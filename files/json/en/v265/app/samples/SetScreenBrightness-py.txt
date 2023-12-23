@@ -1,0 +1,15 @@
+<sample SetScreenBrightness Demo>
+def OnStart():
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay.SetBackColor( "white" )
+
+    spn = app.CreateSeekBar( 1 )
+    spn.SetOnChange( SetScreenBrightness )
+    spn.SetRange( 1 )
+    lay.AddChild( spn )
+
+	app.AddLayout( lay )
+
+def SetScreenBrightness( level ):
+    app.SetScreenBrightness( level )
+</sample>

@@ -1,0 +1,77 @@
+<sample Items>
+items =
+    "Group 1":
+        "Item 1": "",
+        "Item 2": "",
+        "Item 3": "",
+    "Group 2":
+        "Item 1": "",
+        "Item 2": "",
+        "Item 3": "",
+    "Applications":
+        "Editor": "",
+        "Productivity": "",
+        "Social Media":
+            "TikTok": "",
+            "YouTube": "",
+            "Meta":
+                "Facebook": "",
+                "Instagram": "",
+                "Whatsapp": "",
+                "Messenger": ""
+
+
+
+</sample>
+
+<sample Items with icons>
+items =
+    "Folders":
+        "Music": "music_note",
+        "Photos": "photo",
+        "Favorites": "favorite"
+
+</sample>
+
+<sample Basic TreeView>
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "Center,ScrollY,FillXY")
+
+        #  Initialize json object for the treeview items
+        items =
+            "Group 1":
+                "Item 1": "",
+                "Item 2": "",
+                "Item 3": "",
+            "Group 2":
+                "Item 1": "",
+                "Item 2": "",
+                "Item 3": "",
+            "Applications":
+                "Editor": "",
+                "Productivity": "",
+                "Social Media":
+                    "TikTok": "",
+                    "YouTube": "",
+                    "Meta":
+                        "Facebook": "",
+                        "Instagram": "",
+                        "Whatsapp": "",
+                        "Messenger": ""
+
+
+
+
+        #  Add a treeview component to the main layout
+        this.trv = ui.addTreeView(this.main, items, "Primary")
+        this.trv.setMargins(0, 5, 0, 0, "rem")
+
+        #  Add a callback handler when the treeview item is touched
+        this.trv.setOnTouch( this.onTouch )
+
+    onTouch(value, path)
+        ui.showPopup("Value: "+value + " Path: "+path)
+
+</sample>

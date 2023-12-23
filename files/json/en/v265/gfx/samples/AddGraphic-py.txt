@@ -1,0 +1,10 @@
+<sample Basic>
+cfg.Game
+
+def OnLoad():
+    rect = gfx.CreateRectangle( 0.8, 0.1, 0xff, 3, 0x5555ff, 1, "floor" )
+
+def OnReady():
+    <b>gfx.AddGraphic( rect, .1, 0.4 )</b>
+	gfx.Play()
+</sample>

@@ -1,0 +1,4 @@
+<sample Example>
+def OnStart():
+    <b>app.StartApp( "/sdcard/DroidScript/Hello World/Hello World.js" )</b>
+</sample>

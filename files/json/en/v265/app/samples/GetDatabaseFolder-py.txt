@@ -1,0 +1,5 @@
+<sample Show>
+def OnStart():
+    <b>dir = app.GetDatabaseFolder()</b>
+    app.Alert( dir )
+</sample>

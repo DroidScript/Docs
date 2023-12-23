@@ -1,0 +1,4 @@
+<sample Change NavBar Color>
+def OnStart():
+    <b>app.SetNavBarColor("green")</b>
+</sample>

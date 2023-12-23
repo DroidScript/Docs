@@ -1,0 +1,5 @@
+<sample show latest clipboard text>
+def OnStart():
+    <b>text = app.GetClipboardText()</b>
+    app.Alert( text )
+</sample>

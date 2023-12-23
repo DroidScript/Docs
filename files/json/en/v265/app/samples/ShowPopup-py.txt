@@ -1,0 +1,9 @@
+<sample Top>
+def OnStart():
+	<b>app.ShowPopup( "Hello World!" )</b>
+</sample>
+
+<sample Bottom>
+def OnStart():
+	<b>app.ShowPopup( "Hello World!", "Bottom,Short" )</b>
+</sample>

@@ -1,0 +1,5 @@
+<sample Get Pictures folder>
+def OnStart():
+    fld = app.GetSpecialFolder( "Pictures" )
+    app.Alert( fld )
+</sample>

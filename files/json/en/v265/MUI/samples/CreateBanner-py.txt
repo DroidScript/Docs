@@ -1,0 +1,36 @@
+<sample Light>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.blue
+    app.InitializeUIKit(color.lighten1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    app.AddLayout(lay)
+
+    ban = MUI.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
+    ban.Show()
+</sample>
+
+<sample Dark>
+cfg.Dark
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.blue
+    app.InitializeUIKit(color.lighten1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    app.AddLayout(lay)
+
+    ban = MUI.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
+    ban.SetOnTouch(OnTouch)
+    ban.Show()
+
+def OnTouch(v):
+	if v:
+		app.ShowPopup("Learn more")
+	else:
+		app.ShowPopup("Banner close")
+</sample>

@@ -1,0 +1,5 @@
+<sample List Permissions>
+def OnStart(perms):
+    perms = app.ListPermissions("storage")
+    app.Alert(perms, "Permissions:")
+</sample>

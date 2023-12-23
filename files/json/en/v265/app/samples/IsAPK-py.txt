@@ -1,0 +1,5 @@
+<sample Check APK>
+def OnStart():
+    <b>isAPK = app.IsAPK()</b>
+    app.Alert( isAPK, "is APK:" )
+</sample>

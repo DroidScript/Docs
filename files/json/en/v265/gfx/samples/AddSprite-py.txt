@@ -1,0 +1,10 @@
+<sample>
+cfg.Game
+
+def OnLoad():
+    droid = gfx.CreateSprite( "/Sys/Img/Hello.png" )
+
+def OnReady():
+    gfx.AddSprite( droid, 0.2, 0.4, 0.5 )
+    gfx.Play()
+</sample>

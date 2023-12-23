@@ -1,0 +1,133 @@
+<sample Basic text control>
+class Main extends App
+    onStart()
+        #  Create a full screen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        t = "This is the sample text to be displayed."
+
+        #  Add a text control to the main layout
+        this.txt = ui.addText(this.main, t)
+
+        #  You can also add a callback handler when the text control is touch
+        this.txt.setOnTouch( this.onTouch )
+
+    onTouch()
+        ui.showPopup( "You touched the text!" )
+
+</sample>
+
+<sample Heading variants>
+class Main extends App
+    onStart()
+        #  Create a full screen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        t = "Lorem ipsum dolor sit amet, consectetur"
+
+        #  Heading ranges from H1 to H6
+
+        this.h1 = ui.addText( this.main, "Heading 1", "H1" )
+
+        this.h2 = ui.addText( this.main, "Heading 2", "H2" )
+
+        this.h3 = ui.addText( this.main, "Heading 3", "H3" )
+
+        this.h4 = ui.addText( this.main, "Heading 4", "H4" )
+
+        this.h5 = ui.addText( this.main, "Heading 5", "H5" )
+
+        this.h6 = ui.addText( this.main, "Heading 6", "H6" )
+
+</sample>
+
+<sample Other variants>
+class Main extends App
+    onStart()
+        #  Create a full screen layout.
+        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+
+        t = "Lorem ipsum dolor sit amet, consectetur"
+
+        this.text = ui.addText( this.main, t, "body1" )
+
+        this.text = ui.addText( this.main, t, "body2" )
+
+        this.text = ui.addText( this.main, t, "subtitle1" )
+
+        this.text = ui.addText( this.main, t, "subtitle2" )
+
+        this.text = ui.addText( this.main, t, "overline" )
+
+        this.text = ui.addText( this.main, t, "button" )
+
+        this.text = ui.addText( this.main, t, "caption" )
+
+</sample>
+
+<sample Alignments and colors>
+class Main extends App
+    onStart()
+        #  Create a full screen layout.
+        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+        this.main.setChildMargins(0, 0.05)
+
+        t = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            
+        #  Default is left
+        this.txt1 = ui.addText( this.main, t, "body1,Left", 0.9 )
+        this.txt1.backColor = "#e0e0e0"
+
+        #  Center and color primary
+        this.txt2 = ui.addText( this.main, t, "body1,Center,Primary", 0.9 )
+        this.txt2.backColor = "#e0e0e0"
+
+        #  Right and color secondary
+        this.txt3 = ui.addText( this.main, t, "body1,Right,Secondary", 0.9)
+        this.txt3.backColor = "#e0e0e0"
+
+        #  Bottom, Center with a textSecondary color
+        this.txt4 = ui.addText( this.main, t, "body1,Center,Bottom,TextSecondary", 0.9, 0.1)
+        this.txt4.backColor = "#e0e0e0"
+
+</sample>
+
+<sample Icons>
+class Main extends App
+    onStart()
+        #  Create a full screen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.setChildMargins(0, 0.05)
+        
+        #  Add a settings icon
+        this.txt1 = ui.addText(this.main, "settings", "Icon")
+        this.txt1.setOnTouch( this.onTouch )
+
+        #  Add a camera icon
+        ui.addText(this.main, "add_a_photo", "Icon,TextSecondary")
+
+        #  Add a heart icon
+        ui.addText(this.main, "favorite", "Icon,Secondary")
+
+        #  Add an android icon
+        ui.addText(this.main, "android", "Icon,Primary")
+
+    onTouch()
+        ui.showPopup( "You touch the icon!" )
+
+</sample>
+
+<sample Html formatted text>
+class Main extends App
+    onStart()
+        #  Create a full screen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        
+        #  Html formatted string
+        t = 'This text is formatted as html. <h3 style="color:green;">This is a heading with color.</h3>'
+        t += 'You can also add <i>italize text</i> as well as <span style="background-color:yellow;">text with styles</span>.'
+
+        #  Add text control to the main layout by passing `Html` option
+        this.txt = ui.addText(this.main, t, "html")
+
+</sample>

@@ -1,0 +1,5 @@
+<sample Show DroidScript Version>
+def OnStart():
+    <b>ver = app.GetDSVersion()</b>
+    app.Alert( ver )
+</sample>

@@ -1,0 +1,6 @@
+<sample Check App Installed>
+def OnStart():
+    pkg = app.GetPackageName()
+    <b>isInstalled = app.IsAppInstalled( pkg )</b>
+    app.Alert( isInstalled, pkg + " installed:" )
+</sample>

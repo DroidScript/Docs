@@ -1,0 +1,138 @@
+<sample EnjineIO homepage>
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Create a webview and load the EnjineIO homepage
+        this.web = ui.addWebView(this.main, "https:# enjine.io/", "", 0.9, 0.9)
+
+        #  Add a callback handler when the website is loaded
+        this.web.setOnLoad( this.onLoad )
+
+    onLoad()
+        ui.showPopup( "Website is loaded!" )
+
+</sample>
+
+<sample Call a function inside the webview>
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Create a webview and pass 
+        this.web = ui.addWebView(this.main, "", "", 0.9, 0.7)
+
+        #  Add a callback handler when the page is loaded
+        this.web.setOnLoad( this.onLoad )
+
+        #  Load a webpage from a string
+        this.web.html = '<html>' +
+        '<head>' +
+            '<script>' +
+                'def callFunc( name ): ' +
+                    'alert("Hi " + name + " webview!")' +
+                '' +
+            '<\/script>' +
+        '<\/head>' +
+        '<body>' +
+            '<h2>This is an html.<\/h2>' +
+        '<\/body>' +
+        '<\/html>'
+
+    onLoad()
+        #  Call the function `callFunc` inside the webpage
+        #  when the page is loaded
+        x = this.web.window.callFunc( "John Doe" )
+
+</sample>
+
+<sample Getting returned values from a function in a webview>
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Create a webview and pass 
+        this.web = ui.addWebView(this.main, "", "", 0.9, 0.7)
+
+        #  Add a callback handler when the page is loaded
+        this.web.setOnLoad( this.onLoad )
+
+        #  Load a webpage from a string
+        this.web.html = '<html>' +
+        '<head>' +
+            '<script>' +
+                'def getProduct(num1, num2): ' +
+                '' +
+                    'return num1 * num2' +
+                '' +
+            '<\/script>' +
+        '<\/head>' +
+        '<body>' +
+            '<h2>Get some product here!<\/h2>' +
+        '<\/body>' +
+        '<\/html>'
+
+    onLoad()
+        #  Call the function `getProduct` inside the webview
+        #  when the page is loaded and display the answer
+        prod = this.web.window.getProduct(2, 3)
+
+        ui.showPopup( "The product is " + prod )
+
+</sample>
+
+<sample Manipulate dom inside the webview>
+class Main extends App
+    onStart()
+        this.loaded = false
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Create a webview and pass 
+        this.web = ui.addWebView(this.main, "", "", 0.7, 0.5)
+
+        #  Add a callback handler when the page is loaded
+        this.web.setOnLoad( this.onLoad )
+
+        #  Load a webpage from a string
+        this.web.html = '<html>' +
+        '<head>' +
+        '</head>' +
+        '<body>' +
+            '<h2 id="my-text">Hi from webview!</h2>' +
+        '</body>' +
+        '</html>'
+
+        #  Add a button control to the main layout
+        this.btn = ui.addButton(this.main, "Change background color")
+        this.btn.setOnTouch( this.onTouch )
+
+    onLoad()
+        this.loaded = true
+
+    onTouch()
+        #  Check first if webview is loaded
+        if  this.loaded :
+            #  Get a reference to the document object of the webview
+            dom = this.web.document
+
+            #  or `dom = this.web.window.document`
+
+            #  Set the background-color of the body to green
+            dom.body.style.backgroundColor = "green"
+
+            #  Get a reference to the h2 element by its id
+            h2 = dom.getElementById("my-text")
+
+            #  Set the text
+            h2.innerText = "New text from parent!"
+
+            #  Set the text color to white
+            h2.style.color = "white"
+        else:
+            ui.showPopup( "Webview is not yet loaded!" )
+
+</sample>

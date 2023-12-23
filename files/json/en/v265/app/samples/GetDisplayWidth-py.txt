@@ -1,0 +1,5 @@
+<sample Show display width>
+def OnStart():
+    <b>width = app.GetDisplayWidth()</b>
+    app.Alert( width )
+</sample>

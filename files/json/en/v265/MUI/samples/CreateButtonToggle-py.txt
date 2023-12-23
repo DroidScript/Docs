@@ -1,0 +1,18 @@
+<sample Light>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.darken1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    	
+    	btn = MUI.CreateButtonToggle("BUTTON", 0.35, null, false, OnToggle)
+    	lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+def OnToggle(v):
+    app.ShowPopup(v)
+</sample>

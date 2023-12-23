@@ -1,0 +1,20 @@
+<sample Basic>
+nodeJs = 'console.log("Hello World");\nconsole.error("Hello Error");\n'
+
+def OnStart():
+    app.WriteFile("node_script.js", nodeJs)
+
+    lay = app.CreateLayout("linear", "VCenter, FillXY")
+    txt = app.AddText(lay, "Debug Log:", 1, 1, "Log")
+
+    <b>node = app.CreateNode()
+    node.SetOnOutput((msg) =>txt.Log(msg);)
+    node.SetOnError((msg) =>txt.Log(msg, "red");)
+    node.SetOnMessage((msg) =>txt.Log(msg);)
+    node.SetOnReady(node_OnReady)</b>
+
+    app.AddLayout(lay)
+
+def node_OnReady():
+    node.Run("node_script.js")
+</sample>

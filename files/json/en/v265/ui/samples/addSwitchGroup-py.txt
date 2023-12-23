@@ -1,0 +1,123 @@
+<sample Basic>
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        items = ["This is item 1", "This is item 2", "This is item 3"]
+
+        #  Add a switchgroup control to the main layout.
+        this.swg = ui.addSwitchGroup(this.main, items, "Secondary", 0.9)
+
+        #  Add a callback handler when the switchgroup item is touch
+        this.swg.setOnTouch( this.onTouch )
+
+    onTouch(item, value)
+        ui.showPopup(item + " : "  + value)
+
+</sample>
+
+<sample SwitchGroup with leading icons>
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Initialize switchgroup items with leading icon
+        items = [ 
+            ["music_note", "Enable Sound"],
+            ["bluetooth", "Enable Bluetooth"],
+            ["wifi", "Enable Wifi"]
+        ]
+
+        #  Add a switchgroup control to the main layout.
+        this.swg = ui.addSwitchGroup(this.main, items, "Secondary,Icon", 0.9)
+
+        #  Set the label text of the switchgroup control
+        this.swg.label = "Settings"
+
+        #  Add a callback handler when the switchgroup item is touch
+        this.swg.setOnTouch( this.onTouch )
+
+    onTouch(item, value)
+        ui.showPopup(item + " : "  + value)
+
+</sample>
+
+<sample With custom styles>
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Initialize switchgroup items with leading icon
+        items = [ 
+            ["music_note", "Enable Sound"],
+            ["bluetooth", "Enable Bluetooth"],
+            ["wifi", "Enable Wifi"]
+        ]
+
+        #  Adds a switchgroup control to the main layout
+        this.swg = ui.addSwitchGroup(this.main, items, "Secondary,Icon", 0.9)
+        this.swg.setOnTouch( this.onTouch )
+
+        #  Set the text color to deep-purple
+        this.swg.textColor = "#673ab7"
+
+        #  Set the icon color to teal
+        this.swg.iconColor = "#009688"
+
+        #  Set the corner radius
+        this.swg.cornerRadius = 4
+
+        #  Set the background color using rgba
+        this.swg.backColor = "rgba(255, 255, 100, 255)"
+
+    onTouch( item, value )
+        ui.showPopup( item + " : "  + value )
+
+</sample>
+
+<sample Elevated switchgroup with onChange callback>
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Initialize switchgroup items to be displayed
+        items = ["This is item 1", "This is item 2", "This is item 3"]
+
+        #  Adds a switchgroup control to the main layout
+        this.swg = ui.addSwitchGroup( this.main, items, "Secondary,Elevated", 0.9 )
+        this.swg.label = "My label"
+        this.swg.elevation = 4
+
+        #  Add a callback handler when the value of switchgroup changes
+        this.swg.setOnChange( this.onChange )
+
+    onChange(items, indexes)
+        ui.showPopup( items.join(", ") )
+
+</sample>
+
+<sample Outlined switchgroup>
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Initialize switchgroup items to be displayed
+        items = ["This is item 1", "This is item 2", "This is item 3"]
+
+        #  Adds a switchgroup control to the main layout
+        this.swg = ui.addSwitchGroup( this.main, items, "Primary,Outlined", 0.9)
+        this.swg.label = "My label"
+        this.swg.cornerRadius = 8
+
+        #  Add a callback handler when the value of switchgroup changes
+        this.swg.setOnChange( this.onChange )
+
+    onChange(items, indexes)
+        ui.showPopup( items.join(", ") )
+
+</sample>

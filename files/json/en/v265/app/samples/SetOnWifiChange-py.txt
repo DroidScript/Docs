@@ -1,0 +1,10 @@
+<sample Detect WiFi Changes>
+def OnStart():
+    app.SetOnWifiChange( OnWifiChange )
+
+<b>def OnWifiChange( state, ssid ):
+    if  state.EndsWith( "ED" ):
+        app.ShowPopup( state + "\n" + ssid )
+        app.HideProgress()
+    else: app.ShowProgress( state )</b>
+</sample>

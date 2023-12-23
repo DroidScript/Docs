@@ -1,0 +1,5 @@
+<sample Check Premium subscription>
+def OnStart():
+    <b>premium = app.IsPremium()</b>
+    app.Alert( premium, "IsPremium" )
+</sample>

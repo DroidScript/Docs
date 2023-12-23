@@ -1,0 +1,5 @@
+<sample Check Connected>
+def OnStart():
+    <b>isConnected = app.IsConnected()</b>
+    app.Alert( isConnected, "is Connected:" )
+</sample>

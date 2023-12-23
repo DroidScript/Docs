@@ -1,0 +1,11 @@
+<sample Show Bluetooth Profile State>
+def OnStart():
+    states = "a2dp|headset|gatt|health".split( "|" )
+    lst = []
+
+    for  i in states :
+        <b>state = app.GetBtProfileState( states[i] )</b>
+        lst.push( states[i] +  + ": " + state)
+
+    app.Alert( lst.join( "\n" ) )
+</sample>

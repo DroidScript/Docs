@@ -1,0 +1,10 @@
+<sample Demo>
+def OnStart():
+	<b>apps = app.GetRunningApps()
+	curApps = apps.filter( function(v)return v.foreground;)
+    pid = curApps[0].pid
+
+    alert( "Kill app " + curApps[0].name )
+    app.KillApp( pid )</b>
+    app.ShowPopup( "Done" ); #  not shown
+</sample>

@@ -1,0 +1,12 @@
+<sample Example>
+def OnStart():
+	srcFileUrl = "http:# sgarman.net/downloadable.txt"
+	targetDir = "/sdcard"
+
+	<b>dload = app.CreateDownloader()
+	dload.SetOnComplete( dload_OnComplete )
+	dload.Download( srcFileUrl, targetDir )</b>
+
+def dload_OnComplete():
+	app.ShowPopup("Download complete")
+</sample>

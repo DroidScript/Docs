@@ -1,0 +1,8 @@
+<sample Conect to DS WiFi AP>
+def OnStart():
+	<b>app.WifiConnect( "DS WiFi AP", "mypass" )</b>
+	app.SetOnWifiChange( OnWifiChange )
+
+def OnWifiChange( state, ssid ):
+    app.ShowPopup( ssid + " " + state )
+</sample>

@@ -1,0 +1,4 @@
+<sample Blue Background>
+def OnStart():
+    app.SetBackColor( "blue" )
+</sample>

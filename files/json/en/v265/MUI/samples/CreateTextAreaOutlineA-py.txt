@@ -1,0 +1,51 @@
+<sample No Label>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+</sample>
+
+<sample With Label>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", true)
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+</sample>
+
+<sample SetOnEnter Callback>
+cfg.Dark
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", true)
+        tef.SetOnEnter(OnEnter)
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+
+def OnEnter():
+    app.ShowPopup(this.GetText())
+</sample>

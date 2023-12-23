@@ -1,0 +1,28 @@
+<sample Show>
+itv
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "fillxy,vcenter" )
+
+    lst = app.CreateList( "", .8, .8 )
+    lay.AddChild( lst )
+
+    app.AddLayout( lay )
+
+
+    if  !app.IsBluetoothEnabled() :
+        app.SetBluetoothEnabled( true )
+
+    itv = setInterval( checkBtOn, 200 )
+
+def checkBtOn():
+    if  app.IsBluetoothOn() :
+        app.HideProgress()
+        clearInterval( itv )
+
+        <b>devices = app.GetPairedBtDevices()
+
+        for  i in devices :
+            lst.AddItem( devices[i].name, devices[i].address )</b>
+
+</sample>

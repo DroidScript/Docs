@@ -1,0 +1,15 @@
+<sample List home directory>
+def OnStart():
+	<b>list = app.ListFolder( "/sdcard/" )</b>
+
+	ldg = app.CreateListDialog( "/sdcard/*", list )
+	ldg.Show()
+</sample>
+
+<sample List .jpg assets>
+def OnStart():
+	<b>list = app.ListFolder( "/Sys/Img", ".jpg" )</b>
+
+	ldg = app.CreateListDialog( "/Sys/Img/*.jpg", list )
+	ldg.Show()
+</sample>

@@ -1,0 +1,14 @@
+<sample Compute the Answer to the Ultimate Question of Life, the Universe, and Everything>
+scriptJS = `
+num = 7
+def computeNum(): return 6 * num
+`
+
+def OnStart():
+    app.WriteFile( "script.js", scriptJS )
+    <b>app.LoadScript( "script.js", OnLoad )</b>
+
+def OnLoad():
+    app.ShowPopup( "script.js loaded." )
+    app.Alert( computeNum(), "computed number: " )
+</sample>

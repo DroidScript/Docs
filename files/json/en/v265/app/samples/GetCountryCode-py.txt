@@ -1,0 +1,5 @@
+<sample Show Country Code>
+def OnStart():
+    <b>code = app.GetCountryCode()</b>
+    app.Alert( code )
+</sample>

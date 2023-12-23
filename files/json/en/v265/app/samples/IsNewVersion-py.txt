@@ -1,0 +1,5 @@
+<sample Check Version Number increased>
+def OnStart():
+    <b>newVersion = app.IsNewVersion()</b>
+    app.Alert( newVersion, "Is new version:" )
+</sample>

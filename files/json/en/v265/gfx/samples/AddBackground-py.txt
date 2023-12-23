@@ -1,0 +1,10 @@
+<sample Basic>
+cfg.Game
+
+def OnLoad():
+    sky = gfx.CreateBackground( "/Sys/Img/Sky.jpg", "stretch" )
+
+def OnReady():
+    <b>gfx.AddBackground( sky )</b>
+	gfx.Play()
+</sample>

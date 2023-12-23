@@ -1,0 +1,18 @@
+<sample Basic & Light>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        div = MUI.CreateDivider()
+        lay.AddChild(div)
+
+    app.AddLayout(lay)
+
+    text = "You can undone this process."
+    dlg = MUI.CreateDialog("Remove message", text, "REMOVE")
+</sample>

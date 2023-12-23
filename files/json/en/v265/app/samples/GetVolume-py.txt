@@ -1,0 +1,5 @@
+<sample Get System Volume>
+def OnStart():
+    <b>vol = app.GetVolume()</b>
+    app.Alert( vol, "System Volume:" )
+</sample>

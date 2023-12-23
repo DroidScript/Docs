@@ -1,0 +1,5 @@
+<sample Show Default Orientation>
+def OnStart():
+    <b>orient = app.GetDefaultOrientation()</b>
+    app.Alert( orient )
+</sample>

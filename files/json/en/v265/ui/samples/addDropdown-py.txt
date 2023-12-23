@@ -1,0 +1,49 @@
+<sample Basic>
+class Main extends App
+    onStart()
+        #  Create a fullscreen linear layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Initialize items to show in the dropdown
+        items = ["Item 1", "Item 2", "Item 3"]
+
+        #  Add Dropdown control to the main layout.
+        this.dpd = ui.addDropdown(this.main, items)
+
+        #  Add a callback handler for `onChange` event on the Dropdown control
+        this.dpd.setOnChange( this.onChange )
+
+    onChange(text, index)
+        ui.showPopup( "Value is " + text )
+
+</sample>
+
+<sample Custom styles>
+class Main extends App
+    onStart()
+        #  Create a fullscreen linear layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Initialize dropdown items
+        items = ["Item 1", "Item 2", "Item 3"]
+
+        #  Add a Dropdown control to the main layout
+        #  and pass `Outlined` and `Primary` options for styling
+        this.dpd = ui.addDropdown( this.main, items, "Outlined,Primary" )
+
+        #  Set the label property of the Dropdown
+        this.dpd.label = "Choose and item"
+
+        #  Set the corner radius to 16px
+        this.dpd.cornerRadius = 16
+
+        #  Set the text size to 18
+        this.dpd.textSize = 18
+
+        #  Add a callback handler for `onChange` event of the Dropdown control
+        this.dpd.setOnChange( this.onChange )
+
+    onChange(text, index)
+        ui.showPopup( "Value is " + text )
+
+</sample>

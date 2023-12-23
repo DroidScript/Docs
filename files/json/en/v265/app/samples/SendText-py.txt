@@ -1,0 +1,4 @@
+<sample Demo>
+def OnStart():
+    <b>app.SendText("Hello World", "My Subject", "Choose an app")</b>
+</sample>

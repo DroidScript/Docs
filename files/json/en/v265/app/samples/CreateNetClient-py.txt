@@ -1,0 +1,102 @@
+<sample TCP Basic>
+def OnStart():
+    lay = app.CreateLayout( "linear" )
+
+    web = app.CreateWebView( 1, .5, "ignoreerrors" )
+    lay.AddChild( web )
+
+	txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" )
+	txt.SetTextSize( 12 )
+	lay.AddChild( txt )
+
+    app.AddLayout( lay )
+
+	<b>net = app.CreateNetClient( "TCP,Raw" )
+	net.SetOnConnect( net_OnConnect )
+	net.Connect( "www.randomfunfacts.com", 80 )</b>
+
+def net_OnConnect( connected ):
+	if  !connected : return app.ShowPopup( "Failed to connect!" )
+
+	net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" )
+
+	msg = "", s = ""
+	do: msg += s = net.ReceiveText( "UTF-8" )
+	while  s.length > 0 :
+
+    txt.SetText( msg )
+    web.LoadHtml( msg )
+
+    net.Disconnect()
+</sample>
+
+<sample TCP AutoReceive>
+def OnStart():
+    lay = app.CreateLayout( "linear" )
+
+    web = app.CreateWebView( 1, .5, "ignoreerrors" )
+    lay.AddChild( web )
+
+	txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" )
+	txt.SetTextSize( 12 )
+	lay.AddChild( txt )
+
+    app.AddLayout( lay )
+
+	<b>net = app.CreateNetClient( "TCP,Raw" )
+	net.SetOnConnect( net_OnConnect )
+	net.SetOnReceive( OnReceive )
+	net.AutoReceive( "www.randomfunfacts.com", 80, "UTF-8" )</b>
+
+sent = false
+def net_OnConnect( connected ):
+	if  !connected : return app.ShowPopup( "Failed to connect!" )
+
+    if  sent : return sent = msg != ""
+    else: sent = true
+
+	net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" )
+
+msg = ""
+def OnReceive( s ):
+    msg += s
+
+    if s.endsWith( "\r\n\r\n" ):
+        txt.SetText( msg )
+        web.LoadHtml( msg )
+        msg = ""
+
+</sample>
+
+<sample UDP Messaging>
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    btn = app.CreateButton( "Send", 0.3, 0.1 )
+    btn.SetMargins( 0, 0.05, 0, 0 )
+    lay.AddChild( btn )
+    btn.SetOnTouch( btn_OnTouch )
+
+    app.AddLayout( lay )
+
+    net = app.CreateNetClient( "UDP" )
+
+    address = net.GetBroadcastAddress()
+    id = app.GetDeviceId()
+    port = 19700
+
+    setInterval( CheckForMsg, 500 )
+
+def btn_OnTouch():
+    packet = id + "|Hello"
+    net.SendDatagram( packet, "UTF-8", address, port )
+
+def CheckForMsg():
+    packet = net.ReceiveDatagram( "UTF-8", port, 10 )
+    if  packet :
+        parts = packet.split( "|" )
+
+        if  parts[0] != id :
+            app.ShowPopup( parts[1] )
+
+</sample>

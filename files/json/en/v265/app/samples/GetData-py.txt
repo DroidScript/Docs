@@ -1,0 +1,22 @@
+<sample Get Saved Data>
+def OnStart():
+    app.SetData( "myvar", "Hello World!" )
+    <b>data = app.GetData("myvar")</b>
+    app.Alert( data, "Saved Data:" )
+</sample>
+
+<sample Random Value>
+def OnStart():
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+	btn = app.AddButton( lay, "Press Me", 0.3, 0.1 )
+	btn.SetOnTouch( btn_OnTouch )
+
+	app.AddLayout( lay )
+
+def btn_OnTouch():
+	app.SetData( "number", 100 * Math.random() | 0 )
+
+    <b>data = app.GetData( "number" )</b>
+	app.ShowPopup( "Data: " + data)
+</sample>

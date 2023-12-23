@@ -1,0 +1,12 @@
+<sample Get Funfact>
+address = "http:# www.randomfunfacts.com"
+
+<b>app.HttpRequest( "GET", address, null, null, handleReply )</b>
+
+def handleReply( error, reply ):
+	if  error : alert( reply )
+	else:
+		funfact = reply.slice( reply.indexOf("<i>") + 3, reply.indexOf("</i>") )
+		alert( funfact )
+
+</sample>

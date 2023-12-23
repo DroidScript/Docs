@@ -1,0 +1,6 @@
+<sample Translate Buttons>
+def OnStart():
+    <b>app.Translate("new cancel", "new ok")</b>
+    app.Alert("my message")
+    app.ShowTextDialog("Type some text", "")
+</sample>

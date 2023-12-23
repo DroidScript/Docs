@@ -1,0 +1,19 @@
+<sample Show installed apps>
+def OnStart():
+    app.ShowProgress()
+
+    lay = app.CreateLayout( "linear" )
+
+    list = app.GetInstalledApps()
+
+	lst = app.CreateList( "", 1, 1 )
+	lay.AddChild( lst )
+
+    for i in list:
+        a = list[i]
+        lst.AddItem(a.packageName)
+
+	app.AddLayout(lay)
+
+    app.HideProgress()
+</sample>

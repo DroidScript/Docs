@@ -1,0 +1,11 @@
+<sample Set Auto Boot>
+def OnStart():
+    app.SetAutoBoot( true )
+    app.ShowPopup( "You may reboot your phone now." )
+</sample>
+
+<sample Unset Auto Boot>
+def OnStart():
+    app.SetAutoBoot( false )
+    app.ShowPopup( "AutoBoot Disabled." )
+</sample>

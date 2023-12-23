@@ -1,0 +1,5 @@
+<sample Show Android API Level>
+def OnStart():
+	<b>version = app.GetOSVersion()</b>
+	app.Alert( version )
+</sample>

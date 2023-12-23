@@ -1,0 +1,4 @@
+<sample Example>
+def OnStart():
+	<b>app.PreventWifiSleep()</b>
+</sample>

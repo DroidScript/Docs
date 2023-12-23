@@ -1,0 +1,5 @@
+<sample Sleep and Wake>
+def OnStart():
+    <b>app.GoToSleep()</b>
+    setTimeout("app.WakeUp()", 5000)
+</sample>

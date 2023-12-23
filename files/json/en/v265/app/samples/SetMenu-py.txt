@@ -1,0 +1,25 @@
+<sample Example>
+def OnStart():
+	<b>app.SetMenu( "Start,Stop,Pause" )</b>
+
+    lay = app.CreateLayout( "linear", "" )
+
+    btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" )
+    btn.SetOnTouch( app.ShowMenu )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+def OnMenu( item ):
+	app.ShowPopup( item, "Short" )
+</sample>
+
+<sample Menu Icons>
+def OnStart():
+    <b>menus = "Files:folder,Music:list,Images:picture"
+	app.SetMenu( menus )</b>
+    app.ShowMenu()
+
+def OnMenu( item ):
+    app.ShowPopup( item, "Short" )
+</sample>

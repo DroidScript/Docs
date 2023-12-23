@@ -1,0 +1,5 @@
+<sample Show Device IP>
+def OnStart():
+    ip = app.GetIPAddress()
+    app.Alert( ip )
+</sample>

@@ -1,0 +1,9 @@
+<sample No Title>
+def OnStart():
+	<b>app.Alert( "Hello World!" )</b>
+</sample>
+
+<sample Yellow Title>
+def OnStart():
+	<b>app.Alert( "This is an alert box", "Hello Yellow World!", "", -100 )</b>
+</sample>

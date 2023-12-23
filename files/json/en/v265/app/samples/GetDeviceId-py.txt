@@ -1,0 +1,5 @@
+<sample Show Devide ID>
+def OnStart():
+    <b>id = app.GetDeviceId()</b>
+    app.Alert( id )
+</sample>

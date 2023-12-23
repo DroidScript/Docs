@@ -1,0 +1,5 @@
+<sample Example>
+def OnStart():
+	 app.WriteFile( "/sdcard/test.txt", "Hello" )
+	 <b>app.OpenFile( "/sdcard/test.txt", "text/plain", "Choose Editor" )</b>
+</sample>

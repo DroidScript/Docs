@@ -1,0 +1,39 @@
+<sample Show Running Apps>
+def OnStart():
+    app.ShowProgress()
+
+    lay = app.CreateLayout( "linear", "fillxy,vcenter" )
+
+    lst = app.CreateList( "", .9, .9 )
+    lst.SetTextSize1( 15 )
+    lay.AddChild( lst )
+
+    <b>list = app.GetRunningApps()
+
+    for  i in list :
+        a = list[i]
+        body =
+            "user: " + a.user +
+            "\npid: " + a.pid +
+            "\nforeground: " + a.foreground
+        lst.AddItem( a.name, body )</b>
+
+    app.AddLayout( lay )
+
+    app.HideProgress()
+</sample>
+
+<sample Is In Foreground>
+def OnStart():
+    app.Animate(CheckForeground, 0.2)
+
+def CheckForeground():
+    apps = app.GetRunningApps()
+    name = app.GetPackageName()
+    if !app.IsAPK(): name += ":NewActivityProcess"
+
+    for i in apps:
+        if apps[i].name == name:
+            app.ShowPopup("In Foreground: " + apps[i].foreground)
+
+</sample>

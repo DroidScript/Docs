@@ -1,0 +1,7 @@
+<sample Example>
+defaultUserAgent = navigator.userAgent
+myUserAgent = defaultUserAgent
+
+def OnStart():
+    app.SetUserAgent( myUserAgent )
+</sample>

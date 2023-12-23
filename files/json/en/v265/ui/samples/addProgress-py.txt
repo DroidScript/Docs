@@ -1,0 +1,47 @@
+<sample Progress control implementation>
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.childSpacing = "Even"
+
+        #  Indeterminate Linear
+        this.prog1 = ui.addProgress(this.main, 40, "linear", 0.7)
+
+        #  Determinate Linear
+        this.prog2 = ui.addProgress(this.main, null, "Linear,Secondary,indeterminate", 0.7)
+
+        #  Determinate Circular
+        this.prog3 = ui.addProgress(this.main, 50, "Circular")
+
+        #  Indeterminate Circular, enlarge and secondary
+        this.prog4 = ui.addProgress(this.main, null, "Circular,Secondary,indeterminate")
+        this.prog4.circleSize = 100
+
+</sample>
+
+<sample Setting progress value>
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.childSpacing = "Even"
+
+        #  Add an indeterminate linear progress control to the main layout
+        this.prog = ui.addProgress(this.main, 0, "Linear", 0.7)
+
+        #  Add a button control to the main layout
+        this.btn = ui.addButton(this.main, "Increment")
+
+        #  Add a callback handler when the button is touched
+        this.btn.setOnTouch( this.onTouch )
+
+    onTouch()
+        #  Increment the value of the progress control by 10
+        if  this.prog.value < 100 :
+            this.prog.value += 10
+        else:
+            ui.showPopup( "Progress is complete!" )
+
+
+</sample>

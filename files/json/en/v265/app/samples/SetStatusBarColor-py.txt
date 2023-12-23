@@ -1,0 +1,4 @@
+<sample Set StatusBar Color>
+def OnStart():
+    <b>app.SetStatusBarColor("green")</b>
+</sample>

@@ -1,0 +1,47 @@
+<sample Basic>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        skb = MUI.CreateSwitchSettings("Enable Sound", 1)
+        skb.SetOnTouch(OnTouch)
+        lay.AddChild(skb)
+
+    app.AddLayout(lay)
+
+def OnTouch(text, value):
+    app.ShowPopup(text+" : "+value)
+</sample>
+
+<sample More Settings>
+cfg.Dark
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        settings = [
+            "Enable sound",
+            "Enable dark mode",
+            "Disable full screen"
+        ]
+
+        for i=0; i<settings.length; i++:
+            skb = MUI.CreateSwitchSettings(settings[i], 1)
+            skb.SetOnTouch(OnTouch)
+            lay.AddChild(skb)
+            lay.AddChild(MUI.CreateDivider())
+
+    app.AddLayout(lay)
+
+def OnTouch(text, value):
+    app.ShowPopup(text+" : "+value)
+</sample>

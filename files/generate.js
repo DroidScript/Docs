@@ -8,6 +8,7 @@ const Prism = require('prismjs');
 const _glob = require('glob');
 /** @type {DSConfig} */
 const conf = require("./conf.json");
+const { writeFile } = require("fs");
 
 // prism default languages:
 //   plain,plaintext,text,txt,extend,insertBefore,DFS,markup,
@@ -815,7 +816,14 @@ function getSamples(scope, state, func, ext = "") {
     const samples = {};
     let index = 0;
 
-    const source = ReadFile(getSrcDir(D_SCOPE, state, `samples/${func}${ext}.txt`), " ", !scope[func].isval).replace(/\r/g, '');
+    const filePath = getSrcDir(D_SCOPE, state, `samples/${func}${ext}.txt`);
+    if (ext && !app.FileExists(filePath)) {
+        const jsFilePath = getSrcDir(D_SCOPE, state, `samples/${func}.txt`);
+        const jsSource = ReadFile(jsFilePath, "").replace(/\r/g, '');
+        if (jsSource.trim()) app.WriteFile(filePath, translatePython(jsSource));
+    }
+
+    const source = ReadFile(filePath, " ", !ext && !scope[func].isval).replace(/\r/g, '');
     source.replace(/<sample( (.*?))?(( |norun)*)>([^]*?)<\/sample\1?>/g,
         (m, py, name, opt, _1, code) => {
             index++;
@@ -838,6 +846,23 @@ function formatCode(code, langId = "js") {
     return code;
 }
 
+/** @param {string} jsCode */
+function translatePython(jsCode) {
+    return jsCode
+        .replace(/\s*[{}] *(\n)?/g, '$1')
+        .replace(/\bfunction\b (\w+\([^\n]*\))/g, 'def $1: ')
+        .replace(/\/\/([^\n]*)/g, '# $1')
+        .replace(/\/\*(.*?)\*\//g, '"""$1"""')
+        .replace(/else\s+if\s*\(([^\n]*)\) */g, 'elif $1:')
+        .replace(/\b(if|for|while)\b\s*\(([^())]*|[^()]*\([^()]*\)[^()]*) *\) *(;?)/g, '$1 $2: $3')
+        .replace(/\bcatch\b\s*\(([^\n]*)\) */g, 'except $1:')
+        .replace(/\b(else|try|do)\b */g, '$1: ')
+        .replace(/\b(var|let|const)\b (\w+)/g, '$2')
+        .replace(/:;\n/g, ': pass\n')
+        .replace(/; *(<\/b>|\n)/g, '$1')
+        .replace(/: +\n/g, ':\n');
+}
+
 /** convert a sample to html code
  * @param {string} name
  * @param {Sample} jsSample
@@ -847,19 +872,7 @@ function formatCode(code, langId = "js") {
 function toHtmlSamp(name, jsSample, pySample, state) {
     if (!pySample) { // test
         pySample = { ...jsSample };
-        pySample.code = pySample.code
-            .replace(/\s*[{}] *(\n)?/g, '$1')
-            .replace(/\bfunction\b (\w+\([^\n]*\))/g, 'def $1: ')
-            .replace(/\/\/([^\n]*)/g, '# $1')
-            .replace(/\/\*(.*?)\*\//g, '"""$1"""')
-            .replace(/else\s+if\s*\(([^\n]*)\) */g, 'elif $1:')
-            .replace(/\b(if|for|while)\b\s*\(([^())]*|[^()]*\([^()]*\)[^()]*) *\) *(;?)/g, '$1 $2: $3')
-            .replace(/\bcatch\b\s*\(([^\n]*)\) */g, 'except $1:')
-            .replace(/\b(else|try|do)\b */g, '$1: ')
-            .replace(/\b(var|let|const)\b (\w+)/g, '$2')
-            .replace(/:;\n/g, ': pass\n')
-            .replace(/; *(<\/b>|\n)/g, '$1')
-            .replace(/: +\n/g, ':\n');
+        pySample.code = translatePython(jsSample.code);
     }
     if (!jsSample) Throw(Error(`Js sample '${name}' not found for '${state.curFunc}'.`));
     if (!pySample) Throw(Error(`Py sample '${name}' not found for '${state.curFunc}'.`));

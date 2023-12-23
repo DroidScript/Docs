@@ -1,0 +1,5 @@
+<sample Get received intent data>
+def OnStart():
+    <b>int = app.GetIntent()</b>
+    app.Alert( JSON.stringify( int ))
+</sample>

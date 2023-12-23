@@ -1,0 +1,5 @@
+<sample Show /sdcard/ folder size>
+def OnStart():
+    size = app.GetFileSize( "/sdcard/" )
+    app.Alert( size / 1024 + " kB" )
+</sample>

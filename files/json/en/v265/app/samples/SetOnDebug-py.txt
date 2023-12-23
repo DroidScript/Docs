@@ -1,0 +1,10 @@
+<sample OnDebug>
+def OnStart():
+    <b>app.SetOnDebug( OnDebug )</b>
+    app.Debug( "app started" )
+
+def OnDebug(msg):
+    app.SetDebug()
+    app.Alert( msg, "Received debug message:" )
+    app.SetDebug( true )
+</sample>

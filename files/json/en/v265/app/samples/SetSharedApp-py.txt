@@ -1,0 +1,4 @@
+<sample Example>
+def OnStart():
+    app.SetSharedApp( "Hello World" )
+</sample>

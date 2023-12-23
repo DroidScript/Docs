@@ -1,0 +1,11 @@
+<sample Show remaining internal and external storage>
+def OnStart():
+    <b>intSize = Math.round(app.GetFreeSpace("internal") * 1024)
+    extSize = Math.round(app.GetFreeSpace("external") * 1024)</b>
+
+    text =
+        "internal: " + intSize + " MB\n" +
+        "external: " + extSize + " MB"
+
+    app.Alert( text )
+</sample>

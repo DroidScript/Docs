@@ -1,0 +1,77 @@
+<sample Chips>
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.setChildMargins(0, 0.025, 0, 0.025)
+
+        #  Add a default chip to the main layout
+        this.chip1 = ui.addChip(this.main, "Basic Chip")
+
+        #  Add a callback handler for `onTouch` event.
+        this.chip1.setOnTouch( this.onTouch )
+
+        #  Add a small primary chip
+        this.chip2 = ui.addChip(this.main, "Small Primary Chip", "Primary,Small")
+        this.chip2.setOnTouch( this.onTouch )
+
+        #  Add a touchable secondary chip
+        this.chip3 = ui.addChip(this.main, "Secondary Chip", "Secondary,Touchable")
+        this.chip2.setOnTouch( this.onTouch )
+
+    onTouch()
+        ui.showPopup( "You touched the chip!" )
+
+</sample>
+
+<sample Deletable chip>
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a touchable and deletable chip
+        this.chip = ui.addChip(this.main, 'Deletable', 'Secondary,Touchable')
+
+        #  Add callback hanlder for `onDelete` event.
+        #  This will also add a delete icon to the chip.
+        this.chip.setOnDelete( this.onDelete )
+
+    onDelete()
+        ui.showPopup( "Chip is deleted!" )
+
+</sample>
+
+<sample Custom styles>
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a chip control to the main layout
+        this.chip = ui.addChip(this.main, "Shopping Cart")
+
+        #  Add a leading icon to the chip control
+        this.chip.icon = "shopping_cart"
+
+        #  Sets the icon color of the chip control
+        this.chip.iconColor = "#673ab7"
+
+        #  Sets the text size of the chip control
+        this.chip.textSize = 14
+
+</sample>
+
+<sample Avatar>
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a chip control to the main layout
+        this.chip = ui.addChip(this.main, "Character Avatar")
+
+        #  Set the avatar property of the main layout
+        this.chip.avatar = "https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+
+</sample>

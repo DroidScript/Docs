@@ -1,0 +1,8 @@
+<sample Basic>
+def OnStart():
+    lst = app.CreateBluetoothList()
+    lst.SetOnTouch( OnBtList )
+
+def OnBtList(name, address):
+    app.Alert("Name: " + name + "\nAddress: " + address, "Result")
+</sample>

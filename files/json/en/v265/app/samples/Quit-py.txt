@@ -1,0 +1,6 @@
+<sample Quit>
+def OnStart():
+    app.ShowPopup( "Exciting" )
+    <b>app.Quit( "App will now exit anyway.", "No error detected." )</b>
+    app.ShowPopup( "Exited" ); #  not shown
+</sample>

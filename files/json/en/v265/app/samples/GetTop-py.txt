@@ -1,0 +1,5 @@
+<sample GetTop>
+def OnStart():
+    top = app.GetTop()
+    app.Alert(top, "Top")
+</sample>

@@ -1,0 +1,5 @@
+<sample Show Screen Height>
+def OnStart():
+    <b>height = app.GetScreenHeight()</b>
+    app.Alert( height )
+</sample>

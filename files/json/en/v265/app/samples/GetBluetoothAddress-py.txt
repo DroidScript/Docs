@@ -1,0 +1,5 @@
+<sample Show Bluetooth Address>
+def OnStart():
+    <b>addr = app.GetBluetoothAddress()</b>
+    app.Alert( addr )
+</sample>

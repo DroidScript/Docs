@@ -1,0 +1,5 @@
+<sample GetType>
+def OnStart():
+    <b>type = app.GetType()</b>
+    app.Alert( type, "Type" )
+</sample>

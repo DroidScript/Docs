@@ -1,0 +1,5 @@
+<sample Show User Language Code>
+def OnStart():
+    <b>code = app.GetLanguageCode()</b>
+    app.Alert( code )
+</sample>

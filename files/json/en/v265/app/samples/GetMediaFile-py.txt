@@ -1,0 +1,5 @@
+<sample Get Media File>
+def OnStart():
+    <b>path = app.GetMediaFile("Hello World", ".png")</b>
+    app.Alert( path )
+</sample>

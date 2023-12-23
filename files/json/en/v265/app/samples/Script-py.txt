@@ -1,0 +1,19 @@
+<sample Deferred Loading (recommended)>
+app.WriteFile( "script.js", "num = 7;\nfunction computeNum()return 6 * num;" )
+<b>app.Script( "script.js" )</b>
+
+def OnStart():
+    app.ShowPopup( "script.js loaded." )
+    app.Alert( computeNum(), "computed number: " )
+</sample>
+
+<sample Inline Loading>
+app.WriteFile( "script.js", "num = 7;\nfunction computeNum()return 6 * num;" )
+
+def OnStart():
+    <b>app.Script( "script.js", true )</b>
+
+    #  without noDefer true computeNum won't be defined
+    app.ShowPopup( "script.js loaded." )
+    app.Alert( computeNum(), "computed number: " )
+</sample>

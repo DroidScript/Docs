@@ -1,0 +1,5 @@
+<sample Show>
+def OnStart():
+    <b>path = app.GetPrivateFolder( "temp" )</b>
+    app.Alert( path )
+</sample>

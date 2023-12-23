@@ -1,0 +1,8 @@
+<sample Show RSSI>
+def OnStart():
+    app.Animate( ShowRSSI, 1)
+
+def ShowRSSI():
+    rssi = app.GetRSSI()
+    app.ShowPopup( rssi )
+</sample>

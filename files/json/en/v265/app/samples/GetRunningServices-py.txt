@@ -1,0 +1,23 @@
+<sample Show Running Services>
+def OnStart():
+    app.ShowProgress()
+
+    lay = app.CreateLayout( "linear", "fillxy,vcenter" )
+
+    lst = app.CreateList( "", .9, .9 )
+    lst.SetTextSize1( 15 )
+    lay.AddChild( lst )
+
+    <b>list = app.GetRunningServices()
+
+    for  i in list :
+        a = list[i]
+        body =
+            "user: " + a.user +
+            "\npid: " + a.pid
+        lst.AddItem( a.name, body )</b>
+
+    app.AddLayout( lay )
+
+    app.HideProgress()
+</sample>

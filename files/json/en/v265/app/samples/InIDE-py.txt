@@ -1,0 +1,5 @@
+<sample Check IDE>
+def OnStart():
+    <b>inIDE = app.InIDE()</b>
+    app.Alert( inIDE, "Is in IDE:" )
+</sample>

@@ -1,0 +1,8 @@
+<sample>
+cfg.Game
+
+def OnLoad():
+    gfx.AppExec( "app.ShowPopup('Hello from Game')")
+
+def OnReady():
+</sample>

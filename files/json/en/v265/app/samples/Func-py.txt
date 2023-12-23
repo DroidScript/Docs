@@ -1,0 +1,37 @@
+<sample WebView Greeter>
+html = `
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:# /android_asset/app.js'></script>
+</head>
+
+<script>
+def greetWeb(name):
+    app.ShowPopup("Hello " + name + ", I'm the WebView")
+def greetApp():
+    app.Func("greetApp", "WebView")
+def OnRequest(err, s):
+    alert(s.split("\\n").join("\\n"))
+</script>
+
+<input type="button" onclick="greetApp()" value="Greet App"/>
+</html>
+`
+
+def OnStart():
+    lay = app.CreateLayout("linear", "FillXY,VCenter")
+
+    web = app.AddWebView(lay, 1, 0.5)
+    web.LoadHtml(html)
+
+    btn = app.AddButton(lay, "Greet WebView")
+    btn.SetOnTouch(greetWeb)
+
+    app.AddLayout(lay)
+
+def greetApp(name):
+    app.ShowPopup("Hello " + name + ", I'm the App")
+def greetWeb():
+    web.Func("greetWeb", "App")
+</sample>

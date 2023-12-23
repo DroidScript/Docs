@@ -1,0 +1,5 @@
+<sample Show Joystick name on id 0>
+def OnStart():
+	<b>name = app.GetJoystickName( 0 )</b>
+	app.Alert( name )
+</sample>

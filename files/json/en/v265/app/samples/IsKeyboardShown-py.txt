@@ -1,0 +1,5 @@
+<sample Is Keyboard Shown>
+def OnStart():
+    <b>kbShown = app.IsKeyboardShown()</b>
+    app.Alert( kbShown, "Is Keyboard Shown:" )
+</sample>

@@ -1,0 +1,12 @@
+<sample Notification>
+def OnStart():
+	app.ShowPopup( "Sending notification" )
+	<b>notify = app.CreateNotification()
+	notify.SetMessage( "Ticker", "Title", "Text" )
+	notify.Notify( "testID" )
+	setTimeout( cancel, 5000 )</b>
+
+def cancel():
+	notify.Cancel( "testID" )
+	app.ShowPopup( "Notification cancelled" )
+</sample>

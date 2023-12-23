@@ -1,0 +1,7 @@
+<sample Input Name>
+def OnStart():
+	<b>app.ShowTextDialog( "Type your Name:", "", OnInputName )</b>
+
+def OnInputName( name ):
+    app.ShowPopup( "Your name is " + name )
+</sample>

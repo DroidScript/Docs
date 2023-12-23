@@ -1,0 +1,13 @@
+<sample Change Orientation>
+def OnStart():
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+	spn = app.CreateSpinner( "Default,Landscape,ReverseLandscape,Portrait,ReversePortrait", 0.3, 0.1 )
+	spn.SetOnChange( SetOrientation )
+	lay.AddChild( spn )
+
+	app.AddLayout( lay )
+
+def SetOrientation( orient ):
+    <b>app.SetOrientation( orient )</b>
+</sample>

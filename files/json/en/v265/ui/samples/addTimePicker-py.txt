@@ -1,0 +1,22 @@
+<sample Basic>
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout( "main", "Linear", "VCenter,ScrollY", 1, 1 )
+
+        #  button to show time picker
+        this.btn = ui.addButton( this.main, "Show Time Picker", "Outlined,Secondary", 0.2 )
+        this.btn.setOnTouch( this.showTimePicker )
+        
+        #  Initialize time picker
+        this.tpk = ui.addTimePicker()
+        this.tpk.setOnSelect( this.onSelect )
+
+    showTimePicker()
+        #  show time picker dialog
+        this.tpk.show()
+
+    onSelect( value )
+        console.log( value )
+
+</sample>

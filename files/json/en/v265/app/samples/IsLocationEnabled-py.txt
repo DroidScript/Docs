@@ -1,0 +1,5 @@
+<sample Check Locatoin Enabled>
+def OnStart():
+    <b>locEnabled = app.IsLocationEnabled()</b>
+    app.Alert( locEnabled, "Location Enabled:" )
+</sample>

@@ -1,0 +1,7 @@
+<sample Example>
+def OnStart():
+	oldfile = "test.txt"
+    newfile = "test2.txt"
+	app.WriteFile( oldfile, "Created: " + new Date() )
+	<b>app.RenameFile( oldfile, newfile )</b>
+</sample>

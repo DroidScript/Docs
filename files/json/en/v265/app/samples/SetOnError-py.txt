@@ -1,0 +1,13 @@
+<sample Catch JS Errors>
+def OnStart():
+    app.SetOnError( OnError )
+    throw "My thrown error"
+
+<b>def OnError( msg, line, file ):
+    text =
+        'Message: "' + msg + '"\n' +
+        'Line: ' + line + '\n' +
+        'File: "' + app.Uri2Path(file) + '"'
+
+    app.Alert( text, "Received error message:" )</b>
+</sample>

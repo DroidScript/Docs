@@ -1,0 +1,5 @@
+<sample Check WifiAccessPoint Enabled>
+def OnStart():
+    <b>wapEnabled = app.IsWifiApEnabled()</b>
+    app.Alert( wapEnabled, "Wifi Access Point Enabled:" )
+</sample>

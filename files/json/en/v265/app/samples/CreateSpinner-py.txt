@@ -1,0 +1,14 @@
+<sample Example>
+def OnStart():
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+<b>	spin = app.CreateSpinner( "Bilbo,Frodo,Gandalf", 0.4 )
+	spin.SetOnChange( ShowSelection )
+	spin.SelectItem( "Frodo" )
+	lay.AddChild( spin )
+
+</b>	app.AddLayout( lay )
+
+def ShowSelection( item ):
+	app.ShowPopup( "Selected = " + item )
+</sample>

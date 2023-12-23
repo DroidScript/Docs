@@ -1,0 +1,20 @@
+<sample Repeatedly Show Rotation>
+def OnStart():
+    app.Animate( ShowRotation, 2 )
+
+def ShowRotation():
+    <b>mode = app.GetRotation()</b>
+    app.ShowPopup( mode )
+</sample>
+
+<sample Show Rotation and switch Orientation>
+cfg.Portrait
+
+def OnStart():
+    app.Animate( ShowRotation, 2 )
+    setTimeout( 'app.SetOrientation("landscape")', 5000 )
+
+def ShowRotation():
+    <b>mode = app.GetRotation()</b>
+    app.ShowPopup( mode )
+</sample>

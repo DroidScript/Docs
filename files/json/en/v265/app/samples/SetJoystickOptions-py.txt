@@ -1,0 +1,4 @@
+<sample ForwardKeys>
+def OnStart():
+    app.SetJoystickOptions( "ForwardKeys" )
+</sample>

@@ -1,0 +1,5 @@
+<sample Show and Hide Progress>
+def OnStart():
+	<b>app.ShowProgress( "Loading..." )
+	setTimeout( "app.HideProgress()", 3000 )</b>
+</sample>

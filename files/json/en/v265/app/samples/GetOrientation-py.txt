@@ -1,0 +1,5 @@
+<sample Example>
+def OnStart():
+	<b>orient = app.GetOrientation()
+	app.Alert( orient )</b>
+</sample>

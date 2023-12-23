@@ -1,0 +1,12 @@
+<sample AddTextArea>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+        ted1 = MUI.AddTextArea(lay, 0.8, "filled", "Enter message", true)
+        ted1 = MUI.AddTextArea(lay, 0.8, "filled,active", "Enter message", true)
+        ted1 = MUI.AddTextArea(lay, 0.8, "outlined", "Enter message", true)
+        ted1 = MUI.AddTextArea(lay, 0.8, "outlined,active", "Enter message", true)
+    app.AddLayout(lay)
+</sample>

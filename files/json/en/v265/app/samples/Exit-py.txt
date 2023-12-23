@@ -1,0 +1,12 @@
+<sample Exit dialog>
+def OnStart():
+    app.EnableBackKey( false )
+    app.ShowPopup( "Press the back key" )
+
+def OnBack():
+    yesNo = app.CreateYesNoDialog( "Exit App?" )
+    yesNo.SetOnTouch( yesNo_OnTouch )
+
+def yesNo_OnTouch( result ):
+    if  result == "Yes" : app.Exit()
+</sample>

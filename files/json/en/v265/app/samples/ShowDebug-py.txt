@@ -1,0 +1,32 @@
+<sample Debug Overlay>
+def OnStart():
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+	tgl = app.AddToggle( lay, "Toggle Debug", -1, 0.1 )
+	tgl.SetOnTouch( ShowDebug )
+
+	app.AddLayout( lay )
+
+def ShowDebug( show ):
+    <b>app.ShowDebug( show )</b>
+</sample>
+
+<sample Debug Dialog>
+def OnStart():
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+	tgl = app.AddButton( lay, "Show Debug Dialog", -1, 0.1 )
+	tgl.SetOnTouch( ShowDebug )
+
+    app.EnableBackKey( false )
+	app.AddLayout( lay )
+
+def ShowDebug():
+    <b>app.ShowDebug( true, "dialog" )</b>
+    app.ShowPopup( "Press [BACK] to close." )
+
+def OnBack():
+	if  app.IsDebugVisible() :
+	    app.ShowDebug( false )
+
+</sample>

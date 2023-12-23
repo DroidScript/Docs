@@ -1,0 +1,5 @@
+<sample Show SSID>
+def OnStart():
+    ssid = app.GetSSID()
+    app.Alert( ssid )
+</sample>

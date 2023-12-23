@@ -1,0 +1,43 @@
+<sample Basic>
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Adds a switch to the main layout
+        this.swt = ui.addSwitch(this.main, "Check me", "Secondary", 0.5)
+
+        #  Add a callback handler when the switch control is touch
+        this.swt.setOnTouch( this.onTouch )
+
+    onTouch( value )
+        ui.showPopup("Value is : "  + value)
+
+        #  Setting the switch label text
+        this.swt.text = `Check me (Value is $value)`
+
+</sample>
+
+<sample Right switch with custom styles>
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Adds a switch control to the main layout
+        #  `Right` option will display the switch on the right
+        this.swt = ui.addSwitch(this.main, "Check me", "Right,Secondary", 0.5)
+
+        #  Add some custom styling to thw switch control
+        this.swt.border = 1
+        this.swt.padding = ["1.2rem"]
+        this.swt.cornerRadius = 4
+        this.swt.backColor = "yellow"
+
+        #  Add a callback handler when the switch control is touch
+        this.swt.setOnTouch( this.onTouch )
+
+    onTouch( value )
+        ui.showPopup("Value is : "  + value)
+
+</sample>

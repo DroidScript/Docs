@@ -1,0 +1,6 @@
+<sample Demonstration>
+def OnStart():
+    <b>app.CreateDebug()</b>
+
+	app.Debug("Hello World!")
+</sample>

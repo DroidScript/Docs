@@ -1,0 +1,5 @@
+<sample Show App Version>
+def OnStart():
+    <b>version = app.GetVersion()</b>
+    app.Alert( version, "App Version:" )
+</sample>

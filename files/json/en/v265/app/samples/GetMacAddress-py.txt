@@ -1,0 +1,5 @@
+<sample Show MAC Address>
+def OnStart():
+	<b>mac = app.GetMacAddress()</b>
+	app.ShowPopup( mac )
+</sample>

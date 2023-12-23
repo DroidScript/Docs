@@ -1,0 +1,27 @@
+<sample Save, Load and Clear Data>
+file = "demofile"
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    text = getValues()
+    txtValues = app.CreateText( text, .5, -1, "multiline,left" )
+    lay.AddChild( txtValues )
+
+    btnClear = app.CreateButton( "Clear Data", 0.5, 0.1 )
+	btnClear.SetOnTouch( btnClear_OnTouch )
+	lay.AddChild( btnClear )
+
+	app.AddLayout( lay )
+
+def btnClear_OnTouch():
+	<b>app.ClearData( file )</b>
+    txtValues.SetText( getValues() )
+	app.ShowPopup( "Data Cleared." )
+
+def getValues():
+    return (
+        "saved Text: " + app.LoadText( "value", "No Value stored.", file ) + "\n" +
+        "click count: " + app.LoadNumber( "clicks", 0, file ) + "\n" +
+        "first start: " + app.LoadBoolean( "first", true, file ) + "\n")
+</sample>

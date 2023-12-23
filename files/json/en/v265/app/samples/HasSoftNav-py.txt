@@ -1,0 +1,5 @@
+<sample Check Softkeys>
+def OnStart():
+    <b>hasSoftNav = app.HasSoftNav()</b>
+    app.Alert( hasSoftNav, "Has Soft Keys:" )
+</sample>

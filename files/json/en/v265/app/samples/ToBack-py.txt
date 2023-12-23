@@ -1,0 +1,11 @@
+<sample App to Background>
+def OnStart():
+    alert( "App will now go to back." )
+    app.ToBack()
+
+def OnPause():
+    app.ShowPopup( "OnPause" )
+
+def OnResume():
+    app.ShowPopup( "OnResume" )
+</sample>

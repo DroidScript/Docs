@@ -1,0 +1,10 @@
+<sample check and get permissions>
+def OnStart():
+    <b>check = app.CheckPermission( "Camera,ExtSDcard,Network,Storage" )</b>
+    if  check :
+        app.GetPermission( check, PermissionResult )
+    else: alert( "everything ok!" )
+
+def PermissionResult( ungranted ):
+    alert( "ungranted: " + ungranted )
+</sample>

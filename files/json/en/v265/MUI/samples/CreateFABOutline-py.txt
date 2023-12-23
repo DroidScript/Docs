@@ -1,0 +1,19 @@
+<sample>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Absolute", "FillXY,VCenter")
+
+        fab = MUI.CreateFABOutline("add")
+        fab.SetOnTouch(OnClick)
+        lay.AddChild(fab)
+
+    app.AddLayout(lay)
+
+def OnClick():
+    app.ShowPopup("You click FAB")
+</sample>

@@ -1,0 +1,12 @@
+<sample Show Tool-Tip>
+def OnStart():
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    edt = app.CreateTextEdit( "", 0.5 )
+	lay.AddChild( edt )
+
+	app.AddLayout( lay )
+
+    <b>pos = edt.GetPosition( "screen" )
+    app.ShowTip( "Type some text here", pos.left, pos.top, 3000, "Down" )</b>
+</sample>

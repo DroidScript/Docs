@@ -1,0 +1,81 @@
+<sample Vertical>
+def OnStart():
+	<b>lay = app.CreateLayout( "Linear", "Vertical" )</b>
+
+	btnA = app.CreateButton( "A", 0.2, 0.1 )
+	lay.AddChild( btnA )
+
+	btnB = app.CreateButton( "B", 0.2, 0.1 )
+	lay.AddChild( btnB )
+
+	btnC = app.CreateButton( "C", 0.2, 0.1 )
+	lay.AddChild( btnC )
+
+	app.AddLayout( lay )
+</sample>
+
+<sample Horizontal>
+def OnStart():
+	<b>lay = app.CreateLayout( "Linear", "Horizontal,FillXY" )</b>
+
+	btnA = app.CreateButton( "A", 0.2, 0.1 )
+	lay.AddChild( btnA )
+
+	btnB = app.CreateButton( "B", 0.2, 0.1 )
+	lay.AddChild( btnB )
+
+	btnC = app.CreateButton( "C", 0.2, 0.1 )
+	lay.AddChild( btnC )
+
+	app.AddLayout( lay )
+</sample>
+
+<sample Combined>
+def OnStart():
+	layVert = app.CreateLayout( "Linear", "Vertical,FillXY" )
+
+	btnA = app.CreateButton( "A", 0.6, 0.1 )
+	layVert.AddChild( btnA )
+
+	<b>layHoriz = app.CreateLayout( "Linear", "Horizontal" )
+	layVert.AddChild( layHoriz )</b>
+
+	btnB1 = app.CreateButton( "B1", 0.2, 0.1 )
+	layHoriz.AddChild( btnB1 )
+	btnB2 = app.CreateButton( "B2", 0.2, 0.1 )
+	layHoriz.AddChild( btnB2 )
+	btnB3 = app.CreateButton( "B3", 0.2, 0.1 )
+	layHoriz.AddChild( btnB3 )
+
+	btnC = app.CreateButton( "C", 0.6, 0.1 )
+	layVert.AddChild( btnC )
+
+	app.AddLayout( layVert )
+</sample>
+
+<sample Image Swap>
+def OnStart():
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+	<b>layFrm = app.CreateLayout( "Frame" )</b>
+	img1 = app.CreateImage( "/Sys/Img/Droid1.png", 0.5 )
+	layFrm.AddChild( img1 )
+
+	img2 = app.CreateImage( "/Sys/Img/Hello.png", 0.5 )
+	img2.SetVisibility( "Hide" )
+	layFrm.AddChild( img2 )
+	lay.AddChild( layFrm )
+
+	btn = app.CreateButton( "Press Me" )
+	btn.SetMargins( 0,0.1,0,0 )
+	btn.SetOnTouch( btn_OnTouch )
+	lay.AddChild( btn )
+
+	app.AddLayout( lay )
+
+def btn_OnTouch():
+	if  img2.GetVisibility() == "Hide" :
+    	img2.SetVisibility( "Show" )
+	else:
+	   img2.SetVisibility( "Hide" )
+</sample>

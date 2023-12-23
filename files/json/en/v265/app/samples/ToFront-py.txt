@@ -1,0 +1,11 @@
+<sample Hide and Peek>
+def OnStart():
+    app.ToBack()
+    setTimeout("app.ToFront()", 5000)
+
+def OnPause():
+    app.ShowPopup( "OnPause" )
+
+def OnResume():
+    app.ShowPopup( "OnResume" )
+</sample>

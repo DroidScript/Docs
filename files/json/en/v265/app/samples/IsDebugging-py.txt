@@ -1,0 +1,5 @@
+<sample Check Debugging>
+def OnStart():
+    <b>isDbg = app.IsDebugging()</b>
+    app.Alert( isDbg, "now debugging:" )
+</sample>

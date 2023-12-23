@@ -1,0 +1,117 @@
+<sample Basic>
+def OnStart():
+    ip = app.GetIPAddress()
+    app.Alert( ip +":8080", "Type the following address into your browser" )
+
+    <b>serv = app.CreateWebServer( 8080 )
+    serv.SetFolder( "/sdcard/DroidScript" )
+    serv.Start()</b>
+</sample>
+
+<sample Servlets>
+def OnStart():
+    ip = app.GetIPAddress()
+    app.Alert( ip +":8080", "Type the following address into your browser" )
+
+	<b>serv = app.CreateWebServer( 8080, "Upload,ListDir" )
+	serv.SetFolder( "/sdcard/DroidScript" )
+	serv.AddServlet( "/message", OnServlet )
+	serv.Start()</b>
+
+def OnServlet( request, info ):
+	serv.SetResponse( "Got it!" )
+	app.ShowPopup(  info.remoteAddress + " says: " + request.msg )
+</sample>
+
+<sample Send and Receive messages>
+indexhtml = `
+<html>
+<head>
+	<title>WebSockets Demo</title>
+
+	<script>
+		count = 0
+
+		def Connect():
+			#  Open web socket to phone.
+			ws = new WebSocket( "ws:# " + window.location.host )
+			ws.onopen = ws_onopen
+			ws.onmessage = ws_onmessage
+			ws.onclose = ws_onclose
+			ws.onerror = ws_onerror
+
+		def Send():
+			ws.send( "Hello " + count++ )
+
+		def ws_onopen():
+			id_info.innerHTML = "Socket Open"
+
+		def ws_onmessage( msg ):
+			id_info.innerHTML = msg.data
+
+		def ws_onclose():
+			id_info.innerHTML = "Socket Closed"
+
+		def ws_onerror(e):
+			id_info.innerHTML = "Socket Error: " + e.data
+	</script>
+</head>
+
+<body>
+	<h2>DroidScript WebSockets Demo</h2>
+	<div id="id_info">Ready</div>
+	<button onclick="Connect()">Connect</button>
+	<button onclick="Send()">Send Message</button>
+</body>
+</html>`
+
+count = 0
+
+def OnStart():
+    #  Create the Index.html file
+    #  note: in regular use move the html to a separate file
+    app.WriteFile( "Index.html", indexhtml )
+
+    ip = app.GetIPAddress()
+    app.Alert( ip +":8080", "Type the following address into your browser" )
+
+	app.PreventWifiSleep()
+
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+	txt = app.CreateText( "No connected clients.", 0.8, 0.3, "AutoScale,MultiLine" )
+	txt.SetTextSize( 22 )
+	lay.AddChild( txt )
+
+	txtMsg = app.CreateText( "", 0.8, 0.3, "AutoScale,MultiLine" )
+	txtMsg.SetTextSize( 22 )
+	lay.AddChild( txtMsg )
+
+	btn = app.CreateButton( "Send Message", 0.4, 0.1)
+	btn.SetMargins( 0, 0.05, 0, 0 )
+	btn.SetOnTouch( SendMessage )
+	lay.AddChild( btn )
+
+	app.AddLayout( lay )
+
+	serv = app.CreateWebServer( 8080 )
+	serv.SetFolder( app.GetAppPath() )
+	serv.SetOnReceive( serv_OnReceive )
+	serv.Start()
+
+	setInterval( ShowConnections, 3000 )
+
+def ShowConnections():
+	clients = serv.GetWebSockClients()
+	list = []
+	for  i = 0; i < clients.length; i++ :
+		list.push(clients[i].remoteAddress)
+
+	if list.length: txt.SetText( list.join("\n") )
+
+def SendMessage():
+	serv.SendText( "Hello " + count++ )
+
+def serv_OnReceive( msg, ip ):
+	txtMsg.SetText( ip + ": " + msg )
+</sample>

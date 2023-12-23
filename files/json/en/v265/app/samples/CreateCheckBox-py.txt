@@ -1,0 +1,13 @@
+<sample Example>
+def OnStart():
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+	<b>chk = app.CreateCheckBox( "Enable Stuff" )
+	chk.SetOnTouch( ShowState )
+	lay.AddChild( chk )
+
+	app.AddLayout( lay )</b>
+
+def ShowState( isChecked ):
+	app.ShowPopup( "Checked = " + isChecked, "Short" )
+</sample>

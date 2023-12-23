@@ -1,0 +1,5 @@
+<sample Show App Path>
+def OnStart():
+    <b>usr = app.GetPath()</b>
+    app.Alert( usr, "Active User:" )
+</sample>

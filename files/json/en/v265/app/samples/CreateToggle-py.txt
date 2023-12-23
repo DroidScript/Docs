@@ -1,0 +1,13 @@
+<sample Basic>
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    <b>tgl = app.CreateToggle( "Toggle Me" )
+    tgl.SetOnTouch( ShowState )
+    lay.AddChild( tgl )</b>
+
+    app.AddLayout( lay )
+
+def ShowState( isChecked ):
+    app.ShowPopup( "Checked = " + isChecked, "Short" )
+</sample>

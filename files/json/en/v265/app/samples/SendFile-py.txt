@@ -1,0 +1,5 @@
+<sample Send File>
+def OnStart():
+    app.WriteFile( "file.txt", "Hello World" )
+	<b>app.SendFile( app.GetAppPath() + "/file.txt", "Shared File", app.GetUser() + " shared file.txt with you" )</b>
+</sample>

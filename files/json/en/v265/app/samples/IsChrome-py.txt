@@ -1,0 +1,5 @@
+<sample Check APK>
+def OnStart():
+    <b>isChrome = app.IsChrome()</b>
+    app.Alert( isChrome, "is Chrome:" )
+</sample>

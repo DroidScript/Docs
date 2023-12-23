@@ -1,0 +1,5 @@
+<sample Check /sdcard/ available>
+def OnStart():
+    <b>isFolder = app.IsFolder("/sdcard/")</b>
+    app.Alert( isFolder, "/sdcard/ is Folder:" )
+</sample>

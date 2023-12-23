@@ -1,0 +1,5 @@
+<sample Check Portrait>
+def OnStart():
+    <b>isPortrait = app.IsPortrait()</b>
+    app.Alert( isPortrait, "is Portrait:" )
+</sample>

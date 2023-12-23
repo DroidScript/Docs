@@ -1,0 +1,5 @@
+<sample Check if App is Service>
+def OnStart():
+    <b>isSvc = app.IsService()</b>
+    app.Alert( isSvc, "IsService" )
+</sample>

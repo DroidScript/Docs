@@ -1,0 +1,18 @@
+<sample Show Contacts>
+def OnStart():
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+	lst = app.CreateList( "", 1, 1 )
+	lay.AddChild( lst )
+	app.AddLayout( lay )
+
+    uri = "content:# com.android.contacts/data"
+    columns = "display_name,data1"
+    select = "mimetype='vnd.android.cursor.item/phone_v2'"
+    rows = app.QueryContent( uri, columns, select, null, "display_name" )
+
+    list = []
+    for i in rows:
+        list.push( rows[i].display_name + ":" + rows[i].data1 + ": " )
+
+    lst.SetList( list )
+</sample>

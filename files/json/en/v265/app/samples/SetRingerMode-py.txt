@@ -1,0 +1,22 @@
+<sample SetRingerMode Demo>
+def OnStart():
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    spn = app.CreateSpinner( "Normal,Vibrate,Silent" )
+    spn.SetOnChange( SetRingerMode )
+    lay.AddChild( spn )
+
+	btn = app.CreateButton( "Press Me", 0.3, 0.1 )
+	btn.SetOnTouch( Notify )
+	lay.AddChild( btn )
+
+	app.AddLayout( lay )
+
+def SetRingerMode( mode ):
+    <b>app.SetRingerMode( mode )</b>
+
+def Notify():
+    ntf = app.CreateNotification()
+    ntf.SetMessage( "RingerMode Demo", "RingerMode Demo notifies:", "Helo World" )
+    ntf.Notify()
+</sample>

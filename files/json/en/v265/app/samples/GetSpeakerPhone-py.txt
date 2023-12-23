@@ -1,0 +1,5 @@
+<sample Show if Speaker is Enabled>
+def OnStart():
+    speaker = app.GetSpeakerPhone()
+    app.Alert( speaker )
+</sample>

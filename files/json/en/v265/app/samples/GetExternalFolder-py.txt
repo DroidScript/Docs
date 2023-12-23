@@ -1,0 +1,5 @@
+<sample Show External Folder>
+def OnStart():
+    <b>dir = app.GetExternalFolder()</b>
+    app.Alert( dir )
+</sample>

@@ -1,0 +1,5 @@
+<sample Get Router Address>
+def OnStart():
+    ip = app.GetRouterAddress()
+    app.Alert(ip)
+</sample>

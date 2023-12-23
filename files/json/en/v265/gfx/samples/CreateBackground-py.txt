@@ -1,0 +1,13 @@
+<sample Scroll>
+cfg.Game
+
+def OnLoad():
+    sky = gfx.CreateBackground( "/Sys/Img/Sky.jpg", "stretch" )
+
+def OnReady():
+    gfx.AddBackground( sky )
+	gfx.Play()
+
+def OnAnimate(t,dt):
+    <b>sky.Scroll(-dt/1000, 0)</b>
+</sample>

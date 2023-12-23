@@ -1,0 +1,16 @@
+<sample Sample>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        h3 = MUI.AddText(lay, "Some Heading", 0.8, 0.2, "h3,Medium,Multiline")
+
+        h3 = MUI.AddTextH3(lay, "Some Heading", 0.8, 0.2, "Multiline", null, "Medium")
+
+        h3 = MUI.CreateTextH3("Some Heading", 0.8, 0.2, "Multiline", null, "Medium")
+        lay.AddChild(h3)
+
+    app.AddLayout(lay)
+</sample>
