@@ -1,9 +1,9 @@
 <sample Default>
-from native import app, gfx, ui
-class Main(app.App):
+<![CDATA[
+class Main extends App:
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "Top,Vcenter", 1, 1)
+        self.main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
         self.main.setMargins(0.01, 0.01, 0.01, 0.01)
 
         # Add a button to the main layout
@@ -16,14 +16,36 @@ class Main(app.App):
     def showDatePicker(self):
         # Display the date picker dialog
         self.dtp.show()
+]]>
+</sample>
+
+<sample Default>
+<![CDATA[
+class Main extends App:
+    def onStart(self):
+        # Creates a fullscreen layout with objects vertically centered.
+        self.main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
+        self.main.setMargins(0.01, 0.01, 0.01, 0.01)
+
+        # Add a button to the main layout
+        self.btn = ui.addButton(self.main, "Show Date Picker", "Secondary")
+        self.btn.setOnTouch(self.showDatePicker)
+
+        # Initialize date picker
+        self.dtp = ui.addDatePicker()
+
+    def showDatePicker(self):
+        # Display the date picker dialog
+        self.dtp.show()
+]]>
 </sample>
 
 <sample With initial value & portrait>
-from native import app, gfx, ui
-class Main(app.App):
+<![CDATA[
+class Main extends App:
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "Top,Vcenter", 1, 1)
+        self.main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
         self.main.setMargins(0.01, 0.01, 0.01, 0.01)
 
         # Add a button to the main layout
@@ -36,14 +58,15 @@ class Main(app.App):
     def showDatePicker(self):
         # Display the date picker dialog
         self.dtp.show()
+]]>
 </sample>
 
 <sample With limits & callback>
-from native import app, gfx, ui
-class Main(app.App):
+<![CDATA[
+class Main extends App:
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "Top,Vcenter", 1, 1)
+        self.main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
         self.main.setMargins(0.01, 0.01, 0.01, 0.01)
 
         # Add a button to the main layout
@@ -59,5 +82,6 @@ class Main(app.App):
         self.dtp.show()
 
     def onSelect(self, value):
-        app.ShowPopup(value)
+        console.log(value)
+]]>
 </sample>

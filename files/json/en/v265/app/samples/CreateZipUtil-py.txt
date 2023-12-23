@@ -1,40 +1,31 @@
-Here is the translated XML page with JavaScript code converted to Python:
-
-```xml
 <sample List Contents>
-<![CDATA[
 def OnStart():
-    from native import app
     name = app.GetAppName()
     file = "/sdcard/" + name + ".zip"
-
+    
     zip = app.CreateZipUtil()
     zip.Open(file)
     list = zip.List("").split(",")
-    app.Alert("\n".join(list))
+    app.Alert(list.join(",\n"))
     zip.Close()
-]]>
 </sample>
 
 <sample Compress>
-<![CDATA[
 def OnStart():
-    from native import app
     name = app.GetAppName()
     fldr = app.GetPath() + "/" + name
     file = "/sdcard/" + name + ".zip"
     app.ShowProgress()
-
+    
     zip = app.CreateZipUtil()
     zip.Create(file)
     AddFolder(zip, name, fldr)
     zip.Close()
-
+    
     app.HideProgress()
     app.ShowPopup("saved to " + file)
 
 def AddFolder(zip, name, fldr):
-    from native import app
     list = app.ListFolder(fldr, "")
     for i in range(len(list)):
         title = list[i]
@@ -42,8 +33,4 @@ def AddFolder(zip, name, fldr):
             zip.AddFile(name + "/" + title, fldr + "/" + title)
         else:
             AddFolder(zip, name + "/" + title, fldr + "/" + title)
-]]>
 </sample>
-```
-
-Please note that the `<sample>` tags are preserved and the Python code is included inside `<![CDATA[ ... ]]>` sections to ensure proper XML formatting.

@@ -1,16 +1,11 @@
-<sample>AddPicker</sample>
-from native import app
-from native import gfx
-from native import ui
-
-<sample>
+<sample AddPicker>
 cfg.Light
 cfg.MUI
 
 def OnStart():
-    lay = ui.CreateLayout("Linear", "FillXY")
-    
-    tab = ui.AddTabs(lay, "Movies,Games,Books", 1, 1, "fix")
-    
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+    tab = MUI.AddTabs(lay, "Movies,Games,Books", 1, 1, "fix")
+
     app.AddLayout(lay)
 </sample>

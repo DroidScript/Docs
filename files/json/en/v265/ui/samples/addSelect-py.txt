@@ -1,7 +1,5 @@
 <sample Basic>
-from native import app, gfx, ui
-
-class Main(app.App):
+class Main(App):
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -20,14 +18,10 @@ class Main(app.App):
 
     def onChange(self, text, index):
         ui.showPopup("You choose " + text)
-
-app.add(Main())
 </sample>
 
 <sample Group title>
-from native import app, gfx, ui
-
-class Main(app.App):
+class Main(App):
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -47,14 +41,10 @@ class Main(app.App):
 
     def onChange(self, text, index):
         ui.showPopup("You choose " + text)
-
-app.add(Main())
 </sample>
 
 <sample Multiple selection>
-from native import app, gfx, ui
-
-class Main(app.App):
+class Main(App):
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -72,14 +62,10 @@ class Main(app.App):
 
     def onChange(self, items, index):
         ui.showPopup("You choose " + ", ".join(items))
-
-app.add(Main())
 </sample>
 
 <sample Outlined and small>
-from native import app, gfx, ui
-
-class Main(app.App):
+class Main(App):
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -98,14 +84,10 @@ class Main(app.App):
 
     def onChange(self, item, index):
         ui.showPopup("You choose " + item)
-
-app.add(Main())
 </sample>
 
 <sample Radiogroup items>
-from native import app, gfx, ui
-
-class Main(app.App):
+class Main(App):
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -123,14 +105,10 @@ class Main(app.App):
 
     def onChange(self, item, index):
         ui.showPopup("You choose " + item)
-
-app.add(Main())
 </sample>
 
 <sample Grouped list items>
-from native import app, gfx, ui
-
-class Main(app.App):
+class Main(App):
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -147,14 +125,10 @@ class Main(app.App):
 
     def onChange(self, item, index):
         ui.showPopup("You choose " + item)
-
-app.add(Main())
 </sample>
 
 <sample Multiple radiogroup with titles>
-from native import app, gfx, ui
-
-class Main(app.App):
+class Main(App):
     def onStart(self):
         # Creates a fullscreen layout with objects vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -170,4 +144,5 @@ class Main(app.App):
         self.sel.setOnChange(self.onChange)
 
     def onChange(self, items, index):
-        ui.show
+        ui.showPopup("You choose " + ", ".join(items))
+</sample>

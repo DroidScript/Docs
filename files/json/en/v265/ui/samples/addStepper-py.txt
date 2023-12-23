@@ -1,64 +1,13 @@
-<sample Progress control implementation>
-class Main(App):
-    def onStart(self):
-        from native import app
-        from native import ui
-        # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.main.childSpacing = "Even"
-
-        # Indeterminate Linear
-        self.prog1 = ui.addProgress(self.main, 40, "linear", 0.7)
-
-        # Determinate Linear
-        self.prog2 = ui.addProgress(self.main, None, "Linear,Secondary,indeterminate", 0.7)
-
-        # Determinate Circular
-        self.prog3 = ui.addProgress(self.main, 50, "Circular")
-
-        # Indeterminate Circular, enlarge and secondary
-        self.prog4 = ui.addProgress(self.main, None, "Circular,Secondary,indeterminate")
-        self.prog4.circleSize = 100
-</sample>
-
-<sample Setting progress value>
-class Main(App):
-    def onStart(self):
-        from native import app
-        from native import ui
-        # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        self.main.childSpacing = "Even"
-
-        # Add an indeterminate linear progress control to the main layout
-        self.prog = ui.addProgress(self.main, 0, "Linear", 0.7)
-
-        # Add a button control to the main layout
-        self.btn = ui.addButton(self.main, "Increment")
-
-        # Add a callback handler when the button is touched
-        self.btn.setOnTouch(self.onTouch)
-    
-    def onTouch(self):
-        # Increment the value of the progress control by 10
-        if self.prog.value < 100:
-            self.prog.value += 10
-        else:
-            ui.showPopup("Progress is complete!")
-</sample>
-
 <sample Basic stepper>
 class Main(App):
     def onStart(self):
-        from native import app
-        from native import ui
         # Creates a fullscreen layout with object vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
         self.main.setChildMargins(0, 0, 0, 0.02)
 
         # Initialize the steps array
         steps = ["Step 1", "Step 2", "Step 3"]
-        
+
         # Add a stepper component to the main layout
         self.stp = ui.addStepper(self.main, steps, "", 0.6)
 
@@ -69,10 +18,10 @@ class Main(App):
         # Add next button control to the main layout
         self.btnNext = ui.addButton(self.main, "Next", "Raised,Primary")
         self.btnNext.setOnTouch(self.next)
-    
+
     def next(self):
         self.stp.nextStep()
-    
+
     def back(self):
         self.stp.previousStep()
 </sample>
@@ -80,8 +29,6 @@ class Main(App):
 <sample Vertical stepper>
 class Main(App):
     def onStart(self):
-        from native import app
-        from native import ui
         # Creates a fulscreen layout with objects vertically centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -90,7 +37,7 @@ class Main(App):
 
         # Add a stepper control into the main layout
         self.stp = ui.addStepper(self.main, steps, "Vertical", 0.5, 0.6)
-        
+
         # Get the layout of the first step
         step1Lay = self.stp.getLayout(0)
         step1Lay.setChildMargins(0, 0.005, 0, 0.005)
@@ -117,10 +64,10 @@ class Main(App):
         ui.addText(step3Lay, "This is a text content on step 3")
         btnStep3Next = ui.addButton(step3Lay, "Next", "Raised,Primary")
         btnStep3Next.setOnTouch(self.next)
-    
+
     def next(self):
         self.stp.nextStep()
-    
+
     def back(self):
         self.stp.previousStep()
 </sample>
@@ -128,8 +75,6 @@ class Main(App):
 <sample Mobile Stepper>
 class Main(App):
     def onStart(self):
-        from native import app
-        from native import ui
         # Creates a layout with objects verticaly centered
         self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -147,13 +92,13 @@ class Main(App):
 
         # add an image control to the first layout
         ui.addImage(self.lay1, img1, "", 1, 1)
-    
+
         # get the second layout on the stepper
         self.lay2 = self.stp.getLayout(1)
 
         # add an image control to the second layout
         ui.addImage(self.lay2, img2, "", 1, 1)
-    
+
         # get the third layout on the stepper
         self.lay3 = self.stp.getLayout(2)
 
@@ -162,7 +107,7 @@ class Main(App):
 
         # Add a callback handler when stepper layout changes
         self.stp.setOnChange(self.onChange)
-    
+
     def onChange(self, index):
         ui.showPopup("Layout index " + str(index))
 </sample>
@@ -170,8 +115,6 @@ class Main(App):
 <sample Autoswipe and Fraction Mobile Stepper>
 class Main(App):
     def onStart(self):
-        from native import app
-        from native import ui
         ui.setTheme("dark")
 
         # Creates a layout with objects verticaly centered
@@ -191,12 +134,22 @@ class Main(App):
 
         # Add an image control to the first layout
         ui.addImage(self.lay1, img1, "", 1)
-    
+
         # Get the second layout on the stepper
         self.lay2 = self.stp.getLayout(1)
 
         # Add an image control to the second layout
         ui.addImage(self.lay2, img2, "", 1)
-    
+
         # Get the third layout on the stepper
-        self.lay3
+        self.lay3 = self.stp.getLayout(2)
+
+        # Add an image control to the third layout
+        ui.addImage(self.lay3, img3, "", 1)
+
+        # Add a callback handler when stepper layout changes
+        self.stp.setOnChange(self.onChange)
+
+    def onChange(self, index):
+        ui.showPopup("Layout index " + str(index))
+</sample>

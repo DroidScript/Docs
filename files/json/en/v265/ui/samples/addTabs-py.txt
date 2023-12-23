@@ -1,38 +1,45 @@
 <sample Basic>
-from native import app
-import ui
-
-class Main(app.App):
-    
+class Main:
     def onStart(self):
-        # Creates a layout with objects vertically centered
+        # Creates a layout with objects verticaly centered
         self.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
         self.main.backColor = "#e0e0e0"
 
-        # Add text control to the main layout
-        text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."
-        ui.addText(self.main, text, "Justify", 0.8)
+        # Initialize tab names array
+        tabs = ["Tab 1", "Tab 2", "Tab 3"]
 
-        # Add divider control to the main layout
-        self.div = ui.addDivider(self.main, 0.8)
+        # Adds a tab component to the main layout.
+        self.tabs = ui.addTabs(self.main, tabs, "", 0.8, 0.8)
 
-        # Add more text control to the main layout
-        ui.addText(self.main, text, "Justify", 0.8)
-        
-        # Add an inset divider to the main layout
-        self.div = ui.addDivider(self.main, 0.8, "inset")
+        # Handle tab changes
+        self.tabs.setOnChange( self.onChange )
 
-        ui.addText(self.main, text, "Justify", 0.8) 
+        # get the first tab and add a button control
+        self.tab1 = self.tabs.getLayout(0)
+        self.tab1.options = "VCenter"
+        self.btn = ui.addButton(self.tab1, "Button", "Secondary", 0.5)
+
+        # get the second tab and add a text control.
+        self.tab2 = self.tabs.getLayout(1)
+        self.tab2.options = "VCenter"
+        self.txt = ui.addText(self.tab2, "Lorem ipsum dolor set amit", "Center", 1)
+
+        # get the third tab and add a checkbox control
+        self.tab3 = self.tabs.getLayout(2)
+        self.tab3.options = "VCenter"
+        self.ckb = ui.addCheckbox(self.tab3, "Check me", "Secondary")
+
+    def onChange(self, tab, index):
+        ui.showPopup( tab + " : Index " + index)
+
+
+Main().onStart()
 </sample>
 
 <sample With Icon>
-from native import app
-import ui
-
-class Main(app.App):
-    
+class Main:
     def onStart(self):
-        # Creates a layout with objects vertically centered
+        # Creates a layout with objects verticaly centered
         self.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
         self.main.backColor = "#e0e0e0"
 
@@ -63,19 +70,18 @@ class Main(app.App):
         self.tab3 = self.tabs.getLayout(2)
         self.tab3.options = "VCenter"
         self.ckb = ui.addCheckbox(self.tab3, "Check me", "Secondary")
-    
+
     def onChange(self, tab, index):
-        ui.showPopup( tab + " : Index " + str(index))
+        ui.showPopup( tab + " : Index " + index)
+
+
+Main().onStart()
 </sample>
 
 <sample Swipeable tabs>
-from native import app
-import ui
-
-class Main(app.App):
-    
+class Main:
     def onStart(self):
-        # Creates a layout with objects vertically centered
+        # Creates a layout with objects verticaly centered
         self.main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
         self.main.backColor = "#e0e0e0"
 
@@ -104,20 +110,19 @@ class Main(app.App):
         self.tab3.backColor = "blue"
 
     def onChange(self, tab, index):
-        ui.showPopup( tab + " : Index " + str(index))
+        ui.showPopup( tab + " : Index " + index)
+
+
+Main().onStart()
 </sample>
 
 <sample Open tabs dynamically>
-from native import app
-import ui
-
-class Main(app.App):
-    
+class Main:
     def onStart(self):
         # Set the primary and secondary theme colors
         ui.setThemeColor("#673ab7", "#ffc107")
 
-        # Creates a layout with objects vertically centered
+        # Creates a layout with objects verticaly centered
         self.main = ui.addLayout("main", "Linear", "FillXY,VCenter")
         self.main.backColor = "#e0e0e0"
 
@@ -156,9 +161,76 @@ class Main(app.App):
         self.btn3.setOnTouch(lambda: self.tabs.showTab("Favorites"))
 
     def onChange(self, tab, index):
-        ui.showPopup( tab + " : Index " + str(index))
+        ui.showPopup( tab + " : Index " + index)
+
+
+Main().onStart()
 </sample>
 
 <sample Icon only>
-from native import app
-import ui
+class Main:
+    def onStart(self):
+        # Set the primary and secondary theme colors
+        ui.setTheme( "dark" )
+
+        # Creates a layout with objects verticaly centered
+        self.main = ui.addLayout("main", "Linear", "FillXY,VCenter")
+
+        # Initialize tabs array with icons only
+        tabs = ["favorite", "person", "wifi"]
+
+        # Adds a tab component to the main layout
+        self.tabs = ui.addTabs(self.main, tabs, "Icon", 1, 1)
+
+        # Set the tab height to 40px
+        self.tabs.tabHeight = 40
+
+        # Handle tab changes
+        self.tabs.setOnChange( self.onChange )
+
+        # get the first tab and add a button control
+        self.tab1 = self.tabs.getLayout(0)
+        self.tab1.options = "VCenter"
+        self.btn = ui.addButton(self.tab1, "Button", "Secondary", 0.5)
+
+        # get the second tab and add a text control.
+        self.tab2 = self.tabs.getLayout(1)
+        self.tab2.options = "VCenter"
+        self.txt = ui.addText(self.tab2, "Lorem ipsum dolor set amit", "Center", 1)
+
+        # get the third tab and add a checkbox control
+        self.tab3 = self.tabs.getLayout(2)
+        self.tab3.options = "VCenter"
+        self.ckb = ui.addCheckbox(self.tab3, "Check me", "Secondary")
+
+    def onChange(self, tab, index):
+        ui.showPopup(tab + " : Index " + index, "Bottom")
+
+
+Main().onStart()
+</sample>
+
+<sample Custom colors and sizes>
+class Main:
+    def onStart(self):
+        # Creates a layout with objects verticaly centered
+        self.main = ui.addLayout("main", "Linear", "FillXY,VCenter")
+
+        # Initialize tabs array with leading icons
+        tabs = [
+            ["favorite", "Favorites"],
+            ["bluetooth", "Bluetooth"],
+            ["wifi", "Connection"]
+        ]
+
+        # Adds a tab component to the main layout
+        # add some styling to the backColor, textColor, iconColor, iconSize and indicatorColor
+        self.tabs = ui.addTabs(self.main, tabs, "Icon", 0.8, 0.8)
+        self.tabs.backColor = "#ffccbc"
+        self.tabs.textColor = "#f4511e"
+        self.tabs.iconColor = "#f4511e"
+        self.tabs.iconSize = "1.5rem"
+        self.tabs.indicatorColor = "#f4511e"
+
+
+Main().on

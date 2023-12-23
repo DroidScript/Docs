@@ -1,15 +1,5 @@
-<sample Check APK>
-from native import app
-
-def OnStart():
-    isChrome = app.IsChrome()
-    app.Alert(isChrome, "is Chrome:")
-</sample>
-
 <sample Check /sdcard/ available>
-from native import app
-
 def OnStart():
-    isFolder = app.IsFolder("/sdcard/")
-    app.Alert(isFolder, "/sdcard/ is Folder:")
+    <b>isFolder = app.IsFolder("/sdcard/")</b>
+    app.Alert( isFolder, "/sdcard/ is Folder:" )
 </sample>

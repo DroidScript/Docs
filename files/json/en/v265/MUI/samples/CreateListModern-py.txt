@@ -3,8 +3,6 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    from native import app, gfx, ui
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -23,7 +21,7 @@ def OnStart():
     app.AddLayout(lay)
 
 def OnTouch(title, body, index):
-    app.ShowPopup(title + " : " + body + " : " + str(index))
+    app.ShowPopup(title+" : "+body+" : "+index)
 </sample>
 
 <sample With-Color No Options>
@@ -31,8 +29,6 @@ cfg.Light
 cfg.MUI
 
 def OnStart():
-    from native import app, gfx, ui
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -51,7 +47,7 @@ def OnStart():
     app.AddLayout(lay)
 
 def OnTouch(title, body, index):
-    app.ShowPopup(title + " : " + body + " : " + str(index))
+    app.ShowPopup(title+" : "+body+" : "+index)
 </sample>
 
 <sample Selectable>
@@ -59,8 +55,6 @@ cfg.Dark
 cfg.MUI
 
 def OnStart():
-    from native import app, gfx, ui
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -86,7 +80,7 @@ def OnStart():
     app.ShowPopup("Click the icon/avatar to select")
 
 def ListOnTouch(title, body, index):
-    app.ShowPopup("You choose " + title)
+    app.ShowPopup("You choose "+title)
 
 def GetSelectedItems():
     items = lsm.GetSelectedItems()
@@ -100,8 +94,6 @@ cfg.Dark
 cfg.MUI
 
 def OnStart():
-    from native import app, gfx, ui
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -124,8 +116,6 @@ cfg.Dark
 cfg.MUI
 
 def OnStart():
-    from native import app, gfx, ui
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -148,4 +138,87 @@ def OnStart():
     app.AddLayout(lay)
     app.ShowPopup("Click the icon/avatar to select")
 
-def GetSelected
+def GetSelectedItems():
+    items = lsm.GetSelectedItems()
+    for i in range(len(items)):
+        item = lsm.GetItem(items[i])
+        app.Alert(json.dumps(item))
+</sample>
+
+<sample CreateListWithAvatar>
+cfg.Light
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    list = [
+        {"title": "Someone", "body":"The quick brown fox jumps...", "image": "/Sys/Img/Droid1.png", "rightIcon": "more_vert"},
+        {"title": "Anybody", "body":"The quick brown fox jumps...", "image": "/Sys/Img/Droid1.png", "rightIcon": "more_vert"},
+        {"title": "Everyone", "body":"The quick brown fox jumps...", "image": "/Sys/Img/Droid1.png", "rightIcon": "more_vert"}
+    ]
+
+    lsm = MUI.CreateListModern(list, 1, None, "Avatar,RightNote,Selectable")
+    lay.AddChild(lsm)
+
+    btn = MUI.CreateButtonRound("GET SELECTED ITEMS", 0.6)
+    btn.SetMargins(0, 0.075, 0, 0)
+    lay.AddChild(btn)
+    btn.SetOnTouch(GetSelectedItems)
+
+    app.AddLayout(lay)
+    app.ShowPopup("Click the icon/avatar to select")
+
+def GetSelectedItems():
+    items = lsm.GetSelectedItems()
+    for i in range(len(items)):
+        item = lsm.GetItem(items[i])
+        app.Alert(json.dumps(item))
+</sample>
+
+<sample RemoveItems>
+cfg.Dark
+cfg.MUI
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    list = [
+        {"title": "Folder", "body":"The quick brown fox jumps...", "icon": "folder", "rightIcon": "more_vert"},
+        {"title": "Downloads", "body":"The quick brown fox jumps...", "icon": "play_for_work", "rightIcon": "more_vert"},
+        {"title": "Music", "body":"The quick brown fox jumps...", "icon": "music_note", "rightIcon": "more_vert"},
+        {"title": "Account", "body":"The quick brown fox jumps...", "icon": "person", "rightIcon": "more_vert"},
+        {"title": "Password", "body":"The quick brown fox jumps...", "icon": "lock", "rightIcon": "more_vert"}
+    ]
+
+    lsm = MUI.CreateListModern(list, 1, None, "Material,RightNote,Selectable")
+    lsm.SetOnSelect(OnSelect)
+    lay.AddChild(lsm)
+
+    btn = MUI.CreateButtonRaised("REMOVE SELECTED", 0.75)
+    btn.SetMargins(0, 0.075, 0, 0)
+    btn.SetOnTouch(RemoveSelected)
+    btn.Hide()
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+    app.ShowPopup("Click the icon/avatar to select")
+
+def OnSelect():
+    items = lsm.GetSelectedItems()
+    btn.SetText(str(len(items))+" REMOVE SELECTED")
+    if len(items) > 0:
+        btn.Show()
+    else:
+        btn.Hide()
+
+def RemoveSelected():
+    items = lsm.GetSelectedItems()
+    lsm.RemoveItems(items)
+</sample>

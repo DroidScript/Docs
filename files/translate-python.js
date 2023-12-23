@@ -13,35 +13,8 @@ const instructions = `
 You are given a xml page with javascript code.
 Translate all included JavaScript code into Python.
 You have to preserve every single XML tags from the original page.
-in every <sample> area, add add a "from native import app", "gfx", or "ui" statement, when they are used by the sample, and not defined elsewhere already.
-Lines that start with "cfg." at the beginning of a sample should not be modified.
-at the beginning if app, gfx or ui is needed within the sample block.
 Only return the translated xml page with all xml tags from the initial page.
 `.trim().replace(/\n/g, " ");
-
-/** @param {string} keyFile */
-function getOpenAI(keyFile) {
-    const apiKey = fs.readFileSync(P(keyFile), "utf8");
-    if (!apiKey) throw Error("No openai key found");
-
-    // return require("./mocks").openai.OpenAI({ apiKey });
-    return new OpenAI.OpenAI({ apiKey });
-}
-
-async function sleep(ms = 500) {
-    return await new Promise((res) => {
-        const id = setTimeout(() => { res(id); }, ms);
-    });
-}
-
-/** @param {string} sample */
-function invalid(sample) {
-    if (!sample.match(/from native import (app|ui|gfx)/)) return "no import native";
-    if (!sample.includes("<sample")) return "no <sample> tag";
-    if (sample.includes("\nfunction")) return "function instead of def";
-    // if (!sample.includes("<b>")) return "no bold areas";
-    return "";
-}
 
 // create new container
 const multibar = new cliProgress.MultiBar({
@@ -52,19 +25,43 @@ const multibar = new cliProgress.MultiBar({
     format: '{filename} | [{duration}s] {msg} {dots} ',
 }, cliProgress.Presets.shades_grey);
 
-async function main(num = 1, max = 1) {
-    const openai = getOpenAI("./openai.key");
+setTimeout(main);
 
-    const lang = Object.keys(conf.langs)[0];
-    const files = glob(`json/${lang}/${conf.version}/*/samples/*.txt`);
-    const jsFiles = files.filter(f => !f.endsWith("-py.txt"));
-    jsFiles.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
+const useAI = process.argv.includes("-a");
+const useFixup = process.argv.includes("-f");
+
+async function main() {
+    const max = 4;
+    const proc = [];
+
+    const openai = getOpenAI("./openai.key");
 
     const list = await openai.beta.assistants.list({});
     const assistant = list.data.find(o => o.name === "Python Translator");
     if (!assistant) throw Error("Assistant 'Python Translator' not found");
 
     await openai.beta.assistants.update(assistant.id, { instructions });
+
+
+    for (let i = 0; i < max; i++) proc.push(translateWorker(openai, assistant, i, max));
+    Promise.all(proc).then(() => multibar.stop());
+}
+
+/** @param {string} keyFile */
+function getOpenAI(keyFile) {
+    const apiKey = fs.readFileSync(P(keyFile), "utf8");
+    if (!apiKey) throw Error("No openai key found");
+
+    // return require("./mocks").openai.OpenAI({ apiKey });
+    return new OpenAI.OpenAI({ apiKey });
+}
+
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, num:number, max:number) => Promise<void>} */
+async function translateWorker(openai, assistant, num, max) {
+    const lang = Object.keys(conf.langs)[0];
+    const files = glob(`json/${lang}/${conf.version}/*/samples/*.txt`);
+    const jsFiles = files.filter(f => !f.endsWith("-py.txt"));
+    jsFiles.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
 
     const thread = await openai.beta.threads.create();
 
@@ -83,15 +80,20 @@ async function main(num = 1, max = 1) {
         // && fs.statSync(file).mtime <= fs.statSync(pyFile).mtime
         if (fs.existsSync(pyFile)) {
             const pySample = fs.readFileSync(pyFile, "utf8");
-            const status = invalid(pySample);
-            if (!status) continue;
+            const status = invalid(pySample, sample);
+            if (!status) {
+                // eslint-disable-next-line max-depth
+                if (!num) fixup(pyFile, pySample);
+                continue;
+            }
             msg = `re-translating ${file} (${status})`;
         }
+        if (!useAI) continue;
 
         n++;
         if (n % max !== num) continue;
 
-        const message = await openai.beta.threads.messages.create(
+        await openai.beta.threads.messages.create(
             thread.id,
             { content: sample, role: "user" }
         );
@@ -127,25 +129,116 @@ async function main(num = 1, max = 1) {
         );
 
         const pySamples = [];
-        for (const msg of msgs.data[0].content)
-            if (msg.type === "text") pySamples.push(msg.text.value);
+        for (const res of msgs.data[0].content)
+            if (res.type === "text") pySamples.push(res.text.value);
 
         let pySample = pySamples.join("\n\n").replace(/^```.*|```$|<\/?(code|script)>|from native import cfg\s+/g, '').trim();
-        if (invalid(pySample) === "no import native") {
-            if (pySample.includes("app.")) pySample = pySample.replace(/(<sample.*>\s+(cfg\..*\s+|\/\/.*\s+)+?)/g, "$1from native import app\n");
-            if (pySample.includes("ui.")) pySample = pySample.replace(/(<sample.*>\s+(cfg\..*\s+|\/\/.*\s+)+?)/g, "$1from native import ui\n");
-            if (pySample.includes("gfx.")) pySample = pySample.replace(/(<sample.*>\s+(cfg\..*\s+|\/\/.*\s+)+?)/g, "$1from native import gfx\n");
-            multibar.log("fixed import: " + JSON.stringify(pySample));
-        }
-        if (!invalid(pySample)) { fs.writeFileSync(pyFile, pySample, "utf8"); }
+        pySample = fixup("", pySample);
+
+        if (!invalid(pySample, sample)) { fs.writeFileSync(pyFile, pySample, "utf8"); }
         else {
-            multibar.log(`translated sample:\n${JSON.stringify(pySample)}\ninvalid ${invalid(pySample)}\n`);
-            if (n < 5) process.exit();
+            multibar.log(`translated sample:\n${JSON.stringify(pySample)}\ninvalid ${invalid(pySample, sample)}\n`);
+            if (n <= 3) {
+                multibar.log("Error - terminating");
+                multibar.stop();
+                setTimeout(() => process.exit(), 100);
+            }
         }
     }
 }
 
-const max = 4;
-const proc = [];
-for (let i = 0; i < max; i++) proc.push(main(i, max));
-Promise.all(proc).then(() => multibar.stop());
+/** @type {(file:string, pyCode:string) => string} */
+function fixup(file, pyCode) {
+    if (!useFixup) return pyCode;
+
+    const fixedPy = pyCode
+        .replace(/\r/g, '')
+        .split("\n</sample>");
+
+    for (const i in fixedPy) {
+        if (!fixedPy[i].match(/<sample |<sample>\n/)) {
+            fixedPy[i] = "";
+            continue;
+        }
+
+        let code = fixedPy[i]
+            // remove trailing AI text
+            .replace(/[^§]*<sample/, "<sample")
+            // AI once added CDATA tag
+            .replace(/<!\[CDATA\[([\w\W]+)\]\]>/, "$1")
+            // AI thought MUI live in gfx
+            .replace(/gfx\.MUI\./g, "MUI.")
+            // AI thought MUI is ui alias
+            .replace(/ui as MUI/g, "MUI")
+            // move import to top
+            .replace(/(<sample.*>)([^§]+)((\s+from native import.*)+)/, "$1$3$2");
+
+        // AI thinks ui and MUI are equal
+        if (file.includes("MUI")) code = code.replace(/\bui\b/g, "MUI");
+
+        // ui class fragment
+        if (code.match(/class Main\(app(.App)?\):/i)) {
+            code = code
+                .replace(/class Main\(app(.App)?\):/i, "")
+                .replace(/\n {4}/g, "\n");
+        }
+
+        for (const scope of "app,gfx,MUI,ui,cfg".split(",")) {
+            if (scope !== "cfg" && code.includes(scope + ".")) {
+                // eslint-disable-next-line max-depth
+                if (!code.match(RegExp(`from native import .*${scope}`)))
+                    // add import
+                    code = code.replace(/(<sample.*>(\s*|cfg\..*|\/\/.*)*)/, `$1\nfrom native import ${scope}\n`);
+            }
+            else {
+                code = code
+                    // remove import
+                    .replace(RegExp(`\\s*from native import ${scope}\n`), "\n")
+                    // remove inline import
+                    .replace(RegExp(`(from native import )(\\w+, )*${scope},? ?`), "$1$2");
+            }
+        }
+
+        if (file.includes("RadioButtons"))
+            console.log(JSON.stringify(code));
+
+        code = code
+            // remove var keyword
+            .replace(/\bvar /g, '')
+            // remove trailing commas, ensure newlines
+            .replace(/(from native import .*), *\n/g, "$1\n")
+            // merge multiple imports
+            .replace(/((from native import \w+\s+)+)/, m => {
+                const imports = m.split(/\n*from native import /).map(s => s.trim()).filter(s => s);
+                return `from native import ${[...new Set(imports)].join(", ")}\n\n`;
+            })
+            // move import to top
+            .replace(/(<sample.*>)\s+(from native import .*)\s+((\ncfg\..*|\n\/\/.*)*)/, "$1$3\n\n$2\n\n")
+            // trim whitespace
+            .replace(/(<sample.*>)\n+/, "$1\n");
+
+        fixedPy[i] = code.trim() + "\n</sample>\n";
+    }
+
+    const fixedSamples = fixedPy.filter(s => s).join("\n").trim();
+
+    // if (file.includes("TextH4-py")) console.log(fixedSamples);
+    if (file && pyCode !== fixedSamples) fs.writeFileSync(file, fixedSamples);
+    return fixedSamples;
+}
+
+/** @type {(pySample:string, jsSample:string) => string} */
+function invalid(pySample, jsSample) {
+    if (!pySample.includes("<sample")) return "no <sample> tag";
+    if (pySample.includes("\nfunction")) return "function instead of def";
+    if (pySample.split("<sample").length !== jsSample.split("<sample").length)
+        return "mismatching sample count";
+    // if (!sample.includes("<b>")) return "no bold areas";
+    return "";
+}
+
+async function sleep(ms = 500) {
+    return await new Promise((res) => {
+        const id = setTimeout(() => { res(id); }, ms);
+    });
+}
