@@ -81,6 +81,7 @@ indexhtml = """
 count = 0
 
 def OnStart():
+    global txt, serv, serv, ip, txtMsg
     # Create the Index.html file
     # note: in regular use move the html to a separate file
     app.WriteFile( "Index.html", indexhtml )

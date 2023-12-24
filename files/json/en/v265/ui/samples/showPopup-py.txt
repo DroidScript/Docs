@@ -37,6 +37,7 @@ def onStart(self):
     self.btn.setOnTouch(self.showMessage)
 
 def showMessage(self):
+    global snackbar
     self.snackbar = ui.showPopup("Please login to continue", "Bottom,Center", "", "Login")
     self.snackbar.setOnAction(self.onAction)
 

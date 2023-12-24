@@ -9,7 +9,6 @@ def OnStart():
     wiz.Show()
 
 def OnWizard(lay, page):
-    global wizTxt, wizFlag
 
     if page == 0:
         wizTxt = app.CreateText("", -1, -1, "MultiLine")

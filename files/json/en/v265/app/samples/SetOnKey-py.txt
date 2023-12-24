@@ -4,6 +4,7 @@ from native import app
 app.DisableKeys( "VOLUME_DOWN,VOLUME_UP,BACK" )
 
 def OnStart():
+    global txt
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     txt = app.CreateText( "", -1, -1, "multiline,left,monospace" )
@@ -31,6 +32,7 @@ from native import app
 prev
 
 def OnStart():
+    global lay
     app.DisableKeys( "VOLUME_DOWN,VOLUME_UP" )
     app.ShowPopup( "Press the volume keys!" )
 
@@ -46,7 +48,6 @@ def OnStart():
     app.SetOnKey( OnKey )
 
 def OnKey(action, name, code, extra):
-    global prev
     if action != prev:
         if action == "Down":
             lay.Animate( "SlideFromBottom", None, 300 )

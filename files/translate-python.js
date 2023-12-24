@@ -215,6 +215,28 @@ function fixup(file, pyCode) {
             // remove empty var defs
             .replace(/\n\w+;/g, '');
 
+        const defs = code.split("\ndef ");
+        for (let i = 1; i < defs.length; i++) {
+            defs[i] = defs[i].replace(/\s+global .*/, "");
+            const vars = defs[i].match(/\w+(?= = )/g) || [];
+            /** @type {string[]} */
+            const globals = [];
+
+            for (let j = i + 1; j < defs.length; j++) {
+                const vars2 = defs[j].match(/\w+(?= = )/g) || [];
+                const used = vars.filter(v => !vars2.includes(v) && defs[j].match(RegExp(`\\b${v}\\b`)));
+                globals.push(...used);
+            }
+
+            if (globals.length) {
+                defs[i] = defs[i].replace(/\n(\s+\S)/, (_, m) => {
+                    return "\n" + m.slice(m.lastIndexOf("\n") + 1, -1) +
+                        "global " + globals.join(", ") + "\n" + m;
+                });
+            }
+        }
+        code = defs.join("\ndef ");
+
         if (cfg.size > 0) head.push(`# ${[...cfg].join(", ")}\n`);
         if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");
         fixedPy[i] = `${head.join("\n")}\n${code.trim()}\n</sample>\n`;
@@ -222,7 +244,6 @@ function fixup(file, pyCode) {
 
     const fixedSamples = fixedPy.filter(s => s).join("\n").trim();
 
-    // if (file.includes("TextH4-py")) console.log(fixedSamples);
     if (file && pyCode !== fixedSamples) fs.writeFileSync(file, fixedSamples);
     return fixedSamples;
 }

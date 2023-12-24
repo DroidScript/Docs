@@ -28,6 +28,7 @@ ltime = time.monotonic()
 c = 0
 
 def OnStart():
+    global txt
     lay = app.CreateLayout( "Linear", "FillXY,VCenter" )
 
     txt = app.CreateText( "", .5, .1, "left" )

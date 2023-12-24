@@ -4,6 +4,7 @@ from native import app
 prev
 
 def OnStart():
+    global lay
     app.DisableKeys( "VOLUME_DOWN,VOLUME_UP" )
 
     lay = app.CreateLayout( "Linear", "FillX" )

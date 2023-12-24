@@ -76,6 +76,7 @@ import time as Date
 wh;
 
 def OnStart():
+    global ptr, wh, img
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     ptr = app.CreateImage( None, 0.1, 0.1, "fix,alias", 30, 30 )

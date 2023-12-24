@@ -22,6 +22,7 @@ def OnRequest(err, s):
 """
 
 def OnStart():
+    global web
     lay = app.CreateLayout("linear", "FillXY,VCenter")
 
     web = app.AddWebView(lay, 1, 0.5)

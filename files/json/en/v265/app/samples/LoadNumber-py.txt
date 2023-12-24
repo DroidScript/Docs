@@ -5,6 +5,7 @@ clicks = 0
 file = "demofile"
 
 def OnStart():
+    global clicks
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     clicks = app.LoadNumber("clicks", 0, file)
@@ -16,7 +17,6 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    global clicks
     clicks += 1
     app.SaveNumber("clicks", clicks, file)
     app.ShowPopup("Clicks: " + str(clicks))

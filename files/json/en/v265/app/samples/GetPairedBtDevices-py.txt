@@ -16,7 +16,6 @@ def OnStart():
     itv = setInterval(checkBtOn, 200)
 
 def checkBtOn():
-    global itv
     if app.IsBluetoothOn():
         app.HideProgress()
         clearInterval(itv)

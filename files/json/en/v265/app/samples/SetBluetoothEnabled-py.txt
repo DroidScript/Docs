@@ -32,7 +32,6 @@ def OnStart():
     app.AddLayout( lay )
 
 def btn_OnTouch():
-    global itv
     if itv:
         return
     op = this.GetText()
@@ -53,7 +52,6 @@ def btn_OnTouch():
         itv = app.SetInterval( checkBtOff, 200 )
 
 def checkBtOn():
-    global itv
     if app.IsBluetoothOn():
         app.HideProgress()
         app.ShowPopup( "Bluetooth is on" )
@@ -61,7 +59,6 @@ def checkBtOn():
         itv = 0
 
 def checkBtOff():
-    global itv
     if not app.IsBluetoothOn():
         app.HideProgress()
         app.ShowPopup( "Bluetooth is off" )

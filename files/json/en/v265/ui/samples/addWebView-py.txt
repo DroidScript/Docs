@@ -83,6 +83,7 @@ def onStart(self):
     self.btn.setOnTouch(self.onTouch)
 
 def onLoad(self):
+    global loaded
     self.loaded = True
 
 def onTouch(self):

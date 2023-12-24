@@ -15,6 +15,7 @@ def OnStart():
 
 #Called when we get a message from main app.
 def OnMessage( msg ):
+    global diff
     app.Debug( msg )
 
     #Handle commands from main App.
@@ -29,6 +30,7 @@ def DoWork():
 """
 
 def OnStart():
+    global txt
     #Create the Service.js file
     #(In regular usage create the file yourself)
     app.WriteFile("Service.js", servicejs )

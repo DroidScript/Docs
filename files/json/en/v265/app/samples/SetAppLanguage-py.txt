@@ -15,6 +15,7 @@ langJson = """
 """
 
 def OnStart():
+    global lay, spinLang
     app.WriteFile("lang.json", langJson)
     app.SetAppLanguage("English")
 

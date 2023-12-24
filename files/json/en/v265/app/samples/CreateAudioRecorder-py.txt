@@ -4,6 +4,7 @@ from native import app
 file = "/sdcard/demofile.wav"
 
 def OnStart():
+    global rec
     <b>rec = app.CreateAudioRecorder()
     rec.SetFile( file )
     rec.Start()</b>

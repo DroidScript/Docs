@@ -17,6 +17,7 @@ def OnMessage(msg):
 """
 
 def OnStart():
+    global svc
     app.WriteFile("Service.js", serviceJS)
 
     lay = app.CreateLayout("linear", "VCenter,FillXY")

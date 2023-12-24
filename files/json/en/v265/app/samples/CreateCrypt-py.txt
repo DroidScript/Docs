@@ -28,6 +28,7 @@ def ShowDialog(data):
     app.ShowTextDialog("input text", data, OnText)
 
 def OnText(text):
+    global data
     dlg = app.CreateYesNoDialog("Choose option", "NoCancel")
     dlg.SetOnTouch(OnAction)
     dlg.data = {"text": text}

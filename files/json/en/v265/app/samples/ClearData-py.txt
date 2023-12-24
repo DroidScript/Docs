@@ -4,6 +4,7 @@ from native import app
 file = "demofile"
 
 def OnStart():
+    global txtValues
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     text = getValues()

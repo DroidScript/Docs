@@ -21,6 +21,7 @@ script = """
 rm """ + lock  # remove script lock file
 
 def OnStart():
+    global err, txt, itv
     app.WriteFile("/sdcard/termux/scripts/hello.sh", script)
     app.WriteFile(lock, "")
 
