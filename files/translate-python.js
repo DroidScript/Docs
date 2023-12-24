@@ -155,13 +155,13 @@ function fixup(file, pyCode) {
         .replace(/\r/g, '')
         .split("\n</sample>");
 
-    for (const i in fixedPy) {
-        if (!fixedPy[i].match(/<sample |<sample>\n/)) {
-            fixedPy[i] = "";
+    for (const index in fixedPy) {
+        if (!fixedPy[index].match(/<sample |<sample>\n/)) {
+            fixedPy[index] = "";
             continue;
         }
 
-        let code = fixedPy[i]
+        let code = fixedPy[index]
             .replace(/^```.*|```$|<\/?(code|script|xml)>\s+/g, '')
             // remove trailing AI text
             .replace(/[^§]*<sample/, "<sample")
@@ -170,12 +170,13 @@ function fixup(file, pyCode) {
             // AI thought MUI live in gfx
             .replace(/gfx\.MUI\./g, "MUI.")
             // AI thought MUI is ui alias
-            .replace(/ui as MUI/g, "MUI")
+            .replace(/ui as MUI/g, "MUI");
 
         // AI thinks ui and MUI are equal
         if (file.includes("MUI")) code = code.replace(/\bui\b/g, "MUI");
 
-        let head = [];
+        /** @type {string[]} */
+        const head = [];
         /** @type {Set<string>} */
         const imports = new Set();
         /** @type {Set<string>} */
@@ -195,10 +196,27 @@ function fixup(file, pyCode) {
             .replace(/\n{3,}/g, "\n\n");
 
         // additional includes
-        if (code.includes("Math.")) {
-            code = code.replace(/Math\.(abs|PI)/g, m => m.toLowerCase());
-            imports.add("import math");
+        // random module
+        if (code.match(/Math.random\(/i)) {
+            imports.add("import random");
+            code = code.replace(/Math.random\(/gi, "random.random(");
         }
+
+        // base64 module
+        if (code.match(/\batob\b/) || code.match(/\batob\b/)) {
+            imports.add("import base64");
+            code = code.replace(/\batob\b/g, "base64.b64decode")
+                .replace(/\bbtoa\b/g, "base64.b64encode");
+        }
+
+        // math module
+        if (code.includes("Math.")) {
+            imports.add("import math");
+            code = code.replace(/Math\./g, "math.")
+                .replace(/math\.PI/g, "math.pi")
+                .replace(/math\.abs/g, "abs");
+        }
+        // date/time
         if (code.includes("Date.")) imports.add("import time as Date");
 
         // ui class fragment
@@ -213,21 +231,27 @@ function fixup(file, pyCode) {
             // remove var keyword
             .replace(/\bvar /g, '')
             // remove empty var defs
-            .replace(/\n\w+;/g, '');
+            .replace(/(\n|^)\w+;/g, '');
 
+        // auto detect globals and insert global statement
         const defs = code.split("\ndef ");
         for (let i = 1; i < defs.length; i++) {
+            // remove old statement
             defs[i] = defs[i].replace(/\s+global .*/, "");
+            // find all assignments
             const vars = defs[i].match(/\w+(?= = )/g) || [];
             /** @type {string[]} */
             const globals = [];
 
+            // find referenced in other defs
             for (let j = i + 1; j < defs.length; j++) {
+                /** @type {string[]} */
                 const vars2 = defs[j].match(/\w+(?= = )/g) || [];
                 const used = vars.filter(v => !vars2.includes(v) && defs[j].match(RegExp(`\\b${v}\\b`)));
                 globals.push(...used);
             }
 
+            // insert global statement
             if (globals.length) {
                 defs[i] = defs[i].replace(/\n(\s+\S)/, (_, m) => {
                     return "\n" + m.slice(m.lastIndexOf("\n") + 1, -1) +
@@ -239,7 +263,7 @@ function fixup(file, pyCode) {
 
         if (cfg.size > 0) head.push(`# ${[...cfg].join(", ")}\n`);
         if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");
-        fixedPy[i] = `${head.join("\n")}\n${code.trim()}\n</sample>\n`;
+        fixedPy[index] = `${head.join("\n")}\n${code.trim()}\n</sample>\n`;
     }
 
     const fixedSamples = fixedPy.filter(s => s).join("\n").trim();

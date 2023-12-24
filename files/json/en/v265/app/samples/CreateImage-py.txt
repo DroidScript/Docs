@@ -73,8 +73,6 @@ from native import app
 import math
 import time as Date
 
-wh;
-
 def OnStart():
     global ptr, wh, img
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
@@ -99,13 +97,13 @@ def OnAnimate( time, dtime ):
     time = Date.now()
 
     secs = time / 1000
-    angle = math.pi * secs / 2 + math.abs( Math.sin( math.pi * secs ))
-    px = 0.5 + 0.5 * Math.cos( angle )
-    py = 0.5 + 0.5 * Math.sin( angle )
+    angle = math.pi * secs / 2 + abs( math.sin( math.pi * secs ))
+    px = 0.5 + 0.5 * math.cos( angle )
+    py = 0.5 + 0.5 * math.sin( angle )
 
-    hrs = Math.floor( secs / 3600 ) % 60
-    min = Math.floor( secs / 60 ) % 60
-    sec = Math.floor( secs ) % 60
+    hrs = math.floor( secs / 3600 ) % 60
+    min = math.floor( secs / 60 ) % 60
+    sec = math.floor( secs ) % 60
     time = min + ":" + sec
 
     tsize = ptr.MeasureText( time )

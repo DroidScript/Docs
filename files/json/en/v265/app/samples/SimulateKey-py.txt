@@ -1,6 +1,7 @@
 <sample Infinite Monkey>
 from native import app
 import math
+import random
 
 def OnStart():
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
@@ -11,7 +12,7 @@ def OnStart():
 	app.Animate( SimulateKey, 2 )
 
 def SimulateKey():
-    ran = 65 + Math.floor(Math.random() * 26)
+    ran = 65 + math.floor(random.random() * 26)
     char = String.fromCharCode( ran )
     <b>app.SimulateKey( edt, char )</b>
 </sample>

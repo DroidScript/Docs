@@ -10,6 +10,7 @@ def OnStart():
 <sample Random Value>
 from native import app
 import math
+import random
 
 def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")
@@ -20,7 +21,7 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    app.SetData("number", str(int(100 * math.random())))
+    app.SetData("number", str(int(100 * random.random())))
     data = app.GetData("number")
     app.ShowPopup("Data: " + data)
 </sample>
