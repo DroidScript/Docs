@@ -1,0 +1,175 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="app_onstart" id="44" x="5" y="7">
+    <statement name="statements">
+      <block type="variables_set" id="45" inline="false">
+        <field name="VAR">lay</field>
+        <value name="VALUE">
+          <block type="app_createlayout" id="46" inline="true">
+            <field name="type">Linear</field>
+            <value name="options">
+              <block type="lay_flow" id="47" inline="false">
+                <field name="flow">Vertical</field>
+                <value name="flow">
+                  <block type="lay_layout" id="48" inline="false">
+                    <field name="layout">FillXY</field>
+                    <value name="layout">
+                      <block type="lay_align" id="49" inline="false">
+                        <field name="align">VCenter</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="50" inline="false">
+            <field name="VAR">img</field>
+            <value name="VALUE">
+              <block type="app_createimage" id="51" inline="true">
+                <value name="file">
+                  <block type="image" id="52">
+                    <field name="file">/Sys/Img/Hello.png</field>
+                  </block>
+                </value>
+                <value name="width">
+                  <block type="math_number" id="53">
+                    <field name="NUM">0.2</field>
+                  </block>
+                </value>
+                <value name="height">
+                  <block type="math_number" id="54">
+                    <field name="NUM">-1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="lay_childaction" id="55" inline="true">
+                <field name="lay_action">AddChild</field>
+                <value name="lay">
+                  <block type="variables_get" id="56">
+                    <field name="VAR">lay</field>
+                  </block>
+                </value>
+                <value name="control">
+                  <block type="variables_get" id="57">
+                    <field name="VAR">img</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="58" inline="false">
+                    <field name="VAR">btn</field>
+                    <value name="VALUE">
+                      <block type="app_createbutton" id="59" inline="true">
+                        <value name="text">
+                          <block type="text" id="60">
+                            <field name="TEXT">Press Me</field>
+                          </block>
+                        </value>
+                        <value name="width">
+                          <block type="math_number" id="61">
+                            <field name="NUM">0.3</field>
+                          </block>
+                        </value>
+                        <value name="height">
+                          <block type="math_number" id="62">
+                            <field name="NUM">0.1</field>
+                          </block>
+                        </value>
+                        <value name="options">
+                          <block type="btn_style" id="63" inline="false">
+                            <field name="style">Normal</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="control_setmargins" id="64" inline="true">
+                        <value name="control">
+                          <block type="variables_get" id="65">
+                            <field name="VAR">btn</field>
+                          </block>
+                        </value>
+                        <value name="left">
+                          <block type="math_number" id="66">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="top">
+                          <block type="math_number" id="67">
+                            <field name="NUM">0.05</field>
+                          </block>
+                        </value>
+                        <value name="right">
+                          <block type="math_number" id="68">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="bottom">
+                          <block type="math_number" id="69">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="lay_childaction" id="70" inline="true">
+                            <field name="lay_action">AddChild</field>
+                            <value name="lay">
+                              <block type="variables_get" id="71">
+                                <field name="VAR">lay</field>
+                              </block>
+                            </value>
+                            <value name="control">
+                              <block type="variables_get" id="72">
+                                <field name="VAR">btn</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="app_addlayout" id="73" inline="true">
+                                <value name="lay">
+                                  <block type="variables_get" id="74">
+                                    <field name="VAR">lay</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="btn_ontouchevent" id="75" inline="true" x="11" y="326">
+    <value name="btn">
+      <block type="variables_get" id="76">
+        <field name="VAR">btn</field>
+      </block>
+    </value>
+    <statement name="statements">
+      <block type="app_playsound" id="77" inline="true">
+        <value name="file">
+          <block type="sound" id="78">
+            <field name="file">/Sys/Snd/Poing.ogg</field>
+          </block>
+        </value>
+        <next>
+          <block type="app_showpopup" id="79" inline="true">
+            <value name="message">
+              <block type="text" id="80">
+                <field name="TEXT">Hello World</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

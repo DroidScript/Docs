@@ -1,0 +1,205 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="app_onstart" id="1" x="49" y="4">
+    <statement name="statements">
+      <block type="variables_set" id="2" inline="false">
+        <field name="VAR">lay</field>
+        <value name="VALUE">
+          <block type="app_createlayout" id="3">
+            <field name="type">Linear</field>
+            <value name="options">
+              <block type="lay_flow" id="4" inline="false">
+                <field name="flow">Vertical</field>
+                <value name="flow">
+                  <block type="lay_layout" id="5" inline="false">
+                    <field name="layout">FillXY</field>
+                    <value name="layout">
+                      <block type="lay_align" id="6" inline="false">
+                        <field name="align">VCenter</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="7" inline="false">
+            <field name="VAR">btn</field>
+            <value name="VALUE">
+              <block type="app_createbutton" id="8">
+                <value name="text">
+                  <block type="text" id="9">
+                    <field name="TEXT">Connect</field>
+                  </block>
+                </value>
+                <value name="width">
+                  <block type="math_number" id="10">
+                    <field name="NUM">0.3</field>
+                  </block>
+                </value>
+                <value name="height">
+                  <block type="math_number" id="11">
+                    <field name="NUM">0.1</field>
+                  </block>
+                </value>
+                <value name="options">
+                  <block type="btn_style" id="12" inline="false">
+                    <field name="style">Lego</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="control_setmargins" id="13">
+                <value name="control">
+                  <block type="variables_get" id="14">
+                    <field name="VAR">btn</field>
+                  </block>
+                </value>
+                <value name="left">
+                  <block type="math_number" id="15">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="top">
+                  <block type="math_number" id="16">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="right">
+                  <block type="math_number" id="17">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="bottom">
+                  <block type="math_number" id="18">
+                    <field name="NUM">0.1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="lay_childaction" id="19">
+                    <field name="lay_action">AddChild</field>
+                    <value name="lay">
+                      <block type="variables_get" id="20">
+                        <field name="VAR">lay</field>
+                      </block>
+                    </value>
+                    <value name="control">
+                      <block type="variables_get" id="21">
+                        <field name="VAR">btn</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="22" inline="false">
+                        <field name="VAR">btnSnd</field>
+                        <value name="VALUE">
+                          <block type="app_createbutton" id="23">
+                            <value name="text">
+                              <block type="text" id="24">
+                                <field name="TEXT">Beep!</field>
+                              </block>
+                            </value>
+                            <value name="width">
+                              <block type="math_number" id="25">
+                                <field name="NUM">0.3</field>
+                              </block>
+                            </value>
+                            <value name="height">
+                              <block type="math_number" id="26">
+                                <field name="NUM">0.1</field>
+                              </block>
+                            </value>
+                            <value name="options">
+                              <block type="btn_style" id="27">
+                                <field name="style">Lego</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="lay_childaction" id="28">
+                            <field name="lay_action">AddChild</field>
+                            <value name="lay">
+                              <block type="variables_get" id="29">
+                                <field name="VAR">lay</field>
+                              </block>
+                            </value>
+                            <value name="control">
+                              <block type="variables_get" id="30">
+                                <field name="VAR">btnSnd</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="app_addlayout" id="31">
+                                <value name="lay">
+                                  <block type="variables_get" id="32">
+                                    <field name="VAR">lay</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="variables_set" id="33" inline="false">
+                                    <field name="VAR">nxt</field>
+                                    <value name="VALUE">
+                                      <block type="app_createnxt" id="34"></block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="btn_ontouchevent" id="35" x="50" y="341">
+    <value name="btn">
+      <block type="variables_get" id="36">
+        <field name="VAR">btn</field>
+      </block>
+    </value>
+    <statement name="statements">
+      <block type="nxt_connect" id="37">
+        <value name="nxt">
+          <block type="variables_get" id="38">
+            <field name="VAR">nxt</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="btn_ontouchevent" id="39" x="333" y="338">
+    <value name="btn">
+      <block type="variables_get" id="40">
+        <field name="VAR">btnSnd</field>
+      </block>
+    </value>
+    <statement name="statements">
+      <block type="nxt_beep" id="41">
+        <value name="nxt">
+          <block type="variables_get" id="42">
+            <field name="VAR">nxt</field>
+          </block>
+        </value>
+        <value name="frequency">
+          <block type="math_number" id="43">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="time">
+          <block type="math_number" id="44">
+            <field name="NUM">0.5</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,141 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="app_onstart" id="182" x="5" y="7">
+    <statement name="statements">
+      <block type="variables_set" id="183" inline="false">
+        <field name="VAR">lay</field>
+        <value name="VALUE">
+          <block type="app_createlayout" id="184" inline="true">
+            <field name="type">Linear</field>
+            <value name="options">
+              <block type="lay_align" id="185" inline="false">
+                <field name="align">VCenter</field>
+                <value name="align">
+                  <block type="lay_layout" id="186" inline="false">
+                    <field name="layout">FillXY</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="187" inline="false">
+            <field name="VAR">edt</field>
+            <value name="VALUE">
+              <block type="app_createtextedit" id="188" inline="true">
+                <value name="text">
+                  <block type="text" id="189">
+                    <field name="TEXT">Hello World!</field>
+                  </block>
+                </value>
+                <value name="width">
+                  <block type="math_number" id="190">
+                    <field name="NUM">0.8</field>
+                  </block>
+                </value>
+                <value name="height">
+                  <block type="math_number" id="191">
+                    <field name="NUM">0.3</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="lay_childaction" id="192" inline="true">
+                <field name="lay_action">AddChild</field>
+                <value name="lay">
+                  <block type="variables_get" id="193">
+                    <field name="VAR">lay</field>
+                  </block>
+                </value>
+                <value name="control">
+                  <block type="variables_get" id="194">
+                    <field name="VAR">edt</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="195" inline="false">
+                    <field name="VAR">btn</field>
+                    <value name="VALUE">
+                      <block type="app_createbutton" id="196" inline="true">
+                        <value name="text">
+                          <block type="text" id="197">
+                            <field name="TEXT">Press Me</field>
+                          </block>
+                        </value>
+                        <value name="width">
+                          <block type="math_number" id="198">
+                            <field name="NUM">0.3</field>
+                          </block>
+                        </value>
+                        <value name="height">
+                          <block type="math_number" id="199">
+                            <field name="NUM">-1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="lay_childaction" id="200" inline="true">
+                        <field name="lay_action">AddChild</field>
+                        <value name="lay">
+                          <block type="variables_get" id="201">
+                            <field name="VAR">lay</field>
+                          </block>
+                        </value>
+                        <value name="control">
+                          <block type="variables_get" id="202">
+                            <field name="VAR">btn</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="app_addlayout" id="203" inline="true">
+                            <value name="lay">
+                              <block type="variables_get" id="204">
+                                <field name="VAR">lay</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="btn_ontouchevent" id="205" inline="true" x="6" y="279">
+    <value name="btn">
+      <block type="variables_get" id="206">
+        <field name="VAR">btn</field>
+      </block>
+    </value>
+    <statement name="statements">
+      <block type="app_texttospeech" id="207" inline="true">
+        <value name="text">
+          <block type="edit_gettext" id="208" inline="true">
+            <value name="edit">
+              <block type="variables_get" id="209">
+                <field name="VAR">edt</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="pitch">
+          <block type="math_number" id="210">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="speed">
+          <block type="math_number" id="211">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

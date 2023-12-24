@@ -6,14 +6,22 @@ const conf = require("./conf.json");
 const path = require("path");
 const cliProgress = require('cli-progress');
 
+/** @typedef {(pySample:string, jsSample:string) => string} Validator */
+
 /** @param {string[]} p */
 const P = (...p) => path.resolve(__dirname, ...p);
 
-const instructions = `
+const docSampleInstructions = `
 You are given a xml page with javascript code.
 Translate all included JavaScript code into Python.
 You have to preserve every single XML tags from the original page.
 Only return the translated xml page with all xml tags from the initial page.
+`.trim().replace(/\n/g, " ");
+
+const appSampleInstructions = `
+You are given JavaScript code that you should translate into Python.
+The objects app, gfx, ui and MUI can be imported from the module 'native'.
+Only return the translated code.
 `.trim().replace(/\n/g, " ");
 
 // create new container
@@ -30,21 +38,59 @@ setTimeout(main);
 const useAI = process.argv.includes("-a");
 const useFixup = process.argv.includes("-f");
 
-async function main() {
-    const max = 4;
-    const proc = [];
+const doDocs = process.argv.includes("-D");
+const doApp = process.argv.includes("-A");
 
+async function main() {
     const openai = getOpenAI("./openai.key");
 
     const list = await openai.beta.assistants.list({});
     const assistant = list.data.find(o => o.name === "Python Translator");
     if (!assistant) throw Error("Assistant 'Python Translator' not found");
 
+    if (doDocs) await processDocsSamples(openai, assistant, docSampleInstructions);
+    if (doApp) await processAppSamples(openai, assistant, appSampleInstructions);
+    multibar.stop();
+}
+
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, instructions:string) => Promise<void>} */
+async function processDocsSamples(openai, assistant, instructions) {
+    const lang = Object.keys(conf.langs)[0];
+    const files = glob(`json/${lang}/${conf.version}/*/samples/*.txt`);
+
+    /** @type {{[x:string]:string}} */
+    const fileMap = {};
+    for (const file of files) {
+        if (file.endsWith("-py.txt")) continue;
+
+        const sample = fs.readFileSync(file, "utf-8");
+        if (!sample.includes("<sample")) continue;
+
+        const name = path.basename(file, ".txt");
+        fileMap[file] = `${path.dirname(file)}/${name}-py.txt`;
+    }
+
     await openai.beta.assistants.update(assistant.id, { instructions });
+    await startWorker(openai, assistant, fileMap, 4, validateSample);
+}
 
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, instructions:string) => Promise<void>} */
+async function processAppSamples(openai, assistant, instructions) {
+    const files = glob(`samples/*.js`);
 
-    for (let i = 0; i < max; i++) proc.push(translateWorker(openai, assistant, i, max));
-    Promise.all(proc).then(() => multibar.stop());
+    /** @type {{[x:string]:string}} */
+    const fileMap = {};
+    for (const file of files) fileMap[file] = file.replace(".js", ".py");
+
+    await openai.beta.assistants.update(assistant.id, { instructions });
+    await startWorker(openai, assistant, fileMap, 4, validatePython);
+}
+
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, fileMap:{[x:string]:string}, max:number, invalid: Validator) => Promise<void>} */
+async function startWorker(openai, assistant, fileMap, max, invalid) {
+    const proc = [];
+    for (let i = 0; i < max; i++) proc.push(translateWorker(openai, assistant, fileMap, i, max, invalid));
+    await Promise.all(proc);
 }
 
 /** @param {string} keyFile */
@@ -56,28 +102,19 @@ function getOpenAI(keyFile) {
     return new OpenAI.OpenAI({ apiKey });
 }
 
-/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, num:number, max:number) => Promise<void>} */
-async function translateWorker(openai, assistant, num, max) {
-    const lang = Object.keys(conf.langs)[0];
-    const files = glob(`json/${lang}/${conf.version}/*/samples/*.txt`);
-    const jsFiles = files.filter(f => !f.endsWith("-py.txt"));
-    jsFiles.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, fileMap:{[x:string]:string}, num:number, max:number, invalid: Validator) => Promise<void>} */
+async function translateWorker(openai, assistant, fileMap, num, max, invalid) {
 
     const thread = await openai.beta.threads.create();
-
+    const jsFiles = Object.keys(fileMap).sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
 
     let n = 0;
     loop_files: for (const file of jsFiles) {
-        const name = path.basename(file, ".txt");
-        const dir = path.dirname(file);
-        const pyFile = `${dir}/${name}-py.txt`;
-
+        const pyFile = fileMap[file];
         const sample = fs.readFileSync(file, "utf-8");
-        if (!sample.includes("<sample")) continue;
 
         let msg = `translating ${file}`;
 
-        // && fs.statSync(file).mtime <= fs.statSync(pyFile).mtime
         if (fs.existsSync(pyFile)) {
             const pySample = fs.readFileSync(pyFile, "utf8");
             const status = invalid(pySample, sample);
@@ -140,8 +177,8 @@ async function translateWorker(openai, assistant, num, max) {
             multibar.log(`translated sample:\n${JSON.stringify(pySample)}\ninvalid ${invalid(pySample, sample)}\n`);
             if (n <= 3) {
                 multibar.log("Error - terminating");
-                multibar.stop();
-                setTimeout(() => process.exit(), 100);
+                setTimeout(() => multibar.stop(), 500);
+                setTimeout(() => process.exit(), 1000);
             }
         }
     }
@@ -272,10 +309,19 @@ function fixup(file, pyCode) {
     return fixedSamples;
 }
 
-/** @type {(pySample:string, jsSample:string) => string} */
-function invalid(pySample, jsSample) {
-    if (!pySample.includes("<sample")) return "no <sample> tag";
+
+/** @type {Validator} */
+function validatePython(pySample, jsSample) {
     if (pySample.includes("\nfunction")) return "function instead of def";
+    if (!pySample.includes("def OnStart():") && !pySample.includes("def OnLoad():")) return "missing OnStart or OnLoad";
+    return "";
+}
+
+/** @type {Validator} */
+function validateSample(pySample, jsSample) {
+    const invalid = validatePython(pySample, jsSample);
+    if (invalid) return invalid;
+    if (!pySample.includes("<sample")) return "no <sample> tag";
     if (pySample.split("<sample").length !== jsSample.split("<sample").length)
         return "mismatching sample count";
     // if (!sample.includes("<b>")) return "no bold areas";
