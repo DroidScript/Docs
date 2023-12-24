@@ -13,7 +13,7 @@ const LANG = "en";
 const SRC = path.normalize(__dirname + "/markup/" + LANG);
 const DST = path.normalize(__dirname + "/json/" + LANG + "/" + conf.version);
 
-const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?";
+const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?,uio";
 /** @type {Obj<string>} */
 const types = {
     String: "str",
@@ -27,7 +27,8 @@ const types = {
     GameObject: "gvo",
     JSObject: "jso",
     SmartWatchObject: "swo",
-    unknown: "?"
+    unknown: "?",
+    UIObject: "uio"
 }
 
 // Replace backticks with forward slashes around text inside them
@@ -311,6 +312,10 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                 func.desc += c.value.substring(c.value.indexOf("\n"));
             }
 
+            else if( /@\s*ds/i.test(c.value) ) {
+                func.desc += c.value.split("@ds")[1].trim()
+            }
+
             // Sample.txt
             else if (/@\s*sample/i.test(c.value)) {
                 let _samp = c.value.slice(c.value.indexOf("\n") + 1)
@@ -347,13 +352,34 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                         if (c.value.includes("@prop")) met.isval = true;
                     }
 
+                    // exclude these lines
+                    else if( line.includes("@jdocs") ) {}
+
                     else if (line.includes("##") && !isCA) {
                         // met += line;
                     }
 
                     // isCA = false
                     else if (line.includes("@prop")) {
-                        obj.isval = true;
+                        if( line.includes("{") ) {
+                            const l = line.split("@prop")[1].trim(),
+                                p = extractParams(l),
+                                ts = p[0].split('||').map(t => types[p[0]] || t);
+                            if( ts.find(t => !typx.includes(t.split(/[_:-]/)[0])) ) Throw(`unknown param type ${line} in ${name}`);
+                            let d = ts.join('||');
+                            if( p[2] ) d += "-" + p[2];
+                            const ref = /\d/.test(p[1][0]) ? '#' : '';
+                            json[ref + p[1]] = met = newDSFunc();
+                            met.isval = true;
+                            met.desc = p[2];
+
+                            let g = p[0].split(/[_\s:-]/)[0], v;
+                            if( types[g] ) v = types[g];
+                            else if( typx.includes(g) ) v = p[0];
+                            else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p[0];
+                            met.retval = v;
+                        }
+                        else obj.isval = true;
                     }
 
                     else if (line.includes("@name")) {
