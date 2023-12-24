@@ -1,7 +1,7 @@
 <sample Square>
-from native import gfx, app
+# cfg.Game
 
-cfg.Game;
+from native import app, gfx
 
 def OnLoad():
     gfx = app.get_gfx()

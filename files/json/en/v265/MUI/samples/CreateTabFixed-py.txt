@@ -1,10 +1,7 @@
 <sample Basic>
-cfg.Light
-cfg.MUI
+# cfg.Light, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -32,12 +29,9 @@ def OnStart():
 </sample>
 
 <sample With Slide Animation>
-cfg.Light
-cfg.MUI
+# cfg.Light, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -65,12 +59,9 @@ def OnStart():
 </sample>
 
 <sample With Callback>
-cfg.Light
-cfg.MUI
+# cfg.Light, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal

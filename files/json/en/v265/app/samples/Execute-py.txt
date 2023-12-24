@@ -7,13 +7,11 @@ html = '''
         <script src='file:///android_asset/app.js'>
     </head>
 
-    
         source = "html";
         function btn_OnTouch()
         {
             app.Execute( "app.Alert( 'source: " + source + "\\\\ntarget: ' + source );" );
         }
-    
 
     <body style="text-align: center;">
         <input type="button" onclick="btn_OnTouch()" value="Click me!"></button>

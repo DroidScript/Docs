@@ -1,8 +1,7 @@
 <sample Default Time>
-from native import MUI, app
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -22,15 +21,14 @@ def OnStart():
 def ShowPicker():
     tmp.Show()
 
-def OnSelect(time, hh, mm, pos): 
+def OnSelect(time, hh, mm, pos):
     app.ShowPopup(hh+":"+mm+":"+pos)
 </sample>
 
 <sample Custom Time>
-from native import MUI, app
+# cfg.Dark, cfg.MUI
 
-cfg.Dark
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -50,6 +48,6 @@ def OnStart():
 def ShowPicker():
     tmp.Show()
 
-def OnSelect(time, hh, mm, pos): 
+def OnSelect(time, hh, mm, pos):
     app.ShowPopup(hh+":"+mm+":"+pos)
 </sample>

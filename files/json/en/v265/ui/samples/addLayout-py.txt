@@ -1,5 +1,5 @@
 <sample Main layout>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Create a fullscreen linear layout with objects vertically centered.
@@ -27,7 +27,7 @@ app.Run(Main)
 </sample>
 
 <sample Bottom aligned with margins>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Creates a fullscreen main layout with objects aligned at the bottom
@@ -45,7 +45,7 @@ app.Run(Main)
 </sample>
 
 <sample Orientation and spacing>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Create a fullscreen main layout with objects centered horizontally
@@ -63,7 +63,7 @@ app.Run(Main)
 </sample>
 
 <sample Slide Layout>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Create a fullscreen slide layout with objects vertically centered

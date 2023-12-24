@@ -9,7 +9,6 @@ def OnStart():
 
 <sample Random Value>
 from native import app
-
 import math
 
 def OnStart():

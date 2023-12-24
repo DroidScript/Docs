@@ -132,7 +132,7 @@ async function translateWorker(openai, assistant, num, max) {
         for (const res of msgs.data[0].content)
             if (res.type === "text") pySamples.push(res.text.value);
 
-        let pySample = pySamples.join("\n\n").replace(/^```.*|```$|<\/?(code|script)>|from native import cfg\s+/g, '').trim();
+        let pySample = pySamples.join("\n\n");
         pySample = fixup("", pySample);
 
         if (!invalid(pySample, sample)) { fs.writeFileSync(pyFile, pySample, "utf8"); }
@@ -162,6 +162,7 @@ function fixup(file, pyCode) {
         }
 
         let code = fixedPy[i]
+            .replace(/^```.*|```$|<\/?(code|script|xml)>\s+/g, '')
             // remove trailing AI text
             .replace(/[^§]*<sample/, "<sample")
             // AI once added CDATA tag
@@ -170,54 +171,53 @@ function fixup(file, pyCode) {
             .replace(/gfx\.MUI\./g, "MUI.")
             // AI thought MUI is ui alias
             .replace(/ui as MUI/g, "MUI")
-            // move import to top
-            .replace(/(<sample.*>)([^§]+)((\s+from native import.*)+)/, "$1$3$2");
 
         // AI thinks ui and MUI are equal
         if (file.includes("MUI")) code = code.replace(/\bui\b/g, "MUI");
 
+        let head = [];
+        /** @type {Set<string>} */
+        const imports = new Set();
+        /** @type {Set<string>} */
+        const cfg = new Set();
+
+        // get meta stuff
+        const usedObj = "app,gfx,MUI,ui".split(",").filter(s => code.includes(s + "."));
+        if (usedObj.length) imports.add("from native import " + usedObj.join(", "));
+        code = code.replace(/(<sample.*>)\s*/, (_, m) => (head.push(m), ""));
+        code = code.replace(/(# )?(cfg\.\w+)[,;]?\s*/g, (_, _1, m) => (cfg.add(m), ""));
+        code = code.replace(/(from (.*) import .*|import .*)\s*/g, (_, m, ms) => {
+            if (ms !== "native") imports.add(m);
+            return "";
+        });
+        code = code.trim()
+            .replace(/[ \t\r]+\n/g, "\n")
+            .replace(/\n{3,}/g, "\n\n");
+
+        // additional includes
+        if (code.includes("Math.")) {
+            code = code.replace(/Math\.(abs|PI)/g, m => m.toLowerCase());
+            imports.add("import math");
+        }
+        if (code.includes("Date.")) imports.add("import time as Date");
+
         // ui class fragment
-        if (code.match(/class Main\(app(.App)?\):/i)) {
+        if (code.match(/class Main(\(app(.App)?\))?:/i)) {
             code = code
-                .replace(/class Main\(app(.App)?\):/i, "")
+                .replace(/class Main(\(app(.App)?\))?:/i, "")
+                .replace(/Main\(\)\.on.*/g, "")
                 .replace(/\n {4}/g, "\n");
         }
-
-        for (const scope of "app,gfx,MUI,ui,cfg".split(",")) {
-            if (scope !== "cfg" && code.includes(scope + ".")) {
-                // eslint-disable-next-line max-depth
-                if (!code.match(RegExp(`from native import .*${scope}`)))
-                    // add import
-                    code = code.replace(/(<sample.*>(\s*|cfg\..*|\/\/.*)*)/, `$1\nfrom native import ${scope}\n`);
-            }
-            else {
-                code = code
-                    // remove import
-                    .replace(RegExp(`\\s*from native import ${scope}\n`), "\n")
-                    // remove inline import
-                    .replace(RegExp(`(from native import )(\\w+, )*${scope},? ?`), "$1$2");
-            }
-        }
-
-        if (file.includes("RadioButtons"))
-            console.log(JSON.stringify(code));
 
         code = code
             // remove var keyword
             .replace(/\bvar /g, '')
-            // remove trailing commas, ensure newlines
-            .replace(/(from native import .*), *\n/g, "$1\n")
-            // merge multiple imports
-            .replace(/((from native import \w+\s+)+)/, m => {
-                const imports = m.split(/\n*from native import /).map(s => s.trim()).filter(s => s);
-                return `from native import ${[...new Set(imports)].join(", ")}\n\n`;
-            })
-            // move import to top
-            .replace(/(<sample.*>)\s+(from native import .*)\s+((\ncfg\..*|\n\/\/.*)*)/, "$1$3\n\n$2\n\n")
-            // trim whitespace
-            .replace(/(<sample.*>)\n+/, "$1\n");
+            // remove empty var defs
+            .replace(/\n\w+;/g, '');
 
-        fixedPy[i] = code.trim() + "\n</sample>\n";
+        if (cfg.size > 0) head.push(`# ${[...cfg].join(", ")}\n`);
+        if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");
+        fixedPy[i] = `${head.join("\n")}\n${code.trim()}\n</sample>\n`;
     }
 
     const fixedSamples = fixedPy.filter(s => s).join("\n").trim();

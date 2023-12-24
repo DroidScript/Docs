@@ -61,7 +61,7 @@ def onSelect(self, title):
 
 def onClose(self):
     ui.showPopup('Drawer is close', "bottom")
-    
+
 Main().start()
 </sample>
 
@@ -130,6 +130,6 @@ def onSelect(self, value):
 
     # Open the drawer
     self.drawer.show()
-    
+
 Main().start()
 </sample>

@@ -10,7 +10,7 @@ def OnStart():
     txt = app.AddText(lay, "Debug Log:", 1, 1, "Log")
 
     node = app.CreateNode()
-    
+
     def onOutput(msg):
         txt.Log(msg)
 

@@ -23,13 +23,13 @@ def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     tgl = app.CreateToggle("Foreground", 0.3, 0.1)
-    
+
     def tgl_OnTouch(fg):
         if fg:
             svc.SendMessage("fg")
         else:
             svc.SendMessage("bg")
-    
+
     tgl.SetOnTouch(tgl_OnTouch)
     lay.AddChild(tgl)
 

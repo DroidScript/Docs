@@ -1,7 +1,7 @@
 <sample>
-from native import gfx
+# cfg.Game
 
-cfg.Game;
+from native import gfx
 
 def OnLoad():
     rect = gfx.CreateRectangle(0.4, 0.4, 0x00ffff, 6, 0xee3355)

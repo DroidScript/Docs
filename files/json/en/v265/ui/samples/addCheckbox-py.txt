@@ -55,7 +55,7 @@ def onStart(self):
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     self.main.setChildMargins(0, 0.05, 0, 0.05)
 
-    # Add a checkbox with label on the right. 
+    # Add a checkbox with label on the right.
     self.ckb1 = ui.addCheckbox(self.main, "Checkbox on the left", "Left")
     self.ckb1.setOnTouch(self.onTouch)
 

@@ -1,10 +1,6 @@
 <sample Basic>
 from native import ui
-
 import ui
-
-
-
 
 def onStart(self):
     # Create a fullscreen layout with objects vertically centered
@@ -19,7 +15,7 @@ def onStart(self):
 
     # Add more text control to the main layout
     ui.addText(self.main, text, "Justify", 0.8)
-    
+
     # Add an inset divider to the main layout
     self.div = ui.addDivider(self.main, 0.8, "inset")
 

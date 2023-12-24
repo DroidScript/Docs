@@ -15,12 +15,10 @@ def OnStart():
 
     app.AddLayout(lay)
 
-
 def playerOnReady():
     app.HideProgress()
     app.ShowPopup("Ready")
     player.Play()
-
 
 def player_OnError(e):
     app.HideProgress()

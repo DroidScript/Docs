@@ -3,13 +3,13 @@ from native import ui
 
 def onStart(self):
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    
+
     self.btn = ui.addButton(self.main, "Show Date Time Picker", "Primary")
     self.btn.setOnTouch(self.btn_onTouch)
-    
+
 def btn_onTouch(self):
     ui.showDateTimePicker(self.onDateTime)
-    
+
 def onDateTime(self, val):
     ui.showPopup(val)
 </sample>

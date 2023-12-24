@@ -3,13 +3,13 @@ from native import app
 
 def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")
-    
+
     edt = app.CreateTextEdit("Hello World")
     edt.Focus()
     lay.AddChild(edt)
-    
+
     app.AddLayout(lay)
-    
+
     app.ShowKeyboard(edt)
 </sample>
 

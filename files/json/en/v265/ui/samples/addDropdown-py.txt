@@ -1,8 +1,6 @@
 <sample Basic>
 from native import ui
-
 from ui import ui
-
 
 def onStart(self):
     # Create a fullscreen linear layout with objects vertically centered.
@@ -23,9 +21,7 @@ def onChange(self, text, index):
 
 <sample Custom styles>
 from native import ui
-
 from ui import ui
-
 
 def onStart(self):
     # Create a fullscreen linear layout with objects vertically centered

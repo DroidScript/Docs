@@ -1,7 +1,7 @@
 <sample Memory Monitor>
-from native import app
+# cfg.Portrait
 
-cfg.Portrait
+from native import app
 
 def OnStart():
     app.ToBack()

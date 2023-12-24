@@ -6,9 +6,9 @@ def OnStart():
 
     edt = app.CreateTextEdit( "", 0.5 )
     lay.AddChild( edt )
-    
+
     app.AddLayout( lay )
-    
+
     pos = edt.GetPosition( "screen" )
     app.ShowTip( "Type some text here", pos.left, pos.top, 3000, "Down" )
 </sample>

@@ -67,9 +67,11 @@ def OnStart():
 </sample>
 
 <sample Advanced Clock Animating>
-from native import app
+# cfg.No_Dom, cfg.Portrait
 
-cfg.No_Dom, cfg.Portrait;
+from native import app
+import math
+import time as Date
 
 wh;
 
@@ -96,7 +98,7 @@ def OnAnimate( time, dtime ):
     time = Date.now()
 
     secs = time / 1000
-    angle = Math.PI * secs / 2 + Math.abs( Math.sin( Math.PI * secs ))
+    angle = math.pi * secs / 2 + math.abs( Math.sin( math.pi * secs ))
     px = 0.5 + 0.5 * Math.cos( angle )
     py = 0.5 + 0.5 * Math.sin( angle )
 

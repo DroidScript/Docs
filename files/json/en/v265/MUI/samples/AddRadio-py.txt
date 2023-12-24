@@ -1,12 +1,11 @@
 <sample AddPicker>
-from native import app, MUI
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    
+
     scr = app.AddScroller(lay, 1, 1, "")
     lay2 = MUI.CreateLayout("Linear")
 

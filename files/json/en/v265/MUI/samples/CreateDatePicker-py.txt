@@ -1,8 +1,7 @@
 <sample Default>
-from native import MUI, app
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     colors = MUI.colors.teal
@@ -27,10 +26,9 @@ def OnSelect(date, yyyy, mm, dd):
 </sample>
 
 <sample With Custom Date>
-from native import MUI, app
+# cfg.Dark, cfg.MUI
 
-cfg.Dark
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     colors = MUI.colors.teal

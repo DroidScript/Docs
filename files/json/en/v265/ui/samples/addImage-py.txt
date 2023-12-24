@@ -101,9 +101,7 @@ def onStart(self):
 
 <sample Analog Clock>
 from native import ui
-
 import math
-
 
 def onStart(self):
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)

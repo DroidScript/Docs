@@ -1,5 +1,5 @@
 <sample Sample navs array.>
-navs = [ 
+navs = [
     ["Favorites", "favorites"],
     ["Groups", "person"],
     ["Folder", "folder"]

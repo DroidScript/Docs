@@ -1,5 +1,6 @@
 <sample Set Alarm>
 from native import app
+import time as Date
 
 def OnStart():
     <b>now = Date.now()

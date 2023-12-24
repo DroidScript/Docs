@@ -8,7 +8,6 @@ html = """
     <script src='file:///android_asset/app.js'>
 </head>
 
-
 def greetWeb(name):
     app.ShowPopup("Hello " + name + ", I'm the WebView")
 
@@ -17,7 +16,6 @@ def greetApp():
 
 def OnRequest(err, s):
     app.alert(s.split("\\n").join("\\n"))
-
 
 <input type="button" onclick="greetApp()" value="Greet App"/>
 </html>

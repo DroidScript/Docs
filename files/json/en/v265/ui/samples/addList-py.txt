@@ -1,5 +1,5 @@
 <sample Basic list>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered
@@ -17,13 +17,12 @@ def onStart(self):
 def onTouch(self, title, body, icon, action, index):
     ui.showPopup(title, "Short")
 
-
 app = Main()
 app.onStart()
 </sample>
 
 <sample List with icon and body>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.
@@ -55,13 +54,12 @@ def onTouch(self, title, body, icon, action, index):
 def changeIconColor(self):
     self.lst.iconColor = "#e91e63"
 
-
 app = Main()
 app.onStart()
 </sample>
 
 <sample Contacts list>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.
@@ -69,7 +67,7 @@ def onStart(self):
 
     # Avatar url
     avatar = "https://static.wikia.nocookie.net/heroes-and-villain/images/7/7e/Bilbo_BOFA_12.png/revision/latest/scale-to-width-down/350?cb=20190320192007"
-    
+
     # Initialize the contact items to show
     list = [
         [avatar, "Frodo", "+0123456789"],
@@ -86,13 +84,12 @@ def onStart(self):
 def onTouch(self, title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
-
 app = Main()
 app.onStart()
 </sample>
 
 <sample Elevated list>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.
@@ -120,13 +117,12 @@ def onStart(self):
 def onTouch(self, title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
-
 app = Main()
 app.onStart()
 </sample>
 
 <sample Outlined List>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.
@@ -141,7 +137,7 @@ def onStart(self):
 
     # Add an outlined list control to the main layout
     self.lst = ui.addList(self.main, list, "Icon,Outlined", 0.8)
-    
+
     # Set the list label
     self.lst.label = "My awesome list"
 
@@ -154,13 +150,12 @@ def onStart(self):
 def onTouch(self, title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
-
 app = Main()
 app.onStart()
 </sample>
 
 <sample Selectable List>
-from native import ui, app
+from native import app, ui
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.
@@ -186,7 +181,6 @@ def onLongTouch(self):
 
 def onSelect(self, title, i, value):
     ui.showPopup(title + " : " + value)
-
 
 app = Main()
 app.onStart()

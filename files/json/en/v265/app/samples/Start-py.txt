@@ -7,12 +7,8 @@ from native import app
     <script src='file:///android_asset/app.js'>
 </head>
 
-
-   
-
     def OnStart():
         app.ShowPopup( "HTML Rocks!" );
-
 
 <body onload="app.Start()" style="background-color: #ffffff;">
 </body>

@@ -30,7 +30,7 @@ def OnStart():
 def CheckForeground():
     apps = app.GetRunningApps()
     name = app.GetPackageName()
-    if not app.IsAPK(): 
+    if not app.IsAPK():
         name += ":NewActivityProcess"
 
     for a in apps:

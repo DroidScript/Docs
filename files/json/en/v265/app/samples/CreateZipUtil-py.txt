@@ -4,7 +4,7 @@ from native import app
 def OnStart():
     name = app.GetAppName()
     file = "/sdcard/" + name + ".zip"
-    
+
     zip = app.CreateZipUtil()
     zip.Open(file)
     list = zip.List("").split(",")
@@ -20,12 +20,12 @@ def OnStart():
     fldr = app.GetPath() + "/" + name
     file = "/sdcard/" + name + ".zip"
     app.ShowProgress()
-    
+
     zip = app.CreateZipUtil()
     zip.Create(file)
     AddFolder(zip, name, fldr)
     zip.Close()
-    
+
     app.HideProgress()
     app.ShowPopup("saved to " + file)
 

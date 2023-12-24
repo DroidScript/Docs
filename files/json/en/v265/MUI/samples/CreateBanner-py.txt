@@ -1,8 +1,7 @@
 <sample Light>
-from native import app, MUI
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.blue
@@ -16,10 +15,9 @@ def OnStart():
 </sample>
 
 <sample Dark>
-from native import app, MUI
+# cfg.Dark, cfg.MUI
 
-cfg.Dark
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.blue

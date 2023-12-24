@@ -1,8 +1,7 @@
 <sample Basic>
-from native import MUI, app
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -18,10 +17,9 @@ def OnStart():
 </sample>
 
 <sample With callback>
-from native import MUI, app
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -41,10 +39,9 @@ def OnTouch(name, index):
 </sample>
 
 <sample Horizontal>
-from native import MUI, app
+# cfg.Dark, cfg.MUI
 
-cfg.Dark
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal

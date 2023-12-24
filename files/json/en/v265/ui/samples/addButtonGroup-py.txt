@@ -2,7 +2,7 @@
 from native import ui
 
 def onStart(self):
-   
+
     # Creates a fullscreen layout with object vertically centered.
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
@@ -24,7 +24,7 @@ def onTouch(self, text, index):
 from native import ui
 
 def onStart(self):
-   
+
     # Creates a fullscreen layout with object vertically centered.
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     self.main.setChildMargins(0, 0.05, 0, 0.05)
@@ -52,7 +52,7 @@ def onTouch(self, text, index):
 from native import ui
 
 def onStart(self):
-   
+
     # Creates a fullscreen layout with object vertically centered.
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     self.main.setChildMargins(0, 0.05, 0, 0.05)
@@ -81,7 +81,7 @@ def onTouch(self, text, index):
 from native import ui
 
 def onStart(self):
-   
+
     # Creates a fullscreen layout with object vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     self.main.setChildMargins(0, 0.05, 0, 0.05)
@@ -110,7 +110,7 @@ def onTouch(self, text, index):
 from native import ui
 
 def onStart(self):
-   
+
     # Creates a fullscreen layout with object vertically centered.
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     self.main.setChildMargins(0, 0.05, 0, 0.05)

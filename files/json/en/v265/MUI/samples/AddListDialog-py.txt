@@ -1,28 +1,27 @@
 <sample AddPicker>
-from native import MUI, app
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    
+
     tlsd = MUI.AddTextEdit(lay, 0.7, "outline", "Enter time", True)
     tlsd.SetOnTouch(ShowListDialog)
-    
+
     tckl = MUI.AddTextEdit(lay, 0.7, "outline", "Enter date", True)
     tckl.SetOnTouch(ShowChecklist)
-    
+
     # using buttons
-    
+
     btn1 = MUI.AddButton(lay, "Show ListDialog", None, None, "Outline")
     btn1.SetOnTouch(ShowListDialog)
-    
+
     btn2 = MUI.AddButton(lay, "Show Checklist", None, None, "Outline")
     btn2.SetOnTouch(ShowChecklist)
-    
+
     app.AddLayout(lay)
-    
+
     lst = [
         {"name": "Choice 1"},
         {"name": "Choice 2"},

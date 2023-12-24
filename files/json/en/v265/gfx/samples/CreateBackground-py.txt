@@ -1,7 +1,7 @@
 <sample Scroll>
-from native import gfx
+# cfg.Game
 
-cfg.Game
+from native import gfx
 
 def OnLoad():
     global sky

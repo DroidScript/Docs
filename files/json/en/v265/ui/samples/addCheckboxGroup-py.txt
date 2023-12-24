@@ -1,8 +1,6 @@
 <sample Basic>
 from native import ui
-
 from ui import ui
-
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.
@@ -27,9 +25,7 @@ def onTouch(self, value, item, index):
 
 <sample Colors>
 from native import ui
-
 from ui import ui
-
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.
@@ -61,9 +57,7 @@ def onTouch(self, value, item, index):
 
 <sample Elevated>
 from native import ui
-
 from ui import ui
-
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.
@@ -94,9 +88,7 @@ def onTouch(self, value, item, index):
 
 <sample Outlined>
 from native import ui
-
 from ui import ui
-
 
 def onStart(self):
     # Creates a fullscreen layout with objects vertically centered.

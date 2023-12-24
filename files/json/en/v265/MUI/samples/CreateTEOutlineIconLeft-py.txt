@@ -1,11 +1,9 @@
 <sample No Label>
+# cfg.Light, cfg.MUI
+
 from native import app, MUI
 
-cfg.Light
-cfg.MUI
-
 def OnStart():
-   
 
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
@@ -19,13 +17,11 @@ def OnStart():
 </sample>
 
 <sample Dark With Label>
+# cfg.Dark, cfg.MUI
+
 from native import app, MUI
 
-cfg.Dark
-cfg.MUI
-
 def OnStart():
-   
 
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
@@ -39,13 +35,11 @@ def OnStart():
 </sample>
 
 <sample Round>
+# cfg.Light, cfg.MUI
+
 from native import app, MUI
 
-cfg.Light
-cfg.MUI
-
 def OnStart():
-   
 
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
@@ -59,13 +53,11 @@ def OnStart():
 </sample>
 
 <sample SetOnEnter Callback>
+# cfg.Light, cfg.MUI
+
 from native import app, MUI
 
-cfg.Light
-cfg.MUI
-
 def OnStart():
-   
 
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)

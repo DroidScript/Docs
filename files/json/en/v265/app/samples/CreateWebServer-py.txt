@@ -35,7 +35,6 @@ indexhtml = """
 <head>
     <title>WebSockets Demo</title>
 
-    
         count = 0;
 
         function Connect()
@@ -67,7 +66,7 @@ indexhtml = """
         function ws_onerror(e) {
             id_info.innerHTML = "Socket Error: " + e.data;
         }
-    
+
 </head>
 
 <body>

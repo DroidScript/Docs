@@ -34,7 +34,7 @@ def OnStart():
     lay.AddChild(txt)
 
     app.AddLayout(lay)
-    
+
     itv = setInterval(CheckReady, 100)
 
 def CheckReady():

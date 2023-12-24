@@ -10,6 +10,8 @@ def ShowRotation():
 </sample>
 
 <sample Show Rotation and switch Orientation>
+# cfg.Portrait
+
 from native import app
 
 def OnStart():
@@ -19,5 +21,4 @@ def OnStart():
 def ShowRotation():
     mode = app.GetRotation()
     app.ShowPopup(mode)
-cfg.Portrait
 </sample>

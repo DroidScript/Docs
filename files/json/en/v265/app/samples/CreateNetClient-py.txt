@@ -61,7 +61,7 @@ sent = False
 msg = ""
 def net_OnConnect(connected):
     global sent, msg
-    
+
     if not connected:
         return app.ShowPopup("Failed to connect!")
 

@@ -1,10 +1,7 @@
 <sample No-options>
-cfg.Light
-cfg.MUI
+# cfg.Light, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -29,12 +26,9 @@ def OnTouch(title, body, index):
 </sample>
 
 <sample With-Color No Options>
-cfg.Light
-cfg.MUI
+# cfg.Light, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -59,12 +53,9 @@ def OnTouch(title, body, index):
 </sample>
 
 <sample Selectable>
-cfg.Dark
-cfg.MUI
+# cfg.Dark, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -102,12 +93,9 @@ def GetSelectedItems():
 </sample>
 
 <sample CreateListInitialIcon>
-cfg.Dark
-cfg.MUI
+# cfg.Dark, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -128,12 +116,9 @@ def OnStart():
 </sample>
 
 <sample CreateListMaterialIcon>
-cfg.Dark
-cfg.MUI
+# cfg.Dark, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -166,12 +151,9 @@ def GetSelectedItems():
 </sample>
 
 <sample CreateListWithAvatar>
-cfg.Light
-cfg.MUI
+# cfg.Light, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
@@ -204,12 +186,9 @@ def GetSelectedItems():
 </sample>
 
 <sample RemoveItems>
-cfg.Dark
-cfg.MUI
+# cfg.Dark, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal

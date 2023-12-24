@@ -1,8 +1,7 @@
 <sample Basic>
-from native import app, MUI
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
@@ -22,10 +21,9 @@ def OnStart():
 </sample>
 
 <sample Sortable and Numeric Column>
-from native import app, MUI
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
@@ -47,10 +45,9 @@ def OnStart():
 </sample>
 
 <sample Selectable and Dark>
-from native import app, MUI
+# cfg.Dark, cfg.MUI
 
-cfg.Dark
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
@@ -72,10 +69,9 @@ def OnStart():
 </sample>
 
 <sample With Footer>
-from native import app, MUI
+# cfg.Dark, cfg.MUI
 
-cfg.Dark
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "FillXY,VCenter")

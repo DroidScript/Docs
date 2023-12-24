@@ -1,15 +1,14 @@
 <sample Light>
-from native import MUI, app
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.lighten1)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    	
+
     btn = MUI.CreateButtonElegant("BUTTON", 0.35)
     lay.AddChild(btn)
 
@@ -23,17 +22,16 @@ def OnStart():
 </sample>
 
 <sample Dark>
-from native import MUI, app
+# cfg.Dark, cfg.MUI
 
-cfg.Dark
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     color = MUI.colors.teal
     app.InitializeUIKit(color.lighten1)
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    	
+
     btn = MUI.CreateButtonElegant("BUTTON", 0.35)
     lay.AddChild(btn)
 
@@ -47,14 +45,13 @@ def OnStart():
 </sample>
 
 <sample Add Method>
-from native import MUI, app
+# cfg.Light, cfg.MUI
 
-cfg.Light
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    
+
     btn1 = MUI.AddButtonElegant(lay, "BUTTON 1", 0.35)
     btn2 = MUI.AddButtonElegant(lay, "[fa-heart] BUTTON 2", 0.35)
     btn3 = MUI.AddButtonElegant(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)

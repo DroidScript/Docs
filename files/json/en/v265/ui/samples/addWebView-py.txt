@@ -20,11 +20,11 @@ def onStart(self):
     self.web.html = '''
         <html>
         <head>
-            
+
                 function callFunc(name) {
                     alert("Hi " + name + " webview!")
                 }
-            
+
         </head>
         <body>
             <h2>This is an html.</h2>
@@ -46,11 +46,11 @@ def onStart(self):
     self.web.html = '''
         <html>
         <head>
-            
+
                 function getProduct(num1, num2) {
                     return num1 * num2
                 }
-            
+
         </head>
         <body>
             <h2>Get some product here!</h2>

@@ -1,10 +1,7 @@
 <sample AddPicker>
-cfg.Light
-cfg.MUI
+# cfg.Light, cfg.MUI
 
-
-
-from native import MUI, app
+from native import app, MUI
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "FillXY")

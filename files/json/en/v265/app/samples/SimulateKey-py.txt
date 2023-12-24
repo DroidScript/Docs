@@ -1,5 +1,6 @@
 <sample Infinite Monkey>
 from native import app
+import math
 
 def OnStart():
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" )

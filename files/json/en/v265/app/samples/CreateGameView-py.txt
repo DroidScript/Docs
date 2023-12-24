@@ -1,8 +1,7 @@
 <sample Script>
+# cfg.Landscape
+
 from native import app
-
-cfg.Landscape
-
 
 def OnStart():
     app.PreventScreenLock(True)

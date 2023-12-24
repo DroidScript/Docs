@@ -11,7 +11,7 @@ def onStart(self):
 
     # Message to be displayed in the Dialog component
     bodyText = "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
-    
+
     # Initialize the Dialog component with `Agree` and `Disagree` action buttons
     self.dlg = ui.addDialog("Use Google's location service?", bodyText, "Disagree,Agree")
 
@@ -38,7 +38,7 @@ def onStart(self):
 
     # Message to display
     bodyText = "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
-    
+
     # Initialize the Dialog component and pass a `NoCancel` option.
     self.dlg = ui.addDialog("Use Google's location service?", bodyText, "Close,Agree", "NoCancel")
 
@@ -79,7 +79,7 @@ def onStart(self):
     self.btn.setOnTouch(self.showDialog)
 
     bodyText = "To subscribe to this website, please enter your email address here. We will send updates occasionally."
-    
+
     # Initialize the dialog.
     self.dlg = ui.addDialog("Subscribe", bodyText, "Cancel,Subscribe")
 
