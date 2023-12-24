@@ -312,6 +312,10 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                 func.desc += c.value.substring(c.value.indexOf("\n"));
             }
 
+            else if( /@\s*ds/i.test(c.value) ) {
+                func.desc += c.value.split("@ds")[1].trim()
+            }
+
             // Sample.txt
             else if (/@\s*sample/i.test(c.value)) {
                 let _samp = c.value.slice(c.value.indexOf("\n") + 1)
