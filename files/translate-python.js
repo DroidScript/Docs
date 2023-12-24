@@ -7,6 +7,7 @@ const path = require("path");
 const cliProgress = require('cli-progress');
 
 /** @typedef {(pySample:string, jsSample:string) => string} Validator */
+/** @typedef {(file:string, code:string) => string} FixupFunc */
 
 /** @param {string[]} p */
 const P = (...p) => path.resolve(__dirname, ...p);
@@ -20,7 +21,8 @@ Only return the translated xml page with all xml tags from the initial page.
 
 const appSampleInstructions = `
 You are given JavaScript code that you should translate into Python.
-The objects app, gfx, ui and MUI can be imported from the module 'native'.
+Assume the objects app, gfx, ui and MUI are predefined by the framework and can be imported from the module 'native'.
+Do not change any variable names.
 Only return the translated code.
 `.trim().replace(/\n/g, " ");
 
@@ -71,7 +73,7 @@ async function processDocsSamples(openai, assistant, instructions) {
     }
 
     await openai.beta.assistants.update(assistant.id, { instructions });
-    await startWorker(openai, assistant, fileMap, 4, validateSample);
+    await startWorker(openai, assistant, fileMap, 4, validateSample, fixupSample);
 }
 
 /** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, instructions:string) => Promise<void>} */
@@ -83,13 +85,13 @@ async function processAppSamples(openai, assistant, instructions) {
     for (const file of files) fileMap[file] = file.replace(".js", ".py");
 
     await openai.beta.assistants.update(assistant.id, { instructions });
-    await startWorker(openai, assistant, fileMap, 4, validatePython);
+    await startWorker(openai, assistant, fileMap, 4, validatePython, fixupPython);
 }
 
-/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, fileMap:{[x:string]:string}, max:number, invalid: Validator) => Promise<void>} */
-async function startWorker(openai, assistant, fileMap, max, invalid) {
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, fileMap:{[x:string]:string}, max:number, invalid: Validator, fixup: FixupFunc) => Promise<void>} */
+async function startWorker(openai, assistant, fileMap, max, invalid, fixup) {
     const proc = [];
-    for (let i = 0; i < max; i++) proc.push(translateWorker(openai, assistant, fileMap, i, max, invalid));
+    for (let i = 0; i < max; i++) proc.push(translateWorker(openai, assistant, fileMap, i, max, invalid, fixup));
     await Promise.all(proc);
 }
 
@@ -102,8 +104,8 @@ function getOpenAI(keyFile) {
     return new OpenAI.OpenAI({ apiKey });
 }
 
-/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, fileMap:{[x:string]:string}, num:number, max:number, invalid: Validator) => Promise<void>} */
-async function translateWorker(openai, assistant, fileMap, num, max, invalid) {
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, fileMap:{[x:string]:string}, num:number, max:number, invalid: Validator, fixup: FixupFunc) => Promise<void>} */
+async function translateWorker(openai, assistant, fileMap, num, max, invalid, fixup) {
 
     const thread = await openai.beta.threads.create();
     const jsFiles = Object.keys(fileMap).sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
@@ -155,11 +157,12 @@ async function translateWorker(openai, assistant, fileMap, num, max, invalid) {
             if (res.status === "queued" || res.status === "in_progress") continue;
             if (res.status === "completed") { msg = "ok."; break; }
             msg = `failed: ${res.last_error?.code} ${res.last_error?.message}`;
+            bar.update(0, { filename: file, msg, dots: "" });
+            bar.stop();
             continue loop_files;
             // eslint-disable-next-line no-constant-condition
         } while (true);
         bar.update(0, { filename: file, msg, dots: "" });
-        bar.stop();
 
         const msgs = await openai.beta.threads.messages.list(
             thread.id, { limit: 1 }
@@ -174,22 +177,21 @@ async function translateWorker(openai, assistant, fileMap, num, max, invalid) {
 
         if (!invalid(pySample, sample)) { fs.writeFileSync(pyFile, pySample, "utf8"); }
         else {
-            multibar.log(`translated sample:\n${JSON.stringify(pySample)}\ninvalid ${invalid(pySample, sample)}\n`);
-            if (n <= 3) {
-                multibar.log("Error - terminating");
-                setTimeout(() => multibar.stop(), 500);
-                setTimeout(() => process.exit(), 1000);
-            }
+            multibar.log("translated sample:");
+            multibar.log(JSON.stringify(pySample));
+            bar.update(0, { filename: file, msg: "invalid " + invalid(pySample, sample), dots: "" });
         }
+        bar.stop();
     }
 }
 
-/** @type {(file:string, pyCode:string) => string} */
-function fixup(file, pyCode) {
+/** @type {FixupFunc} */
+function fixupSample(file, pyCode) {
     if (!useFixup) return pyCode;
 
     const fixedPy = pyCode
         .replace(/\r/g, '')
+        .replace(/^[\s\S]*```python\n([\s\S]*)\n```[\s\S]*$/, "$1")
         .split("\n</sample>");
 
     for (const index in fixedPy) {
@@ -213,94 +215,8 @@ function fixup(file, pyCode) {
         if (file.includes("MUI")) code = code.replace(/\bui\b/g, "MUI");
 
         /** @type {string[]} */
-        const head = [];
-        /** @type {Set<string>} */
-        const imports = new Set();
-        /** @type {Set<string>} */
-        const cfg = new Set();
-
-        // get meta stuff
-        const usedObj = "app,gfx,MUI,ui".split(",").filter(s => code.includes(s + "."));
-        if (usedObj.length) imports.add("from native import " + usedObj.join(", "));
-        code = code.replace(/(<sample.*>)\s*/, (_, m) => (head.push(m), ""));
-        code = code.replace(/(# )?(cfg\.\w+)[,;]?\s*/g, (_, _1, m) => (cfg.add(m), ""));
-        code = code.replace(/(from (.*) import .*|import .*)\s*/g, (_, m, ms) => {
-            if (ms !== "native") imports.add(m);
-            return "";
-        });
-        code = code.trim()
-            .replace(/[ \t\r]+\n/g, "\n")
-            .replace(/\n{3,}/g, "\n\n");
-
-        // additional includes
-        // random module
-        if (code.match(/Math.random\(/i)) {
-            imports.add("import random");
-            code = code.replace(/Math.random\(/gi, "random.random(");
-        }
-
-        // base64 module
-        if (code.match(/\batob\b/) || code.match(/\batob\b/)) {
-            imports.add("import base64");
-            code = code.replace(/\batob\b/g, "base64.b64decode")
-                .replace(/\bbtoa\b/g, "base64.b64encode");
-        }
-
-        // math module
-        if (code.includes("Math.")) {
-            imports.add("import math");
-            code = code.replace(/Math\./g, "math.")
-                .replace(/math\.PI/g, "math.pi")
-                .replace(/math\.abs/g, "abs");
-        }
-        // date/time
-        if (code.includes("Date.")) imports.add("import time as Date");
-
-        // ui class fragment
-        if (code.match(/class Main(\(app(.App)?\))?:/i)) {
-            code = code
-                .replace(/class Main(\(app(.App)?\))?:/i, "")
-                .replace(/Main\(\)\.on.*/g, "")
-                .replace(/\n {4}/g, "\n");
-        }
-
-        code = code
-            // remove var keyword
-            .replace(/\bvar /g, '')
-            // remove empty var defs
-            .replace(/(\n|^)\w+;/g, '');
-
-        // auto detect globals and insert global statement
-        const defs = code.split("\ndef ");
-        for (let i = 1; i < defs.length; i++) {
-            // remove old statement
-            defs[i] = defs[i].replace(/\s+global .*/, "");
-            // find all assignments
-            const vars = defs[i].match(/\w+(?= = )/g) || [];
-            /** @type {string[]} */
-            const globals = [];
-
-            // find referenced in other defs
-            for (let j = i + 1; j < defs.length; j++) {
-                /** @type {string[]} */
-                const vars2 = defs[j].match(/\w+(?= = )/g) || [];
-                const used = vars.filter(v => !vars2.includes(v) && defs[j].match(RegExp(`\\b${v}\\b`)));
-                globals.push(...used);
-            }
-
-            // insert global statement
-            if (globals.length) {
-                defs[i] = defs[i].replace(/\n(\s+\S)/, (_, m) => {
-                    return "\n" + m.slice(m.lastIndexOf("\n") + 1, -1) +
-                        "global " + globals.join(", ") + "\n" + m;
-                });
-            }
-        }
-        code = defs.join("\ndef ");
-
-        if (cfg.size > 0) head.push(`# ${[...cfg].join(", ")}\n`);
-        if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");
-        fixedPy[index] = `${head.join("\n")}\n${code.trim()}\n</sample>\n`;
+        code = fixupPython(file, code);
+        fixedPy[index] = code + `\n</sample>\n`;
     }
 
     const fixedSamples = fixedPy.filter(s => s).join("\n").trim();
@@ -310,10 +226,105 @@ function fixup(file, pyCode) {
 }
 
 
+/** @type {FixupFunc} */
+function fixupPython(file, code) {
+    const head = [];
+    /** @type {Set<string>} */
+    const imports = new Set();
+    /** @type {Set<string>} */
+    const cfg = new Set();
+
+    // get meta stuff
+    const usedObj = "app,gfx,MUI,ui".split(",").filter(s => code.includes(s + "."));
+    if (usedObj.length) imports.add("from native import " + usedObj.join(", "));
+    code = code.replace(/(<sample.*>)\s*/, (_, m) => (head.push(m), ""));
+    code = code.replace(/(# )?(cfg\.\w+)[,;]?\s*/g, (_, _1, m) => (cfg.add(m), ""));
+    code = code.replace(/(from (.*) import .*|import .*)\s*/g, (_, m, ms) => {
+        if (ms !== "native") imports.add(m);
+        return "";
+    });
+    code = code.trim()
+        .replace(/[ \t\r]+\n/g, "\n")
+        .replace(/\n{3,}/g, "\n\n");
+
+    // additional includes
+    // random module
+    if (code.match(/Math.random\(/i)) {
+        imports.add("import random");
+        code = code.replace(/Math.random\(/gi, "random.random(");
+    }
+
+    // base64 module
+    if (code.match(/\batob\b/) || code.match(/\batob\b/)) {
+        imports.add("import base64");
+        code = code.replace(/\batob\b/g, "base64.b64decode")
+            .replace(/\bbtoa\b/g, "base64.b64encode");
+    }
+
+    // math module
+    if (code.includes("Math.")) {
+        imports.add("import math");
+        code = code.replace(/Math\./g, "math.")
+            .replace(/math\.PI/g, "math.pi")
+            .replace(/math\.abs/g, "abs");
+    }
+    // date/time
+    if (code.includes("Date.")) imports.add("import time as Date");
+
+    // ui class fragment
+    if (code.match(/class Main(\(app(.App)?\))?:/i)) {
+        code = code
+            .replace(/class Main(\(app(.App)?\))?:/i, "")
+            .replace(/Main\(\)\.on.*/g, "")
+            .replace(/\n {4}/g, "\n");
+    }
+
+    code = code
+        // remove var keyword
+        .replace(/\bvar /g, '')
+        // remove empty var defs
+        .replace(/(\n|^)\w+;/g, '');
+
+    // auto detect globals and insert global statement
+    const defs = code.split("\ndef ");
+    for (let i = 1; i < defs.length; i++) {
+        // remove old statement
+        defs[i] = defs[i].replace(/\s+global .*/, "");
+        // find all assignments
+        const vars = defs[i].match(/\w+(?= = )/g) || [];
+        /** @type {string[]} */
+        const globals = [];
+
+        // find referenced in other defs
+        for (let j = i + 1; j < defs.length; j++) {
+            /** @type {string[]} */
+            const vars2 = defs[j].match(/\w+(?= = )/g) || [];
+            const used = vars.filter(v => !vars2.includes(v) && defs[j].match(RegExp(`\\b${v}\\b`)));
+            globals.push(...used);
+        }
+
+        // insert global statement
+        if (globals.length) {
+            defs[i] = defs[i].replace(/\n(\s+\S)/, (_, m) => {
+                return "\n" + m.slice(m.lastIndexOf("\n") + 1, -1) +
+                    "global " + globals.join(", ") + "\n" + m;
+            });
+        }
+    }
+    code = defs.join("\ndef ");
+
+    if (cfg.size > 0) head.push(`# ${[...cfg].join(", ")}\n`);
+    if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");
+    return `${head.join("\n")}\n${code.trim()}`;
+}
+
 /** @type {Validator} */
 function validatePython(pySample, jsSample) {
     if (pySample.includes("\nfunction")) return "function instead of def";
-    if (!pySample.includes("def OnStart():") && !pySample.includes("def OnLoad():")) return "missing OnStart or OnLoad";
+    if (!pySample.includes("def OnStart():") && !pySample.includes("def OnLoad():"))
+        return "missing OnStart or OnLoad " + [pySample.includes("def OnStart():"), pySample.includes("def OnLoad():"), pySample.slice(pySample.indexOf("def "), pySample.indexOf("def ") + 20)];
+    if (pySample.split(/\bdef /).length !== jsSample.split(/\bfunction /).length)
+        return "mismatching def count";
     return "";
 }
 
