@@ -1,16 +1,16 @@
-The code provided includes a mix of variable assignments and function definitions. To translate the code, we should separate the variable assignments from the function definitions and remove the 'OnStart()' function call at the end. Here is the updated translation:
+from native import app
 
-```python
-app = native.app
-gfx = native.gfx
+app = app
+gfx = gfx
 ui = native.ui
-MUI = native.MUI
+MUI = MUI
 
 # Initialise some variables.
 timer = None
 
 # Called when application is started.
 def OnStart():
+	global img, xdraw, ydraw, xtilt, ytilt
 	# Lock screen orientation to Portrait.
 	app.SetOrientation("Portrait")
 
@@ -50,7 +50,6 @@ def OnStart():
 	# Set a timer to call the Draw function in 2 secs.
 	timer = app.SetTimeout("Draw()", 2000)
 
-
 # Draw to the screen at the current x,y posn.
 def Draw():
 	# Shift position.
@@ -63,14 +62,12 @@ def Draw():
 	# Call this func again in 1 millisec.
 	timer = app.SetTimeout("Draw()", 1)
 
-
 # Called when 'Accelerometer' sensor changes.
 # Values range from approx -10.0 to +10.0
 # (the x and y may need swapping on some tablets)
 def sns_OnChange(x, y, z):
 	xtilt = x / 100
 	ytilt = y / 100
-
 
 # Called when user selects a menu item.
 def OnMenu(name):
@@ -83,6 +80,3 @@ def OnMenu(name):
 		ydraw = 0.5
 		xtilt = 0
 		ytilt = 0
-```
-
-Note that in the provided code, the 'app.SetTimeout()' method is used to schedule a function call after a delay. The equivalent method in Python is 'app.SetTimer()', so you may need to modify that part of the code if necessary.

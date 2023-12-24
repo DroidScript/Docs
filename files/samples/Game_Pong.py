@@ -1,10 +1,12 @@
 from native import app
+import random
 
 xBat, yBat, wBat, hBat = 0.4, 0.9, 0.3, 0.02
 xBall, yBall, rBall = 0.4, 0.02, 0.04
 xDir, yDir, xDrift, speed = 1, 1, 0.005, 0.01
 
 def OnStart():
+    global canvas, quit, orient, synthBall, tstart
     app.SetOrientation("Portrait")
     app.PreventScreenLock(True)
     lay = app.CreateLayout("Linear", "FillXY")
@@ -34,19 +36,20 @@ def DrawFrame():
         return
 
 def DrawBat():
+    global xBat
     roll = orient.GetRoll()
-    
+
     if abs(roll) > 5:
         if roll > 0:
             xBat += 0.02
         else:
             xBat -= 0.02
-        
+
         if xBat < 0.05:
             xBat = 0.05
         elif xBat > 0.8:
             xBat = 0.8
-    
+
     canvas.SetPaintColor("#ffffff")
     canvas.DrawRectangle(xBat, yBat, xBat+wBat, yBat+hBat, 0.03)
 
@@ -58,15 +61,15 @@ def DrawBall():
     canvas.DrawCircle(xBall, yBall, rBall)
     xDist = abs(xBall - (xBat+wBat/2))
     yDist = abs(yBall - (yBat+hBat/2))
-    
+
     if xDist < wBat/2 and yDist < hBat*1.5:
         yDir = -1
-        xDrift = Math.random() * 0.01
-        if Math.random() > 0.5:
+        xDrift = random.random() * 0.01
+        if random.random() > 0.5:
             xDir = 1
         else:
             xDir = -1
-        
+
         synthBall.PlayTone(560, 100)
     elif yBall < 0.04:
         yDir = 1
@@ -83,7 +86,7 @@ def DrawBall():
     elif xBall > 0.90:
         xDir = -1
         playWallSnd = True
-    
+
     if playWallSnd:
         synthBall.PlayTone(400, 100)
 

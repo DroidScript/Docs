@@ -1,9 +1,9 @@
+# cfg.Hybrid
+
 from native import app, ui
 
 #Make this a Hybrid app.
-app.cfg.Hybrid
-
-#Called when application starts.
+app.#Called when application starts.
 def OnStart():
     #Add main layout and set default child margins.
     layMain = ui.addLayout("main", "linear", "fillxy")

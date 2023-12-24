@@ -1,3 +1,5 @@
+from native import app
+
 """
 In-App subscription sample -
 
@@ -18,9 +20,9 @@ remains of the period that has been purchased).
 subscribed = False
 productId = "subs_premium1"  # <-- change this to your product id.
 
-
 # Called when application is started.
 def OnStart():
+    global playStore, txt
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -42,11 +44,9 @@ def OnStart():
     # Get user's status after a short time.
     setTimeout(GetStatus, 100)
 
-
 # Get the user's purchase status.
 def GetStatus():
     playStore.GetPurchases(OnPurchases, "SUBS")
-
 
 # Show user's purchases.
 def OnPurchases(items):
@@ -55,9 +55,9 @@ def OnPurchases(items):
             txt.SetText("Purchased!")
             subscribed = True
 
-
 # Show subscription info box.
 def ShowSubsInfo():
+    global txtPremPrice, s
     # Create dialog window.
     dlgPrem = app.CreateDialog("My App Subscription")
     layPrem = app.CreateLayout("linear", "vertical")
@@ -92,20 +92,18 @@ def ShowSubsInfo():
     # Show price after short wait.
     setTimeout(ShowPrice, 100)
 
-
 # Show subscription price.
 def ShowPrice():
     playStore.GetBillingInfo(productId, OnStoreInfo, "SUBS")
-
 
 # Show Play Store subscription price.
 def OnStoreInfo(items):
     if items:
         txtPremPrice.SetText(items[0]["price"] + "/month")
 
-
 # Show the subscription sign up page.
 def btnGo_OnTouch():
+    global edtGo, s, email
     dlgGo = app.CreateDialog("My App Subscription")
     layGo = app.CreateLayout("linear", "vertical,fillxy")
 
@@ -128,13 +126,12 @@ def btnGo_OnTouch():
     dlgGo.AddLayout(layGo)
     dlgGo.Show()
 
-
 # Handle the sign up.
 def btnGo_OnClick():
+    global userId
     userId = edtGo.GetText().strip()
     if userId and "@" in userId:
         playStore.Purchase(productId, "MyToken", OnPurchased, "SUBS")
-
 
 # Handle completed purchase.
 def OnPurchased(prodId, orderId, purchToken, devToken, packageName):

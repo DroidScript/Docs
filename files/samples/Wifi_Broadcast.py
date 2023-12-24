@@ -1,16 +1,11 @@
-In this code, the framework objects 'app', 'gfx', 'ui', and 'MUI' are imported from the 'native' module in JavaScript code. However, in Python, `app`, `gfx`, `ui`, and `MUI` are not available.
-
-Additionally, the `console.log` function is not present in Python.
-
-Here is the Python translation of the code using the `app` module from the framework:
-
-```python
+from android import app
+from native import app
 import socket
 import threading
-from android import app
 
 # Called when application is started.
 def OnStart():
+    global net, address, thisId
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -66,4 +61,3 @@ def receive_datagrams(net, port, encoding):
         data, addr = sock.recvfrom(1024)  # buffer size is 1024 bytes
         data = data.decode(encoding)
         net.OnReceive(data, addr)
-```

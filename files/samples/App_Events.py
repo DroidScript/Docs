@@ -1,4 +1,4 @@
-from native import app, gfx, ui, MUI
+from native import app
 
 # Called when application is created.
 def OnStart():

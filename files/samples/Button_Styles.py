@@ -1,6 +1,5 @@
-Translated code (Python):
+from native import app
 
-```python
 def OnStart():
     lay = app.CreateLayout("Linear", "Vertical,FillXY")
     lay.SetChildMargins(0.01, 0.01, 0.01, 0.01)
@@ -44,4 +43,3 @@ def OnStart():
     b8.SetStyle("#ffffff", "#cccccc", 20, "#999999", 1, 0)
 
     app.AddLayout(lay)
-```

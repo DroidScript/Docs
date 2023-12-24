@@ -1,9 +1,12 @@
+from native import app
+import random
+
 # Set frame rate.
 fps = 30
 
 # Set size of canvas bitmap.
-#(We set it lower than the screen resolution to improve 
-#performance and make it 1.5 x wider than the screen 
+#(We set it lower than the screen resolution to improve
+#performance and make it 1.5 x wider than the screen
 #so objects can disappear off the screen cleanly).
 bmpW = 1.5 * 480
 bmpH = 800
@@ -44,6 +47,7 @@ pillarSpeed = 4/bmpW
 
 # Called when application is started.
 def OnStart():
+    global canvas, imgBackground, imgFlapUp, imgFlapDown, imgPillarTop, imgPillar, synthFly, gameOver
     # Lock screen orientation to Portrait and
     # stop screen turning off while playing.
     app.SetOrientation("Portrait")
@@ -98,14 +102,14 @@ def OnStart():
     synthCrash.SetVca(0, 130, 0, 0)
     synthCrash.SetVcf(110, 870, 0.45, 450, 2000, 0.4)
 
-    # Create a Start Again button. 
+    # Create a Start Again button.
     btn = app.CreateButton("Start Again", 0.5, 0.1)
     btn.SetPosition(0.24, 0.5)
     btn.SetVisibility("Gone")
     btn.SetOnTouch(btnStart_OnTouch)
     lay.AddChild(btn)
 
-    # Add layout to app.    
+    # Add layout to app.
     app.AddLayout(lay)
 
     # Switch off debugging for max performance.
@@ -159,7 +163,7 @@ def DrawFrame():
 
     # Change top pillars height every time it goes off screen.
     if(pill1X <= 0):
-        pill1H = 0.1 + Math.random() * 0.5
+        pill1H = 0.1 + random.random() * 0.5
         donePass = False
 
     # Move and draw pillar 1.

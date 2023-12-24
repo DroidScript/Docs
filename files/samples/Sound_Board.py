@@ -1,7 +1,4 @@
-Translated code:
-
-```python
-from native import app, gfx, ui, MUI
+from native import app
 
 def OnStart():
     lay = app.CreateLayout("Linear", "FillXY,VCenter")
@@ -23,7 +20,6 @@ def OnStart():
     player1.SetFile("/Sys/Snd/Poing.ogg")
     player2.SetFile("/Sys/Snd/Trill.ogg")
 
-
 def img1_OnTouch(ev):
     if ev.action == "Down":
         player1.SeekTo(0)
@@ -32,7 +28,6 @@ def img1_OnTouch(ev):
     elif ev.action == "Up":
         img1.Reset(1.0, 1.0)
 
-
 def img2_OnTouch(ev):
     if ev.action == "Down":
         player2.SeekTo(0)
@@ -40,5 +35,3 @@ def img2_OnTouch(ev):
         img2.Scale(0.8, 0.8)
     elif ev.action == "Up":
         img2.Reset(1.0, 1.0)
-
-```

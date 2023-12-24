@@ -1,8 +1,11 @@
+from native import app
+
 # Initialise some variables
 angle = 0
 
 # Called when application is started
 def OnStart():
+    global img
     # Create a layout with objects vertically centered
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -27,6 +30,5 @@ def OnStart():
     app.setInterval(RotateImage, 10)
 
 def RotateImage():
-    global angle
     img.Rotate(angle)
     angle += 3

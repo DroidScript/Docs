@@ -1,6 +1,6 @@
-# Make this a Hybrid app.
-import native
+from native import app, ui
 
+# Make this a Hybrid app.
 # Called when application starts.
 def OnStart():
     # Add main layout and set default child margins.
@@ -17,4 +17,4 @@ def OnStart():
 # Handle touching the image.
 def img_OnTouch():
     native.ui.showPopup("Mango")
-    native.app.Vibrate("0,100,30,100,50,300")
+    app.Vibrate("0,100,30,100,50,300")

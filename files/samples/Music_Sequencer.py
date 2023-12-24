@@ -1,3 +1,5 @@
+from native import app
+
 # Simple Music Sequencer by CandleLight
 
 # Declare global variables.
@@ -11,9 +13,9 @@ note = None
 notes = ["E5", "D4", "B4", "A#4", "A4", "G4", "E4"]
 colors = ["#A3EEFF", "#FFFDC2", "#C4FFD7"]
 
-
 # Called when application is started.
 def OnStart():
+    global lay
     # Configure app to landscape mode, full screen.
     app.SetOrientation("Landscape")
     app.SetScreenMode("Game")
@@ -27,9 +29,9 @@ def OnStart():
     # Add layout to app.
     app.AddLayout(lay)
 
-
 # Draw the sequencer.
 def Draw(lay):
+    global layHoriz, synth
     lay.SetBackColor("#EEEEEE")
     layHoriz = None
     block = None
@@ -56,9 +58,9 @@ def Draw(lay):
     music.RepeatTransport(repeat, "4n")
     music.StartTransport()
 
-
 # Add a sequencer block to the screen.
 def AddBlock(layHoriz, color):
+    global color, GetChecked
     card = app.AddLayout(layHoriz, "Card")
     card.SetMargins(0.001, 0.001, 0.001, 0.002)
     card.SetCornerRadius(8)
@@ -71,7 +73,6 @@ def AddBlock(layHoriz, color):
     block.data.color = color
     return block
 
-
 # Handle touching a block
 def block_OnTouchDown():
     self.data.checked = not self.data.checked
@@ -79,7 +80,6 @@ def block_OnTouchDown():
         self.SetBackColor(self.data.color)
     else:
         self.SetBackColor("#FFFFFF")
-
 
 # Repeat the sequence
 def repeat(time):

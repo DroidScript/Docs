@@ -1,18 +1,14 @@
-Translated code:
-
-```python
-import native
+from native import app
 
 def OnStart():
-    native.app.SetStatusBarColor("#ff0000")
-    native.app.SetNavBarColor("#ff0000")
-    
-    lay = native.app.CreateLayout("linear", "VCenter,FillXY")
-    
-    txt = native.app.CreateText("Hello")
+    app.SetStatusBarColor("#ff0000")
+    app.SetNavBarColor("#ff0000")
+
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    txt = app.CreateText("Hello")
     txt.SetTextColor("#ff0000")
     txt.SetTextSize(32)
     lay.AddChild(txt)
-    
-    native.app.AddLayout(lay)
-```
+
+    app.AddLayout(lay)

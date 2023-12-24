@@ -1,3 +1,5 @@
+from native import app
+
 # This basic template is a good starting
 # point for simple vertical scrolling games.
 
@@ -13,6 +15,7 @@ charH = 0.115
 
 # Called when application is started.
 def OnStart():
+    global canvas, imgBackground, imgChar
     # Lock screen orientation to Portrait and
     # stop screen turning off while playing.
     app.SetOrientation("Portrait")
@@ -46,7 +49,6 @@ def OnStart():
     # Drawing the game frame 60x a second.
     app.Animate(DrawFrame, 60)
 
-
 # Update and redraw all game graphics.
 def DrawFrame():
     # Clear the canvas.
@@ -68,7 +70,6 @@ def DrawFrame():
 
     # Update the canvas.
     canvas.Update()
-
 
 # Handle moving finger on screen.
 def canvas_OnTouchMove(ev):

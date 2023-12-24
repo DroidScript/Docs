@@ -1,8 +1,8 @@
-```python
+from native import app
+import native.MUI as MUI
 import native.app as app
 import native.gfx as gfx
 import native.ui as ui
-import native.MUI as MUI
 
 isFullscreen = False
 
@@ -12,8 +12,8 @@ videoIds = [
 
 videoTitles = ["Part 1", "Part 2", "Part 3", "Part 4"]
 
-
 def OnStart():
+    global web, title, list
     app.SetOrientation("Portrait")
 
     lay = app.CreateLayout("Linear", "FillXY")
@@ -41,14 +41,12 @@ def OnStart():
 
     web.LoadUrl("https://www.youtube.com/embed/" + videoIds[0] + "?&rel=0")
 
-
 def list_OnTouch(title, body, icon, index):
     list.SelectItemByIndex(index)
 
     web.Execute(
         "document.querySelector('#movie_player').loadVideoById('" + videoIds[index] + "')"
     )
-
 
 def web_OnProgress(progress):
     if progress != 100:
@@ -62,28 +60,21 @@ def web_OnProgress(progress):
     list.SetEnabled(True)
     web.Show()
 
-
 def web_OnConsole(msg):
-    global isFullscreen
 
     if msg == "fullscreen":
         goFullscreen()
 
-
 def goFullscreen():
-    global isFullscreen
 
     isFullscreen = not isFullscreen
 
     app.SetOrientation("Landscape" if isFullscreen else "Portrait")
     app.SetScreenMode("Game" if isFullscreen else "Normal")
 
-
 def OnConfig():
     web.SetSize(1, 0.4) if app.IsPortrait() else web.SetSize(1, 1)
-
 
 def web_OnError(message, code):
     if code == -2:
         app.Quit("No network connection!")
-```

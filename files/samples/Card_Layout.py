@@ -1,10 +1,11 @@
-from native import app, ui
+# cfg.Light
+
+from native import app
 
 # Set light theme.
-cfg.Light
-
 # Called when application is started.
 def OnStart():
+    global layCard, skbElev, skbRad, txt
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 

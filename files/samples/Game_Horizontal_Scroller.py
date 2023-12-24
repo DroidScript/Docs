@@ -1,14 +1,11 @@
-The given JavaScript code translated to Python:
+# cfg.Game, cfg.Portrait
 
-```python
-from native import app, gfx, ui, MUI
+from native import gfx
 
 # Configure app for landscape game mode.
-cfg.Game 
-cfg.Portrait
-
 # Handle game loading.
 def OnLoad():
+    global sky, bunny
     # Add physics and enclose scene with roof and floor.
     gfx.AddPhysics(50)
     gfx.Enclose(-1, "top,bottom")
@@ -41,4 +38,3 @@ def OnControl(touchState, touchX, touchY, keyState, key):
     # Increase bunny upward velocity when screen touched.
     if touchState == "Up":
         bunny.AddVelocity(0, -1.5)
-```

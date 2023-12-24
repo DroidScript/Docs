@@ -7,7 +7,7 @@ const path = require("path");
 const cliProgress = require('cli-progress');
 
 /** @typedef {(pySample:string, jsSample:string) => string} Validator */
-/** @typedef {(file:string, code:string) => string} FixupFunc */
+/** @typedef {(file:string, pyCode?:string) => string} FixupFunc */
 
 /** @param {string[]} p */
 const P = (...p) => path.resolve(__dirname, ...p);
@@ -46,16 +46,16 @@ const doApp = process.argv.includes("-A");
 async function main() {
     const openai = getOpenAI("./openai.key");
 
-    const list = await openai.beta.assistants.list({});
-    const assistant = list.data.find(o => o.name === "Python Translator");
-    if (!assistant) throw Error("Assistant 'Python Translator' not found");
+    const list = useAI ? await openai.beta.assistants.list({}) : undefined;
+    const assistant = list && list.data.find(o => o.name === "Python Translator");
+    if (useAI && !assistant) throw Error("Assistant 'Python Translator' not found");
 
     if (doDocs) await processDocsSamples(openai, assistant, docSampleInstructions);
     if (doApp) await processAppSamples(openai, assistant, appSampleInstructions);
     multibar.stop();
 }
 
-/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, instructions:string) => Promise<void>} */
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant|undefined, instructions:string) => Promise<void>} */
 async function processDocsSamples(openai, assistant, instructions) {
     const lang = Object.keys(conf.langs)[0];
     const files = glob(`json/${lang}/${conf.version}/*/samples/*.txt`);
@@ -72,11 +72,17 @@ async function processDocsSamples(openai, assistant, instructions) {
         fileMap[file] = `${path.dirname(file)}/${name}-py.txt`;
     }
 
-    await openai.beta.assistants.update(assistant.id, { instructions });
-    await startWorker(openai, assistant, fileMap, 4, validateSample, fixupSample);
+    if (useFixup) {
+        for (const file in fileMap)
+            fixupSample(fileMap[file]);
+    }
+    if (assistant) {
+        await openai.beta.assistants.update(assistant.id, { instructions });
+        await startWorker(openai, assistant, fileMap, 4, validateSample, fixupSample);
+    }
 }
 
-/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, instructions:string) => Promise<void>} */
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant|undefined, instructions:string) => Promise<void>} */
 async function processAppSamples(openai, assistant, instructions) {
     const files = glob(`samples/*.js`);
 
@@ -84,11 +90,18 @@ async function processAppSamples(openai, assistant, instructions) {
     const fileMap = {};
     for (const file of files) fileMap[file] = file.replace(".js", ".py");
 
-    await openai.beta.assistants.update(assistant.id, { instructions });
-    await startWorker(openai, assistant, fileMap, 4, validatePython, fixupPython);
+    if (useFixup) {
+        for (const file in fileMap)
+            fixupPython(fileMap[file]);
+    }
+
+    if (assistant) {
+        await openai.beta.assistants.update(assistant.id, { instructions });
+        await startWorker(openai, assistant, fileMap, 4, validatePython, fixupPython);
+    }
 }
 
-/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, fileMap:{[x:string]:string}, max:number, invalid: Validator, fixup: FixupFunc) => Promise<void>} */
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant|undefined, fileMap:{[x:string]:string}, max:number, invalid: Validator, fixup: FixupFunc) => Promise<void>} */
 async function startWorker(openai, assistant, fileMap, max, invalid, fixup) {
     const proc = [];
     for (let i = 0; i < max; i++) proc.push(translateWorker(openai, assistant, fileMap, i, max, invalid, fixup));
@@ -104,10 +117,10 @@ function getOpenAI(keyFile) {
     return new OpenAI.OpenAI({ apiKey });
 }
 
-/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant, fileMap:{[x:string]:string}, num:number, max:number, invalid: Validator, fixup: FixupFunc) => Promise<void>} */
+/** @type {(openai: OpenAI.OpenAI, assistant:OpenAI.OpenAI.Beta.Assistant|undefined, fileMap:{[x:string]:string}, num:number, max:number, invalid: Validator, fixup: FixupFunc) => Promise<void>} */
 async function translateWorker(openai, assistant, fileMap, num, max, invalid, fixup) {
 
-    const thread = await openai.beta.threads.create();
+    const thread = assistant ? await openai.beta.threads.create() : null;
     const jsFiles = Object.keys(fileMap).sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : 1));
 
     let n = 0;
@@ -120,14 +133,10 @@ async function translateWorker(openai, assistant, fileMap, num, max, invalid, fi
         if (fs.existsSync(pyFile)) {
             const pySample = fs.readFileSync(pyFile, "utf8");
             const status = invalid(pySample, sample);
-            if (!status) {
-                // eslint-disable-next-line max-depth
-                if (!num) fixup(pyFile, pySample);
-                continue;
-            }
+            if (!status) continue;
             msg = `re-translating ${file} (${status})`;
         }
-        if (!useAI) continue;
+        if (!assistant || !thread) continue;
 
         n++;
         if (n % max !== num) continue;
@@ -172,10 +181,11 @@ async function translateWorker(openai, assistant, fileMap, num, max, invalid, fi
         for (const res of msgs.data[0].content)
             if (res.type === "text") pySamples.push(res.text.value);
 
-        let pySample = pySamples.join("\n\n");
-        pySample = fixup("", pySample);
+        const pySample = pySamples.join("\n\n");
+        if (!invalid(pySample, sample)) {
+            fs.writeFileSync(pyFile, fixup("", pySample), "utf8");
 
-        if (!invalid(pySample, sample)) { fs.writeFileSync(pyFile, pySample, "utf8"); }
+        }
         else {
             multibar.log("translated sample:");
             multibar.log(JSON.stringify(pySample));
@@ -186,12 +196,13 @@ async function translateWorker(openai, assistant, fileMap, num, max, invalid, fi
 }
 
 /** @type {FixupFunc} */
-function fixupSample(file, pyCode) {
+function fixupSample(file, pyCode = "") {
     if (!useFixup) return pyCode;
+
+    pyCode ||= fs.readFileSync(file, "utf8");
 
     const fixedPy = pyCode
         .replace(/\r/g, '')
-        .replace(/^[\s\S]*```python\n([\s\S]*)\n```[\s\S]*$/, "$1")
         .split("\n</sample>");
 
     for (const index in fixedPy) {
@@ -227,7 +238,13 @@ function fixupSample(file, pyCode) {
 
 
 /** @type {FixupFunc} */
-function fixupPython(file, code) {
+function fixupPython(file, code = "") {
+    if (!useFixup) return code;
+
+    code ||= fs.readFileSync(file, "utf8");
+
+    code = code.replace(/[\s\S]*```python\s*([\s\S]*)\s*```[\s\S]*/, "$1");
+
     const head = [];
     /** @type {Set<string>} */
     const imports = new Set();
@@ -243,6 +260,7 @@ function fixupPython(file, code) {
         if (ms !== "native") imports.add(m);
         return "";
     });
+    imports.delete("import native");
     code = code.trim()
         .replace(/[ \t\r]+\n/g, "\n")
         .replace(/\n{3,}/g, "\n\n");
@@ -270,6 +288,10 @@ function fixupPython(file, code) {
     }
     // date/time
     if (code.includes("Date.")) imports.add("import time as Date");
+
+    code = code
+        .replace(/native.(app|gfx|MUI)/g, "$1")
+        .replace(/(app\.)?alert\(/g, "app.Alert(");
 
     // ui class fragment
     if (code.match(/class Main(\(app(.App)?\))?:/i)) {
@@ -307,7 +329,7 @@ function fixupPython(file, code) {
         if (globals.length) {
             defs[i] = defs[i].replace(/\n(\s+\S)/, (_, m) => {
                 return "\n" + m.slice(m.lastIndexOf("\n") + 1, -1) +
-                    "global " + globals.join(", ") + "\n" + m;
+                    "global " + [...new Set(globals)].join(", ") + "\n" + m;
             });
         }
     }
@@ -315,12 +337,17 @@ function fixupPython(file, code) {
 
     if (cfg.size > 0) head.push(`# ${[...cfg].join(", ")}\n`);
     if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");
-    return `${head.join("\n")}\n${code.trim()}`;
+    const fixedSamples = `${head.join("\n")}\n${code.trim()}`;
+
+    if (file && code !== fixedSamples) fs.writeFileSync(file, fixedSamples);
+    return fixedSamples;
+
 }
 
 /** @type {Validator} */
 function validatePython(pySample, jsSample) {
     if (pySample.includes("\nfunction")) return "function instead of def";
+    if (pySample.includes("androidhelper")) return "detected androidhelper";
     if (!pySample.includes("def OnStart():") && !pySample.includes("def OnLoad():"))
         return "missing OnStart or OnLoad " + [pySample.includes("def OnStart():"), pySample.includes("def OnLoad():"), pySample.slice(pySample.indexOf("def "), pySample.indexOf("def ") + 20)];
     if (pySample.split(/\bdef /).length !== jsSample.split(/\bfunction /).length)

@@ -1,3 +1,5 @@
+from native import app, ui
+
 # Translated Python Code
 
 # Example showing how to control an Arduino Uno via OTG cable.
@@ -9,6 +11,7 @@
 
 # Called when application is started.
 def OnStart():
+    global usb
     # Create a layout with objects vertically centered.
     lay = ui.createLayout( "linear", "VCenter,FillXY" )
 
@@ -21,7 +24,7 @@ def OnStart():
     app.addLayout( lay )
 
     # Create USB serial object.
-    usb = native.createUSBSerial() 
+    usb = native.createUSBSerial()
     if not usb:
         app.showPopup( "Please connect your Arduino and restart" )
         return
@@ -32,7 +35,7 @@ def OnStart():
 def btn_OnTouch(isChecked):
     if not usb:
         return
-   
+
     # Send LED command to Uno.
     if isChecked:
         usb.write( "ledh" )

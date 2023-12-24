@@ -1,12 +1,12 @@
-Translated code (Python):
+from native import app
 
-```python
 # Set the IP of your target Android device here.
 # (Note: A dedicated WiFi router is recommended for highest speed)
 ip = "192.168.1.221"
 
 # Called when application is created.
 def OnStart():
+    global cam
     # Lock orientation while we create initial layout.
     app.SetOrientation("Landscape")
 
@@ -29,6 +29,3 @@ def cam_OnReady():
 
     # Start video stream.
     cam.Stream(ip, 11055, 80, 30, 32000)
-```
-
-Note: To make this code work properly in Python, you would need to have the necessary app module imported and the appropriate methods and functions available.

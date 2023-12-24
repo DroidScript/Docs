@@ -1,5 +1,8 @@
+from native import app
+
 # Called when application is started.
 def OnStart():
+    global txt
     # Lock screen orientation to Portrait.
     app.SetOrientation("Portrait")
 
@@ -20,7 +23,6 @@ def OnStart():
 
     # Add main layout to app.
     app.AddLayout(lay)
-
 
 # Called when 'Orientation' sensor changes.
 # All values are angles in degrees.

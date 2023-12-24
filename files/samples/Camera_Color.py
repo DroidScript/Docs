@@ -1,7 +1,8 @@
-#Translated Python code
-
+from native import app
 import androidhelper
 import math
+
+#Translated Python code
 
 droid = androidhelper.Android()
 
@@ -10,10 +11,11 @@ count = 0
 
 #Called when application is started.
 def OnStart():
+    global layLeft, cam, imgGraph
     #Fix orientation to landscape since
     #most phones cameras work this way.
     droid.setOrientation("Landscape")
-    
+
     #Stop screen turning off.
     droid.setScreenBrightness(255)
 
@@ -54,7 +56,7 @@ def OnStart():
 
 #Called when camera is ready.
 def cam_OnReady():
-    #Create an image control over the top of the 
+    #Create an image control over the top of the
     #camera view with transparency (alpha) so
     #we can show a target area.
     img = droid.createImage(None, 0.4, 0.8)
@@ -81,6 +83,7 @@ def cam_OnReady():
 
 #Handle reported colors.
 def OnColor(colors):
+    global red, green, blue, name
     #Get pixel colors.
     red = colors[0][0]
     green = colors[0][1]

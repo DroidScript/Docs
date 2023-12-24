@@ -1,12 +1,12 @@
-from native import app, gfx, ui, MUI
+from native import app
 
 def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")
-    
+
     gal = Gallery(lay, "/sdcard/Inspector", 1, 1)
-   
+
     app.AddLayout(lay)
-    
+
     app.EnableBackKey(False)
 
 def OnBack():

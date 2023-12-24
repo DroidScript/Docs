@@ -1,3 +1,5 @@
+from native import app
+
 #Translated Python code :
 
 #Note: Offline recognition engines can be downloaded in the
@@ -6,8 +8,9 @@
 
 #Called when application is started.
 def OnStart():
+    global s, speech
     #Create a main layout with objects vertically centered.
-    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )   
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
     lay.SetBackground( "/res/drawable/pattern_carbon", "repeat" )
 
     s = "<u>Commands</u><br><br>"  ㅣ
@@ -20,14 +23,14 @@ def OnStart():
     txt.SetTextSize(32)
     lay.AddChild(txt)
 
-    #Add layout to app.    
+    #Add layout to app.
     app.AddLayout(lay)
-    
+
     #Create recognition object and set callbacks.
     speech = app.CreateSpeechRec("NoBeep,Parxtial")
     speech.SetOnResult(speech_OnResult)
     speech.SetOnError(speech_OnError)
-    
+
     #Say something at start (to get speech engine ready).
     app.TextToSpeech("Your wish is my command", 1, 1.5, Listen)
     app.ShowProgress()
@@ -41,7 +44,7 @@ def Listen():
 def speech_OnResult(results, partial):
     #Get result.
     cmd = results[0].lower()
-    
+
     #Watch for key phrases.
     if "computer" in cmd:
         #speech.Cancel()
@@ -57,16 +60,16 @@ def speech_OnResult(results, partial):
         app.TextToSpeech("I'm feeling good", 1,2, Listen)
     elif "exit" in cmd:
         app.Exit()
-    
+
     #Restart recognition.
     else: speech.Recognize()
 
 #Called if recognition fails.
 def speech_OnError(error):
     print("Error" + error)
-    
+
     #Restart recognition.
-    if not speech.IsListening(): 
+    if not speech.IsListening():
         speech.Recognize()
 
 #Get the current time.

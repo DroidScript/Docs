@@ -1,6 +1,9 @@
+from native import app
+
 sum = ""
 
 def OnStart():
+    global txtSum
     layMain = app.CreateLayout("linear", "FillXY")
 
     keys = [7, 8, 9, "/", 4, 5, 6, "*", 1, 2, 3, "-", 0, ".", "C", "+"]

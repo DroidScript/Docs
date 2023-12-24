@@ -1,6 +1,8 @@
-```python
+from native import app
+
 # Called when application is started.
 def OnStart():
+    global img
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -29,13 +31,11 @@ def OnStart():
     # Add layout to app.
     app.AddLayout(lay)
 
-
 # Send a file to another App (user's choice).
 def btnSend_OnTouch():
     file = "/sdcard/sftest.txt"
     app.WriteFile(file, "Hello World")
     app.SendFile(file, "sftest.txt", "Send File")
-
 
 # Send an image to Google Drive.
 def btnImg_OnTouch():
@@ -56,7 +56,6 @@ def btnImg_OnTouch():
     extras = JSON.stringify(extras)
     app.SendIntent(packageName, className, action, category, uri, type, extras)
 
-
 # Send text to Google Drive.
 def btnTxt_OnTouch():
     textData = "The cat sat on the mat"
@@ -72,4 +71,3 @@ def btnTxt_OnTouch():
 
     extras = JSON.stringify(extras)
     app.SendIntent(packageName, className, action, category, uri, type, extras)
-```

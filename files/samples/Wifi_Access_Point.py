@@ -1,8 +1,8 @@
-```python
+from native import app
+import native.MUI as MUI
 import native.app as app
 import native.gfx as gfx
 import native.ui as ui
-import native.MUI as MUI
 
 def OnStart():
     if app.GetOSVersion() > 24:
@@ -24,4 +24,3 @@ def tgl_OnTouch():
     else:
         app.SetWifiApEnabled(False)
         app.SetWifiEnabled(True)
-```

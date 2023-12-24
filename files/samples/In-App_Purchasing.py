@@ -1,3 +1,5 @@
+from native import app
+
 """
 In-App purchasing sample -
 
@@ -7,7 +9,7 @@ please see the following link for more information:-
 http://developer.android.com/google/play/billing/index.html
 
 Notes: If your email address is listed in the 'licence testing' section of the
-developer console settings page, any purchases you make will not be charged. 
+developer console settings page, any purchases you make will not be charged.
 """
 
 # Set to "IAP" or "SUBS"
@@ -19,36 +21,37 @@ productId = "plugin_spheroball"
 
 # Called when application is started.
 def OnStart():
+    global playStore, txt
     # Create a layout with objects vertically centered.
-    lay = native.app.CreateLayout("linear", "VCenter,FillXY")	
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     # Create an 'info' button.
-    btnInfo = native.app.CreateButton("Get Store Info", 0.5, 0.1)
+    btnInfo = app.CreateButton("Get Store Info", 0.5, 0.1)
     btnInfo.SetOnTouch(btnInfo_OnTouch)
     lay.AddChild(btnInfo)
 
     # Create a 'purchases'  button.
-    btnPurch = native.app.CreateButton("Get Purchases", 0.5, 0.1)
+    btnPurch = app.CreateButton("Get Purchases", 0.5, 0.1)
     btnPurch.SetOnTouch(btnPurch_OnTouch)
     lay.AddChild(btnPurch)
-	
+
     # Create a 'buy'  button.
-    btnBuy = native.app.CreateButton("Buy", 0.5, 0.1)
+    btnBuy = app.CreateButton("Buy", 0.5, 0.1)
     btnBuy.SetOnTouch(btnBuy_OnTouch)
     lay.AddChild(btnBuy)
-	
+
     # Create a text control to show results.
-    txt = native.app.CreateText("", 0.9, 0.5, "Multiline,Left")
+    txt = app.CreateText("", 0.9, 0.5, "Multiline,Left")
     txt.SetMargins(0, 0.1, 0, 0)
     txt.SetTextColor("#ffffffff")
     txt.SetBackColor("#ff222222")
     lay.AddChild(txt)
-	
-    # Add layout to app.	
-    native.app.AddLayout(lay)
-	
+
+    # Add layout to app.
+    app.AddLayout(lay)
+
     # Create a playstore object.
-    playStore = native.app.CreatePlayStore()
+    playStore = app.CreatePlayStore()
 
 # Called when user touches our 'Info' button.
 def btnInfo_OnTouch():

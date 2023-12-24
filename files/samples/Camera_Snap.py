@@ -1,14 +1,12 @@
-Here is the translated code:
-
-```python
-from native import app, gfx, ui, MUI
+from native import app
 
 # Called when application is started.
 def OnStart():
+    global cam, snapFolder
     # Fix orientation to landscape since
     # most phone's cameras work this way.
     app.SetOrientation("Landscape")
-  
+
     # Create horizontal layout that fills the screen.
     lay = app.CreateLayout("linear", "horizontal,fillxy,vcenter")
     lay.SetBackground("/res/drawable/pattern_carbon", "repeat")
@@ -53,4 +51,3 @@ def cam_OnReady():
 def btn_OnTouch():
     # Take a picture and store to sdcard.
     cam.TakePicture(snapFolder + "/Snap.jpg")
-```

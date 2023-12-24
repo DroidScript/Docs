@@ -1,6 +1,9 @@
-```python
+from native import app
+import math
+
 # Called when application is started.
 def OnStart():
+    global nxt
     # Lock screen orientation to Landscape.
     app.SetOrientation("Landscape")
 
@@ -13,9 +16,9 @@ def OnStart():
     # Create NXT controller object.
     nxt = app.CreateNxt()
 
-
 # Create the screen layout.
 def CreateLayout():
+    global imgPad
     # Create the main background layout.
     lay = app.CreateLayout("Linear", "Horizontal,VCenter,FillXY")
     lay.SetBackground("/Sys/Img/Tile.png", "repeat")
@@ -59,12 +62,10 @@ def CreateLayout():
     # Add main layout to app.
     app.AddLayout(lay)
 
-
 # Called when user presses connect.
 def btn_OnTouch():
     # Show list of NXT devices.
     nxt.ShowDevices()
-
 
 # Called when joypad image is touched.
 def imgPad_OnTouch(e):
@@ -79,7 +80,6 @@ def imgPad_OnTouch(e):
     # the NXT queue can cause commands to be missed)
     else:
         setTimeout("nxt.Stop('BC')", 100)
-
 
 # Called when horizontal 'A' bar image is touched.
 def imgBarA_OnTouch(e):
@@ -97,7 +97,6 @@ def imgBarA_OnTouch(e):
     else:
         setTimeout("nxt.Stop('A')", 100)
 
-
 # Called when sound image is touched.
 def imgSnd_OnTouch(e):
     if not nxt.CheckConnection():
@@ -107,7 +106,6 @@ def imgSnd_OnTouch(e):
         nxt.Beep(100, 10000)
     elif e.action == "Up":
         nxt.Beep(0, 0)
-
 
 # Called when light/bulb image is touched.
 def imgLight_OnTouch(e):
@@ -119,7 +117,6 @@ def imgLight_OnTouch(e):
     elif e.action == "Up":
         nxt.SetLampColor(3, "off")
 
-
 # Drive C and D motors using x/y posn within a circle.
 def CircleDrive(obj, x, y):
     # Adjust x and y values so they range from -1.0 to +1.0
@@ -127,7 +124,7 @@ def CircleDrive(obj, x, y):
     y = -2 * (y - 0.5)
 
     # Calc velocity using distance from center.
-    vel = Math.sqrt(x * x + y * y)
+    vel = math.sqrt(x * x + y * y)
 
     # Get direction (fwd or rev).
     dir = 1 if y > 0 else -1
@@ -149,4 +146,3 @@ def CircleDrive(obj, x, y):
     # Set motor speed/direction.
     nxt.Drive("B", dir * vel * turnB * 100, 0)
     nxt.Drive("C", dir * vel * turnC * 100, 0)
-```

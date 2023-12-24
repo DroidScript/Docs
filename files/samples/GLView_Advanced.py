@@ -1,3 +1,6 @@
+from native import app
+import math
+
 # Initialise variables
 horizDroidCount = 8
 frameCounter = 0
@@ -7,6 +10,7 @@ moveDroids = False
 
 # Called when application is started
 def OnStart():
+    global glview, droidWidth, droidHeight, vertDroidCount, imgDroidGreen
     # Set full screen game mode
     app.SetScreenMode("Game")
 
@@ -73,11 +77,9 @@ def OnStart():
 
     app.SetDebugEnabled(False)
 
-
 def StartRendering():
     # Render at 30 frames per second
     setInterval(DrawFrame, 1000 / 30)
-
 
 def DrawFrame():
     # Note: DrawFrameSimple and DrawFrameAdvanced illustrate the 2
@@ -93,7 +95,6 @@ def DrawFrame():
     glview.Render()
 
     frameCounter += 1
-
 
 def DrawFrameSimple():
     # DrawFrameSimple uses the GLView.DrawImage
@@ -121,11 +122,11 @@ def DrawFrameSimple():
 
                 if moveDroids:
                     # Offset maximum +-1/4 of the width & height of the GLView
-                    x += Math.sin(frameCounter / 10) * 0.25
-                    y += Math.sin(frameCounter / 20) * 0.25
+                    x += math.sin(frameCounter / 10) * 0.25
+                    y += math.sin(frameCounter / 20) * 0.25
 
                 if pulseDroids:
-                    scale = 0.5 + Math.abs(Math.sin(frameCounter / 10))
+                    scale = 0.5 + abs(math.sin(frameCounter / 10))
                     scaledDroidWidth = droidWidth * scale
                     scaledDroidHeight = droidHeight * scale
 

@@ -1,4 +1,4 @@
-from native import app, gfx, ui, MUI
+from native import app
 import json
 
 # Called when application is started.
@@ -13,7 +13,6 @@ def OnStart():
 
     # Add layout to app.
     app.AddLayout(lay)
-
 
 # Called when user touches our button.
 def btn_OnTouch():
@@ -30,7 +29,6 @@ def btn_OnTouch():
                {"title": "Goats", "check": True}]
 
     app.ShowCheckList("Select Animals", lst, OnFinish)
-
 
 # Returns data when user has finished with checklist
 def OnFinish(data):

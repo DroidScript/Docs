@@ -1,7 +1,4 @@
-I forgot to import the `alert` function from the `native` module. Here's the updated code:
-
-```python
-from native import app, ui, alert
+from native import app, ui
 
 def OnStart():
     lay = ui.addLayout("linear", "fillxy")
@@ -31,9 +28,8 @@ def btns_OnTouch():
     elif this.icon == "[fa-repeat]":
         edit.Redo()
     elif this.icon == "[fa-search]":
-        alert("Todo!")
+        app.Alert("Todo!")
     elif this.icon == "[fa-file]":
         edit.SetText(app.ReadFile("/Storage/testfile.txt"))
     elif this.icon == "[fa-save]":
         app.WriteFile("/Storage/testfile.txt", edit.GetText())
-```

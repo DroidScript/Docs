@@ -1,6 +1,8 @@
-```python
+from native import app
+
 # Called when application is started.
 def OnStart():
+    global notify
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -20,7 +22,6 @@ def OnStart():
     notify.Listen("CheckPerms")
     app.ShowPopup("Listening...")
 
-
 # Handle notifications.
 def notify_OnNotify(source, title, message, extra, type, id):
     app.ShowPopup(source + "\n" + title + "\n" + message + "\n" + extra + "\n" + type + "\n" + id)
@@ -29,13 +30,10 @@ def notify_OnNotify(source, title, message, extra, type, id):
     # notify.Cancel(id)
     # notify.Cancel('*')
 
-
 # Show the notification listener permissions.
 # (Notes: The 'CheckPerms' option will do this automatically for you if required
 # You may need to toggle this option on and off when re-installing APKs)
 def btnShowPerms_OnTouch():
     app.SendIntent(None, None, "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS")
 
-
 OnStart()
-```

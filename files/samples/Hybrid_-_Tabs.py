@@ -1,7 +1,9 @@
-from native import app, gfx, ui, MUI
+# cfg.Hybrid
+
+from native import ui
 
 # Make this a Hybrid app
-cfg.Hybrid = True
+= True
 
 # Called when application starts
 def OnStart():

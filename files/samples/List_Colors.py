@@ -1,3 +1,4 @@
+from native import app
 
 # Called when app starts.
 def OnStart():
@@ -8,7 +9,7 @@ def OnStart():
     list = "Fruits::,Oranges:3:,Apples:5:,Lemons:1:,Vegetables::,Cabbages:1:,Carrots:0:"
     lst = app.AddList(lay, list, 0.8, 0.5, "Horiz")
     lst.SetTextSize2(16)
-    lst.SetTextColor1("black") 
+    lst.SetTextColor1("black")
     lst.SetTextColor2("black")
     lst.SetBackColor("#ffffffff")
     lst.SetOnTouch(lst_OnTouch)

@@ -1,6 +1,5 @@
-Translated code (Python):
+from native import app
 
-```python
 # Notes
 # - Try pressing your home button once the ChatHead is visible.
 # - Try dragging the ChatHead around with your finger.
@@ -8,6 +7,7 @@ Translated code (Python):
 
 # Called when application is started.
 def OnStart():
+    global ovl, layHead, chatLeft, chatTop
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -34,7 +34,6 @@ def OnStart():
     chatLeft = 0.1
     chatTop = 0.1
 
-
 # Called when user touches our button.
 def tgl_OnTouch(isChecked):
     # Add chat head layout to overlay.
@@ -42,7 +41,6 @@ def tgl_OnTouch(isChecked):
         ovl.AddLayout(layHead, chatLeft, chatTop)
     else:
         ovl.RemoveLayout(layHead)
-
 
 # Handle chat head image touches.
 def img_OnTouch(ev):
@@ -68,6 +66,3 @@ def img_OnTouch(ev):
     elif ev.action == "Up":
         if abs(dx) < 0.001:
             app.ShowPopup("Hello")
-```
-
-Note: To make this code work properly in Python, you would need to have the necessary app module imported and the appropriate methods and functions available.

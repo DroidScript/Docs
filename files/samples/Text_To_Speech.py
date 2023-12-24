@@ -1,7 +1,10 @@
+from native import app, ui
+
 # Translated Python Code
 
 # Called when application is started.
 def OnStart():
+    global edt
     # Create a layout with objects vertically centered.
     lay = ui.createLayout( "linear", "VCenter,FillXY" )
 

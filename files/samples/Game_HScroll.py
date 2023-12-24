@@ -1,9 +1,11 @@
-# This basic template is a good starting 
+from native import app
+
+# This basic template is a good starting
 # point for simple horizontal scrolling games.
 
 # Set size of canvas bitmap.
-# (We set it lower than the screen resolution to improve 
-# performance and make it 1.5 x wider than the screen 
+# (We set it lower than the screen resolution to improve
+# performance and make it 1.5 x wider than the screen
 # so objects can disappear off the screen cleanly).
 bmpW = 1.5 * 800
 bmpH = 480
@@ -32,6 +34,7 @@ obj2Speed = 4 / bmpW
 
 # Called when application is started.
 def OnStart():
+    global canvas, imgBackground, imgChar, imgobj, imgCharDead, synthExp
     # Lock screen orientation to Landscape and
     # stop screen turning off while playing.
     app.SetOrientation("Landscape")
@@ -40,7 +43,7 @@ def OnStart():
     # Create the main layout.
     lay = app.CreateLayout("Absolute", "FillXY")
 
-    # Create our scene layout wider than the screen 
+    # Create our scene layout wider than the screen
     # so objects can slide on and off screen cleanly.
     layScene = app.CreateLayout("Absolute")
     layScene.SetPosition(-0.25, 0, 1.5, 1)
@@ -72,7 +75,7 @@ def OnStart():
     synthExp.SetVca(1, 1, 0.8, 800)
     synthExp.SetVcf(1, 1, 0, 400, 1000, 0.85, 2.0)
 
-    # Add layout to app.    
+    # Add layout to app.
     app.AddLayout(lay)
 
     # Switch off debugging for max performance.
@@ -80,7 +83,6 @@ def OnStart():
 
     # Drawing the game frame 60x a second.
     app.Animate(DrawFrame, 60)
-
 
 # Update and redraw all game graphics.
 def DrawFrame():
@@ -125,13 +127,12 @@ def DrawFrame():
     # Update the canvas.
     canvas.Update()
 
-
 # Handle moving finger on screen.
 def canvas_OnTouchMove(ev):
+    global charY
     # Move our character.
     if ev.X < 0.3:
         charY = ev.Y
-
 
 # Check for a collision between two objects.
 # (d is the depth of impact required)
@@ -140,7 +141,6 @@ def IsCollision(x1, y1, w1, h1, x2, y2, w2, h2, d):
         return True
     else:
         return False
-
 
 # Handle game over situation.
 def GameOver():

@@ -1,8 +1,11 @@
+from native import app
+
 # This sample demonstrates getting a list of UK place names
 # within a post code area using the free geonames.org web service.
 
 # Called when application is started.
 def OnStart():
+    global edt, txt
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", ["vcenter", "fillxy"])
 
@@ -25,7 +28,6 @@ def OnStart():
     # Add layout to app.
     app.AddLayout(lay)
 
-
 # Handle button press.
 def btn_OnTouch():
     # Get user entered post code.
@@ -38,7 +40,6 @@ def btn_OnTouch():
     app.HttpRequest("get", url, path, params, HandleReply)
 
     app.ShowProgress("Loading...")
-
 
 # Handle the server's reply.
 def HandleReply(error, response, status):

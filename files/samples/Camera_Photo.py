@@ -1,6 +1,5 @@
-Translated code (Python):
+from native import app
 
-```python
 def OnStart():
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
@@ -19,6 +18,7 @@ def OnStart():
 
 # Called when user touches our button.
 def btn_OnTouch():
+    global file
     # Create a placeholder file.
     file = "/Private/photo.jpg"
     app.WriteFile(file, "")
@@ -29,12 +29,10 @@ def btn_OnTouch():
     # Send intent to built-in photo app.
     extras = [{"name": "output", "type": "uri", "value": uri}]
     extras = json.dumps(extras)
-    app.SendIntent(None, None, "android.media.action.IMAGE_CAPTURE", 
+    app.SendIntent(None, None, "android.media.action.IMAGE_CAPTURE",
                    None, None, None, extras, "result", OnResult)
 
 # Handle the photo result.
 def OnResult(code, data):
     if code < 0:
         img.SetImage(file)
-```
-Note: To make this code work properly in Python, you would need to have the necessary app module imported and the appropriate methods and functions available.

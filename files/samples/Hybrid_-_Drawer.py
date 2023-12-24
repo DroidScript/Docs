@@ -1,4 +1,6 @@
-cfg.Hybrid
+# cfg.Hybrid
+
+from native import ui
 
 def OnStart():
     layMain = ui.addLayout("main", "linear", "fillxy")

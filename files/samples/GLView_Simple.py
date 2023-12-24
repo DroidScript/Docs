@@ -1,7 +1,10 @@
+from native import app
 import time
+
 frameCounter = 0
 
 def OnStart():
+    global glview, droidWidth, droidHeight, imgDroid
     app.SetScreenMode("Game")
     lay = app.CreateLayout("Linear", "FillXY")
     glview = app.CreateGLView(1, 1, "Fast2d")

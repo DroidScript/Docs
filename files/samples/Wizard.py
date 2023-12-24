@@ -1,5 +1,8 @@
+from native import app
+
 # Called when application is started.
 def OnStart():
+    global lay
     # Create a theme for all controls.
     CreateTheme()
 
@@ -14,13 +17,12 @@ def OnStart():
     # Add layout to app.
     app.AddLayout(lay)
 
-
 # Show the wizard.
 def btn_OnTouch():
+    global wiz
     # Create a wizard dialog.
     wiz = app.CreateWizard("My Wizard", 0.7, 0.7, OnWizard)
     wiz.Show()
-
 
 # Handle wizard pages.
 def OnWizard(lay, page):
@@ -75,7 +77,6 @@ def OnWizard(lay, page):
 
     elif page < 0:
         app.ShowPopup("Wizard cancelled")
-
 
 # Create a theme for all controls and dialogs.
 def CreateTheme():

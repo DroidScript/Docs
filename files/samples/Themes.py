@@ -1,6 +1,5 @@
-The translated code is as follows:
+from native import app
 
-```python
 lay = None
 themeName = "None"
 
@@ -8,10 +7,9 @@ def OnStart():
     CreateLayout()
 
 def CreateLayout():
-    global lay, themeName
     if lay:
         app.DestroyLayout(lay)
-    
+
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     txt = app.CreateText("Theme")
@@ -26,30 +24,30 @@ def CreateLayout():
     txt = app.CreateText("Dialogs")
     txt.SetMargins(0, 0.04, 0, 0.02)
     lay.AddChild(txt)
-    
+
     layHoriz = app.CreateLayout("Linear", "Horizontal")
     lay.AddChild(layHoriz)
-    
+
     btnCust = app.CreateButton("Custom")
     btnCust.SetOnTouch(CustomDialog)
     layHoriz.AddChild(btnCust)
-    
+
     btn = app.CreateButton("List")
     btn.SetOnTouch(ListDialog)
     layHoriz.AddChild(btn)
-    
+
     btn = app.CreateButton("YesNo")
     btn.SetOnTouch(YesNoDialog)
     layHoriz.AddChild(btn)
-    
+
     btn = app.CreateButton("Alert")
     btn.SetOnTouch(AlertDialog)
     layHoriz.AddChild(btn)
-    
+
     tgl = app.CreateToggle("Toggle Button")
     tgl.SetMargins(0, 0.02, 0, 0)
     lay.AddChild(tgl)
-  
+
     chk = app.CreateCheckBox("Check Box")
     chk.SetMargins(0, 0.02, 0, 0)
     lay.AddChild(chk)
@@ -57,22 +55,21 @@ def CreateLayout():
     edt = app.CreateTextEdit("Text Edit", 0.6, 0.1)
     edt.SetMargins(0, 0.02, 0, 0)
     lay.AddChild(edt)
-    
+
     lst = app.CreateList("Fred,Bill,Jim", 0.6, 0.2)
     lst.SetMargins(0, 0.03, 0, 0)
     lay.AddChild(lst)
-    
+
     skb = app.CreateSeekBar(0.8)
     skb.SetRange(1.0)
     skb.SetValue(0.5)
     lay.AddChild(skb)
-    
+
     app.AddLayout(lay)
 
 def spin_OnChange(item):
-    global themeName
     themeName = item
-    
+
     if themeName == "Dark":
         theme = app.CreateTheme("Dark")
         app.SetTheme(theme)
@@ -111,7 +108,7 @@ def spin_OnChange(item):
     elif themeName == "None":
         theme = app.CreateTheme("Default")
         app.SetTheme(theme)
-    
+
     CreateLayout()
 
 def CustomDialog():
@@ -139,4 +136,3 @@ def AlertDialog():
 def YesNoDialog():
     dlg = app.CreateYesNoDialog("Are you sure?")
     dlg.Show()
-```

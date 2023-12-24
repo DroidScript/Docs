@@ -1,7 +1,6 @@
-The translation of the code is as follows:
+from native import app
 
-```python
-app = native.app
+app = app
 
 # Global variables
 ip = None
@@ -11,6 +10,7 @@ net2 = None
 
 # Called when application is created.
 def OnStart():
+    global net
     # Create the main graphical layout.
     CreateLayout()
 
@@ -18,9 +18,9 @@ def OnStart():
     net = app.CreateNetClient("TCP")
     net.SetOnConnect(net_OnConnect)
 
-
 # Create the graphical layout.
 def CreateLayout():
+    global btnCon, edt
     # Create main layout.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -43,7 +43,6 @@ def CreateLayout():
     # Add layouts.
     app.AddLayout(lay)
 
-
 # Handle 'Connect' button press.
 def btnCon_OnTouch():
     # Un-check button until we've connected.
@@ -56,21 +55,19 @@ def btnCon_OnTouch():
         # Disconnect from PC.
         net.Disconnect()
 
-
 # Handle 'Send' button press.
 def btnSend_OnTouch():
     if net.IsConnected():
         net.SendText(edt.GetText(), "UTF-16LE")
 
-
 # Called when we get a message from the PC.
 def net_OnReceive(text):
     app.ShowPopup(text, "Short")
 
-
 # Find PC by broadcasting a UDP
 # message and waiting for a response.
 def FindPC():
+    global ip
     # Check wifi is enabled.
     if not net.IsEnabled():
         app.ShowPopup("Please Enable Wifi")
@@ -103,7 +100,6 @@ def FindPC():
     else:
         app.Alert("No PC's Found!\n\nCheck that WifiDemo is running on your PC and that you are in Wifi range.")
 
-
 # Connects to PC and wait for commands.
 # (Automatically maintains the connection)
 def Connect():
@@ -111,12 +107,8 @@ def Connect():
     net.SetOnReceive(net_OnReceive)
     net.AutoReceive(ip, 11077, "UTF-16LE")
 
-
 # Called when we successfully connect to PC.
 def net_OnConnect(connected):
     # Check toggle button if we connected.
     if connected:
         btnCon.SetChecked(True)
-```
-
-Note that the 'app.ShowPopup()', 'app.ShowProgress()', 'app.HideProgress()', and 'app.Alert()' functions are predefined by the framework and can be imported from the module 'native'. Make sure to import them at the beginning of the translated code.

@@ -1,6 +1,5 @@
-I apologize for the mistake in the previous code. Here is the corrected translation:
+from native import app
 
-```python
 def OnStart():
     app.SetOrientation("Landscape")
 
@@ -14,4 +13,3 @@ def OnStart():
 
     net = app.CreateNetClient("UDP")
     net.ReceiveVideoStream(11055, img)
-```

@@ -1,10 +1,11 @@
+from native import app
 import app 
-from native import gfx, ui
 
 #Called when application is started.
 def OnStart():
+    global synth
     #Create a layout with objects vertically centered.
-    lay = app.CreateLayout("linear", "VCenter,FillXY")    
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     #Create a button.
     btn = app.CreateButton("Press Me", 0.3, 0.1)
@@ -19,7 +20,7 @@ def OnStart():
     synth = app.CreateSynth("VCF")
     synth.SetWaveShape("Saw")
     synth.SetVca(10, 400, 0.8, 100)
-    synth.SetVcf(10, 400, 0.8, 100, 1000, 0.85, 2.0) 
+    synth.SetVcf(10, 400, 0.8, 100, 1000, 0.85, 2.0)
 
 #Called when user touches our button.
 def btn_OnTouch():

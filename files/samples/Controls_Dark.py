@@ -1,6 +1,5 @@
-The code translates to:
+from native import app
 
-```python
 # Called when application is started.
 def OnStart():
     # Create a layout with objects vertically centered.
@@ -73,11 +72,9 @@ def OnStart():
     # Add layout to app.
     app.AddLayout(lay)
 
-
 # Handle tab selection.
 def tabs_OnChange(name):
     print("TAB=" + name)
-
 
 # Show a custom dialog with current theme.
 def CustomDialog():
@@ -95,12 +92,10 @@ def CustomDialog():
     layDlg.AddChild(edt)
     dlg.Show()
 
-
 # Show a list dialog with current theme.
 def ListDialog():
     dlg = app.CreateListDialog("My Title", "Apples,Oranges,Bananas")
     dlg.Show()
-
 
 # Show a chlist dialog with current theme.
 def CheckListDialog():
@@ -112,14 +107,11 @@ def CheckListDialog():
     ]
     app.ShowCheckList("Select Animals", lst)
 
-
 # Show an Alert dialog with current theme.
 def AlertDialog():
     app.Alert("Hi", "My Title")
-
 
 # Show a Yes/No dialog with current theme.
 def YesNoDialog():
     dlg = app.CreateYesNoDialog("Are you sure?")
     dlg.Show()
-```

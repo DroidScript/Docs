@@ -1,4 +1,5 @@
-```python
+from native import app
+
 # Called when application is started.
 def OnStart():
     # Create layout that fills the screen.
@@ -12,7 +13,6 @@ def OnStart():
     # Add main layout to app.
     app.AddLayout(lay)
 
-
 # Handle Send button.
 def btn_OnTouch():
     # Send the email message via built in email app.
@@ -20,6 +20,4 @@ def btn_OnTouch():
     file = "/sdcard/MyPic.jpg"
     app.SendMail("myfriend@gmail.com", "MySubject", "Hello", file)
 
-
 OnStart()
-```

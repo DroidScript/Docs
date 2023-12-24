@@ -1,20 +1,16 @@
-Translated code:
-
-```python
-import native
+from native import app
 
 def OnStart():
-    lay = native.app.CreateLayout("linear", "VCenter,FillXY")
-    
-    btn = native.app.CreateButton("Press Me", 0.3, 0.25)
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    btn = app.CreateButton("Press Me", 0.3, 0.25)
     lay.AddChild(btn)
-    
+
     btn.SetOnTouch(btn_OnTouch)
-    
-    native.app.AddLayout(lay)
-    
-    usb = native.app.CreateUSBSerial()
+
+    app.AddLayout(lay)
+
+    usb = app.CreateUSBSerial()
 
 def btn_OnTouch():
     usb.Write("Hello serial device!")
-```

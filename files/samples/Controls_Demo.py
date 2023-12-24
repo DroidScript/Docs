@@ -1,7 +1,4 @@
-Here is the translated code:
-
-```python
-from native import app, ui
+from native import app
 
 # Called when application is started.
 def OnStart():
@@ -84,4 +81,3 @@ def lst_OnLongTouch(item):
 # Called when seek bar is touched.
 def skb_OnTouch(value):
     app.ShowPopup("Value = " + str(value))
-```

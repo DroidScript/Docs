@@ -1,13 +1,15 @@
+from native import app
+import native as app
+
 '''
  This demonstrates a very basic app launcher (home screen).
  You can set this app as your home screen by adding the
  'homeScreen=true' option to your build.json file.
 '''
 
-import native as app
-
 # Called when application is started.
 def OnStart():
+    global lay, scroller
     # Lock screen orientation to Portrait.
     app.SetOrientation("Portrait")
 
@@ -25,9 +27,9 @@ def OnStart():
     # Add layout to app.
     app.AddLayout(lay)
 
-
 # Draw the icons
 def DisplayIcons(lay):
+    global layIcons, packageName, className, layIcon, label
     app.ShowProgress()
 
     # Switch off debugging for max speed.
@@ -55,7 +57,7 @@ def DisplayIcons(lay):
         if i % iconsPerRow == 0:
             layIconsHoriz = app.CreateLayout("Linear", "Horizontal")
             layIcons.AddChild(layIconsHoriz)
-    
+
         # Create layout to wrap icon and text.
         layIcon = app.CreateLayout("Linear", "Vertical")
         layIcon.SetMargins(0.038/iconsPerRow, 0.015, 0.038/iconsPerRow, 0)
@@ -83,19 +85,16 @@ def DisplayIcons(lay):
     app.SetDebugEnabled(True)
     app.HideProgress()
 
-
 # Destroy and redraw all icons.
 def RedrawIcons():
     scroller.DestroyChild(layIcons)
     DisplayIcons(scroller)
-
 
 # Handle icon touch down.
 def img_OnTouchDown():
     # Shrink and fade icon.
     this.Scale(0.95, 0.95)
     this.SetAlpha(0.7)
-
 
 # Handle icon touch up.
 def img_OnTouchUp():
@@ -107,9 +106,9 @@ def img_OnTouchUp():
     action = "android.intent.action.MAIN"
     app.SendIntent(this.packageName, this.className, action)
 
-
 # Handle icon long touch.
 def img_OnLongTouch():
+    global curIcon
     # Restore icon appearance.
     this.Scale(1, 1)
     this.SetAlpha(1)
@@ -122,7 +121,6 @@ def img_OnLongTouch():
     lstOps = app.CreateListDialog("", list, "AutoCancel")
     lstOps.SetOnTouch(lstOps_Select)
     lstOps.Show()
-
 
 # Called when icon long click option chosen.
 def lstOps_Select(item):
@@ -138,7 +136,6 @@ def lstOps_Select(item):
         cb = OnResult
         app.SendIntent(None, None, action,
                        None, uri, None, None, "result", cb)
-
 
 # Handle intent result.
 def OnResult(resultCode):

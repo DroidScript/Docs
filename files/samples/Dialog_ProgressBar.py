@@ -1,4 +1,4 @@
-from native import app, ui, gfx
+from native import app
 
 # Called when application is started.
 def OnStart():

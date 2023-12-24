@@ -1,6 +1,8 @@
-```python
+from native import app
+
 # Called when application is started.
 def OnStart():
+    global txt, state
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -19,7 +21,6 @@ def OnStart():
     state = app.CreatePhoneState(types)
     state.SetOnChange(state_OnChange)
     state.Start()
-
 
 # Called when phone states change.
 def state_OnChange(type, data):
@@ -42,4 +43,3 @@ def state_OnChange(type, data):
         txt.Log("message: " + data)
     elif type == "CallForwarding":
         txt.Log("forwarding: " + data)
-```

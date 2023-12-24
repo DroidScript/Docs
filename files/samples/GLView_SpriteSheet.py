@@ -1,3 +1,5 @@
+from native import app
+
 # Spritesheet variables.
 spriteCount = 8
 spriteIndex = 0
@@ -8,6 +10,7 @@ frameCount = 0
 
 # Called when application is started.
 def OnStart():
+    global glview, imgSpritesheet
     # Set full screen mode.
     app.SetScreenMode("Full")
 
@@ -26,6 +29,7 @@ def OnStart():
     imgSpritesheet = glview.CreateImage("/Sys/Img/Sprint.png", StartRendering)
 
 def StartRendering():
+    global spriteDstHeight, spriteDstWidth
     # Now the GLView is visible we can get its size in pixels.
     viewWidth = glview.GetAbsWidth()
     viewHeight = glview.GetAbsHeight()
@@ -52,7 +56,7 @@ def DrawFrame():
 
     # Copy character sprite from sprite sheet to screen.
     glview.DrawSprite(
-        imgSpritesheet, sx, sy, spriteSrcWidth, spriteSrcHeight, 
+        imgSpritesheet, sx, sy, spriteSrcWidth, spriteSrcHeight,
         spriteDstX, spriteDstY, spriteDstWidth, spriteDstHeight)
 
     # Render the graphics to screen.

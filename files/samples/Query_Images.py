@@ -1,7 +1,4 @@
-The translated code is as follows:
-
-```python
-from native import app, gfx, ui, MUI
+from native import app
 
 def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")
@@ -16,4 +13,3 @@ def btn_OnTouch():
     rows = app.QueryContent(uri, columns)
     app.Alert(str(rows))
     img.SetImage(app.Path2Uri(rows[0]["_data"]))
-```

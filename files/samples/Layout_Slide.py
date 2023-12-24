@@ -1,5 +1,8 @@
+from native import app
+
 # Called when application is started.
 def OnStart():
+    global laySlide
     # Create the main layout.
     layMain = app.CreateLayout("linear", "FillXY")
     layMain.SetBackground("/Sys/Img/BlueBack.jpg")

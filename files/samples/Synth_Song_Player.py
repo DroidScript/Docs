@@ -1,6 +1,5 @@
-The translated code is as follows:
+from native import app
 
-```python
 HeyHoNotes = [
     "D4", "C4", "D4", "D4", "D4", "A3",
     "D4", "D4", "E4", "E4", "F4", "F4", "F4", "F4", "E4",
@@ -30,13 +29,13 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
+    global synth
     music = app.CreateMusic()
     synth = music.CreateSynth("Synth")
     music.RepeatTransport(repeat, "4n")
     music.StartTransport()
 
 def repeat(time):
-    global turn, index, note, duration, velocity
     turn = index % length
     index += 1
 
@@ -45,4 +44,3 @@ def repeat(time):
     velocity = HeyHoVelocity[turn]
 
     synth.PlayStopTone(note, duration, time, velocity)
-```

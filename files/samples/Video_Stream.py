@@ -1,44 +1,47 @@
+from native import app, ui
+
 # Translated Python Code
 
 # Called when application is started.
 def OnStart():
+    global player, skb
     # Create layout that fills the screen.
     lay = ui.createLayout( "Linear", "FillXY,VCenter" )
-        
+
     # Create video view.
     player = native.createVideoView( 0.9, 0.4 )
     lay.addChild( player )
     player.setOnReady( player_OnReady )
     player.setOnComplete( player_OnComplete )
     player.setOnError( player_OnError )
-    
+
     # Create video list.
     spin = ui.createSpinner( "...,NASA,BUNNY" )
     spin.setSize( 0.8, -1 )
     spin.setOnTouch( spn_OnTouch )
     lay.addChild( spin )
-    
+
     # Create Play button.
     btnPlay = ui.createButton( "Play", 0.4, 0.1 )
     btnPlay.setMargins( 0, 0.05, 0, 0 )
     btnPlay.setOnTouch( btnPlay_OnTouch )
-    lay.addChild( btnPlay ) 
-    
+    lay.addChild( btnPlay )
+
     # Create Pause button.
     btnPause = ui.createButton( "Pause", 0.4, 0.1 )
     btnPause.setOnTouch( btnPause_OnTouch )
-    lay.addChild( btnPause ) 
-    
+    lay.addChild( btnPause )
+
     # Create seek bar and add to layout.
     skb = ui.createSeekBar( 0.8, -1 )
     skb.setMargins( 0, 0.05, 0, 0 )
     skb.setRange( 1.0 )
     skb.setOnTouch( skb_OnTouch )
     lay.addChild( skb )
-    
+
     # Add main layout to app.
     app.addLayout( lay )
-    
+
     # Start timer to update seek bar every second.
     setInterval( "Update()", 1000 )
 

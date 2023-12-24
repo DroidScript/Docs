@@ -1,8 +1,8 @@
-```python
 from native import app
 
 # Called when application is started.
 def OnStart():
+    global notify1, notify2, notify3
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -71,4 +71,3 @@ def btn4_OnTouch():
     notify1.Cancel()
     notify2.Cancel()
     notify3.Cancel()
-```

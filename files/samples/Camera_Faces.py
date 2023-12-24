@@ -1,6 +1,4 @@
-The code translates to:
-
-```python
+from native import app
 import time
 
 # Init global variables.
@@ -10,7 +8,7 @@ tLast = None
 
 # Called when application is started.
 def OnStart():
-    global tLast
+    global cam, img
     # Fix orientation to landscape since
     # most phones cameras work this way.
     app.SetOrientation("Landscape")
@@ -51,7 +49,7 @@ def cam_OnReady():
 
 # Extract and process image data.
 def ProcessImage():
-    global tLast
+    global faces
     # Get faces list.
     faces = cam.FindFaces(10)
 
@@ -64,7 +62,6 @@ def ProcessImage():
 
 # Draw area where face detected.
 def DrawFaces(faces):
-    global tLast
 
     # Clear image.
     img.Clear()
@@ -87,4 +84,3 @@ def DrawFaces(faces):
 
     # Update image canvas.
     img.Update()
-```

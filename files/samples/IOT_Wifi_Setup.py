@@ -1,8 +1,6 @@
-There appears to be a few undefined variables and undefined functions in the given code. Here is the modified version of the code with all the required imports and variables defined:
-
-```python
-import threading
 from androidhelper import Android
+from native import app
+import threading
 
 app = Android()
 
@@ -15,7 +13,8 @@ g_ssids = "[none]"
 g_ssid = None
 
 def OnStart():
-    lay = app.CreateLayout("linear", "VCenter,FillXY") 
+    global txtInfo, serv
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
     s = "Endpoints:\n"+ app.GetIPAddress() +":8080/scan\n"
     s += app.GetIPAddress() +":8080/setup\n"
     txtInfo = app.CreateText(s, 0.8, 0.1, "MultiLine")
@@ -34,9 +33,9 @@ def OnStart():
         threading.Timer(g_ApTime/1000, UseRouter).start()
     else:
         UseRouter()
-    app.SetAutoBoot("app" if g_autoBoot else None) 
-    app.SetAutoWifi(g_autoBoot)    
-    app.SetAutoStart(app.GetAppName() if g_autoBoot else None) 
+    app.SetAutoBoot("app" if g_autoBoot else None)
+    app.SetAutoWifi(g_autoBoot)
+    app.SetAutoStart(app.GetAppName() if g_autoBoot else None)
     app.WifiScan(lambda ssid: g_ssids = ssid)
 
 def UseAccessPoint():
@@ -47,6 +46,7 @@ def UseAccessPoint():
     threading.Timer(10, lambda: RestartServer(True)).start()
 
 def UseRouter(ssid=None, key=None):
+    global ssid, key
     if not ssid:
         ssid = app.LoadText("ssid")
         if ssid == "AP":
@@ -87,4 +87,3 @@ def serv_OnSetup(request, info):
     serv.SetResponse("router changed")
 
 OnStart()
-```

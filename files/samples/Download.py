@@ -1,7 +1,6 @@
-```python
-#Translated Python code:
-
 from native import app
+
+#Translated Python code:
 
 #Called when application is started.
 def OnStart():
@@ -18,6 +17,7 @@ def OnStart():
 
 #Called when user touches our button.
 def btn_OnTouch():
+    global file
     url = "http://androidscript.org/images/DroidScript.png"
     fldr = "/sdcard/temp"
     file = "icon.png"
@@ -39,4 +39,3 @@ def dload_OnDownload( file ):
 #Handle download errors.
 def dload_OnError( error ):
     app.ShowPopup( "Download failed: " + error )
-```

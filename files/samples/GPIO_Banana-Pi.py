@@ -1,3 +1,5 @@
+from native import app
+
 def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")
     txt = app.CreateText("Banana-Pi GPIO")

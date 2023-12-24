@@ -1,16 +1,14 @@
-The provided code can be translated to Python as follows:
-
-```python
-from native import app, gfx, ui, MUI
+from native import app, gfx
 
 # Configure app for game mode.
 app.Game
 
 # Handle game loading.
 def OnLoad():
+    global sky, bird, floor, pillar1, pillar2, plinth, bang, crash, quack
     # Enable physics and enclose scene with walls.
     gfx.AddPhysics()
-    
+
     # Create sprites.
     sky = gfx.CreateSprite("/Sys/Img/Sky.jpg")
     bird = gfx.CreateSprite("/Sys/Img/Bird_960x687x3x3", "birds")
@@ -28,6 +26,7 @@ def OnLoad():
 
 # Called when game has loaded.
 def OnReady():
+    global fired
     # Add sky image.
     gfx.AddSprite(sky, 0, 0, 1, 1)
 
@@ -78,4 +77,3 @@ def OnCollide(a, b):
             quack.Play()
             bird.data.dead = True
         crash.Play()
-```

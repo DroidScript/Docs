@@ -1,5 +1,7 @@
+from native import app
+
 def OnStart():
-    lay = app.CreateLayout("linear", "VCenter,FillXY")	 
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
     btnFile = app.CreateButton("Choose File", 0.5, 0.1)
     btnFile.SetMargins(0, 0.05, 0, 0)
     btnFile.SetOnTouch(btnFile_OnTouch)

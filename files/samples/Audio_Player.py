@@ -1,7 +1,4 @@
-The translation of the JavaScript code to Python is as follows:
-
-```python
-from native import app, gfx, ui, MUI
+from native import app
 
 def OnStart():
     lay = app.CreateLayout("linear", "fillxy,vcenter")
@@ -52,6 +49,7 @@ def OnStart():
     app.TimerInterval(1000, Update)
 
 def player_OnReady():
+    global dur
     dur = player.GetDuration()
     app.ShowPopup("Ready")
 
@@ -80,6 +78,3 @@ def Update():
 
 def skbVol_OnTouch(value):
     player.SetVolume(value, value)
-```
-
-The code above translates the JavaScript code into equivalent Python code. The app object is imported from the native module and the functions are defined as Python functions. The JavaScript syntax is adapted to Python's syntax.

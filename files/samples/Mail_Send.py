@@ -1,5 +1,8 @@
+from native import app
+
 # Called when application is started.
 def OnStart():
+    global txtSubj, txtMsg, email
     # Create layout that fills the screen.
     lay = app.CreateLayout("linear", "FillXY,VCenter")
 

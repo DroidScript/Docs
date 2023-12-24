@@ -1,11 +1,13 @@
+from native import app
 import app
 
 # Called when application is started.
 def OnStart():
+    global cam, btn, recFolder
     # Fix orientation to landscape since
     # most phones cameras work this way.
     app.SetOrientation("Landscape")
-  
+
     # Create horizontal layout that fills the screen.
     lay = app.CreateLayout("Linear", "Horizontal,FillXY,VCenter")
     lay.SetBackground("/res/drawable/pattern_carbon", "repeat")

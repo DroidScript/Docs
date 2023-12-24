@@ -1,14 +1,17 @@
+from native import app
+import random
+
 Translated code:
 
 ```python
 def OnStart():
     # Create a layout with objects vertically centered.
-    lay = native.app.CreateLayout("linear", "VCenter,FillXY")
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
     lay.SetBackground("/Sys/Img/StarField.jpg")
 
     # Button with image in between chars.
     text = "<big><b>Andr<img src=/Sys/Img/AScript.png>id</b></big>"
-    btn = native.app.CreateButton(text, 0.6, -1, "Html")
+    btn = app.CreateButton(text, 0.6, -1, "Html")
     btn.SetTextSize(20)
     btn.SetMargins(0, 0.03, 0, 0)
     btn.SetBackAlpha(0.6)
@@ -18,7 +21,7 @@ def OnStart():
 
     # Button with image at end.
     text = "Explode <img src=/Sys/Img/Explode1.png>"
-    btn = native.app.CreateButton(text, 0.6, -1, "Html")
+    btn = app.CreateButton(text, 0.6, -1, "Html")
     btn.SetTextSize(25)
     btn.SetMargins(0, 0.03, 0, 0)
     btn.SetBackAlpha(0.6)
@@ -36,7 +39,7 @@ def OnStart():
            "against the <big><i><font color=#ff0000>evil</font></i></big> " + \
            "<a href=http://www.google.co.uk/search?q=galactic+empire>" + \
            "Galactic Empire&#8482;</a>"
-    txt = native.app.CreateText(text, 0.8, -1, "Html,Link")
+    txt = app.CreateText(text, 0.8, -1, "Html,Link")
     txt.SetMargins(0, 0.02, 0, 0)
     txt.SetPadding(0.03, 0.03, 0.03, 0.03)
     txt.SetTextSize(20)
@@ -49,7 +52,7 @@ def OnStart():
         "<i>(Cool dude with a Lightsaber)</i>:null" + \
         ",R2D2:Actor^c^ <font color=#77CECF>Kenny Baker</font><br>" + \
         "<i>(Lukes loyal robot companion)</i>:null"
-    lst = native.app.CreateList(data, 0.8, 0.25, "Html")
+    lst = app.CreateList(data, 0.8, 0.25, "Html")
     lst.SetMargins(0, 0.02, 0, 0)
     lst.SetBackColor("#77444444")
     lst.SetTextColor("#cccccc")
@@ -62,25 +65,25 @@ def OnStart():
     lay.AddChild(lst)
 
     # Add layout to app.
-    native.app.AddLayout(lay)
-
+    app.AddLayout(lay)
 
 def btn_OnTouch():
+    global imgBack
     # Lets have some fun!
-    layExp = native.app.CreateLayout("linear", "VCenter,FillXY")
-    imgBack = native.app.CreateImage(None, 1.0, 1.0)
+    layExp = app.CreateLayout("linear", "VCenter,FillXY")
+    imgBack = app.CreateImage(None, 1.0, 1.0)
     layExp.AddChild(imgBack)
-    native.app.AddLayout(layExp)
-    player = native.app.CreateMediaPlayer()
+    app.AddLayout(layExp)
+    player = app.CreateMediaPlayer()
     player.SetOnReady(player_OnReady)
     player.SetFile("/Sys/Snd/Explode.mp3")
     Explode(0)
 
-
 def lst_OnTouch(item):
+    global synth
     if item == "R2D2":
         # Make R2D2 sounds (sort of).
-        synth = native.app.CreateSynth("VCF")
+        synth = app.CreateSynth("VCF")
         synth.SetWaveShape("Square")
         synth.SetVca(10, 400, 0.8, 100)
         synth.SetVcf(10, 400, 0.8, 100, 1000, 0.85, 2.0)
@@ -89,9 +92,7 @@ def lst_OnTouch(item):
         synth.PlayTone(1000, 1400)
         RandomBeeps(50)
 
-
 def RandomBeeps(beeps):
-    global beepCount, synth
 
     if beeps is not None:
         beepCount = beeps
@@ -99,26 +100,24 @@ def RandomBeeps(beeps):
         beepCount -= 1
 
     if beepCount > 40:
-        if native.math.random() > 0.4:
+        if native.random.random() > 0.4:
             synth.SetVcfEnabled(False)
-            synth.SetFrequency(500 + 500 * native.math.random())
+            synth.SetFrequency(500 + 500 * native.random.random())
         else:
             synth.SetVcfEnabled(True)
-            synth.SetFrequency(200 * native.math.random())
-        native.app.SetTimeout(RandomBeeps, 100 + 2 * native.math.random())
+            synth.SetFrequency(200 * native.random.random())
+        app.SetTimeout(RandomBeeps, 100 + 2 * native.random.random())
     elif beepCount == 40:
         freq = 3600
-        add = (30 if native.math.random() > 0.6 else -30)
+        add = (30 if native.random.random() > 0.6 else -30)
         synth.SetWaveShape("Sin")
         synth.SetVcfEnabled(False)
-        native.app.SetTimeout(RandomBeeps, 0)
+        app.SetTimeout(RandomBeeps, 0)
     elif beepCount > 0:
         synth.SetFrequency(freq + add)
-        native.app.SetTimeout(RandomBeeps, 2)
-
+        app.SetTimeout(RandomBeeps, 2)
 
 def Explode(startFrame):
-    global explodeFrame, layExp, imgBack, player, btn
 
     if startFrame is not None:
         explodeFrame = startFrame
@@ -126,4 +125,4 @@ def Explode(startFrame):
     if explodeFrame < 5:
         file = f"Explode{explodeFrame}.png"
         imgBack.SetImage(f"/Sys/Img/{file}", 1)
-        native.app
+        app

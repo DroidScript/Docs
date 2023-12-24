@@ -1,6 +1,5 @@
-Translated code (Python):
+from native import app
 
-```python
 def OnStart():
     lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
@@ -35,7 +34,5 @@ def OnStart():
 
     app.AddLayout(lay)
 
-
 def lst_OnTouch(name):
     layAnim.Animate(name)
-```

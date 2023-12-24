@@ -1,11 +1,8 @@
-Here is the translated code:
+# cfg.Light
 
-```python
-from native import app, gfx, ui, MUI
+from native import app
 
 # Use light theme.
-cfg.Light
-
 # Called when application is started.
 def OnStart():
     # Create a layout with objects vertically centered.
@@ -18,16 +15,16 @@ def OnStart():
 
     # Create tabs.
     tabs = app.CreateTabs("CONTROLS,DIALOGS,LISTS", 0.95, 0.8, "VCenter,Fade")
-    tabs.SetOnChange(tabs_OnChange) 
+    tabs.SetOnChange(tabs_OnChange)
     tabCtrl = tabs.GetLayout("CONTROLS")
     tabCtrl.SetChildMargins(0, 0.03, 0, 0)
     tabDlg = tabs.GetLayout("DIALOGS")
     tabDlg.SetChildMargins(0, 0.04, 0, 0)
     tabLst = tabs.GetLayout("LISTS")
-    lay.AddChild(tabs) 
-    
+    lay.AddChild(tabs)
+
     # --- CONTROLS ---------
-    
+
     # Add buttons.
     btn = app.AddButton(tabCtrl, "Button")
     tgl = app.AddToggle(tabCtrl, "Toggle")
@@ -42,39 +39,39 @@ def OnStart():
     # Add some text.
     txt = app.AddText(tabCtrl, "Seek Bar")
     txt.SetMargins(0, 0.02, 0, 0)
-    
+
     # Add a seek bar.
     skb = app.AddSeekBar(tabCtrl, 0.7)
     skb.SetRange(1.0)
     skb.SetValue(0.5)
-    
+
     # --- DIALOGS ----------
-    
+
     # Add a Custom Dialog button.
     btnCust = app.AddButton(tabDlg, "Custom", 0.3)
     btnCust.SetOnTouch(CustomDialog)
-    
+
     # Add a YesNo Dialog button.
     btn = app.AddButton(tabDlg, "YesNo", 0.3)
     btn.SetOnTouch(YesNoDialog)
-    
+
     # Add an Alert button.
     btn = app.AddButton(tabDlg, "Alert", 0.3)
     btn.SetOnTouch(AlertDialog)
-    
+
     # Add a List Dialog button.
     btn = app.AddButton(tabDlg, "List", 0.3)
     btn.SetOnTouch(ListDialog)
-    
+
     # Add a CheckList Dialog button.
     btn = app.AddButton(tabDlg, "CheckList", 0.3)
     btn.SetOnTouch(CheckListDialog)
-    
+
     # --- LISTS ------------
-    
+
     # Add a list box.
     lst = app.AddList(tabLst, "Fred,Bill,Jim,Anne,Jane", 0.6)
-    
+
     # Add layout to app.
     app.AddLayout(lay)
 
@@ -119,4 +116,3 @@ def AlertDialog():
 def YesNoDialog():
     dlg = app.CreateYesNoDialog("Are you sure?")
     dlg.Show()
-```

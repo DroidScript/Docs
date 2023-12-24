@@ -1,5 +1,5 @@
+from native import app
 import app 
-from native import gfx, ui
 
 # Initialise some variables.
 sensitivity = 50  # percent
@@ -9,6 +9,7 @@ snapFolder = "/sdcard/Snaps"
 
 # Called when application is started.
 def OnStart():
+    global layLeft, cam
     # Fix orientation to landscape since
     # most phone's cameras work this way.
     app.SetOrientation("Landscape")
@@ -67,9 +68,9 @@ def OnStart():
     # Add main layout to app.
     app.AddLayout(lay)
 
-
 # Start motion detection.
 def StartDetection():
+    global log, maxPics
     # Create an image control over the top of the
     # camera view with transparency (alpha) and with a
     # fixed internal bitmap the same size as camera view.
@@ -100,14 +101,12 @@ def StartDetection():
     # Start preview.
     cam.StartPreview()
 
-
 # Handle menu selections.
 def OnMenu(name):
     if name == "Snap":
         Snap()
     elif name == "Exit":
         app.Exit()
-
 
 # Called when motion is detected.
 # (data contains an array of detection strength
@@ -118,7 +117,6 @@ def OnMotion(data):
 
     # Snap a photo.
     Snap()
-
 
 # Take a picture and store to sdcard.
 def Snap():
@@ -134,19 +132,17 @@ def Snap():
     cam.TakePicture(file)
     Log(file)
 
-
 # Called when user touches 'sensitivity' seek bar.
 # ( value ranges from 0 to 100 )
 def skb_OnTouch(value):
     sensitivity = value
     ChangeSettings()
 
-
 # Called when user touches mosaic spinner.
 def spin_OnTouch(item):
+    global mosaic
     mosaic = item
     ChangeSettings()
-
 
 # Change the motion detection settings.
 def ChangeSettings():

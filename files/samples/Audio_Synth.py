@@ -1,4 +1,4 @@
-from native import app, gfx, ui, MUI
+from native import app
 
 #Init some variables.
 minFreq = 200
@@ -7,6 +7,7 @@ freq = 1100
 
 #Called when application is started.
 def OnStart():
+    global layVca, layVcf
     #Lock screen orientation to Portrait.
     app.SetOrientation( "Portrait" )
 
