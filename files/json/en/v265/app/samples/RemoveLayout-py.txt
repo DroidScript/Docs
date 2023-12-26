@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global lay
     lay = app.CreateLayout( "Linear", "FillXY,VCenter" )
 
     txt = app.CreateText( "Hello" )

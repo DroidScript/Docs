@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global player
     lay = app.CreateLayout("Linear", "FillXY,VCenter")
 
     app.ShowProgress("Buffering...")

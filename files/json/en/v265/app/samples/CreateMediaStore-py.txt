@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global lst
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     lst = app.CreateList("", 1, 0.9)
@@ -28,6 +29,7 @@ def media_OnArtistsResult(result):
 from native import app
 
 def OnStart():
+    global lst
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     lst = app.CreateList("", 1, 0.9)
@@ -56,6 +58,7 @@ def media_OnAlbumsResult(result):
 from native import app
 
 def OnStart():
+    global lst
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     lst = app.CreateList("", 1, 0.9)

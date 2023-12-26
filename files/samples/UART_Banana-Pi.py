@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global sys
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     txt = app.CreateText("Banana-Pi UART")

@@ -14,6 +14,7 @@ def onLoad(self):
 from native import ui
 
 def onStart(self):
+    global web
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.web = ui.addWebView(self.main, "", "", 0.9, 0.7)
     self.web.setOnLoad(self.onLoad)
@@ -22,7 +23,7 @@ def onStart(self):
         <head>
 
                 function callFunc(name) {
-                    alert("Hi " + name + " webview!")
+                    app.Alert("Hi " + name + " webview!")
                 }
 
         </head>
@@ -40,6 +41,7 @@ def onLoad(self):
 from native import ui
 
 def onStart(self):
+    global web
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.web = ui.addWebView(self.main, "", "", 0.9, 0.7)
     self.web.setOnLoad(self.onLoad)
@@ -67,6 +69,7 @@ def onLoad(self):
 from native import ui
 
 def onStart(self):
+    global loaded, web
     self.loaded = False
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.web = ui.addWebView(self.main, "", "", 0.7, 0.5)

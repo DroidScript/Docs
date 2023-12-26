@@ -2,6 +2,7 @@ from native import app
 
 # This basic template is a good starting
 # point for simple vertical scrolling games.
+global backGroundY, backGroundShift, charX, charY, charW, charH
 
 # Init background variables.
 backGroundY = 0

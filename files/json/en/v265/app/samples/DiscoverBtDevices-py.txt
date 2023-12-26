@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global lst
     app.SetBluetoothEnabled(True)
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 

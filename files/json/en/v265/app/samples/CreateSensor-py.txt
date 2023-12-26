@@ -11,6 +11,7 @@ def OnStart():
 from native import app
 
 def OnStart():
+    global txt
     lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
     txt = app.CreateText("", 0.8, 0.3, "Multiline")
@@ -29,6 +30,7 @@ def sns_OnChange(x, y, z, time):
 from native import app
 
 def OnStart():
+    global txt
     lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
     txt = app.CreateText("", 0.8, 0.3, "Multiline")
@@ -50,6 +52,7 @@ def sns_OnChange(azimuth, pitch, roll, time):
 from native import app
 
 def OnStart():
+    global txt
     lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
     txt = app.CreateText("", 0.8, 0.3)

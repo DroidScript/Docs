@@ -4,6 +4,7 @@ app = app
 gfx = gfx
 ui = native.ui
 MUI = MUI
+global app
 
 # Initialise some variables.
 timer = None

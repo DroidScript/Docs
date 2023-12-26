@@ -4,6 +4,7 @@
 from native import app, MUI
 
 def OnStart():
+    global lsd
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -37,6 +38,7 @@ def OnTouch(name):
 from native import app, MUI
 
 def OnStart():
+    global lsd
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -70,6 +72,7 @@ def OnTouch(name):
 from native import app, MUI
 
 def OnStart():
+    global lsd
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -103,6 +106,7 @@ def OnTouch(name):
 from native import app, MUI
 
 def OnStart():
+    global lsd
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

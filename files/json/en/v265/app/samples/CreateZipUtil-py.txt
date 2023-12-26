@@ -16,6 +16,7 @@ def OnStart():
 from native import app
 
 def OnStart():
+    global name, fldr, zip
     name = app.GetAppName()
     fldr = app.GetPath() + "/" + name
     file = "/sdcard/" + name + ".zip"

@@ -4,6 +4,7 @@
 from native import app, MUI
 
 def OnStart():
+    global tPkr, dPkr, cPkr
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     ttime = MUI.AddTextEdit(lay, 0.7, "outline", "Enter time", True)

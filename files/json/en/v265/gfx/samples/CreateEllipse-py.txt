@@ -4,6 +4,7 @@
 from native import gfx
 
 def OnLoad():
+    global ellipse
     ellipse = gfx.CreateEllipse(0.7, 0.4*gfx.aspect, 0xcccc00, 10, 0xbb00ff)
 
 def OnReady():

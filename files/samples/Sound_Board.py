@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global img1, player1, img2, player2
     lay = app.CreateLayout("Linear", "FillXY,VCenter")
 
     img1 = app.CreateImage("/Sys/Img/Spring.png", 0.4, 0.2)

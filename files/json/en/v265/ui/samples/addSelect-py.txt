@@ -49,6 +49,7 @@ def onChange(self, text, index):
 from native import ui
 
 def onStart(self):
+    global items
     # Creates a fullscreen layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -137,6 +138,7 @@ def onChange(self, item, index):
 from native import ui
 
 def onStart(self):
+    global items
     # Creates a fullscreen layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

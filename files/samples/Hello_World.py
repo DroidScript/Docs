@@ -1,6 +1,7 @@
 from native import app, gfx
 
 def OnLoad():
+    global sky, bird, floor, pillar1, pillar2, plinth, bang, crash, quack
     gfx.AddPhysics()
 
 sky = gfx.CreateSprite("/Sys/Img/Sky.jpg")

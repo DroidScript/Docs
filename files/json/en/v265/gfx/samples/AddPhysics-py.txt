@@ -4,6 +4,7 @@
 from native import gfx
 
 def OnLoad():
+    global ball1, ball2
 
     gfx.AddPhysics(0)
     gfx.Enclose(-1, "left,top,right,bottom", 1, 0.9, 0)
@@ -32,6 +33,7 @@ def OnReady():
 from native import gfx
 
 def OnLoad():
+    global bunny, squeak
 
     gfx.AddPhysics(20)
     gfx.Enclose(-1, "left,top,right,bottom", 1, 0.9, 0.01)

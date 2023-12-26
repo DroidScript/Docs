@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global txt, serv
     ip = app.GetIPAddress()
 
     lay = app.CreateLayout("linear", "VCenter,FillXY")

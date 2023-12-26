@@ -3,6 +3,7 @@ from native import app
 import threading
 
 app = Android()
+global app, g_debug, g_autoBoot, g_ApTime, g_ApName, g_ApPass
 
 g_debug = True
 g_autoBoot = True

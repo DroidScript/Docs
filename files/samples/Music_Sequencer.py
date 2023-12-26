@@ -1,8 +1,9 @@
 from native import app
 
 # Simple Music Sequencer by CandleLight
+global items, notes, colors, blockWidth, index, synth
 
-# Declare global variables.
+# Declare
 items = []
 index = 0
 step, blockWidth = (1 / 7) - 0.002  # 7 columns

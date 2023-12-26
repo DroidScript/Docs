@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global img
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 

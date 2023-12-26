@@ -2,6 +2,7 @@
 from native import ui
 
 def onStart(self):
+    global dlg
     # Create a fullscreen layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -27,6 +28,7 @@ main.onStart()
 from native import ui
 
 def onStart(self):
+    global dlg
     # Create a fullscreen layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -64,6 +66,7 @@ main.onStart()
 from native import ui
 
 def onStart(self):
+    global dlg, txt, tfd
     # Creates a fullscreen layout with objects vertically centered.
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)

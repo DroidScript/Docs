@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global layAnim
     lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
     layAnim = app.CreateLayout("Linear", "VCenter,FillX")

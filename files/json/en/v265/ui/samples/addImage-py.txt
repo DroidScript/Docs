@@ -104,6 +104,7 @@ from native import ui
 import math
 
 def onStart(self):
+    global img, time
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
     ui.addAppBar(self.main, "Analog Clock")

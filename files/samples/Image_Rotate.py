@@ -2,6 +2,7 @@ from native import app
 
 # Initialise some variables
 angle = 0
+global angle
 
 # Called when application is started
 def OnStart():

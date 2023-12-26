@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global spn
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     spn = app.AddSpinner(lay, app.ListPermissions(), .5)

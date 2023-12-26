@@ -2,7 +2,7 @@
 from native import app
 
 def OnStart():
-    global itv
+    global lst, itv
     lay = app.CreateLayout( "linear", "fillxy,vcenter" )
 
     lst = app.CreateList( "", .8, .8 )

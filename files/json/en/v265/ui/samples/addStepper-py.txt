@@ -2,6 +2,7 @@
 from native import ui
 
 def onStart(self):
+    global stp
     # Creates a fullscreen layout with object vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.main.setChildMargins(0, 0, 0, 0.02)
@@ -31,6 +32,7 @@ def back(self):
 from native import ui
 
 def onStart(self):
+    global stp
     # Creates a fulscreen layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

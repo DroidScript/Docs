@@ -61,6 +61,7 @@ def onTouch(self, item, value):
 from native import ui
 
 def onStart(self):
+    global items
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = ["This is item 1", "This is item 2", "This is item 3"]
@@ -79,6 +80,7 @@ def onChange(self, items, indexes):
 from native import ui
 
 def onStart(self):
+    global items
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = ["This is item 1", "This is item 2", "This is item 3"]

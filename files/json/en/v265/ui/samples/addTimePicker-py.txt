@@ -2,6 +2,7 @@
 from native import ui
 
 def onStart(self):
+    global tpk
     self.main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
     self.btn = ui.addButton(self.main, "Show Time Picker", "Outlined,Secondary", 0.2)
     self.btn.setOnTouch(self.showTimePicker)

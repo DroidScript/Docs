@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global glview, img
     lay = app.CreateLayout( "Linear", "FillXY" )
 
     glview = app.CreateGLView(1, 1, "Fast2d")
@@ -85,7 +86,7 @@ from native import app
 objects = []
 
 def OnStart():
-    global glv, name, name, glv, X, Y, W, H, X, Y, W, H, X, Y, W, H, X, Y, W, H
+    global glv, name, X, Y, W, H
     lay = app.CreateLayout( "linear" )
 
     glv = app.CreateGLView( 1, 1, "Fast2d" )

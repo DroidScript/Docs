@@ -4,6 +4,7 @@
 from native import gfx
 
 def OnLoad():
+    global droid
     droid = gfx.CreateSprite( "/Sys/Img/Hello.png" )
 
 def OnReady():

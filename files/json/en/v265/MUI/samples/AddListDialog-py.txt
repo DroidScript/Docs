@@ -4,6 +4,7 @@
 from native import app, MUI
 
 def OnStart():
+    global lsd, ckl
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     tlsd = MUI.AddTextEdit(lay, 0.7, "outline", "Enter time", True)

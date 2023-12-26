@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global usb
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     btn = app.CreateButton("Press Me", 0.3, 0.25)

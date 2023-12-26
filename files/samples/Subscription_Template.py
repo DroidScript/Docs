@@ -2,6 +2,7 @@ from native import app
 
 """
 In-App subscription sample -
+global productId
 
 Use this sample as a template for setting up Google Play subscriptions in
 your Apps. See the following link for more information:-

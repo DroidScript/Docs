@@ -3,6 +3,7 @@ from native import app
 
 langJson = """
 {
+    global langJson
     "langs": [ "English", "Español" ],
     "codes": { "english":"en", "español":"es" },
     "trans" : {

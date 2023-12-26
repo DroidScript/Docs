@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global txtLog
     lay = app.CreateLayout( "linear", "VCenter,FillXY")
     app.AddLayout(lay)
 

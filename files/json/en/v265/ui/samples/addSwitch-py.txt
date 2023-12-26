@@ -2,6 +2,7 @@
 from native import ui
 
 def onStart(self):
+    global swt
     # Creates a layout with objects verticaly centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

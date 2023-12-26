@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global gal
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     gal = Gallery(lay, "/sdcard/Inspector", 1, 1)

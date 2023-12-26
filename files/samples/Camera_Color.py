@@ -3,10 +3,11 @@ import androidhelper
 import math
 
 #Translated Python code
+global droid, count
 
 droid = androidhelper.Android()
 
-#Init global variables.
+#Init
 count = 0
 
 #Called when application is started.

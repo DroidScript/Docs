@@ -308,8 +308,8 @@ function fixupPython(file, code = "") {
         .replace(/(\n|^)\w+;/g, '');
 
     // auto detect globals and insert global statement
-    const defs = code.split("\ndef ");
-    for (let i = 1; i < defs.length; i++) {
+    const defs = code.split(/(?=\ndef )/);
+    for (let i = 0; i < defs.length; i++) {
         // remove old statement
         defs[i] = defs[i].replace(/\s+global .*/, "");
         // find all assignments
@@ -324,6 +324,7 @@ function fixupPython(file, code = "") {
             const used = vars.filter(v => !vars2.includes(v) && defs[j].match(RegExp(`\\b${v}\\b`)));
             globals.push(...used);
         }
+        if (file.includes("SimulateKey")) console.log(vars, globals)
 
         // insert global statement
         if (globals.length) {
@@ -333,7 +334,7 @@ function fixupPython(file, code = "") {
             });
         }
     }
-    code = defs.join("\ndef ");
+    code = defs.join("");
 
     if (cfg.size > 0) head.push(`# ${[...cfg].join(", ")}\n`);
     if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");

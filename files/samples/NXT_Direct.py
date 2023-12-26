@@ -2,6 +2,7 @@ from native import app, ui
 import androidscript.native as native
 
 def OnStart():
+    global bt
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     btnCon = app.CreateButton("Connect", 0.4, 0.15)

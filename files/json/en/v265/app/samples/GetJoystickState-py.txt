@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global txt
     lay = app.CreateLayout("linear")
 
     txt = app.CreateText("", 1, 1, "monospace,left,multiline")

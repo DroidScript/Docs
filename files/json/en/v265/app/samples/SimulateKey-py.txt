@@ -4,6 +4,7 @@ import math
 import random
 
 def OnStart():
+	global edt
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 	edt = app.CreateTextEdit( "", 0.8, 0.3, "nokeyboard" )
 	lay.AddChild( edt )

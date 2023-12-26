@@ -4,6 +4,7 @@
 from native import gfx
 
 def OnLoad():
+    global polygon
     polygon = gfx.CreatePolygon([0.2,0.6, 0.8,0.6, 0.5,0.2, 0.2,0.6], 0, 0, 0x33ff55, 6, 0xcc1122 )
 
 def OnReady():

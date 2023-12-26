@@ -5,6 +5,7 @@ import native.gfx as gfx
 import native.ui as ui
 
 isFullscreen = False
+global videoIds, videoTitles
 
 videoIds = [
     "zZTs3bYRyzs", "AK31U2f1nl0",

@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global txt
     lay = app.CreateLayout( "linear" )
 
     txt = app.CreateText( "", 1, 1, "Log,Monospace,autoscale" )
@@ -26,6 +27,7 @@ def sys_OnError( msg ):
 from native import app
 
 def OnStart():
+    global scr, txt, sys
     lay = app.CreateLayout( "linear" )
 
     scr = app.CreateScroller( 1, 1, "horizontal" )

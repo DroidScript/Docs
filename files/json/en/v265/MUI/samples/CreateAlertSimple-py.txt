@@ -18,6 +18,7 @@ def OnStart():
 from native import app, MUI
 
 def OnStart():
+    global als
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -37,6 +38,7 @@ def CloseAlert():
 from native import app, MUI
 
 def OnStart():
+    global als
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

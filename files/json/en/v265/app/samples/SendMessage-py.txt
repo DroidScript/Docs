@@ -5,6 +5,7 @@ servicejs = """
 #Init variables.
 count = 0
 diff = 1
+global count, diff, servicejs
 
 #Called when service is started.
 def OnStart():

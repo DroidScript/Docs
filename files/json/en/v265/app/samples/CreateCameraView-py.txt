@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global cam
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
     cam = app.CreateCameraView( 0.8, 0.4 )
@@ -18,6 +19,7 @@ def cam_OnReady():
 from native import app
 
 def OnStart():
+    global cam
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
     cam = app.CreateCameraView( 0.8, 0.4 )
@@ -43,6 +45,7 @@ def Snap():
 from native import app
 
 def OnStart():
+    global cam, recFolder
     app.SetOrientation("Landscape")
 
     lay = app.CreateLayout( "Linear", "Horizontal,FillXY,VCenter" )
@@ -77,6 +80,7 @@ def Record( start ):
 from native import app
 
 def OnStart():
+    global layCam, cam
     app.SetOrientation( "Landscape" )
 
     lay = app.CreateLayout( "linear", "fillxy,VCenter" )

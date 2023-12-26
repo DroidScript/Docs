@@ -1,7 +1,7 @@
 from native import app
 
 def OnStart():
-    global lay, scroll
+    global scroll
 
     lay = app.CreateLayout("linear", "FillXY")
 

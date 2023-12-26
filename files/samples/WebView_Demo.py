@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global web
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     web = app.CreateWebView(0.8, 0.8)

@@ -7,6 +7,7 @@ frameCounter = 0
 rotateDroids = True
 pulseDroids = False
 moveDroids = False
+global horizDroidCount, rotateDroids, pulseDroids, moveDroids, frameCounter
 
 # Called when application is started
 def OnStart():

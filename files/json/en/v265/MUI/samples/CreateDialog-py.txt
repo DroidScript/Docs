@@ -4,6 +4,7 @@
 from native import app, MUI
 
 def OnStart():
+    global dlg
     colors = MUI.colors.teal
     app.InitializeUIKit(colors.teal)
 
@@ -28,6 +29,7 @@ def ShowDialog():
 from native import app, MUI
 
 def OnStart():
+    global dlg
     colors = MUI.colors.teal
     app.InitializeUIKit(colors.teal)
 

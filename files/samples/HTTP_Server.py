@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global serv
     # Check wifi is enabled.
     ip = app.GetIPAddress()
     if ip == "0.0.0.0":

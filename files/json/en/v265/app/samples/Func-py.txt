@@ -4,6 +4,7 @@ from native import app
 html = """
 <html>
 <head>
+    global html
     <meta name="viewport" content="width=device-width">
     <script src='file:///android_asset/app.js'>
 </head>
@@ -15,7 +16,7 @@ def greetApp():
     app.Func("greetApp", "WebView")
 
 def OnRequest(err, s):
-    app.alert(s.split("\\n").join("\\n"))
+    app.Alert(s.split("\\n").join("\\n"))
 
 <input type="button" onclick="greetApp()" value="Greet App"/>
 </html>

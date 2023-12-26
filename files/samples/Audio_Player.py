@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global player, dur, skb
     lay = app.CreateLayout("linear", "fillxy,vcenter")
     spin = app.CreateSpinner("[No tracks found]")
     spin.SetSize(0.8, -1)

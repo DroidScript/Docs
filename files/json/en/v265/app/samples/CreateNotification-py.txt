@@ -2,6 +2,7 @@
 from native import app, ui
 
 def OnStart():
+    global notify
     app.ShowPopup("Sending notification")
     <b>notify = ui.Notification()
     notify.SetMessage("Ticker", "Title", "Text")

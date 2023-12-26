@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global bt
     app.ShowProgress( "Enabling Bluetooth" )
     if( !app.IsBluetoothEnabled() ):
         app.SetBluetoothEnabled( true )
@@ -29,7 +30,7 @@ def bt_OnConnect( ok, data ):
         if( typeof data == "object" ):
             app.ShowPopup( "Connected!" )
         else:
-            alert( "Connected to " + ok + " (" + data + ")" )
+            app.Alert( "Connected to " + ok + " (" + data + ")" )
 
         bt.Write("hello from " + app.GetBluetoothName())
     else:

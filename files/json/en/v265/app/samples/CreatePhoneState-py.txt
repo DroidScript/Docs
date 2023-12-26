@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global txt, log
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     txt = app.CreateText("", 0.95, 0.95, "multiline,left")

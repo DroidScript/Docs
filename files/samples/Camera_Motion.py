@@ -6,6 +6,7 @@ sensitivity = 50  # percent
 minPeriod = 500  # millisecs
 mosaic = "3x3"
 snapFolder = "/sdcard/Snaps"
+global sensitivity, mosaic, minPeriod, snapFolder
 
 # Called when application is started.
 def OnStart():

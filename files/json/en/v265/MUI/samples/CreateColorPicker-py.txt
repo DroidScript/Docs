@@ -1,10 +1,10 @@
 <sample Dark>
-from native import MUI, app
+# cfg.Dark, cfg.MUI
 
-cfg.Dark
-cfg.MUI
+from native import app, MUI
 
 def OnStart():
+    global clr, color
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

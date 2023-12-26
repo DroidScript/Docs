@@ -4,6 +4,7 @@
 from native import app, MUI
 
 def OnStart():
+    global pck
     colors = MUI.colors.teal
     app.InitializeUIKit(colors.teal)
 
@@ -31,6 +32,7 @@ def OnSelect(date, yyyy, mm, dd):
 from native import app, MUI
 
 def OnStart():
+    global pck
     colors = MUI.colors.teal
     app.InitializeUIKit(colors.teal)
 

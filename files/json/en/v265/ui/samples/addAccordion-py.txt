@@ -2,6 +2,7 @@
 from native import ui
 
 def onStart(self):
+    global accords
     # Creates a fullscreen main layout.
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
@@ -48,6 +49,7 @@ main.onStart()
 from native import ui
 
 def onStart(self):
+    global acc, count
     self.count = 1
 
     # Creates a fullscreen main layout.

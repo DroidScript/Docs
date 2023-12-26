@@ -4,6 +4,7 @@
 from native import app, MUI
 
 def OnStart():
+    global lst
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -32,6 +33,7 @@ def OnSelect(choice):
 from native import app, MUI
 
 def OnStart():
+    global lst
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

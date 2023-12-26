@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global img
     lay = app.CreateLayout("linear", "VCenter,FillXY")
     btn = app.AddButton(lay, "Get all Images", 0.4, 0.1)
     btn.SetOnTouch(btn_OnTouch)

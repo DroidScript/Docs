@@ -2,6 +2,7 @@ from native import app
 
 # This basic template is a good starting
 # point for simple horizontal scrolling games.
+global bmpW, bmpH, backGroundShift, charX, charY, charW, charH, obj1X, obj1Y, obj1W, obj1H, obj1Speed, obj2X, obj2Y, obj2W, obj2H, obj2Speed
 
 # Set size of canvas bitmap.
 # (We set it lower than the screen resolution to improve

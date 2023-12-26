@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global img
     app.SetOrientation("Landscape")
 
     lay = app.CreateLayout("Absolute", "FillXY")

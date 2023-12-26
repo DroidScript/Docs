@@ -44,6 +44,7 @@ def OnStart():
 from native import app, MUI
 
 def OnStart():
+    global lsd, color, lay
     color = MUI.colors.teal
 
     lay = MUI.CreateLayout("linear", "FillXY,VCenter")

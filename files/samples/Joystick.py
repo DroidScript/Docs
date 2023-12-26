@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global txt
     lay = app.CreateLayout("linear", "VCenter, FillXY")
 
     txt = app.AddText(lay, "", 1.0, None, "MultiLine")

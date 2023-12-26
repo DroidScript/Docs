@@ -17,7 +17,7 @@ def btn_OnTouch():
     console.log( "first two bytes:" + data[0] + "," + data[1] )
 
     file.Seek( 0 )
-    alert( file.ReadText( "Line" ) )
+    app.Alert( file.ReadText( "Line" ) )
 
     file.Close()
 </sample>

@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global bt
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     btn = app.CreateButton("Connect", 0.4, 0.15)

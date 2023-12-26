@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global watch
     watch = app.CreateSmartWatch("Sony")
     watch.SetOnShow(watch_OnShow)
     watch.SetOnHide(watch_OnHide)

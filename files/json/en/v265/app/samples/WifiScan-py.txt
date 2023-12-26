@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global lst
     lay = app.CreateLayout("linear", "VCenter,FillXY")
     lst = app.CreateList("", 1, 1)
     lay.AddChild(lst)

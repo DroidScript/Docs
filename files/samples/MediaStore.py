@@ -1,6 +1,7 @@
 from native import app, ui
 
 def OnStart():
+    global media, player, img
     lay = app.CreateLayout("linear", "VCenter,FillXY")
     img = app.CreateImage("/Sys/Img/Droid1.png", 0.2)
     lay.AddChild(img)

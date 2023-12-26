@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global player
     lay = app.CreateLayout("linear", "VCenter,FillXY")
     btnSet = app.CreateButton("Set Alarm", 0.4, 0.1)
     btnSet.SetMargins(0, 0.05, 0, 0)

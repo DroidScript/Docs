@@ -14,6 +14,7 @@ def OnStart():
 from native import app
 
 def OnStart():
+    global serv
     ip = app.GetIPAddress()
     app.Alert( ip +":8080", "Type the following address into your browser" )
 
@@ -33,6 +34,7 @@ from native import app
 indexhtml = """
 <html>
 <head>
+    global indexhtml, count
     <title>WebSockets Demo</title>
 
         count = 0;
@@ -81,7 +83,7 @@ indexhtml = """
 count = 0
 
 def OnStart():
-    global txt, serv, serv, ip, txtMsg
+    global txt, serv, ip, txtMsg
     # Create the Index.html file
     # note: in regular use move the html to a separate file
     app.WriteFile( "Index.html", indexhtml )

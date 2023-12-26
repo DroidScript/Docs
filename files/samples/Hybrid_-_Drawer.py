@@ -3,6 +3,7 @@
 from native import ui
 
 def OnStart():
+    global drawer
     layMain = ui.addLayout("main", "linear", "fillxy")
     bar = ui.addAppBar(layMain, "My App", "menu", 1)
     bar.setOnMenu(lambda: drawer.show())

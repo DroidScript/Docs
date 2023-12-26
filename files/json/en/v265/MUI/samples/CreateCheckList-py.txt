@@ -4,6 +4,7 @@
 from native import app, MUI
 
 def OnStart():
+    global chk, lst
 
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
@@ -38,6 +39,7 @@ def OnSubmit(lst):
 from native import app, MUI
 
 def OnStart():
+    global chk, lst
 
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)

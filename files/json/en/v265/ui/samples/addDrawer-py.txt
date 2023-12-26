@@ -2,6 +2,7 @@
 from native import ui
 
 def onStart(self):
+    global drawer, apb
     # Creates a fullscreen layout with objects vertically centered.
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -69,6 +70,7 @@ Main().start()
 from native import ui
 
 def onStart(self):
+    global drawer
     # Creates a fullscreen layout with objects vertically centered.
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

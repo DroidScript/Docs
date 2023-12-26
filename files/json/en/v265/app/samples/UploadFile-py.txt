@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global file
     name = app.GetAppName() + ".js"
     file = app.GetAppPath() + "/" + name
     app.UploadFile("https://yourwebsite.com/upload", file, name, OnUpload)

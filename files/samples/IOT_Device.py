@@ -1,6 +1,7 @@
 from native import app
 
 # IOT device Template
+global g_debug, g_autoBoot, g_APTime
 
 ```python
 """
@@ -18,7 +19,7 @@ from native import app
   also network loss.  During startup the app swtiches to Access point mode for
   a few minutes so that it can be re-configured if desired (eg. Change router).
 
-  Setting the g_autoBoot global to true will cause this app to be automatically
+  Setting the g_autoBoot
   started up when the device is powered. You may need to disable the lock
   screen in the Android/Security settings for this to work properly.
 

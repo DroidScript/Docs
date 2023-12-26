@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global txt
     lay = app.CreateLayout("linear")
 
     txt = app.CreateText("Keyboard Height: ", .8, -1, "left")

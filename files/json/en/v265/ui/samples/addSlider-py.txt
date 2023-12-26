@@ -10,6 +10,7 @@ marks = [
 from native import ui
 
 def onStart(self):
+    global popup
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.sld = ui.addSlider(self.main, 10, "", 0.7)
     self.sld.setOnChange(self.onChange)
@@ -24,6 +25,7 @@ def onChange(self, value):
 from native import ui
 
 def onStart(self):
+    global txt
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.sld = ui.addSlider(self.main, 10, "", 0.7)
     self.sld.step = 10
@@ -39,6 +41,7 @@ def onSelect(self, value):
 from native import ui
 
 def onStart(self):
+    global txt
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.sld = ui.addSlider(self.main, 10, "Primary", 0.7)
     self.sld.step = 10
@@ -59,6 +62,7 @@ def onSelect(self, value):
 from native import ui
 
 def onStart(self):
+    global popup
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.sld = ui.addSlider(self.main, 10, "Vertical,Primary", 0.2, 0.7)
     self.sld.setOnChange(self.onChange)

@@ -34,6 +34,7 @@ def onChange(self, text, index):
 from native import ui
 
 def onStart(self):
+    global bmn
     # Creates a layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)

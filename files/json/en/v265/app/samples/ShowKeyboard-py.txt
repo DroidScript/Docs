@@ -17,6 +17,7 @@ def OnStart():
 from native import app
 
 def OnStart():
+    global edt
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     tgl = app.CreateToggle("Keyboard", 0.3, 0.1)

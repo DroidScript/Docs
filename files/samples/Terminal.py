@@ -5,6 +5,7 @@ import native.gfx as gfx
 import native.ui as ui
 
 def OnStart():
+    global txt, edt, sys, scroll
     lay = app.CreateLayout("linear", "VCenter,FillXY")
     lay.SetBackColor("#333333")
 

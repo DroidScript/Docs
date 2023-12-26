@@ -2,6 +2,7 @@
 from native import ui
 
 def OnStart():
+    global nxt
     <b>nxt = ui.Nxt()
     nxt.SetOnConnected(OnConnected)
     nxt.ShowDevices()</b>
@@ -14,6 +15,7 @@ def OnConnected():
 from native import app
 
 def OnStart():
+    global nxt
     nxt = app.CreateNxt()
 
     <b>deviceName = "myNXTbrick"
@@ -36,6 +38,7 @@ def nxt_OnConnect(success, nxt):
 from native import app
 
 def OnStart():
+    global spnInput, nxt, spnType
     nxt = app.CreateNxt()
 
     lay = app.CreateLayout("linear", "FillXY,VCenter")

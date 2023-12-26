@@ -7,6 +7,7 @@ import native.gfx as gfx
 import native.ui as ui
 
 def OnStart():
+    global lst
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     data = [

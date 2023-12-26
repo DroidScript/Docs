@@ -3,6 +3,7 @@ import random
 
 # Set frame rate.
 fps = 30
+global fps, bmpW, bmpH, gravity, backGroundShift, charX, charW, charH, charSpeedY, capHeight, gap, pill1Y, pill1W, pill2W, pill2H, pillars, pillarSpeed, impulse
 
 # Set size of canvas bitmap.
 #(We set it lower than the screen resolution to improve

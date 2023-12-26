@@ -1,6 +1,7 @@
 from native import app
 
 isPortrait = app.IsPortrait()
+global width, height
 
 width = 0.7 if isPortrait else 0.25
 height = 0.7 if isPortrait else 0.7

@@ -40,6 +40,7 @@ def bt_OnComplete():
 from native import app
 
 def OnStart():
+    global lst
     app.ShowProgress("enabling Bluetooth")
     app.SetBluetoothEnabled(True)
     while not app.IsBluetoothOn():

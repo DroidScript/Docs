@@ -2,6 +2,7 @@ from native import app
 import random
 
 def OnStart():
+    global bt, btnRand
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     btn = app.CreateButton("Connect", 0.4, 0.1)

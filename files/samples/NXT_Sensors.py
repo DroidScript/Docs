@@ -5,6 +5,7 @@ import native.gfx as gfx
 import native.ui as ui
 
 def OnStart():
+    global nxt
     CreateLayout()
 
     nxt = app.CreateNxt()

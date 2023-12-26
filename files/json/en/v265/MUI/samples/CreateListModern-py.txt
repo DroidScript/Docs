@@ -58,6 +58,7 @@ def OnTouch(title, body, index):
 from native import app, MUI
 
 def OnStart():
+    global lsm
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -121,6 +122,7 @@ def OnStart():
 from native import app, MUI
 
 def OnStart():
+    global lsm
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -156,6 +158,7 @@ def GetSelectedItems():
 from native import app, MUI
 
 def OnStart():
+    global lsm
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -191,6 +194,7 @@ def GetSelectedItems():
 from native import app, MUI
 
 def OnStart():
+    global lsm, btn
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

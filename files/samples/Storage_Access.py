@@ -1,6 +1,7 @@
 from native import app
 
 def OnStart():
+    global spin
     lay = app.CreateLayout("Linear", "VCenter,FillXY")
     spin = app.AddSpinner(lay, "Internal,External,USB", 0.5)
     spin.SelectItem("Internal")

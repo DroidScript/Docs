@@ -11,6 +11,7 @@ def OnStart():
 from native import app
 
 def OnStart():
+    global txt
     lay = app.CreateLayout("linear", "fillxy,vcenter")
 
     txt = app.CreateText("", .8, -1, "monospace,multiline")

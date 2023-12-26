@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global spnMime
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     list = "*/*,application/text,application/apk,application/zip," + \

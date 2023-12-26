@@ -1,6 +1,7 @@
 from native import app, ui
 
 def OnStart():
+    global edit, icon
     lay = ui.addLayout("linear", "fillxy")
 
     edit = ui.addTextEdit(lay, "Hello", 1, 0.9, "")

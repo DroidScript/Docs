@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global dlg
     dlg = app.CreateDialog( "Custom Dialog" )
 
     layDlg = app.CreateLayout( "linear", "VCenter,FillXY" )

@@ -2,6 +2,7 @@
 from native import ui
 
 def onStart(self):
+    global menu
     # Creates a fullscreen layout with objects vertically centered.
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -33,6 +34,7 @@ main.onStart()
 from native import ui
 
 def onStart(self):
+    global btn1, menu, btn2
     # Creates a fullscreen layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.main.setChildSpacing("Evenly")
@@ -73,6 +75,7 @@ main.onStart()
 from native import ui
 
 def onStart(self):
+    global menu
     # Creates a fullscreen layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -108,6 +111,7 @@ main.onStart()
 from native import ui
 
 def onStart(self):
+    global menu
     # Creates a fullscreen layout with objects vertically centered
     self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     self.main.setOnContextMenu(self.onMenu)

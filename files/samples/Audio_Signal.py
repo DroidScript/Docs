@@ -2,6 +2,7 @@ from native import app
 import androidhelper
 
 #Translated Python code
+global droid, minFreq, maxFreq
 
 droid = androidhelper.Android()
 

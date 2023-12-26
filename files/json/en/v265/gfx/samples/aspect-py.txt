@@ -4,6 +4,7 @@
 from native import app, gfx
 
 def OnLoad():
+    global square
     gfx = app.get_gfx()
     square = gfx.CreateRectangle(0.4, 0.4*gfx.aspect, 0x2255ff)
 

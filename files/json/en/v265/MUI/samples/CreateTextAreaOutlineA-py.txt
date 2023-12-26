@@ -38,6 +38,7 @@ def OnStart():
 from native import app, MUI
 
 def OnStart():
+    global tef
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

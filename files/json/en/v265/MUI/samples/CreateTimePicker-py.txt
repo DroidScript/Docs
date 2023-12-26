@@ -4,6 +4,7 @@
 from native import app, MUI
 
 def OnStart():
+    global tmp
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -31,6 +32,7 @@ def OnSelect(time, hh, mm, pos):
 from native import app, MUI
 
 def OnStart():
+    global tmp
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

@@ -2,6 +2,7 @@
 from native import app
 
 def OnStart():
+    global web, txt, net
     lay = app.CreateLayout("linear")
 
     web = app.CreateWebView(1, 0.5, "ignoreerrors")
@@ -41,6 +42,7 @@ def net_OnConnect(connected):
 from native import app
 
 def OnStart():
+    global net, msg, web, txt
     lay = app.CreateLayout("linear")
 
     web = app.CreateWebView(1, 0.5, "ignoreerrors")
@@ -85,6 +87,7 @@ def OnReceive(s):
 from native import app
 
 def OnStart():
+    global net, address, id, port
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     btn = app.CreateButton("Send", 0.3, 0.1)
