@@ -9,66 +9,66 @@ marks = [
 <sample Basic slider>
 from native import ui
 
-def onStart(self):
+def OnStart
     global popup
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.sld = ui.addSlider(self.main, 10, "", 0.7)
-    self.sld.setOnChange(self.onChange)
-    self.popup = ui.showPopup(10)
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    sld = ui.addSlider(.main, 10, "", 0.7)
+    sld.setOnChange(.onChange)
+    popup = ui.showPopup(10)
 
-def onChange(self, value):
-    self.popup.text = str(value)
-    self.popup.show()
+def onChange(, value):
+    popup.text = str(value)
+    popup.show()
 </sample>
 
 <sample Slider steps and marks>
 from native import ui
 
-def onStart(self):
+def OnStart
     global txt
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.sld = ui.addSlider(self.main, 10, "", 0.7)
-    self.sld.step = 10
-    self.sld.marks = True
-    self.sld.setOnSelect(self.onSelect)
-    self.txt = ui.addText(self.main, "Value is 10")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    sld = ui.addSlider(.main, 10, "", 0.7)
+    sld.step = 10
+    sld.marks = True
+    sld.setOnSelect(.onSelect)
+    txt = ui.addText(.main, "Value is 10")
 
-def onSelect(self, value):
-    self.txt.text = "Value is " + str(value)
+def onSelect(, value):
+    txt.text = "Value is " + str(value)
 </sample>
 
 <sample Slider with custom step marks>
 from native import ui
 
-def onStart(self):
+def OnStart
     global txt
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.sld = ui.addSlider(self.main, 10, "Primary", 0.7)
-    self.sld.step = 10
-    self.sld.marks = [
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    sld = ui.addSlider(.main, 10, "Primary", 0.7)
+    sld.step = 10
+    sld.marks = [
         { "label": "First", "value": 10 },
         { "label": "Second", "value": 40 },
         { "label": "Third", "value": 60 }
     ]
-    self.sld.setOnSelect(self.onSelect)
-    self.txt = ui.addText(self.main, "Value is 10")
-    self.txt.margins = 0.02
+    sld.setOnSelect(.onSelect)
+    txt = ui.addText(.main, "Value is 10")
+    txt.margins = 0.02
 
-def onSelect(self, value):
-    self.txt.text = "Value is " + str(value)
+def onSelect(, value):
+    txt.text = "Value is " + str(value)
 </sample>
 
 <sample Vertical slider>
 from native import ui
 
-def onStart(self):
+def OnStart
     global popup
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.sld = ui.addSlider(self.main, 10, "Vertical,Primary", 0.2, 0.7)
-    self.sld.setOnChange(self.onChange)
-    self.popup = ui.showPopup(10)
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    sld = ui.addSlider(.main, 10, "Vertical,Primary", 0.2, 0.7)
+    sld.setOnChange(.onChange)
+    popup = ui.showPopup(10)
 
-def onChange(self, value):
-    self.popup.text = str(value)
-    self.popup.show()
+def onChange(, value):
+    popup.text = str(value)
+    popup.show()
 </sample>

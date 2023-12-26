@@ -1,37 +1,37 @@
 <sample Basic AppBar>
 from native import ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen linear layout with objects align Top and Center
-    self.main = ui.addLayout("main", "Linear", "Top,Center", 1, 1)
+    main = ui.addLayout("main", "Linear", "Top,Center", 1, 1)
 
     # Adds an appbar to the layout
-    self.apb = ui.addAppBar(self.main, "My App", "", 1)
+    apb = ui.addAppBar(.main, "My App", "", 1)
 
     # Adds a button control with margins 1/10 of the parent width.
-    self.btn = ui.addButton(self.main, "Button")
-    self.btn.margins = 0.1
+    btn = ui.addButton(.main, "Button")
+    btn.margins = 0.1
 </sample>
 
 <sample Fixed appbar with drawer>
 from native import ui
 
-def onStart(self):
+def OnStart
     global drawer, apb
     # Creates a fullscreen linear layout with objects vertically centered
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
     # Add an appbar to the layout
-    self.apb = ui.addAppBar(self.main, "My app", "Menu,Fixed", 1)
+    apb = ui.addAppBar(.main, "My app", "Menu,Fixed", 1)
 
     # Add a callback handler to show the drawer onMenu event
-    self.apb.setOnMenu( self.showDrawer )
+    apb.setOnMenu( showDrawer )
 
     # Add a drawer layout
-    self.drawLay = ui.addLayout(None, "Linear", "Top")
+    drawLay = ui.addLayout(None, "Linear", "Top")
 
     # Add a drawer to the app and pass the drawer layout
-    self.drawer = ui.addDrawer(self.drawLay, "left")
+    drawer = ui.addDrawer(.drawLay, "left")
 
     # Add a list to the drawer layout. See `List` component for customization.
     lst = [
@@ -39,49 +39,49 @@ def onStart(self):
         ["music_note", "Audios"],
         ["photo", "Photos"]
     ]
-    self.lstMenu = ui.addList(self.drawLay, lst, "Icon", 1 )
-    self.lstMenu.label = "Main navigation"
+    lstMenu = ui.addList(.drawLay, lst, "Icon", 1 )
+    lstMenu.label = "Main navigation"
 
     # Add a callback handler to the list onTouch event
-    self.lstMenu.setOnTouch( self.onTouch )
+    lstMenu.setOnTouch( onTouch )
 
-def showDrawer(self):
-    self.drawer.show()
+def showDrawer():
+    drawer.show()
 
-def onTouch(self, title):
+def onTouch(, title):
     # Set the appbar text with the selected list item
-    self.apb.text = title
+    apb.text = title
 
     # Close the drawer
-    self.drawer.hide()
+    drawer.hide()
 </sample>
 
 <sample Appbar with actions>
 from native import ui
 
-def onStart(self):
+def OnStart
     global drawer, apb
     # Creates a fullscreen layout with objects vertically centered
-    self.main = ui.addLayout("main", "Linear", "Top,Center", 1, 1)
+    main = ui.addLayout("main", "Linear", "Top,Center", 1, 1)
 
-    self.apb = ui.addAppBar(self.main, "My App", "Menu,Primary")
-    self.apb.setOnMenu( self.showDrawer )
+    apb = ui.addAppBar(.main, "My App", "Menu,Primary")
+    apb.setOnMenu( showDrawer )
 
     # Add an icon buttons to the appbar with onTouch callbacks
-    self.btn1 = ui.addButton(self.apb.layout, "mail", "icon")
-    self.btn1.setOnTouch(lambda: ui.showPopup("Messages", "Bottom"))
+    btn1 = ui.addButton(.apb.layout, "mail", "icon")
+    btn1.setOnTouch(lambda: ui.showPopup("Messages", "Bottom"))
 
-    self.btn2 = ui.addButton(self.apb.layout, "person", "icon")
-    self.btn2.setOnTouch(lambda: ui.showPopup("Account", "Bottom"))
+    btn2 = ui.addButton(.apb.layout, "person", "icon")
+    btn2.setOnTouch(lambda: ui.showPopup("Account", "Bottom"))
 
-    self.btn3 = ui.addButton(self.apb.layout, "more_vert", "icon")
-    self.btn3.setOnTouch(lambda: ui.showPopup("More options", "Bottom"))
+    btn3 = ui.addButton(.apb.layout, "more_vert", "icon")
+    btn3.setOnTouch(lambda: ui.showPopup("More options", "Bottom"))
 
     # Adds a drawer layout
-    self.drawLay = ui.addLayout(None, "Linear", "Top")
+    drawLay = ui.addLayout(None, "Linear", "Top")
 
     # Adds a drawer to the app and pass the drawer layout
-    self.drawer = ui.addDrawer(self.drawLay, "left")
+    drawer = ui.addDrawer(.drawLay, "left")
 
     # Adds a list to the drawer layout. See `List` component for customization.
     lst = [
@@ -89,50 +89,50 @@ def onStart(self):
         ["music_note", "Audios"],
         ["photo", "Photos"]
     ]
-    self.lstMenu = ui.addList(self.drawLay, lst, "Icon", 1 )
-    self.lstMenu.label = "Main navigation"
+    lstMenu = ui.addList(.drawLay, lst, "Icon", 1 )
+    lstMenu.label = "Main navigation"
 
     # Add a callback handler to the list onTouch event
-    self.lstMenu.setOnTouch( self.onTouch )
+    lstMenu.setOnTouch( onTouch )
 
-def showDrawer(self):
-    self.drawer.show()
+def showDrawer():
+    drawer.show()
 
-def onTouch(self, title):
+def onTouch(, title):
     # Set the appbar text with the selected list item
-    self.apb.text = title
+    apb.text = title
 
     # Close the drawer
-    self.drawer.hide()
+    drawer.hide()
 </sample>
 
 <sample Appbar with search field>
 from native import ui
 
-def onStart(self):
+def OnStart
     global tfd, searchBtn
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "Top", 1, 1)
+    main = ui.addLayout("main", "Linear", "Top", 1, 1)
 
     # Add an appbar to the main layout
-    self.apb = ui.addAppBar(self.main, "My app", "Default")
+    apb = ui.addAppBar(.main, "My app", "Default")
 
     # Adds a textfield to the appbar
-    self.tfd = ui.addTextField(self.apb.layout, "", "Search,Outlined,Small")
-    self.tfd.placeholder = "Search"
-    self.tfd.hide()
+    tfd = ui.addTextField(.apb.layout, "", "Search,Outlined,Small")
+    tfd.placeholder = "Search"
+    tfd.hide()
 
     # Add a search icon button to the appbar
-    self.searchBtn = ui.addButton(self.apb.layout, "search", "icon")
+    searchBtn = ui.addButton(.apb.layout, "search", "icon")
 
     # Add a callback handler when the button is click
-    self.searchBtn.setOnTouch( self.showSearchField )
+    searchBtn.setOnTouch( showSearchField )
 
-def showSearchField(self):
-    if self.searchBtn.text == "search":
-        self.tfd.show()
-        self.searchBtn.text = "close"
+def showSearchField():
+    if searchBtn.text == "search":
+        tfd.show()
+        searchBtn.text = "close"
     else:
-        self.tfd.hide()
-        self.searchBtn.text = "search"
+        tfd.hide()
+        searchBtn.text = "search"
 </sample>

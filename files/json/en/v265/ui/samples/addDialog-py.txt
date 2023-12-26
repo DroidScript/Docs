@@ -1,107 +1,98 @@
 <sample Basic>
 from native import ui
 
-def onStart(self):
+def OnStart
     global dlg
     # Create a fullscreen layout with objects vertically centered
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Add button to the main layout to show the dialog when clicked.
-    self.btn = ui.addButton(self.main, "Show Dialog", "Contained,Primary")
-    self.btn.setOnTouch(self.showDialog)
+    btn = ui.addButton(.main, "Show Dialog", "Contained,Primary")
+    btn.setOnTouch(.showDialog)
 
     # Message to be displayed in the Dialog component
     bodyText = "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
 
     # Initialize the Dialog component with `Agree` and `Disagree` action buttons
-    self.dlg = ui.addDialog("Use Google's location service?", bodyText, "Disagree,Agree")
+    dlg = ui.addDialog("Use Google's location service?", bodyText, "Disagree,Agree")
 
-def showDialog(self):
+def showDialog():
     # Show the Dialog component when the button is clicked.
-    self.dlg.show()
-
-main = Main()
-main.onStart()
+    dlg.show()
 </sample>
 
 <sample NoCancel>
 from native import ui
 
-def onStart(self):
+def OnStart
     global dlg
     # Create a fullscreen layout with objects vertically centered
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Add a button to the main layout.
-    self.btn = ui.addButton(self.main, "Show Dialog", "Contained,Primary")
+    btn = ui.addButton(.main, "Show Dialog", "Contained,Primary")
 
     # Add a callback handler for `onTouch` event on the button.
-    self.btn.setOnTouch(self.showDialog)
+    btn.setOnTouch(.showDialog)
 
     # Message to display
     bodyText = "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
 
     # Initialize the Dialog component and pass a `NoCancel` option.
-    self.dlg = ui.addDialog("Use Google's location service?", bodyText, "Close,Agree", "NoCancel")
+    dlg = ui.addDialog("Use Google's location service?", bodyText, "Close,Agree", "NoCancel")
 
     # Add a callback handler for `onAction` event on the Dialog component
-    self.dlg.setOnAction(self.onAction)
+    dlg.setOnAction(.onAction)
 
-def showDialog(self):
+def showDialog():
     # Show the Dialog component when button is clicked
-    self.dlg.show()
+    dlg.show()
 
-def onAction(self, action):
+def onAction(, action):
     if action == "Close":
         ui.showPopup("There you go.")
-        self.dlg.hide()
+        dlg.hide()
     else:
         ui.showPopup("Oops! You can't close me here.")
-
-main = Main()
-main.onStart()
 </sample>
 
 <sample Adding controls to the dialog>
 from native import ui
 
-def onStart(self):
+def OnStart
     global dlg, txt, tfd
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
     # Adds a text control to the main layout.
-    self.txt = ui.addText(self.main, "Email: ", "", 0.7)
+    txt = ui.addText(.main, "Email: ", "", 0.7)
 
     # Adds a button to show the dialog.
-    self.btn = ui.addButton(self.main, "Show Dialog", "Contained,Primary")
+    btn = ui.addButton(.main, "Show Dialog", "Contained,Primary")
 
     # Add a callback handler for `ontouch` event on the button control
     # to show the Dialog component
-    self.btn.setOnTouch(self.showDialog)
+    btn.setOnTouch(.showDialog)
 
     bodyText = "To subscribe to this website, please enter your email address here. We will send updates occasionally."
 
     # Initialize the dialog.
-    self.dlg = ui.addDialog("Subscribe", bodyText, "Cancel,Subscribe")
+    dlg = ui.addDialog("Subscribe", bodyText, "Cancel,Subscribe")
 
     # Add a callback handler for `onaction` event on the Dialog componenti
-    self.dlg.setOnAction(self.onAction)
+    dlg.setOnAction(.onAction)
 
     # Adding textfield to the main layout
-    self.tfd = ui.addTextField(self.dlg.layout, "", "Filled")
-    self.tfd.label = "Email Address"
+    tfd = ui.addTextField(.dlg.layout, "", "Filled")
+    tfd.label = "Email Address"
 
-def showDialog(self):
-    self.dlg.show()
+def showDialog():
+    dlg.show()
 
-def onAction(self, action):
+def onAction(, action):
     # Check the button that is clicked.
     if action == "Subscribe":
         # Change the text of the text control.
-        self.txt.text = "Email: " + self.tfd.text
-
-main = Main()
-main.onStart()
+        txt.text = "Email: " + tfd.text
 </sample>

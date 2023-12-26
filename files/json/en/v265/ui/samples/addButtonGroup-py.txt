@@ -1,21 +1,21 @@
 <sample Basic ButtonGroup>
 from native import ui
 
-def onStart(self):
+def OnStart
 
     # Creates a fullscreen layout with object vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
     # Initialize button items
     buttons = ["Button 1", "Button 2", "Button 3"]
 
     # Add a ButtonGroup control to the main layout
-    self.btg = ui.addButtonGroup(self.main, buttons, "", 0.9)
+    btg = ui.addButtonGroup(.main, buttons, "", 0.9)
 
     # Add a callback handler for `onTouch` event
-    self.btg.setOnTouch(self.onTouch)
+    btg.setOnTouch(.onTouch)
 
-def onTouch(self, text, index):
+def onTouch(, text, index):
     # Display the touched button text
     ui.showPopup(text)
 </sample>
@@ -23,27 +23,27 @@ def onTouch(self, text, index):
 <sample ButtonGroup variants>
 from native import ui
 
-def onStart(self):
+def OnStart
 
     # Creates a fullscreen layout with object vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0, 0.05, 0, 0.05)
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
 
     buttons = ["Button 1", "Button 2", "Button 3"]
 
     # Add a contained ButtonGroup to the main layout
-    self.btg1 = ui.addButtonGroup(self.main, buttons, "Contained,Primary", 0.9)
-    self.btg1.setOnTouch(self.onTouch)
+    btg1 = ui.addButtonGroup(.main, buttons, "Contained,Primary", 0.9)
+    btg1.setOnTouch(.onTouch)
 
     # Add an outlined ButtonGroup to the main layout
-    self.btg2 = ui.addButtonGroup(self.main, buttons, "Outlined,Primary", 0.9)
-    self.btg2.setOnTouch(self.onTouch)
+    btg2 = ui.addButtonGroup(.main, buttons, "Outlined,Primary", 0.9)
+    btg2.setOnTouch(.onTouch)
 
     # Add a text ButtonGroup to the main layout
-    self.btg3 = ui.addButtonGroup(self.main, buttons, "Text,Primary", 0.9)
-    self.btg3.setOnTouch(self.onTouch)
+    btg3 = ui.addButtonGroup(.main, buttons, "Text,Primary", 0.9)
+    btg3.setOnTouch(.onTouch)
 
-def onTouch(self, text, index):
+def onTouch(, text, index):
     # Display the touched button text
     ui.showPopup(text)
 </sample>
@@ -51,28 +51,28 @@ def onTouch(self, text, index):
 <sample ButtonGroup colors>
 from native import ui
 
-def onStart(self):
+def OnStart
 
     # Creates a fullscreen layout with object vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0, 0.05, 0, 0.05)
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
 
     # Initialize button items
     buttons = ["Button 1", "Button 2", "Button 3"]
 
     # Add defualt ButtonGroup to the main layout
-    self.btg1 = ui.addButtonGroup(self.main, buttons, "Default", 0.9)
-    self.btg1.setOnTouch(self.onTouch)
+    btg1 = ui.addButtonGroup(.main, buttons, "Default", 0.9)
+    btg1.setOnTouch(.onTouch)
 
     # Add primary ButtonGroup to the main layout
-    self.btg2 = ui.addButtonGroup(self.main, buttons, "Primary", 0.9)
-    self.btg2.setOnTouch(self.onTouch)
+    btg2 = ui.addButtonGroup(.main, buttons, "Primary", 0.9)
+    btg2.setOnTouch(.onTouch)
 
     # Add secondary ButtonGroup to the main layout
-    self.btg3 = ui.addButtonGroup(self.main, buttons, "Secondary", 0.9)
-    self.btg3.setOnTouch(self.onTouch)
+    btg3 = ui.addButtonGroup(.main, buttons, "Secondary", 0.9)
+    btg3.setOnTouch(.onTouch)
 
-def onTouch(self, text, index):
+def onTouch(, text, index):
     # Display the touched button text
     ui.showPopup(text)
 </sample>
@@ -80,28 +80,28 @@ def onTouch(self, text, index):
 <sample ButtonGroup sizes>
 from native import ui
 
-def onStart(self):
+def OnStart
 
     # Creates a fullscreen layout with object vertically centered
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0, 0.05, 0, 0.05)
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
 
     # Initialize button items
     buttons = ["Button 1", "Button 2", "Button 3"]
 
     # Add small size ButtonGroup to the main layout
-    self.btg1 = ui.addButtonGroup(self.main, buttons, "Contained,Primary,Small", 0.9)
-    self.btg1.setOnTouch(self.onTouch)
+    btg1 = ui.addButtonGroup(.main, buttons, "Contained,Primary,Small", 0.9)
+    btg1.setOnTouch(.onTouch)
 
     # Add medium/default size ButtonGroup to the main layout
-    self.btg2 = ui.addButtonGroup(self.main, buttons, "Contained,Primary,Medium", 0.9)
-    self.btg2.setOnTouch(self.onTouch)
+    btg2 = ui.addButtonGroup(.main, buttons, "Contained,Primary,Medium", 0.9)
+    btg2.setOnTouch(.onTouch)
 
     # Add large size ButtonGroup to the main layout
-    self.btg3 = ui.addButtonGroup(self.main, buttons, "Contained,Primary,Large", 0.9)
-    self.btg3.setOnTouch(self.onTouch)
+    btg3 = ui.addButtonGroup(.main, buttons, "Contained,Primary,Large", 0.9)
+    btg3.setOnTouch(.onTouch)
 
-def onTouch(self, text, index):
+def onTouch(, text, index):
     # Display the touched button text
     ui.showPopup(text)
 </sample>
@@ -109,28 +109,28 @@ def onTouch(self, text, index):
 <sample ButtonGroup icons>
 from native import ui
 
-def onStart(self):
+def OnStart
 
     # Creates a fullscreen layout with object vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0, 0.05, 0, 0.05)
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
 
     # Initialize button items
     buttons = ["delete", "shopping_cart", "dashboard"]
 
     # Add small and primary contained ButtonGroup icons to the main layout
-    self.btg1 = ui.addButtonGroup(self.main, buttons, "Contained,Primary,Small,Icon")
-    self.btg1.setOnTouch(self.onTouch)
+    btg1 = ui.addButtonGroup(.main, buttons, "Contained,Primary,Small,Icon")
+    btg1.setOnTouch(.onTouch)
 
     # Add a medium and secondary outlined ButtonGroup icons to the main layout
-    self.btg2 = ui.addButtonGroup(self.main, buttons, "Outlined,Secondary,Medium,Icon")
-    self.btg2.setOnTouch(self.onTouch)
+    btg2 = ui.addButtonGroup(.main, buttons, "Outlined,Secondary,Medium,Icon")
+    btg2.setOnTouch(.onTouch)
 
     # Add a large and default text ButtonGroup icons to the main layout
-    self.btg3 = ui.addButtonGroup(self.main, buttons, "Text,Large,Icon")
-    self.btg3.setOnTouch(self.onTouch)
+    btg3 = ui.addButtonGroup(.main, buttons, "Text,Large,Icon")
+    btg3.setOnTouch(.onTouch)
 
-def onTouch(self, text, index):
+def onTouch(, text, index):
     # Display the touched button text
     ui.showPopup(text)
 </sample>

@@ -1,128 +1,128 @@
 <sample Button variants>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-    self.btn1 = ui.addButton(self.main, "Button", "Contained")
-    self.btn1.setOnTouch(self.onTouch)
+    btn1 = ui.addButton(.main, "Button", "Contained")
+    btn1.setOnTouch(.onTouch)
 
-    self.btn2 = ui.addButton(self.main, "Button", "Outlined")
-    self.btn2.setOnTouch(self.onTouch)
+    btn2 = ui.addButton(.main, "Button", "Outlined")
+    btn2.setOnTouch(.onTouch)
 
-    self.btn3 = ui.addButton(self.main, "Button", "Text")
-    self.btn3.setOnTouch(self.onTouch)
+    btn3 = ui.addButton(.main, "Button", "Text")
+    btn3.setOnTouch(.onTouch)
 
-def onTouch(self):
+def onTouch():
     ui.showPopup("Button is touch!")
 </sample>
 
 <sample Button theme colors>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-    self.btn1 = ui.addButton(self.main, "Primary", "Contained,Primary")
-    self.btn1.setOnTouch(self.onTouch)
+    btn1 = ui.addButton(.main, "Primary", "Contained,Primary")
+    btn1.setOnTouch(.onTouch)
 
-    self.btn2 = ui.addButton(self.main, "Secondary", "Outlined,Secondary")
-    self.btn2.setOnTouch(self.onTouch)
+    btn2 = ui.addButton(.main, "Secondary", "Outlined,Secondary")
+    btn2.setOnTouch(.onTouch)
 
-    self.btn3 = ui.addButton(self.main, "Default", "Text,Default")
-    self.btn3.setOnTouch(self.onTouch)
+    btn3 = ui.addButton(.main, "Default", "Text,Default")
+    btn3.setOnTouch(.onTouch)
 
-def onTouch(self):
+def onTouch():
     ui.showPopup("Button is touch!")
 </sample>
 
 <sample Button sizes>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-    self.btn1 = ui.addButton(self.main, "Small", "Contained,Primary,Small")
-    self.btn1.setOnTouch(self.onTouch)
+    btn1 = ui.addButton(.main, "Small", "Contained,Primary,Small")
+    btn1.setOnTouch(.onTouch)
 
-    self.btn2 = ui.addButton(self.main, "Medium", "Contained,Primary,Medium")
-    self.btn2.setOnTouch(self.onTouch)
+    btn2 = ui.addButton(.main, "Medium", "Contained,Primary,Medium")
+    btn2.setOnTouch(.onTouch)
 
-    self.btn3 = ui.addButton(self.main, "Large", "Contained,Primary,Large")
+    btn3 = ui.addButton(.main, "Large", "Contained,Primary,Large")
 
-def onTouch(self):
+def onTouch():
     ui.showPopup("Button is touch!")
 </sample>
 
 <sample Button tooltips>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0, 0.05, 0, 0.05)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
 
-    self.btn1 = ui.addButton(self.main, "Left", "Contained,Primary")
-    self.btn1.setToolTip("Tooltip on the left", "left")
+    btn1 = ui.addButton(.main, "Left", "Contained,Primary")
+    btn1.setToolTip("Tooltip on the left", "left")
 
-    self.btn2 = ui.addButton(self.main, "Top", "Contained,Primary")
-    self.btn2.setToolTip("Tooltip on the top", "top")
+    btn2 = ui.addButton(.main, "Top", "Contained,Primary")
+    btn2.setToolTip("Tooltip on the top", "top")
 
-    self.btn3 = ui.addButton(self.main, "Right", "Contained,Primary")
-    self.btn3.setToolTip("Tooltip on the right", "right")
+    btn3 = ui.addButton(.main, "Right", "Contained,Primary")
+    btn3.setToolTip("Tooltip on the right", "right")
 
-    self.btn4 = ui.addButton(self.main, "Bottom", "Contained,Primary")
-    self.btn4.setToolTip("Tooltip on the bottom", "bottom")
+    btn4 = ui.addButton(.main, "Bottom", "Contained,Primary")
+    btn4.setToolTip("Tooltip on the bottom", "bottom")
 </sample>
 
 <sample Button with icons>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins("12px", "12px", "12px", "12px")
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins("12px", "12px", "12px", "12px")
 
-    self.btn1 = ui.addButton(self.main, "Send", "Primary")
-    self.btn1.icon = "send"
+    btn1 = ui.addButton(.main, "Send", "Primary")
+    btn1.icon = "send"
 
-    self.btn2 = ui.addButton(self.main, "Add to cart", "Secondary")
-    self.btn2.icon = "shopping_cart"
+    btn2 = ui.addButton(.main, "Add to cart", "Secondary")
+    btn2.icon = "shopping_cart"
 
-    self.btn3 = ui.addButton(self.main, "android", "Primary,Icon")
+    btn3 = ui.addButton(.main, "android", "Primary,Icon")
 
-    self.btn4 = ui.addButton(self.main, "settings", "Secondary,Icon")
+    btn4 = ui.addButton(.main, "settings", "Secondary,Icon")
 </sample>
 
 <sample Buttons with badges>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
-    self.btn1 = ui.addButton(self.main, "android", "Primary,Icon")
+    btn1 = ui.addButton(.main, "android", "Primary,Icon")
 
-    self.btn2 = ui.addButton(self.main, "settings", "Primary,Icon")
-    self.btn2.setBadge(5)
+    btn2 = ui.addButton(.main, "settings", "Primary,Icon")
+    btn2.setBadge(5)
 
-    self.btn3 = ui.addButton(self.main, "With Badge", "Secondary,Outlined")
-    self.btn3.setBadge("New", "Primary")
+    btn3 = ui.addButton(.main, "With Badge", "Secondary,Outlined")
+    btn3.setBadge("New", "Primary")
 </sample>
 
 <sample Upload button>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-    self.btn = ui.addButton(self.main, "Upload File", "Primary,Upload")
-    self.btn.icon = "backup"
+    btn = ui.addButton(.main, "Upload File", "Primary,Upload")
+    btn.icon = "backup"
 
-    self.btn.setOnFileSelect(self.onFileSelect)
+    btn.setOnFileSelect(.onFileSelect)
 
-def onFileSelect(self, files):
+def onFileSelect(, files):
     file = files[0]
     ui.showPopup(f"{file.name} is selected.")
 </sample>

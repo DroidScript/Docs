@@ -2,86 +2,86 @@
 from native import ui
 
 class Main extends App:
-    def onStart(self):
+    def OnStart
         # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
-        self.main.setMargins(0.01, 0.01, 0.01, 0.01)
+        main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
+        main.setMargins(0.01, 0.01, 0.01, 0.01)
 
         # Add a button to the main layout
-        self.btn = ui.addButton(self.main, "Show Date Picker", "Secondary")
-        self.btn.setOnTouch(self.showDatePicker)
+        btn = ui.addButton(.main, "Show Date Picker", "Secondary")
+        btn.setOnTouch(.showDatePicker)
 
         # Initialize date picker
-        self.dtp = ui.addDatePicker()
+        dtp = ui.addDatePicker()
 
-    def showDatePicker(self):
+    def showDatePicker():
         # Display the date picker dialog
-        self.dtp.show()
+        dtp.show()
 </sample>
 
 <sample Default>
 from native import ui
 
 class Main extends App:
-    def onStart(self):
+    def OnStart
         # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
-        self.main.setMargins(0.01, 0.01, 0.01, 0.01)
+        main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
+        main.setMargins(0.01, 0.01, 0.01, 0.01)
 
         # Add a button to the main layout
-        self.btn = ui.addButton(self.main, "Show Date Picker", "Secondary")
-        self.btn.setOnTouch(self.showDatePicker)
+        btn = ui.addButton(.main, "Show Date Picker", "Secondary")
+        btn.setOnTouch(.showDatePicker)
 
         # Initialize date picker
-        self.dtp = ui.addDatePicker()
+        dtp = ui.addDatePicker()
 
-    def showDatePicker(self):
+    def showDatePicker():
         # Display the date picker dialog
-        self.dtp.show()
+        dtp.show()
 </sample>
 
 <sample With initial value & portrait>
 from native import ui
 
 class Main extends App:
-    def onStart(self):
+    def OnStart
         # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
-        self.main.setMargins(0.01, 0.01, 0.01, 0.01)
+        main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
+        main.setMargins(0.01, 0.01, 0.01, 0.01)
 
         # Add a button to the main layout
-        self.btn = ui.addButton(self.main, "Show Date Picker", "Secondary")
-        self.btn.setOnTouch(self.showDatePicker)
+        btn = ui.addButton(.main, "Show Date Picker", "Secondary")
+        btn.setOnTouch(.showDatePicker)
 
         # With initial value. Date must be of the form "YYYY-MM-DD"
-        self.dtp = ui.addDatePicker("2022-12-25", "Portrait")
+        dtp = ui.addDatePicker("2022-12-25", "Portrait")
 
-    def showDatePicker(self):
+    def showDatePicker():
         # Display the date picker dialog
-        self.dtp.show()
+        dtp.show()
 </sample>
 
 <sample With limits & callback>
 from native import ui
 
 class Main extends App:
-    def onStart(self):
+    def OnStart
         # Creates a fullscreen layout with objects vertically centered.
-        self.main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
-        self.main.setMargins(0.01, 0.01, 0.01, 0.01)
+        main = ui.addLayout("main", "Linear", "Top,VCenter", 1, 1)
+        main.setMargins(0.01, 0.01, 0.01, 0.01)
 
         # Add a button to the main layout
-        self.btn = ui.addButton(self.main, "Show Date Picker", "Secondary")
-        self.btn.setOnTouch(self.showDatePicker)
+        btn = ui.addButton(.main, "Show Date Picker", "Secondary")
+        btn.setOnTouch(.showDatePicker)
 
         # With initial value. Date must be of the form "YYYY-MM-DD"
-        self.dtp = ui.addDatePicker("2022-12-25", "Portrait")
-        self.dtp.setOnSelect(self.onSelect)
+        dtp = ui.addDatePicker("2022-12-25", "Portrait")
+        dtp.setOnSelect(.onSelect)
 
-    def showDatePicker(self):
+    def showDatePicker():
         # Display the date picker dialog
-        self.dtp.show()
+        dtp.show()
 
-    def onSelect(self, value):
+    def onSelect(, value):
         console.log(value)
 </sample>

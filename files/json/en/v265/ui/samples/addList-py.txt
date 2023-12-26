@@ -1,20 +1,20 @@
 <sample Basic list>
 from native import app, ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Initialize the list items to show
     list = ["Javascript", "Java", "Python"]
 
     # Add a list control to the main layout
-    self.lst = ui.addList(self.main, list, "", 0.6)
+    lst = ui.addList(.main, list, "", 0.6)
 
     # Adds a callback handler when the list is touched
-    self.lst.setOnTouch(self.onTouch)
+    lst.setOnTouch(.onTouch)
 
-def onTouch(self, title, body, icon, action, index):
+def onTouch(, title, body, icon, action, index):
     ui.showPopup(title, "Short")
 
 app = Main()
@@ -24,11 +24,11 @@ app.onStart()
 <sample List with icon and body>
 from native import app, ui
 
-def onStart(self):
+def OnStart
     global lst
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    self.main.setChildMargins(0, 0, 0, 0.02)
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0, 0, 0.02)
 
     # Initialize the list items to show
     list = [
@@ -38,22 +38,22 @@ def onStart(self):
     ]
 
     # Add a list control with icon to the main layout
-    self.lst = ui.addList(self.main, list, "Icon", 0.8)
+    lst = ui.addList(.main, list, "Icon", 0.8)
 
     # Adds a callback handler when the list is touched
-    self.lst.setOnTouch(self.onTouch)
+    lst.setOnTouch(.onTouch)
 
     # Add a button control to the main layout
-    self.btn = ui.addButton(self.main, "Change Icon Color", "Outlined")
+    btn = ui.addButton(.main, "Change Icon Color", "Outlined")
 
     # Add a callback handler to change the icon color when the button is touched
-    self.btn.setOnTouch(self.changeIconColor)
+    btn.setOnTouch(.changeIconColor)
 
-def onTouch(self, title, body, icon, action, index):
+def onTouch(, title, body, icon, action, index):
     ui.showPopup(title, "Short")
 
-def changeIconColor(self):
-    self.lst.iconColor = "#e91e63"
+def changeIconColor():
+    lst.iconColor = "#e91e63"
 
 app = Main()
 app.onStart()
@@ -62,9 +62,9 @@ app.onStart()
 <sample Contacts list>
 from native import app, ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Avatar url
     avatar = "https://static.wikia.nocookie.net/heroes-and-villain/images/7/7e/Bilbo_BOFA_12.png/revision/latest/scale-to-width-down/350?cb=20190320192007"
@@ -77,12 +77,12 @@ def onStart(self):
     ]
 
     # Add a list control with avatar to the main layout
-    self.lst = ui.addList(self.main, list, "Avatar", 0.8)
+    lst = ui.addList(.main, list, "Avatar", 0.8)
 
     # Adds a callback handler when the list is touched
-    self.lst.setOnTouch(self.onTouch)
+    lst.setOnTouch(.onTouch)
 
-def onTouch(self, title, body, icon, action, index):
+def onTouch(, title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
 app = Main()
@@ -92,9 +92,9 @@ app.onStart()
 <sample Elevated list>
 from native import app, ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Initialize the list items to show
     list = [
@@ -104,18 +104,18 @@ def onStart(self):
     ]
 
     # Add an elevated list control to the main layout
-    self.lst = ui.addList(self.main, list, "Icon,Elevated", 0.8)
+    lst = ui.addList(.main, list, "Icon,Elevated", 0.8)
 
     # Set the elevation depth to 5
-    self.lst.elevation = 5
+    lst.elevation = 5
 
     # Set the list label
-    self.lst.label = "This is a label text"
+    lst.label = "This is a label text"
 
     # Adds a callback handler when the list is touched
-    self.lst.setOnTouch(self.onTouch)
+    lst.setOnTouch(.onTouch)
 
-def onTouch(self, title, body, icon, action, index):
+def onTouch(, title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
 app = Main()
@@ -125,9 +125,9 @@ app.onStart()
 <sample Outlined List>
 from native import app, ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Initialize the list items to show
     list = [
@@ -137,18 +137,18 @@ def onStart(self):
     ]
 
     # Add an outlined list control to the main layout
-    self.lst = ui.addList(self.main, list, "Icon,Outlined", 0.8)
+    lst = ui.addList(.main, list, "Icon,Outlined", 0.8)
 
     # Set the list label
-    self.lst.label = "My awesome list"
+    lst.label = "My awesome list"
 
     # Set the corner radius to 12
-    self.lst.cornerRadius = 12
+    lst.cornerRadius = 12
 
     # Adds a callback handler when the list is touched
-    self.lst.setOnTouch(self.onTouch)
+    lst.setOnTouch(.onTouch)
 
-def onTouch(self, title, body, icon, action, index):
+def onTouch(, title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
 app = Main()
@@ -158,30 +158,30 @@ app.onStart()
 <sample Selectable List>
 from native import app, ui
 
-def onStart(self):
+def OnStart
     global lst
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     list = ["Javascript", "Java", "Python"]
 
     # Add a list control to the main layout
-    self.lst = ui.addList(self.main, list, "", 0.6)
+    lst = ui.addList(.main, list, "", 0.6)
 
     # Set the list label
-    self.lst.label = "Long press any item to select"
+    lst.label = "Long press any item to select"
 
     # Add on long touch event and set the list to selectable
-    self.lst.setOnLongTouch(self.onLongTouch)
+    lst.setOnLongTouch(.onLongTouch)
 
     # Add `onSelect` event listener to the list
     # and display the selected item in the popup
-    self.lst.setOnSelect(self.onSelect)
+    lst.setOnSelect(.onSelect)
 
-def onLongTouch(self):
-    self.lst.selectable = True
+def onLongTouch():
+    lst.selectable = True
 
-def onSelect(self, title, i, value):
+def onSelect(, title, i, value):
     ui.showPopup(title + " : " + value)
 
 app = Main()

@@ -2,20 +2,20 @@
 from native import ui
 from ui import ui
 
-def onStart(self):
+def OnStart
     # Create a fullscreen linear layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Initialize items to show in the dropdown
     items = ["Item 1", "Item 2", "Item 3"]
 
     # Add Dropdown control to the main layout.
-    self.dpd = ui.addDropdown(self.main, items)
+    dpd = ui.addDropdown(.main, items)
 
     # Add a callback handler for `onChange` event on the Dropdown control
-    self.dpd.setOnChange(self.onChange)
+    dpd.setOnChange(.onChange)
 
-def onChange(self, text, index):
+def onChange(, text, index):
     ui.showPopup("Value is " + text)
 </sample>
 
@@ -23,29 +23,29 @@ def onChange(self, text, index):
 from native import ui
 from ui import ui
 
-def onStart(self):
+def OnStart
     # Create a fullscreen linear layout with objects vertically centered
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Initialize dropdown items
     items = ["Item 1", "Item 2", "Item 3"]
 
     # Add a Dropdown control to the main layout
     # and pass `Outlined` and `Primary` options for styling
-    self.dpd = ui.addDropdown(self.main, items, "Outlined,Primary")
+    dpd = ui.addDropdown(.main, items, "Outlined,Primary")
 
     # Set the label property of the Dropdown
-    self.dpd.label = "Choose an item"
+    dpd.label = "Choose an item"
 
     # Set the corner radius to 16px
-    self.dpd.cornerRadius = 16
+    dpd.cornerRadius = 16
 
     # Set the text size to 18
-    self.dpd.textSize = 18
+    dpd.textSize = 18
 
     # Add a callback handler for `onChange` event of the Dropdown control
-    self.dpd.setOnChange(self.onChange)
+    dpd.setOnChange(.onChange)
 
-def onChange(self, text, index):
+def onChange(, text, index):
     ui.showPopup("Value is " + text)
 </sample>

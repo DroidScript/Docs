@@ -2,24 +2,24 @@
 from native import ui
 from ui import ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Initialize checkbox items
-    self.items = [
+    items = [
         "Checkbox item 1",
         "Checkbox item 2",
         "Checkbox item 3"
     ]
 
     # Add a checkbox group to the main layout.
-    self.ckg = ui.addCheckboxGroup(self.main, self.items)
+    ckg = ui.addCheckboxGroup(.main, items)
 
     # Add a callback handler for `onTouch` event
-    self.ckg.setOnTouch(self.onTouch)
+    ckg.setOnTouch(.onTouch)
 
-def onTouch(self, value, item, index):
+def onTouch(, value, item, index):
     ui.showPopup(f"Value of {item} is {value}")
 </sample>
 
@@ -27,10 +27,10 @@ def onTouch(self, value, item, index):
 from native import ui
 from ui import ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.main.childSpacing = "evenly"
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.childSpacing = "evenly"
 
     # Initialize the checkbox items
     list = [
@@ -40,18 +40,18 @@ def onStart(self):
     ]
 
     # Add a default CheckboxGroup to the main layout
-    self.ckg1 = ui.addCheckboxGroup(self.main, list)
-    self.ckg1.setOnTouch(self.onTouch)
+    ckg1 = ui.addCheckboxGroup(.main, list)
+    ckg1.setOnTouch(.onTouch)
 
     # Add a primary CheckboxGroup to the main layout
-    self.ckg2 = ui.addCheckboxGroup(self.main, list, "Primary")
-    self.ckg2.setOnTouch(self.onTouch)
+    ckg2 = ui.addCheckboxGroup(.main, list, "Primary")
+    ckg2.setOnTouch(.onTouch)
 
     # Add a secondary CheckboxGroup to the main layout
-    self.ckg3 = ui.addCheckboxGroup(self.main, list, "Secondary")
-    self.ckg3.setOnTouch(self.onTouch)
+    ckg3 = ui.addCheckboxGroup(.main, list, "Secondary")
+    ckg3.setOnTouch(.onTouch)
 
-def onTouch(self, value, item, index):
+def onTouch(, value, item, index):
     ui.showPopup(f"Value of {item} is {value}")
 </sample>
 
@@ -59,9 +59,9 @@ def onTouch(self, value, item, index):
 from native import ui
 from ui import ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Initialize the checkbox list items
     list = [
@@ -71,18 +71,18 @@ def onStart(self):
     ]
 
     # Add an elevated checkbox group to the main layout.
-    self.ckg = ui.addCheckboxGroup(self.main, list, "Elevated,Secondary", 0.6)
+    ckg = ui.addCheckboxGroup(.main, list, "Elevated,Secondary", 0.6)
 
     # Set the label of the CheckboxGroup
-    self.ckg.label = "Select as many as you can"
+    ckg.label = "Select as many as you can"
 
     # Set the elevation of the CheckboxGroup container
-    self.ckg.elevation = 4
+    ckg.elevation = 4
 
     # Add a callback handler for `onTouch` event
-    self.ckg.setOnTouch(self.onTouch)
+    ckg.setOnTouch(.onTouch)
 
-def onTouch(self, value, item, index):
+def onTouch(, value, item, index):
     ui.showPopup(f"Value of {item} is {value}")
 </sample>
 
@@ -90,9 +90,9 @@ def onTouch(self, value, item, index):
 from native import ui
 from ui import ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Initialize the checkbox items
     list = [
@@ -102,15 +102,15 @@ def onStart(self):
     ]
 
     # Add an outlined checkbox group to the main layout.
-    self.ckg = ui.addCheckboxGroup(self.main, list, "Outlined,Secondary", 0.9)
-    self.ckg.setOnTouch(self.onTouch)
+    ckg = ui.addCheckboxGroup(.main, list, "Outlined,Secondary", 0.9)
+    ckg.setOnTouch(.onTouch)
 
     # Set the label of the CheckboxGroup items
-    self.ckg.label = "Select as many as you can"
+    ckg.label = "Select as many as you can"
 
     # Set the cornerRadius to `20`
-    self.ckg.cornerRadius = 20
+    ckg.cornerRadius = 20
 
-def onTouch(self, value, item, index):
+def onTouch(, value, item, index):
     ui.showPopup(f"Value of {item} is {value}")
 </sample>

@@ -1,47 +1,47 @@
 <sample Progress control implementation>
 from native import ui
 
-def onStart(self):
+def OnStart
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.main.childSpacing = "Even"
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.childSpacing = "Even"
 
     # Indeterminate Linear
-    self.prog1 = ui.addProgress(self.main, 40, "linear", 0.7)
+    prog1 = ui.addProgress(.main, 40, "linear", 0.7)
 
     # Determinate Linear
-    self.prog2 = ui.addProgress(self.main, None, "Linear,Secondary,indeterminate", 0.7)
+    prog2 = ui.addProgress(.main, None, "Linear,Secondary,indeterminate", 0.7)
 
     # Determinate Circular
-    self.prog3 = ui.addProgress(self.main, 50, "Circular")
+    prog3 = ui.addProgress(.main, 50, "Circular")
 
     # Indeterminate Circular, enlarge and secondary
-    self.prog4 = ui.addProgress(self.main, None, "Circular,Secondary,indeterminate")
-    self.prog4.circleSize = 100
+    prog4 = ui.addProgress(.main, None, "Circular,Secondary,indeterminate")
+    prog4.circleSize = 100
 </sample>
 
 <sample Setting progress value>
 from native import ui
 
-def onStart(self):
+def OnStart
     global prog
     # Creates a fullscreen layout with objects vertically centered.
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.main.childSpacing = "Even"
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.childSpacing = "Even"
 
     # Add an indeterminate linear progress control to the main layout
-    self.prog = ui.addProgress(self.main, 0, "Linear", 0.7)
+    prog = ui.addProgress(.main, 0, "Linear", 0.7)
 
     # Add a button control to the main layout
-    self.btn = ui.addButton(self.main, "Increment")
+    btn = ui.addButton(.main, "Increment")
 
     # Add a callback handler when the button is touched
-    self.btn.setOnTouch(self.onTouch)
+    btn.setOnTouch(.onTouch)
 
-def onTouch(self):
+def onTouch():
     # Increment the value of the progress control by 10
-    if self.prog.value < 100:
-        self.prog.value += 10
+    if prog.value < 100:
+        prog.value += 10
     else:
         ui.showPopup("Progress is complete!")
 </sample>

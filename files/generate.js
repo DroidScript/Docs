@@ -8,7 +8,6 @@ const Prism = require('prismjs');
 const _glob = require('glob');
 /** @type {DSConfig} */
 const conf = require("./conf.json");
-const { writeFile } = require("fs");
 
 // prism default languages:
 //   plain,plaintext,text,txt,extend,insertBefore,DFS,markup,

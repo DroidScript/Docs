@@ -294,6 +294,16 @@ function fixupPython(file, code = "") {
         .replace(/(app\.)?alert\(/g, "app.Alert(");
 
     // ui class fragment
+    if (code.includes("def onStart(self):")) {
+        code = code
+            .replace("def onStart(self):", "def OnStart")
+            .replace("app.Run(Main)", "")
+            .replace("main = Main()", "")
+            .replace("main.onStart()", "")
+            .replace(/(\()self|self\./g, "$1");
+    }
+
+    // ui class fragment
     if (code.match(/class Main(\(app(.App)?\))?:/i)) {
         code = code
             .replace(/class Main(\(app(.App)?\))?:/i, "")
@@ -324,7 +334,6 @@ function fixupPython(file, code = "") {
             const used = vars.filter(v => !vars2.includes(v) && defs[j].match(RegExp(`\\b${v}\\b`)));
             globals.push(...used);
         }
-        if (file.includes("SimulateKey")) console.log(vars, globals)
 
         // insert global statement
         if (globals.length) {
