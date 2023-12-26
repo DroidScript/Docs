@@ -19,6 +19,6 @@ def OnStart():
     drawer = ui.createDrawer(layDrawer, "left", drawerWidth)
     drawer.setOnClose(lambda: print("onClose"))
 
-def lstMenu_OnTouch(title, body, icon, index):
+def lstMenu_OnTouch(title, body, icon, index, event ):
     print(title)
     drawer.hide()

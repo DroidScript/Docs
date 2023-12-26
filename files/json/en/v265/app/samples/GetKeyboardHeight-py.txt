@@ -15,7 +15,7 @@ def OnStart():
 
     app.AddLayout(lay)
 
-def OnKeyboardShow():
+def OnKeyboardShow(shown):
     height = app.GetKeyboardHeight()
     txt.SetText("Keyboard Height: " + str(height) + "px")
 </sample>

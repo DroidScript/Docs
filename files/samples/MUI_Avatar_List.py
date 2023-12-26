@@ -45,7 +45,7 @@ def lst_OnSelect(i, val):
     selected = lst.GetSelectedItems()
     app.ShowPopup(str(len(selected)) + " Selected")
 
-def lst_OnTouch(i, t):
+def lst_OnTouch(i, t, index):
     app.ShowPopup(t)
     lst.SetUnread(i, False)
 

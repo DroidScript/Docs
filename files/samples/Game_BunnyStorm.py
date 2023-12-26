@@ -15,7 +15,7 @@ def OnLoad():
 
     wabbitTexture = gfx.CreateTexture("/Sys/Img/Bunny.png")
 
-    gfx.SetOnTouchDown(lambda ev: isAdding = True)
+    gfx.SetOnTouchDown(lambda ev, y: isAdding = True)
     gfx.SetOnTouchUp(lambda ev: isAdding = False)
 
 def OnReady():

@@ -63,6 +63,6 @@ def OnStart():
     sns.SetOnChange(sns_OnChange)
     sns.Start()
 
-def sns_OnChange(lux):
+def sns_OnChange(lux, second, third, time):
     txt.SetText("level = " + str(lux) + " lux")
 </sample>

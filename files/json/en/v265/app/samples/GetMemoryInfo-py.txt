@@ -22,7 +22,7 @@ def OnStart():
 
     app.Animate(ShowMemory, 2)
 
-def ShowMemory():
+def ShowMemory(time, dtime):
     mem = app.GetMemoryInfo()
 
     text = str(round(mem.avail / 1024 ** 2)) + "/" + str(round(mem.total / 1024 ** 2)) + " MB<br><br>" + str(

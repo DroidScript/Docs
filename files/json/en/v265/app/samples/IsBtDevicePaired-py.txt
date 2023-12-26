@@ -67,7 +67,7 @@ def bt_OnFound(name, address):
 def bt_OnComplete():
     app.HideProgress()
 
-def pair(name, address):
+def pair(name, address, icon, index):
     if not app.IsBtDevicePaired(name):
         app.ShowProgress("Pairing " + name)
         app.PairBtDevice(address, OnPair)

@@ -7,7 +7,7 @@ def OnStart():
     loc.Start()
     app.ShowPopup("Locating")
 
-def loc_OnChange(pos):
+def loc_OnChange(pos, time):
     msg = str(pos.latitude) + ", " + str(pos.longitude)
     app.ShowPopup(msg)
 </sample>

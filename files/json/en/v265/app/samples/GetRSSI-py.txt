@@ -4,7 +4,7 @@ from native import app
 def OnStart():
     app.Animate(ShowRSSI, 1)
 
-def ShowRSSI():
+def ShowRSSI(time, dtime):
     rssi = app.GetRSSI()
     app.ShowPopup(str(rssi))
 </sample>

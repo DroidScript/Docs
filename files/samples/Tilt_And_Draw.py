@@ -66,7 +66,7 @@ def Draw():
 # Called when 'Accelerometer' sensor changes.
 # Values range from approx -10.0 to +10.0
 # (the x and y may need swapping on some tablets)
-def sns_OnChange(x, y, z):
+def sns_OnChange(x, y, z, time):
 	xtilt = x / 100
 	ytilt = y / 100
 

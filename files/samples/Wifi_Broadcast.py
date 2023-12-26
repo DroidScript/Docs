@@ -40,7 +40,7 @@ def btn_OnTouch():
     net.SendDatagram(packet, "UTF-8", address, 19700)
 
 # Handle incoming UDP messages.
-def net_OnReceive(data, address):
+def net_OnReceive(data):
     print(address + ": " + data)
 
     # Extract original parts.

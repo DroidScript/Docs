@@ -28,7 +28,7 @@ def OnStart():
 def ShowListDialog():
     lsd.Show()
 
-def OnTouch(name):
+def OnTouch(name, index):
     app.ShowPopup(name)
 </sample>
 
@@ -62,7 +62,7 @@ def OnStart():
 def ShowListDialog():
     lsd.Show()
 
-def OnTouch(name):
+def OnTouch(name, index):
     app.ShowPopup(name)
 </sample>
 
@@ -96,7 +96,7 @@ def OnStart():
 def ShowListDialog():
     lsd.Show()
 
-def OnTouch(name):
+def OnTouch(name, index):
     app.ShowPopup(name)
 </sample>
 
@@ -130,6 +130,6 @@ def OnStart():
 def ShowListDialog():
     lsd.Show()
 
-def OnTouch(name):
+def OnTouch(name, index):
     app.ShowPopup(name)
 </sample>

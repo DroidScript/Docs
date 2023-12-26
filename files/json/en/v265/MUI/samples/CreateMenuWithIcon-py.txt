@@ -23,7 +23,7 @@ def OnStart():
 def ShowMenu():
     lst.Show()
 
-def OnSelect(choice):
+def OnSelect(choice, index):
     app.ShowPopup(choice)
 </sample>
 

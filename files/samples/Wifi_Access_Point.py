@@ -18,7 +18,7 @@ def OnStart():
 
     app.AddLayout(lay)
 
-def tgl_OnTouch():
+def tgl_OnTouch(value):
     if not app.IsWifiApEnabled():
         app.SetWifiApEnabled(True, "MyAp", "MyPassword")
     else:

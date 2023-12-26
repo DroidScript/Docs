@@ -60,7 +60,7 @@ def player_OnComplete():
 def spn_OnTouch(item):
     player.SetFile("/sdcard/music/" + item)
 
-def btnPlay_OnTouch():
+def btnPlay_OnTouch(event):
     player.Play()
 
 def btnPause_OnTouch():

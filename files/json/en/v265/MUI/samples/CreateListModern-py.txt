@@ -221,7 +221,7 @@ def OnStart():
     app.AddLayout(lay)
     app.ShowPopup("Click the icon/avatar to select")
 
-def OnSelect():
+def OnSelect(index, isSelected):
     items = lsm.GetSelectedItems()
     btn.SetText(str(len(items))+" REMOVE SELECTED")
     if len(items) > 0:

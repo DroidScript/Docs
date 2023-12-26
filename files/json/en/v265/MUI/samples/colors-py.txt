@@ -72,6 +72,6 @@ def OnStart():
 def ShowDialog():
     lsd.Show()
 
-def OnSelect(name):
+def OnSelect(name, index):
     lay.SetBackColor(color[name])
 </sample>

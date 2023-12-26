@@ -23,7 +23,7 @@ def OnStart():
 
     app.AddLayout(lay)
 
-def btns_OnTouch():
+def btns_OnTouch(event ):
     if this.icon == "[fa-undo]":
         edit.Undo()
     elif this.icon == "[fa-repeat]":

@@ -30,7 +30,7 @@ def OnStart():
     rag.setLabel("Flavor")
 
 #Called when button is pressed.
-def btnTheme_onTouch():
+def btnTheme_onTouch(event ):
     if not ui.theme.dark:
         ui.setTheme("dark")
     else:

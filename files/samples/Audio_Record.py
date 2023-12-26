@@ -65,7 +65,7 @@ def GetLevel():
     level = rec.GetRMS()
     txt.SetText("Level: " + str(int(round(100 * level / 0.72))) + "%")
 
-def btnPlay_OnTouch():
+def btnPlay_OnTouch(event):
     player.SetFile(destFile)
 
 def player_OnReady():

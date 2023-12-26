@@ -35,5 +35,5 @@ def OnStart():
 
     app.AddLayout(lay)
 
-def lst_OnTouch(name):
+def lst_OnTouch(name, body, icon, index):
     layAnim.Animate(name)

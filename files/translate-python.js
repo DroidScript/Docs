@@ -45,6 +45,7 @@ const doApp = process.argv.includes("-A");
 
 async function main() {
     const openai = getOpenAI("./openai.key");
+    loadScopes();
 
     const list = useAI ? await openai.beta.assistants.list({}) : undefined;
     const assistant = list && list.data.find(o => o.name === "Python Translator");
@@ -345,13 +346,60 @@ function fixupPython(file, code = "") {
     }
     code = defs.join("");
 
+    // insert callback args
+    code.replace(/((\w+)\s*=\s*)?(app|gfx|ui|MUI)\.(\w+)\(\s*([^)]+)\s*\)/g,
+        (m1, _1, obj, scope, func, args1) => {
+            if (!obj) { code = fixCbs(code, scope, obj, func, args1.trim()); }
+            else {
+                var regex = /%s\.(\w+)\(\s*([^)]+)\s*\)/g;
+                regex = RegExp(regex.source.replace('%s', obj || scope), regex.flags);
+                code.replace(regex, (m2, subf, args2) => (code = fixCbs(code, scope, func, subf, args2.trim()), ''));
+            }
+            return '';
+        });
+
+
     if (cfg.size > 0) head.push(`# ${[...cfg].join(", ")}\n`);
     if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");
     const fixedSamples = `${head.join("\n")}\n${code.trim()}`;
 
     if (file && code !== fixedSamples) fs.writeFileSync(file, fixedSamples);
     return fixedSamples;
+}
 
+/** @type {(code:string, scopestr:string, obj:string, subf:string, args:string) => string} */
+function fixCbs(code, scopestr, obj, subf, argstr) {
+    const func = loadDef(scopestr, obj || subf, obj && subf);
+
+    if (!func) {
+        console.error(`Warning: ${scopestr}.${obj || subf}${obj ? '.' + subf : ''} not found`);
+        return code;
+    }
+
+    const args = argstr.split(/,\s*/);
+
+    // todo: base func
+    if (typeof func != "object" || !Array.isArray(func.pTypes)) return code;
+
+    for (let i = 0; i < func.pTypes.length; i++) {
+        const cb = func.pTypes[i];
+        // find callback param
+        if (typeof cb != "object" || !Array.isArray(cb.pNames)) return code;
+
+        if (args[i].includes("lambda")) {
+            const args2 = cb.pNames;
+            code = code.replace(
+                RegExp(`lambda ([^:]*):`),
+                (_, args1) => `lambda ${args2.map((v, j) => args1.split(/,\s*/)[j] || v).join(", ")}:`);
+        }
+        else {
+            const args2 = cb.pNames;
+            code = code.replace(
+                RegExp(`(def ${args[i]})\\(([^)]*)\\):`),
+                (_, pfx, args1) => `${pfx}(${args2.map((v, j) => args1.split(/\s*,\s*/)[j] || v).join(", ")}):`);
+        }
+    }
+    return code;
 }
 
 /** @type {Validator} */
@@ -374,6 +422,62 @@ function validateSample(pySample, jsSample) {
         return "mismatching sample count";
     // if (!sample.includes("<b>")) return "no bold areas";
     return "";
+}
+
+/** @type {{[x:string]: DSScope}} */
+const scopes = {};
+
+function loadScopes() {
+    const lang = Object.keys(conf.langs)[0];
+    const scopeDirs = glob(`json/${lang}/${conf.version}/*/`);
+    for (const dir of scopeDirs) {
+        const name = path.basename(dir);
+        scopes[name] = loadJson(dir + '\\obj.json');
+        scopes[name + 'base'] = loadJson(dir + '\\base.json');
+    }
+}
+
+/** @type {(file:string) => any} */
+function loadJson(file) {
+    try { return JSON.parse(fs.readFileSync(file, 'utf8')); }
+    catch (e) { return undefined; }
+}
+
+function loadDef(scope = '', func = '', subf = '') {
+    /** @type {string | UndefinedPartial<DSMethod>} */
+    let met = scopes[scope][func];
+    if (!met) return null;
+    if (subf) met = met.subf && met.subf[subf] || {};
+    // load base func
+    met = unwrapBaseFunc(met, "basefunc", scopes[scope + "base"]);
+    if (typeof met == "string") return null;
+    const base = scopes[scope + 'base'];
+
+    // load params from base
+    while (typeof met.params === "string") {
+        if (!met.params.startsWith('#')) throw Error(`params must have # prefix. got '${met}'`);
+        if (/[a-z]/i.test(met.params[1])) met.params = met.params.slice(1);
+        if (!base || !base[met.params]) throw Error("params " + met.params + " not found!");
+        met.pNames = base[met.params].pNames || [];
+        met.pTypes = base[met.params].pTypes || [];
+        met.params = base[met.params].params || undefined;
+    }
+    return met;
+}
+
+/**
+ * @param {string | UndefinedPartial<DSMethod>} met
+ * @param {string} type
+ * @param {DSBase | null} base
+ */
+function unwrapBaseFunc(met, type, base) {
+    while (typeof met === "string") {
+        if (!met.startsWith('#')) throw Error(`${type} must have # prefix. got '${met}'`);
+        if (/[a-z]/i.test(met[1])) met = met.slice(1);
+        if (!base || !base[met]) throw Error("basefunc " + met + " not found!");
+        met = base[met];
+    }
+    return met;
 }
 
 async function sleep(ms = 500) {

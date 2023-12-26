@@ -65,6 +65,27 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/files/transformPopups.js",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "translate-python",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["-f", "-A", "-D"],
+            "program": "${workspaceFolder}/files/translate-python.js",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "test",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/test.js",
         }
     ]
 }

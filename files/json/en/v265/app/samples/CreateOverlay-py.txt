@@ -20,7 +20,7 @@ def OnStart():
 
 lst = [1e5] * 100
 
-def Update(time):
+def Update(time, dtime):
     mem = app.GetMemoryInfo()
     lst.append(round(100 * mem.avail / mem.total) - 50)
     lst = lst[-100:]

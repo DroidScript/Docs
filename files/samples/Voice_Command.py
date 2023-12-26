@@ -41,7 +41,7 @@ def Listen():
     speech.Recognize()
 
 #Called with the recognition result(s).
-def speech_OnResult(results, partial):
+def speech_OnResult(results):
     #Get result.
     cmd = results[0].lower()
 

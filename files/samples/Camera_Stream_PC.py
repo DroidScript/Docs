@@ -47,7 +47,7 @@ def cam_OnReady():
     cam.StartPreview()
 
 #Handle 'Connect' button clicks.
-def btnCon_OnTouch():
+def btnCon_OnTouch(value):
     #Un-check button until we've connected.
     btnCon.SetChecked(False)
 
@@ -99,7 +99,7 @@ def FindPC():
                   "is running on your PC and that you are in Wifi range.")
 
 #Handle chosen PC.
-def lstServ_OnTouch(item):
+def lstServ_OnTouch(item, checked):
     global ip
     #Set ip address and connect to server.
     ip = serverIPs[item]

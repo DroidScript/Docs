@@ -11,6 +11,6 @@ def OnStart():
 
     app.AddLayout(lay)
 
-def ShowSelection(item):
+def ShowSelection(item, index):
     app.ShowPopup("Selected = " + item)
 </sample>

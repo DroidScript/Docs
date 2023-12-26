@@ -27,7 +27,7 @@ from native import app
 def OnStart():
     app.Animate(CheckForeground, 0.2)
 
-def CheckForeground():
+def CheckForeground(time, dtime):
     apps = app.GetRunningApps()
     name = app.GetPackageName()
     if not app.IsAPK():

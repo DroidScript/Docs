@@ -13,7 +13,7 @@ def OnStart():
     app.SetDebug("console")
     app.Animate(ShowStates, 10)
 
-def ShowStates():
+def ShowStates(time, dtime):
     keys = "A|B|C|X|Y|Z|R1|L1|Up|Down|Left|Right|Start|ThumbLeft|ThumbRight|" \
            "axis-0|axis-1|axis-2|axis-3|axis-4|axis-5|axis-6|axis-7|axis-8|axis-9"
 

@@ -26,7 +26,7 @@ def OnStart():
     app.SetDebugEnabled(False)
     app.Animate(DrawFrame, 60)
 
-def DrawFrame():
+def DrawFrame(time, dtime):
     canvas.Clear()
     DrawBat()
     DrawBall()

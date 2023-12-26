@@ -143,7 +143,7 @@ def addCard(row, index):
 
     return card
 
-def FlipToInfo():
+def FlipToInfo(event):
     global createdImg
     # this: clicked card.
     canvas.Show()

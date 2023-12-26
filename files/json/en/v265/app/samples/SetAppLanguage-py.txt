@@ -30,7 +30,7 @@ def OnStart():
 
     app.ShowPopup(T("SelectLang"))
 
-def spinLang_OnChange():
+def spinLang_OnChange(item, index):
     language = spinLang.GetText()
     app.SetAppLanguage(language)
 

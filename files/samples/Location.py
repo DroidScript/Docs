@@ -28,7 +28,7 @@ def OnStart():
     Log( "Locating..." )
 
 # Called when we get a change in location.
-def loc_OnChange( data ):
+def loc_OnChange( data , time):
     Log( data.provider+": Lat "+str(data.latitude)+", Lng "+str(data.longitude)
         +", Spd "+str(data.speed)+", Bear "+str(data.bearing)
         +", Alt "+str(data.altitude)+", Accu "+str(data.accuracy)+"" )

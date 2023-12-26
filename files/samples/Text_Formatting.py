@@ -79,7 +79,7 @@ def btn_OnTouch():
     player.SetFile("/Sys/Snd/Explode.mp3")
     Explode(0)
 
-def lst_OnTouch(item):
+def lst_OnTouch(item, body, icon, index):
     global synth
     if item == "R2D2":
         # Make R2D2 sounds (sort of).

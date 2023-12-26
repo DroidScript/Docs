@@ -30,7 +30,7 @@ def OnStart():
     ban.SetOnTouch(OnTouch)
     ban.Show()
 
-def OnTouch(v):
+def OnTouch(v, btnText):
     if v:
         app.ShowPopup("Learn more")
     else:

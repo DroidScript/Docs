@@ -91,13 +91,13 @@ def RedrawIcons():
     DisplayIcons(scroller)
 
 # Handle icon touch down.
-def img_OnTouchDown():
+def img_OnTouchDown(event):
     # Shrink and fade icon.
     this.Scale(0.95, 0.95)
     this.SetAlpha(0.7)
 
 # Handle icon touch up.
-def img_OnTouchUp():
+def img_OnTouchUp(event):
     # Restore icon appearance.
     this.Scale(1, 1)
     this.SetAlpha(1)
@@ -107,7 +107,7 @@ def img_OnTouchUp():
     app.SendIntent(this.packageName, this.className, action)
 
 # Handle icon long touch.
-def img_OnLongTouch():
+def img_OnLongTouch(src):
     global curIcon
     # Restore icon appearance.
     this.Scale(1, 1)
@@ -123,7 +123,7 @@ def img_OnLongTouch():
     lstOps.Show()
 
 # Called when icon long click option chosen.
-def lstOps_Select(item):
+def lstOps_Select(item, checked):
     if item == "Remove":
         curIcon.layIcon.SetVisibility("Gone")
     elif item == "Info":

@@ -23,5 +23,5 @@ def OnStart():
     btnHello.setOnTouch(btnHello_onTouch)
 
 # Called when button is pressed
-def btnHello_onTouch():
+def btnHello_onTouch(event ):
     ui.showPopup("Hello World")

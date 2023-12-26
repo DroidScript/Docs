@@ -10,6 +10,6 @@ def OnStart():
 
     app.AddLayout(lay)
 
-def SetScreenMode(mode):
+def SetScreenMode(mode, index):
     app.SetScreenMode(mode)
 </sample>

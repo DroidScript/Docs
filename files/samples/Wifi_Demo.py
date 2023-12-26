@@ -45,7 +45,7 @@ def CreateLayout():
     app.AddLayout(lay)
 
 # Handle 'Connect' button press.
-def btnCon_OnTouch():
+def btnCon_OnTouch(value):
     # Un-check button until we've connected.
     btnCon.SetChecked(False)
 

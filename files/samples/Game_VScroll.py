@@ -51,7 +51,7 @@ def OnStart():
     app.Animate(DrawFrame, 60)
 
 # Update and redraw all game graphics.
-def DrawFrame():
+def DrawFrame(time, dtime):
     # Clear the canvas.
     canvas.Clear()
 

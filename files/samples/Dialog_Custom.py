@@ -41,7 +41,7 @@ def btn_OnTouch():
     dlg.Show()
 
 #Handle list item selection.
-def lst_OnTouch(item):
+def lst_OnTouch(item, body, icon, index):
     #Hide the dialog window.
     dlg.Hide()
 

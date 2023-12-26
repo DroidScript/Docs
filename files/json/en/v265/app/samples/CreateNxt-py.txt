@@ -57,7 +57,7 @@ def OnStart():
 
     app.AddLayout(lay)
 
-def spnType_OnChange():
+def spnType_OnChange(item, index):
     app.SimulateTouch(spnInput)
 
 def ReadSensor():
