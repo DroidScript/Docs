@@ -17,7 +17,7 @@ def OnStart():
 def btn_OnTouch():
     app.ShowProgressBar("Processing...", 0)
     setInterval(lambda: Update(10), 1000)
-    app.SetInterval(2000, lambda: Update(30))
+    setInterval(lambda: Update(30), 2000)
     app.SetInterval(3000, lambda: Update(40))
     app.SetInterval(4000, lambda: Update(60))
     app.SetInterval(5000, lambda: Update(100))

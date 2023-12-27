@@ -1,8 +1,4 @@
 from native import app
-import native.MUI as MUI
-import native.app as app
-import native.gfx as gfx
-import native.ui as ui
 
 def OnStart():
     global txt, edt, sys, scroll

@@ -2,6 +2,7 @@
 # cfg.Light, cfg.MUI
 
 from native import app, MUI
+import json
 
 def OnStart():
     global chk, lst
@@ -37,6 +38,7 @@ def OnSubmit(lst):
 # cfg.Dark, cfg.MUI
 
 from native import app, MUI
+import json
 
 def OnStart():
     global chk, lst

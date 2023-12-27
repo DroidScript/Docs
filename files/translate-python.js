@@ -261,10 +261,22 @@ function fixupPython(file, code = "") {
         if (ms !== "native") imports.add(m);
         return "";
     });
+
     imports.delete("import native");
+    const importList = [...imports];
+    imports.clear();
+    for (const i of importList) if (!i.includes("native.")) imports.add(i);
+
     code = code.trim()
         .replace(/[ \t\r]+\n/g, "\n")
         .replace(/\n{3,}/g, "\n\n");
+
+    code = code
+        .replace(/native\.(app|ui|MUI|gfx|random|json|base64)?/g, (_, s) => s || "app.")
+        .replace(/(app|ui|MUI|gfx) = (app|ui|MUI|gfx)/g, "");
+
+    if (!file.includes("ui"))
+        code = code.replace(/ui.app/g, "app");
 
     // additional includes
     // random module
@@ -272,6 +284,9 @@ function fixupPython(file, code = "") {
         imports.add("import random");
         code = code.replace(/Math.random\(/gi, "random.random(");
     }
+
+    if (code.match(/json\.(loads|dumps)/i))
+        imports.add("import json");
 
     // base64 module
     if (code.match(/\batob\b/) || code.match(/\batob\b/)) {
@@ -292,12 +307,14 @@ function fixupPython(file, code = "") {
 
     code = code
         .replace(/native.(app|gfx|MUI)/g, "$1")
-        .replace(/(app\.)?alert\(/g, "app.Alert(");
+        .replace(/(app\.)?alert\(/g, "app.Alert(")
+        .replace(/console\.log/g, "print");
 
     // ui class fragment
     //if (code.includes("def onStart(self):")) {
     code = code
-        .replace("def onStart(self):", "def OnStart")
+        .replace("def onStart(self):", "def OnStart():")
+        .replace("def onStart\n", "def OnStart():")
         .replace("app.Run(Main)", "")
         .replace("main = Main()", "")
         .replace("main.onStart()", "")

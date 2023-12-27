@@ -24,7 +24,7 @@ def OnStart():
     app.addLayout( lay )
 
     # Create USB serial object.
-    usb = native.createUSBSerial()
+    usb = app.createUSBSerial()
     if not usb:
         app.showPopup( "Please connect your Arduino and restart" )
         return
@@ -44,4 +44,4 @@ def btn_OnTouch(isChecked):
 
 # Called when we get data from Espruino.
 def usb_OnReceive(data):
-    console.log( data )
+    print( data )

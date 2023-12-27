@@ -2,9 +2,9 @@
 from native import ui
 import app, gfx, ui:
 
-def from native.def OnStart
+def from app.def OnStart
 
-        main = ui.from native.ui.addLayout("main", "Linear", "VCenter,FillXY")
+        main = ui.from ui.addLayout("main", "Linear", "VCenter,FillXY")
 
         t = 'This text is formatted as html. <h3 style="color:green;">This is a
 </sample>

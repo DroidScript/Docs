@@ -11,7 +11,7 @@ def onLoad():
 </sample>
 
 <sample Call a function inside the webview>
-from native import ui
+from native import app, ui
 
 def OnStart
     global web

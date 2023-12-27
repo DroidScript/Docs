@@ -36,10 +36,10 @@ def CreateLayout():
 # Called when user presses connect.
 def btn_OnTouch():
     # Show list of NXT devices.
-    native.nxt.ShowDevices()
+    app.nxt.ShowDevices()
 
 # Called when sound image is touched.
 def imgSnd_OnTouch(e):
     if e.action == "Down":
         # Play a 100Hz tone for 500 milliseconds.
-        native.nxt.Beep(100, 500)
+        app.nxt.Beep(100, 500)

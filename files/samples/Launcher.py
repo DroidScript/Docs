@@ -51,7 +51,7 @@ def DisplayIcons(lay):
     for i in range(len(list)):
         # Get activity info.
         a = list[i]
-        # console.log( a.label )
+        # print( a.label )
 
         # Create horizontal layout for rows.
         if i % iconsPerRow == 0:

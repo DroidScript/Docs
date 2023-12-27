@@ -36,7 +36,7 @@ def OnStart():
     app.addLayout( lay )
 
     # Create Cryptography object.
-    crypt = native.createCrypt()
+    crypt = app.createCrypt()
 
 # Called when user touches 'Encrypt' button.
 def btnEncrypt_OnTouch():

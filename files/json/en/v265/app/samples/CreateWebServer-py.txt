@@ -130,6 +130,6 @@ def SendMessage():
     serv.SendText( "Hello " + str(count) )
     count += 1
 
-def serv_OnReceive( msg, ip , id):
+def serv_OnReceive( msg, ip, id):
     txtMsg.SetText( ip + ": " + msg )
 </sample>

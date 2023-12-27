@@ -83,5 +83,5 @@ class Main extends App:
         dtp.show()
 
     def onSelect(value):
-        console.log(value)
+        print(value)
 </sample>

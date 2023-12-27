@@ -1,10 +1,6 @@
 # cfg.MUI, cfg.Light
 
 from native import app, MUI
-import native.MUI as MUI
-import native.app as app
-import native.gfx as gfx
-import native.ui as ui
 
 def OnStart():
     global lst

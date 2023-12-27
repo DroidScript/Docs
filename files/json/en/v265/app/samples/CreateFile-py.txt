@@ -6,7 +6,7 @@ def btn_OnTouch():
 
     file.WriteText( "Hello", "Char" )
     len = file.GetLength()
-    console.log( "file len: " + len )
+    print( "file len: " + len )
 
     file.Seek( len )
     file.WriteNumber( 77, "Byte" )
@@ -14,7 +14,7 @@ def btn_OnTouch():
 
     file.Seek( 0 )
     data = file.ReadData( 2 )
-    console.log( "first two bytes:" + data[0] + "," + data[1] )
+    print( "first two bytes:" + data[0] + "," + data[1] )
 
     file.Seek( 0 )
     app.Alert( file.ReadText( "Line" ) )

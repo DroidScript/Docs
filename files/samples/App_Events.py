@@ -1,4 +1,5 @@
 from native import app
+import json
 
 # Called when application is created.
 def OnStart():

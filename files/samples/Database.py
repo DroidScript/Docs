@@ -85,4 +85,4 @@ def OnResult(results):
 # Callback to show errors.
 def OnError(msg):
     app.Alert("Error: " + msg)
-    console.log("Error: " + msg)
+    print("Error: " + msg)

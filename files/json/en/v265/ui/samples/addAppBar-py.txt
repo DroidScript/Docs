@@ -48,7 +48,7 @@ def OnStart
 def showDrawer():
     drawer.show()
 
-def onTouch(title, body , icon , index , event ):
+def onTouch(title, body, icon, index, event ):
     # Set the appbar text with the selected list item
     apb.text = title
 
@@ -98,7 +98,7 @@ def OnStart
 def showDrawer():
     drawer.show()
 
-def onTouch(title, body , icon , index , event ):
+def onTouch(title, body, icon, index, event ):
     # Set the appbar text with the selected list item
     apb.text = title
 

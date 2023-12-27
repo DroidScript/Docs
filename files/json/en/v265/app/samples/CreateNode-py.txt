@@ -1,7 +1,7 @@
 <sample Basic>
 from native import app
 
-nodeJs = 'console.log("Hello World");\nconsole.error("Hello Error");\n'
+nodeJs = 'print("Hello World");\nconsole.error("Hello Error");\n'
 
 def OnStart():
     global node

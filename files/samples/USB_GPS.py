@@ -19,6 +19,6 @@ def OnStart():
     app.ShowPopup("Connected")
 
 def usb_OnReceive(data):
-    native.console.log(data)
+    app.print(data)
     if data[:6] == "$GPRMC":
         txtLog.Log(data.replace("\n", ""))

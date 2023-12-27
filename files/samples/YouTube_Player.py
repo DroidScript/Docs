@@ -1,8 +1,4 @@
 from native import app
-import native.MUI as MUI
-import native.app as app
-import native.gfx as gfx
-import native.ui as ui
 
 isFullscreen = False
 global videoIds, videoTitles
@@ -54,7 +50,7 @@ def web_OnProgress(progress):
         return
 
     inject = (
-        'document.querySelector("button.ytp-fullscreen-button.ytp-button").addEventListener("click", () => console.log("fullscreen"))'
+        'document.querySelector("button.ytp-fullscreen-button.ytp-button").addEventListener("click", () => print("fullscreen"))'
     )
     web.Execute(inject)
 

@@ -1,7 +1,6 @@
 from native import app
 
-app = app
-global app, net, ip
+global net, ip
 
 # Global variables
 ip = None

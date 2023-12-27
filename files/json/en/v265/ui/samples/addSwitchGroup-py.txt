@@ -9,7 +9,7 @@ def OnStart
     swg = ui.addSwitchGroup(main, items, "Secondary", 0.9)
     swg.setOnTouch(onTouch)
 
-def onTouch(item, value, index , event ):
+def onTouch(item, value, index, event ):
     ui.showPopup(item + " : " + value)
 </sample>
 
@@ -29,7 +29,7 @@ def OnStart
     swg.label = "Settings"
     swg.setOnTouch(onTouch)
 
-def onTouch(item, value, index , event ):
+def onTouch(item, value, index, event ):
     ui.showPopup(item + " : " + value)
 </sample>
 
@@ -53,7 +53,7 @@ def OnStart
     swg.cornerRadius = 4
     swg.backColor = "rgba(255, 255, 100, 255)"
 
-def onTouch(item, value, index , event ):
+def onTouch(item, value, index, event ):
     ui.showPopup(item + " : " + value)
 </sample>
 

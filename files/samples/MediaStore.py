@@ -34,7 +34,7 @@ def media_OnMediaResult(result):
     for item in result:
         s += item.title + ", " + item.albumId + ", " + item.album + ", " + item.artistId + ", " + item.artist + ", " + str(int(item.duration/1000)) + "s" + ", " + str(int(item.size/1000)) + "KB" + ", " + item.uri + "\n\n"
     app.HideProgress()
-    native.ui.app.Alert(s[0:2048])
+    app.Alert(s[0:2048])
     if len(result) > 0:
         player.SetFile(result[0].uri)
 
@@ -47,7 +47,7 @@ def media_OnArtistsResult(result):
     for item in result:
         s += item.id + ", " + item.artist + ", " + item.numAlbums + ", " + item.numTracks + "\n\n"
     app.HideProgress()
-    native.ui.app.Alert(s[0:2048])
+    app.Alert(s[0:2048])
 
 def btnAlbums_OnTouch():
     app.ShowProgress("...")
@@ -58,7 +58,7 @@ def media_OnAlbumsResult(result):
     for item in result:
         s += item.id + ", " + item.album + ", " + item.artist + ", " + item.numSongs + "\n\n"
     app.HideProgress()
-    native.ui.app.Alert(s[0:2048])
+    app.Alert(s[0:2048])
     ok = media.GetAlbumArt(img, result[1].id, "external")
 
 def player_OnReady():

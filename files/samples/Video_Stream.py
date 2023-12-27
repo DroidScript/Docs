@@ -9,7 +9,7 @@ def OnStart():
     lay = ui.createLayout( "Linear", "FillXY,VCenter" )
 
     # Create video view.
-    player = native.createVideoView( 0.9, 0.4 )
+    player = app.createVideoView( 0.9, 0.4 )
     lay.addChild( player )
     player.setOnReady( player_OnReady )
     player.setOnComplete( player_OnComplete )

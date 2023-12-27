@@ -6,7 +6,7 @@ def OnStart():
     dlg.SetOnTouch( dlg_OnTouch )
     dlg.Show()
 
-def dlg_OnTouch( item , checked):
+def dlg_OnTouch( item, checked):
     app.ShowPopup( item )
 </sample>
 

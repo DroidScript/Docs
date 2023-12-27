@@ -1,4 +1,5 @@
 from native import app
+import json
 
 def OnStart():
     global img

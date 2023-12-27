@@ -1,4 +1,5 @@
 from native import app
+import json
 
 #Called when application is started.
 def OnStart():
@@ -27,6 +28,6 @@ def btn_OnTouch():
         {"name": "android.intent.extra.SUBJECT", "type": "string", "value": "My subject"},
         {"name": "android.intent.extra.TEXT", "type": "string", "value": "Hello!"}
     ]
-    extras = native.json.dumps(extras)
+    extras = json.dumps(extras)
 
     app.SendIntent(packageName, className, action, category, uri, type, extras)

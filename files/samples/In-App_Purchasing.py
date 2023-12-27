@@ -84,6 +84,6 @@ def btnBuy_OnTouch():
 
 # Handle completed purchase.
 def OnPurchased(prodId, orderId, purchToken, devToken, packageName):
-    console.log(prodId +" "+ orderId +" "+ purchToken)
+    print(prodId +" "+ orderId +" "+ purchToken)
     app.Alert("Item purchased!", "My App")
 """

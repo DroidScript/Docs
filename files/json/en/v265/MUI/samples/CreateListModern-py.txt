@@ -56,6 +56,7 @@ def OnTouch(title, body, index):
 # cfg.Dark, cfg.MUI
 
 from native import app, MUI
+import json
 
 def OnStart():
     global lsm
@@ -120,6 +121,7 @@ def OnStart():
 # cfg.Dark, cfg.MUI
 
 from native import app, MUI
+import json
 
 def OnStart():
     global lsm
@@ -156,6 +158,7 @@ def GetSelectedItems():
 # cfg.Light, cfg.MUI
 
 from native import app, MUI
+import json
 
 def OnStart():
     global lsm

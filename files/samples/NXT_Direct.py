@@ -41,7 +41,7 @@ def bt_OnConnect(ok):
     app.ShowPopup("Connected")
 
 def bt_OnReceive(data):
-    native.ui.console.log(data)
+    print(data)
 
     ss = data.split(",")
 
