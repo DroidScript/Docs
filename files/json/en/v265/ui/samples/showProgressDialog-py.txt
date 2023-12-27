@@ -1,24 +1,24 @@
 <sample Progress Dialog>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     btn = ui.addButton(main, "Show Progress Dialog", "Outlined")
     btn.setOnTouch(onTouch)
 
-def onTouch(event ):
+def onTouch(event):
     ui.showProgressDialog("Loading...", "AutoCancel")
 </sample>
 
 <sample Nocancel progress dialog>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     btn = ui.addButton(main, "Show Progress Dialog", "Outlined")
     btn.setOnTouch(onTouch)
 
-def onTouch(event ):
+def onTouch(event):
     pdlg = ui.showProgressDialog("Loading...", "NoCancel")
 
     def hideProgressDialog():

@@ -1,7 +1,8 @@
 <sample AddPicker>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
+from native import cfg
 
 def OnStart():
     global tPkr, dPkr, cPkr

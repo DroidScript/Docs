@@ -1,7 +1,7 @@
 <sample Basic & Light>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global dlg
@@ -26,7 +26,7 @@ def ShowDialog():
 <sample Customize & Dark>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global dlg

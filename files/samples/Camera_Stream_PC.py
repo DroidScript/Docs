@@ -5,7 +5,6 @@ ip = None
 net = None
 net2 = None
 light = None
-global net, ip
 
 #Called when application is created.
 def OnStart():

@@ -1,7 +1,8 @@
 <sample Chips>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     main.setChildMargins(0, 0.025, 0, 0.025)
@@ -20,7 +21,7 @@ def OnStart
     chip3 = ui.addChip(main, "Secondary Chip", "Secondary,Touchable")
     chip3.setOnTouch(onTouch)
 
-def onTouch(event ):
+def onTouch(event):
     ui.showPopup("You touched the chip!")
 
 sample = Main()
@@ -28,9 +29,10 @@ sample.start()
 </sample>
 
 <sample Deletable chip>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -49,9 +51,10 @@ sample.start()
 </sample>
 
 <sample Custom styles>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -72,9 +75,10 @@ sample.start()
 </sample>
 
 <sample Avatar>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

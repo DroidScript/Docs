@@ -3,7 +3,6 @@ from native import app
 # Set the IP of your target Android device here.
 # (Note: A dedicated WiFi router is recommended for highest speed)
 ip = "192.168.1.221"
-global ip
 
 # Called when application is created.
 def OnStart():

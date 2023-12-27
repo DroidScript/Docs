@@ -1,8 +1,6 @@
 <sample>
 # cfg.Game
 
-from native import gfx
-
 def OnLoad():
     global text
     text = gfx.CreateText("Hello World", 40, "/Sys/Img/Desyrel.xml")

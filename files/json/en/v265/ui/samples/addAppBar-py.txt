@@ -1,7 +1,8 @@
 <sample Basic AppBar>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen linear layout with objects align Top and Center
     main = ui.addLayout("main", "Linear", "Top,Center", 1, 1)
 
@@ -14,9 +15,10 @@ def OnStart
 </sample>
 
 <sample Fixed appbar with drawer>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global drawer, apb
     # Creates a fullscreen linear layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -48,7 +50,7 @@ def OnStart
 def showDrawer():
     drawer.show()
 
-def onTouch(title, body, icon, index, event ):
+def onTouch(title, body, icon, index, event):
     # Set the appbar text with the selected list item
     apb.text = title
 
@@ -57,9 +59,10 @@ def onTouch(title, body, icon, index, event ):
 </sample>
 
 <sample Appbar with actions>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global drawer, apb
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "Top,Center", 1, 1)
@@ -69,13 +72,13 @@ def OnStart
 
     # Add an icon buttons to the appbar with onTouch callbacks
     btn1 = ui.addButton(apb.layout, "mail", "icon")
-    btn1.setOnTouch(lambda: ui.showPopup("Messages", "Bottom"))
+    btn1.setOnTouch(lambda event: ui.showPopup("Messages", "Bottom"))
 
     btn2 = ui.addButton(apb.layout, "person", "icon")
-    btn2.setOnTouch(lambda: ui.showPopup("Account", "Bottom"))
+    btn2.setOnTouch(lambda event: ui.showPopup("Account", "Bottom"))
 
     btn3 = ui.addButton(apb.layout, "more_vert", "icon")
-    btn3.setOnTouch(lambda: ui.showPopup("More options", "Bottom"))
+    btn3.setOnTouch(lambda event: ui.showPopup("More options", "Bottom"))
 
     # Adds a drawer layout
     drawLay = ui.addLayout(None, "Linear", "Top")
@@ -98,7 +101,7 @@ def OnStart
 def showDrawer():
     drawer.show()
 
-def onTouch(title, body, icon, index, event ):
+def onTouch(title, body, icon, index, event):
     # Set the appbar text with the selected list item
     apb.text = title
 
@@ -107,9 +110,10 @@ def onTouch(title, body, icon, index, event ):
 </sample>
 
 <sample Appbar with search field>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global tfd, searchBtn
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "Top", 1, 1)
@@ -128,7 +132,7 @@ def OnStart
     # Add a callback handler when the button is click
     searchBtn.setOnTouch( showSearchField )
 
-def showSearchField(event ):
+def showSearchField(event):
     if searchBtn.text == "search":
         tfd.show()
         searchBtn.text = "close"

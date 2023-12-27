@@ -1,7 +1,8 @@
 <sample Main layout>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global main
     # Create a fullscreen linear layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -15,10 +16,10 @@ def OnStart
     # Add a callback handler when the button is touched
     btn.setOnTouch(btnTouch)
 
-def onTouch(event ):
+def onTouch(event):
     ui.showPopup("You click the layout!")
 
-def btnTouch(event ):
+def btnTouch(event):
     if main.backColor == "yellow":
         main.backColor = "white"
     else:
@@ -26,9 +27,10 @@ def btnTouch(event ):
 </sample>
 
 <sample Bottom aligned with margins>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen main layout with objects aligned at the bottom
     main = ui.addLayout("main", "Linear", "Bottom,FillXY")
 
@@ -42,9 +44,10 @@ def OnStart
 </sample>
 
 <sample Orientation and spacing>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Create a fullscreen main layout with objects centered horizontally
     main = ui.addLayout("main", "Linear", "VCenter,Horizontal", 1, 1)
 
@@ -58,9 +61,10 @@ def OnStart
 </sample>
 
 <sample Slide Layout>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Create a fullscreen slide layout with objects vertically centered
     # You can pass `Vertical` option to make a vertical slide
     main = ui.addLayout("main", "Slide", "VCenter,FillXY")

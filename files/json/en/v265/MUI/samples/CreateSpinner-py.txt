@@ -1,7 +1,7 @@
 <sample Basic>
 # cfg.Light, cfg.MUI
 
-from native import app, gfx, MUI
+from native import app
 
 def OnStart():
     color = app.gfx.teal

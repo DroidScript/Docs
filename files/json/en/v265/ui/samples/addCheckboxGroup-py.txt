@@ -1,8 +1,8 @@
 <sample Basic>
-from native import ui
-from ui import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -19,15 +19,15 @@ def OnStart
     # Add a callback handler for `onTouch` event
     ckg.setOnTouch(onTouch)
 
-def onTouch(value, item, index, event ):
+def onTouch(value, item, index, event):
     ui.showPopup(f"Value of {item} is {value}")
 </sample>
 
 <sample Colors>
-from native import ui
-from ui import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     main.childSpacing = "evenly"
@@ -51,15 +51,15 @@ def OnStart
     ckg3 = ui.addCheckboxGroup(main, list, "Secondary")
     ckg3.setOnTouch(onTouch)
 
-def onTouch(value, item, index, event ):
+def onTouch(value, item, index, event):
     ui.showPopup(f"Value of {item} is {value}")
 </sample>
 
 <sample Elevated>
-from native import ui
-from ui import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -82,15 +82,15 @@ def OnStart
     # Add a callback handler for `onTouch` event
     ckg.setOnTouch(onTouch)
 
-def onTouch(value, item, index, event ):
+def onTouch(value, item, index, event):
     ui.showPopup(f"Value of {item} is {value}")
 </sample>
 
 <sample Outlined>
-from native import ui
-from ui import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -111,6 +111,6 @@ def OnStart
     # Set the cornerRadius to `20`
     ckg.cornerRadius = 20
 
-def onTouch(value, item, index, event ):
+def onTouch(value, item, index, event):
     ui.showPopup(f"Value of {item} is {value}")
 </sample>

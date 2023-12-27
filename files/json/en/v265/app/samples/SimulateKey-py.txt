@@ -14,6 +14,6 @@ def OnStart():
 
 def SimulateKey(time, dtime):
     ran = 65 + math.floor(random.random() * 26)
-    char = String.fromCharCode( ran )
+    char = chr( ran )
     <b>app.SimulateKey( edt, char )</b>
 </sample>

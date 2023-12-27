@@ -1,6 +1,7 @@
 # cfg.Hybrid
 
-from native import app, ui
+from hybrid import ui
+from native import app
 
 #Make this a Hybrid app.
 app.#Called when application starts.
@@ -30,7 +31,7 @@ def OnStart():
     rag.setLabel("Flavor")
 
 #Called when button is pressed.
-def btnTheme_onTouch(event ):
+def btnTheme_onTouch(event):
     if not ui.theme.dark:
         ui.setTheme("dark")
     else:

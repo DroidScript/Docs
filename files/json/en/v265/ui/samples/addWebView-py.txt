@@ -1,7 +1,8 @@
 <sample EnjineIO homepage>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     web = ui.addWebView(main, "https://enjine.io/", "", 0.9, 0.9)
     web.setOnLoad(onLoad)
@@ -11,9 +12,10 @@ def onLoad():
 </sample>
 
 <sample Call a function inside the webview>
-from native import app, ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global web
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     web = ui.addWebView(main, "", "", 0.9, 0.7)
@@ -38,9 +40,10 @@ def onLoad():
 </sample>
 
 <sample Getting returned values from a function in a webview>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global web
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
     web = ui.addWebView(main, "", "", 0.9, 0.7)
@@ -66,9 +69,10 @@ def onLoad():
 </sample>
 
 <sample Manipulate dom inside the webview>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global loaded, web
     loaded = False
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -89,7 +93,7 @@ def onLoad():
     global loaded
     loaded = True
 
-def onTouch(event ):
+def onTouch(event):
     if loaded:
         dom = web.document
         dom.body.style.backgroundColor = "green"

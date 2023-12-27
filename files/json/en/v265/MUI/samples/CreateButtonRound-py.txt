@@ -1,7 +1,7 @@
 <sample Add Method>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")

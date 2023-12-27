@@ -1,4 +1,3 @@
-from android import app
 from native import app
 import socket
 import threading

@@ -1,7 +1,8 @@
 <sample Default Time>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
+from native import cfg
 
 def OnStart():
     global tmp
@@ -29,7 +30,8 @@ def OnSelect(time, hh, mm, pos):
 <sample Custom Time>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
+from native import cfg
 
 def OnStart():
     global tmp

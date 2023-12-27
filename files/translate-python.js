@@ -1,3 +1,5 @@
+//  git restore --source 9e74153 --worktree samples/; git restore --source 1a2275 --worktree json/
+
 /* eslint-disable camelcase */
 const OpenAI = require("openai");
 const fs = require("fs");
@@ -237,10 +239,11 @@ function fixupSample(file, pyCode = "") {
     return fixedSamples;
 }
 
-
+let watch = false;
 /** @type {FixupFunc} */
 function fixupPython(file, code = "") {
     if (!useFixup) return code;
+    watch = file.includes("showPopover") || file.includes("addDropdown");
 
     code ||= fs.readFileSync(file, "utf8");
 
@@ -253,27 +256,30 @@ function fixupPython(file, code = "") {
     const cfg = new Set();
 
     // get meta stuff
-    const usedObj = "app,gfx,MUI,ui".split(",").filter(s => code.includes(s + "."));
-    if (usedObj.length) imports.add("from native import " + usedObj.join(", "));
     code = code.replace(/(<sample.*>)\s*/, (_, m) => (head.push(m), ""));
     code = code.replace(/(# )?(cfg\.\w+)[,;]?\s*/g, (_, _1, m) => (cfg.add(m), ""));
-    code = code.replace(/(from (.*) import .*|import .*)\s*/g, (_, m, ms) => {
-        if (ms !== "native") imports.add(m);
+
+    /** @type {Obj<string>} */
+    const objLibs = { app: "native", ui: "hybrid", MUI: " ", gfx: " " };
+    for (const obj in objLibs) {
+        if (code.includes(obj + ".") && objLibs[obj] != " ")
+            imports.add(`from ${objLibs[obj]} import ${obj}`);
+    }
+    code = code.replace(/((from .* )?import (.*))\s*/g, (_, m, ms, is) => {
+        if (is && is.includes("native")) return "";
+        for (var i of is.split(/,\s*/g)) {
+            if (!(ms?.includes(i) || objLibs[i]))
+                imports.add((ms || '') + `import ` + i);
+        }
         return "";
     });
 
-    imports.delete("import native");
-    const importList = [...imports];
-    imports.clear();
-    for (const i of importList) if (!i.includes("native.")) imports.add(i);
+    if (imports.delete("from native import ui"))
+        imports.add("from hybrid import ui");
 
     code = code.trim()
         .replace(/[ \t\r]+\n/g, "\n")
         .replace(/\n{3,}/g, "\n\n");
-
-    code = code
-        .replace(/native\.(app|ui|MUI|gfx|random|json|base64)?/g, (_, s) => s || "app.")
-        .replace(/(app|ui|MUI|gfx) = (app|ui|MUI|gfx)/g, "");
 
     if (!file.includes("ui"))
         code = code.replace(/ui.app/g, "app");
@@ -306,15 +312,15 @@ function fixupPython(file, code = "") {
     if (code.includes("Date.")) imports.add("import time as Date");
 
     code = code
-        .replace(/native.(app|gfx|MUI)/g, "$1")
         .replace(/(app\.)?alert\(/g, "app.Alert(")
-        .replace(/console\.log/g, "print");
+        .replace(/console\.log/g, "print")
+        .replace(/native\.(app|ui|MUI|gfx|random|json|base64)?/g, (_, s) => s || "app.")
+        .replace(/(app|ui|MUI|gfx) = (app|ui|MUI|gfx)/g, "");
 
     // ui class fragment
     //if (code.includes("def onStart(self):")) {
     code = code
         .replace("def onStart(self):", "def OnStart():")
-        .replace("def onStart\n", "def OnStart():")
         .replace("app.Run(Main)", "")
         .replace("main = Main()", "")
         .replace("main.onStart()", "")
@@ -322,6 +328,10 @@ function fixupPython(file, code = "") {
         .replace(/(\()self(,\s*)?/g, "$1")
         .replace(/\(\.(?=[a-z])/gi, "(");
     //}
+
+    code = code
+        .replace(/String.fromCharCode/g, "chr")
+        .replace(/(\w+)\.charCodeAt\(([^)]*)\)/g, "ord($1)");
 
     // ui class fragment
     if (code.match(/class Main(\(app(.App)?\))?:/i)) {
@@ -342,11 +352,14 @@ function fixupPython(file, code = "") {
         // remove var keyword
         .replace(/\bvar /g, '')
         // remove empty var defs
-        .replace(/(\n|^)\w+;/g, '');
+        .replace(/(\n|^)\w+;/g, '')
+        .replace(/\n=.*/, '');
 
     // auto detect globals and insert global statement
     const defs = code.split(/(?=\ndef )/);
     for (let i = 0; i < defs.length; i++) {
+        if (!defs[i].includes("def ")) continue;
+
         // remove old statement
         defs[i] = defs[i].replace(/\s+global .*/, "");
         // find all assignments
@@ -415,15 +428,15 @@ function fixCbs(code, scopestr, obj, subf, argstr) {
 
         if (args[i].includes("lambda")) {
             const args2 = cb.pNames;
-            code = code.replace(
-                RegExp(`lambda ([^:]*):`),
-                (_, args1) => `lambda ${args2.map((v, j) => args1.split(/,\s*/)[j] || v).join(", ")}:`);
+            code = code.replace(argstr, argstr.replace(
+                RegExp(`lambda ?([^:]*):`),
+                (_, args1) => `lambda ${args2.map((v, j) => args1.split(/,\s*/)[j] || v.trim()).join(", ")}:`));
         }
         else {
             const args2 = cb.pNames;
             code = code.replace(
                 RegExp(`(def ${args[i]})\\(([^)]*)\\):`),
-                (_, pfx, args1) => `${pfx}(${args2.map((v, j) => args1.split(/\s*,\s*/)[j] || v).join(", ")}):`);
+                (_, pfx, args1) => `${pfx}(${args2.map((v, j) => args1.split(/\s*,\s*/)[j] || v.trim()).join(", ")}):`);
         }
     }
     return code;
@@ -433,6 +446,7 @@ function fixCbs(code, scopestr, obj, subf, argstr) {
 function validatePython(pySample, jsSample) {
     if (pySample.includes("\nfunction")) return "function instead of def";
     if (pySample.includes("androidhelper")) return "detected androidhelper";
+    if (!pySample.includes("#")) return "no comments";
     if (!pySample.includes("def OnStart():") && !pySample.includes("def OnLoad():"))
         return "missing OnStart or OnLoad " + [pySample.includes("def OnStart():"), pySample.includes("def OnLoad():"), pySample.slice(pySample.indexOf("def "), pySample.indexOf("def ") + 20)];
     if (pySample.split(/\bdef /).length !== jsSample.split(/\bfunction /).length)

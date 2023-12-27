@@ -1,10 +1,9 @@
 <sample>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

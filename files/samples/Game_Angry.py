@@ -1,4 +1,4 @@
-from native import app, gfx
+from native import app
 
 # Configure app for game mode.
 app.Game

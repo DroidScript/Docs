@@ -1,7 +1,7 @@
 <sample Basic Image>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
@@ -10,14 +10,14 @@ def OnStart
 
     img.setOnTouch(onTouch)
 
-def onTouch(event ):
+def onTouch(event):
     ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Avatar>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
@@ -26,14 +26,14 @@ def OnStart
 
     img.setOnTouch(onTouch)
 
-def onTouch(event ):
+def onTouch(event):
     ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Button>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
@@ -42,14 +42,14 @@ def OnStart
 
     img.setOnTouch(onTouch)
 
-def onTouch(event ):
+def onTouch(event):
     ui.showPopup("You touched the mango!")
 </sample>
 
 <sample Drawings>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
     img = ui.addImage(main, "", "canvas", 1, 1)
@@ -77,9 +77,9 @@ def OnStart
 </sample>
 
 <sample Text and Shapes>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
     img = ui.addImage(main, "", "canvas", "300px", "500px")
@@ -100,10 +100,10 @@ def OnStart
 </sample>
 
 <sample Analog Clock>
-from native import ui
+from hybrid import ui
 import math
 
-def OnStart
+def OnStart():
     global img, time
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
@@ -171,9 +171,9 @@ def drawHand(angle, length, width, color):
 </sample>
 
 <sample Scratch Pad>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     color = "#000000"
     main = ui.addLayout("main", "Linear", "Top", 1, 1)
     main.setChildMargins(0, 0.01, 0, 0.01)

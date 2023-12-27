@@ -1,8 +1,8 @@
 <sample Basic>
-from native import ui
-import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Create a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

@@ -34,7 +34,6 @@ from native import app
 indexhtml = """
 <html>
 <head>
-    global indexhtml, count
     <title>WebSockets Demo</title>
 
         count = 0;
@@ -130,6 +129,6 @@ def SendMessage():
     serv.SendText( "Hello " + str(count) )
     count += 1
 
-def serv_OnReceive( msg, ip, id):
+def serv_OnReceive( msg, ip , id):
     txtMsg.SetText( ip + ": " + msg )
 </sample>

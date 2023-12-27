@@ -1,4 +1,4 @@
-from native import app, MUI
+from native import app
 
 dotw = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
 rows = []

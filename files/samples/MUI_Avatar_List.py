@@ -1,6 +1,6 @@
 # cfg.MUI, cfg.Light
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global lst

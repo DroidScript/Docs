@@ -1,7 +1,8 @@
 <sample AddTextArea>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
+from native import cfg
 
 def OnStart():
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")

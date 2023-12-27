@@ -38,9 +38,9 @@ items = {
 </sample>
 
 <sample Basic TreeView>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "Center,ScrollY,FillXY")
 
     items = {

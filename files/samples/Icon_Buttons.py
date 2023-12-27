@@ -1,4 +1,6 @@
-from native import app, ui
+from hybrid import ui
+from native import alert
+from native import app
 
 def OnStart():
     global edit, icon
@@ -23,7 +25,7 @@ def OnStart():
 
     app.AddLayout(lay)
 
-def btns_OnTouch(event ):
+def btns_OnTouch(event):
     if this.icon == "[fa-undo]":
         edit.Undo()
     elif this.icon == "[fa-repeat]":

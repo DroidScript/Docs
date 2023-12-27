@@ -1,8 +1,6 @@
 <sample Scroll>
 # cfg.Game
 
-from native import gfx
-
 def OnLoad():
     global sky
     sky = gfx.CreateBackground("/Sys/Img/Sky.jpg", "stretch")

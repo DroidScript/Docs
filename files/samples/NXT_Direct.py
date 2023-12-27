@@ -1,5 +1,5 @@
-from native import app, ui
-import androidscript.native as native
+from hybrid import ui
+from native import app
 
 def OnStart():
     global bt
@@ -41,7 +41,7 @@ def bt_OnConnect(ok):
     app.ShowPopup("Connected")
 
 def bt_OnReceive(data):
-    print(data)
+    ui.print(data)
 
     ss = data.split(",")
 

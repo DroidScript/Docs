@@ -1,7 +1,6 @@
 from native import app
 
 isFullscreen = False
-global videoIds, videoTitles
 
 videoIds = [
     "zZTs3bYRyzs", "AK31U2f1nl0",

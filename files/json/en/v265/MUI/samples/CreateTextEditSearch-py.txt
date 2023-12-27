@@ -1,9 +1,7 @@
 <sample Search>
-from gfx import MUI
-from native import app, MUI
+from native import app
 
 def OnStart():
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -16,12 +14,10 @@ def OnStart():
 </sample>
 
 <sample SetOnEnter Callback>
-from gfx import MUI
-from native import app, MUI
+from native import app
 
 def OnStart():
     global tef
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

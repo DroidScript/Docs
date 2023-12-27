@@ -1,5 +1,5 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
 
 def OnStart():
     global nxt

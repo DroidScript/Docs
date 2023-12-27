@@ -1,7 +1,55 @@
-<sample Basic stepper>
-from native import ui
+<sample Progress control implementation>
+from hybrid import ui
 
-def OnStart
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.childSpacing = "Even"
+
+    # Indeterminate Linear
+    prog1 = ui.addProgress(main, 40, "linear", 0.7)
+
+    # Determinate Linear
+    prog2 = ui.addProgress(main, None, "Linear,Secondary,indeterminate", 0.7)
+
+    # Determinate Circular
+    prog3 = ui.addProgress(main, 50, "Circular")
+
+    # Indeterminate Circular, enlarge and secondary
+    prog4 = ui.addProgress(main, None, "Circular,Secondary,indeterminate")
+    prog4.circleSize = 100
+</sample>
+
+<sample Setting progress value>
+from hybrid import ui
+
+def OnStart():
+    global prog
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.childSpacing = "Even"
+
+    # Add an indeterminate linear progress control to the main layout
+    prog = ui.addProgress(main, 0, "Linear", 0.7)
+
+    # Add a button control to the main layout
+    btn = ui.addButton(main, "Increment")
+
+    # Add a callback handler when the button is touched
+    btn.setOnTouch(onTouch)
+
+def onTouch(event):
+    # Increment the value of the progress control by 10
+    if prog.value < 100:
+        prog.value += 10
+    else:
+        ui.showPopup("Progress is complete!")
+</sample>
+
+<sample Basic stepper>
+from hybrid import ui
+
+def OnStart():
     global stp
     # Creates a fullscreen layout with object vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -21,17 +69,17 @@ def OnStart
     btnNext = ui.addButton(main, "Next", "Raised,Primary")
     btnNext.setOnTouch(next)
 
-def next(event ):
+def next(event):
     stp.nextStep()
 
-def back(event ):
+def back(event):
     stp.previousStep()
 </sample>
 
 <sample Vertical stepper>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global stp
     # Creates a fulscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -69,7 +117,7 @@ def OnStart
     btnStep3Next = ui.addButton(step3Lay, "Next", "Raised,Primary")
     btnStep3Next.setOnTouch(next)
 
-def next(event ):
+def next(event):
     stp.nextStep()
 
 def back():
@@ -77,9 +125,9 @@ def back():
 </sample>
 
 <sample Mobile Stepper>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     # Creates a layout with objects verticaly centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -118,9 +166,9 @@ def onChange(index):
 </sample>
 
 <sample Autoswipe and Fraction Mobile Stepper>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     ui.setTheme("dark")
 
     # Creates a layout with objects verticaly centered
@@ -148,14 +196,5 @@ def OnStart
     ui.addImage(lay2, img2, "", 1)
 
     # Get the third layout on the stepper
-    lay3 = stp.getLayout(2)
-
-    # Add an image control to the third layout
-    ui.addImage(lay3, img3, "", 1)
-
-    # Add a callback handler when stepper layout changes
-    stp.setOnChange(onChange)
-
-def onChange(index):
-    ui.showPopup("Layout index " + str(index))
+    lay3
 </sample>

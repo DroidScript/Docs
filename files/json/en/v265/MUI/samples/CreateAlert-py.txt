@@ -1,7 +1,7 @@
 <sample No icon>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     color = MUI.colors.teal
@@ -15,7 +15,7 @@ def OnStart():
 <sample With icon>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global alr
@@ -35,7 +35,7 @@ def CloseAlert():
 <sample On close function>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     color = MUI.colors.teal

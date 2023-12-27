@@ -2,7 +2,6 @@ from native import app
 
 """
 In-App purchasing sample -
-global mode, products, productId
 
 This sample demonstrated how to query a user's purchased Google Play items,
 please see the following link for more information:-

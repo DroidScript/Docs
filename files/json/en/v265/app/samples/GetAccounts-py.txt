@@ -7,6 +7,6 @@ def OnStart():
     dlg.SetOnTouch( dlg_OnTouch )
     dlg.Show()
 
-def dlg_OnTouch( account, checked):
+def dlg_OnTouch( account , checked):
     app.ShowPopup( "Selected Account: " + account )
 </sample>

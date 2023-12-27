@@ -1,4 +1,4 @@
-from native import app, gfx
+from native import app
 
 def OnLoad():
     global sky, bird, floor, pillar1, pillar2, plinth, bang, crash, quack

@@ -1,7 +1,7 @@
 <sample Basic>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global lsd
@@ -35,7 +35,7 @@ def OnTouch(name, index):
 <sample With Icon>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global lsd
@@ -69,7 +69,7 @@ def OnTouch(name, index):
 <sample With Icon & Colors>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global lsd
@@ -103,7 +103,7 @@ def OnTouch(name, index):
 <sample Dark Bottom>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global lsd

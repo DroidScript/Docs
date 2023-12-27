@@ -1,7 +1,8 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global btn
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -12,15 +13,16 @@ def OnStart
     # Add a callback handler when the button is clicked
     btn.setOnTouch(onTouch)
 
-def onTouch(event ):
+def onTouch(event):
     # Display a popover when the button is clicked
     ui.showPopover(btn, "This is a text to be displayed.")
 </sample>
 
 <sample Positioning>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,Horizontal", 1, 1)
 
@@ -30,31 +32,31 @@ def OnStart
     ui.addText(lay1, "Position on parent", "h5")
 
     btn = ui.addButton(lay1, "Top-Left")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,tl"))
 
     btn = ui.addButton(lay1, "Top-Center")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tc,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tc,tl"))
 
     btn = ui.addButton(lay1, "Top-Right")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tr,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tr,tl"))
 
     btn = ui.addButton(lay1, "Center-Left")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "cl,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "cl,tl"))
 
     btn = ui.addButton(lay1, "Center-Center")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "cc,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "cc,tl"))
 
     btn = ui.addButton(lay1, "Center-Right")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "cr,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "cr,tl"))
 
     btn = ui.addButton(lay1, "Bottom-Left")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "bl,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "bl,tl"))
 
     btn = ui.addButton(lay1, "Bottom-Center")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "bc,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "bc,tl"))
 
     btn = ui.addButton(lay1, "Bottom-Right")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "br,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "br,tl"))
 
     lay2 = ui.addLayout(main, "Linear", "VCenter", 0.5, 1)
     lay2.setChildMargins(0, 0.05)
@@ -62,37 +64,38 @@ def OnStart
     ui.addText(lay2, "Origin on popover", "h5")
 
     btn = ui.addButton(lay2, "Top-Left")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,tl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,tl"))
 
     btn = ui.addButton(lay2, "Top-Center")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,tc"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,tc"))
 
     btn = ui.addButton(lay2, "Top-Right")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,tr"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,tr"))
 
     btn = ui.addButton(lay2, "Center-Left")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl", "cl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl", "cl"))
 
     btn = ui.addButton(lay2, "Center-Center")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,cc"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,cc"))
 
     btn = ui.addButton(lay2, "Center-Right")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,cr"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,cr"))
 
     btn = ui.addButton(lay2, "Bottom-Left")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,bl"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,bl"))
 
     btn = ui.addButton(lay2, "Bottom-Center")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,bc"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,bc"))
 
     btn = ui.addButton(lay2, "Bottom-Right")
-    btn.setOnTouch(lambda: ui.showPopover("This is a popover message", "tl,br"))
+    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,br"))
 </sample>
 
 <sample Advanced>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global btn
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -101,7 +104,7 @@ def OnStart
     btn = ui.addButton(main, "Show Popover")
     btn.setOnTouch(onTouch)
 
-def onTouch(event ):
+def onTouch(event):
     # Display a custom popover when the button is clicked.
 
     # Create a layout with `null` parent to be passed into the popover

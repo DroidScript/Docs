@@ -43,7 +43,7 @@ def OnWizard(lay, page):
         lay.AddChild(wizFrm)
 
         wizImg = app.CreateImage("/Sys/Img/Hello.png", 0.1, -1, "button")
-        wizImg.SetOnTouchUp(lambda: app.ShowPopup("Button Pressed"))
+        wizImg.SetOnTouchUp(lambda event: app.ShowPopup("Button Pressed"))
         wizFrm.AddChild(wizImg)
 
         # Create text box for checkered flag icon.

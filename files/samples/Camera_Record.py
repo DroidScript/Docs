@@ -1,5 +1,4 @@
 from native import app
-import app
 
 # Called when application is started.
 def OnStart():

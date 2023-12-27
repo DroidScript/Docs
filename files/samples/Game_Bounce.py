@@ -1,7 +1,5 @@
 # cfg.Game, cfg.Portrait
 
-from native import gfx
-
 # Configure app for landscape game mode.
 # Called when game starts, so we can load our assets.
 def OnLoad():

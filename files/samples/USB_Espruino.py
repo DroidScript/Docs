@@ -3,7 +3,6 @@ from native import app
 #Global variables.
 usb = None
 reply = ""
-global usb
 
 #Called when application is started.
 def OnStart():

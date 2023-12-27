@@ -1,7 +1,6 @@
 from native import app
 
 HeyHoNotes = [
-    global HeyHoNotes, HeyHoDurations, HeyHoVelocity, length, index
     "D4", "C4", "D4", "D4", "D4", "A3",
     "D4", "D4", "E4", "E4", "F4", "F4", "F4", "F4", "E4",
     "A4", "G4", "A4", "G4", "A4", "G4", "A4", "G4", "F4", "E4"

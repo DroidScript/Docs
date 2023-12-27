@@ -1,44 +1,34 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
-    # Creates a layout with objects verticaly centered
+def OnStart():
+    # Creates a layout with objects vertically centered
     main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
     main.backColor = "#e0e0e0"
 
-    # Initialize tab names array
-    tabs = ["Tab 1", "Tab 2", "Tab 3"]
+    # Add text control to the main layout
+    text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."
+    ui.addText(main, text, "Justify", 0.8)
 
-    # Adds a tab component to the main layout.
-    tabs = ui.addTabs(main, tabs, "", 0.8, 0.8)
+    # Add divider control to the main layout
+    div = ui.addDivider(main, 0.8)
 
-    # Handle tab changes
-    tabs.setOnChange( onChange )
+    # Add more text control to the main layout
+    ui.addText(main, text, "Justify", 0.8)
 
-    # get the first tab and add a button control
-    tab1 = tabs.getLayout(0)
-    tab1.options = "VCenter"
-    btn = ui.addButton(tab1, "Button", "Secondary", 0.5)
+    # Add an inset divider to the main layout
+    div = ui.addDivider(main, 0.8, "inset")
 
-    # get the second tab and add a text control.
-    tab2 = tabs.getLayout(1)
-    tab2.options = "VCenter"
-    txt = ui.addText(tab2, "Lorem ipsum dolor set amit", "Center", 1)
-
-    # get the third tab and add a checkbox control
-    tab3 = tabs.getLayout(2)
-    tab3.options = "VCenter"
-    ckb = ui.addCheckbox(tab3, "Check me", "Secondary")
-
-def onChange(tab, index):
-    ui.showPopup( tab + " : Index " + index)
+    ui.addText(main, text, "Justify", 0.8)
 </sample>
 
 <sample With Icon>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
-    # Creates a layout with objects verticaly centered
+def OnStart():
+    # Creates a layout with objects vertically centered
     main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
     main.backColor = "#e0e0e0"
 
@@ -71,14 +61,15 @@ def OnStart
     ckb = ui.addCheckbox(tab3, "Check me", "Secondary")
 
 def onChange(tab, index):
-    ui.showPopup( tab + " : Index " + index)
+    ui.showPopup( tab + " : Index " + str(index))
 </sample>
 
 <sample Swipeable tabs>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
-    # Creates a layout with objects verticaly centered
+def OnStart():
+    # Creates a layout with objects vertically centered
     main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
     main.backColor = "#e0e0e0"
 
@@ -107,17 +98,18 @@ def OnStart
     tab3.backColor = "blue"
 
 def onChange(tab, index):
-    ui.showPopup( tab + " : Index " + index)
+    ui.showPopup( tab + " : Index " + str(index))
 </sample>
 
 <sample Open tabs dynamically>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Set the primary and secondary theme colors
     ui.setThemeColor("#673ab7", "#ffc107")
 
-    # Creates a layout with objects verticaly centered
+    # Creates a layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "FillXY,VCenter")
     main.backColor = "#e0e0e0"
 
@@ -139,87 +131,26 @@ def OnStart
     tab1 = tabs.getLayout(0)
     tab1.options = "VCenter"
     btn1 = ui.addButton(tab1, "Open next")
-    btn1.setOnTouch(lambda: tabs.showTabByIndex(1))
+    btn1.setOnTouch(lambda event: tabs.showTabByIndex(1))
 
     # get the second tab and add a button control
     # to open the last tab by its index
     tab2 = tabs.getLayout(1)
     tab2.options = "VCenter"
     btn2 = ui.addButton(tab2, "Open next", "Primary")
-    btn2.setOnTouch(lambda: tabs.showTabByIndex(2))
+    btn2.setOnTouch(lambda event: tabs.showTabByIndex(2))
 
     # get the third tab and add a button control
     # to open the first tab by its tab name
     tab3 = tabs.getLayout(2)
     tab3.options = "VCenter"
     btn3 = ui.addButton(tab3, "Open previous", "Secondary")
-    btn3.setOnTouch(lambda: tabs.showTab("Favorites"))
+    btn3.setOnTouch(lambda event: tabs.showTab("Favorites"))
 
 def onChange(tab, index):
-    ui.showPopup( tab + " : Index " + index)
+    ui.showPopup( tab + " : Index " + str(index))
 </sample>
 
 <sample Icon only>
-from native import ui
 
-def OnStart
-    # Set the primary and secondary theme colors
-    ui.setTheme( "dark" )
-
-    # Creates a layout with objects verticaly centered
-    main = ui.addLayout("main", "Linear", "FillXY,VCenter")
-
-    # Initialize tabs array with icons only
-    tabs = ["favorite", "person", "wifi"]
-
-    # Adds a tab component to the main layout
-    tabs = ui.addTabs(main, tabs, "Icon", 1, 1)
-
-    # Set the tab height to 40px
-    tabs.tabHeight = 40
-
-    # Handle tab changes
-    tabs.setOnChange( onChange )
-
-    # get the first tab and add a button control
-    tab1 = tabs.getLayout(0)
-    tab1.options = "VCenter"
-    btn = ui.addButton(tab1, "Button", "Secondary", 0.5)
-
-    # get the second tab and add a text control.
-    tab2 = tabs.getLayout(1)
-    tab2.options = "VCenter"
-    txt = ui.addText(tab2, "Lorem ipsum dolor set amit", "Center", 1)
-
-    # get the third tab and add a checkbox control
-    tab3 = tabs.getLayout(2)
-    tab3.options = "VCenter"
-    ckb = ui.addCheckbox(tab3, "Check me", "Secondary")
-
-def onChange(tab, index):
-    ui.showPopup(tab + " : Index " + index, "Bottom")
-</sample>
-
-<sample Custom colors and sizes>
-from native import ui
-
-def OnStart
-    # Creates a layout with objects verticaly centered
-    main = ui.addLayout("main", "Linear", "FillXY,VCenter")
-
-    # Initialize tabs array with leading icons
-    tabs = [
-        ["favorite", "Favorites"],
-        ["bluetooth", "Bluetooth"],
-        ["wifi", "Connection"]
-    ]
-
-    # Adds a tab component to the main layout
-    # add some styling to the backColor, textColor, iconColor, iconSize and indicatorColor
-    tabs = ui.addTabs(main, tabs, "Icon", 0.8, 0.8)
-    tabs.backColor = "#ffccbc"
-    tabs.textColor = "#f4511e"
-    tabs.iconColor = "#f4511e"
-    tabs.iconSize = "1.5rem"
-    tabs.indicatorColor = "#f4511e"
 </sample>

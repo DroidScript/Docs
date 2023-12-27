@@ -1,9 +1,8 @@
 <sample Html formatted text>
-from native import ui
-import app, gfx, ui:
+from hybrid import ui
+import ui:
 
-def from app.def OnStart
-
+def from app.def OnStart():
         main = ui.from ui.addLayout("main", "Linear", "VCenter,FillXY")
 
         t = 'This text is formatted as html. <h3 style="color:green;">This is a

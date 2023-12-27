@@ -1,7 +1,7 @@
 <sample SetOnEnter Callback>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global tef

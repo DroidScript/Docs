@@ -1,7 +1,7 @@
 <sample All Colors From Green>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     color = MUI.colors.green
@@ -41,7 +41,7 @@ def OnStart():
 <sample Change Layout Background>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global lsd, color, lay

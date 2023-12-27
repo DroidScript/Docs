@@ -1,4 +1,6 @@
 <sample Sample navs array.>
+from native import cfg
+
 navs = [
     ["Favorites", "favorites"],
     ["Groups", "person"],
@@ -7,9 +9,9 @@ navs = [
 </sample>
 
 <sample Basic>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     # Creates a layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0.01, 0.01, 0.01, 0.01)
@@ -31,9 +33,9 @@ def onChange(text, index):
 </sample>
 
 <sample Hide or show labels>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global bmn
     # Creates a layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -59,10 +61,10 @@ def OnStart
     btn1 = ui.addButton(main, "Hide Labels")
     btn1.setOnTouch(hideLabels)
 
-def showLabels(event ):
+def showLabels(event):
     bmn.showLabels()
 
-def hideLabels(event ):
+def hideLabels(event):
     bmn.hideLabels()
 
 def onChange(text, index):
@@ -70,9 +72,9 @@ def onChange(text, index):
 </sample>
 
 <sample Custom styles>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     # Creates a layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 

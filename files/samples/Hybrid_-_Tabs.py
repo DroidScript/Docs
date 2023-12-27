@@ -1,9 +1,8 @@
 # cfg.Hybrid
 
-from native import ui
+from hybrid import ui
 
 # Make this a Hybrid app
-= True
 
 # Called when application starts
 def OnStart():
@@ -23,5 +22,5 @@ def OnStart():
     btnHello.setOnTouch(btnHello_onTouch)
 
 # Called when button is pressed
-def btnHello_onTouch(event ):
+def btnHello_onTouch(event):
     ui.showPopup("Hello World")

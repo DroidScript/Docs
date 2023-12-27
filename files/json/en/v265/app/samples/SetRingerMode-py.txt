@@ -14,7 +14,7 @@ def OnStart():
 
     app.AddLayout( lay )
 
-def SetRingerMode( mode, index):
+def SetRingerMode( mode , index):
     app.SetRingerMode( mode )
 
 def Notify():

@@ -14,7 +14,6 @@ from native import app
 itv, lock = "/sdcard/.termuxlock"
 script = """
 {  # this is a comment
-    global lock, script
     echo This is a message  # prints to stdout
     sleep 1  # waits 1 second
     echo This is an error  1>&2  # prints to stderr

@@ -1,7 +1,8 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -19,12 +20,15 @@ def OnStart
 
 def onChange(text):
     ui.showPopup("You choose " + text)
+
+app.add(Main())
 </sample>
 
 <sample Group title>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -43,12 +47,15 @@ def OnStart
 
 def onChange(text):
     ui.showPopup("You choose " + text)
+
+app.add(Main())
 </sample>
 
 <sample Multiple selection>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global items
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -66,12 +73,15 @@ def OnStart
 
 def onChange(items):
     ui.showPopup("You choose " + ", ".join(items))
+
+app.add(Main())
 </sample>
 
 <sample Outlined and small>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -89,12 +99,15 @@ def OnStart
 
 def onChange(item):
     ui.showPopup("You choose " + item)
+
+app.add(Main())
 </sample>
 
 <sample Radiogroup items>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -111,12 +124,15 @@ def OnStart
 
 def onChange(item):
     ui.showPopup("You choose " + item)
+
+app.add(Main())
 </sample>
 
 <sample Grouped list items>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -132,12 +148,15 @@ def OnStart
 
 def onChange(item):
     ui.showPopup("You choose " + item)
+
+app.add(Main())
 </sample>
 
 <sample Multiple radiogroup with titles>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global items
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -153,5 +172,5 @@ def OnStart
     sel.setOnChange(onChange)
 
 def onChange(items):
-    ui.showPopup("You choose " + ", ".join(items))
+    ui.show
 </sample>

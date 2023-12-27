@@ -1,9 +1,8 @@
 from native import app
 import threading
 
-# Create
+# Create global variables.
 timer = 0
-global timer
 
 # Called when application is started.
 def OnStart():

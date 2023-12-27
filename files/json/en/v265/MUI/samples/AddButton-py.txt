@@ -1,10 +1,9 @@
 <sample AddButton>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
-
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
     	btn1 = MUI.AddButton(lay, "Button 1", 0.35, None, "raised")

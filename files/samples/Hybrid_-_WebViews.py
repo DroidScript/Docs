@@ -1,4 +1,4 @@
-from native import ui
+from hybrid import ui
 
 # Called when application starts.
 def OnStart():
@@ -11,4 +11,4 @@ def OnStart():
 
     # Add a navigation button.
     btnNavigate = ui.addButton(layMain, "Load News", "primary")
-    btnNavigate.setOnTouch(lambda: web.loadUrl("https://droidscript.org/news-2"))
+    btnNavigate.setOnTouch(lambda event: web.loadUrl("https://droidscript.org/news-2"))

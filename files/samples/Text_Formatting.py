@@ -5,6 +5,7 @@ Translated code:
 
 ```python
 def OnStart():
+    global btn
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
     lay.SetBackground("/Sys/Img/StarField.jpg")
@@ -68,7 +69,7 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    global imgBack
+    global layExp, imgBack, player
     # Lets have some fun!
     layExp = app.CreateLayout("linear", "VCenter,FillXY")
     imgBack = app.CreateImage(None, 1.0, 1.0)
@@ -115,7 +116,7 @@ def RandomBeeps(beeps):
         setTimeout(RandomBeeps, 0)
     elif beepCount > 0:
         synth.SetFrequency(freq + add)
-        setTimeout(RandomBeeps, 2)
+        app.SetTimeout(RandomBeeps, 2)
 
 def Explode(startFrame):
 

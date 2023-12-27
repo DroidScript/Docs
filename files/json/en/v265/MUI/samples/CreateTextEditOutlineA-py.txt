@@ -1,7 +1,8 @@
 <sample No Label>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
+from native import cfg
 
 def OnStart():
     color = MUI.colors.teal
@@ -18,7 +19,8 @@ def OnStart():
 <sample With Label>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
+from native import cfg
 
 def OnStart():
     color = MUI.colors.teal
@@ -35,7 +37,8 @@ def OnStart():
 <sample SetOnEnter Callback>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
+from native import cfg
 
 def OnStart():
     global tef

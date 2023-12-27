@@ -1,7 +1,7 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global swt
     # Creates a layout with objects verticaly centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -20,9 +20,9 @@ def onTouch(value):
 </sample>
 
 <sample Right switch with custom styles>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     # Creates a layout with objects verticaly centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

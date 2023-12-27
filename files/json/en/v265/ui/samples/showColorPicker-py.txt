@@ -1,7 +1,8 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Create a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -11,7 +12,7 @@ def OnStart
     # Add callback handler for `onTouch` event
     btn.setOnTouch(showColorPicker)
 
-def showColorPicker(event ):
+def showColorPicker(event):
     # Show color picker dialog with `Alpha` option
     # to include alpha in the output format `#aarrggbb`
     ui.showColorPicker(None, "Alpha", onSelect)

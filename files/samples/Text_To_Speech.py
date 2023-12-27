@@ -1,4 +1,5 @@
-from native import app, ui
+from hybrid import ui
+from native import app
 
 # Translated Python Code
 

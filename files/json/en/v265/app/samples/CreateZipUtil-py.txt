@@ -8,7 +8,7 @@ def OnStart():
     zip = app.CreateZipUtil()
     zip.Open(file)
     list = zip.List("").split(",")
-    app.Alert(list.join(",\n"))
+    app.Alert("\n".join(list))
     zip.Close()
 </sample>
 

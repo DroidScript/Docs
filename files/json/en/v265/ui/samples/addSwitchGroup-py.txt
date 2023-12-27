@@ -1,7 +1,7 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = ["This is item 1", "This is item 2", "This is item 3"]
@@ -9,14 +9,14 @@ def OnStart
     swg = ui.addSwitchGroup(main, items, "Secondary", 0.9)
     swg.setOnTouch(onTouch)
 
-def onTouch(item, value, index, event ):
+def onTouch(item, value, index, event):
     ui.showPopup(item + " : " + value)
 </sample>
 
 <sample SwitchGroup with leading icons>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = [
@@ -29,14 +29,14 @@ def OnStart
     swg.label = "Settings"
     swg.setOnTouch(onTouch)
 
-def onTouch(item, value, index, event ):
+def onTouch(item, value, index, event):
     ui.showPopup(item + " : " + value)
 </sample>
 
 <sample With custom styles>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = [
@@ -53,14 +53,14 @@ def OnStart
     swg.cornerRadius = 4
     swg.backColor = "rgba(255, 255, 100, 255)"
 
-def onTouch(item, value, index, event ):
+def onTouch(item, value, index, event):
     ui.showPopup(item + " : " + value)
 </sample>
 
 <sample Elevated switchgroup with onChange callback>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global items
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -77,9 +77,9 @@ def onChange(items):
 </sample>
 
 <sample Outlined switchgroup>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global items
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

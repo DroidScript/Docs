@@ -1,5 +1,6 @@
 <sample dark scheme>
-from native import app, ui
+from hybrid import ui
+from native import app
 
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )

@@ -1,7 +1,5 @@
 from native import app
 
-global net, ip
-
 # Global variables
 ip = None
 pc = None

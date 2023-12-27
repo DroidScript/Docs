@@ -1,6 +1,5 @@
 # cfg.Game, cfg.Landscape
 
-from native import gfx
 import random
 
 bunnys = []
@@ -16,7 +15,7 @@ def OnLoad():
     wabbitTexture = gfx.CreateTexture("/Sys/Img/Bunny.png")
 
     gfx.SetOnTouchDown(lambda ev, y: isAdding = True)
-    gfx.SetOnTouchUp(lambda ev: isAdding = False)
+    gfx.SetOnTouchUp(lambda ev, y: isAdding = False)
 
 def OnReady():
     for i in range(startBunnyCount):

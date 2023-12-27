@@ -1,5 +1,4 @@
 from native import app
-from random import random
 from time import sleep
 
 level=1
@@ -129,7 +128,7 @@ def UpdateDefender():
   setTimeout(UpdateDefender,100)
 
 def imgBack_OnTouchDown(event):
-  global xMis, yMis
+  global xMis, yMis, missileFlying
   if not gameOver:
     if missileFlying or clear:
       return

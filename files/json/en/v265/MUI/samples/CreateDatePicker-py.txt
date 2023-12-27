@@ -1,7 +1,7 @@
 <sample Default>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global pck
@@ -29,7 +29,7 @@ def OnSelect(date, yyyy, mm, dd):
 <sample With Custom Date>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global pck

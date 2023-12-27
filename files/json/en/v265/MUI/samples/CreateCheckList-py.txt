@@ -1,12 +1,11 @@
 <sample Light>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 import json
 
 def OnStart():
     global chk, lst
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 
@@ -37,12 +36,11 @@ def OnSubmit(lst):
 <sample Dark, Bottom>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
 import json
 
 def OnStart():
     global chk, lst
-
     color = MUI.colors.teal
     app.InitializeUIKit(color.teal)
 

@@ -1,6 +1,13 @@
+<sample Example>
+from native import app
+
+def OnStart():
+    app.SetClipboardText( "Sample Text" )
+</sample>
+
 <sample ForwardKeys>
 from native import app
 
 def OnStart():
-    app.SetJoystickOptions("ForwardKeys")
+    app.SetJoystickOptions( "ForwardKeys" )
 </sample>

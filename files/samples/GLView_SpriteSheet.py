@@ -7,7 +7,6 @@ spriteSrcWidth = 50
 spriteSrcHeight = 60
 spriteSrcAspectRatio = spriteSrcWidth/spriteSrcHeight
 frameCount = 0
-global spriteSrcAspectRatio, spriteCount, spriteSrcWidth, spriteSrcHeight, frameCount
 
 # Called when application is started.
 def OnStart():

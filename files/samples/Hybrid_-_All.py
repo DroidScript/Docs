@@ -1,14 +1,15 @@
-from native import app, ui
+from hybrid import ui
+from native import app
 
 def OnStart():
     app.Alert("This demo is best viewed on a tablet")
 
     mainLay = ui.addLayout("main", "linear", "fillxy")
-    mainLay.setOnTouch(lambda: ui.ShowPopup("You click the main layout"))
+    mainLay.setOnTouch(lambda event: ui.ShowPopup("You click the main layout"))
 
     apb = ui.addAppBar(mainLay, "My App", "menu", 1)
     apb.setOnMenu(openDrawer)
-    apb.setOnTouch(lambda: print("Hello world"))
+    apb.setOnTouch(lambda event: print("Hello world"))
 
     apbLay = ui.addLayout(None, "Linear", "Horizontal,Right,NoDom,VCenter")
     apbTextField = ui.addTextField(apbLay, "", "outlined,secondary,small", 0.2)
@@ -16,7 +17,7 @@ def OnStart():
     apbBadge = ui.addButton(apbLay, "notifications", "icon")
     apbBadge.SetTextColor('#ffffff')
     apbBadge.SetBadge(9, 'primary')
-    apbBadge.setOnTouch(lambda: print("badge is click"))
+    apbBadge.setOnTouch(lambda event: print("badge is click"))
 
     apbBtn = ui.addButton(apbLay, "account_circle", "Icon")
     apbBtn.SetTextColor('#ffffff')
@@ -31,7 +32,7 @@ def OnStart():
 
     # Change the theme color of the ui~
 
-    # btnBright.setOnTouch(lambda: ui.SetThemeColor({
+    # btnBright.setOnTouch(lambda event: ui.SetThemeColor({
     #     "primary": "#009688",
     #     "secondary": "#673ab7"
     # }))

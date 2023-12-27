@@ -6,7 +6,6 @@ diff = 0
 frame = None
 createdImg = None
 isPortrait = app.IsPortrait()
-global isPortrait, data, flippedPos, width, height, diff, createdImg
 
 # DH is shorthand for app.GetDisplayHeight()
 # DW s shorthand for app.GetDisplayWidth()

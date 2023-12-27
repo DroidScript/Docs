@@ -1,66 +1,65 @@
 <sample Button variants>
-from native import ui
+from hybrid import ui
 
-def OnStart
-    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+def OnStart():
+    main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+    main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
 
-    btn1 = ui.addButton(main, "Button", "Contained")
-    btn1.setOnTouch(onTouch)
+    btn1 = ui.addButton( main, "Button", "Contained" )
+    btn1.setOnTouch( onTouch )
 
-    btn2 = ui.addButton(main, "Button", "Outlined")
-    btn2.setOnTouch(onTouch)
+    btn2 = ui.addButton( main, "Button", "Outlined" )
+    btn2.setOnTouch( onTouch )
 
-    btn3 = ui.addButton(main, "Button", "Text")
-    btn3.setOnTouch(onTouch)
+    btn3 = ui.addButton( main, "Button", "Text" )
+    btn3.setOnTouch( onTouch )
 
-def onTouch(event ):
-    ui.showPopup("Button is touch!")
+def onTouch(event):
+    ui.showPopup( "Button is touch!" )
 </sample>
 
 <sample Button theme colors>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
     btn1 = ui.addButton(main, "Primary", "Contained,Primary")
-    btn1.setOnTouch(onTouch)
+    btn1.setOnTouch( onTouch )
 
     btn2 = ui.addButton(main, "Secondary", "Outlined,Secondary")
-    btn2.setOnTouch(onTouch)
+    btn2.setOnTouch( onTouch )
 
     btn3 = ui.addButton(main, "Default", "Text,Default")
-    btn3.setOnTouch(onTouch)
+    btn3.setOnTouch( onTouch )
 
-def onTouch(event ):
-    ui.showPopup("Button is touch!")
+def onTouch(event):
+    ui.showPopup( "Button is touch!" )
 </sample>
 
 <sample Button sizes>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
     btn1 = ui.addButton(main, "Small", "Contained,Primary,Small")
-    btn1.setOnTouch(onTouch)
+    btn1.setOnTouch( onTouch )
 
     btn2 = ui.addButton(main, "Medium", "Contained,Primary,Medium")
-    btn2.setOnTouch(onTouch)
 
     btn3 = ui.addButton(main, "Large", "Contained,Primary,Large")
 
-def onTouch(event ):
-    ui.showPopup("Button is touch!")
+def onTouch(event):
+    ui.showPopup( "Button is touch!" )
 </sample>
 
 <sample Button tooltips>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0, 0.05, 0, 0.05)
 
@@ -78,10 +77,10 @@ def OnStart
 </sample>
 
 <sample Button with icons>
-from native import ui
+from hybrid import ui
 
-def OnStart
-    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+def OnStart():
+    main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
     main.setChildMargins("12px", "12px", "12px", "12px")
 
     btn1 = ui.addButton(main, "Send", "Primary")
@@ -96,33 +95,31 @@ def OnStart
 </sample>
 
 <sample Buttons with badges>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0.01, 0.01, 0.01, 0.01)
 
     btn1 = ui.addButton(main, "android", "Primary,Icon")
 
     btn2 = ui.addButton(main, "settings", "Primary,Icon")
-    btn2.setBadge(5)
+    btn2.setBadge( 5 )
 
     btn3 = ui.addButton(main, "With Badge", "Secondary,Outlined")
     btn3.setBadge("New", "Primary")
 </sample>
 
 <sample Upload button>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
     btn = ui.addButton(main, "Upload File", "Primary,Upload")
     btn.icon = "backup"
 
-    btn.setOnFileSelect(onFileSelect)
-
 def onFileSelect(files):
     file = files[0]
-    ui.showPopup(f"{file.name} is selected.")
+    ui.showPopup( f"{file.name} is selected." )
 </sample>

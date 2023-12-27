@@ -1,7 +1,7 @@
 <sample Basic>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     color = MUI.colors.teal
@@ -30,7 +30,7 @@ def OnStart():
 <sample Sample page>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global lay
@@ -69,7 +69,7 @@ def OnCtrlTouch():
 <sample Dark mode>
 # cfg.Dark, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     color = MUI.colors.teal

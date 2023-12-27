@@ -1,8 +1,8 @@
 <sample Basic>
-from native import ui
-from ui import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Create a fullscreen linear layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -20,10 +20,10 @@ def onChange(text, index):
 </sample>
 
 <sample Custom styles>
-from native import ui
-from ui import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     # Create a fullscreen linear layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 

@@ -1,5 +1,4 @@
 from native import app
-import native as app
 
 '''
  This demonstrates a very basic app launcher (home screen).

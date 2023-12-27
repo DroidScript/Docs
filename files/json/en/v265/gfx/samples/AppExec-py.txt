@@ -1,7 +1,7 @@
 <sample>
 # cfg.Game
 
-from native import app, gfx
+from native import app
 
 def OnLoad():
     gfx.AppExec( "app.ShowPopup('Hello from Game')" )

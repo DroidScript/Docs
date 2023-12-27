@@ -1,7 +1,7 @@
 <sample Basic menu>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global menu
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -19,18 +19,18 @@ def OnStart
     # Add a callback handler when a menu is touched
     menu.setOnTouch(menuTouch)
 
-def onTouch(event ):
+def onTouch(event):
     # show the menu
     menu.show()
 
-def menuTouch(item, icon, index ):
+def menuTouch(item, icon, index):
     ui.showPopup(item)
 </sample>
 
 <sample Changing anchor component>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global btn1, menu, btn2
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -53,22 +53,22 @@ def OnStart
     # Add a callback handler when a menu is touched
     menu.setOnTouch(menuTouch)
 
-def onTouch1(event ):
+def onTouch1(event):
     # Show the menu on button 1
     menu.show(btn1)
 
-def onTouch2(event ):
+def onTouch2(event):
     # Show the menu on button 2
     menu.show(btn2)
 
-def menuTouch(item, icon, index ):
+def menuTouch(item, icon, index):
     ui.showPopup(item)
 </sample>
 
 <sample With icons and disabled items>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global menu
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -89,19 +89,19 @@ def OnStart
     # Add a callback handler when a menu is touched
     menu.setOnTouch(menuTouch)
 
-def onTouch(event ):
+def onTouch(event):
     # show the menu
     menu.show()
 
-def menuTouch(item, icon, index ):
+def menuTouch(item, icon, index):
     # display the selected item
     ui.showPopup(item)
 </sample>
 
 <sample Anchor position on mouse>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global menu
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -123,7 +123,7 @@ def onMenu(pos):
     # show the menu on the position of the mouse
     menu.show(pos.x, pos.y)
 
-def menuTouch(item, icon, index ):
+def menuTouch(item, icon, index):
     # display the selected item
     ui.showPopup(item)
 </sample>

@@ -1,7 +1,7 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
@@ -16,9 +16,9 @@ def onTouch(value):
 </sample>
 
 <sample Colors>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     global value
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
@@ -43,9 +43,9 @@ def onTouch(value):
 </sample>
 
 <sample Text positions>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0, 0.05, 0, 0.05)
@@ -71,9 +71,9 @@ def onTouch(value):
 </sample>
 
 <sample Adding custom checkbox icon>
-from native import ui
+from hybrid import ui
 
-def OnStart
+def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 

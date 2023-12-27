@@ -4,7 +4,6 @@ import math
 # Init background variables.
 backGroundY = 0
 backGroundShift = 0.005
-global backGroundY, backGroundShift, charW
 
 # Init character variables.
 charX = 0.5

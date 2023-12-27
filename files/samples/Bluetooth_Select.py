@@ -2,7 +2,6 @@ from native import app
 import androidhelper
 
 #Translated Python code
-global droid
 
 droid = androidhelper.Android()
 

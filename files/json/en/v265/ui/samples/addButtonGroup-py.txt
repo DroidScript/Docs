@@ -1,8 +1,7 @@
 <sample Basic ButtonGroup>
-from native import ui
+from hybrid import ui
 
-def OnStart
-
+def OnStart():
     # Creates a fullscreen layout with object vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
@@ -15,16 +14,15 @@ def OnStart
     # Add a callback handler for `onTouch` event
     btg.setOnTouch(onTouch)
 
-def onTouch(text, index, event ):
+def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
 </sample>
 
 <sample ButtonGroup variants>
-from native import ui
+from hybrid import ui
 
-def OnStart
-
+def OnStart():
     # Creates a fullscreen layout with object vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0, 0.05, 0, 0.05)
@@ -43,16 +41,15 @@ def OnStart
     btg3 = ui.addButtonGroup(main, buttons, "Text,Primary", 0.9)
     btg3.setOnTouch(onTouch)
 
-def onTouch(text, index, event ):
+def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
 </sample>
 
 <sample ButtonGroup colors>
-from native import ui
+from hybrid import ui
 
-def OnStart
-
+def OnStart():
     # Creates a fullscreen layout with object vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0, 0.05, 0, 0.05)
@@ -72,16 +69,15 @@ def OnStart
     btg3 = ui.addButtonGroup(main, buttons, "Secondary", 0.9)
     btg3.setOnTouch(onTouch)
 
-def onTouch(text, index, event ):
+def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
 </sample>
 
 <sample ButtonGroup sizes>
-from native import ui
+from hybrid import ui
 
-def OnStart
-
+def OnStart():
     # Creates a fullscreen layout with object vertically centered
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0, 0.05, 0, 0.05)
@@ -101,16 +97,15 @@ def OnStart
     btg3 = ui.addButtonGroup(main, buttons, "Contained,Primary,Large", 0.9)
     btg3.setOnTouch(onTouch)
 
-def onTouch(text, index, event ):
+def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
 </sample>
 
 <sample ButtonGroup icons>
-from native import ui
+from hybrid import ui
 
-def OnStart
-
+def OnStart():
     # Creates a fullscreen layout with object vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
     main.setChildMargins(0, 0.05, 0, 0.05)
@@ -130,7 +125,7 @@ def OnStart
     btg3 = ui.addButtonGroup(main, buttons, "Text,Large,Icon")
     btg3.setOnTouch(onTouch)
 
-def onTouch(text, index, event ):
+def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
 </sample>

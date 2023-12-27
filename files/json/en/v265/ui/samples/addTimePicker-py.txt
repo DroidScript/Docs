@@ -1,7 +1,8 @@
 <sample Basic>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     global tpk
     main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
     btn = ui.addButton(main, "Show Time Picker", "Outlined,Secondary", 0.2)
@@ -9,7 +10,7 @@ def OnStart
     tpk = ui.addTimePicker()
     tpk.setOnSelect(onSelect)
 
-def showTimePicker(event ):
+def showTimePicker(event):
     tpk.show()
 
 def onSelect(value):

@@ -1,8 +1,6 @@
 <sample>
 # cfg.Game
 
-from native import gfx
-
 def OnLoad():
     global circle
     circle = gfx.CreateCircle( 0.4, 0xff1133, 6, 0x7799ff )

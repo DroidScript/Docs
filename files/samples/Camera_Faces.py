@@ -1,11 +1,10 @@
 from native import app
 import time
 
-# Init
+# Init global variables.
 width = 320
 height = 240
 tLast = None
-global width, height
 
 # Called when application is started.
 def OnStart():

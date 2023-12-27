@@ -1,13 +1,14 @@
 <sample DateTimePicker>
-from native import ui
+from hybrid import ui
+from native import app
 
-def OnStart
+def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
     btn = ui.addButton(main, "Show Date Time Picker", "Primary")
     btn.setOnTouch(btn_onTouch)
 
-def btn_onTouch(event ):
+def btn_onTouch(event):
     ui.showDateTimePicker(onDateTime)
 
 def onDateTime(val):

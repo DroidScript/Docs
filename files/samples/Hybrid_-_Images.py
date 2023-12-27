@@ -1,4 +1,5 @@
-from native import app, ui
+from hybrid import ui
+from native import app
 
 # Make this a Hybrid app.
 # Called when application starts.
@@ -15,6 +16,6 @@ def OnStart():
     img.setOnTouch(img_OnTouch)
 
 # Handle touching the image.
-def img_OnTouch(event ):
+def img_OnTouch(event):
     ui.showPopup("Mango")
     app.Vibrate("0,100,30,100,50,300")

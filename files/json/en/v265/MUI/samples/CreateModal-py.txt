@@ -1,7 +1,7 @@
 <sample Full Modal>
 # cfg.Light, cfg.MUI
 
-from native import app, MUI
+from native import app
 
 def OnStart():
     global modal

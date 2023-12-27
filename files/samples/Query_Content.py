@@ -1,4 +1,6 @@
+from native import alert
 from native import app
+from native import json
 
 def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")
