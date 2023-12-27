@@ -1,31 +1,29 @@
+Sorry about that, it seems I made a mistake. The correct translation is as follows:
+
+```python
 from native import app
-import androidhelper
 
-#Translated Python code
-
-droid = androidhelper.Android()
-
-#Called when application is started.
+# Called when application is started.
 def OnStart():
-    global player
-    #Create layout that fills the screen.
-    lay = droid.fullScrreen().vcard()
+    # Create layout that fills the screen.
+    lay = app.CreateLayout("linear", "FillXY,VCenter")
+    
+    # Create 'Play' button.
+    btn = app.CreateButton("Play", 0.4, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+    
+    # Add main layout to app.
+    app.AddLayout(lay)
+    
+    # Create media player.
+    player = app.CreateMediaPlayer()
+    
+    # Load a file (can be ogg or mp3).
+    player.SetFile("/Sys/Snd/Poing.ogg")
 
-    #Create 'Play' button.
-    btn = droid.buttonCreate('Play', 'Play')
-    btn.setOnTouch(btn_OnTouch)
-    lay.addChild(btn)
-
-    #Add main layout to app.
-    droid.addLayout(lay)
-
-    #Create media player.
-    player = droid.mediaCreate()
-
-    #Load a file (can be ogg or mp3).
-    player.setFile("/Sys/Snd/Poing.ogg")
-
-#Handle 'Play' button.
+# Handle 'Play' button.
 def btn_OnTouch():
-    player.seekTo(0)
-    player.play()
+    player.SeekTo(0)
+    player.Play()
+```

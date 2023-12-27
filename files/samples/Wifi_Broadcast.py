@@ -1,10 +1,15 @@
-from native import app
-import socket
-import threading
+Translated Python code:
+
+```python
+# This WiFi messaging sample broadcasts UDP network
+# messages to every device inside your WiFi network (that
+# is running this sample).  This sample could easily be
+# extended to create a WiFi-Chat Application or used as
+# starting point for a multi-player Wifi game.
+# (Note: A few routers block fast UDP messages by default)
 
 # Called when application is started.
 def OnStart():
-    global net, address, thisId
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -25,8 +30,7 @@ def OnStart():
     address = net.GetBroadcastAddress()
 
     # Watch for incoming messages.
-    receive_thread = threading.Thread(target=receive_datagrams, args=(net, 19700, "UTF-8"))
-    receive_thread.start()
+    net.ReceiveDatagrams(19700, "UTF-8")
 
     # Get our device id.
     thisId = app.GetDeviceId()
@@ -38,8 +42,8 @@ def btn_OnTouch():
     packet = thisId + "|" + msg
     net.SendDatagram(packet, "UTF-8", address, 19700)
 
-# Handle incoming UDP messages.
-def net_OnReceive(data):
+# Handle in-comming UDP messages.
+def net_OnReceive(data, address):
     print(address + ": " + data)
 
     # Extract original parts.
@@ -47,16 +51,9 @@ def net_OnReceive(data):
     id = parts[0]
     msg = parts[1]
 
-    # Show the message (that doesn't come from us).
+    # Show the message (that don't come from us).
     if id != thisId:
         app.ShowPopup(msg)
+```
 
-# Function to receive datagrams from UDP
-def receive_datagrams(net, port, encoding):
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.bind((socket.gethostname(), port))
-
-    while True:
-        data, addr = sock.recvfrom(1024)  # buffer size is 1024 bytes
-        data = data.decode(encoding)
-        net.OnReceive(data, addr)
+Note: The code assumes that the necessary modules and libraries have been imported.

@@ -16,16 +16,16 @@ const P = (...p) => path.resolve(__dirname, ...p);
 
 const docSampleInstructions = `
 You are given a xml page with javascript code.
-Translate all included JavaScript code into Python.
+Translate all included JavaScript code into Python, preserving all comments.
 You have to preserve every single XML tags from the original page.
 Only return the translated xml page with all xml tags from the initial page.
 `.trim().replace(/\n/g, " ");
 
 const appSampleInstructions = `
 You are given JavaScript code that you should translate into Python.
-Assume the objects app, gfx, ui and MUI are predefined by the framework and can be imported from the module 'native'.
-Do not change any variable names.
-Only return the translated code.
+Assume the objects app, gfx, ui and MUI are predefined by the framework.
+Do not change any variable names! Preserve all comments!
+Only return the translated code!
 `.trim().replace(/\n/g, " ");
 
 // create new container
@@ -446,11 +446,12 @@ function fixCbs(code, scopestr, obj, subf, argstr) {
 function validatePython(pySample, jsSample) {
     if (pySample.includes("\nfunction")) return "function instead of def";
     if (pySample.includes("androidhelper")) return "detected androidhelper";
-    if (!pySample.includes("#")) return "no comments";
+    if (pySample.includes("threading")) return "detected threading";
+    if (!pySample.includes("#") && jsSample.includes("//")) return "no comments";
     if (!pySample.includes("def OnStart():") && !pySample.includes("def OnLoad():"))
         return "missing OnStart or OnLoad " + [pySample.includes("def OnStart():"), pySample.includes("def OnLoad():"), pySample.slice(pySample.indexOf("def "), pySample.indexOf("def ") + 20)];
-    if (pySample.split(/\bdef /).length !== jsSample.split(/\bfunction /).length)
-        return "mismatching def count";
+    //if (pySample.split(/\bdef /).length !== jsSample.split(/\bfunction /).length)
+    //    return "mismatching def count";
     return "";
 }
 

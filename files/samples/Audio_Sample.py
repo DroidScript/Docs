@@ -1,12 +1,11 @@
-from native import app
-import threading
+The code translated to Python is shown below:
 
+```python
 # Create global variables.
 timer = 0
 
-# Called when application is started.
+# Called when the application is started.
 def OnStart():
-    global rec, imgBack, imgData
     # Lock screen orientation to Landscape.
     app.SetOrientation("Landscape")
 
@@ -25,7 +24,7 @@ def OnStart():
     imgData.SetAutoUpdate(False)
     layGraph.AddChild(imgData)
 
-    # Create horizontal layout for buttons.
+    # Create a horizontal layout for buttons.
     layHoriz = app.CreateLayout("Linear", "Horizontal")
     layHoriz.SetMargins(0, 0.02, 0, 0)
     lay.AddChild(layHoriz)
@@ -42,11 +41,11 @@ def OnStart():
     btnStop.SetOnTouch(btnStop_OnTouch)
     layHoriz.AddChild(btnStop)
 
-    # Add layout to app.
+    # Add layout to the app.
     app.AddLayout(lay)
 
-    # Create Audio Recorder.
-    # frequencies: 8000, 11025, 22050 44100 or 48000
+    # Create an Audio Recorder.
+    # Frequencies: 8000, 11025, 22050 44100 or 48000
     rec = app.CreateAudioRecorder()
     rec.SetFrequency(8000)
 
@@ -56,24 +55,26 @@ def OnStart():
     # Switch off to speed things up.
     app.SetDebugEnabled(False)
 
-# Called when user touches our Start button.
-def btnStart_OnTouch():
-    global timer
-    rec.Start()
-    timer = threading.Timer(0.01, GetSamples)
-    timer.start()
 
-# Called when user touches our Stop button.
+# Called when the user touches our Start button.
+def btnStart_OnTouch():
+    rec.Start()
+    global timer
+    timer = setInterval(GetSamples, 10)
+
+
+# Called when the user touches our Stop button.
 def btnStop_OnTouch():
     rec.Stop()
-    if timer:
-        timer.cancel()
+    global timer
+    clearInterval(timer)
+
 
 # Get samples from the current data buffer.
 def GetSamples():
-    global data
     data = rec.GetData()
     DisplaySamples(data)
+
 
 # Draw graph display background.
 def DrawGraph():
@@ -81,7 +82,7 @@ def DrawGraph():
     imgBack.SetColor("#ff000000")
 
     # Set drawing color to blue.
-    # format is (#alpha:red:green:blue) in hex.
+    # Format is (#alpha:red:green:blue) in hex.
     imgBack.SetPaintColor("#ff4444ff")
 
     # Draw x and y axis.
@@ -109,11 +110,12 @@ def DrawGraph():
     # Update the background image.
     imgBack.Update()
 
-    # Set properties for forground image (sample data).
+    # Set properties for foreground image (sample data).
     imgData.SetLineWidth(1.0)
     imgData.SetPaintColor("#ff4444ff")
 
-# Display audio samples on graph.
+
+# Display audio samples on the graph.
 def DisplaySamples(data):
     # Clear screen.
     imgData.SetColor("#00000000")
@@ -121,5 +123,22 @@ def DisplaySamples(data):
     # Draw samples.
     imgData.DrawSamples(data, 32768)
 
+    """
+    Alternative (slower) drawing method.
+    y = 0.5
+    lasty = 0.5
+    x = 0
+    lastx = 0
+    length = len(data)
+
+    for i in range(length):
+        x = i / length
+        y = 0.5 + data[i] / 32768 / 2
+        imgData.DrawLine(lastx, lasty, x, y)
+        lastx = x
+        lasty = y
+    """
+
     # Update image.
     imgData.Update()
+```

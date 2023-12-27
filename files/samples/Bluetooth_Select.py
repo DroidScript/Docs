@@ -1,71 +1,69 @@
+Here is the translated code in Python:
+
+```python
 from native import app
-import androidhelper
 
-#Translated Python code
-
-droid = androidhelper.Android()
-
-#Called when application is started.
+# Called when application is started.
 def OnStart():
-    global lst, bt, edt
-    #Create a layout with objects vertically centered.
-    lay = droid.fullScrreen().vcard()
-    lay.setBackColor("#222222")
+    # Create a layout with objects vertically centered.
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+    lay.SetBackColor("#222222")
 
-    #Create a list view.
-    lst = droid.createList("")
-    lst.setBackColor("black")
-    lst.setOnTouch(lst_OnTouch)
-    lay.addChild(lst)
+    # Create a list view.
+    lst = app.CreateList("", 0.9, 0.5)
+    lst.SetBackColor("black")
+    lst.SetOnTouch(lst_OnTouch)
+    lay.AddChild(lst)
 
-    #Get a list of paired devices into listview.
-    devices = droid.getPairedBtDevices()
+    # Get a list of paired devices into listview.
+    devices = app.GetPairedBtDevices()
     for d in devices:
-        lst.addItem(devices[d].name, devices[d].address)
+        lst.AddItem(devices[d].name, devices[d].address)
 
-    #Create an edit with commands to send.
-    edt = droid.createTextEdit("Hello from Android!", 0.9, 0.2, "NoSpell")
-    edt.setMargins(0,0.04,0,0)
-    edt.setBackColor("black")
-    lay.addChild(edt)
+    # Create an edit with commands to send.
+    edt = app.CreateTextEdit("Hello from Android!", 0.9, 0.2, "NoSpell")
+    edt.SetMargins(0, 0.04, 0, 0)
+    edt.SetBackColor("black")
+    lay.AddChild(edt)
 
-    #Create an send button.
-    btnSend = droid.createButton("Send", "Send")
-    btnSend.setMargins(0,0.02,0,0)
-    btnSend.setOnTouch(btnSend_OnTouch)
-    lay.addChild(btnSend)
+    # Create a send button.
+    btnSend = app.CreateButton("Send", 0.4, 0.1)
+    btnSend.SetMargins(0, 0.02, 0, 0)
+    btnSend.SetOnTouch(btnSend_OnTouch)
+    lay.AddChild(btnSend)
 
-    #Create Bluetooth serial object.
-    #(also set newline as command separator)
-    bt = droid.createBluetoothSerial()
-    bt.setOnConnect(bt_OnConnect)
-    bt.setOnReceive(bt_OnReceive)
-    bt.setSplitMode("End", "\n")
+    # Create Bluetooth serial object.
+    #(also set a newline as command separator)
+    bt = app.CreateBluetoothSerial()
+    bt.SetOnConnect(bt_OnConnect)
+    bt.SetOnReceive(bt_OnReceive)
+    bt.SetSplitMode("End", "\n")
 
-    #Add main layout to app.
-    droid.addLayout(lay)
+    # Add main layout to app.
+    app.AddLayout(lay)
 
-#Handle list selection.
+# Handle list selection.
 def lst_OnTouch(title, body, type, index):
-    droid.showProgress("Connecting...")
-    bt.connect(body)
+    app.ShowProgress("Connecting...")
+    bt.Connect(body)
     lst.SelectItemByIndex(index)
 
-#Called when we are connected.
+# Called when we are connected.
 def bt_OnConnect(ok):
-    droid.hideProgress()
+    app.HideProgress()
 
-    if ok:
-        droid.makeToast("Connected!")
+    if(ok):
+        app.ShowPopup("Connected!")
     else:
-        droid.makeToast("Failed to connect!")
+        app.ShowPopup("Failed to connect!")
         lst.SelectItemByIndex(-1)
 
-#Called when user touches send button.
+# Called when the user touches the send button.
 def btnSend_OnTouch():
     s = edt.GetText()
-    bt.write(s + "\n")
+    bt.Write(s + "\n")
 
-#Called when we get data from remote device.
+# Called when we receive data from the remote device.
 def bt_OnReceive(data):
-    droid.makeToast(data)
+    app.ShowPopup(data)
+```
