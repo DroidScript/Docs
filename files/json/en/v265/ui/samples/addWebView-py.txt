@@ -1,6 +1,5 @@
 <sample EnjineIO homepage>
 from hybrid import ui
-from native import app
 
 def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -41,7 +40,6 @@ def onLoad():
 
 <sample Getting returned values from a function in a webview>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global web
@@ -70,7 +68,6 @@ def onLoad():
 
 <sample Manipulate dom inside the webview>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global loaded, web

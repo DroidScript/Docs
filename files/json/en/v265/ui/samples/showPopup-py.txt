@@ -1,6 +1,5 @@
 <sample Basic>
 from hybrid import ui
-from native import app
 
 def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -13,7 +12,6 @@ def onTouch(event):
 
 <sample Popups with transitions>
 from hybrid import ui
-from native import app
 
 def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -32,7 +30,6 @@ def onTouch2(event):
 
 <sample With Transition>
 from hybrid import ui
-from native import app
 
 def OnStart():
     layMain = ui.addLayout("main", "Linear", "VCenter,FillXY")

@@ -1,6 +1,5 @@
 <sample Default>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global dtp
@@ -22,7 +21,6 @@ def showDatePicker(event):
 
 <sample With initial value & portrait>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global dtp

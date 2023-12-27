@@ -1,6 +1,5 @@
-Translated Python code:
+from native import app
 
-```python
 # This WiFi messaging sample broadcasts UDP network
 # messages to every device inside your WiFi network (that
 # is running this sample).  This sample could easily be
@@ -10,6 +9,7 @@ Translated Python code:
 
 # Called when application is started.
 def OnStart():
+    global net, address, thisId
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -43,7 +43,7 @@ def btn_OnTouch():
     net.SendDatagram(packet, "UTF-8", address, 19700)
 
 # Handle in-comming UDP messages.
-def net_OnReceive(data, address):
+def net_OnReceive(data):
     print(address + ": " + data)
 
     # Extract original parts.
@@ -54,6 +54,3 @@ def net_OnReceive(data, address):
     # Show the message (that don't come from us).
     if id != thisId:
         app.ShowPopup(msg)
-```
-
-Note: The code assumes that the necessary modules and libraries have been imported.

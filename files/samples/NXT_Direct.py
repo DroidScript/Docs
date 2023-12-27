@@ -1,8 +1,11 @@
+from native import app
+
 # See the following link for info on NXT Bluetooth commands
 # http://androidscript.org/docs/nxt
 
 # Called when application is started.
 def OnStart():
+    global bt
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 

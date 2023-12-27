@@ -1,6 +1,5 @@
 <sample Basic>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global tpk

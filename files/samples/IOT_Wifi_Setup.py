@@ -1,3 +1,5 @@
+from native import app
+
 """
     IOT device Template
     ===================
@@ -29,6 +31,7 @@ g_ssid = None            #Current router ssid or null if not connected.
 
 #Called when application is started.
 def OnStart():
+    global txtInfo, serv
 
     #Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
@@ -73,7 +76,6 @@ def OnStart():
     #Get latest list of wifi router ssids.
     app.WifiScan(lambda ssid: g_ssids = ssid)
 
-
 #Start the access point. (always uses 192.168.43.1)
 def UseAccessPoint():
 
@@ -86,10 +88,10 @@ def UseAccessPoint():
     #Repeatedly check if access point is started ok.
     setTimeout(app.IsWifiApEnabled, 5000)
     setTimeout(app.IsWifiApEnabled, 10000)
-    
 
 #Connect to the given or last known router.
 def UseRouter(ssid = None, key = None):
+    global ssid, key
 
     #Attempt to use last know ssid if none given.
     if not ssid:
@@ -115,7 +117,6 @@ def UseRouter(ssid = None, key = None):
     #Check for failure (eg. bad password) and revert to access point if so.
     setTimeout(lambda: UseAccessPoint() if g_ssid!=ssid else None, 15000)
 
-
 #Watch for router changes.
 def OnWifiChange( state, ssid ):
     app.ShowPopup( "wifi state:" + state + " ssid:" + ssid )
@@ -123,17 +124,15 @@ def OnWifiChange( state, ssid ):
         g_ssid = ssid
         RestartServer()
 
-
 #Restart HTTP server.
 def RestartServer():
     txtInfo.SetText( "Endpoint:\n"+ app.GetIPAddress() +":8080/setup\n" )
     serv.Start()
-    
 
 #Return list of knows router SSIDs.
 def serv_OnScan( request, info ):
     serv.SetResponse( g_ssids )
-    
+
     #Refresh list for next time.
     app.WifiScan(lambda ssid: g_ssids = ssid)
 
@@ -141,7 +140,7 @@ def serv_OnScan( request, info ):
 #eg. http://192.168.43.1:8080/setup?ssid=NETGEAR21&key=ab34fb42
 #    http://192.168.1.217:8080/setup?ssid=AP
 def serv_OnSetup( request, info ):
-    console.log( "API:" + JSON.stringify(request) )
+    print( "API:" + JSON.stringify(request) )
 
     #Store router info to internal flash memory.
     #(Note: this info is not secure on rooted devices, so

@@ -1,6 +1,5 @@
 <sample Basic>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a layout with objects vertically centered
@@ -25,7 +24,6 @@ def OnStart():
 
 <sample With Icon>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a layout with objects vertically centered
@@ -66,7 +64,6 @@ def onChange(tab, index):
 
 <sample Swipeable tabs>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a layout with objects vertically centered
@@ -103,7 +100,6 @@ def onChange(tab, index):
 
 <sample Open tabs dynamically>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Set the primary and secondary theme colors

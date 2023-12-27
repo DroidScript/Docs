@@ -1,4 +1,5 @@
-```python
+from native import app
+
 #
 # This sample toggles the GPIO on pin 7 of the BananaPi zero.
 # (Tested with the Kitkat image released on 2018-07-09)
@@ -8,6 +9,7 @@
 
 # Called when application is started.
 def OnStart():
+    global sys
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -34,4 +36,3 @@ def tgl_OnTouch(check):
         sys.Out("echo 1 > /sys/class/gpio_sw/PA6/data\n")
     else:
         sys.Out("echo 0 > /sys/class/gpio_sw/PA6/data\n")
-```

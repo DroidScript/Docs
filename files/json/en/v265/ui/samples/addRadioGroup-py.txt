@@ -1,6 +1,5 @@
 <sample Basic radiogroup>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered
@@ -21,7 +20,6 @@ def onChange(text):
 
 <sample Elevated secondary radiogroup>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered
@@ -48,7 +46,6 @@ def onChange(text):
 
 <sample Outlined and radios to the right>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered

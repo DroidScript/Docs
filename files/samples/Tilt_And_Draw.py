@@ -55,7 +55,7 @@ def Draw():
 	img.DrawCircle(xdraw, ydraw, 0.015)
 
 	# Call this func again in 1 millisec.
-	timer = app.SetTimeout("Draw()", 1)
+	timer = setTimeout("Draw()", 1)
 
 # Called when 'Accelerometer' sensor changes.
 # Values range from approx -10.0 to +10.0

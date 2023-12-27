@@ -1,6 +1,5 @@
 <sample Main layout>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global main
@@ -28,7 +27,6 @@ def btnTouch(event):
 
 <sample Bottom aligned with margins>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen main layout with objects aligned at the bottom
@@ -45,7 +43,6 @@ def OnStart():
 
 <sample Orientation and spacing>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Create a fullscreen main layout with objects centered horizontally
@@ -62,7 +59,6 @@ def OnStart():
 
 <sample Slide Layout>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Create a fullscreen slide layout with objects vertically centered

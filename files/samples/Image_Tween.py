@@ -1,18 +1,21 @@
+from native import app
+
 # Called when application is started.
 def OnStart():
+    global img
     # Lock screen orientation to Landscape
     app.SetOrientation("Landscape")
-    
+
     # Create an Absolute layout so we can position images precisely.
     lay = app.CreateLayout("Absolute", "FillXY")
-    
+
     # Create image.
     img = app.CreateImage("/Sys/Img/Hello.png", 0.2)
     lay.AddChild(img)
-    
+
     # Add layout to app.
     app.AddLayout(lay)
-    
+
     # Start Tween animation.
     Tween1()
 

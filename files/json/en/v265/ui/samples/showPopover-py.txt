@@ -1,6 +1,5 @@
 <sample Basic>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global btn
@@ -20,7 +19,6 @@ def onTouch(event):
 
 <sample Positioning>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
@@ -93,7 +91,6 @@ def OnStart():
 
 <sample Advanced>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global btn

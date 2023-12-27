@@ -1,8 +1,6 @@
 <sample Square>
 # cfg.Game
 
-from native import app
-
 def OnLoad():
     global square
     .get_gfx()

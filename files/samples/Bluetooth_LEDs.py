@@ -1,6 +1,6 @@
-Translate JavaScript code into Python:
+from native import app
+import random
 
-```python
 # This sample demonstrates controlling the PWM outputs on
 # pins C6,C7 and C8 of an Espruino circuit board via Bluetooth.
 #
@@ -10,6 +10,7 @@ Translate JavaScript code into Python:
 
 # Called when application is started.
 def OnStart():
+    global bt, btnRand
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -89,9 +90,9 @@ def btnRand_OnTouch():
 
 # Flash the LEDs with random colors.
 def RandomFlash():
-    red = (Math.random() > 0.5)
-    green = (Math.random() > 0.5)
-    blue = (Math.random() > 0.5)
+    red = (random.random() > 0.5)
+    green = (random.random() > 0.5)
+    blue = (random.random() > 0.5)
     if not (red or green or blue):
         red = green = blue = True
     bt.Write("analogWrite(C6," + str(int(red)) + ")\n")
@@ -103,4 +104,3 @@ def SwitchOff():
     bt.Write("analogWrite(C6,0)\n")
     bt.Write("analogWrite(C7,0)\n")
     bt.Write("analogWrite(C8,0)\n")
-```

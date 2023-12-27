@@ -1,3 +1,4 @@
+from native import app
 import math
 
 #Intitialise frame counter.
@@ -5,6 +6,7 @@ frameCounter = 0
 
 #Called when application is started.
 def OnStart():
+    global glview, droidWidth, droidHeight, imgDroid
     #Set full screen game mode.
     app.SetScreenMode("Game")
 
@@ -52,7 +54,7 @@ def DrawFrame():
     y = y - ((scaledDroidHeight/2) - (droidHeight/2))
 
     #Draw the droid.
-    glview.DrawImage(imgDroid, x, y, 
+    glview.DrawImage(imgDroid, x, y,
         scaledDroidWidth, scaledDroidHeight, angle)
 
     #Render the graphics to screen.

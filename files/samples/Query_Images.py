@@ -1,7 +1,7 @@
-Here is the Python translation of the given JavaScript code:
+from native import app
 
-```python
 def OnStart():
+    global img
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -15,10 +15,9 @@ def OnStart():
     # Add layout to app.
     app.AddLayout(lay)
 
-
 def btn_OnTouch():
     # Query for all image info.
-    # (Look here for column names: 
+    # (Look here for column names:
     # https://developer.android.com/reference/android/provider/MediaStore.Images.ImageColumns)
     uri = "content://media/external/images/media"
     columns = "_data"
@@ -29,6 +28,3 @@ def btn_OnTouch():
 
     # Show the first image.
     img.SetImage(app.Path2Uri(rows[0]["_data"]))
-```
-
-Note: The translation assumes that the `app` object has already been imported or defined. If it is not the case, you need to import or define it properly. Also, the function `app.Alert` is used instead of `alert` to display the result, assuming you have a similar functionality available in your Python environment.

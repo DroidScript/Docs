@@ -154,7 +154,6 @@ app.add(Main())
 
 <sample Multiple radiogroup with titles>
 from hybrid import ui
-from native import app
 
 def OnStart():
     global items

@@ -1,9 +1,18 @@
 from native import app
 import random
 
-Translated code:
+'''
+ The following basic Html formatting Tags are supported
+ within Text, Button and List controls. For more advanced
+ text formatting use a WebView control.
 
-```python
+    <a href="..."> <b>,  <big>, <br>, <div>,
+    <font color="..." face="...">
+    <h1>,  <h2>, <h3>, <h4>,  <h5>, <h6>
+    <i>,  <img src="...">,  <p>, <small>
+    <strong>, <sub>, <sup>, <tt>, <u>
+'''
+
 def OnStart():
     global btn
     # Create a layout with objects vertically centered.
@@ -107,7 +116,7 @@ def RandomBeeps(beeps):
         else:
             synth.SetVcfEnabled(True)
             synth.SetFrequency(200 * random.random())
-        app.SetTimeout(RandomBeeps, 100 + 2 * random.random())
+        setTimeout(RandomBeeps, 100 + 2 * random.random())
     elif beepCount == 40:
         freq = 3600
         add = (30 if random.random() > 0.6 else -30)
@@ -116,7 +125,7 @@ def RandomBeeps(beeps):
         setTimeout(RandomBeeps, 0)
     elif beepCount > 0:
         synth.SetFrequency(freq + add)
-        app.SetTimeout(RandomBeeps, 2)
+        setTimeout(RandomBeeps, 2)
 
 def Explode(startFrame):
 
@@ -126,4 +135,15 @@ def Explode(startFrame):
     if explodeFrame < 5:
         file = f"Explode{explodeFrame}.png"
         imgBack.SetImage(f"/Sys/Img/{file}", 1)
-        app
+        setTimeout( Explode,  100 )
+    else:
+        explodeFrame = 1
+        app.DestroyLayout( layExp )
+		player.Release()
+		setTimeout( "btn.SetVisibility('Show')", 1000 )
+
+# Play explosion sound and vibrate.
+def player_OnReady():
+	player.Play()
+	app.Vibrate( "100,80" )
+	btn.SetVisibility( "Hide" )

@@ -1,6 +1,5 @@
 <sample Basic>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Create a fullscreen linear layout with objects vertically centered.
@@ -21,7 +20,6 @@ def onChange(text, index):
 
 <sample Custom styles>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Create a fullscreen linear layout with objects vertically centered

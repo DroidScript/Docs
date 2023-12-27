@@ -1,6 +1,8 @@
+from native import app
 
 # Called when application is started.
 def OnStart():
+    global bt
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 

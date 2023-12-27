@@ -1,11 +1,11 @@
-The code translated to Python is shown below:
+from native import app
 
-```python
 # Create global variables.
 timer = 0
 
 # Called when the application is started.
 def OnStart():
+    global rec, imgBack, imgData
     # Lock screen orientation to Landscape.
     app.SetOrientation("Landscape")
 
@@ -55,26 +55,22 @@ def OnStart():
     # Switch off to speed things up.
     app.SetDebugEnabled(False)
 
-
 # Called when the user touches our Start button.
 def btnStart_OnTouch():
-    rec.Start()
     global timer
+    rec.Start()
     timer = setInterval(GetSamples, 10)
-
 
 # Called when the user touches our Stop button.
 def btnStop_OnTouch():
     rec.Stop()
-    global timer
     clearInterval(timer)
-
 
 # Get samples from the current data buffer.
 def GetSamples():
+    global data
     data = rec.GetData()
     DisplaySamples(data)
-
 
 # Draw graph display background.
 def DrawGraph():
@@ -114,7 +110,6 @@ def DrawGraph():
     imgData.SetLineWidth(1.0)
     imgData.SetPaintColor("#ff4444ff")
 
-
 # Display audio samples on the graph.
 def DisplaySamples(data):
     # Clear screen.
@@ -141,4 +136,3 @@ def DisplaySamples(data):
 
     # Update image.
     imgData.Update()
-```

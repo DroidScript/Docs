@@ -1,7 +1,10 @@
+from native import app
+
 #Translated Python code:
 
 #Called when application is started.
 def OnStart():
+    global spin
     #Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -22,16 +25,13 @@ def OnStart():
     #Add layout to app.
     app.AddLayout(lay)
 
-
 #Handle the 'write to storage' button.
 def btnWrite_OnTouch():
     WriteToStorage()
 
-
 #Handle the 'remove permissions' button.
 def btnRemove_OnTouch():
     app.RemovePermission("*")
-
 
 #Write a file to the chosen storage type.
 def WriteToStorage():
@@ -48,7 +48,7 @@ def WriteToStorage():
 
     #Check if we have permission to write to folder.
     if not app.CheckPermission(fldr):
-        alert("Please give permission to access the " + fldr + " folder or a parent folder")
+        app.Alert("Please give permission to access the " + fldr + " folder or a parent folder")
         app.GetPermission(perm, OnPermission)
         return
 
@@ -62,7 +62,6 @@ def WriteToStorage():
         app.ShowPopup("written: " + s)
     else:
         app.ShowPopup("write failed!")
-
 
 #Handle result of permission request.
 def OnPermission(path, uri):

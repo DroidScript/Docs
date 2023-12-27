@@ -1,22 +1,21 @@
-Translated Python code:
+from native import app
 
-```python
 # Called when application is started.
 def OnStart():
     # Create a layout with objects vertically centered.
-    lay = app.CreateLayout("linear", "VCenter,FillXY")    
-    
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
     # Create a contacts intent button.
     btnPhone = app.CreateButton("Get Phone Number", 0.4, 0.1)
     btnPhone.SetOnTouch(btnPhone_OnTouch)
     lay.AddChild(btnPhone)
-    
+
     # Create a Get Contacts button.
     btnContact = app.CreateButton("Get D Contacts", 0.4, 0.1)
     btnContact.SetOnTouch(btnContact_OnTouch)
     lay.AddChild(btnContact)
-    
-    # Add layout to app.    
+
+    # Add layout to app.
     app.AddLayout(lay)
 
 # Called when user touches our Get Phone Number button.
@@ -40,7 +39,6 @@ def btnContact_OnTouch():
     select = "display_name LIKE ?"
     params = "D%"
     rows = app.QueryContent(uri, columns, select, params)
-    
+
     # Show result (stringify as useful way of converting JS objects to text)
-    alert(str(rows))
-```
+    app.Alert(str(rows))

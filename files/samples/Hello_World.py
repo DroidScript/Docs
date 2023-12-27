@@ -1,6 +1,5 @@
-Translated code:
+from native import app
 
-```python
 def OnStart():
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
@@ -24,4 +23,3 @@ def btn_OnTouch():
     # Vibrate phone with a pattern (in milliseconds).
     # pause,vibrate,pause,vibrate...
     app.Vibrate("0,100,30,100,50,300")
-```

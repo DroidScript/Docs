@@ -1,6 +1,5 @@
 <sample Basic Image>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
@@ -20,7 +19,6 @@ def onTouch(event):
 
 <sample Avatar>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
@@ -41,7 +39,6 @@ def onTouch(event):
 
 <sample Button>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
@@ -62,7 +59,6 @@ def onTouch(event):
 
 <sample Drawings>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
@@ -102,7 +98,6 @@ def OnStart():
 
 <sample Text and Shapes>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # create a main layout with object vertically centered
@@ -131,7 +126,6 @@ def OnStart():
 
 <sample Analog Clock>
 from hybrid import ui
-from native import app
 import math
 
 def OnStart():

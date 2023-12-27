@@ -1,6 +1,5 @@
 <sample Chips>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
@@ -30,7 +29,6 @@ sample.start()
 
 <sample Deletable chip>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
@@ -52,7 +50,6 @@ sample.start()
 
 <sample Custom styles>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.
@@ -76,7 +73,6 @@ sample.start()
 
 <sample Avatar>
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered.

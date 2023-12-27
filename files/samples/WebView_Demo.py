@@ -1,38 +1,38 @@
-Translated Python code:
+from native import app
 
-```python
 # Called when application is started.
 def OnStart():
+    global web
     # Create a layout with objects vertically centered.
-    lay = app.CreateLayout("linear", "VCenter,FillXY")    
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     # Create a web control.
     web = app.CreateWebView(0.8, 0.8)
     web.SetOnProgress(web_OnProgress)
     lay.AddChild(web)
-    
+
     # Create horizontal sub-layout for buttons.
-    layHoriz = app.CreateLayout("linear", "Horizontal")    
-    
+    layHoriz = app.CreateLayout("linear", "Horizontal")
+
     # Create 'Local' button.
     btnLocal = app.CreateButton("Local")
     btnLocal.SetOnTouch(btnLocal_OnTouch)
     layHoriz.AddChild(btnLocal)
-    
+
     # Create 'Dynamic' button.
     btnDynamic = app.CreateButton("Dynamic")
     btnDynamic.SetOnTouch(btnDynamic_OnTouch)
     layHoriz.AddChild(btnDynamic)
-    
+
     # Create 'Remote' button.
     btnRemote = app.CreateButton("Remote")
     btnRemote.SetOnTouch(btnRemote_OnTouch)
     layHoriz.AddChild(btnRemote)
-    
+
     # Add horizontal layout to main layout.
     lay.AddChild(layHoriz)
-    
-    # Add layout to app.    
+
+    # Add layout to app.
     app.AddLayout(lay)
 
 # Called when user touches 'Local' button.
@@ -59,4 +59,3 @@ def web_OnProgress(progress):
     app.Debug("progress = " + progress)
     if progress == 100:
         app.HideProgress()
-```

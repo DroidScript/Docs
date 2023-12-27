@@ -1,7 +1,9 @@
+from native import app
 import time
 
 #Called when application is started.
 def OnStart():
+    global player
     #Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -41,6 +43,7 @@ def btnSet_OnTouch():
 #Called when alarm is triggered.
 #(Even if your app is closed)
 def OnAlarm(id):
+    global id
     app.ShowPopup("Got Alarm: id = " + str(id))
     player.SeekTo(0)
     player.Play()

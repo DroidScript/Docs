@@ -128,7 +128,7 @@ def UpdateDefender():
   setTimeout(UpdateDefender,100)
 
 def imgBack_OnTouchDown(event):
-  global xMis, yMis, missileFlying
+  global xMis, yMis
   if not gameOver:
     if missileFlying or clear:
       return

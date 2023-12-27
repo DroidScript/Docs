@@ -1,3 +1,5 @@
+from native import app
+
 Translated code:
 
 ```
@@ -7,6 +9,7 @@ maxFreq = 2000
 
 # Called when application is started.
 def OnStart():
+    global togSin, togSaw, togSqu, synth, txtFreq
     # Create layout that fills the screen.
     lay = app.CreateLayout("Linear", "FillXY,VCenter")
 
@@ -66,7 +69,7 @@ def OnStart():
     skbFreq_OnTouch(skbFreq.GetValue())
 
 # Handle wave shape select.
-def tog_OnTouch():
+def tog_OnTouch(value):
     # Clear all toggles.
     togSin.SetChecked(False)
     togSaw.SetChecked(False)

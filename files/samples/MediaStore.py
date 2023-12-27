@@ -1,6 +1,8 @@
+from native import app
 
 #Called when application is started.
 def OnStart():
+    global media, player, img
     #Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
@@ -62,12 +64,11 @@ def media_OnMediaResult(result):
         s += item.title + ", " + item.albumId + ", " + item.album + ", " + item.artistId + ", " + item.artist + ", " + str(round(item.duration/1000)) + "s" + ", " + str(round(item.size/1000)) + "KB" + ", " + item.uri + "\n\n"
 
     app.HideProgress()
-    alert(s[:2048])
+    app.Alert(s[:2048])
 
     #Play first file found.
     if len(result) > 0:
         player.SetFile(result[0].uri)
-
 
 #Called when user touches 'Artists' button.
 def btnArtists_OnTouch():
@@ -83,8 +84,7 @@ def media_OnArtistsResult(result):
         s += item.id + ", " + item.artist + ", " + str(item.numAlbums) + ", " + str(item.numTracks) + "\n\n"
 
     app.HideProgress()
-    alert(s[:2048])
-
+    app.Alert(s[:2048])
 
 #Called when user touches 'Albums' button.
 def btnAlbums_OnTouch():
@@ -102,11 +102,10 @@ def media_OnAlbumsResult(result):
         s += item.id + ", " + item.album + ", " + item.artist + ", " + str(item.numSongs) + "\n\n"
 
     app.HideProgress()
-    alert(s[:2048])
+    app.Alert(s[:2048])
 
     #Show album art.
     ok = media.GetAlbumArt(img, result[1].id, "external")
-
 
 #Called when file is ready to play.
 def player_OnReady():

@@ -1,6 +1,5 @@
-Translated code:
+from native import app
 
-```python
 # Synth Song Player by CandleLight
 
 # Setup notes in the song.
@@ -43,6 +42,7 @@ def OnStart():
 
 # Called when user touches our 'Play' button.
 def btn_OnTouch():
+    global synth
     # Create music component.
     music = app.CreateMusic()
 
@@ -55,12 +55,8 @@ def btn_OnTouch():
 
 # Play each note.
 def repeat(time):
-    global turn, index, note, duration, velocity
     turn = index % length  # if notes end back first.
     note = HeyHoNotes[turn]
     duration = HeyHoDurations[turn]
     velocity = HeyHoVelocity[turn]
     synth.PlayStopTone(note, duration, time, velocity)
-```
-
-Note that the `app.CreateLayout`, `app.AddButton`, `btn.SetOnTouch`, `app.CreateMusic`, `music.CreateSynth`, `music.RepeatTransport`, `music.StartTransport`, and `synth.PlayStopTone` functions might need to be adjusted to the Python equivalent depending on the framework you are using.

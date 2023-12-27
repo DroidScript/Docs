@@ -343,9 +343,9 @@ function fixupPython(file, code = "") {
 
     //if (code.match(/app\.Set(Timeout|Interval)/i)) {
     code = code
-        .replace(/app.Set(Timeout|Interval)\((\s*(\d+), (.*))\)/i, "set$1($4, $3)")
-        .replace(/app.Set(Timeout|Interval)\((\s*(.*), (\d+))\)/i, "set$1($3, $4)")
-        .replace(/app.Clear(Timeout|Interval)/i, "clear$1");
+        .replace(/app.Set(Timeout|Interval)\((\s*(\d+), (.*))\)/gi, "set$1($4, $3)")
+        .replace(/app.Set(Timeout|Interval)\((\s*(.*), (\d+))\)/gi, "set$1($3, $4)")
+        .replace(/app.Clear(Timeout|Interval)/gi, "clear$1");
     //}
 
     code = code

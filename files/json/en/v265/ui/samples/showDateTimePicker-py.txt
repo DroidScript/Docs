@@ -1,6 +1,5 @@
 <sample DateTimePicker>
 from hybrid import ui
-from native import app
 
 def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)

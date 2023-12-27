@@ -1,10 +1,8 @@
-Here is the translated code in Python:
-
-```python
 from native import app
 
 # Called when application is started.
 def OnStart():
+    global lst, bt, edt
     # Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
     lay.SetBackColor("#222222")
@@ -66,4 +64,3 @@ def btnSend_OnTouch():
 # Called when we receive data from the remote device.
 def bt_OnReceive(data):
     app.ShowPopup(data)
-```
