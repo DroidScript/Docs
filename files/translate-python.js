@@ -295,14 +295,16 @@ function fixupPython(file, code = "") {
         .replace(/(app\.)?alert\(/g, "app.Alert(");
 
     // ui class fragment
-    if (code.includes("def onStart(self):")) {
-        code = code
-            .replace("def onStart(self):", "def OnStart")
-            .replace("app.Run(Main)", "")
-            .replace("main = Main()", "")
-            .replace("main.onStart()", "")
-            .replace(/(\()self|self\./g, "$1");
-    }
+    //if (code.includes("def onStart(self):")) {
+    code = code
+        .replace("def onStart(self):", "def OnStart")
+        .replace("app.Run(Main)", "")
+        .replace("main = Main()", "")
+        .replace("main.onStart()", "")
+        .replace(/self\./g, "")
+        .replace(/(\()self(,\s*)?/g, "$1")
+        .replace(/\(\.(?=[a-z])/gi, "(");
+    //}
 
     // ui class fragment
     if (code.match(/class Main(\(app(.App)?\))?:/i)) {
@@ -311,6 +313,13 @@ function fixupPython(file, code = "") {
             .replace(/Main\(\)\.on.*/g, "")
             .replace(/\n {4}/g, "\n");
     }
+
+    //if (code.match(/app\.Set(Timeout|Interval)/i)) {
+    code = code
+        .replace(/app.Set(Timeout|Interval)\((\s*(\d+), (.*))\)/i, "set$1($4, $3)")
+        .replace(/app.Set(Timeout|Interval)\((\s*(.*), (\d+))\)/i, "set$1($3, $4)")
+        .replace(/app.Clear(Timeout|Interval)/i, "clear$1");
+    //}
 
     code = code
         // remove var keyword
@@ -372,7 +381,8 @@ function fixCbs(code, scopestr, obj, subf, argstr) {
     const func = loadDef(scopestr, obj || subf, obj && subf);
 
     if (!func) {
-        console.error(`Warning: ${scopestr}.${obj || subf}${obj ? '.' + subf : ''} not found`);
+        if (!subf.match(/InitializeUIKit|CreateSmartWatch/))
+            console.error(`Warning: ${scopestr}.${obj || subf}${obj ? '.' + subf : ''} not found`);
         return code;
     }
 

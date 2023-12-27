@@ -10,12 +10,12 @@ def OnStart
     items = ["Item 1", "Item 2", "Item 3"]
 
     # Add Dropdown control to the main layout.
-    dpd = ui.addDropdown(.main, items)
+    dpd = ui.addDropdown(main, items)
 
     # Add a callback handler for `onChange` event on the Dropdown control
-    dpd.setOnChange(.onChange)
+    dpd.setOnChange(onChange)
 
-def onChange(, text, index):
+def onChange(text, index):
     ui.showPopup("Value is " + text)
 </sample>
 
@@ -32,7 +32,7 @@ def OnStart
 
     # Add a Dropdown control to the main layout
     # and pass `Outlined` and `Primary` options for styling
-    dpd = ui.addDropdown(.main, items, "Outlined,Primary")
+    dpd = ui.addDropdown(main, items, "Outlined,Primary")
 
     # Set the label property of the Dropdown
     dpd.label = "Choose an item"
@@ -44,8 +44,8 @@ def OnStart
     dpd.textSize = 18
 
     # Add a callback handler for `onChange` event of the Dropdown control
-    dpd.setOnChange(.onChange)
+    dpd.setOnChange(onChange)
 
-def onChange(, text, index):
+def onChange(text, index):
     ui.showPopup("Value is " + text)
 </sample>

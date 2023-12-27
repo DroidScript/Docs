@@ -1,24 +1,24 @@
 <sample EnjineIO homepage>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.web = ui.addWebView(self.main, "https://enjine.io/", "", 0.9, 0.9)
-    self.web.setOnLoad(self.onLoad)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    web = ui.addWebView(main, "https://enjine.io/", "", 0.9, 0.9)
+    web.setOnLoad(onLoad)
 
-def onLoad(self):
+def onLoad():
     ui.showPopup("Website is loaded!")
 </sample>
 
 <sample Call a function inside the webview>
 from native import ui
 
-def onStart(self):
+def OnStart
     global web
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.web = ui.addWebView(self.main, "", "", 0.9, 0.7)
-    self.web.setOnLoad(self.onLoad)
-    self.web.html = '''
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    web = ui.addWebView(main, "", "", 0.9, 0.7)
+    web.setOnLoad(onLoad)
+    web.html = '''
         <html>
         <head>
 
@@ -33,19 +33,19 @@ def onStart(self):
         </html>
     '''
 
-def onLoad(self):
-    x = self.web.window.callFunc("John Doe")
+def onLoad():
+    x = web.window.callFunc("John Doe")
 </sample>
 
 <sample Getting returned values from a function in a webview>
 from native import ui
 
-def onStart(self):
+def OnStart
     global web
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.web = ui.addWebView(self.main, "", "", 0.9, 0.7)
-    self.web.setOnLoad(self.onLoad)
-    self.web.html = '''
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    web = ui.addWebView(main, "", "", 0.9, 0.7)
+    web.setOnLoad(onLoad)
+    web.html = '''
         <html>
         <head>
 
@@ -60,21 +60,21 @@ def onStart(self):
         </html>
     '''
 
-def onLoad(self):
-    prod = self.web.window.getProduct(2, 3)
+def onLoad():
+    prod = web.window.getProduct(2, 3)
     ui.showPopup("The product is " + str(prod))
 </sample>
 
 <sample Manipulate dom inside the webview>
 from native import ui
 
-def onStart(self):
+def OnStart
     global loaded, web
-    self.loaded = False
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.web = ui.addWebView(self.main, "", "", 0.7, 0.5)
-    self.web.setOnLoad(self.onLoad)
-    self.web.html = '''
+    loaded = False
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    web = ui.addWebView(main, "", "", 0.7, 0.5)
+    web.setOnLoad(onLoad)
+    web.html = '''
         <html>
         <head></head>
         <body>
@@ -82,16 +82,16 @@ def onStart(self):
         </body>
         </html>
     '''
-    self.btn = ui.addButton(self.main, "Change background color")
-    self.btn.setOnTouch(self.onTouch)
+    btn = ui.addButton(main, "Change background color")
+    btn.setOnTouch(onTouch)
 
-def onLoad(self):
+def onLoad():
     global loaded
-    self.loaded = True
+    loaded = True
 
-def onTouch(self):
-    if self.loaded:
-        dom = self.web.document
+def onTouch(event ):
+    if loaded:
+        dom = web.document
         dom.body.style.backgroundColor = "green"
         h2 = dom.getElementById("my-text")
         h2.innerText = "New text from parent!"

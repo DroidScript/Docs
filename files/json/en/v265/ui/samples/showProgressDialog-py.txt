@@ -1,28 +1,28 @@
 <sample Progress Dialog>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.btn = ui.addButton(self.main, "Show Progress Dialog", "Outlined")
-    self.btn.setOnTouch(self.onTouch)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    btn = ui.addButton(main, "Show Progress Dialog", "Outlined")
+    btn.setOnTouch(onTouch)
 
-def onTouch(self):
+def onTouch(event ):
     ui.showProgressDialog("Loading...", "AutoCancel")
 </sample>
 
 <sample Nocancel progress dialog>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.btn = ui.addButton(self.main, "Show Progress Dialog", "Outlined")
-    self.btn.setOnTouch(self.onTouch)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    btn = ui.addButton(main, "Show Progress Dialog", "Outlined")
+    btn.setOnTouch(onTouch)
 
-def onTouch(self):
-    self.pdlg = ui.showProgressDialog("Loading...", "NoCancel")
+def onTouch(event ):
+    pdlg = ui.showProgressDialog("Loading...", "NoCancel")
 
     def hideProgressDialog():
-        self.pdlg.hide()
+        pdlg.hide()
         ui.showPopup("Progress dialog is close!")
 
     setTimeout(hideProgressDialog, 2000)

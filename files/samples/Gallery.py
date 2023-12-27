@@ -21,55 +21,55 @@ def OnConfig():
 
 class Gallery:
 
-    def __init__(self, lay, folder, width, height):
-        self.lay = lay
-        self.folder = folder
-        self.width = width
-        self.height = height
+    def __init__(lay, folder, width, height):
+        lay = lay
+        folder = folder
+        width = width
+        height = height
 
-        self.layFrame = None
+        layFrame = None
 
         def img_OnLoad(img):
             img.Save(img.thumbFile)
 
         def img_OnTouchUp(ev):
             layView.SetBackColor("#ff000000")
-            self.imgView = app.CreateImage(ev.source.fname, 1.0, -1)
-            layView.AddChild(self.imgView)
+            imgView = app.CreateImage(ev.source.fname, 1.0, -1)
+            layView.AddChild(imgView)
 
-        self.Load()
+        Load()
 
-    def Load(self):
-        if self.layFrame:
-            lay.DestroyChild(self.layFrame)
+    def Load():
+        if layFrame:
+            lay.DestroyChild(layFrame)
 
-        app.MakeFolder(self.folder + "/.thumbs")
+        app.MakeFolder(folder + "/.thumbs")
 
-        list = app.ListFolder(self.folder, ".jpg")
+        list = app.ListFolder(folder, ".jpg")
 
         orient = app.GetOrientation()
-        xmarg = self.width / 100
-        ymarg = self.height / 150
+        xmarg = width / 100
+        ymarg = height / 150
         picsPerRow = 2
-        w = self.width / 2 - xmarg * 2
-        h = self.height / 5 - ymarg * 2
+        w = width / 2 - xmarg * 2
+        h = height / 5 - ymarg * 2
 
         if orient == "Landscape":
-            xmarg = self.width / 150
-            ymarg = self.height / 100
+            xmarg = width / 150
+            ymarg = height / 100
             picsPerRow = 4
-            w = self.width / 4 - xmarg * 2
-            h = self.height / 3 - ymarg * 2
+            w = width / 4 - xmarg * 2
+            h = height / 3 - ymarg * 2
 
-        self.layFrame = app.CreateLayout("Frame", 1.0, 1.0)
-        lay.AddChild(self.layFrame)
+        layFrame = app.CreateLayout("Frame", 1.0, 1.0)
+        lay.AddChild(layFrame)
 
-        scroll = app.CreateScroller(self.width, self.height, "")
-        self.layFrame.AddChild(scroll)
+        scroll = app.CreateScroller(width, height, "")
+        layFrame.AddChild(scroll)
 
         layView = app.CreateLayout("Linear", "VCenter")
         layView.SetSize(1, 1)
-        self.layFrame.AddChild(layView)
+        layFrame.AddChild(layView)
 
         layPics = app.CreateLayout("Linear", "Left")
         scroll.AddChild(layPics)
@@ -80,8 +80,8 @@ class Gallery:
                 layPics.AddChild(layRow)
 
             if list[i][:1] != "~":
-                file = self.folder + "/" + list[i]
-                thumbFile = self.folder + "/.thumbs/" + list[i]
+                file = folder + "/" + list[i]
+                thumbFile = folder + "/.thumbs/" + list[i]
                 thumbFile = thumbFile.replace(".png", ".jpg")
 
                 img = None
@@ -97,13 +97,13 @@ class Gallery:
                 img.fname = file
                 img.thumbFile = thumbFile
 
-    def IsViewerOpen(self):
-        return hasattr(self, 'imgView')
+    def IsViewerOpen():
+        return hasattr('imgView')
 
-    def CloseViewer(self):
-        if hasattr(self, 'imgView'):
-            layView.DestroyChild(self.imgView)
-            self.imgView = None
+    def CloseViewer():
+        if hasattr('imgView'):
+            layView.DestroyChild(imgView)
+            imgView = None
             layView.SetBackColor("#00000000")
 
 lay = app.CreateLayout("linear", "VCenter,FillXY")

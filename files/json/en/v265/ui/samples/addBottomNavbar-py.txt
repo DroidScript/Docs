@@ -21,12 +21,12 @@ def OnStart
     ]
 
     # Creates a BottomNavbar control
-    bmn = ui.addBottomNavbar(.main, navs, "", 1)
+    bmn = ui.addBottomNavbar(main, navs, "", 1)
 
     # Add a callback handler for `onChange` event
-    bmn.setOnChange(.onChange)
+    bmn.setOnChange(onChange)
 
-def onChange(, text, index):
+def onChange(text, index):
     ui.showPopup(text)
 </sample>
 
@@ -46,26 +46,26 @@ def OnStart
     ]
 
     # Creates a BottomNavbar control
-    bmn = ui.addBottomNavbar(.main, navs, "", 1)
+    bmn = ui.addBottomNavbar(main, navs, "", 1)
 
     # Add a callback handler for `onChange` event
-    bmn.setOnChange(.onChange)
+    bmn.setOnChange(onChange)
 
     # Button to show the labels
-    btn = ui.addButton(.main, "Show Labels")
-    btn.setOnTouch(.showLabels)
+    btn = ui.addButton(main, "Show Labels")
+    btn.setOnTouch(showLabels)
 
     # Button to hide the labels
-    btn1 = ui.addButton(.main, "Hide Labels")
-    btn1.setOnTouch(.hideLabels)
+    btn1 = ui.addButton(main, "Hide Labels")
+    btn1.setOnTouch(hideLabels)
 
-def showLabels():
+def showLabels(event ):
     bmn.showLabels()
 
-def hideLabels():
+def hideLabels(event ):
     bmn.hideLabels()
 
-def onChange(, text, index):
+def onChange(text, index):
     ui.showPopup(text)
 </sample>
 
@@ -83,7 +83,7 @@ def OnStart
     ]
 
     # Creates a BottomNavbar control
-    bmn = ui.addBottomNavbar(.main, navs, "", 1)
+    bmn = ui.addBottomNavbar(main, navs, "", 1)
 
     # Hide the labels when not active
     bmn.labels = False

@@ -1,17 +1,17 @@
 <sample Basic>
 from native import ui
 
-def onStart(self):
+def OnStart
     global tpk
-    self.main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
-    self.btn = ui.addButton(self.main, "Show Time Picker", "Outlined,Secondary", 0.2)
-    self.btn.setOnTouch(self.showTimePicker)
-    self.tpk = ui.addTimePicker()
-    self.tpk.setOnSelect(self.onSelect)
+    main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
+    btn = ui.addButton(main, "Show Time Picker", "Outlined,Secondary", 0.2)
+    btn.setOnTouch(showTimePicker)
+    tpk = ui.addTimePicker()
+    tpk.setOnSelect(onSelect)
 
-def showTimePicker(self):
-    self.tpk.show()
+def showTimePicker(event ):
+    tpk.show()
 
-def onSelect(self, value):
+def onSelect(value):
     print(value)
 </sample>

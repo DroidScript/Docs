@@ -28,7 +28,7 @@ def OnStart():
     app.AddLayout(lay)
 
     # Start timer to rotate top image
-    app.setInterval(RotateImage, 10)
+    setInterval(RotateImage, 10)
 
 def RotateImage():
     img.Rotate(angle)

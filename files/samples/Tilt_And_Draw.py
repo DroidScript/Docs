@@ -49,7 +49,7 @@ def OnStart():
 	app.ShowPopup("Hold the screen flat")
 
 	# Set a timer to call the Draw function in 2 secs.
-	timer = app.SetTimeout("Draw()", 2000)
+	timer = setTimeout("Draw()", 2000)
 
 # Draw to the screen at the current x,y posn.
 def Draw():

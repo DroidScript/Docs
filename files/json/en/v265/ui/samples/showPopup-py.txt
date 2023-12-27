@@ -1,47 +1,47 @@
 <sample Basic>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.btn1 = ui.addButton(self.main, "Show Popup")
-    self.btn1.setOnTouch(self.onTouch)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    btn1 = ui.addButton(main, "Show Popup")
+    btn1.setOnTouch(onTouch)
 
-def onTouch(self):
+def onTouch(event ):
     ui.showPopup("Hello from popup!")
 </sample>
 
 <sample Popups with transitions>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.main.setChildMargins(0, 0, 0, 0.02)
-    self.btn1 = ui.addButton(self.main, "Top & Grow", "Primary")
-    self.btn1.setOnTouch(self.onTouch1)
-    self.btn2 = ui.addButton(self.main, "Bottom and Slide", "Secondary")
-    self.btn2.setOnTouch(self.onTouch2)
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.setChildMargins(0, 0, 0, 0.02)
+    btn1 = ui.addButton(main, "Top & Grow", "Primary")
+    btn1.setOnTouch(onTouch1)
+    btn2 = ui.addButton(main, "Bottom and Slide", "Secondary")
+    btn2.setOnTouch(onTouch2)
 
-def onTouch1(self):
+def onTouch1(event ):
     ui.showPopup("Hello world.", "Top,Grow")
 
-def onTouch2(self):
+def onTouch2(event ):
     ui.showPopup("Hello world.", "Bottom,Slide", 1500)
 </sample>
 
 <sample With Transition>
 from native import ui
 
-def onStart(self):
-    self.layMain = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    self.btn = ui.addButton(self.layMain, "Show Popup")
-    self.btn.setOnTouch(self.showMessage)
+def OnStart
+    layMain = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    btn = ui.addButton(layMain, "Show Popup")
+    btn.setOnTouch(showMessage)
 
-def showMessage(self):
+def showMessage(event ):
     global snackbar
-    self.snackbar = ui.showPopup("Please login to continue", "Bottom,Center", "", "Login")
-    self.snackbar.setOnAction(self.onAction)
+    snackbar = ui.showPopup("Please login to continue", "Bottom,Center", "", "Login")
+    snackbar.setOnAction(onAction)
 
-def onAction(self):
-    self.snackbar.hide()
+def onAction():
+    snackbar.hide()
     ui.showPopup("Login is click. Show login Page.")
 </sample>

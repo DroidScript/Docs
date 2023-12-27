@@ -9,12 +9,12 @@ def OnStart
     list = ["Javascript", "Java", "Python"]
 
     # Add a list control to the main layout
-    lst = ui.addList(.main, list, "", 0.6)
+    lst = ui.addList(main, list, "", 0.6)
 
     # Adds a callback handler when the list is touched
-    lst.setOnTouch(.onTouch)
+    lst.setOnTouch(onTouch)
 
-def onTouch(, title, body, icon, action, index):
+def onTouch(title, body, icon, action, index):
     ui.showPopup(title, "Short")
 
 app = Main()
@@ -38,21 +38,21 @@ def OnStart
     ]
 
     # Add a list control with icon to the main layout
-    lst = ui.addList(.main, list, "Icon", 0.8)
+    lst = ui.addList(main, list, "Icon", 0.8)
 
     # Adds a callback handler when the list is touched
-    lst.setOnTouch(.onTouch)
+    lst.setOnTouch(onTouch)
 
     # Add a button control to the main layout
-    btn = ui.addButton(.main, "Change Icon Color", "Outlined")
+    btn = ui.addButton(main, "Change Icon Color", "Outlined")
 
     # Add a callback handler to change the icon color when the button is touched
-    btn.setOnTouch(.changeIconColor)
+    btn.setOnTouch(changeIconColor)
 
-def onTouch(, title, body, icon, action, index):
+def onTouch(title, body, icon, action, index):
     ui.showPopup(title, "Short")
 
-def changeIconColor():
+def changeIconColor(event ):
     lst.iconColor = "#e91e63"
 
 app = Main()
@@ -77,12 +77,12 @@ def OnStart
     ]
 
     # Add a list control with avatar to the main layout
-    lst = ui.addList(.main, list, "Avatar", 0.8)
+    lst = ui.addList(main, list, "Avatar", 0.8)
 
     # Adds a callback handler when the list is touched
-    lst.setOnTouch(.onTouch)
+    lst.setOnTouch(onTouch)
 
-def onTouch(, title, body, icon, action, index):
+def onTouch(title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
 app = Main()
@@ -104,7 +104,7 @@ def OnStart
     ]
 
     # Add an elevated list control to the main layout
-    lst = ui.addList(.main, list, "Icon,Elevated", 0.8)
+    lst = ui.addList(main, list, "Icon,Elevated", 0.8)
 
     # Set the elevation depth to 5
     lst.elevation = 5
@@ -113,9 +113,9 @@ def OnStart
     lst.label = "This is a label text"
 
     # Adds a callback handler when the list is touched
-    lst.setOnTouch(.onTouch)
+    lst.setOnTouch(onTouch)
 
-def onTouch(, title, body, icon, action, index):
+def onTouch(title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
 app = Main()
@@ -137,7 +137,7 @@ def OnStart
     ]
 
     # Add an outlined list control to the main layout
-    lst = ui.addList(.main, list, "Icon,Outlined", 0.8)
+    lst = ui.addList(main, list, "Icon,Outlined", 0.8)
 
     # Set the list label
     lst.label = "My awesome list"
@@ -146,9 +146,9 @@ def OnStart
     lst.cornerRadius = 12
 
     # Adds a callback handler when the list is touched
-    lst.setOnTouch(.onTouch)
+    lst.setOnTouch(onTouch)
 
-def onTouch(, title, body, icon, action, index):
+def onTouch(title, body, icon, action, index):
     ui.showPopup(title + " : " + body, "Short")
 
 app = Main()
@@ -166,22 +166,22 @@ def OnStart
     list = ["Javascript", "Java", "Python"]
 
     # Add a list control to the main layout
-    lst = ui.addList(.main, list, "", 0.6)
+    lst = ui.addList(main, list, "", 0.6)
 
     # Set the list label
     lst.label = "Long press any item to select"
 
     # Add on long touch event and set the list to selectable
-    lst.setOnLongTouch(.onLongTouch)
+    lst.setOnLongTouch(onLongTouch)
 
     # Add `onSelect` event listener to the list
     # and display the selected item in the popup
-    lst.setOnSelect(.onSelect)
+    lst.setOnSelect(onSelect)
 
 def onLongTouch():
     lst.selectable = True
 
-def onSelect(, title, i, value):
+def onSelect(title, i):
     ui.showPopup(title + " : " + value)
 
 app = Main()

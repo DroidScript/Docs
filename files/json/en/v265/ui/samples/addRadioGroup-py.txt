@@ -9,12 +9,12 @@ def OnStart
     items = ["Item 1", "Item 2", "Item 3"]
 
     # Add a radiogroup control to the main layout
-    rdg = ui.addRadioGroup(.main, items)
+    rdg = ui.addRadioGroup(main, items)
 
     # Add a callback handler when the value changes
     rdg.setOnChange( onChange )
 
-def onChange(, text, index):
+def onChange(text):
     ui.showPopup("You choose " + text)
 </sample>
 
@@ -29,7 +29,7 @@ def OnStart
     items = ["Item 1", "Item 2", "Item 3"]
 
     # Add an elevated radiogroup control to the main layout
-    rdg = ui.addRadioGroup(.main, items, "Elevated,Secondary", 0.6)
+    rdg = ui.addRadioGroup(main, items, "Elevated,Secondary", 0.6)
 
     # Set the label text of the radiogroup
     rdg.label = "Select one"
@@ -40,7 +40,7 @@ def OnStart
     # Add a callback handler when the value changes
     rdg.setOnChange( onChange )
 
-def onChange(, text, index):
+def onChange(text):
     ui.showPopup("You choose " + text)
 </sample>
 
@@ -67,6 +67,6 @@ def OnStart
     # Add a callback handler when the value changes
     rdg.setOnChange( onChange )
 
-def onChange(, text, index):
+def onChange(text):
     ui.showPopup("You choose " + text)
 </sample>

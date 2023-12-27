@@ -7,18 +7,18 @@ def OnStart
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
     # Add a callback hanlder when the layout is touched
-    main.setOnTouch(.onTouch)
+    main.setOnTouch(onTouch)
 
     # Add a button control to the main layout
-    btn = ui.addButton(.main, "Button", "primary")
+    btn = ui.addButton(main, "Button", "primary")
 
     # Add a callback handler when the button is touched
-    btn.setOnTouch(.btnTouch)
+    btn.setOnTouch(btnTouch)
 
-def onTouch():
+def onTouch(event ):
     ui.showPopup("You click the layout!")
 
-def btnTouch():
+def btnTouch(event ):
     if main.backColor == "yellow":
         main.backColor = "white"
     else:
@@ -36,9 +36,9 @@ def OnStart
     main.setChildMargins(0, 0.05, 0, 0.05)
 
     # Add buttons to the main layout
-    btn1 = ui.addButton(.main, "Button 1", "Primary")
-    btn2 = ui.addButton(.main, "Button 2", "Secondary")
-    btn3 = ui.addButton(.main, "Button 3", "Primary,Outlined")
+    btn1 = ui.addButton(main, "Button 1", "Primary")
+    btn2 = ui.addButton(main, "Button 2", "Secondary")
+    btn3 = ui.addButton(main, "Button 3", "Primary,Outlined")
 </sample>
 
 <sample Orientation and spacing>
@@ -52,9 +52,9 @@ def OnStart
     main.childSpacing = "even"
 
     # Add buttons to the main layout.
-    btn1 = ui.addButton(.main, "Button 1", "Primary")
-    btn2 = ui.addButton(.main, "Button 2", "Secondary")
-    btn3 = ui.addButton(.main, "Button 3", "Primary,Outlined")
+    btn1 = ui.addButton(main, "Button 1", "Primary")
+    btn2 = ui.addButton(main, "Button 2", "Secondary")
+    btn3 = ui.addButton(main, "Button 3", "Primary,Outlined")
 </sample>
 
 <sample Slide Layout>
@@ -66,30 +66,30 @@ def OnStart
     main = ui.addLayout("main", "Slide", "VCenter,FillXY")
 
     # Adds an onSlide event handler to the layout
-    main.setOnSlide(.onSlide)
+    main.setOnSlide(onSlide)
 
     # Adds a yellow-colored Linear first layout to the slide
-    lay1 = ui.addLayout(.main, "Linear", "VCenter", 0.8, 0.5)
+    lay1 = ui.addLayout(main, "Linear", "VCenter", 0.8, 0.5)
     lay1.backColor = "yellow"
     ui.addText(lay1, "First Page")
 
     # Adds a green-colored Linear second layout to the slide
-    lay2 = ui.addLayout(.main, "Linear", "VCenter", 0.8, 0.5)
+    lay2 = ui.addLayout(main, "Linear", "VCenter", 0.8, 0.5)
     lay2.backColor = "green"
     ui.addText(lay2, "Second Page")
 
     # Adds a red-colored Linear third layout to the slide
-    lay3 = ui.addLayout(.main, "Linear", "VCenter", 0.8, 0.5)
+    lay3 = ui.addLayout(main, "Linear", "VCenter", 0.8, 0.5)
     lay3.backColor = "red"
     ui.addText(lay3, "Third Page")
 
     # Adds a blue-colored Linear fourth layout to the slide
-    lay4 = ui.addLayout(.main, "Linear", "VCenter", 0.8, 0.5)
+    lay4 = ui.addLayout(main, "Linear", "VCenter", 0.8, 0.5)
     lay4.backColor = "blue"
     ui.addText(lay4, "Fourth Page")
 
     ui.showPopup("Swipe horizontally", "Long");
 
-def onSlide(, ctrl, index):
+def onSlide(ctrl, index):
     ui.showPopup(index, "", 350)
 </sample>

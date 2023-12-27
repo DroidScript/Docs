@@ -40,8 +40,8 @@ items = {
 <sample Basic TreeView>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "Center,ScrollY,FillXY")
+def OnStart
+    main = ui.addLayout("main", "Linear", "Center,ScrollY,FillXY")
 
     items = {
         "Group 1": {
@@ -70,10 +70,10 @@ def onStart(self):
         }
     }
 
-    self.trv = ui.addTreeView(self.main, items, "Primary")
-    self.trv.setMargins(0, 5, 0, 0, "rem")
-    self.trv.setOnTouch(self.onTouch)
+    trv = ui.addTreeView(main, items, "Primary")
+    trv.setMargins(0, 5, 0, 0, "rem")
+    trv.setOnTouch(onTouch)
 
-def onTouch(self, value, path):
+def onTouch(value, path):
     ui.showPopup("Value: " + value + " Path: " + path)
 </sample>

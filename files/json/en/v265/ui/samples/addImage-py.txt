@@ -6,11 +6,11 @@ def OnStart
 
     image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-    img = ui.addImage(.main, image, "", 0.5)
+    img = ui.addImage(main, image, "", 0.5)
 
-    img.setOnTouch(.onTouch)
+    img.setOnTouch(onTouch)
 
-def onTouch():
+def onTouch(event ):
     ui.showPopup("You touched the mango!")
 </sample>
 
@@ -22,11 +22,11 @@ def OnStart
 
     image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-    img = ui.addImage(.main, image, "Avatar")
+    img = ui.addImage(main, image, "Avatar")
 
-    img.setOnTouch(.onTouch)
+    img.setOnTouch(onTouch)
 
-def onTouch():
+def onTouch(event ):
     ui.showPopup("You touched the mango!")
 </sample>
 
@@ -38,11 +38,11 @@ def OnStart
 
     image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
 
-    img = ui.addImage(.main, image, "Button", 0.5)
+    img = ui.addImage(main, image, "Button", 0.5)
 
-    img.setOnTouch(.onTouch)
+    img.setOnTouch(onTouch)
 
-def onTouch():
+def onTouch(event ):
     ui.showPopup("You touched the mango!")
 </sample>
 
@@ -52,7 +52,7 @@ from native import ui
 def OnStart
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-    img = ui.addImage(.main, "", "canvas", 1, 1)
+    img = ui.addImage(main, "", "canvas", 1, 1)
     img.lineCap = "round"
     img.lineJoin = "round"
 
@@ -82,7 +82,7 @@ from native import ui
 def OnStart
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-    img = ui.addImage(.main, "", "canvas", "300px", "500px")
+    img = ui.addImage(main, "", "canvas", "300px", "500px")
 
     img.drawRectangle(0, 0, 300, 500, "#fff", "", 4)
 
@@ -107,20 +107,20 @@ def OnStart
     global img, time
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-    ui.addAppBar(.main, "Analog Clock")
+    ui.addAppBar(main, "Analog Clock")
 
-    img = ui.addImage(.main, "", "canvas", "300px", "300px")
+    img = ui.addImage(main, "", "canvas", "300px", "300px")
 
     img.lineCap = "round"
     img.lineWidth = 4
     img.strokeColor = "#009688"
     img.lineJoin = "round"
 
-    time = ui.addText(.main, "00:00:00", "h6,bold")
+    time = ui.addText(main, "00:00:00", "h6,bold")
     time.setMargins(0, 0.05, 0, 0)
 
     draw()
-    setInterval(.draw.bind(), 1000)
+    setInterval(draw.bind(), 1000)
 
 def draw():
     img.clear()
@@ -160,7 +160,7 @@ def draw():
         ("PM" if date.hour > 12 else "AM")
     )
 
-def drawHand(, angle, length, width, color):
+def drawHand(angle, length, width, color):
     x = length * math.cos(angle)
     y = length * math.sin(angle)
 
@@ -178,7 +178,7 @@ def OnStart
     main = ui.addLayout("main", "Linear", "Top", 1, 1)
     main.setChildMargins(0, 0.01, 0, 0.01)
 
-    lay = ui.addLayout(.main, "Linear", "Horizontal,Center,VCenter", 1)
+    lay = ui.addLayout(main, "Linear", "Horizontal,Center,VCenter", 1)
     lay.setChildMargins(0.01, 0, 0.01, 0)
 
     colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]

@@ -112,7 +112,7 @@ def RandomBeeps(beeps):
         add = (30 if native.random.random() > 0.6 else -30)
         synth.SetWaveShape("Sin")
         synth.SetVcfEnabled(False)
-        app.SetTimeout(RandomBeeps, 0)
+        setTimeout(RandomBeeps, 0)
     elif beepCount > 0:
         synth.SetFrequency(freq + add)
         app.SetTimeout(RandomBeeps, 2)

@@ -18,7 +18,7 @@ def OnStart():
 
     scroll.ScrollTo(0.5, 0.5)
 
-    app.SetInterval(ShowScrollPos, 1000)
+    setInterval(ShowScrollPos, 1000)
 
 def ShowScrollPos():
     x = scroll.GetScrollX()

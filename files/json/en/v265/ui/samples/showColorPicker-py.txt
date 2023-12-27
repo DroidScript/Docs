@@ -1,21 +1,21 @@
 <sample Basic>
 from native import ui
 
-def onStart(self):
+def OnStart
     # Create a fullscreen layout with objects vertically centered
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     # Add a button to the main layout
-    self.btn = ui.addButton(self.main, "Show Popup", "Primary")
+    btn = ui.addButton(main, "Show Popup", "Primary")
 
     # Add callback handler for `onTouch` event
-    self.btn.setOnTouch(self.showColorPicker)
+    btn.setOnTouch(showColorPicker)
 
-def showColorPicker(self):
+def showColorPicker(event ):
     # Show color picker dialog with `Alpha` option
     # to include alpha in the output format `#aarrggbb`
-    ui.showColorPicker(None, "Alpha", self.onSelect)
+    ui.showColorPicker(None, "Alpha", onSelect)
 
-def onSelect(self, clr):
+def onSelect(clr):
     ui.showPopup(clr)
 </sample>

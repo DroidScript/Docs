@@ -76,11 +76,11 @@ def AddBlock(layHoriz, color):
 
 # Handle touching a block
 def block_OnTouchDown():
-    self.data.checked = not self.data.checked
-    if self.data.checked:
-        self.SetBackColor(self.data.color)
+    data.checked = not data.checked
+    if data.checked:
+        SetBackColor(data.color)
     else:
-        self.SetBackColor("#FFFFFF")
+        SetBackColor("#FFFFFF")
 
 # Repeat the sequence
 def repeat(time):

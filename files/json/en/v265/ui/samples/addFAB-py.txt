@@ -7,12 +7,12 @@ def OnStart
 
     # Add a floating action button to the main layout.
     # By default, FAB is positioned fix at the bottom right corner
-    fab = ui.addFAB(.main, "add")
+    fab = ui.addFAB(main, "add")
 
     # Add a callback handler for `onTouch` event on the FAB
-    fab.setOnTouch(.onTouch)
+    fab.setOnTouch(onTouch)
 
-def onTouch():
+def onTouch(event ):
     ui.showPopup("You clicked me!")
 </sample>
 
@@ -26,12 +26,12 @@ def OnStart
     # Add a primary floating action button to the main layout.
     # Passing `Static` will ignore fixed positioning
     # and will follow the flow of the parent layout
-    fab = ui.addFAB(.main, "add", "Primary,Static")
+    fab = ui.addFAB(main, "add", "Primary,Static")
 
     # Add a callback handler for `onTouch` event on the FAB
-    fab.setOnTouch(.onTouch)
+    fab.setOnTouch(onTouch)
 
-def onTouch():
+def onTouch(event ):
     ui.showPopup("You clicked me!")
 </sample>
 
@@ -44,12 +44,12 @@ def OnStart
 
     # Add a secondary floating action button to the main layout.
     # Passing `Extended` enables to add more text on the FAB
-    fab = ui.addFAB(.main, "add", "Secondary,Extended", "New message")
+    fab = ui.addFAB(main, "add", "Secondary,Extended", "New message")
 
     # Add a callback handler for `onTouch` event on the FAB
-    fab.setOnTouch(.onTouch)
+    fab.setOnTouch(onTouch)
 
-def onTouch():
+def onTouch(event ):
     ui.showPopup("You clicked me!")
 </sample>
 
@@ -62,11 +62,11 @@ def OnStart
 
     # Add a secondary floating action button to the main layout.
     # Passing `Left` option will position the FAB on the bottom left corner
-    fab = ui.addFAB(.main, "add", "Secondary,Extended,Left", "New message")
+    fab = ui.addFAB(main, "add", "Secondary,Extended,Left", "New message")
 
     # Add a callback handler for `onTouch` event on the FAB
-    fab.setOnTouch(.onTouch)
+    fab.setOnTouch(onTouch)
 
-def onTouch():
+def onTouch(event ):
     ui.showPopup("You clicked me!")
 </sample>

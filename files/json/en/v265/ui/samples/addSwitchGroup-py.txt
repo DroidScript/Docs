@@ -1,23 +1,23 @@
 <sample Basic>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = ["This is item 1", "This is item 2", "This is item 3"]
 
-    self.swg = ui.addSwitchGroup(self.main, items, "Secondary", 0.9)
-    self.swg.setOnTouch(self.onTouch)
+    swg = ui.addSwitchGroup(main, items, "Secondary", 0.9)
+    swg.setOnTouch(onTouch)
 
-def onTouch(self, item, value):
+def onTouch(item, value, index , event ):
     ui.showPopup(item + " : " + value)
 </sample>
 
 <sample SwitchGroup with leading icons>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = [
         ["music_note", "Enable Sound"],
@@ -25,19 +25,19 @@ def onStart(self):
         ["wifi", "Enable Wifi"]
     ]
 
-    self.swg = ui.addSwitchGroup(self.main, items, "Secondary,Icon", 0.9)
-    self.swg.label = "Settings"
-    self.swg.setOnTouch(self.onTouch)
+    swg = ui.addSwitchGroup(main, items, "Secondary,Icon", 0.9)
+    swg.label = "Settings"
+    swg.setOnTouch(onTouch)
 
-def onTouch(self, item, value):
+def onTouch(item, value, index , event ):
     ui.showPopup(item + " : " + value)
 </sample>
 
 <sample With custom styles>
 from native import ui
 
-def onStart(self):
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+def OnStart
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = [
         ["music_note", "Enable Sound"],
@@ -45,52 +45,52 @@ def onStart(self):
         ["wifi", "Enable Wifi"]
     ]
 
-    self.swg = ui.addSwitchGroup(self.main, items, "Secondary,Icon", 0.9)
-    self.swg.setOnTouch(self.onTouch)
+    swg = ui.addSwitchGroup(main, items, "Secondary,Icon", 0.9)
+    swg.setOnTouch(onTouch)
 
-    self.swg.textColor = "#673ab7"
-    self.swg.iconColor = "#009688"
-    self.swg.cornerRadius = 4
-    self.swg.backColor = "rgba(255, 255, 100, 255)"
+    swg.textColor = "#673ab7"
+    swg.iconColor = "#009688"
+    swg.cornerRadius = 4
+    swg.backColor = "rgba(255, 255, 100, 255)"
 
-def onTouch(self, item, value):
+def onTouch(item, value, index , event ):
     ui.showPopup(item + " : " + value)
 </sample>
 
 <sample Elevated switchgroup with onChange callback>
 from native import ui
 
-def onStart(self):
+def OnStart
     global items
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = ["This is item 1", "This is item 2", "This is item 3"]
 
-    self.swg = ui.addSwitchGroup(self.main, items, "Secondary,Elevated", 0.9)
-    self.swg.label = "My label"
-    self.swg.elevation = 4
+    swg = ui.addSwitchGroup(main, items, "Secondary,Elevated", 0.9)
+    swg.label = "My label"
+    swg.elevation = 4
 
-    self.swg.setOnChange(self.onChange)
+    swg.setOnChange(onChange)
 
-def onChange(self, items, indexes):
+def onChange(items):
     ui.showPopup(", ".join(items))
 </sample>
 
 <sample Outlined switchgroup>
 from native import ui
 
-def onStart(self):
+def OnStart
     global items
-    self.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
     items = ["This is item 1", "This is item 2", "This is item 3"]
 
-    self.swg = ui.addSwitchGroup(self.main, items, "Primary,Outlined", 0.9)
-    self.swg.label = "My label"
-    self.swg.cornerRadius = 8
+    swg = ui.addSwitchGroup(main, items, "Primary,Outlined", 0.9)
+    swg.label = "My label"
+    swg.cornerRadius = 8
 
-    self.swg.setOnChange(self.onChange)
+    swg.setOnChange(onChange)
 
-def onChange(self, items, indexes):
+def onChange(items):
     ui.showPopup(", ".join(items))
 </sample>

@@ -12,11 +12,11 @@ from native import ui
 def OnStart
     global popup
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    sld = ui.addSlider(.main, 10, "", 0.7)
-    sld.setOnChange(.onChange)
+    sld = ui.addSlider(main, 10, "", 0.7)
+    sld.setOnChange(onChange)
     popup = ui.showPopup(10)
 
-def onChange(, value):
+def onChange(value):
     popup.text = str(value)
     popup.show()
 </sample>
@@ -27,13 +27,13 @@ from native import ui
 def OnStart
     global txt
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    sld = ui.addSlider(.main, 10, "", 0.7)
+    sld = ui.addSlider(main, 10, "", 0.7)
     sld.step = 10
     sld.marks = True
-    sld.setOnSelect(.onSelect)
-    txt = ui.addText(.main, "Value is 10")
+    sld.setOnSelect(onSelect)
+    txt = ui.addText(main, "Value is 10")
 
-def onSelect(, value):
+def onSelect(value):
     txt.text = "Value is " + str(value)
 </sample>
 
@@ -43,18 +43,18 @@ from native import ui
 def OnStart
     global txt
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    sld = ui.addSlider(.main, 10, "Primary", 0.7)
+    sld = ui.addSlider(main, 10, "Primary", 0.7)
     sld.step = 10
     sld.marks = [
         { "label": "First", "value": 10 },
         { "label": "Second", "value": 40 },
         { "label": "Third", "value": 60 }
     ]
-    sld.setOnSelect(.onSelect)
-    txt = ui.addText(.main, "Value is 10")
+    sld.setOnSelect(onSelect)
+    txt = ui.addText(main, "Value is 10")
     txt.margins = 0.02
 
-def onSelect(, value):
+def onSelect(value):
     txt.text = "Value is " + str(value)
 </sample>
 
@@ -64,11 +64,11 @@ from native import ui
 def OnStart
     global popup
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    sld = ui.addSlider(.main, 10, "Vertical,Primary", 0.2, 0.7)
-    sld.setOnChange(.onChange)
+    sld = ui.addSlider(main, 10, "Vertical,Primary", 0.2, 0.7)
+    sld.setOnChange(onChange)
     popup = ui.showPopup(10)
 
-def onChange(, value):
+def onChange(value):
     popup.text = str(value)
     popup.show()
 </sample>
