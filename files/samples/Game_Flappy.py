@@ -131,43 +131,43 @@ def DrawFrame(time, dtime):
     # Shift the background images left slightly each frame
     # until the left image is off screen, then we start again.
     backGroundX -= backGroundShift
-    if(backGroundX <= -1):
+    if backGroundX <= -1:
         backGroundX = 0
 
     # Move the bird and limit its vertical range.
     charY += charSpeedY
     charSpeedY += gravity
-    if(charY > 0.85):
+    if charY > 0.85:
         charY = 0.85
-    elif(charY < -0.1):
+    elif charY < -0.1:
         charY = -0.1
 
     # Adjust an limit birds angle.
-    if(angle < 45):
+    if angle < 45:
         angle += 3
-    if(charY >= 0.85):
+    if charY >= 0.85:
         angle -= 30
-    if(angle < 0):
+    if angle < 0:
         angle = 0
 
     # Draw our bird.
-    if(flap < 2):
+    if flap < 2:
         imgChar = imgFlapUp
-    elif(flap > 2):
+    elif flap > 2:
         imgChar = imgFlapDown
     canvas.DrawImage(imgChar, charX, charY, charW, -1, angle)
-    if(flap > 4):
+    if flap > 4:
         flap = 0
     else:
         flap += 1
 
     # Change top pillars height every time it goes off screen.
-    if(pill1X <= 0):
+    if pill1X <= 0:
         pill1H = 0.1 + random.random() * 0.5
         donePass = False
 
     # Move and draw pillar 1.
-    if(pill1X <= 0):
+    if pill1X <= 0:
         pill1X = 1.0
     else:
         pill1X -= pillarSpeed
@@ -175,7 +175,7 @@ def DrawFrame(time, dtime):
     canvas.DrawImage(imgPillarTop, pill1X, pill1H - capHeight, pill1W, capHeight)
 
     # Move and draw pillar 2.
-    if(pill2X <= 0):
+    if pill2X <= 0:
         pill2X = 1.0
     else:
         pill2X -= pillarSpeed
@@ -188,11 +188,11 @@ def DrawFrame(time, dtime):
     hit2 = IsCollision(charX, charY, charW, charH, pill2X, pill2Y, pill2W, pill2H, 0.06)
 
     # Deal with collisions.
-    if(hit1 or hit2):
+    if hit1 or hit2:
         GameOver()
 
     # Play little tune if we pass a pillar.
-    if(charX > pill1X + pill1W and not donePass):
+    if charX > pill1X + pill1W and not donePass:
         PassedPillar()
 
     # Draw the score.
@@ -209,7 +209,7 @@ def canvas_OnTouchMove(ev):
     angle = 0
 
     # Play flying sound.
-    if(not gameOver):
+    if not gameOver:
         synthFly.PlayTone(0, 3000)
 
 # Check for a collision between two objects.

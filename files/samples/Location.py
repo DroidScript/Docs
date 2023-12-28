@@ -43,7 +43,7 @@ def loc_OnChange( data, time):
 
 # Add messages to log.
 def Log( msg ):
-    if( txt.GetLineTop( txt.GetLineCount() ) >= 0.8 ):
+    if txt.GetLineTop( txt.GetLineCount() ) >= 0.8:
         log.pop(0)
 
     log.append( msg + "\n" )

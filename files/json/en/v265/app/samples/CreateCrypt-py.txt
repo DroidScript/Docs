@@ -37,10 +37,10 @@ def OnText(text):
     dlg.SetButtonText("Encrypt", "Decrypt")
 
 def OnAction(result):
-    if(result == "Yes"):
+    if result == "Yes":
         result = crp.Encrypt(this.data["text"], app.GetDeviceId())
         ShowDialog(result)
-    elif(result == "No"):
+    elif result == "No":
         result = crp.Decrypt(this.data["text"], app.GetDeviceId())
         ShowDialog(result)
 </sample>

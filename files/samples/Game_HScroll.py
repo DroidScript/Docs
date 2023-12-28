@@ -137,7 +137,7 @@ def canvas_OnTouchMove(ev):
 # Check for a collision between two objects.
 # (d is the depth of impact required)
 def IsCollision(x1, y1, w1, h1, x2, y2, w2, h2, d):
-    if (x2 < x1 + w1 - d and x2 + w2 > x1 + d and y2 + h2 > y1 + d and y2 < y1 + h1 - d):
+    if x2 < x1 + w1 - d and x2 + w2 > x1 + d and y2 + h2 > y1 + d and y2 < y1 + h1 - d:
         return True
     else:
         return False

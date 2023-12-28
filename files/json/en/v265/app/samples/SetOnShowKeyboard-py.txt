@@ -18,7 +18,7 @@ def OnStart():
     app.SetOnShowKeyboard( OnKeyboardShown )
 
 def tgl_OnTouch( show ):
-    if( show ):
+    if show:
         app.ShowKeyboard( edt )
     else:
         app.HideKeyboard()

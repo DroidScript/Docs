@@ -21,7 +21,7 @@ def OnMessage( msg ):
     app.Debug( msg )
 
     #Handle commands from main App.
-    if( msg == "change" ):
+    if msg == "change":
         diff = (diff > 0 ? -1 : 1)
 
 #This is where we do some regular background task

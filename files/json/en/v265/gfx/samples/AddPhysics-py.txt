@@ -43,5 +43,5 @@ def OnReady():
 
 def OnCollide(a, b):
     if a.group == "bunnies":
-        squeak.Play(false, 0, 0)
+        squeak.Play(False, 0, 0)
 </sample>

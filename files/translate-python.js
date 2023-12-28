@@ -7,9 +7,10 @@ const glob = require("glob").sync;
 const conf = require("./conf.json");
 const path = require("path");
 const cliProgress = require('cli-progress');
+const { off } = require("process");
 
 /** @typedef {(pySample:string, jsSample:string) => string} Validator */
-/** @typedef {(file:string, pyCode?:string) => string} FixupFunc */
+/** @typedef {(file:string, pyCode?:string, write?:boolean) => string} FixupFunc */
 
 /** @param {string[]} p */
 const P = (...p) => path.resolve(__dirname, ...p);
@@ -199,7 +200,7 @@ async function translateWorker(openai, assistant, fileMap, num, max, invalid, fi
 }
 
 /** @type {FixupFunc} */
-function fixupSample(file, pyCode = "") {
+function fixupSample(file, pyCode = "", write = true) {
     if (!useFixup) return pyCode;
 
     pyCode ||= fs.readFileSync(file, "utf8");
@@ -229,19 +230,19 @@ function fixupSample(file, pyCode = "") {
         if (file.includes("MUI")) code = code.replace(/\bui\b/g, "MUI");
 
         /** @type {string[]} */
-        code = fixupPython(file, code);
+        code = fixupPython(file, code, false);
         fixedPy[index] = code + `\n</sample>\n`;
     }
 
     const fixedSamples = fixedPy.filter(s => s).join("\n").trim();
 
-    if (file && pyCode !== fixedSamples) fs.writeFileSync(file, fixedSamples);
+    if (write && file && pyCode !== fixedSamples) fs.writeFileSync(file, fixedSamples);
     return fixedSamples;
 }
 
 let watch = false;
 /** @type {FixupFunc} */
-function fixupPython(file, code = "") {
+function fixupPython(file, code = "", write = true) {
     if (!useFixup) return code;
     watch = file.includes("showPopover") || file.includes("addDropdown");
 
@@ -314,8 +315,16 @@ function fixupPython(file, code = "") {
     code = code
         .replace(/(app\.)?alert\(/g, "app.Alert(")
         .replace(/console\.log/g, "print")
+        .replace(/(if|while)\s*\((.*)\)\s*:/g, (_, kw, ex) => `${kw} ${ex.trim()}:`)
         .replace(/native\.(app|ui|MUI|gfx|random|json|base64)?/g, (_, s) => s || "app.")
         .replace(/(app|ui|MUI|gfx) = (app|ui|MUI|gfx)/g, "");
+
+    if (!file.match(/IOT_|USB_/)) {
+        code = code
+            .replace(/([^'":])\btrue\b([^"'<])/g, "$1True$2")
+            .replace(/([^'":])\bfalse\b([^"'<])/g, "$1False$2")
+            .replace(/([^'":\w])!([^"'<=\\\n-])/g, "$1not $2");
+    }
 
     // ui class fragment
     //if (code.includes("def onStart(self):")) {
@@ -402,7 +411,7 @@ function fixupPython(file, code = "") {
     if (imports.size > 0) head.push([...imports].sort().join("\n") + "\n");
     const fixedSamples = `${head.join("\n")}\n${code.trim()}`;
 
-    if (file && code !== fixedSamples) fs.writeFileSync(file, fixedSamples);
+    if (file && write && code !== fixedSamples) fs.writeFileSync(file, fixedSamples);
     return fixedSamples;
 }
 

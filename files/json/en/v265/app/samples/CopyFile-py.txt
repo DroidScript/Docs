@@ -6,7 +6,7 @@ def OnStart():
 
     app.CopyFile("myFile.txt", "/sdcard/myFile.txt")
 
-    if(app.FolderExists("/sdcard/myFile.txt")):
+    if app.FolderExists("/sdcard/myFile.txt"):
         app.ShowPopup("myFile exists in /sdcard/!")
     else:
         app.ShowPopup("myFile does not exist in /sdcard/!")

@@ -68,7 +68,7 @@ def cam_OnReady():
     cam.StartPreview()
 
 def Record( start ):
-    if( start ):
+    if start:
         cam.Record( recFolder + "/test.mp4" )
         app.ShowPopup("Recording")
     else:

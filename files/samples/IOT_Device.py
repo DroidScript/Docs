@@ -35,7 +35,7 @@ g_APTime = 1*30000     #How long to run Access Point at startup.
 def OnStart():
     global txtInfo, serv
     #Check this Android version supports hotspot control.
-    if( app.GetOSVersion() > 23 ):
+    if app.GetOSVersion() > 23:
         app.Quit( "Sorry, only Marshmallow or older supported!" )
 
     #Create a layout with objects vertically centered.
@@ -64,7 +64,7 @@ def OnStart():
 
     #Use the access point for the first few minutes
     #to give user chance to re-configure device.
-    if( not g_debug ):
+    if not g_debug:
         UseAccessPoint()
         setTimeout( lambda: UseRouter(), g_APTime )
     else:

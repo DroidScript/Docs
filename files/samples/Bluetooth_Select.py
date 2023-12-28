@@ -50,7 +50,7 @@ def lst_OnTouch(title, body, type, index):
 def bt_OnConnect(ok):
     app.HideProgress()
 
-    if(ok):
+    if ok:
         app.ShowPopup("Connected!")
     else:
         app.ShowPopup("Failed to connect!")

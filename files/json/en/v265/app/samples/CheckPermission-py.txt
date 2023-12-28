@@ -3,7 +3,7 @@ from native import app
 
 def OnStart():
     <b>check = app.CheckPermission( "Camera,ExtSDcard,Network,Storage" )</b>
-    if( check ):
+    if check:
         app.GetPermission( check, PermissionResult )
     else:
         app.Alert( "everything ok!" )

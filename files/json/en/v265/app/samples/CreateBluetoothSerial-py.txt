@@ -4,17 +4,17 @@ from native import app
 def OnStart():
     global bt
     app.ShowProgress( "Enabling Bluetooth" )
-    if( !app.IsBluetoothEnabled() ):
-        app.SetBluetoothEnabled( true )
+    if not app.IsBluetoothEnabled():
+        app.SetBluetoothEnabled( True )
 
-    while( !app.IsBluetoothOn() ):
+    while not app.IsBluetoothOn():
         app.Wait(.4)
     app.HideProgress()
 
     bt = app.CreateBluetoothSerial()
     bt.SetOnConnect( bt_OnConnect )
     bt.SetSplitMode( "End", "\n" )
-    bt.Listen( true )
+    bt.Listen( True )
 
     lst = app.CreateBluetoothList()
     lst.SetOnTouch(lst_OnTouch)
@@ -26,8 +26,8 @@ def lst_OnTouch( name, address ):
 def bt_OnConnect( ok, data ):
     app.HideProgress()
 
-    if( ok ):
-        if( typeof data == "object" ):
+    if ok:
+        if typeof data == "object":
             app.ShowPopup( "Connected!" )
         else:
             app.Alert( "Connected to " + ok + " (" + data + ")" )
