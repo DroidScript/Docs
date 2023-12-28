@@ -120,7 +120,7 @@ def OnStart():
     time.setMargins(0, 0.05, 0, 0)
 
     draw()
-    setInterval(draw.bind(), 1000)
+    app.SetInterval(draw.bind(), 1000)
 
 def draw():
     img.clear()

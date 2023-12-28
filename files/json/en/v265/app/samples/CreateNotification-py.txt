@@ -8,7 +8,7 @@ def OnStart():
     <b>notify = ui.Notification()
     notify.SetMessage("Ticker", "Title", "Text")
     notify.Notify("testID")
-    setTimeout(cancel, 5000)</b>
+    app.SetTimeout(cancel, 5000)</b>
 
 def cancel():
     notify.Cancel("testID")

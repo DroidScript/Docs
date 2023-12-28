@@ -13,5 +13,5 @@ def OnStart():
             "Press me!", "Do as the title says."
         )
         not.Notify(1234)
-        setTimeout(app.Exit, 2000)
+        app.SetTimeout(app.Exit, 2000)
 </sample>

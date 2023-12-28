@@ -43,7 +43,7 @@ def OnStart():
 	app.ShowPopup("Hold the screen flat")
 
 	# Set a timer to call the Draw function in 2 secs.
-	timer = setTimeout("Draw()", 2000)
+	timer = app.SetTimeout("Draw()", 2000)
 
 # Draw to the screen at the current x,y posn.
 def Draw():
@@ -55,7 +55,7 @@ def Draw():
 	img.DrawCircle(xdraw, ydraw, 0.015)
 
 	# Call this func again in 1 millisec.
-	timer = setTimeout("Draw()", 1)
+	timer = app.SetTimeout("Draw()", 1)
 
 # Called when 'Accelerometer' sensor changes.
 # Values range from approx -10.0 to +10.0

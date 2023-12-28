@@ -25,5 +25,5 @@ def onTouch(event):
         pdlg.hide()
         ui.showPopup("Progress dialog is close!")
 
-    setTimeout(hideProgressDialog, 2000)
+    app.SetTimeout(hideProgressDialog, 2000)
 </sample>

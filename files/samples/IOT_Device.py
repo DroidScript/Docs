@@ -102,7 +102,7 @@ def UseRouter(ssid=None, key=None):
     app.SetWifiApEnabled( False )
     app.SetWifiEnabled( True )
     app.ShowPopup( "Connecting to router: " + ssid )
-    setTimeout( lambda: app.WifiConnect(ssid, key), 5000)
+    app.SetTimeout(lambda: app.WifiConnect(ssid, key), 5000)
 
 #Watch for router changes.
 def OnWifiChange(state, ssid):

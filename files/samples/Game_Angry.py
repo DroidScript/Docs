@@ -55,7 +55,7 @@ def OnReady():
         bird.data.fired = True
         bang.Play()
 
-    setTimeout(fire, 2000)
+    app.SetTimeout(fire, 2000)
 
     # Start game.
     gfx.Play()

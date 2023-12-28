@@ -42,7 +42,7 @@ def OnStart():
     playStore = app.CreatePlayStore()
 
     # Get user's status after a short time.
-    setTimeout(GetStatus, 100)
+    app.SetTimeout(GetStatus, 100)
 
 # Get the user's purchase status.
 def GetStatus():
@@ -90,7 +90,7 @@ def ShowSubsInfo():
     dlgPrem.Show()
 
     # Show price after short wait.
-    setTimeout(ShowPrice, 100)
+    app.SetTimeout(ShowPrice, 100)
 
 # Show subscription price.
 def ShowPrice():

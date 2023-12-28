@@ -14,5 +14,5 @@ def btn_OnTouch():
     app.Lock()
     app.ShowPopup("Locked. Wait 5 secs")
 
-    setTimeout(app.Unlock, 5000)
+    app.SetTimeout(app.Unlock, 5000)
 </sample>

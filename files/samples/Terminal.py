@@ -31,15 +31,15 @@ def OnStart():
 
     app.SetDebugEnabled(False)
 
-    setTimeout(edt_OnEnter, 1000)
+    app.SetTimeout(edt_OnEnter, 1000)
 
 def sys_OnInput(data):
     txt.Log(data)
-    setTimeout(Scroll, 100)
+    app.SetTimeout(Scroll, 100)
 
 def sys_OnError(data):
     txt.Log(data, "Red")
-    setTimeout(Scroll, 100)
+    app.SetTimeout(Scroll, 100)
 
 def edt_OnEnter():
     cmd = edt.GetText()

@@ -86,8 +86,8 @@ def UseAccessPoint():
     g_ssid = None
 
     #Repeatedly check if access point is started ok.
-    setTimeout(app.IsWifiApEnabled, 5000)
-    setTimeout(app.IsWifiApEnabled, 10000)
+    app.SetTimeout(app.IsWifiApEnabled, 5000)
+    app.SetTimeout(app.IsWifiApEnabled, 10000)
 
 #Connect to the given or last known router.
 def UseRouter(ssid = None, key = None):
@@ -112,10 +112,10 @@ def UseRouter(ssid = None, key = None):
     app.SetWifiApEnabled( False )
     app.SetWifiEnabled( True )
     app.ShowPopup( "Connecting to router: " + ssid )
-    setTimeout(lambda: app.WifiConnect(ssid,key), 5000)
+    app.SetTimeout(lambda: app.WifiConnect(ssid,key), 5000)
 
     #Check for failure (eg. bad password) and revert to access point if so.
-    setTimeout(lambda: UseAccessPoint() if g_ssid!=ssid else None, 15000)
+    app.SetTimeout(lambda: UseAccessPoint() if g_ssid!=ssid else None, 15000)
 
 #Watch for router changes.
 def OnWifiChange( state, ssid ):
@@ -150,9 +150,9 @@ def serv_OnSetup( request, info ):
 
     #Switch to given router or AP (with delay to allow http response to go).
     if request.ssid == "AP":
-        setTimeout(UseAccessPoint(), 1000)
+        app.SetTimeout(UseAccessPoint(), 1000)
     else:
-        setTimeout(UseRouter(request.ssid, request.key), 1000)
+        app.SetTimeout(UseRouter(request.ssid, request.key), 1000)
 
     #Set client response.
     serv.SetResponse("router changed")

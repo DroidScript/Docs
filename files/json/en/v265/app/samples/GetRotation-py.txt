@@ -16,7 +16,7 @@ from native import app
 
 def OnStart():
     app.Animate(ShowRotation, 2)
-    setTimeout('app.SetOrientation("landscape")', 5000)
+    app.SetTimeout('app.SetOrientation("landscape")', 5000)
 
 def ShowRotation(time, dtime):
     mode = app.GetRotation()

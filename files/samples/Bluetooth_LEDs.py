@@ -81,11 +81,11 @@ def btnRand_OnTouch():
     if btnRand.GetText() == "Random":
         # Call the 'RandomFlash' function repeatedly.
         val = 0
-        timer = setInterval(RandomFlash, 500)
+        timer = app.SetInterval(RandomFlash, 500)
         btnRand.SetText("Stop")
     else:
         SwitchOff()
-        clearInterval(timer)
+        app.ClearInterval(timer)
         btnRand.SetText("Random")
 
 # Flash the LEDs with random colors.

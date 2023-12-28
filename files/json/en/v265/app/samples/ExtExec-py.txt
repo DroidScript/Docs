@@ -36,12 +36,12 @@ def OnStart():
 
     app.AddLayout(lay)
 
-    itv = setInterval(CheckReady, 100)
+    itv = app.SetInterval(CheckReady, 100)
 
 def CheckReady():
     if not app.FileExists(lock):
         app.HideProgress()
-        clearInterval(itv)
+        app.ClearInterval(itv)
 
         stdout = app.ReadFile("/sdcard/out.txt")
         stderr = app.ReadFile("/sdcard/err.txt")

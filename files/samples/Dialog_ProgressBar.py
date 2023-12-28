@@ -16,12 +16,12 @@ def OnStart():
 # Called when user touches our button.
 def btn_OnTouch():
     app.ShowProgressBar("Processing...", 0)
-    setInterval(lambda: Update(10), 1000)
-    setInterval(lambda: Update(30), 2000)
-    setInterval(lambda: Update(40), 3000)
-    setInterval(lambda: Update(60), 4000)
-    setInterval(lambda: Update(100), 5000)
-    setTimeout(lambda: Hide(), 6000)
+    app.SetInterval(lambda: Update(10), 1000)
+    app.SetInterval(lambda: Update(30), 2000)
+    app.SetInterval(lambda: Update(40), 3000)
+    app.SetInterval(lambda: Update(60), 4000)
+    app.SetInterval(lambda: Update(100), 5000)
+    app.SetTimeout(lambda: Hide(), 6000)
 
 # Update the progress bar.
 def Update(progress):

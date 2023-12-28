@@ -79,7 +79,7 @@ def imgPad_OnTouch(e):
     # (We add a slight delay because too many commands in
     # the NXT queue can cause commands to be missed)
     else:
-        setTimeout("nxt.Stop('BC')", 100)
+        app.SetTimeout("nxt.Stop('BC')", 100)
 
 # Called when horizontal 'A' bar image is touched.
 def imgBarA_OnTouch(e):
@@ -95,7 +95,7 @@ def imgBarA_OnTouch(e):
         nxt.Drive("A", v * 100, 0)
     # Stop motors when finger is lifted.
     else:
-        setTimeout("nxt.Stop('A')", 100)
+        app.SetTimeout("nxt.Stop('A')", 100)
 
 # Called when sound image is touched.
 def imgSnd_OnTouch(e):

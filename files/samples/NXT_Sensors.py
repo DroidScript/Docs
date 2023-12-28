@@ -65,4 +65,4 @@ def UpdateSensors():
         val = nxt.ReadDistanceSensor(4)
         txtDist.SetText("Distance: " + val + " cm")
 
-    timer = setTimeout("UpdateSensors()", 300)
+    timer = app.SetTimeout("UpdateSensors()", 300)

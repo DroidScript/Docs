@@ -7,7 +7,6 @@ const glob = require("glob").sync;
 const conf = require("./conf.json");
 const path = require("path");
 const cliProgress = require('cli-progress');
-const { off } = require("process");
 
 /** @typedef {(pySample:string, jsSample:string) => string} Validator */
 /** @typedef {(file:string, pyCode?:string, write?:boolean) => string} FixupFunc */
@@ -240,11 +239,9 @@ function fixupSample(file, pyCode = "", write = true) {
     return fixedSamples;
 }
 
-let watch = false;
 /** @type {FixupFunc} */
 function fixupPython(file, code = "", write = true) {
     if (!useFixup) return code;
-    watch = file.includes("showPopover") || file.includes("addDropdown");
 
     code ||= fs.readFileSync(file, "utf8");
 
@@ -263,7 +260,7 @@ function fixupPython(file, code = "", write = true) {
     /** @type {Obj<string>} */
     const objLibs = { app: "native", ui: "hybrid", MUI: " ", gfx: " " };
     for (const obj in objLibs) {
-        if (code.includes(obj + ".") && objLibs[obj] != " ")
+        if (code.includes(obj + ".") && objLibs[obj] !== " ")
             imports.add(`from ${objLibs[obj]} import ${obj}`);
     }
     code = code.replace(/((from .* )?import (.*))\s*/g, (_, m, ms, is) => {
@@ -352,9 +349,9 @@ function fixupPython(file, code = "", write = true) {
 
     //if (code.match(/app\.Set(Timeout|Interval)/i)) {
     code = code
-        .replace(/app.Set(Timeout|Interval)\((\s*(\d+), (.*))\)/gi, "set$1($4, $3)")
-        .replace(/app.Set(Timeout|Interval)\((\s*(.*), (\d+))\)/gi, "set$1($3, $4)")
-        .replace(/app.Clear(Timeout|Interval)/gi, "clear$1");
+        .replace(/(?!app.)set(Timeout|Interval)\((\s*(\d+), (.*))\)/gi, "app.Set$1($4, $3)")
+        .replace(/(?!app.)set(Timeout|Interval)\((\s*(.*), (\d+))\)/gi, "app.Set$1($3, $4)")
+        .replace(/(?!app.)clear(Timeout|Interval)/gi, "app.Clear$1");
     //}
 
     code = code
@@ -420,7 +417,7 @@ function fixCbs(code, scopestr, obj, subf, argstr) {
     const func = loadDef(scopestr, obj || subf, obj && subf);
 
     if (!func) {
-        if (!subf.match(/InitializeUIKit|CreateSmartWatch/))
+        if (!subf.match(/InitializeUIKit|CreateSmartWatch|(Set|Clear)(Timeout|Interval)/))
             console.error(`Warning: ${scopestr}.${obj || subf}${obj ? '.' + subf : ''} not found`);
         return code;
     }

@@ -3,5 +3,5 @@ from native import app
 
 def OnStart():
     app.GoToSleep()
-    setTimeout("app.WakeUp()", 5000)
+    app.SetTimeout("app.WakeUp()", 5000)
 </sample>

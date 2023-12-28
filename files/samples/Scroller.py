@@ -24,7 +24,7 @@ def OnStart():
     scroll.ScrollTo(0.5, 0.5)
 
     # Show the current scroll position every second.
-    setInterval(ShowScrollPos, 1000)
+    app.SetInterval(ShowScrollPos, 1000)
 
 # Called every second.
 def ShowScrollPos():

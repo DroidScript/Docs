@@ -8,7 +8,7 @@ def OnStart():
         nonlocal i
         app.ShowPopup(i)
         i += 1
-    setInterval(show_popup, 2000)
+    app.SetInterval(show_popup, 2000)
 
 def OnMessage(msg):
     if msg == "fg":

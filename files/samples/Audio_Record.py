@@ -48,8 +48,8 @@ def btnStart_OnTouch():
     global timer
     rec.Start()
     txt.SetTextColor("#aa2222")
-    clearInterval(timer)
-    timer = setInterval(GetLevel, 250)
+    app.ClearInterval(timer)
+    timer = app.SetInterval(GetLevel, 250)
 
 def btnPause_OnTouch():
     rec.Pause()
@@ -59,7 +59,7 @@ def btnStop_OnTouch():
     rec.Stop()
     txt.SetTextColor("#222222")
     txt.SetText("Level: 0%")
-    clearInterval(timer)
+    app.ClearInterval(timer)
 
 def GetLevel():
     level = rec.GetRMS()

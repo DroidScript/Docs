@@ -149,7 +149,7 @@ def OnStart():
     time.setMargins(0, 0.05, 0, 0)
 
     # Call the draw function every second
-    setInterval(draw.bind(), 1000)
+    app.SetInterval(draw.bind(), 1000)
 
 def draw():
     # Clear all the drawings first in the canvas

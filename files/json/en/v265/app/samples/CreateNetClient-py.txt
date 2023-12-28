@@ -103,7 +103,7 @@ def OnStart():
     id = app.GetDeviceId()
     port = 19700
 
-    setInterval(CheckForMsg, 500)
+    app.SetInterval(CheckForMsg, 500)
 
 def btn_OnTouch():
     packet = id + "|Hello"

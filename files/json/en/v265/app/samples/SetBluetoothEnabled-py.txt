@@ -55,13 +55,13 @@ def checkBtOn():
     if app.IsBluetoothOn():
         app.HideProgress()
         app.ShowPopup( "Bluetooth is on" )
-        clearInterval( itv )
+        app.ClearInterval( itv )
         itv = 0
 
 def checkBtOff():
     if not app.IsBluetoothOn():
         app.HideProgress()
         app.ShowPopup( "Bluetooth is off" )
-        clearInterval( itv )
+        app.ClearInterval( itv )
         itv = 0
 </sample>

@@ -17,7 +17,7 @@ def OnStart():
     # app.SetJoystickOptions('ForwardKeys')
 
     # Start timer to show joystick state.
-    setInterval(ShowState, 200)
+    app.SetInterval(ShowState, 200)
 
 # Called 5x as second.
 def ShowState():

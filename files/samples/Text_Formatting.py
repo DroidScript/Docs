@@ -122,10 +122,10 @@ def RandomBeeps(beeps):
         add = (30 if random.random() > 0.6 else -30)
         synth.SetWaveShape("Sin")
         synth.SetVcfEnabled(False)
-        setTimeout(RandomBeeps, 0)
+        app.SetTimeout(RandomBeeps, 0)
     elif beepCount > 0:
         synth.SetFrequency(freq + add)
-        setTimeout(RandomBeeps, 2)
+        app.SetTimeout(RandomBeeps, 2)
 
 def Explode(startFrame):
 

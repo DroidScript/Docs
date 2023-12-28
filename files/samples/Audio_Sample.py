@@ -59,12 +59,12 @@ def OnStart():
 def btnStart_OnTouch():
     global timer
     rec.Start()
-    timer = setInterval(GetSamples, 10)
+    timer = app.SetInterval(GetSamples, 10)
 
 # Called when the user touches our Stop button.
 def btnStop_OnTouch():
     rec.Stop()
-    clearInterval(timer)
+    app.ClearInterval(timer)
 
 # Get samples from the current data buffer.
 def GetSamples():

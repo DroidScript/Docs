@@ -3,5 +3,5 @@ from native import app
 
 def OnStart():
     app.ShowProgress("Loading...")
-    setTimeout("app.HideProgress()", 3000)
+    app.SetTimeout("app.HideProgress()", 3000)
 </sample>

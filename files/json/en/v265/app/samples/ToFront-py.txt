@@ -3,7 +3,7 @@ from native import app
 
 def OnStart():
     app.ToBack()
-    setTimeout("app.ToFront()", 5000)
+    app.SetTimeout("app.ToFront()", 5000)
 
 def OnPause():
     app.ShowPopup( "OnPause" )

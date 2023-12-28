@@ -28,7 +28,7 @@ def OnStart():
     als = MUI.CreateAlertSimple(text, "GOT IT", color.darken2)
     als.Show()
 
-    setTimeout(CloseAlert, 4000)
+    app.SetTimeout(CloseAlert, 4000)
 
 def CloseAlert():
     als.Hide()

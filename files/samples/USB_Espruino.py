@@ -116,7 +116,7 @@ def spin_OnTouch(item):
         s += " digitalWrite(LED1, state)\n"
         s += " state = !state;\n"
         s += "}\n"
-        s += "setInterval(flash, 200)\n"
+        s += "app.SetInterval(flash, 200)\n"
     elif item == "PWM":
         s += "analogWrite(A1, 0.5)\n"
     elif item == "Servo":
