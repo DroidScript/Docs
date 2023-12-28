@@ -32,4 +32,6 @@ def ShowDebug():
 def OnBack():
     if app.IsDebugVisible():
         app.ShowDebug(False)
+    else:
+        app.Exit()
 </sample>

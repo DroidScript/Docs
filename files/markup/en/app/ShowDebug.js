@@ -60,7 +60,9 @@ function ShowDebug()
 function OnBack()
 {
 	if( app.IsDebugVisible() ) {
-	    app.ShowDebug( false );
+		app.ShowDebug( false );
+	} else {
+		app.Exit();
 	}
 }
  */

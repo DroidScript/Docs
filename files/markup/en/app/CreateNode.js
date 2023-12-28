@@ -15,8 +15,15 @@
 /** @Description
 Creates a NodeJS background process with all the functionality of common node.js.
 
-Note that to define private functions (functions that are invisible by the main app) you have to declare them as global variable without usign the var keyword.
-This is actually a safer way of working as it prevents name clashes and libraries overwriting each other's functions and variables accidentally.  Ideally you should put your code into objects or classes for better protection and avoid using many globals.
+You can do most things in Node Native apps that you would normally do, however you must use the require() function instead of the app.Script() method to include other scripts from your project. Scripts that are called in via require are scoped slightly differently, which means functions and objects declared like the following will not be seen by your main app -
+<js>function MyTest() { return "Hello" }</js>
+
+If you want a function to be global you need declare it like this -
+<js>MyTest = function() { return "Hello" }</js>
+
+Similarly with variables, don't use the var keyword if you want them to be visible globally.
+
+**Note:** This is actually a safer way of working as it prevents name clashes and libraries overwriting each other's functions and variables accidentally.  Ideally you should put your code into objects or classes for better protection and avoid using many globals.
 
 <js>
 var myLocalVariable = "Local Hello";

@@ -30,6 +30,7 @@ var curPage = "";
 var serverAddress = "";
 
 var curMode = location.href.match(/\bmode=([-\w]*)/);
+if (curMode) curMode = curMode[1];
 
 // set current theme
 var curTheme = location.href.match(/\btheme=([-\w]*)/);
@@ -96,7 +97,7 @@ $(document).live('pageshow', function (event, ui) {
 		if (!isDS) $("div[name=divCopy] > a:contains(Run)").hide();
 
 		// hide theme switch button inside DS
-		if (isDS) $(".ui-header > .ui-btn-right").hide();
+		if (isDS) $(".ui-header .ui-btn[data-icon=gear]").hide();
 
 		//If on Android, save current page.
 		if (isMobileIDE)
@@ -106,7 +107,8 @@ $(document).live('pageshow', function (event, ui) {
 		curPage = $.mobile.activePage.attr('id');
 
 		// set language mode
-		setMode(curMode ? curMode[1] : getCookie("dsDocsMode", "js"));
+		setMode(curMode || getCookie("dsDocsMode", "js"));
+		alert("~show " + curMode);
 
 		//Show plugins list if 'plugins' page is loading.
 		if (curPage == "plugins") ShowPluginsPage()
@@ -410,11 +412,13 @@ function searchDocs(filterName, filterContent, fetched) {
 function has(s, t) { return s.indexOf(t) > -1; }
 
 function setCookie(name, val) {
+	if (window.sessionStorage) sessionStorage.setItem(name, val);
 	name = name.replace(/\W+/g, '');
 	window.name = window.name.replace(new RegExp(";" + name + "=[^;]*;|$"), ";" + name + "=" + val + ";");
 }
 
 function getCookie(name, dflt) {
+	if (window.sessionStorage) return sessionStorage.getItem(name) || dflt;
 	name = name.replace(/\W+/g, '');
 	return (window.name.match(new RegExp(";" + name + "=([^;]*);")) || [null, dflt])[1];
 }

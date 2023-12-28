@@ -96,17 +96,22 @@ $(document).live('pageshow', function (event, ui) {
 		if (!isDS) $("div[name=divCopy] > a:contains(Run)").hide();
 
 		// hide theme switch button inside DS
-		if (isDS) $(".ui-header > .ui-btn-right").hide();
+		if (isDS) $(".ui-header .ui-btn[data-icon=gear]").hide();
 
 		//If on Android, save current page.
 		if (isMobileIDE)
 			setTimeout("app.SetData( 'CurWebDoc', document.title )", 1); //<-- to stop HTC crash.
 
+		// change link to ui/UI.html inside DS
+		if (isDS && !app.FileExists(baseFolder + "HybridUI.htm"))
+			$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
+
 		//Get current page id.
 		curPage = $.mobile.activePage.attr('id');
 
 		// set language mode
-		setMode(curMode ? curMode[1] : getCookie("dsDocsMode", "js"));
+		var t = curMode;
+		setMode(Array.isArray(curMode) && curMode[1] || getCookie("dsDocsMode", "js"));
 
 		//Show plugins list if 'plugins' page is loading.
 		if (curPage == "plugins") ShowPluginsPage()
@@ -333,9 +338,6 @@ function tglMode() {
 
 //Set the current code mode "js" or "py"
 function setMode(mode) {
-	if (curMode == mode) return;
-
-	console.log("setMode('" + mode + "')");
 	setCookie("dsDocsMode", curMode = mode);
 
 	if (mode === "py") {
@@ -410,11 +412,13 @@ function searchDocs(filterName, filterContent, fetched) {
 function has(s, t) { return s.indexOf(t) > -1; }
 
 function setCookie(name, val) {
+	if (window.sessionStorage) sessionStorage.setItem(name, val);
 	name = name.replace(/\W+/g, '');
 	window.name = window.name.replace(new RegExp(";" + name + "=[^;]*;|$"), ";" + name + "=" + val + ";");
 }
 
 function getCookie(name, dflt) {
+	if (window.sessionStorage) return sessionStorage.getItem(name) || dflt;
 	name = name.replace(/\W+/g, '');
 	return (window.name.match(new RegExp(";" + name + "=([^;]*);")) || [null, dflt])[1];
 }

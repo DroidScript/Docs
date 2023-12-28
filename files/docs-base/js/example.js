@@ -11,7 +11,7 @@ function copy(id) {
 	var div = document.querySelector('#' + id + codeClass);
 	var txt = div.innerText || div.textContent;
 	txt = txt.replace(/\xa0/g, " ");
-	if (navigator.userAgent.indexOf("Android") > -1) //
+	if (isDS) //
 	{
 		app.SetClipboardText(txt); //replace nbsp chars
 		ShowPopup("Text copied to clipboard");
@@ -24,14 +24,18 @@ function demo(id) {
 	var fld = "/sdcard/DroidScript/~DocSamp/";
 	var codeClass = curMode === "py" ? '.code-py' : '.code-js';
 	var div = document.querySelector('#' + id + codeClass);
+	var code = (div.innerText || div.textContent).replace(/\xa0/g, ' ');
 	if (isMobileIDE) {
-		if (!app.FolderExists(fld)) app.MakeFolder(fld);
-		app.WriteFile(fld + "~DocSamp.js", div.innerText || div.textContent);
-		app.Execute("RunDemo( '" + fld + "/~DocSamp.js' );");
-		//app.Execute( "try { StartApp('" + fld + "/~DocSamp.js') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
+		app.DeleteFolder(fld);
+		app.MakeFolder(fld);
+		app.WriteFile(fld + "~DocSamp." + curMode, code);
+		app.Execute("LaunchApp( '~DocSamp' );");
+		//app.Execute( "try { StartApp('" + fld + "/~DocSamp." + curMode + "') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
 	}
-	else
-		parent.postMessage("demo:" + (div.innerText || div.textContent), "*")
+	else {
+		var cmd = curMode == "py" ? "demo:python:" : "demo:";
+		parent.postMessage(cmd + code, "*")
+	}
 }
 
 function run(file) {

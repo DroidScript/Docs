@@ -160,7 +160,7 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
+	txt = app.CreateText( "", 0.8, 0.3, "Multiline,Left" );
 	lay.AddChild( txt );
 	app.AddLayout( lay );
 
