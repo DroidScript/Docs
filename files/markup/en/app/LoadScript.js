@@ -37,3 +37,24 @@ function OnLoad() {
  */
     
             
+    
+/**
+@sample Python Compute the Answer to the Ultimate Question of Life, the Universe, and Everything
+from native import app
+
+scriptPJ = """
+num = 7
+def computeNum():
+    return 6 * num
+"""
+
+def OnStart():
+    app.WriteFile( "script.js", scriptPJ )
+    app.LoadScript( "script.js", OnLoad )
+
+def OnLoad():
+    app.ShowPopup( "script.js loaded." )
+    app.Alert( computeNum(), "computed number: " )
+ */
+    
+            

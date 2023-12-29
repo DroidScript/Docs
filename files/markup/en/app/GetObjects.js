@@ -45,3 +45,32 @@ function btn_OnTouch()
  */
     
             
+    
+/**
+@sample Python Show Types of all Objects
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    img = app.CreateImage( "/Sys/Img/Hello.png", 0.2, -1 )
+    lay.AddChild( img )
+
+    btn = app.CreateButton( "Get Objects", 0.3, 0.1 )
+    btn.SetMargins( 0, 0.05, 0, 0 )
+    btn.SetOnTouch( btn_OnTouch )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+def btn_OnTouch():
+    objs = app.GetObjects()
+
+    lst = []
+    for i in objs:
+        lst.append( i + ": " + objs[i].GetType() )
+
+    app.Alert( "\n".join(lst) )
+ */
+    
+            

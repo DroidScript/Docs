@@ -55,3 +55,29 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python List home directory
+from native import app
+
+def OnStart():
+    list = app.ListFolder("/sdcard/")
+
+    ldg = app.CreateListDialog("/sdcard/*", list)
+    ldg.Show()
+ */
+    
+            
+    
+/**
+@sample Python List .jpg assets
+from native import app
+
+def OnStart():
+    list = app.ListFolder("/Sys/Img", ".jpg")
+
+    ldg = app.CreateListDialog("/Sys/Img/*.jpg", list)
+    ldg.Show()
+ */
+    
+            

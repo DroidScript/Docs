@@ -30,3 +30,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Demo
+from native import app
+
+def OnStart():
+    app.SetKioskMode( "Status,Nav", True, "Black" )
+ */
+    
+            

@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show User Language Code
+from native import app
+
+def OnStart():
+    code = app.GetLanguageCode()
+    app.Alert(code)
+ */
+    
+            

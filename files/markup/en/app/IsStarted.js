@@ -27,3 +27,16 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Started
+from native import app
+
+setTimeout('app.Alert( app.IsStarted(), "Started in global:" );')
+
+def OnStart():
+    started = app.IsStarted()
+    app.Alert( started, "Started in OnStart:" )
+ */
+    
+            

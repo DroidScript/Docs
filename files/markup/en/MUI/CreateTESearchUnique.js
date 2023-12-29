@@ -179,3 +179,45 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Search
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTESearchUnique(0.8, "Search for music", "search")
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTESearchUnique(0.8, "Search for music", "search")
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            

@@ -128,3 +128,21 @@ function dload_OnComplete()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    srcFileUrl = "http://sgarman.net/downloadable.txt"
+    targetDir = "/sdcard"
+
+    dload = app.CreateDownloader()
+    dload.SetOnComplete( dload_OnComplete )
+    dload.Download( srcFileUrl, targetDir )
+
+def dload_OnComplete():
+    app.ShowPopup("Download complete")
+ */
+    
+            

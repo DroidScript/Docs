@@ -188,3 +188,23 @@ function ShowSelection( item )
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
+
+    spin = app.CreateSpinner("Bilbo,Frodo,Gandalf", 0.4)
+    spin.SetOnChange(ShowSelection)
+    spin.SelectItem("Frodo")
+    lay.AddChild(spin)
+
+    app.AddLayout(lay)
+
+def ShowSelection(item, index):
+    app.ShowPopup("Selected = " + item)
+ */
+    
+            

@@ -37,3 +37,24 @@ function SetScreenBrightness( level )
  */
     
             
+    
+/**
+@sample Python SetScreenBrightness Demo
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+    lay.SetBackColor( "white" )
+
+    spn = app.CreateSeekBar( 1 )
+    spn.SetOnChange( SetScreenBrightness )
+    spn.SetRange( 1 )
+    lay.AddChild( spn )
+
+    app.AddLayout( lay )
+
+def SetScreenBrightness( level ):
+    app.SetScreenBrightness( level )
+ */
+    
+            

@@ -38,3 +38,18 @@ function OnReady()
  */
     
             
+    
+/**
+@sample Python 
+# cfg.Game
+
+def OnLoad():
+    global droid
+    droid = gfx.CreateSprite( "/Sys/Img/Hello.png" )
+
+def OnReady():
+    gfx.AddSprite( droid, 0.2, 0.4, 0.5 )
+    gfx.Play()
+ */
+    
+            

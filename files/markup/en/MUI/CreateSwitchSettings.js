@@ -155,3 +155,35 @@ function OnTouch(text, value)
  */
     
             
+    
+/**
+@sample Python More Settings
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    settings = [
+        "Enable sound",
+        "Enable dark mode",
+        "Disable full screen"
+    ]
+
+    for setting in settings:
+        skb = MUI.CreateSwitchSettings(setting, 1)
+        skb.SetOnTouch(OnTouch)
+        lay.AddChild(skb)
+        lay.AddChild(MUI.CreateDivider())
+
+    app.AddLayout(lay)
+
+def OnTouch(text, value):
+    app.ShowPopup(text+" : "+value)
+ */
+    
+            

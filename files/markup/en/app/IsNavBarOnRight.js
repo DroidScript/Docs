@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check NavBar is on the Dark Side
+from native import app
+
+def OnStart():
+    navOnRight = app.IsNavBarOnRight()
+    app.Alert( navOnRight, "NavBar on right" )
+ */
+    
+            

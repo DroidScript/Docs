@@ -37,3 +37,16 @@ function OnPermission( pathURI )
  */
     
             
+    
+/**
+@sample Python Get ExtSDCard Permission and User-Selected Path
+from native import app
+
+def OnStart():
+    path = app.GetPermission("extsdcard", OnPermission)
+
+def OnPermission(pathURI):
+    app.Alert(pathURI)
+ */
+    
+            

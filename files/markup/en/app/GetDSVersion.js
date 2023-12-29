@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show DroidScript Version
+from native import app
+
+def OnStart():
+    ver = app.GetDSVersion()
+    app.Alert(ver)
+ */
+    
+            

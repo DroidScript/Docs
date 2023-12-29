@@ -265,3 +265,146 @@ function OnControlTouch(text, index)
  */
     
             
+    
+/**
+@sample Python Just a title
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Absolute", "FillXY")
+
+    apb = MUI.CreateAppBarElegant("My Title")
+    apbHeight = apb.GetHeight()
+
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
+
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
+    pageLay.SetSize(1, 1.2)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(MUI.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Sample page
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global lay
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Absolute", "FillXY")
+
+    apb = MUI.CreateAppBar("My Title", "arrow_back", "search")
+    apb.SetOnMenuTouch(OnMenuTouch)
+
+    apbHeight = apb.GetHeight()
+
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
+
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
+    pageLay.SetSize(1, 1.2)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(MUI.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
+
+    app.AddLayout(lay)
+
+def OnMenuTouch():
+    lay.Animate("SlideToBottom")
+ */
+    
+            
+    
+/**
+@sample Python Complete controls
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Absolute", "FillXY")
+
+    apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
+    apbHeight = apb.GetHeight()
+
+    scr = app.CreateScroller(1, 1, "NoScrollBar")
+
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
+    pageLay.SetSize(1, 1.2)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(MUI.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Dark mode
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Absolute", "FillXY")
+
+    apb = MUI.CreateAppBar("My Title", "menu", "search,more_vert")
+    apb.SetOnMenuTouch(OnMenuTouch)
+    apb.SetOnControlTouch(OnControlTouch)
+
+    apbHeight = apb.GetHeight()
+
+    scr=app.CreateScroller(1, 1, "NoScrollBar")
+
+    pageLay = MUI.CreateLayout("Linear", "VCenter")
+    pageLay.SetSize(1, 1.2)
+    pageLay.SetPadding(0, 0, apbHeight, 0)
+    txt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."
+    pageLay.AddChild(MUI.CreateTextParagraph(txt))
+    scr.AddChild(pageLay)
+
+    lay.AddChild(scr)
+    lay.AddChild(apb)
+
+    app.AddLayout(lay)
+
+def OnMenuTouch():
+    app.ShowPopup("You click the menu. Might as well display a drawer.")
+
+def OnControlTouch(text, index):
+    app.ShowPopup("You click " + text + ": Control index = "+index)
+ */
+    
+            

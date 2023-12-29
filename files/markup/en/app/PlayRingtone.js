@@ -35,3 +35,22 @@ function btn_OnTouch()
  */
     
             
+    
+/**
+@sample Python Play Notification Sound
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    btn = app.CreateButton("Press Me", 0.3, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+def btn_OnTouch():
+    app.PlayRingtone("Notification")
+ */
+    
+            

@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    width = app.GetDisplayWidth()
+    app.Alert(width)
+ */
+    
+            

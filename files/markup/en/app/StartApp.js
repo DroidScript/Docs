@@ -28,3 +28,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    app.StartApp( "/sdcard/DroidScript/Hello World/Hello World.js" )
+ */
+    
+            

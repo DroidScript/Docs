@@ -142,3 +142,44 @@ function OnCheckBox(index, value)
  */
     
             
+    
+/**
+@sample Python Light
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    lst = "Apple,Mango,Orange,Banana"
+    chk = MUI.CreateCheckbox(lst, 0.7)
+    lay.AddChild(chk)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global lst
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    lst = "Apple,Mango,Orange,Banana"
+    chk = MUI.CreateCheckbox(lst, 0.7)
+    chk.SetOnTouch(OnCheckBox)
+    lay.AddChild(chk)
+
+    app.AddLayout(lay)
+
+def OnCheckBox(index, value):
+    app.ShowPopup(lst[index] + " is " + value)
+ */
+    
+            

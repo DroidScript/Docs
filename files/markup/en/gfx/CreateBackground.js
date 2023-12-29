@@ -61,3 +61,21 @@ function OnAnimate(t,dt)
  */
     
             
+    
+/**
+@sample Python Scroll
+# cfg.Game
+
+def OnLoad():
+    global sky
+    sky = gfx.CreateBackground("/Sys/Img/Sky.jpg", "stretch")
+
+def OnReady():
+    gfx.AddBackground(sky)
+    gfx.Play()
+
+def OnAnimate(t, dt):
+    sky.Scroll(-dt/1000, 0)
+ */
+    
+            

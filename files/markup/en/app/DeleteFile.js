@@ -33,3 +33,20 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    app.WriteFile( "myFile.txt", "Bye World!\n", "Append" )
+
+    app.DeleteFile("myFile.txt")
+
+    if app.FileExists("myFile.txt"):
+        app.ShowPopup("myFile was not deleted!")
+    else:
+        app.ShowPopup("myFile was deleted!")
+ */
+    
+            

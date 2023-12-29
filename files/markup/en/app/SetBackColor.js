@@ -24,3 +24,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Blue Background
+from native import app
+
+def OnStart():
+    app.SetBackColor("blue")
+ */
+    
+            

@@ -28,3 +28,25 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check APK
+from native import app
+
+def OnStart():
+    isChrome = app.IsChrome()
+    app.Alert(isChrome, "is Chrome:")
+ */
+    
+            
+    
+/**
+@sample Python Check /sdcard/ available
+from native import app
+
+def OnStart():
+    isFolder = app.IsFolder("/sdcard/")
+    app.Alert(isFolder, "/sdcard/ is Folder:")
+ */
+    
+            

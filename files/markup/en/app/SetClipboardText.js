@@ -26,3 +26,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    app.SetClipboardText("Sample Text")
+ */
+    
+            

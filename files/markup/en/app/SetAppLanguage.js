@@ -58,3 +58,45 @@ function spinLang_OnChange()
  */
     
             
+    
+/**
+@sample Python Switch Language
+from native import app
+
+langJson = """
+{
+    "langs": [ "English", "Español" ],
+    "codes": { "english":"en", "español":"es" },
+    "trans" : {
+        "SelectLang" : {
+            "en":"Please select your preferred language from the 'Settings' menu",
+            "es":"Selecciona tu idioma preferido en el menú 'Configuración'"
+        }
+    }
+}
+"""
+
+def OnStart():
+    global lay, spinLang
+    app.WriteFile("lang.json", langJson)
+    app.SetAppLanguage("English")
+
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    spinLang = app.CreateSpinner("English,Español", 0.4)
+    spinLang.SetOnChange(spinLang_OnChange)
+    lay.AddChild(spinLang)
+
+    app.AddLayout(lay)
+
+    app.ShowPopup(T("SelectLang"))
+
+def spinLang_OnChange(item, index):
+    language = spinLang.GetText()
+    app.SetAppLanguage(language)
+
+    app.DestroyLayout(lay)
+    OnStart()
+ */
+    
+            

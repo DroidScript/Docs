@@ -32,3 +32,23 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    app.SetClipboardText( "Sample Text" )
+ */
+    
+            
+    
+/**
+@sample Python ForwardKeys
+from native import app
+
+def OnStart():
+    app.SetJoystickOptions( "ForwardKeys" )
+ */
+    
+            

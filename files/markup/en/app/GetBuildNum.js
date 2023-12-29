@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show build number
+from native import app
+
+def OnStart():
+    num = app.GetBuildNum()
+    app.Alert(num)
+ */
+    
+            

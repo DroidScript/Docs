@@ -15,15 +15,8 @@
 /** @Description
 Creates a NodeJS background process with all the functionality of common node.js.
 
-You can do most things in Node Native apps that you would normally do, however you must use the require() function instead of the app.Script() method to include other scripts from your project. Scripts that are called in via require are scoped slightly differently, which means functions and objects declared like the following will not be seen by your main app -
-<js>function MyTest() { return "Hello" }</js>
-
-If you want a function to be global you need declare it like this -
-<js>MyTest = function() { return "Hello" }</js>
-
-Similarly with variables, don't use the var keyword if you want them to be visible globally.
-
-**Note:** This is actually a safer way of working as it prevents name clashes and libraries overwriting each other's functions and variables accidentally.  Ideally you should put your code into objects or classes for better protection and avoid using many globals.
+Note that to define private functions (functions that are invisible by the main app) you have to declare them as global variable without usign the var keyword.
+This is actually a safer way of working as it prevents name clashes and libraries overwriting each other's functions and variables accidentally.  Ideally you should put your code into objects or classes for better protection and avoid using many globals.
 
 <js>
 var myLocalVariable = "Local Hello";
@@ -222,6 +215,43 @@ function node_OnReady()
 {
     node.Run("node_script.js");
 }
+ */
+    
+            
+    
+/**
+@sample Python Basic
+from native import app
+
+nodeJs = 'print("Hello World");\nconsole.error("Hello Error");\n'
+
+def OnStart():
+    global node
+    app.WriteFile("node_script.js", nodeJs)
+
+    lay = app.CreateLayout("linear", "VCenter, FillXY")
+    txt = app.AddText(lay, "Debug Log:", 1, 1, "Log")
+
+    node = app.CreateNode()
+
+    def onOutput(msg):
+        txt.Log(msg)
+
+    def onError(msg):
+        txt.Log(msg, "red")
+
+    def onMessage(msg):
+        txt.Log(msg)
+
+    node.SetOnOutput(onOutput)
+    node.SetOnError(onError)
+    node.SetOnMessage(onMessage)
+    node.SetOnReady(node_OnReady)
+
+    app.AddLayout(lay)
+
+def node_OnReady():
+    node.Run("node_script.js")
  */
     
             

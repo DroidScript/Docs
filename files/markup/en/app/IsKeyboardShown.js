@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Is Keyboard Shown
+from native import app
+
+def OnStart():
+    kbShown = app.IsKeyboardShown()
+    app.Alert(kbShown, "Is Keyboard Shown:")
+ */
+    
+            

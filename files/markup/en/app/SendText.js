@@ -39,3 +39,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Demo
+from native import app
+
+def OnStart():
+    app.SendText("Hello World", "My Subject", "Choose an app")
+ */
+    
+            

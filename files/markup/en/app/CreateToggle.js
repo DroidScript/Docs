@@ -182,3 +182,22 @@ function ShowState( isChecked )
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    tgl = app.CreateToggle( "Toggle Me" )
+    tgl.SetOnTouch( ShowState )
+    lay.AddChild( tgl )
+
+    app.AddLayout( lay )
+
+def ShowState( isChecked ):
+    app.ShowPopup( "Checked = " + str(isChecked), "Short" )
+ */
+    
+            

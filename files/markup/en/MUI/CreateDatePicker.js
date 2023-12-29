@@ -130,3 +130,66 @@ function OnSelect(date, yyyy, mm, dd)
  */
     
             
+    
+/**
+@sample Python Default
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global pck
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    btn = MUI.CreateButtonRaised("SHOW PICKER", 0.5)
+    btn.SetOnTouch(ShowDatePicker)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    pck = MUI.CreateDatePicker()
+    pck.SetOnSelect(OnSelect)
+
+def ShowDatePicker():
+    pck.Show()
+
+def OnSelect(date, yyyy, mm, dd):
+    app.ShowPopup(date)
+ */
+    
+            
+    
+/**
+@sample Python With Custom Date
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global pck
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    btn = MUI.CreateButtonRaised("SHOW PICKER", 0.5)
+    btn.SetOnTouch(ShowDatePicker)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    # September 1, 2020
+    pck = MUI.CreateDatePicker(2020, 8, 1)
+    pck.SetOnSelect(OnSelect)
+
+def ShowDatePicker():
+    pck.Show()
+
+def OnSelect(date, yyyy, mm, dd):
+    app.ShowPopup(date)
+ */
+    
+            

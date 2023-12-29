@@ -74,3 +74,18 @@ function OnReady()
  */
     
             
+    
+/**
+@sample Python 
+# cfg.Game
+
+def OnLoad():
+    global ellipse
+    ellipse = gfx.CreateEllipse(0.7, 0.4*gfx.aspect, 0xcccc00, 10, 0xbb00ff)
+
+def OnReady():
+    gfx.AddGraphic(ellipse, 0.1, 0.2)
+    gfx.Play()
+ */
+    
+            

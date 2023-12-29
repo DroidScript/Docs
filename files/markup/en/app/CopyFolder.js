@@ -43,3 +43,19 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    app.MakeFolder("myFolder")
+    <b>app.CopyFolder("myFolder", "/sdcard/myFolder")</b>
+
+    if app.FolderExists("/sdcard/myFolder"):
+        app.ShowPopup("myFolder exists in /sdcard/!")
+    else:
+        app.ShowPopup("myFolder does not exist in /sdcard/!")
+ */
+    
+            

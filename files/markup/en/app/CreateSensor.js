@@ -160,7 +160,7 @@ function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.8, 0.3, "Multiline,Left" );
+	txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
 	lay.AddChild( txt );
 	app.AddLayout( lay );
 
@@ -200,6 +200,87 @@ function sns_OnChange( lux )
 {
 	txt.SetText( "level = " + lux + " lux" );
 }
+ */
+    
+            
+    
+/**
+@sample Python GetNames
+from native import app
+
+def OnStart():
+    sns = app.CreateSensor()
+    names = sns.GetNames()
+    app.Alert(names.replace(",", ",\n"), "Sensor Names")
+ */
+    
+            
+    
+/**
+@sample Python Accelerometer
+from native import app
+
+def OnStart():
+    global txt
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
+
+    txt = app.CreateText("", 0.8, 0.3, "Multiline,Left")
+    lay.AddChild(txt)
+    app.AddLayout(lay)
+
+    sns = app.CreateSensor("Accelerometer")
+    sns.SetOnChange(sns_OnChange)
+    sns.Start()
+
+def sns_OnChange(x, y, z, time):
+    txt.SetText("x=" + str(x) + "\n y=" + str(y) + "\n z=" + str(z))
+ */
+    
+            
+    
+/**
+@sample Python Orientation
+from native import app
+
+def OnStart():
+    global txt
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
+
+    txt = app.CreateText("", 0.8, 0.3, "Multiline")
+    lay.AddChild(txt)
+    app.AddLayout(lay)
+
+    sns = app.CreateSensor("Orientation")
+    sns.SetOnChange(sns_OnChange)
+    sns.Start()
+
+def sns_OnChange(azimuth, pitch, roll, time):
+    msg = " azimuth = " + str(azimuth)
+    msg += "\n pitch = " + str(pitch)
+    msg += "\n roll = " + str(roll)
+    txt.SetText(msg)
+ */
+    
+            
+    
+/**
+@sample Python Light
+from native import app
+
+def OnStart():
+    global txt
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
+
+    txt = app.CreateText("", 0.8, 0.3)
+    lay.AddChild(txt)
+    app.AddLayout(lay)
+
+    sns = app.CreateSensor("Light")
+    sns.SetOnChange(sns_OnChange)
+    sns.Start()
+
+def sns_OnChange(lux, second, third, time):
+    txt.SetText("level = " + str(lux) + " lux")
  */
     
             

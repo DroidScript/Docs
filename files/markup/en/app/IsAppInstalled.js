@@ -29,3 +29,15 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check App Installed
+from native import app
+
+def OnStart():
+    pkg = app.GetPackageName()
+    isInstalled = app.IsAppInstalled(pkg)
+    app.Alert(isInstalled, pkg + " installed:")
+ */
+    
+            

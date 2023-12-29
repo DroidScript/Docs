@@ -51,3 +51,28 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show installed apps
+from native import app
+
+def OnStart():
+    app.ShowProgress()
+
+    lay = app.CreateLayout("linear")
+
+    list = app.GetInstalledApps()
+
+    lst = app.CreateList("", 1, 1)
+    lay.AddChild(lst)
+
+    for i in range(len(list)):
+        a = list[i]
+        lst.AddItem(a.packageName)
+
+    app.AddLayout(lay)
+
+    app.HideProgress()
+ */
+    
+            

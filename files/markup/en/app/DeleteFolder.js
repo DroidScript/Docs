@@ -33,3 +33,20 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Delete created folder
+from native import app
+
+def OnStart():
+    app.MakeFolder("myFolder")
+
+    app.DeleteFolder("myFolder")
+
+    if app.FolderExists("myFolder"):
+        app.ShowPopup("myFolder was not deleted!")
+    else:
+        app.ShowPopup("myFolder was deleted!")
+ */
+    
+            

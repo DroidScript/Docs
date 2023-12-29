@@ -28,3 +28,15 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Demonstration
+from native import app
+
+def OnStart():
+    app.CreateDebug()
+
+    app.Debug("Hello World!")
+ */
+    
+            

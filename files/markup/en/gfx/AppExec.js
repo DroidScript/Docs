@@ -28,3 +28,18 @@ function OnReady() {}
  */
     
             
+    
+/**
+@sample Python 
+# cfg.Game
+
+from native import app
+
+def OnLoad():
+    gfx.AppExec( "app.ShowPopup('Hello from Game')" )
+
+def OnReady():
+    pass
+ */
+    
+            

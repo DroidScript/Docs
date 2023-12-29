@@ -131,3 +131,28 @@ function OnClick()
  */
     
             
+    
+/**
+@sample Python 
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Absolute", "FillXY,VCenter")
+
+    fab = MUI.CreateFAB("add")
+    fab.SetOnTouch(OnClick)
+    lay.AddChild(fab)
+
+    app.AddLayout(lay)
+
+def OnClick():
+    app.ShowPopup("You clicked FAB")
+ */
+    
+            

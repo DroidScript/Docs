@@ -57,3 +57,39 @@ function OnMenu( item )
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    app.SetMenu("Start,Stop,Pause")
+
+    lay = app.CreateLayout("linear", "")
+
+    btn = app.CreateButton("[fa-gear]", -1, -1, "fontawesome")
+    btn.SetOnTouch(app.ShowMenu)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+def OnMenu(item):
+    app.ShowPopup(item, "Short")
+ */
+    
+            
+    
+/**
+@sample Python Menu Icons
+from native import app
+
+def OnStart():
+    menus = "Files:folder,Music:list,Images:picture"
+    app.SetMenu(menus)
+    app.ShowMenu()
+
+def OnMenu(item):
+    app.ShowPopup(item, "Short")
+ */
+    
+            

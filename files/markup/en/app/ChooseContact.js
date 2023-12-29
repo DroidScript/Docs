@@ -67,3 +67,47 @@ function OnEmailChoose( name, email )
  */
     
             
+    
+/**
+@sample Python Choose Phone Number
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    btnChoose = app.CreateButton( "Choose Phone", 0.5, 0.1 )
+    btnChoose.SetOnTouch( btnChoose_OnTouch )
+    lay.AddChild( btnChoose )
+
+    app.AddLayout( lay )
+
+def btnChoose_OnTouch():
+    app.ChooseContact( "phone", OnPhoneChoose )
+
+def OnPhoneChoose( name, number ):
+    app.ShowPopup( name + " " + number )
+ */
+    
+            
+    
+/**
+@sample Python Choose Email Address
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    btnChoose = app.CreateButton( "Choose Email", 0.5, 0.1 )
+    btnChoose.SetOnTouch( btnChoose_OnTouch )
+    lay.AddChild( btnChoose )
+
+    app.AddLayout( lay )
+
+def btnChoose_OnTouch():
+    app.ChooseContact( "email", OnEmailChoose )
+
+def OnEmailChoose( name, email ):
+    app.ShowPopup( name + " " + email )
+ */
+    
+            

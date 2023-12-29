@@ -186,3 +186,44 @@ function OnEnter()
  */
     
             
+    
+/**
+@sample Python Search
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTextEditSearch(0.8, "Left", "Search for something")
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python SetOnEnter Callback
+from native import app
+
+def OnStart():
+    global tef
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTextEditSearch(0.8, "Left", "Search for something")
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+
+def OnEnter():
+    app.ShowPopup(tef.GetText())
+ */
+    
+            

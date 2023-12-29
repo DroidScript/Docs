@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    id = app.GetDeviceId()
+    app.Alert(id)
+ */
+    
+            

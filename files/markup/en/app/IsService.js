@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    isSvc = app.IsService()
+    app.Alert(isSvc, "IsService")
+ */
+    
+            

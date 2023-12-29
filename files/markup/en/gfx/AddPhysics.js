@@ -200,3 +200,57 @@ function OnReady()
  */
     
             
+    
+/**
+@sample Python Billiard
+# cfg.Game
+
+def OnLoad():
+    global ball1, ball2
+    gfx.AddPhysics(0)
+    gfx.Enclose(-1, "left,top,right,bottom", 1, 0.9, 0)
+
+    ball1 = gfx.CreateSprite("/Sys/Img/Forward.png")
+    ball2 = gfx.CreateSprite("/Sys/Img/Forward.png")
+
+def OnReady():
+    gfx.AddSprite(ball1, 0.2, 0.6, 0.16)
+    ball1.SetPhysics(1, "Dynamic", 0.5, 0.8, 0.01)
+    ball1.SetVelocity(2, -2.3)
+    ball1.SetShape("round")
+
+    gfx.AddSprite(ball2, 0.5, 0.6, 0.24)
+    ball2.SetPhysics(1, "Dynamic", 0.5, 0.8, 0.01)
+    ball2.SetVelocity(2, 2.3)
+    ball2.SetShape("round")
+
+    gfx.Play()
+ */
+    
+            
+    
+/**
+@sample Python Collision
+# cfg.Game
+
+def OnLoad():
+    global bunny, squeak
+    gfx.AddPhysics(20)
+    gfx.Enclose(-1, "left,top,right,bottom", 1, 0.9, 0.01)
+
+    bunny = gfx.CreateSprite("/Sys/Img/Bunny.png", "bunnies")
+    squeak = gfx.CreateSound("/Sys/Snd/Squeak.mp3")
+
+def OnReady():
+    gfx.AddSprite(bunny, 0.2, 0.6, 0.05)
+    bunny.SetPhysics(1, "Dynamic", 0.5, 0.9, 0.1)
+    bunny.SetVelocity(2, -2.3)
+
+    gfx.Play()
+
+def OnCollide(a, b):
+    if a.group == "bunnies":
+        squeak.Play(False, 0, 0)
+ */
+    
+            

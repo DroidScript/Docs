@@ -199,3 +199,67 @@ function OnEnter()
  */
     
             
+    
+/**
+@sample Python No Label
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTEFilledIconLeft(0.8, "Left", "person", "Type your name")
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python With Label
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTEFilledIconLeft(0.8, "Left,Password", "lock", "Type your password", True)
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python SetOnEnter Callback
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTEFilledIconLeft(0.8, "Left,Number", "call", "Type your number", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+
+def OnEnter():
+    app.ShowPopup(this.GetText())
+ */
+    
+            

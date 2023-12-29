@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Tablet
+from native import app
+
+def OnStart():
+    tablet = app.IsTablet()
+    app.ShowPopup(str(tablet), "Is Tablet:")
+ */
+    
+            

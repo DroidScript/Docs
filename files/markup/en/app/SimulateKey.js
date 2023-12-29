@@ -40,3 +40,26 @@ function SimulateKey()
  */
     
             
+    
+/**
+@sample Python Infinite Monkey
+from native import app
+import math
+import random
+
+def OnStart():
+	global edt
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+	edt = app.CreateTextEdit( "", 0.8, 0.3, "nokeyboard" )
+	lay.AddChild( edt )
+	app.AddLayout( lay )
+
+	app.Animate( SimulateKey, 2 )
+
+def SimulateKey(time, dtime):
+    ran = 65 + math.floor(random.random() * 26)
+    char = chr( ran )
+    <b>app.SimulateKey( edt, char )</b>
+ */
+    
+            

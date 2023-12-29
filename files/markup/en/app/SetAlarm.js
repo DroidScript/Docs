@@ -37,3 +37,20 @@ function OnAlarm( id )
  */
     
             
+    
+/**
+@sample Python Set Alarm
+from native import app
+import time as Date
+
+def OnStart():
+    <b>now = Date.now()
+    app.SetAlarm("Set", 1234, OnAlarm, Date.now() + 3000)</b>
+    # app.ToBack()
+    # app.Exit()
+
+def OnAlarm(id):
+    app.ShowPopup("Got Alarm: id = " + str(id))
+ */
+    
+            

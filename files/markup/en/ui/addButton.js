@@ -475,3 +475,150 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Button variants
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+    main.setChildMargins( 0.01, 0.01, 0.01, 0.01 )
+
+    btn1 = ui.addButton( main, "Button", "Contained" )
+    btn1.setOnTouch( onTouch )
+
+    btn2 = ui.addButton( main, "Button", "Outlined" )
+    btn2.setOnTouch( onTouch )
+
+    btn3 = ui.addButton( main, "Button", "Text" )
+    btn3.setOnTouch( onTouch )
+
+def onTouch(event):
+    ui.showPopup( "Button is touch!" )
+ */
+    
+            
+    
+/**
+@sample Python Button theme colors
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+
+    btn1 = ui.addButton(main, "Primary", "Contained,Primary")
+    btn1.setOnTouch( onTouch )
+
+    btn2 = ui.addButton(main, "Secondary", "Outlined,Secondary")
+    btn2.setOnTouch( onTouch )
+
+    btn3 = ui.addButton(main, "Default", "Text,Default")
+    btn3.setOnTouch( onTouch )
+
+def onTouch(event):
+    ui.showPopup( "Button is touch!" )
+ */
+    
+            
+    
+/**
+@sample Python Button sizes
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+
+    btn1 = ui.addButton(main, "Small", "Contained,Primary,Small")
+    btn1.setOnTouch( onTouch )
+
+    btn2 = ui.addButton(main, "Medium", "Contained,Primary,Medium")
+
+    btn3 = ui.addButton(main, "Large", "Contained,Primary,Large")
+
+def onTouch(event):
+    ui.showPopup( "Button is touch!" )
+ */
+    
+            
+    
+/**
+@sample Python Button tooltips
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
+
+    btn1 = ui.addButton(main, "Left", "Contained,Primary")
+    btn1.setToolTip("Tooltip on the left", "left")
+
+    btn2 = ui.addButton(main, "Top", "Contained,Primary")
+    btn2.setToolTip("Tooltip on the top", "top")
+
+    btn3 = ui.addButton(main, "Right", "Contained,Primary")
+    btn3.setToolTip("Tooltip on the right", "right")
+
+    btn4 = ui.addButton(main, "Bottom", "Contained,Primary")
+    btn4.setToolTip("Tooltip on the bottom", "bottom")
+ */
+    
+            
+    
+/**
+@sample Python Button with icons
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+    main.setChildMargins("12px", "12px", "12px", "12px")
+
+    btn1 = ui.addButton(main, "Send", "Primary")
+    btn1.icon = "send"
+
+    btn2 = ui.addButton(main, "Add to cart", "Secondary")
+    btn2.icon = "shopping_cart"
+
+    btn3 = ui.addButton(main, "android", "Primary,Icon")
+
+    btn4 = ui.addButton(main, "settings", "Secondary,Icon")
+ */
+    
+            
+    
+/**
+@sample Python Buttons with badges
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+
+    btn1 = ui.addButton(main, "android", "Primary,Icon")
+
+    btn2 = ui.addButton(main, "settings", "Primary,Icon")
+    btn2.setBadge( 5 )
+
+    btn3 = ui.addButton(main, "With Badge", "Secondary,Outlined")
+    btn3.setBadge("New", "Primary")
+ */
+    
+            
+    
+/**
+@sample Python Upload button
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    btn = ui.addButton(main, "Upload File", "Primary,Upload")
+    btn.icon = "backup"
+
+def onFileSelect(files):
+    file = files[0]
+    ui.showPopup( f"{file.name} is selected." )
+ */
+    
+            

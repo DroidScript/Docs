@@ -27,3 +27,14 @@ function OnStart(perms)
  */
     
             
+    
+/**
+@sample Python List Permissions
+from native import app
+
+def OnStart():
+    perms = app.ListPermissions("storage")
+    app.Alert(perms, "Permissions:")
+ */
+    
+            

@@ -411,3 +411,178 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Button variants
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+
+    # Contained
+    btn1 = ui.addButton(main, "Button", "Contained")
+
+    # Add a callback handler for onTouch event
+    btn1.setOnTouch(onTouch)
+
+    # Outlined
+    btn2 = ui.addButton(main, "Button", "Outlined")
+    btn2.setOnTouch(onTouch)
+
+    # Text
+    btn3 = ui.addButton(main, "Button", "Text")
+    btn3.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("Button is touch!")
+ */
+    
+            
+    
+/**
+@sample Python Button theme colors
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+
+    # Add primary button to the main layout
+    btn1 = ui.addButton(main, "Primary", "Contained,Primary")
+
+    # Add a callback handler for onTouch event
+    btn1.setOnTouch(onTouch)
+
+    # Add secondary button to the main layout
+    btn2 = ui.addButton(main, "Secondary", "Outlined,Secondary")
+    btn2.setOnTouch(onTouch)
+
+    # Add default button to the main layout
+    btn3 = ui.addButton(main, "Default", "Text,Default")
+    btn3.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("Button is touch!")
+ */
+    
+            
+    
+/**
+@sample Python Button sizes
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+
+    # Add a small size button to the main layout
+    btn1 = ui.addButton(main, "Small", "Contained,Primary,Small")
+
+    # Add a callback handler for onTouch event
+    btn1.setOnTouch(onTouch)
+
+    # Add a medium/default size button to the main layout
+    btn2 = ui.addButton(main, "Medium", "Contained,Primary,Medium")
+
+    # Add a large size button to the main layout
+    btn3 = ui.addButton(main, "Large", "Contained,Primary,Large")
+
+def onTouch(event):
+    ui.showPopup("Button is touch!")
+ */
+    
+            
+    
+/**
+@sample Python Button tooltips
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
+
+    # Add a button to the main layout and add a tooltip to the left of the button
+    btn1 = ui.addButton(main, "Left", "Contained,Primary")
+    btn1.setToolTip("Tooltip on the left", "left")
+
+    # Add a button to the main layout and add a tooltip to the top of the button
+    btn2 = ui.addButton(main, "Top", "Contained,Primary")
+    btn2.setToolTip("Tooltip on the top", "top")
+
+    # Add a button to the main layout and add a tooltip to the right of the button
+    btn3 = ui.addButton(main, "Right", "Contained,Primary")
+    btn3.setToolTip("Tooltip on the right", "right")
+
+    # Add a button to the main layout and add a tooltip to the bottom of the button
+    btn4 = ui.addButton(main, "Bottom", "Contained,Primary")
+    btn4.setToolTip("Tooltip on the bottom", "bottom")
+ */
+    
+            
+    
+/**
+@sample Python Button with icons
+from hybrid import ui
+
+def OnStart():
+    # Creates a layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins("12px", "12px", "12px", "12px")
+
+    # Add a primary contained button and set its leading icon to `send`
+    btn1 = ui.addButton(main, "Send", "Primary")
+    btn1.icon = "send"
+
+    # Add a secondary contained button and set its leading icon to `shopping_cart`
+    btn2 = ui.addButton(main, "Add to cart", "Secondary")
+    btn2.icon = "shopping_cart"
+
+    # Add an `android` primary icon button to the main layout
+    btn3 = ui.addButton(main, "android", "Primary,Icon")
+
+    # Add a `settings` secondary icon button to the main layout
+    btn4 = ui.addButton(main, "settings", "Secondary,Icon")
+ */
+    
+            
+    
+/**
+@sample Python Buttons with badges
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main" ,"Linear", "VCenter", 1, 1)
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+
+    # Add an android icon button to the main layout
+    btn1 = ui.addButton(main, "android", "Primary,Icon")
+
+    # Add a setting icon button to the main layout and set the badge to `5`
+    btn2 = ui.addButton(main, "settings", "Primary,Icon")
+    btn2.setBadge(5)
+
+    # Add a contained button to the main layout and set the badge to `New` with a `Primary` background color
+    btn3  = ui.addButton(main, "With Badge", "Secondary,Outlined")
+    btn3.setBadge("New", "Primary")
+ */
+    
+            
+    
+/**
+@sample Python Upload button
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    # Add a primary
+ */
+    
+            

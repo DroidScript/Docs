@@ -49,3 +49,25 @@ function tgl_OnTouch( enable )
  */
     
             
+    
+/**
+@sample Python WiFi Access Point
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    tgl = app.CreateToggle( "WiFi Access Point", -1, 0.1 )
+    tgl.SetOnTouch( tgl_OnTouch )
+    lay.AddChild( tgl )
+
+    app.AddLayout( lay )
+
+def tgl_OnTouch( enable ):
+    if enable:
+        app.SetWifiApEnabled( True, "DS Wifi AP", "mypass" )
+    else:
+        app.SetWifiApEnabled( False )
+ */
+    
+            

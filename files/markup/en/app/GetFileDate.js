@@ -26,3 +26,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show /sdcard/ last modifies date
+from native import app
+
+def OnStart():
+    date = app.GetFileDate("/sdcard/")
+    app.Alert(date.toLocaleString())
+ */
+    
+            

@@ -40,3 +40,26 @@ function btn_OnTouch()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    global spn
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    spn = app.AddSpinner(lay, app.ListPermissions(), .5)
+    btn = app.AddButton( lay, "Remove", 0.3 )
+    btn.SetOnTouch( btn_OnTouch )
+
+    app.AddLayout( lay )
+
+def btn_OnTouch():
+    perm = spn.GetText()
+    if perm:
+        app.RemovePermission(perm)
+        app.ShowPopup("Removed " + perm)
+ */
+    
+            

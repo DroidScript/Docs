@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Portrait
+from native import app
+
+def OnStart():
+    <b>isPortrait = app.IsPortrait()</b>
+    app.Alert(isPortrait, "is Portrait:")
+ */
+    
+            

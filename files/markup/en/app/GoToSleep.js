@@ -26,3 +26,16 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+import time
+
+def OnStart():
+    app.GoToSleep()
+    time.sleep(5)
+    app.WakeUp()
+ */
+    
+            

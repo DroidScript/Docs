@@ -37,3 +37,20 @@ function PermissionResult( ungranted )
  */
     
             
+    
+/**
+@sample Python check and get permissions
+from native import app
+
+def OnStart():
+    <b>check = app.CheckPermission( "Camera,ExtSDcard,Network,Storage" )</b>
+    if check:
+        app.GetPermission( check, PermissionResult )
+    else:
+        app.Alert( "everything ok!" )
+
+def PermissionResult( ungranted ):
+    app.Alert( "ungranted: " + ungranted )
+ */
+    
+            

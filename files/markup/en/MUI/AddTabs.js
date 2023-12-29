@@ -38,3 +38,19 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+    tab = MUI.AddTabs(lay, "Movies,Games,Books", 1, 1, "fix")
+
+    app.AddLayout(lay)
+ */
+    
+            

@@ -103,3 +103,62 @@ function CheckReady()
  */
     
             
+    
+/**
+@sample Python Open Termux and pass arguments
+from native import app
+
+def OnStart():
+    app.WriteFile("/sdcard/termux/scripts/hello.sh", "echo Hello $1 and $2")
+    err = app.ExtExec("termux", "hello.sh", 'World "' + app.GetUser() + '"', "")
+    if err:
+        app.Alert("Termux Error:" + err)
+ */
+    
+            
+    
+/**
+@sample Python Execute in Background and retrieve output
+from native import app
+
+itv, lock = "/sdcard/.termuxlock"
+script = """
+{  # this is a comment
+    echo This is a message  # prints to stdout
+    sleep 1  # waits 1 second
+    echo This is an error  1>&2  # prints to stderr
+} 1>/sdcard/out.txt 2>/sdcard/err.txt; # forward stdout and stderr to files
+rm """ + lock  # remove script lock file
+
+def OnStart():
+    global err, txt, itv
+    app.WriteFile("/sdcard/termux/scripts/hello.sh", script)
+    app.WriteFile(lock, "")
+
+    app.ShowProgress("Script is running")
+    err = app.ExtExec("termux", "hello.sh", "", "hide")
+    if err: app.Alert(err)
+
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    txt = app.CreateText("", 0.8, 0.8, "monospace,multiline,left")
+    lay.AddChild(txt)
+
+    app.AddLayout(lay)
+
+    itv = app.SetInterval(CheckReady, 100)
+
+def CheckReady():
+    if not app.FileExists(lock):
+        app.HideProgress()
+        app.ClearInterval(itv)
+
+        stdout = app.ReadFile("/sdcard/out.txt")
+        stderr = app.ReadFile("/sdcard/err.txt")
+
+        text = "stdout:\n" + stdout + "\n\n" + "stderr:\n" + stderr
+
+        txt.SetText(text)
+ */
+    
+            

@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Battery Level
+from native import app
+
+def OnStart():
+    lvl = app.GetBatteryLevel()
+    app.Alert( lvl )
+ */
+    
+            

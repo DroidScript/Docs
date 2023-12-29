@@ -259,3 +259,54 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Single line
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    txt = app.CreateText( "Hello" )
+    txt.SetTextSize( 22 )
+    lay.AddChild( txt )
+
+    app.AddLayout( lay )
+ */
+    
+            
+    
+/**
+@sample Python Multi line
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    txt = app.CreateText( "Hello\nWorld", 0.8, 0.2, "Multiline"  )
+    txt.SetTextSize( 12 )
+    txt.SetTextColor( "#ff6666ff" )
+    txt.SetBackColor( "#ffffffff" )
+    lay.AddChild( txt )
+
+    app.AddLayout( lay )
+ */
+    
+            
+    
+/**
+@sample Python Ellipsize
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    txt = app.CreateText( "The quick brown fox jumps over the lazy dog", 0.75 )
+    txt.SetTextSize( 28 )
+    txt.SetEllipsize( "end" )
+    lay.AddChild( txt )
+
+    app.AddLayout( lay )
+ */
+    
+            

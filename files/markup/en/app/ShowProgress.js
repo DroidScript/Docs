@@ -26,3 +26,17 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show and Hide Progress
+from native import app
+
+def OnStart():
+    app.ShowProgress( "Loading..." )
+    setTimeout( hideProgress, 3000 )
+
+def hideProgress():
+    app.HideProgress()
+ */
+    
+            

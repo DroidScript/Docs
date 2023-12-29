@@ -25,3 +25,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show MAC Address
+from native import app
+
+def OnStart():
+        mac = app.GetMacAddress()
+        app.ShowPopup(mac)
+ */
+    
+            
+    
+/**
+@sample Python l
+
+ */
+    
+            

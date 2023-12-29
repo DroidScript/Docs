@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Basic
+from native import app
+
+def OnStart():
+    app.SetMenu("Option 1,Option 2,Option 3")
+    app.ShowMenu()
+ */
+    
+            

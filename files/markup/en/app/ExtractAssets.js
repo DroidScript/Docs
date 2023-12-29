@@ -42,3 +42,28 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Extract File
+from native import app
+
+def OnStart():
+    app.WriteFile("myData.txt", "main: " + app.GetAppName())
+    app.ExtractAssets("myData.txt", "/sdcard/myData.txt")
+    app.Alert(app.ReadFile("/sdcard/myData.txt"))
+ */
+    
+            
+    
+/**
+@sample Python Extract Folder
+from native import app
+
+def OnStart():
+    app.MakeFolder(app.GetAppPath() + "/myFolder")
+    app.WriteFile(app.GetAppPath() + "/myFolder/myData.txt", "main: " + app.GetAppName())
+    app.ExtractAssets("myFolder", "/sdcard/myFolder")
+    app.Alert(app.ReadFile("/sdcard/myFolder/myData.txt"))
+ */
+    
+            

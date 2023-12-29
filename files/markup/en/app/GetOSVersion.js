@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Android API Level
+from native import app
+
+def OnStart():
+    version = app.GetOSVersion()
+    app.Alert(version)
+ */
+    
+            

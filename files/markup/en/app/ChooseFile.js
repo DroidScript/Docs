@@ -53,3 +53,33 @@ function OnChoose( file )
  */
     
             
+    
+/**
+@sample Python Choose File by Mimetype
+from native import app
+
+def OnStart():
+    global spnMime
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    list = "*_*,application/text,application/apk,application/zip," + \
+        "audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css," + \
+        "text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg"
+
+    spnMime = app.CreateSpinner(list)
+    lay.AddChild(spnMime)
+
+    btnChoose = app.CreateButton( "Choose File", 0.5, 0.1 )
+    btnChoose.SetOnTouch( btnChoose_OnTouch )
+    lay.AddChild( btnChoose )
+
+    app.AddLayout( lay )
+
+def btnChoose_OnTouch():
+    app.ChooseFile( "Choose a File", spnMime.GetText(), OnChoose )
+
+def OnChoose( file ):
+    app.Alert( "file path: " + file )
+ */
+    
+            

@@ -42,3 +42,28 @@ function OnKeyboardShow()
  */
     
             
+    
+/**
+@sample Python Show Keyboard Height
+from native import app
+
+def OnStart():
+    global txt
+    lay = app.CreateLayout("linear")
+
+    txt = app.CreateText("Keyboard Height: ", .8, -1, "left")
+    lay.AddChild(txt)
+
+    edt = app.CreateTextEdit("Hello World", .8, .4)
+    lay.AddChild(edt)
+
+    app.SetOnShowKeyboard(OnKeyboardShow)
+
+    app.AddLayout(lay)
+
+def OnKeyboardShow(shown):
+    height = app.GetKeyboardHeight()
+    txt.SetText("Keyboard Height: " + str(height) + "px")
+ */
+    
+            

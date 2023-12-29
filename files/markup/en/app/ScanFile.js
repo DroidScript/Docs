@@ -32,3 +32,19 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Add Image to Gallery
+from native import app
+
+def OnStart():
+    img = app.CreateImage( None, 1, 1 )
+    img.SetPaintColor( "green" )
+    img.DrawCircle( 0.5, 0.5, 0.3 )
+    img.Save( app.GetAppPath() + "/circle.jpg" )
+
+    app.ScanFile( "circle.jpg" )
+    app.ChooseImage()
+ */
+    
+            

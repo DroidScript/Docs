@@ -24,3 +24,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Get Router Address
+from native import app
+
+def OnStart():
+    ip = app.GetRouterAddress()
+    app.Alert(ip)
+ */
+    
+            

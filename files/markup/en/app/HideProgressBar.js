@@ -29,3 +29,18 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    app.ShowProgressBar("Loading...")
+
+    for prog in range(100):
+        app.UpdateProgressBar(prog)
+
+    app.HideProgressBar()
+ */
+    
+            

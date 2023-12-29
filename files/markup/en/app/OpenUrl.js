@@ -28,3 +28,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    app.OpenUrl("http://droidscript.org")
+ */
+    
+            

@@ -35,3 +35,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Tool-Tip
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    edt = app.CreateTextEdit( "", 0.5 )
+    lay.AddChild( edt )
+
+    app.AddLayout( lay )
+
+    pos = edt.GetPosition( "screen" )
+    app.ShowTip( "Type some text here", pos.left, pos.top, 3000, "Down" )
+ */
+    
+            

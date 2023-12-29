@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Get received intent data
+from native import app
+
+def OnStart():
+    <b>int = app.GetIntent()</b>
+    app.Alert( JSON.stringify( int ))
+ */
+    
+            

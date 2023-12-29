@@ -453,3 +453,66 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Remote
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    web = app.CreateWebView( 1, 1, "Progress" )
+    web.SetOnProgress( web_OnProgess )
+    lay.AddChild( web )
+
+    app.AddLayout( lay )
+
+    web.LoadUrl( "http:///www.google.com" )
+
+def web_OnProgess( progress ):
+    app.Debug( "progress = " + progress )
+ */
+    
+            
+    
+/**
+@sample Python Local File
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    web = app.CreateWebView( 0.8, 0.8 )
+    web.SetBackColor( "#00000000" )
+    lay.AddChild( web )
+
+    app.AddLayout( lay )
+
+    web.LoadUrl( "file:///Sys/Html/Page.htm" )
+ */
+    
+            
+    
+/**
+@sample Python Direct Html
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    web = app.CreateWebView( 0.8, 0.8 )
+    web.SetBackColor( "#00000000" )
+    lay.AddChild( web )
+
+    app.AddLayout( lay )
+
+    html = "<html><body><center>" + \
+        "    <img src='Img/Droid2.png'>" + \
+        "    <div style='color:white; font-size:30;'>" + \
+        "    Hello World!</div><br>" + \
+        "</center></body></html>"
+
+    web.LoadHtml( html, "file:///Sys/" )
+ */
+    
+            

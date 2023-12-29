@@ -202,3 +202,28 @@ function OnEnter()
  */
     
             
+    
+/**
+@sample Python SetOnEnter Callback
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global tef
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTextEditOutline(0.8, "Left", "Type your name", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+
+def OnEnter():
+    app.ShowPopup(tef.GetText())
+ */
+    
+            

@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    orient = app.GetOrientation()
+    app.Alert(orient)
+ */
+    
+            

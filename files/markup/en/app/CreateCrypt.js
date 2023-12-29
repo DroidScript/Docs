@@ -120,3 +120,56 @@ function OnAction( result )
  */
     
             
+    
+/**
+@sample Python Basic
+from native import app
+
+def OnStart():
+    text = "Hello World!"
+    crpt = app.CreateCrypt()
+    encr = crpt.Encrypt(text, "key")
+    decr = crpt.Decrypt(encr, "key")
+    hash = crpt.Hash(text)
+
+    app.Alert(
+        'text: "' + text + '"\n' +
+        'encr: "' + encr + '"\n' +
+        'decr: "' + decr + '"\n' +
+        'hash: "' + hash + '"\n' ,
+        "Data"
+    )
+ */
+    
+            
+    
+/**
+@sample Python Encrypt using device id
+from native import app
+
+def OnStart():
+    global crp
+    crp = app.CreateCrypt()
+    ShowDialog("Hello World")
+
+def ShowDialog(data):
+    app.ShowTextDialog("input text", data, OnText)
+
+def OnText(text):
+    global data
+    dlg = app.CreateYesNoDialog("Choose option", "NoCancel")
+    dlg.SetOnTouch(OnAction)
+    dlg.data = {"text": text}
+    dlg.Show()
+    dlg.SetButtonText("Encrypt", "Decrypt")
+
+def OnAction(result):
+    if result == "Yes":
+        result = crp.Encrypt(this.data["text"], app.GetDeviceId())
+        ShowDialog(result)
+    elif result == "No":
+        result = crp.Decrypt(this.data["text"], app.GetDeviceId())
+        ShowDialog(result)
+ */
+    
+            

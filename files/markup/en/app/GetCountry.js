@@ -29,3 +29,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Country
+from native import app
+
+def OnStart():
+    name = app.GetCountry()
+    app.Alert(name)
+ */
+    
+            

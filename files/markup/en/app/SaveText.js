@@ -56,3 +56,38 @@ function btnLoad_OnTouch()
  */
     
             
+    
+/**
+@sample Python Load Saved Text
+from native import app
+
+file = "demofile"
+
+def OnStart():
+    global edtValue
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    text = app.LoadText("value", "My Value", file)
+    edtValue = app.CreateTextEdit(text, .5)
+    lay.AddChild(edtValue)
+
+    btnSave = app.CreateButton("Save Value", 0.5, 0.1)
+    btnSave.SetOnTouch(btnSave_OnTouch)
+    lay.AddChild(btnSave)
+
+    btnLoad = app.CreateButton("Load Value", 0.5, 0.1)
+    btnLoad.SetOnTouch(btnLoad_OnTouch)
+    lay.AddChild(btnLoad)
+
+    app.AddLayout(lay)
+
+def btnSave_OnTouch():
+    app.SaveText("value", edtValue.GetText(), file)
+    app.ShowPopup("Value Saved.")
+
+def btnLoad_OnTouch():
+    value = app.LoadText("value", "no value stored", file)
+    app.ShowPopup(value)
+ */
+    
+            

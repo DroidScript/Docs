@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    ip = app.GetIPAddress()
+    app.Alert( ip )
+ */
+    
+            

@@ -30,3 +30,15 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Zip File
+from native import app
+
+def OnStart():
+    file = "/sdcard/DroidScript/Hello World/Hello World.js"
+    app.ZipFile( file, file + ".zip" )
+    app.ShowPopup( "Compressed to " + file + ".zip" )
+ */
+    
+            

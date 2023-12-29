@@ -28,3 +28,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Screen Height
+from native import app
+
+def OnStart():
+    height = app.GetScreenHeight()
+    app.Alert(str(height))
+ */
+    
+            

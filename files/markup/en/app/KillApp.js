@@ -30,3 +30,19 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Demo
+from native import app
+
+def OnStart():
+    <b>apps = app.GetRunningApps()
+    curApps = list(filter(lambda v: v.foreground, apps))
+    pid = curApps[0].pid
+
+    app.Alert( "Kill app " + curApps[0].name )
+    app.KillApp( pid )</b>
+    app.ShowPopup( "Done" ) # not shown
+ */
+    
+            

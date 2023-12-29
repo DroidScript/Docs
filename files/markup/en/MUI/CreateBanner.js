@@ -125,3 +125,50 @@ function OnTouch(v)
  */
     
             
+    
+/**
+@sample Python Light
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.blue
+    app.InitializeUIKit(color.lighten1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    app.AddLayout(lay)
+
+    ban = MUI.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
+    ban.Show()
+ */
+    
+            
+    
+/**
+@sample Python Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.blue
+    app.InitializeUIKit(color.lighten1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+    app.AddLayout(lay)
+
+    ban = MUI.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
+    ban.SetOnTouch(OnTouch)
+    ban.Show()
+
+def OnTouch(v, btnText):
+    if v:
+        app.ShowPopup("Learn more")
+    else:
+        app.ShowPopup("Banner close")
+ */
+    
+            

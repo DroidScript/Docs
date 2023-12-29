@@ -26,3 +26,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Debugging
+from native import app
+
+def OnStart():
+    isDbg = app.IsDebugging()
+    app.Alert( isDbg, "now debugging:" )
+ */
+    
+            

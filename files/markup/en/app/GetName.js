@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Get app Name
+from native import app
+
+def OnStart():
+    <b>name = app.GetName()</b>
+    app.Alert(name)
+ */
+    
+            

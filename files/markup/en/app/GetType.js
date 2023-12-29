@@ -24,3 +24,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    type = app.GetType()
+    app.Alert(type, "Type")
+ */
+    
+            

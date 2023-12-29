@@ -159,3 +159,26 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Script
+# cfg.Landscape
+
+from native import app
+
+def OnStart():
+    app.PreventScreenLock(True)
+
+    app.CopyFile("/assets/samples/Game_Bounce.js", "script.js")
+
+    lay = app.CreateLayout("Linear", "Vertical,FillXY,VCenter")
+
+    <b>gam = app.CreateGameView(1, 1)
+    gam.SetFile("script.js")
+    gam.SetFrameRate(40)
+    lay.AddChild(gam)</b>
+
+    app.AddLayout(lay)
+ */
+    
+            

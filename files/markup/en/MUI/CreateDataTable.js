@@ -285,3 +285,130 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Basic
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    headers = ["ID", "Name", "Age", "Color"]
+    values = [
+        "1:Robb Stark:14:Blue",
+        "2:Sansa Stark:11:Teal",
+        "3:Arya Stark:9:Green",
+        "4:Bran Stark:7:Orange",
+        "5:Rickon Stark:Grey"
+    ]
+    table = MUI.CreateDataTable(headers, values, 0.96, 0.6)
+    lay.AddChild(table)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Sortable and Numeric Column
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    headers = ["ID", "Name:Sortable", "Age:Sortable", "Color"]
+    values = [
+        "1:Robb Stark:14:Blue",
+        "2:Sansa Stark:11:Teal",
+        "3:Arya Stark:9:Green",
+        "4:Bran Stark:7:Orange",
+        "5:Rickon Stark:2:Grey",
+        "6:Theon Greyjoy:18:Brown",
+        "7:Jon Snow:11:Red"
+    ]
+    table = MUI.CreateDataTable(headers, values, 0.96, 0.6)
+    lay.AddChild(table)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Selectable and Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    headers = ["ID", "Name:Sortable", "Age", "Color"]
+    values = [
+        "1:Robb Stark:14:Blue",
+        "2:Sansa Stark:11:Teal",
+        "3:Arya Stark:9:Green",
+        "4:Bran Stark:7:Orange",
+        "5:Rickon Stark:2:Grey",
+        "6:Theon Greyjoy:18:Brown",
+        "7:Jon Snow:11:Red"
+    ]
+    table = MUI.CreateDataTable(headers, values, 0.96, 0.6, "Selectable")
+    lay.AddChild(table)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python With Footer
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    headers = ["ID", "Name:Sortable", "Age"]
+    values = [
+        "1:Robb Stark:14",
+        "2:Sansa Stark:11",
+        "3:Arya Stark:9",
+        "4:Bran Stark:7",
+        "5:Rickon Stark:2"
+    ]
+    table = MUI.CreateDataTable(headers, values, 0.96, 0.6, "Selectable")
+    lay.AddChild(table)
+
+    ftr = table.AddFooter("Linear", "Horizontal, Right, VCenter", 0.09)
+
+    fBtn = MUI.CreateButtonFlat('REMOVE SELECTED')
+    fBtn.SetEnabled(False)
+    ftr.AddChild(fBtn)
+
+    def remove_selected():
+        table.GetSelectedRows(lambda x: table.RemoveRows(x))
+
+    fBtn.SetOnTouch(remove_selected)
+
+    def on_selection_status(c):
+        if c:
+            fBtn.SetEnabled(True)
+        else:
+            fBtn.SetEnabled(False)
+
+    table.SetOnSelectionStatus(on_selection_status)
+
+    app.AddLayout(lay)
+ */
+    
+            

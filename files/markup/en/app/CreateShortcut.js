@@ -30,3 +30,15 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    file = app.GetAppPath() + "/" + app.GetAppName() + ".js"
+    app.CreateShortcut( "Demo", "/Sys/Img/Icon.png", file )
+    app.ShowPopup( "Add Shortcut" )
+ */
+    
+            

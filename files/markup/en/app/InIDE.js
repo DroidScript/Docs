@@ -24,3 +24,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check IDE
+from native import app
+
+def OnStart():
+    inIDE = app.InIDE()
+    app.Alert( inIDE, "Is in IDE:" )
+ */
+    
+            

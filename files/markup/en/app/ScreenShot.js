@@ -35,3 +35,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Take Screenshot
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("linear")
+    img = app.CreateImage(None, 1, 1)
+    img.SetPaintColor("green")
+    img.DrawCircle(0.5, 0.5, 0.3)
+    lay.AddChild(img)
+    app.AddLayout(lay)
+
+    app.ScreenShot("/sdcard/file.jpg")
+    img.SetImage("/sdcard/file.jpg")
+ */
+    
+            

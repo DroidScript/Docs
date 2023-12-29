@@ -36,3 +36,20 @@ function OnResume()
  */
     
             
+    
+/**
+@sample Python App to Background
+from native import app
+
+def OnStart():
+    app.Alert("App will now go to back.")
+    app.ToBack()
+
+def OnPause():
+    app.ShowPopup("OnPause")
+
+def OnResume():
+    app.ShowPopup("OnResume")
+ */
+    
+            

@@ -57,3 +57,26 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Basic & Light
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    colors = app.gfx.teal
+    app.InitializeUIKit(colors.teal)
+
+    lay = app.MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        div = app.MUI.CreateDivider()
+        lay.AddChild(div)
+
+    app.AddLayout(lay)
+
+    text = "You can undone this process."
+    dlg = app.MUI.CreateDialog("Remove message", text, "REMOVE")
+ */
+    
+            

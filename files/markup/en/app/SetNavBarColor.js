@@ -25,3 +25,13 @@ function OnStart() {
  */
     
             
+    
+/**
+@sample Python Change NavBar Color
+from native import app
+
+def OnStart():
+    app.SetNavBarColor("green")
+ */
+    
+            

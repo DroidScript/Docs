@@ -41,3 +41,27 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Replace Text in File
+from native import app
+
+def OnStart():
+    app.WriteFile("file.txt", "Hello world, exciting world.")
+    app.ReplaceInFile("file.txt", "world", "user")
+    app.Alert(app.ReadFile("file.txt"), "Result")
+ */
+    
+            
+    
+/**
+@sample Python Replace Regular Expression
+from native import app
+
+def OnStart():
+    app.WriteFile("file.txt", "Hello world, exciting world.")
+    app.ReplaceInFile("file.txt", "(\\w+)o (\\w+)", "$2 is $1")
+    app.Alert(app.ReadFile("file.txt"), "Result")
+ */
+    
+            

@@ -35,3 +35,23 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Top
+from native import app
+
+def OnStart():
+    app.ShowPopup("Hello World!")
+ */
+    
+            
+    
+/**
+@sample Python Bottom
+from native import app
+
+def OnStart():
+    app.ShowPopup("Hello World!", "Bottom,Short")
+ */
+    
+            

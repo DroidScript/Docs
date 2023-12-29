@@ -209,3 +209,24 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Sample
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    jum = MUI.AddText(lay, "Some jumbo text", 0.8, 0.3, "Jumbo,Multiline")
+
+    jum = MUI.AddTextJumbo(lay, "Some jumbo text", 0.8, 0.3, "Multiline", None, "Medium")
+
+    jum = MUI.CreateText("Some jumbo text", 0.8, 0.3, "Multiline", None, "Medium")
+    lay.AddChild(jum)
+
+    app.AddLayout(lay)
+ */
+    
+            

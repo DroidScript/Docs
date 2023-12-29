@@ -51,3 +51,34 @@ function ShowRotation()
  */
     
             
+    
+/**
+@sample Python Repeatedly Show Rotation
+from native import app
+
+def OnStart():
+    app.Animate(ShowRotation, 2)
+
+def ShowRotation(time, dtime):
+    mode = app.GetRotation()
+    app.ShowPopup(mode)
+ */
+    
+            
+    
+/**
+@sample Python Show Rotation and switch Orientation
+# cfg.Portrait
+
+from native import app
+
+def OnStart():
+    app.Animate(ShowRotation, 2)
+    app.SetTimeout('app.SetOrientation("landscape")', 5000)
+
+def ShowRotation(time, dtime):
+    mode = app.GetRotation()
+    app.ShowPopup(mode)
+ */
+    
+            

@@ -126,3 +126,34 @@ function OnSelect(color)
  */
     
             
+    
+/**
+@sample Python Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global clr, color
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    btn = MUI.CreateButtonRaised("PICKER", 0.35)
+    btn.SetOnTouch(ShowPicker)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    clr = MUI.CreateColorPicker("Choose Color")
+    clr.SetOnSelect(OnSelect)
+
+def ShowPicker():
+    clr.Show()
+
+def OnSelect(color):
+    app.ShowPopup(color)
+ */
+    
+            

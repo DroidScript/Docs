@@ -35,3 +35,22 @@ function OnUpload( error, file, result )
  */
     
             
+    
+/**
+@sample Python Upload File
+from native import app
+
+def OnStart():
+    global file
+    name = app.GetAppName() + ".js"
+    file = app.GetAppPath() + "/" + name
+    app.UploadFile("https://yourwebsite.com/upload", file, name, OnUpload)
+
+def OnUpload(error, file, result):
+    if error:
+        app.Alert("Upload Failed!")
+    else:
+        app.ShowPopup("Response:\n" + result, "Upload Successful!")
+ */
+    
+            

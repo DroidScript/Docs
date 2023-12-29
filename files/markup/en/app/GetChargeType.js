@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Charge Type
+from native import app
+
+def OnStart():
+    type = app.GetChargeType()
+    app.Alert(type)
+ */
+    
+            

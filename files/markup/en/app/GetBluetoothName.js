@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Bluetooth Name
+from native import app
+
+def OnStart():
+    name = app.GetBluetoothName()
+    app.Alert( name )
+ */
+    
+            

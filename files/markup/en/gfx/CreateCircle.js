@@ -73,3 +73,18 @@ function OnReady()
  */
     
             
+    
+/**
+@sample Python 
+# cfg.Game
+
+def OnLoad():
+    global circle
+    circle = gfx.CreateCircle( 0.4, 0xff1133, 6, 0x7799ff )
+
+def OnReady():
+    gfx.AddGraphic( circle, 0.3, 0.2 )
+    gfx.Play()
+ */
+    
+            

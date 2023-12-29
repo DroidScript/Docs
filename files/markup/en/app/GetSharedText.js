@@ -29,3 +29,18 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Shared Text
+from native import app
+
+def OnStart():
+    text = app.GetSharedText()
+
+    if text:
+        app.Alert(text)
+    else:
+        app.ShowPopup("No shared text received.")
+ */
+    
+            

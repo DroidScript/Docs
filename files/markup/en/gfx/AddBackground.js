@@ -32,3 +32,18 @@ function OnReady()
  */
     
             
+    
+/**
+@sample Python Basic
+# cfg.Game
+
+def OnLoad():
+    global sky
+    sky = gfx.CreateBackground("/Sys/Img/Sky.jpg", "stretch")
+
+def OnReady():
+    gfx.AddBackground(sky)
+    gfx.Play()
+ */
+    
+            

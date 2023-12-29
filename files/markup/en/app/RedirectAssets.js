@@ -31,3 +31,20 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Redirect Assets
+from native import app
+
+def OnStart():
+    app.RedirectAssets("/sdcard/DroidScript/Hello World/")
+
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
+
+    img = app.CreateImage("Img/Hello World.png")
+    lay.AddChild(img)
+
+    app.AddLayout(lay)
+ */
+    
+            

@@ -328,3 +328,88 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Basic FAB
+from hybrid import ui
+
+def OnStart():
+    # Create a fullscreen linear layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a floating action button to the main layout.
+    # By default, FAB is positioned fix at the bottom right corner
+    fab = ui.addFAB(main, "add")
+
+    # Add a callback handler for `onTouch` event on the FAB
+    fab.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("You clicked me!")
+ */
+    
+            
+    
+/**
+@sample Python Primary static FAB
+from hybrid import ui
+
+def OnStart():
+    # Create a fullscreen linear layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a primary floating action button to the main layout.
+    # Passing `Static` will ignore fixed positioning
+    # and will follow the flow of the parent layout
+    fab = ui.addFAB(main, "add", "Primary,Static")
+
+    # Add a callback handler for `onTouch` event on the FAB
+    fab.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("You clicked me!")
+ */
+    
+            
+    
+/**
+@sample Python Extended FAB
+from hybrid import ui
+
+def OnStart():
+    # Create a fullscreen linear layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a secondary floating action button to the main layout.
+    # Passing `Extended` enables to add more text on the FAB
+    fab = ui.addFAB(main, "add", "Secondary,Extended", "New message")
+
+    # Add a callback handler for `onTouch` event on the FAB
+    fab.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("You clicked me!")
+ */
+    
+            
+    
+/**
+@sample Python Secondary,Extended,Left
+from hybrid import ui
+
+def OnStart():
+    # Create a fullscreen linear layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a secondary floating action button to the main layout.
+    # Passing `Left` option will position the FAB on the bottom left corner
+    fab = ui.addFAB(main, "add", "Secondary,Extended,Left", "New message")
+
+    # Add a callback handler for `onTouch` event on the FAB
+    fab.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("You clicked me!")
+ */
+    
+            

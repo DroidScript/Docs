@@ -144,3 +144,52 @@ function OnWizard( lay, page )
  */
     
             
+    
+/**
+@sample Python Demo
+from native import app
+
+def OnStart():
+    global wiz
+    theme = app.CreateTheme("light")
+    app.SetTheme(theme)
+
+    wiz = app.CreateWizard("My Wizard", 0.7, 0.7, OnWizard)
+    wiz.Show()
+
+def OnWizard(lay, page):
+
+    if page == 0:
+        wizTxt = app.CreateText("", -1, -1, "MultiLine")
+        wizTxt.SetTextSize(19)
+        lay.AddChild(wizTxt)
+
+        wizFlag = app.CreateText("[fa-flag-checkered]", -1, -1, "FontAwesome")
+        wizFlag.SetMargins(0, 0.05, 0, 0)
+        wizFlag.SetTextSize(64)
+        wizFlag.Gone()
+        lay.AddChild(wizFlag)
+
+    elif page == 1:
+        msg = "This is the first page of your wizard"
+        wizTxt.SetText(msg)
+
+    elif page == 2:
+        msg = "You can put any controls you like here, including a webview and have as many pages as you like"
+        wizTxt.SetText(msg)
+        wizFlag.Gone()
+
+    elif page == 3:
+        wizTxt.SetText("Wizard complete!")
+        wizFlag.Show()
+        wiz.Finish()
+
+    elif page == 4:
+        wiz.Dismiss()
+        app.ShowPopup("Wizard finished")
+
+    elif page == -1:
+        app.ShowPopup("Wizard cancelled")
+ */
+    
+            

@@ -26,3 +26,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Sleep and Wake
+from native import app
+
+def OnStart():
+    app.GoToSleep()
+    app.SetTimeout("app.WakeUp()", 5000)
+ */
+    
+            

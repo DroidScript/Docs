@@ -62,3 +62,48 @@ function greetWeb() {
  */
     
             
+    
+/**
+@sample Python WebView Greeter
+from native import app
+
+html = """
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src='file:///android_asset/app.js'>
+</head>
+
+def greetWeb(name):
+    app.ShowPopup("Hello " + name + ", I'm the WebView")
+
+def greetApp():
+    app.Func("greetApp", "WebView")
+
+def OnRequest(err, s):
+    app.Alert(s.split("\\n").join("\\n"))
+
+<input type="button" onclick="greetApp()" value="Greet App"/>
+</html>
+"""
+
+def OnStart():
+    global web
+    lay = app.CreateLayout("linear", "FillXY,VCenter")
+
+    web = app.AddWebView(lay, 1, 0.5)
+    web.LoadHtml(html)
+
+    btn = app.AddButton(lay, "Greet WebView")
+    btn.SetOnTouch(greetWeb)
+
+    app.AddLayout(lay)
+
+def greetApp(name):
+    app.ShowPopup("Hello " + name + ", I'm the App")
+
+def greetWeb():
+    web.Func("greetWeb", "App")
+ */
+    
+            

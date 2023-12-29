@@ -129,3 +129,67 @@ function OnSelect(time, hh, mm, pos)
  */
     
             
+    
+/**
+@sample Python Default Time
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    global tmp
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    btn = MUI.CreateButtonRaised("SHOW PICKER")
+    btn.SetOnTouch(ShowPicker)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    tmp = MUI.CreateTimePicker()
+    tmp.SetOnSelect(OnSelect)
+
+def ShowPicker():
+    tmp.Show()
+
+def OnSelect(time, hh, mm, pos):
+    app.ShowPopup(hh+":"+mm+":"+pos)
+ */
+    
+            
+    
+/**
+@sample Python Custom Time
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    global tmp
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    btn = MUI.CreateButtonRaised("SHOW PICKER")
+    btn.SetOnTouch(ShowPicker)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    tmp = MUI.CreateTimePicker(13, 24, MUI.colors.deepOrange.deepOrange)
+    tmp.SetOnSelect(OnSelect)
+
+def ShowPicker():
+    tmp.Show()
+
+def OnSelect(time, hh, mm, pos):
+    app.ShowPopup(hh+":"+mm+":"+pos)
+ */
+    
+            

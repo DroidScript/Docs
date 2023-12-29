@@ -52,3 +52,37 @@ function btn_OnTouch()
  */
     
             
+    
+/**
+@sample Python Get Saved Data
+from native import app
+
+def OnStart():
+    app.SetData("myvar", "Hello World!")
+    data = app.GetData("myvar")
+    app.Alert(data, "Saved Data:")
+ */
+    
+            
+    
+/**
+@sample Python Random Value
+from native import app
+import math
+import random
+
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    btn = app.AddButton(lay, "Press Me", 0.3, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
+
+    app.AddLayout(lay)
+
+def btn_OnTouch():
+    app.SetData("number", str(int(100 * random.random())))
+    data = app.GetData("number")
+    app.ShowPopup("Data: " + data)
+ */
+    
+            

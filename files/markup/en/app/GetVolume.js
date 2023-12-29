@@ -28,3 +28,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Get System Volume
+from native import app
+
+def OnStart():
+    vol = app.GetVolume()
+    app.Alert(vol, "System Volume:")
+ */
+    
+            

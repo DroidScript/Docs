@@ -391,3 +391,49 @@ function OnTouch(name, index)
  */
     
             
+    
+/**
+@sample Python Basic
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    list = "Apple, Mango, Banana"
+    rad = MUI.CreateRadio(list)
+    lay.AddChild(rad)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python With callback
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    list = "Apple, Mango, Banana"
+    rad = MUI.CreateRadio(list)
+    rad.SetOnTouch(OnTouch)
+    lay.AddChild(rad)
+
+    app.AddLayout(lay)
+
+def OnTouch(name, index):
+    app.ShowPopup(name + " : " + str(index))
+ */
+    
+            

@@ -37,3 +37,15 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Synchronous delay
+from native import app
+
+def OnStart():
+    app.Alert("Press Ok to start the delay.")
+    app.Wait(5)
+    app.ShowPopup("Done.")
+ */
+    
+            

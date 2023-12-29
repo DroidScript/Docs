@@ -36,3 +36,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Send File
+from native import app
+
+def OnStart():
+    app.WriteFile( "file.txt", "Hello World" )
+    app.SendFile( app.GetAppPath() + "/file.txt", "Shared File", app.GetUser() + " shared file.txt with you" )
+ */
+    
+            

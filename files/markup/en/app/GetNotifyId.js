@@ -38,3 +38,24 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    <b>id = app.GetNotifyId()</b>
+
+    if id:
+        app.Alert(id, "Notification ID")
+    else:
+        not = app.CreateNotification()
+        not.SetMessage(
+            "You have an urgent notification",
+            "Press me!", "Do as the title says."
+        )
+        not.Notify(1234)
+        app.SetTimeout(app.Exit, 2000)
+ */
+    
+            

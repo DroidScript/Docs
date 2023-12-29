@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Bluetooth Address
+from native import app
+
+def OnStart():
+    addr = app.GetBluetoothAddress()
+    app.Alert( addr )
+ */
+    
+            

@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Premium subscription
+from native import app
+
+def OnStart():
+    premium = app.IsPremium()
+    app.Alert(premium, "IsPremium")
+ */
+    
+            

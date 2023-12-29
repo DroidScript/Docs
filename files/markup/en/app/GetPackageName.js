@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Package Name
+from native import app
+
+def OnStart():
+    pkg = app.GetPackageName()
+    app.Alert( pkg )
+ */
+    
+            

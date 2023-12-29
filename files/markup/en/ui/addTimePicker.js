@@ -82,3 +82,24 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    global tpk
+    main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
+    btn = ui.addButton(main, "Show Time Picker", "Outlined,Secondary", 0.2)
+    btn.setOnTouch(showTimePicker)
+    tpk = ui.addTimePicker()
+    tpk.setOnSelect(onSelect)
+
+def showTimePicker(event):
+    tpk.show()
+
+def onSelect(value):
+    print(value)
+ */
+    
+            

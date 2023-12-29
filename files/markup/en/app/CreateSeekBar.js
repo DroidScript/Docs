@@ -180,3 +180,24 @@ function skb_OnTouch( value )
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
+
+    skb = app.CreateSeekBar(0.8)
+    skb.SetRange(1.0)
+    skb.SetValue(0.5)
+    skb.SetOnTouch(skb_OnTouch)
+    lay.AddChild(skb)
+
+    app.AddLayout(lay)
+
+def skb_OnTouch(value):
+    app.ShowPopup("Value = " + str(value))
+ */
+    
+            

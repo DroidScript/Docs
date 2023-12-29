@@ -561,3 +561,200 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Basic
+from hybrid import ui
+from native import app
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize the list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
+
+    # Adds a select control to the main layout
+    sel = ui.addSelect(main, items, "", 0.6)
+
+    # Set the label text
+    sel.label = "Select an item"
+
+    # Add a callback handler when an item is selected
+    sel.setOnChange(onChange)
+
+def onChange(text):
+    ui.showPopup("You choose " + text)
+
+app.add(Main())
+ */
+    
+            
+    
+/**
+@sample Python Group title
+from hybrid import ui
+from native import app
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize the list items to show
+    # The leading colon in each item will render it as group tile
+    items = [":Choices", "Item 1", "Item 2", "Item 3"]
+
+    # Adds a select control to the main layout
+    sel = ui.addSelect(main, items, "", 0.6)
+
+    # Set the label text
+    sel.label = "Select an item"
+
+    # Add a callback handler when an item is selected
+    sel.setOnChange(onChange)
+
+def onChange(text):
+    ui.showPopup("You choose " + text)
+
+app.add(Main())
+ */
+    
+            
+    
+/**
+@sample Python Multiple selection
+from hybrid import ui
+from native import app
+
+def OnStart():
+    global items
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
+
+    # Adds a select control to the main layout
+    # Passing `Multiple` option will allow more than one selection
+    sel = ui.addSelect(main, items, "Multiple", 0.6)
+    sel.label = "Select an item"
+
+    # Add a callback handler when an item is selected
+    sel.setOnChange(onChange)
+
+def onChange(items):
+    ui.showPopup("You choose " + ", ".join(items))
+
+app.add(Main())
+ */
+    
+            
+    
+/**
+@sample Python Outlined and small
+from hybrid import ui
+from native import app
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
+
+    # Adds a select control to the main layout
+    # Passing `Outlined` option will add a border
+    # Passing `Small` option will make the control smaller
+    sel = ui.addSelect(main, items, "Outlined,Small,Secondary", 0.6)
+    sel.label = "Select an item"
+
+    # Add a callback handler when an item is selected
+    sel.setOnChange(onChange)
+
+def onChange(item):
+    ui.showPopup("You choose " + item)
+
+app.add(Main())
+ */
+    
+            
+    
+/**
+@sample Python Radiogroup items
+from hybrid import ui
+from native import app
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize list items to show
+    items = ["Item 1", "Item 2", "Item 3"]
+
+    # Adds a select control to the main layout
+    # Passing `Radio` option will render the items as radiogroup
+    sel = ui.addSelect(main, items, "Filled,Radio", 0.6)
+    sel.label = "Select an item"
+
+    # Add a callback handler when an item is selected
+    sel.setOnChange(onChange)
+
+def onChange(item):
+    ui.showPopup("You choose " + item)
+
+app.add(Main())
+ */
+    
+            
+    
+/**
+@sample Python Grouped list items
+from hybrid import ui
+from native import app
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize list items to show with group tiles
+    items = [":Group 1", "Item 1", "Item 2", ":Group 2", "Another item 1", "Another item 2"]
+
+    # Adds a select control to the main layout
+    sel = ui.addSelect(main, items, "Filled", 0.6)
+    sel.label = "Select an item"
+
+    # Add a callback handler when an item is selected
+    sel.setOnChange(onChange)
+
+def onChange(item):
+    ui.showPopup("You choose " + item)
+
+app.add(Main())
+ */
+    
+            
+    
+/**
+@sample Python Multiple radiogroup with titles
+from hybrid import ui
+
+def OnStart():
+    global items
+    # Creates a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize list items to show with group tiles
+    items = [":Group 1", "Item 1", "Item 2", ":Group 2", "Another item 1", "Another item 2"]
+
+    # Adds a select control to the main layout
+    sel = ui.addSelect(main, items, "Outlined,Radio,Multiple", 0.6)
+    sel.label = "Select an item"
+
+    # Add a callback handler when an item is selected
+    sel.setOnChange(onChange)
+
+def onChange(items):
+    ui.show
+ */
+    
+            

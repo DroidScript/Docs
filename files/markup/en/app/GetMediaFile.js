@@ -29,3 +29,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Get Media File
+from native import app
+
+def OnStart():
+        path = app.GetMediaFile("Hello World", ".png")
+        app.Alert(path)
+ */
+    
+            
+    
+/**
+@sample Python l
+
+ */
+    
+            

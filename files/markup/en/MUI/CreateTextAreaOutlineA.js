@@ -200,3 +200,72 @@ function OnEnter()
  */
     
             
+    
+/**
+@sample Python No Label
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name")
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python With Label
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", True)
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python SetOnEnter Callback
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    global tef
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    # Create the text area
+    tef = MUI.CreateTextAreaOutlineA(0.8, 0.2, "Type your name", True)
+    tef.SetOnEnter(OnEnter)
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+
+def OnEnter():
+    app.ShowPopup(tef.GetText())
+ */
+    
+            

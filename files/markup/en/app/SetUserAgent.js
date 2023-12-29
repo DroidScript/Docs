@@ -27,3 +27,16 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+defaultUserAgent = navigator.userAgent
+myUserAgent = defaultUserAgent
+
+def OnStart():
+    app.SetUserAgent(myUserAgent)
+ */
+    
+            

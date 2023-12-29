@@ -29,3 +29,16 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+# cfg.No_Dom, cfg.Portrait
+
+from native import app
+
+def OnStart():
+    opt = app.GetOptions()
+    app.Alert( opt )
+ */
+    
+            

@@ -48,3 +48,23 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python No Title
+from native import app
+
+def OnStart():
+    <b>app.Alert( "Hello World!" )</b>
+ */
+    
+            
+    
+/**
+@sample Python Yellow Title
+from native import app
+
+def OnStart():
+    <b>app.Alert( "This is an alert box", "Hello Yellow World!", "", -100 )</b>
+ */
+    
+            

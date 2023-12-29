@@ -240,3 +240,29 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    # Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add text control to the main layout
+    text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."
+    ui.addText(main, text, "Justify", 0.8)
+
+    # Add divider control to the main layout
+    div = ui.addDivider(main, 0.8)
+
+    # Add more text control to the main layout
+    ui.addText(main, text, "Justify", 0.8)
+
+    # Add an inset divider to the main layout
+    div = ui.addDivider(main, 0.8, "inset")
+
+    ui.addText(main, text, "Justify", 0.8)
+ */
+    
+            

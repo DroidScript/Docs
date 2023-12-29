@@ -41,3 +41,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python AddTextArea
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+        ted1 = MUI.AddTextArea(lay, 0.8, "filled", "Enter message", True)
+        ted1 = MUI.AddTextArea(lay, 0.8, "filled,active", "Enter message", True)
+        ted1 = MUI.AddTextArea(lay, 0.8, "outlined", "Enter message", True)
+        ted1 = MUI.AddTextArea(lay, 0.8, "outlined,active", "Enter message", True)
+    app.AddLayout(lay)
+ */
+    
+            

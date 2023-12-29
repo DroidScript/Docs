@@ -36,3 +36,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python SetPosition
+from native import app
+
+def OnStart():
+    app.SetPosition(0.2, 0.2, .6, .6)
+
+    lay = app.CreateLayout("linear", "VCenter,fillxy")
+    lay.SetBackColor("blue")
+
+    btn = app.CreateButton("Hello World", 0.3, 0.1)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+ */
+    
+            

@@ -199,3 +199,45 @@ function bt_OnConnect( ok, data )
  */
     
             
+    
+/**
+@sample Python Connect to Device
+from native import app
+
+def OnStart():
+    global bt
+    app.ShowProgress( "Enabling Bluetooth" )
+    if not app.IsBluetoothEnabled():
+        app.SetBluetoothEnabled( True )
+
+    while not app.IsBluetoothOn():
+        app.Wait(.4)
+    app.HideProgress()
+
+    bt = app.CreateBluetoothSerial()
+    bt.SetOnConnect( bt_OnConnect )
+    bt.SetSplitMode( "End", "\n" )
+    bt.Listen( True )
+
+    lst = app.CreateBluetoothList()
+    lst.SetOnTouch(lst_OnTouch)
+
+def lst_OnTouch( name, address ):
+    app.ShowProgress( "Connecting..." )
+    bt.Connect( address )
+
+def bt_OnConnect( ok, data ):
+    app.HideProgress()
+
+    if ok:
+        if typeof data == "object":
+            app.ShowPopup( "Connected!" )
+        else:
+            app.Alert( "Connected to " + ok + " (" + data + ")" )
+
+        bt.Write("hello from " + app.GetBluetoothName())
+    else:
+        app.ShowPopup( "Failed to connect!" )
+ */
+    
+            

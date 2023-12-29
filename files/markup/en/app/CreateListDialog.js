@@ -109,3 +109,33 @@ function dlg_OnTouch( item, isChecked )
  */
     
             
+    
+/**
+@sample Python Basic
+from native import app
+
+def OnStart():
+    dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" )
+    dlg.SetOnTouch( dlg_OnTouch )
+    dlg.Show()
+
+def dlg_OnTouch( item, checked):
+    app.ShowPopup( item )
+ */
+    
+            
+    
+/**
+@sample Python Multi
+from native import app
+
+def OnStart():
+    dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" )
+    dlg.SetOnTouch( dlg_OnTouch )
+    dlg.Show()
+
+def dlg_OnTouch( item, isChecked ):
+    app.ShowPopup( item + " isChecked = " + str(isChecked) )
+ */
+    
+            

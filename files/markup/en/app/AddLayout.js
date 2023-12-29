@@ -35,3 +35,19 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Vertical
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "FillXY,VCenter" )
+
+    txt = app.CreateText( "Hello" )
+    txt.SetTextSize( 50 )
+    lay.AddChild( txt )
+
+    <b>app.AddLayout( lay )</b>
+ */
+    
+            

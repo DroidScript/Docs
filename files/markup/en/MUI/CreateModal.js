@@ -253,3 +253,31 @@ function OnControlTouch(isOk, btnText)
  */
     
             
+    
+/**
+@sample Python Full Modal
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global modal
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    btn = MUI.AddButtonRaised(lay, "SHOW MODAL", 0.35)
+    btn.SetOnTouch(ShowModal)
+
+    app.AddLayout(lay)
+
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    modal = MUI.CreateModal("Modal title", text, "Save", "Close", False, "Full")
+    modal.SetOnTouch(OnControlTouch)
+
+def ShowModal():
+    modal.Show()
+
+def OnControlTouch(isOk, btnText):
+    app.ShowPopup(isOk+" : "+btnText)
+ */
+    
+            

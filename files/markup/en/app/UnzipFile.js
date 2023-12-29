@@ -28,3 +28,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Unzip File
+from native import app
+
+def OnStart():
+    <b>app.UnzipFile( "yourfile.zip", "/sdcard/Extracted" )</b>
+ */
+    
+            

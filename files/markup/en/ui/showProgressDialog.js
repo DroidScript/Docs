@@ -105,3 +105,39 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Progress Dialog
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    btn = ui.addButton(main, "Show Progress Dialog", "Outlined")
+    btn.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showProgressDialog("Loading...", "AutoCancel")
+ */
+    
+            
+    
+/**
+@sample Python Nocancel progress dialog
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    btn = ui.addButton(main, "Show Progress Dialog", "Outlined")
+    btn.setOnTouch(onTouch)
+
+def onTouch(event):
+    pdlg = ui.showProgressDialog("Loading...", "NoCancel")
+
+    def hideProgressDialog():
+        pdlg.hide()
+        ui.showPopup("Progress dialog is close!")
+
+    app.SetTimeout(hideProgressDialog, 2000)
+ */
+    
+            

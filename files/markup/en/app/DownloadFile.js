@@ -52,3 +52,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Get current GPS location
+from native import app
+
+def OnStart():
+    app.EnableGps()
+
+    app.WaitForGps("WaitForGps", 10)
+
+def WaitForGps():
+    lat = app.GetGpsLatitude()
+    lon = app.GetGpsLongitude()
+
+    app.ShowPopup("Latitude: " + lat + ", Longitude: " + lon)
+ */
+    
+            

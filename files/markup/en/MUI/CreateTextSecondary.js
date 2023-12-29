@@ -215,3 +215,27 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python All Headings
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+    sec1 = MUI.AddText(lay, text, 0.9, None, "Secondary,Multiline,Light")
+
+    sec2 = MUI.AddTextSecondary(lay, text, 0.9, None, "Multiline", None, "Light")
+
+    sec3 = MUI.CreateTextSecondary(text, 0.9, None, "Multiline", None, "Light")
+    lay.AddChild(sec3)
+
+    app.AddLayout(lay)
+ */
+    
+            

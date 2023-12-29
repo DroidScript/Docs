@@ -87,3 +87,18 @@ function Ynd_OnTouch( result )
  */
     
             
+    
+/**
+@sample Python Basic
+from native import app
+
+def OnStart():
+    ynd = app.CreateYesNoDialog("Choose an answer")
+    ynd.SetOnTouch(Ynd_OnTouch)
+    ynd.Show()
+
+def Ynd_OnTouch(result):
+    app.Alert(result, "Result")
+ */
+    
+            

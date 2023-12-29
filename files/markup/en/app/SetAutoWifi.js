@@ -26,3 +26,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Auto Enable WiFi
+from native import app
+
+def OnStart():
+    app.SetAutoWifi(True)
+ */
+    
+            

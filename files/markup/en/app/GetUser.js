@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show App Path
+from native import app
+
+def OnStart():
+    usr = app.GetPath()
+    app.Alert(usr, "Active User:")
+ */
+    
+            

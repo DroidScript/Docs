@@ -71,3 +71,28 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    # Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a button to the main layout
+    btn = ui.addButton(main, "Show Popup", "Primary")
+
+    # Add callback handler for `onTouch` event
+    btn.setOnTouch(showColorPicker)
+
+def showColorPicker(event):
+    # Show color picker dialog with `Alpha` option
+    # to include alpha in the output format `#aarrggbb`
+    ui.showColorPicker(None, "Alpha", onSelect)
+
+def onSelect(clr):
+    ui.showPopup(clr)
+ */
+    
+            

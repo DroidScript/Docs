@@ -34,3 +34,22 @@ function SetScreenMode( mode )
  */
     
             
+    
+/**
+@sample Python SetScreenMode Demo
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("Linear", "Vertical,VCenter,FillXY")
+
+    spn = app.CreateSpinner("Default,Normal,Full,Game")
+    spn.SetOnChange(SetScreenMode)
+    lay.AddChild(spn)
+
+    app.AddLayout(lay)
+
+def SetScreenMode(mode, index):
+    app.SetScreenMode(mode)
+ */
+    
+            

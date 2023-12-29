@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show SSID
+from native import app
+
+def OnStart():
+    ssid = app.GetSSID()
+    app.Alert(ssid)
+ */
+    
+            

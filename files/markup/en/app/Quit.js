@@ -28,3 +28,15 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Quit
+from native import app
+
+def OnStart():
+    app.ShowPopup("Exciting")
+    app.Quit("App will now exit anyway.", "No error detected.")
+    app.ShowPopup("Exited") # not shown
+ */
+    
+            

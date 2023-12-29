@@ -27,3 +27,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Send SMS
+from native import app
+
+def OnStart():
+    app.SendSMS( "Hello World!", "0123456789" )
+ */
+    
+            

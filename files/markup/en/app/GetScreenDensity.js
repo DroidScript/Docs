@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Screen Density
+from native import app
+
+def OnStart():
+    <b>dens = app.GetScreenDensity()</b>
+    app.Alert(dens)
+ */
+    
+            

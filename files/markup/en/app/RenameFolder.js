@@ -37,3 +37,23 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Rename
+from native import app
+
+def OnStart():
+    <b>app.RenameFolder("/sdcard/MyFolder", "/sdcard/YourFolder")</b>
+ */
+    
+            
+    
+/**
+@sample Python Move
+from native import app
+
+def OnStart():
+    <b>app.RenameFolder("/sdcard/MyFolder", "/sdcard/DroidScript/MyFolder")</b>
+ */
+    
+            

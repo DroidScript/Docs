@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Internal Storage Path
+from native import app
+
+def OnStart():
+    dir = app.GetInternalFolder()
+    app.Alert( dir )
+ */
+    
+            

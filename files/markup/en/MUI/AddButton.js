@@ -46,3 +46,29 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python AddButton
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    	btn1 = MUI.AddButton(lay, "Button 1", 0.35, None, "raised")
+        btn2 = MUI.AddButton(lay, "Button 2", 0.35, None, "raisedo")
+        btn3 = MUI.AddButton(lay, "Button 3", 0.35, None, "round")
+        btn4 = MUI.AddButton(lay, "Button 4", 0.35, None, "roundo")
+        btn5 = MUI.AddButton(lay, "Button 5", 0.35, None, "elegant")
+        btn6 = MUI.AddButton(lay, "Button 6", 0.35, None, "outlined")
+        btn7 = MUI.AddButton(lay, "Button 7", 0.35, None, "contained")
+        btn8 = MUI.AddButton(lay, "Button 8", 0.35, None, "text")
+        btn9 = MUI.AddButton(lay, "Button 9", 0.35, None, "flat")
+        btn10 = MUI.AddButton(lay, "[fa-android] Android", 0.35, None, "text")
+        btn11 = MUI.AddButton(lay, "[fa-folder] Folder", 0.35, None, "flat")
+
+    app.AddLayout(lay)
+ */
+    
+            

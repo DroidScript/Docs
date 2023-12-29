@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Softkeys
+from native import app
+
+def OnStart():
+    hasSoftNav = app.HasSoftNav()
+    app.Alert(hasSoftNav, "Has Soft Keys:")
+ */
+    
+            

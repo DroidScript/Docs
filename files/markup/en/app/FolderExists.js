@@ -30,3 +30,16 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    if app.FolderExists("myFolder"):
+        app.ShowPopup("myFolder exists!")
+    else:
+        app.ShowPopup("myFolder does not exist!")
+ */
+    
+            

@@ -167,3 +167,26 @@ function OnToggle(v)
  */
     
             
+    
+/**
+@sample Python Light
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.darken1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = MUI.CreateButtonToggle("BUTTON", 0.35, None, False, OnToggle)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+def OnToggle(v):
+    app.ShowPopup(v)
+ */
+    
+            

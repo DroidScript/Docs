@@ -210,3 +210,24 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Sample
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    h4 = MUI.AddText(lay, "Some Heading", 0.8, 0.2, "h4,Medium,Multiline")
+
+    h4 = MUI.AddTextH4(lay, "Some Heading", 0.8, 0.2, "Multiline", None, "Medium")
+
+    h4 = MUI.CreateTextH4("Some Heading", 0.8, 0.2, "Multiline", None, "Medium")
+    lay.AddChild(h4)
+
+    app.AddLayout(lay)
+ */
+    
+            

@@ -317,3 +317,147 @@ function serv_OnReceive( msg, ip ) {
  */
     
             
+    
+/**
+@sample Python Basic
+from native import app
+
+def OnStart():
+    ip = app.GetIPAddress()
+    app.Alert( ip +":8080", "Type the following address into your browser" )
+
+    serv = app.CreateWebServer( 8080 )
+    serv.SetFolder( "/sdcard/DroidScript" )
+    serv.Start()
+ */
+    
+            
+    
+/**
+@sample Python Servlets
+from native import app
+
+def OnStart():
+    global serv
+    ip = app.GetIPAddress()
+    app.Alert( ip +":8080", "Type the following address into your browser" )
+
+    serv = app.CreateWebServer( 8080, "Upload,ListDir" )
+    serv.SetFolder( "/sdcard/DroidScript" )
+    serv.AddServlet( "/message", OnServlet )
+    serv.Start()
+
+def OnServlet( request, info ):
+    serv.SetResponse( "Got it!" )
+    app.ShowPopup(  info.remoteAddress + " says: " + request.msg )
+ */
+    
+            
+    
+/**
+@sample Python Send and Receive messages
+from native import app
+
+indexhtml = """
+<html>
+<head>
+    <title>WebSockets Demo</title>
+
+        count = 0;
+
+        function Connect()
+        {
+            // Open web socket to phone.
+            ws = new WebSocket( "ws://" + window.location.host );
+            ws.onopen = ws_onopen;
+            ws.onmessage = ws_onmessage;
+            ws.onclose = ws_onclose;
+            ws.onerror = ws_onerror;
+        }
+
+        function Send() {
+            ws.send( "Hello " + count++ );
+        }
+
+        function ws_onopen() {
+            id_info.innerHTML = "Socket Open";
+        }
+
+        function ws_onmessage( msg ) {
+            id_info.innerHTML = msg.data;
+        }
+
+        function ws_onclose() {
+            id_info.innerHTML = "Socket Closed";
+        }
+
+        function ws_onerror(e) {
+            id_info.innerHTML = "Socket Error: " + e.data;
+        }
+
+</head>
+
+<body>
+    <h2>DroidScript WebSockets Demo</h2>
+    <div id="id_info">Ready</div>
+    <button onclick="Connect()">Connect</button>
+    <button onclick="Send()">Send Message</button>
+</body>
+</html>
+"""
+
+count = 0
+
+def OnStart():
+    global txt, serv, ip, txtMsg
+    # Create the Index.html file
+    # note: in regular use move the html to a separate file
+    app.WriteFile( "Index.html", indexhtml )
+
+    ip = app.GetIPAddress()
+    app.Alert( ip +":8080", "Type the following address into your browser" )
+
+    app.PreventWifiSleep()
+
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    txt = app.CreateText( "No connected clients.", 0.8, 0.3, "AutoScale,MultiLine" )
+    txt.SetTextSize( 22 )
+    lay.AddChild( txt )
+
+    txtMsg = app.CreateText( "", 0.8, 0.3, "AutoScale,MultiLine" )
+    txtMsg.SetTextSize( 22 )
+    lay.AddChild( txtMsg )
+
+    btn = app.CreateButton( "Send Message", 0.4, 0.1)
+    btn.SetMargins( 0, 0.05, 0, 0 )
+    btn.SetOnTouch( SendMessage )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+    serv = app.CreateWebServer( 8080 )
+    serv.SetFolder( app.GetAppPath() )
+    serv.SetOnReceive( serv_OnReceive )
+    serv.Start()
+
+    setInterval( ShowConnections, 3000 )
+
+def ShowConnections():
+    clients = serv.GetWebSockClients()
+    list = []
+    for client in clients:
+        list.append(client.remoteAddress)
+
+    if list:
+        txt.SetText( "\n".join(list) )
+
+def SendMessage():
+    serv.SendText( "Hello " + str(count) )
+    count += 1
+
+def serv_OnReceive( msg, ip, id):
+    txtMsg.SetText( ip + ": " + msg )
+ */
+    
+            

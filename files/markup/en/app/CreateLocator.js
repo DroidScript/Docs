@@ -108,3 +108,20 @@ function loc_OnChange(pos)
  */
     
             
+    
+/**
+@sample Python Get Location Updates
+from native import app
+
+def OnStart():
+    loc = app.CreateLocator("GPS,Network")
+    loc.SetOnChange(loc_OnChange)
+    loc.Start()
+    app.ShowPopup("Locating")
+
+def loc_OnChange(pos, time):
+    msg = str(pos.latitude) + ", " + str(pos.longitude)
+    app.ShowPopup(msg)
+ */
+    
+            

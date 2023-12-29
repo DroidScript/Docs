@@ -141,3 +141,53 @@ function OnTouch(value)
  */
     
             
+    
+/**
+@sample Python Basic
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    skb = MUI.CreateSwitch()
+    skb.SetOnTouch(OnTouch)
+    lay.AddChild(skb)
+
+    app.AddLayout(lay)
+
+def OnTouch(value):
+    app.ShowPopup(value)
+ */
+    
+            
+    
+/**
+@sample Python With Value & Color
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    skb = MUI.CreateSwitch(True, MUI.colors.blue.blue)
+    skb.SetOnTouch(OnTouch)
+    lay.AddChild(skb)
+
+    app.AddLayout(lay)
+
+def OnTouch(value):
+    app.ShowPopup(value)
+ */
+    
+            

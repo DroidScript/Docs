@@ -39,3 +39,27 @@ function RemoveDrawer() {
  */
     
             
+    
+/**
+@sample Python Vertical
+from native import app
+
+def OnStart():
+    global lay
+    lay = app.CreateLayout( "Linear", "FillXY,VCenter" )
+
+    txt = app.CreateText( "Hello" )
+    txt.SetTextSize( 50 )
+    lay.AddChild( txt )
+
+    btn = app.CreateButton( "Remove" )
+    btn.SetOnTouch( RemoveDrawer )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+def RemoveDrawer():
+    <b>app.RemoveLayout( lay )</b>
+ */
+    
+            

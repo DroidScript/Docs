@@ -31,3 +31,16 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    if app.FileExists("myFile.txt"):
+        app.ShowPopup("myFile exists!")
+    else:
+        app.ShowPopup("myFile does not exist!")
+ */
+    
+            

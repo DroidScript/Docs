@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Connected
+from native import app
+
+def OnStart():
+    isConnected = app.IsConnected()
+    app.Alert(isConnected, "is Connected:")
+ */
+    
+            

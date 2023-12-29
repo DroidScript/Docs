@@ -49,3 +49,25 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python AddTextEdit
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    ted1 = MUI.AddTextEdit(lay, 0.8, "filled", "Enter Name", True)
+    ted2 = MUI.AddTextEdit(lay, 0.8, "filled,active,password", "Enter password", True)
+    ted3 = MUI.AddTextEdit(lay, 0.8, "outline,number", "Enter Number", True)
+    ted4 = MUI.AddTextEdit(lay, 0.8, "outline,active", "Enter PIN", True)
+    ted5 = MUI.AddTextEdit(lay, 0.8, "elegant", "Enter name")
+    ted6 = MUI.AddTextEdit(lay, 0.8, "outline,icon,left", "person", "Enter name", True)
+    ted7 = MUI.AddTextEdit(lay, 0.8, "outline,icon,right", "password", "Enter password", True)
+
+    app.AddLayout(lay)
+ */
+    
+            

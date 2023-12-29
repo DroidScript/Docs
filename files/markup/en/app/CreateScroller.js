@@ -188,3 +188,24 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("Linear", "FillXY")
+
+    scroll = app.CreateScroller(1.0, 1.0)
+    lay.AddChild(scroll)
+
+    layScroll = app.CreateLayout("Linear", "Left")
+    scroll.AddChild(layScroll)
+
+    img = app.CreateImage("/Sys/Img/Hello.png", 2.0, 2.0)
+    layScroll.AddChild(img)
+
+    app.AddLayout(lay)
+ */
+    
+            

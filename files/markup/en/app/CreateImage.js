@@ -664,3 +664,162 @@ function btn_OnTouch()
  */
     
             
+    
+/**
+@sample Python Original Size
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    img = app.CreateImage( "/Sys/Img/Droid1.png" )
+    img.SetOnTouch( img_OnTouch )
+    lay.AddChild( img )
+
+    app.AddLayout( lay )
+
+def img_OnTouch( ev ):
+    if ev.action=="Down":
+        app.ShowPopup( "Ouch!" )
+ */
+    
+            
+    
+/**
+@sample Python Stretched
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, 0.7 )
+    img.SetOnTouch( img_OnTouch )
+    lay.AddChild( img )
+
+    app.AddLayout( lay )
+
+def img_OnTouch( ev ):
+    if ev.action=="Down":
+        app.ShowPopup( "Aaaargh!" )
+ */
+    
+            
+    
+/**
+@sample Python Maintain Aspect
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 )
+    img.SetOnTouch( img_OnTouch )
+    lay.AddChild( img )
+
+    app.AddLayout( lay )
+
+def img_OnTouch( ev ):
+    if ev.action=="Down":
+        app.ShowPopup( ev.x[0] + ", " + ev.y[0], "Short" )
+ */
+    
+            
+    
+/**
+@sample Python Draw Shapes
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    img = app.CreateImage( None, 0.8, 0.8 )
+    lay.AddChild( img )
+
+    img.SetColor( "#8888ff" )
+    img.SetPaintColor( "#ff0000" )
+    img.DrawCircle( 0.5, 0.5, 0.1 )
+    img.DrawRectangle( 0.7, 0.7, 0.1, 0.75 )
+
+    app.AddLayout( lay )
+ */
+    
+            
+    
+/**
+@sample Python Advanced Clock Animating
+# cfg.No_Dom, cfg.Portrait
+
+from native import app
+import math
+import time as Date
+
+def OnStart():
+    global ptr, wh, img
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    ptr = app.CreateImage( None, 0.1, 0.1, "fix,alias", 30, 30 )
+    ptr.SetTextSize( 4.3 )
+
+    wh = ptr.GetAbsWidth() / ptr.GetAbsHeight()
+
+    img = app.CreateImage( None, 1, 1, "alias" )
+    img.SetPaintStyle( "line" )
+    img.SetAutoUpdate( False )
+    img.SetLineWidth( 15 )
+    lay.AddChild( img )
+
+    app.AddLayout( lay )
+
+    app.SetDebug( "console" )
+    app.Animate( OnAnimate, 40 )
+
+def OnAnimate( time, dtime ):
+    time = Date.now()
+
+    secs = time / 1000
+    angle = math.pi * secs / 2 + abs( math.sin( math.pi * secs ))
+    px = 0.5 + 0.5 * math.cos( angle )
+    py = 0.5 + 0.5 * math.sin( angle )
+
+    hrs = math.floor( secs / 3600 ) % 60
+    min = math.floor( secs / 60 ) % 60
+    sec = math.floor( secs ) % 60
+    time = min + ":" + sec
+
+    tsize = ptr.MeasureText( time )
+    tx = (1 - tsize.width ) / 2
+    ty = (1 + tsize.height) / 2
+
+    ptr.Clear()
+    ptr.SetPaintColor( "red" )
+    ptr.DrawLine( .5, .5, px, py )
+    ptr.SetPaintColor( "white" )
+    ptr.DrawText( time, tx, ty )
+
+    img.Clear()
+    img.DrawCircle( .5, .5, .48 )
+    img.DrawImage( ptr, 0, (1 - wh) / 2, 1, wh )
+    img.Update()
+ */
+    
+            
+    
+/**
+@sample Python Button
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    btn = app.CreateImage( "/Sys/Img/Hello.png", 0.2, -1, "button" )
+    btn.SetOnTouchUp( btn_OnTouch )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+def btn_OnTouch(event):
+    app.ShowPopup( "Hello World!" )
+    app.Vibrate( "0,100,30,100,50,300" )
+ */
+    
+            

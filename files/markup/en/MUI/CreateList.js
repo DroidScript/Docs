@@ -458,3 +458,85 @@ function OnTouch(title, body)
  */
     
             
+    
+/**
+@sample Python Basic
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    list = ["Downloads", "Images", "Videos"]
+    lst = MUI.CreateList(list, 0.95, 0.4)
+    lst.SetOnTouch(OnTouch)
+    lay.AddChild(lst)
+
+    app.AddLayout(lay)
+
+def OnTouch(title):
+    app.ShowPopup(title)
+ */
+    
+            
+    
+/**
+@sample Python With-Icon
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY")
+
+    list = ["Downloads:[fa-cloud-download]", "Images:[fa-image]", "Videos:[fa-youtube-play]"]
+    lst = MUI.CreateList(list, 0.95, 0.4)
+    lst.SetOnTouch(OnTouch)
+    lay.AddChild(lst)
+
+    app.AddLayout(lay)
+
+def OnTouch(title):
+    app.ShowPopup(title)
+ */
+    
+            
+    
+/**
+@sample Python Dark With Body & Icon
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    list = [
+        "Downloads:Some body text:[fa-cloud-download]",
+        "Images:Some body text:[fa-image]",
+        "Videos:Some body text:[fa-youtube-play]"
+    ]
+    lst = MUI.CreateList(list, 0.95, 0.4)
+    lst.SetOnTouch(OnTouch)
+    lay.AddChild(lst)
+
+    app.AddLayout(lay)
+
+def OnTouch(title, body):
+    app.ShowPopup(title+" : "+body)
+ */
+    
+            

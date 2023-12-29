@@ -56,3 +56,29 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Running Services
+from native import app
+
+def OnStart():
+    app.ShowProgress()
+
+    lay = app.CreateLayout("linear", "fillxy,vcenter")
+
+    lst = app.CreateList("", .9, .9)
+    lst.SetTextSize1(15)
+    lay.AddChild(lst)
+
+    list = app.GetRunningServices()
+
+    for a in list:
+        body = "user: " + a.user + "\npid: " + str(a.pid)
+        lst.AddItem(a.name, body)
+
+    app.AddLayout(lay)
+
+    app.HideProgress()
+ */
+    
+            

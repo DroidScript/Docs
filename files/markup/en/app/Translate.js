@@ -27,3 +27,15 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Translate Buttons
+from native import app
+
+def OnStart():
+    <b>app.Translate("new cancel", "new ok")</b>
+    app.Alert("my message")
+    app.ShowTextDialog("Type some text", "")
+ */
+    
+            

@@ -96,3 +96,32 @@ function state_OnChange( type, data )
  */
     
             
+    
+/**
+@sample Python Demo
+from native import app
+
+def OnStart():
+    global txt, log
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    txt = app.CreateText("", 0.95, 0.95, "multiline,left")
+    txt.SetTextSize(14)
+    lay.AddChild(txt)
+
+    app.AddLayout(lay)
+
+    types = "CellLocation,DataConnection,DataActivity,CallState," + "ServiceState,SignalStrength,CallForwarding,MessageWaiting"
+
+    state = app.CreatePhoneState(types)
+    state.SetOnChange(state_OnChange)
+    state.Start()
+
+log = []
+
+def state_OnChange(type, data):
+    log.append("<b>" + type + ":</b><br>\t" + str(data))
+    txt.SetHtml("<br>".join(log))
+ */
+    
+            

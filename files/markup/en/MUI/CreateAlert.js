@@ -132,3 +132,65 @@ function AlertOnClose(val)
  */
     
             
+    
+/**
+@sample Python No icon
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color)
+
+    text = "This is a sample text for the popup."
+    alr = MUI.MUI.CreateAlert(text)
+    alr.Show()
+ */
+    
+            
+    
+/**
+@sample Python With icon
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global alr
+    color = MUI.colors.teal
+    app.InitializeUIKit(color)
+
+    text = "This is a sample text for the popup."
+    alr = MUI.MUI.CreateAlert(text, "message")
+    alr.Show()
+
+    app.SetTimeout(CloseAlert, 4000)
+
+def CloseAlert():
+    alr.Hide()
+ */
+    
+            
+    
+/**
+@sample Python On close function
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color)
+
+    text = "This is a sample text for the popup."
+    alr = MUI.MUI.CreateAlert(text, "message", MUI.colors.blue.darken2)
+    alr.SetOnClose(AlertOnClose)
+    alr.Show()
+
+def AlertOnClose(val):
+    if val:
+        app.ShowPopup("You close me!")
+ */
+    
+            

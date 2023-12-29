@@ -39,3 +39,22 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python ListDir SH
+from native import app
+
+def OnStart():
+    delim = "\0"
+    list = app.SysExec('ls -ap /sdcard/;exit', "sh,log")
+    list = list.split("\n").join(delim)
+
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    lst = app.CreateList(list, 1, 1, "", delim)
+    lay.AddChild(lst)
+
+    app.AddLayout(lay)
+ */
+    
+            

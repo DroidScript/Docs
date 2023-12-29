@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    model = app.GetModel()
+    app.ShowPopup( model )
+ */
+    
+            

@@ -176,3 +176,74 @@ function sys_OnError( msg )
  */
     
             
+    
+/**
+@sample Python Basic
+from native import app
+
+def OnStart():
+    global txt
+    lay = app.CreateLayout( "linear" )
+
+    txt = app.CreateText( "", 1, 1, "Log,Monospace,autoscale" )
+    lay.AddChild( txt )
+
+    app.AddLayout( lay )
+
+    sys = app.CreateSysProc( "sh" )
+    sys.Out( "netstat\n" )
+    sys.SetOnInput( sys_OnInput )
+    sys.SetOnError( sys_OnError )
+    sys.Out( "netstoat\n" )
+
+def sys_OnInput( msg ):
+    txt.Log( msg )
+
+def sys_OnError( msg ):
+    txt.Log( msg )
+ */
+    
+            
+    
+/**
+@sample Python Colored
+from native import app
+
+def OnStart():
+    global scr, txt, sys
+    lay = app.CreateLayout( "linear" )
+
+    scr = app.CreateScroller( 1, 1, "horizontal" )
+    lay.AddChild( scr )
+
+    txt = app.CreateText( "", 1, -1, "monospace,log" )
+    txt.SetTextSize( 8 )
+    txt.SetLog( 1000 )
+    scr.AddChild( txt )
+
+    app.AddLayout( lay )
+
+    sys = app.CreateSysProc( "sh" )
+    sys.SetOnInput( sys_OnInput )
+    sys.SetOnError( sys_OnError )
+
+    Exec( "netstat\n" )
+
+    # filter files containing 'D' in /sdcard/ and forward to stderr
+    Exec( "ls -al /sdcard/ | grep D >&2\n" )
+
+def Exec( cmd ):
+    sys.Out( cmd )
+    txt.Log( cmd, "green" )
+    scr.ScrollTo( 0, txt.GetHeight() )
+
+def sys_OnInput( msg ):
+    txt.Log( msg )
+    scr.ScrollTo( 0, txt.GetHeight() )
+
+def sys_OnError( msg ):
+    txt.Log( msg, "red" )
+    scr.ScrollTo( 0, txt.GetHeight() )
+ */
+    
+            

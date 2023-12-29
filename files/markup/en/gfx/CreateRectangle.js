@@ -74,3 +74,18 @@ function OnReady()
  */
     
             
+    
+/**
+@sample Python 
+# cfg.Game
+
+def OnLoad():
+    global rect
+    rect = gfx.CreateRectangle(0.4, 0.4, 0x00ffff, 6, 0xee3355)
+
+def OnReady():
+    gfx.AddGraphic(rect, 0.3, 0.2)
+    gfx.Play()
+ */
+    
+            

@@ -53,3 +53,34 @@ function checkBtOn()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    global lst, itv
+    lay = app.CreateLayout( "linear", "fillxy,vcenter" )
+
+    lst = app.CreateList( "", .8, .8 )
+    lay.AddChild( lst )
+
+    app.AddLayout( lay )
+
+    if not app.IsBluetoothEnabled():
+        app.SetBluetoothEnabled(True)
+
+    itv = app.SetInterval(checkBtOn, 200)
+
+def checkBtOn():
+    if app.IsBluetoothOn():
+        app.HideProgress()
+        app.ClearInterval(itv)
+
+        devices = app.GetPairedBtDevices()
+
+        for d in devices:
+            lst.AddItem(d.name, d.address)
+ */
+    
+            

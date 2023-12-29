@@ -31,3 +31,16 @@ function OnInputName( name )
  */
     
             
+    
+/**
+@sample Python Input Name
+from native import app
+
+def OnStart():
+    app.ShowTextDialog("Type your Name:", "", OnInputName)
+
+def OnInputName(name):
+    app.ShowPopup("Your name is " + name)
+ */
+    
+            

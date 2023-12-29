@@ -215,3 +215,29 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Paragraph-Sample
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal, "Light")
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis nunc nec orci finibus blandit. Nam nec consectetur odio. Sed a erat ultrices lectus volutpat malesuada. Aliquam id dictum metus."
+
+        p1 = MUI.AddText(lay, text, 0.9, None, "Multiline,Paragraph,Light")
+
+        p2 = MUI.AddTextParagraph(lay, text, 0.9, None, "Multiline", None, "Light")
+
+        p3 = MUI.CreateTextParagraph(text, 0.9, None, "Multiline", None, "Light")
+        lay.AddChild(p3)
+
+    app.AddLayout(lay)
+ */
+    
+            

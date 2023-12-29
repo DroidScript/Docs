@@ -167,3 +167,22 @@ function ShowState( isChecked )
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    chk = app.CreateCheckBox( "Enable Stuff" )
+    chk.SetOnTouch( ShowState )
+    lay.AddChild( chk )
+
+    app.AddLayout( lay )
+
+def ShowState( isChecked ):
+    app.ShowPopup( "Checked = " + str(isChecked), "Short" )
+ */
+    
+            

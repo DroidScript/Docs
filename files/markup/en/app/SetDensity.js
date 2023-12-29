@@ -41,3 +41,29 @@ function OnStart() {
  */
     
             
+    
+/**
+@sample Python Demonstration
+from native import app
+
+def OnStart():
+    dens = app.GetScreenDensity()
+
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    app.SetDensity(dens / 2)
+    btn = app.CreateButton("Press Me", -1, .1)
+    lay.AddChild(btn)
+
+    app.SetDensity(dens)
+    btn = app.CreateButton("Press Me", -1, .1)
+    lay.AddChild(btn)
+
+    app.SetDensity(dens * 2)
+    btn = app.CreateButton("Press Me", -1, .1)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+ */
+    
+            

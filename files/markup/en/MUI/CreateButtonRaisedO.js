@@ -214,3 +214,76 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Light
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.lighten1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = MUI.CreateButtonRaisedO("BUTTON", 0.35)
+    lay.AddChild(btn)
+
+    btn = MUI.CreateButtonRaisedO("[fa-android] ANDROID", 0.35)
+    lay.AddChild(btn)
+
+    btn = MUI.CreateButtonRaisedO("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.lighten1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = MUI.CreateButtonRaisedO("BUTTON", 0.35)
+    lay.AddChild(btn)
+
+    btn = MUI.CreateButtonRaisedO("[fa-android] ANDROID", 0.35)
+    lay.AddChild(btn)
+
+    btn = MUI.CreateButtonRaisedO("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Add Method
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn1 = MUI.AddButtonRaisedO(lay, "BUTTON 1", 0.35)
+    btn2 = MUI.AddButtonRaisedO(lay, "[fa-heart] BUTTON 2", 0.35)
+    btn3 = MUI.AddButtonRaisedO(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
+
+    app.AddLayout(lay)
+ */
+    
+            

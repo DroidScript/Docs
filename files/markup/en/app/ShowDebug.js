@@ -60,11 +60,53 @@ function ShowDebug()
 function OnBack()
 {
 	if( app.IsDebugVisible() ) {
-		app.ShowDebug( false );
-	} else {
-		app.Exit();
+	    app.ShowDebug( false );
 	}
 }
+ */
+    
+            
+    
+/**
+@sample Python Debug Overlay
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    tgl = app.AddToggle(lay, "Toggle Debug", -1, 0.1)
+    tgl.SetOnTouch(ShowDebug)
+
+    app.AddLayout(lay)
+
+def ShowDebug(show):
+    app.ShowDebug(show)
+ */
+    
+            
+    
+/**
+@sample Python Debug Dialog
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    tgl = app.AddButton(lay, "Show Debug Dialog", -1, 0.1)
+    tgl.SetOnTouch(ShowDebug)
+
+    app.EnableBackKey(False)
+    app.AddLayout(lay)
+
+def ShowDebug():
+    app.ShowDebug(True, "dialog")
+    app.ShowPopup("Press [BACK] to close.")
+
+def OnBack():
+    if app.IsDebugVisible():
+        app.ShowDebug(False)
+    else:
+        app.Exit()
  */
     
             

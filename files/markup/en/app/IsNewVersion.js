@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    newVersion = app.IsNewVersion()
+    app.Alert(newVersion, "Is new version:")
+ */
+    
+            

@@ -28,3 +28,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    fld = app.GetSpecialFolder("Pictures")
+    app.Alert(fld)
+ */
+    
+            

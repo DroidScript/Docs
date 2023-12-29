@@ -38,3 +38,25 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Set Auto Boot
+from native import app
+
+def OnStart():
+    app.SetAutoBoot( True )
+    app.ShowPopup( "You may reboot your phone now." )
+ */
+    
+            
+    
+/**
+@sample Python Unset Auto Boot
+from native import app
+
+def OnStart():
+    app.SetAutoBoot( False )
+    app.ShowPopup( "AutoBoot Disabled." )
+ */
+    
+            

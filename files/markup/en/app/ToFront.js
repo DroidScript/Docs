@@ -36,3 +36,20 @@ function OnResume()
  */
     
             
+    
+/**
+@sample Python Hide and Peek
+from native import app
+
+def OnStart():
+    app.ToBack()
+    app.SetTimeout("app.ToFront()", 5000)
+
+def OnPause():
+    app.ShowPopup( "OnPause" )
+
+def OnResume():
+    app.ShowPopup( "OnResume" )
+ */
+    
+            

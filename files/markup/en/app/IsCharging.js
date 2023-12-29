@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Charging State
+from native import app
+
+def OnStart():
+    charging = app.IsCharging()
+    app.Alert(charging, "is charging:")
+ */
+    
+            

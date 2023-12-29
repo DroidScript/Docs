@@ -251,3 +251,23 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Border
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right", None, "Small,Border")
+    lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            

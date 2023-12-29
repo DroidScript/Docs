@@ -26,3 +26,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show /sdcard/ folder size
+from native import app
+
+def OnStart():
+    size = app.GetFileSize("/sdcard/")
+    app.Alert(size / 1024 + " kB")
+ */
+    
+            

@@ -553,3 +553,123 @@ function StartDetection()
  */
     
             
+    
+/**
+@sample Python Show Camera Preview
+from native import app
+
+def OnStart():
+    global cam
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    cam = app.CreateCameraView( 0.8, 0.4 )
+    cam.SetOnReady( cam_OnReady )
+    lay.AddChild( cam )
+
+    app.AddLayout( lay )
+
+def cam_OnReady():
+    cam.StartPreview()
+ */
+    
+            
+    
+/**
+@sample Python Take pictures
+from native import app
+
+def OnStart():
+    global cam
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    cam = app.CreateCameraView( 0.8, 0.4 )
+    cam.SetOnReady( cam_OnReady )
+    lay.AddChild( cam )
+
+    btn = app.CreateButton( "Snap", 0.3, -1 )
+    btn.SetOnTouch( Snap )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+def cam_OnReady():
+    cam.SetPictureSize( 1024, 768 )
+    cam.StartPreview()
+
+def Snap():
+    cam.TakePicture( "/sdcard/MyPic.jpg" )
+    app.ShowPopup("Picture saved")
+ */
+    
+            
+    
+/**
+@sample Python Record Video
+from native import app
+
+def OnStart():
+    global cam, recFolder
+    app.SetOrientation("Landscape")
+
+    lay = app.CreateLayout( "Linear", "Horizontal,FillXY,VCenter" )
+
+    cam = app.CreateCameraView( .9, 1 )
+    cam.SetOnReady( cam_OnReady )
+    lay.AddChild( cam )
+
+    tgl = app.CreateToggle( "Rec", 0.1 )
+    tgl.SetOnTouch( Record )
+    lay.AddChild( tgl )
+
+    app.AddLayout( lay )
+
+    recFolder = "/sdcard/Videos"
+    app.MakeFolder( recFolder )
+
+def cam_OnReady():
+    cam.SetFocusMode( "Video" )
+    cam.StartPreview()
+
+def Record( start ):
+    if start:
+        cam.Record( recFolder + "/test.mp4" )
+        app.ShowPopup("Recording")
+    else:
+        cam.Stop()
+        app.ShowPopup("Saved to " + recFolder + "/test.mp4")
+ */
+    
+            
+    
+/**
+@sample Python Motion Detector
+from native import app
+
+def OnStart():
+    global layCam, cam
+    app.SetOrientation( "Landscape" )
+
+    lay = app.CreateLayout( "linear", "fillxy,VCenter" )
+
+    layCam = app.CreateLayout( "Frame" )
+    lay.AddChild( layCam )
+
+    cam = app.CreateCameraView( 1, 1, "front" )
+    cam.SetOnReady( StartDetection )
+    layCam.AddChild( cam )
+
+    app.AddLayout( lay )
+
+def StartDetection():
+    w = cam.GetImageWidth()
+    h = cam.GetImageHeight()
+
+    img = app.CreateImage( None, 1, 1, "Fix", w, h )
+    img.SetAlpha( 0.5 )
+    layCam.AddChild( img )
+
+    cam.MotionMosaic( 3, 3, sensitivity, minPeriod, img )
+    cam.StartPreview()
+ */
+    
+            

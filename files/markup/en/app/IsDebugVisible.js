@@ -42,3 +42,27 @@ function ShowDebug( show )
  */
     
             
+    
+/**
+@sample Python Toggle Debug
+from native import app
+
+def OnStart():
+    app.CreateDebug()
+
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    tgl = app.CreateToggle("WiFi Access Point", -1, 0.1)
+    tgl.SetOnTouch(ShowDebug)
+    tgl.SetChecked(True)
+    lay.AddChild(tgl)
+
+    app.AddLayout(lay)
+
+def ShowDebug(show):
+    app.ShowDebug(show)
+    vis = app.IsDebugVisible()
+    app.ShowPopup(vis)
+ */
+    
+            

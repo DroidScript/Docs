@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check APK
+from native import app
+
+def OnStart():
+    isAPK = app.IsAPK()
+    app.Alert(isAPK, "is APK:")
+ */
+    
+            

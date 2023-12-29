@@ -44,3 +44,32 @@ function OnLockChange( lock )
  */
     
             
+    
+/**
+@sample Python Basic
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("Linear", "FillXY,VCenter")
+
+    tgl = app.CreateToggle("Locked", -1, -1, "fontawesome")
+    tgl.SetPadding(.1, .05, .1, .05)
+    tgl.SetOnTouch(OnLockChange)
+    tgl.SetTextSize(30)
+    lay.AddChild(tgl)
+
+    app.AddLayout(lay)
+
+    layDrawer = app.CreateLayout("Linear", "FillXY,VCenter")
+    layDrawer.SetBackground("/Sys/Img/BlueBack.jpg")
+
+    app.AddDrawer(layDrawer, "left", 0.8)
+
+def OnLockChange(lock):
+    if lock:
+        app.LockDrawer("left")
+    else:
+        app.UnlockDrawer("left")
+ */
+    
+            

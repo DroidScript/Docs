@@ -212,3 +212,73 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Light
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.lighten1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        btn = MUI.CreateButtonFlat("BUTTON", 0.35)
+        lay.AddChild(btn)
+
+        btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
+        lay.AddChild(btn)
+
+        btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.lighten1)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        btn = MUI.CreateButtonFlat("BUTTON", 0.35)
+        lay.AddChild(btn)
+
+        btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
+        lay.AddChild(btn)
+
+        btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+        lay.AddChild(btn)
+
+    app.AddLayout(lay)
+ */
+    
+            
+    
+/**
+@sample Python Add Method
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        btn1 = MUI.AddButtonFlat(lay, "BUTTON 1", 0.35)
+        btn2 = MUI.AddButtonFlat(lay, "[fa-heart] BUTTON 2", 0.35)
+        btn3 = MUI.AddButtonFlat(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
+
+    app.AddLayout(lay)
+ */
+    
+            

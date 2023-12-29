@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    mode = app.GetRingerMode()
+    app.Alert(mode)
+ */
+    
+            

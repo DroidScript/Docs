@@ -28,3 +28,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show app path
+from native import app
+
+def OnStart():
+    path = app.GetAppPath()
+    app.Alert( path )
+ */
+    
+            

@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check WifiAccessPoint Enabled
+from native import app
+
+def OnStart():
+    wapEnabled = app.IsWifiApEnabled()
+    app.Alert(wapEnabled, "Wifi Access Point Enabled:")
+ */
+    
+            

@@ -56,3 +56,41 @@ function btn_OnTouch()
  */
     
             
+    
+/**
+@sample Python Play Local Sound File
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    btn = app.CreateButton("Press Me", 0.3, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+def btn_OnTouch():
+    app.PlaySound("/Sys/Snd/Trill.ogg")
+ */
+    
+            
+    
+/**
+@sample Python Play Remote Sound File
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    btn = app.CreateButton("Press Me", 0.3, 0.1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+def btn_OnTouch():
+    app.PlaySound("https://sgarman.net/silly.mp3")
+ */
+    
+            

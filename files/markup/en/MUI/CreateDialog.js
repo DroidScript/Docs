@@ -151,3 +151,66 @@ function OnTouch(val, btnTxt)
  */
     
             
+    
+/**
+@sample Python Basic & Light
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global dlg
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
+    btn.SetOnTouch(ShowDialog)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    text = "You can undone this process."
+    dlg = MUI.CreateDialog("Remove message", text, "REMOVE")
+
+def ShowDialog():
+    dlg.Show()
+ */
+    
+            
+    
+/**
+@sample Python Customize & Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+
+def OnStart():
+    global dlg
+    colors = MUI.colors.teal
+    app.InitializeUIKit(colors.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = MUI.CreateButtonRaised("SHOW DIALOG", 0.5)
+    btn.SetOnTouch(ShowDialog)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    text = "You can undone this process."
+    dlg = MUI.CreateDialog("Remove message", text, "REMOVE", "CLOSE", True)
+    dlg.SetOnTouch(OnTouch)
+
+def ShowDialog():
+    dlg.Show()
+
+def OnTouch(val, btnTxt):
+    if val and btnTxt == "REMOVE":
+        app.ShowPopup("Confirmed. Proceed an action")
+    else:
+        app.ShowPopup("You decline the confirmation.")
+ */
+    
+            

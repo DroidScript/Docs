@@ -40,3 +40,25 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Auto Start 'Hello World'
+from native import app
+
+def OnStart():
+    app.SetAutoStart( "Hello World" )
+    app.ShowPopup( "You may now restart DroidScript." )
+ */
+    
+            
+    
+/**
+@sample Python Unset Autostart
+from native import app
+
+def OnStart():
+    app.SetAutoStart( "" )
+    app.ShowPopup( "Autostart unset." )
+ */
+    
+            

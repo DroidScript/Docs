@@ -151,3 +151,78 @@ function AlertOnTouch(val)
  */
     
             
+    
+/**
+@sample Python Simple
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    text = "This is a sample alert text."
+    als = MUI.CreateAlertSimple(text)
+    als.Show()
+ */
+    
+            
+    
+/**
+@sample Python Custom
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    global als
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    text = "This is a sample alert text."
+    als = MUI.CreateAlertSimple(text, "GOT IT", color.darken2)
+    als.Show()
+
+    app.SetTimeout(CloseAlert, 4000)
+
+def CloseAlert():
+    als.Hide()
+ */
+    
+            
+    
+/**
+@sample Python Dark
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    global als
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btnShow = MUI.CreateButtonRound("SHOW ALERT")
+    btnShow.SetOnTouch(ShowAlert)
+    lay.AddChild(btnShow)
+
+    app.AddLayout(lay)
+
+    text = "This is a sample alert text."
+    als = MUI.CreateAlertSimple(text, "GOT IT", MUI.colors.green.darken2)
+    als.SetOnTouch(AlertOnTouch)
+
+def ShowAlert():
+    als.Show()
+
+def AlertOnTouch(val):
+    app.ShowPopup(val)
+ */
+    
+            

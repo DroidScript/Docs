@@ -33,3 +33,17 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Append file and get line count
+from native import app
+
+def OnStart():
+    app.WriteFile("myFile.txt", "Hello World from Write\n", "Append")
+
+    txt = app.ReadFile("myFile.txt")
+    length = len(txt.split("\n"))
+    app.ShowPopup("myFile contains " + str(length) + " lines")
+ */
+    
+            

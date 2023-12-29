@@ -496,3 +496,132 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Complete accordion implementation
+from hybrid import ui
+
+def OnStart():
+    global accords
+    # Creates a fullscreen main layout.
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    accords = ["Accordion 1", "Accordion 2", "Accordion 3"]
+
+    # Adds an accordion to the main layout
+    acc = ui.addAccordion(main, accords, "", 0.9)
+
+    # Secondary text to display
+    secTxt = [
+        "This is the secondary text 1",
+        "This is the secondary text 2",
+        "This is the secondary text 3"
+    ]
+
+    # sets the secondary text
+    acc.setSecondaryText(secTxt)
+
+    # Add ontouch event handler to the accordion
+    acc.setOnTouch(onTouch)
+
+    # Add controls to the first accordion layout
+    lay1 = acc.getLayout(0)
+    txt = ui.addText(lay1, "This is a text in the first layout.")
+
+    # Add controls to the second layout
+    lay2 = acc.getLayout(1)
+    btn = ui.addButton(lay2, "Button", "Primary")
+
+    # Add controls to the third layout
+    lay3 = acc.getLayout(2)
+    tfd = ui.addTextField(lay3, "", "Outlined", 0.3)
+    tfd.label = "Enter some text"
+
+def onTouch(index, expand):
+    msg = f"{accords[index]} is {'open' if expand else 'close'}"
+    ui.showPopup(msg)
+ */
+    
+            
+    
+/**
+@sample Python Items manipulation
+from hybrid import ui
+
+def OnStart():
+    global acc, count
+    count = 1
+
+    # Creates a fullscreen main layout.
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.01, 0, 0.01)
+
+    accords = ["Accordion 1", "Accordion 2", "Accordion 3"]
+
+    # Adds an accordion to the main layout
+    acc = ui.addAccordion(main, accords, "", 0.9)
+
+    lay = ui.addLayout(main, "Linear", "Horizontal", 0.9)
+    lay.childSpacing = "evenly"
+
+    # add a button controls to add or remove accordion item
+    btn1 = ui.addButton(lay, "Append Item")
+    btn1.setOnTouch(btn1_onTouch)
+
+    btn2 = ui.addButton(lay, "Add Item in index 1")
+    btn2.setOnTouch(btn2_onTouch)
+
+    btn3 = ui.addButton(lay, "Remove Item")
+    btn3.setOnTouch(btn3_onTouch)
+
+def btn1_onTouch(event):
+    # add an item at the bottom of the accordion
+    acc.addItem("New Bottom Title", "New secondary text")
+
+def btn2_onTouch(event):
+    title = "New Title " + str(count)
+    # insert item in the second index
+    acc.addItem(title, "New secondary text", 1)
+    count += 1
+
+def btn3_onTouch(event):
+    acc.removeItemByIndex(2)
+    ui.showPopup("Second item is removed")
+ */
+    
+            
+    
+/**
+@sample Python Custom styles
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen main layout.
+    main = ui.addLayout("main", "Linear", "VCenter")
+
+    items = ["Accordion 1", "Accordion 2", "Accordion 3"]
+    texts = ["Description for item 1", "Description for item 2", "Description for item 3"]
+
+    # Adds an accordion to the main layout
+    acc = ui.addAccordion(main, items, "", 0.9)
+    acc.setSecondaryText(texts)
+
+    # Sets the background color
+    acc.backColor = "#b2dfdb"
+
+    # Sets the text-sizes
+    acc.textSize1 = 18
+    acc.textSize2 = 14
+
+    # Sets the text colors
+    acc.textColor1 = "#00695c"
+    acc.textColor2 = "#009688"
+
+    # Sets the corner radius
+    acc.cornerRadius = 14
+
+    # Sets the expand icon
+    acc.expandIcon = "favorite"
+ */
+    
+            

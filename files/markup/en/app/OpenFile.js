@@ -29,3 +29,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    app.WriteFile("/sdcard/test.txt", "Hello")
+    app.OpenFile("/sdcard/test.txt", "text/plain", "Choose Editor")
+ */
+    
+            

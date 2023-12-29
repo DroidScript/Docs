@@ -36,3 +36,20 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Detect WiFi Changes
+from native import app
+
+def OnStart():
+    app.SetOnWifiChange(OnWifiChange)
+
+def OnWifiChange(state, ssid):
+    if state.endswith("ED"):
+        app.ShowPopup(state + "\n" + ssid)
+        app.HideProgress()
+    else:
+        app.ShowProgress(state)
+ */
+    
+            

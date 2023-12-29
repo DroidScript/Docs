@@ -130,3 +130,27 @@ function OnChange(value, index)
  */
     
             
+    
+/**
+@sample Python Basic
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = app.gfx.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = app.MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+        spn = app.MUI.CreateSpinner("Item 1, Item 2, Item 3", 0.6, 0.1)
+        spn.SetOnChange(OnChange)
+        lay.AddChild(spn)
+
+    app.AddLayout(lay)
+
+def OnChange(value, index):
+    app.ShowPopup(value)
+ */
+    
+            

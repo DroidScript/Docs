@@ -40,3 +40,15 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    app.SetDebug("adb")
+    switches = app.GetDebug()
+    app.Alert(switches)
+ */
+    
+            

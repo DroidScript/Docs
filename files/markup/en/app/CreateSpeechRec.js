@@ -146,3 +146,37 @@ function speech_OnError()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    global speech
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    btn = app.CreateButton( "Talk To Me", 0.3, 0.1 )
+    btn.SetOnTouch( btn_OnTouch )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+    speech = app.CreateSpeechRec()
+    speech.SetOnReady( speech_OnReady )
+    speech.SetOnResult( speech_OnResult )
+    speech.SetOnError( speech_OnError )
+
+def btn_OnTouch():
+    speech.Recognize()
+
+def speech_OnReady():
+    app.ShowPopup( "Listening...", "Short" )
+
+def speech_OnResult( results ):
+    app.ShowPopup( results[0] )
+
+def speech_OnError():
+    app.ShowPopup( "Please speak more clearly!" )
+ */
+    
+            

@@ -80,3 +80,49 @@ function CheckForeground()
  */
     
             
+    
+/**
+@sample Python Show Running Apps
+from native import app
+
+def OnStart():
+    app.ShowProgress()
+
+    lay = app.CreateLayout( "linear", "fillxy,vcenter" )
+
+    lst = app.CreateList( "", .9, .9 )
+    lst.SetTextSize1( 15 )
+    lay.AddChild( lst )
+
+    list = app.GetRunningApps()
+
+    for a in list:
+        body = f"user: {a.user}\npid: {a.pid}\nforeground: {a.foreground}"
+        lst.AddItem(a.name, body)
+
+    app.AddLayout( lay )
+
+    app.HideProgress()
+ */
+    
+            
+    
+/**
+@sample Python Is In Foreground
+from native import app
+
+def OnStart():
+    app.Animate(CheckForeground, 0.2)
+
+def CheckForeground(time, dtime):
+    apps = app.GetRunningApps()
+    name = app.GetPackageName()
+    if not app.IsAPK():
+        name += ":NewActivityProcess"
+
+    for a in apps:
+        if a.name == name:
+            app.ShowPopup("In Foreground: " + str(a.foreground))
+ */
+    
+            

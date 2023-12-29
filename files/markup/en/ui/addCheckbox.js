@@ -365,3 +365,108 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    # Add a checkbox control to the main layout
+    ckb = ui.addCheckbox(main, "This is checkbox label")
+
+    # Add a callback handler for `onTouch` event
+    ckb.setOnTouch(onTouch)
+
+def onTouch(value):
+    ui.showPopup(f"Value is {value}")
+ */
+    
+            
+    
+/**
+@sample Python Colors
+from hybrid import ui
+
+def OnStart():
+    global value
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
+
+    # Add a default checkbox control to the main layout
+    ckb1 = ui.addCheckbox(main, "This is checkbox label")
+    ckb1.setOnTouch(onTouch)
+
+    # Add a primary checkbox control to the main layout
+    ckb2 = ui.addCheckbox(main, "This is checkbox label", "Primary")
+    ckb2.setOnTouch(onTouch)
+
+    # Add a secondary checkbox control to the main layout
+    # and set its value to `True`
+    ckb3 = ui.addCheckbox(main, "This is checkbox label", "Secondary")
+    ckb3.value = True
+    ckb3.setOnTouch(onTouch)
+
+def onTouch(value):
+    ui.showPopup(f"Value is {value}")
+ */
+    
+            
+    
+/**
+@sample Python Text positions
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+    main.setChildMargins(0, 0.05, 0, 0.05)
+
+    # Add a checkbox with label on the right.
+    ckb1 = ui.addCheckbox(main, "Checkbox on the left", "Left")
+    ckb1.setOnTouch(onTouch)
+
+    # Add a checkbox with label on the bottom.
+    ckb2 = ui.addCheckbox(main, "Checkbox on the top", "Primary,Top")
+    ckb2.setOnTouch(onTouch)
+
+    # Add a checkbox with label on the left.
+    ckb3 = ui.addCheckbox(main, "Checkbox on the right", "Secondary,Right")
+    ckb3.setOnTouch(onTouch)
+
+    # Add a checkbox with label on top.
+    ckb4 = ui.addCheckbox(main, "Checkbox on the bottom", "Secondary,Bottom")
+    ckb4.setOnTouch(onTouch)
+
+def onTouch(value):
+    ui.showPopup(f"Value is {value}")
+ */
+    
+            
+    
+/**
+@sample Python Adding custom checkbox icon
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    # Adds checkbox control to the main layout
+    ckb = ui.addCheckbox(main, "This is checkbox label", "Left,Secondary")
+
+    # Set the checked icon to `favorite`
+    # and uncheck icon to `person`
+    ckb.setIcon("favorite", "person")
+
+    # Add a callback handler for `onTouch` event
+    ckb.setOnTouch(onTouch)
+
+def onTouch(value):
+    ui.showPopup(f"Value is {value}")
+ */
+    
+            

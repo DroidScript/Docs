@@ -37,3 +37,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python AddFAB
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    fab1 = MUI.AddFAB(lay, "favorite", None, "default")
+    fab2 = MUI.AddFAB(lay, "favorite", MUI.colors.deepPurple.lighten1, "outline")
+    fab3 = MUI.AddFAB(lay, "favorite", MUI.colors.teal.darken1, "elegant")
+
+    app.AddLayout(lay)
+ */
+    
+            

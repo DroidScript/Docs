@@ -50,3 +50,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    app.CopyFile("/Sys/Img/Hello.png", "/sdcard/Hello.png")
+    app.SendMail("myfriend@gmail.com", "MySubject", "Hello", "/sdcard/Hello.png")
+ */
+    
+            

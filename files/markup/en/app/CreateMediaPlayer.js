@@ -198,3 +198,23 @@ function player_OnComplete()
  */
     
             
+    
+/**
+@sample Python Playing Audio
+from native import app
+
+def OnStart():
+    global player
+    player = app.CreateMediaPlayer()
+    player.SetOnReady(Play)
+    player.SetOnComplete(player_OnComplete)
+    player.SetFile("/Sys/Snd/Poing.ogg")
+
+def Play():
+    player.Play()
+
+def player_OnComplete():
+    app.ShowPopup("OnComplete")
+ */
+    
+            

@@ -53,3 +53,17 @@ function OnBtList(name, address)
  */
     
             
+    
+/**
+@sample Python Basic
+from native import app
+
+def OnStart():
+    lst = app.CreateBluetoothList()
+    lst.SetOnTouch( OnBtList )
+
+def OnBtList(name, address):
+    app.Alert("Name: " + name + "\nAddress: " + address, "Result")
+ */
+    
+            

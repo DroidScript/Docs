@@ -34,3 +34,19 @@ function OnDebug(msg)
  */
     
             
+    
+/**
+@sample Python OnDebug
+from native import app
+
+def OnStart():
+    app.SetOnDebug( OnDebug )
+    app.Debug( "app started" )
+
+def OnDebug(msg):
+    app.SetDebug()
+    app.Alert( msg, "Received debug message:" )
+    app.SetDebug( True )
+ */
+    
+            

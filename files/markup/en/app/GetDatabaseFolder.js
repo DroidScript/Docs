@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show
+from native import app
+
+def OnStart():
+    dir = app.GetDatabaseFolder()
+    app.Alert(dir)
+ */
+    
+            

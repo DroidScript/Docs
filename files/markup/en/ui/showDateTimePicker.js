@@ -59,3 +59,22 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python DateTimePicker
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    btn = ui.addButton(main, "Show Date Time Picker", "Primary")
+    btn.setOnTouch(btn_onTouch)
+
+def btn_onTouch(event):
+    ui.showDateTimePicker(onDateTime)
+
+def onDateTime(val):
+    ui.showPopup(val)
+ */
+    
+            

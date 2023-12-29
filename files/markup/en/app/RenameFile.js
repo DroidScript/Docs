@@ -30,3 +30,16 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    oldfile = "test.txt"
+    newfile = "test2.txt"
+    app.WriteFile(oldfile, "Created: " + str(app.Date()))
+    app.RenameFile(oldfile, newfile)
+ */
+    
+            

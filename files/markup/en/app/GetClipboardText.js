@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python show latest clipboard text
+from native import app
+
+def OnStart():
+    text = app.GetClipboardText()
+    app.Alert(text)
+ */
+    
+            

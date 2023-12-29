@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Country Code
+from native import app
+
+def OnStart():
+    code = app.GetCountryCode()
+    app.Alert(code)
+ */
+    
+            

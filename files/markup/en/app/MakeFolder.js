@@ -31,3 +31,18 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Create folder
+from native import app
+
+def OnStart():
+    app.MakeFolder("myFolder")
+
+    if app.FolderExists("myFolder"):
+        app.ShowPopup("myFolder exists!")
+    else:
+        app.ShowPopup("myFolder does not exist!")
+ */
+    
+            

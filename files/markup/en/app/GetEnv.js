@@ -26,3 +26,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show PATH environment variable
+from native import app
+
+def OnStart():
+    envPath = app.GetEnv("PATH")
+    app.Alert(envPath)
+ */
+    
+            

@@ -46,3 +46,31 @@ function btn_OnTouch()
  */
     
             
+    
+/**
+@sample Python Pressing Buttons
+from native import app
+
+def OnStart():
+    global btn
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+
+    btn = app.CreateButton( "Press Me", 0.3, 0.1 )
+    btn.SetOnTouch( btn_OnTouch )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+    app.Animate( SimulateTouch, 1/2 )
+
+def SimulateTouch(time, dtime):
+    global i
+    app.SimulateTouch( btn, 0.5, 0.5, "down" )
+
+i = 1
+def btn_OnTouch():
+    app.ShowPopup( "Hello World " + str(i) )
+    i += 1
+ */
+    
+            

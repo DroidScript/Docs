@@ -63,23 +63,7 @@ ${info} * ${_desc}
         const outputFile = folder + fileName;
         const data = obj[key];
 
-        let _desc = data.desc || "";
-        if (!/^#.*.md$/.test(_desc)) _desc = _desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ").replace(/\*\//g, '*\\/');
-        else _desc = "";
-
-        let info = "";
-        // if (data.name && data.name !== key) info += ` * @name ${data.name}\n`;
-        if (data.name && data.name !== key) info += ` * @name ${data.name}\n`;
-        if (data.isval) info += ` * @prop\n`;
-        if (data.abbrev) info += ` * @abbrev ${data.abbrev}\n`;
-        if (data.shortDesc) info += ` * @brief ${data.shortDesc}\n`;
-
-
-        str += `
-/** # ${key} #
-${info} * ${_desc}
- * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${key}(${data.pNames ? data.pNames.join(", ") : ""}) $$ 
-`;
+        str += renderInfo(scope, key, data);
 
         str += extractParams(data, usedIDs);
 
@@ -100,59 +84,88 @@ ${info} * ${_desc}
         // methods
         if (data.subf) {
             str += `\n\n// ------------- VISIBLE METHODS & PROPERTIES ------------- \n\n`;
-            for (const method in data.subf) {
-                let methodData = data.subf[method];
+            str += renderSubf(data, usedIDs);
+        }
 
-                if (typeof methodData === "string") {
-                    if (!methodData.startsWith("#")) throw Error("Unexpected subf string " + methodData);
-                    if (/[a-z]/i.test(methodData[1])) methodData = methodData.slice(1);
-                    const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || '';
-                    str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
-                    usedIDs[method] ||= methodData;
-                }
+        // samples
 
-                else if (methodData.isval) {
-                    const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc}`;
-                    str += `
+        // samples
+        let samples = "";
+        const sampFile = path + "/samples/" + key + ".txt";
+        if (fs.existsSync(sampFile)) samples += renderSamples(sampFile);
+
+        const pysampFile = path + "/samples/" + key + "-py.txt";
+        if (fs.existsSync(pysampFile)) samples += renderSamples(pysampFile, "Python");
+
+        if (fs.existsSync(sampFile)) str += "\n\n// ------------- SAMPLES ------------- \n\n";
+        if (samples) str += samples;
+
+        await fsp.writeFile(outputFile, str);
+    }
+}
+
+/** @type {(scope:string, name: string, data: UndefinedPartial<DSMethod>) => string} */
+function renderInfo(scope, name, data) {
+    let _desc = data.desc || "";
+    if (!/^#.*.md$/.test(_desc)) _desc = _desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ").replace(/\*\//g, '*\\/');
+    else _desc = "";
+
+    let info = "";
+    // if (data.name && data.name !== key) info += ` * @name ${data.name}\n`;
+    if (data.name && data.name !== name) info += ` * @name ${data.name}\n`;
+    if (data.isval) info += ` * @prop\n`;
+    if (data.abbrev) info += ` * @abbrev ${data.abbrev}\n`;
+    if (data.shortDesc) info += ` * @brief ${data.shortDesc}\n`;
+
+    return `
+/** # ${name} #
+${info} * ${_desc}
+ * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${name}(${data.pNames ? data.pNames.join(", ") : ""}) $$ 
+`;
+}
+
+/** @type {(data: UndefinedPartial<DSMethod>, usedIDs: Obj<string>) => string} */
+function renderSubf(data, usedIDs) {
+    let str = "";
+    for (const method in data.subf) {
+        let methodData = data.subf[method];
+
+        if (typeof methodData === "string") {
+            if (!methodData.startsWith("#")) throw Error("Unexpected subf string " + methodData);
+            if (/[a-z]/i.test(methodData[1])) methodData = methodData.slice(1);
+            const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || '';
+            str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
+            usedIDs[method] ||= methodData;
+        }
+
+        else if (methodData.isval) {
+            const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc}`;
+            str += `
 /** ### ${method}
  * @prop${brief || ''}
  * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : ""}
  * @returns ${methodData.retval}
  */
 \n                    `;
-                }
+        }
 
-                else {
-                    const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc || ''}`;
-                    str += `
+        else {
+            const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc || ''}`;
+            str += `
 /** ### ${method} ###${brief || ''}
  * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : ""}
  * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
 `;
 
-                    str += extractParams(methodData, usedIDs);
+            str += extractParams(methodData, usedIDs);
 
-                    if (methodData.retval)
-                        str += ` * @returns ${methodData.retval}\n`;
+            if (methodData.retval)
+                str += ` * @returns ${methodData.retval}\n`;
 
-                    str += ` */\n\n`;
-                }
-            }
+            str += ` */\n\n`;
         }
-
-        // samples
-
-        // samples
-        const sampFile = path + "/samples/" + key + ".txt";
-        if (fs.existsSync(sampFile)) {
-            str += "\n\n// ------------- SAMPLES ------------- \n\n";
-            const cmpSamp = fs.readFileSync(sampFile, "utf8");
-            // str += `/** @Sample\n${cmpSamp}\n */\n\n`;
-            str += renderSamples(cmpSamp);
-        }
-
-        await fsp.writeFile(outputFile, str);
     }
+    return str;
 }
 
 const split0 = (s = '', t = '') => s.substring(0, s.indexOf(t)) || s;
@@ -180,9 +193,11 @@ function extractParams(methodData, usedIDs) {
     return str;
 }
 
-/** @param {string} raw */
-function renderSamples(raw) {
+/** @param {string} file */
+function renderSamples(file, ext = "") {
+    const raw = fs.readFileSync(file, "utf8").trim();
     if (!raw) return "";
+
     let str = "";
     const strArr = raw.split(/<\/sample( [^>]+)?>/);
     strArr.forEach(samp => {
@@ -193,7 +208,7 @@ function renderSamples(raw) {
             str += `
     
 /**
-@sample ${name}
+@sample ${ext && ext + " "}${name}
 ${cod}
  */
     

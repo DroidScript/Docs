@@ -28,3 +28,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check Locatoin Enabled
+from native import app
+
+def OnStart():
+    <b>locEnabled = app.IsLocationEnabled()</b>
+    app.Alert(locEnabled, "Location Enabled:")
+ */
+    
+            

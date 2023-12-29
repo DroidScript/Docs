@@ -30,3 +30,17 @@ function OnWifiChange( state, ssid )
  */
     
             
+    
+/**
+@sample Python Conect to DS WiFi AP
+from native import app
+
+def OnStart():
+    app.WifiConnect("DS WiFi AP", "mypass")
+    app.SetOnWifiChange(OnWifiChange)
+
+def OnWifiChange(state, ssid):
+    app.ShowPopup(ssid + " " + state)
+ */
+    
+            

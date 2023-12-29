@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show External Folder
+from native import app
+
+def OnStart():
+    dir = app.GetExternalFolder()
+    app.Alert(dir)
+ */
+    
+            

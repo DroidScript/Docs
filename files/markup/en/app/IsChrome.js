@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Check APK
+from native import app
+
+def OnStart():
+    isChrome = app.IsChrome()
+    app.Alert(isChrome, "is Chrome:")
+ */
+    
+            

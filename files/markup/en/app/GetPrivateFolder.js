@@ -29,3 +29,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show
+from native import app
+
+def OnStart():
+    path = app.GetPrivateFolder( "temp" )
+    app.Alert( path )
+ */
+    
+            

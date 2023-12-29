@@ -104,3 +104,22 @@ function email_OnStatus( status )
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    email = app.CreateEmail( "mymail@gmail.com", "MyPass" )
+    email.SetSMTP( "smtp.gmail.com", 465 )
+    email.SetOnStatus( email_OnStatus )
+
+    app.ShowProgress( "Sending..." )
+    email.Send( "My Subjewct", "My Content", "mymail@yahoo.com", "myothermail@gmail.com" )
+
+def email_OnStatus( status ):
+    app.HideProgress()
+    app.ShowPopup( status )
+ */
+    
+            

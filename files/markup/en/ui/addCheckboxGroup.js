@@ -549,3 +549,128 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize checkbox items
+    items = [
+        "Checkbox item 1",
+        "Checkbox item 2",
+        "Checkbox item 3"
+    ]
+
+    # Add a checkbox group to the main layout.
+    ckg = ui.addCheckboxGroup(main, items)
+
+    # Add a callback handler for `onTouch` event
+    ckg.setOnTouch(onTouch)
+
+def onTouch(value, item, index, event):
+    ui.showPopup(f"Value of {item} is {value}")
+ */
+    
+            
+    
+/**
+@sample Python Colors
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.childSpacing = "evenly"
+
+    # Initialize the checkbox items
+    list = [
+        "Checkbox item 1",
+        "Checkbox item 2",
+        "Checkbox item 3"
+    ]
+
+    # Add a default CheckboxGroup to the main layout
+    ckg1 = ui.addCheckboxGroup(main, list)
+    ckg1.setOnTouch(onTouch)
+
+    # Add a primary CheckboxGroup to the main layout
+    ckg2 = ui.addCheckboxGroup(main, list, "Primary")
+    ckg2.setOnTouch(onTouch)
+
+    # Add a secondary CheckboxGroup to the main layout
+    ckg3 = ui.addCheckboxGroup(main, list, "Secondary")
+    ckg3.setOnTouch(onTouch)
+
+def onTouch(value, item, index, event):
+    ui.showPopup(f"Value of {item} is {value}")
+ */
+    
+            
+    
+/**
+@sample Python Elevated
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize the checkbox list items
+    list = [
+        "Checkbox item 1",
+        "Checkbox item 2",
+        "Checkbox item 3"
+    ]
+
+    # Add an elevated checkbox group to the main layout.
+    ckg = ui.addCheckboxGroup(main, list, "Elevated,Secondary", 0.6)
+
+    # Set the label of the CheckboxGroup
+    ckg.label = "Select as many as you can"
+
+    # Set the elevation of the CheckboxGroup container
+    ckg.elevation = 4
+
+    # Add a callback handler for `onTouch` event
+    ckg.setOnTouch(onTouch)
+
+def onTouch(value, item, index, event):
+    ui.showPopup(f"Value of {item} is {value}")
+ */
+    
+            
+    
+/**
+@sample Python Outlined
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize the checkbox items
+    list = [
+        "Checkbox item 1",
+        "Checkbox item 2",
+        "Checkbox item 3"
+    ]
+
+    # Add an outlined checkbox group to the main layout.
+    ckg = ui.addCheckboxGroup(main, list, "Outlined,Secondary", 0.9)
+    ckg.setOnTouch(onTouch)
+
+    # Set the label of the CheckboxGroup items
+    ckg.label = "Select as many as you can"
+
+    # Set the cornerRadius to `20`
+    ckg.cornerRadius = 20
+
+def onTouch(value, item, index, event):
+    ui.showPopup(f"Value of {item} is {value}")
+ */
+    
+            

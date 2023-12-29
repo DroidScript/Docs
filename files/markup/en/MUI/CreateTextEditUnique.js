@@ -152,3 +152,23 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Unique Text Input
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    color = app.gfx.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = app.MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+        tef = app.MUI.CreateTextEditUnique(0.8, "Left", "Search for something")
+        lay.AddChild(tef)
+
+    app.AddLayout(lay)
+ */
+    
+            

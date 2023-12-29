@@ -37,3 +37,24 @@ function OnWifi( ssid )
  */
     
             
+    
+/**
+@sample Python Conect to DS WiFi AP
+from native import app
+
+def OnStart():
+    global lst
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+    lst = app.CreateList("", 1, 1)
+    lay.AddChild(lst)
+    app.AddLayout(lay)
+
+    app.ShowProgress()
+    app.WifiScan(OnWifi)
+
+def OnWifi(ssid):
+    lst.SetList(ssid, "\\|")
+    app.HideProgress()
+ */
+    
+            

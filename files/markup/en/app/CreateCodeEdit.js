@@ -361,3 +361,22 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python dark scheme
+from hybrid import ui
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+
+    cde = ui.CodeEdit("", 1, 1)
+    cde.SetText(app.ReadFile("/assets/templates/js/Simple.js"))
+    cde.SetLanguage(".js")
+    cde.SetColorScheme("dark")
+    lay.AddChild(cde)
+
+    app.AddLayout(lay)
+ */
+    
+            

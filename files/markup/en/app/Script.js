@@ -53,3 +53,33 @@ function OnStart() {
  */
     
             
+    
+/**
+@sample Python Deferred Loading (recommended)
+from native import app
+
+app.WriteFile( "script.js", "num = 7;\nfunction computeNum() { return 6 * num; }" )
+app.LoadScript( "script.js" )
+
+def OnStart():
+    app.ShowPopup( "script.js loaded." )
+    app.Alert( computeNum(), "computed number: " )
+ */
+    
+            
+    
+/**
+@sample Python Inline Loading
+from native import app
+
+app.WriteFile( "script.js", "num = 7;\nfunction computeNum() { return 6 * num; }" )
+
+def OnStart():
+    app.LoadScript( "script.js", True )
+
+    # without noDefer True computeNum won't be defined
+    app.ShowPopup( "script.js loaded." )
+    app.Alert( computeNum(), "computed number: " )
+ */
+    
+            

@@ -25,3 +25,13 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Example
+from native import app
+
+def OnStart():
+    app.Vibrate( "0,100,30,100,50,300" )
+ */
+    
+            

@@ -37,3 +37,21 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Catch JS Errors
+from native import app
+
+def OnStart():
+    app.SetOnError(OnError)
+    raise Exception("My thrown error")
+
+<b>def OnError(msg):
+    text = 'Message: "' + msg + '"\n' +
+           'Line: ' + str(line) + '\n' +
+           'File: "' + app.Uri2Path(file) + '"'
+
+    app.Alert(text, "Received error message:")</b>
+ */
+    
+            

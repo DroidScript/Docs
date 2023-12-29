@@ -82,3 +82,17 @@ function ShowRSSI()
  */
     
             
+    
+/**
+@sample Python Show RSSI
+from native import app
+
+def OnStart():
+    app.Animate(ShowRSSI, 1)
+
+def ShowRSSI(time, dtime):
+    rssi = app.GetRSSI()
+    app.ShowPopup(str(rssi))
+ */
+    
+            

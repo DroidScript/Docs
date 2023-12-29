@@ -26,3 +26,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show if Speaker is Enabled
+from native import app
+
+def OnStart():
+    speaker = app.GetSpeakerPhone()
+    app.Alert(str(speaker))
+ */
+    
+            

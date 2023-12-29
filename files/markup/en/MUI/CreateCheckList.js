@@ -153,3 +153,79 @@ function OnSubmit(lst)
  */
     
             
+    
+/**
+@sample Python Light
+# cfg.Light, cfg.MUI
+
+from native import app
+import json
+
+def OnStart():
+    global chk, lst
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = MUI.CreateButtonRaised("SHOW CHECKLIST", 0.6)
+    btn.SetOnTouch(ShowCheckList)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    lst = [
+        {"name": "Apple", "check": False},
+        {"name": "Mango", "check": True},
+        {"name": "Orange", "check": True},
+        {"name": "Banana"}
+    ]
+    chk = MUI.CreateCheckList("Choose a fruit", lst)
+    chk.SetOnSubmit(OnSubmit)
+
+def ShowCheckList():
+    chk.Show()
+
+def OnSubmit(lst):
+    app.ShowPopup(json.dumps(lst))
+ */
+    
+            
+    
+/**
+@sample Python Dark, Bottom
+# cfg.Dark, cfg.MUI
+
+from native import app
+import json
+
+def OnStart():
+    global chk, lst
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = MUI.CreateButtonRaised("SHOW CHECKLIST", 0.6)
+    btn.SetOnTouch(ShowCheckList)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    lst = [
+        {"name": "Apple", "check": False},
+        {"name": "Mango", "check": True},
+        {"name": "Orange", "check": True},
+        {"name": "Banana"}
+    ]
+    chk = MUI.CreateCheckList("Choose a fruit", lst, None, True)
+    chk.SetOnSubmit(OnSubmit)
+
+def ShowCheckList():
+    chk.Show()
+
+def OnSubmit(lst):
+    app.ShowPopup(json.dumps(lst))
+ */
+    
+            

@@ -147,3 +147,69 @@ function OnSelect(choice)
  */
     
             
+    
+/**
+@sample Python Basic
+# cfg.Light, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    global lst
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
+    btn.SetOnTouch(ShowMenu)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    list = "Find, Edit, Share, Settings, About"
+    lst = MUI.CreateMenu(list, None, None, "Top, Right")
+    lst.SetOnSelect(OnSelect)
+
+def ShowMenu():
+    lst.Show()
+
+def OnSelect(choice, index):
+    app.ShowPopup(choice)
+ */
+    
+            
+    
+/**
+@sample Python Dark & Bottom,Right
+# cfg.Dark, cfg.MUI
+
+from native import app
+from native import cfg
+
+def OnStart():
+    global lst
+    color = MUI.colors.teal
+    app.InitializeUIKit(color.teal)
+
+    lay = MUI.CreateLayout("Linear", "FillXY,VCenter")
+
+    btn = MUI.CreateButtonRaised("SHOW MENU", 0.35)
+    btn.SetOnTouch(ShowMenu)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+    list = "Find, Edit, Share, Settings, About"
+    lst = MUI.CreateMenu(list, None, None, "Bottom, Right")
+    lst.SetOnSelect(OnSelect)
+
+def ShowMenu():
+    lst.Show()
+
+def OnSelect(choice, index):
+    app.ShowPopup(choice)
+ */
+    
+            

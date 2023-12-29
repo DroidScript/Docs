@@ -25,3 +25,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python GetTop
+from native import app
+
+def OnStart():
+    top = app.GetTop()
+    app.Alert(top, "Top")
+ */
+    
+            

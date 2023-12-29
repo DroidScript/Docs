@@ -28,3 +28,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    lang = app.GetLanguage()
+    app.Alert( lang )
+ */
+    
+            

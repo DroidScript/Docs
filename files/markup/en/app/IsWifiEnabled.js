@@ -27,3 +27,14 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python 
+from native import app
+
+def OnStart():
+    wifiEnabled = app.IsWifiEnabled()
+    app.Alert(wifiEnabled, "Wifi Enabled:")
+ */
+    
+            

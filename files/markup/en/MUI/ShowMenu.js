@@ -54,3 +54,25 @@ function btn_OnTouch() {
  */
     
             
+    
+/**
+@sample Python Basic usage
+# cfg.Light, cfg.MUI
+
+from native import app
+
+def OnStart():
+    lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
+
+    btn = MUI.CreateFabOutline("more_vert")
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+
+    app.AddLayout(lay)
+
+def btn_OnTouch():
+    menu = MUI.ShowMenu(this, "Item 1, Item 2, Item 3")
+    menu.SetOnSelect(lambda item: app.ShowPopup(item))
+ */
+    
+            

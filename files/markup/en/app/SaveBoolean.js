@@ -37,3 +37,22 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Detect First Start
+from native import app
+
+file = "demofile"
+
+def OnStart():
+    first = app.LoadBoolean( "first", True, file )
+
+    if first:
+        app.ShowPopup( "You ran this demo for the first time!" )
+    else:
+        app.ShowPopup( "This is not the first time you have run this demo." )
+
+    app.SaveBoolean( "first", False, file )
+ */
+    
+            

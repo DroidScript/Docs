@@ -29,3 +29,18 @@ function OnStart()
  */
     
             
+    
+/**
+@sample Python Show Shared Files
+from native import app
+
+def OnStart():
+    files = app.GetSharedFiles()
+
+    if files:
+        app.Alert("\n".join(files))
+    else:
+        app.ShowPopup("No shared files received.")
+ */
+    
+            

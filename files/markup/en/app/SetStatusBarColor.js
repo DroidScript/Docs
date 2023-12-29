@@ -25,3 +25,13 @@ function OnStart() {
  */
     
             
+    
+/**
+@sample Python Set StatusBar Color
+from native import app
+
+def OnStart():
+    app.SetStatusBarColor("green")
+ */
+    
+            

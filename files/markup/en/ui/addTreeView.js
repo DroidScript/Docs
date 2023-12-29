@@ -340,3 +340,92 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Items
+items = {
+    "Group 1": {
+        "Item 1": "",
+        "Item 2": "",
+        "Item 3": ""
+    },
+    "Group 2": {
+        "Item 1": "",
+        "Item 2": "",
+        "Item 3": ""
+    },
+    "Applications": {
+        "Editor": "",
+        "Productivity": "",
+        "Social Media": {
+            "TikTok": "",
+            "YouTube": "",
+            "Meta": {
+                "Facebook": "",
+                "Instagram": "",
+                "Whatsapp": "",
+                "Messenger": ""
+            }
+        }
+    }
+}
+ */
+    
+            
+    
+/**
+@sample Python Items with icons
+items = {
+    "Folders": {
+        "Music": "music_note",
+        "Photos": "photo",
+        "Favorites": "favorite"
+    }
+}
+ */
+    
+            
+    
+/**
+@sample Python Basic TreeView
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "Center,ScrollY,FillXY")
+
+    items = {
+        "Group 1": {
+            "Item 1": "",
+            "Item 2": "",
+            "Item 3": ""
+        },
+        "Group 2": {
+            "Item 1": "",
+            "Item 2": "",
+            "Item 3": ""
+        },
+        "Applications": {
+            "Editor": "",
+            "Productivity": "",
+            "Social Media": {
+                "TikTok": "",
+                "YouTube": "",
+                "Meta": {
+                    "Facebook": "",
+                    "Instagram": "",
+                    "Whatsapp": "",
+                    "Messenger": ""
+                }
+            }
+        }
+    }
+
+    trv = ui.addTreeView(main, items, "Primary")
+    trv.setMargins(0, 5, 0, 0, "rem")
+    trv.setOnTouch(onTouch)
+
+def onTouch(value, path):
+    ui.showPopup("Value: " + value + " Path: " + path)
+ */
+    
+            

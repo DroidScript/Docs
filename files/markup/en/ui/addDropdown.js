@@ -404,3 +404,59 @@ class Main extends App
  */
     
             
+    
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    # Create a fullscreen linear layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize items to show in the dropdown
+    items = ["Item 1", "Item 2", "Item 3"]
+
+    # Add Dropdown control to the main layout.
+    dpd = ui.addDropdown(main, items)
+
+    # Add a callback handler for `onChange` event on the Dropdown control
+    dpd.setOnChange(onChange)
+
+def onChange(text, index):
+    ui.showPopup("Value is " + text)
+ */
+    
+            
+    
+/**
+@sample Python Custom styles
+from hybrid import ui
+
+def OnStart():
+    # Create a fullscreen linear layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Initialize dropdown items
+    items = ["Item 1", "Item 2", "Item 3"]
+
+    # Add a Dropdown control to the main layout
+    # and pass `Outlined` and `Primary` options for styling
+    dpd = ui.addDropdown(main, items, "Outlined,Primary")
+
+    # Set the label property of the Dropdown
+    dpd.label = "Choose an item"
+
+    # Set the corner radius to 16px
+    dpd.cornerRadius = 16
+
+    # Set the text size to 18
+    dpd.textSize = 18
+
+    # Add a callback handler for `onChange` event of the Dropdown control
+    dpd.setOnChange(onChange)
+
+def onChange(text, index):
+    ui.showPopup("Value is " + text)
+ */
+    
+            

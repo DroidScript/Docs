@@ -33,3 +33,19 @@ function dlg_OnTouch( account )
  */
     
             
+    
+/**
+@sample Python Get Accounts
+from native import app
+
+def OnStart():
+    accounts = app.GetAccounts()
+    dlg = app.CreateListDialog( "Select an account:", accounts )
+    dlg.SetOnTouch( dlg_OnTouch )
+    dlg.Show()
+
+def dlg_OnTouch( account, checked):
+    app.ShowPopup( "Selected Account: " + account )
+ */
+    
+            
