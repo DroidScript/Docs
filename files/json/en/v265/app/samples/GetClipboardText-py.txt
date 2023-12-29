@@ -1,7 +1,0 @@
-<sample show latest clipboard text>
-from native import app
-
-def OnStart():
-    text = app.GetClipboardText()
-    app.Alert(text)
-</sample>

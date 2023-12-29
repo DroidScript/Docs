@@ -1,7 +1,0 @@
-<sample>
-from native import app
-
-def OnStart():
-    mode = app.GetRingerMode()
-    app.Alert(mode)
-</sample>

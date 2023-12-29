@@ -1,6 +1,0 @@
-<sample Example>
-from native import app
-
-def OnStart():
-    app.SetSharedApp("Hello World")
-</sample>

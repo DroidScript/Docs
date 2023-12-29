@@ -1,7 +1,0 @@
-<sample Show Package Name>
-from native import app
-
-def OnStart():
-    pkg = app.GetPackageName()
-    app.Alert( pkg )
-</sample>

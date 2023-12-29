@@ -1,7 +1,0 @@
-<sample Show Charge Type>
-from native import app
-
-def OnStart():
-    type = app.GetChargeType()
-    app.Alert(type)
-</sample>

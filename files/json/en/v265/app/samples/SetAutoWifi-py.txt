@@ -1,6 +1,0 @@
-<sample Auto Enable WiFi>
-from native import app
-
-def OnStart():
-    app.SetAutoWifi(True)
-</sample>

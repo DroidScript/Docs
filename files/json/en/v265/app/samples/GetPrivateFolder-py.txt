@@ -1,7 +1,0 @@
-<sample Show>
-from native import app
-
-def OnStart():
-    path = app.GetPrivateFolder( "temp" )
-    app.Alert( path )
-</sample>

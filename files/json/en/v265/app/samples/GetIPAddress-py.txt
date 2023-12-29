@@ -1,7 +1,0 @@
-<sample>
-from native import app
-
-def OnStart():
-    ip = app.GetIPAddress()
-    app.Alert( ip )
-</sample>
