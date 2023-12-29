@@ -20,5 +20,5 @@ def ShowModal():
     modal.Show()
 
 def OnControlTouch(isOk, btnText):
-    app.ShowPopup(isOk+" : "+btnText)</sample>
+    app.ShowPopup(isOk+" : "+btnText)
 </sample>

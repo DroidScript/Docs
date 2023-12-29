@@ -23,5 +23,5 @@ def ShowPicker():
     clr.Show()
 
 def OnSelect(color):
-    app.ShowPopup(color)</sample>
+    app.ShowPopup(color)
 </sample>

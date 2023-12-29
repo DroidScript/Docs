@@ -12,5 +12,5 @@ def OnStart():
     tef = MUI.CreateTESearchElegant(0.8, "Search for music", "music_note", "Right", None, "Small,Border")
     lay.AddChild(tef)
 
-    app.AddLayout(lay)</sample>
+    app.AddLayout(lay)
 </sample>

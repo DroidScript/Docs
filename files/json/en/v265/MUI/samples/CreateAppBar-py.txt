@@ -32,5 +32,5 @@ def OnMenuTouch():
     app.ShowPopup("You click the menu. Might as well display a drawer.")
 
 def OnControlTouch(text, index):
-    app.ShowPopup("You click " + text + ": Control index = "+index)</sample>
+    app.ShowPopup("You click " + text + ": Control index = "+index)
 </sample>

@@ -270,10 +270,3 @@ def OnStart():
  */
     
             
-    
-/**
-@sample Python <sample
-<sample Get current GPS location
- */
-    
-            

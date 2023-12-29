@@ -4,6 +4,4 @@ from native import app
 def OnStart():
         mac = app.GetMacAddress()
         app.ShowPopup(mac)
-    </sample>
-</xml>
 </sample>

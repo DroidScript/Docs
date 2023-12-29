@@ -4,6 +4,4 @@ from native import app
 def OnStart():
         path = app.GetMediaFile("Hello World", ".png")
         app.Alert(path)
-    </sample>
-</xml>
 </sample>

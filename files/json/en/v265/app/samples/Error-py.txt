@@ -189,7 +189,3 @@ from native import app
 def OnStart():
     app.DisableGps()
 </sample>
-
-
-<sample Get current GPS location
-</sample>

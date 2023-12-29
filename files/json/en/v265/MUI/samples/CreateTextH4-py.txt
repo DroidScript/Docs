@@ -13,5 +13,5 @@ def OnStart():
     h4 = MUI.CreateTextH4("Some Heading", 0.8, 0.2, "Multiline", None, "Medium")
     lay.AddChild(h4)
 
-    app.AddLayout(lay)</sample>
+    app.AddLayout(lay)
 </sample>

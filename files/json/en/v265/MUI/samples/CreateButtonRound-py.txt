@@ -10,5 +10,5 @@ def OnStart():
     btn2 = MUI.AddButtonRound(lay, "[fa-heart] BUTTON 2", 0.35)
     btn3 = MUI.AddButtonRound(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
 
-    app.AddLayout(lay)</sample>
+    app.AddLayout(lay)
 </sample>

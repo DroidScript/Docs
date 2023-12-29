@@ -10,17 +10,5 @@
  * @param {str_col} color 
  * @returns obj
 */
-
-
-
-
-// ------------- SAMPLES ------------- 
-
-
-    
-/**
-@sample Python Hello
-Hello World
- */
     
             

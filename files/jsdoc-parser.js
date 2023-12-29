@@ -88,7 +88,9 @@ function LoopFiles(SOURCE_DIR, fn) {
 
             // write sample.txt file
             const sampleFile = path.join(outputSamples, data.name + ".txt");
-            if (!_errors) fs.writeFileSync(sampleFile, data.samples);
+            if (!_errors && data.samples.js) fs.writeFileSync(sampleFile, data.samples.js);
+            const pysampleFile = path.join(outputSamples, data.name + "-py.txt");
+            if (!_errors && data.samples.py) fs.writeFileSync(pysampleFile, data.samples.py);
         }
         else if (file.endsWith(".md")) {
             const data = renderMdFile(folderPath, objJson);
@@ -196,9 +198,6 @@ function renderFile(filePath, objJson, baseJson, navs) {
     }
     else { desc += "\n"; }
 
-    if (data.samples.trim()) data.samples = data.samples.trim() + "\n";
-    else data.samples = " ";
-
     return {
         name: data.name,
         desc,
@@ -265,6 +264,10 @@ function Warn(msg, lvl = 2) {
     if (verbose >= lvl) console.warn(`\x1b[30mWarning: ${msg}\x1b[37m`);
 }
 
+
+/** @ts-ignore @type {<T>(O: T) => (Extract<keyof T, string>)[]} */
+function keys(o) { return Object.keys(o || []); }
+
 /**
  * @param {Obj<DSFunction | string>} objJson
  * @param {import('esprima').Token[]} tokens
@@ -277,7 +280,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
     let func = {};
     objJson[name] = func;
 
-    let samples = "";
+    const samples = { js: "", py: "" };
     /** @type {string[][]} */
     const props = [];
     /** @type {string[]} */
@@ -290,10 +293,12 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
             const mt = c.value.match(/@\s*(ex|s)ample *-? *(.*)/i);
             if (mt) {
                 const t = mt[2].trim() || '';
+                const ext = t.startsWith("Python") ? "py" : "js";
+                const title = t.slice(ext === "py" ? 7 : 0).trim();
+
                 const cod = c.value.substring(c.value.indexOf('\n', mt.index)).trim();
-                samples += `\n\n<sample${t && ' ' + t}>\n`;
-                samples += cod.replace(/\*_/g, '*/');
-                samples += "\n</sample>";
+                const sample = `\n\n<sample${title && ' ' + title}>\n${cod.replace(/\*_/g, '*/')}\n</sample>`;
+                samples[ext] += sample;
             }
             else if (c.value.includes('```')) { /* empty */ }
 
@@ -305,7 +310,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
             // Sample.txt
             else if (/@\s*sample/i.test(c.value)) {
                 const _samp = c.value.slice(c.value.indexOf("\n") + 1);
-                samples += `\n\n${_samp}\n\n`;
+                samples.js += `\n\n${_samp}\n\n`;
                 console.log("reached @sample despite /(ex|s)ample/");
             }
 
@@ -345,6 +350,9 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
         if (!v.desc) Warn(`empty desc in ${name}.${k}`);
         if (!v.shortDesc) Warn(`empty shortDesc in ${name}.${k}`, 3);
     }
+
+    for (const ext of keys(samples))
+        samples[ext] = samples[ext].trim();
 
     return {
         json,

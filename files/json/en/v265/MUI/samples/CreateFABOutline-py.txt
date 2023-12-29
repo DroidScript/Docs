@@ -16,5 +16,5 @@ def OnStart():
     app.AddLayout(lay)
 
 def OnClick():
-    app.ShowPopup("You click FAB")</sample>
+    app.ShowPopup("You click FAB")
 </sample>

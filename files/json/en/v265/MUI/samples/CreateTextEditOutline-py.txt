@@ -17,5 +17,5 @@ def OnStart():
     app.AddLayout(lay)
 
 def OnEnter():
-    app.ShowPopup(tef.GetText())</sample>
+    app.ShowPopup(tef.GetText())
 </sample>
