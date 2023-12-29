@@ -65,7 +65,7 @@
 		You can also put the cfg.Game flag at the top level of your script to write the game code immediately in your main script.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Game_Bounce.js</h3>
-			<div id="examp2" class="code-js" style="font-size:70%">
+			<div id="examp1" class="code-js" style="font-size:70%">
 				<span class="token comment">//Configure app for landscape game mode.</span><br>
 				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">,</span> cfg<span class="token punctuation">.</span>Portrait<br>
 				<br>
@@ -104,7 +104,7 @@
 				    gfx<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">}</span>
 			</div>
-			<div id="examp2" class="code-py" style="font-size:70%">
+			<div id="examp1" class="code-py" style="font-size:70%">
 				<span class="token comment"># cfg.Game, cfg.Portrait</span><br>
 				<br>
 				<span class="token comment"># Configure app for landscape game mode.</span><br>
@@ -141,22 +141,22 @@
 				    gfx<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
 			</div>
 		</div>
 
 
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Demo</h3>
-			<div id="examp1" class="code-js" style="font-size:70%">
+			<div id="examp2" class="code-js" style="font-size:70%">
 				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<span class="token punctuation">{</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">CopyFile</span><span class="token punctuation">(</span><span class="token string">"/assets/samples/Game_Bounce.js"</span><span class="token punctuation">,</span> <span class="token string">"script.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				    app<span class="token punctuation">.</span><span class="token function">CreateGame</span><span class="token punctuation">(</span><span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"landscape"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				<span class="token punctuation">}</span>
 			</div>
-			<div id="examp1" class="code-py" style="font-size:70%">
+			<div id="examp2" class="code-py" style="font-size:70%">
 				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
@@ -164,8 +164,8 @@
 				    app<span class="token punctuation">.</span>CreateGame<span class="token punctuation">(</span><span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"landscape"</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
 			</div>
 		</div>
 
