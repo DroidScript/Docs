@@ -70,7 +70,10 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> edtNumber<br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
 				    <br>
 				    edtNumber <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateTextEdit<span class="token punctuation">(</span> <span class="token string">"5500"</span><span class="token punctuation">,</span> <span class="token number">.8</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"singleline,number,center"</span> <span class="token punctuation">)</span><br>

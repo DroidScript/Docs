@@ -281,19 +281,20 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a checkbox control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>ckb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler for `onTouch` event</span><br>
-				        this<span class="token punctuation">.</span>ckb<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> `Value <span class="token keyword">is</span> $value` <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a checkbox control to the main layout</span><br>
+				    ckb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler for `onTouch` event</span><br>
+				    ckb<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Value is </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -335,28 +336,30 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a default checkbox control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>ckb1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>ckb1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a primary checkbox control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>ckb2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>ckb2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a secondary checkbox control to the main layout</span><br>
-				        <span class="token comment">#  and set its value to `true`</span><br>
-				        this<span class="token punctuation">.</span>ckb3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>ckb3<span class="token punctuation">.</span>value <span class="token operator">=</span> true<br>
-				        this<span class="token punctuation">.</span>ckb3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> value<br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> `Value <span class="token keyword">is</span> $value` <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a default checkbox control to the main layout</span><br>
+				    ckb1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">)</span><br>
+				    ckb1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a primary checkbox control to the main layout</span><br>
+				    ckb2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
+				    ckb2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a secondary checkbox control to the main layout</span><br>
+				    <span class="token comment"># and set its value to `True`</span><br>
+				    ckb3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				    ckb3<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">True</span><br>
+				    ckb3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Value is </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
@@ -400,30 +403,31 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a checkbox with label on the right. </span><br>
-				        this<span class="token punctuation">.</span>ckb1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Checkbox on the left"</span><span class="token punctuation">,</span> <span class="token string">"Left"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>ckb1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a checkbox with label on the bottom.</span><br>
-				        this<span class="token punctuation">.</span>ckb2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Checkbox on the top"</span><span class="token punctuation">,</span> <span class="token string">"Primary,Top"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>ckb2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a checkbox with label on the left.</span><br>
-				        this<span class="token punctuation">.</span>ckb3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Checkbox on the right"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Right"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>ckb3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a checkbox with label on top.</span><br>
-				        this<span class="token punctuation">.</span>ckb4 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Checkbox on the bottom"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Bottom"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>ckb4<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> `Value <span class="token keyword">is</span> $value` <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a checkbox with label on the right.</span><br>
+				    ckb1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Checkbox on the left"</span><span class="token punctuation">,</span> <span class="token string">"Left"</span><span class="token punctuation">)</span><br>
+				    ckb1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a checkbox with label on the bottom.</span><br>
+				    ckb2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Checkbox on the top"</span><span class="token punctuation">,</span> <span class="token string">"Primary,Top"</span><span class="token punctuation">)</span><br>
+				    ckb2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a checkbox with label on the left.</span><br>
+				    ckb3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Checkbox on the right"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Right"</span><span class="token punctuation">)</span><br>
+				    ckb3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a checkbox with label on top.</span><br>
+				    ckb4 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Checkbox on the bottom"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Bottom"</span><span class="token punctuation">)</span><br>
+				    ckb4<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Value is </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
@@ -460,23 +464,24 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp4" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Adds checkbox control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>ckb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">,</span> <span class="token string">"Left,Secondary"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Set the checked icon to `favorite`</span><br>
-				        <span class="token comment">#  and uncheck icon to `person`</span><br>
-				        this<span class="token punctuation">.</span>ckb<span class="token punctuation">.</span>setIcon<span class="token punctuation">(</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"person"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler for `onTouch` event</span><br>
-				        this<span class="token punctuation">.</span>ckb<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> `Value <span class="token keyword">is</span> $value` <span class="token punctuation">)</span>
+				    <span class="token comment"># Adds checkbox control to the main layout</span><br>
+				    ckb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"This is checkbox label"</span><span class="token punctuation">,</span> <span class="token string">"Left,Secondary"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Set the checked icon to `favorite`</span><br>
+				    <span class="token comment"># and uncheck icon to `person`</span><br>
+				    ckb<span class="token punctuation">.</span>setIcon<span class="token punctuation">(</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"person"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler for `onTouch` event</span><br>
+				    ckb<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Value is </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>

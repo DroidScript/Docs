@@ -68,14 +68,17 @@
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>SetOnWifiChange<span class="token punctuation">(</span> OnWifiChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
-				<b id="snip1" class="code-py" style="font-size:100%"><span class="token keyword">def</span> OnWifiChange<span class="token punctuation">(</span> state<span class="token punctuation">,</span> ssid <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <span class="token keyword">if</span>  state<span class="token punctuation">.</span>EndsWith<span class="token punctuation">(</span> <span class="token string">"ED"</span> <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> state <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span> ssid <span class="token punctuation">)</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>SetOnWifiChange<span class="token punctuation">(</span>OnWifiChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnWifiChange</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> ssid<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span> state<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">"ED"</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span>state <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span> ssid<span class="token punctuation">)</span><br>
 				        app<span class="token punctuation">.</span>HideProgress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token keyword">else</span><span class="token punctuation">:</span> app<span class="token punctuation">.</span>ShowProgress<span class="token punctuation">(</span> state <span class="token punctuation">)</span></b>
+				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowProgress<span class="token punctuation">(</span>state<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

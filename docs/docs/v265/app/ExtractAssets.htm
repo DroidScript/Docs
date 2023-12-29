@@ -61,9 +61,11 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"myData.txt"</span><span class="token punctuation">,</span> <span class="token string">"main: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>GetAppName<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>ExtractAssets<span class="token punctuation">(</span> <span class="token string">"myData.txt"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/myData.txt"</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span><span class="token string">"myData.txt"</span><span class="token punctuation">,</span> <span class="token string">"main: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>GetAppName<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>ExtractAssets<span class="token punctuation">(</span><span class="token string">"myData.txt"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/myData.txt"</span><span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span>app<span class="token punctuation">.</span>ReadFile<span class="token punctuation">(</span><span class="token string">"/sdcard/myData.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -85,10 +87,12 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>MakeFolder<span class="token punctuation">(</span> app<span class="token punctuation">.</span>GetAppPath<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/myFolder"</span> <span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> app<span class="token punctuation">.</span>GetAppPath<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/myFolder/myData.txt"</span><span class="token punctuation">,</span> <span class="token string">"main: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>GetAppName<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>ExtractAssets<span class="token punctuation">(</span> <span class="token string">"myFolder"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/myFolder"</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>MakeFolder<span class="token punctuation">(</span>app<span class="token punctuation">.</span>GetAppPath<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/myFolder"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span>app<span class="token punctuation">.</span>GetAppPath<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"/myFolder/myData.txt"</span><span class="token punctuation">,</span> <span class="token string">"main: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>GetAppName<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>ExtractAssets<span class="token punctuation">(</span><span class="token string">"myFolder"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/myFolder"</span><span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span>app<span class="token punctuation">.</span>ReadFile<span class="token punctuation">(</span><span class="token string">"/sdcard/myFolder/myData.txt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">

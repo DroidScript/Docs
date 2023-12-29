@@ -94,27 +94,30 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				html <span class="token operator">=</span> `<br>
-				<span class="token operator">&lt;</span>html<span class="token operator">></span><br>
-				<span class="token operator">&lt;</span>head<span class="token operator">></span><br>
-				    <span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"viewport"</span> content<span class="token operator">=</span><span class="token string">"width=device-width"</span><span class="token operator">></span><br>
-				    <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">'file:# /android_asset/app.js'</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><br>
-				<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
-				<span class="token operator">&lt;</span>script<span class="token operator">></span><br>
-				<span class="token keyword">def</span> <span class="token function">greetWeb</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">", I'm the WebView"</span><span class="token punctuation">)</span><br>
-				<span class="token keyword">def</span> <span class="token function">greetApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>Func<span class="token punctuation">(</span><span class="token string">"greetApp"</span><span class="token punctuation">,</span> <span class="token string">"WebView"</span><span class="token punctuation">)</span><br>
-				<span class="token keyword">def</span> <span class="token function">OnRequest</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    alert<span class="token punctuation">(</span>s<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"\\n"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">"\\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-				<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><br>
+				html <span class="token operator">=</span> <span class="token triple-quoted-string string">"""<br>
+				&lt;html><br>
+				&lt;head><br>
+				    &lt;meta name="viewport" content="width=device-width"><br>
+				    &lt;script src='file:///android_asset/app.js'><br>
+				&lt;/head><br>
 				<br>
-				<span class="token operator">&lt;</span><span class="token builtin">input</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token string">"button"</span> onclick<span class="token operator">=</span><span class="token string">"greetApp()"</span> value<span class="token operator">=</span><span class="token string">"Greet App"</span><span class="token operator">/</span><span class="token operator">></span><br>
-				<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><br>
-				`<br>
+				def greetWeb(name):<br>
+				    app.ShowPopup("Hello " + name + ", I'm the WebView")<br>
+				<br>
+				def greetApp():<br>
+				    app.Func("greetApp", "WebView")<br>
+				<br>
+				def OnRequest(err, s):<br>
+				    app.Alert(s.split("\\n").join("\\n"))<br>
+				<br>
+				&lt;input type="button" onclick="greetApp()" value="Greet App"/><br>
+				&lt;/html><br>
+				"""</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> web<br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
 				    <br>
 				    web <span class="token operator">=</span> app<span class="token punctuation">.</span>AddWebView<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
@@ -127,6 +130,7 @@
 				<br>
 				<span class="token keyword">def</span> <span class="token function">greetApp</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Hello "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">", I'm the App"</span><span class="token punctuation">)</span><br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">greetWeb</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    web<span class="token punctuation">.</span>Func<span class="token punctuation">(</span><span class="token string">"greetWeb"</span><span class="token punctuation">,</span> <span class="token string">"App"</span><span class="token punctuation">)</span>
 			</div>

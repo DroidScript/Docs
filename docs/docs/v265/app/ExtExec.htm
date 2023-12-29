@@ -87,10 +87,13 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"/sdcard/termux/scripts/hello.sh"</span><span class="token punctuation">,</span> <span class="token string">"echo Hello $1 and $2"</span> <span class="token punctuation">)</span><br>
-				    <b id="snip1" class="code-py" style="font-size:100%">err <span class="token operator">=</span> app<span class="token punctuation">.</span>ExtExec<span class="token punctuation">(</span> <span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">'World "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>GetUser<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">,</span> <span class="token string">""</span> <span class="token punctuation">)</span></b><br>
-				    <span class="token keyword">if</span>  err <span class="token punctuation">:</span> app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> <span class="token string">"Termux Error:"</span> <span class="token operator">+</span> err <span class="token punctuation">)</span>
+				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span><span class="token string">"/sdcard/termux/scripts/hello.sh"</span><span class="token punctuation">,</span> <span class="token string">"echo Hello $1 and $2"</span><span class="token punctuation">)</span><br>
+				    err <span class="token operator">=</span> app<span class="token punctuation">.</span>ExtExec<span class="token punctuation">(</span><span class="token string">"termux"</span><span class="token punctuation">,</span> <span class="token string">"hello.sh"</span><span class="token punctuation">,</span> <span class="token string">'World "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>GetUser<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><br>
+				    <span class="token keyword">if</span> err<span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span><span class="token string">"Termux Error:"</span> <span class="token operator">+</span> err<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

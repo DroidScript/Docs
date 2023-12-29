@@ -124,52 +124,49 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    theme <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateTheme<span class="token punctuation">(</span> <span class="token string">"light"</span> <span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>SetTheme<span class="token punctuation">(</span> theme <span class="token punctuation">)</span><br>
+				    <span class="token keyword">global</span> wiz<br>
+				    theme <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateTheme<span class="token punctuation">(</span><span class="token string">"light"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetTheme<span class="token punctuation">(</span>theme<span class="token punctuation">)</span><br>
 				    <br>
-				    wiz <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateWizard<span class="token punctuation">(</span> <span class="token string">"My Wizard"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> OnWizard  <span class="token punctuation">)</span><br>
+				    wiz <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateWizard<span class="token punctuation">(</span><span class="token string">"My Wizard"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> OnWizard<span class="token punctuation">)</span><br>
 				    wiz<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<br>
-				<span class="token keyword">def</span> <span class="token function">OnWizard</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> page <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    switch<span class="token punctuation">(</span> page <span class="token punctuation">)</span><br>
-				    <span class="token keyword">case</span> <span class="token number">0</span><span class="token punctuation">:</span><br>
-				        wizTxt <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"MultiLine"</span> <span class="token punctuation">)</span><br>
-				        wizTxt<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">19</span> <span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> wizTxt <span class="token punctuation">)</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnWizard</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> page<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <br>
+				    <span class="token keyword">if</span> page <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span><br>
+				        wizTxt <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"MultiLine"</span><span class="token punctuation">)</span><br>
+				        wizTxt<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>wizTxt<span class="token punctuation">)</span><br>
 				        <br>
-				        wizFlag <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">"[fa-flag-checkered]"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"FontAwesome"</span> <span class="token punctuation">)</span><br>
-				        wizFlag<span class="token punctuation">.</span>SetMargins<span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
-				        wizFlag<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">64</span> <span class="token punctuation">)</span><br>
+				        wizFlag <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span><span class="token string">"[fa-flag-checkered]"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"FontAwesome"</span><span class="token punctuation">)</span><br>
+				        wizFlag<span class="token punctuation">.</span>SetMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				        wizFlag<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><br>
 				        wizFlag<span class="token punctuation">.</span>Gone<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> wizFlag <span class="token punctuation">)</span><br>
-				    <span class="token keyword">break</span><br>
+				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>wizFlag<span class="token punctuation">)</span><br>
 				    <br>
-				    <span class="token keyword">case</span> <span class="token number">1</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">elif</span> page <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span><br>
 				        msg <span class="token operator">=</span> <span class="token string">"This is the first page of your wizard"</span><br>
-				        wizTxt<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span> msg <span class="token punctuation">)</span><br>
-				    <span class="token keyword">break</span><br>
+				        wizTxt<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span>msg<span class="token punctuation">)</span><br>
 				    <br>
-				    <span class="token keyword">case</span> <span class="token number">2</span><span class="token punctuation">:</span><br>
-				        msg <span class="token operator">=</span> <span class="token string">"You can put any controls you like here, including"</span><br>
-				            <span class="token operator">+</span> <span class="token string">" a webview and have as many  pages as you like"</span><br>
-				        wizTxt<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span> msg <span class="token punctuation">)</span><br>
+				    <span class="token keyword">elif</span> page <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span><br>
+				        msg <span class="token operator">=</span> <span class="token string">"You can put any controls you like here, including a webview and have as many pages as you like"</span><br>
+				        wizTxt<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span>msg<span class="token punctuation">)</span><br>
 				        wizFlag<span class="token punctuation">.</span>Gone<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token keyword">break</span><br>
 				    <br>
-				    <span class="token keyword">case</span> <span class="token number">3</span><span class="token punctuation">:</span><br>
-				        wizTxt<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span> <span class="token string">"Wizard complete!"</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">elif</span> page <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">:</span><br>
+				        wizTxt<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span><span class="token string">"Wizard complete!"</span><span class="token punctuation">)</span><br>
 				        wizFlag<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				        wiz<span class="token punctuation">.</span>Finish<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token keyword">break</span><br>
 				    <br>
-				    <span class="token keyword">case</span> <span class="token number">4</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">elif</span> page <span class="token operator">==</span> <span class="token number">4</span><span class="token punctuation">:</span><br>
 				        wiz<span class="token punctuation">.</span>Dismiss<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Wizard finished"</span> <span class="token punctuation">)</span><br>
-				    <span class="token keyword">break</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Wizard finished"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    <span class="token keyword">case</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><br>
-				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Wizard cancelled"</span> <span class="token punctuation">)</span>
+				    <span class="token keyword">elif</span> page <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Wizard cancelled"</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>

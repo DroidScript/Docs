@@ -244,26 +244,32 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				items <span class="token operator">=</span><br>
-				    <span class="token string">"Group 1"</span><span class="token punctuation">:</span><br>
+				items <span class="token operator">=</span> <span class="token punctuation">{</span><br>
+				    <span class="token string">"Group 1"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
 				        <span class="token string">"Item 1"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
 				        <span class="token string">"Item 2"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"Item 3"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				    <span class="token string">"Group 2"</span><span class="token punctuation">:</span><br>
+				        <span class="token string">"Item 3"</span><span class="token punctuation">:</span> <span class="token string">""</span><br>
+				    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				    <span class="token string">"Group 2"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
 				        <span class="token string">"Item 1"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
 				        <span class="token string">"Item 2"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"Item 3"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				    <span class="token string">"Applications"</span><span class="token punctuation">:</span><br>
+				        <span class="token string">"Item 3"</span><span class="token punctuation">:</span> <span class="token string">""</span><br>
+				    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				    <span class="token string">"Applications"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
 				        <span class="token string">"Editor"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
 				        <span class="token string">"Productivity"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"Social Media"</span><span class="token punctuation">:</span><br>
+				        <span class="token string">"Social Media"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
 				            <span class="token string">"TikTok"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
 				            <span class="token string">"YouTube"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"Meta"</span><span class="token punctuation">:</span><br>
+				            <span class="token string">"Meta"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
 				                <span class="token string">"Facebook"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
 				                <span class="token string">"Instagram"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
 				                <span class="token string">"Whatsapp"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                <span class="token string">"Messenger"</span><span class="token punctuation">:</span> <span class="token string">""</span>
+				                <span class="token string">"Messenger"</span><span class="token punctuation">:</span> <span class="token string">""</span><br>
+				            <span class="token punctuation">}</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -284,11 +290,13 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				items <span class="token operator">=</span><br>
-				    <span class="token string">"Folders"</span><span class="token punctuation">:</span><br>
+				items <span class="token operator">=</span> <span class="token punctuation">{</span><br>
+				    <span class="token string">"Folders"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
 				        <span class="token string">"Music"</span><span class="token punctuation">:</span> <span class="token string">"music_note"</span><span class="token punctuation">,</span><br>
 				        <span class="token string">"Photos"</span><span class="token punctuation">:</span> <span class="token string">"photo"</span><span class="token punctuation">,</span><br>
-				        <span class="token string">"Favorites"</span><span class="token punctuation">:</span> <span class="token string">"favorite"</span>
+				        <span class="token string">"Favorites"</span><span class="token punctuation">:</span> <span class="token string">"favorite"</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
@@ -350,45 +358,44 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Center,ScrollY,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize json object for the treeview items</span><br>
-				        items <span class="token operator">=</span><br>
-				            <span class="token string">"Group 1"</span><span class="token punctuation">:</span><br>
-				                <span class="token string">"Item 1"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                <span class="token string">"Item 2"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                <span class="token string">"Item 3"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"Group 2"</span><span class="token punctuation">:</span><br>
-				                <span class="token string">"Item 1"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                <span class="token string">"Item 2"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                <span class="token string">"Item 3"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"Applications"</span><span class="token punctuation">:</span><br>
-				                <span class="token string">"Editor"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                <span class="token string">"Productivity"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                <span class="token string">"Social Media"</span><span class="token punctuation">:</span><br>
-				                    <span class="token string">"TikTok"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                    <span class="token string">"YouTube"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                    <span class="token string">"Meta"</span><span class="token punctuation">:</span><br>
-				                        <span class="token string">"Facebook"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                        <span class="token string">"Instagram"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                        <span class="token string">"Whatsapp"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
-				                        <span class="token string">"Messenger"</span><span class="token punctuation">:</span> <span class="token string">""</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
 				<br>
-				<br>
-				<br>
-				<br>
-				        <span class="token comment">#  Add a treeview component to the main layout</span><br>
-				        this<span class="token punctuation">.</span>trv <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTreeView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>trv<span class="token punctuation">.</span>setMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"rem"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when the treeview item is touched</span><br>
-				        this<span class="token punctuation">.</span>trv<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Center,ScrollY,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span>value<span class="token punctuation">,</span> path<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Value: "</span><span class="token operator">+</span>value <span class="token operator">+</span> <span class="token string">" Path: "</span><span class="token operator">+</span>path<span class="token punctuation">)</span>
+				    items <span class="token operator">=</span> <span class="token punctuation">{</span><br>
+				        <span class="token string">"Group 1"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
+				            <span class="token string">"Item 1"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"Item 2"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"Item 3"</span><span class="token punctuation">:</span> <span class="token string">""</span><br>
+				        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"Group 2"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
+				            <span class="token string">"Item 1"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"Item 2"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"Item 3"</span><span class="token punctuation">:</span> <span class="token string">""</span><br>
+				        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"Applications"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
+				            <span class="token string">"Editor"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"Productivity"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				            <span class="token string">"Social Media"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
+				                <span class="token string">"TikTok"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				                <span class="token string">"YouTube"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				                <span class="token string">"Meta"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><br>
+				                    <span class="token string">"Facebook"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				                    <span class="token string">"Instagram"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				                    <span class="token string">"Whatsapp"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span><br>
+				                    <span class="token string">"Messenger"</span><span class="token punctuation">:</span> <span class="token string">""</span><br>
+				                <span class="token punctuation">}</span><br>
+				            <span class="token punctuation">}</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    trv <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTreeView<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
+				    trv<span class="token punctuation">.</span>setMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"rem"</span><span class="token punctuation">)</span><br>
+				    trv<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> path<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Value: "</span> <span class="token operator">+</span> value <span class="token operator">+</span> <span class="token string">" Path: "</span> <span class="token operator">+</span> path<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>

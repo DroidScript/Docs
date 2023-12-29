@@ -69,13 +69,14 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    fab1 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddFAB<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"default"</span><span class="token punctuation">)</span><br>
+				    fab1 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddFAB<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"default"</span><span class="token punctuation">)</span><br>
 				    fab2 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddFAB<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>deepPurple<span class="token punctuation">.</span>lighten1<span class="token punctuation">,</span> <span class="token string">"outline"</span><span class="token punctuation">)</span><br>
 				    fab3 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddFAB<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"favorite"</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<span class="token punctuation">.</span>darken1<span class="token punctuation">,</span> <span class="token string">"elegant"</span><span class="token punctuation">)</span><br>
 				    <br>

@@ -91,36 +91,41 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				lay <span class="token operator">=</span> null<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				lay <span class="token operator">=</span> <span class="token boolean">None</span><br>
 				themeName <span class="token operator">=</span> <span class="token string">"Default"</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    CreateLayout<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <span class="token keyword">if</span>  lay <span class="token punctuation">:</span> app<span class="token punctuation">.</span>DestroyLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
 				    <br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">if</span> lay<span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>DestroyLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				    <br>
-				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">"Theme"</span> <span class="token punctuation">)</span><br>
-				    txt<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span> <span class="token number">30</span> <span class="token punctuation">)</span><br>
-				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> txt <span class="token punctuation">)</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    spin <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSpinner<span class="token punctuation">(</span> <span class="token string">"Default,Dark,Light"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
-				    spin<span class="token punctuation">.</span>SetMargins<span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span> <span class="token punctuation">)</span><br>
-				    spin<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> spin_OnChange <span class="token punctuation">)</span><br>
-				    spin<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span> themeName <span class="token punctuation">)</span><br>
-				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> spin <span class="token punctuation">)</span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span><span class="token string">"Theme"</span><span class="token punctuation">)</span><br>
+				    txt<span class="token punctuation">.</span>SetTextSize<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>txt<span class="token punctuation">)</span><br>
 				    <br>
-				    tgl <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateButton<span class="token punctuation">(</span> <span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token number">.3</span><span class="token punctuation">,</span> <span class="token number">.1</span> <span class="token punctuation">)</span><br>
-				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> tgl <span class="token punctuation">)</span><br>
+				    spin <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSpinner<span class="token punctuation">(</span><span class="token string">"Default,Dark,Light"</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
+				    spin<span class="token punctuation">.</span>SetMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
+				    spin<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>spin_OnChange<span class="token punctuation">)</span><br>
+				    spin<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span>themeName<span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>spin<span class="token punctuation">)</span><br>
 				    <br>
-				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    tgl <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateButton<span class="token punctuation">(</span><span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token number">.3</span><span class="token punctuation">,</span> <span class="token number">.1</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>tgl<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<br>
-				<span class="token keyword">def</span> <span class="token function">spin_OnChange</span><span class="token punctuation">(</span> item <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				<span class="token keyword">def</span> <span class="token function">spin_OnChange</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <br>
 				    themeName <span class="token operator">=</span> item<br>
-				    theme <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateTheme<span class="token punctuation">(</span> themeName <span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>SetTheme<span class="token punctuation">(</span> theme <span class="token punctuation">)</span><br>
+				    theme <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateTheme<span class="token punctuation">(</span>themeName<span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetTheme<span class="token punctuation">(</span>theme<span class="token punctuation">)</span><br>
 				    CreateLayout<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">

@@ -11,7 +11,7 @@ function copy(id) {
 	var div = document.querySelector('#' + id + codeClass);
 	var txt = div.innerText || div.textContent;
 	txt = txt.replace(/\xa0/g, " ");
-	if (navigator.userAgent.indexOf("Android") > -1) //
+	if (isDS) //
 	{
 		app.SetClipboardText(txt); //replace nbsp chars
 		ShowPopup("Text copied to clipboard");
@@ -21,16 +21,14 @@ function copy(id) {
 }
 
 function demo(id) {
-	var fld = "/sdcard/DroidScript/~DocSamp/";
+	var fld = "/sdcard/.DroidScript/";
 	var codeClass = curMode === "py" ? '.code-py' : '.code-js';
 	var div = document.querySelector('#' + id + codeClass);
 	var code = (div.innerText || div.textContent).replace(/\xa0/g, ' ');
 	if (isMobileIDE) {
-		app.DeleteFolder(fld);
-		app.MakeFolder(fld);
-		app.WriteFile(fld + "~DocSamp." + curMode, code);
-		app.Execute("LaunchApp( '~DocSamp' );");
-		//app.Execute( "try { StartApp('" + fld + "/~DocSamp." + curMode + "') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
+		app.WriteFile(fld + "Example." + curMode, code);
+		app.Execute("RunDemo( '" + fld + "/Example.js' );");
+		//app.Execute( "try { StartApp('" + fld + "/Example.js') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
 	}
 	else {
 		var cmd = curMode == "py" ? "demo:python:" : "demo:";

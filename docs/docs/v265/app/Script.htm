@@ -63,8 +63,10 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"num = 7;\nfunction computeNum()return 6 * num;"</span> <span class="token punctuation">)</span><br>
-				<b id="snip1" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>Script<span class="token punctuation">(</span> <span class="token string">"script.js"</span> <span class="token punctuation">)</span></b><br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"num = 7;\nfunction computeNum() { return 6 * num; }"</span> <span class="token punctuation">)</span><br>
+				app<span class="token punctuation">.</span>LoadScript<span class="token punctuation">(</span> <span class="token string">"script.js"</span> <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"script.js loaded."</span> <span class="token punctuation">)</span><br>
@@ -92,12 +94,14 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"num = 7;\nfunction computeNum()return 6 * num;"</span> <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"num = 7;\nfunction computeNum() { return 6 * num; }"</span> <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <b id="snip2" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>Script<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> true <span class="token punctuation">)</span></b><br>
+				    app<span class="token punctuation">.</span>LoadScript<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token boolean">True</span> <span class="token punctuation">)</span><br>
 				    <br>
-				    <span class="token comment">#  without noDefer true computeNum won't be defined</span><br>
+				    <span class="token comment"># without noDefer True computeNum won't be defined</span><br>
 				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"script.js loaded."</span> <span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> computeNum<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"computed number: "</span> <span class="token punctuation">)</span>
 			</div>

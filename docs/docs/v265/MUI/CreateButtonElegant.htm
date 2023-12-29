@@ -84,23 +84,24 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
 				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>lighten1<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
-				        <br>
-				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"[fa-android] ANDROID"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
-				        <br>
-				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"CUSTOM COLOR"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<span class="token punctuation">.</span>blue<span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"[fa-android] ANDROID"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"CUSTOM COLOR"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<span class="token punctuation">.</span>blue<span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>
@@ -137,23 +138,24 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Dark<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Dark, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
 				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>lighten1<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
-				        <br>
-				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"[fa-android] ANDROID"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
-				        <br>
-				        btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"CUSTOM COLOR"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<span class="token punctuation">.</span>blue<span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"BUTTON"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"[fa-android] ANDROID"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    btn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonElegant<span class="token punctuation">(</span><span class="token string">"CUSTOM COLOR"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<span class="token punctuation">.</span>blue<span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>
@@ -182,15 +184,16 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        btn1 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButtonElegant<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"BUTTON 1"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
-				        btn2 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButtonElegant<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"[fa-heart] BUTTON 2"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
-				        btn3 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButtonElegant<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"BUTTON 3"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>green<span class="token punctuation">.</span>darken2<span class="token punctuation">)</span><br>
+				    <br>
+				    btn1 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButtonElegant<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"BUTTON 1"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				    btn2 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButtonElegant<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"[fa-heart] BUTTON 2"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				    btn3 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddButtonElegant<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"BUTTON 3"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>green<span class="token punctuation">.</span>darken2<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>

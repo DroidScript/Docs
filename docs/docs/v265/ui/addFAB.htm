@@ -266,20 +266,21 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Create a fullscreen linear layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a floating action button to the main layout.</span><br>
-				        <span class="token comment">#  By default, FAB is positioned fix at the bottom right corner</span><br>
-				        this<span class="token punctuation">.</span>fab <span class="token operator">=</span> ui<span class="token punctuation">.</span>addFAB<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler for `onTouch` event on the FAB</span><br>
-				        this<span class="token punctuation">.</span>fab<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Create a fullscreen linear layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You click me!"</span> <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a floating action button to the main layout.</span><br>
+				    <span class="token comment"># By default, FAB is positioned fix at the bottom right corner</span><br>
+				    fab <span class="token operator">=</span> ui<span class="token punctuation">.</span>addFAB<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler for `onTouch` event on the FAB</span><br>
+				    fab<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You clicked me!"</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -314,21 +315,22 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Create a fullscreen linear layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a primary floating action button to the main layout.</span><br>
-				        <span class="token comment">#  Passing `Static` will ignore fixed positioning</span><br>
-				        <span class="token comment">#  and will follow the flow of the parent layout</span><br>
-				        this<span class="token punctuation">.</span>fab <span class="token operator">=</span> ui<span class="token punctuation">.</span>addFAB<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">,</span> <span class="token string">"Primary,Static"</span> <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler for `onTouch` event on the FAB</span><br>
-				        this<span class="token punctuation">.</span>fab<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Create a fullscreen linear layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You click me!"</span> <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a primary floating action button to the main layout.</span><br>
+				    <span class="token comment"># Passing `Static` will ignore fixed positioning</span><br>
+				    <span class="token comment"># and will follow the flow of the parent layout</span><br>
+				    fab <span class="token operator">=</span> ui<span class="token punctuation">.</span>addFAB<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">,</span> <span class="token string">"Primary,Static"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler for `onTouch` event on the FAB</span><br>
+				    fab<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You clicked me!"</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
@@ -362,20 +364,21 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Create a fullscreen linear layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a secondary floating action button to the main layout.</span><br>
-				        <span class="token comment">#  Passing `Extended` enables to add more text on the FAB</span><br>
-				        this<span class="token punctuation">.</span>fab <span class="token operator">=</span> ui<span class="token punctuation">.</span>addFAB<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Extended"</span><span class="token punctuation">,</span> <span class="token string">"New message"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler for `onTouch` event on the FAB</span><br>
-				        this<span class="token punctuation">.</span>fab<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Create a fullscreen linear layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You click me!"</span> <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a secondary floating action button to the main layout.</span><br>
+				    <span class="token comment"># Passing `Extended` enables to add more text on the FAB</span><br>
+				    fab <span class="token operator">=</span> ui<span class="token punctuation">.</span>addFAB<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Extended"</span><span class="token punctuation">,</span> <span class="token string">"New message"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler for `onTouch` event on the FAB</span><br>
+				    fab<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You clicked me!"</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
@@ -409,20 +412,21 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp4" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Create a fullscreen linear layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a secondary floating action button to the main layout.</span><br>
-				        <span class="token comment">#  Passing `Left` option will position the FAB on the bottom left corner</span><br>
-				        this<span class="token punctuation">.</span>fab <span class="token operator">=</span> ui<span class="token punctuation">.</span>addFAB<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Extended,Left"</span><span class="token punctuation">,</span> <span class="token string">"New message"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler for `onTouch` event on the FAB</span><br>
-				        this<span class="token punctuation">.</span>fab<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Create a fullscreen linear layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You click me!"</span> <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a secondary floating action button to the main layout.</span><br>
+				    <span class="token comment"># Passing `Left` option will position the FAB on the bottom left corner</span><br>
+				    fab <span class="token operator">=</span> ui<span class="token punctuation">.</span>addFAB<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Extended,Left"</span><span class="token punctuation">,</span> <span class="token string">"New message"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler for `onTouch` event on the FAB</span><br>
+				    fab<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You clicked me!"</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>

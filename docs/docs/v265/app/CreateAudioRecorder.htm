@@ -86,8 +86,12 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token builtin">file</span> <span class="token operator">=</span> <span class="token string">"/sdcard/demofile.wav"</span><br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> rec<br>
 				    <b id="snip1" class="code-py" style="font-size:100%">rec <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateAudioRecorder<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    rec<span class="token punctuation">.</span>SetFile<span class="token punctuation">(</span> <span class="token builtin">file</span> <span class="token punctuation">)</span><br>
 				    rec<span class="token punctuation">.</span>Start<span class="token punctuation">(</span><span class="token punctuation">)</span></b><br>

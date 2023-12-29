@@ -76,8 +76,10 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> cfg<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<br>
@@ -124,8 +126,10 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Dark<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Dark, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> cfg<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<br>
@@ -138,7 +142,7 @@
 				    ban<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>OnTouch<span class="token punctuation">)</span><br>
 				    ban<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<br>
-				<span class="token keyword">def</span> <span class="token function">OnTouch</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnTouch</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span> btnText<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    <span class="token keyword">if</span> v<span class="token punctuation">:</span><br>
 				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Learn more"</span><span class="token punctuation">)</span><br>
 				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>

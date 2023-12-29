@@ -86,22 +86,24 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> cfg<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        headers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token string">"Name"</span><span class="token punctuation">,</span> <span class="token string">"Age"</span><span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">]</span><br>
-				        values <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				            <span class="token string">"1:Robb Stark:14:Blue"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"2:Sansa Stark:11:Teal"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"3:Arya Stark:9:Green"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"4:Bran Stark:7:Orange"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"5:Rickon Stark:Grey"</span><br>
-				        <span class="token punctuation">]</span><br>
-				        table <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDataTable<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>table<span class="token punctuation">)</span><br>
+				    <br>
+				    headers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token string">"Name"</span><span class="token punctuation">,</span> <span class="token string">"Age"</span><span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">]</span><br>
+				    values <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token string">"1:Robb Stark:14:Blue"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"2:Sansa Stark:11:Teal"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"3:Arya Stark:9:Green"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"4:Bran Stark:7:Orange"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"5:Rickon Stark:Grey"</span><br>
+				    <span class="token punctuation">]</span><br>
+				    table <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDataTable<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>table<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>
@@ -140,24 +142,26 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> cfg<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        headers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token string">"Name:Sortable"</span><span class="token punctuation">,</span> <span class="token string">"Age:Sortable"</span><span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">]</span><br>
-				        values <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				            <span class="token string">"1:Robb Stark:14:Blue"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"2:Sansa Stark:11:Teal"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"3:Arya Stark:9:Green"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"4:Bran Stark:7:Orange"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"5:Rickon Stark:2:Grey"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"6:Theon Greyjoy:18:Brown"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"7:Jon Snow:11:Red"</span><br>
-				        <span class="token punctuation">]</span><br>
-				        table <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDataTable<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>table<span class="token punctuation">)</span><br>
+				    <br>
+				    headers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token string">"Name:Sortable"</span><span class="token punctuation">,</span> <span class="token string">"Age:Sortable"</span><span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">]</span><br>
+				    values <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token string">"1:Robb Stark:14:Blue"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"2:Sansa Stark:11:Teal"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"3:Arya Stark:9:Green"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"4:Bran Stark:7:Orange"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"5:Rickon Stark:2:Grey"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"6:Theon Greyjoy:18:Brown"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"7:Jon Snow:11:Red"</span><br>
+				    <span class="token punctuation">]</span><br>
+				    table <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDataTable<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>table<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>
@@ -196,24 +200,26 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Dark<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Dark, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> cfg<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        headers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token string">"Name:Sortable"</span><span class="token punctuation">,</span> <span class="token string">"Age"</span><span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">]</span><br>
-				        values <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				            <span class="token string">"1:Robb Stark:14:Blue"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"2:Sansa Stark:11:Teal"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"3:Arya Stark:9:Green"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"4:Bran Stark:7:Orange"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"5:Rickon Stark:2:Grey"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"6:Theon Greyjoy:18:Brown"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"7:Jon Snow:11:Red"</span><br>
-				        <span class="token punctuation">]</span><br>
-				        table <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDataTable<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token string">"Selectable"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>table<span class="token punctuation">)</span><br>
+				    <br>
+				    headers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token string">"Name:Sortable"</span><span class="token punctuation">,</span> <span class="token string">"Age"</span><span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">]</span><br>
+				    values <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token string">"1:Robb Stark:14:Blue"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"2:Sansa Stark:11:Teal"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"3:Arya Stark:9:Green"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"4:Bran Stark:7:Orange"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"5:Rickon Stark:2:Grey"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"6:Theon Greyjoy:18:Brown"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"7:Jon Snow:11:Red"</span><br>
+				    <span class="token punctuation">]</span><br>
+				    table <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDataTable<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token string">"Selectable"</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>table<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>
@@ -265,34 +271,43 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp4" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Dark<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Dark, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> cfg<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        headers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token string">"Name:Sortable"</span><span class="token punctuation">,</span> <span class="token string">"Age"</span><span class="token punctuation">]</span><br>
-				        values <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				            <span class="token string">"1:Robb Stark:14"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"2:Sansa Stark:11"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"3:Arya Stark:9"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"4:Bran Stark:7"</span><span class="token punctuation">,</span><br>
-				            <span class="token string">"5:Rickon Stark:2"</span><br>
-				        <span class="token punctuation">]</span><br>
-				        table <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDataTable<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token string">"Selectable"</span><span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>table<span class="token punctuation">)</span><br>
-				        <br>
-				        ftr <span class="token operator">=</span> table<span class="token punctuation">.</span>AddFooter<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal, Right, VCenter"</span><span class="token punctuation">,</span> <span class="token number">0.09</span><span class="token punctuation">)</span><br>
-				        <br>
-				        fBtn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonFlat<span class="token punctuation">(</span><span class="token string">'REMOVE SELECTED'</span><span class="token punctuation">)</span><br>
-				        fBtn<span class="token punctuation">.</span>SetEnabled<span class="token punctuation">(</span>false<span class="token punctuation">)</span><br>
-				        ftr<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>fBtn<span class="token punctuation">)</span><br>
-				        fBtn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>function<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				            table<span class="token punctuation">.</span>GetSelectedRows<span class="token punctuation">(</span>function<span class="token punctuation">(</span>x<span class="token punctuation">)</span><br>
-				                table<span class="token punctuation">.</span>RemoveRows<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-				        table<span class="token punctuation">.</span>SetOnSelectionStatus<span class="token punctuation">(</span>function<span class="token punctuation">(</span>c<span class="token punctuation">)</span><br>
-				            <span class="token keyword">if</span> c<span class="token punctuation">:</span> fBtn<span class="token punctuation">.</span>SetEnabled<span class="token punctuation">(</span>true<span class="token punctuation">)</span><br>
-				            <span class="token keyword">else</span><span class="token punctuation">:</span> fBtn<span class="token punctuation">.</span>SetEnabled<span class="token punctuation">(</span>false<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <br>
+				    headers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"ID"</span><span class="token punctuation">,</span> <span class="token string">"Name:Sortable"</span><span class="token punctuation">,</span> <span class="token string">"Age"</span><span class="token punctuation">]</span><br>
+				    values <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token string">"1:Robb Stark:14"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"2:Sansa Stark:11"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"3:Arya Stark:9"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"4:Bran Stark:7"</span><span class="token punctuation">,</span><br>
+				        <span class="token string">"5:Rickon Stark:2"</span><br>
+				    <span class="token punctuation">]</span><br>
+				    table <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateDataTable<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> values<span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token string">"Selectable"</span><span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>table<span class="token punctuation">)</span><br>
+				    <br>
+				    ftr <span class="token operator">=</span> table<span class="token punctuation">.</span>AddFooter<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal, Right, VCenter"</span><span class="token punctuation">,</span> <span class="token number">0.09</span><span class="token punctuation">)</span><br>
+				    <br>
+				    fBtn <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateButtonFlat<span class="token punctuation">(</span><span class="token string">'REMOVE SELECTED'</span><span class="token punctuation">)</span><br>
+				    fBtn<span class="token punctuation">.</span>SetEnabled<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span><br>
+				    ftr<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>fBtn<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">def</span> <span class="token function">remove_selected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        table<span class="token punctuation">.</span>GetSelectedRows<span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> table<span class="token punctuation">.</span>RemoveRows<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <br>
+				    fBtn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>remove_selected<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">def</span> <span class="token function">on_selection_status</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        <span class="token keyword">if</span> c<span class="token punctuation">:</span><br>
+				            fBtn<span class="token punctuation">.</span>SetEnabled<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				            fBtn<span class="token punctuation">.</span>SetEnabled<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span><br>
+				    <br>
+				    table<span class="token punctuation">.</span>SetOnSelectionStatus<span class="token punctuation">(</span>on_selection_status<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>

@@ -74,15 +74,16 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">)</span><br>
 				    <br>
 				    text <span class="token operator">=</span> <span class="token string">"This is a sample text for the popup."</span><br>
-				    alr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAlert<span class="token punctuation">(</span>text<span class="token punctuation">)</span><br>
+				    alr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>MUI<span class="token punctuation">.</span>CreateAlert<span class="token punctuation">(</span>text<span class="token punctuation">)</span><br>
 				    alr<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
@@ -116,18 +117,20 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> alr<br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">)</span><br>
 				    <br>
 				    text <span class="token operator">=</span> <span class="token string">"This is a sample text for the popup."</span><br>
-				    alr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAlert<span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token string">"message"</span><span class="token punctuation">)</span><br>
+				    alr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>MUI<span class="token punctuation">.</span>CreateAlert<span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token string">"message"</span><span class="token punctuation">)</span><br>
 				    alr<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <br>
-				    setTimeout<span class="token punctuation">(</span>CloseAlert<span class="token punctuation">,</span> <span class="token number">4000</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetTimeout<span class="token punctuation">(</span>CloseAlert<span class="token punctuation">,</span> <span class="token number">4000</span><span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">CloseAlert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    alr<span class="token punctuation">.</span>Hide<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -163,15 +166,16 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Dark<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Dark, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
-				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">)</span><br>
 				    <br>
 				    text <span class="token operator">=</span> <span class="token string">"This is a sample text for the popup."</span><br>
-				    alr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAlert<span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token string">"message"</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<span class="token punctuation">.</span>darken2<span class="token punctuation">)</span><br>
+				    alr <span class="token operator">=</span> MUI<span class="token punctuation">.</span>MUI<span class="token punctuation">.</span>CreateAlert<span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token string">"message"</span><span class="token punctuation">,</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>blue<span class="token punctuation">.</span>darken2<span class="token punctuation">)</span><br>
 				    alr<span class="token punctuation">.</span>SetOnClose<span class="token punctuation">(</span>AlertOnClose<span class="token punctuation">)</span><br>
 				    alr<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<br>

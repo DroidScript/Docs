@@ -63,15 +63,15 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <b id="snip1" class="code-py" style="font-size:100%">intSize <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token builtin">round</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span>GetFreeSpace<span class="token punctuation">(</span><span class="token string">"internal"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span><br>
-				    extSize <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token builtin">round</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span>GetFreeSpace<span class="token punctuation">(</span><span class="token string">"external"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span></b><br>
+				    intSize <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span>GetFreeSpace<span class="token punctuation">(</span><span class="token string">"internal"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span><br>
+				    extSize <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span>GetFreeSpace<span class="token punctuation">(</span><span class="token string">"external"</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span><br>
 				    <br>
-				    text <span class="token operator">=</span><br>
-				        <span class="token string">"internal: "</span> <span class="token operator">+</span> intSize <span class="token operator">+</span> <span class="token string">" MB\n"</span> <span class="token operator">+</span><br>
-				        <span class="token string">"external: "</span> <span class="token operator">+</span> extSize <span class="token operator">+</span> <span class="token string">" MB"</span><br>
+				    text <span class="token operator">=</span> <span class="token string">"internal: "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>intSize<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" MB\n"</span> <span class="token operator">+</span> <span class="token string">"external: "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>extSize<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" MB"</span><br>
 				    <br>
-				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> text <span class="token punctuation">)</span>
+				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

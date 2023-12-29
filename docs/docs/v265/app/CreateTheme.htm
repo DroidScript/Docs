@@ -100,6 +100,8 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    SetHackerTheme<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <br>
@@ -128,13 +130,13 @@
 				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> <span class="token string">"My Text"</span><span class="token punctuation">,</span> <span class="token string">"Custom theme"</span> <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">SetHackerTheme</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <b id="snip1" class="code-py" style="font-size:100%">theme <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateTheme<span class="token punctuation">(</span><span class="token string">"dark"</span><span class="token punctuation">)</span><br>
+				    theme <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateTheme<span class="token punctuation">(</span><span class="token string">"dark"</span><span class="token punctuation">)</span><br>
 				    theme<span class="token punctuation">.</span>SetBtnTextColor<span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><br>
 				    theme<span class="token punctuation">.</span>SetTitleColor<span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><br>
 				    theme<span class="token punctuation">.</span>SetDialogBtnTxtColor<span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><br>
 				    theme<span class="token punctuation">.</span>SetTextColor<span class="token punctuation">(</span> <span class="token string">"green"</span> <span class="token punctuation">)</span><br>
 				    theme<span class="token punctuation">.</span>AdjustColor<span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">76</span> <span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>SetTheme<span class="token punctuation">(</span> theme <span class="token punctuation">)</span></b>
+				    app<span class="token punctuation">.</span>SetTheme<span class="token punctuation">(</span> theme <span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

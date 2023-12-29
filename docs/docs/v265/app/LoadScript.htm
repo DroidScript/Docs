@@ -67,14 +67,17 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				scriptJS <span class="token operator">=</span> `<br>
-				num <span class="token operator">=</span> <span class="token number">7</span><br>
-				<span class="token keyword">def</span> <span class="token function">computeNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">6</span> <span class="token operator">*</span> num<br>
-				`<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				scriptPJ <span class="token operator">=</span> <span class="token triple-quoted-string string">"""<br>
+				num = 7<br>
+				def computeNum():<br>
+				    return 6 * num<br>
+				"""</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> scriptJS <span class="token punctuation">)</span><br>
-				    <b id="snip1" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>LoadScript<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> OnLoad <span class="token punctuation">)</span></b><br>
+				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> scriptPJ <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>LoadScript<span class="token punctuation">(</span> <span class="token string">"script.js"</span><span class="token punctuation">,</span> OnLoad <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"script.js loaded."</span> <span class="token punctuation">)</span><br>

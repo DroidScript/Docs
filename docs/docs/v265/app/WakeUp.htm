@@ -58,9 +58,11 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>GoToSleep<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <b id="snip1" class="code-py" style="font-size:100%">setTimeout<span class="token punctuation">(</span><span class="token string">"app.WakeUp()"</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span></b>
+				    app<span class="token punctuation">.</span>SetTimeout<span class="token punctuation">(</span><span class="token string">"app.WakeUp()"</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

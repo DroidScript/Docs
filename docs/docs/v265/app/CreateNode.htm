@@ -94,19 +94,32 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				nodeJs <span class="token operator">=</span> <span class="token string">'console.log("Hello World");\nconsole.error("Hello Error");\n'</span><br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				nodeJs <span class="token operator">=</span> <span class="token string">'print("Hello World");\nconsole.error("Hello Error");\n'</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> node<br>
 				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span><span class="token string">"node_script.js"</span><span class="token punctuation">,</span> nodeJs<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter, FillXY"</span><span class="token punctuation">)</span><br>
 				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span>AddText<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Debug Log:"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Log"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    <b id="snip1" class="code-py" style="font-size:100%">node <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateNode<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    node<span class="token punctuation">.</span>SetOnOutput<span class="token punctuation">(</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>txt<span class="token punctuation">.</span>Log<span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><br>
-				    node<span class="token punctuation">.</span>SetOnError<span class="token punctuation">(</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>txt<span class="token punctuation">.</span>Log<span class="token punctuation">(</span>msg<span class="token punctuation">,</span> <span class="token string">"red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><br>
-				    node<span class="token punctuation">.</span>SetOnMessage<span class="token punctuation">(</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>txt<span class="token punctuation">.</span>Log<span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">)</span><br>
-				    node<span class="token punctuation">.</span>SetOnReady<span class="token punctuation">(</span>node_OnReady<span class="token punctuation">)</span></b><br>
+				    node <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateNode<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">def</span> <span class="token function">onOutput</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        txt<span class="token punctuation">.</span>Log<span class="token punctuation">(</span>msg<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">def</span> <span class="token function">onError</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        txt<span class="token punctuation">.</span>Log<span class="token punctuation">(</span>msg<span class="token punctuation">,</span> <span class="token string">"red"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">def</span> <span class="token function">onMessage</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        txt<span class="token punctuation">.</span>Log<span class="token punctuation">(</span>msg<span class="token punctuation">)</span><br>
+				    <br>
+				    node<span class="token punctuation">.</span>SetOnOutput<span class="token punctuation">(</span>onOutput<span class="token punctuation">)</span><br>
+				    node<span class="token punctuation">.</span>SetOnError<span class="token punctuation">(</span>onError<span class="token punctuation">)</span><br>
+				    node<span class="token punctuation">.</span>SetOnMessage<span class="token punctuation">(</span>onMessage<span class="token punctuation">)</span><br>
+				    node<span class="token punctuation">.</span>SetOnReady<span class="token punctuation">(</span>node_OnReady<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<br>

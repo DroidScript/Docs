@@ -295,25 +295,29 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize the list items to show</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a select control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Set the label text</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when an item is selected</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>text<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You choose "</span> <span class="token operator">+</span> text<span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize the list items to show</span><br>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a select control to the main layout</span><br>
+				    sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Set the label text</span><br>
+				    sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler when an item is selected</span><br>
+				    sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You choose "</span> <span class="token operator">+</span> text<span class="token punctuation">)</span><br>
+				<br>
+				app<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -353,26 +357,30 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize the list items to show</span><br>
-				        <span class="token comment">#  The leading colon in each item will render it as group tile</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">":Choices"</span><span class="token punctuation">,</span> <span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a select control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Set the label text</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when an item is selected</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>text<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You choose "</span> <span class="token operator">+</span> text<span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize the list items to show</span><br>
+				    <span class="token comment"># The leading colon in each item will render it as group tile</span><br>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">":Choices"</span><span class="token punctuation">,</span> <span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a select control to the main layout</span><br>
+				    sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Set the label text</span><br>
+				    sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler when an item is selected</span><br>
+				    sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You choose "</span> <span class="token operator">+</span> text<span class="token punctuation">)</span><br>
+				<br>
+				app<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
@@ -410,24 +418,29 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize list items to show</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a select control to the main layout</span><br>
-				        <span class="token comment">#  Passing `Multiple` option will allow more than one selection</span><br>
-				        this<span class="token punctuation">.</span>sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Multiple"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when an item is selected</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> items<br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>items<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You choose "</span> <span class="token operator">+</span> items<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize list items to show</span><br>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a select control to the main layout</span><br>
+				    <span class="token comment"># Passing `Multiple` option will allow more than one selection</span><br>
+				    sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Multiple"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler when an item is selected</span><br>
+				    sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You choose "</span> <span class="token operator">+</span> <span class="token string">", "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				<br>
+				app<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
@@ -466,25 +479,29 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp4" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize list items to show</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a select control to the main layout</span><br>
-				        <span class="token comment">#  Passing `Outlined` option will add a border</span><br>
-				        <span class="token comment">#  Passing `Small` option will make the control smaller</span><br>
-				        this<span class="token punctuation">.</span>sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Outlined,Small,Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when an item is selected</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You choose "</span> <span class="token operator">+</span> item <span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize list items to show</span><br>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a select control to the main layout</span><br>
+				    <span class="token comment"># Passing `Outlined` option will add a border</span><br>
+				    <span class="token comment"># Passing `Small` option will make the control smaller</span><br>
+				    sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Outlined,Small,Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler when an item is selected</span><br>
+				    sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You choose "</span> <span class="token operator">+</span> item<span class="token punctuation">)</span><br>
+				<br>
+				app<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
@@ -522,24 +539,28 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp5" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize list items to show</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a select control to the main layout</span><br>
-				        <span class="token comment">#  Passing `Radio` option will render the items as radiogroup</span><br>
-				        this<span class="token punctuation">.</span>sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Filled,Radio"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when an item is selected</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You choose "</span> <span class="token operator">+</span> item <span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize list items to show</span><br>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">"Item 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a select control to the main layout</span><br>
+				    <span class="token comment"># Passing `Radio` option will render the items as radiogroup</span><br>
+				    sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Filled,Radio"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler when an item is selected</span><br>
+				    sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You choose "</span> <span class="token operator">+</span> item<span class="token punctuation">)</span><br>
+				<br>
+				app<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp5' )">Copy All</a>
@@ -576,23 +597,27 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp6" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize list items to show with group tiles</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">":Group 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">":Group 2"</span><span class="token punctuation">,</span> <span class="token string">"Another item 1"</span><span class="token punctuation">,</span> <span class="token string">"Another item 2"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a select control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Filled"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when an item is selected</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You choose "</span> <span class="token operator">+</span> item <span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize list items to show with group tiles</span><br>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">":Group 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">":Group 2"</span><span class="token punctuation">,</span> <span class="token string">"Another item 1"</span><span class="token punctuation">,</span> <span class="token string">"Another item 2"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a select control to the main layout</span><br>
+				    sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Filled"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler when an item is selected</span><br>
+				    sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You choose "</span> <span class="token operator">+</span> item<span class="token punctuation">)</span><br>
+				<br>
+				app<span class="token punctuation">.</span>add<span class="token punctuation">(</span>Main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp6' )">Copy All</a>
@@ -629,23 +654,25 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp7" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize list items to show with group tiles</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">":Group 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">":Group 2"</span><span class="token punctuation">,</span> <span class="token string">"Another item 1"</span><span class="token punctuation">,</span> <span class="token string">"Another item 2"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a select control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Outlined,Radio,Multiple"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when an item is selected</span><br>
-				        this<span class="token punctuation">.</span>sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> items<br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>items<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You choose "</span> <span class="token operator">+</span> items<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize list items to show with group tiles</span><br>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">":Group 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 1"</span><span class="token punctuation">,</span> <span class="token string">"Item 2"</span><span class="token punctuation">,</span> <span class="token string">":Group 2"</span><span class="token punctuation">,</span> <span class="token string">"Another item 1"</span><span class="token punctuation">,</span> <span class="token string">"Another item 2"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a select control to the main layout</span><br>
+				    sel <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSelect<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Outlined,Radio,Multiple"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				    sel<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Select an item"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler when an item is selected</span><br>
+				    sel<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>show
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp7' )">Copy All</a>

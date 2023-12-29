@@ -79,7 +79,10 @@
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> edt<br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
 				    <br>
 				    tgl <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateToggle<span class="token punctuation">(</span> <span class="token string">"Keyboard"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
@@ -95,8 +98,10 @@
 				    app<span class="token punctuation">.</span>SetOnShowKeyboard<span class="token punctuation">(</span> OnKeyboardShown <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">tgl_OnTouch</span><span class="token punctuation">(</span> show <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <span class="token keyword">if</span>  show <span class="token punctuation">:</span> app<span class="token punctuation">.</span>ShowKeyboard<span class="token punctuation">(</span> edt <span class="token punctuation">)</span><br>
-				    <span class="token keyword">else</span><span class="token punctuation">:</span> app<span class="token punctuation">.</span>HideKeyboard<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token keyword">if</span> show<span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>ShowKeyboard<span class="token punctuation">(</span> edt <span class="token punctuation">)</span><br>
+				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>HideKeyboard<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<br>
 				<b id="snip1" class="code-py" style="font-size:100%"><span class="token keyword">def</span> OnKeyboard<span class="token punctuation">(</span> shown <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Keyboard shown: "</span> <span class="token operator">+</span> shown <span class="token punctuation">)</span></b>

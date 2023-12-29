@@ -90,29 +90,30 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
 				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Absolute"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        apb <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAppBarModern<span class="token punctuation">(</span><span class="token string">"Search for games"</span><span class="token punctuation">,</span> <span class="token string">"more_vert"</span><span class="token punctuation">)</span><br>
-				        apbHeight <span class="token operator">=</span> apb<span class="token punctuation">.</span>GetHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <br>
-				        scr <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateScroller<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"NoScrollBar"</span><span class="token punctuation">)</span><br>
-				            <br>
-				            pageLay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">)</span><br>
-				            pageLay<span class="token punctuation">.</span>SetSize<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">)</span><br>
-				            pageLay<span class="token punctuation">.</span>SetPadding<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> apbHeight<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
-				                txt <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."</span><br>
-				                pageLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> MUI<span class="token punctuation">.</span>CreateTextParagraph<span class="token punctuation">(</span>txt<span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				            scr<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>pageLay<span class="token punctuation">)</span><br>
-				        <br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>scr<span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>apb<span class="token punctuation">)</span><br>
+				    <br>
+				    apb <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAppBarModern<span class="token punctuation">(</span><span class="token string">"Search for games"</span><span class="token punctuation">,</span> <span class="token string">"more_vert"</span><span class="token punctuation">)</span><br>
+				    apbHeight <span class="token operator">=</span> apb<span class="token punctuation">.</span>GetHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    scr <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateScroller<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"NoScrollBar"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    pageLay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">)</span><br>
+				    pageLay<span class="token punctuation">.</span>SetSize<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">)</span><br>
+				    pageLay<span class="token punctuation">.</span>SetPadding<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> apbHeight<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				    txt <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."</span><br>
+				    pageLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>MUI<span class="token punctuation">.</span>CreateTextParagraph<span class="token punctuation">(</span>txt<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    scr<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>pageLay<span class="token punctuation">)</span><br>
+				    <br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>scr<span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>apb<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>
@@ -168,32 +169,34 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> lay<br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
 				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Absolute"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        apb <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAppBarModern<span class="token punctuation">(</span><span class="token string">"Search for games"</span><span class="token punctuation">,</span> <span class="token string">"more_vert"</span><span class="token punctuation">,</span> <span class="token string">"Round"</span><span class="token punctuation">)</span><br>
-				        apb<span class="token punctuation">.</span>SetOnMenuTouch<span class="token punctuation">(</span>OnMenuTouch<span class="token punctuation">)</span><br>
-				        apb<span class="token punctuation">.</span>SetOnControlTouch<span class="token punctuation">(</span>OnCtrlTouch<span class="token punctuation">)</span><br>
-				        <br>
-				        apbHeight <span class="token operator">=</span> apb<span class="token punctuation">.</span>GetHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <br>
-				        scr <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateScroller<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"NoScrollBar"</span><span class="token punctuation">)</span><br>
-				            <br>
-				            pageLay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">)</span><br>
-				            pageLay<span class="token punctuation">.</span>SetSize<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">)</span><br>
-				            pageLay<span class="token punctuation">.</span>SetPadding<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> apbHeight<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
-				                txt <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."</span><br>
-				                pageLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> MUI<span class="token punctuation">.</span>CreateTextParagraph<span class="token punctuation">(</span>txt<span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				            scr<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>pageLay<span class="token punctuation">)</span><br>
-				        <br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>scr<span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>apb<span class="token punctuation">)</span><br>
+				    <br>
+				    apb <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAppBarModern<span class="token punctuation">(</span><span class="token string">"Search for games"</span><span class="token punctuation">,</span> <span class="token string">"more_vert"</span><span class="token punctuation">,</span> <span class="token string">"Round"</span><span class="token punctuation">)</span><br>
+				    apb<span class="token punctuation">.</span>SetOnMenuTouch<span class="token punctuation">(</span>OnMenuTouch<span class="token punctuation">)</span><br>
+				    apb<span class="token punctuation">.</span>SetOnControlTouch<span class="token punctuation">(</span>OnCtrlTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    apbHeight <span class="token operator">=</span> apb<span class="token punctuation">.</span>GetHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    scr <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateScroller<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"NoScrollBar"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    pageLay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">)</span><br>
+				    pageLay<span class="token punctuation">.</span>SetSize<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">)</span><br>
+				    pageLay<span class="token punctuation">.</span>SetPadding<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> apbHeight<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				    txt <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."</span><br>
+				    pageLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>MUI<span class="token punctuation">.</span>CreateTextParagraph<span class="token punctuation">(</span>txt<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    scr<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>pageLay<span class="token punctuation">)</span><br>
+				    <br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>scr<span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>apb<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<br>
@@ -242,29 +245,30 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Dark<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Dark, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
 				    app<span class="token punctuation">.</span>InitializeUIKit<span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
 				    <br>
 				    lay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Absolute"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        apb <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAppBarModern<span class="token punctuation">(</span><span class="token string">"My Title"</span><span class="token punctuation">,</span> <span class="token string">"menu"</span><span class="token punctuation">,</span> <span class="token string">"search,more_vert"</span><span class="token punctuation">)</span><br>
-				        apbHeight <span class="token operator">=</span> apb<span class="token punctuation">.</span>GetHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <br>
-				        scr <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateScroller<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"NoScrollBar"</span><span class="token punctuation">)</span><br>
-				            <br>
-				            pageLay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">)</span><br>
-				            pageLay<span class="token punctuation">.</span>SetSize<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">)</span><br>
-				            pageLay<span class="token punctuation">.</span>SetPadding<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> apbHeight<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
-				                txt <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do: eiusmod ..."</span><br>
-				                pageLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> MUI<span class="token punctuation">.</span>CreateTextParagraph<span class="token punctuation">(</span>txt<span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				            scr<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>pageLay<span class="token punctuation">)</span><br>
-				        <br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>scr<span class="token punctuation">)</span><br>
-				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>apb<span class="token punctuation">)</span><br>
+				    <br>
+				    apb <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateAppBarModern<span class="token punctuation">(</span><span class="token string">"My Title"</span><span class="token punctuation">,</span> <span class="token string">"menu"</span><span class="token punctuation">,</span> <span class="token string">"search,more_vert"</span><span class="token punctuation">)</span><br>
+				    apbHeight <span class="token operator">=</span> apb<span class="token punctuation">.</span>GetHeight<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    scr <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateScroller<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"NoScrollBar"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    pageLay <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">)</span><br>
+				    pageLay<span class="token punctuation">.</span>SetSize<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">)</span><br>
+				    pageLay<span class="token punctuation">.</span>SetPadding<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> apbHeight<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				    txt <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod ..."</span><br>
+				    pageLay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>MUI<span class="token punctuation">.</span>CreateTextParagraph<span class="token punctuation">(</span>txt<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    scr<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>pageLay<span class="token punctuation">)</span><br>
+				    <br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>scr<span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>apb<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>
 			</div>

@@ -67,17 +67,18 @@
 				<span class="token punctuation">}</span></b>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>SetOnError<span class="token punctuation">(</span> OnError <span class="token punctuation">)</span><br>
-				    throw <span class="token string">"My thrown error"</span><br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
-				<b id="snip1" class="code-py" style="font-size:100%"><span class="token keyword">def</span> OnError<span class="token punctuation">(</span> msg<span class="token punctuation">,</span> line<span class="token punctuation">,</span> <span class="token builtin">file</span> <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    text <span class="token operator">=</span><br>
-				        <span class="token string">'Message: "'</span> <span class="token operator">+</span> msg <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span><br>
-				        <span class="token string">'Line: '</span> <span class="token operator">+</span> line <span class="token operator">+</span> <span class="token string">'\n'</span> <span class="token operator">+</span><br>
-				        <span class="token string">'File: "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>Uri2Path<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>SetOnError<span class="token punctuation">(</span>OnError<span class="token punctuation">)</span><br>
+				    <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"My thrown error"</span><span class="token punctuation">)</span><br>
+				<br>
+				<b id="snip1" class="code-py" style="font-size:100%"><span class="token keyword">def</span> OnError<span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    text <span class="token operator">=</span> <span class="token string">'Message: "'</span> <span class="token operator">+</span> msg <span class="token operator">+</span> <span class="token string">'"\n'</span> <span class="token operator">+</span><br>
+				           <span class="token string">'Line: '</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'\n'</span> <span class="token operator">+</span><br>
+				           <span class="token string">'File: "'</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>Uri2Path<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'"'</span><br>
 				    <br>
-				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> text<span class="token punctuation">,</span> <span class="token string">"Received error message:"</span> <span class="token punctuation">)</span></b>
+				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token string">"Received error message:"</span><span class="token punctuation">)</span></b>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

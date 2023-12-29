@@ -70,13 +70,14 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Game<br>
+				<span class="token comment"># cfg.Game</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    rect <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateRectangle<span class="token punctuation">(</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0xff</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0x5555ff</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"floor"</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">global</span> rect<br>
+				    rect <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateRectangle<span class="token punctuation">(</span><span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">0xff</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0x5555ff</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"floor"</span><span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <b id="snip1" class="code-py" style="font-size:100%">gfx<span class="token punctuation">.</span>AddGraphic<span class="token punctuation">(</span> rect<span class="token punctuation">,</span> <span class="token number">.1</span><span class="token punctuation">,</span> <span class="token number">0.4</span> <span class="token punctuation">)</span></b><br>
+				    gfx<span class="token punctuation">.</span>AddGraphic<span class="token punctuation">(</span>rect<span class="token punctuation">,</span> <span class="token number">.1</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">)</span><br>
 				    gfx<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">

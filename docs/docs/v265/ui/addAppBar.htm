@@ -252,17 +252,18 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen linear layout with objects align Top and Center</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Adds an appbar to the layout</span><br>
-				        this<span class="token punctuation">.</span>apb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"My App"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a button control with margins 1/10 of the parent width.</span><br>
-				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>margins <span class="token operator">=</span> <span class="token number">0.1</span>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen linear layout with objects align Top and Center</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Adds an appbar to the layout</span><br>
+				    apb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"My App"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Adds a button control with margins 1/10 of the parent width.</span><br>
+				    btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>margins <span class="token operator">=</span> <span class="token number">0.1</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -322,44 +323,46 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen linear layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add an appbar to the layout</span><br>
-				        this<span class="token punctuation">.</span>apb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"My app"</span><span class="token punctuation">,</span> <span class="token string">"Menu,Fixed"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler to show the drawer onMenu event</span><br>
-				        this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>setOnMenu<span class="token punctuation">(</span> this<span class="token punctuation">.</span>showDrawer <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a drawer layout</span><br>
-				        this<span class="token punctuation">.</span>drawLay <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span>null<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a drawer to the app and pass the drawer layout</span><br>
-				        this<span class="token punctuation">.</span>drawer <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDrawer<span class="token punctuation">(</span>this<span class="token punctuation">.</span>drawLay<span class="token punctuation">,</span> <span class="token string">"left"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a list to the drawer layout. See `List` component for customization.</span><br>
-				        lst <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"folder"</span><span class="token punctuation">,</span> <span class="token string">"Folders"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Audios"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"photo"</span><span class="token punctuation">,</span> <span class="token string">"Photos"</span><span class="token punctuation">]</span><br>
-				        <span class="token punctuation">]</span><br>
-				        this<span class="token punctuation">.</span>lstMenu <span class="token operator">=</span> ui<span class="token punctuation">.</span>addList<span class="token punctuation">(</span>this<span class="token punctuation">.</span>drawLay<span class="token punctuation">,</span> lst<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>lstMenu<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Main navigation"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler to the list onTouch event</span><br>
-				        this<span class="token punctuation">.</span>lstMenu<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> drawer<span class="token punctuation">,</span> apb<br>
+				    <span class="token comment"># Creates a fullscreen linear layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
 				    <br>
-				    showDrawer<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>drawer<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token comment"># Add an appbar to the layout</span><br>
+				    apb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"My app"</span><span class="token punctuation">,</span> <span class="token string">"Menu,Fixed"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span> title <span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Set the appbar text with the selected list item</span><br>
-				        this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>text <span class="token operator">=</span> title<br>
-				        <br>
-				        <span class="token comment">#  Close the drawer</span><br>
-				        this<span class="token punctuation">.</span>drawer<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span>
+				    <span class="token comment"># Add a callback handler to show the drawer onMenu event</span><br>
+				    apb<span class="token punctuation">.</span>setOnMenu<span class="token punctuation">(</span> showDrawer <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a drawer layout</span><br>
+				    drawLay <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a drawer to the app and pass the drawer layout</span><br>
+				    drawer <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDrawer<span class="token punctuation">(</span>drawLay<span class="token punctuation">,</span> <span class="token string">"left"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a list to the drawer layout. See `List` component for customization.</span><br>
+				    lst <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"folder"</span><span class="token punctuation">,</span> <span class="token string">"Folders"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Audios"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"photo"</span><span class="token punctuation">,</span> <span class="token string">"Photos"</span><span class="token punctuation">]</span><br>
+				    <span class="token punctuation">]</span><br>
+				    lstMenu <span class="token operator">=</span> ui<span class="token punctuation">.</span>addList<span class="token punctuation">(</span>drawLay<span class="token punctuation">,</span> lst<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    lstMenu<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Main navigation"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler to the list onTouch event</span><br>
+				    lstMenu<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> onTouch <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">showDrawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    drawer<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> index<span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Set the appbar text with the selected list item</span><br>
+				    apb<span class="token punctuation">.</span>text <span class="token operator">=</span> title<br>
+				    <br>
+				    <span class="token comment"># Close the drawer</span><br>
+				    drawer<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
@@ -426,51 +429,53 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        this<span class="token punctuation">.</span>apb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"My App"</span><span class="token punctuation">,</span> <span class="token string">"Menu,Primary"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>setOnMenu<span class="token punctuation">(</span> this<span class="token punctuation">.</span>showDrawer <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add an icon buttons to the appbar with onTouch callbacks</span><br>
-				        this<span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"mail"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>btn1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Messages"</span><span class="token punctuation">,</span> <span class="token string">"Bottom"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-				        <br>
-				        this<span class="token punctuation">.</span>btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>btn2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Account"</span><span class="token punctuation">,</span> <span class="token string">"Bottom"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-				        <br>
-				        this<span class="token punctuation">.</span>btn3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"more_vert"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>btn3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"More options"</span><span class="token punctuation">,</span> <span class="token string">"Bottom"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a drawer layout</span><br>
-				        this<span class="token punctuation">.</span>drawLay <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span>null<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a drawer to the app and pass the drawer layout</span><br>
-				        this<span class="token punctuation">.</span>drawer <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDrawer<span class="token punctuation">(</span>this<span class="token punctuation">.</span>drawLay<span class="token punctuation">,</span> <span class="token string">"left"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a list to the drawer layout. See `List` component for customization.</span><br>
-				        lst <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"folder"</span><span class="token punctuation">,</span> <span class="token string">"Folders"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Audios"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"photo"</span><span class="token punctuation">,</span> <span class="token string">"Photos"</span><span class="token punctuation">]</span><br>
-				        <span class="token punctuation">]</span><br>
-				        this<span class="token punctuation">.</span>lstMenu <span class="token operator">=</span> ui<span class="token punctuation">.</span>addList<span class="token punctuation">(</span>this<span class="token punctuation">.</span>drawLay<span class="token punctuation">,</span> lst<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>lstMenu<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Main navigation"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler to the list onTouch event</span><br>
-				        this<span class="token punctuation">.</span>lstMenu<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> drawer<span class="token punctuation">,</span> apb<br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
 				    <br>
-				    showDrawer<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>drawer<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    apb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"My App"</span><span class="token punctuation">,</span> <span class="token string">"Menu,Primary"</span><span class="token punctuation">)</span><br>
+				    apb<span class="token punctuation">.</span>setOnMenu<span class="token punctuation">(</span> showDrawer <span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span> title <span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Set the appbar text with the selected list item</span><br>
-				        this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>text <span class="token operator">=</span> title<br>
-				        <br>
-				        <span class="token comment">#  Close the drawer</span><br>
-				        this<span class="token punctuation">.</span>drawer<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span>
+				    <span class="token comment"># Add an icon buttons to the appbar with onTouch callbacks</span><br>
+				    btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"mail"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				    btn1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token keyword">lambda</span> event<span class="token punctuation">:</span> ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Messages"</span><span class="token punctuation">,</span> <span class="token string">"Bottom"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <br>
+				    btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				    btn2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token keyword">lambda</span> event<span class="token punctuation">:</span> ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Account"</span><span class="token punctuation">,</span> <span class="token string">"Bottom"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <br>
+				    btn3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"more_vert"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				    btn3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token keyword">lambda</span> event<span class="token punctuation">:</span> ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"More options"</span><span class="token punctuation">,</span> <span class="token string">"Bottom"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Adds a drawer layout</span><br>
+				    drawLay <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Adds a drawer to the app and pass the drawer layout</span><br>
+				    drawer <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDrawer<span class="token punctuation">(</span>drawLay<span class="token punctuation">,</span> <span class="token string">"left"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Adds a list to the drawer layout. See `List` component for customization.</span><br>
+				    lst <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"folder"</span><span class="token punctuation">,</span> <span class="token string">"Folders"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Audios"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"photo"</span><span class="token punctuation">,</span> <span class="token string">"Photos"</span><span class="token punctuation">]</span><br>
+				    <span class="token punctuation">]</span><br>
+				    lstMenu <span class="token operator">=</span> ui<span class="token punctuation">.</span>addList<span class="token punctuation">(</span>drawLay<span class="token punctuation">,</span> lst<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    lstMenu<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Main navigation"</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler to the list onTouch event</span><br>
+				    lstMenu<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> onTouch <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">showDrawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    drawer<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> body<span class="token punctuation">,</span> icon<span class="token punctuation">,</span> index<span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Set the appbar text with the selected list item</span><br>
+				    apb<span class="token punctuation">.</span>text <span class="token operator">=</span> title<br>
+				    <br>
+				    <span class="token comment"># Close the drawer</span><br>
+				    drawer<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
@@ -520,32 +525,34 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp4" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add an appbar to the main layout</span><br>
-				        this<span class="token punctuation">.</span>apb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"My app"</span><span class="token punctuation">,</span> <span class="token string">"Default"</span> <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a textfield to the appbar</span><br>
-				        this<span class="token punctuation">.</span>tfd <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Search,Outlined,Small"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>placeholder <span class="token operator">=</span> <span class="token string">"Search"</span><br>
-				        this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a search icon button to the appbar</span><br>
-				        this<span class="token punctuation">.</span>searchBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"search"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when the button is click</span><br>
-				        this<span class="token punctuation">.</span>searchBtn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>showSearchField <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> tfd<span class="token punctuation">,</span> searchBtn<br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
 				    <br>
-				    showSearchField<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">if</span> this<span class="token punctuation">.</span>searchBtn<span class="token punctuation">.</span>text <span class="token operator">==</span> <span class="token string">"search"</span><span class="token punctuation">:</span><br>
-				            this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				            this<span class="token punctuation">.</span>searchBtn<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">"close"</span><br>
-				        <span class="token keyword">else</span><span class="token punctuation">:</span><br>
-				            this<span class="token punctuation">.</span>tfd<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				            this<span class="token punctuation">.</span>searchBtn<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">"search"</span>
+				    <span class="token comment"># Add an appbar to the main layout</span><br>
+				    apb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addAppBar<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"My app"</span><span class="token punctuation">,</span> <span class="token string">"Default"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Adds a textfield to the appbar</span><br>
+				    tfd <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTextField<span class="token punctuation">(</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Search,Outlined,Small"</span><span class="token punctuation">)</span><br>
+				    tfd<span class="token punctuation">.</span>placeholder <span class="token operator">=</span> <span class="token string">"Search"</span><br>
+				    tfd<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a search icon button to the appbar</span><br>
+				    searchBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"search"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler when the button is click</span><br>
+				    searchBtn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> showSearchField <span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">showSearchField</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span> searchBtn<span class="token punctuation">.</span>text <span class="token operator">==</span> <span class="token string">"search"</span><span class="token punctuation">:</span><br>
+				        tfd<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        searchBtn<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">"close"</span><br>
+				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>
+				        tfd<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        searchBtn<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">"search"</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>

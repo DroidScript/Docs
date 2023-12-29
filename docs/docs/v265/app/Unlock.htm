@@ -71,20 +71,22 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY,touchspy"</span> <span class="token punctuation">)</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY,touchspy"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateButton<span class="token punctuation">(</span> <span class="token string">"Disable"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
-				    btn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> btn_OnTouch <span class="token punctuation">)</span><br>
-				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> btn <span class="token punctuation">)</span><br>
+				    btn <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateButton<span class="token punctuation">(</span><span class="token string">"Disable"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>btn_OnTouch<span class="token punctuation">)</span><br>
+				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
 				    <br>
-				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>Lock<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Locked. Wait 5 secs"</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Locked. Wait 5 secs"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    <b id="snip1" class="code-py" style="font-size:100%">setTimeout<span class="token punctuation">(</span>app<span class="token punctuation">.</span>Unlock<span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span></b>
+				    app<span class="token punctuation">.</span>SetTimeout<span class="token punctuation">(</span>app<span class="token punctuation">.</span>Unlock<span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

@@ -67,18 +67,21 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    <b id="snip1" class="code-py" style="font-size:100%"><span class="token builtin">id</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>GetNotifyId<span class="token punctuation">(</span><span class="token punctuation">)</span></b><br>
 				    <br>
-				    <span class="token keyword">if</span>  <span class="token builtin">id</span> <span class="token punctuation">:</span> app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> <span class="token builtin">id</span><span class="token punctuation">,</span> <span class="token string">"Notification ID"</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">if</span> <span class="token builtin">id</span><span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">,</span> <span class="token string">"Notification ID"</span><span class="token punctuation">)</span><br>
 				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>
 				        <span class="token keyword">not</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateNotification<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				        <span class="token keyword">not</span><span class="token punctuation">.</span>SetMessage<span class="token punctuation">(</span><br>
 				            <span class="token string">"You have an urgent notification"</span><span class="token punctuation">,</span><br>
 				            <span class="token string">"Press me!"</span><span class="token punctuation">,</span> <span class="token string">"Do as the title says."</span><br>
 				        <span class="token punctuation">)</span><br>
-				        <span class="token keyword">not</span><span class="token punctuation">.</span>Notify<span class="token punctuation">(</span> <span class="token number">1234</span> <span class="token punctuation">)</span><br>
-				        setTimeout<span class="token punctuation">(</span> app<span class="token punctuation">.</span>Exit<span class="token punctuation">,</span>  <span class="token number">2000</span> <span class="token punctuation">)</span>
+				        <span class="token keyword">not</span><span class="token punctuation">.</span>Notify<span class="token punctuation">(</span><span class="token number">1234</span><span class="token punctuation">)</span><br>
+				        app<span class="token punctuation">.</span>SetTimeout<span class="token punctuation">(</span>app<span class="token punctuation">.</span>Exit<span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

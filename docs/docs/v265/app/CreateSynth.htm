@@ -101,12 +101,14 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    syn <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSynth<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    syn<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><br>
-				    syn<span class="token punctuation">.</span>SetVcaSustain<span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><br>
-				    syn<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
-				    syn<span class="token punctuation">.</span>SetNoteLength<span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
+				    syn<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span><span class="token string">"Saw"</span><span class="token punctuation">)</span><br>
+				    syn<span class="token punctuation">.</span>SetVcaSustain<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				    syn<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    syn<span class="token punctuation">.</span>SetNoteLength<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
 				    <br>
 				    syn<span class="token punctuation">.</span>PlayMidiTune<span class="token punctuation">(</span><br>
 				        <span class="token string">"76:4,71:8,72:8,74:4,72:8,71:8,69:4,69:8,72:8,76:4,"</span> <span class="token operator">+</span><br>
@@ -152,29 +154,37 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    synth1 <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSynth<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    synth1<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><br>
-				    synth1<span class="token punctuation">.</span>SetVcaSustain<span class="token punctuation">(</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><br>
-				    synth1<span class="token punctuation">.</span>SetVcaDecay<span class="token punctuation">(</span> <span class="token number">500</span> <span class="token punctuation">)</span><br>
-				    synth1<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    synth1<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span><span class="token string">"Saw"</span><span class="token punctuation">)</span><br>
+				    synth1<span class="token punctuation">.</span>SetVcaSustain<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				    synth1<span class="token punctuation">.</span>SetVcaDecay<span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><br>
+				    synth1<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
 				    <br>
 				    synth2 <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateSynth<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    synth2<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span> <span class="token string">"Saw"</span> <span class="token punctuation">)</span><br>
-				    synth2<span class="token punctuation">.</span>SetVcaDecay<span class="token punctuation">(</span> <span class="token number">300</span> <span class="token punctuation">)</span><br>
-				    synth2<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				    synth2<span class="token punctuation">.</span>SetWaveShape<span class="token punctuation">(</span><span class="token string">"Saw"</span><span class="token punctuation">)</span><br>
+				    synth2<span class="token punctuation">.</span>SetVcaDecay<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><br>
+				    synth2<span class="token punctuation">.</span>SetVolume<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
 				    <br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth1.PlayMidiTune("35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    <span class="token keyword">def</span> <span class="token function">playSynth1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        synth1<span class="token punctuation">.</span>PlayMidiTune<span class="token punctuation">(</span><span class="token string">"35:4,35:4,35:4,35:4,31:4,31:4,30:4,30:4"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
-				    setTimeout<span class="token punctuation">(</span><span class="token string">'synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span>
+				    <span class="token keyword">def</span> <span class="token function">playSynth2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        synth2<span class="token punctuation">.</span>PlayMidiTune<span class="token punctuation">(</span><span class="token string">"59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    setTimeout<span class="token punctuation">(</span>playSynth1<span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span>playSynth1<span class="token punctuation">,</span> <span class="token number">1</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span>playSynth1<span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span>playSynth1<span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span>playSynth1<span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span>playSynth1<span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    <br>
+				    setTimeout<span class="token punctuation">(</span>playSynth2<span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span>playSynth2<span class="token punctuation">,</span> <span class="token number">3</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span>playSynth2<span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span><br>
+				    setTimeout<span class="token punctuation">(</span>playSynth2<span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">*</span><span class="token number">5120</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>

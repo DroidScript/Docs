@@ -83,13 +83,15 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    ip <span class="token operator">=</span> app<span class="token punctuation">.</span>GetIPAddress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">,</span> <span class="token string">"Type the following address into your browser"</span> <span class="token punctuation">)</span><br>
 				    <br>
-				    <b id="snip1" class="code-py" style="font-size:100%">serv <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateWebServer<span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><br>
+				    serv <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateWebServer<span class="token punctuation">(</span> <span class="token number">8080</span> <span class="token punctuation">)</span><br>
 				    serv<span class="token punctuation">.</span>SetFolder<span class="token punctuation">(</span> <span class="token string">"/sdcard/DroidScript"</span> <span class="token punctuation">)</span><br>
-				    serv<span class="token punctuation">.</span>Start<span class="token punctuation">(</span><span class="token punctuation">)</span></b>
+				    serv<span class="token punctuation">.</span>Start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
@@ -125,14 +127,17 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> serv<br>
 				    ip <span class="token operator">=</span> app<span class="token punctuation">.</span>GetIPAddress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> ip <span class="token operator">+</span><span class="token string">":8080"</span><span class="token punctuation">,</span> <span class="token string">"Type the following address into your browser"</span> <span class="token punctuation">)</span><br>
 				    <br>
-				    <b id="snip2" class="code-py" style="font-size:100%">serv <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateWebServer<span class="token punctuation">(</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"Upload,ListDir"</span> <span class="token punctuation">)</span><br>
+				    serv <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateWebServer<span class="token punctuation">(</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token string">"Upload,ListDir"</span> <span class="token punctuation">)</span><br>
 				    serv<span class="token punctuation">.</span>SetFolder<span class="token punctuation">(</span> <span class="token string">"/sdcard/DroidScript"</span> <span class="token punctuation">)</span><br>
 				    serv<span class="token punctuation">.</span>AddServlet<span class="token punctuation">(</span> <span class="token string">"/message"</span><span class="token punctuation">,</span> OnServlet <span class="token punctuation">)</span><br>
-				    serv<span class="token punctuation">.</span>Start<span class="token punctuation">(</span><span class="token punctuation">)</span></b><br>
+				    serv<span class="token punctuation">.</span>Start<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnServlet</span><span class="token punctuation">(</span> request<span class="token punctuation">,</span> info <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    serv<span class="token punctuation">.</span>SetResponse<span class="token punctuation">(</span> <span class="token string">"Got it!"</span> <span class="token punctuation">)</span><br>
@@ -266,52 +271,62 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				indexhtml <span class="token operator">=</span> `<br>
-				<span class="token operator">&lt;</span>html<span class="token operator">></span><br>
-				<span class="token operator">&lt;</span>head<span class="token operator">></span><br>
-				    <span class="token operator">&lt;</span>title<span class="token operator">></span>WebSockets Demo<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span><br>
-				    <br>
-				    <span class="token operator">&lt;</span>script<span class="token operator">></span><br>
-				        count <span class="token operator">=</span> <span class="token number">0</span><br>
-				        <br>
-				        <span class="token keyword">def</span> <span class="token function">Connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				            <span class="token comment">#  Open web socket to phone.</span><br>
-				            ws <span class="token operator">=</span> new WebSocket<span class="token punctuation">(</span> <span class="token string">"ws:# "</span> <span class="token operator">+</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>host <span class="token punctuation">)</span><br>
-				            ws<span class="token punctuation">.</span>onopen <span class="token operator">=</span> ws_onopen<br>
-				            ws<span class="token punctuation">.</span>onmessage <span class="token operator">=</span> ws_onmessage<br>
-				            ws<span class="token punctuation">.</span>onclose <span class="token operator">=</span> ws_onclose<br>
-				            ws<span class="token punctuation">.</span>onerror <span class="token operator">=</span> ws_onerror<br>
-				        <br>
-				        <span class="token keyword">def</span> <span class="token function">Send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				            ws<span class="token punctuation">.</span>send<span class="token punctuation">(</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> count<span class="token operator">+</span><span class="token operator">+</span> <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token keyword">def</span> <span class="token function">ws_onopen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				            id_info<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"Socket Open"</span><br>
-				        <br>
-				        <span class="token keyword">def</span> <span class="token function">ws_onmessage</span><span class="token punctuation">(</span> msg <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				            id_info<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> msg<span class="token punctuation">.</span>data<br>
-				        <br>
-				        <span class="token keyword">def</span> <span class="token function">ws_onclose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				            id_info<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"Socket Closed"</span><br>
-				        <br>
-				        <span class="token keyword">def</span> <span class="token function">ws_onerror</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				            id_info<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"Socket Error: "</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>data<br>
-				    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><br>
-				<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span><br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
-				<span class="token operator">&lt;</span>body<span class="token operator">></span><br>
-				    <span class="token operator">&lt;</span>h2<span class="token operator">></span>DroidScript WebSockets Demo<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span><br>
-				    <span class="token operator">&lt;</span>div <span class="token builtin">id</span><span class="token operator">=</span><span class="token string">"id_info"</span><span class="token operator">></span>Ready<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><br>
-				    <span class="token operator">&lt;</span>button onclick<span class="token operator">=</span><span class="token string">"Connect()"</span><span class="token operator">></span>Connect<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span><br>
-				    <span class="token operator">&lt;</span>button onclick<span class="token operator">=</span><span class="token string">"Send()"</span><span class="token operator">></span>Send Message<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span><br>
-				<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span><br>
-				<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>`<br>
+				indexhtml <span class="token operator">=</span> <span class="token triple-quoted-string string">"""<br>
+				&lt;html><br>
+				&lt;head><br>
+				    &lt;title>WebSockets Demo&lt;/title><br>
+				        <br>
+				        count = 0;<br>
+				        <br>
+				        function Connect()<br>
+				        {<br>
+				            // Open web socket to phone.<br>
+				            ws = new WebSocket( "ws://" + window.location.host );<br>
+				            ws.onopen = ws_onopen;<br>
+				            ws.onmessage = ws_onmessage;<br>
+				            ws.onclose = ws_onclose;<br>
+				            ws.onerror = ws_onerror;<br>
+				        }<br>
+				        <br>
+				        function Send() {<br>
+				            ws.send( "Hello " + count++ );<br>
+				        }<br>
+				        <br>
+				        function ws_onopen() {<br>
+				            id_info.innerHTML = "Socket Open";<br>
+				        }<br>
+				        <br>
+				        function ws_onmessage( msg ) {<br>
+				            id_info.innerHTML = msg.data;<br>
+				        }<br>
+				        <br>
+				        function ws_onclose() {<br>
+				            id_info.innerHTML = "Socket Closed";<br>
+				        }<br>
+				        <br>
+				        function ws_onerror(e) {<br>
+				            id_info.innerHTML = "Socket Error: " + e.data;<br>
+				        }<br>
+				<br>
+				&lt;/head><br>
+				<br>
+				&lt;body><br>
+				    &lt;h2>DroidScript WebSockets Demo&lt;/h2><br>
+				    &lt;div id="id_info">Ready&lt;/div><br>
+				    &lt;button onclick="Connect()">Connect&lt;/button><br>
+				    &lt;button onclick="Send()">Send Message&lt;/button><br>
+				&lt;/body><br>
+				&lt;/html><br>
+				"""</span><br>
 				<br>
 				count <span class="token operator">=</span> <span class="token number">0</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <span class="token comment">#  Create the Index.html file</span><br>
-				    <span class="token comment">#  note: in regular use move the html to a separate file</span><br>
+				    <span class="token keyword">global</span> txt<span class="token punctuation">,</span> serv<span class="token punctuation">,</span> ip<span class="token punctuation">,</span> txtMsg<br>
+				    <span class="token comment"># Create the Index.html file</span><br>
+				    <span class="token comment"># note: in regular use move the html to a separate file</span><br>
 				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"Index.html"</span><span class="token punctuation">,</span> indexhtml <span class="token punctuation">)</span><br>
 				    <br>
 				    ip <span class="token operator">=</span> app<span class="token punctuation">.</span>GetIPAddress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
@@ -346,15 +361,17 @@
 				<span class="token keyword">def</span> <span class="token function">ShowConnections</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    clients <span class="token operator">=</span> serv<span class="token punctuation">.</span>GetWebSockClients<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token builtin">list</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><br>
-				    <span class="token keyword">for</span>  i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> clients<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span> <span class="token punctuation">:</span><br>
-				        <span class="token builtin">list</span><span class="token punctuation">.</span>push<span class="token punctuation">(</span>clients<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>remoteAddress<span class="token punctuation">)</span><br>
+				    <span class="token keyword">for</span> client <span class="token keyword">in</span> clients<span class="token punctuation">:</span><br>
+				        <span class="token builtin">list</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>client<span class="token punctuation">.</span>remoteAddress<span class="token punctuation">)</span><br>
 				    <br>
-				    <span class="token keyword">if</span> <span class="token builtin">list</span><span class="token punctuation">.</span>length<span class="token punctuation">:</span> txt<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span> <span class="token builtin">list</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">if</span> <span class="token builtin">list</span><span class="token punctuation">:</span><br>
+				        txt<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span> <span class="token string">"\n"</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">SendMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    serv<span class="token punctuation">.</span>SendText<span class="token punctuation">(</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> count<span class="token operator">+</span><span class="token operator">+</span> <span class="token punctuation">)</span><br>
+				    serv<span class="token punctuation">.</span>SendText<span class="token punctuation">(</span> <span class="token string">"Hello "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				    count <span class="token operator">+=</span> <span class="token number">1</span><br>
 				<br>
-				<span class="token keyword">def</span> <span class="token function">serv_OnReceive</span><span class="token punctuation">(</span> msg<span class="token punctuation">,</span> ip <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				<span class="token keyword">def</span> <span class="token function">serv_OnReceive</span><span class="token punctuation">(</span> msg<span class="token punctuation">,</span> ip<span class="token punctuation">,</span> <span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    txtMsg<span class="token punctuation">.</span>SetText<span class="token punctuation">(</span> ip <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> msg <span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">

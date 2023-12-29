@@ -72,15 +72,18 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				address <span class="token operator">=</span> <span class="token string">"http:# www.randomfunfacts.com"</span><br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
-				<b id="snip1" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>HttpRequest<span class="token punctuation">(</span> <span class="token string">"GET"</span><span class="token punctuation">,</span> address<span class="token punctuation">,</span> null<span class="token punctuation">,</span> null<span class="token punctuation">,</span> handleReply <span class="token punctuation">)</span></b><br>
+				address <span class="token operator">=</span> <span class="token string">"http://www.randomfunfacts.com"</span><br>
 				<br>
-				<span class="token keyword">def</span> <span class="token function">handleReply</span><span class="token punctuation">(</span> error<span class="token punctuation">,</span> reply <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <span class="token keyword">if</span>  error <span class="token punctuation">:</span> alert<span class="token punctuation">(</span> reply <span class="token punctuation">)</span><br>
+				app<span class="token punctuation">.</span>HttpRequest<span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> address<span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> handleReply<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">handleReply</span><span class="token punctuation">(</span>error<span class="token punctuation">,</span> reply<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span> error<span class="token punctuation">:</span><br>
+				        app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span>reply<span class="token punctuation">)</span><br>
 				    <span class="token keyword">else</span><span class="token punctuation">:</span><br>
-				        funfact <span class="token operator">=</span> reply<span class="token punctuation">.</span><span class="token builtin">slice</span><span class="token punctuation">(</span> reply<span class="token punctuation">.</span>indexOf<span class="token punctuation">(</span><span class="token string">"&lt;i>"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">,</span> reply<span class="token punctuation">.</span>indexOf<span class="token punctuation">(</span><span class="token string">"&lt;/i>"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
-				        alert<span class="token punctuation">(</span> funfact <span class="token punctuation">)</span>
+				        funfact <span class="token operator">=</span> reply<span class="token punctuation">[</span>reply<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">"&lt;i>"</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">:</span> reply<span class="token punctuation">.</span>index<span class="token punctuation">(</span><span class="token string">"&lt;/i>"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><br>
+				        app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span>funfact<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

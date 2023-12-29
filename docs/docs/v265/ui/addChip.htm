@@ -286,28 +286,32 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.025</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.025</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a default chip to the main layout</span><br>
-				        this<span class="token punctuation">.</span>chip1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Basic Chip"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler for `onTouch` event.</span><br>
-				        this<span class="token punctuation">.</span>chip1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a small primary chip</span><br>
-				        this<span class="token punctuation">.</span>chip2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Small Primary Chip"</span><span class="token punctuation">,</span> <span class="token string">"Primary,Small"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>chip2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a touchable secondary chip</span><br>
-				        this<span class="token punctuation">.</span>chip3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Secondary Chip"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Touchable"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>chip2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.025</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.025</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"You touched the chip!"</span> <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a default chip to the main layout</span><br>
+				    chip1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Basic Chip"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a callback handler for `onTouch` event.</span><br>
+				    chip1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a small primary chip</span><br>
+				    chip2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Small Primary Chip"</span><span class="token punctuation">,</span> <span class="token string">"Primary,Small"</span><span class="token punctuation">)</span><br>
+				    chip2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a touchable secondary chip</span><br>
+				    chip3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Secondary Chip"</span><span class="token punctuation">,</span> <span class="token string">"Secondary,Touchable"</span><span class="token punctuation">)</span><br>
+				    chip3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"You touched the chip!"</span><span class="token punctuation">)</span><br>
+				<br>
+				sample <span class="token operator">=</span> Main<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				sample<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -341,20 +345,24 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a touchable and deletable chip</span><br>
-				        this<span class="token punctuation">.</span>chip <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">'Deletable'</span><span class="token punctuation">,</span> <span class="token string">'Secondary,Touchable'</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add callback hanlder for `onDelete` event.</span><br>
-				        <span class="token comment">#  This will also add a delete icon to the chip.</span><br>
-				        this<span class="token punctuation">.</span>chip<span class="token punctuation">.</span>setOnDelete<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onDelete <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onDelete<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Chip is deleted!"</span> <span class="token punctuation">)</span>
+				    <span class="token comment"># Add a touchable and deletable chip</span><br>
+				    chip <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">'Deletable'</span><span class="token punctuation">,</span> <span class="token string">'Secondary,Touchable'</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add callback hanlder for `onDelete` event.</span><br>
+				    <span class="token comment"># This will also add a delete icon to the chip.</span><br>
+				    chip<span class="token punctuation">.</span>setOnDelete<span class="token punctuation">(</span>onDelete<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onDelete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Chip is deleted!"</span><span class="token punctuation">)</span><br>
+				<br>
+				sample <span class="token operator">=</span> Main<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				sample<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
@@ -388,22 +396,26 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a chip control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>chip <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Shopping Cart"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a leading icon to the chip control</span><br>
-				        this<span class="token punctuation">.</span>chip<span class="token punctuation">.</span>icon <span class="token operator">=</span> <span class="token string">"shopping_cart"</span><br>
-				        <br>
-				        <span class="token comment">#  Sets the icon color of the chip control</span><br>
-				        this<span class="token punctuation">.</span>chip<span class="token punctuation">.</span>iconColor <span class="token operator">=</span> <span class="token string">"#673ab7"</span><br>
-				        <br>
-				        <span class="token comment">#  Sets the text size of the chip control</span><br>
-				        this<span class="token punctuation">.</span>chip<span class="token punctuation">.</span>textSize <span class="token operator">=</span> <span class="token number">14</span>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a chip control to the main layout</span><br>
+				    chip <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Shopping Cart"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a leading icon to the chip control</span><br>
+				    chip<span class="token punctuation">.</span>icon <span class="token operator">=</span> <span class="token string">"shopping_cart"</span><br>
+				    <br>
+				    <span class="token comment"># Sets the icon color of the chip control</span><br>
+				    chip<span class="token punctuation">.</span>iconColor <span class="token operator">=</span> <span class="token string">"#673ab7"</span><br>
+				    <br>
+				    <span class="token comment"># Sets the text size of the chip control</span><br>
+				    chip<span class="token punctuation">.</span>textSize <span class="token operator">=</span> <span class="token number">14</span><br>
+				<br>
+				sample <span class="token operator">=</span> Main<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				sample<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
@@ -431,16 +443,20 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp4" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a chip control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>chip <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Character Avatar"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Set the avatar property of the main layout</span><br>
-				        this<span class="token punctuation">.</span>chip<span class="token punctuation">.</span>avatar <span class="token operator">=</span> <span class="token string">"https:# upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"</span>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a chip control to the main layout</span><br>
+				    chip <span class="token operator">=</span> ui<span class="token punctuation">.</span>addChip<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Character Avatar"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Set the avatar property of the main layout</span><br>
+				    chip<span class="token punctuation">.</span>avatar <span class="token operator">=</span> <span class="token string">"https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"</span><br>
+				<br>
+				sample <span class="token operator">=</span> Main<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				sample<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>

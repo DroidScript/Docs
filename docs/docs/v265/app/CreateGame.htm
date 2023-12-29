@@ -106,36 +106,37 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token comment"># Configure app for landscape game mode.</span><br>
-				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">,</span> cfg<span class="token punctuation">.</span>Portrait<br>
+				<span class="token comment"># cfg.Game, cfg.Portrait</span><br>
 				<br>
+				<span class="token comment"># Configure app for landscape game mode.</span><br>
 				<span class="token comment"># Called when game starts, so we can load our assets.</span><br>
 				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> sky<span class="token punctuation">,</span> bunny<span class="token punctuation">,</span> floor<br>
 				    <span class="token comment"># Enable physics with gravity of 20.</span><br>
-				    gfx<span class="token punctuation">.</span>AddPhysics<span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> <br>
+				    gfx<span class="token punctuation">.</span>AddPhysics<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token comment"># Enclose screen with invisible walls.</span><br>
-				    gfx<span class="token punctuation">.</span>Enclose<span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"left,right"</span> <span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>Enclose<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"left,right"</span><span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token comment"># Create our sprite images.</span><br>
-				    sky <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateBackground<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span> <span class="token string">"stretch"</span> <span class="token punctuation">)</span><br>
-				    bunny <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateSprite<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Bunny.png"</span><span class="token punctuation">,</span> <span class="token string">"bunnies"</span> <span class="token punctuation">)</span><br>
-				    floor <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateRectangle<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0x338833</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"floor"</span> <span class="token punctuation">)</span><br>
+				    sky <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateBackground<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span> <span class="token string">"stretch"</span><span class="token punctuation">)</span><br>
+				    bunny <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateSprite<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Bunny.png"</span><span class="token punctuation">,</span> <span class="token string">"bunnies"</span><span class="token punctuation">)</span><br>
+				    floor <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateRectangle<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0x338833</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"floor"</span><span class="token punctuation">)</span><br>
 				<br>
 				<span class="token comment"># Called when game assets have loaded.</span><br>
 				<span class="token keyword">def</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    <span class="token comment"># Add background.</span><br>
-				    gfx<span class="token punctuation">.</span>AddBackground<span class="token punctuation">(</span> sky <span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>AddBackground<span class="token punctuation">(</span>sky<span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token comment"># Add floor.</span><br>
-				    gfx<span class="token punctuation">.</span>AddGraphic<span class="token punctuation">(</span> floor<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.95</span> <span class="token punctuation">)</span><br>
-				    floor<span class="token punctuation">.</span>SetPhysics<span class="token punctuation">(</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"fixed"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>AddGraphic<span class="token punctuation">(</span>floor<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">)</span><br>
+				    floor<span class="token punctuation">.</span>SetPhysics<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"fixed"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token comment"># Add character and set physics properties.</span><br>
 				    <span class="token comment"># (groupId, type, density, bounce, friction)</span><br>
-				    gfx<span class="token punctuation">.</span>AddSprite<span class="token punctuation">(</span> bunny<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.05</span> <span class="token punctuation">)</span><br>
-				    bunny<span class="token punctuation">.</span>SetPhysics<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
-				    bunny<span class="token punctuation">.</span>SetVelocity<span class="token punctuation">(</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>AddSprite<span class="token punctuation">(</span>bunny<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
+				    bunny<span class="token punctuation">.</span>SetPhysics<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
+				    bunny<span class="token punctuation">.</span>SetVelocity<span class="token punctuation">(</span><span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token comment"># Start game.</span><br>
 				    gfx<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -156,6 +157,8 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>CopyFile<span class="token punctuation">(</span><span class="token string">"/assets/samples/Game_Bounce.js"</span><span class="token punctuation">,</span> <span class="token string">"script.js"</span><span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span>CreateGame<span class="token punctuation">(</span><span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"landscape"</span><span class="token punctuation">)</span>

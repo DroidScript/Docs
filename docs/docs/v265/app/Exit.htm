@@ -68,16 +68,14 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>EnableBackKey<span class="token punctuation">(</span> false <span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Press the back key"</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>EnableBackKey<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Press the back key"</span><span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    yesNo <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateYesNoDialog<span class="token punctuation">(</span> <span class="token string">"Exit App?"</span> <span class="token punctuation">)</span><br>
-				    yesNo<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> yesNo_OnTouch <span class="token punctuation">)</span><br>
-				<br>
-				<span class="token keyword">def</span> <span class="token function">yesNo_OnTouch</span><span class="token punctuation">(</span> result <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <span class="token keyword">if</span>  result <span class="token operator">==</span> <span class="token string">"Yes"</span> <span class="token punctuation">:</span> app<span class="token punctuation">.</span>Exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+				    yesNo <span class="token operator">=</span> app
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>

@@ -84,6 +84,8 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>ShowProgress<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <br>
@@ -93,15 +95,11 @@
 				    lst<span class="token punctuation">.</span>SetTextSize1<span class="token punctuation">(</span> <span class="token number">15</span> <span class="token punctuation">)</span><br>
 				    lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span> lst <span class="token punctuation">)</span><br>
 				    <br>
-				    <b id="snip1" class="code-py" style="font-size:100%"><span class="token builtin">list</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>GetRunningApps<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token builtin">list</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>GetRunningApps<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <br>
-				    <span class="token keyword">for</span>  i <span class="token keyword">in</span> <span class="token builtin">list</span> <span class="token punctuation">:</span><br>
-				        a <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><br>
-				        body <span class="token operator">=</span><br>
-				            <span class="token string">"user: "</span> <span class="token operator">+</span> a<span class="token punctuation">.</span>user <span class="token operator">+</span><br>
-				            <span class="token string">"\npid: "</span> <span class="token operator">+</span> a<span class="token punctuation">.</span>pid <span class="token operator">+</span><br>
-				            <span class="token string">"\nforeground: "</span> <span class="token operator">+</span> a<span class="token punctuation">.</span>foreground<br>
-				        lst<span class="token punctuation">.</span>AddItem<span class="token punctuation">(</span> a<span class="token punctuation">.</span>name<span class="token punctuation">,</span> body <span class="token punctuation">)</span></b><br>
+				    <span class="token keyword">for</span> a <span class="token keyword">in</span> <span class="token builtin">list</span><span class="token punctuation">:</span><br>
+				        body <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"user: </span><span class="token interpolation"><span class="token punctuation">{</span>a<span class="token punctuation">.</span>user<span class="token punctuation">}</span></span><span class="token string">\npid: </span><span class="token interpolation"><span class="token punctuation">{</span>a<span class="token punctuation">.</span>pid<span class="token punctuation">}</span></span><span class="token string">\nforeground: </span><span class="token interpolation"><span class="token punctuation">{</span>a<span class="token punctuation">.</span>foreground<span class="token punctuation">}</span></span><span class="token string">"</span></span><br>
+				        lst<span class="token punctuation">.</span>AddItem<span class="token punctuation">(</span>a<span class="token punctuation">.</span>name<span class="token punctuation">,</span> body<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
 				    <br>
@@ -137,17 +135,20 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>Animate<span class="token punctuation">(</span>CheckForeground<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><br>
 				<br>
-				<span class="token keyword">def</span> <span class="token function">CheckForeground</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				<span class="token keyword">def</span> <span class="token function">CheckForeground</span><span class="token punctuation">(</span>time<span class="token punctuation">,</span> dtime<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    apps <span class="token operator">=</span> app<span class="token punctuation">.</span>GetRunningApps<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    name <span class="token operator">=</span> app<span class="token punctuation">.</span>GetPackageName<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token keyword">if</span> !app<span class="token punctuation">.</span>IsAPK<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> name <span class="token operator">+=</span> <span class="token string">":NewActivityProcess"</span><br>
+				    <span class="token keyword">if</span> <span class="token keyword">not</span> app<span class="token punctuation">.</span>IsAPK<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        name <span class="token operator">+=</span> <span class="token string">":NewActivityProcess"</span><br>
 				    <br>
-				    <span class="token keyword">for</span> i <span class="token keyword">in</span> apps<span class="token punctuation">:</span><br>
-				        <span class="token keyword">if</span> apps<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">==</span> name<span class="token punctuation">:</span><br>
-				            app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"In Foreground: "</span> <span class="token operator">+</span> apps<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>foreground<span class="token punctuation">)</span>
+				    <span class="token keyword">for</span> a <span class="token keyword">in</span> apps<span class="token punctuation">:</span><br>
+				        <span class="token keyword">if</span> a<span class="token punctuation">.</span>name <span class="token operator">==</span> name<span class="token punctuation">:</span><br>
+				            app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"In Foreground: "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>foreground<span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>

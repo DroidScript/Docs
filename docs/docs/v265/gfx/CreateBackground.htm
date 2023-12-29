@@ -78,17 +78,18 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Game<br>
+				<span class="token comment"># cfg.Game</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    sky <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateBackground<span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span> <span class="token string">"stretch"</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">global</span> sky<br>
+				    sky <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateBackground<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span> <span class="token string">"stretch"</span><span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    gfx<span class="token punctuation">.</span>AddBackground<span class="token punctuation">(</span> sky <span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>AddBackground<span class="token punctuation">(</span>sky<span class="token punctuation">)</span><br>
 				    gfx<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<br>
-				<span class="token keyword">def</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>dt<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <b id="snip1" class="code-py" style="font-size:100%">sky<span class="token punctuation">.</span>Scroll<span class="token punctuation">(</span><span class="token operator">-</span>dt<span class="token operator">/</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span></b>
+				<span class="token keyword">def</span> <span class="token function">OnAnimate</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> dt<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    sky<span class="token punctuation">.</span>Scroll<span class="token punctuation">(</span><span class="token operator">-</span>dt<span class="token operator">/</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

@@ -97,24 +97,25 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a button to the main layout</span><br>
-				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Popup"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add callback handler for `onTouch` event</span><br>
-				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>showColorPicker <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Create a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    showColorPicker<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Show color picker dialog with `Alpha` option</span><br>
-				        <span class="token comment">#  to include alpha in the output format `#aarrggbb`</span><br>
-				        ui<span class="token punctuation">.</span>showColorPicker<span class="token punctuation">(</span>null<span class="token punctuation">,</span> <span class="token string">"Alpha"</span><span class="token punctuation">,</span> this<span class="token punctuation">.</span>onSelect<span class="token punctuation">)</span><br>
+				    <span class="token comment"># Add a button to the main layout</span><br>
+				    btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Show Popup"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onSelect<span class="token punctuation">(</span> clr <span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> clr <span class="token punctuation">)</span>
+				    <span class="token comment"># Add callback handler for `onTouch` event</span><br>
+				    btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>showColorPicker<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">showColorPicker</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Show color picker dialog with `Alpha` option</span><br>
+				    <span class="token comment"># to include alpha in the output format `#aarrggbb`</span><br>
+				    ui<span class="token punctuation">.</span>showColorPicker<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"Alpha"</span><span class="token punctuation">,</span> onSelect<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onSelect</span><span class="token punctuation">(</span>clr<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span>clr<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>

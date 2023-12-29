@@ -73,13 +73,15 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    ynd <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateYesNoDialog<span class="token punctuation">(</span> <span class="token string">"Choose an answer"</span> <span class="token punctuation">)</span><br>
-				    ynd<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span> Ynd_OnTouch <span class="token punctuation">)</span><br>
+				    ynd <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateYesNoDialog<span class="token punctuation">(</span><span class="token string">"Choose an answer"</span><span class="token punctuation">)</span><br>
+				    ynd<span class="token punctuation">.</span>SetOnTouch<span class="token punctuation">(</span>Ynd_OnTouch<span class="token punctuation">)</span><br>
 				    ynd<span class="token punctuation">.</span>Show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				<br>
-				<span class="token keyword">def</span> <span class="token function">Ynd_OnTouch</span><span class="token punctuation">(</span> result <span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> result<span class="token punctuation">,</span> <span class="token string">"Result"</span> <span class="token punctuation">)</span>
+				<span class="token keyword">def</span> <span class="token function">Ynd_OnTouch</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span>result<span class="token punctuation">,</span> <span class="token string">"Result"</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>

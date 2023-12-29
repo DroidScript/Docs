@@ -82,12 +82,14 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    <span class="token builtin">file</span> <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateFile<span class="token punctuation">(</span> <span class="token string">"/sdcard/test.txt"</span><span class="token punctuation">,</span> <span class="token string">"rw"</span> <span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token builtin">file</span><span class="token punctuation">.</span>WriteText<span class="token punctuation">(</span> <span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"Char"</span> <span class="token punctuation">)</span><br>
 				    <span class="token builtin">len</span> <span class="token operator">=</span> <span class="token builtin">file</span><span class="token punctuation">.</span>GetLength<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span> <span class="token string">"file len: "</span> <span class="token operator">+</span> <span class="token builtin">len</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span> <span class="token string">"file len: "</span> <span class="token operator">+</span> <span class="token builtin">len</span> <span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token builtin">file</span><span class="token punctuation">.</span>Seek<span class="token punctuation">(</span> <span class="token builtin">len</span> <span class="token punctuation">)</span><br>
 				    <span class="token builtin">file</span><span class="token punctuation">.</span>WriteNumber<span class="token punctuation">(</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token string">"Byte"</span> <span class="token punctuation">)</span><br>
@@ -95,10 +97,10 @@
 				    <br>
 				    <span class="token builtin">file</span><span class="token punctuation">.</span>Seek<span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
 				    data <span class="token operator">=</span> <span class="token builtin">file</span><span class="token punctuation">.</span>ReadData<span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span> <span class="token string">"first two bytes:"</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span> <span class="token string">"first two bytes:"</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token builtin">file</span><span class="token punctuation">.</span>Seek<span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
-				    alert<span class="token punctuation">(</span> <span class="token builtin">file</span><span class="token punctuation">.</span>ReadText<span class="token punctuation">(</span> <span class="token string">"Line"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> <span class="token builtin">file</span><span class="token punctuation">.</span>ReadText<span class="token punctuation">(</span> <span class="token string">"Line"</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token builtin">file</span><span class="token punctuation">.</span>Close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 			</div>

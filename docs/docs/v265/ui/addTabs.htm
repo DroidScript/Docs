@@ -311,38 +311,27 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize tab names array</span><br>
-				        tabs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Tab 1"</span><span class="token punctuation">,</span> <span class="token string">"Tab 2"</span><span class="token punctuation">,</span> <span class="token string">"Tab 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a tab component to the main layout.</span><br>
-				        this<span class="token punctuation">.</span>tabs <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTabs<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Handle tab changes</span><br>
-				        this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the first tab and add a button control</span><br>
-				        this<span class="token punctuation">.</span>tab1 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab1<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab1<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the second tab and add a text control.</span><br>
-				        this<span class="token punctuation">.</span>tab2 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab2<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab2<span class="token punctuation">,</span> <span class="token string">"Lorem ipsum dolor set amit"</span><span class="token punctuation">,</span> <span class="token string">"Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the third tab and add a checkbox control</span><br>
-				        this<span class="token punctuation">.</span>tab3 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab3<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>ckb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab3<span class="token punctuation">,</span> <span class="token string">"Check me"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>tab<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> tab <span class="token operator">+</span> <span class="token string">" : Index "</span> <span class="token operator">+</span> index<span class="token punctuation">)</span>
+				    <span class="token comment"># Add text control to the main layout</span><br>
+				    text <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."</span><br>
+				    ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add divider control to the main layout</span><br>
+				    div <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDivider<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add more text control to the main layout</span><br>
+				    ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add an inset divider to the main layout</span><br>
+				    div <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDivider<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"inset"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -398,42 +387,43 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize tabs array with leading icons</span><br>
-				        tabs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Favorites"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Bluetooth"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Connection"</span><span class="token punctuation">]</span><br>
-				        <span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a tab component to the main layout and passing the `icon` option</span><br>
-				        this<span class="token punctuation">.</span>tabs <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTabs<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Handle tab changes</span><br>
-				        this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the first tab and add a button control</span><br>
-				        this<span class="token punctuation">.</span>tab1 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab1<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab1<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the second tab and add a text control.</span><br>
-				        this<span class="token punctuation">.</span>tab2 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab2<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab2<span class="token punctuation">,</span> <span class="token string">"Lorem ipsum dolor set amit"</span><span class="token punctuation">,</span> <span class="token string">"Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the third tab and add a checkbox control</span><br>
-				        this<span class="token punctuation">.</span>tab3 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab3<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>ckb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab3<span class="token punctuation">,</span> <span class="token string">"Check me"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>tab<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> tab <span class="token operator">+</span> <span class="token string">" : Index "</span> <span class="token operator">+</span> index<span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize tabs array with leading icons</span><br>
+				    tabs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Favorites"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Bluetooth"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Connection"</span><span class="token punctuation">]</span><br>
+				    <span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a tab component to the main layout and passing the `icon` option</span><br>
+				    tabs <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTabs<span class="token punctuation">(</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle tab changes</span><br>
+				    tabs<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> onChange <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># get the first tab and add a button control</span><br>
+				    tab1 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
+				    tab1<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
+				    btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>tab1<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># get the second tab and add a text control.</span><br>
+				    tab2 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
+				    tab2<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
+				    txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>tab2<span class="token punctuation">,</span> <span class="token string">"Lorem ipsum dolor set amit"</span><span class="token punctuation">,</span> <span class="token string">"Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># get the third tab and add a checkbox control</span><br>
+				    tab3 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
+				    tab3<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
+				    ckb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>tab3<span class="token punctuation">,</span> <span class="token string">"Check me"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>tab<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> tab <span class="token operator">+</span> <span class="token string">" : Index "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
@@ -485,38 +475,39 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize tabs names array</span><br>
-				        tabs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Tab 1"</span><span class="token punctuation">,</span> <span class="token string">"Tab 2"</span><span class="token punctuation">,</span> <span class="token string">"Tab 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a tab component to the main layout and passing the `swipeable` option</span><br>
-				        <span class="token comment">#  to enable swiping gesture</span><br>
-				        this<span class="token punctuation">.</span>tabs <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTabs<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Swipeable"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Handle tab changes</span><br>
-				        this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the first tab and add a text control</span><br>
-				        this<span class="token punctuation">.</span>tab1 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab1<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>tab1<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"yellow"</span><br>
-				        this<span class="token punctuation">.</span>txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab1<span class="token punctuation">,</span> <span class="token string">"&lt;--- Swipe to the left"</span><span class="token punctuation">,</span> <span class="token string">"Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the second tab and add a button control.</span><br>
-				        this<span class="token punctuation">.</span>tab2 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab2<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"green"</span><br>
-				        <br>
-				        <span class="token comment">#  get the third tab and add a checkbox control</span><br>
-				        this<span class="token punctuation">.</span>tab3 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab3<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"blue"</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Creates a layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>tab<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> tab <span class="token operator">+</span> <span class="token string">" : Index "</span> <span class="token operator">+</span> index<span class="token punctuation">)</span>
+				    <span class="token comment"># Initialize tabs names array</span><br>
+				    tabs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Tab 1"</span><span class="token punctuation">,</span> <span class="token string">"Tab 2"</span><span class="token punctuation">,</span> <span class="token string">"Tab 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a tab component to the main layout and passing the `swipeable` option</span><br>
+				    <span class="token comment"># to enable swiping gesture</span><br>
+				    tabs <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTabs<span class="token punctuation">(</span> main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Swipeable"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle tab changes</span><br>
+				    tabs<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> onChange <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># get the first tab and add a text control</span><br>
+				    tab1 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
+				    tab1<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
+				    tab1<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"yellow"</span><br>
+				    txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>tab1<span class="token punctuation">,</span> <span class="token string">"&lt;--- Swipe to the left"</span><span class="token punctuation">,</span> <span class="token string">"Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># get the second tab and add a button control.</span><br>
+				    tab2 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
+				    tab2<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"green"</span><br>
+				    <br>
+				    <span class="token comment"># get the third tab and add a checkbox control</span><br>
+				    tab3 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
+				    tab3<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"blue"</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>tab<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> tab <span class="token operator">+</span> <span class="token string">" : Index "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
@@ -587,54 +578,52 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp4" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Set the primary and secondary theme colors</span><br>
-				        ui<span class="token punctuation">.</span>setThemeColor<span class="token punctuation">(</span><span class="token string">"#673ab7"</span><span class="token punctuation">,</span> <span class="token string">"#ffc107"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize tabs names array with leading icons</span><br>
-				        tabs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Favorites"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Bluetooth"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Connection"</span><span class="token punctuation">]</span><br>
-				        <span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a tab component to the main layout</span><br>
-				        this<span class="token punctuation">.</span>tabs <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTabs<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon,Center,Primary"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Handle tab changes</span><br>
-				        this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the first tab and add a button control</span><br>
-				        <span class="token comment">#  to open the second tab by its index</span><br>
-				        this<span class="token punctuation">.</span>tab1 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab1<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab1<span class="token punctuation">,</span> <span class="token string">"Open next"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>btn1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span><br>
-				            this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>showTabByIndex<span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the second tab and add a button control</span><br>
-				        <span class="token comment">#  to open the last tab by its index</span><br>
-				        this<span class="token punctuation">.</span>tab2 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab2<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab2<span class="token punctuation">,</span> <span class="token string">"Open next"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>btn2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span><br>
-				            this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>showTabByIndex<span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the third tab and add a button control </span><br>
-				        <span class="token comment">#  to open the first tab by its tab name</span><br>
-				        this<span class="token punctuation">.</span>tab3 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab3<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>btn3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab3<span class="token punctuation">,</span> <span class="token string">"Open previous"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>btn3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span><br>
-				            this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>showTab<span class="token punctuation">(</span> <span class="token string">"Favorites"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Set the primary and secondary theme colors</span><br>
+				    ui<span class="token punctuation">.</span>setThemeColor<span class="token punctuation">(</span><span class="token string">"#673ab7"</span><span class="token punctuation">,</span> <span class="token string">"#ffc107"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>tab<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> tab <span class="token operator">+</span> <span class="token string">" : Index "</span> <span class="token operator">+</span> index<span class="token punctuation">)</span>
+				    <span class="token comment"># Creates a layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><br>
+				    <br>
+				    <span class="token comment"># Initialize tabs names array with leading icons</span><br>
+				    tabs <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"Favorites"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Bluetooth"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Connection"</span><span class="token punctuation">]</span><br>
+				    <span class="token punctuation">]</span><br>
+				    <br>
+				    <span class="token comment"># Adds a tab component to the main layout</span><br>
+				    tabs <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTabs<span class="token punctuation">(</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon,Center,Primary"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle tab changes</span><br>
+				    tabs<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> onChange <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># get the first tab and add a button control</span><br>
+				    <span class="token comment"># to open the second tab by its index</span><br>
+				    tab1 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
+				    tab1<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
+				    btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>tab1<span class="token punctuation">,</span> <span class="token string">"Open next"</span><span class="token punctuation">)</span><br>
+				    btn1<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token keyword">lambda</span> event<span class="token punctuation">:</span> tabs<span class="token punctuation">.</span>showTabByIndex<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># get the second tab and add a button control</span><br>
+				    <span class="token comment"># to open the last tab by its index</span><br>
+				    tab2 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
+				    tab2<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
+				    btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>tab2<span class="token punctuation">,</span> <span class="token string">"Open next"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
+				    btn2<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token keyword">lambda</span> event<span class="token punctuation">:</span> tabs<span class="token punctuation">.</span>showTabByIndex<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># get the third tab and add a button control</span><br>
+				    <span class="token comment"># to open the first tab by its tab name</span><br>
+				    tab3 <span class="token operator">=</span> tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
+				    tab3<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
+				    btn3 <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>tab3<span class="token punctuation">,</span> <span class="token string">"Open previous"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				    btn3<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span><span class="token keyword">lambda</span> event<span class="token punctuation">:</span> tabs<span class="token punctuation">.</span>showTab<span class="token punctuation">(</span><span class="token string">"Favorites"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>tab<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> tab <span class="token operator">+</span> <span class="token string">" : Index "</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
@@ -691,43 +680,7 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp5" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Set the primary and secondary theme colors</span><br>
-				        ui<span class="token punctuation">.</span>setTheme<span class="token punctuation">(</span> <span class="token string">"dark"</span> <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize tabs array with icons only</span><br>
-				        tabs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"favorite"</span><span class="token punctuation">,</span> <span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"wifi"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a tab component to the main layout</span><br>
-				        this<span class="token punctuation">.</span>tabs <span class="token operator">=</span> ui<span class="token punctuation">.</span>addTabs<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> tabs<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Set the tab height to 40px</span><br>
-				        this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>tabHeight <span class="token operator">=</span> <span class="token number">40</span><br>
-				        <br>
-				        <span class="token comment">#  Handle tab changes</span><br>
-				        this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the first tab and add a button control</span><br>
-				        this<span class="token punctuation">.</span>tab1 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab1<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab1<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the second tab and add a text control.</span><br>
-				        this<span class="token punctuation">.</span>tab2 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab2<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>txt <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab2<span class="token punctuation">,</span> <span class="token string">"Lorem ipsum dolor set amit"</span><span class="token punctuation">,</span> <span class="token string">"Center"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  get the third tab and add a checkbox control</span><br>
-				        this<span class="token punctuation">.</span>tab3 <span class="token operator">=</span> this<span class="token punctuation">.</span>tabs<span class="token punctuation">.</span>getLayout<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>tab3<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
-				        this<span class="token punctuation">.</span>ckb <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCheckbox<span class="token punctuation">(</span>this<span class="token punctuation">.</span>tab3<span class="token punctuation">,</span> <span class="token string">"Check me"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
-				    <br>
-				    onChange<span class="token punctuation">(</span>tab<span class="token punctuation">,</span> index<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span>tab <span class="token operator">+</span> <span class="token string">" : Index "</span> <span class="token operator">+</span> index<span class="token punctuation">,</span> <span class="token string">"Bottom"</span><span class="token punctuation">)</span>
+
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp5' )">Copy All</a>

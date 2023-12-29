@@ -59,8 +59,10 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    <b id="snip1" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>SetData<span class="token punctuation">(</span> <span class="token string">"myvar"</span><span class="token punctuation">,</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span></b><br>
+				    app<span class="token punctuation">.</span>SetData<span class="token punctuation">(</span> <span class="token string">"myvar"</span><span class="token punctuation">,</span> <span class="token string">"Hello World!"</span> <span class="token punctuation">)</span><br>
 				    data <span class="token operator">=</span> app<span class="token punctuation">.</span>GetData<span class="token punctuation">(</span><span class="token string">"myvar"</span><span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> data<span class="token punctuation">,</span> <span class="token string">"Saved Data:"</span> <span class="token punctuation">)</span>
 			</div>
@@ -94,6 +96,8 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
 				    <br>
@@ -103,8 +107,8 @@
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span> lay <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    data <span class="token operator">=</span> <span class="token number">100</span> <span class="token operator">*</span> Math<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">0</span><br>
-				    <b id="snip2" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>SetData<span class="token punctuation">(</span> <span class="token string">"number"</span><span class="token punctuation">,</span> data <span class="token punctuation">)</span></b><br>
+				    data <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token number">100</span> <span class="token operator">*</span> <span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>SetData<span class="token punctuation">(</span> <span class="token string">"number"</span><span class="token punctuation">,</span> data <span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Data: "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span>GetData<span class="token punctuation">(</span> <span class="token string">"number"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>

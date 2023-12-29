@@ -89,20 +89,15 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a button to the main layout</span><br>
-				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Progress Dialog"</span><span class="token punctuation">,</span> <span class="token string">"Outlined"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when the button is click</span><br>
-				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				    <br>
-				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Show a progress dialog with `AutoCancel` the dismisses on backdrop click</span><br>
-				        ui<span class="token punctuation">.</span>showProgressDialog<span class="token punctuation">(</span><span class="token string">"Loading..."</span><span class="token punctuation">,</span> <span class="token string">"AutoCancel"</span><span class="token punctuation">)</span>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				    btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Show Progress Dialog"</span><span class="token punctuation">,</span> <span class="token string">"Outlined"</span><span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showProgressDialog<span class="token punctuation">(</span><span class="token string">"Loading..."</span><span class="token punctuation">,</span> <span class="token string">"AutoCancel"</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -142,25 +137,21 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a fullscreen layout with objects vertically centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a button to the main layout</span><br>
-				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Progress Dialog"</span><span class="token punctuation">,</span> <span class="token string">"Outlined"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when the button is click</span><br>
-				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				    btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Show Progress Dialog"</span><span class="token punctuation">,</span> <span class="token string">"Outlined"</span><span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    pdlg <span class="token operator">=</span> ui<span class="token punctuation">.</span>showProgressDialog<span class="token punctuation">(</span><span class="token string">"Loading..."</span><span class="token punctuation">,</span> <span class="token string">"NoCancel"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Show a progress dialog with `AutoCancel` the dismisses on backdrop click</span><br>
-				        this<span class="token punctuation">.</span>pdlg <span class="token operator">=</span> ui<span class="token punctuation">.</span>showProgressDialog<span class="token punctuation">(</span><span class="token string">"Loading..."</span><span class="token punctuation">,</span> <span class="token string">"NoCancel"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  hide the progress dialog after 2 seconds</span><br>
-				        setTimeout<span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span><br>
-				            this<span class="token punctuation">.</span>pdlg<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				            ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Progress dialog is close!"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
+				    <span class="token keyword">def</span> <span class="token function">hideProgressDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				        pdlg<span class="token punctuation">.</span>hide<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">"Progress dialog is close!"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span>SetTimeout<span class="token punctuation">(</span>hideProgressDialog<span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>

@@ -66,10 +66,12 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span> <span class="token string">"myFile.txt"</span><span class="token punctuation">,</span> <span class="token string">"Hello World from Write\n"</span><span class="token punctuation">,</span> <span class="token string">"Append"</span> <span class="token punctuation">)</span><br>
 				    <br>
-				    <b id="snip1" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>CopyFile<span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/myFile.txt"</span><span class="token punctuation">)</span></b><br>
+				    app<span class="token punctuation">.</span>CopyFile<span class="token punctuation">(</span><span class="token string">"myFile.txt"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/myFile.txt"</span><span class="token punctuation">)</span><br>
 				    <br>
 				    <span class="token keyword">if</span> app<span class="token punctuation">.</span>FolderExists<span class="token punctuation">(</span><span class="token string">"/sdcard/myFile.txt"</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				        app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"myFile exists in /sdcard/!"</span><span class="token punctuation">)</span><br>

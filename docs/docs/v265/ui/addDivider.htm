@@ -233,25 +233,26 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add text control to the main layout</span><br>
-				        text <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."</span><br>
-				        ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add divider control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>div <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDivider<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add more text control to the main layout</span><br>
-				        ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add an inset divider to the main layout</span><br>
-				        this<span class="token punctuation">.</span>div <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDivider<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"inset"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Create a fullscreen layout with objects vertically centered</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add text control to the main layout</span><br>
+				    text <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."</span><br>
+				    ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add divider control to the main layout</span><br>
+				    div <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDivider<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add more text control to the main layout</span><br>
+				    ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add an inset divider to the main layout</span><br>
+				    div <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDivider<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"inset"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>main<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token string">"Justify"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>

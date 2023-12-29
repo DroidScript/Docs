@@ -86,8 +86,9 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				cfg<span class="token punctuation">.</span>Light<br>
-				cfg<span class="token punctuation">.</span>MUI<br>
+				<span class="token comment"># cfg.Light, cfg.MUI</span><br>
+				<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    color <span class="token operator">=</span> MUI<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
@@ -97,11 +98,11 @@
 				        <br>
 				        text <span class="token operator">=</span> <span class="token string">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis nunc nec orci finibus blandit. Nam nec consectetur odio. Sed a erat ultrices lectus volutpat malesuada. Aliquam id dictum metus."</span><br>
 				        <br>
-				        p1 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddText<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Multiline,Paragraph,Light"</span><span class="token punctuation">)</span><br>
+				        p1 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddText<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"Multiline,Paragraph,Light"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        p2 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddTextParagraph<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				        p2 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>AddTextParagraph<span class="token punctuation">(</span>lay<span class="token punctuation">,</span> text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
 				        <br>
-				        p3 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateTextParagraph<span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
+				        p3 <span class="token operator">=</span> MUI<span class="token punctuation">.</span>CreateTextParagraph<span class="token punctuation">(</span>text<span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"Multiline"</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">"Light"</span><span class="token punctuation">)</span><br>
 				        lay<span class="token punctuation">.</span>AddChild<span class="token punctuation">(</span>p3<span class="token punctuation">)</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>AddLayout<span class="token punctuation">(</span>lay<span class="token punctuation">)</span>

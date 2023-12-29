@@ -79,13 +79,15 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
-				    srcFileUrl <span class="token operator">=</span> <span class="token string">"http:# sgarman.net/downloadable.txt"</span><br>
+				    srcFileUrl <span class="token operator">=</span> <span class="token string">"http://sgarman.net/downloadable.txt"</span><br>
 				    targetDir <span class="token operator">=</span> <span class="token string">"/sdcard"</span><br>
 				    <br>
-				    <b id="snip1" class="code-py" style="font-size:100%">dload <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateDownloader<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    dload <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateDownloader<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    dload<span class="token punctuation">.</span>SetOnComplete<span class="token punctuation">(</span> dload_OnComplete <span class="token punctuation">)</span><br>
-				    dload<span class="token punctuation">.</span>Download<span class="token punctuation">(</span> srcFileUrl<span class="token punctuation">,</span> targetDir <span class="token punctuation">)</span></b><br>
+				    dload<span class="token punctuation">.</span>Download<span class="token punctuation">(</span> srcFileUrl<span class="token punctuation">,</span> targetDir <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">dload_OnComplete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span><span class="token string">"Download complete"</span><span class="token punctuation">)</span>

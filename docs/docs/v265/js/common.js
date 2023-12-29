@@ -30,7 +30,6 @@ var curPage = "";
 var serverAddress = "";
 
 var curMode = location.href.match(/\bmode=([-\w]*)/);
-if (curMode) curMode = curMode[1];
 
 // set current theme
 var curTheme = location.href.match(/\btheme=([-\w]*)/);
@@ -103,12 +102,16 @@ $(document).live('pageshow', function (event, ui) {
 		if (isMobileIDE)
 			setTimeout("app.SetData( 'CurWebDoc', document.title )", 1); //<-- to stop HTC crash.
 
+		// change link to ui/UI.html inside DS
+		if (isDS && !app.FileExists(baseFolder + "HybridUI.htm"))
+			$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
+
 		//Get current page id.
 		curPage = $.mobile.activePage.attr('id');
 
 		// set language mode
-		setMode(curMode || getCookie("dsDocsMode", "js"));
-		alert("~show " + curMode);
+		var t = curMode;
+		setMode(Array.isArray(curMode) && curMode[1] || getCookie("dsDocsMode", "js"));
 
 		//Show plugins list if 'plugins' page is loading.
 		if (curPage == "plugins") ShowPluginsPage()
@@ -335,9 +338,6 @@ function tglMode() {
 
 //Set the current code mode "js" or "py"
 function setMode(mode) {
-	if (curMode == mode) return;
-
-	console.log("setMode('" + mode + "')");
 	setCookie("dsDocsMode", curMode = mode);
 
 	if (mode === "py") {

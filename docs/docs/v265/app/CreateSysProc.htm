@@ -89,7 +89,10 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> txt<br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><br>
 				    <br>
 				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateText<span class="token punctuation">(</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Log,Monospace,autoscale"</span> <span class="token punctuation">)</span><br>
@@ -164,7 +167,10 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> scr<span class="token punctuation">,</span> txt<span class="token punctuation">,</span> sys<br>
 				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateLayout<span class="token punctuation">(</span> <span class="token string">"linear"</span> <span class="token punctuation">)</span><br>
 				    <br>
 				    scr <span class="token operator">=</span> app<span class="token punctuation">.</span>CreateScroller<span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"horizontal"</span> <span class="token punctuation">)</span><br>
@@ -183,7 +189,7 @@
 				    <br>
 				    Exec<span class="token punctuation">(</span> <span class="token string">"netstat\n"</span> <span class="token punctuation">)</span><br>
 				    <br>
-				    <span class="token comment">#  filter files containing 'D' in /sdcard/ and forward to stderr</span><br>
+				    <span class="token comment"># filter files containing 'D' in /sdcard/ and forward to stderr</span><br>
 				    Exec<span class="token punctuation">(</span> <span class="token string">"ls -al /sdcard/ | grep D >&amp;2\n"</span> <span class="token punctuation">)</span><br>
 				<br>
 				<span class="token keyword">def</span> <span class="token function">Exec</span><span class="token punctuation">(</span> cmd <span class="token punctuation">)</span><span class="token punctuation">:</span><br>

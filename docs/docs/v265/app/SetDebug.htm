@@ -94,35 +94,37 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    app<span class="token punctuation">.</span>CreateDebug<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <br>
-				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"default 1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">#  default on</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"default 2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">#  default on</span><br>
+				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"default 1"</span><span class="token punctuation">)</span>   <span class="token comment"># default on</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"default 2"</span><span class="token punctuation">)</span> <span class="token comment"># default on</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>SetDebug<span class="token punctuation">(</span><span class="token string">"adb"</span><span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"adb 3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">#  off</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"adb 4"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">#  off</span><br>
+				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"adb 3"</span><span class="token punctuation">)</span>       <span class="token comment"># off</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"adb 4"</span><span class="token punctuation">)</span>     <span class="token comment"># off</span><br>
 				    <br>
 				    <b id="snip1" class="code-py" style="font-size:100%">app<span class="token punctuation">.</span>SetDebug<span class="token punctuation">(</span><span class="token string">"console"</span><span class="token punctuation">)</span></b><br>
-				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"console 5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">#  off</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"console 6"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">#  on</span><br>
+				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"console 5"</span><span class="token punctuation">)</span>   <span class="token comment"># off</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"console 6"</span><span class="token punctuation">)</span> <span class="token comment"># on</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>SetDebug<span class="token punctuation">(</span><span class="token string">"ds"</span><span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"ds 7"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">#  on</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"ds 8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">#  off</span><br>
+				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"ds 7"</span><span class="token punctuation">)</span>        <span class="token comment"># on</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"ds 8"</span><span class="token punctuation">)</span>      <span class="token comment"># off</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>SetDebug<span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"null 9"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">#  off</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"null 10"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">#  off</span><br>
+				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"null 9"</span><span class="token punctuation">)</span>      <span class="token comment"># off</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"null 10"</span><span class="token punctuation">)</span>   <span class="token comment"># off</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>SetDebug<span class="token punctuation">(</span><span class="token string">"true"</span><span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"true 11"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">#  on</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"true 12"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">#  on</span><br>
+				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"true 11"</span><span class="token punctuation">)</span>     <span class="token comment"># on</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"true 12"</span><span class="token punctuation">)</span>   <span class="token comment"># on</span><br>
 				    <br>
 				    app<span class="token punctuation">.</span>SetDebug<span class="token punctuation">(</span><span class="token string">"false"</span><span class="token punctuation">)</span><br>
-				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"hello 13"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">#  off</span><br>
-				    console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"hello 14"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">#  off</span>
+				    app<span class="token punctuation">.</span>Debug<span class="token punctuation">(</span><span class="token string">"hello 13"</span><span class="token punctuation">)</span>    <span class="token comment"># off</span><br>
+				    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello 14"</span><span class="token punctuation">)</span>  <span class="token comment"># off</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>

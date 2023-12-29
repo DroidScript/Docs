@@ -284,21 +284,18 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This is item 1"</span><span class="token punctuation">,</span> <span class="token string">"This is item 2"</span><span class="token punctuation">,</span> <span class="token string">"This is item 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Add a switchgroup control to the main layout.</span><br>
-				        this<span class="token punctuation">.</span>swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when the switchgroup item is touch</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span>item<span class="token punctuation">,</span> value<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span>item <span class="token operator">+</span> <span class="token string">" : "</span>  <span class="token operator">+</span> value<span class="token punctuation">)</span>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This is item 1"</span><span class="token punctuation">,</span> <span class="token string">"This is item 2"</span><span class="token punctuation">,</span> <span class="token string">"This is item 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				    swg<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> value<span class="token punctuation">,</span> index<span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span>item <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span> value<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
@@ -341,29 +338,23 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp2" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered.</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize switchgroup items with leading icon</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span> <br>
-				            <span class="token punctuation">[</span><span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Enable Sound"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Enable Bluetooth"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Enable Wifi"</span><span class="token punctuation">]</span><br>
-				        <span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Add a switchgroup control to the main layout.</span><br>
-				        this<span class="token punctuation">.</span>swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Secondary,Icon"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Set the label text of the switchgroup control</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Settings"</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when the switchgroup item is touch</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span>item<span class="token punctuation">,</span> value<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span>item <span class="token operator">+</span> <span class="token string">" : "</span>  <span class="token operator">+</span> value<span class="token punctuation">)</span>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Enable Sound"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Enable Bluetooth"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Enable Wifi"</span><span class="token punctuation">]</span><br>
+				    <span class="token punctuation">]</span><br>
+				    <br>
+				    swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Secondary,Icon"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				    swg<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"Settings"</span><br>
+				    swg<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> value<span class="token punctuation">,</span> index<span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span>item <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span> value<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
@@ -413,36 +404,27 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp3" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize switchgroup items with leading icon</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span> <br>
-				            <span class="token punctuation">[</span><span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Enable Sound"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Enable Bluetooth"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
-				            <span class="token punctuation">[</span><span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Enable Wifi"</span><span class="token punctuation">]</span><br>
-				        <span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a switchgroup control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Secondary,Icon"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Set the text color to deep-purple</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#673ab7"</span><br>
-				        <br>
-				        <span class="token comment">#  Set the icon color to teal</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>iconColor <span class="token operator">=</span> <span class="token string">"#009688"</span><br>
-				        <br>
-				        <span class="token comment">#  Set the corner radius</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> <span class="token number">4</span><br>
-				        <br>
-				        <span class="token comment">#  Set the background color using rgba</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"rgba(255, 255, 100, 255)"</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onTouch<span class="token punctuation">(</span> item<span class="token punctuation">,</span> value <span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> item <span class="token operator">+</span> <span class="token string">" : "</span>  <span class="token operator">+</span> value <span class="token punctuation">)</span>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"music_note"</span><span class="token punctuation">,</span> <span class="token string">"Enable Sound"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"bluetooth"</span><span class="token punctuation">,</span> <span class="token string">"Enable Bluetooth"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">[</span><span class="token string">"wifi"</span><span class="token punctuation">,</span> <span class="token string">"Enable Wifi"</span><span class="token punctuation">]</span><br>
+				    <span class="token punctuation">]</span><br>
+				    <br>
+				    swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Secondary,Icon"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				    swg<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>onTouch<span class="token punctuation">)</span><br>
+				    <br>
+				    swg<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#673ab7"</span><br>
+				    swg<span class="token punctuation">.</span>iconColor <span class="token operator">=</span> <span class="token string">"#009688"</span><br>
+				    swg<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> <span class="token number">4</span><br>
+				    swg<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"rgba(255, 255, 100, 255)"</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onTouch</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> value<span class="token punctuation">,</span> index<span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span>item <span class="token operator">+</span> <span class="token string">" : "</span> <span class="token operator">+</span> value<span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
@@ -480,24 +462,22 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp4" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize switchgroup items to be displayed</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This is item 1"</span><span class="token punctuation">,</span> <span class="token string">"This is item 2"</span><span class="token punctuation">,</span> <span class="token string">"This is item 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a switchgroup control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Secondary,Elevated"</span><span class="token punctuation">,</span> <span class="token number">0.9</span> <span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"My label"</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>elevation <span class="token operator">=</span> <span class="token number">4</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when the value of switchgroup changes</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> items<br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>items<span class="token punctuation">,</span> indexes<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> items<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This is item 1"</span><span class="token punctuation">,</span> <span class="token string">"This is item 2"</span><span class="token punctuation">,</span> <span class="token string">"This is item 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Secondary,Elevated"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				    swg<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"My label"</span><br>
+				    swg<span class="token punctuation">.</span>elevation <span class="token operator">=</span> <span class="token number">4</span><br>
+				    <br>
+				    swg<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
@@ -535,24 +515,22 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp5" class="code-py" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
-				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token comment">#  Creates a layout with objects verticaly centered</span><br>
-				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">#  Initialize switchgroup items to be displayed</span><br>
-				        items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This is item 1"</span><span class="token punctuation">,</span> <span class="token string">"This is item 2"</span><span class="token punctuation">,</span> <span class="token string">"This is item 3"</span><span class="token punctuation">]</span><br>
-				        <br>
-				        <span class="token comment">#  Adds a switchgroup control to the main layout</span><br>
-				        this<span class="token punctuation">.</span>swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span> this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Primary,Outlined"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"My label"</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> <span class="token number">8</span><br>
-				        <br>
-				        <span class="token comment">#  Add a callback handler when the value of switchgroup changes</span><br>
-				        this<span class="token punctuation">.</span>swg<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> items<br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
 				    <br>
-				    onChange<span class="token punctuation">(</span>items<span class="token punctuation">,</span> indexes<span class="token punctuation">)</span><br>
-				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> items<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+				    items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"This is item 1"</span><span class="token punctuation">,</span> <span class="token string">"This is item 2"</span><span class="token punctuation">,</span> <span class="token string">"This is item 3"</span><span class="token punctuation">]</span><br>
+				    <br>
+				    swg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addSwitchGroup<span class="token punctuation">(</span>main<span class="token punctuation">,</span> items<span class="token punctuation">,</span> <span class="token string">"Primary,Outlined"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				    swg<span class="token punctuation">.</span>label <span class="token operator">=</span> <span class="token string">"My label"</span><br>
+				    swg<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> <span class="token number">8</span><br>
+				    <br>
+				    swg<span class="token punctuation">.</span>setOnChange<span class="token punctuation">(</span>onChange<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onChange</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span><span class="token string">", "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">)</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp5' )">Copy All</a>

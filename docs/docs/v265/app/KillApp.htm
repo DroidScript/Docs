@@ -62,14 +62,16 @@
 				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
 				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
 				    <b id="snip1" class="code-py" style="font-size:100%">apps <span class="token operator">=</span> app<span class="token punctuation">.</span>GetRunningApps<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    curApps <span class="token operator">=</span> apps<span class="token punctuation">.</span><span class="token builtin">filter</span><span class="token punctuation">(</span> function<span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token keyword">return</span> v<span class="token punctuation">.</span>foreground<span class="token punctuation">;</span><span class="token punctuation">)</span><br>
+				    curApps <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">filter</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> v<span class="token punctuation">:</span> v<span class="token punctuation">.</span>foreground<span class="token punctuation">,</span> apps<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
 				    pid <span class="token operator">=</span> curApps<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>pid<br>
 				    <br>
-				    alert<span class="token punctuation">(</span> <span class="token string">"Kill app "</span> <span class="token operator">+</span> curApps<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span>Alert<span class="token punctuation">(</span> <span class="token string">"Kill app "</span> <span class="token operator">+</span> curApps<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token punctuation">)</span><br>
 				    app<span class="token punctuation">.</span>KillApp<span class="token punctuation">(</span> pid <span class="token punctuation">)</span></b><br>
-				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Done"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">#  not shown</span>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span> <span class="token string">"Done"</span> <span class="token punctuation">)</span> <span class="token comment"># not shown</span>
 			</div>
 			<div name="divCopy" align="right">
 			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
