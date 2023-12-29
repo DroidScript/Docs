@@ -391,7 +391,7 @@ function generateDocs(inpt, state) {
     if (!"tips".match(regGen)) return;
 
     generateTips(inpt, state);
-    generateTsx(inpt);
+    generateTsx(inpt, state);
 }
 
 /**
@@ -441,9 +441,79 @@ function unwrapBaseFunc(met, type, base) {
     return met;
 }
 
-/** @param {DSInput} _inpt */
-function generateTsx(_inpt) {
+/**
+ * @param {DSInput} inpt
+ * @param {GenState} state
+ */
+function generateTsx(inpt, state) {
     // TODO
+    const file = state.curScope + '.d.ts';
+    state.curDoc = file;
+
+    const defs = generateDefinitionFile(inpt.scope);
+    app.WriteFile(file, defs);
+}
+
+/** @type {Obj<string>} */
+const tsxTypes = {
+    str: "String",
+    num: "Number",
+    obj: "Object",
+    bin: "Boolean",
+    fnc: "Function",
+    lst: "Array",
+    all: "Any",
+    dso: "AppObject",
+    gvo: "GameObject",
+    jso: "JSObject",
+    swo: "SmartWatchObject",
+    uio: "UIObject"
+};
+
+/** @type {(scope: Obj<DSFunction | string>) => string} */
+function generateDefinitionFile(scope) {
+    let definition = '';
+
+    /** @param {string | UndefinedPartial<DSMethod>} type */
+    function makeType(type) {
+        if (typeof type === "string")
+            return tsxTypes[type.split(/[_-]/)[0]] || "any";
+        return processFunction("callback", type, true);
+    }
+
+    /** @type {(name: string, func: DSFunction, isCb?: boolean) => string} */
+    function processFunction(name, func, isCb = false) {
+        let funcDef = "";
+        func.pNames ||= [];
+        func.pTypes ||= [];
+        const params = [];
+        for (const i in func.pNames) params.push(`${func.pNames[i]}: ${makeType(func.pTypes[i])}`);
+
+        if (isCb) {
+            funcDef += `(${params.join(', ')}) => ${func.retval || 'void'}`;
+        }
+        else {
+            funcDef += `\n/** ${func.shortDesc || ''} */\n`;
+            funcDef += `declare function ${name}(${params.join(', ')}): ${func.retval || 'void'};\n`;
+        }
+
+        if (func.subf) {
+            for (const subFuncName in func.subf) {
+                const met = func.subf[subFuncName];
+                if (typeof met === 'object') funcDef += processFunction(`${name}.${subFuncName}`, met);
+            }
+        }
+        return funcDef;
+    }
+
+    for (const funcName in scope) {
+        const func = scope[funcName];
+        if (typeof func === 'object')
+            definition += processFunction(funcName, func);
+
+    }
+
+    return definition;
 }
 
 /** generates one document by function name
