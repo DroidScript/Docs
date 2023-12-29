@@ -20,8 +20,33 @@ You can still access the GameView and the layout where it was added to via gam.g
 **Note:** If you want to have more control over the GameView control use @CreateGameView directly.
 
 You can also put the cfg.Game flag at the top level of your script to write the game code immediately in your main script.
+ */
 
-<sample Game_Bounce.js>
+
+
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+
+
+/** ### game
+ * @prop
+ * 
+ * @returns dso-Game
+ */
+
+                    
+/** ### lay
+ * @prop
+ * 
+ * @returns dso-CreateLayout
+ */
+
+                    
+
+// ------------- SAMPLES ------------- 
+
+
+/**
+@sample Game_Bounce.js
 //Configure app for landscape game mode.
 cfg.Game, cfg.Portrait
 
@@ -59,32 +84,7 @@ function OnReady()
     //Start game.
     gfx.Play()
 }
-</sample>
  */
-
-
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### game
- * @prop
- * 
- * @returns dso-Game
- */
-
-                    
-/** ### lay
- * @prop
- * 
- * @returns dso-CreateLayout
- */
-
-                    
-
-// ------------- SAMPLES ------------- 
-
-
     
 /**
 @sample Demo

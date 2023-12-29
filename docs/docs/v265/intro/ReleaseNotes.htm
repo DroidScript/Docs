@@ -43,6 +43,7 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('DS 2.65b2(30-Nov 2023)')">DS 2.65b2</a><sup>(30-Nov 2023)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.65b1(27-Nov 2023)')">DS 2.65b1</a><sup>(27-Nov 2023)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.64b2(28-Oct 2023)')">DS 2.64b2</a><sup>(28-Oct 2023)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.64b1(05-Oct 2023)')">DS 2.64b1</a><sup>(05-Oct 2023)</sup><br>
@@ -120,7 +121,17 @@
 		</span><br>
 		</div>
 
-		<p><!-- /([^\\])([_<i>])/$1\\$2/ /:/:/ --></p>
+		<p><!-- /([^\\])([_*])/$1\\$2/ /:/:/ --></p>
+		<h3>DS 2.65b2<sup>(30-Nov 2023)</sup></h3>
+		<p>- Removed Premium signup email box, to improve app privacy.<br>
+		- Modified Premium subs description.<br>
+		- Updated Hybrid/AppBar and Drawer template.<br>
+		- Fixed docs back button issues after removing plugins or func params popup.<br>
+		- Fixed issue with Hybrid UI docs not being available till app restart.<br>
+		- Fixed issue with landscape display height not taking account of status bar.<br>
+		- Add more app demos on fresh install (not just 'Hello World').<br>
+		- Removed MUI link from main docs page (deprecated).<br>
+		- Removed CreateCloudStore from Premium docs page (deprecated).</p>
 		<h3>DS 2.65b1<sup>(27-Nov 2023)</sup></h3>
 		<p>- Added 'Bound' class, auto-binds methods of classes that extend it.<br>
 		- Fixed Notification 'No Permissions' issue for < API33.<br>
@@ -143,7 +154,7 @@
 		- Added USB Drive SAF support + Updated 'Storage Access' sample.<br>
 		- Enabled editing of Python apps in Wifi IDE (but not creating).<br>
 		- Disabled AndroidTV mode in IDE (was not working properly).<br>
-		- </i>.Batch calls can now have the optional params left out.<br>
+		- *.Batch calls can now have the optional params left out.<br>
 		- app.Tween() is now available to cfg.Node apps.<br>
 		- Fixed 'IgnoreErrors' in WebViews for cfg.Node.<br>
 		- Added support for new notification permissions in Android 13.<br>
