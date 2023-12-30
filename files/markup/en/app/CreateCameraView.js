@@ -212,10 +212,11 @@ More samples can be found in the samples section of DroidScript.
 
 /** ### Record ###
  * @brief Start recording video
- * Record a video to a given file. If seconds is specified, the recording will automatically stop after this time. Otherwise call cam.Stop().
- * $$ cam.Record(file, seconds) $$
+ * Record a video to a given file. If seconds is specified, the recording will automatically stop after this time. Otherwise call cam.Stop(). For the quality, you can also pass integers found here https://developer.android.com/reference/android/media/CamcorderProfile
+ * $$ cam.Record(file, seconds, quality) $$
  * @param {str_ptf} file 
  * @param {num_sec} seconds 
+ * @param {str} quality high|low|480p|720p|1080p|2k|4k|8k|qvga|vga|cif
  */
 
 
