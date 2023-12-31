@@ -3,7 +3,7 @@
  * @name Animate
  * @brief Animates a control
  * Animates the control.
- * 
+ *
  * There are
  * 	“in”-Animations which are used to show objects from hidden state
  * 	“out”-animations which are used to hide objects in visible state and

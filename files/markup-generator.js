@@ -52,6 +52,7 @@ ${info} * ${_desc}
     }
 
     if (baseStr) {
+        baseStr = baseStr.replace(/ +\n/, "\n");
         const _baseFile = "_base.js";
         const _baseOutFile = folder.slice(0, -1) + _baseFile;
         fs.writeFileSync(_baseOutFile, baseStr);
@@ -100,6 +101,7 @@ ${info} * ${_desc}
         if (fs.existsSync(sampFile)) str += "\n\n// ------------- SAMPLES ------------- \n\n";
         if (samples) str += samples;
 
+        str = str.replace(/ +\n/, "\n");
         await fsp.writeFile(outputFile, str);
     }
 }

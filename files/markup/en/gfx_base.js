@@ -21,7 +21,7 @@
  * @name Contains
  * @brief Check if the sprite contains a point
  * Checks if a point is contained in the sprite
- * @param {num_frc} x 
+ * @param {num_frc} x
  * @param {num_frc} y 
  * @returns bin
  */
