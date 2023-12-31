@@ -124,6 +124,8 @@
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

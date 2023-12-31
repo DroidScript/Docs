@@ -10,5 +10,9 @@
  * @param {str_col} color 
  * @returns obj
 */
-    
-            
+
+
+
+
+// ------------- SAMPLES ------------- 
+

@@ -1,17 +1,17 @@
-// ------------- HEADER SECTION -------------
+// ------------- HEADER SECTION ------------- 
 
 
 /** # CreateGameView #
  * @abbrev gmv
- *
- * $$ gmv = app.CreateGameView(width, height, options) $$
- * @param {num_frc} width
- * @param {num_frc} height
- * @param {str_com} options
+ * 
+ * $$ gmv = app.CreateGameView(width, height, options) $$ 
+ * @param {num_frc} width 
+ * @param {num_frc} height 
+ * @param {str_com} options 
 */
 
 
-// ------------- LONG DESCRIPTION -------------
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics. The GameView runs a standalone script which can communicate with the main app via gfx.Execute or gmv.Execute vice versa.
@@ -28,7 +28,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES -------------
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** @extern AdjustColor */
@@ -41,7 +41,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
  * @brief Execute code inside the GameView
  * Execute some code inside the GameView.
  * $$ gmv.Execute(js) $$
- * @param {str_jsc} js
+ * @param {str_jsc} js 
  */
 
 
@@ -85,6 +85,8 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */
@@ -103,7 +105,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
  * @brief Define the game source file
  * Loads a GameView script file.
  * $$ gmv.SetFile(file) $$
- * @param {str_ptf} file
+ * @param {str_ptf} file 
  */
 
 
@@ -111,7 +113,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
  * @brief Change the target framerate
  * Change the targeted framerate.
  * $$ gmv.SetFrameRate(fps) $$
- * @param {num_fps} fps
+ * @param {num_fps} fps 
  */
 
 
@@ -135,7 +137,7 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 // ------------- SAMPLES ------------- 
 
 
-
+    
 /**
 @sample Script
 cfg.Landscape;
@@ -156,9 +158,9 @@ function OnStart()
     app.AddLayout( lay );
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Script
 # cfg.Landscape
@@ -179,5 +181,5 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-
-
+    
+            

@@ -92,6 +92,8 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

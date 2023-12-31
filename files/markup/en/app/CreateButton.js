@@ -99,6 +99,8 @@ You can customize the visual look in many ways by either using one of the existi
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

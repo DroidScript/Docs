@@ -325,6 +325,8 @@ For animations you can then use the **Animate** function of the app object which
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

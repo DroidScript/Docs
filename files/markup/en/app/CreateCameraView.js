@@ -233,6 +233,8 @@ More samples can be found in the samples section of DroidScript.
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

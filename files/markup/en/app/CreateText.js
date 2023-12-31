@@ -140,6 +140,8 @@ You can also set a background image/pattern or background gradient for the Text 
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */
@@ -213,13 +215,13 @@ You can also set a background image/pattern or background gradient for the Text 
 @sample Single line
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>txt = app.CreateText( "Hello" );
-	txt.SetTextSize( 22 );
-	lay.AddChild( txt );</b>
+    <b>txt = app.CreateText( "Hello" );
+    txt.SetTextSize( 22 );
+    lay.AddChild( txt );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
     
@@ -229,15 +231,15 @@ function OnStart()
 @sample Multi line
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>txt = app.CreateText( "Hello\nWorld", 0.8, 0.2, "Multiline"  );
-	txt.SetTextSize( 12 );
-	txt.SetTextColor( "#ff6666ff" );
-	txt.SetBackColor( "#ffffffff" );
-	lay.AddChild( txt );</b>
+    <b>txt = app.CreateText( "Hello\nWorld", 0.8, 0.2, "Multiline"  );
+    txt.SetTextSize( 12 );
+    txt.SetTextColor( "#ff6666ff" );
+    txt.SetBackColor( "#ffffffff" );
+    lay.AddChild( txt );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
     
@@ -247,14 +249,14 @@ function OnStart()
 @sample Ellipsize
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>txt = app.CreateText( "The quick brown fox jumps over the lazy dog", 0.75 );
-	txt.SetTextSize( 28 );
-	txt.SetEllipsize( "end" );
-	lay.AddChild( txt );</b>
+    <b>txt = app.CreateText( "The quick brown fox jumps over the lazy dog", 0.75 );
+    txt.SetTextSize( 28 );
+    txt.SetEllipsize( "end" );
+    lay.AddChild( txt );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
     

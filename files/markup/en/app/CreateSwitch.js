@@ -90,6 +90,8 @@ You can get the state of the switch at any time using the **GetChecked** method.
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

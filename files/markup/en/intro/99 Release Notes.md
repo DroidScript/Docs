@@ -1,5 +1,18 @@
 <!-- /([^\\])([_*])/$1\\$2/ /:/&colon;/ -->
 
+### DS 2.67b1 (15-Dec 2023)
+- Fixed bug stopping background services from running.
+- Fixed bug stopping some plugins from working (eg. BLEBeacon)
+- Fixed issue renaming of python apps in device IDE.
+- Fixed Python apps with spaces in the name.
+- Fixed Python APK building.
+- Fixed node.Execute() atob2 is not defined bug.
+- Disabled banner animation when in premium.
+- Added new forum extension to device IDE.
+
+## DS 2.66 (02-Dec 2023)
+- Removed docs auto-update (need more testing).
+
 ### DS 2.65b2 (30-Nov 2023)
 - Removed Premium signup email box, to improve app privacy.
 - Modified Premium subs description.
@@ -18,6 +31,7 @@
 - Fixed version code on AABs not matching version name.
 - Updated Docs, including new full text search facility and app types info.
 - Enabled Hybrid by default (not just in experiments mode).
+- Added app.SetErrorFilter( regex ) to allow filtering out certain errors (useful for nodejs apps).
 - Fixed app icons not showing up at startup on slow devices.
 - Added obj.Resize() to resize a control after device rotation (keeps original width/height ratios).
 - Added 'AutoSize' option to all layouts - Resizes itself and child controls after device rotation.
@@ -142,7 +156,7 @@
 - Removed troublesome bytecode file.
 
 ### DS 2.60b1 (28-Feb-2023)
-- Added FLA\_MUTABLE to app.SetInForeground() and others to stop API 31 error.
+- Added FLAG\_MUTABLE to app.SetInForeground() and others to stop API 31 error.
 - Added app.GetIsBatteryOptimized() detects if app is being optimized.
 - Added app.ShowBatterySettings() show user battery optimization settings.
 - Added foreground location service support for Android 10+.

@@ -1,22 +1,22 @@
-// ------------- HEADER SECTION -------------
+// ------------- HEADER SECTION ------------- 
 
 
 /** # SendIntent #
- *
- * $$ app.SendIntent(packageName, className, action, category, uri, type, extras, options, callback) $$
- * @param {str} packageName
- * @param {str} className
+ * 
+ * $$ app.SendIntent(packageName, className, action, category, uri, type, extras, options, callback) $$ 
+ * @param {str} packageName 
+ * @param {str} className 
  * @param {str} action android.intent.action.*
  * @param {str} category android.intent.category.*
- * @param {str_uri} uri
- * @param {str_mim} type
+ * @param {str_uri} uri 
+ * @param {str_mim} type 
  * @param {lst} extras [{ name:str&comma; type:str-"string|float|int|long|bool|list|file|uri|keydown|keyup"&comma; value:str }]
  * @param {str_com} options Result:expect a result to be passed to the callback function,ClearTask
  * @param {fnc_json} callback {"pNames":["resultCode","data"],"pTypes":["num_int--1|0|1","obj-{ action:string, type:str, data:string, flags:integer, extras:object }"]}
 */
 
 
-// ------------- LONG DESCRIPTION -------------
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 Intens can be used to perform an operation between different applications or activities. _It is basically a passive data structure holding an abstract description of an action to be performed_.

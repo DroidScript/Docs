@@ -209,6 +209,8 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */
@@ -341,6 +343,14 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  */
 
 
+/** ### SetUseBrowser ###
+ * @brief Define which URLs open in browser
+ * Gives control over which URLs open a browser when clicked by the user.
+ * $$ web.SetUseBrowser(urlFilter) $$
+ * @param {str} urlFilter 
+ */
+
+
 /** ### SetUserAgent ###
  * @brief Set/Add custom user agent
  * Defines a custom user agent or add to the default one
@@ -436,11 +446,11 @@ function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	 <b>web = app.CreateWebView( 0.8, 0.8 );
-	 web.SetBackColor( "#00000000" );
-	 lay.AddChild( web );</b>
+	<b>web = app.CreateWebView( 0.8, 0.8 );
+	web.SetBackColor( "#00000000" );
+	lay.AddChild( web );</b>
 
-	 app.AddLayout( lay );
+	app.AddLayout( lay );
 
 	html = "<html><body><center>" +
 		"    <img src='Img/Droid2.png'>" +
@@ -448,7 +458,7 @@ function OnStart()
 		"    Hello World!</div><br>" +
 		"</center></body></html>";
 
-	 web.LoadHtml( html, "file:///Sys/" );
+	web.LoadHtml( html, "file:///Sys/" );
 }
  */
     

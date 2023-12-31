@@ -220,6 +220,8 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

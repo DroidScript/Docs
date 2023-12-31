@@ -4,10 +4,11 @@
 /** # CheckPermission #
  * @brief Checks if permission was granted
  * CheckPermission checks whether the permission of a particular component has been granted.
+ * You can also test for individual “android.permission.\*” strings.
  * 
  * See Also: @GetPermission @RemovePermission @ListPermissions
  * $$ app.CheckPermission(type) $$ 
- * @param {str} type Camera|Storage|ExtSDcard|Network|Notify|Location|SMS|Calendar|Body|Contacts|Record|Biometric|Phone|Accounts|License
+ * @param {str} type Camera|Storage|ExtSDcard|Network|Notify|Location|SMS|Calendar|Body|Contacts|Record|Biometric|Phone|Accounts|License|android.permission.\*
  * @returns lst-["“Permissions”":str-not granted permissions ]
 */
 

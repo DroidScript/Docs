@@ -83,6 +83,8 @@ Use the SetOnChange method to define a function you want to be called when the S
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

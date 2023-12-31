@@ -122,6 +122,8 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */

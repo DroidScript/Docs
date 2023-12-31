@@ -114,6 +114,8 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** ### SetBackColor ###
  * @brief Change the background color
  * Changes the background color of the control.

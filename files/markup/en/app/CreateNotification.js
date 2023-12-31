@@ -1,17 +1,17 @@
-// ------------- HEADER SECTION -------------
+// ------------- HEADER SECTION ------------- 
 
 
 /** # CreateNotification #
  * @abbrev ntf
  * @brief Returns a new Notification object
- *
- * $$ ntf = app.CreateNotification(options) $$
+ * 
+ * $$ ntf = app.CreateNotification(options) $$ 
  * @param {str_com} options Ongoing,AutoCancel,FullScreen,NoVibrate,Low:priority
  * @returns dso-Notification
 */
 
 
-// ------------- LONG DESCRIPTION -------------
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The Notification object can be used to put messages in the notification drawer. The “AutoCancel” **option** will automatically dismiss the notificatin if the user touches it. “FullScreen” tries to create a larger notification on the screen. And “OnGoing” makes the Notification closeable by your app only.
@@ -27,7 +27,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES -------------
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** @extern Batch */
@@ -57,7 +57,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 /** ### Notify ###
  * Send the notification to the user.
  * $$ ntf.Notify(id) $$
- * @param {str} id
+ * @param {str} id 
  */
 
 
@@ -65,7 +65,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
  * @brief Set a large image in the notification
  * Set an image which will be displayed bigger than usual.
  * $$ ntf.SetLargeImage(image) $$
- * @param {str_ptf} image
+ * @param {str_ptf} image 
  */
 
 
@@ -73,18 +73,18 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
  * @brief Activate device notification LEDs
  * Activate the device notification LEDs.
  * $$ ntf.SetLights(color, onMs, offMs) $$
- * @param {str_col} color
- * @param {num_mls} onMs
- * @param {num_mls} offMs
+ * @param {str_col} color 
+ * @param {num_mls} onMs 
+ * @param {num_mls} offMs 
  */
 
 
 /** ### SetMessage ###
  * Set notification texts.
  * $$ ntf.SetMessage(ticker, title, text, extra) $$
- * @param {str} ticker
- * @param {str} title
- * @param {str} text
+ * @param {str} ticker 
+ * @param {str} title 
+ * @param {str} text 
  * @param {str} extra Add multiline text in your notification.
  */
 
@@ -101,7 +101,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
  * @brief Set a small image icon
  * Set a small image in your notification.
  * $$ ntf.SetSmallImage(image) $$
- * @param {str_ptf} image
+ * @param {str_ptf} image 
  */
 
 
@@ -109,7 +109,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 // ------------- SAMPLES ------------- 
 
 
-
+    
 /**
 @sample Notification
 function OnStart()
@@ -127,9 +127,9 @@ function cancel()
     app.ShowPopup( "Notification cancelled" );
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Notification
 from hybrid import ui
@@ -147,5 +147,5 @@ def cancel():
     notify.Cancel("testID")
     app.ShowPopup("Notification cancelled")
  */
-
-
+    
+            

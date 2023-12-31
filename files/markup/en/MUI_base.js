@@ -216,6 +216,13 @@
  */
 
 
+/** ### Resize
+ * @name Resize
+ * @brief resize a control after device rotation
+ * Resize a control after device rotation by keeping the original width/height ratios.
+ */
+
+
 /** ### SetFontFile
  * @name SetFontFile
  * @brief Change the used font

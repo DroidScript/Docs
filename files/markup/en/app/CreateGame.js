@@ -45,6 +45,7 @@ You can also put the cfg.Game flag at the top level of your script to write the 
 // ------------- SAMPLES ------------- 
 
 
+    
 /**
 @sample Game_Bounce.js
 //Configure app for landscape game mode.
@@ -85,6 +86,8 @@ function OnReady()
     gfx.Play()
 }
  */
+    
+            
     
 /**
 @sample Demo

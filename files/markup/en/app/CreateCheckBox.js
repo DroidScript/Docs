@@ -90,6 +90,8 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */
