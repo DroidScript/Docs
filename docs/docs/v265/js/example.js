@@ -22,7 +22,10 @@ function demo(id) {
 	var div = document.querySelector('#' + id + codeClass);
 	var code = (div.innerText || div.textContent).replace(/\xa0/g, ' ');
 	if (isMobileIDE) {
-		var file = "/sdcard/.DroidScript/Example." + curMode;
+		const dir = "/sdcard/.DroidScript/Example/";
+		app.DeleteFolder(dir);
+		app.MakeFolder(dir);
+		var file = dir + "Example." + curMode;
 		app.WriteFile(file, code);
 		app.Execute("RunDemo( '" + file + "' );");
 		// app.Execute( "try { StartApp('" + file + "') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
