@@ -102,16 +102,23 @@ $(document).live('pageshow', function (event, ui) {
 		if (isMobileIDE)
 			setTimeout("app.SetData( 'CurWebDoc', document.title )", 1); //<-- to stop HTC crash.
 
-		// change link to ui/UI.html inside DS
-		if (isDS && !app.FileExists(baseFolder + "HybridUI.htm"))
-			$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
+		// set language mode
+		setMode(Array.isArray(curMode) && curMode[1] || getCookie("dsDocsMode", "js"));
 
 		//Get current page id.
 		curPage = $.mobile.activePage.attr('id');
 
-		// set language mode
-		var t = curMode;
-		setMode(Array.isArray(curMode) && curMode[1] || getCookie("dsDocsMode", "js"));
+		// change link to ui/UI.html inside DS
+		if (curPage == "main") {
+			if (isMobileIDE && !app.FileExists(baseFolder + "UIDocs.htm"))
+				$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
+			else if (isWebIDE) {
+				getIdeList("list&dir=.edit/docs/", function _onIdeList(data) {
+					if (!data.list.includes("UIDocs.htm"))
+						$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
+				})
+			}
+		}
 
 		//Show plugins list if 'plugins' page is loading.
 		if (curPage == "plugins") ShowPluginsPage()
@@ -214,7 +221,7 @@ function getIdeList(cmd, cb) {
 		//Extract plugins list.
 		const data = JSON.parse(xmlHttp.responseText);
 		if (data.status == "access denied") data.status = "IDE not connected";
-		if (!data.plugins && !data.extensions) return app.ShowPopup(data.status || xmlHttp.responseText);
+		if (!data.plugins && !data.extensions && !data.list) return app.ShowPopup(data.status || xmlHttp.responseText);
 		cb(data);
 	};
 	xmlHttp.open("get", "/ide?cmd=" + cmd, true);
@@ -436,7 +443,7 @@ function IsApp() {
 }
 
 function OpenSamples() {
-	if (isDS) app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
+	if (isMobileIDE) app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
 	else {
 		var e = parent.$(".nav-tabs > li > a:contains(Samples)");
 		if (e.length) e.click()
