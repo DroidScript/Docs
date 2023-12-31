@@ -18,6 +18,16 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "testLinks",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/testLinks.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "updatePages",
             "cwd": "${workspaceFolder}/files",
             "skipFiles": [
