@@ -69,6 +69,17 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "generate tsx",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["-d"],
+            "program": "${workspaceFolder}/files/generate.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "translate-python",
             "cwd": "${workspaceFolder}/files",
             "skipFiles": [

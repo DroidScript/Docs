@@ -26,7 +26,7 @@ const dfltState = {
     progress: 0, popDefs: {}, spop: {}
 };
 const warnEnbl = false;
-let dbg = false, clear = false, force = false, updateVer = false;
+let dbg = false, clear = false, force = false, updateVer = false, makeTsx = false;
 let regGen = RegExp(""), regHide = RegExp("");
 
 const app = getApp();
@@ -41,6 +41,9 @@ let [subfBase, naviItem, switchPop, appPopup, codeBase,
     txtPopup, defPopup, subfHead] = "";
 /** @type {Obj<string>} */
 let hints = {};
+
+/** @type {Obj<string>} */
+const special = { n: '\n', r: '\r', t: '\t', b: '\b', f: '\f' };
 
 // eslint-disable-next-line no-undef
 if (typeof OnStart === 'undefined') OnStart = g_OnStart;
@@ -243,7 +246,8 @@ function generateScope(name, state, genPattern) {
     }
 
     // generate doc pages
-    generateDocs(inpt, state);
+    if (makeTsx) generateTsx(inpt, state);
+    else generateDocs(inpt, state);
     return app.HideProgressBar();
 }
 
@@ -391,7 +395,6 @@ function generateDocs(inpt, state) {
     if (!"tips".match(regGen)) return;
 
     generateTips(inpt, state);
-    generateTsx(inpt, state);
 }
 
 /**
@@ -450,19 +453,19 @@ function generateTsx(inpt, state) {
     const file = state.curScope + '.d.ts';
     state.curDoc = file;
 
-    const defs = generateDefinitionFile(inpt.scope);
+    const defs = generateDefinitionFile(state.curScope, inpt.scope);
     app.WriteFile(file, defs);
 }
 
 /** @type {Obj<string>} */
 const tsxTypes = {
-    str: "String",
-    num: "Number",
-    obj: "Object",
-    bin: "Boolean",
+    str: "string",
+    num: "number",
+    obj: "object",
+    bin: "boolean",
     fnc: "Function",
     lst: "Array",
-    all: "Any",
+    all: "any",
     dso: "AppObject",
     gvo: "GameObject",
     jso: "JSObject",
@@ -470,50 +473,197 @@ const tsxTypes = {
     uio: "UIObject"
 };
 
-/** @type {(scope: Obj<DSFunction | string>) => string} */
-function generateDefinitionFile(scope) {
-    let definition = '';
+/** @type {(scopeName: string, scope: Obj<DSFunction | string>) => string} */
+function generateDefinitionFile(scopeName, scope) {
+    /** @type {Obj<string>} */
+    const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "Ui", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx", swo: "Sw" };
 
-    /** @param {string | UndefinedPartial<DSMethod>} type */
-    function makeType(type) {
-        if (typeof type === "string")
-            return tsxTypes[type.split(/[_-]/)[0]] || "any";
-        return processFunction("callback", type, true);
+    const typeDecls = Object.entries(Object.assign(conf.tname, conf.tdesc))
+        .filter(([name, _]) => name.match(/^[a-z]/i))
+        .map(([name, desc]) => `/** ${desc} */\ndeclare type ${name} = ${makeType(name.split(/[_-]/)[0])[1]};\n`);
+
+    let definition = "";
+    let classDefinition = "";
+    for (const funcName in scope) {
+        const func = scope[funcName];
+        if (typeof func === 'object') {
+            const def = processFunction(funcName, func, "\t");
+            definition += def[0];
+            classDefinition += def[1];
+        }
     }
 
-    /** @type {(name: string, func: DSFunction, isCb?: boolean) => string} */
-    function processFunction(name, func, isCb = false) {
-        let funcDef = "";
-        func.pNames ||= [];
-        func.pTypes ||= [];
-        const params = [];
-        for (const i in func.pNames) params.push(`${func.pNames[i]}: ${makeType(func.pTypes[i])}`);
+    return `${typeDecls.join("")}\n\nclass Ds${scopeName[0].toUpperCase() + scopeName.slice(1)} {\n${definition}\n}\n${classDefinition}\n`;
 
+    /** @param {string | UndefinedPartial<DSMethod>} stypes */
+    function makeType(stypes, tsx = true) {
+        if (typeof stypes === "object")
+            return ["fnc", processFunction("callback", stypes, "\t", true)[0]];
+
+        const types1 = stypes.split("||").map((/** @type {string} */ type) => [type.slice(0, 3)]
+            .concat(type
+                // custom type desc
+                .replace(/^(...):([^-]*)/, (m, /** @type {string} */ btype, desc) => btype)
+                // sample vals
+                .replace(/-/, '\x01').split('\x01')
+            )
+        );
+
+        const str = types1.filter(t => t[0]).map(
+            /* @return {[string,string,string]} */
+            function formatTypePop(type) {
+                type[1] = tsxTypes[type[0]] || type[1];
+                type[2] ||= '';
+                switch (type[0]) {
+                    case "?":
+                    case "all":
+                    case "fnc": return type;
+                    case "num":
+                    case "str":
+                    case "bin": {
+                        if (type.length === 3 && has(type[2], ':')) {
+                            const types = replaceTsxTypes(type[2]);
+                            //if (type[0] === "str") types.forEach(([a, b], i, l) => l[i] = `"${a}"`);
+                            //type[1] = types.map(a => a[0]).join("|");
+                            //type[2] = types.map(a => a[0] + a[1]).join("\n");
+                            type[2] = types[0];
+                        }
+
+                        if (type[2]) {
+                            let tdesc = type[2]
+                                .replace(/([^\\]|^)\\(.)/g, (m, e, /** @type {string} */ c) =>
+                                    `${e || ''}§${(special[c] || c).charCodeAt(0)}§`)
+                                .replace(/§(\d+?)§/g, (m, /** @type {number} */ c) =>
+                                    String.fromCharCode(Number(c)))
+                                .split(/[,|]/);
+
+                            if (type[0] === "str") tdesc = tdesc.map(s => `"${s}"`);
+                            if (tdesc.length > 1 || /^[a-z"/]+$/i.test(tdesc[0])) {
+                                type[1] = tdesc.join("|");
+                                type[2] = "";
+                            }
+                        }
+                        return type;
+                    }
+                    case "lst":
+                    case "obj":
+                        if (type[2]) {
+
+                            const types = replaceTsxTypes(replW(type[2]));
+                            type[2] = types[0];
+                        }
+                        return type; //replaceTypes(inpt, state, replW(type[2]), true);
+                    default:
+                        if (!type[0].endsWith("o"))
+                            Throw(Error("unknown typex " + type[1]));
+                        if (type[2]) type[2] = type[2].replace(regConPrefix, '');
+                        if (objPfx[type[0]] && type[2])
+                            type[1] = objPfx[type[0]] + type[2];
+                        else
+                            type[1] = type[1] || '';
+                        return type;
+                }
+            });
+
+        return str.length && str.reduce(([v, t, d], [v1, t1, d1]) => [v + '|' + v1, t + '|' + t1, d + ' *or* ' + d1]) || str;
+        // return (tsx ? tsxTypes[stypes.split(/[_-]/)[0]] : stypes.split(/[_-]/)[0]) || "any";
+    }
+
+    /** accept formats: "name":"desc" name:type name:"types" name:"type-values"
+     * using name:'...' will force app popups
+     * @param {string} descStr
+     * @return {[string, string[][]]}
+     */
+    function replaceTsxTypes(descStr) {
+        /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
+        const { tname: tName, tdesc: tDesc } = conf;
+        /** @type {string[][]} */
+        const types = [];
+
+        // const tags = /** @type {string[]} */ ([]);
+        // descStr = descStr.replace(/\s*<[^\s​].*?>/g, (m) => (tags.push(m), `§t${tags.length - 1}§`));
+
+        descStr = descStr.replace(/(\b([\w_.#-]+)|"([^"]*)"):([a-z]{3}(_[a-z]{3})?\b)?-?("(\\"|[^"])*|'(\\'|[^'])*| ?\w(\\[\s\S]|[^.,:”<|}\]])*)?['"]?/g,
+            function formatDescType(m, _1, /** @type {string} */ name, /** @type {string} */ aname, /** @type {string} */ type, _2, /** @type {string} */ desc) {
+                let space = '', tapop = false;
+                if (!name) name = aname;
+                if (!type && (!desc || desc[0] === ' ') || name.startsWith("Note")) return m;
+
+                if (desc) {
+                    if (desc.endsWith(' ')) space = ' ';
+                    desc = desc.replace(/\\(["'])/g, "$1").slice(Number(desc[0] === '"'), space ? -1 : undefined);
+                    if (desc[0] === "'") { tapop = true; desc = desc.slice(1); }
+                    if (tName[desc.slice(0, 3)] && (!desc[4] || !desc[4].match(/[a-z]/i))) { type = desc; desc = ''; }
+                }
+
+                if (type) {
+                    if (tName[type.slice(0, 3)]) { if (desc) { type += '-' + desc; desc = ''; } }
+                    else { desc = type + (desc || ''); type = ''; }
+                }
+
+                let r;
+                if (tapop) {
+                    if (type && !desc) { r = [name, type, '']; }
+                    else {
+                        r = [
+                            name,
+                            type && tName[type.slice(0, 3)],
+                            (tDesc[type] || "") + desc];
+                    }
+
+                }
+                else if (type) { r = [name, type/*.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])*/, '']; }
+                else { r = [name, "", desc/*.replace(/§t(\d+)§(<\/span>)?/g, (_m, i, s) => (s || '') + tags[i])*/]; }
+
+                types.push(r);
+                return r[0];
+            }
+        );
+        // types[1] = descStr;
+        return [descStr, types]; //descStr.replace(/§t(\d+)§(<\/span>)?/g, (m, i, s) => (s || '') + tags[i]);
+    }
+
+
+    /** @type {(name: string, func: DSFunction, indent?:string, isCb?:boolean) => [string, string]} */
+    function processFunction(name, dfunc, indent = "", isCb = false) {
+        let funcDef = "";
+        let classDef = "";
+        dfunc.name ||= name;
+        const func = fillMissingFuncProps(dfunc);
+        // Fix MUI return types
+        if (scopeName === "MUI" && func.name?.match(regConPrefix))
+            func.retval = "muo-" + func.name?.replace(regConPrefix, '');
+
+
+        const params = [], jsparams = [];
+        for (const i in func.pNames) {
+            const pname = func.pNames[i] === "default" ? "dflt" : func.pNames[i];
+            const ptype = func.pTypes[i];
+
+            const [t, type, desc] = makeType(ptype, false);
+            params.push(`${pname}: ${type}`);
+            if (desc) jsparams.push(`${indent} * @param ${pname} ${desc}\n`);
+        }
+        const [rt, rtype, rdesc] = func.retval ? makeType(func.retval) : [];
         if (isCb) {
-            funcDef += `(${params.join(', ')}) => ${func.retval || 'void'}`;
+            // jsparams.push(`${indent} * @return ${rdesc}`);
+            funcDef += `(${params.join(', ')}) => ${rtype || 'void'}`;
         }
         else {
-            funcDef += `\n/** ${func.shortDesc || ''} */\n`;
-            funcDef += `declare function ${name}(${params.join(', ')}): ${func.retval || 'void'};\n`;
+            funcDef += `\n${indent}/**\n${indent} * ${func.shortDesc || ''}\n${jsparams.join('')}${indent} */\n`;
+            funcDef += `${indent}${name}(${params.join(', ')}): ${rtype || 'void'};\n`;
         }
 
         if (func.subf) {
+            classDef += `\nclass ${objPfx[scopeName]}${name.replace(regConPrefix, "")} {\n`;
             for (const subFuncName in func.subf) {
                 const met = func.subf[subFuncName];
-                if (typeof met === 'object') funcDef += processFunction(`${name}.${subFuncName}`, met);
+                if (typeof met === 'object') classDef += processFunction(subFuncName, met, indent)[0];
             }
+            classDef += `\n}\n\n`;
         }
-        return funcDef;
+        return [funcDef, classDef];
     }
-
-    for (const funcName in scope) {
-        const func = scope[funcName];
-        if (typeof func === 'object')
-            definition += processFunction(funcName, func);
-
-    }
-
-    return definition;
 }
 
 /** generates one document by function name
@@ -1007,26 +1157,26 @@ function typeDesc(inpt, state, stypes) {
 
     let ss = types.map(
         function formatTypePop(type, i) {
-            if (s[i] && type.length === 3) {
-                //allow limited values for parameters
-                switch (type[0]) {
-                    case "num": return s[i] + rplop(type[2]);
-                    case "str": return s[i] + rplop(type[2], true);
-                    case "lst":
-                    case "obj":
-                    case "jso": return s[i] + replaceTypes(inpt, state, type[2], false);
-                    default:
-                        if (!type[0].endsWith("o"))
-                            Throw(Error("unknown typex " + type[1]));
-                        if (state.curDoc.endsWith(type[2] + ".htm"))
-                            return s[i] + type[2];
-                        if (!type[2].startsWith("@") && !inpt.scope[type[2]])
-                            Throw(Error("link required for " + type[2]));
-                        return s[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
-                            type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
-                }
+            if (!s[i] || type.length < 3)
+                return s[i] || Throw(Error("unknown type " + type[1]));
+
+            //allow limited values for parameters
+            switch (type[0]) {
+                case "num": return s[i] + rplop(type[2]);
+                case "str": return s[i] + rplop(type[2], true);
+                case "lst":
+                case "obj":
+                case "jso": return s[i] + replaceTypes(inpt, state, type[2], false);
+                default:
+                    if (!type[0].endsWith("o"))
+                        Throw(Error("unknown typex " + type[1]));
+                    if (state.curDoc.endsWith(type[2] + ".htm"))
+                        return s[i] + type[2];
+                    if (!type[2].startsWith("@") && !inpt.scope[type[2]])
+                        Throw(Error("link required for " + type[2]));
+                    return s[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
+                        type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
             }
-            else { return s[i] || Throw(Error("unknown type " + type[1])); }
         }).join("<br>\n\t\t\t").replace(/(“.*?”)/g, "<docstr>$1</docstr>");
 
     if (types.length > 1) ss = '<span style="display:inline-block;vertical-align: middle;">' + s + "</span>";
@@ -1090,28 +1240,26 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
 
     // add formatted possible values
     const str = types.map(function formatTypePop(type, i) {
-        if (type.length === 3) {
-            switch (type[0]) {
-                case "num":
-                case "str":
-                case "bin":
-                    if (type.length === 3 && has(type[2], ':'))
-                        type[2] = replaceTypes(inpt, state, type[2], true);
-                    return s2[i] + rplop(type[2], type[0] === "str");
-                case "lst":
-                case "obj": return s2[i] + replaceTypes(inpt, state, replW(type[2]), true);
-                default:
-                    if (!type[0].endsWith("o"))
-                        Throw(Error("unknown typex " + type[1]));
-                    if (state.curDoc.endsWith(type[2] + ".htm"))
-                        return s2[i] + type[2];
-                    if (!type[2].startsWith("@") && !inpt.scope[type[2]])
-                        Throw(Error("link required for " + type[2]));
-                    return s2[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
-                        type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
-            }
+        if (type.length < 3) return s2[i];
+        switch (type[0]) {
+            case "num":
+            case "str":
+            case "bin":
+                if (type.length === 3 && has(type[2], ':'))
+                    type[2] = replaceTypes(inpt, state, type[2], true);
+                return s2[i] + rplop(type[2], type[0] === "str");
+            case "lst":
+            case "obj": return s2[i] + replaceTypes(inpt, state, replW(type[2]), true);
+            default:
+                if (!type[0].endsWith("o"))
+                    Throw(Error("unknown typex " + type[1]));
+                if (state.curDoc.endsWith(type[2] + ".htm"))
+                    return s2[i] + type[2];
+                if (!type[2].startsWith("@") && !inpt.scope[type[2]])
+                    Throw(Error("link required for " + type[2]));
+                return s2[i] + newLink(type[2].replace("@", "") + (type[2].match(/\.\w{2,5}$/) ? "" : ".htm"),
+                    type[2].replace(/@.*\/|\.\w{2,5}$/g, "").replace(regConPrefix, ""));
         }
-        else { return s2[i]; }
     });
 
     // build popup id, "std_type" for common or "type_index" for individual popups
@@ -1263,9 +1411,6 @@ function addMarkdown(s) {
             `${b}<a href="${n}.htm${(H || '').replace(/_/g, ' ')}" data-ajax="false">${(h || f).replace(/_/g, ' ')}</a>`)
         .replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
 }
-
-/** @type {Obj<string>} */
-const special = { n: '\n', r: '\r', t: '\t', b: '\b', f: '\f' };
 
 /** convert int to 3-digit hex
  * @param {number} v */
@@ -1693,6 +1838,7 @@ function main() {
             case "-V": case "--verbose": dbg = true; break;
             case "-c": case "--clear": clear = true; break;
             case "-C": case "--clean": clean = true; break;
+            case "-d": case "--tsx": makeTsx = true; break;
             case "-u": case "--update": updateVer = true; break;
             case "-f": case "--force": force = true; break;
             case "-h": case "--help": app.Alert(help); process.exit(0);
