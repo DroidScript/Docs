@@ -4,8 +4,8 @@
 /** # RemoveBackground #
  * @brief Remove background from game
  * Removes the background from the game
- * $$ gfx.RemoveBackground(gvo-CreateBackground) $$ 
- * @param {gvo} gvo-CreateBackground CreateBackground
+ * $$ gfx.RemoveBackground(gvo) $$
+ * @param {gvo} obj CreateBackground
 */
 
 

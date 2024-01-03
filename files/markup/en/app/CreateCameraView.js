@@ -1,19 +1,19 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateCameraView #
  * @abbrev cam
  * @brief Returns a new CameraView object to access the device camera
- * 
- * $$ cam = app.CreateCameraView(width, height, options) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
+ *
+ * $$ cam = app.CreateCameraView(width, height, options) $$
+ * @param {num_frc} width
+ * @param {num_frc} height
  * @param {str_com} options Front,UseBitmap,UseABGR,NoRotate,"&lt;id&gt;":"“front,back,cam0,cam1,cam2,cam3”","&lt;resolution&gt;":"CIF: 352x288\\nQQVGA: 160x120\\nQVGA: 320x240\\nSVGA: 800x600\\nVGA: 640x480\\nXGA: 1024x768\\nUXGA: 1600x1200"
  * @returns dso-CameraView
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 **CameraView**s are used to access the device camera.
@@ -36,7 +36,7 @@ More samples can be found in the samples section of DroidScript.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -48,9 +48,9 @@ More samples can be found in the samples section of DroidScript.
  * Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}.
  * The first # in the filename is a placeholder for numbers increasing for every taken picture.
  * $$ cam.AutoCapture(path, fileName, maxCount) $$
- * @param {str_ptd} path 
+ * @param {str_ptd} path
  * @param {str} fileName File_n#_motion
- * @param {num_int} maxCount 
+ * @param {num_int} maxCount
  */
 
 
@@ -62,8 +62,8 @@ More samples can be found in the samples section of DroidScript.
  * @brief Find faces in the current camera view
  * Finds faces in the current camera view.
  * $$ cam.FindFaces(maxCount) $$
- * @param {num_int} maxCount 
- * @returns obj-{ confidence:num_frc&comma; eyeDistance:num&comma; midPoint:obj:{x:num&comma; y:num}&comma; pose:num_int }
+ * @param {num_int} maxCount
+ * @returns obj-{ confidence:num_frc&comma; eyeDistance:num&comma; midPoint:"obj-{x:num&comma; y:num}"&comma; pose:num_int }
  */
 
 
@@ -139,10 +139,10 @@ More samples can be found in the samples section of DroidScript.
  * Returns the current camera's raw, png or jpg image datas encoded as base64.
  * $$ cam.GetPixelData(format, left, top, width, height) $$
  * @param {str} format GrayScale:fastest|JSON:"slowest&colon; “ARGB&comma;ARGB&comma;...”"|"&lt;resolution&gt;":"CIF: 352x288\\nQQVGA: 160x120\\nQVGA: 320x240\\nSVGA: 800x600\\nVGA: 640x480\\nXGA: 1024x768\\nUXGA: 1600x1200"|rawbase64|pngbase64|jpgbase64
- * @param {num_frc} left 
- * @param {num_frc} top 
- * @param {num_frc} width 
- * @param {num_frc} height 
+ * @param {num_frc} left
+ * @param {num_frc} top
+ * @param {num_frc} width
+ * @param {num_frc} height
  * @returns str_b64
  */
 
@@ -202,10 +202,10 @@ More samples can be found in the samples section of DroidScript.
  * Defines a raster which is used for motion detection.
  * Use AutoCapture to take pictures if a motion was detected.
  * $$ cam.MotionMosaic(xtiles, ytiles, sensitivity, minPeriod, image) $$
- * @param {num_int} xtiles 
- * @param {num_int} ytiles 
- * @param {num_pxl} sensitivity 
- * @param {num_mls} minPeriod 
+ * @param {num_int} xtiles
+ * @param {num_int} ytiles
+ * @param {num_pxl} sensitivity
+ * @param {num_mls} minPeriod
  * @param {dso} image CreateImage
  */
 
@@ -214,8 +214,8 @@ More samples can be found in the samples section of DroidScript.
  * @brief Start recording video
  * Record a video to a given file. If seconds is specified, the recording will automatically stop after this time. Otherwise call cam.Stop().
  * $$ cam.Record(file, seconds) $$
- * @param {str_ptf} file 
- * @param {num_sec} seconds 
+ * @param {str_ptf} file
+ * @param {num_sec} seconds
  */
 
 
@@ -225,8 +225,8 @@ More samples can be found in the samples section of DroidScript.
  * $$ cam.ReportColors(list, callback, sampSize, maxRate) $$
  * @param {str_pip} list x1:num_frc\,y1:num_frc\|x2:num_frc\,y2:num_frc\|...
  * @param {fnc_json} callback {"pNames":["data"],"pTypes":["lst-[[r1,g1,b1], [r2,g2,b2], ...]"]}
- * @param {num_pxl} sampSize 
- * @param {num_mls} maxRate 
+ * @param {num_pxl} sampSize
+ * @param {num_mls} maxRate
  */
 
 
@@ -266,7 +266,7 @@ More samples can be found in the samples section of DroidScript.
  * @brief En-/Disables the camera flash
  * En- or disables the camera flash if available.
  * $$ cam.SetFlash(onoff) $$
- * @param {bin} onoff 
+ * @param {bin} onoff
  */
 
 
@@ -312,16 +312,16 @@ More samples can be found in the samples section of DroidScript.
  * Change property values of the camera.
  * See GetProperties to get a full list of available keys.
  * $$ cam.SetParameter(name, value) $$
- * @param {str} name 
- * @param {num||str} value 
+ * @param {str} name
+ * @param {num||str} value
  */
 
 
 /** ### SetPictureSize ###
  * Define a custom picture size in pixels.
  * $$ cam.SetPictureSize(width, height) $$
- * @param {num_pxl} width 
- * @param {num_pxl} height 
+ * @param {num_pxl} width
+ * @param {num_pxl} height
  */
 
 
@@ -331,7 +331,7 @@ More samples can be found in the samples section of DroidScript.
  * @brief Rotate the captured image
  * Rotates captured image in any desired angle in degrees.
  * $$ cam.SetPostRotation(angle) $$
- * @param {num_deg} angle 
+ * @param {num_deg} angle
  */
 
 
@@ -351,7 +351,7 @@ More samples can be found in the samples section of DroidScript.
  * @brief n-/Disables the camera sound
  * En-/Disables the camera sound playing when taking pictures.
  * $$ cam.SetSound(enabled) $$
- * @param {bin} enabled 
+ * @param {bin} enabled
  */
 
 
@@ -359,8 +359,8 @@ More samples can be found in the samples section of DroidScript.
  * @brief Define custom video recording size
  * Define a custom video recording size in pixels.
  * $$ cam.SetVideoSize(width, height) $$
- * @param {num_pxl} width 
- * @param {num_pxl} height 
+ * @param {num_pxl} width
+ * @param {num_pxl} height
  */
 
 
@@ -369,7 +369,7 @@ More samples can be found in the samples section of DroidScript.
 /** ### SetZoom ###
  * Change the zoom value of the camera.
  * $$ cam.SetZoom(level) $$
- * @param {num} level 
+ * @param {num} level
  */
 
 
@@ -397,11 +397,11 @@ More samples can be found in the samples section of DroidScript.
 /** ### Stream ###
  * Streams the camera view to a local ip.
  * $$ cam.Stream(ip, port, quality, fps, mtu) $$
- * @param {str} ip 
- * @param {num_int} port 
- * @param {num_prc} quality 
- * @param {num_fps} fps 
- * @param {num_mtu} mtu 
+ * @param {str} ip
+ * @param {num_int} port
+ * @param {num_prc} quality
+ * @param {num_fps} fps
+ * @param {num_mtu} mtu
  */
 
 
@@ -409,7 +409,7 @@ More samples can be found in the samples section of DroidScript.
  * @brief Save the current camera view to a file
  * Takes a picture of the current view and saves it to a file.
  * $$ cam.TakePicture(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
@@ -419,42 +419,42 @@ More samples can be found in the samples section of DroidScript.
 // ------------- SAMPLES ------------- 
 
 
-    
+
 /**
 @sample Show Camera Preview
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>cam = app.CreateCameraView( 0.8, 0.4 );
+    <b>cam = app.CreateCameraView( 0.8, 0.4 );
     cam.SetOnReady( cam_OnReady );
-	lay.AddChild( cam );</b>
+    lay.AddChild( cam );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function cam_OnReady() {
   cam.StartPreview();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Take pictures
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>cam = app.CreateCameraView( 0.8, 0.4 );
+    <b>cam = app.CreateCameraView( 0.8, 0.4 );
     cam.SetOnReady( cam_OnReady );
-	lay.AddChild( cam );</b>
+    lay.AddChild( cam );</b>
 
-	btn = app.CreateButton( "Snap", 0.3, -1 );
-	btn.SetOnTouch( Snap );
-	lay.AddChild( btn );
+    btn = app.CreateButton( "Snap", 0.3, -1 );
+    btn.SetOnTouch( Snap );
+    lay.AddChild( btn );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function cam_OnReady() {
@@ -464,33 +464,33 @@ function cam_OnReady() {
 
 function Snap()
 {
-	cam.TakePicture( "/sdcard/MyPic.jpg" );
-	app.ShowPopup("Picture saved");
+    cam.TakePicture( "/sdcard/MyPic.jpg" );
+    app.ShowPopup("Picture saved");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Record Video
 function OnStart()
 {
     app.SetOrientation("Landscape");
 
-	lay = app.CreateLayout( "Linear", "Horizontal,FillXY,VCenter" );
+    lay = app.CreateLayout( "Linear", "Horizontal,FillXY,VCenter" );
 
-	cam = app.CreateCameraView( .9, 1 );
-	cam.SetOnReady( cam_OnReady );
-	lay.AddChild( cam );
+    cam = app.CreateCameraView( .9, 1 );
+    cam.SetOnReady( cam_OnReady );
+    lay.AddChild( cam );
 
-	tgl = app.CreateToggle( "Rec", 0.1 );
+    tgl = app.CreateToggle( "Rec", 0.1 );
     tgl.SetOnTouch( Record );
-	lay.AddChild( tgl );
+    lay.AddChild( tgl );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
-	recFolder = "/sdcard/Videos";
-	app.MakeFolder( recFolder );
+    recFolder = "/sdcard/Videos";
+    app.MakeFolder( recFolder );
 }
 
 function cam_OnReady()
@@ -501,21 +501,21 @@ function cam_OnReady()
 
 function Record( start )
 {
-	if( start )
-	{
-	    cam.Record( recFolder + "/test.mp4" );
+    if( start )
+    {
+        cam.Record( recFolder + "/test.mp4" );
         app.ShowPopup("Recording");
-	}
-	else
-	{
-	    cam.Stop();
+    }
+    else
+    {
+        cam.Stop();
         app.ShowPopup("Saved to " + recFolder + "/test.mp4");
-	}
+    }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Motion Detector
 var sensitivity = 10; // motion threshold
@@ -524,36 +524,36 @@ var snapFolder = "/sdcard/Snaps";
 
 function OnStart()
 {
-	app.SetOrientation( "Landscape" );
+    app.SetOrientation( "Landscape" );
 
     lay = app.CreateLayout( "linear", "fillxy,VCenter" );
 
-	layCam = app.CreateLayout( "Frame" );
-	lay.AddChild( layCam );
+    layCam = app.CreateLayout( "Frame" );
+    lay.AddChild( layCam );
 
-	cam = app.CreateCameraView( 1, 1, "front" );
+    cam = app.CreateCameraView( 1, 1, "front" );
     cam.SetOnReady( StartDetection );
-	layCam.AddChild( cam );
+    layCam.AddChild( cam );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function StartDetection()
 {
-	var w = cam.GetImageWidth();
-	var h = cam.GetImageHeight();
+    var w = cam.GetImageWidth();
+    var h = cam.GetImageHeight();
 
-	img = app.CreateImage( null, 1, 1, "Fix", w, h );
-	img.SetAlpha( 0.5 );
-	layCam.AddChild( img );
+    img = app.CreateImage( null, 1, 1, "Fix", w, h );
+    img.SetAlpha( 0.5 );
+    layCam.AddChild( img );
 
-	cam.MotionMosaic( 3, 3, sensitivity, minPeriod, img );
-	cam.StartPreview();
+    cam.MotionMosaic( 3, 3, sensitivity, minPeriod, img );
+    cam.StartPreview();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Camera Preview
 from native import app
@@ -571,9 +571,9 @@ def OnStart():
 def cam_OnReady():
     cam.StartPreview()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Take pictures
 from native import app
@@ -600,9 +600,9 @@ def Snap():
     cam.TakePicture( "/sdcard/MyPic.jpg" )
     app.ShowPopup("Picture saved")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Record Video
 from native import app
@@ -638,9 +638,9 @@ def Record( start ):
         cam.Stop()
         app.ShowPopup("Saved to " + recFolder + "/test.mp4")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Motion Detector
 from native import app
@@ -671,5 +671,4 @@ def StartDetection():
     cam.MotionMosaic( 3, 3, sensitivity, minPeriod, img )
     cam.StartPreview()
  */
-    
-            
+

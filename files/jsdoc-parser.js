@@ -490,15 +490,15 @@ function HandleComment(c, name, func, json, objJson) {
         }
 
         else if (line.includes("@returns")) {
-            let f = line.split("returns")[1].trim(), g = f.split(/[_\s:-]/)[0], v;
-            if (types[g]) v = types[g];
-            else if (typx.includes(g)) v = f;
-            else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + f;
-            obj.retval = v;
+            const f = line.split("returns")[1].trim(), g = f.split(/[_\s:-]/)[0];
+            if (types[g]) obj.retval = types[g];
+            else if (typx.includes(g)) obj.retval = f;
+            else console.log(`unknown ret type ${g} in ${name}`), obj.retval = "obj-" + f;
         }
 
         else if (line.includes("@img")) { /* empty */ }
         else if (line.includes("@@")) { /* empty */ }
+        else if (line.startsWith("* $ ")) { /* empty */ }
 
         else if (line.includes("$$")) {
             if (!line.includes('(')) obj.isval = true;
