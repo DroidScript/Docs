@@ -474,15 +474,15 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">setOnClose</a>(
-			<a href="#pop_std_" data-transition="pop" data-rel="popup">callback</a> )
-		</div>
-		<div class="samp">
-			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">setOnContextMenu</a>(
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">setOnTouch</a>(
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">setOnContextMenu</a>(
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">setOnTouch</a>(
+			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">setPadding</a>(
@@ -520,7 +520,6 @@
 	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> Values can be `true` `false`.</div>
 	<div data-role="popup" id="pop_bin_003" class="ui-content"><b>Boolean:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the control.</i></div>
 	<div data-role="popup" id="pop_bin_004" class="ui-content"><b>Boolean:</b> <i>Returns whether the control is visible or not.</i></div>
-	<div data-role="popup" id="pop_std_" class="ui-content"><b>undefined</b></div>
 	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width. [0-1]</div>
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The index in which to insert the menu item.</div>
@@ -558,7 +557,7 @@
 	<div data-role="popup" id="pop_num_029" class="ui-content"><b>Number:</b> <i>Sets or returns the size of the text within the control.</i></div>
 	<div data-role="popup" id="pop_num_02a" class="ui-content"><b>Number:</b> <i>Returns the distance of the control from the top.</i></div>
 	<div data-role="popup" id="pop_num_02b" class="ui-content"><b>Number:</b> <i>Sets or returns the width of the control as a fraction of the parent control.</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A comma separated Dropdown options. Can be <br> Colors: `Primary` `Secondary` `Default` <br> `Variants: `Contained` `Outlined` `Text` <br> `Sizes: `Small` `Medium` `Large` <br> `Orientation: `Horizontal` `Vertical` <br> `Util: `NoElevation`”</docstr></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A comma separated Dropdown options. Can be <br> Colors: `Primary` `Secondary` `Default` <br> `Variants`: `Contained` `Outlined` `Text` <br> `Sizes`: `Small` `Medium` `Large` <br> `Orientation`: `Horizontal` `Vertical` <br> `Util`: `NoElevation`”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The name of the menu.”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“The name of the corresponding menu item.”</docstr></div>
@@ -600,14 +599,15 @@
 	<div data-role="popup" id="pop_lst_004" class="ui-content"><b>List:</b> <i>Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</i></div>
 	<div data-role="popup" id="pop_lst_005" class="ui-content"><b>List:</b> <i>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</i></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">The </a>,
-		<a href="" onclick="app.ShowPopup('Number: The index of the corresponding item.')">index </a>
+		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">The</a>,
+		<a href="" onclick="app.ShowPopup('Number: The index of the corresponding item.')">index</a>
 	)</div>
-	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">event </a>
-	)</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
-		<a href="" onclick="switchPopup(this, '#pop_obj_004')" data-transition="pop" data-rel="popup">event </a>
+		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">event</a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_obj_004')" data-transition="pop" data-rel="popup">event</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dpd.addItem</b><br>Add or insert a menu item in the dropdown list</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>dpd.animate</b><br>Animate the component</div>

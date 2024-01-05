@@ -51,7 +51,7 @@
 
 		<div class="samp">
 		dtp = ui.showDateTimePicker(
-			<a href="#pop_std_" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">date</a>,
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">time</a>,
 			<a href="#pop_str_003" data-transition="pop" data-rel="popup">format</a> )
@@ -110,17 +110,17 @@
 
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">setOnSelect</a>(
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_" class="ui-content"><b>undefined</b></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Default value for date of the form "MM/DD/YYYY"”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“Default value for time of the form "HH/MM/SS"”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The format value that will be pass to callback. Formats can be of the form <br> `MM/DD/YYYY <a href="" onclick="app.ShowPopup('MM')">HH</a>:SS` `<a href="" onclick="app.ShowPopup('DD')">MM</a>:YYYY <a href="" onclick="app.ShowPopup('MM')">HH</a>:SS`”</docstr></div>
-	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('String: “The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`.”')">value </a>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: “The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`.”')">value</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dtp.setOnSelect</b><br>Sets a callback function on select date and time</div>
 </div>

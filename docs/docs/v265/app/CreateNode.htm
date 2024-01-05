@@ -224,7 +224,7 @@
 	<div data-role="popup" id="pop_str_lst" class="ui-content"><b>String:</b> <i>separated</i></div>
 	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> ):</i> <docstr>“NODE_PATH env variable”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('allow app')">extended</a>.* methods in default main instance”</docstr>, <docstr>“ <a href="" onclick="app.ShowPopup('dont use named pipes for messaging”, “ nostart:disable auto start”, “ esm:use EcmaScript-Modules')">legacy</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('allow app methods in default main instance')">extended</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('dont use named pipes for messaging')">legacy</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('disable auto start')">nostart</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('use EcmaScript-Modules')">esm</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“name”</docstr> or <docstr>“name^ver”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <i>optional target directory</i></div>
 	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <i>Context ID</i></div>
@@ -236,24 +236,24 @@
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">stdout</a>
 	)</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>node.AddModule</b><br>Install a node module from npmjs.org<br>$ node.AddModule(name, dir) $</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>node.CloseMsgPipe</b><br>Close a message pipe<br>$ node.CloseMsgPipe(isCmd) $</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>node.Execute</b><br>Execute a line of code in the node process.<br>$ node.Execute(js, id) $</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>node.GetEnv</b><br>Get a process environment variable.<br>$ node.GetEnv(name) $</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>node.GetVersion</b><br>Returns the plugin version<br>$ node.GetVersion() $</div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>node.IsDone</b><br>Returns if the node process exited<br>$ node.IsDone() $</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>node.IsReady</b><br>Returns if the Node component is ready for use<br>$ node.IsReady() $</div>
-	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>node.OpenMsgPipe</b><br>Open a message pipe<br>$ node.OpenMsgPipe(isCmd) $</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>node.Run</b><br>Run a NodeJS source file. Use id to run in a new context<br>$ node.Run(file, id, newPaths) $</div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>node.SendMessage</b><br>Send a message to the running node process. Calls cb of parent.SetOnMessage<br>$ node.SendMessage(msg) $</div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>node.SendPipeMsg</b><br>Send a message over the message pipe<br>$ node.SendPipeMsg(msg, isCmd) $</div>
-	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>node.SetEnv</b><br>Set a process environment variable.<br>$ node.SetEnv(name, val) $</div>
-	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>node.SetOnDone</b><br>Define a callback function which is called when the node process has exited.<br>$ node.SetOnDone(cb) $</div>
-	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>node.SetOnError</b><br>Define a callback function which is called when the node process prints to stderr.<br>$ node.SetOnError(cb) $</div>
-	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>node.SetOnMessage</b><br>Define a callback function which is called when a system/pipe message was received from the node process.<br>$ node.SetOnMessage(cb) $</div>
-	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>node.SetOnOutput</b><br>Define a callback function which is called when the node process prints to stdout.<br>$ node.SetOnOutput(cb) $</div>
-	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>node.SetOnReady</b><br>Define a callback function which is called when the Node component is ready for use.<br>$ node.SetOnReady(cb) $</div>
-	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>node.Start</b><br>Start the main Node process<br>$ node.Start(args, paths) $</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>node.AddModule</b><br>Install a node module from npmjs.org</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>node.CloseMsgPipe</b><br>Close a message pipe</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>node.Execute</b><br>Execute a line of code in the node process.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>node.GetEnv</b><br>Get a process environment variable.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>node.GetVersion</b><br>Returns the plugin version</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>node.IsDone</b><br>Returns if the node process exited</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>node.IsReady</b><br>Returns if the Node component is ready for use</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>node.OpenMsgPipe</b><br>Open a message pipe</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>node.Run</b><br>Run a NodeJS source file. Use id to run in a new context</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>node.SendMessage</b><br>Send a message to the running node process. Calls cb of parent.SetOnMessage</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>node.SendPipeMsg</b><br>Send a message over the message pipe</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>node.SetEnv</b><br>Set a process environment variable.</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>node.SetOnDone</b><br>Define a callback function which is called when the node process has exited.</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>node.SetOnError</b><br>Define a callback function which is called when the node process prints to stderr.</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>node.SetOnMessage</b><br>Define a callback function which is called when a system/pipe message was received from the node process.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>node.SetOnOutput</b><br>Define a callback function which is called when the node process prints to stdout.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>node.SetOnReady</b><br>Define a callback function which is called when the Node component is ready for use.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>node.Start</b><br>Start the main Node process</div>
 </div>
 </body>
 
