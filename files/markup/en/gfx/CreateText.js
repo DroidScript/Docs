@@ -67,7 +67,3 @@
 /** @extern visible */
 
 /** @extern width */
-
-
-// ------------- SAMPLES ------------- 
-

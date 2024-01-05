@@ -5,7 +5,7 @@
  * @abbrev ted
  * 
  * $$ ted = MUI.AddTextEdit(parent, width, options, p1, p2, p3, p4, p5) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {num} width 
  * @param {str} options outline|filled|unique|search|active|icon and for icon can be  left|right
  * @param {str} p1 See corresponding MUI TextEdit

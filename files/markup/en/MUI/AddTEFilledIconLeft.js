@@ -6,7 +6,7 @@
  * @brief Adds a filled text input with icon on the left.
  * Adds a filled text input with icon on the left on the given layout. See @CreateTEFilledIconLeft for full documentation.
  * $$ tef = MUI.AddTEFilledIconLeft(parent, width, options, icon, hint, label, color) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {num} width 
  * @param {str_com} options DS TextEdit options
  * @param {str} icon Material icon font
@@ -16,8 +16,4 @@
  * @returns obj
 */
 
-
-
-
-// ------------- SAMPLES ------------- 
 

@@ -6,7 +6,7 @@
  * @brief Adds a radio button control.
  * Adds an MUI radio button control. See @CreateRadioButtons for a full documentation.
  * $$ rdb = MUI.AddRadioButtons(parent, list, width, height, orientation, color, backColor) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {lst} list A comma separated strings
  * @param {num} width 
  * @param {num} height 
@@ -16,8 +16,4 @@
  * @returns obj
 */
 
-
-
-
-// ------------- SAMPLES ------------- 
 

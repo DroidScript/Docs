@@ -62,7 +62,3 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
  * @param {str} options SUBS
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

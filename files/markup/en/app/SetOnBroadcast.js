@@ -20,7 +20,3 @@ You can find [a list of broadcasts available for android SDK ver. 28 here](https
 See also: @Broadcast
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

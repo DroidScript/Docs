@@ -166,7 +166,3 @@ The default constructor values are:
  * @param {str} encoding US-ASCII|UTF16L/BE
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

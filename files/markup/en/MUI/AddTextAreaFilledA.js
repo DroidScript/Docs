@@ -6,7 +6,7 @@
  * @brief Adds an active filled textarea.
  * Adds an active filled textarea on a given layout. See @CreateTextAreaFilledA for a full documentation.
  * $$ taf = MUI.AddTextAreaFilledA(parent, width, height, hint, label, color) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {num} width 
  * @param {num} height 
  * @param {str} hint Hint|Label text
@@ -15,8 +15,4 @@
  * @returns obj
 */
 
-
-
-
-// ------------- SAMPLES ------------- 
 

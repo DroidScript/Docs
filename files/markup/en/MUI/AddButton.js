@@ -5,7 +5,7 @@
  * @abbrev btn
  * Adds a MUI button to a given layout. See @CreateButtonElegant, @CreateButtonFlat, @CreateButtonRaised, @CreateButtonRaisedO, @CreateButtonRound, and @CreateButtonRoundO for full documentation
  * $$ btn = MUI.AddButton(parent, text, width, height, options) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {str} text 
  * @param {num_frc} width 
  * @param {num_frc} height 
@@ -29,7 +29,7 @@ function OnStart()
 {
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn1 = MUI.AddButton(lay, "Button 1", 0.35, null, "raised")
+        btn1 = MUI.AddButton(lay, "Button 1", 0.35, null, "raised")
         btn2 = MUI.AddButton(lay, "Button 2", 0.35, null, "raisedo")
         btn3 = MUI.AddButton(lay, "Button 3", 0.35, null, "round")
         btn4 = MUI.AddButton(lay, "Button 4", 0.35, null, "roundo")
@@ -56,7 +56,7 @@ from native import app
 def OnStart():
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
-    	btn1 = MUI.AddButton(lay, "Button 1", 0.35, None, "raised")
+        btn1 = MUI.AddButton(lay, "Button 1", 0.35, None, "raised")
         btn2 = MUI.AddButton(lay, "Button 2", 0.35, None, "raisedo")
         btn3 = MUI.AddButton(lay, "Button 3", 0.35, None, "round")
         btn4 = MUI.AddButton(lay, "Button 4", 0.35, None, "roundo")

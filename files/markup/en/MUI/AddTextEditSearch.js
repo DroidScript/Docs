@@ -6,7 +6,7 @@
  * @brief Adds a customize search style text input.
  * Adds a customize search style text input on given layout. See @CreateTextEditSearch for a full documentation.
  * $$ tes = MUI.AddTextEditSearch(parent, width, options, hint, color, backColor) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {num} width 
  * @param {str} options Comma separated DS TextEdit options
  * @param {str} hint Hint text
@@ -15,8 +15,4 @@
  * @returns obj
 */
 
-
-
-
-// ------------- SAMPLES ------------- 
 

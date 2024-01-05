@@ -6,7 +6,7 @@
  * @brief Adds the most common type of material text input.
  * Adds the most common type of material text input on a given layout. See @CreateTextEditFilled for a full documentation.
  * $$ tef = MUI.AddTextEditFilled(parent, width, options, hint, label, color) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {num} width 
  * @param {str} options Comma separated DS TextEdit options
  * @param {str} hint Hint|Label text
@@ -15,8 +15,4 @@
  * @returns obj
 */
 
-
-
-
-// ------------- SAMPLES ------------- 
 

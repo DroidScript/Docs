@@ -72,15 +72,29 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * $$ glv.CreateImage(file, callback) $$
  * @param {str_ptf} file 
  * @param {fnc_json} callback {}
- * @returns dso_glv
+ * @returns obj-img
  */
 
 
+/** ### CreateImage.img.width
+ * @prop
+ * Width of the image
+ * @returns num_int
+ */
+
+                    
+/** ### CreateImage.img.height
+ * @prop
+ * Height of the image
+ * @returns num_int
+ */
+
+                    
 /** ### DrawImage ###
  * @brief Draw image to canvas
  * Draws an image to the canvas
  * $$ glv.DrawImage(image, x, y, w, h, angle) $$
- * @param {obj} image glv Image
+ * @param {obj} image img
  * @param {num_frc} x 
  * @param {num_frc} y 
  * @param {num_frc} w 
@@ -93,7 +107,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief Draw part of a sprite to the canvas
  * Draws a part of an image to the canvas.
  * $$ glv.DrawSprite(sheet, sx, sy, sw, sh, dx, dy, dw, dh, angle) $$
- * @param {obj} sheet GLV Image
+ * @param {obj} sheet img
  * @param {num_pxl} sx 
  * @param {num_pxl} sy 
  * @param {num_pxl} sw 
@@ -149,7 +163,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief Draws part of a sprite to the context
  * Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.
  * $$ glv.GetContext.ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) $$
- * @param {obj} image glv Image
+ * @param {obj} image img
  * @param {num_pxl} sx 
  * @param {num_pxl} sy 
  * @param {num_pxl} sw 

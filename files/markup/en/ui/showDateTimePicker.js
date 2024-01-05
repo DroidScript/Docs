@@ -8,7 +8,7 @@
  * 
  *  If you want a date picker only see <col nobox #4c4>DatePicker</col> or if you want time picker only see <col nobox #4c4>TimePicker</col>
  * $$ dtp = ui.showDateTimePicker(callback, date, time, format) $$ 
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  * @param {str} date Default value for date of the form "MM/DD/YYYY"
  * @param {str} time Default value for time of the form "HH/MM/SS"
  * @param {str} format The format value that will be pass to callback. Formats can be of the form \n `MM/DD/YYYY HH:MM:SS` `MM:DD:YYYY HH:MM:SS`

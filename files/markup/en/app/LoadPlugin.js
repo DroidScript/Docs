@@ -17,7 +17,3 @@ Import an installed plugin to your app. You can download plugins from [DroidScri
 You can find instructions on how to create plugins on DroidScript.org) or on my [BlogSpot page](https://symbroson.blogspot.com/search/label/Plugins).
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

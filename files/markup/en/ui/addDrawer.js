@@ -66,7 +66,7 @@ These are the setter and getter properties for the addDrawer Component.
  * @brief setOnOpen
  * Adds a callback function when the drawer is opened
  * $$ drw.setOnOpen(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 
@@ -74,7 +74,7 @@ These are the setter and getter properties for the addDrawer Component.
  * @brief setOnClose
  * Adds a callback function when the drawer is closed
  * $$ drw.setOnClose(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

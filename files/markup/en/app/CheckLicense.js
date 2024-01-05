@@ -17,7 +17,3 @@ The key can be found under “Development Tools > Services and API's” in the G
 If the App is not licensed it will show a dialog asking them to purchase the App from Google Play and then close the App.
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

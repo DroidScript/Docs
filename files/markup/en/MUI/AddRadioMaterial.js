@@ -6,7 +6,7 @@
  * @brief Adds a material radio control.
  * Adds an MUI RadioMaterial input. See @CreateRadioMaterial for a full documentation.
  * $$ rdm = MUI.AddRadioMaterial(parent, list, width, height, orientation, color, backColor) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {lst} list A comma separated strings
  * @param {num} width 
  * @param {num} height 
@@ -16,8 +16,4 @@
  * @returns obj
 */
 
-
-
-
-// ------------- SAMPLES ------------- 
 

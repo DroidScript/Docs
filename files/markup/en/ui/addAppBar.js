@@ -67,7 +67,7 @@ These are the setter and getter properties for the addAppBar Component.
  * @brief setOnMenu
  * Sets a function to be called when the user clicks the menu
  * $$ apb.setOnMenu(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

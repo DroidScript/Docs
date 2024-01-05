@@ -77,7 +77,7 @@ These are the setter and getter properties for the addDropdown Component.
  * @brief setOnClose
  * Adds a callback function on close event
  * $$ dpd.setOnClose(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

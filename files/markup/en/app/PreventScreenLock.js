@@ -5,7 +5,7 @@
  * @brief Prevent screen from locking after some time
  * The _PreventScreenLock_ method prevents the device screen from dimming and locking while your app is in the foreground.
  * $$ app.PreventScreenLock(mode) $$ 
- * @param {bin||str} mode Full:Device can sleep, Screen and Keyboard on|Partial:CPU always on, Screen and Keyboard off
+ * @param {bin||str} mode Full:Device can sleep&comma;Screen and Keyboard on|Partial:CPU always on&comma;Screen and Keyboard off
 */
 
 

@@ -21,7 +21,7 @@
  * @brief Calls a function when the user selects a time.
  * Calls a function when the user selects a time.
  * $$ tmp.SetOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["hh:mm AM|PM","hour","minute","pos"],"pTypes":["str","num_int-[0 to 24]","num_int-[0 to 59]","str-AM|PM"]}
+ * @param {fnc_json} callback {"pNames":["time","hour","minute","pos"],"pTypes":["str-hh\\:mm AM\\|PM","num_int-[0 to 24]","num_int-[0 to 59]","str-AM|PM"]}
  */
 
 

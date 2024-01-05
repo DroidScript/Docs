@@ -21,7 +21,7 @@
 /** ### SetOnSelect ###
  * Calls a function when a user click the OK button
  * $$ dtp.SetOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["yyyy-mm-dd","yyyy","mm","dd"],"pTypes":["str","num_int","num_int","num_int"]}
+ * @param {fnc_json} callback {"pNames":["date","yyyy","mm","dd"],"pTypes":["str-yyyy-mm-dd","num_int","num_int","num_int"]}
  */
 
 

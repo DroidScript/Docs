@@ -126,7 +126,7 @@ These are the setter and getter properties for the addTextField Component.
  * @brief setStartAdornmentOnTouch
  * Add a callback handler when the start adornment control is touch
  * $$ tfd.setStartAdornmentOnTouch(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 
@@ -151,7 +151,7 @@ These are the setter and getter properties for the addTextField Component.
  * @brief setEndAdornmentOnTouch
  * Add a callback handler when the end adornment control is touch
  * $$ tfd.setEndAdornmentOnTouch(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

@@ -21,7 +21,7 @@
 /** ### SetOnSubmit ###
  * Calls a function when the checklist is submitted
  * $$ chl.SetOnSubmit(callback) $$
- * @param {fnc_json} callback {"pNames":["list"],"pTypes":["lst"]}
+ * @param {fnc_json} callback {"pNames":["lst"],"pTypes":["lst"]}
  */
 
 

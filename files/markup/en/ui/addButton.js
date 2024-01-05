@@ -105,7 +105,7 @@ These are the setter and getter properties for the addButton Component.
  * @param {num} top The top padding in pixels,
  * @param {num} right The right padding in pixels.
  * @param {num} bottom The bottom padding in pixels.
- * @param {str} mode Can be `px` `%`
+ * @param {str} mode `px` `%`
  */
 
 

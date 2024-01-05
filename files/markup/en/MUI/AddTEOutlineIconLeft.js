@@ -6,7 +6,7 @@
  * @brief Adds a material outlined text input with icon on the left.
  * Adds a material outlined text input with icon on the left on a given layout. See @CreateTEOutlineIconLeft for full documentation.
  * $$ teo = MUI.AddTEOutlineIconLeft(parent, width, options, icon, hint, label, color, backColor) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {num} width 
  * @param {str_com} options DS TextEdit options with additional 'Round' option.
  * @param {str} icon Material icon font
@@ -17,8 +17,4 @@
  * @returns obj
 */
 
-
-
-
-// ------------- SAMPLES ------------- 
 

@@ -71,7 +71,7 @@ These are the setter and getter properties for the addWebView Component.
  * The example above will call the function `Hello` defined in the WebView passing
  * the three arguments which is a text, number and a boolean
  * $$ web.setOnLoad(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

@@ -8,7 +8,7 @@
  * @param {lst} list An array of object elements. See list example
  * @param {num} width 
  * @param {num} height 
- * @param {str} options Initial|Material|Avatar, RightIcon|RightNote, Selectable
+ * @param {str} options Initial|Material|Avatar|RightIcon|RightNote|Selectable
  * @returns obj
 */
 

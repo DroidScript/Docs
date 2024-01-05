@@ -21,7 +21,3 @@ You can find more informations on the [Google Developers page](https://developer
 <premium>
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

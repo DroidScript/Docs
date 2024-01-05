@@ -40,7 +40,3 @@
  * @param {num_mls} gap time gap between two loops
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

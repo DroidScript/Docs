@@ -16,7 +16,3 @@ MUI uses the free Roboto font family downloaded from <a href='www.fonts.google.c
 For the icons, MUI uses the Google's Material Icon Font.
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

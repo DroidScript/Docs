@@ -11,7 +11,7 @@
  * @param {num} height 
  * @param {str} options DS text options
  * @param {str_col} color 
- * @param {str} fontWeight Can be Thin|Light|Regular|Medium|Bold
+ * @param {str} fontWeight Thin|Light|Regular|Medium|Bold
  * @returns obj
 */
 

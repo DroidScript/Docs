@@ -118,7 +118,3 @@ combine the parts only when making CloudStore API calls.
  * @param {str} password 
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

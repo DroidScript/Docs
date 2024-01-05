@@ -34,7 +34,7 @@ These are the setter and getter properties for the showPopup Component.
  * @brief setOnClose
  * Adds an onClose callback to your popup
  * $$ pop.setOnClose(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 
@@ -42,7 +42,7 @@ These are the setter and getter properties for the showPopup Component.
  * @brief setOnAction
  * Adds an action callback when the user touches the action button. The `btnText` param must be provided in order to create an action button
  * $$ pop.setOnAction(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

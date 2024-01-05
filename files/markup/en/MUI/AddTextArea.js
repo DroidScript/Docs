@@ -6,7 +6,7 @@
  * @brief Adds a material filled textarea
  * Adds a material textarea on a given layout. See @CreateTextAreaFilled, @CreateTextAreaFilledA, @CreateTextAreaOutline and @CreateTextAreaOutlineA for a full documentation on each corresponding type.
  * $$ txa = MUI.AddTextArea(parent, width, height, options, hint, label, color, backColor) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {num} width 
  * @param {num} height 
  * @param {str_com} options filled|outline|active

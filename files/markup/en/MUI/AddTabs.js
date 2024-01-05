@@ -5,7 +5,7 @@
  * @abbrev tbf
  * Adds an MUI tab on a given layout. See @CreateTabFixed for a full documentation.
  * $$ tbf = MUI.AddTabs(parent, title, width, height, options, color, animation) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {str_com} title titles
  * @param {num} width 
  * @param {num} height 

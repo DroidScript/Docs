@@ -6,7 +6,7 @@
  * 
  * $$ node = app.CreateNode(paths, options) $$ 
  * @param {str_pth} paths NODE_PATH env variable
- * @param {str} options extended:allow app.* methods in default main instance, legacy:don't use named pipes for messaging, nostart:disable auto start, esm:use EcmaScript-Modules
+ * @param {str} options extended:allow app methods in default main instance,legacy:dont use named pipes for messaging,nostart:disable auto start,esm:use EcmaScript-Modules
 */
 
 
@@ -36,7 +36,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### GetVersion ###
  * Returns the plugin version
- * $ node.GetVersion() $
  * $$ node.GetVersion() $$
  * @returns num
  */
@@ -44,7 +43,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### Start ###
  * Start the main Node process
- * $ node.Start(args, paths) $
  * $$ node.Start(args, paths) $$
  * @param {lst} args argument array
  * @param {lst} paths 
@@ -53,7 +51,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SetOnReady ###
  * %cb% the Node component is ready for use.
- * $ node.SetOnReady(cb) $
  * $$ node.SetOnReady(cb) $$
  * @param {fnc_json} cb {}
  */
@@ -61,7 +58,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SetOnDone ###
  * %cb% the node process has exited.
- * $ node.SetOnDone(cb) $
  * $$ node.SetOnDone(cb) $$
  * @param {fnc_json} cb {}
  */
@@ -69,7 +65,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SetOnOutput ###
  * %cb% the node process prints to stdout.
- * $ node.SetOnOutput(cb) $
  * $$ node.SetOnOutput(cb) $$
  * @param {fnc_json} cb {"pNames":["stdout"],"pTypes":["str:newline delimeted"]}
  */
@@ -77,7 +72,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SetOnError ###
  * %cb% the node process prints to stderr.
- * $ node.SetOnError(cb) $
  * $$ node.SetOnError(cb) $$
  * @param {fnc_json} cb {"pNames":["msg"],"pTypes":["str:newline delimeted"]}
  */
@@ -85,7 +79,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SetOnMessage ###
  * %cb% a system/pipe message was received from the node process.
- * $ node.SetOnMessage(cb) $
  * $$ node.SetOnMessage(cb) $$
  * @param {fnc_json} cb {"pNames":["msg"],"pTypes":["str"]}
  */
@@ -93,7 +86,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SetEnv ###
  * Set a process environment variable.
- * $ node.SetEnv(name, val) $
  * $$ node.SetEnv(name, val) $$
  * @param {str} name 
  * @param {str} val 
@@ -102,7 +94,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### GetEnv ###
  * Get a process environment variable.
- * $ node.GetEnv(name) $
  * $$ node.GetEnv(name) $$
  * @param {str} name 
  * @returns str
@@ -111,7 +102,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### OpenMsgPipe ###
  * Open a message pipe
- * $ node.OpenMsgPipe(isCmd) $
  * $$ node.OpenMsgPipe(isCmd) $$
  * @param {bin} isCmd 
  */
@@ -119,7 +109,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### CloseMsgPipe ###
  * Close a message pipe
- * $ node.CloseMsgPipe(isCmd) $
  * $$ node.CloseMsgPipe(isCmd) $$
  * @param {bin} isCmd 
  */
@@ -127,7 +116,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SendPipeMsg ###
  * Send a message over the message pipe
- * $ node.SendPipeMsg(msg, isCmd) $
  * $$ node.SendPipeMsg(msg, isCmd) $$
  * @param {str} msg 
  * @param {bin} isCmd 
@@ -136,7 +124,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SendMessage ###
  * Send a message to the running node process. Calls cb of parent.SetOnMessage
- * $ node.SendMessage(msg) $
  * $$ node.SendMessage(msg) $$
  * @param {str} msg 
  */
@@ -144,7 +131,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### IsReady ###
  * Returns if the Node component is ready for use
- * $ node.IsReady() $
  * $$ node.IsReady() $$
  * @returns bin
  */
@@ -152,7 +138,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### IsDone ###
  * Returns if the node process exited
- * $ node.IsDone() $
  * $$ node.IsDone() $$
  * @returns bin
  */
@@ -160,7 +145,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### Run ###
  * Run a NodeJS source file. Use id to run in a new context
- * $ node.Run(file, id, newPaths) $
  * $$ node.Run(file, id, newPaths) $$
  * @param {str_pth} file 
  * @param {str:Context ID} id 
@@ -170,7 +154,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### Execute ###
  * Execute a line of code in the node process.
- * $ node.Execute(js, id) $
  * $$ node.Execute(js, id) $$
  * @param {str_jsc} js 
  * @param {str:Context ID} id 
@@ -179,7 +162,6 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### AddModule ###
  * Install a node module from npmjs.org
- * $ node.AddModule(name, dir) $
  * $$ node.AddModule(name, dir) $$
  * @param {str} name name|name^ver
  * @param {str:optional target directory} dir 

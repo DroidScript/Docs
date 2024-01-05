@@ -48,7 +48,3 @@
  * @param {fnc_json} callback {"pNames":["status"],"pTypes":["str"]}
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

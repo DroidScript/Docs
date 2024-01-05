@@ -235,6 +235,3 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  */
 
                     
-
-// ------------- SAMPLES ------------- 
-

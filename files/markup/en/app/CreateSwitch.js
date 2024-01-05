@@ -154,7 +154,3 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** @extern Show */
 
 /** @extern Tween */
-
-
-// ------------- SAMPLES ------------- 
-

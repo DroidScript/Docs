@@ -52,7 +52,7 @@
  * $$ db.executeSql(statement, params, success, error) $$
  * @param {str_sql} statement 
  * @param {lst} params 
- * @param {fnc_json} success {"pNames":["tx","res"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }","obj-{ rows.item(i): { id:num, data:all, data_num:num } }","obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"]}
+ * @param {fnc_json} success {"pNames":["tx","res"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }","obj-{ rows: { item(i): { id:num, data:all, data_num:num } } }","obj-{ length:num_int, rowsAffected:num_int, rows: { item(i): { id:num, data:all, data_num:num } } }"]}
  * @param {fnc_json} error {"pNames":["t","err"],"pTypes":["?","obj-{ message:str }"]}
  */
 
@@ -63,7 +63,7 @@
  * $$ db.ExecuteSql(sql, params, success, error) $$
  * @param {str_sql} sql 
  * @param {lst} params 
- * @param {fnc_json} success {"pNames":["res"],"pTypes":["obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"]}
+ * @param {fnc_json} success {"pNames":["res"],"pTypes":["obj-{ length:num_int, rowsAffected:num_int, rows: { item(i): { id:num, data:all, data_num:num } } }"]}
  * @param {fnc_json} error {"pNames":["err"],"pTypes":["str"]}
  */
 
@@ -108,7 +108,7 @@
  * $$ db.readTransaction(fn, error, success) $$
  * @param {fnc_json} fn {"pNames":["tx"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]}
  * @param {fnc_json} error {"pNames":["err"],"pTypes":["str"]}
- * @param {fnc_json} success {"pNames":["tx","res"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }","obj-{ rows.item(i): { id:num, data:all, data_num:num } }"]}
+ * @param {fnc_json} success {"pNames":["tx","res"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }","obj-{ rows: { item(i): { id:num, data:all, data_num:num } } }"]}
  */
 
 
@@ -125,10 +125,6 @@
  * $$ db.transaction(fn, error, success) $$
  * @param {fnc_json} fn {"pNames":["tx"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]}
  * @param {fnc_json} error {"pNames":["err"],"pTypes":["str"]}
- * @param {fnc_json} success {"pNames":["fnc","res"],"pTypes":[{"pNames":["tx"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]},"obj-{ length:num_int, rowsAffected:num_int, rows.item(i): { id:num, data:all, data_num:num } }"]}
+ * @param {fnc_json} success {"pNames":["fnc","res"],"pTypes":[{"pNames":["tx"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]},"obj-{ length:num_int, rowsAffected:num_int, rows: { item(i): { id:num, data:all, data_num:num } } }"]}
  */
-
-
-
-// ------------- SAMPLES ------------- 
 

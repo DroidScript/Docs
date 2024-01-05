@@ -4,8 +4,8 @@
 /** # AddListDialog #
  * @abbrev lsd
  * Adds a more customizable list dialog or checklist dialog. See @CreateListDialog and @CreateCheckList for a full documentation on each type.
- * $$ lsd = MUI.AddListDialog(textEdit, title, list, color, options) $$ 
- * @param {obj} textEdit MUI TextEdit control or DS TextEdit control
+ * $$ lsd = MUI.AddListDialog(parent, title, list, color, options) $$ 
+ * @param {dso} parent @../app/CreateTextEdit
  * @param {str} title 
  * @param {lst} list An array of objects
  * @param {str_col} color 

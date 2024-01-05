@@ -39,7 +39,7 @@
  * @brief setOnClose
  * Adds a callback handler method on close event
  * $$ prd.setOnClose(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

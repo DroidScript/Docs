@@ -20,7 +20,3 @@ Decodes a URI encoded string.
 See Also: @SetOnError
  */
 
-
-
-// ------------- SAMPLES ------------- 
-

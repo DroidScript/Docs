@@ -99,7 +99,7 @@ These are the setter and getter properties for the addLayout Component.
  * @param {num} top Top margin.
  * @param {num} right Right margin.
  * @param {num} bottom Bottom margin.
- * @param {str} mode Can be `px`. Default is a fraction of viewport.
+ * @param {str} mode `px`. Default is a fraction of viewport.
  */
 
 

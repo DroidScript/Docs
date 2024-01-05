@@ -4,10 +4,9 @@
 /** # showColorPicker #
  * @brief showColorPicker
  * 
- * $$ ui.showColorPicker(value, options, ) $$ 
+ * $$ ui.showColorPicker(value, options) $$ 
  * @param {str} value A hexadecimal default value for the color picker.
  * @param {str} options A comma separated color picker options. Values can be \n `Alpha` Includes an alpha
- * @param {}  
  * @returns obj-ColorPicker Component
 */
 

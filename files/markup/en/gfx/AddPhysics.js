@@ -26,7 +26,7 @@
  * Adds linear and angular velocity to the object
  * $$ phs.AddShape(type, points) $$
  * @param {str} type Polygon
- * @param {lst} points [ [x:num_frc, y:num_frc], [x:num_frc, y:num_frc], ... ]
+ * @param {lst} points [ [x:num_frc, y:num_frc] ]
  */
 
 

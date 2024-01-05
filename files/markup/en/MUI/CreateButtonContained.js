@@ -132,7 +132,3 @@
 /** @extern Show */
 
 /** @extern Tween */
-
-
-// ------------- SAMPLES ------------- 
-

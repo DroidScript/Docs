@@ -4,8 +4,8 @@
 /** # AddPicker #
  * @abbrev pck
  * Adds a picker dialog such as time, date or color. See @CreateDatePicker, @CreateTimePicker and @CreateColorPicker for a full documentation.
- * $$ pck = MUI.AddPicker(textEdit, options) $$ 
- * @param {obj} textEdit MUI TextEdit or DS TextEdit control
+ * $$ pck = MUI.AddPicker(parent, options) $$ 
+ * @param {dso} parent @../app/CreateTextEdit
  * @param {str} options Date|Color|Time
  * @returns obj
 */

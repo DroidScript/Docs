@@ -73,7 +73,7 @@ These are the setter and getter properties for the addChip Component.
  * @brief setTouchable
  * Sets the chip to clickable. This will add a pointer cursor into the chip when hovered
  * $$ chp.setTouchable(touchable) $$
- * @param {bin} touchable Can be `true` or `false`
+ * @param {bin} touchable `true` or `false`
  */
 
 
@@ -81,7 +81,7 @@ These are the setter and getter properties for the addChip Component.
  * @brief setOnDelete
  * Sets a callback function when the chip is deleted. This will automatically add a delete icon to the chip
  * $$ chp.setOnDelete(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

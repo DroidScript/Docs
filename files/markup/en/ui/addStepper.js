@@ -70,7 +70,7 @@ These are the setter and getter properties for the addStepper Component.
  * @brief setOnComplete
  * Adds a callback function to be called when the stepper is complete
  * $$ stp.setOnComplete(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

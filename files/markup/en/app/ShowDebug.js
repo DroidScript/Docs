@@ -8,7 +8,7 @@
  * See Also: @Debug, @IsDebugVisible
  * $$ app.ShowDebug(show, options) $$ 
  * @param {bin} show 
- * @param {str} options dialog-Show the debug log as black overlay dialog|clear-Clear content before showing
+ * @param {str} options dialog:Show the debug log as black overlay dialog|clear:Clear content before showing
 */
 
 

@@ -129,7 +129,7 @@ For animations you can then use the **Animate** function of the app object which
  * Draws an image with a 2d [transformation matrix](https://docs.rainmeter.net/tips/transformation-matrix-guide).
  * $$ img.DrawImageMtx(image, matrix) $$
  * @param {dso} image CreateImage
- * @param {lst} matrix [a, b, c, d, tx, ty]
+ * @param {lst} matrix [a:num, b:num, c:num, d:num, tx:num, ty:num]
  */
 
 

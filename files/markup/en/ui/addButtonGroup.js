@@ -148,7 +148,7 @@ These are the setter and getter properties for the addButtonGroup Component.
  * @brief enableElevation
  * Enable of disable the elevation of the button group
  * $$ btg.enableElevation(enable) $$
- * @param {bin} enable Can be `true` or `false`
+ * @param {bin} enable `true` or `false`
  */
 
 

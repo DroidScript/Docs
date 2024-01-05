@@ -90,7 +90,7 @@ These are the setter and getter properties for the addSelect Component.
  * @brief setOnOpen
  * Sets a callback function when the menu is open
  * $$ sel.setOnOpen(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 
@@ -161,7 +161,7 @@ These are the setter and getter properties for the addSelect Component.
  * @brief setEnabled
  * Enable or disable the select component
  * $$ sel.setEnabled(index, value) $$
- * @param {num} index Can be `true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.
+ * @param {num} index `true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.
  * @param {bin} value Values can be `true` or `false`.
  */
 

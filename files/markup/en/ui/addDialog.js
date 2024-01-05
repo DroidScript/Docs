@@ -44,7 +44,7 @@ These are the setter and getter properties for the addDialog Component.
  * @brief setOnClose
  * Adds a callback function when the dialog is close
  * $$ dlg.setOnClose(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

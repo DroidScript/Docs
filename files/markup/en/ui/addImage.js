@@ -74,7 +74,7 @@ These are the setter and getter properties for the addImage Component.
  * @brief setOnLoad
  * Sets a callback function on load event
  * $$ img.setOnLoad(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 
@@ -234,7 +234,7 @@ These are the setter and getter properties for the addImage Component.
  * @brief setOnTouchMove
  * Sets a callback function when the a mouse move event is triggered
  * $$ img.setOnTouchMove(callback) $$
- * @param {fnc_json} callback 
+ * @param {fnc_json} callback {}
  */
 
 

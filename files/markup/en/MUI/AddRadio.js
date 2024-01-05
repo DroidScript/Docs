@@ -5,7 +5,7 @@
  * @abbrev rd
  * 
  * $$ rd = MUI.AddRadio(parent, list, width, height, options, p1, color, backColor) $$ 
- * @param {obj} parent MUI Layout or DS Layout control
+ * @param {dso} parent @../app/CreateLayout
  * @param {str_com} list strings
  * @param {num} width 
  * @param {num} height 
