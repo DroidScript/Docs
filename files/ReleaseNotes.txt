@@ -1,3 +1,36 @@
+DS 2.66
+- Removed docs auto-update (need more testing).
+
+DS 2.65b2
+- Removed Premium signup email box, to improve app privacy.
+- Modified Premium subs description.
+- Updated Hybrid/AppBar and Drawer template.
+- Fixed docs back button issues after removing plugins or func params popup.
+- Fixed issue with Hybrid UI docs not being available till app restart.
+- Fixed issue with landscape display height not taking account of status bar.
+- Add more app demos on fresh install (not just 'Hello World').
+- Removed MUI link from main docs page (deprecated).
+- Removed CreateCloudStore from Premium docs page (deprecated).
+
+DS 2.65b1
+- Added 'Bound' class, auto-binds methods of classes that extend it.
+- Fixed Notification 'No Permissions' issue for < API33.
+- Enabled docs to be updated via a plugin.
+- Fixed version code on AABs not matching version name.
+- Updated Docs, including new full text search facility and app types info.
+- Enabled Hybrid by default (not just in experiments mode).
+- Added app.SetErrorFilter( regex ) to allow filtering out certain errors (useful for nodejs apps).
+- Fixed app icons not showing up at startup on slow devices.
+- Added obj.Resize() to resize a control after device rotation (keeps original width/height ratios).
+- Added 'AutoSize' option to all layouts - Resizes itself and child controls after device rotation.
+- Fixed app.DisplayWidth() reporting wrong size with SoftNav and status bar visible.
+- Prevented webview 'UseBrowser' option taking affect during redirects.
+- Added web.SetUseBrowser( urlFilter ) method for fine control over urls that open a browser.
+- Docs are no longer chopped off at bottom on device IDE.
+- Removed full screen notification sample (now restricted on Android).
+- Enhanced app.Check/GetPermission() to support individual "android.permission.*" strings.
+- Added app.GetShortcuts() method, returns list of shortcuts associated with current app.
+
 DS 2.64b2
 - Fixed missing callback on app.LoadScript() when using cfg.Node.
 - Added USB Drive SAF support + Updated 'Storage Access' sample.

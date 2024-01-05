@@ -43,6 +43,11 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('DS 2.67b1(15-Dec 2023)')">DS 2.67b1</a><sup>(15-Dec 2023)</sup><br>
+			</span><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('DS 2.66(02-Dec 2023)')">DS 2.66</a><sup>(02-Dec 2023)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
 				- <a href="" onclick="jumpTo('DS 2.65b2(30-Nov 2023)')">DS 2.65b2</a><sup>(30-Nov 2023)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.65b1(27-Nov 2023)')">DS 2.65b1</a><sup>(27-Nov 2023)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.64b2(28-Oct 2023)')">DS 2.64b2</a><sup>(28-Oct 2023)</sup><br>
@@ -52,7 +57,6 @@
 				- <a href="" onclick="jumpTo('DS 2.62b2(23-Jul 2023)')">DS 2.62b2</a><sup>(23-Jul 2023)</sup><br>
 				- <a href="" onclick="jumpTo('DS 2.62b1(15-Jun 2023)')">DS 2.62b1</a><sup>(15-Jun 2023)</sup><br>
 			</span><br>
-		<span style="display:inline-block;padding-left:1em;">
 			• <a href="" onclick="jumpTo('DS 2.61(23-Mar-2023)')">DS 2.61</a><sup>(23-Mar-2023)</sup><br>
 			<span style="display:inline-block;padding-left:1em;">
 				- <a href="" onclick="jumpTo('DS 2.60b1(28-Feb-2023)')">DS 2.60b1</a><sup>(28-Feb-2023)</sup><br>
@@ -122,6 +126,17 @@
 		</div>
 
 		<p><!-- /([^\\])([_*])/$1\\$2/ /:/:/ --></p>
+		<h3>DS 2.67b1<sup>(15-Dec 2023)</sup></h3>
+		<p>- Fixed bug stopping background services from running.<br>
+		- Fixed bug stopping some plugins from working (eg. BLEBeacon)<br>
+		- Fixed issue renaming of python apps in device IDE.<br>
+		- Fixed Python apps with spaces in the name.<br>
+		- Fixed Python APK building.<br>
+		- Fixed node.Execute() atob2 is not defined bug.<br>
+		- Disabled banner animation when in premium.<br>
+		- Added new forum extension to device IDE.</p>
+		<h2>DS 2.66<sup>(02-Dec 2023)</sup></h2>
+		<p>- Removed docs auto-update (need more testing).</p>
 		<h3>DS 2.65b2<sup>(30-Nov 2023)</sup></h3>
 		<p>- Removed Premium signup email box, to improve app privacy.<br>
 		- Modified Premium subs description.<br>
@@ -139,6 +154,7 @@
 		- Fixed version code on AABs not matching version name.<br>
 		- Updated Docs, including new full text search facility and app types info.<br>
 		- Enabled Hybrid by default (not just in experiments mode).<br>
+		- Added app.SetErrorFilter( regex ) to allow filtering out certain errors (useful for nodejs apps).<br>
 		- Fixed app icons not showing up at startup on slow devices.<br>
 		- Added obj.Resize() to resize a control after device rotation (keeps original width/height ratios).<br>
 		- Added 'AutoSize' option to all layouts - Resizes itself and child controls after device rotation.<br>
@@ -252,7 +268,7 @@
 		<p>- Fixed issue with using ctrl.Batch() method with obfuscation.<br>
 		- Removed troublesome bytecode file.</p>
 		<h3>DS 2.60b1<sup>(28-Feb-2023)</sup></h3>
-		<p>- Added FLA_MUTABLE to app.SetInForeground() and others to stop API 31 error.<br>
+		<p>- Added FLAG_MUTABLE to app.SetInForeground() and others to stop API 31 error.<br>
 		- Added app.GetIsBatteryOptimized() detects if app is being optimized.<br>
 		- Added app.ShowBatterySettings() show user battery optimization settings.<br>
 		- Added foreground location service support for Android 10+.<br>

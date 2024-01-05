@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateTabs #
@@ -103,6 +103,8 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */
@@ -196,7 +198,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 @sample Basic
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
     var tabs = app.CreateTabs( "Tab 1,Tab 2,Tab 3", 0.8, 0.8, "VCenter" );
     lay.AddChild( tabs );
@@ -210,7 +212,7 @@ function OnStart()
     tab1 = tabs.GetLayout( "Tab 3" );
     tab1.SetBackGradient( "blue", "red", "", "left-right" );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
     

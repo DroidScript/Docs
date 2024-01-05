@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateTextEdit #
@@ -202,6 +202,8 @@ You can also set a background image/pattern or background gradient for the List 
 
 /** @extern SetBackAlpha */
 
+/** @extern Resize */
+
 /** @extern SetBackColor */
 
 /** @extern SetBackGradient */
@@ -302,22 +304,22 @@ You can also set a background image/pattern or background gradient for the List 
 @sample Using OnChange
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>edt = app.CreateTextEdit( "Edit me", 0.8, 0.3 );
-	edt.SetOnChange( edt_OnChange );
-	lay.AddChild( edt );</b>
+    <b>edt = app.CreateTextEdit( "Edit me", 0.8, 0.3 );
+    edt.SetOnChange( edt_OnChange );
+    lay.AddChild( edt );</b>
 
-	txt = app.CreateText( "", 0.8, 0.3 );
-	txt.SetMargins( 0, 0.02, 0, 0 );
-	lay.AddChild( txt );
+    txt = app.CreateText( "", 0.8, 0.3 );
+    txt.SetMargins( 0, 0.02, 0, 0 );
+    lay.AddChild( txt );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function edt_OnChange()
 {
-	txt.SetText( edt.GetText() );
+    txt.SetText( edt.GetText() );
 }
  */
     
@@ -327,14 +329,14 @@ function edt_OnChange()
 @sample Blue on White
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>edt = app.CreateTextEdit( "Hello", 0.8, 0.4  );
-	edt.SetTextColor( "#ff6666ff" );
-	edt.SetBackColor( "#ffffffff" );
-	lay.AddChild( edt );</b>
+    <b>edt = app.CreateTextEdit( "Hello", 0.8, 0.4  );
+    edt.SetTextColor( "#ff6666ff" );
+    edt.SetBackColor( "#ffffffff" );
+    lay.AddChild( edt );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
     
@@ -344,14 +346,14 @@ function OnStart()
 @sample Password
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>edt = app.CreateTextEdit( "", 0.8, 0.4, "Password,Singleline"  );
+    <b>edt = app.CreateTextEdit( "", 0.8, 0.4, "Password,Singleline"  );
     edt.SetHint( "Password" );
     edt.SetOnEnter( edt_OnEnter );
-	lay.AddChild( edt );</b>
+    lay.AddChild( edt );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function edt_OnEnter()

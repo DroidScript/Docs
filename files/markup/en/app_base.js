@@ -3,7 +3,7 @@
  * @name Animate
  * @brief Animates a control
  * Animates the control.
- * 
+ *
  * There are
  * 	“in”-Animations which are used to show objects from hidden state
  * 	“out”-animations which are used to hide objects in visible state and
@@ -212,6 +212,13 @@
  * @param {str} p3 
  * @param {str} p4 
  * @returns all
+ */
+
+
+/** ### Resize
+ * @name Resize
+ * @brief resize a control after device rotation
+ * Resize a control after device rotation by keeping the original width/height ratios.
  */
 
 

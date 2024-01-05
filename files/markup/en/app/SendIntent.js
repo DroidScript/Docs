@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # SendIntent #
@@ -28,7 +28,7 @@ If you expect a **callback** you have to pass the “result” **option**. The *
 	1: _user-defined activity results_
 	0: _operation canceled_
 
-Many common usage examples are shown in @../intro/09AppIntents.
+Many common usage examples are shown in @../intro/AppIntents.
 
 For more information visit the [Android Developer Page](https://developer.android.com/reference/android/content/Intent.html). There you can find informations about the [activity](https://developer.android.com/reference/android/content/Intent.html#standard-activity-actions), [category](https://developer.android.com/reference/android/content/Intent.html#standard-categories) and [extra](https://developer.android.com/reference/android/content/Intent.html#standard-extra-data).
 

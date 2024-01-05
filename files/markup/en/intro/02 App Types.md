@@ -36,8 +36,8 @@
         <tr>
             <th class='premHint'>MUI "<i class='fa fa-info-circle'></i>":"<premium>" Components</th>
             <td><i class='fa fa-remove red'></i></td>
-            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <a href='04CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a>"</td>
-            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <a href='04CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a>"</td>
+            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <a href='CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a>"</td>
+            <td><i class='fa fa-check green'></i> "<i class='fa fa-info-circle'></i>":"Included via <a href='CodingFeatures.htm#MUI' onclick='location.href=this.href'>cfg.MUI</a>"</td>
             <td><i class='fa fa-remove red'></i></td>
         </tr>
         <tr>
@@ -96,7 +96,7 @@ __Advantages:__
 - Small APK size and memory usage
 
 __Disadvantages:__
-- The performance is slower for complex UI (can be improved with [cfg.Fast](04CodingFeatures.htm#Fast) at the loss of DOM objects)
+- The performance is slower for complex UI (can be improved with [cfg.Fast](CodingFeatures.htm#Fast) at the loss of DOM objects)
 - Modern browser features might not work with older WebView versions
 
 

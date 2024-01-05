@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateCrypt #

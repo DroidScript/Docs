@@ -41,7 +41,7 @@ Enables various legacy transparent app behaviour
 -->
 
 #### cfg.Fast
-The Fast config will make use of [the J2V8 engine](https://eclipsesource.com/j2v8) which increases the apps execution speed roughly by a factor of 3. Specifically it will increase the speed of app.* calls, which is quite useful for tween animations or when creating and modifying a huge amount of app controls.
+The Fast config will make use of [the J2V8 engine](https://github.com/eclipsesource/j2v8) which increases the apps execution speed roughly by a factor of 3. Specifically it will increase the speed of app.* calls, which is quite useful for tween animations or when creating and modifying a huge amount of app controls.
 
 The drawback of this method is that all default WebView DOM objects are not available any more.
 This includes methods like setInterval and setTimeout which should be converted to **app.@../app/Animate** respectively.
@@ -88,7 +88,7 @@ These methods can force DroidScript to add or remove specific permissions from y
 See also: @../app/GetPermission, @../app/CheckPermission
 
 ## Translations: T()
-Converts a keyword into the translated text using a [lang.json](07FileStructure.htm#lang.json) file.
+Converts a keyword into the translated text using a [lang.json](FileStructure.htm#lang.json) file.
 
 ## Unique Callbacks: I()
 DroidScript checks if a callback function already exists and uses it instead of creating a new instance.

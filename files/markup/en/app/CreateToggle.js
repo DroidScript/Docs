@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateToggle #
@@ -91,6 +91,8 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** @extern Method */
 
 /** @extern SetBackAlpha */
+
+/** @extern Resize */
 
 /** @extern SetBackColor */
 

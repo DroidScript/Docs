@@ -1,10 +1,10 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # GetPermission #
  * 
  * $$ app.GetPermission(type, callback) $$ 
- * @param {str_com} type Camera|ExtSDcard|External|Internal|Network|Notify|Storage|Overlay|SMS|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|usb\:<pid:num>
+ * @param {str_com} type Camera|ExtSDcard|External|Internal|Network|Notify|Storage|Overlay|SMS|Location|Calendar|Body|Contacts|Record|Phone|Biometric|Accounts|License|android.permission.\*|usb\:<pid:num>
  * @param {fnc_json} callback {"pNames":["ungranted"],"pTypes":["str_com||str_uri"]}
 */
 
@@ -13,6 +13,7 @@
 
 /** @Description
 GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder.
+You can also test for individual “android.permission.\*” strings.
 
 See Also: @CheckPermission @RemovePermission @ListPermissions
  */

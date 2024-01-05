@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateTextH2 #
@@ -123,6 +123,8 @@
 /** @extern Method */
 
 /** @extern SetBackAlpha */
+
+/** @extern Resize */
 
 /** @extern SetBackColor */
 

@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateSpinner #
@@ -93,6 +93,8 @@ Use the **SelectItem** method to select a particular item in code.
 
 
 /** @extern SetBackAlpha */
+
+/** @extern Resize */
 
 /** @extern SetBackColor */
 

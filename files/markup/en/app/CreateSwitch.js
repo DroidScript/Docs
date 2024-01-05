@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateSwitch #
@@ -89,6 +89,8 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** @extern Method */
 
 /** @extern SetBackAlpha */
+
+/** @extern Resize */
 
 /** @extern SetBackColor */
 

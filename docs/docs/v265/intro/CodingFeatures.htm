@@ -88,7 +88,7 @@
 		<p>Enables various legacy transparent app behaviour<br>
 		--></p>
 		<h4>cfg.Fast</h4>
-		<p>The Fast config will make use of <a href="https://eclipsesource.com/j2v8" onclick="return OpenUrl(this.href);">the J2V8 engine</a> which increases the apps execution speed roughly by a factor of 3. Specifically it will increase the speed of app.* calls, which is quite useful for tween animations or when creating and modifying a huge amount of app controls.<br>
+		<p>The Fast config will make use of <a href="https://github.com/eclipsesource/j2v8" onclick="return OpenUrl(this.href);">the J2V8 engine</a> which increases the apps execution speed roughly by a factor of 3. Specifically it will increase the speed of app.* calls, which is quite useful for tween animations or when creating and modifying a huge amount of app controls.<br>
 		<br>
 		The drawback of this method is that all default WebView DOM objects are not available any more.<br>
 		This includes methods like setInterval and setTimeout which should be converted to <b>app.<a href="../app/Animate.htm" data-ajax="false">Animate</a></b> respectively.<br>
@@ -161,7 +161,7 @@
 		<p>These methods can force DroidScript to add or remove specific permissions from your app.<br>
 		See also: <a href="../app/GetPermission.htm" data-ajax="false">GetPermission</a>, <a href="../app/CheckPermission.htm" data-ajax="false">CheckPermission</a></p>
 		<h2>Translations: T()</h2>
-		<p>Converts a keyword into the translated text using a <a href="07FileStructure.htm#lang.json" data-ajax="false">lang.json</a> file.</p>
+		<p>Converts a keyword into the translated text using a <a href="FileStructure.htm#lang.json" data-ajax="false">lang.json</a> file.</p>
 		<h2>Unique Callbacks: I()</h2>
 		<p>DroidScript checks if a callback function already exists and uses it instead of creating a new instance.<br>
 		This can cause issues when referring to other local variables in private scopes.<br>

@@ -140,7 +140,7 @@ By default you can achieve a maximum framerate of 60 fps, however the framerate 
 
 The following sample is a simple two-player Pong implementation using basic shapes only.
 It also demonstrates how you can handle multiple touches, and how a game can be made fps independent, so that collision detection on low fps is no problem any more.
-An [advanced version](https://dspk.justplayer.de/browse/view/69) is available on the dspk store.
+An [advanced version](https://ds.justplayer.de/uploads/pong) is available on the dspk store.
 
 <sample Pong>
 // User variables

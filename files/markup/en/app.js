@@ -94,12 +94,14 @@ function DsApp()
 	/*#app*/ this.GetMediaFile = function( appName,ext ) { return prompt( "#", "App.GetMediaFile(\f"+appName+"\f"+ext ); }
 	/*#app*/ this.KillApp = function( procId ) { prompt( "#", "App.KillApp("+procId ); }
 	/*#app*/ this.CreateShortcut = function( name,iconFile,file,options ) { prompt( "#", "App.CreateShortcut(\f"+name+"\f"+iconFile+"\f"+file+"\f"+options ); }
+	/*#app*/ this.GetShortcuts = function() { var s = prompt( "#", "App.GetShortcuts(" ); if(s.length) return JSON.parse(s); else return null; }
 	/*#app*/ this.GetBuildNum = function() { return parseInt( prompt( "#", "App.GetBuildNum(" )); }
 	/*#app*/ this.GetOSVersion = function() { return parseInt( prompt( "#", "App.GetBuildNum(" )); }
 	/*#app*/ this.GetModel = function() { return prompt( "#", "App.GetModel(" ); }
 	/*#app*/ this.IsTablet = function() { return prompt( "#", "App.IsTablet(" )=="true"; }
 	/*#app*/ this.IsChrome = function() { return prompt( "#", "App.IsChrome(" )=="true"; }
 	/*#app*/ this.IsTV = function() { return prompt( "#", "App.IsTV(" )=="true"; }
+	/*#app*/ this.SetErrorFilter = function( filter ) { prompt( "#", "App.SetErrorFilter(\f"+filter ); }
 	/*#app*/ this.SetOnError = function( callback ) { prompt( "#", "App.SetOnError(\f"+_Cbm(callback) ); }
 	/*#app*/ this.SetOnDebug = function( callback ) { prompt( "#", "App.SetOnDebug(\f"+_Cbm(callback) ); }
 	/*#app*/ this.SetOnKey = function( callback ) { prompt( "#", "App.SetOnKey(\f"+_Cbm(callback) ); }
@@ -588,6 +590,7 @@ Obj = function( id, typeId )
     /*#obj*/ self.AdjustColor  = function( hue,sat,bright,cont ) { prompt( self.id, "Obj.AdjustColor(\f"+hue+"\f"+sat+"\f"+bright+"\f"+cont ); }
     /*#obj*/ self.SetPosition  = function( left,top,width,height,options ) { prompt( self.id, "Obj.SetPosition(\f"+left+"\f"+top+"\f"+width+"\f"+height+"\f"+options ); self._left = left; self._top = top;}
     /*#obj*/ self.SetSize  = function( width,height,options ) { prompt( self.id, "Obj.SetSize(\f"+width+"\f"+height+"\f"+options ); }
+    /*#obj*/ self.Resize  = function() { prompt( self.id, "Obj.Resize(\f"); }
     /*#obj*/ self.GetWidth  = function( options ) { return parseFloat(prompt( self.id, "Obj.GetWidth(\f"+options )); }
     /*#obj*/ self.GetHeight  = function( options ) { return parseFloat(prompt( self.id, "Obj.GetHeight(\f"+options )); }
     /*#obj*/ self.GetAbsWidth  = function() { return parseInt(prompt( self.id, "Obj.GetAbsWidth(" )); }
@@ -1054,6 +1057,7 @@ function Web( id )
     /*#web*/ obj.SetUserCreds = function( name,password ) { prompt( obj.id, "Web.SetUserCreds(\f"+name+"\f"+password ); }
     /*#web*/ obj.SimulateKey = function( keyName,modifiers,pause ) { prompt( obj.id, "Web.SimulateKey(\f"+keyName+"\f"+modifiers+"\f"+pause ); }
     /*#web*/ obj.SetRedirect = function( urlFrom, urlTo ) { prompt( obj.id, "Web.SetRedirect(\f"+urlFrom+"\f"+urlTo ); }
+    /*#web*/ obj.SetUseBrowser = function( urlFilter ) { prompt( obj.id, "Web.SetUseBrowser(\f"+urlFilter ); }
     /*#web*/ obj.SetTouchMode = function( mode ) { prompt( obj.id, "Web.SetTouchMode(\f"+mode ); }
     /*#web*/ obj.SetOnTouch = function( callback ) { prompt( obj.id, "Web.SetOnTouch(\f"+_Cbm(callback) ); }
     /*#web*/ obj.SetOnUrl = function( callback ) { prompt( obj.id, "Web.SetOnUrl(\f"+_Cbm(callback) ); }
@@ -1633,10 +1637,10 @@ function Usb( id )
     /*#usb*/ obj.Write = function( txt,encoding ) { prompt( obj.id, "Usb.Write(\f"+txt+"\f"+encoding ); }
     /*#usb*/ obj.SetOnReceive = function( callback ) { prompt( obj.id, "Usb.SetOnReceive("+_Cbm(callback) ); }
     /*#usb*/ obj.SetDTR = function( onOff ) { prompt( obj.id, "Usb.SetDTR(\f"+onOff ); }
-    /*#usb*/ obj.GetDTR = function( onOff ) { return prompt( obj.id, "Usb.GetDTR(" )=="true"; }
+    /*#usb*/ obj.GetDTR = function() { return prompt( obj.id, "Usb.GetDTR(" )=="true"; }
     /*#usb*/ obj.SetRTS = function( onOff ) { prompt( obj.id, "Usb.SetRTS(\f"+onOff ); }
-    /*#usb*/ obj.GetRTS = function( onOff ) { return prompt( obj.id, "Usb.GetRTS(" )=="true"; }
-    /*#usb*/ obj.GetCD = function( onOff ) { return prompt( obj.id, "Usb.GetCD(" )=="true"; }
+    /*#usb*/ obj.GetRTS = function() { return prompt( obj.id, "Usb.GetRTS(" )=="true"; }
+    /*#usb*/ obj.GetCD = function() { return prompt( obj.id, "Usb.GetCD(" )=="true"; }
     /*#usb*/ obj.SetMaxRead = function( bytes ) { prompt( obj.id, "Usb.SetMaxRead(\f"+bytes ); }
     /*#usb*/ obj.SetMaxWrite = function( bytes ) { prompt( obj.id, "Usb.SetMaxWrite(\f"+bytes ); }
     /*#usb*/ obj.SetTimeout = function( ms ) { prompt( obj.id, "Usb.SetTimeout(\f"+ms ); }
@@ -1766,6 +1770,21 @@ function Wpr( id )
     /*#wpr*/ obj.GetType = function() { return "Wallpaper"; }
     /*#wpr*/ obj.IsVisible = function() { return prompt( obj.id, "Wpr.IsVisible\f" )=="true"; }
    	return obj;
+}
+
+Bound = class
+{
+    constructor() {
+        this.bindMethods(this);
+    }
+    bindMethods( ctx ) {
+        var meths = Object.getOwnPropertyNames(Object.getPrototypeOf(ctx))
+        for (var m in meths) {
+            var f = ctx[meths[m]];
+            ctx[meths[m]] = f.bind(ctx);
+            f._ctx = ctx; f._nohash = true; //<-- for DS callbacks.
+        }
+    }
 }
 
 I = function( func ) { if( func ) func._nohash=true; return func; }

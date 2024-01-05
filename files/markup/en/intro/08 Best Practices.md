@@ -1,6 +1,6 @@
 ## General
 
-- Use the cfg object to enter specific app modes immediately (See @04CodingFeatures for more details)
+- Use the cfg object to enter specific app modes immediately (See @CodingFeatures for more details)
 - Use app.@../app/Script to load extra source files
 - Use app.Add\* eqivalents to app.Create* to make your code shorter and cleaner
 - Use features that DS provides you instead of doing them yourself (ie. filtering ListFolder items)
@@ -11,7 +11,7 @@
 
 ### UI
 - Wrap your UI creation in app.Hide and app.Show
-- Use cfg.@04CodingFeatures#Dark and cfg.@04CodingFeatures#Light for an easy Light/Dark theme setting
+- Use cfg.@CodingFeatures#Dark and cfg.@CodingFeatures#Light for an easy Light/Dark theme setting
 - <grey>Use obj.@../app/CreateLayout#Batch to do a whole bunch of configuration calls at one shot</grey>
 - Add a (optionally animated) splash screen while your app loads UI
 - Use <js nobox>app.@../app/SetDebug(false)</js> in your release version
@@ -24,7 +24,7 @@
 ### Graphics / Animations
 - Use app.@../app/Animate instead of setInterval
 - Use <js nobox>img.@../app/CreateImage#SetAutoUpdate(false)</js> and use manual img.@../app/CreateImage#Update calls
-- Switch to the @../app/CreateGameView control (using cfg.@04CodingFeatures#Game) as its generally faster and works in web browsers too
+- Switch to the @../app/CreateGameView control (using cfg.@CodingFeatures#Game) as its generally faster and works in web browsers too
 - use the “async” option to load images
 
 ## Getting Help

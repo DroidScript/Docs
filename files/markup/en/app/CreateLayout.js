@@ -1,4 +1,4 @@
-// ------------- HEADER SECTION ------------- 
+// ------------- HEADER SECTION -------------
 
 
 /** # CreateLayout #
@@ -7,7 +7,7 @@
  * 
  * $$ lay = app.CreateLayout(type, options) $$ 
  * @param {str} type Linear|Absolute|Frame|Card
- * @param {str_com} options TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
+ * @param {str_com} options AutoSize:Resizes itself and child controls after device rotation,TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
  * @returns dso-Layout
 */
 
@@ -137,6 +137,8 @@ They may be used to display offers with an image and optional info text.
 
 
 /** @extern SetBackAlpha */
+
+/** @extern Resize */
 
 /** @extern SetBackColor */
 

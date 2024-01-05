@@ -9,26 +9,26 @@ function hidecopy() {
 function copy(id) {
 	var codeClass = curMode === "py" ? '.code-py' : '.code-js';
 	var div = document.querySelector('#' + id + codeClass);
-	var txt = div.innerText || div.textContent;
-	txt = txt.replace(/\xa0/g, " ");
-	if (isDS) //
-	{
-		app.SetClipboardText(txt); //replace nbsp chars
+	var txt = (div.innerText || div.textContent).replace(/\xa0/g, " ");
+	if (isMobileIDE) {
+		app.SetClipboardText(txt);
 		ShowPopup("Text copied to clipboard");
-	}
-	else
+	} else
 		copyToClipboard(txt);
 }
 
 function demo(id) {
-	var fld = "/sdcard/.DroidScript/";
 	var codeClass = curMode === "py" ? '.code-py' : '.code-js';
 	var div = document.querySelector('#' + id + codeClass);
 	var code = (div.innerText || div.textContent).replace(/\xa0/g, ' ');
 	if (isMobileIDE) {
-		app.WriteFile(fld + "Example." + curMode, code);
-		app.Execute("RunDemo( '" + fld + "/Example.js' );");
-		//app.Execute( "try { StartApp('" + fld + "/Example.js') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
+		const dir = "/sdcard/.DroidScript/Example/";
+		app.DeleteFolder(dir);
+		app.MakeFolder(dir);
+		var file = dir + "Example." + curMode;
+		app.WriteFile(file, code);
+		app.Execute("RunDemo( '" + file + "' );");
+		// app.Execute( "try { StartApp('" + file + "') } catch(e) { ShowPopup('Whoops! Something went wrong.'); }" );
 	}
 	else {
 		var cmd = curMode == "py" ? "demo:python:" : "demo:";

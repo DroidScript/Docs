@@ -32,9 +32,9 @@
 	Provides tutorials for the DroidScript GameView. Start with [lesson 1](https://dsgameview.wixsite.com/gameview/tutorial-1)
 
 ### Unofficial Websites
-- [GineersLife Website](https://gineerslife.com)
+<!--- [GineersLife Website](https://gineerslife.com)
 	From the creator of the DS plugins MaterialUI, ChartJS, Mapview and more
-	Includes version histories and more tutorials
+	Includes version histories and more tutorials-->
 - [Justin's SPK Store](https://dspk.justplayer.de)
 	Sharing platform for DroidScript Projects (SPKs) and Plugins
 - [Symbroson's DroidScript Blog](https://symbroson.blogspot.com) <grey>(inactive)<grey>

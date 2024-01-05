@@ -3,3 +3,4 @@ body{font-size:90%}.bodyPC{font-size:100%}h1{padding-top:35px}h2{padding-top:20p
 .ui-popup-screen{display:none}div[role=main]{margin-bottom:25px;}kbd{font-size:18px!important;}.tint-red{background-color:#ff000022;}.tint-green{background-color:#00ff0022;}.tint-yellow{background-color:#ffff0022;}
 table{border-collapse:collapse;width:100%;border:1px}thead th{border-bottom:solid 2px #888}th,td{border-right:solid 1px #888;border-bottom:solid 1px #8883;text-align:center;padding:10px;max-width:120px;margin:2px}/*tr:nth-child(even){background-color:#6662}*/
 .code-js.ui-btn,.code-py.ui-btn{top:6px;margin:0}.code-js.ui-btn>span.ui-btn-inner,.code-py.ui-btn>span.ui-btn-inner{padding-left:6px;padding-right:6px;padding-top:3px;padding-bottom:3px;}
+#main .ui-content>div div{vertical-align:top}
