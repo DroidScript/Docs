@@ -26,7 +26,7 @@ const dfltState = {
     progress: 0, popDefs: {}, spop: {}
 };
 const warnEnbl = false;
-let dbg = false, clear = false, force = false, updateVer = false, makeTsx = false;
+let dbg = false, nogen = false, clear = false, force = false, updateVer = false, makeTsx = false, makeTips = false;
 let regGen = RegExp(""), regHide = RegExp("");
 
 const app = getApp();
@@ -246,8 +246,7 @@ function generateScope(name, state, genPattern) {
     }
 
     // generate doc pages
-    if (makeTsx) generateTsx(inpt, state);
-    else generateDocs(inpt, state);
+    generateDocs(inpt, state);
     return app.HideProgressBar();
 }
 
@@ -299,7 +298,7 @@ function parseInput(state) {
     }
     else // no json file available
     {
-        regGen = RegExp("(?=^tips$)[]|(?!^tips$)^.*" + regGen.source);
+        regGen = RegExp("(?=^(tips|tsx)$)[]|(?!^(tips|tsx)$)^.*" + regGen.source);
         // add files from scope folder to be generated
         newScope = {}; base = null; navs = [];
 
@@ -382,19 +381,18 @@ function generateNavigators(scope, navs, name, state, pfx) {
  * @param {GenState} state
  */
 function generateDocs(inpt, state) {
-    state.curDoc = getSrcDir(D_SCOPE, state);
-    const lst = keys(inpt.scope).filter(nothidden).filter(n => Boolean(n.match(regGen)));
-
-    for (let i = 0; i < lst.length; i++) {
-        state.progress = Math.floor(100 * i / lst.length);
-        app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
-        //console.log('\n:'+i+':'+lst[i]+'\n');
-        generateDoc(state, inpt, lst[i]);
+    if (!nogen) {
+        const lst = keys(inpt.scope).filter(nothidden).filter(n => Boolean(n.match(regGen)));
+        for (let i = 0; i < lst.length; i++) {
+            state.progress = Math.floor(100 * i / lst.length);
+            app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
+            //console.log('\n:'+i+':'+lst[i]+'\n');
+            generateDoc(state, inpt, lst[i]);
+        }
     }
 
-    if (!"tips".match(regGen)) return;
-
-    generateTips(inpt, state);
+    if (makeTips && "tips".match(regGen)) generateTips(inpt, state);
+    if (makeTsx && "tsx".match(regGen)) generateTsx(inpt, state);
 }
 
 /**
@@ -402,7 +400,9 @@ function generateDocs(inpt, state) {
  * @param {GenState} state
  */
 function generateTips({ base, scope }, state) {
-    state.curDoc = getSrcDir(D_VER, state, state.curScope + '-tips.json');
+    state.curDoc = getDstDir(D_LANG, state, state.curScope + '-tips.json');
+    console.log(`generating ${state.lang}.${state.curScope}-tips.json`);
+
     /** @type {DSScopeRaw} */
     let tsubf;
     /** @type {Obj<Obj<string>>} */
@@ -450,11 +450,11 @@ function unwrapBaseFunc(met, type, base) {
  */
 function generateTsx(inpt, state) {
     // TODO
-    const file = state.curScope + '.d.ts';
-    state.curDoc = file;
+    state.curDoc = getDstDir(D_LANG, state, state.curScope + '.d.ts');
+    console.log(`generating ${state.lang}.${state.curScope}.tsx`);
 
     const defs = generateDefinitionFile(state.curScope, inpt.scope);
-    app.WriteFile(file, defs);
+    app.WriteFile(state.curDoc, defs);
 }
 
 /** @type {Obj<string>} */
@@ -472,6 +472,9 @@ const tsxTypes = {
     all: "any",
     dso: "AppObject",
     gvo: "GameObject",
+    glo: "GLViewObject",
+    // eslint-disable-next-line camelcase
+    glo_img: "{ width:num_int, height:num_int }",
     jso: "JSObject",
     swo: "SmartWatchObject",
     uio: "UIObject"
@@ -481,6 +484,8 @@ const tsxTypes = {
 function generateDefinitionFile(scopeName, scope) {
     /** @type {Obj<string>} */
     const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "Ui", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx", swo: "Sw" };
+    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
+    const { tname: tName, tdesc: tDesc } = conf;
 
     const typeDecls = Object.entries(Object.assign(conf.tname, conf.tdesc))
         .filter(([name, _]) => name.match(/^[a-z]/i))
@@ -492,7 +497,7 @@ function generateDefinitionFile(scopeName, scope) {
         const func = scope[funcName];
         if (typeof func !== 'object') continue;
 
-        const defs = processFunction(funcName, func, "\t");
+        const defs = processFunction(funcName, scopeName, func, "\t");
         definition += defs.func;
         classDefinition += defs.class;
         for (const obj in defs.extra) {
@@ -507,7 +512,7 @@ function generateDefinitionFile(scopeName, scope) {
     /** @param {string | UndefinedPartial<DSMethod>} stypes */
     function makeType(stypes, tsx = false) {
         if (typeof stypes === "object")
-            return { main: "fnc", sub: processFunction("callback", stypes, "\t", true).func, desc: "" };
+            return { main: "fnc", sub: processFunction("callback", "cb", stypes, "\t", true).func, desc: "" };
 
         const types1 = stypes.split("||").map((/** @type {string} */ stype) => [stype.slice(0, 3)]
             .concat(stype
@@ -519,9 +524,9 @@ function generateDefinitionFile(scopeName, scope) {
         ).map(([main = "", sub = "", desc = ""]) => ({ main, sub, desc }));
 
         const str = types1.filter(t => t.main).map(
-            /* @return {[string,string,string]} */
             function formatTypeDecl(type) {
                 if (tsx) type.sub = tsxTypes[type.sub] || tsxTypes[type.main] || type.sub;
+                else type.desc = type.desc.replace(/@.*\//, '');
                 switch (type.main) {
                     case "?":
                     case "all":
@@ -530,10 +535,9 @@ function generateDefinitionFile(scopeName, scope) {
                     case "str":
                     case "bin": {
                         const types = replaceTsxTypes(type.desc, type.main);
-                        type.desc = types[0];
 
-                        if (type.desc) {
-                            let tdesc = type.desc
+                        if (types[0] && !types[0].includes(" ")) {
+                            let tdesc = types[0]
                                 .replace(/([^\\]|^)\\(.)/g, (m, e, /** @type {string} */ c) =>
                                     `${e || ''}§${(special[c] || c).charCodeAt(0)}§`)
                                 .replace(/§(\d+?)§/g, (m, /** @type {number} */ c) =>
@@ -544,24 +548,29 @@ function generateDefinitionFile(scopeName, scope) {
                             if (tdesc.length <= 1 && !/^[a-z"/]+$/i.test(tdesc[0]))
                                 return type;
 
+                            type.desc = types[1];
                             if (type.sub === "str_com")
                                 type.sub = `string | (${tdesc.join("|")})[]`;
                             else
                                 type.sub = tdesc.join("|");
-                            type.desc = types[1].map(v => v.desc && `\n\`${decodeHtml(v.name)}\` - ${decodeHtml(v.desc)}`).join("");
                         }
                         return type;
                     }
                     case "lst":
-                    case "obj":
-                        if (type.desc) {
-                            const types = replaceTsxTypes(replW(type.desc), type.sub);
-                            type.desc = types[0]
+                        if (type.desc.includes("{")) type.sub = "lst_obj";
+                    // eslint-disable-next-line no-fallthrough
+                    case "obj": {
+                        const types = replaceTsxTypes(replW(type.desc), type.sub);
+                        if (type.desc && (type.desc.match(/^[{[]/) || !type.desc.includes(" "))) {
+                            type.sub = types[0];
+                            type.desc = types[1];
+                            type.sub = type.sub
                                 .replace(/&comma;/g, ',')
                                 .replace(/[“”]/g, '"')
-                                .replace(/^\[(.*)\]$/, (m, t) => (t.includes(",") && !t.includes("{") ? m : t + "[]"));
+                                .replace(/^\[(.*)\]$/, (m, t) => (t.includes(",") && !t.match(/{|\[/) ? m : t.trim() + "[]"));
                         }
                         return type; //replaceTypes(inpt, state, replW(type.desc), true);
+                    }
                     default:
                         if (!type.main.endsWith("o"))
                             Throw(Error("unknown typex " + type.sub));
@@ -582,7 +591,7 @@ function generateDefinitionFile(scopeName, scope) {
         return str.reduce((a, b) => {
             a.main += '|' + b.main;
             a.sub += '|' + b.sub;
-            a.desc += a.desc && b.desc ? ' **or** ' + b.desc : b.desc;
+            a.desc += a.desc && b.desc ? '\\\n  * **or** ' + b.desc : b.desc;
             return a;
         });
     }
@@ -591,12 +600,10 @@ function generateDefinitionFile(scopeName, scope) {
      * using name:'...' will force app popups
      * @param {string} descStr
      * @param {string} ptype
-     * @return {[string, {name:str,type:str,desc:str}[]]}
+     * @return {[string, string]}
      */
     function replaceTsxTypes(descStr, ptype) {
-        /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
-        const { tname: tName } = conf;
-        /** @type {{name:str,type:str,desc:str}[]} */
+        /** @type {string[]} */
         const types = [];
 
         // const tags = /** @type {string[]} */ ([]);
@@ -620,32 +627,35 @@ function generateDefinitionFile(scopeName, scope) {
                     else { desc = type + (desc || ''); type = ''; }
                 }
 
-                const r = { name, type, desc };
+                desc = decodeHtml(desc).replace(/\n(\S)/g, "\\\n  * &emsp; $1");
+                types.push(`\n  * &emsp; \`${decodeHtml(name)}\`` + (desc && ` - ${desc}`));
 
-                types.push(r);
                 // fix Email
-                if (r.type.includes("obj-{")) r.type = r.type.slice(4);
-                if (ptype.endsWith("obj")) return r.name + ": " + r.type;
-                if (ptype.endsWith("lst")) return r.type.split("-")[0];
-                return r.name;
+                if (type.includes("obj-{")) type = type.slice(4);
+                if (type.includes("-")) type = makeType(type).sub;
+                if (ptype.endsWith("obj")) return name + ": " + type;
+                if (ptype.endsWith("lst")) return type.split("-")[0];
+                return name;
             }
         );
 
         // fix weird GetObjects and wiz.GetButtons retval
-        if (ptype.startsWith("lst") && !descStr.includes("{")) descStr = descStr.replace(/\s*(\w+):\s*([\w-]+(, )?)\s*/g, (m, n, t) => makeType(t).sub);
+        if (ptype.startsWith("lst") && !descStr.includes("{")) descStr = descStr.replace(/\s*(\w+):\s*([\w-]+(, )?)\s*/g, (m, n, t) => t);
         // fix GetJoystickStates {key:t: value:t} pattern
         if (ptype === "obj") descStr = descStr.replace(/\s*(\w+):\s*(\w+):\s*value:\s*(\w+)\s*/, "[$1: $2]: $3");
         // fix StartApp intent
         if (ptype !== "str") descStr = descStr.replace(/&comma;/g, ",");
-        return [descStr, types]; //descStr.replace(/§t(\d+)§(<\/span>)?/g, (m, i, s) => (s || '') + tags[i]);
+
+        return [descStr, types.join("\\")]; //descStr.replace(/§t(\d+)§(<\/span>)?/g, (m, i, s) => (s || '') + tags[i]);
     }
 
 
     /**
      * @param {string} name
+     * @param {string} pAbbrev
      * @param {DSFunction} dfunc
      */
-    function processFunction(name, dfunc, indent = "", isCb = false) {
+    function processFunction(name, pAbbrev, dfunc, indent = "", isCb = false) {
         const defs = {
             func: "", class: "",
             /** @type {Obj<string>} */
@@ -667,13 +677,13 @@ function generateDefinitionFile(scopeName, scope) {
         for (const i in func.pNames) {
             const pname = func.pNames[i].replace("default", "dflt").replace(/(\w+)\.\.\./, "...$1");
             const ptype = func.pTypes[i];
-
             const type = makeType(ptype);
+            if (type.sub.match(/^[a-z_]+$/) && !(tDesc[type.sub] || tName[type.sub]))
+                type.sub = pAbbrev.toUpperCase() + '_' + type.sub;
+
             params.push(`${pname}: ${type.sub}`);
-            if (type.desc) {
-                type.desc = type.desc.replace(/\n(\S)/g, `\\\n ${indent} * &emsp; $1`).replace(/^\\/, '');
-                jsparams.push(`${indent} * @param ${pname} ${type.desc}\n`);
-            }
+            if (type.desc)
+                jsparams.push(`${indent} * @param ${pname} ${type.desc.replace(/ \* /g, indent + ' * ')}\n`);
         }
 
         // eslint-disable-next-line prefer-const
@@ -686,16 +696,13 @@ function generateDefinitionFile(scopeName, scope) {
         }
 
         // return value
-        if (rdesc) {
-            if (Array.isArray(rdesc)) rdesc = rdesc.join(" | ");
-            if (!rdesc.match(/\.\.|\/\//)) rtype = rdesc;
-            else jsparams.push(`${indent} * @return ${rdesc}`);
-        }
+        rdesc = rdesc.replace(/.*`\\?(\n|$)/g, '').trim();
+        if (rdesc) jsparams.push(`${indent} * @return ${rdesc}\n`);
 
         // sub properties
         if (name.includes(".")) {
             const [fname, fobj, fcon] = name.split(".").reverse();
-            const key = fcon ? `${fcon}_${fobj}` : fobj;
+            const key = fcon ? `${pAbbrev.toUpperCase()}_${fobj}` : fobj;
             let tempDef = defs.extra[key] || "";
 
             if (jsparams.length) tempDef += `\n${indent}/**\n${indent} * ${func.shortDesc || ''}\n${jsparams.join('')}${indent} */\n`;
@@ -718,7 +725,7 @@ function generateDefinitionFile(scopeName, scope) {
         for (const subFuncName in func.subf) {
             const met = func.subf[subFuncName];
             if (typeof met === 'object') {
-                const sdefs = processFunction(subFuncName, met, indent);
+                const sdefs = processFunction(subFuncName, func.abbrev || "undefined", met, indent);
                 defs.class += sdefs.func;
                 for (const i in sdefs.extra)
                     defs.extra[i] = (defs.extra[i] || "") + sdefs.extra[i];
@@ -740,9 +747,9 @@ function generateDefinitionFile(scopeName, scope) {
     /** @param {string} str */
     function decodeHtml(str) {
         /** @type {Obj<string>} */
-        const entityMap = { lt: '<', gt: '>', amp: '&' };
+        const entityMap = { lt: '<', gt: '>', amp: '&', period: '.', comma: ',', colon: ':', bsol: '\\' };
         return str.replace(/\\\\n/g, "\n")
-            .replace(/&([a-z]+);/g, (_, m) => entityMap[m] || m);
+            .replace(/&([a-z]+);/g, (_, m) => entityMap[m] || console.log('html entity:', m) || m);
     }
 }
 
@@ -1081,23 +1088,25 @@ function getDocData(inpt, state, f, useAppPop = false) {
         let mdesc = m.desc || "";
         if (!m.isval) mdesc = `<b>${f.abbrev}.${state.curSubf}</b><br>` + mdesc;
 
-        const args = [];
         let metpop = newPopup(state, "dsc", state.curSubf,
             addMarkdown(replaceTypes(inpt, state, replW(mdesc), true)),
             getAddClass(m, state) || (has(inpt.baseKeys, state.curSubf) ? ' class="baseFunc"' : ""));
 
-        if (!m.isval) {
+        if (m.isval) {
+            metpop = metpop.trim();
+        }
+        else {
+            const args = [];
             for (i in m.pNames)
                 args.push(toArgPop(inpt, state, m.pNames[i], m.pTypes[i]));
-
             metpop += args.length ? `(${args.join(",")} )` : "()";
-
-            if (has(state.curSubf, '.'))
-                metpop = state.curSubf.split(".").fill("  ").join("") + metpop.italics();
-
-            methods += subfBase.replace("%s", metpop + retval);
         }
-        else { methods += subfBase.replace("\n\t\t", "").replace("%s", metpop.trim() + retval); }
+
+        // indent subtype declarations
+        if (has(state.curSubf, '.'))
+            metpop = state.curSubf.split(".").fill("  ").join("") + metpop.italics();
+
+        methods += subfBase.replace(m.isval ? "\n\t\t" : "", "").replace("%s", metpop + retval);
     }
     state.curSubf = "";
 
@@ -1898,7 +1907,7 @@ function getApp() {
 }
 
 function main() {
-    let nogen = false, startServer = false, clean = false, addcfg = false;
+    let startServer = false, clean = false, addcfg = false;
     /** @type {GenPattern} */
     const genPattern = { ver: "", lang: "", scope: "", func: "" };
 
@@ -1918,6 +1927,7 @@ function main() {
             case "-V": case "--verbose": dbg = true; break;
             case "-c": case "--clear": clear = true; break;
             case "-C": case "--clean": clean = true; break;
+            case "-t": case "--tips": makeTips = true; break;
             case "-d": case "--tsx": makeTsx = true; break;
             case "-u": case "--update": updateVer = true; break;
             case "-f": case "--force": force = true; break;
@@ -1973,7 +1983,8 @@ function main() {
 
     if (addcfg) app.WriteFile("conf.json", tos(conf));
 
-    if (!nogen) Generate(genPattern);
+    Generate(genPattern);
+    if (!nogen) makeTips = makeTsx = true;
     if (startServer) {
         const express = require('express');
         const server = express();
