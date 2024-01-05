@@ -78,7 +78,7 @@ These are the setter and getter properties for the addStepper Component.
  * @brief setOnChange
  * Adds a callback function to be called when the stepper has changed step
  * $$ stp.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["index "],"pTypes":["num-The index of the active step."]}
+ * @param {fnc_json} callback {"pNames":["index"],"pTypes":["num-The index of the active step."]}
  */
 
 
@@ -135,7 +135,7 @@ These are the setter and getter properties for the addStepper Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ stp.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -143,7 +143,7 @@ These are the setter and getter properties for the addStepper Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ stp.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

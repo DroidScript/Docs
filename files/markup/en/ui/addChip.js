@@ -8,7 +8,7 @@
  * $$ chp = ui.addChip(parent, text, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the Chip.
  * @param {str} text The text on the chip.
- * @param {str_com} options Color: `Primary` `Secondary` `Default` \n `Size: `Small` `Medium` \n `Variant: `Outlined` `Default` \n `Util: `Touchable`
+ * @param {str_com} options Color: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` \n `Variant`: `Outlined` `Default` \n `Util`: `Touchable`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Chip Component
@@ -101,7 +101,7 @@ These are the setter and getter properties for the addChip Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ chp.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -109,7 +109,7 @@ These are the setter and getter properties for the addChip Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ chp.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

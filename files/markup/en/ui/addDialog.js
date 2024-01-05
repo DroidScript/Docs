@@ -9,7 +9,7 @@
  * @param {str} title The dialog title text.
  * @param {str} body The dialog message to be shown.
  * @param {str} actions A comma separated text for action buttons.
- * @param {str_com} options Colors: `Primary` `Secondary` \n `Util: `NoCancel` prevents the dialog from closing on action.
+ * @param {str_com} options Colors: `Primary` `Secondary` \n `Util`: `NoCancel` prevents the dialog from closing on action.
  * @returns obj-Dialog Component
 */
 
@@ -36,7 +36,7 @@ These are the setter and getter properties for the addDialog Component.
  * @brief setOnAction
  * Adds a callback function when the action buttons are click
  * $$ dlg.setOnAction(callback) $$
- * @param {fnc_json} callback {"pNames":["text ","index "],"pTypes":["str-The dialog action text.","num-The index of the corresponding dialog action."]}
+ * @param {fnc_json} callback {"pNames":["text","index"],"pTypes":["str-The dialog action text.","num-The index of the corresponding dialog action."]}
  */
 
 

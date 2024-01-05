@@ -83,7 +83,7 @@ These are the setter and getter properties for the addFAB Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ fab.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -91,7 +91,7 @@ These are the setter and getter properties for the addFAB Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ fab.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

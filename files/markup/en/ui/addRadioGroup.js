@@ -8,7 +8,7 @@
  * $$ rdg = ui.addRadioGroup(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent where to add the RadioGroup component.
  * @param {lst} list The list items array.
- * @param {str_com} options Radio Sizes: `Small` `Medium` \n `Colors: `Primary` `Secondary` \n `Icon Position: `Left` or `Right` \n `Container: `Elevated` or `Outlined` \n `Corner: `Square` \n `Required`
+ * @param {str_com} options Radio Sizes: `Small` `Medium` \n `Colors`: `Primary` `Secondary` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n `Required`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-RadioGroup Component
@@ -75,7 +75,7 @@ These are the setter and getter properties for the addRadioGroup Component.
  * @brief setOnChange
  * Call a function when the value of the radio group has changed
  * $$ rdg.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["index "],"pTypes":["num-The index of the selected item."]}
+ * @param {fnc_json} callback {"pNames":["index"],"pTypes":["num-The index of the selected item."]}
  */
 
 
@@ -83,7 +83,7 @@ These are the setter and getter properties for the addRadioGroup Component.
  * @brief setOnTouch
  * Adds a callback function when an item is click
  * $$ rdg.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["checked ","label ","index ","event "],"pTypes":["bin-The checked state of the radio item.","str-The radio item label text.","num- The index of the radio item.","obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["checked","label","index","event"],"pTypes":["bin-The checked state of the radio item.","str-The radio item label text.","num- The index of the radio item.","obj-The click event object."]}
  */
 
 
@@ -192,7 +192,7 @@ These are the setter and getter properties for the addRadioGroup Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ rdg.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["label ","index ","event "],"pTypes":["str-The list item label text.","num-The index of the corresponding radio item.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["label","index","event"],"pTypes":["str-The list item label text.","num-The index of the corresponding radio item.","obj-The pointer event object."]}
  */
 
 

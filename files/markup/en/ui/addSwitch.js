@@ -8,7 +8,7 @@
  * $$ swt = ui.addSwitch(parent, text, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the Switch Component.
  * @param {str} text The label text.
- * @param {str} options A comma separated switch options. Options can be one or a combination of the following \n Color: `Primary` `Secondary` `Default` \n `Icon Position: `Left` `Top` `Right` `Bottom` \n `Sizes: `Small` `Medium`
+ * @param {str} options A comma separated switch options. Options can be one or a combination of the following \n Color: `Primary` `Secondary` `Default` \n `Icon Position: `Left` `Top` `Right` `Bottom` \n `Sizes`: `Small` `Medium`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Switch Component
@@ -71,7 +71,7 @@ These are the setter and getter properties for the addSwitch Component.
  * @brief setOnTouch
  * Adds an event handler when the switch is touch
  * $$ swt.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["check "],"pTypes":["bin-The checked state of the switch control."]}
+ * @param {fnc_json} callback {"pNames":["check"],"pTypes":["bin-The checked state of the switch control."]}
  */
 
 
@@ -79,7 +79,7 @@ These are the setter and getter properties for the addSwitch Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ swt.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

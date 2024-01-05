@@ -8,7 +8,7 @@
  * $$ sld = ui.addSlider(parent, value, options, width, height) $$ 
  * @param {obj} parent The layout where to add the Slider Component.
  * @param {num} value The initial value of the Slider. Value must be between 0-100, the default min and max values.
- * @param {str_com} options Color: `Primary` `Secondary` \n `Orienation: `Horizontal` `Vertical` \n `Track: `Normal` `Inverted` `False`
+ * @param {str_com} options Color: `Primary` `Secondary` \n `Orienation`: `Horizontal` `Vertical` \n `Track`: `Normal` `Inverted` `False`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height.
  * @returns obj-Slider Component.
@@ -74,7 +74,7 @@ These are the setter and getter properties for the addSlider Component.
  * @brief setOnChange
  * Sets a callback function when the value of the Slider Component changes
  * $$ sld.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["value "],"pTypes":["num-The value of the Slider component."]}
+ * @param {fnc_json} callback {"pNames":["value"],"pTypes":["num-The value of the Slider component."]}
  */
 
 
@@ -82,7 +82,7 @@ These are the setter and getter properties for the addSlider Component.
  * @brief setOnSelect
  * Sets a callback function when a final value is selected. This is equal to submit value event
  * $$ sld.setOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["value "],"pTypes":["num-The value of the Slider component."]}
+ * @param {fnc_json} callback {"pNames":["value"],"pTypes":["num-The value of the Slider component."]}
  */
 
 
@@ -117,7 +117,7 @@ These are the setter and getter properties for the addSlider Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ sld.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -125,7 +125,7 @@ These are the setter and getter properties for the addSlider Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ sld.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

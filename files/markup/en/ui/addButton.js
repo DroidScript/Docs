@@ -8,7 +8,7 @@
  * $$ btn = ui.addButton(parent, text, options, width, height) $$ 
  * @param {obj} parent The layout where to add the button.
  * @param {str} text The button text or the material icon text.
- * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color: `Primary` `Secondary` `Default` \n `Size: `Small` `Medium` `Large` \n `Util: `Icon` `NoRipple` `Upload` \n `In case of upload, you can specify `Multiple` to accept multiple files.
+ * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Util`: `Icon` `NoRipple` `Upload` \n `In case of upload, you can specify `Multiple` to accept multiple files.
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
  * @returns obj-Button Component
@@ -73,7 +73,7 @@ These are the setter and getter properties for the addButton Component.
  * @brief setOnFileSelect
  * Sets a callback on file select
  * $$ btn.setOnFileSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["files "],"pTypes":["lst-An array of file objects selected."]}
+ * @param {fnc_json} callback {"pNames":["files"],"pTypes":["lst-An array of file objects selected."]}
  */
 
 
@@ -125,7 +125,7 @@ These are the setter and getter properties for the addButton Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ btn.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -133,7 +133,7 @@ These are the setter and getter properties for the addButton Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ btn.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

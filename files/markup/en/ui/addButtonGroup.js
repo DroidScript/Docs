@@ -8,7 +8,7 @@
  * $$ btg = ui.addButtonGroup(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the ButtonGroup
  * @param {lst} list The item to be displayed on the buttn group.
- * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color: `Primary` `Secondary` `Default` \n `Size: `Small` `Medium` `Large` \n `Orientation: `Horizontal` `Vertical` \n `Util: `Icon` `NoElevation`
+ * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `Icon` `NoElevation`
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
  * @returns obj-ButtonGroup Component
@@ -68,7 +68,7 @@ These are the setter and getter properties for the addButtonGroup Component.
  * @brief setOnTouch
  * Adds a callback handler when the button is touch
  * $$ btg.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-The button text.","num-The index of the correspoding button.","obj-The pointer click event object."]}
+ * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-The button text.","num-The index of the correspoding button.","obj-The pointer click event object."]}
  */
 
 
@@ -76,7 +76,7 @@ These are the setter and getter properties for the addButtonGroup Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ btg.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-Button text.","num-The index of the corresponding button.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-Button text.","num-The index of the corresponding button.","obj-The pointer event object."]}
  */
 
 

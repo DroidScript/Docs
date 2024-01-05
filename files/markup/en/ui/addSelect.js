@@ -8,7 +8,7 @@
  * $$ sel = ui.addSelect(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the control
  * @param {lst} list The list of items for the Select options
- * @param {str_com} options Sizes: `Small` `Medium` \n `Variant: `Filled` `Outlined` `Standard` \n `Margin: `Dense` `Normal` \n `Utils: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
+ * @param {str_com} options Sizes: `Small` `Medium` \n `Variant`: `Filled` `Outlined` `Standard` \n `Margin`: `Dense` `Normal` \n `Utils`: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Select Component
@@ -82,7 +82,7 @@ These are the setter and getter properties for the addSelect Component.
  * @brief setOnChange
  * Sets a callback function when the value changes
  * $$ sel.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["value "],"pTypes":["str-The value of the select input."]}
+ * @param {fnc_json} callback {"pNames":["value"],"pTypes":["str-The value of the select input."]}
  */
 
 
@@ -98,7 +98,7 @@ These are the setter and getter properties for the addSelect Component.
  * @brief setOnClose
  * Sets a callback function when the menu dialog is close
  * $$ sel.setOnClose(callback) $$
- * @param {fnc_json} callback {"pNames":["value "],"pTypes":["str-The value of the select input."]}
+ * @param {fnc_json} callback {"pNames":["value"],"pTypes":["str-The value of the select input."]}
  */
 
 
@@ -197,7 +197,7 @@ These are the setter and getter properties for the addSelect Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ sel.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -205,7 +205,7 @@ These are the setter and getter properties for the addSelect Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ sel.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

@@ -90,7 +90,7 @@ These are the setter and getter properties for the addAccordion Component.
  * @brief setSecondaryText
  * Adds a secondary text on the accordion
  * $$ acc.setSecondaryText(text, index) $$
- * @param {obj} text The secondary text to display. You can pass arguments as string or array by following the format below. \n String: `"Secodary text 1,Secondary text 2,Secondary text 3"` \n `Array: `[ "Secondary text 1", "Secondary text 2", "Secondary text 3" ]`
+ * @param {obj} text The secondary text to display. You can pass arguments as string or array by following the format below. \n String: `"Secodary text 1,Secondary text 2,Secondary text 3"` \n `Array`: `[ "Secondary text 1", "Secondary text 2", "Secondary text 3" ]`
  * @param {num} index If `index` is provided, the corresponding index will be updated with the new text.
  */
 
@@ -192,7 +192,7 @@ These are the setter and getter properties for the addAccordion Component.
  * @brief setOnTouch
  * Sets a callback function when the accordion is touch
  * $$ acc.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["index ","expand "],"pTypes":["num-The index of the corresponding accordion item.","bin-The expanded state of the accordion."]}
+ * @param {fnc_json} callback {"pNames":["index","expand"],"pTypes":["num-The index of the corresponding accordion item.","bin-The expanded state of the accordion."]}
  */
 
 
@@ -200,7 +200,7 @@ These are the setter and getter properties for the addAccordion Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ acc.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["title ","index ","event "],"pTypes":["str-The accordion title text.","num-The index of the corresponding accordion item.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["title","index","event"],"pTypes":["str-The accordion title text.","num-The index of the corresponding accordion item.","obj-The pointer event object."]}
  */
 
 

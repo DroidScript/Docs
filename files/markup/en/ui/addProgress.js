@@ -8,7 +8,7 @@
  * $$ prg = ui.addProgress(parent, value, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the prgress component.
  * @param {num} value the initial value of the progress component.
- * @param {str_com} options Color: `Primary` `Secondary` \n `Type: `Circular` `Linear` \n `Variant: `Determinate` `Indeterminate`
+ * @param {str_com} options Color: `Primary` `Secondary` \n `Type`: `Circular` `Linear` \n `Variant`: `Determinate` `Indeterminate`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction fo the screen height. [0-1]
  * @returns obj-Progress Component
@@ -70,7 +70,7 @@ These are the setter and getter properties for the addProgress Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ prg.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -78,7 +78,7 @@ These are the setter and getter properties for the addProgress Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ prg.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

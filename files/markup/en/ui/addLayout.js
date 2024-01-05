@@ -8,7 +8,7 @@
  * $$ lay = ui.addLayout(parent, type, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
  * @param {str} type The layout type. Values can be `Linear` `Absolute` `Frame` `Slide`
- * @param {str} options Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions: `FillX` `FillY` \n `Scroll: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils: `BackColor` to apply light or dark background rather than transparent.
+ * @param {str} options Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions`: `FillX` `FillY` \n `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils`: `BackColor` to apply light or dark background rather than transparent.
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {obj} height Fraction of the screen height. [0-1]
  * @returns obj-Layout Component
@@ -178,7 +178,7 @@ These are the setter and getter properties for the addLayout Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ lay.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -186,7 +186,7 @@ These are the setter and getter properties for the addLayout Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ lay.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

@@ -77,7 +77,7 @@ These are the setter and getter properties for the addMenu Component.
  * @brief setOnTouch
  * Adds a callback handler when the menu is touch
  * $$ men.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["item ","icon ","index "],"pTypes":["str-The menu item text.","str-The menu item icon.","num-The menu item index."]}
+ * @param {fnc_json} callback {"pNames":["item","icon","index"],"pTypes":["str-The menu item text.","str-The menu item icon.","num-The menu item index."]}
  */
 
 
@@ -201,7 +201,7 @@ These are the setter and getter properties for the addMenu Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ men.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

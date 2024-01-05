@@ -7,7 +7,7 @@
  * $$ ui.addTabs(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the Tabs Component.
  * @param {lst} list An array of tab names.
- * @param {str_com} options Enable swipe: `Swipeable` \n `Colors: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant: `Standard` `Scrollable` `FullWidth` \n `Layout: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
+ * @param {str_com} options Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Tabs Component
@@ -75,7 +75,7 @@ These are the setter and getter properties for the addTabs Component.
  * @brief setOnChange
  * Sets a callback function when the value of the tab changes
  * $$ undefined.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["name ","index "],"pTypes":["str-The tab name.","num-The index of the corresponding tab."]}
+ * @param {fnc_json} callback {"pNames":["name","index"],"pTypes":["str-The tab name.","num-The index of the corresponding tab."]}
  */
 
 
@@ -83,7 +83,7 @@ These are the setter and getter properties for the addTabs Component.
  * @brief setOnTouch
  * Add a callback function when a tab item i click
  * $$ undefined.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["name ","The "],"pTypes":["str-The tab name text.","num-tab item index."]}
+ * @param {fnc_json} callback {"pNames":["name","The"],"pTypes":["str-The tab name text.","num-tab item index."]}
  */
 
 
@@ -222,7 +222,7 @@ These are the setter and getter properties for the addTabs Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ undefined.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-The text of the tab item.","num-The index of the corresponding tab item.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-The text of the tab item.","num-The index of the corresponding tab item.","obj-The pointer event object."]}
  */
 
 

@@ -74,7 +74,7 @@ These are the setter and getter properties for the addBottomNavbar Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ bmn.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-Bottom navigation action text.","num-Bottom navigation action index.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-Bottom navigation action text.","num-Bottom navigation action index.","obj-The pointer event object."]}
  */
 
 
@@ -180,7 +180,7 @@ These are the setter and getter properties for the addBottomNavbar Component.
  * @brief setOnChange
  * Sets a callback function to execute when bottom navbar value changes
  * $$ bmn.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["text ","index "],"pTypes":["str-Bottom navigation action text.","num-Bottom navigation action index."]}
+ * @param {fnc_json} callback {"pNames":["text","index"],"pTypes":["str-Bottom navigation action text.","num-Bottom navigation action index."]}
  */
 
 
@@ -238,7 +238,7 @@ These are the setter and getter properties for the addBottomNavbar Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ bmn.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 

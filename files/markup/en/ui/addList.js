@@ -8,7 +8,7 @@
  * $$ lst = ui.addList(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout
  * @param {lst} list An array of arrays. Each element is of the form `[icon, title, body, secondary]`
- * @param {str_com} options Media: `Icon` `Avatar` \n `Styling: `Dense` `Inset` \n `Util: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
+ * @param {str_com} options Media: `Icon` `Avatar` \n `Styling`: `Dense` `Inset` \n `Util`: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-List Component
@@ -96,7 +96,7 @@ These are the setter and getter properties for the addList Component.
  * @brief setOnTouch
  * Adds a callback function when the list item is click
  * $$ lst.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["title ","body ","icon ","index ","event "],"pTypes":["str-The list item title text.","str-The list item body text.","str-The list item icon.","num-The list item index.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["title","body","icon","index","event"],"pTypes":["str-The list item title text.","str-The list item body text.","str-The list item icon.","num-The list item index.","obj-The pointer event object."]}
  */
 
 
@@ -104,7 +104,7 @@ These are the setter and getter properties for the addList Component.
  * @brief setOnSelect
  * Sets a callback handler when an item in the list is selected
  * $$ lst.setOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["title ","index "],"pTypes":["str-The list item title text.","num-The index of the selected list item."]}
+ * @param {fnc_json} callback {"pNames":["title","index"],"pTypes":["str-The list item title text.","num-The index of the selected list item."]}
  */
 
 
@@ -112,7 +112,7 @@ These are the setter and getter properties for the addList Component.
  * @brief setOnAction
  * Sets a callback handler when an action icon is click
  * $$ lst.setOnAction(callback) $$
- * @param {fnc_json} callback {"pNames":["icon ","index "],"pTypes":["str-The icon text.","num-The index of the corresponding secondary action."]}
+ * @param {fnc_json} callback {"pNames":["icon","index"],"pTypes":["str-The icon text.","num-The index of the corresponding secondary action."]}
  */
 
 
@@ -120,7 +120,7 @@ These are the setter and getter properties for the addList Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ lst.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["title ","body ","icon ","index ","event "],"pTypes":["str-The list item title text.","str-The list item body text.","str-The list item icon.","num-The list item index.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["title","body","icon","index","event"],"pTypes":["str-The list item title text.","str-The list item body text.","str-The list item icon.","num-The list item index.","obj-The pointer event object."]}
  */
 
 

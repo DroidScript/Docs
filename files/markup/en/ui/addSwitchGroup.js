@@ -8,7 +8,7 @@
  * $$ swg = ui.addSwitchGroup(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the SwitchGroup Component.
  * @param {obj} list The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
- * @param {str_com} options Icon: `Icon` \n `Color: `Primary` or `Secondary` \n `Container: `Elevated` or `Outlined` \n `Corner: `Square` \n`Divider`
+ * @param {str_com} options Icon: `Icon` \n `Color`: `Primary` or `Secondary` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n`Divider`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-SwitchGroup Component
@@ -72,7 +72,7 @@ These are the setter and getter properties for the addSwitchGroup Component.
  * @brief setOnTouch
  * Sets a callback function when the switch item is touch
  * $$ swg.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["value ","text ","index ","event "],"pTypes":["bin-The checked state of the switch item.","str-The switch item label text.","num-The index of the corresponding switch item.","obj-The click event."]}
+ * @param {fnc_json} callback {"pNames":["value","text","index","event"],"pTypes":["bin-The checked state of the switch item.","str-The switch item label text.","num-The index of the corresponding switch item.","obj-The click event."]}
  */
 
 
@@ -80,7 +80,7 @@ These are the setter and getter properties for the addSwitchGroup Component.
  * @brief setOnChange
  * Adds a callback function to be called whent there is a change of value
  * $$ swg.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["values "],"pTypes":["lst-An array of indexes corresponding to the checked switch items."]}
+ * @param {fnc_json} callback {"pNames":["values"],"pTypes":["lst-An array of indexes corresponding to the checked switch items."]}
  */
 
 
@@ -173,7 +173,7 @@ These are the setter and getter properties for the addSwitchGroup Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ swg.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["text ","index ","event "],"pTypes":["str-The label text of the switchgroup item.","num-The index of the corresponding switchgroup item.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-The label text of the switchgroup item.","num-The index of the corresponding switchgroup item.","obj-The pointer event object."]}
  */
 
 

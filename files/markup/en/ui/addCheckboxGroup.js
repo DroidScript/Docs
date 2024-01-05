@@ -8,7 +8,7 @@
  * $$ ckb = ui.addCheckboxGroup(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the CheckboxGroup.
  * @param {lst} list The items to be displayed.
- * @param {str_com} options Colors: `Default` `Primary` `Secondary` \n `Sizes: `Small` `Medium` \n `Icon Position: `Left` or `Right` \n `Container: `Elevated` or `Outlined` \n `Corners : `Square`
+ * @param {str_com} options Colors: `Default` `Primary` `Secondary` \n `Sizes`: `Small` `Medium` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corners : `Square`
  * @param {num} width Fraction of the screen width.
  * @param {num} height Fraction of the screen height.
  * @returns obj-CheckboxGroup Component
@@ -73,7 +73,7 @@ These are the setter and getter properties for the addCheckboxGroup Component.
  * @brief setOnTouch
  * Sets a callback function when the checkbox item is touch
  * $$ ckb.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["value ","text ","index ","event "],"pTypes":["bin-The checked state of the checkbox item.","str-The checkbox label text.","num-The index of the corresponding checkbox.","obj-The click event."]}
+ * @param {fnc_json} callback {"pNames":["value","text","index","event"],"pTypes":["bin-The checked state of the checkbox item.","str-The checkbox label text.","num-The index of the corresponding checkbox.","obj-The click event."]}
  */
 
 
@@ -81,7 +81,7 @@ These are the setter and getter properties for the addCheckboxGroup Component.
  * @brief setOnChange
  * Adds a callback function to be called whent there is a change of value
  * $$ ckb.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["values "],"pTypes":["lst-An array of indexes corresponding to the checked checkbox items."]}
+ * @param {fnc_json} callback {"pNames":["values"],"pTypes":["lst-An array of indexes corresponding to the checked checkbox items."]}
  */
 
 
@@ -260,7 +260,7 @@ These are the setter and getter properties for the addCheckboxGroup Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ ckb.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["label ","index ","event "],"pTypes":["str-The checkbox item label text.","num-The index of the corresponding item.","obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["label","index","event"],"pTypes":["str-The checkbox item label text.","num-The index of the corresponding item.","obj-The pointer event object."]}
  */
 
 

@@ -7,7 +7,7 @@
  * 
  * $$ pop = ui.showPopup(msg, options, duration, action) $$ 
  * @param {str} msg The message to display on the pop-up.
- * @param {str} options A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition: `Grow` `Fade` `Slide` `Collapse` `Zoom`
+ * @param {str} options A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`
  * @param {num} duration Time in milliseconds. Pass this, if you don't want the default auto hide duration.
  * @param {str} action Action button text.
  * @returns obj-Popup Component.

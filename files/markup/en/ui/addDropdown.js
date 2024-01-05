@@ -8,7 +8,7 @@
  * $$ dpd = ui.addDropdown(parent, list, options, width, height) $$ 
  * @param {obj} parent The layout where to add the dropdown.
  * @param {lst} list The list items to show.
- * @param {str} options A comma separated Dropdown options. Can be \n Colors: `Primary` `Secondary` `Default` \n `Variants: `Contained` `Outlined` `Text` \n `Sizes: `Small` `Medium` `Large` \n `Orientation: `Horizontal` `Vertical` \n `Util: `NoElevation`
+ * @param {str} options A comma separated Dropdown options. Can be \n Colors: `Primary` `Secondary` `Default` \n `Variants`: `Contained` `Outlined` `Text` \n `Sizes`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `NoElevation`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
  * @returns obj-Dropdown Component.
@@ -69,7 +69,7 @@ These are the setter and getter properties for the addDropdown Component.
  * @brief setOnChange
  * Adds a callback function on change event
  * $$ dpd.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["The ","index "],"pTypes":["obj-item text.","num-The index of the corresponding item."]}
+ * @param {fnc_json} callback {"pNames":["The","index"],"pTypes":["obj-item text.","num-The index of the corresponding item."]}
  */
 
 
@@ -198,7 +198,7 @@ These are the setter and getter properties for the addDropdown Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ dpd.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -206,7 +206,7 @@ These are the setter and getter properties for the addDropdown Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ dpd.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

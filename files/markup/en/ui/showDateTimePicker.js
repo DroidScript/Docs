@@ -25,7 +25,7 @@
  * @brief setOnSelect
  * Sets a callback function on select date and time
  * $$ dtp.setOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["value "],"pTypes":["str-The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`."]}
+ * @param {fnc_json} callback {"pNames":["value"],"pTypes":["str-The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`."]}
  */
 
 

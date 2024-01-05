@@ -63,7 +63,7 @@ These are the setter and getter properties for the addTreeView Component.
  * @brief setOnTouch
  * Add a on touch handler to the TreeView item when click
  * $$ trv.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["value ","path "],"pTypes":["str-The selected tree item.","str-The complete path of the tree item."]}
+ * @param {fnc_json} callback {"pNames":["value","path"],"pTypes":["str-The selected tree item.","str-The complete path of the tree item."]}
  */
 
 
@@ -97,7 +97,7 @@ These are the setter and getter properties for the addTreeView Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ trv.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

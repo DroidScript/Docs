@@ -8,7 +8,7 @@
  * $$ ckb = ui.addCheckbox(parent, text, options, width, height) $$ 
  * @param {obj} parent The layout where to add the checkbox
  * @param {str} text The label for the checkbox
- * @param {str_com} options Colors: `Primary` `Secondary` `Medium` `Small` \n `Position: `Left` `Top` `Right` `Bottom` \n `Variant: `Indeterminate` `Determinate`
+ * @param {str_com} options Colors: `Primary` `Secondary` `Medium` `Small` \n `Position`: `Left` `Top` `Right` `Bottom` \n `Variant`: `Indeterminate` `Determinate`
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
  * @returns obj-Checkbox Component
@@ -72,7 +72,7 @@ These are the setter and getter properties for the addCheckbox Component.
  * @brief setOnTouch
  * Adds an event handler when the checkbox is touch
  * $$ ckb.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["check "],"pTypes":["bin-The checked state of the checkbox."]}
+ * @param {fnc_json} callback {"pNames":["check"],"pTypes":["bin-The checked state of the checkbox."]}
  */
 
 
@@ -97,7 +97,7 @@ These are the setter and getter properties for the addCheckbox Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ ckb.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 

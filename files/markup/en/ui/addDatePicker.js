@@ -54,7 +54,7 @@ These are the setter and getter properties for the addDatePicker Component.
  * @brief setOnSelect
  * Sets a callback function to execute when date picker dialog is submitted
  * $$ dtp.setOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["date "],"pTypes":["str-The selected date in the following format `YYYY-MM-DD`. You change format by setting `format` property."]}
+ * @param {fnc_json} callback {"pNames":["date"],"pTypes":["str-The selected date in the following format `YYYY-MM-DD`. You change format by setting `format` property."]}
  */
 
 

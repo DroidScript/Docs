@@ -8,7 +8,7 @@
  * $$ tfd = ui.addTextField(parent, text, options, width, height) $$ 
  * @param {obj} parent The layout where to add the TextField Component.
  * @param {str} text The initial value of the TextField
- * @param {str_com} options Color: `Primary` or `Secondary` \n `Sizes: `Small` or `Medium` \n `Type: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant: `Standard` `Filled` or `Outlined` \n `Utils: `Autofocus`
+ * @param {str_com} options Color: `Primary` or `Secondary` \n `Sizes`: `Small` or `Medium` \n `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant`: `Standard` `Filled` or `Outlined` \n `Utils`: `Autofocus`
  * @param {num} width Fraction of the screen width.
  * @param {num} height Fraction of the screen height.
  * @returns obj-TextField Component
@@ -84,7 +84,7 @@ These are the setter and getter properties for the addTextField Component.
  * @brief setOnEnter
  * Sets a callback function on `enter` or `submit` event
  * $$ tfd.setOnEnter(callback) $$
- * @param {fnc_json} callback {"pNames":["text "],"pTypes":["str-The text value of the input."]}
+ * @param {fnc_json} callback {"pNames":["text"],"pTypes":["str-The text value of the input."]}
  */
 
 
@@ -92,7 +92,7 @@ These are the setter and getter properties for the addTextField Component.
  * @brief setOnChange
  * Sets a callback function on `values changes` event
  * $$ tfd.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["text "],"pTypes":["str-The text value of the input."]}
+ * @param {fnc_json} callback {"pNames":["text"],"pTypes":["str-The text value of the input."]}
  */
 
 
@@ -100,7 +100,7 @@ These are the setter and getter properties for the addTextField Component.
  * @brief setOnFocus
  * Adds a callback function when the textfield is focus or blur
  * $$ tfd.setOnFocus(callback) $$
- * @param {fnc_json} callback {"pNames":["focus "],"pTypes":["bin-The focus state of the input component."]}
+ * @param {fnc_json} callback {"pNames":["focus"],"pTypes":["bin-The focus state of the input component."]}
  */
 
 
@@ -167,7 +167,7 @@ These are the setter and getter properties for the addTextField Component.
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
  * $$ tfd.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The click event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
 
@@ -175,7 +175,7 @@ These are the setter and getter properties for the addTextField Component.
  * @brief setOnContextMenu
  * Adds a callback function on right click
  * $$ tfd.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event "],"pTypes":["obj-The pointer event object."]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
 
