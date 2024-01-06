@@ -675,15 +675,18 @@ function generateDefinitionFile(scopeName, scope) {
 
         const params = [], jsparams = [];
         for (const i in func.pNames) {
-            const pname = func.pNames[i].replace("default", "dflt").replace(/(\w+)\.\.\./, "...$1");
+            const [pname, dflt] = func.pNames[i]
+                .replace("default", "dflt")
+                .replace(/(\w+)\.\.\./, "...$1")
+                .split("=");
             const ptype = func.pTypes[i];
             const type = makeType(ptype);
             if (type.sub.match(/^[a-z_]+$/) && !(tDesc[type.sub] || tName[type.sub]))
                 type.sub = pAbbrev.toUpperCase() + '_' + type.sub;
 
-            params.push(`${pname}: ${type.sub}`);
+            params.push(`${pname}: ${type.sub}` + (dflt ? ' = ' + dflt : ''));
             if (type.desc)
-                jsparams.push(`${indent} * @param ${pname} ${type.desc.replace(/ \* /g, indent + ' * ')}\n`);
+                jsparams.push(`${indent} * @param ${pname.replace("?", '')} ${type.desc.replace(/ \* /g, indent + ' * ')}\n`);
         }
 
         // eslint-disable-next-line prefer-const
@@ -1469,7 +1472,7 @@ function replaceTypes(inpt, state, descStr, useAppPop) {
 function addMarkdown(s) {
     return s
         // links
-        .replace(/([^\\]|^)\[([^\]}]*)\]\((.*?)\)/g, function (match, /** @type {string} */ white, name, /** @type {string} */ url) {
+        .replace(/([^\\]|^)\[([^\]}]*)\]\((.*?)\)/g, function replaceMdLinks(match, /** @type {string} */ white, name, /** @type {string} */ url) {
             if (name && !url) url = name;
             if (!name && url) name = url;
             // web link ? external : internal
@@ -1479,7 +1482,7 @@ function addMarkdown(s) {
                 + `${name}</a>`;
         })
         // link + onclick
-        .replace(/([^\\]|^)\[([^\]}]*)\]{(.*?)}/g, function (match, /** @type {string} */ white, name, /** @type {string} */ script) {
+        .replace(/([^\\]|^)\[([^\]}]*)\]{(.*?)}/g, function replaceMdActions(match, /** @type {string} */ white, name, /** @type {string} */ script) {
             script = script.replace(/"/g, "&quot;").replace(/([*_`~])/g, "\\$1");
             return white + `<a href="" onclick="${script}">${name}</a>`;
         })
@@ -1496,7 +1499,7 @@ function addMarkdown(s) {
         .replace(/([^\\]|^)~~([^]*?[^\\])~~/g, "$1<s>$2</s>")		// ~~strikethrough~~
         // additional notes
         .replace(/<(premium|deprecated|xfeature)(.*?)>/g, (m, /** @type {string} */ n, a) => hints[n].replace("%s", a))
-        .replace(/([^\\]|^)@(([^\/\n<>, ]+\/)*(\w+?))(#(\w+))?\b/gi, (m, b, n, _, f, H, h) =>  // @DocReference
+        .replace(/([^\\]|^)@(([^/\n<>, ]+\/)*(\w+?))(#(\w+))?\b/gi, (m, b, n, _, f, H, h) =>  // @DocReference
             `${b}<a href="${n}.htm${(H || '').replace(/_/g, ' ')}" data-ajax="false">${(h || f).replace(/_/g, ' ')}</a>`)
         .replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
 }
@@ -1982,9 +1985,9 @@ function main() {
     }
 
     if (addcfg) app.WriteFile("conf.json", tos(conf));
+    if (!nogen) makeTips = makeTsx = true;
 
     Generate(genPattern);
-    if (!nogen) makeTips = makeTsx = true;
     if (startServer) {
         const express = require('express');
         const server = express();

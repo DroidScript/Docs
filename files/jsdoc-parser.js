@@ -402,38 +402,36 @@ function HandleComment(c, name, func, json, objJson) {
         else if (line.includes("@prop") && line.includes("{")) {
             const l = line.split("@prop")[1].trim(),
                 p = extractParams(l),
-                ts = p[0].split('||').map(t => types[p[0]] || t);
+                ts = p.type.split('||').map(t => types[p.type] || t);
             if (ts.find(t => !typx.includes(t.split(/[_:-]/)[0]))) Throw(`unknown param type ${line} in ${name}`);
-            let d = ts.join('||');
-            if (p[2]) d += "-" + p[2];
-            const ref = /\d/.test(p[1][0]) ? '#' : '';
-            json[ref + p[1]] = met = newDSFunc();
-            met.isval = true;
-            met.desc = p[2];
 
-            let g = p[0].split(/[_\s:-]/)[0], v;
+            const ref = /\d/.test(p.name[0]) ? '#' : '';
+            json[ref + p.name] = met = newDSFunc();
+            met.isval = true;
+            met.desc = p.desc;
+
+            let g = p.type.split(/[_\s:-]/)[0], v;
             if (types[g]) v = types[g];
-            else if (typx.includes(g)) v = p[0];
-            else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p[0];
+            else if (typx.includes(g)) v = p.type;
+            else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p.type;
             met.retval = v;
         }
         else if (line.includes("@prop")) {
             if (line.includes("{")) {
                 const l = line.split("@prop")[1].trim(),
                     p = extractParams(l),
-                    ts = p[0].split('||').map(t => types[p[0]] || t);
+                    ts = p.type.split('||').map(t => types[p.type] || t);
                 if (ts.find(t => !typx.includes(t.split(/[_:-]/)[0]))) Throw(`unknown param type ${line} in ${name}`);
-                let d = ts.join('||');
-                if (p[2]) d += "-" + p[2];
-                const ref = /\d/.test(p[1][0]) ? '#' : '';
-                json[ref + p[1]] = met = newDSFunc();
-                met.isval = true;
-                met.desc = p[2];
 
-                let g = p[0].split(/[_\s:-]/)[0], v;
+                const ref = /\d/.test(p.name[0]) ? '#' : '';
+                json[ref + p.name] = met = newDSFunc();
+                met.isval = true;
+                met.desc = p.desc;
+
+                let g = p.type.split(/[_\s:-]/)[0], v;
                 if (types[g]) v = types[g];
-                else if (typx.includes(g)) v = p[0];
-                else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p[0];
+                else if (typx.includes(g)) v = p.type;
+                else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p.type;
                 met.retval = v;
             }
             else { obj.isval = true; }
@@ -452,32 +450,32 @@ function HandleComment(c, name, func, json, objJson) {
         }
 
         else if (line.includes("@param")) {
-            const _l = line.split("@param")[1].trim();
-            const p = extractParams(_l);
-            let _d;
-            //p[2] = p[2].replace(/\\n/g, '\n') //.replace(pattern, replacement);
-            if (p[2].includes("--->") || p[0].includes("unction")) {
-                _d = formatDef(p[2].split("--->")[1] || "");
-                p[2] = p[2].split("--->")[0];
-                p[2] = extractBacktickStrings(p[2]);
+            const l = line.split("@param")[1].trim();
+            const p = extractParams(l);
+            let d;
+            //p.desc = p.desc.replace(/\\n/g, '\n') //.replace(pattern, replacement);
+            if (p.desc.includes("--->") || p.type.includes("unction")) {
+                d = formatDef(p.desc.split("--->")[1] || "");
+                p.desc = p.desc.split("--->")[0];
+                p.desc = extractBacktickStrings(p.desc);
             }
-            else if (p[0] === "fnc_json") {
-                _d = p[2] && JSON.parse(p[2]);
+            else if (p.type === "fnc_json") {
+                d = p.desc && JSON.parse(p.desc);
             }
             else {
-                const ts = p[0].split('||').map(t => types[p[0]] || t);
+                const ts = p.type.split('||').map(t => types[p.type] || t);
                 if (ts.find(t => !typx.includes(t.split(/[_:-]/)[0])))
                     Throw(`unknown param type ${line} in ${name}`);
-                _d = ts.join('||');
-                if (p[2]) _d += "-" + p[2];
+                d = ts.join('||');
+                if (p.desc) d += "-" + p.desc;
             }
 
             if (isCA) afterCmpParam = true;
 
             if (!obj.pNames) obj.pNames = [];
             if (!obj.pTypes) obj.pTypes = [];
-            obj.pNames.push(p[1]);
-            obj.pTypes.push(_d);
+            obj.pNames.push(p.name);
+            obj.pTypes.push(d);
             afterCmpParam = true;
         }
 
@@ -547,15 +545,14 @@ function formatDef(sline) {
 /** @param {string} str */
 function extractParams(str) {
     const regex = /{([^}]+)}\s*(\S+)\s*(.*)/;
-    const matches = str.match(regex);
-    if (matches) {
-        const word1 = matches[1];
-        const word2 = matches[2];
-        const word3 = matches[3] ? matches[3].trim() : '';
-        return [word1, word2, word3];
-    }
-    return ['', '', ''];
-
+    const [_, type, name, desc] = str.match(regex) || ['', ''];
+    return {
+        type,
+        name: name
+            .replace(/^\[(.*)=(.*)\]$/, "$1=$2")
+            .replace(/^\[(.*)\]$/, "$1?"),
+        desc: desc || ''
+    };
 }
 
 /** replace backticks with a colored string

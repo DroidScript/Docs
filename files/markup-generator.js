@@ -89,8 +89,6 @@ ${info} * ${_desc}
         }
 
         // samples
-
-        // samples
         let samples = "";
         const sampFile = path + "/samples/" + key + ".txt";
         if (fs.existsSync(sampFile)) samples += renderSamples(sampFile);
@@ -98,8 +96,10 @@ ${info} * ${_desc}
         const pysampFile = path + "/samples/" + key + "-py.txt";
         if (fs.existsSync(pysampFile)) samples += renderSamples(pysampFile, "Python");
 
-        if (fs.existsSync(sampFile)) str += "\n\n// ------------- SAMPLES ------------- \n\n";
-        if (samples) str += samples;
+        if (samples) {
+            str += "\n\n// ------------- SAMPLES ------------- \n\n";
+            str += samples;
+        }
 
         str = str.replace(/ +\n/, "\n");
         await fsp.writeFile(outputFile, str);
@@ -189,7 +189,10 @@ function extractParams(methodData, usedIDs) {
                 pType = split0(pDef, "-");
                 pDesc = split1(pDef, "-");
             }
-            str += ` * @param {${pType}} ${methodData.pNames[i]} ${pDesc.replace(/\n/g, "\\n")}\n`;
+            const name = methodData.pNames[i]
+                .replace(/^(.*)=(.*)$/, "[$1=$2]")
+                .replace(/^(.*)\?$/, "[$1]");
+            str += ` * @param {${pType}} ${name} ${pDesc.replace(/\n/g, "\\n")}\n`;
         }
     }
     return str;
