@@ -132,7 +132,7 @@ declare type str_uri = string;
 declare type str_url = string;
 
 
-class DsUi {
+class UI {
 
 	/**
 	 * AddAccordion
@@ -171,7 +171,7 @@ class DsUi {
 	 * AddButton
 	 * @param parent The layout where to add the button.
 	 * @param text The button text or the material icon text.
-	 * @param options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color: `Primary` `Secondary` `Default` \n `Size: `Small` `Medium` `Large` \n `Util: `Icon` `NoRipple` `Upload` \n `In case of upload, you can specify `Multiple` to accept multiple files.
+	 * @param options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Util`: `Icon` `NoRipple` `Upload` \n `In case of upload, you can specify `Multiple` to accept multiple files.
 	 * @param width Fraction of the parent width. [0-1]
 	 * @param height Fraction of the parent height. [0-1]
 	 * @return Button Component
@@ -182,7 +182,7 @@ class DsUi {
 	 * AddButtonGroup
 	 * @param parent The parent layout where to add the ButtonGroup
 	 * @param list The item to be displayed on the buttn group.
-	 * @param options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color: `Primary` `Secondary` `Default` \n `Size: `Small` `Medium` `Large` \n `Orientation: `Horizontal` `Vertical` \n `Util: `Icon` `NoElevation`
+	 * @param options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `Icon` `NoElevation`
 	 * @param width Fraction of the parent width. [0-1]
 	 * @param height Fraction of the parent height. [0-1]
 	 * @return ButtonGroup Component
@@ -193,7 +193,7 @@ class DsUi {
 	 * AddCheckbox
 	 * @param parent The layout where to add the checkbox
 	 * @param text The label for the checkbox
-	 * @param options Colors: `Primary` `Secondary` `Medium` `Small` \n `Position: `Left` `Top` `Right` `Bottom` \n `Variant: `Indeterminate` `Determinate`
+	 * @param options Colors: `Primary` `Secondary` `Medium` `Small` \n `Position`: `Left` `Top` `Right` `Bottom` \n `Variant`: `Indeterminate` `Determinate`
 	 * @param width Fraction of the parent width. [0-1]
 	 * @param height Fraction of the parent height. [0-1]
 	 * @return Checkbox Component
@@ -204,7 +204,7 @@ class DsUi {
 	 * AddCheckboxGroup
 	 * @param parent The parent layout where to add the CheckboxGroup.
 	 * @param list The items to be displayed.
-	 * @param options Colors: `Default` `Primary` `Secondary` \n `Sizes: `Small` `Medium` \n `Icon Position: `Left` or `Right` \n `Container: `Elevated` or `Outlined` \n `Corners : `Square`
+	 * @param options Colors: `Default` `Primary` `Secondary` \n `Sizes`: `Small` `Medium` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corners : `Square`
 	 * @param width Fraction of the screen width.
 	 * @param height Fraction of the screen height.
 	 * @return CheckboxGroup Component
@@ -215,7 +215,7 @@ class DsUi {
 	 * AddChip
 	 * @param parent The parent layout where to add the Chip.
 	 * @param text The text on the chip.
-	 * @param options Color: `Primary` `Secondary` `Default` \n `Size: `Small` `Medium` \n `Variant: `Outlined` `Default` \n `Util: `Touchable`
+	 * @param options Color: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` \n `Variant`: `Outlined` `Default` \n `Util`: `Touchable`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return Chip Component
@@ -235,7 +235,7 @@ class DsUi {
 	 * @param title The dialog title text.
 	 * @param body The dialog message to be shown.
 	 * @param actions A comma separated text for action buttons.
-	 * @param options Colors: `Primary` `Secondary` \n `Util: `NoCancel` prevents the dialog from closing on action.
+	 * @param options Colors: `Primary` `Secondary` \n `Util`: `NoCancel` prevents the dialog from closing on action.
 	 * @return Dialog Component
 	 */
 	addDialog(title: str, body: str, actions: str, options: str_com): obj;
@@ -260,7 +260,7 @@ class DsUi {
 	 * AddDropdown
 	 * @param parent The layout where to add the dropdown.
 	 * @param list The list items to show.
-	 * @param options A comma separated Dropdown options. Can be \n Colors: `Primary` `Secondary` `Default` \n `Variants: `Contained` `Outlined` `Text` \n `Sizes: `Small` `Medium` `Large` \n `Orientation: `Horizontal` `Vertical` \n `Util: `NoElevation`
+	 * @param options A comma separated Dropdown options. Can be \n Colors: `Primary` `Secondary` `Default` \n `Variants`: `Contained` `Outlined` `Text` \n `Sizes`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `NoElevation`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return Dropdown Component.
@@ -292,7 +292,7 @@ class DsUi {
 	 * AddLayout
 	 * @param parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
 	 * @param type The layout type. Values can be `Linear` `Absolute` `Frame` `Slide`
-	 * @param options Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions: `FillX` `FillY` \n `Scroll: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils: `BackColor` to apply light or dark background rather than transparent.
+	 * @param options Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions`: `FillX` `FillY` \n `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils`: `BackColor` to apply light or dark background rather than transparent.
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return Layout Component
@@ -303,7 +303,7 @@ class DsUi {
 	 * AddList
 	 * @param parent The parent layout
 	 * @param list An array of arrays. Each element is of the form `[icon, title, body, secondary]`
-	 * @param options Media: `Icon` `Avatar` \n `Styling: `Dense` `Inset` \n `Util: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
+	 * @param options Media: `Icon` `Avatar` \n `Styling`: `Dense` `Inset` \n `Util`: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return List Component
@@ -325,7 +325,7 @@ class DsUi {
 	 * AddProgress
 	 * @param parent The parent layout where to add the prgress component.
 	 * @param value the initial value of the progress component.
-	 * @param options Color: `Primary` `Secondary` \n `Type: `Circular` `Linear` \n `Variant: `Determinate` `Indeterminate`
+	 * @param options Color: `Primary` `Secondary` \n `Type`: `Circular` `Linear` \n `Variant`: `Determinate` `Indeterminate`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction fo the screen height. [0-1]
 	 * @return Progress Component
@@ -336,7 +336,7 @@ class DsUi {
 	 * AddRadioGroup
 	 * @param parent The parent where to add the RadioGroup component.
 	 * @param list The list items array.
-	 * @param options Radio Sizes: `Small` `Medium` \n `Colors: `Primary` `Secondary` \n `Icon Position: `Left` or `Right` \n `Container: `Elevated` or `Outlined` \n `Corner: `Square` \n `Required`
+	 * @param options Radio Sizes: `Small` `Medium` \n `Colors`: `Primary` `Secondary` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n `Required`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return RadioGroup Component
@@ -347,7 +347,7 @@ class DsUi {
 	 * AddSelect
 	 * @param parent The parent layout where to add the control
 	 * @param list The list of items for the Select options
-	 * @param options Sizes: `Small` `Medium` \n `Variant: `Filled` `Outlined` `Standard` \n `Margin: `Dense` `Normal` \n `Utils: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
+	 * @param options Sizes: `Small` `Medium` \n `Variant`: `Filled` `Outlined` `Standard` \n `Margin`: `Dense` `Normal` \n `Utils`: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return Select Component
@@ -358,7 +358,7 @@ class DsUi {
 	 * AddSlider
 	 * @param parent The layout where to add the Slider Component.
 	 * @param value The initial value of the Slider. Value must be between 0-100, the default min and max values.
-	 * @param options Color: `Primary` `Secondary` \n `Orienation: `Horizontal` `Vertical` \n `Track: `Normal` `Inverted` `False`
+	 * @param options Color: `Primary` `Secondary` \n `Orienation`: `Horizontal` `Vertical` \n `Track`: `Normal` `Inverted` `False`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height.
 	 * @return Slider Component.
@@ -380,7 +380,7 @@ class DsUi {
 	 * AddSwitch
 	 * @param parent The parent layout where to add the Switch Component.
 	 * @param text The label text.
-	 * @param options A comma separated switch options. Options can be one or a combination of the following \n Color: `Primary` `Secondary` `Default` \n `Icon Position: `Left` `Top` `Right` `Bottom` \n `Sizes: `Small` `Medium`
+	 * @param options A comma separated switch options. Options can be one or a combination of the following \n Color: `Primary` `Secondary` `Default` \n `Icon Position: `Left` `Top` `Right` `Bottom` \n `Sizes`: `Small` `Medium`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return Switch Component
@@ -391,7 +391,7 @@ class DsUi {
 	 * AddSwitchGroup
 	 * @param parent The parent layout where to add the SwitchGroup Component.
 	 * @param list The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
-	 * @param options Icon: `Icon` \n `Color: `Primary` or `Secondary` \n `Container: `Elevated` or `Outlined` \n `Corner: `Square` \n`Divider`
+	 * @param options Icon: `Icon` \n `Color`: `Primary` or `Secondary` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n`Divider`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return SwitchGroup Component
@@ -402,7 +402,7 @@ class DsUi {
 	 * AddTabs
 	 * @param parent The parent layout where to add the Tabs Component.
 	 * @param list An array of tab names.
-	 * @param options Enable swipe: `Swipeable` \n `Colors: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant: `Standard` `Scrollable` `FullWidth` \n `Layout: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
+	 * @param options Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
 	 * @return Tabs Component
@@ -413,7 +413,7 @@ class DsUi {
 	 * AddText
 	 * @param parent The layout control where to add the text control
 	 * @param text The text to be displayed on the text control
-	 * @param options A comma separated string. Options can be one or a combination of the following: \n Variants: `H1` `H2` `H3` `H4` `H5` `H6` `body1` `body2` `overline` `subtitle1` `subtitle2` `button` `caption`.\nLines: `Singleline` `Multiline`.\nAlignment: `Left` `Center` `Right` `Justify`.\nColor: `Primary` `Secondary` `Error`.\nFormat `Html` `Icon` `Italize` `Monospace` `Bold` `Underline` \n `Utils: `Touchable`
+	 * @param options A comma separated string. Options can be one or a combination of the following: \n Variants: `H1` `H2` `H3` `H4` `H5` `H6` `body1` `body2` `overline` `subtitle1` `subtitle2` `button` `caption`.\nLines: `Singleline` `Multiline`.\nAlignment: `Left` `Center` `Right` `Justify`.\nColor: `Primary` `Secondary` `Error`.\nFormat `Html` `Icon` `Italize` `Monospace` `Bold` `Underline` \n `Utils`: `Touchable`
 	 * @param width Fraction of the screen width
 	 * @param height Fraction of the screen height
 	 * @return Text Component
@@ -424,7 +424,7 @@ class DsUi {
 	 * AddTextField
 	 * @param parent The layout where to add the TextField Component.
 	 * @param text The initial value of the TextField
-	 * @param options Color: `Primary` or `Secondary` \n `Sizes: `Small` or `Medium` \n `Type: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant: `Standard` `Filled` or `Outlined` \n `Utils: `Autofocus`
+	 * @param options Color: `Primary` or `Secondary` \n `Sizes`: `Small` or `Medium` \n `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant`: `Standard` `Filled` or `Outlined` \n `Utils`: `Autofocus`
 	 * @param width Fraction of the screen width.
 	 * @param height Fraction of the screen height.
 	 * @return TextField Component
@@ -491,7 +491,7 @@ class DsUi {
 	/**
 	 * ShowPopup
 	 * @param msg The message to display on the pop-up.
-	 * @param options A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition: `Grow` `Fade` `Slide` `Collapse` `Zoom`
+	 * @param options A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`
 	 * @param duration Time in milliseconds. Pass this, if you don't want the default auto hide duration.
 	 * @param action Action button text.
 	 * @return Popup Component.
@@ -524,7 +524,7 @@ class UIAccordion {
 
 	/**
 	 * SetSecondaryText
-	 * @param text The secondary text to display. You can pass arguments as string or array by following the format below. \n String: `"Secodary text 1,Secondary text 2,Secondary text 3"` \n `Array: `[ "Secondary text 1", "Secondary text 2", "Secondary text 3" ]`
+	 * @param text The secondary text to display. You can pass arguments as string or array by following the format below. \n String: `"Secodary text 1,Secondary text 2,Secondary text 3"` \n `Array`: `[ "Secondary text 1", "Secondary text 2", "Secondary text 3" ]`
 	 * @param index If `index` is provided, the corresponding index will be updated with the new text.
 	 */
 	setSecondaryText(text: obj, index: num): void;
@@ -594,10 +594,10 @@ class UIAccordion {
 	getLayoutIndex(layout: obj): num;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (index : num, expand : bin) => void): void;
+	setOnTouch(callback: (index: num, expand: bin) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (title : str, index : num, event : obj) => void): void;
+	setOnContextMenu(callback: (title: str, index: num, event: obj) => void): void;
 
 	/**
 	 * SetTextColor
@@ -727,10 +727,10 @@ class UIAppBar {
 	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -824,7 +824,7 @@ class UIAppBar {
 class UIBottomNavbar {
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (text : str, index : num, event : obj) => void): void;
+	setOnContextMenu(callback: (text: str, index: num, event: obj) => void): void;
 
 	/**
 	 * SetList
@@ -892,7 +892,7 @@ class UIBottomNavbar {
 	popItem(): void;
 
 	/** SetOnChange */
-	setOnChange(callback: (text : str, index : num) => void): void;
+	setOnChange(callback: (text: str, index: num) => void): void;
 
 	/**
 	 * SetEnabled
@@ -927,7 +927,7 @@ class UIBottomNavbar {
 	hideLabels(): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -1031,7 +1031,7 @@ class UIBottomNavbar {
 class UIButton {
 
 	/** SetOnFileSelect */
-	setOnFileSelect(callback: (files : lst) => void): void;
+	setOnFileSelect(callback: (files: lst) => void): void;
 
 	/**
 	 * SetToolTip
@@ -1070,10 +1070,10 @@ class UIButton {
 	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -1157,10 +1157,10 @@ class UIButton {
 class UIButtonGroup {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (text : str, index : num, event : obj) => void): void;
+	setOnTouch(callback: (text: str, index: num, event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (text : str, index : num, event : obj) => void): void;
+	setOnContextMenu(callback: (text: str, index: num, event: obj) => void): void;
 
 	/**
 	 * SetList
@@ -1340,7 +1340,7 @@ class UIButtonGroup {
 class UICheckbox {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (check : bin) => void): void;
+	setOnTouch(callback: (check: bin) => void): void;
 
 	/**
 	 * SetIcon
@@ -1353,7 +1353,7 @@ class UICheckbox {
 	getIcon(): obj;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -1457,10 +1457,10 @@ class UICheckbox {
 class UICheckboxGroup {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (value : bin, text : str, index : num, event : obj) => void): void;
+	setOnTouch(callback: (value: bin, text: str, index: num, event: obj) => void): void;
 
 	/** SetOnChange */
-	setOnChange(callback: (values : lst) => void): void;
+	setOnChange(callback: (values: lst) => void): void;
 
 	/**
 	 * SetIcon
@@ -1579,7 +1579,7 @@ class UICheckboxGroup {
 	shiftItem(): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (label : str, index : num, event : obj) => void): void;
+	setOnContextMenu(callback: (label: str, index: num, event: obj) => void): void;
 
 	/**
 	 * SetCornerRadius
@@ -1702,10 +1702,10 @@ class UIChip {
 	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -1812,7 +1812,7 @@ class UIDatePicker {
 	setLimits(past: str, future: str): void;
 
 	/** SetOnSelect */
-	setOnSelect(callback: (date : str) => void): void;
+	setOnSelect(callback: (date: str) => void): void;
 
 	/**
 	 * SetFormat
@@ -1828,7 +1828,7 @@ class UIDatePicker {
 class UIDialog {
 
 	/** SetOnAction */
-	setOnAction(callback: (text : str, index : num) => void): void;
+	setOnAction(callback: (text: str, index: num) => void): void;
 
 	/** SetOnClose */
 	setOnClose(callback: () => void): void;
@@ -1844,10 +1844,10 @@ class UIDialog {
 class UIDivider {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -1994,7 +1994,7 @@ class UIDrawer {
 class UIDropdown {
 
 	/** SetOnChange */
-	setOnChange(callback: (The : obj, index : num) => void): void;
+	setOnChange(callback: (The: obj, index: num) => void): void;
 
 	/** SetOnClose */
 	setOnClose(callback: () => void): void;
@@ -2080,10 +2080,10 @@ class UIDropdown {
 	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -2187,10 +2187,10 @@ class UIFAB {
 	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -2408,10 +2408,10 @@ class UIImage {
 	setOnTouchMove(callback: () => void): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -2567,10 +2567,10 @@ class UILayout {
 	removeChild(child: obj): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -2680,16 +2680,16 @@ class UIList {
 	addItem(title: str, body: str, image: str, index: num): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (title : str, body : str, icon : str, index : num, event : obj) => void): void;
+	setOnTouch(callback: (title: str, body: str, icon: str, index: num, event: obj) => void): void;
 
 	/** SetOnSelect */
-	setOnSelect(callback: (title : str, index : num) => void): void;
+	setOnSelect(callback: (title: str, index: num) => void): void;
 
 	/** SetOnAction */
-	setOnAction(callback: (icon : str, index : num) => void): void;
+	setOnAction(callback: (icon: str, index: num) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (title : str, body : str, icon : str, index : num, event : obj) => void): void;
+	setOnContextMenu(callback: (title: str, body: str, icon: str, index: num, event: obj) => void): void;
 
 	/** GetSelectedItems */
 	getSelectedItems(): void;
@@ -2889,7 +2889,7 @@ class UIList {
 class UIMenu {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (item : str, icon : str, index : num) => void): void;
+	setOnTouch(callback: (item: str, icon: str, index: num) => void): void;
 
 	/**
 	 * Show
@@ -2971,7 +2971,7 @@ class UIMenu {
 	getEnabledByName(name: str): bin;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -3061,10 +3061,10 @@ class UIMenu {
 class UIProgress {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -3168,10 +3168,10 @@ class UIProgress {
 class UIRadioGroup {
 
 	/** SetOnChange */
-	setOnChange(callback: (index : num) => void): void;
+	setOnChange(callback: (index: num) => void): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (checked : bin, label : str, index : num, event : obj) => void): void;
+	setOnTouch(callback: (checked: bin, label: str, index: num, event: obj) => void): void;
 
 	/**
 	 * SetList
@@ -3245,7 +3245,7 @@ class UIRadioGroup {
 	getEnabledByName(name: str): bin;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (label : str, index : num, event : obj) => void): void;
+	setOnContextMenu(callback: (label: str, index: num, event: obj) => void): void;
 
 	/**
 	 * SetCornerRadius
@@ -3349,13 +3349,13 @@ class UIRadioGroup {
 class UISelect {
 
 	/** SetOnChange */
-	setOnChange(callback: (value : str) => void): void;
+	setOnChange(callback: (value: str) => void): void;
 
 	/** SetOnOpen */
 	setOnOpen(callback: () => void): void;
 
 	/** SetOnClose */
-	setOnClose(callback: (value : str) => void): void;
+	setOnClose(callback: (value: str) => void): void;
 
 	/**
 	 * AddItem
@@ -3421,10 +3421,10 @@ class UISelect {
 	getEnabledByName(name: str): bin;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -3528,10 +3528,10 @@ class UISelect {
 class UISlider {
 
 	/** SetOnChange */
-	setOnChange(callback: (value : num) => void): void;
+	setOnChange(callback: (value: num) => void): void;
 
 	/** SetOnSelect */
-	setOnSelect(callback: (value : num) => void): void;
+	setOnSelect(callback: (value: num) => void): void;
 
 	/**
 	 * SetRange
@@ -3550,10 +3550,10 @@ class UISlider {
 	getMarks(): bin;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -3660,7 +3660,7 @@ class UIStepper {
 	setOnComplete(callback: () => void): void;
 
 	/** SetOnChange */
-	setOnChange(callback: (index : num) => void): void;
+	setOnChange(callback: (index: num) => void): void;
 
 	/** NextStep */
 	nextStep(): void;
@@ -3694,10 +3694,10 @@ class UIStepper {
 	setTitleText(index: num, title: str): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -3801,10 +3801,10 @@ class UIStepper {
 class UISwitch {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (check : bin) => void): void;
+	setOnTouch(callback: (check: bin) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -3908,10 +3908,10 @@ class UISwitch {
 class UISwitchGroup {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (value : bin, text : str, index : num, event : obj) => void): void;
+	setOnTouch(callback: (value: bin, text: str, index: num, event: obj) => void): void;
 
 	/** SetOnChange */
-	setOnChange(callback: (values : lst) => void): void;
+	setOnChange(callback: (values: lst) => void): void;
 
 	/**
 	 * SetValueByIndex
@@ -3973,7 +3973,7 @@ class UISwitchGroup {
 	getEnabled(index: num): bin;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (text : str, index : num, event : obj) => void): void;
+	setOnContextMenu(callback: (text: str, index: num, event: obj) => void): void;
 
 	/**
 	 * SetCornerRadius
@@ -4077,10 +4077,10 @@ class UISwitchGroup {
 class UITabs {
 
 	/** SetOnChange */
-	setOnChange(callback: (name : str, index : num) => void): void;
+	setOnChange(callback: (name: str, index: num) => void): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (name : str, The : num) => void): void;
+	setOnTouch(callback: (name: str, The: num) => void): void;
 
 	/**
 	 * SetTabs
@@ -4180,7 +4180,7 @@ class UITabs {
 	getLayoutIndex(layout: obj): num;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (text : str, index : num, event : obj) => void): void;
+	setOnContextMenu(callback: (text: str, index: num, event: obj) => void): void;
 
 	/**
 	 * SetCornerRadius
@@ -4321,10 +4321,10 @@ class UIText {
 	setTextShadow(radius: num, dx: num, dy: num, color: obj): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -4428,13 +4428,13 @@ class UIText {
 class UITextField {
 
 	/** SetOnEnter */
-	setOnEnter(callback: (text : str) => void): void;
+	setOnEnter(callback: (text: str) => void): void;
 
 	/** SetOnChange */
-	setOnChange(callback: (text : str) => void): void;
+	setOnChange(callback: (text: str) => void): void;
 
 	/** SetOnFocus */
-	setOnFocus(callback: (focus : bin) => void): void;
+	setOnFocus(callback: (focus: bin) => void): void;
 
 	/**
 	 * SetRows
@@ -4470,10 +4470,10 @@ class UITextField {
 	getEndAdornment(): str;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -4580,14 +4580,14 @@ class UITimePicker {
 	 * Show
 	 * @param format A time format. Can be of the form \n Hour formats \n `H` : 0 1 ... 22 23 \n `HH` : 	00 01 ... 22 23 \n `h` : 1 2 ... 11 12 \n `hh` : 	01 02 ... 11 12 \n Minute formats \n `m` : 	0 1 ... 58 59 \n `mm` : 00 01 ... 58 59 \n AM/PM \n `A` : AM or PM \n `a` : am pm
 	 */
-	show(callback: (value : str) => void, format: str): bin;
+	show(callback: (value: str) => void, format: str): bin;
 }
 
 
 class UITreeView {
 
 	/** SetOnTouch */
-	setOnTouch(callback: (value : str, path : str) => void): void;
+	setOnTouch(callback: (value: str, path: str) => void): void;
 
 	/**
 	 * SetList
@@ -4609,7 +4609,7 @@ class UITreeView {
 	getItem(name: str): obj;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -4716,10 +4716,10 @@ class UIWebView {
 	setOnLoad(callback: () => void): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (event : obj) => void): void;
+	setOnTouch(callback: (event: obj) => void): void;
 
 	/** SetOnContextMenu */
-	setOnContextMenu(callback: (event : obj) => void): void;
+	setOnContextMenu(callback: (event: obj) => void): void;
 
 	/**
 	 * Animate
@@ -4830,7 +4830,7 @@ class UIshowColorPicker {
 class UIshowDateTimePicker {
 
 	/** SetOnSelect */
-	setOnSelect(callback: (value : str) => void): void;
+	setOnSelect(callback: (value: str) => void): void;
 }
 
 

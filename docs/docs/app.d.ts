@@ -292,7 +292,7 @@ class DsApp {
 	CheckLicense(key: str_b64): void;
 
 	/** Checks if permission was granted */
-	CheckPermission(type: "Camera"|"Storage"|"ExtSDcard"|"Network"|"Notify"|"Location"|"SMS"|"Calendar"|"Body"|"Contacts"|"Record"|"Biometric"|"Phone"|"Accounts"|"License"): str[];
+	CheckPermission(type: "Camera"|"Storage"|"ExtSDcard"|"Network"|"Notify"|"Location"|"SMS"|"Calendar"|"Body"|"Contacts"|"Record"|"Biometric"|"Phone"|"Accounts"|"License"|"android.permission.*"): str[];
 
 	/** Let the user choose an google account */
 	ChooseAccount(callback: (account: "email") => void): void;
@@ -444,10 +444,11 @@ class DsApp {
 	/**
 	 * Returns a new Layout object
 	 * @param options 
+ 	 * &emsp; `AutoSize` - Resizes itself and child controls after device rotation\
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
 	 */
-	CreateLayout(type: "Linear"|"Absolute"|"Frame"|"Card", options: string | ("TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y")[]): DsLayout;
+	CreateLayout(type: "Linear"|"Absolute"|"Frame"|"Card", options: string | ("AutoSize"|"TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y")[]): DsLayout;
 
 	/**
 	 * Returns a new List object
@@ -718,7 +719,7 @@ class DsApp {
 	Func(name: str, ...args: all): void;
 
 	/** Google Analytics */
-	GA(command: "create"|"send"|"set"|"require"|"provide"|"remove", [...fields]: str, options: obj): void;
+	GA(command: "create"|"send"|"set"|"require"|"provide"|"remove", ...fields?: str, options: obj): void;
 
 	/** Get accesibility feature availability */
 	GetAccessibility(): { enabled: bin, exploreByTouch: bin, screenReader: bin };
@@ -896,7 +897,7 @@ class DsApp {
 	 * @param type 
  	 * &emsp; `pid`
 	 */
-	GetPermission(type: string | ("Camera"|"ExtSDcard"|"External"|"Internal"|"Network"|"Notify"|"Storage"|"Overlay"|"SMS"|"Location"|"Calendar"|"Body"|"Contacts"|"Record"|"Phone"|"Biometric"|"Accounts"|"License"|"usb:<pid>")[], callback: (ungranted: str_com|str_uri) => void): void;
+	GetPermission(type: string | ("Camera"|"ExtSDcard"|"External"|"Internal"|"Network"|"Notify"|"Storage"|"Overlay"|"SMS"|"Location"|"Calendar"|"Body"|"Contacts"|"Record"|"Phone"|"Biometric"|"Accounts"|"License"|"android.permission.*"|"usb:<pid>")[], callback: (ungranted: str_com|str_uri) => void): void;
 
 	/** Get path to a private folder */
 	GetPrivateFolder(name: str, options: "external"): str_pth;
@@ -939,6 +940,9 @@ class DsApp {
 
 	/** Get value of shared text */
 	GetSharedText(): str;
+
+	/** Get associated app shortcuts */
+	GetShortcuts(): lst;
 
 	/** Checks if the speaker is enabled for phone calls. Returns false if no call is active.
 	 * 
@@ -1333,6 +1337,12 @@ class DsApp {
 
 	/** Changes the dpi value for any control creatred afterwards */
 	SetDensity(dpi: num_int): void;
+
+	/**
+	 * Filter/ignore certain errors
+	 * @param regex regex pattern
+	 */
+	SetErrorFilter(regex: str): void;
 
 	/** Set services to run in the background */
 	SetInBackground(): void;
@@ -1853,7 +1863,7 @@ class DsCameraView {
 	MotionMosaic(xtiles: num_int, ytiles: num_int, sensitivity: num_pxl, minPeriod: num_mls, image: DsImage): void;
 
 	/** Start recording video */
-	Record(file: str_ptf, seconds: num_sec): void;
+	Record(file: str_ptf, seconds: num_sec, quality: "high"|"low"|"480p"|"720p"|"1080p"|"2k"|"4k"|"8k"|"qvga"|"vga"|"cif"): void;
 
 	/**
 	 * Keeps tracks of the average color around a given point
@@ -2283,10 +2293,10 @@ class DsFile {
 class DsGame {
 
 	/** Game */
-	game(): DsGame;
+	game: DsGame;
 
 	/** Lay */
-	lay(): DsLayout;
+	lay: DsLayout;
 }
 
 
@@ -2309,10 +2319,10 @@ class DsGameView {
 class DsGLView {
 
 	/** Width/height relation */
-	aspect(): num_flt;
+	aspect: num_flt;
 
 	/** [HTMLDivElement] */
-	canvas(): obj;
+	canvas: obj;
 
 	/** Create a sprite object which can be drawn on the GLView */
 	CreateImage(file: str_ptf, callback: () => void): img;
@@ -2330,22 +2340,22 @@ class DsGLView {
 	GetType(): "GLView";
 
 	/** Height */
-	height(): num_int;
+	height: num_int;
 
 	/** Render draw commands */
 	Render(): void;
 
 	/** Width */
-	width(): num_int;
+	width: num_int;
 }
 
 class GLV_img {
 
 	/** Width of the image */
-	width(): num_int;
+	width: num_int;
 
 	/** Height of the image */
-	height(): num_int;
+	height: num_int;
 }
 class GLV_ctx {
 
@@ -4123,6 +4133,9 @@ class DsWebView {
 	/** En/Disable touchmode on the control */
 	SetTouchMode(mode: bin): void;
 
+	/** Define which URLs open in browser */
+	SetUseBrowser(urlFilter: str): void;
+
 	/**
 	 * Set/Add custom user agent
 	 * @param options Add-appends to default user agent
@@ -4249,7 +4262,7 @@ class DsDatabase {
 	GetType(): "Database";
 
 	/** Database name */
-	name(): str;
+	name: str;
 
 	/** Open database */
 	open(success: () => void, error: (msg: str) => void): void;

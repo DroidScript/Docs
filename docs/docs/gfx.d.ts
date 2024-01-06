@@ -154,7 +154,7 @@ class DsGfx {
 	AppExec(js: str_jsc): void;
 
 	/** The display aspect ratio */
-	aspect(): num;
+	aspect: num;
 
 	/** Returns a new background */
 	CreateBackground(file: str_ptf, options: string | ("stretch")[]): GfxBackground;
@@ -188,10 +188,10 @@ class DsGfx {
 	CreateText(text: str, fontSize: num, fontFile: str_ptf, align: "left"|"center"|"right", callback: () => void): GfxText;
 
 	/** Returns a new texture object */
-	CreateTexture(): GfxTexture;
+	CreateTexture: GfxTexture;
 
 	/** GameView custom data */
-	data(): obj;
+	data: obj;
 
 	/** En/Disables the physics engine */
 	EnablePhysics(enabled: bin): void;
@@ -212,7 +212,7 @@ class DsGfx {
 	GetTime(): jso;
 
 	/** Display height in pixels */
-	height(): num_pxl;
+	height: num_pxl;
 
 	/** Tests if two objects overlap */
 	IsOverlap(obj1: gvo, obj2: gvo, depth: num): bin;
@@ -221,19 +221,19 @@ class DsGfx {
 	IsPaused(): bin;
 
 	/** True when game is ready */
-	isReady(): bin;
+	isReady: bin;
 
 	/** Currently pressed key */
-	keyDown(): str;
+	keyDown: str;
 
 	/** Current key state */
-	keyState(): "Down"|"Up";
+	keyState: "Down"|"Up";
 
 	/** Enables multitouch */
-	multiTouch(): bin;
+	multiTouch: bin;
 
 	/** List of active objects */
-	objects(): lst_obj;
+	objects: lst_obj;
 
 	/** Pause game */
 	Pause(): void;
@@ -290,13 +290,13 @@ class DsGfx {
 	 * Gfx version number
 	 * @return 1.1
 	 */
-	version(): str;
+	version: str;
 
 	/** Shortcut to app.../app/Vibrate) */
 	Vibrate(pattern: str): void;
 
 	/** Display width */
-	width(): num_pxl;
+	width: num_pxl;
 
 }
 
@@ -355,7 +355,7 @@ class GfxBackground {
 	Scroll(x: num, y: num): void;
 
 	/** Indicates if ready for use */
-	loaded(): bin;
+	loaded: bin;
 }
 
 
@@ -378,7 +378,7 @@ class GfxRectangle {
 class GfxSound {
 
 	/** The file url */
-	file(): str;
+	file: str;
 
 	/** Pause the track */
 	Pause(): void;
@@ -395,10 +395,10 @@ class GfxSound {
 class GfxSprite {
 
 	/** Incicates if added to game */
-	added(): bin;
+	added: bin;
 
 	/** Sprite aspect ratio */
-	aspect(): num;
+	aspect: num;
 
 	/** Flip sprite */
 	Flip(horiz: bin, vert: bin): void;
@@ -443,30 +443,30 @@ class GfxSprite {
 	StopAt(frame: num_int): void;
 
 	/** X-position on the screen */
-	x(): num_frv;
+	x: num_frv;
 
 	/** Y-position on the screen */
-	y(): num_frc;
+	y: num_frc;
 }
 
 
 class GfxSpriteSheet {
 
 	/** Loaded indicator */
-	loaded(): bin;
+	loaded: bin;
 }
 
 
 class GfxText {
 
 	/** Multiline text alignment */
-	align(): "left"|"center"|"right";
+	align: "left"|"center"|"right";
 
 	/** Source file */
-	file(): str_pth;
+	file: str_pth;
 
 	/** Pixel font size */
-	fontSize(): num_pxl;
+	fontSize: num_pxl;
 }
 
 

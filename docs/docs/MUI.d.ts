@@ -239,13 +239,13 @@ class DsMUI {
 	AddCheckbox(parent: DsLayout, list: lst, width: num_frc, height: num_frc, color: str_col): MuiCheckbox;
 
 	/**
-	 * Adds an MUI checklist dialog. See CreateCheckList for a full documentation.{dso} parent ../app/CreateTextEdit
+	 * Adds an MUI checklist dialog. See CreateCheckList for a full documentation
 	 * @param list An array of objects of the form {name: string, check: boolean}
 	 */
-	AddCheckList(title: str, list: lst_obj, color: str_col, bottom: bin): MuiCheckList;
+	AddCheckList(parent: DsTextEdit, title: str, list: lst_obj, color: str_col, bottom: bin): MuiCheckList;
 
 	/** Creates a color picker dialog where you can select a range of MUI predefined colors */
-	AddColorPicker(title: "Title"): MuiColorPicker;
+	AddColorPicker(parent: DsTextEdit, title: "Title"): MuiColorPicker;
 
 	/**
 	 * Adds a new DataTable Control
@@ -257,12 +257,12 @@ class DsMUI {
 	AddDataTable(parent: DsLayout, columns: lst, values: lst, width: num, height: num, options: string | ("Selectable")[]): MuiDataTable;
 
 	/**
-	 * Adds a date picker dialog. See CreateDatePicker for a full documentation.{dso} parent ../app/CreateTextEdit
+	 * Adds a date picker dialog. See CreateDatePicker for a full documentation
 	 * @param yyyy Full year
 	 * @param mm [0-11]
 	 * @param dd [1-31]
 	 */
-	AddDatePicker(yyyy: num_int, mm: num_int, dd: num_int, color: str_col): MuiDatePicker;
+	AddDatePicker(parent: DsTextEdit, yyyy: num_int, mm: num_int, dd: num_int, color: str_col): MuiDatePicker;
 
 	/**
 	 * Adds a customizable materialize dialog. See CreateDialog for a full documentation
@@ -304,10 +304,10 @@ class DsMUI {
 	AddList(parent: DsLayout, list: str, width: num, height: num, options: string | ("simple"|"modern"|"default"|"divider")[]): MuiList;
 
 	/**
-	 * Adds a more customizable list dialog or checklist dialog. See CreateListDialog and CreateCheckList for a full documentation on each type.{dso} parent ../app/CreateTextEdit
+	 * Adds a more customizable list dialog or checklist dialog. See CreateListDialog and CreateCheckList for a full documentation on each type
 	 * @param list An array of objects
 	 */
-	AddListDialog(title: str, list: lst, color: str_col, options: string | ("CheckList"|"ListDialog"|"Bottom")[]): MuiListDialog;
+	AddListDialog(parent: DsTextEdit, title: str, list: lst, color: str_col, options: string | ("CheckList"|"ListDialog"|"Bottom")[]): MuiListDialog;
 
 	/**
 	 * Adds a ListModern control on a given layout. See CreateListModern for a full documentation
@@ -340,8 +340,8 @@ class DsMUI {
 	 */
 	AddModal(title: str, body: str, okTxt: str, cancelTxt: str, options: str): MuiModal;
 
-	/** Adds a picker dialog such as time, date or color. See CreateDatePicker, CreateTimePicker and CreateColorPicker for a full documentation.{dso} parent ../app/CreateTextEdit */
-	AddPicker(options: "Date"|"Color"|"Time"): MuiPicker;
+	/** Adds a picker dialog such as time, date or color. See CreateDatePicker, CreateTimePicker and CreateColorPicker for a full documentation */
+	AddPicker(parent: DsTextEdit, options: "Date"|"Color"|"Time"): MuiPicker;
 
 	/** #AddRadio.md */
 	AddRadio(parent: DsLayout, list: string | ("strings")[], width: num, height: num, options: string | ("Buttons"|"Material"|"Normal")[], p1: "color"|"orientation", color: str_col, backColor: str_col): MuiRadio;
@@ -585,10 +585,10 @@ class DsMUI {
 	 * @param hour [0-24]
 	 * @param minute 0-59
 	 */
-	AddTimePicker(hour: num, minute: num, color: str_col): MuiTimePicker;
+	AddTimePicker(parent: DsTextEdit, hour: num, minute: num, color: str_col): MuiTimePicker;
 
 	/** #colors.md */
-	colors(): obj;
+	colors: obj;
 
 	/**
 	 * A nice pop-up at the top of your current layout
@@ -1016,7 +1016,7 @@ class DsMUI {
 	CreateTimePicker(hour: num, minute: num, color: str_col): MuiTimePicker;
 
 	/** #fonts.md */
-	fonts(): obj;
+	fonts: obj;
 
 	/** Show a menu on a given control */
 	ShowMenu(control: dso, list: str_lst, width: num_frc): obj;
@@ -1158,7 +1158,7 @@ class MuiBanner {
 class MuiButtonContained {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1171,7 +1171,7 @@ class MuiButtonContained {
 class MuiButtonElegant {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1184,7 +1184,7 @@ class MuiButtonElegant {
 class MuiButtonFlat {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1197,7 +1197,7 @@ class MuiButtonFlat {
 class MuiButtonOutlined {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1210,7 +1210,7 @@ class MuiButtonOutlined {
 class MuiButtonRaised {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1223,7 +1223,7 @@ class MuiButtonRaised {
 class MuiButtonRaisedO {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1236,7 +1236,7 @@ class MuiButtonRaisedO {
 class MuiButtonRound {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1249,7 +1249,7 @@ class MuiButtonRound {
 class MuiButtonRoundO {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1262,7 +1262,7 @@ class MuiButtonRoundO {
 class MuiButtonToggle {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1414,7 +1414,7 @@ class MuiFAB {
 	GetIcon(): str;
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1439,7 +1439,7 @@ class MuiFABElegant {
 	GetIcon(): str;
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -1464,7 +1464,7 @@ class MuiFABOutline {
 	GetIcon(): str;
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get type */
 	GetType(): "Button";
@@ -2672,7 +2672,7 @@ class MuiTextEditUnique {
 class MuiTextH1 {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;
@@ -2703,7 +2703,7 @@ class MuiTextH1 {
 class MuiTextH2 {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;
@@ -2734,7 +2734,7 @@ class MuiTextH2 {
 class MuiTextH3 {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;
@@ -2765,7 +2765,7 @@ class MuiTextH3 {
 class MuiTextH4 {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;
@@ -2796,7 +2796,7 @@ class MuiTextH4 {
 class MuiTextH5 {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;
@@ -2827,7 +2827,7 @@ class MuiTextH5 {
 class MuiTextH6 {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;
@@ -2858,7 +2858,7 @@ class MuiTextH6 {
 class MuiTextJumbo {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;
@@ -2889,7 +2889,7 @@ class MuiTextJumbo {
 class MuiTextParagraph {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;
@@ -2920,7 +2920,7 @@ class MuiTextParagraph {
 class MuiTextSecondary {
 
 	/** Data */
-	data(): obj;
+	data: obj;
 
 	/** Get html */
 	GetHtml(): obj;

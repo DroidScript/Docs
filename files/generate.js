@@ -507,7 +507,9 @@ function generateDefinitionFile(scopeName, scope) {
         }
     }
 
-    return `${typeDecls.join("")}\n\nclass Ds${scopeName[0].toUpperCase() + scopeName.slice(1)} {\n${definition}\n}\n${classDefinition}\n`;
+    scopeName = `Ds${scopeName[0].toUpperCase() + scopeName.slice(1)}`;
+    if (scopeName === "DsUi") scopeName = "UI";
+    return `${typeDecls.join("")}\n\nclass ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
 
     /** @param {string | UndefinedPartial<DSMethod>} stypes */
     function makeType(stypes, tsx = false) {
@@ -691,10 +693,11 @@ function generateDefinitionFile(scopeName, scope) {
 
         // eslint-disable-next-line prefer-const
         let { sub: rtype, desc: rdesc } = makeType(func.retval || "");
+        const args = func.isval ? '' : `(${params.join(', ')})`;
 
         // callbacks
         if (isCb) {
-            defs.func += `(${params.join(', ')}) => ${rtype || 'void'}`;
+            defs.func += `${args} => ${rtype || 'void'}`;
             return defs;
         }
 
@@ -711,14 +714,14 @@ function generateDefinitionFile(scopeName, scope) {
             if (jsparams.length) tempDef += `\n${indent}/**\n${indent} * ${func.shortDesc || ''}\n${jsparams.join('')}${indent} */\n`;
             else tempDef += `\n${indent}/** ${func.shortDesc} */\n`;
 
-            tempDef += `${indent}${fname}(${params.join(', ')}): ${rtype || 'void'};\n`;
+            tempDef += `${indent}${fname}${args}: ${rtype || 'void'};\n`;
             defs.extra[key] = tempDef;
         }
         else {
             if (jsparams.length) defs.func += `\n${indent}/**\n${indent} * ${func.shortDesc || ''}\n${jsparams.join('')}${indent} */\n`;
             else defs.func += `\n${indent}/** ${func.shortDesc} */\n`;
 
-            defs.func += `${indent}${name}(${params.join(', ')}): ${rtype || 'void'};\n`;
+            defs.func += `${indent}${name}${args}: ${rtype || 'void'};\n`;
         }
 
         if (!func.subf) return defs;
