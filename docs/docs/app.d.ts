@@ -414,10 +414,10 @@ class DsApp {
 	/** Returns a new File object */
 	CreateFile(file: str_ptf, mode: "r"|"w"|"rw"): DsFile;
 
-	/** #CreateGame.md */
+	/** CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script */
 	CreateGame(file: str_ptf, orient: "Portrait"|"Landscape"): void;
 
-	/** #CreateGameView.md */
+	/** The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics */
 	CreateGameView(width: num_frc, height: num_frc, options: str_com): void;
 
 	/**
@@ -482,7 +482,7 @@ class DsApp {
 	CreateNetClient(type: "UDP"|"TCP"|"Raw"): DsNetClient;
 
 	/**
-	 * #CreateNode.md
+	 * Creates a NodeJS background process with all the functionality of common node.js
 	 * @param paths NODE_PATH env variable
 	 * @param options 
  	 * &emsp; `extended` - allow app methods in default main instance\
@@ -643,7 +643,7 @@ class DsApp {
 	 */
 	CreateWebView(width: num_frc, height: num_frc, options: string | ("AllowZoom"|"AutoZoom"|"ClearCookies"|"FillX/Y"|"Local"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Persist"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser"|"Wide")[], zoom: num_prc): DsWebView;
 
-	/** #CreateWizard.md */
+	/** The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user */
 	CreateWizard(title: str, width: num_frc, height: num_frc, callback: (layout: DsLayout, page: num_int) => void, options: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"TouchModal"|"NoTouch")[]): void;
 
 	/** Returns a new YesNoDialog object */
@@ -682,7 +682,7 @@ class DsApp {
 	/** Download a file with Androids download manager */
 	DownloadFile(source: str, destination: str_pth, title: str, description: str, options: "NoDialog"): void;
 
-	/** #EnableBackKey.md */
+	/** Allows to en- or disable the devices back key */
 	EnableBackKey(enable: bin): void;
 
 	/** Show an error message */
@@ -726,7 +726,7 @@ class DsApp {
 	/** Returns a string of all known account names on the device separated with comma ',' */
 	GetAccounts(): str_com;
 
-	/** #GetActivities.md */
+	/** GetActivities returns a list of object of currently running activities */
 	GetActivities(): { label: str, packageName: str, className: str }[];
 
 	/** Convert language name to its code or get current language code */
@@ -832,7 +832,7 @@ class DsApp {
 	GetJoystickName(id: num_int): str;
 
 	/**
-	 * #GetJoystickState.md
+	 * Returns the state of a connected joystick
 	 * @param key A|B|C|X|Y|Z|R1|L1|Left|Right|Up|Down|Start|ThumbLeft|ThumbRight|axis-0..9|btn-1..12
 	 */
 	GetJoystickState(id: num_int, key: str): num;
@@ -892,7 +892,7 @@ class DsApp {
 	GetPath(): str_pth;
 
 	/**
-	 * #GetPermission.md
+	 * GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder
 	 * @param type 
  	 * &emsp; `pid`
 	 */
@@ -1265,7 +1265,7 @@ class DsApp {
 	SendImage(file: str_pfa, choose: str): void;
 
 	/**
-	 * #SendIntent.md
+	 * Intens can be used to perform an operation between different applications or activities
 	 * @param action android.intent.action.*
 	 * @param category android.intent.category.*
 	 * @param extras 

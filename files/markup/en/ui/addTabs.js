@@ -3,8 +3,8 @@
 
 /** # addTabs #
  * @brief addTabs
- * 
- * $$ ui.addTabs(parent, list, options, width, height) $$ 
+ * @abbrev tab
+ * $$ ui.addTabs(parent, list, options, width, height) $$
  * @param {obj} parent The parent layout where to add the Tabs Component.
  * @param {lst} list An array of tab names.
  * @param {str_com} options Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
@@ -389,7 +389,7 @@ These are the setter and getter properties for the addTabs Component.
 // ------------- SAMPLES ------------- 
 
 
-    
+
 /**
 @sample Basic
 class Main extends App
@@ -431,9 +431,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Icon
 class Main extends App
@@ -479,9 +479,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Swipeable tabs
 class Main extends App
@@ -523,9 +523,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Open tabs dynamically
 class Main extends App
@@ -586,9 +586,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Icon only
 class Main extends App
@@ -635,9 +635,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Custom colors and sizes
 class Main extends App
@@ -665,9 +665,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -692,9 +692,9 @@ def OnStart():
 
     ui.addText(main, text, "Justify", 0.8)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Icon
 from hybrid import ui
@@ -735,9 +735,9 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Swipeable tabs
 from hybrid import ui
@@ -774,9 +774,9 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Open tabs dynamically
 from hybrid import ui
@@ -826,12 +826,11 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Icon only
 
  */
-    
-            
+

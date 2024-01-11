@@ -3,8 +3,8 @@
 
 /** # addDivider #
  * @brief addDivider
- * 
- * $$ ui.addDivider(parent, width, options) $$ 
+ * @abbrev div
+ * $$ ui.addDivider(parent, width, options) $$
  * @param {obj} parent The layour where to add the divider.
  * @param {num} width Fraction of the screen width. Default is 1.
  * @param {str} options A comma separated Divider options. Values can be `Inset`
@@ -211,7 +211,7 @@ These are the setter and getter properties for the addDivider Component.
 // ------------- SAMPLES ------------- 
 
 
-    
+
 /**
 @sample Basic
 class Main extends App
@@ -238,9 +238,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -264,5 +264,4 @@ def OnStart():
 
     ui.addText(main, text, "Justify", 0.8)
  */
-    
-            
+

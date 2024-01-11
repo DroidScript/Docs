@@ -149,7 +149,7 @@ class DsMUI {
 	AddAlertSimple(text: str, btnText: str, color: str_col): MuiAlertSimple;
 
 	/**
-	 * #AddAppBar.md
+	 * Adds an appbar on a given layout
 	 * @param p1 Title text|Hint
 	 * @param p2 Material Icon
 	 * @param options 
@@ -343,7 +343,7 @@ class DsMUI {
 	/** Adds a picker dialog such as time, date or color */
 	AddPicker(parent: DsTextEdit, options: "Date"|"Color"|"Time"): MuiPicker;
 
-	/** #AddRadio.md */
+	/** Adds a radio material input */
 	AddRadio(parent: DsLayout, list: string | ("strings")[], width: num, height: num, options: string | ("Buttons"|"Material"|"Normal")[], p1: "color"|"orientation", color: str_col, backColor: str_col): MuiRadio;
 
 	/**
@@ -469,7 +469,7 @@ class DsMUI {
 	AddTextAreaOutlineA(parent: DsLayout, width: num, height: num, hint: str, label: bin, color: str_col, backColor: str_col): MuiTextAreaOutlineA;
 
 	/**
-	 * #AddTextEdit.md
+	 * Adds a TextEdit control to a given layout
 	 * @param options outline|filled|unique|search|active|icon and for icon can be  left|right
 	 * @param p1 See corresponding MUI TextEdit
 	 * @param p2 See corresponding MUI TextEdit
@@ -587,7 +587,7 @@ class DsMUI {
 	 */
 	AddTimePicker(parent: DsTextEdit, hour: num, minute: num, color: str_col): MuiTimePicker;
 
-	/** #colors.md */
+	/** MUI colors are accessible through the **colors** property of the MUI object */
 	colors: obj;
 
 	/**
@@ -665,7 +665,7 @@ class DsMUI {
 	CreateButtonToggle(text: str, width: num_frc, height: num_frc, value: bin, callback: () => void, color: str_col, backColor: str_col): MuiButtonToggle;
 
 	/**
-	 * #CreateCard.md
+	 * A material implementation of a card
 	 * @param options 
  	 * &emsp; `title`\
  	 * &emsp; `body`\
@@ -744,7 +744,7 @@ class DsMUI {
 	CreateFABOutline(icon: str, color: str_col, backColor: str_col): MuiFABOutline;
 
 	/**
-	 * #CreateLayout.md
+	 * It is just the **CreateLayout** method of DroidScript with predefined values on background color just to be consistent on MUI theming
 	 * @param options Comma separated DroidScript layout options
 	 */
 	CreateLayout(type: "Linear"|"Absolute"|"Frame"|"Card", options: str): MuiLayout;
@@ -759,7 +759,7 @@ class DsMUI {
 	CreateListDialog(title: str, list: lst_obj, color: str_col, bottom: bin): MuiListDialog;
 
 	/**
-	 * #CreateListModern.md
+	 * A modern implementation of list using the available controls of DroidScript
 	 * @param list An array of object elements. See list example
 	 */
 	CreateListModern(list: lst, width: num, height: num, options: "Initial"|"Material"|"Avatar"|"RightIcon"|"RightNote"|"Selectable"): MuiListModern;
@@ -781,7 +781,7 @@ class DsMUI {
 	CreateMenuWithIcon(list: str, width: num_frc, height: num_frc, position: "Top"|"Left"|"Top"|"Right"|"Bottom"|"Left"|"Bottom"|"Right"): MuiMenuWithIcon;
 
 	/**
-	 * #CreateModal.md
+	 * A modal is a popup with more controls that can be added
 	 * @param body Body text. If you want to customize the modal layout pass an empty string.
 	 * @param okTxt Truthy button text
 	 * @param cancelTxt Falsy button text
@@ -824,7 +824,7 @@ class DsMUI {
 	CreateSwitchSettings(text: str, width: num_frc, height: num_frc, value: bin, color: str_col, backColor: str_col): MuiSwitchSettings;
 
 	/**
-	 * #CreateTabFixed.md
+	 * Creates a simple fixed tab
 	 * @param options DS layout options
 	 */
 	CreateTabFixed(title: string | ("titles")[], width: num, height: num, options: str_com, color: str_col, animation: bin): MuiTabFixed;
@@ -866,7 +866,7 @@ class DsMUI {
 	CreateTEOutlineIconRight(width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTEOutlineIconRight;
 
 	/**
-	 * #CreateTESearchElegant.md
+	 * Creates a customizable elegant text input
 	 * @param hint Hint text
 	 * @param icon Material icon font
 	 */
@@ -1015,7 +1015,7 @@ class DsMUI {
 	 */
 	CreateTimePicker(hour: num, minute: num, color: str_col): MuiTimePicker;
 
-	/** #fonts.md */
+	/** MUI uses the free Roboto font family downloaded from <a href='www.fonts.google.com'>Google Fonts</a> as its main font for all of the controls */
 	fonts: obj;
 
 	/** Show a menu on a given control */

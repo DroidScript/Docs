@@ -253,7 +253,7 @@
 		"show": "Show",
 		"hide": "Hide"
 	},
-	"dr": {
+	"div": {
 		"setOnTouch": "SetOnTouch",
 		"setOnContextMenu": "SetOnContextMenu",
 		"animate": "Animate",
@@ -650,7 +650,7 @@
 		"bringForward": "BringForward",
 		"sendBackward": "SendBackward"
 	},
-	"s": {
+	"tab": {
 		"setOnChange": "SetOnChange",
 		"setOnTouch": "SetOnTouch",
 		"setTabs": "SetTabs",
@@ -783,7 +783,7 @@
 		"bringForward": "BringForward",
 		"sendBackward": "SendBackward"
 	},
-	"lrp": {
+	"col": {
 		"getValue": "GetValue"
 	},
 	"pop": {

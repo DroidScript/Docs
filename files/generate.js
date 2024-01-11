@@ -412,6 +412,10 @@ function generateTips({ base, scope }, state) {
 
     for (const name of keys(scope).filter(nothidden)) {
         const s = scope[name];
+        s.name ||= name;
+        if (!s.shortDesc && s.desc?.startsWith("#")) s.desc = unwrapDesc(s.desc, state);
+        fillMissingFuncProps(s);
+
         if (!s.shortDesc || !s.subf || !s.abbrev) continue;
         tips[state.curScope][name] = s.shortDesc;
 
@@ -422,6 +426,8 @@ function generateTips({ base, scope }, state) {
 
         for (const j of keys(tsubf).filter(nothidden)) {
             const t = unwrapBaseFunc(tsubf[j], base);
+            t.name ||= j;
+            fillMissingFuncProps(t);
             if (t.shortDesc) tctrl[j] = t.shortDesc;
         }
     }
@@ -454,7 +460,7 @@ function generateTsx(inpt, state) {
     state.curDoc = getDstDir(D_LANG, state, state.curScope + '.d.ts');
     console.log(`generating ${state.lang}.${state.curScope}.tsx`);
 
-    const defs = generateDefinitionFile(state.curScope, inpt);
+    const defs = generateDefinitionFile(state.curScope, inpt, state);
     app.WriteFile(state.curDoc, defs);
 }
 
@@ -481,8 +487,8 @@ const tsxTypes = {
     uio: "UIObject"
 };
 
-/** @type {(scopeName: string, inpt: DSInput) => string} */
-function generateDefinitionFile(scopeName, inpt) {
+/** @type {(scopeName: string, inpt: DSInput, state: GenState) => string} */
+function generateDefinitionFile(scopeName, inpt, state) {
     /** @type {Obj<string>} */
     const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "Ui", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx", swo: "Sw" };
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
@@ -671,6 +677,7 @@ function generateDefinitionFile(scopeName, inpt) {
         };
 
         dfunc.name ||= name;
+        if (dfunc.desc?.startsWith("#")) dfunc.desc = unwrapDesc(dfunc.desc, state);
         const func = fillMissingFuncProps(dfunc);
         // Fix MUI return types
         if (scopeName === "MUI" && func.name?.match(regConPrefix))

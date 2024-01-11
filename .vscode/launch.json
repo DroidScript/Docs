@@ -84,7 +84,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "args": ["-d"],
+            "args": ["-c", "-n", "-d", "-t"],
             "program": "${workspaceFolder}/files/generate.js"
         },
         {
