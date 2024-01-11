@@ -137,8 +137,7 @@ class DsGfx {
 	/** Adds a background to the game */
 	AddBackground(obj: GfxBackground): void;
 
-	/** Adds a basic shape object to the game.
-	 * See Also: CreateCircle, CreateEllipse, CreateRectangle, CreatePolygon */
+	/** Adds a basic shape object to the game */
 	AddGraphic(obj: obj, x: num_frc, y: num_frc, w: num_frc, h: num_frc, angle: num_rad, alpha: num_frc): void;
 
 	/** Adds physics to the game */
@@ -266,10 +265,10 @@ class DsGfx {
 	SetOnCollide(callback: (a: gvo, b: gvo) => void): void;
 
 	/** Define a KeyDown callback */
-	SetOnKeyDown(callback: (key: "LETTER"|"Shift"|"Ctrl"|"Alt"|"Meta"|"...") => void): void;
+	SetOnKeyDown(callback: (key: str) => void): void;
 
 	/** Define a KeyUp callback */
-	SetOnKeyUp(callback: (key: "LETTER"|"Shift"|"Ctrl"|"Alt"|"Meta"|"...") => void): void;
+	SetOnKeyUp(callback: (key: str) => void): void;
 
 	/** Set callback for touch down */
 	SetOnTouchDown(callback: (x: num_frc|fractions, y: num_frc|fractions) => void): void;
@@ -360,18 +359,198 @@ class GfxBackground {
 
 
 class GfxCircle {
+
+	/** The alpha value */
+	alpha: num_frc;
+
+	/** The rotation fraction */
+	angle: num_frc;
+
+	/** Check if the sprite contains a point */
+	Contains(x: num_frc, y: num_frc): bin;
+
+	/** Extra properties */
+	data: obj;
+
+	/** PIXI graphic */
+	graphic: obj;
+
+	/** The object's group */
+	group: str;
+
+	/** The objects height */
+	height: num_frc;
+
+	/** Rotation x pivot */
+	pivotX: num_frc;
+
+	/** Rotation y pivot */
+	pivotY: num_frc;
+
+	/** Horizontal scaling */
+	scaleX: num_fac;
+
+	/** Vertical scaling */
+	scaleY: num_fac;
+
+	/** Set 2d transformation */
+	SetMatrix(mtx: Matrix): void;
+
+	/** Updates internal properties */
+	Update(): void;
+
+	/** Visibility state */
+	visible: bin;
+
+	/** Object width */
+	width: num;
 }
 
 
 class GfxEllipse {
+
+	/** The alpha value */
+	alpha: num_frc;
+
+	/** The rotation fraction */
+	angle: num_frc;
+
+	/** Check if the sprite contains a point */
+	Contains(x: num_frc, y: num_frc): bin;
+
+	/** Extra properties */
+	data: obj;
+
+	/** PIXI graphic */
+	graphic: obj;
+
+	/** The object's group */
+	group: str;
+
+	/** The objects height */
+	height: num_frc;
+
+	/** Rotation x pivot */
+	pivotX: num_frc;
+
+	/** Rotation y pivot */
+	pivotY: num_frc;
+
+	/** Horizontal scaling */
+	scaleX: num_fac;
+
+	/** Vertical scaling */
+	scaleY: num_fac;
+
+	/** Set 2d transformation */
+	SetMatrix(mtx: Matrix): void;
+
+	/** Updates internal properties */
+	Update(): void;
+
+	/** Visibility state */
+	visible: bin;
+
+	/** Object width */
+	width: num;
 }
 
 
 class GfxPolygon {
+
+	/** The alpha value */
+	alpha: num_frc;
+
+	/** The rotation fraction */
+	angle: num_frc;
+
+	/** Check if the sprite contains a point */
+	Contains(x: num_frc, y: num_frc): bin;
+
+	/** Extra properties */
+	data: obj;
+
+	/** PIXI graphic */
+	graphic: obj;
+
+	/** The object's group */
+	group: str;
+
+	/** The objects height */
+	height: num_frc;
+
+	/** Rotation x pivot */
+	pivotX: num_frc;
+
+	/** Rotation y pivot */
+	pivotY: num_frc;
+
+	/** Horizontal scaling */
+	scaleX: num_fac;
+
+	/** Vertical scaling */
+	scaleY: num_fac;
+
+	/** Set 2d transformation */
+	SetMatrix(mtx: Matrix): void;
+
+	/** Updates internal properties */
+	Update(): void;
+
+	/** Visibility state */
+	visible: bin;
+
+	/** Object width */
+	width: num;
 }
 
 
 class GfxRectangle {
+
+	/** The alpha value */
+	alpha: num_frc;
+
+	/** The rotation fraction */
+	angle: num_frc;
+
+	/** Check if the sprite contains a point */
+	Contains(x: num_frc, y: num_frc): bin;
+
+	/** Extra properties */
+	data: obj;
+
+	/** PIXI graphic */
+	graphic: obj;
+
+	/** The object's group */
+	group: str;
+
+	/** The objects height */
+	height: num_frc;
+
+	/** Rotation x pivot */
+	pivotX: num_frc;
+
+	/** Rotation y pivot */
+	pivotY: num_frc;
+
+	/** Horizontal scaling */
+	scaleX: num_fac;
+
+	/** Vertical scaling */
+	scaleY: num_fac;
+
+	/** Set 2d transformation */
+	SetMatrix(mtx: Matrix): void;
+
+	/** Updates internal properties */
+	Update(): void;
+
+	/** Visibility state */
+	visible: bin;
+
+	/** Object width */
+	width: num;
 }
 
 
@@ -397,8 +576,20 @@ class GfxSprite {
 	/** Incicates if added to game */
 	added: bin;
 
+	/** The alpha value */
+	alpha: num_frc;
+
+	/** The rotation fraction */
+	angle: num_frc;
+
 	/** Sprite aspect ratio */
 	aspect: num;
+
+	/** Check if the sprite contains a point */
+	Contains(x: num_frc, y: num_frc): bin;
+
+	/** Extra properties */
+	data: obj;
 
 	/** Flip sprite */
 	Flip(horiz: bin, vert: bin): void;
@@ -409,6 +600,21 @@ class GfxSprite {
 	/** Go to animation frame */
 	Goto(frame: num_int): void;
 
+	/** The object's group */
+	group: str;
+
+	/** The objects height */
+	height: num_frc;
+
+	/** Pause tweening */
+	PauseTween(): void;
+
+	/** Rotation x pivot */
+	pivotX: num_frc;
+
+	/** Rotation y pivot */
+	pivotY: num_frc;
+
 	/** Play sprite animation */
 	Play(startFrame: num_int, speed: num_int, loop: bin): void;
 
@@ -418,8 +624,20 @@ class GfxSprite {
 	/** Play to animation frame */
 	PlayTo(frame: num_int): void;
 
+	/** Resume tweening */
+	PlayTween(): void;
+
+	/** Horizontal scaling */
+	scaleX: num_fac;
+
+	/** Vertical scaling */
+	scaleY: num_fac;
+
 	/** Set animation looping */
 	SetLoop(loop: bin): void;
+
+	/** Set 2d transformation */
+	SetMatrix(mtx: Matrix): void;
 
 	/** Set animation speed */
 	SetPlaySpeed(speed: num): void;
@@ -436,11 +654,42 @@ class GfxSprite {
 	/** Change sprite texture */
 	SetTexture(tx: GfxTexture): void;
 
+	/** Setup tween methods */
+	SetTween(): void;
+
+	/** Start tween */
+	StartTween(): void;
+
+	/** Update tween to now */
+	StepTween(): void;
+
 	/** Stop animation */
 	Stop(): void;
 
 	/** Stop animation on frame */
 	StopAt(frame: num_int): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Updates internal properties */
+	Update(): void;
+
+	/** Visibility state */
+	visible: bin;
+
+	/** Object width */
+	width: num;
 
 	/** X-position on the screen */
 	x: num_frv;
@@ -452,6 +701,9 @@ class GfxSprite {
 
 class GfxSpriteSheet {
 
+	/** Extra properties */
+	data: obj;
+
 	/** Loaded indicator */
 	loaded: bin;
 }
@@ -462,11 +714,47 @@ class GfxText {
 	/** Multiline text alignment */
 	align: "left"|"center"|"right";
 
+	/** The alpha value */
+	alpha: num_frc;
+
+	/** The rotation fraction */
+	angle: num_frc;
+
+	/** Check if the sprite contains a point */
+	Contains(x: num_frc, y: num_frc): bin;
+
 	/** Source file */
 	file: str_pth;
 
 	/** Pixel font size */
 	fontSize: num_pxl;
+
+	/** The objects height */
+	height: num_frc;
+
+	/** Rotation x pivot */
+	pivotX: num_frc;
+
+	/** Rotation y pivot */
+	pivotY: num_frc;
+
+	/** Horizontal scaling */
+	scaleX: num_fac;
+
+	/** Vertical scaling */
+	scaleY: num_fac;
+
+	/** Set 2d transformation */
+	SetMatrix(mtx: Matrix): void;
+
+	/** Updates internal properties */
+	Update(): void;
+
+	/** Visibility state */
+	visible: bin;
+
+	/** Object width */
+	width: num;
 }
 
 

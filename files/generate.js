@@ -391,7 +391,9 @@ function generateDocs(inpt, state) {
         }
     }
 
+    resetGlobals(state);
     if (makeTips && "tips".match(regGen)) generateTips(inpt, state);
+    resetGlobals(state);
     if (makeTsx && "tsx".match(regGen)) generateTsx(inpt, state);
 }
 
@@ -419,7 +421,7 @@ function generateTips({ base, scope }, state) {
         tips[s.abbrev] = tctrl;
 
         for (const j of keys(tsubf).filter(nothidden)) {
-            const t = unwrapBaseFunc(tsubf[j], 'md ref', base);
+            const t = unwrapBaseFunc(tsubf[j], base);
             if (t.shortDesc) tctrl[j] = t.shortDesc;
         }
     }
@@ -431,12 +433,11 @@ function generateTips({ base, scope }, state) {
 
 /**
  * @param {string | UndefinedPartial<DSMethod>} met
- * @param {string} type
  * @param {DSBase | null} base
  */
-function unwrapBaseFunc(met, type, base) {
+function unwrapBaseFunc(met, base) {
     while (typeof met === "string") {
-        if (!met.startsWith('#')) Throw(Error(`${type} must have # prefix. got '${met}'`));
+        if (!met.startsWith('#')) Throw(Error(`basefunc must have # prefix. got '${met}'`));
         if (/[a-z]/i.test(met[1])) met = met.slice(1);
         if (!base || !base[met]) Throw(Error("basefunc " + met + " not found!"));
         met = base[met];
@@ -453,7 +454,7 @@ function generateTsx(inpt, state) {
     state.curDoc = getDstDir(D_LANG, state, state.curScope + '.d.ts');
     console.log(`generating ${state.lang}.${state.curScope}.tsx`);
 
-    const defs = generateDefinitionFile(state.curScope, inpt.scope);
+    const defs = generateDefinitionFile(state.curScope, inpt);
     app.WriteFile(state.curDoc, defs);
 }
 
@@ -480,21 +481,21 @@ const tsxTypes = {
     uio: "UIObject"
 };
 
-/** @type {(scopeName: string, scope: Obj<DSFunction | string>) => string} */
-function generateDefinitionFile(scopeName, scope) {
+/** @type {(scopeName: string, inpt: DSInput) => string} */
+function generateDefinitionFile(scopeName, inpt) {
     /** @type {Obj<string>} */
     const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "Ui", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx", swo: "Sw" };
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
 
-    const typeDecls = Object.entries(Object.assign(conf.tname, conf.tdesc))
+    const typeDecls = Object.entries({ ...conf.tname, ...conf.tdesc })
         .filter(([name, _]) => name.match(/^[a-z]/i))
         .map(([name, desc]) => `/** ${desc} */\ndeclare type ${name} = ${makeType(name, true).sub};\n`);
 
     let definition = "";
     let classDefinition = "";
-    for (const funcName in scope) {
-        const func = scope[funcName];
+    for (const funcName in inpt.scope) {
+        const func = inpt.scope[funcName];
         if (typeof func !== 'object') continue;
 
         const defs = processFunction(funcName, scopeName, func, "\t");
@@ -537,25 +538,30 @@ function generateDefinitionFile(scopeName, scope) {
                     case "str":
                     case "bin": {
                         const types = replaceTsxTypes(type.desc, type.main);
+                        if (!types[0]) return type;
 
-                        if (types[0] && !types[0].includes(" ")) {
-                            let tdesc = types[0]
-                                .replace(/([^\\]|^)\\(.)/g, (m, e, /** @type {string} */ c) =>
-                                    `${e || ''}§${(special[c] || c).charCodeAt(0)}§`)
-                                .replace(/§(\d+?)§/g, (m, /** @type {number} */ c) =>
-                                    String.fromCharCode(Number(c)))
-                                .split(/[,|]/);
-
-                            if (type.main === "str") tdesc = tdesc.map(s => `"${s}"`);
-                            if (tdesc.length <= 1 && !/^[a-z"/]+$/i.test(tdesc[0]))
-                                return type;
-
-                            type.desc = types[1];
-                            if (type.sub === "str_com")
-                                type.sub = `string | (${tdesc.join("|")})[]`;
-                            else
-                                type.sub = tdesc.join("|");
+                        if (types[0].match(/ |\.\./)) {
+                            type.desc = types[0];
+                            return type;
                         }
+
+                        let tdesc = types[0]
+                            .replace(/([^\\]|^)\\(.)/g, (m, e, /** @type {string} */ c) =>
+                                `${e || ''}§${(special[c] || c).charCodeAt(0)}§`)
+                            .replace(/§(\d+?)§/g, (m, /** @type {number} */ c) =>
+                                String.fromCharCode(Number(c)))
+                            .split(/[,|]/);
+
+                        if (type.main === "str") tdesc = tdesc.map(s => `"${s}"`);
+                        if (tdesc.length <= 1 && !/^[a-z"/]+$/i.test(tdesc[0]))
+                            return type;
+
+                        type.desc = types[1];
+                        if (type.sub === "str_com")
+                            type.sub = `string | (${tdesc.join("|")})[]`;
+                        else
+                            type.sub = tdesc.join("|");
+
                         return type;
                     }
                     case "lst":
@@ -670,6 +676,9 @@ function generateDefinitionFile(scopeName, scope) {
         if (scopeName === "MUI" && func.name?.match(regConPrefix))
             func.retval = "muo-" + func.name?.replace(regConPrefix, '');
 
+        if (!func.shortDesc?.trim())
+            func.shortDesc = func.desc.split(/\.\s/)[0];
+
         func.shortDesc = func.shortDesc
             .replace(/@/g, '')
             .replace(/\n/g, `\n${indent} * `)
@@ -729,13 +738,13 @@ function generateDefinitionFile(scopeName, scope) {
         // subfunctions for classes
         defs.class += `\nclass ${objPfx[scopeName]}${name.replace(regConPrefix, "")} {\n`;
         for (const subFuncName in func.subf) {
-            const met = func.subf[subFuncName];
-            if (typeof met === 'object') {
-                const sdefs = processFunction(subFuncName, func.abbrev || "undefined", met, indent);
-                defs.class += sdefs.func;
-                for (const i in sdefs.extra)
-                    defs.extra[i] = (defs.extra[i] || "") + sdefs.extra[i];
-            }
+            let met = func.subf[subFuncName];
+            if (typeof met === "string") met = unwrapBaseFunc(met, inpt.base);
+
+            const sdefs = processFunction(subFuncName, func.abbrev || "undefined", met, indent);
+            defs.class += sdefs.func;
+            for (const i in sdefs.extra)
+                defs.extra[i] = (defs.extra[i] || "") + sdefs.extra[i];
         }
 
         for (const obj in defs.extra) {
@@ -1005,7 +1014,7 @@ function fillMissingFuncProps(f) {
     }
 
     if (!f.shortDesc?.trim())
-        f.shortDesc = f.desc;
+        f.shortDesc = f.desc.split(/\.\s/)[0];
 
     // start upper case without trailing dot
     f.shortDesc = f.shortDesc.charAt(0).toUpperCase() +
@@ -1065,7 +1074,7 @@ function getDocData(inpt, state, f, useAppPop = false) {
         let met = f.subf[mkeys[k]], retval = "";
 
         // load base func
-        met = unwrapBaseFunc(met, "basefunc", base);
+        met = unwrapBaseFunc(met, base);
 
         state.curSubf = met.name = met.name || mkeys[k];
         // force use of entry name

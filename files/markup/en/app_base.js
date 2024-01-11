@@ -206,7 +206,7 @@
  * 
  * <premium>
  * @param {str} name 
- * @param {lst} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+ * @param {str_com} types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
  * @param {str} p1 
  * @param {str} p2 
  * @param {str} p3 

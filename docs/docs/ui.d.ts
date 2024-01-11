@@ -433,7 +433,7 @@ class UI {
 
 	/**
 	 * AddTimePicker
-	 * @param time A default time value to which the timepicker begins. Value is of the form `HH:mm`
+	 * @param time A default time value to which the timepicker begins. Value is of the form `HH\:mm`
 	 * @param options `Portrait` `24H` `12H`
 	 * @return TimePicker Component
 	 */
@@ -472,7 +472,7 @@ class UI {
 	 * ShowDateTimePicker
 	 * @param date Default value for date of the form "MM/DD/YYYY"
 	 * @param time Default value for time of the form "HH/MM/SS"
-	 * @param format The format value that will be pass to callback. Formats can be of the form \n `MM/DD/YYYY HH:MM:SS` `MM:DD:YYYY HH:MM:SS`
+	 * @param format The format value that will be pass to callback. Formats can be of the form \n `MM/DD/YYYY HH:SS` `MM:YYYY HH:SS`
 	 * @return DateTimePicker Component
 	 */
 	showDateTimePicker(callback: () => void, date: str, time: str, format: str): obj;

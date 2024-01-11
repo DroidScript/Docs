@@ -135,14 +135,14 @@ declare type str_url = string;
 class DsMUI {
 
 	/**
-	 * Adds a nice pop-up at the top. See CreateAlert for a full documentation
+	 * Adds a nice pop-up at the top
 	 * @param text Popup text
 	 * @param icon Material icon
 	 */
 	AddAlert(text: str, icon: str, color: str_col): MuiAlert;
 
 	/**
-	 * Adds a simple alert with a single button. See CreateAlertSimple for a full documentation
+	 * Adds a simple alert with a single button
 	 * @param text Text of the alert
 	 * @param btnText Button text. Default is OKAY
 	 */
@@ -158,7 +158,7 @@ class DsMUI {
 	AddAppBar(parent: DsLayout, p1: str, p2: str, p3: "controls"|"color", options: string | ("Elegant"|"Modern"|"Default"|"Round"|"Rectangle")[]): MuiAppBar;
 
 	/**
-	 * Adds an elegant appbar on a given layout. See CreateAppBarElegant for a full documentation
+	 * Adds an elegant appbar on a given layout
 	 * @param title Title text
 	 * @param leadingIcon Material icon font
 	 * @param options material icon font for the right controls
@@ -166,57 +166,57 @@ class DsMUI {
 	AddAppBarElegant(parent: DsLayout, title: str, leadingIcon: str, options: str_com): MuiAppBarElegant;
 
 	/**
-	 * Adds a modern appbar on a given layout. See CreateAppBarModern for a full documentation
+	 * Adds a modern appbar on a given layout
 	 * @param hint Hint text for the search input
 	 * @param controlIcon Material font for the control icon
 	 */
 	AddAppBarModern(parent: DsLayout, hint: str, controlIcon: str, options: "Round"|"Rectangle", color: str_col): MuiAppBarModern;
 
 	/**
-	 * Adds a banner dialog. See CreateBanner for a full documentation
+	 * Adds a banner dialog
 	 * @param okText Truthy button text
 	 * @param cancelText Falsey button text
 	 */
 	AddBanner(text: str, okText: str, cancelText: str): MuiBanner;
 
-	/** Adds a MUI button to a given layout. See CreateButtonElegant, CreateButtonFlat, CreateButtonRaised, CreateButtonRaisedO, CreateButtonRound, and CreateButtonRoundO for full documentation */
+	/** Adds a MUI button to a given layout */
 	AddButton(parent: DsLayout, text: str, width: num_frc, height: num_frc, options: "raised"|"raisedo"|"roundo"|"round"|"elegant"|"outlined"|"contained"|"text"|"flat"): MuiButton;
 
-	/** Adds a contained material button on a given layout. See CreateButtonContained for full documentation */
+	/** Adds a contained material button on a given layout */
 	AddButtonContained(parent: DsLayout, text: str, width: num_frc, height: num_frc): MuiButtonContained;
 
-	/** Add an elegant button on a given layout. See CreateButtonElegant for full documentation */
+	/** Add an elegant button on a given layout */
 	AddButtonElegant(parent: DsLayout, text: str, width: num_frc, height: num_frc, color: str_col): MuiButtonElegant;
 
-	/** Adds a flat button on given layout. See CreateButtonFlat for full documentation */
+	/** Adds a flat button on given layout */
 	AddButtonFlat(parent: DsLayout, text: str, width: num_frc, height: num_frc, color: str_col, backColor: str_col): MuiButtonFlat;
 
-	/** An outlined material button. See CreateButtonOutlined for full documentation */
+	/** An outlined material button */
 	AddButtonOutlined(parent: DsLayout, text: str, width: num_frc, height: num_frc): MuiButtonOutlined;
 
-	/** Adds a raised material button on a given layout. See CreateButtonRaised for full documentation */
+	/** Adds a raised material button on a given layout */
 	AddButtonRaised(parent: DsLayout, text: str, width: num_frc, height: num_frc, color: str_col, txtcolor: str_col): MuiButtonRaised;
 
-	/** Adds an outlined material raised button on a given layout. See CreateButtonRaisedO for full documentation */
+	/** Adds an outlined material raised button on a given layout */
 	AddButtonRaisedO(parent: DsLayout, text: str, width: num_frc, height: num_frc, color: str_col, backColor: str_col): MuiButtonRaisedO;
 
-	/** Adds a round material button on a given layout. See CreateButtonRound for full documentation */
+	/** Adds a round material button on a given layout */
 	AddButtonRound(parent: DsLayout, text: str, width: num_frc, height: num_frc, color: str_col, txtcolor: str_col): MuiButtonRound;
 
-	/** Adds an outlined material round button on a given layout. See CreateButtonRoundO for full documentation */
+	/** Adds an outlined material round button on a given layout */
 	AddButtonRoundO(parent: DsLayout, text: str, width: num_frc, height: num_frc, color: str_col, backColor: str_col): MuiButtonRoundO;
 
-	/** Adds a text button on a given layout. See CreateButtonFlat for full documentation */
+	/** Adds a text button on a given layout */
 	AddButtonText(parent: DsLayout, text: str, width: num_frc, height: num_frc): MuiButtonText;
 
 	/**
-	 * Adds a toggleable button on a given layout. See CreateButtonToggle for a full documentation
+	 * Adds a toggleable button on a given layout
 	 * @param text Button text
 	 */
 	AddButtonToggle(parent: DsLayout, text: str, width: num_frc, height: num_frc, value: bin, callback: () => void): MuiButtonToggle;
 
 	/**
-	 * Adds a card on a given layout. See CreateCard for a full documentation
+	 * Adds a card on a given layout
 	 * @param options 
  	 * &emsp; `title`\
  	 * &emsp; `body`\
@@ -233,13 +233,13 @@ class DsMUI {
 	AddCard(parent: DsLayout, options: {title: str, body: str, image: str_ptf, buttonText: str_com, color: str, width: num_frc, dividerAvatar: bin, dividerBody: bin, avatar: str_pth, avatarOnTop: bin, buttonType: "raised"|"raisedoutline"|"round"|"roundoutline"|"flat"}): MuiCard;
 
 	/**
-	 * Adds an MUI Checkbox on a given layout. See CreateCheckbox for a full documentation
+	 * Adds an MUI Checkbox on a given layout
 	 * @param list A comma separated string
 	 */
 	AddCheckbox(parent: DsLayout, list: lst, width: num_frc, height: num_frc, color: str_col): MuiCheckbox;
 
 	/**
-	 * Adds an MUI checklist dialog. See CreateCheckList for a full documentation
+	 * Adds an MUI checklist dialog
 	 * @param list An array of objects of the form {name: string, check: boolean}
 	 */
 	AddCheckList(parent: DsTextEdit, title: str, list: lst_obj, color: str_col, bottom: bin): MuiCheckList;
@@ -257,7 +257,7 @@ class DsMUI {
 	AddDataTable(parent: DsLayout, columns: lst, values: lst, width: num, height: num, options: string | ("Selectable")[]): MuiDataTable;
 
 	/**
-	 * Adds a date picker dialog. See CreateDatePicker for a full documentation
+	 * Adds a date picker dialog
 	 * @param yyyy Full year
 	 * @param mm [0-11]
 	 * @param dd [1-31]
@@ -265,7 +265,7 @@ class DsMUI {
 	AddDatePicker(parent: DsTextEdit, yyyy: num_int, mm: num_int, dd: num_int, color: str_col): MuiDatePicker;
 
 	/**
-	 * Adds a customizable materialize dialog. See CreateDialog for a full documentation
+	 * Adds a customizable materialize dialog
 	 * @param body Body text
 	 * @param okText Truthy button text
 	 * @param cancelText Falsey button text
@@ -273,50 +273,50 @@ class DsMUI {
 	 */
 	AddDialog(title: "Title", body: str, okText: str, cancelText: str, divider: bin): MuiDialog;
 
-	/** Adds a divider to a given layout. See CreateDivider for a full documentation */
+	/** Adds a divider to a given layout */
 	AddDivider(parent: DsLayout, height: Optional): MuiDivider;
 
 	/**
-	 * Adds a floating action button. See CreateFAB, CreateFABElegant and CreateFABOutline for a full documentation
+	 * Adds a floating action button
 	 * @param icon Material icon fonts
 	 */
 	AddFAB(parent: DsLayout, icon: str, color: str_col, options: string | ("outline"|"elegant"|"default")[]): MuiFAB;
 
 	/**
-	 * Adds an elegant floating action button. See CreateFABElegant for a full documentation
+	 * Adds an elegant floating action button
 	 * @param icon Material icon fonts
 	 */
 	AddFABElegant(parent: DsLayout, icon: str, color: str_col): MuiFABElegant;
 
 	/**
-	 * Adds an outlined floating action button on a given layout. See CreateFABOutline for a full documentation
+	 * Adds an outlined floating action button on a given layout
 	 * @param icon Material icon font
 	 */
 	AddFABOutline(parent: DsLayout, icon: str, color: str_col, backColor: str_col): MuiFABOutline;
 
 	/**
-	 * Adds a layout. See CreateLayout for a full documentation
+	 * Adds a layout
 	 * @param options Comma separated DroidScript layout options
 	 */
 	AddLayout(parent: DsLayout, type: "Linear"|"Absolute"|"Frame"|"Card", options: str): MuiLayout;
 
-	/** Adds an MUI control on a given layout. See CreateList, CreateListModern and CreateListSimple for a full documentation */
+	/** Adds an MUI control on a given layout */
 	AddList(parent: DsLayout, list: str, width: num, height: num, options: string | ("simple"|"modern"|"default"|"divider")[]): MuiList;
 
 	/**
-	 * Adds a more customizable list dialog or checklist dialog. See CreateListDialog and CreateCheckList for a full documentation on each type
+	 * Adds a more customizable list dialog or checklist dialog
 	 * @param list An array of objects
 	 */
 	AddListDialog(parent: DsTextEdit, title: str, list: lst, color: str_col, options: string | ("CheckList"|"ListDialog"|"Bottom")[]): MuiListDialog;
 
 	/**
-	 * Adds a ListModern control on a given layout. See CreateListModern for a full documentation
+	 * Adds a ListModern control on a given layout
 	 * @param list An array of object elements. See list example
 	 */
 	AddListModern(parent: DsLayout, list: lst, width: num, height: num, options: "Initial"|"Material"|"Avatar"|"RightIcon"|"RightNote"|"Selectable"): MuiListModern;
 
 	/**
-	 * Adds a simple list for navigation purposes. See CreateListSimple for a full documentation
+	 * Adds a simple list for navigation purposes
 	 * @param list 
  	 * &emsp; `title`\
  	 * &emsp; `icon`\
@@ -328,11 +328,11 @@ class DsMUI {
 	/** Adds a simple menu */
 	AddMenu(list: string | ("list")[], width: num_frc, height: num_frc, position: "Top"|"Left"|"Top"|"Right"|"Bottom"|"Left"|"Bottom"|"Right"): MuiMenu;
 
-	/** MUI menu with material icon font. See CreateMenuWithIcon for a full documentation */
+	/** MUI menu with material icon font */
 	AddMenuWithIcon(list: str, width: num_frc, height: num_frc, position: "Top"|"Left"|"Top"|"Right"|"Bottom"|"Left"|"Bottom"|"Right"): MuiMenuWithIcon;
 
 	/**
-	 * Adds a modal. See CreateModal for a full documentation
+	 * Adds a modal
 	 * @param body Body text. If you want to customize the modal layout pass an empty string.
 	 * @param okTxt Truthy button text
 	 * @param cancelTxt Falsy button text
@@ -340,7 +340,7 @@ class DsMUI {
 	 */
 	AddModal(title: str, body: str, okTxt: str, cancelTxt: str, options: str): MuiModal;
 
-	/** Adds a picker dialog such as time, date or color. See CreateDatePicker, CreateTimePicker and CreateColorPicker for a full documentation */
+	/** Adds a picker dialog such as time, date or color */
 	AddPicker(parent: DsTextEdit, options: "Date"|"Color"|"Time"): MuiPicker;
 
 	/** #AddRadio.md */
@@ -365,14 +365,14 @@ class DsMUI {
 	 */
 	AddSeekBar(parent: DsLayout, value: num, range: num, width: num, color: str_col): MuiSeekBar;
 
-	/** Adds an MUI Switch to a given control. See CreateSwitch for a full documentation */
+	/** Adds an MUI Switch to a given control */
 	AddSwitch(parent: DsLayout, value: bin, color: str_col): MuiSwitch;
 
-	/** Adds an MUI SwitchSettings to a given layout. See CreateSwitchSettings for a full documentation */
+	/** Adds an MUI SwitchSettings to a given layout */
 	AddSwitchSettings(parent: DsLayout, text: str, width: num_frc, height: num_frc, value: bin, color: str_col, backColor: str_col): MuiSwitchSettings;
 
 	/**
-	 * Adds an MUI tab on a given layout. See CreateTabFixed for a full documentation
+	 * Adds an MUI tab on a given layout
 	 * @param options DS layout options|Fix
 	 */
 	AddTabs(parent: DsLayout, title: string | ("titles")[], width: num, height: num, options: str_com, color: str_col, animation: bin): MuiTabs;
@@ -387,7 +387,7 @@ class DsMUI {
 	AddTEFilledIconLeft(parent: DsLayout, width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col): MuiTEFilledIconLeft;
 
 	/**
-	 * Adds a filled text input with icon on the right on a given layout. See CreateTEFilledIconRight for full documentaion
+	 * Adds a filled text input with icon on the right on a given layout
 	 * @param options DS TextEdit options
 	 * @param icon Material icon font
 	 * @param hint Hint or label text
@@ -414,7 +414,7 @@ class DsMUI {
 	AddTEOutlineIconRight(parent: DsLayout, width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTEOutlineIconRight;
 
 	/**
-	 * Adds an elegant search textedit on a given layout. See CreateTESearchElegant for full documentation
+	 * Adds an elegant search textedit on a given layout
 	 * @param hint Hint text
 	 * @param icon Material icon font
 	 */
@@ -428,7 +428,7 @@ class DsMUI {
 	AddTESearchUnique(parent: DsLayout, width: num, hint: str, icon: str, iconColor: str_col): MuiTESearchUnique;
 
 	/**
-	 * Adds a mui text control to the layout. See CreateTextH1, CreateTextH2, CreateTextH3, CreateTextH4, CreateTextH5, CreateTextH6, CreateTextJumbo, CreateTextParagraph and CreateTextSecondary for full documentation on each type of mui typhography
+	 * Adds a mui text control to the layout
 	 * @param options DS text options with addition Thin|Light|Regular|Medium|Bold,h1|h2|h3|h4|h5|h6|secondary|jumbo|paragraph
 	 */
 	AddText(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col): MuiText;
@@ -441,7 +441,7 @@ class DsMUI {
 	AddTextArea(parent: DsLayout, width: num, height: num, options: string | ("filled"|"outline"|"active")[], hint: str, label: bin, color: str_col, backColor: str_col): MuiTextArea;
 
 	/**
-	 * Add a material filled textarea on a given layout. See CreateTextAreaFilled for  a full documentation
+	 * Add a material filled textarea on a given layout
 	 * @param hint Hint text
 	 * @param label Show or hide label
 	 */
@@ -527,37 +527,37 @@ class DsMUI {
 	AddTextEditUnique(parent: DsLayout, width: num, hint: str, icon: str, iconCOlor: str_col): MuiTextEditUnique;
 
 	/**
-	 * Adds an H1 text to a layout. See CreateTextH1 for full documentation
+	 * Adds an H1 text to a layout
 	 * @param options DS text options
 	 */
 	AddTextH1(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH1;
 
 	/**
-	 * Adds an H2 text to a layout. See CreateTextH2 for full documentation
+	 * Adds an H2 text to a layout
 	 * @param options DS text options
 	 */
 	AddTextH2(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH2;
 
 	/**
-	 * Adds an H3 text to a layout. See CreateTextH3 for full documentation
+	 * Adds an H3 text to a layout
 	 * @param options DS text options
 	 */
 	AddTextH3(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH3;
 
 	/**
-	 * Adds an H4 text to a layout. See CreateTextH4 for full documentation
+	 * Adds an H4 text to a layout
 	 * @param options DS text options
 	 */
 	AddTextH4(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH4;
 
 	/**
-	 * Adds an H5 text to a layout. See CreateTextH5 for full documentation
+	 * Adds an H5 text to a layout
 	 * @param options DS text options
 	 */
 	AddTextH5(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH5;
 
 	/**
-	 * Adds an H6 text to a layout. See CreateTextH6 for full documentation
+	 * Adds an H6 text to a layout
 	 * @param options DS text options
 	 */
 	AddTextH6(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH6;
@@ -569,13 +569,13 @@ class DsMUI {
 	AddTextJumbo(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col): MuiTextJumbo;
 
 	/**
-	 * Adds a paragraph text to a layout. See CreateTextParagraph for full documentation
+	 * Adds a paragraph text to a layout
 	 * @param options DS text options
 	 */
 	AddTextParagraph(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextParagraph;
 
 	/**
-	 * Adds a secondary text to a layout. See CreateTextSecondary for full documentation
+	 * Adds a secondary text to a layout
 	 * @param options DS text options
 	 */
 	AddTextSecondary(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextSecondary;
@@ -658,7 +658,7 @@ class DsMUI {
 	/** An outlined material round button */
 	CreateButtonRoundO(text: str, width: num_frc, height: num_frc, color: str_col, backColor: str_col): MuiButtonRoundO;
 
-	/** Adds a text button. See CreateButtonFlat for full documentation */
+	/** Adds a text button */
 	CreateButtonText(text: str, width: num_frc, height: num_frc): MuiButtonText;
 
 	/** Create button toggle */
@@ -688,7 +688,7 @@ class DsMUI {
 	CreateCheckbox(list: lst, width: num_frc, height: num_frc, color: str_col): MuiCheckbox;
 
 	/**
-	 * Check list is a dialog type checkbox list. Let the user select items in a nice popup
+	 * Check list is a dialog type checkbox list
 	 * @param list An array of objects of the form {name: string, check: boolean}
 	 */
 	CreateCheckList(title: str, list: lst_obj, color: str_col, bottom: bin): MuiCheckList;
@@ -793,13 +793,13 @@ class DsMUI {
 	CreateRadio(list: string | ("strings")[], width: num, height: num, color: str_col): MuiRadio;
 
 	/**
-	 * Creates a radio button control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox
+	 * Creates a radio button control
 	 * @param list A comma separated strings
 	 */
 	CreateRadioButtons(list: lst, width: num, height: num, orientation: "Vertical"|"Horizontal", color: str_col, backColor: str_col): MuiRadioButtons;
 
 	/**
-	 * Creates a material radio control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox
+	 * Creates a material radio control
 	 * @param list A comma separated strings
 	 */
 	CreateRadioMaterial(list: lst, width: num, height: num, orientation: "Vertical"|"Horizontal", color: str_col, backColor: str_col): MuiRadioMaterial;
@@ -1025,15 +1025,135 @@ class DsMUI {
 
 class MuiAlert {
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Hides the control visually */
+	Hide(): void;
+
 	/** Calls a function when alert is close */
 	SetOnClose(callback: (isBtnClick: bin) => void): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 }
 
 
 class MuiAlertSimple {
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Hides the control visually */
+	Hide(): void;
+
 	/** Calls a function when button is click */
 	SetOnTouch(callback: (isBtnClick: bin) => void): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
 }
 
 
@@ -1065,6 +1185,79 @@ class MuiAppBar {
 
 	/** Change the color of the title */
 	SetTitleTextColor(newColor: str_col): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1096,10 +1289,86 @@ class MuiAppBarElegant {
 
 	/** Change the color of the title */
 	SetTitleTextColor(newColor: str_col): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiAppBarModern {
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
 
 	/** Calls a function when right control is touch */
 	SetOnControlTouch(callback: () => void): void;
@@ -1107,8 +1376,14 @@ class MuiAppBarModern {
 	/** Call a function when the menu icon is touch */
 	SetOnMenuTouch(callback: () => void): void;
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): void;
@@ -1125,6 +1400,9 @@ class MuiAppBarModern {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
 
@@ -1137,11 +1415,20 @@ class MuiAppBarModern {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter) */
 	SetOnEnter(callback: () => void): void;
 
 	/** Define a callback function which is called when the user focuses the control */
 	SetOnFocus(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -1150,125 +1437,1729 @@ class MuiAppBarModern {
 
 class MuiBanner {
 
-	/** Calls a function when buttons are click (prev. SetOnTouchOK) */
+	/** Calls a function when buttons are click (prev */
 	SetOnTouch(callback: (isOkBtnClick: bin, btnText: str) => void): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Called when the dialog or control has been closed */
+	SetOnClose(callback: () => void): void;
 }
 
 
 class MuiButtonContained {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiButtonElegant {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
 class MuiButtonFlat {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiButtonOutlined {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiButtonRaised {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
 class MuiButtonRaisedO {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
 class MuiButtonRound {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
 class MuiButtonRoundO {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
 class MuiButtonToggle {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
 
 	/** Get type */
 	GetType(): "Button";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
 	/** Set style */
 	SetStyle(clr1: str_col, clr2: str_col, radius: num, strokeClr: str_col, strokeWidth: num, shadow: num): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
@@ -1285,6 +3176,82 @@ class MuiCard {
 
 	/** Calls a function when title item is click */
 	SetOnTitleTouch(callback: (title: str, cardName: str) => void): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1310,6 +3277,91 @@ class MuiCheckbox {
 	 * @param index You can also pass an array of indexes e.g. [1, 3]
 	 */
 	UncheckItemByIndex(index: num_int): void;
+
+	/**
+	 * Change the height of the control
+	 * @param height Fraction of the screen height
+	 */
+	SetHeight(height: num): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1317,6 +3369,75 @@ class MuiCheckList {
 
 	/** Calls a function when the checklist is submitted */
 	SetOnSubmit(callback: (lst: lst) => void): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Change the height of the control
+	 * @param height Fraction of the screen height
+	 */
+	SetHeight(height: num): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/**
+	 * Pass texedit control to display input values
+	 * @param textEdit An MUI TextEdit control
+	 */
+	SetTextEdit(textEdit: obj): void;
 }
 
 
@@ -1324,6 +3445,54 @@ class MuiColorPicker {
 
 	/** Calls a function when a user click the OK button */
 	SetOnSelect(callback: (color: str_col) => void): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/**
+	 * Pass texedit control to display input values
+	 * @param textEdit An MUI TextEdit control
+	 */
+	SetTextEdit(textEdit: obj): void;
 }
 
 
@@ -1347,7 +3516,7 @@ class MuiDataTable {
 	 */
 	RemoveRows(index: lst): void;
 
-	/** Get the selected rows. This function is synchronous. You need to pass a callback */
+	/** Get the selected rows */
 	GetSelectedRows(callback: (indexes: lst) => void): void;
 
 	/** Calls a function when the selection status of the table changes */
@@ -1375,6 +3544,82 @@ class MuiDataTable {
 	 * @param height A fraction of the screen height.
 	 */
 	AddFooter(type: str, options: str, height: num): MuiFooter;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1382,22 +3627,183 @@ class MuiDatePicker {
 
 	/** Calls a function when a user click the OK button */
 	SetOnSelect(callback: (date: str, yyyy: num_int, mm: num_int, dd: num_int) => void): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/**
+	 * Pass texedit control to display input values
+	 * @param textEdit An MUI TextEdit control
+	 */
+	SetTextEdit(textEdit: obj): void;
 }
 
 
 class MuiDialog {
 
-	/** Calls a function when buttons are click (prev. SetOnTouchOK) */
+	/** Calls a function when buttons are click (prev */
 	SetOnTouch(callback: (isOkBtnClick: bin, btnText: str) => void): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/**
+	 * Sets a new title text
+	 * @param newTitle New title text
+	 */
+	SetTitle(newTitle: str): void;
+
+	/** Change the color of the title text */
+	SetTitleColor(color: str_col): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Called when the dialog or control has been closed */
+	SetOnClose(callback: () => void): void;
 }
 
 
 class MuiDivider {
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
 }
 
 
 class MuiFAB {
 
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
 	/**
 	 * Sets a new material icon
 	 * @param icon Material icon font
@@ -1413,16 +3819,110 @@ class MuiFAB {
 	 */
 	GetIcon(): str;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Button";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 }
 
 
 class MuiFABElegant {
 
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
 	/**
 	 * Sets a new material icon
 	 * @param icon Material icon font
@@ -1438,16 +3938,110 @@ class MuiFABElegant {
 	 */
 	GetIcon(): str;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Button";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 }
 
 
 class MuiFABOutline {
 
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
 	/**
 	 * Sets a new material icon
 	 * @param icon Material icon font
@@ -1463,11 +4057,99 @@ class MuiFABOutline {
 	 */
 	GetIcon(): str;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Button";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+
+	/** Change the color of the control */
+	SetColor(color: str_col, backColor: str_col): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 }
 
 
@@ -1476,11 +4158,44 @@ class MuiList {
 	/** Add item */
 	AddItem(title: str, body: str, image: str_ptf): MuiItem;
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get item */
 	GetItem(title: str): obj;
 
 	/** Get item by index */
 	GetItemByIndex(index: num): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get length */
 	GetLength(): num_int;
@@ -1488,11 +4203,50 @@ class MuiList {
 	/** Get list */
 	GetList(delim: str): obj;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "List";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
 	/** Insert item */
 	InsertItem(index: num, title: str, body: str, image: str_ptf): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/** Remove all */
 	RemoveAll(): void;
@@ -1515,17 +4269,50 @@ class MuiList {
 	/** Select item by index */
 	SelectItemByIndex(index: num, scroll: bin): void;
 
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
 	/** Set column widths */
 	SetColumnWidths(icon: ?, title: str, body: str, mode: ?): void;
 
 	/** Set divider */
 	SetDivider(height: num, color: str_col): void;
 
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
 	/** Set ellipsize1 */
 	SetEllipsize1(mode: ?): void;
 
 	/** Set ellipsize2 */
 	SetEllipsize2(mode: ?): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
 
 	/** Set hi text color1 */
 	SetHiTextColor1(clr: ?): void;
@@ -1548,6 +4335,30 @@ class MuiList {
 	/** Set list */
 	SetList(list: ?, delim: str): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
 	/** Set text color1 */
 	SetTextColor1(clr: str_col): void;
 
@@ -1557,17 +4368,47 @@ class MuiList {
 	/** Set text margins */
 	SetTextMargins(left: ?, top: ?, right: ?, bottom: ?, mode: ?, options: str_com): void;
 
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
 	/** Set text shadow1 */
 	SetTextShadow1(radius: num, dx: num, dy: num, color: str_col): void;
 
 	/** Set text shadow2 */
 	SetTextShadow2(radius: num, dx: num, dy: num, color: str_col): void;
 
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
 	/** Set text size1 */
 	SetTextSize1(size: ?, mode: ?): void;
 
 	/** Set text size2 */
 	SetTextSize2(size: ?, mode: ?): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1575,6 +4416,75 @@ class MuiListDialog {
 
 	/** Calls a function selects an item in the list */
 	SetOnSelect(callback: (name: str, index: num_int) => void): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Change the height of the control
+	 * @param height Fraction of the screen height
+	 */
+	SetHeight(height: num): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/**
+	 * Pass texedit control to display input values
+	 * @param textEdit An MUI TextEdit control
+	 */
+	SetTextEdit(textEdit: obj): void;
 }
 
 
@@ -1586,7 +4496,7 @@ class MuiListModern {
 	/** Calls a function when an item in the list is select */
 	SetOnSelect(callback: (index: num_int, isSelected: bin) => void): void;
 
-	/** Calls a function when an icon or avatar is click. The same as SetIconOnTouch */
+	/** Calls a function when an icon or avatar is click */
 	SetAvatarOnTouch(callback: (index: num_int) => void): void;
 
 	/** Enable or disable selectable option */
@@ -1675,6 +4585,82 @@ class MuiListModern {
 	 * @param data A single element of the list object
 	 */
 	SetItem(data: obj, index: num_int): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1709,6 +4695,82 @@ class MuiListSimple {
 	 * @param list ListSimple list
 	 */
 	SetList(list: obj): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1722,6 +4784,63 @@ class MuiMenu {
 	 * @param list A comma separated options
 	 */
 	SetList(list: lst): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
 }
 
 
@@ -1729,6 +4848,63 @@ class MuiMenuWithIcon {
 
 	/** Calls a function when item is click */
 	SetOnSelect(callback: (text: str, index: num_int) => void): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
 }
 
 
@@ -1740,11 +4916,77 @@ class MuiModal {
 	/** Get the layout of the modal where you can add your controls */
 	GetLayout(): DsLayout;
 
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
 	/** Sets a new title to the modal */
 	SetTitle(title: str): void;
 
 	/** Sets a new title to the modal */
 	SetHeaderColor(color: str_col): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Called when the dialog or control has been closed */
+	SetOnClose(callback: () => void): void;
 }
 
 
@@ -1759,11 +5001,35 @@ class MuiRadio {
 	/** Gets the checked item in the list */
 	GetCheckItem(): "title"|"index";
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get item */
 	GetItem(title: str): obj;
 
 	/** Get item by index */
 	GetItemByIndex(index: num): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get length */
 	GetLength(): num_int;
@@ -1771,11 +5037,50 @@ class MuiRadio {
 	/** Get list */
 	GetList(delim: str): obj;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "List";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
 	/** Insert item */
 	InsertItem(index: num, title: str, body: str, image: str_ptf): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/** Remove all */
 	RemoveAll(): void;
@@ -1798,17 +5103,50 @@ class MuiRadio {
 	/** Select item by index */
 	SelectItemByIndex(index: num, scroll: ?): void;
 
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
 	/** Set column widths */
 	SetColumnWidths(icon: ?, title: str, body: str, mode: ?): void;
 
 	/** Set divider */
 	SetDivider(height: num, color: str_col): void;
 
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
 	/** Set ellipsize1 */
 	SetEllipsize1(mode: ?): void;
 
 	/** Set ellipsize2 */
 	SetEllipsize2(mode: ?): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
 
 	/** Set hi text color1 */
 	SetHiTextColor1(clr: ?): void;
@@ -1819,6 +5157,27 @@ class MuiRadio {
 	/** Set list */
 	SetList(list: ?, delim: str): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
 	/** Set text color1 */
 	SetTextColor1(clr: ?): void;
 
@@ -1828,17 +5187,47 @@ class MuiRadio {
 	/** Set text margins */
 	SetTextMargins(left: ?, top: ?, right: ?, bottom: ?, mode: ?, options: str_com): void;
 
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
 	/** Set text shadow1 */
 	SetTextShadow1(radius: num, dx: num, dy: num, color: str_col): void;
 
 	/** Set text shadow2 */
 	SetTextShadow2(radius: num, dx: num, dy: num, color: str_col): void;
 
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
 	/** Set text size1 */
 	SetTextSize1(size: ?, mode: ?): void;
 
 	/** Set text size2 */
 	SetTextSize2(size: ?, mode: ?): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1853,11 +5242,50 @@ class MuiRadioButtons {
 	/** Gets the checked item in the list */
 	GetCheckItem(): "title"|"index";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
 	/** Show or Hide the list */
 	Toggle(): void;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Returns the corresponding item */
 	GetItem(index: num_int): "title";
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/**
 	 * Gets the list
@@ -1865,8 +5293,60 @@ class MuiRadioButtons {
 	 */
 	GetList(): lst;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Radio";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1881,11 +5361,50 @@ class MuiRadioMaterial {
 	/** Gets the checked item in the list */
 	GetCheckItem(): "title"|"index";
 
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
 	/** Show or Hide the list */
 	Toggle(): void;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Returns the corresponding item */
 	GetItem(index: num_int): "title";
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/**
 	 * Gets the list
@@ -1893,8 +5412,60 @@ class MuiRadioMaterial {
 	 */
 	GetList(): lst;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Radio";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1918,8 +5489,81 @@ class MuiSeekBar {
 	 */
 	SetValue(value: num): void;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Seekbar";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1951,6 +5595,90 @@ class MuiSpinner {
 	 * @param hint The hint text.
 	 */
 	SetHint(hint: str): void;
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1965,8 +5693,78 @@ class MuiSwitch {
 	/** Sets the value of the switch */
 	SetValue(value: bin): void;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Seekbar";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -1981,8 +5779,78 @@ class MuiSwitchSettings {
 	/** Sets the value of the switch */
 	SetValue(value: bin): void;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Seekbar";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -2000,15 +5868,91 @@ class MuiTabFixed {
 	/** Calls a function when the tab is click */
 	SetOnSelect(callback: (name: str, index: num_int) => void): void;
 
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Tab";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTEFilledIconLeft {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2025,8 +5969,29 @@ class MuiTEFilledIconLeft {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2037,21 +6002,42 @@ class MuiTEFilledIconLeft {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
 
 	/** Calls a function when icon is touch */
 	SetOnIconTouch(callback: () => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTEFilledIconRight {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2068,8 +6054,29 @@ class MuiTEFilledIconRight {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2080,21 +6087,42 @@ class MuiTEFilledIconRight {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
 
 	/** Calls a function when icon is touch */
 	SetOnIconTouch(callback: () => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTEOutlineIconLeft {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2111,8 +6139,29 @@ class MuiTEOutlineIconLeft {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2123,21 +6172,42 @@ class MuiTEOutlineIconLeft {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
 
 	/** Calls a function when icon is touch */
 	SetOnIconTouch(callback: () => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTEOutlineIconRight {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2154,8 +6224,29 @@ class MuiTEOutlineIconRight {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2166,21 +6257,42 @@ class MuiTEOutlineIconRight {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
 
 	/** Calls a function when icon is touch */
 	SetOnIconTouch(callback: () => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTESearchElegant {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2197,8 +6309,29 @@ class MuiTESearchElegant {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2208,6 +6341,12 @@ class MuiTESearchElegant {
 
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
 
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
@@ -2215,18 +6354,33 @@ class MuiTESearchElegant {
 	/** Define a callback function which is called when the user pressed the icon */
 	SetIconOnTouch(callback: () => void): void;
 
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
 	/** Undo an action */
 	Undo(): void;
 
 	/** Calls a function when icon is touch */
 	SetOnIconTouch(callback: () => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTESearchUnique {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2243,8 +6397,29 @@ class MuiTESearchUnique {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2255,8 +6430,20 @@ class MuiTESearchUnique {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -2268,8 +6455,14 @@ class MuiTESearchUnique {
 
 class MuiTextAreaFilled {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2286,8 +6479,29 @@ class MuiTextAreaFilled {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2298,8 +6512,20 @@ class MuiTextAreaFilled {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -2308,8 +6534,14 @@ class MuiTextAreaFilled {
 
 class MuiTextAreaFilledA {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2326,8 +6558,29 @@ class MuiTextAreaFilledA {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2338,8 +6591,20 @@ class MuiTextAreaFilledA {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -2348,8 +6613,14 @@ class MuiTextAreaFilledA {
 
 class MuiTextAreaOutline {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2366,8 +6637,29 @@ class MuiTextAreaOutline {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2378,8 +6670,20 @@ class MuiTextAreaOutline {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -2388,8 +6692,14 @@ class MuiTextAreaOutline {
 
 class MuiTextAreaOutlineA {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2406,8 +6716,29 @@ class MuiTextAreaOutlineA {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2418,8 +6749,20 @@ class MuiTextAreaOutlineA {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -2428,8 +6771,14 @@ class MuiTextAreaOutlineA {
 
 class MuiTextEditFilled {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2446,8 +6795,29 @@ class MuiTextEditFilled {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2458,18 +6828,39 @@ class MuiTextEditFilled {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
 
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
 	/** Undo an action */
 	Undo(): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTextEditFilledA {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2486,8 +6877,29 @@ class MuiTextEditFilledA {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2498,18 +6910,39 @@ class MuiTextEditFilledA {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
 
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
 	/** Undo an action */
 	Undo(): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTextEditOutline {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2526,8 +6959,29 @@ class MuiTextEditOutline {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2538,18 +6992,39 @@ class MuiTextEditOutline {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
 
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
 	/** Undo an action */
 	Undo(): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTextEditOutlineA {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2566,8 +7041,29 @@ class MuiTextEditOutlineA {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2578,18 +7074,39 @@ class MuiTextEditOutlineA {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
 
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
 	/** Undo an action */
 	Undo(): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTextEditSearch {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2606,8 +7123,29 @@ class MuiTextEditSearch {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2618,8 +7156,20 @@ class MuiTextEditSearch {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -2631,8 +7181,14 @@ class MuiTextEditSearch {
 
 class MuiTextEditUnique {
 
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Clear input history */
 	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
 
 	/** Get cursor line */
 	GetCursorLine(): num;
@@ -2649,8 +7205,29 @@ class MuiTextEditUnique {
 	/** Get selection start */
 	GetSelectionStart(): void;
 
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
 	/** Inserts a string at a given position */
 	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -2661,21 +7238,69 @@ class MuiTextEditUnique {
 	/** Change the curernt cursor position */
 	SetCursorPos(position: num_int): void;
 
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
 	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
 	SetOnEnter(callback: () => void): void;
 
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
 	/** Undo an action */
 	Undo(): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
 }
 
 
 class MuiTextH1 {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2689,24 +7314,204 @@ class MuiTextH1 {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTextH2 {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2720,24 +7525,204 @@ class MuiTextH2 {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTextH3 {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2751,24 +7736,204 @@ class MuiTextH3 {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTextH4 {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2782,24 +7947,204 @@ class MuiTextH4 {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTextH5 {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2813,24 +8158,204 @@ class MuiTextH5 {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTextH6 {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2844,24 +8369,204 @@ class MuiTextH6 {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTextJumbo {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2875,24 +8580,204 @@ class MuiTextJumbo {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTextParagraph {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2906,24 +8791,204 @@ class MuiTextParagraph {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
 class MuiTextSecondary {
 
+	/**
+	 * Adjust the visual color effect of the control
+	 * @param hue -180..180
+	 * @param saturation -100..100
+	 * @param brightness -100..100
+	 * @param contrast 0..100
+	 */
+	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+
+	/**
+	 * Animates a control
+	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 */
+	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
 	/** Data */
 	data: obj;
 
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
 	/** Get html */
 	GetHtml(): obj;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
 
 	/** Get line count */
 	GetLineCount(): num_int;
@@ -2937,14 +9002,161 @@ class MuiTextSecondary {
 	/** Get max lines */
 	GetMaxLines(): num_int;
 
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Returns the current text size */
+	GetTextSize(mode: "px"): num;
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
 	/** Get type */
 	GetType(): "Text";
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
 
 	/** Log */
 	Log(msg: str, options: str_com): void;
 
+	/**
+	 * Access Java object methods via reflection
+	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 */
+	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+
+	/**
+	 * Set the background transparency by alpha value
+	 * @param alpha 0..0.99|1..256
+	 */
+	SetBackAlpha(alpha: num): void;
+
+	/** Resize a control after device rotation */
+	Resize(): void;
+
+	/** Change the background color */
+	SetBackColor(color: str_col): void;
+
+	/** Define the background color of the control with a gradient */
+	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+
+	/** Define a radial background color gradient */
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+
+	/** Change the background to an image */
+	SetBackground(file: str_ptf, options: "repeat"): void;
+
+	/** Adjust the visual color effect with different BlendModes */
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+
+	/** Auto-crop text to fit in control */
+	SetEllipsize(mode: "start"|"middle"|"end"): void;
+
+	/** En/Disable the control */
+	SetEnabled(enable: bin): void;
+
+	/** Change the used font */
+	SetFontFile(file: str_ptf): void;
+
+	/** Set current text to html-formatted text */
+	SetHtml(str: str_htm): void;
+
 	/** Set log */
 	SetLog(maxLines: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when the control was pressed for eons */
+	SetOnLongTouch(callback: (src: dso) => void): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+
+	/** Called when the user starts touching the control */
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user drags his finger over the screen */
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Called when the user finger leaves te screen */
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+
+	/** Define distances to contained elements */
+	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Scale the control by the given factors */
+	SetScale(x: num_fac, y: num_fac): void;
+
+	/** Change the size of the control */
+	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Change the text color */
+	SetTextColor(color: str_col): void;
+
+	/** Define a shadow around the control */
+	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+
+	/**
+	 * Change the text size
+	 * @param mode 
+ 	 * &emsp; `pl` - scales text in proportion with device resolution\
+ 	 * &emsp; `ps` - scales text in proportion with device resolution
+	 */
+	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+
+	/** En/Disables touch events to be fired on the control */
+	SetTouchable(touchable: bin): void;
+
+	/** Change the visibility mode */
+	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/**
+	 * Animates the control
+	 * @param target 
+ 	 * &emsp; `x`\
+ 	 * &emsp; `y`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `w`\
+ 	 * &emsp; `sw`\
+ 	 * &emsp; `sh`\
+ 	 * &emsp; `rot`
+	 */
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
@@ -2952,6 +9164,54 @@ class MuiTimePicker {
 
 	/** Calls a function when the user selects a time */
 	SetOnSelect(callback: (time: str, hour: num_int, minute: num_int, pos: "AM"|"PM") => void): void;
+
+	/** Set the visibility to “Show” */
+	Show(): void;
+
+	/** Hides the control visually */
+	Hide(): void;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** Get the control height in pixels */
+	GetAbsHeight(): num_int;
+
+	/** Get the control width in pixels */
+	GetAbsWidth(): num_int;
+
+	/** Get the height of the control */
+	GetHeight(options: "px"): num;
+
+	/** Get distance to the left parent border */
+	GetLeft(options: "px"): num;
+
+	/** Returns the parent control object */
+	GetParent(): dso;
+
+	/** Returns data about position and size */
+	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
+
+	/** Get distance to the upper parent border */
+	GetTop(options: "px"): num;
+
+	/** Get the width of the control */
+	GetWidth(options: "px"): num;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/**
+	 * Pass texedit control to display input values
+	 * @param textEdit An MUI TextEdit control
+	 */
+	SetTextEdit(textEdit: obj): void;
 }
 
 
