@@ -139,7 +139,7 @@ declare class DsApp {
 
 	/**
 	 * Create and add CameraView to Layout
-	 * @param options 
+	 * @param options `Front`, `UseBitmap`, `UseABGR`, `NoRotate`, `<resolution>`\
  	 * &emsp; `<resolution>` - CIF: 352x288\
  	 * &emsp; QQVGA: 160x120\
  	 * &emsp; QVGA: 320x240\
@@ -148,11 +148,11 @@ declare class DsApp {
  	 * &emsp; XGA: 1024x768\
  	 * &emsp; UXGA: 1600x1200
 	 */
-	AddCameraView(layout: DsLayout, width?: num_frc, height?: num_frc, options?: string | ("Front"|"UseBitmap"|"UseABGR"|"NoRotate"|"&lt;resolution&gt;")[]): DsCameraView;
+	AddCameraView(layout: DsLayout, width?: num_frc, height?: num_frc, options?: str_com): DsCameraView;
 
 	/**
 	 * Create and add Button to Layout
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `fix` - image with fixed resolution\
  	 * &emsp; `px` - use pixel values for size\
  	 * &emsp; `Button` - causes image to depress like a button when touched\
@@ -173,7 +173,7 @@ declare class DsApp {
 
 	/**
 	 * Create and add Image to Layout
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `px` - use pixel values for size\
  	 * &emsp; `Button` - causes image to depress like a button when touched\
  	 * &emsp; `async` - loads the image asynchronously\
@@ -184,7 +184,7 @@ declare class DsApp {
 
 	/**
 	 * Adds a layout to the app
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
 	 */
@@ -192,7 +192,7 @@ declare class DsApp {
 
 	/**
 	 * Create and add List to Layout
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `bold` - bold item titles\
  	 * &emsp; `Expand` - Expand list to full height inside scrollers\
  	 * &emsp; `Menu` - applies various settings to make the list appear like an in-app menu\
@@ -220,7 +220,7 @@ declare class DsApp {
 
 	/**
 	 * Create and add TextEdit to Layout
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AutoSelect` - Select all Text if user enter the Textedit\
  	 * &emsp; `AutoSize` - Expand or shrink the control automatically so the text fits in the Textedit\
  	 * &emsp; `Bold` - Write bold text\
@@ -244,7 +244,7 @@ declare class DsApp {
 
 	/**
 	 * Create and add WebView to Layout
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AllowZoom` - Allows the user to zoom the page\
  	 * &emsp; `Wide` - force page using “wide” viewport\
  	 * &emsp; `NoAccel` - for OrangePi support\
@@ -263,7 +263,7 @@ declare class DsApp {
 
 	/**
 	 * Shows a popup message with an 'OK' button to exit
-	 * @param hue -180..180
+	 * @param hue `-180..180`
 	 */
 	Alert(message: str, title: str, options?: string | ("NoDim"|"NoFocus")[], hue?: num_int): void;
 
@@ -275,7 +275,7 @@ declare class DsApp {
 
 	/**
 	 * Send broadcast intent
-	 * @param action android action
+	 * @param action `android action`
 	 */
 	BroadcastIntent(action: str, category: str, data: str, type: str, extras: str, options?: str_com): void;
 
@@ -287,7 +287,7 @@ declare class DsApp {
 
 	/**
 	 * Checks if app is licensed with Google Play
-	 * @param key GPlay license key
+	 * @param key `GPlay license key`
 	 */
 	CheckLicense(key: str_b64): void;
 
@@ -302,7 +302,7 @@ declare class DsApp {
 
 	/**
 	 * Let the user choose a file
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `persist` - keep file permission after reboot\
  	 * &emsp; `nodownload` - prevents file downloads
 	 */
@@ -343,7 +343,7 @@ declare class DsApp {
 
 	/**
 	 * Creates a button control
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AutoShrink` - Auto-shrinks text to fit\
  	 * &emsp; `AutoSize` - Auto-sizes text to fit
 	 */
@@ -351,7 +351,7 @@ declare class DsApp {
 
 	/**
 	 * Returns a new CameraView object to access the device camera
-	 * @param options 
+	 * @param options `Front`, `UseBitmap`, `UseABGR`, `NoRotate`, `<id>`, `<resolution>`\
  	 * &emsp; `<id>` - “front,back,cam0,cam1,cam2,cam3”\
  	 * &emsp; `<resolution>` - CIF: 352x288\
  	 * &emsp; QQVGA: 160x120\
@@ -361,11 +361,11 @@ declare class DsApp {
  	 * &emsp; XGA: 1024x768\
  	 * &emsp; UXGA: 1600x1200
 	 */
-	CreateCameraView(width?: num_frc, height?: num_frc, options?: string | ("Front"|"UseBitmap"|"UseABGR"|"NoRotate"|"&lt;id&gt;"|"&lt;resolution&gt;")[]): DsCameraView;
+	CreateCameraView(width?: num_frc, height?: num_frc, options?: str_com): DsCameraView;
 
 	/**
 	 * Create a blank white Image object
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `fix` - image with fixed resolution\
  	 * &emsp; `px` - use pixel values for size\
  	 * &emsp; `Button` - causes image to depress like a button when touched\
@@ -392,7 +392,7 @@ declare class DsApp {
 
 	/**
 	 * Shows a debug log overlay
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `dialog` - Show the debug log as black overlay dialog\
  	 * &emsp; `clear` - Clear content before showing
 	 */
@@ -400,7 +400,7 @@ declare class DsApp {
 
 	/**
 	 * Returns a new Dialog object to display messages
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Old` - apply old list style affecting title style and unrounded corners
 	 */
 	CreateDialog(title: str, options?: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"Fillscreen"|"Fullscreen"|"TouchModal"|"NoTouch"|"Modal"|"Kiosk"|"Old")[]): DsDialog;
@@ -420,15 +420,12 @@ declare class DsApp {
 	/** The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics */
 	CreateGameView(width: num_frc, height: num_frc, options?: str_com): void;
 
-	/**
-	 * Returns a GLView object
-	 * @param options fast2d
-	 */
-	CreateGLView(width: num_frc, height: num_frc, options?: str): DsGLView;
+	/** Returns a GLView object */
+	CreateGLView(width: num_frc, height: num_frc, options?: "fast2d"): DsGLView;
 
 	/**
 	 * Returns a new Image object
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `fix` - image with fixed resolution\
  	 * &emsp; `px` - use pixel values for size\
  	 * &emsp; `Button` - causes image to depress like a button when touched\
@@ -440,7 +437,7 @@ declare class DsApp {
 
 	/**
 	 * Returns a new Layout object
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AutoSize` - Resizes itself and child controls after device rotation\
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
@@ -449,7 +446,7 @@ declare class DsApp {
 
 	/**
 	 * Returns a new List object
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `bold` - bold item titles\
  	 * &emsp; `Expand` - Expand list to full height inside scrollers\
  	 * &emsp; `Menu` - applies various settings to make the list appear like an in-app menu\
@@ -474,7 +471,7 @@ declare class DsApp {
 
 	/**
 	 * Returns a new NetClient object
-	 * @param type 
+	 * @param type <br>
  	 * &emsp; `UDP` - fast but does not guarantee data correctness\
  	 * &emsp; `TCP` - slow but guarantees data correctness\
  	 * &emsp; `Raw` - drop 4 Byte header before every message
@@ -483,18 +480,18 @@ declare class DsApp {
 
 	/**
 	 * Creates a NodeJS background process with all the functionality of common node.js
-	 * @param paths NODE_PATH env variable
-	 * @param options 
+	 * @param paths `NODE_PATH env variable`
+	 * @param options <br>
  	 * &emsp; `extended` - allow app methods in default main instance\
  	 * &emsp; `legacy` - dont use named pipes for messaging\
  	 * &emsp; `nostart` - disable auto start\
  	 * &emsp; `esm` - use EcmaScript-Modules
 	 */
-	CreateNode(paths: str_pth, options?: "extended"|"legacy"|"nostart"|"esm"): void;
+	CreateNode(paths?: str_pth, options?: "extended"|"legacy"|"nostart"|"esm"): void;
 
 	/**
 	 * Returns a new Notification object
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Low` - priority
 	 */
 	CreateNotification(options?: string | ("Ongoing"|"AutoCancel"|"FullScreen"|"NoVibrate"|"Low")[]): DsNotification;
@@ -522,14 +519,16 @@ declare class DsApp {
 
 	/**
 	 * Returns a new Service object
-	 * @param options 
+	 * @param packageName `this`, `<package>`
+	 * @param className `this`, `<class>`
+	 * @param options <br>
  	 * &emsp; `Persist` - attempts to force restart if service killed
 	 */
-	CreateService(packageName: "this"|"&lt;package&gt;", className: "this"|"&lt;class&gt;", callback?: () => void, options?: string | ("Persist")[]): DsService;
+	CreateService(packageName: str, className: str, callback?: () => void, options?: string | ("Persist")[]): DsService;
 
 	/**
 	 * Creates a Home-Screen shortcut to an app
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Debug` - start app in debug mode\
  	 * &emsp; `Game` - runs in GameView mode
 	 */
@@ -552,7 +551,8 @@ declare class DsApp {
 
 	/**
 	 * Returns a new SysProc object
-	 * @param options 
+	 * @param cmd program name
+	 * @param options <br>
  	 * &emsp; `combine` - combines stdout and stderr\
  	 * &emsp; `builder` - force use of proc builder
 	 */
@@ -563,14 +563,14 @@ declare class DsApp {
 
 	/**
 	 * Returns a new Text object
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AutoShrink` - Auto-shrinks text to fit
 	 */
 	CreateText(text: str, width?: num_frc, height?: num_frc, options?: string | ("AutoScale"|"AutoSize"|"Multiline"|"Left"|"Right"|"Bottom"|"VCenter"|"Html"|"Bold"|"Monospace"|"AutoShrink"|"NoWrap"|"Log"|"FillX/Y")[]): DsText;
 
 	/**
 	 * Returns a new TextEdit object
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AutoSelect` - Select all Text if user enter the Textedit\
  	 * &emsp; `AutoSize` - Expand or shrink the control automatically so the text fits in the Textedit\
  	 * &emsp; `Bold` - Write bold text\
@@ -594,36 +594,36 @@ declare class DsApp {
 
 	/**
 	 * Returns a new USBSerial object
-	 * @param parity 
+	 * @param parity <br>
  	 * &emsp; `0` - none\
  	 * &emsp; `1` - odd\
  	 * &emsp; `2` - even\
  	 * &emsp; `3` - mark\
  	 * &emsp; `4` - space
-	 * @param device Product ID from Device Magager > Hardware IDs
+	 * @param device `Product ID from Device Magager > Hardware IDs`
 	 */
-	CreateUSBSerial(baudRate: 300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600, dataBits: 5|6|7|8, stopBits: 1|2|15, parity: 0|1|2|3|4, device: num): DsUSBSerial;
+	CreateUSBSerial(baudRate?: 300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600, dataBits?: 5|6|7|8, stopBits?: 1|2|15, parity?: 0|1|2|3|4, device?: num): DsUSBSerial;
 
 	/** Returns a new VideoView object */
 	CreateVideoView(width?: num_frc, height?: num_frc, options?: str_com): DsVideoView;
 
 	/**
 	 * Returns a new WebServer object
-	 * @param options 
+	 * @param options `ListDir`, `Upload`, `NoWelcome`, `Reflect`, `<BUFSIZE>`\
  	 * &emsp; `ListDir` - Show files in folder\
  	 * &emsp; `Upload` - Allow file uploads\
  	 * &emsp; `NoWelcome` - Ignore index.html\
  	 * &emsp; `Reflect` - Reflect web socket messages back to all clients\
  	 * &emsp; `<BUFSIZE>` - “ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”
 	 */
-	CreateWebServer(port: num_int, options?: string | ("ListDir"|"Upload"|"NoWelcome"|"Reflect"|"&lt;BUFSIZE&gt;")[]): DsWebServer;
+	CreateWebServer(port: num_int, options?: str_com): DsWebServer;
 
 	/** Returns a new WebSocket object */
-	CreateWebSocket(ip: str, id: str, retry: num_int, options?: str): DsWebSocket;
+	CreateWebSocket(ip: str, id?: str, retry?: num_int, options?: str): DsWebSocket;
 
 	/**
 	 * Returns a new WebView object
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AllowZoom` - Allows the user to zoom the page\
  	 * &emsp; `ClearCookies` - Clear all webview cookies at startup\
  	 * &emsp; `Local` - loads URLs starting with / from /Storage/[AppName\]/ instead\
@@ -641,7 +641,7 @@ declare class DsApp {
  	 * &emsp; `UseBrowser` - Open links in external browser\
  	 * &emsp; `Wide` - force page using “wide” viewport
 	 */
-	CreateWebView(width?: num_frc, height?: num_frc, options?: string | ("AllowZoom"|"AutoZoom"|"ClearCookies"|"FillX/Y"|"Local"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Persist"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser"|"Wide")[], zoom: num_prc): DsWebView;
+	CreateWebView(width?: num_frc, height?: num_frc, options?: string | ("AllowZoom"|"AutoZoom"|"ClearCookies"|"FillX/Y"|"Local"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Persist"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser"|"Wide")[], zoom?: num_prc): DsWebView;
 
 	/** The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user */
 	CreateWizard(title: str, width?: num_frc, height?: num_frc, callback?: (layout: DsLayout, page: num_int) => void, options?: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"TouchModal"|"NoTouch")[]): void;
@@ -669,7 +669,7 @@ declare class DsApp {
 
 	/**
 	 * Disable specific device keys
-	 * @param keyList VOLUME_DOWN,VOLUME_UP,FORWARD,BACK,MENU,ENTER,...
+	 * @param keyList `VOLUME_DOWN`, `VOLUME_UP`, `FORWARD`, `BACK`, `MENU`, `ENTER`, `...`
 	 */
 	DisableKeys(keyList: str_com): void;
 
@@ -677,16 +677,16 @@ declare class DsApp {
 	DisableTouch(disable: bin): void;
 
 	/** Search for nearby bluetooth devices */
-	DiscoverBtDevices(filter: str, onFound: (name: str, address: str) => void, onComplete: () => void): void;
+	DiscoverBtDevices(filter: str, onFound?: (name: str, address: str) => void, onComplete?: () => void): void;
 
 	/** Download a file with Androids download manager */
-	DownloadFile(source: str, destination: str_pth, title: str, description: str, options?: "NoDialog"): void;
+	DownloadFile(source: str, destination: str_pth, title?: str, description?: str, options?: "NoDialog"): void;
 
 	/** Allows to en- or disable the devices back key */
 	EnableBackKey(enable: bin): void;
 
 	/** Show an error message */
-	Error(message: str, line: num_int, file: str_ptf, quit: bin): void;
+	Error(message: str, line: num_int, file: str_ptf, quit?: bin): void;
 
 	/** Execute js code from your app or a WebWiew */
 	Execute(js: str_jsc): void;
@@ -695,15 +695,15 @@ declare class DsApp {
 	Exit(kill: bin): void;
 
 	/** Execute a bash script using Termux */
-	ExtExec(name: "termux", file: str_ptf, args: str, options?: "hide"): void;
+	ExtExec(name: "termux", file: str_ptf, args?: str, options?: "hide"): void;
 
 	/**
 	 * Extract app assets to a local directory
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `DoEvents` - extract in background\
  	 * &emsp; `shallow` - extract top level
 	 */
-	ExtractAssets(source: str_pth, destination: str_pth, overwrite: bin, options?: "DoEvents"|"shallow"): void;
+	ExtractAssets(source: str_pth, destination: str_pth, overwrite?: bin, options?: "DoEvents"|"shallow"): void;
 
 	/** Forcefully update your plugins */
 	ExtractPlugins(): void;
@@ -720,7 +720,10 @@ declare class DsApp {
 	/** Google Analytics */
 	GA(command: "create"|"send"|"set"|"require"|"provide"|"remove", fields: str_com, options?: obj): void;
 
-	/** Get accesibility feature availability */
+	/**
+	 * Get accesibility feature availability
+	 * @return \{ enabled, exploreByTouch, screenReader }
+	 */
 	GetAccessibility(): { enabled: bin, exploreByTouch: bin, screenReader: bin };
 
 	/** Returns a string of all known account names on the device separated with comma ',' */
@@ -797,7 +800,7 @@ declare class DsApp {
 
 	/**
 	 * Get environment variable
-	 * @param name PATH|...
+	 * @param name `PATH`, `...`
 	 */
 	GetEnv(name: str): str;
 
@@ -819,7 +822,10 @@ declare class DsApp {
 	/** Get data about installed apps */
 	GetInstalledApps(): { packageName: str, className: str, uid: num_int, targetSdkVersion: num_int, dataDir: str_pth, sourceDir: str_pth, publicSourceDir: str_pth, nativeLibraryDir: str_pth }[];
 
-	/** Get received intent data */
+	/**
+	 * Get received intent data
+	 * @return \{ action, type, data, flags, extras: { app_intent, app_file, app_options } }
+	 */
 	GetIntent(): { action: str, type: str, data: str, flags: num_int, extras: { app_intent: str, app_file: str_pth, app_options: str } };
 
 	/** Get internal storage path */
@@ -833,11 +839,14 @@ declare class DsApp {
 
 	/**
 	 * Returns the state of a connected joystick
-	 * @param key A|B|C|X|Y|Z|R1|L1|Left|Right|Up|Down|Start|ThumbLeft|ThumbRight|axis-0..9|btn-1..12
+	 * @param key `A`, `B`, `C`, `X`, `Y`, `Z`, `R1`, `L1`, `Left`, `Right`, `Up`, `Down`, `Start`, `ThumbLeft`, `ThumbRight`, `axis-0..9`, `btn-1..12`
 	 */
 	GetJoystickState(id: num_int, key: str): num;
 
-	/** Get joystick key states object */
+	/**
+	 * Get joystick key states object
+	 * @return \{ key: value }
+	 */
 	GetJoystickStates(id: num_int): {[key: str]: num};
 
 	/** Get current keyboard height */
@@ -852,14 +861,20 @@ declare class DsApp {
 	/** Get devices MAC address */
 	GetMacAddress(): str;
 
-	/** Get a path to an unambiguous media file */
+	/**
+	 * Get a path to an unambiguous media file
+	 * @param folder `app name`
+	 */
 	GetMediaFile(folder: str, ext: str): str_pth;
 
-	/** Get RAM memory information */
+	/**
+	 * Get RAM memory information
+	 * @return \{ avail, low, threshold, total }
+	 */
 	GetMemoryInfo(): { avail: num_byt, low: bin, threshold: num_byt, total: num_byt };
 
 	/** Returns a string list of metadata values contained in an audio file */
-	GetMetadata(file: str_ptf, keys: string | ("album"|"artist"|"genre"|"title"|"composer"|"author"|"duration"|"bitrate"|"width"|"height")[]): str_com;
+	GetMetadata(file: str_ptf, keys?: string | ("album"|"artist"|"genre"|"title"|"composer"|"author"|"duration"|"bitrate"|"width"|"height")[]): str_com;
 
 	/** Get device model name */
 	GetModel(): str;
@@ -893,10 +908,9 @@ declare class DsApp {
 
 	/**
 	 * GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder
-	 * @param type 
- 	 * &emsp; `pid`
+	 * @param type `Camera`, `ExtSDcard`, `External`, `Internal`, `Network`, `Notify`, `Storage`, `Overlay`, `SMS`, `Location`, `Calendar`, `Body`, `Contacts`, `Record`, `Phone`, `Biometric`, `Accounts`, `License`, `android.permission.*`, `usb:<pid>`
 	 */
-	GetPermission(type: string | ("Camera"|"ExtSDcard"|"External"|"Internal"|"Network"|"Notify"|"Storage"|"Overlay"|"SMS"|"Location"|"Calendar"|"Body"|"Contacts"|"Record"|"Phone"|"Biometric"|"Accounts"|"License"|"android.permission.*"|"usb:<pid>")[], callback?: (ungranted: str_com|str_uri) => void): void;
+	GetPermission(type: str_com, callback?: (ungranted: str_com|str_uri) => void): void;
 
 	/** Get path to a private folder */
 	GetPrivateFolder(name: str, options?: "external"): str_pth;
@@ -910,12 +924,15 @@ declare class DsApp {
 	/** Get device rotation */
 	GetRotation(): 0|90|180|270;
 
-	/** Returns the routers ip address */
+	/**
+	 * Returns the routers ip address
+	 * @return `ip address`
+	 */
 	GetRouterAddress(): str;
 
 	/**
 	 * Get RSSI in dBm
-	 * @return -127..-30
+	 * @return `-127..-30`
 	 */
 	GetRSSI(): num_int;
 
@@ -955,10 +972,16 @@ declare class DsApp {
 	/** Get WiFi network SSID (name) */
 	GetSSID(): str;
 
-	/** Calculates text bounds */
-	GetTextBounds(txt: str, size: num, width?: num_frc, obj: dso): { width: num_frc, height: num_frc };
+	/**
+	 * Calculates text bounds
+	 * @return \{ width, height }
+	 */
+	GetTextBounds(txt: str, size?: num, width?: num_frc, obj?: dso): { width: num_frc, height: num_frc };
 
-	/** Get theme configuration */
+	/**
+	 * Get theme configuration
+	 * @return \{ baseTheme, holo, dark, titleHeight, backColor, dialogColor, btnColor, dialogBtnColor, textColor1, textColor2,btnTextColor, highlightColor }
+	 */
 	GetThemeInfo(): { baseTheme: str, holo: bin, dark: bin, titleHeight: num_frc, backColor: str_col, dialogColor: str_col, btnColor: str_col, dialogBtnColor: str_col, textColor1: str_col, textColor2: str_col,btnTextColor: str_col, highlightColor: str_col };
 
 	/** Create downscaled copy of an image */
@@ -999,7 +1022,7 @@ declare class DsApp {
 
 	/**
 	 * Send Http request
-	 * @param type 
+	 * @param type <br>
  	 * &emsp; `GET` - retrieve data\
  	 * &emsp; `POST` - submit data\
  	 * &emsp; `JSON` - post json data\
@@ -1007,7 +1030,7 @@ declare class DsApp {
  	 * &emsp; `DELETE` - deletes the resource\
  	 * &emsp; `HEAD` - omit body
 	 */
-	HttpRequest(type: "GET"|"POST"|"JSON"|"PUT"|"DELETE"|"HEAD", baseUrl: str_url, path: str, params: str, callback?: (error: bin, reply: str, status: num_int) => void, headers: str): void;
+	HttpRequest(type: "GET"|"POST"|"JSON"|"PUT"|"DELETE"|"HEAD", baseUrl: str_url, path?: str, params?: str, callback?: (error: bin, reply: str, status: num_int) => void, headers?: str): void;
 
 	/** In ide */
 	InIDE(): bin;
@@ -1093,13 +1116,16 @@ declare class DsApp {
 	/** Kill an app by its pid */
 	KillApp(pid: num_int): void;
 
-	/** Launch or search an app */
-	LaunchApp(packageName: str, noPlay: bin): void;
+	/**
+	 * Launch or search an app
+	 * @param noPlay `dont search`
+	 */
+	LaunchApp(packageName: str, noPlay?: bin): void;
 
 	/**
 	 * Get a list of files ans folders contained in a specific folder
-	 * @param path must not have a trailing slash
-	 * @param options 
+	 * @param path `must not have a trailing slash`
+	 * @param options <br>
  	 * &emsp; `Alphasort` - sorts the paths in alphabetical order\
  	 * &emsp; `FullPath` - returns absolute paths to the listed items\
  	 * &emsp; `RegEx` - accepts regexp patterns\
@@ -1108,7 +1134,7 @@ declare class DsApp {
  	 * &emsp; `NoEmpty` - hide empty folders\
  	 * &emsp; `project` - Shows DS project folders only
 	 */
-	ListFolder(path: str_pth, filter: str, limit: num_int, options?: string | ("Alphasort"|"FullPath"|"RegEx"|"Folders"|"Files"|"NoEmpty"|"project")[]): str_pth[];
+	ListFolder(path: str_pth, filter?: str, limit?: num_int, options?: string | ("Alphasort"|"FullPath"|"RegEx"|"Folders"|"Files"|"NoEmpty"|"project")[]): str_pth[];
 
 	/** Returns a list of granted permissions
 	 * 
@@ -1116,13 +1142,13 @@ declare class DsApp {
 	ListPermissions(type: "Camera"|"Storage"|"ExtSDcard"|"Network"|"Notify"|"Location"|"SMS"|"Calendar"|"Body"|"Contacts"|"Record"|"Biometric"|"Phone"|"Accounts"|"License"): str_uri[];
 
 	/** Load saved boolean value */
-	LoadBoolean(name: str, dflt: bin, file: str_ptf): bin;
+	LoadBoolean(name: str, dflt?: bin, file?: str_ptf): bin;
 
 	/** Load saved json object */
-	LoadJson(name: str, dflt: obj, file: str_ptf): obj;
+	LoadJson(name: str, dflt?: obj, file?: str_ptf): obj;
 
 	/** Load saved boolean value */
-	LoadNumber(name: str, dflt: num, file: str_ptf): num;
+	LoadNumber(name: str, dflt?: num, file?: str_ptf): num;
 
 	/** Load an installed plugin to your app */
 	LoadPlugin(url: str_url): void;
@@ -1131,7 +1157,7 @@ declare class DsApp {
 	LoadScript(path: str_pth, callback?: (info: { isTrusted: bin }) => void): void;
 
 	/** Load saved text value to remember varibale values between multiple app starts */
-	LoadText(name: str, dflt: str, file: str_ptf): void;
+	LoadText(name: str, dflt?: str, file?: str_ptf): void;
 
 	/** Lock the device */
 	Lock(): void;
@@ -1149,10 +1175,10 @@ declare class DsApp {
 	OpenDrawer(side: "left"|"right"): void;
 
 	/** Allow user to open a file with an external app */
-	OpenFile(file: str_ptf, type: str_mim, choose: str): void;
+	OpenFile(file: str_ptf, type?: str_mim, choose?: str): void;
 
 	/** Allow user to open an url with an external app */
-	OpenUrl(url: str_url, type: str_mim, choose: str): void;
+	OpenUrl(url: str_url, type?: str_mim, choose?: str): void;
 
 	/** Pairs a bluetooth device with yours */
 	PairBtDevice(address: str, callback?: () => void): void;
@@ -1174,7 +1200,7 @@ declare class DsApp {
 
 	/**
 	 * Prevent screen from locking after some time
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `Full` - Device can sleep,Screen and Keyboard on\
  	 * &emsp; `Partial` - CPU always on,Screen and Keyboard off
 	 */
@@ -1185,23 +1211,23 @@ declare class DsApp {
 
 	/**
 	 * Queries content from the android content model
-	 * @param sort 
+	 * @param sort <br>
  	 * &emsp; `coloumn` - a coloumn specified in 'coloumns'
 	 */
-	QueryContent(uri: str_uri, columns: str_com, select: str_sql, args: lst, sort: "coloumn"): void;
+	QueryContent(uri: str_uri, columns: str_com, select?: str_sql, args?: lst, sort?: "coloumn"): void;
 
 	/** Quit the app with showing a dialog and exit after closing */
-	Quit(msg: str, title: str, options?: string | ("NoDim"|"NoFocus")[]): void;
+	Quit(msg: str, title?: str, options?: string | ("NoDim"|"NoFocus")[]): void;
 
 	/**
 	 * Read the content of a local file
-	 * @param encoding 
+	 * @param encoding <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
 	 */
-	ReadFile(file: str_ptc, encoding: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"|"base64"): void;
+	ReadFile(file: str_ptc, encoding?: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"|"base64"): void;
 
 	/** Read local file content data */
-	ReadFileData(file: str_pfa, mode: "base64"|"hex"|"int"|"ascii"): void;
+	ReadFileData(file: str_pfa, mode?: "base64"|"hex"|"int"|"ascii"): void;
 
 	/** Convert short to full path */
 	RealPath(path: str_pth): void;
@@ -1230,19 +1256,19 @@ declare class DsApp {
 	ReplaceInFile(file: str_ptf, txt: str, rep: str, options?: str_com): void;
 
 	/** Save a boolean value across multiple starts */
-	SaveBoolean(name: str, value: bin, file: str_ptf): void;
+	SaveBoolean(name: str, value: bin, file?: str_ptf): void;
 
 	/** Save web cookies */
 	SaveCookies(): void;
 
 	/** Save a json object across multiple starts */
-	SaveJson(name: str, value: obj, file: str_ptf): void;
+	SaveJson(name: str, value: obj, file?: str_ptf): void;
 
 	/** Save a number value across multiple starts */
-	SaveNumber(name: str, value: num, file: str_ptf): void;
+	SaveNumber(name: str, value: num, file?: str_ptf): void;
 
 	/** Save a text value across multiple starts */
-	SaveText(name: str, value: str, file: str_ptf): void;
+	SaveText(name: str, value: str, file?: str_ptf): void;
 
 	/** Adds media files to phone gallery */
 	ScanFile(file: str_ptf): void;
@@ -1253,10 +1279,13 @@ declare class DsApp {
 	ScheduleJob(delay: num_mls, options?: str): void;
 
 	/** Take a screen shot of your app */
-	ScreenShot(fileName: str_ptf, quality: num_prc): void;
+	ScreenShot(fileName: str_ptf, quality?: num_prc): void;
 
-	/** Import an external JavaScript file */
-	Script(file: str_ptf, noDefer: bin): void;
+	/**
+	 * Import an external JavaScript file
+	 * @param noDefer `load script inline`
+	 */
+	Script(file: str_ptf, noDefer?: bin): void;
 
 	/** Send a file to a remote target */
 	SendFile(file: str_pfa, subject: str, text: str, choose: str): void;
@@ -1268,11 +1297,7 @@ declare class DsApp {
 	 * Intens can be used to perform an operation between different applications or activities
 	 * @param action android.intent.action.*
 	 * @param category android.intent.category.*
-	 * @param extras 
- 	 * &emsp; `name`\
- 	 * &emsp; `type`\
- 	 * &emsp; `value`
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Result` - expect a result to be passed to the callback function
 	 */
 	SendIntent(packageName: str, className: str, action: str, category: str, uri: str_uri, type: str_mim, extras: { name: str, type: "string"|"float"|"int"|"long"|"bool"|"list"|"file"|"uri"|"keydown"|"keyup", value: str }[], options?: string | ("Result"|"ClearTask")[], callback?: (resultCode: -1|0|1, data: { action: str, type: str, data: str, flags: num_int, extras: obj }) => void): void;
@@ -1291,7 +1316,7 @@ declare class DsApp {
 
 	/**
 	 * Set alarm to open your app at a specific time
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Exact` - only works for single shot alarms\
  	 * &emsp; `App` - Opens main app if called from a service
 	 */
@@ -1329,7 +1354,7 @@ declare class DsApp {
 
 	/**
 	 * Filter/ignore certain errors
-	 * @param regex regex pattern
+	 * @param regex `regex pattern`
 	 */
 	SetErrorFilter(regex: str): void;
 
@@ -1341,17 +1366,17 @@ declare class DsApp {
 
 	/**
 	 * Set options for the connected joystick
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `ForwardKeys` - allows the joystick key presses to pass onto the child controls of the main activity
 	 */
 	SetJoystickOptions(options?: string | ("ForwardKeys")[]): void;
 
 	/**
 	 * Blocks android functionality outside your app
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `LockTask` - COSU kiosk\
  	 * &emsp; `Pin` - task un-/pinning
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Tasks` - prevents recent tasks button working
 	 */
 	SetKioskMode(mode: string | ("Power"|"Status"|"Nav"|"NavRight"|"LockTask"|"Pin")[], enable: bin, options?: string | ("Black"|"Tasks")[], packages: str): void;
@@ -1388,7 +1413,7 @@ declare class DsApp {
 
 	/**
 	 * Define global app options
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `NoPause` - dont pause when not in foreground
 	 */
 	SetOptions(options?: string | ("UseBrowser"|"NoKeys"|"ShowKeys"|"NoPause"|"NoThemeAlerts"|"IgnoreSslErrors"|"TouchModal"|"NoCors"|"NoTouch"|"NoFocus"|"Secure"|"ShowLocked"|"WakeScreen"|"ScreenOn")[]): void;
@@ -1422,18 +1447,18 @@ declare class DsApp {
 
 	/**
 	 * Set default text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Change the theme of your app to any created [Theme Object](CreateTheme.htm) */
 	SetTheme(theme: DsTheme): void;
 
 	/**
 	 * Change the user agent for html apps
-	 * @param options Add-appends to default user agent
+	 * @param options `Add-appends to default user agent`
 	 */
 	SetUserAgent(agent: str, options?: str): void;
 
@@ -1442,7 +1467,7 @@ declare class DsApp {
 
 	/**
 	 * Change volume of a given audio type
-	 * @param stream 
+	 * @param stream <br>
  	 * &emsp; `DTMF` - Dual Tone Multi-Frequency
 	 */
 	SetVolume(stream: "Alarm"|"DTMF"|"Music"|"Notification"|"Ring"|"System"|"Voicecall", level: num_frc, options?: "ShowUI"): void;
@@ -1458,17 +1483,14 @@ declare class DsApp {
 
 	/**
 	 * Shows a CheckList
-	 * @param list title:str\:checked:bin\
- 	 * **or** 
- 	 * &emsp; `title`\
- 	 * &emsp; `check`
+	 * @param list title:str\:checked:bin
 	 * @param options sun-moon:shows sun and moon icons instead of default check boxes
 	 */
 	ShowCheckList(title: str, list: str|{ title: str, check: bin }, callback?: (data: { title: str, checked: bin }) => void, width?: num_frc, height?: num_frc, options?: str): DsCheckList;
 
 	/**
 	 * Opens the in-app debug console as black overlay
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `dialog` - Show the debug log as black overlay dialog\
  	 * &emsp; `clear` - Clear content before showing
 	 */
@@ -1485,7 +1507,7 @@ declare class DsApp {
 
 	/**
 	 * Show a progress indicator
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `NoDim` - Don't darken background\
  	 * &emsp; `NonModal` - allow background touch\
  	 * &emsp; `Solid` - shows solid background behind spinner
@@ -1518,10 +1540,10 @@ declare class DsApp {
 
 	/**
 	 * Starts an app in a new window
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Debug` - start app in debug mode\
  	 * &emsp; `Game` - runs in GameView mode
-	 * @param intent { action\, type\, data\, extras }
+	 * @param intent `{ action`, ` type`, ` data`, ` extras }`
 	 */
 	StartApp(file: str_ptf, options?: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[], intent: str): void;
 
@@ -1542,7 +1564,7 @@ declare class DsApp {
 
 	/**
 	 * Execute a shell command on the android shell
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `log` - logs output to console\
  	 * &emsp; `noread` - dont read result (just execute)
 	 */
@@ -1571,21 +1593,21 @@ declare class DsApp {
 
 	/**
 	 * Unzip a zip file
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `spk` - Extract SPK as DS project folder
 	 */
 	UnzipFile(source: str_pth, destination: str_pth, options?: "spk"): void;
 
 	/**
 	 * Update the ProgressBar percentage
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `doevents` - force v8 UI update
 	 */
 	UpdateProgressBar(percent: num_prc, options?: "doevents"): void;
 
 	/**
 	 * Force UI refresh
-	 * @param ms Update Rate
+	 * @param ms `Update Rate`
 	 */
 	UpdateUI(ms: num_mls): void;
 
@@ -1594,7 +1616,7 @@ declare class DsApp {
 
 	/**
 	 * Decode a URI encoded string
-	 * @param options returns DS style paths
+	 * @param options `returns DS style paths`
 	 */
 	Uri2Path(uri: str_uri, options?: str): str;
 
@@ -1609,7 +1631,7 @@ declare class DsApp {
 
 	/**
 	 * Lists the contents of a folder recursively
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Alphasort` - sorts the paths in alphabetical order\
  	 * &emsp; `FullPath` - returns absolute paths to the listed items\
  	 * &emsp; `RegEx` - accepts regexp patterns\
@@ -1628,21 +1650,21 @@ declare class DsApp {
 
 	/**
 	 * Write text to a local file
-	 * @param encoding 
+	 * @param encoding <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
 	 */
 	WriteFile(file: str_ptf, text: str, mode: "Append"|"ASCII", encoding: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"): void;
 
 	/**
 	 * Compress a file to zip
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `spk` - Create SPK from File
 	 */
 	ZipFile(source: str_pth, destination: str_pth, options?: "spk"): void;
 
 	/**
 	 * Compress a folder to zip
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `spk` - Create SPK from DS project folder
 	 */
 	ZipFolder(source: str_pth, destination: str_pth, options?: "spk"): void;
@@ -1653,9 +1675,7 @@ declare class DsAudioRecorder {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -1695,9 +1715,7 @@ declare class DsBluetoothList {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -1713,9 +1731,7 @@ declare class DsBluetoothSerial {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -1745,7 +1761,7 @@ declare class DsBluetoothSerial {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -1754,13 +1770,13 @@ declare class DsBluetoothSerial {
 
 	/**
 	 * Define data format for outgoing data
-	 * @param mode 
+	 * @param mode `Hex`, `Int`, `Text`, `<encoding>`\
  	 * &emsp; `Hex` - comma separated text value\
  	 * &emsp; `Int` - comma separated byte numbers\
  	 * &emsp; `Text` - string of text characters\
  	 * &emsp; `encoding` - UTF-16L/BE
 	 */
-	SetDataMode(mode: "Hex"|"Int"|"Text"|"&lt;encoding&gt;"): void;
+	SetDataMode(mode: str): void;
 
 	/** If the device has sent the connection request
 	 * 	name is of type boolean (true if the connection was established successful)
@@ -1792,24 +1808,22 @@ declare class DsButton {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -1834,7 +1848,10 @@ declare class DsButton {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Returns the currently contained text */
@@ -1872,13 +1889,13 @@ declare class DsButton {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -1950,7 +1967,7 @@ declare class DsButton {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -1964,14 +1981,7 @@ declare class DsButton {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -1981,16 +1991,16 @@ declare class DsCameraView {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -2002,16 +2012,17 @@ declare class DsCameraView {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
 
-	/** Find faces in the current camera view */
+	/**
+	 * Find faces in the current camera view
+	 * @return \{ confidence, eyeDistance, midPoint, pose }
+	 */
 	FindFaces(maxCount?: num_int): { confidence: num_frc, eyeDistance: num, midPoint: {x:num, y:num}, pose: num_int };
 
 	/** Set the focus to the control for immediate access */
@@ -2046,7 +2057,7 @@ declare class DsCameraView {
 
 	/**
 	 * Get camera parameters
-	 * @return key1=value1;key2=value2;...
+	 * @return `key1=value1;key2=value2;...`
 	 */
 	GetParameters(): str_smc;
 
@@ -2055,13 +2066,13 @@ declare class DsCameraView {
 
 	/**
 	 * Returns a new list of possible picture dimensions
-	 * @return w1 x h1\,w2 x h2\,...
+	 * @return `w1 x h1`, `w2 x h2`, `...`
 	 */
 	GetPictureSizes(): str_com;
 
 	/**
 	 * Returns base64 pixel data as raw bitmap, png or jpg format
-	 * @param format 
+	 * @param format `GrayScale`, `JSON`, `<resolution>`, `rawbase64`, `pngbase64`, `jpgbase64`\
  	 * &emsp; `GrayScale` - fastest\
  	 * &emsp; `JSON` - slowest: “ARGB,ARGB,...”\
  	 * &emsp; `<resolution>` - CIF: 352x288\
@@ -2072,9 +2083,12 @@ declare class DsCameraView {
  	 * &emsp; XGA: 1024x768\
  	 * &emsp; UXGA: 1600x1200
 	 */
-	GetPixelData(format: "GrayScale"|"JSON"|"&lt;resolution&gt;"|"rawbase64"|"pngbase64"|"jpgbase64", left: num_frc, top: num_frc, width: num_frc, height: num_frc): str_b64;
+	GetPixelData(format: str, left: num_frc, top: num_frc, width: num_frc, height: num_frc): str_b64;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -2115,7 +2129,7 @@ declare class DsCameraView {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -2127,13 +2141,13 @@ declare class DsCameraView {
 
 	/**
 	 * Keeps tracks of the average color around a given point
-	 * @param list x1\,y1\|x2\,y2\|...
+	 * @param list `x1`, `y1`, `x2`, `y2`, `...`
 	 */
 	ReportColors(list: str_pip, callback: (data: [num,num,num][]) => void, sampSize?: num_pxl, maxRate?: num_mls): void;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2172,7 +2186,7 @@ declare class DsCameraView {
 
 	/**
 	 * Change focus mode
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `Picture` - for taking pictures\
  	 * &emsp; `Video` - for recording videos\
  	 * &emsp; `EDOF` - Extended Depth Of Field for continuous digital focusing
@@ -2250,14 +2264,7 @@ declare class DsCameraView {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -2267,24 +2274,22 @@ declare class DsCheckBox {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -2312,7 +2317,10 @@ declare class DsCheckBox {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Returns the currently contained text */
@@ -2350,13 +2358,13 @@ declare class DsCheckBox {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2413,7 +2421,7 @@ declare class DsCheckBox {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -2427,14 +2435,7 @@ declare class DsCheckBox {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -2444,9 +2445,7 @@ declare class DsCloudStore {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -2480,24 +2479,22 @@ declare class DsCodeEdit {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -2540,7 +2537,10 @@ declare class DsCodeEdit {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get the selected text */
@@ -2593,7 +2593,7 @@ declare class DsCodeEdit {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -2620,7 +2620,7 @@ declare class DsCodeEdit {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2701,7 +2701,7 @@ declare class DsCodeEdit {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -2718,14 +2718,7 @@ declare class DsCodeEdit {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -2738,9 +2731,7 @@ declare class DsCrypt {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -2768,18 +2759,16 @@ declare class DsDialog {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -2810,7 +2799,10 @@ declare class DsDialog {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get title bar height */
@@ -2845,7 +2837,7 @@ declare class DsDialog {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -2854,7 +2846,7 @@ declare class DsDialog {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2932,14 +2924,7 @@ declare class DsDialog {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -2949,17 +2934,13 @@ declare class DsDownloader {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
 	/**
 	 * Download file(s)
-	 * @param url 
- 	 * &emsp; `urls`
-	 * @param fldr must not have a trailing slash
+	 * @param fldr `must not have a trailing slash`
 	 */
 	Download(url: str_url|str_url[], fldr: str_pth, name?: str, headers?: str): void;
 
@@ -2977,7 +2958,7 @@ declare class DsDownloader {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -2999,9 +2980,7 @@ declare class DsEmail {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -3013,18 +2992,18 @@ declare class DsEmail {
 
 	/**
 	 * Send an email to someone
-	 * @param sender email address
-	 * @param recipients email address
+	 * @param sender `email address`
+	 * @param recipients `email address`
 	 */
 	Send(subject: str, body: str, sender: str, recipients: str, attach?: str_pth): void;
 
 	/**
 	 * Set IMAP settings for receiving messages
-	 * @param server 
+	 * @param server <br>
  	 * &emsp; `pop.gmail.com` - google\
  	 * &emsp; `pop.mail.yahoo.com` - yahoo\
  	 * &emsp; `pop.gmx.net` - gmx
-	 * @param port 
+	 * @param port <br>
  	 * &emsp; `993` - imap\
  	 * &emsp; `995` - pop
 	 */
@@ -3038,11 +3017,11 @@ declare class DsEmail {
 
 	/**
 	 * Set SMTP settings for sending messages
-	 * @param server 
+	 * @param server <br>
  	 * &emsp; `smtp.gmail.com` - google\
  	 * &emsp; `smtp.mail.yahoo.com` - yahoo\
  	 * &emsp; `mail.gmx.net` - gmx
-	 * @param port 
+	 * @param port <br>
  	 * &emsp; `465` - SSL\
  	 * &emsp; `578` - TLS (gmail, yahoo)\
  	 * &emsp; `587` - gmx
@@ -3055,9 +3034,7 @@ declare class DsFile {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -3081,7 +3058,7 @@ declare class DsFile {
 
 	/**
 	 * Read data as text
-	 * @param type 
+	 * @param type <br>
  	 * &emsp; `UTF` - read UTF-8 string with 2 byte header\
  	 * &emsp; `Line` - read one line terminated by \\n, \\r or \\r\\n\
  	 * &emsp; `Char` - read big-endian 16-bit character
@@ -3090,7 +3067,7 @@ declare class DsFile {
 
 	/**
 	 * Asynchronously read data as text
-	 * @param type 
+	 * @param type <br>
  	 * &emsp; `Line` - read one line terminated by \\n, \\r or \\r\\n\
  	 * &emsp; `Char` - read big-endian 16-bit character
 	 */
@@ -3107,7 +3084,7 @@ declare class DsFile {
 
 	/**
 	 * Write data to the file
-	 * @param data 
+	 * @param data <br>
  	 * &emsp; `abc46` - low order 8-bit bytes
 	 */
 	WriteData(data: "FA"|"FB"|"FC"|"250"|"251"|"252"|"abc46", mode?: "Hex"|"Int"|"Text"): void;
@@ -3117,9 +3094,7 @@ declare class DsFile {
 
 	/**
 	 * Writes text to file
-	 * @param data 
- 	 * &emsp; `bytes`
-	 * @param type 
+	 * @param type <br>
  	 * &emsp; `UTF` - write UTF-8 encoded text\
  	 * &emsp; `Bytes` - 8-bit bytes\
  	 * &emsp; `Char` - Write big-endian 16-bit characters
@@ -3142,18 +3117,16 @@ declare class DsGameView {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -3181,7 +3154,10 @@ declare class DsGameView {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -3213,13 +3189,13 @@ declare class DsGameView {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -3276,14 +3252,7 @@ declare class DsGameView {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -3296,9 +3265,7 @@ declare class DsGLView {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -3308,13 +3275,22 @@ declare class DsGLView {
 	/** Removes the focus of the control */
 	ClearFocus(): void;
 
-	/** Create a sprite object which can be drawn on the GLView */
+	/**
+	 * Create a sprite object which can be drawn on the GLView
+	 * @return \img
+	 */
 	CreateImage(file: str_ptf, callback?: () => void): GLV_img;
 
-	/** Draw image to canvas */
+	/**
+	 * Draw image to canvas
+	 * @param image \img
+	 */
 	DrawImage(image: GLV_img, x: num_frc, y: num_frc, w?: num_frc, h?: num_frc, angle?: num_deg): void;
 
-	/** Draw part of a sprite to the canvas */
+	/**
+	 * Draw part of a sprite to the canvas
+	 * @param sheet \img
+	 */
 	DrawSprite(sheet: GLV_img, sx: num_pxl, sy: num_pxl, sw: num_pxl, sh: num_pxl, dx: num_frc, dy: num_frc, dw: num_frc, dh: num_frc, angle: num_deg): void;
 
 	/** Set the focus to the control for immediate access */
@@ -3326,7 +3302,10 @@ declare class DsGLView {
 	/** Get the control width in pixels */
 	GetAbsWidth(): num_int;
 
-	/** Returns the glv context */
+	/**
+	 * Returns the glv context
+	 * @return \ctx
+	 */
 	GetContext(): GLV_ctx;
 
 	/** Get the height of the control */
@@ -3338,7 +3317,10 @@ declare class DsGLView {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -3373,7 +3355,7 @@ declare class DsGLView {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -3436,14 +3418,7 @@ declare class DsGLView {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -3461,13 +3436,19 @@ declare class GLV_img {
 }
 declare class GLV_ctx {
 
-	/** Captures the canvas to a png image */
+	/**
+	 * Captures the canvas to a png image
+	 * @param fileName `path relative to “/sdcard”`
+	 */
 	capture(x: num_pxl, y: num_pxl, w: num_pxl, h: num_pxl, fileName: str, successCallback?: fnc, errorCallback?: fnc): void;
 
 	/** <deprecated does nothing */
 	clearRect(x: num_pxl, y: num_pxl, width?: num_pxl, height?: num_pxl): void;
 
-	/** Draws part of a sprite to the context */
+	/**
+	 * Draws part of a sprite to the context
+	 * @param image \img
+	 */
 	drawImage(image: GLV_img, sx: num_pxl, sy: num_pxl, sw: num_pxl, sh: num_pxl, dx: num_pxl, dy: num_pxl, dw: num_pxl, dh: num_pxl): void;
 
 	/** Render draw commands */
@@ -3502,24 +3483,22 @@ declare class DsImage {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -3529,10 +3508,19 @@ declare class DsImage {
 	/** Removes the focus of the control */
 	ClearFocus(): void;
 
-	/** Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn */
+	/**
+	 * Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn
+	 * @param x1 `corner 1`
+	 * @param y1 `corner 1`
+	 * @param x2 `corner 2`
+	 * @param y2 `corner 2`
+	 */
 	DrawArc(x1: num, y1: num, x2: num, y2: num, start: num_deg, sweep: num_deg): void;
 
-	/** Draws a Circle */
+	/**
+	 * Draws a Circle
+	 * @param radius `width relative`
+	 */
 	DrawCircle(x: num, y: num, radius: num): void;
 
 	/** Draw gif frame on a specific time */
@@ -3541,16 +3529,7 @@ declare class DsImage {
 	/** Draws an Image:dso-CreateImage */
 	DrawImage(image: DsImage, x: num, y: num, w?: num, h?: num, angle?: num_deg, mode?: "ADD"|"CLEAR"|"DARKEN"|"DST"|"DST_ATOP"|"DST_IN"|"DST_OUT"|"DST_OVER"|"LIGHTEN"|"MULTIPLY"|"OVERLAY"|"SCREEN"|"SRC"|"SRC_ATOP"|"SRC_IN"|"SRC_OUT"|"SRC_OVER"|"XOR"): void;
 
-	/**
-	 * Draws an image with a 2d transformation matrix
-	 * @param matrix 
- 	 * &emsp; `a`\
- 	 * &emsp; `b`\
- 	 * &emsp; `c`\
- 	 * &emsp; `d`\
- 	 * &emsp; `tx`\
- 	 * &emsp; `ty`
-	 */
+	/** Draws an image with a 2d transformation matrix */
 	DrawImageMtx(image: DsImage, matrix: [num, num, num, num, num, num]): void;
 
 	/** Draws a line */
@@ -3562,11 +3541,7 @@ declare class DsImage {
 	/** Draws a rectangle */
 	DrawRectangle(x1: num, y1: num, x2: num, y2: num): void;
 
-	/**
-	 * Draws a vertically centered sample graph
-	 * @param data 
- 	 * &emsp; `data`
-	 */
+	/** Draws a vertically centered sample graph */
 	DrawSamples(data: num_int[], range: num): void;
 
 	/** Draws a text */
@@ -3602,7 +3577,10 @@ declare class DsImage {
 	/** Returns base64 encoded image data */
 	GetPixelData(format: "rawbase64"|"pngbase64"|"jpgbase64", left?: num_int, top?: num_int, width?: num_int, height?: num_int): str_b64;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -3632,12 +3610,15 @@ declare class DsImage {
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
 
-	/** Measures the size of a given text */
+	/**
+	 * Measures the size of a given text
+	 * @return \{ width, height }
+	 */
 	MeasureText(txt: str): { width: num_frc, height: num_frc };
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -3652,7 +3633,7 @@ declare class DsImage {
 
 	/**
 	 * Saves the image to a file on the local filesystem
-	 * @param quality for jpg files
+	 * @param quality `for jpg files`
 	 */
 	Save(fileName: str_ptf, quality?: num_prc): void;
 
@@ -3667,7 +3648,7 @@ declare class DsImage {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -3745,10 +3726,11 @@ declare class DsImage {
 
 	/**
 	 * Set base64 encoded pixel data
-	 * @param options 
+	 * @param data `<rawbase64>`, `data:image/jpg;base64,<jpgbase64>`, `data:image/png;base64,<pngbase64>`
+	 * @param options <br>
  	 * &emsp; `fix` - set bitmap size
 	 */
-	SetPixelData(data: "&lt;rawbase64&gt;"|"data&colon;image/jpg;base64&comma;&lt;jpgbase64&gt;"|"data&colon;image/png;base64&comma;&lt;pngbase64&gt;", width?: num, height?: num, options?: "px"|"icon"|"resize"|"rescale"|"square"|"fix"): void;
+	SetPixelData(data: str_b64, width?: num, height?: num, options?: "px"|"icon"|"resize"|"rescale"|"square"|"fix"): void;
 
 	/** Change the pixel mode for drawing methods */
 	SetPixelMode(onoff: bin): void;
@@ -3782,14 +3764,7 @@ declare class DsImage {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -3805,24 +3780,22 @@ declare class DsLayout {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -3856,7 +3829,10 @@ declare class DsLayout {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -3888,7 +3864,7 @@ declare class DsLayout {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -3897,7 +3873,7 @@ declare class DsLayout {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -3924,7 +3900,7 @@ declare class DsLayout {
 
 	/**
 	 * Change text size of top-level children
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -3995,14 +3971,7 @@ declare class DsLayout {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -4015,31 +3984,29 @@ declare class DsList {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
 
-	/** ? */
+	/** Expand the list to the full height inside scrollers */
 	Expand(): void;
 
 	/** Set the focus to the control for immediate access */
@@ -4054,10 +4021,16 @@ declare class DsList {
 	/** Get the height of the control */
 	GetHeight(options: "px"): num;
 
-	/** Returns item data by a title */
+	/**
+	 * Returns item data by a title
+	 * @return \{ title, body, image }
+	 */
 	GetItem(title: str): { title: str, body: str, image: str_pth };
 
-	/** Returns item data by an index */
+	/**
+	 * Returns item data by an index
+	 * @return \{ title, body, image }
+	 */
 	GetItemByIndex(index: num_int): { title: str, body: str, image: str_pth };
 
 	/** Get distance to the left parent border */
@@ -4068,14 +4041,17 @@ declare class DsList {
 
 	/**
 	 * Returns the whole list as object
-	 * @return * **or** title1[DELIM]title2[DELIM]...
+	 * @return `title1[DELIM]title2[DELIM]...`
 	 */
 	GetList(delim: str): { title: str, body: str, image: str_pth }[]|str;
 
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Returns the current text size */
@@ -4113,7 +4089,7 @@ declare class DsList {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -4140,7 +4116,7 @@ declare class DsList {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -4196,31 +4172,31 @@ declare class DsList {
 	SetIconMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
 
 	/** Change the icon size */
-	SetIconSize(size: num, mode: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
+	SetIconSize(size: num, mode?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
 
 	/** Change the content of an element by its title */
-	SetItem(title: str, newTitle: str, newBody: str, newImage: str_ptf): void;
+	SetItem(title: str, newTitle: str, newBody?: str, newImage?: str_ptf): void;
 
 	/** Change the content of an element by its index */
-	SetItemByIndex(index: num_int, newTitle: str, newBody: str, newImage: str_ptf): void;
+	SetItemByIndex(index: num_int, newTitle: str, newBody?: str, newImage?: str_ptf): void;
 
 	/** Set item color */
-	SetItemColor(name: str, textClr: str_col, backClr: str_col): void;
+	SetItemColor(name: str, textClr: str_col, backClr?: str_col): void;
 
 	/** Set item color by index */
-	SetItemColorByIndex(index: num_int, textClr: str_col, backClr: str_col): void;
+	SetItemColorByIndex(index: num_int, textClr: str_col, backClr?: str_col): void;
 
 	/** Set the content of the whole list */
-	SetList(list: "title"|"title&colon;icon"|"title&colon;body&colon;icon", delim: str): void;
+	SetList(list: "title"|"title&colon;icon"|"title&colon;body&colon;icon", delim?: str): void;
 
 	/** Define distances to other controls */
 	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Define a callback function for touch events */
-	SetOnLongTouch(callback: (title: str, body: str, icon: str, index: num_int) => void): void;
+	SetOnLongTouch(callback: (title: str, body?: str, icon?: str, index?: num_int) => void): void;
 
 	/** Define a callback function for touch events */
-	SetOnTouch(callback: (title: str, body: str, icon: str, index: num_int) => void): void;
+	SetOnTouch(callback: (title: str, body?: str, icon?: str, index?: num_int) => void): void;
 
 	/** Define distances to contained elements */
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
@@ -4245,34 +4221,34 @@ declare class DsList {
 
 	/**
 	 * Define distances to other controls
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `inner` - around each individual title and body\
  	 * &emsp; `outer` - around both title and body together
 	 */
-	SetTextMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt", options?: "inner"|"outer"): void;
+	SetTextMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt", options?: "inner"|"outer"): void;
 
 	/** Define a shadow around the control */
 	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
 
 	/** Apply shadow to titles */
-	SetTextShadow1(radius: num_deg, dx: num_int, dy: num_int, color: str_col): void;
+	SetTextShadow1(radius: num_deg, dx?: num_int, dy?: num_int, color?: str_col): void;
 
 	/** Apply shadow to bodies */
-	SetTextShadow2(radius: num_deg, dx: num_int, dy: num_int, color: str_col): void;
+	SetTextShadow2(radius: num_deg, dx?: num_int, dy?: num_int, color?: str_col): void;
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
 	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Set title text size */
-	SetTextSize1(size: num, mode: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
+	SetTextSize1(size: num, mode?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
 
 	/** Set body text size */
-	SetTextSize2(size: num, mode: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
+	SetTextSize2(size: num, mode?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -4282,14 +4258,7 @@ declare class DsList {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -4299,18 +4268,16 @@ declare class DsListDialog {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4325,7 +4292,7 @@ declare class DsListDialog {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -4336,7 +4303,7 @@ declare class DsListDialog {
 	SetBackground(file: str_ptf, options: "repeat"): void;
 
 	/** Define a callback function for touch events */
-	SetOnTouch(callback: (title: str, checked: bin) => void): void;
+	SetOnTouch(callback: (title: str, checked?: bin) => void): void;
 
 	/** Change the size of the control */
 	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
@@ -4356,9 +4323,7 @@ declare class DsLocator {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4389,9 +4354,7 @@ declare class DsMediaPlayer {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4458,9 +4421,7 @@ declare class DsMediaStore {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4473,14 +4434,23 @@ declare class DsMediaStore {
 	/** Returns the control class name */
 	GetType(): "MediaStore";
 
-	/** Search for media albums */
-	QueryAlbums(filter: str_sql, sort: "album"|"_id"|"albumArt"|"artist"|"numSongs"|"firstYear"|"lastYear", options?: "internal"|"external"): void;
+	/**
+	 * Search for media albums
+	 * @param sort coloumns
+	 */
+	QueryAlbums(filter?: str_sql, sort?: "album"|"_id"|"albumArt"|"artist"|"numSongs"|"firstYear"|"lastYear", options?: "internal"|"external"): void;
 
-	/** Search for media artists */
-	QueryArtists(filter: str_sql, sort: "_id"|"artist"|"numAlbums"|"numTracks", options?: "internal"|"external"): void;
+	/**
+	 * Search for media artists
+	 * @param sort coloumns
+	 */
+	QueryArtists(filter?: str_sql, sort?: "_id"|"artist"|"numAlbums"|"numTracks", options?: "internal"|"external"): void;
 
-	/** Search for media */
-	QueryMedia(filter: str_sql, sort: "title"|"_id"|"duration"|"size"|"uri"|"album"|"albumID"|"artist"|"artistId", options?: "internal"|"external"): void;
+	/**
+	 * Search for media
+	 * @param sort coloumns
+	 */
+	QueryMedia(filter?: str_sql, sort?: "title"|"_id"|"duration"|"size"|"uri"|"album"|"albumID"|"artist"|"artistId", options?: "internal"|"external"): void;
 
 	/** Called when album query has finished */
 	SetOnAlbumsResult(callback: (result: { album: str, id: num_int, albumArt: str_pth, artist: str, numSongs: num_int, firstYear: str, lastYear: str }[]) => void): void;
@@ -4496,13 +4466,11 @@ declare class DsMediaStore {
 declare class DsNetClient {
 
 	/** Calls the OnReceive callback for incoming TCP data */
-	AutoReceive(server: str_url, port: num_int, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"): void;
+	AutoReceive(server: str_url, port?: num_int, mode?: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4510,7 +4478,7 @@ declare class DsNetClient {
 	Close(): void;
 
 	/** Connect to a server */
-	Connect(address: str_url, port: num_int): void;
+	Connect(address: str_url, port?: num_int): void;
 
 	/** Disconnect from server */
 	Disconnect(): void;
@@ -4535,52 +4503,52 @@ declare class DsNetClient {
 
 	/**
 	 * Receive an UDP Datagram
-	 * @param options &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
+	 * @param options `<BUFSIZ>`\
+ 	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
 	 */
-	ReceiveDatagram(mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", port: num_int, timeout: num, options?: str): str;
+	ReceiveDatagram(mode?: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", port?: num_int, timeout?: num, options?: str): str;
 
 	/**
 	 * Receive UDP datagrams
-	 * @param options &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
+	 * @param options `<BUFSIZ>`\
+ 	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
 	 */
-	ReceiveDatagrams(port: num_int, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", options?: str): void;
+	ReceiveDatagrams(port?: num_int, mode?: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", options?: str): void;
 
 	/** Receive a file via TCP from the server */
-	ReceiveFile(file: str, wait: num): str;
+	ReceiveFile(file: str, wait?: num): str;
 
 	/** Receive text over TCP */
-	ReceiveText(mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"): str;
+	ReceiveText(mode?: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"): str;
 
 	/** Receive video over UDP */
 	ReceiveVideoStream(port: num, img: DsImage): str;
 
 	/**
 	 * Send bytes over TCP connection
-	 * @param data 
- 	 * &emsp; `bytes`\
- 	 * **or** 
+	 * @param data <br>
  	 * &emsp; `bytes` - hexadecimal 00..FF
 	 */
-	SendBytes(data: num_byt[]|string | ("bytes")[], mode: "Int"|"Hex"): void;
+	SendBytes(data: num_byt[]|string | ("bytes")[], mode?: "Int"|"Hex"): void;
 
 	/** Send an UDP Datagram */
-	SendDatagram(data: str, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", address: str_url, port: num_int, options?: "Text"|"Hex"|"Bytes"): void;
+	SendDatagram(data: str, mode?: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", address?: str_url, port?: num_int, options?: "Text"|"Hex"|"Bytes"): void;
 
 	/**
 	 * Define data format for outgoing data
-	 * @param mode 
+	 * @param mode `Hex`, `Int`, `Text`, `<encoding>`\
  	 * &emsp; `Hex` - comma separated text value\
  	 * &emsp; `Int` - comma separated byte numbers\
  	 * &emsp; `Text` - string of text characters\
  	 * &emsp; `encoding` - UTF-16L/BE
 	 */
-	SetDataMode(mode: "Hex"|"Int"|"Text"|"&lt;encoding&gt;"): void;
+	SetDataMode(mode?: str): void;
 
 	/** Specify how to split received data */
-	SetSplitMode(mode: "End"|"Start-End"|"Size", p2: str|num_int, p3: str|num_int): void;
+	SetSplitMode(mode: "End"|"Start-End"|"Size", p2?: str|num_int, p3?: str|num_int): void;
 
 	/** Sends text over TCP connection */
-	SendText(text: str, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"): void;
+	SendText(text: str, mode?: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"): void;
 
 	/** Called when TCP connected or failed to connect to a server */
 	SetOnConnect(callback: (connected: bin) => void): void;
@@ -4595,7 +4563,7 @@ declare class DsNetClient {
 	SetTimeout(seconds: num_sec): void;
 
 	/** Wake up devices if they are configured to */
-	WakeOnLan(ip: str, mac: str): void;
+	WakeOnLan(ip: str, mac?: str): void;
 }
 
 
@@ -4608,7 +4576,7 @@ declare class DsNode {
 	 * Start the main Node process
 	 * @param args argument array
 	 */
-	Start(args: lst, paths: lst): void;
+	Start(args?: lst, paths?: lst): void;
 
 	/** Define a callback function which is called when the Node component is ready for use */
 	SetOnReady(cb: () => void): void;
@@ -4638,7 +4606,7 @@ declare class DsNode {
 	CloseMsgPipe(isCmd: bin): void;
 
 	/** Send a message over the message pipe */
-	SendPipeMsg(msg: str, isCmd: bin): void;
+	SendPipeMsg(msg: str, isCmd?: bin): void;
 
 	/** Send a message to the running node process */
 	SendMessage(msg: str): void;
@@ -4649,14 +4617,23 @@ declare class DsNode {
 	/** Returns if the node process exited */
 	IsDone(): bin;
 
-	/** Run a NodeJS source file */
-	Run(file: str_pth, id: str, newPaths: str_lst): void;
+	/**
+	 * Run a NodeJS source file
+	 * @param id `Context ID`
+	 */
+	Run(file: str_pth, id?: str, newPaths?: str_lst): void;
 
-	/** Execute a line of code in the node process */
-	Execute(js: str_jsc, id: str): void;
+	/**
+	 * Execute a line of code in the node process
+	 * @param id `Context ID`
+	 */
+	Execute(js: str_jsc, id?: str): void;
 
-	/** Install a node module from npmjs.org */
-	AddModule(name: "name"|"name^ver", dir: str): void;
+	/**
+	 * Install a node module from npmjs.org
+	 * @param dir `optional target directory`
+	 */
+	AddModule(name: "name"|"name^ver", dir?: str): void;
 }
 
 
@@ -4664,9 +4641,7 @@ declare class DsNotification {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4686,13 +4661,13 @@ declare class DsNotification {
 	SetLargeImage(image: str_ptf): void;
 
 	/** Activate device notification LEDs */
-	SetLights(color: str_col, onMs: num_mls, offMs: num_mls): void;
+	SetLights(color: str_col, onMs?: num_mls, offMs?: num_mls): void;
 
 	/**
 	 * Set notification texts
-	 * @param extra Add multiline text in your notification.
+	 * @param extra `Add multiline text in your notification.`
 	 */
-	SetMessage(ticker: str, title: str, text: str, extra: str): void;
+	SetMessage(ticker: str, title?: str, text?: str, extra?: str): void;
 
 	/** Called when notification intercepted */
 	SetOnNotify(callback: (source: str, title: str, message: str, extra: str, type: "Normal") => void): void;
@@ -4706,14 +4681,12 @@ declare class DsNxt {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
 	/** Play frequency tone */
-	Beep(frequency: num_hrz, duration: num_mls): void;
+	Beep(frequency: num_hrz, duration?: num_mls): void;
 
 	/** Brakes motors smoothly */
 	Brake(motors: "A"|"B"|"C"|"ABC"): void;
@@ -4729,9 +4702,9 @@ declare class DsNxt {
 
 	/**
 	 * Commands NXT to drive motors
-	 * @param rotations -100..100
+	 * @param rotations `-100..100`
 	 */
-	Drive(motors: "A"|"B"|"C"|"ABC", power: num_prc, rotations: num_prc, options?: str): void;
+	Drive(motors: "A"|"B"|"C"|"ABC", power: num_prc, rotations?: num_prc, options?: str): void;
 
 	/** Find first program file */
 	FileFindFirst(pattern: str): str;
@@ -4769,47 +4742,46 @@ declare class DsNxt {
 	/** Checks if the device is paired with an other */
 	IsPaired(name: str): bin;
 
-	/** Play a sound file for a given amount of times */
-	PlaySoundFile(file: str_ptf, repeat: num_int): void;
+	/** Play a sound file a certain amount of times */
+	PlaySoundFile(file: str_ptf, repeat?: num_int): void;
 
 	/**
 	 * Read a color sensor value on the input where the sensor is plugged into
-	 * @param input 1
-	 * @return 1..6 or 0..1023
+	 * @return `1..6 or 0..1023`
 	 */
-	ReadColorSensor(input: num_int, mode: "ColorDetect"|"LightSense"|"RedSense"|"GreenSense"|"BlueSense"): num_int;
+	ReadColorSensor(input: 1, mode?: "ColorDetect"|"LightSense"|"RedSense"|"GreenSense"|"BlueSense"): num_int;
 
 	/**
 	 * Get measured ultrasinic distance in cm
-	 * @param input 1..4
+	 * @param input `1..4`
 	 */
 	ReadDistanceSensor(input: num_int): num_flt;
 
 	/**
 	 * Measures the light intensity
-	 * @param input 1..4
-	 * @return 0..100
+	 * @param input `1..4`
+	 * @return `0..100`
 	 */
-	ReadLightSensor(input: num_int, active: bin): num_int;
+	ReadLightSensor(input: num_int, active?: bin): num_int;
 
 	/**
 	 * Reads a message from the NXT brick's mail box
-	 * @param mailbox 1..10
+	 * @param mailbox `1..10`
 	 */
-	ReadMail(mailbox: num_int, type: "Text"|"Number"|"Logic", remove: bin): str;
+	ReadMail(mailbox: num_int, type?: "Text"|"Number"|"Logic", remove?: bin): str;
 
 	/**
 	 * Measure the sound pressure level
-	 * @param input 1..4
-	 * @param mode 
+	 * @param input `1..4`
+	 * @param mode <br>
  	 * &emsp; `DB` - Decibels\
  	 * &emsp; `DbA` - A-weighted Decibels
 	 */
-	ReadSoundSensor(input: num_int, mode: "DB"|"DbA"): num_flt;
+	ReadSoundSensor(input: num_int, mode?: "DB"|"DbA"): num_flt;
 
 	/**
 	 * Check if the touch sensor is pressed
-	 * @param input 1..4
+	 * @param input `1..4`
 	 */
 	ReadTouchSensor(input: num_int): bin;
 
@@ -4821,16 +4793,16 @@ declare class DsNxt {
 
 	/**
 	 * Sends a message to the NXT brick's mail box
-	 * @param mailbox 1..10
+	 * @param mailbox `1..10`
 	 */
-	SendMail(mailbox: num_int, type: "Text"|"Number"|"Logic", message: str|num_int): void;
+	SendMail(mailbox: num_int, type?: "Text"|"Number"|"Logic", message?: str|num_int): void;
 
 	/** Inverts the direction of motor commands */
 	SetInvert(invert: bin): void;
 
 	/**
 	 * Change sensor LED color
-	 * @param input 1..4
+	 * @param input `1..4`
 	 */
 	SetLampColor(input: num_int, color: "White"|"Red"|"Green"|"Blue"|"Off"): void;
 
@@ -4854,7 +4826,7 @@ declare class DsNxt {
 
 	/**
 	 * Convert color number to its name
-	 * @param val 1..6
+	 * @param val `1..6`
 	 */
 	ToColorName(val: num_int): "black"|"blue"|"green"|"yellow"|"red"|"white";
 }
@@ -4863,13 +4835,11 @@ declare class DsNxt {
 declare class DsOverlay {
 
 	/** Adds layout to overlay */
-	AddLayout(layout: DsLayout, left: num_frc, top: num_frc, options?: "px"): void;
+	AddLayout(layout: DsLayout, left?: num_frc, top?: num_frc, options?: "px"): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4883,7 +4853,7 @@ declare class DsOverlay {
 	RemoveLayout(layout: DsLayout): void;
 
 	/** Changes a child layout position */
-	SetPosition(layout: DsLayout, left: num_frc, top: num_frc, options?: "px"): void;
+	SetPosition(layout: DsLayout, left?: num_frc, top?: num_frc, options?: "px"): void;
 }
 
 
@@ -4891,9 +4861,7 @@ declare class DsPhoneState {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4915,15 +4883,13 @@ declare class DsPlayStore {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
 	/**
 	 * Get product info from Google Play
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `IAP` - In-App purchases\
  	 * &emsp; `SUBS` - subscriptions
 	 */
@@ -4947,24 +4913,22 @@ declare class DsScroller {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -4992,7 +4956,10 @@ declare class DsScroller {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get horizontal scroll bar position */
@@ -5030,7 +4997,7 @@ declare class DsScroller {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -5045,7 +5012,7 @@ declare class DsScroller {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -5096,14 +5063,7 @@ declare class DsScroller {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5113,24 +5073,22 @@ declare class DsSeekBar {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -5155,7 +5113,10 @@ declare class DsSeekBar {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -5190,13 +5151,13 @@ declare class DsSeekBar {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -5216,7 +5177,7 @@ declare class DsSeekBar {
 	SetBackground(file: str_ptf, options: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over", options?: str): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over", options?: str): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -5259,14 +5220,7 @@ declare class DsSeekBar {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5276,9 +5230,7 @@ declare class DsSensor {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -5302,7 +5254,7 @@ declare class DsSensor {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -5327,9 +5279,7 @@ declare class DsService {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -5343,7 +5293,7 @@ declare class DsService {
 	SetInBackground(): void;
 
 	/** Run service in foreground */
-	SetInForeground(title: str, text: str, largeIcon: str_ptf, smallIcon: str_ptf, importance: "none"|"min"|"low"|"high"): void;
+	SetInForeground(title: str, text?: str, largeIcon?: str_ptf, smallIcon?: str_ptf, importance?: "none"|"min"|"low"|"high"): void;
 
 	/** Called when service sent a message */
 	SetOnMessage(callback: (message: str) => void): void;
@@ -5357,9 +5307,7 @@ declare class DsSMS {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -5368,7 +5316,7 @@ declare class DsSMS {
 
 	/**
 	 * Send SMS message
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `MultiPart` - multi-part SMS messaging
 	 */
 	Send(number: str, message: str, options?: "MultiPart"): void;
@@ -5385,9 +5333,7 @@ declare class DsSpeechRec {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -5405,7 +5351,7 @@ declare class DsSpeechRec {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -5430,24 +5376,22 @@ declare class DsSpinner {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -5472,7 +5416,10 @@ declare class DsSpinner {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Returns the currently contained text */
@@ -5510,7 +5457,7 @@ declare class DsSpinner {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -5519,7 +5466,7 @@ declare class DsSpinner {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -5548,7 +5495,7 @@ declare class DsSpinner {
 	SetEnabled(enable: bin): void;
 
 	/** Change spinner list */
-	SetList(list: str_com, delim: str): void;
+	SetList(list: str_com, delim?: str): void;
 
 	/** Define distances to other controls */
 	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
@@ -5579,7 +5526,7 @@ declare class DsSpinner {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -5593,14 +5540,7 @@ declare class DsSpinner {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5610,24 +5550,22 @@ declare class DsSwitch {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -5655,7 +5593,10 @@ declare class DsSwitch {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Returns the currently contained text */
@@ -5693,13 +5634,13 @@ declare class DsSwitch {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -5749,7 +5690,7 @@ declare class DsSwitch {
 	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Customize the button looks */
-	SetStyle(color1: str_col, color2: str_col, radius: num_pxl, strokeClr: str_col, strokeWidth: num_pxl, shadow: num_frc): void;
+	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc): void;
 
 	/** Change displayed text */
 	SetText(text: str): void;
@@ -5759,7 +5700,7 @@ declare class DsSwitch {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -5773,14 +5714,7 @@ declare class DsSwitch {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5790,9 +5724,7 @@ declare class DsSynth {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -5801,17 +5733,20 @@ declare class DsSynth {
 
 	/**
 	 * Play a sequence of notes
-	 * @param tune note1&colon;duration1&comma;note2&colon;duration2&comma;...
+	 * @param tune `note1:duration1,note2:duration2,...`
 	 */
 	PlayMidiTune(tune: str_com): void;
 
 	/**
 	 * Play a single note
-	 * @param note 0..125
+	 * @param note `0..125`
 	 */
 	PlayNote(note: num_int): void;
 
-	/** Plays a frequency tone */
+	/**
+	 * Plays a frequency tone
+	 * @param frequency frequency
+	 */
 	PlayTone(frequency: num, duration: num_mls): void;
 
 	/** Change delay effect difference */
@@ -5859,19 +5794,28 @@ declare class DsSynth {
 	/** En/Disables VCA effect */
 	SetVcaEnabled(enable: bin): void;
 
-	/** Set a time of minimum volume */
+	/**
+	 * Set a time of minimum volume
+	 * @param release mls
+	 */
 	SetVcaRelease(release: num): void;
 
 	/** Set a basis volume */
 	SetVcaSustain(sustain: num_frc): void;
 
-	/** Initialize the VCF effect */
+	/**
+	 * Initialize the VCF effect
+	 * @param cuttoff frequency
+	 */
 	SetVcf(attack: num_mls, decay: num_mls, sustain: num_frc, release: num_mls, cuttoff: num, resonance: num_frc, depth: num_frc): void;
 
 	/** Set a time of maximum frequencies */
 	SetVcfAttack(attack: num_mls): void;
 
-	/** Set a maximum frequency which will never be exceeded */
+	/**
+	 * Set a maximum frequency which will never be exceeded
+	 * @param cuttoff frequency
+	 */
 	SetVcfCutoff(cuttoff: num): void;
 
 	/** Controls time when frequency is lowered to sustain */
@@ -5910,15 +5854,13 @@ declare class DsSysProc {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
 	/**
 	 * Read from stderr
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `nowait` - dont wait for input
 	 */
 	Err(maxLines: num_int, options?: string | ("nowait")[]): void;
@@ -5928,14 +5870,14 @@ declare class DsSysProc {
 
 	/**
 	 * Read from stdin
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `nowait` - dont wait for input
 	 */
 	In(maxLines: num_int, options?: string | ("nowait")[]): void;
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -5960,24 +5902,22 @@ declare class DsTabs {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -6008,7 +5948,10 @@ declare class DsTabs {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -6040,13 +5983,13 @@ declare class DsTabs {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -6105,7 +6048,7 @@ declare class DsTabs {
 	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Set text size */
-	SetTextSize(size: num, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetTextSize(size: num, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** En/Disables touch events to be fired on the control */
 	SetTouchable(touchable: bin): void;
@@ -6124,14 +6067,7 @@ declare class DsTabs {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -6146,24 +6082,22 @@ declare class DsText {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -6203,7 +6137,10 @@ declare class DsText {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Returns the currently contained text */
@@ -6241,20 +6178,20 @@ declare class DsText {
 
 	/**
 	 * Append line to the text
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `Clear` - Clears the log before writing
 	 */
 	Log(message: str, options?: string | ("Clear"|"Red"|"Green"|"Blue")[]): void;
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -6335,7 +6272,7 @@ declare class DsText {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -6352,14 +6289,7 @@ declare class DsText {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -6369,24 +6299,22 @@ declare class DsTextEdit {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -6435,7 +6363,10 @@ declare class DsTextEdit {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get the selected text */
@@ -6485,7 +6416,7 @@ declare class DsTextEdit {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -6497,7 +6428,7 @@ declare class DsTextEdit {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -6566,7 +6497,7 @@ declare class DsTextEdit {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -6580,14 +6511,7 @@ declare class DsTextEdit {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -6600,18 +6524,16 @@ declare class DsTheme {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -6620,7 +6542,7 @@ declare class DsTheme {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -6640,7 +6562,7 @@ declare class DsTheme {
 	SetButtonPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Define button style */
-	SetButtonStyle(color1: str_col, color2: str_col, radius: num_pxl, strokeClr: str_col, strokeWidth: num_pxl, shadow: num_frc, checkClr: str_col): void;
+	SetButtonStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc, checkClr?: str_col): void;
 
 	/** Define check box options */
 	SetCheckBoxOptions(options?: string | ("FillX/Y")[]): void;
@@ -6705,24 +6627,22 @@ declare class DsToggle {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -6750,7 +6670,10 @@ declare class DsToggle {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Returns the currently contained text */
@@ -6788,13 +6711,13 @@ declare class DsToggle {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -6844,7 +6767,7 @@ declare class DsToggle {
 	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Customize the button looks */
-	SetStyle(color1: str_col, color2: str_col, radius: num_pxl, strokeClr: str_col, strokeWidth: num_pxl, shadow: num_frc): void;
+	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc): void;
 
 	/** Change displayed text */
 	SetText(text: str): void;
@@ -6854,7 +6777,7 @@ declare class DsToggle {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -6868,14 +6791,7 @@ declare class DsToggle {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -6885,9 +6801,7 @@ declare class DsUSBSerial {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -6908,19 +6822,19 @@ declare class DsUSBSerial {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Define data format for outgoing data
-	 * @param mode 
+	 * @param mode `Hex`, `Int`, `Text`, `<encoding>`\
  	 * &emsp; `Hex` - comma separated text value\
  	 * &emsp; `Int` - comma separated byte numbers\
  	 * &emsp; `Text` - string of text characters\
  	 * &emsp; `encoding` - UTF-16L/BE
 	 */
-	SetDataMode(mode: "Hex"|"Int"|"Text"|"&lt;encoding&gt;"): void;
+	SetDataMode(mode: str): void;
 
 	/** Raises the Data Terminal Ready state */
 	SetDTR(onOff: bin): void;
@@ -6938,7 +6852,7 @@ declare class DsUSBSerial {
 	SetRTS(onOff: bin): void;
 
 	/** Specify how to split received data */
-	SetSplitMode(mode: "End"|"Start-End"|"Size", p2: str|num_int, p3: str|num_int): void;
+	SetSplitMode(mode: "End"|"Start-End"|"Size", p2?: str|num_int, p3?: str|num_int): void;
 
 	/** Set timeout */
 	SetTimeout(ms: num_mls): void;
@@ -6950,7 +6864,7 @@ declare class DsUSBSerial {
 	Stop(): void;
 
 	/** Send data to connected device */
-	Write(text: str, encoding: "US-ASCII"|"UTF16L/BE"): void;
+	Write(text: str, encoding?: "US-ASCII"|"UTF16L/BE"): void;
 }
 
 
@@ -6958,18 +6872,16 @@ declare class DsVideoView {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -6997,7 +6909,10 @@ declare class DsVideoView {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -7035,7 +6950,7 @@ declare class DsVideoView {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -7050,7 +6965,7 @@ declare class DsVideoView {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -7128,14 +7043,7 @@ declare class DsVideoView {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -7146,19 +7054,20 @@ declare class DsWebServer {
 	/** Redirect urls */
 	AddRedirect(pattern: str_url, location: str_url): void;
 
-	/** Called when servlet received a message */
-	AddServlet(path: "/name", callback?: (args: { parameter: argument }, info: { remoteAddress: str }) => void): void;
+	/**
+	 * Called when servlet received a message
+	 * @param path url path
+	 */
+	AddServlet(path: "/name", callback: (args: { parameter: argument }, info: { remoteAddress: str }) => void): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
 	/** Disconnect Client from WebServer */
-	Disconnect(ip: str, id: num_int): void;
+	Disconnect(ip: str, id?: num_int): void;
 
 	/** Returns the control class name */
 	GetType(): "WebServer";
@@ -7168,7 +7077,7 @@ declare class DsWebServer {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -7202,9 +7111,7 @@ declare class DsWebSocket {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -7238,16 +7145,16 @@ declare class DsWebView {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -7256,9 +7163,7 @@ declare class DsWebView {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -7307,7 +7212,10 @@ declare class DsWebView {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, width, height }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
 
 	/** Get distance to the upper parent border */
@@ -7348,7 +7256,7 @@ declare class DsWebView {
 
 	/**
 	 * Load html to WebView
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AllowZoom` - Allows the user to zoom the page\
  	 * &emsp; `Wide` - force page using “wide” viewport\
  	 * &emsp; `NoActionBar` - prevents copy/paste popup\
@@ -7362,11 +7270,11 @@ declare class DsWebView {
  	 * &emsp; `UseBasicInput` - makes softkeyboard useful for html code editors\
  	 * &emsp; `UseBrowser` - Open links in external browser
 	 */
-	LoadHtml(html: str_htm, baseFolder: str_ptd, options?: string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoRedirect"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]): void;
+	LoadHtml(html: str_htm, baseFolder?: str_ptd, options?: string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoRedirect"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]): void;
 
 	/**
 	 * Load url to WebView
-	 * @param options 
+	 * @param options <br>
  	 * &emsp; `AllowZoom` - Allows the user to zoom the page\
  	 * &emsp; `Wide` - force page using “wide” viewport\
  	 * &emsp; `NoActionBar` - prevents copy/paste popup\
@@ -7384,7 +7292,7 @@ declare class DsWebView {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -7396,7 +7304,7 @@ declare class DsWebView {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -7415,19 +7323,15 @@ declare class DsWebView {
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
 
-	/**
-	 * Block urls from loading
-	 * @param urls 
- 	 * &emsp; `urls`
-	 */
+	/** Block urls from loading */
 	SetBlockedUrls(urls: str[]|"urls"): void;
 
 	/**
 	 * Define context menus to listen for
-	 * @param links Copy URL\,Open URL
-	 * @param images Download Image
+	 * @param links `Copy URL`, `Open URL`
+	 * @param images `Download Image`
 	 */
-	SetContextMenus(links: str, images: str): void;
+	SetContextMenus(links?: str, images?: str): void;
 
 	/** Adjust the visual color effect with different BlendModes */
 	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
@@ -7494,7 +7398,7 @@ declare class DsWebView {
 
 	/**
 	 * Set/Add custom user agent
-	 * @param options Add-appends to default user agent
+	 * @param options `Add-appends to default user agent`
 	 */
 	SetUserAgent(agent: str, options?: str): void;
 
@@ -7508,21 +7412,14 @@ declare class DsWebView {
 	Show(): void;
 
 	/** Simulate key event */
-	SimulateKey(keyName: str, modifiers: "META_META_ON"|"META_RIGHT_ON"|"NUM_LOCK_ON"|"SCROLL_LOCK_ON"|"SHIFT_LEFT_ON"|"SHIFT_MASK"|"SHIFT_ON"|"SHIFT_RIGHT_ON"|"SYM_ON", pause: num): void;
+	SimulateKey(keyName: str, modifiers?: "META_META_ON"|"META_RIGHT_ON"|"NUM_LOCK_ON"|"SCROLL_LOCK_ON"|"SHIFT_LEFT_ON"|"SHIFT_MASK"|"SHIFT_ON"|"SHIFT_RIGHT_ON"|"SYM_ON", pause?: num): void;
 
 	/** Stop loading processes */
 	Stop(): void;
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -7532,9 +7429,7 @@ declare class DsWizard {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -7571,18 +7466,16 @@ declare class DsYesNoDialog {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -7597,12 +7490,12 @@ declare class DsYesNoDialog {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/** Change the background color */
-	SetBackColor(color: str_col, radius: num_pxl): void;
+	SetBackColor(color: str_col, radius?: num_pxl): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -7623,17 +7516,21 @@ declare class DsYesNoDialog {
 
 declare class DsZipUtil {
 
-	/** Add file to zip */
+	/**
+	 * Add file to zip
+	 * @param name `zip path`
+	 */
 	AddFile(name: str, file: str_ptf): void;
 
-	/** Add text to the zip */
+	/**
+	 * Add text to the zip
+	 * @param name `zip path`
+	 */
 	AddText(name: str, text: str): void;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param properties 
- 	 * &emsp; `command`\
- 	 * &emsp; `args`
+	 * @param properties \{ command: args }
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
@@ -7655,7 +7552,10 @@ declare class DsZipUtil {
 	 */
 	CreateKey(file: str_ptf, password: str, name: str, organization: str): void;
 
-	/** Extract file from zip */
+	/**
+	 * Extract file from zip
+	 * @param name `zip path`
+	 */
 	Extract(name: str, file: str_ptf): void;
 
 	/** Returns the control class name */
@@ -7671,18 +7571,21 @@ declare class DsZipUtil {
 	Sign(fileIn: str_ptf, fileOut: str_ptf, keyStore: str_pth, password: str): bin;
 
 	/** Update zip manifest */
-	UpdateManifest(fileIn: str_ptf, fileOut: str_ptf, packageName: str, appName: str, permissions: str_com, options?: string | ("Launch"|"Debug")[]): void;
+	UpdateManifest(fileIn: str_ptf, fileOut: str_ptf, packageName: str, appName: str, permissions?: str_com, options?: string | ("Launch"|"Debug")[]): void;
 }
 
 
 declare class DsDatabase {
 
-	/** AddTransaction
-	 * @deprecated  Use ExecuteSQL instead */
+	/**
+	 * AddTransaction
+	 * @deprecated  Use ExecuteSQL instead
+	 * @param transaction JS SQLitePluginTransaction
+	 */
 	addTransaction(transaction: obj): void;
 
 	/** Close the database */
-	close(success: (msg: str) => void, error: (msg: str) => void): void;
+	close(success?: (msg: str) => void, error?: (msg: str) => void): void;
 
 	/** Close the database */
 	Close(): void;
@@ -7691,10 +7594,10 @@ declare class DsDatabase {
 	Delete(): void;
 
 	/** Execute SQL query */
-	executeSql(statement: str_sql, params: lst, success: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void, error: (t: all, err: { message: str }) => void): void;
+	executeSql(statement: str_sql, params?: lst, success?: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void, error?: (t: all, err: { message: str }) => void): void;
 
 	/** Execute SQL query */
-	ExecuteSql(sql: str_sql, params: lst, success: (res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void, error: (err: str) => void): void;
+	ExecuteSql(sql: str_sql, params?: lst, success?: (res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void, error?: (err: str) => void): void;
 
 	/** Get database name */
 	GetName(): str;
@@ -7706,11 +7609,11 @@ declare class DsDatabase {
 	name: str;
 
 	/** Open database */
-	open(success: () => void, error: (msg: str) => void): void;
+	open(success?: () => void, error?: (msg: str) => void): void;
 
 	/** ReadTransaction
 	 * @deprecated  Use ExecuteSql instead */
-	readTransaction(fn: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, error: (err: str) => void, success: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void): void;
+	readTransaction(fn: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, error?: (err: str) => void, success?: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void): void;
 
 	/** StartNextTransaction
 	 * @deprecated  Use ExecuteSql instead */
@@ -7718,7 +7621,7 @@ declare class DsDatabase {
 
 	/** Transaction
 	 * @deprecated  Use ExecuteSql instead */
-	transaction(fn: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, error: (err: str) => void, success: (fnc: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void): void;
+	transaction(fn: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, error?: (err: str) => void, success?: (fnc: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void): void;
 }
 
 

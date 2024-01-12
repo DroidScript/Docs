@@ -66,8 +66,7 @@
 		"CreateTextJumbo": "Creates an extra large text",
 		"CreateTextParagraph": "Creates a paragraph text",
 		"CreateTextSecondary": "Creates a secondary text",
-		"CreateTimePicker": "Creates a material design time picker",
-		"ShowMenu": "Show a menu on a given control"
+		"CreateTimePicker": "Creates a material design time picker"
 	},
 	"alr": {
 		"GetVisibility": "Returns the current visibility state",
@@ -1761,8 +1760,5 @@
 		"IsEnabled": "Checks if the control is useable",
 		"IsOverlap": "Checks if the control overlaps with another",
 		"SetTextEdit": "Pass texedit control to display input values"
-	},
-	"smu": {
-		"SetOnSelect": "Calls a function when the user selects an item"
 	}
 }

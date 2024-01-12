@@ -136,46 +136,46 @@ declare class DsMUI {
 
 	/**
 	 * Adds a nice pop-up at the top
-	 * @param text Popup text
-	 * @param icon Material icon
+	 * @param text `Popup text`
+	 * @param icon `Material icon`
 	 */
 	AddAlert(text: str, icon: str, color: str_col): MuiAlert;
 
 	/**
 	 * Adds a simple alert with a single button
-	 * @param text Text of the alert
-	 * @param btnText Button text. Default is OKAY
+	 * @param text `Text of the alert`
+	 * @param btnText `Button text. Default is OKAY`
 	 */
 	AddAlertSimple(text: str, btnText: str, color: str_col): MuiAlertSimple;
 
 	/**
 	 * Adds an appbar on a given layout
-	 * @param p1 Title text|Hint
-	 * @param p2 Material Icon
-	 * @param options 
+	 * @param p1 `Title text`, `Hint`
+	 * @param p2 `Material Icon`
+	 * @param options <br>
  	 * &emsp; `Rectangle` - for Modern Appbar
 	 */
 	AddAppBar(parent: DsLayout, p1: str, p2: str, p3: "controls"|"color", options: string | ("Elegant"|"Modern"|"Default"|"Round"|"Rectangle")[]): MuiAppBar;
 
 	/**
 	 * Adds an elegant appbar on a given layout
-	 * @param title Title text
-	 * @param leadingIcon Material icon font
-	 * @param options material icon font for the right controls
+	 * @param title `Title text`
+	 * @param leadingIcon `Material icon font`
+	 * @param options `material icon font for the right controls`
 	 */
 	AddAppBarElegant(parent: DsLayout, title: str, leadingIcon: str, options: str_com): MuiAppBarElegant;
 
 	/**
 	 * Adds a modern appbar on a given layout
-	 * @param hint Hint text for the search input
-	 * @param controlIcon Material font for the control icon
+	 * @param hint `Hint text for the search input`
+	 * @param controlIcon `Material font for the control icon`
 	 */
 	AddAppBarModern(parent: DsLayout, hint: str, controlIcon: str, options: "Round"|"Rectangle", color: str_col): MuiAppBarModern;
 
 	/**
 	 * Adds a banner dialog
-	 * @param okText Truthy button text
-	 * @param cancelText Falsey button text
+	 * @param okText `Truthy button text`
+	 * @param cancelText `Falsey button text`
 	 */
 	AddBanner(text: str, okText: str, cancelText: str): MuiBanner;
 
@@ -211,24 +211,13 @@ declare class DsMUI {
 
 	/**
 	 * Adds a toggleable button on a given layout
-	 * @param text Button text
+	 * @param text `Button text`
 	 */
 	AddButtonToggle(parent: DsLayout, text: str, width: num_frc, height: num_frc, value: bin, callback: () => void): MuiButtonToggle;
 
 	/**
 	 * Adds a card on a given layout
-	 * @param options 
- 	 * &emsp; `title`\
- 	 * &emsp; `body`\
- 	 * &emsp; `image`\
- 	 * &emsp; `buttonText`\
- 	 * &emsp; `color`\
- 	 * &emsp; `width`\
- 	 * &emsp; `dividerAvatar`\
- 	 * &emsp; `dividerBody`\
- 	 * &emsp; `avatar`\
- 	 * &emsp; `avatarOnTop`\
- 	 * &emsp; `buttonType`
+	 * @param options \{title, body, image, buttonText, color, width, dividerAvatar, dividerBody, avatar, avatarOnTop, buttonType}
 	 */
 	AddCard(parent: DsLayout, options: {title: str, body: str, image: str_ptf, buttonText: str_com, color: str, width: num_frc, dividerAvatar: bin, dividerBody: bin, avatar: str_pth, avatarOnTop: bin, buttonType: "raised"|"raisedoutline"|"round"|"roundoutline"|"flat"}): MuiCard;
 
@@ -251,14 +240,14 @@ declare class DsMUI {
 	 * Adds a new DataTable Control
 	 * @param columns An array of strings of the form Name:Type for column header. Where 'Name' is the column name and 'Type is the column type [Can be Sortable or Numeric]'
 	 * @param values An array of strings of the form Val1:Val2:Val3...
-	 * @param width Fraction of the screen width
-	 * @param height Fraction of the screen height
+	 * @param width `Fraction of the screen width`
+	 * @param height `Fraction of the screen height`
 	 */
 	AddDataTable(parent: DsLayout, columns: lst, values: lst, width: num, height: num, options: string | ("Selectable")[]): MuiDataTable;
 
 	/**
 	 * Adds a date picker dialog
-	 * @param yyyy Full year
+	 * @param yyyy `Full year`
 	 * @param mm [0-11]
 	 * @param dd [1-31]
 	 */
@@ -266,10 +255,10 @@ declare class DsMUI {
 
 	/**
 	 * Adds a customizable materialize dialog
-	 * @param body Body text
-	 * @param okText Truthy button text
-	 * @param cancelText Falsey button text
-	 * @param divider Show divider or hide
+	 * @param body `Body text`
+	 * @param okText `Truthy button text`
+	 * @param cancelText `Falsey button text`
+	 * @param divider `Show divider or hide`
 	 */
 	AddDialog(title: "Title", body: str, okText: str, cancelText: str, divider: bin): MuiDialog;
 
@@ -278,25 +267,25 @@ declare class DsMUI {
 
 	/**
 	 * Adds a floating action button
-	 * @param icon Material icon fonts
+	 * @param icon `Material icon fonts`
 	 */
 	AddFAB(parent: DsLayout, icon: str, color: str_col, options: string | ("outline"|"elegant"|"default")[]): MuiFAB;
 
 	/**
 	 * Adds an elegant floating action button
-	 * @param icon Material icon fonts
+	 * @param icon `Material icon fonts`
 	 */
 	AddFABElegant(parent: DsLayout, icon: str, color: str_col): MuiFABElegant;
 
 	/**
 	 * Adds an outlined floating action button on a given layout
-	 * @param icon Material icon font
+	 * @param icon `Material icon font`
 	 */
 	AddFABOutline(parent: DsLayout, icon: str, color: str_col, backColor: str_col): MuiFABOutline;
 
 	/**
 	 * Adds a layout
-	 * @param options Comma separated DroidScript layout options
+	 * @param options `Comma separated DroidScript layout options`
 	 */
 	AddLayout(parent: DsLayout, type: "Linear"|"Absolute"|"Frame"|"Card", options: str): MuiLayout;
 
@@ -315,14 +304,7 @@ declare class DsMUI {
 	 */
 	AddListModern(parent: DsLayout, list: lst, width: num, height: num, options: "Initial"|"Material"|"Avatar"|"RightIcon"|"RightNote"|"Selectable"): MuiListModern;
 
-	/**
-	 * Adds a simple list for navigation purposes
-	 * @param list 
- 	 * &emsp; `title`\
- 	 * &emsp; `icon`\
- 	 * &emsp; `color`\
- 	 * &emsp; `badge`
-	 */
+	/** Adds a simple list for navigation purposes */
 	AddListSimple(parent: DsLayout, list: { title: str, icon: str, color: str_col, badge: num }, width: num_frc, height: num_frc, options: "Divider"): MuiListSimple;
 
 	/** Adds a simple menu */
@@ -333,10 +315,10 @@ declare class DsMUI {
 
 	/**
 	 * Adds a modal
-	 * @param body Body text. If you want to customize the modal layout pass an empty string.
-	 * @param okTxt Truthy button text
-	 * @param cancelTxt Falsy button text
-	 * @param options Dialog options with additional Full option
+	 * @param body `Body text. If you want to customize the modal layout pass an empty string.`
+	 * @param okTxt `Truthy button text`
+	 * @param cancelTxt `Falsy button text`
+	 * @param options `Dialog options with additional Full option`
 	 */
 	AddModal(title: str, body: str, okTxt: str, cancelTxt: str, options: str): MuiModal;
 
@@ -360,8 +342,8 @@ declare class DsMUI {
 
 	/**
 	 * Adds an MUI basic seekbar
-	 * @param value Must be between 0 and range
-	 * @param range The maximum value of your seekbar
+	 * @param value `Must be between 0 and range`
+	 * @param range `The maximum value of your seekbar`
 	 */
 	AddSeekBar(parent: DsLayout, value: num, range: num, width: num, color: str_col): MuiSeekBar;
 
@@ -373,210 +355,210 @@ declare class DsMUI {
 
 	/**
 	 * Adds an MUI tab on a given layout
-	 * @param options DS layout options|Fix
+	 * @param options `DS layout options`, `Fix`
 	 */
 	AddTabs(parent: DsLayout, title: string | ("titles")[], width: num, height: num, options: str_com, color: str_col, animation: bin): MuiTabs;
 
 	/**
 	 * Adds a filled text input with icon on the left
-	 * @param options DS TextEdit options
-	 * @param icon Material icon font
-	 * @param hint Hint or label text
-	 * @param label Show or hide label
+	 * @param options `DS TextEdit options`
+	 * @param icon `Material icon font`
+	 * @param hint `Hint or label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTEFilledIconLeft(parent: DsLayout, width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col): MuiTEFilledIconLeft;
 
 	/**
 	 * Adds a filled text input with icon on the right on a given layout
-	 * @param options DS TextEdit options
-	 * @param icon Material icon font
-	 * @param hint Hint or label text
-	 * @param label Show or hide label
+	 * @param options `DS TextEdit options`
+	 * @param icon `Material icon font`
+	 * @param hint `Hint or label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTEFilledIconRight(parent: DsLayout, width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col): MuiTEFilledIconRight;
 
 	/**
 	 * Adds a material outlined text input with icon on the left
-	 * @param options DS TextEdit options with additional 'Round' option.
-	 * @param icon Material icon font
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `DS TextEdit options with additional 'Round' option.`
+	 * @param icon `Material icon font`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTEOutlineIconLeft(parent: DsLayout, width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTEOutlineIconLeft;
 
 	/**
 	 * Adds a material outlined text input with icon on the right
-	 * @param options DS TextEdit options with additional 'Round' option.
-	 * @param icon Material icon font
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `DS TextEdit options with additional 'Round' option.`
+	 * @param icon `Material icon font`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTEOutlineIconRight(parent: DsLayout, width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTEOutlineIconRight;
 
 	/**
 	 * Adds an elegant search textedit on a given layout
-	 * @param hint Hint text
-	 * @param icon Material icon font
+	 * @param hint `Hint text`
+	 * @param icon `Material icon font`
 	 */
 	AddTESearchElegant(parent: DsLayout, width: num, hint: str, icon: str, iconPos: "Right"|"Left", color: str_col, option: "Small"|"Normal"|"Border"): MuiTESearchElegant;
 
 	/**
 	 * Creates a unique text input
-	 * @param hint Hint text
-	 * @param icon Material icon font
+	 * @param hint `Hint text`
+	 * @param icon `Material icon font`
 	 */
 	AddTESearchUnique(parent: DsLayout, width: num, hint: str, icon: str, iconColor: str_col): MuiTESearchUnique;
 
 	/**
 	 * Adds a mui text control to the layout
-	 * @param options DS text options with addition Thin|Light|Regular|Medium|Bold,h1|h2|h3|h4|h5|h6|secondary|jumbo|paragraph
+	 * @param options `DS text options with addition Thin`, `Light`, `Regular`, `Medium`, `Bold`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `secondary`, `jumbo`, `paragraph`
 	 */
 	AddText(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col): MuiText;
 
 	/**
 	 * Adds a material filled textarea
-	 * @param hint Hint text
-	 * @param label Show or hide label
+	 * @param hint `Hint text`
+	 * @param label `Show or hide label`
 	 */
 	AddTextArea(parent: DsLayout, width: num, height: num, options: string | ("filled"|"outline"|"active")[], hint: str, label: bin, color: str_col, backColor: str_col): MuiTextArea;
 
 	/**
 	 * Add a material filled textarea on a given layout
-	 * @param hint Hint text
-	 * @param label Show or hide label
+	 * @param hint `Hint text`
+	 * @param label `Show or hide label`
 	 */
 	AddTextAreaFilled(parent: DsLayout, width: num, height: num, hint: str, label: bin, color: str_col): MuiTextAreaFilled;
 
 	/**
 	 * Adds an active filled textarea
-	 * @param hint Hint|Label text
-	 * @param label Hides or show label
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Hides or show label`
 	 */
 	AddTextAreaFilledA(parent: DsLayout, width: num, height: num, hint: str, label: bin, color: str_col): MuiTextAreaFilledA;
 
 	/**
 	 * Add an outlined material textarea
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTextAreaOutline(parent: DsLayout, width: num, height: num, hint: str, label: bin, color: str_col, backColor: str_col): MuiTextAreaOutline;
 
 	/**
 	 * Add an active outlined material textarea
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTextAreaOutlineA(parent: DsLayout, width: num, height: num, hint: str, label: bin, color: str_col, backColor: str_col): MuiTextAreaOutlineA;
 
 	/**
 	 * Adds a TextEdit control to a given layout
-	 * @param options outline|filled|unique|search|active|icon and for icon can be  left|right
-	 * @param p1 See corresponding MUI TextEdit
-	 * @param p2 See corresponding MUI TextEdit
-	 * @param p3 See corresponding MUI TextEdit
-	 * @param p4 See corresponding MUI TextEdit
-	 * @param p5 See corresponding MUI TextEdit
+	 * @param options `outline`, `filled`, `unique`, `search`, `active`, `icon and for icon can be  left`, `right`
+	 * @param p1 `See corresponding MUI TextEdit`
+	 * @param p2 `See corresponding MUI TextEdit`
+	 * @param p3 `See corresponding MUI TextEdit`
+	 * @param p4 `See corresponding MUI TextEdit`
+	 * @param p5 `See corresponding MUI TextEdit`
 	 */
 	AddTextEdit(parent: DsLayout, width: num, options: str, p1: str, p2: str, p3: str, p4: str, p5: str): MuiTextEdit;
 
 	/**
 	 * Adds the most common type of material text input
-	 * @param options Comma separated DS TextEdit options
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `Comma separated DS TextEdit options`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTextEditFilled(parent: DsLayout, width: num, options: str, hint: str, label: bin, color: str_col): MuiTextEditFilled;
 
 	/**
 	 * Add an active filled material text input
-	 * @param options Comma separated DS TextEdit options
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `Comma separated DS TextEdit options`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTextEditFilledA(parent: DsLayout, width: num, options: str, hint: str, label: bin, color: str_col): MuiTextEditFilledA;
 
 	/**
 	 * Adds an outlined material text input
-	 * @param options Comma separated DS TextEdit options with additional 'Round' option.
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `Comma separated DS TextEdit options with additional 'Round' option.`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTextEditOutline(parent: DsLayout, width: num, options: str, hint: str, label: bin): MuiTextEditOutline;
 
 	/**
 	 * Adds an active outlined material text input
-	 * @param options Comma separated DS TextEdit options with additional 'Round' option.
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `Comma separated DS TextEdit options with additional 'Round' option.`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	AddTextEditOutlineA(parent: DsLayout, width: num, options: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTextEditOutlineA;
 
 	/**
 	 * Adds a customize search style text input
-	 * @param options Comma separated DS TextEdit options
-	 * @param hint Hint text
+	 * @param options `Comma separated DS TextEdit options`
+	 * @param hint `Hint text`
 	 */
 	AddTextEditSearch(parent: DsLayout, width: num, options: str, hint: str, color: str_col, backColor: str_col): MuiTextEditSearch;
 
 	/**
 	 * Adds a unique textedit customization
-	 * @param hint Hint text
-	 * @param icon Material icon font
-	 * @param iconCOlor Icon color
+	 * @param hint `Hint text`
+	 * @param icon `Material icon font`
+	 * @param iconCOlor `Icon color`
 	 */
 	AddTextEditUnique(parent: DsLayout, width: num, hint: str, icon: str, iconCOlor: str_col): MuiTextEditUnique;
 
 	/**
 	 * Adds an H1 text to a layout
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextH1(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH1;
 
 	/**
 	 * Adds an H2 text to a layout
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextH2(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH2;
 
 	/**
 	 * Adds an H3 text to a layout
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextH3(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH3;
 
 	/**
 	 * Adds an H4 text to a layout
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextH4(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH4;
 
 	/**
 	 * Adds an H5 text to a layout
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextH5(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH5;
 
 	/**
 	 * Adds an H6 text to a layout
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextH6(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH6;
 
 	/**
 	 * Creates an extra large text
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextJumbo(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col): MuiTextJumbo;
 
 	/**
 	 * Adds a paragraph text to a layout
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextParagraph(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextParagraph;
 
 	/**
 	 * Adds a secondary text to a layout
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	AddTextSecondary(parent: DsLayout, text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextSecondary;
 
@@ -592,45 +574,45 @@ declare class DsMUI {
 
 	/**
 	 * A nice pop-up at the top of your current layout
-	 * @param text Popup text
-	 * @param icon Material icon
+	 * @param text `Popup text`
+	 * @param icon `Material icon`
 	 */
 	CreateAlert(text: str, icon: str, color: str_col): MuiAlert;
 
 	/**
 	 * Create a simple alert with a single button
-	 * @param text Text of the alert
-	 * @param btnText Button text. Default is OKAY
+	 * @param text `Text of the alert`
+	 * @param btnText `Button text. Default is OKAY`
 	 */
 	CreateAlertSimple(text: str, btnText: str, color: str_col): MuiAlertSimple;
 
 	/**
 	 * The most common type of material design app bar
-	 * @param title Title text
-	 * @param leadingIcon A material font icon for the leading control
-	 * @param controls material icon font for the right controls
+	 * @param title `Title text`
+	 * @param leadingIcon `A material font icon for the leading control`
+	 * @param controls `material icon font for the right controls`
 	 */
 	CreateAppBar(title: str, leadingIcon: str, controls: str_com): MuiAppBar;
 
 	/**
 	 * A more elegant appbar implementation
-	 * @param title Title text
-	 * @param leadingIcon Material icon font
-	 * @param options material icon font for the right controls
+	 * @param title `Title text`
+	 * @param leadingIcon `Material icon font`
+	 * @param options `material icon font for the right controls`
 	 */
 	CreateAppBarElegant(title: str, leadingIcon: str, options: str_com): MuiAppBarElegant;
 
 	/**
 	 * A modern appbar with a search input, leading icon and trailing icon
-	 * @param hint Hint text for the search input
-	 * @param controlIcon Material font for the control icon
+	 * @param hint `Hint text for the search input`
+	 * @param controlIcon `Material font for the control icon`
 	 */
 	CreateAppBarModern(hint: str, controlIcon: str, options: "Round"|"Rectangle", color: str_col): MuiAppBarModern;
 
 	/**
 	 * A banner dialog is a nice popup that slides from the top of your current page
-	 * @param okText Truthy button text
-	 * @param cancelText Falsey button text
+	 * @param okText `Truthy button text`
+	 * @param cancelText `Falsey button text`
 	 */
 	CreateBanner(text: str, okText: str, cancelText: str): MuiBanner;
 
@@ -666,18 +648,7 @@ declare class DsMUI {
 
 	/**
 	 * A material implementation of a card
-	 * @param options 
- 	 * &emsp; `title`\
- 	 * &emsp; `body`\
- 	 * &emsp; `image`\
- 	 * &emsp; `buttonText`\
- 	 * &emsp; `color`\
- 	 * &emsp; `width`\
- 	 * &emsp; `dividerAvatar`\
- 	 * &emsp; `dividerBody`\
- 	 * &emsp; `avatar`\
- 	 * &emsp; `avatarOnTop`\
- 	 * &emsp; `buttonType`
+	 * @param options \{title, body, image, buttonText, color, width, dividerAvatar, dividerBody, avatar, avatarOnTop, buttonType}
 	 */
 	CreateCard(options: {title: str, body: str, image: str_ptf, buttonText: str_com, color: str, width: num_frc, dividerAvatar: bin, dividerBody: bin, avatar: str_pth, avatarOnTop: bin, buttonType: "raised"|"raisedoutline"|"round"|"roundoutline"|"flat"}): MuiCard;
 
@@ -700,14 +671,14 @@ declare class DsMUI {
 	 * Creates a new DataTable Control
 	 * @param columns An array of strings of the form Name:Type for column header. Where 'Name' is the column name and 'Type is the column type [Can be Sortable or Numeric]'
 	 * @param values An array of strings of the form Val1:Val2:Val3...
-	 * @param width Fraction of the screen width
-	 * @param height Fraction of the screen height
+	 * @param width `Fraction of the screen width`
+	 * @param height `Fraction of the screen height`
 	 */
 	CreateDataTable(columns: lst, values: lst, width: num, height: num, options: string | ("Selectable")[]): MuiDataTable;
 
 	/**
 	 * Creates a materialize date picker dialog
-	 * @param yyyy Full year
+	 * @param yyyy `Full year`
 	 * @param mm [0-11]
 	 * @param dd [1-31]
 	 */
@@ -715,10 +686,10 @@ declare class DsMUI {
 
 	/**
 	 * Creates a customizable materialize dialog
-	 * @param body Body text
-	 * @param okText Truthy button text
-	 * @param cancelText Falsey button text
-	 * @param divider Show divider or hide
+	 * @param body `Body text`
+	 * @param okText `Truthy button text`
+	 * @param cancelText `Falsey button text`
+	 * @param divider `Show divider or hide`
 	 */
 	CreateDialog(title: "Title", body: str, okText: str, cancelText: str, divider: bin): MuiDialog;
 
@@ -727,25 +698,25 @@ declare class DsMUI {
 
 	/**
 	 * Creates a floating action button
-	 * @param icon Material icon fonts
+	 * @param icon `Material icon fonts`
 	 */
 	CreateFAB(icon: str, color: str_col): MuiFAB;
 
 	/**
 	 * An elegant floating action button
-	 * @param icon Material icon fonts
+	 * @param icon `Material icon fonts`
 	 */
 	CreateFABElegant(icon: str, color: str_col): MuiFABElegant;
 
 	/**
 	 * Creates an outlined floating action button
-	 * @param icon Material icon font
+	 * @param icon `Material icon font`
 	 */
 	CreateFABOutline(icon: str, color: str_col, backColor: str_col): MuiFABOutline;
 
 	/**
 	 * It is just the **CreateLayout** method of DroidScript with predefined values on background color just to be consistent on MUI theming
-	 * @param options Comma separated DroidScript layout options
+	 * @param options `Comma separated DroidScript layout options`
 	 */
 	CreateLayout(type: "Linear"|"Absolute"|"Frame"|"Card", options: str): MuiLayout;
 
@@ -764,14 +735,7 @@ declare class DsMUI {
 	 */
 	CreateListModern(list: lst, width: num, height: num, options: "Initial"|"Material"|"Avatar"|"RightIcon"|"RightNote"|"Selectable"): MuiListModern;
 
-	/**
-	 * Creates a simple list that has an optional badge and icon with no body text
-	 * @param list 
- 	 * &emsp; `title`\
- 	 * &emsp; `icon`\
- 	 * &emsp; `color`\
- 	 * &emsp; `badge`
-	 */
+	/** Creates a simple list that has an optional badge and icon with no body text */
 	CreateListSimple(list: { title: str, icon: str, color: str_col, badge: num }, width: num_frc, height: num_frc, options: "Divider"): MuiListSimple;
 
 	/** Creates a simple menu */
@@ -782,10 +746,10 @@ declare class DsMUI {
 
 	/**
 	 * A modal is a popup with more controls that can be added
-	 * @param body Body text. If you want to customize the modal layout pass an empty string.
-	 * @param okTxt Truthy button text
-	 * @param cancelTxt Falsy button text
-	 * @param options Dialog options with additional Full option
+	 * @param body `Body text. If you want to customize the modal layout pass an empty string.`
+	 * @param okTxt `Truthy button text`
+	 * @param cancelTxt `Falsy button text`
+	 * @param options `Dialog options with additional Full option`
 	 */
 	CreateModal(title: str, body: str, okTxt: str, cancelTxt: str, show: bin, options: str): MuiModal;
 
@@ -806,8 +770,8 @@ declare class DsMUI {
 
 	/**
 	 * An MUI implementation of a basic seekbar
-	 * @param value Must be between 0 and range
-	 * @param range The maximum value of your seekbar
+	 * @param value `Must be between 0 and range`
+	 * @param range `The maximum value of your seekbar`
 	 */
 	CreateSeekBar(value: num, range: num, width: num, color: str_col): MuiSeekBar;
 
@@ -825,186 +789,186 @@ declare class DsMUI {
 
 	/**
 	 * Creates a simple fixed tab
-	 * @param options DS layout options
+	 * @param options `DS layout options`
 	 */
 	CreateTabFixed(title: string | ("titles")[], width: num, height: num, options: str_com, color: str_col, animation: bin): MuiTabFixed;
 
 	/**
 	 * Creates a filled text input with icon on the left
-	 * @param options DS TextEdit options
-	 * @param icon Material icon font
-	 * @param hint Hint or label text
-	 * @param label Show or hide label
+	 * @param options `DS TextEdit options`
+	 * @param icon `Material icon font`
+	 * @param hint `Hint or label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTEFilledIconLeft(width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col): MuiTEFilledIconLeft;
 
 	/**
 	 * Creates a filled text input with icon on the right
-	 * @param options DS TextEdit options
-	 * @param icon Material icon font
-	 * @param hint Hint or label text
-	 * @param label Show or hide label
+	 * @param options `DS TextEdit options`
+	 * @param icon `Material icon font`
+	 * @param hint `Hint or label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTEFilledIconRight(width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col): MuiTEFilledIconRight;
 
 	/**
 	 * Creates a material outlined text input with icon on the left
-	 * @param options DS TextEdit options with additional 'Round' option.
-	 * @param icon Material icon font
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `DS TextEdit options with additional 'Round' option.`
+	 * @param icon `Material icon font`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTEOutlineIconLeft(width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTEOutlineIconLeft;
 
 	/**
 	 * Creates a material outlined text input with icon on the right
-	 * @param options DS TextEdit options with additional 'Round' option.
-	 * @param icon Material icon font
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `DS TextEdit options with additional 'Round' option.`
+	 * @param icon `Material icon font`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTEOutlineIconRight(width: num, options: str_com, icon: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTEOutlineIconRight;
 
 	/**
 	 * Creates a customizable elegant text input
-	 * @param hint Hint text
-	 * @param icon Material icon font
+	 * @param hint `Hint text`
+	 * @param icon `Material icon font`
 	 */
 	CreateTESearchElegant(width: num, hint: str, icon: str, iconPos: "Right"|"Left", color: str_col, option: "Small"|"Normal"|"Border"): MuiTESearchElegant;
 
 	/**
 	 * Creates a unique text input
-	 * @param hint Hint text
-	 * @param icon Material icon font
+	 * @param hint `Hint text`
+	 * @param icon `Material icon font`
 	 */
 	CreateTESearchUnique(width: num, hint: str, icon: str, iconColor: str_col): MuiTESearchUnique;
 
 	/**
 	 * Creates a material filled textarea
-	 * @param hint Hint text
-	 * @param label Show or hide label
+	 * @param hint `Hint text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTextAreaFilled(width: num, height: num, hint: str, label: bin, color: str_col): MuiTextAreaFilled;
 
 	/**
 	 * Creates an active filled textarea
-	 * @param hint Hint|Label text
-	 * @param label Hides or show label
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Hides or show label`
 	 */
 	CreateTextAreaFilledA(width: num, height: num, hint: str, label: bin, color: str_col): MuiTextAreaFilledA;
 
 	/**
 	 * Creates an outlined material textarea
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTextAreaOutline(width: num, height: num, hint: str, label: bin, color: str_col, backColor: str_col): MuiTextAreaOutline;
 
 	/**
 	 * Creates an active outlined material textarea
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTextAreaOutlineA(width: num, height: num, hint: str, label: bin, color: str_col, backColor: str_col): MuiTextAreaOutlineA;
 
 	/**
 	 * Creates the most common type of material text input
-	 * @param options Comma separated DS TextEdit options
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `Comma separated DS TextEdit options`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTextEditFilled(width: num, options: str, hint: str, label: bin, color: str_col): MuiTextEditFilled;
 
 	/**
 	 * Creates an active filled material text input
-	 * @param options Comma separated DS TextEdit options
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `Comma separated DS TextEdit options`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTextEditFilledA(width: num, options: str, hint: str, label: bin, color: str_col): MuiTextEditFilledA;
 
 	/**
 	 * Creates an outlined material text input
-	 * @param options Comma separated DS TextEdit options with additional 'Round' option.
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `Comma separated DS TextEdit options with additional 'Round' option.`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTextEditOutline(width: num, options: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTextEditOutline;
 
 	/**
 	 * Creates an active outlined material text input
-	 * @param options Comma separated DS TextEdit options with additional 'Round' option.
-	 * @param hint Hint|Label text
-	 * @param label Show or hide label
+	 * @param options `Comma separated DS TextEdit options with additional 'Round' option.`
+	 * @param hint `Hint`, `Label text`
+	 * @param label `Show or hide label`
 	 */
 	CreateTextEditOutlineA(width: num, options: str, hint: str, label: bin, color: str_col, backColor: str_col): MuiTextEditOutlineA;
 
 	/**
 	 * Creates a customize search style text input
-	 * @param options Comma separated DS TextEdit options
-	 * @param hint Hint text
+	 * @param options `Comma separated DS TextEdit options`
+	 * @param hint `Hint text`
 	 */
 	CreateTextEditSearch(width: num, options: str, hint: str, color: str_col, backColor: str_col): MuiTextEditSearch;
 
 	/**
 	 * Creates a unique textedit customization
-	 * @param hint Hint text
-	 * @param icon Material icon font
-	 * @param iconCOlor Icon color
+	 * @param hint `Hint text`
+	 * @param icon `Material icon font`
+	 * @param iconCOlor `Icon color`
 	 */
 	CreateTextEditUnique(width: num, hint: str, icon: str, iconCOlor: str_col): MuiTextEditUnique;
 
 	/**
 	 * Creates a heading text 1
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextH1(text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH1;
 
 	/**
 	 * Creates a heading text 2
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextH2(text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH2;
 
 	/**
 	 * Creates a heading text 3
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextH3(text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH3;
 
 	/**
 	 * Creates a heading text 4
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextH4(text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH4;
 
 	/**
 	 * Creates a heading text 5
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextH5(text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH5;
 
 	/**
 	 * Creates a heading text 6
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextH6(text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextH6;
 
 	/**
 	 * Creates an extra large text
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextJumbo(text: str, width: num, height: num, options: str, color: str_col): MuiTextJumbo;
 
 	/**
 	 * Creates a paragraph text
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextParagraph(text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextParagraph;
 
 	/**
 	 * Creates a secondary text
-	 * @param options DS text options
+	 * @param options `DS text options`
 	 */
 	CreateTextSecondary(text: str, width: num, height: num, options: str, color: str_col, fontWeight: "Thin"|"Light"|"Regular"|"Medium"|"Bold"): MuiTextSecondary;
 
@@ -1061,7 +1025,10 @@ declare class MuiAlert {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -1128,7 +1095,10 @@ declare class MuiAlertSimple {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -1161,13 +1131,13 @@ declare class MuiAppBar {
 
 	/**
 	 * Sets a new heading icon
-	 * @param newIcon New material icon font
+	 * @param newIcon `New material icon font`
 	 */
 	SetMenuIcon(newIcon: str): void;
 
 	/**
 	 * Change the color of the heading icon
-	 * @param newColor New color of the heading icon
+	 * @param newColor `New color of the heading icon`
 	 */
 	SetMenuIconColor(newColor: str_col): void;
 
@@ -1179,7 +1149,7 @@ declare class MuiAppBar {
 
 	/**
 	 * Sets a new title
-	 * @param newTitle New title text
+	 * @param newTitle `New title text`
 	 */
 	SetTitleText(newTitle: str): void;
 
@@ -1207,7 +1177,10 @@ declare class MuiAppBar {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -1248,14 +1221,7 @@ declare class MuiAppBar {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -1265,13 +1231,13 @@ declare class MuiAppBarElegant {
 
 	/**
 	 * Sets a new heading icon
-	 * @param newIcon New material icon font
+	 * @param newIcon `New material icon font`
 	 */
 	SetMenuIcon(newIcon: str): void;
 
 	/**
 	 * Change the color of the heading icon
-	 * @param newColor New color of the heading icon
+	 * @param newColor `New color of the heading icon`
 	 */
 	SetMenuIconColor(newColor: str_col): void;
 
@@ -1283,7 +1249,7 @@ declare class MuiAppBarElegant {
 
 	/**
 	 * Sets a new title
-	 * @param newTitle New title text
+	 * @param newTitle `New title text`
 	 */
 	SetTitleText(newTitle: str): void;
 
@@ -1311,7 +1277,10 @@ declare class MuiAppBarElegant {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -1352,14 +1321,7 @@ declare class MuiAppBarElegant {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -1454,7 +1416,7 @@ declare class MuiBanner {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -1484,7 +1446,10 @@ declare class MuiBanner {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -1523,16 +1488,16 @@ declare class MuiButtonContained {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -1560,7 +1525,10 @@ declare class MuiButtonContained {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -1598,13 +1566,13 @@ declare class MuiButtonContained {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -1673,7 +1641,7 @@ declare class MuiButtonContained {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -1687,14 +1655,7 @@ declare class MuiButtonContained {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -1704,16 +1665,16 @@ declare class MuiButtonElegant {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -1741,7 +1702,10 @@ declare class MuiButtonElegant {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -1779,13 +1743,13 @@ declare class MuiButtonElegant {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -1854,7 +1818,7 @@ declare class MuiButtonElegant {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -1868,14 +1832,7 @@ declare class MuiButtonElegant {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -1888,16 +1845,16 @@ declare class MuiButtonFlat {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -1925,7 +1882,10 @@ declare class MuiButtonFlat {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -1963,13 +1923,13 @@ declare class MuiButtonFlat {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2038,7 +1998,7 @@ declare class MuiButtonFlat {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -2052,14 +2012,7 @@ declare class MuiButtonFlat {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -2069,16 +2022,16 @@ declare class MuiButtonOutlined {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -2106,7 +2059,10 @@ declare class MuiButtonOutlined {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -2144,13 +2100,13 @@ declare class MuiButtonOutlined {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2219,7 +2175,7 @@ declare class MuiButtonOutlined {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -2233,14 +2189,7 @@ declare class MuiButtonOutlined {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -2250,16 +2199,16 @@ declare class MuiButtonRaised {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -2287,7 +2236,10 @@ declare class MuiButtonRaised {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -2325,13 +2277,13 @@ declare class MuiButtonRaised {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2400,7 +2352,7 @@ declare class MuiButtonRaised {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -2414,14 +2366,7 @@ declare class MuiButtonRaised {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -2434,16 +2379,16 @@ declare class MuiButtonRaisedO {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -2471,7 +2416,10 @@ declare class MuiButtonRaisedO {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -2509,13 +2457,13 @@ declare class MuiButtonRaisedO {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2584,7 +2532,7 @@ declare class MuiButtonRaisedO {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -2598,14 +2546,7 @@ declare class MuiButtonRaisedO {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -2618,16 +2559,16 @@ declare class MuiButtonRound {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -2655,7 +2596,10 @@ declare class MuiButtonRound {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -2693,13 +2637,13 @@ declare class MuiButtonRound {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2768,7 +2712,7 @@ declare class MuiButtonRound {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -2782,14 +2726,7 @@ declare class MuiButtonRound {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -2802,16 +2739,16 @@ declare class MuiButtonRoundO {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -2839,7 +2776,10 @@ declare class MuiButtonRoundO {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -2877,13 +2817,13 @@ declare class MuiButtonRoundO {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -2952,7 +2892,7 @@ declare class MuiButtonRoundO {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -2966,14 +2906,7 @@ declare class MuiButtonRoundO {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -2986,16 +2919,16 @@ declare class MuiButtonToggle {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -3023,7 +2956,10 @@ declare class MuiButtonToggle {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -3061,13 +2997,13 @@ declare class MuiButtonToggle {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -3133,7 +3069,7 @@ declare class MuiButtonToggle {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -3147,14 +3083,7 @@ declare class MuiButtonToggle {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -3198,7 +3127,10 @@ declare class MuiCard {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -3242,14 +3174,7 @@ declare class MuiCard {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -3268,19 +3193,19 @@ declare class MuiCheckbox {
 
 	/**
 	 * Checks the corresponding item/items in the checkbox list
-	 * @param index You can also pass an array of indexes e.g. [1, 3]
+	 * @param index `You can also pass an array of indexes e.g. [1`, ` 3]`
 	 */
 	CheckItemByIndex(index: num_int): void;
 
 	/**
 	 * Unchecks the corresponding item/items in the checkbox list
-	 * @param index You can also pass an array of indexes e.g. [1, 3]
+	 * @param index `You can also pass an array of indexes e.g. [1`, ` 3]`
 	 */
 	UncheckItemByIndex(index: num_int): void;
 
 	/**
 	 * Change the height of the control
-	 * @param height Fraction of the screen height
+	 * @param height `Fraction of the screen height`
 	 */
 	SetHeight(height: num): void;
 
@@ -3305,7 +3230,10 @@ declare class MuiCheckbox {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -3352,14 +3280,7 @@ declare class MuiCheckbox {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -3375,7 +3296,7 @@ declare class MuiCheckList {
 
 	/**
 	 * Change the height of the control
-	 * @param height Fraction of the screen height
+	 * @param height `Fraction of the screen height`
 	 */
 	SetHeight(height: num): void;
 
@@ -3412,7 +3333,10 @@ declare class MuiCheckList {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -3473,7 +3397,10 @@ declare class MuiColorPicker {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -3500,13 +3427,13 @@ declare class MuiDataTable {
 
 	/**
 	 * Append a row to the table
-	 * @param row A colon ':' separated entries for the new row.
+	 * @param row `A colon ':' separated entries for the new row.`
 	 */
 	AppendRow(row: str): void;
 
 	/**
 	 * Prepend a row to the table
-	 * @param row A colon ':' separated entries for the new row.
+	 * @param row `A colon ':' separated entries for the new row.`
 	 */
 	PrependRow(row: str): void;
 
@@ -3539,9 +3466,9 @@ declare class MuiDataTable {
 
 	/**
 	 * Add a footer layout to the table where you can add controls
-	 * @param type Type of layout. Can be Linear|Absolute|Frame. Default to Linear
-	 * @param options A comma separated layout options. Default to Horizontal|Right|VCenter
-	 * @param height A fraction of the screen height.
+	 * @param type `Type of layout. Can be Linear`, `Absolute`, `Frame. Default to Linear`
+	 * @param options `A comma separated layout options. Default to Horizontal`, `Right`, `VCenter`
+	 * @param height `A fraction of the screen height.`
 	 */
 	AddFooter(type: str, options: str, height: num): MuiFooter;
 
@@ -3566,7 +3493,10 @@ declare class MuiDataTable {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -3610,14 +3540,7 @@ declare class MuiDataTable {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -3655,7 +3578,10 @@ declare class MuiDatePicker {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -3697,7 +3623,7 @@ declare class MuiDialog {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -3705,7 +3631,7 @@ declare class MuiDialog {
 
 	/**
 	 * Sets a new title text
-	 * @param newTitle New title text
+	 * @param newTitle `New title text`
 	 */
 	SetTitle(newTitle: str): void;
 
@@ -3736,7 +3662,10 @@ declare class MuiDialog {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -3806,7 +3735,7 @@ declare class MuiFAB {
 
 	/**
 	 * Sets a new material icon
-	 * @param icon Material icon font
+	 * @param icon `Material icon font`
 	 */
 	SetIcon(icon: str): void;
 
@@ -3815,13 +3744,13 @@ declare class MuiFAB {
 
 	/**
 	 * Returns the icon
-	 * @return Material icon font
+	 * @return `Material icon font`
 	 */
 	GetIcon(): str;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -3849,7 +3778,10 @@ declare class MuiFAB {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -3896,14 +3828,7 @@ declare class MuiFAB {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -3925,7 +3850,7 @@ declare class MuiFABElegant {
 
 	/**
 	 * Sets a new material icon
-	 * @param icon Material icon font
+	 * @param icon `Material icon font`
 	 */
 	SetIcon(icon: str): void;
 
@@ -3934,13 +3859,13 @@ declare class MuiFABElegant {
 
 	/**
 	 * Returns the icon
-	 * @return Material icon font
+	 * @return `Material icon font`
 	 */
 	GetIcon(): str;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -3968,7 +3893,10 @@ declare class MuiFABElegant {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -4015,14 +3943,7 @@ declare class MuiFABElegant {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -4044,7 +3965,7 @@ declare class MuiFABOutline {
 
 	/**
 	 * Sets a new material icon
-	 * @param icon Material icon font
+	 * @param icon `Material icon font`
 	 */
 	SetIcon(icon: str): void;
 
@@ -4053,13 +3974,13 @@ declare class MuiFABOutline {
 
 	/**
 	 * Returns the icon
-	 * @return Material icon font
+	 * @return `Material icon font`
 	 */
 	GetIcon(): str;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -4087,7 +4008,10 @@ declare class MuiFABOutline {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -4134,14 +4058,7 @@ declare class MuiFABOutline {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -4160,16 +4077,16 @@ declare class MuiList {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -4206,7 +4123,10 @@ declare class MuiList {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the current text size */
@@ -4244,7 +4164,7 @@ declare class MuiList {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -4271,7 +4191,7 @@ declare class MuiList {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -4379,7 +4299,7 @@ declare class MuiList {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -4399,14 +4319,7 @@ declare class MuiList {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -4422,7 +4335,7 @@ declare class MuiListDialog {
 
 	/**
 	 * Change the height of the control
-	 * @param height Fraction of the screen height
+	 * @param height `Fraction of the screen height`
 	 */
 	SetHeight(height: num): void;
 
@@ -4459,7 +4372,10 @@ declare class MuiListDialog {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -4522,25 +4438,25 @@ declare class MuiListModern {
 
 	/**
 	 * Set a new title to a respective index
-	 * @param newTitle New title text
+	 * @param newTitle `New title text`
 	 */
 	SetTitleText(newTitle: str, index: num_int): void;
 
 	/**
 	 * Set a new body to a respective index
-	 * @param newBody New body text
+	 * @param newBody `New body text`
 	 */
 	SetBodyText(newBody: str, index: num_int): void;
 
 	/**
 	 * Set a new material icon to the right icon
-	 * @param newIcon New right icon
+	 * @param newIcon `New right icon`
 	 */
 	SetRightIcon(newIcon: str, index: num_int): void;
 
 	/**
 	 * Set a new note text for a respective item on the list
-	 * @param newNote New note text
+	 * @param newNote `New note text`
 	 */
 	SetNoteText(newNote: str, index: num_int): void;
 
@@ -4576,7 +4492,7 @@ declare class MuiListModern {
 
 	/**
 	 * Set a new image to a respective item in the list
-	 * @param newImagePath Path to the new image
+	 * @param newImagePath `Path to the new image`
 	 */
 	SetImage(newImagePath: str_ptf, index: num_int): void;
 
@@ -4607,7 +4523,10 @@ declare class MuiListModern {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -4651,14 +4570,7 @@ declare class MuiListModern {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -4683,7 +4595,7 @@ declare class MuiListSimple {
 
 	/**
 	 * Sets a new title to a corresponding item
-	 * @param newTitle New title text
+	 * @param newTitle `New title text`
 	 */
 	SetTitleText(newTitle: str, index: num_int): void;
 
@@ -4717,7 +4629,10 @@ declare class MuiListSimple {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -4761,14 +4676,7 @@ declare class MuiListSimple {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -4821,7 +4729,10 @@ declare class MuiMenu {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -4885,7 +4796,10 @@ declare class MuiMenuWithIcon {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -4964,7 +4878,10 @@ declare class MuiModal {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -5003,7 +4920,7 @@ declare class MuiRadio {
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -5040,7 +4957,10 @@ declare class MuiRadio {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the current text size */
@@ -5078,7 +4998,7 @@ declare class MuiRadio {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
@@ -5105,7 +5025,7 @@ declare class MuiRadio {
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -5198,7 +5118,7 @@ declare class MuiRadio {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -5218,14 +5138,7 @@ declare class MuiRadio {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5262,7 +5175,7 @@ declare class MuiRadioButtons {
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -5296,7 +5209,10 @@ declare class MuiRadioButtons {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -5337,14 +5253,7 @@ declare class MuiRadioButtons {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5381,7 +5290,7 @@ declare class MuiRadioMaterial {
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -5415,7 +5324,10 @@ declare class MuiRadioMaterial {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -5456,14 +5368,7 @@ declare class MuiRadioMaterial {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5476,7 +5381,7 @@ declare class MuiSeekBar {
 
 	/**
 	 * Set the number of decimals to the value
-	 * @param decimals The number of decimals
+	 * @param decimals `The number of decimals`
 	 */
 	SetDecimals(decimals: num_int): void;
 
@@ -5485,13 +5390,13 @@ declare class MuiSeekBar {
 
 	/**
 	 * Sets a new value to the seekbar
-	 * @param value Must be between 0 and range
+	 * @param value `Must be between 0 and range`
 	 */
 	SetValue(value: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -5516,7 +5421,10 @@ declare class MuiSeekBar {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -5554,14 +5462,7 @@ declare class MuiSeekBar {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5574,13 +5475,13 @@ declare class MuiSpinner {
 
 	/**
 	 * Select an option
-	 * @param value Must be one of the provided values
+	 * @param value `Must be one of the provided values`
 	 */
 	SelectItem(value: str): void;
 
 	/**
 	 * Select an option with a given index
-	 * @param index The index of the option in the given values
+	 * @param index `The index of the option in the given values`
 	 */
 	SelectItemByIndex(index: num_int): void;
 
@@ -5592,7 +5493,7 @@ declare class MuiSpinner {
 
 	/**
 	 * Sets the hint when there is no active selection
-	 * @param hint The hint text.
+	 * @param hint `The hint text.`
 	 */
 	SetHint(hint: str): void;
 
@@ -5601,7 +5502,7 @@ declare class MuiSpinner {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -5625,7 +5526,10 @@ declare class MuiSpinner {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -5669,14 +5573,7 @@ declare class MuiSpinner {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5695,7 +5592,7 @@ declare class MuiSwitch {
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -5720,7 +5617,10 @@ declare class MuiSwitch {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -5755,14 +5655,7 @@ declare class MuiSwitch {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5781,7 +5674,7 @@ declare class MuiSwitchSettings {
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -5806,7 +5699,10 @@ declare class MuiSwitchSettings {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -5841,14 +5737,7 @@ declare class MuiSwitchSettings {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -5858,7 +5747,7 @@ declare class MuiTabFixed {
 
 	/**
 	 * Get the corresponding layout of a given name where you can add your controls
-	 * @param name The layout name
+	 * @param name `The layout name`
 	 */
 	GetLayout(name: str): DsLayout;
 
@@ -5870,7 +5759,7 @@ declare class MuiTabFixed {
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -5895,7 +5784,10 @@ declare class MuiTabFixed {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */
@@ -5930,14 +5822,7 @@ declare class MuiTabFixed {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -7265,16 +7150,16 @@ declare class MuiTextH1 {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -7317,7 +7202,10 @@ declare class MuiTextH1 {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -7358,13 +7246,13 @@ declare class MuiTextH1 {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -7442,7 +7330,7 @@ declare class MuiTextH1 {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -7459,14 +7347,7 @@ declare class MuiTextH1 {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -7476,16 +7357,16 @@ declare class MuiTextH2 {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -7528,7 +7409,10 @@ declare class MuiTextH2 {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -7569,13 +7453,13 @@ declare class MuiTextH2 {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -7653,7 +7537,7 @@ declare class MuiTextH2 {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -7670,14 +7554,7 @@ declare class MuiTextH2 {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -7687,16 +7564,16 @@ declare class MuiTextH3 {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -7739,7 +7616,10 @@ declare class MuiTextH3 {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -7780,13 +7660,13 @@ declare class MuiTextH3 {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -7864,7 +7744,7 @@ declare class MuiTextH3 {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -7881,14 +7761,7 @@ declare class MuiTextH3 {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -7898,16 +7771,16 @@ declare class MuiTextH4 {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -7950,7 +7823,10 @@ declare class MuiTextH4 {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -7991,13 +7867,13 @@ declare class MuiTextH4 {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -8075,7 +7951,7 @@ declare class MuiTextH4 {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -8092,14 +7968,7 @@ declare class MuiTextH4 {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -8109,16 +7978,16 @@ declare class MuiTextH5 {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -8161,7 +8030,10 @@ declare class MuiTextH5 {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -8202,13 +8074,13 @@ declare class MuiTextH5 {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -8286,7 +8158,7 @@ declare class MuiTextH5 {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -8303,14 +8175,7 @@ declare class MuiTextH5 {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -8320,16 +8185,16 @@ declare class MuiTextH6 {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -8372,7 +8237,10 @@ declare class MuiTextH6 {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -8413,13 +8281,13 @@ declare class MuiTextH6 {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -8497,7 +8365,7 @@ declare class MuiTextH6 {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -8514,14 +8382,7 @@ declare class MuiTextH6 {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -8531,16 +8392,16 @@ declare class MuiTextJumbo {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -8583,7 +8444,10 @@ declare class MuiTextJumbo {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -8624,13 +8488,13 @@ declare class MuiTextJumbo {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -8708,7 +8572,7 @@ declare class MuiTextJumbo {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -8725,14 +8589,7 @@ declare class MuiTextJumbo {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -8742,16 +8599,16 @@ declare class MuiTextParagraph {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -8794,7 +8651,10 @@ declare class MuiTextParagraph {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -8835,13 +8695,13 @@ declare class MuiTextParagraph {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -8919,7 +8779,7 @@ declare class MuiTextParagraph {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -8936,14 +8796,7 @@ declare class MuiTextParagraph {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -8953,16 +8806,16 @@ declare class MuiTextSecondary {
 
 	/**
 	 * Adjust the visual color effect of the control
-	 * @param hue -180..180
-	 * @param saturation -100..100
-	 * @param brightness -100..100
-	 * @param contrast 0..100
+	 * @param hue `-180..180`
+	 * @param saturation `-100..100`
+	 * @param brightness `-100..100`
+	 * @param contrast `0..100`
 	 */
 	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
 
 	/**
 	 * Animates a control
-	 * @param type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
+	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
 	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
 
@@ -9005,7 +8858,10 @@ declare class MuiTextSecondary {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Returns the currently contained text */
@@ -9046,13 +8902,13 @@ declare class MuiTextSecondary {
 
 	/**
 	 * Access Java object methods via reflection
-	 * @param types boolean,char,byte,short,int,long,float,double,String,CharSequence,...
+	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
-	 * @param alpha 0..0.99|1..256
+	 * @param alpha `0..0.99`, `1..256`
 	 */
 	SetBackAlpha(alpha: num): void;
 
@@ -9130,7 +8986,7 @@ declare class MuiTextSecondary {
 
 	/**
 	 * Change the text size
-	 * @param mode 
+	 * @param mode <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
@@ -9147,14 +9003,7 @@ declare class MuiTextSecondary {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `h`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
@@ -9192,7 +9041,10 @@ declare class MuiTimePicker {
 	/** Returns the parent control object */
 	GetParent(): dso;
 
-	/** Returns data about position and size */
+	/**
+	 * Returns data about position and size
+	 * @return \{ left, top, right, bottom }
+	 */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, right: num, bottom: num };
 
 	/** Get distance to the upper parent border */

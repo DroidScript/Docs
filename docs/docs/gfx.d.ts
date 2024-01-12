@@ -164,11 +164,7 @@ declare class DsGfx {
 	/** Creates an ellipse */
 	CreateEllipse(width: num_frc, height: num_frc, color: num_col, lineWidth: num_pxl, lineColor: num_col, lineAlpha: num_frc, group: str): GfxEllipse;
 
-	/**
-	 * Creates a polygonal game object
-	 * @param points 
- 	 * &emsp; `point_x_y`
-	 */
+	/** Creates a polygonal game object */
 	CreatePolygon(points: num_frc[], pivotX: num_frc, pivotY: num_frc, color: num_col, lineWidth: num_pxl, lineColor: num_col, lineAlpha: num_frc, group: str): GfxPolygon;
 
 	/** Creates a rectangle */
@@ -301,12 +297,7 @@ declare class DsGfx {
 
 declare class GfxPhysics {
 
-	/**
-	 * Adds velocity to the object
-	 * @param points 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`
-	 */
+	/** Adds velocity to the object */
 	AddShape(type: "Polygon", points: [num_frc, num_frc][]): void;
 
 	/** Adds velocity to the object */
@@ -314,8 +305,8 @@ declare class GfxPhysics {
 
 	/**
 	 * Applies an impulse p=m*v to the object
-	 * @param offsetX -1..1
-	 * @param offsetY -1..1
+	 * @param offsetX `-1..1`
+	 * @param offsetY `-1..1`
 	 */
 	ApplyImpulse(x: num, y: num, offsetX: num, offsetY: num): void;
 
@@ -331,7 +322,10 @@ declare class GfxPhysics {
 	/** Removes physics from the game oblect */
 	RemovePhysics(): void;
 
-	/** Applies a 2D transformation matrix to the game object */
+	/**
+	 * Applies a 2D transformation matrix to the game object
+	 * @param mtx \Matrix
+	 */
 	SetMatrix(mtx: Matrix): void;
 
 	/** Set physics properties */
@@ -393,7 +387,10 @@ declare class GfxCircle {
 	/** Vertical scaling */
 	scaleY: num_fac;
 
-	/** Set 2d transformation */
+	/**
+	 * Set 2d transformation
+	 * @param mtx \Matrix
+	 */
 	SetMatrix(mtx: Matrix): void;
 
 	/** Updates internal properties */
@@ -442,7 +439,10 @@ declare class GfxEllipse {
 	/** Vertical scaling */
 	scaleY: num_fac;
 
-	/** Set 2d transformation */
+	/**
+	 * Set 2d transformation
+	 * @param mtx \Matrix
+	 */
 	SetMatrix(mtx: Matrix): void;
 
 	/** Updates internal properties */
@@ -491,7 +491,10 @@ declare class GfxPolygon {
 	/** Vertical scaling */
 	scaleY: num_fac;
 
-	/** Set 2d transformation */
+	/**
+	 * Set 2d transformation
+	 * @param mtx \Matrix
+	 */
 	SetMatrix(mtx: Matrix): void;
 
 	/** Updates internal properties */
@@ -540,7 +543,10 @@ declare class GfxRectangle {
 	/** Vertical scaling */
 	scaleY: num_fac;
 
-	/** Set 2d transformation */
+	/**
+	 * Set 2d transformation
+	 * @param mtx \Matrix
+	 */
 	SetMatrix(mtx: Matrix): void;
 
 	/** Updates internal properties */
@@ -564,8 +570,8 @@ declare class GfxSound {
 
 	/**
 	 * Play the soundtrack
-	 * @param delay delay before playback start
-	 * @param gap time gap between two loops
+	 * @param delay `delay before playback start`
+	 * @param gap `time gap between two loops`
 	 */
 	Play(loop: bin, delay: num_mls, gap: num_mls): void;
 }
@@ -636,7 +642,10 @@ declare class GfxSprite {
 	/** Set animation looping */
 	SetLoop(loop: bin): void;
 
-	/** Set 2d transformation */
+	/**
+	 * Set 2d transformation
+	 * @param mtx \Matrix
+	 */
 	SetMatrix(mtx: Matrix): void;
 
 	/** Set animation speed */
@@ -671,14 +680,7 @@ declare class GfxSprite {
 
 	/**
 	 * Animates the control
-	 * @param target 
- 	 * &emsp; `x`\
- 	 * &emsp; `y`\
- 	 * &emsp; `w`\
- 	 * &emsp; `w`\
- 	 * &emsp; `sw`\
- 	 * &emsp; `sh`\
- 	 * &emsp; `rot`
+	 * @param target \{ x, y, w, w, sw, sh, rot }
 	 */
 	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
@@ -744,7 +746,10 @@ declare class GfxText {
 	/** Vertical scaling */
 	scaleY: num_fac;
 
-	/** Set 2d transformation */
+	/**
+	 * Set 2d transformation
+	 * @param mtx \Matrix
+	 */
 	SetMatrix(mtx: Matrix): void;
 
 	/** Updates internal properties */

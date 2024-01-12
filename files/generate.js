@@ -487,6 +487,12 @@ const tsxTypes = {
     uio: "UIObject"
 };
 
+/** @type {(s:string, d:string|RegExp, l?:number) => [string]|[string,string]} */
+function split1(s, d) {
+    /** @ts-ignore */
+    return s.replace(d, '\x01').split('\x01');
+}
+
 /** @type {(scopeName: string, inpt: DSInput, state: GenState) => string} */
 function generateDefinitionFile(scopeName, inpt, state) {
     /** @type {Obj<string>} */
@@ -523,14 +529,16 @@ function generateDefinitionFile(scopeName, inpt, state) {
         if (typeof stypes === "object")
             return { main: "fnc", sub: processFunction("callback", "cb", stypes, "\t", true).func, desc: "" };
 
-        const types1 = stypes.split("||").map((/** @type {string} */ stype) => [stype.slice(0, 3)]
-            .concat(stype
-                // custom type desc
-                .replace(/^(...):([^-]*)/, (m, /** @type {string} */ btype, _desc) => btype)
-                // sample vals
-                .replace(/-/, '\x01').split('\x01')
-            )
-        ).map(([main = "", sub = "", desc = ""]) => ({ main, sub, desc }));
+        const types1 = stypes.split("||").map(stype => {
+            const [sub, desc] = split1(stype, "-");
+            const [psub, pdesc] = sub.split(':');
+            return {
+                main: stype.slice(0, 3),
+                sub: psub || sub,
+                desc: desc || pdesc || '',
+                pdesc
+            };
+        });
 
         const str = types1.filter(t => t.main).map(
             function formatTypeDecl(type) {
@@ -545,29 +553,36 @@ function generateDefinitionFile(scopeName, inpt, state) {
                     case "str":
                     case "bin": {
                         const types = replaceTsxTypes(type.desc, type.main);
-                        if (!types[0]) return type;
+                        if (!types.string) return type;
 
-                        if (types[0].match(/ |\.\./)) {
-                            type.desc = types[0];
-                            return type;
-                        }
-
-                        let tdesc = types[0]
+                        let tdesc = types.string
                             .replace(/([^\\]|^)\\(.)/g, (m, e, /** @type {string} */ c) =>
                                 `${e || ''}§${(special[c] || c).charCodeAt(0)}§`)
                             .replace(/§(\d+?)§/g, (m, /** @type {number} */ c) =>
                                 String.fromCharCode(Number(c)))
                             .split(/[,|]/);
 
+                        if (types.string.match(/ |\.\.|&lt;|&gt;|<|>/)) {
+                            if (types.descs) types.descs = "\\" + types.descs;
+                            type.desc = tdesc.map(c => '`' + decodeHtml(c) + '`').join(", ") + types.descs;
+                            tdesc = [type.sub];
+                            return type;
+                        }
+
                         if (type.main === "str") tdesc = tdesc.map(s => `"${s}"`);
-                        if (tdesc.length <= 1 && !/^[a-z"/]+$/i.test(tdesc[0]))
+                        if (tdesc.length <= 1 && !/^[a-z0-9"/]+$/i.test(tdesc[0]))
                             return type;
 
-                        type.desc = types[1];
+                        type.desc = types.descs && "<br>" + types.descs;
                         if (type.sub === "str_com")
                             type.sub = `string | (${tdesc.join("|")})[]`;
                         else
                             type.sub = tdesc.join("|");
+
+                        if (type.pdesc) {
+                            if (type.sub === type.pdesc) type.sub = type.main;
+                            type.desc = type.pdesc;
+                        }
 
                         return type;
                     }
@@ -577,8 +592,8 @@ function generateDefinitionFile(scopeName, inpt, state) {
                     case "obj": {
                         const types = replaceTsxTypes(replW(type.desc), type.sub);
                         if (type.desc && (type.desc.match(/^[{[]/) || !type.desc.includes(" "))) {
-                            type.sub = types[0];
-                            type.desc = types[1];
+                            type.sub = types.string;
+                            type.desc = types.descs || types.nameString;
                             type.sub = type.sub
                                 .replace(/&comma;/g, ',')
                                 .replace(/[“”]/g, '"')
@@ -616,16 +631,16 @@ function generateDefinitionFile(scopeName, inpt, state) {
      * using name:'...' will force app popups
      * @param {string} descStr
      * @param {string} ptype
-     * @return {[string, string]}
+     * @return {{string: string, nameString: string, descs: string}}
      */
-    function replaceTsxTypes(descStr, ptype) {
+    function replaceTsxTypes(descStr, ptype, names = false) {
         /** @type {string[]} */
         const types = [];
 
         // const tags = /** @type {string[]} */ ([]);
         // descStr = descStr.replace(/\s*<[^\s​].*?>/g, (m) => (tags.push(m), `§t${tags.length - 1}§`));
 
-        descStr = descStr.replace(/(\b([\w_.#-]+)|"([^"]*)"):([a-z]{3}(_[a-z]{3})?\b)?-?("(\\"|[^"])*|'(\\'|[^'])*| ?\w(\\[\s\S]|[^.,:”<|}\]])*)?['"]?/g,
+        let string = descStr.replace(/(\b([\w_.#-]+)|"([^"]*)"):([a-z]{3}(_[a-z]{3})?\b)?-?("(\\"|[^"])*|'(\\'|[^'])*| ?\w(\\[\s\S]|[^.,:”<|}\]])*)?['"]?/g,
             function formatDescType(m, _1, /** @type {string} */ name, /** @type {string} */ aname, /** @type {string} */ type = "", _2 = "", /** @type {string} */ desc = "") {
                 let space = '';
                 if (!name) name = aname;
@@ -644,25 +659,30 @@ function generateDefinitionFile(scopeName, inpt, state) {
                 }
 
                 desc = decodeHtml(desc).replace(/\n(\S)/g, "\\\n  * &emsp; $1");
-                types.push(`\n  * &emsp; \`${decodeHtml(name)}\`` + (desc && ` - ${desc}`));
+                if (desc) types.push(`\n  * &emsp; \`${decodeHtml(name)}\` - ${desc}`);
 
                 // fix Email
                 if (type.includes("obj-{")) type = type.slice(4);
                 if (type.includes("-")) type = makeType(type).sub;
-                if (ptype.endsWith("obj")) return name + ": " + type;
+                if (ptype.endsWith("obj") && !names) return name + ": " + type;
                 if (ptype.endsWith("lst")) return type.split("-")[0];
                 return name;
             }
         );
 
         // fix weird GetObjects and wiz.GetButtons retval
-        if (ptype.startsWith("lst") && !descStr.includes("{")) descStr = descStr.replace(/\s*(\w+):\s*([\w-]+(, )?)\s*/g, (m, n, t) => t);
+        if (ptype.startsWith("lst") && !string.includes("{")) string = string.replace(/\s*(\w+):\s*([\w-]+(, )?)\s*/g, (m, n, t) => t);
         // fix GetJoystickStates {key:t: value:t} pattern
-        if (ptype === "obj") descStr = descStr.replace(/\s*(\w+):\s*(\w+):\s*(\w+):\s*(\w+)\s*/, "[$1: $2]: $4");
+        if (ptype === "obj") string = string.replace(/\s*(\w+):\s*(\w+):\s*(\w+):\s*(\w+)\s*/, "[$1: $2]: $4");
         // fix StartApp intent
-        if (ptype !== "str") descStr = descStr.replace(/&comma;/g, ",");
+        if (ptype !== "str") string = string.replace(/&comma;/g, ",");
 
-        return [descStr, types.join("\\")]; //descStr.replace(/§t(\d+)§(<\/span>)?/g, (m, i, s) => (s || '') + tags[i]);
+        const nameString = ptype === "obj" && !names ? replaceTsxTypes(descStr, ptype, true).string : '';
+        return {
+            string,
+            nameString: nameString && '\\' + nameString,
+            descs: types.length ? types.join("\\") : ''
+        };
     }
 
 
@@ -720,7 +740,6 @@ function generateDefinitionFile(scopeName, inpt, state) {
         }
 
         // return value
-        rdesc = rdesc.replace(/.*`\\?(\n|$)/g, '').trim();
         if (rdesc) jsparams.push(`${indent} * @return ${rdesc}\n`);
 
         // sub properties
