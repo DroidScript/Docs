@@ -9,7 +9,7 @@ declare type gvo = GameObject;
 /** smartwatch object */
 declare type swo = SmartWatchObject;
 /** JavaScript object */
-declare type jso = JSObject;
+declare type jso = Object;
 /** Function */
 declare type fnc = Function;
 /** List */
@@ -132,7 +132,7 @@ declare type str_uri = string;
 declare type str_url = string;
 
 
-class DsMUI {
+declare class DsMUI {
 
 	/**
 	 * Adds a nice pop-up at the top
@@ -1019,11 +1019,11 @@ class DsMUI {
 	fonts: obj;
 
 	/** Show a menu on a given control */
-	ShowMenu(control: dso, list: str_lst, width: num_frc): obj;
+	ShowMenu(control: dso, list: str_lst, width: num_frc): MuiMenu;
 
 }
 
-class MuiAlert {
+declare class MuiAlert {
 
 	/** Returns the current visibility state */
 	GetVisibility(): "Show"|"Hide"|"Gone";
@@ -1084,7 +1084,7 @@ class MuiAlert {
 }
 
 
-class MuiAlertSimple {
+declare class MuiAlertSimple {
 
 	/** Returns the current visibility state */
 	GetVisibility(): "Show"|"Hide"|"Gone";
@@ -1157,7 +1157,7 @@ class MuiAlertSimple {
 }
 
 
-class MuiAppBar {
+declare class MuiAppBar {
 
 	/**
 	 * Sets a new heading icon
@@ -1252,16 +1252,16 @@ class MuiAppBar {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiAppBarElegant {
+declare class MuiAppBarElegant {
 
 	/**
 	 * Sets a new heading icon
@@ -1356,16 +1356,16 @@ class MuiAppBarElegant {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiAppBarModern {
+declare class MuiAppBarModern {
 
 	/** Get the height of the control */
 	GetHeight(options: "px"): num;
@@ -1435,7 +1435,7 @@ class MuiAppBarModern {
 }
 
 
-class MuiBanner {
+declare class MuiBanner {
 
 	/** Calls a function when buttons are click (prev */
 	SetOnTouch(callback: (isOkBtnClick: bin, btnText: str) => void): void;
@@ -1519,7 +1519,7 @@ class MuiBanner {
 }
 
 
-class MuiButtonContained {
+declare class MuiButtonContained {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -1615,10 +1615,10 @@ class MuiButtonContained {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -1639,7 +1639,7 @@ class MuiButtonContained {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -1648,7 +1648,7 @@ class MuiButtonContained {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -1691,16 +1691,16 @@ class MuiButtonContained {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiButtonElegant {
+declare class MuiButtonElegant {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -1796,10 +1796,10 @@ class MuiButtonElegant {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -1820,7 +1820,7 @@ class MuiButtonElegant {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -1829,7 +1829,7 @@ class MuiButtonElegant {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -1872,19 +1872,19 @@ class MuiButtonElegant {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
-class MuiButtonFlat {
+declare class MuiButtonFlat {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -1980,10 +1980,10 @@ class MuiButtonFlat {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2004,7 +2004,7 @@ class MuiButtonFlat {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -2013,7 +2013,7 @@ class MuiButtonFlat {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2056,16 +2056,16 @@ class MuiButtonFlat {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiButtonOutlined {
+declare class MuiButtonOutlined {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -2161,10 +2161,10 @@ class MuiButtonOutlined {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2185,7 +2185,7 @@ class MuiButtonOutlined {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -2194,7 +2194,7 @@ class MuiButtonOutlined {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2237,16 +2237,16 @@ class MuiButtonOutlined {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiButtonRaised {
+declare class MuiButtonRaised {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -2342,10 +2342,10 @@ class MuiButtonRaised {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2366,7 +2366,7 @@ class MuiButtonRaised {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -2375,7 +2375,7 @@ class MuiButtonRaised {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2418,19 +2418,19 @@ class MuiButtonRaised {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
-class MuiButtonRaisedO {
+declare class MuiButtonRaisedO {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -2526,10 +2526,10 @@ class MuiButtonRaisedO {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2550,7 +2550,7 @@ class MuiButtonRaisedO {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -2559,7 +2559,7 @@ class MuiButtonRaisedO {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2602,19 +2602,19 @@ class MuiButtonRaisedO {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
-class MuiButtonRound {
+declare class MuiButtonRound {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -2710,10 +2710,10 @@ class MuiButtonRound {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2734,7 +2734,7 @@ class MuiButtonRound {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -2743,7 +2743,7 @@ class MuiButtonRound {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2786,19 +2786,19 @@ class MuiButtonRound {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
-class MuiButtonRoundO {
+declare class MuiButtonRoundO {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -2894,10 +2894,10 @@ class MuiButtonRoundO {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2918,7 +2918,7 @@ class MuiButtonRoundO {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -2927,7 +2927,7 @@ class MuiButtonRoundO {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2970,19 +2970,19 @@ class MuiButtonRoundO {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
-class MuiButtonToggle {
+declare class MuiButtonToggle {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -3078,10 +3078,10 @@ class MuiButtonToggle {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -3102,13 +3102,13 @@ class MuiButtonToggle {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -3151,19 +3151,19 @@ class MuiButtonToggle {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
 }
 
 
-class MuiCard {
+declare class MuiCard {
 
 	/** Calls a function when buttons are click */
 	SetOnButtonTouch(callback: (btnText: str, cardName: str) => void): void;
@@ -3229,7 +3229,7 @@ class MuiCard {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -3246,16 +3246,16 @@ class MuiCard {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiCheckbox {
+declare class MuiCheckbox {
 
 	/** Calls a function when the checkbox is click */
 	SetOnTouch(callback: (index: num_int, checked: bin) => void): void;
@@ -3339,7 +3339,7 @@ class MuiCheckbox {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -3356,16 +3356,16 @@ class MuiCheckbox {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiCheckList {
+declare class MuiCheckList {
 
 	/** Calls a function when the checklist is submitted */
 	SetOnSubmit(callback: (lst: lst) => void): void;
@@ -3441,7 +3441,7 @@ class MuiCheckList {
 }
 
 
-class MuiColorPicker {
+declare class MuiColorPicker {
 
 	/** Calls a function when a user click the OK button */
 	SetOnSelect(callback: (color: str_col) => void): void;
@@ -3496,7 +3496,7 @@ class MuiColorPicker {
 }
 
 
-class MuiDataTable {
+declare class MuiDataTable {
 
 	/**
 	 * Append a row to the table
@@ -3597,7 +3597,7 @@ class MuiDataTable {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -3614,16 +3614,16 @@ class MuiDataTable {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiDatePicker {
+declare class MuiDatePicker {
 
 	/** Calls a function when a user click the OK button */
 	SetOnSelect(callback: (date: str, yyyy: num_int, mm: num_int, dd: num_int) => void): void;
@@ -3678,7 +3678,7 @@ class MuiDatePicker {
 }
 
 
-class MuiDialog {
+declare class MuiDialog {
 
 	/** Calls a function when buttons are click (prev */
 	SetOnTouch(callback: (isOkBtnClick: bin, btnText: str) => void): void;
@@ -3771,7 +3771,7 @@ class MuiDialog {
 }
 
 
-class MuiDivider {
+declare class MuiDivider {
 
 	/** Set the visibility to “Show” */
 	Show(): void;
@@ -3796,7 +3796,7 @@ class MuiDivider {
 }
 
 
-class MuiFAB {
+declare class MuiFAB {
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -3883,7 +3883,7 @@ class MuiFAB {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -3900,12 +3900,12 @@ class MuiFAB {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
@@ -3915,7 +3915,7 @@ class MuiFAB {
 }
 
 
-class MuiFABElegant {
+declare class MuiFABElegant {
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -4002,7 +4002,7 @@ class MuiFABElegant {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -4019,12 +4019,12 @@ class MuiFABElegant {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
@@ -4034,7 +4034,7 @@ class MuiFABElegant {
 }
 
 
-class MuiFABOutline {
+declare class MuiFABOutline {
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -4121,7 +4121,7 @@ class MuiFABOutline {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -4138,12 +4138,12 @@ class MuiFABOutline {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Change the color of the control */
 	SetColor(color: str_col, backColor: str_col): void;
@@ -4153,7 +4153,7 @@ class MuiFABOutline {
 }
 
 
-class MuiList {
+declare class MuiList {
 
 	/** Add item */
 	AddItem(title: str, body: str, image: str_ptf): MuiItem;
@@ -4282,10 +4282,10 @@ class MuiList {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -4294,7 +4294,7 @@ class MuiList {
 	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set column widths */
-	SetColumnWidths(icon: ?, title: str, body: str, mode: ?): void;
+	SetColumnWidths(icon: all, title: str, body: str, mode: all): void;
 
 	/** Set divider */
 	SetDivider(height: num, color: str_col): void;
@@ -4303,10 +4303,10 @@ class MuiList {
 	SetEllipsize(mode: "start"|"middle"|"end"): void;
 
 	/** Set ellipsize1 */
-	SetEllipsize1(mode: ?): void;
+	SetEllipsize1(mode: all): void;
 
 	/** Set ellipsize2 */
-	SetEllipsize2(mode: ?): void;
+	SetEllipsize2(mode: all): void;
 
 	/** En/Disable the control */
 	SetEnabled(enable: bin): void;
@@ -4315,28 +4315,28 @@ class MuiList {
 	SetFontFile(file: str_ptf): void;
 
 	/** Set hi text color1 */
-	SetHiTextColor1(clr: ?): void;
+	SetHiTextColor1(clr: all): void;
 
 	/** Set hi text color2 */
-	SetHiTextColor2(clr: ?): void;
+	SetHiTextColor2(clr: all): void;
 
 	/** Set icon margins */
-	SetIconMargins(left: ?, top: ?, right: ?, bottom: ?, mode: ?): void;
+	SetIconMargins(left?: all, top?: all, right?: all, bottom?: all, mode?: all): void;
 
 	/** Set icon size */
-	SetIconSize(size: ?, mode: ?): void;
+	SetIconSize(size: all, mode: all): void;
 
 	/** Set item */
-	SetItem(title: str, newTitle: ?, newBody: num, newImage: ?): void;
+	SetItem(title: str, newTitle: all, newBody: num, newImage: all): void;
 
 	/** Set item by index */
-	SetItemByIndex(index: num, newTitle: ?, newBody: num, newImage: ?): void;
+	SetItemByIndex(index: num, newTitle: all, newBody: num, newImage: all): void;
 
 	/** Set list */
-	SetList(list: ?, delim: str): void;
+	SetList(list: all, delim: str): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -4345,7 +4345,7 @@ class MuiList {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -4366,7 +4366,7 @@ class MuiList {
 	SetTextColor2(clr: str_col): void;
 
 	/** Set text margins */
-	SetTextMargins(left: ?, top: ?, right: ?, bottom: ?, mode: ?, options: str_com): void;
+	SetTextMargins(left: all, top: all, right: all, bottom: all, mode: all, options: str_com): void;
 
 	/** Define a shadow around the control */
 	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
@@ -4386,10 +4386,10 @@ class MuiList {
 	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Set text size1 */
-	SetTextSize1(size: ?, mode: ?): void;
+	SetTextSize1(size: all, mode: all): void;
 
 	/** Set text size2 */
-	SetTextSize2(size: ?, mode: ?): void;
+	SetTextSize2(size: all, mode: all): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -4403,16 +4403,16 @@ class MuiList {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiListDialog {
+declare class MuiListDialog {
 
 	/** Calls a function selects an item in the list */
 	SetOnSelect(callback: (name: str, index: num_int) => void): void;
@@ -4488,7 +4488,7 @@ class MuiListDialog {
 }
 
 
-class MuiListModern {
+declare class MuiListModern {
 
 	/** Calls a function when an item is click */
 	SetOnTouch(callback: (title: str, body: str, index: num_int) => void): void;
@@ -4638,7 +4638,7 @@ class MuiListModern {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -4655,16 +4655,16 @@ class MuiListModern {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiListSimple {
+declare class MuiListSimple {
 
 	/** Calls a function when an item is click */
 	SetOnTouch(callback: (title: str, index: num_int, icon: str, badge: num) => void): void;
@@ -4748,7 +4748,7 @@ class MuiListSimple {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -4765,16 +4765,16 @@ class MuiListSimple {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiMenu {
+declare class MuiMenu {
 
 	/** Calls a function when item is click */
 	SetOnSelect(callback: (title: str, index: num_int) => void): void;
@@ -4844,7 +4844,7 @@ class MuiMenu {
 }
 
 
-class MuiMenuWithIcon {
+declare class MuiMenuWithIcon {
 
 	/** Calls a function when item is click */
 	SetOnSelect(callback: (text: str, index: num_int) => void): void;
@@ -4908,7 +4908,7 @@ class MuiMenuWithIcon {
 }
 
 
-class MuiModal {
+declare class MuiModal {
 
 	/** Calls a function when control buttons are click */
 	SetOnTouch(callback: (isOkBtnClick: bin, btnText: str) => void): void;
@@ -4990,7 +4990,7 @@ class MuiModal {
 }
 
 
-class MuiRadio {
+declare class MuiRadio {
 
 	/** Calls a function when the user selects an item in the list */
 	SetOnSelect(callback: (name: str, index: num_int) => void): void;
@@ -5098,10 +5098,10 @@ class MuiRadio {
 	ScrollToItemByIndex(index: num): void;
 
 	/** Select item */
-	SelectItem(title: str, body: str, scroll: ?): void;
+	SelectItem(title: str, body: str, scroll: all): void;
 
 	/** Select item by index */
-	SelectItemByIndex(index: num, scroll: ?): void;
+	SelectItemByIndex(index: num, scroll: all): void;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -5116,10 +5116,10 @@ class MuiRadio {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -5128,7 +5128,7 @@ class MuiRadio {
 	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set column widths */
-	SetColumnWidths(icon: ?, title: str, body: str, mode: ?): void;
+	SetColumnWidths(icon: all, title: str, body: str, mode: all): void;
 
 	/** Set divider */
 	SetDivider(height: num, color: str_col): void;
@@ -5137,10 +5137,10 @@ class MuiRadio {
 	SetEllipsize(mode: "start"|"middle"|"end"): void;
 
 	/** Set ellipsize1 */
-	SetEllipsize1(mode: ?): void;
+	SetEllipsize1(mode: all): void;
 
 	/** Set ellipsize2 */
-	SetEllipsize2(mode: ?): void;
+	SetEllipsize2(mode: all): void;
 
 	/** En/Disable the control */
 	SetEnabled(enable: bin): void;
@@ -5149,16 +5149,16 @@ class MuiRadio {
 	SetFontFile(file: str_ptf): void;
 
 	/** Set hi text color1 */
-	SetHiTextColor1(clr: ?): void;
+	SetHiTextColor1(clr: all): void;
 
 	/** Set hi text color2 */
-	SetHiTextColor2(clr: ?): void;
+	SetHiTextColor2(clr: all): void;
 
 	/** Set list */
-	SetList(list: ?, delim: str): void;
+	SetList(list: all, delim: str): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -5179,13 +5179,13 @@ class MuiRadio {
 	SetTextColor(color: str_col): void;
 
 	/** Set text color1 */
-	SetTextColor1(clr: ?): void;
+	SetTextColor1(clr: all): void;
 
 	/** Set text color2 */
-	SetTextColor2(clr: ?): void;
+	SetTextColor2(clr: all): void;
 
 	/** Set text margins */
-	SetTextMargins(left: ?, top: ?, right: ?, bottom: ?, mode: ?, options: str_com): void;
+	SetTextMargins(left: all, top: all, right: all, bottom: all, mode: all, options: str_com): void;
 
 	/** Define a shadow around the control */
 	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
@@ -5205,10 +5205,10 @@ class MuiRadio {
 	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Set text size1 */
-	SetTextSize1(size: ?, mode: ?): void;
+	SetTextSize1(size: all, mode: all): void;
 
 	/** Set text size2 */
-	SetTextSize2(size: ?, mode: ?): void;
+	SetTextSize2(size: all, mode: all): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -5222,16 +5222,16 @@ class MuiRadio {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiRadioButtons {
+declare class MuiRadioButtons {
 
 	/** Calls a function when the user selects an item in the list */
 	SetOnSelect(callback: (name: str, index: num_int) => void): void;
@@ -5249,7 +5249,7 @@ class MuiRadioButtons {
 	Hide(): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -5341,16 +5341,16 @@ class MuiRadioButtons {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiRadioMaterial {
+declare class MuiRadioMaterial {
 
 	/** Calls a function when the user selects an item in the list */
 	SetOnSelect(callback: (name: str, index: num_int) => void): void;
@@ -5368,7 +5368,7 @@ class MuiRadioMaterial {
 	Hide(): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -5460,16 +5460,16 @@ class MuiRadioMaterial {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiSeekBar {
+declare class MuiSeekBar {
 
 	/** Get the current value of the seekbar */
 	GetValue(): num;
@@ -5558,16 +5558,16 @@ class MuiSeekBar {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiSpinner {
+declare class MuiSpinner {
 
 	/** Calls a function when value changes */
 	SetOnChange(callback: (value: str, index: num_int) => void): void;
@@ -5656,7 +5656,7 @@ class MuiSpinner {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -5673,16 +5673,16 @@ class MuiSpinner {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiSwitch {
+declare class MuiSwitch {
 
 	/** Get the current value of the switch */
 	GetValue(): bin;
@@ -5759,16 +5759,16 @@ class MuiSwitch {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiSwitchSettings {
+declare class MuiSwitchSettings {
 
 	/** Get the current value of the switch */
 	GetValue(): bin;
@@ -5845,16 +5845,16 @@ class MuiSwitchSettings {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTabFixed {
+declare class MuiTabFixed {
 
 	/**
 	 * Get the corresponding layout of a given name where you can add your controls
@@ -5934,16 +5934,16 @@ class MuiTabFixed {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTEFilledIconLeft {
+declare class MuiTEFilledIconLeft {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6003,7 +6003,7 @@ class MuiTEFilledIconLeft {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6028,7 +6028,7 @@ class MuiTEFilledIconLeft {
 }
 
 
-class MuiTEFilledIconRight {
+declare class MuiTEFilledIconRight {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6088,7 +6088,7 @@ class MuiTEFilledIconRight {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6113,7 +6113,7 @@ class MuiTEFilledIconRight {
 }
 
 
-class MuiTEOutlineIconLeft {
+declare class MuiTEOutlineIconLeft {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6173,7 +6173,7 @@ class MuiTEOutlineIconLeft {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6198,7 +6198,7 @@ class MuiTEOutlineIconLeft {
 }
 
 
-class MuiTEOutlineIconRight {
+declare class MuiTEOutlineIconRight {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6258,7 +6258,7 @@ class MuiTEOutlineIconRight {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6283,7 +6283,7 @@ class MuiTEOutlineIconRight {
 }
 
 
-class MuiTESearchElegant {
+declare class MuiTESearchElegant {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6343,7 +6343,7 @@ class MuiTESearchElegant {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6371,7 +6371,7 @@ class MuiTESearchElegant {
 }
 
 
-class MuiTESearchUnique {
+declare class MuiTESearchUnique {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6431,7 +6431,7 @@ class MuiTESearchUnique {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6453,7 +6453,7 @@ class MuiTESearchUnique {
 }
 
 
-class MuiTextAreaFilled {
+declare class MuiTextAreaFilled {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6513,7 +6513,7 @@ class MuiTextAreaFilled {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6532,7 +6532,7 @@ class MuiTextAreaFilled {
 }
 
 
-class MuiTextAreaFilledA {
+declare class MuiTextAreaFilledA {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6592,7 +6592,7 @@ class MuiTextAreaFilledA {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6611,7 +6611,7 @@ class MuiTextAreaFilledA {
 }
 
 
-class MuiTextAreaOutline {
+declare class MuiTextAreaOutline {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6671,7 +6671,7 @@ class MuiTextAreaOutline {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6690,7 +6690,7 @@ class MuiTextAreaOutline {
 }
 
 
-class MuiTextAreaOutlineA {
+declare class MuiTextAreaOutlineA {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6750,7 +6750,7 @@ class MuiTextAreaOutlineA {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6769,7 +6769,7 @@ class MuiTextAreaOutlineA {
 }
 
 
-class MuiTextEditFilled {
+declare class MuiTextEditFilled {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6829,89 +6829,7 @@ class MuiTextEditFilled {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
-
-	/** Called when content was changed by the user */
-	SetOnChange(callback: () => void): void;
-
-	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
-	SetOnEnter(callback: () => void): void;
-
-	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
-
-	/** Change displayed text */
-	SetText(text: str): void;
-
-	/** Undo an action */
-	Undo(): void;
-
-	/** Define a callback function for touch events */
-	SetOnTouch(callback: () => void): void;
-}
-
-
-class MuiTextEditFilledA {
-
-	/** Removes the focus of the control */
-	ClearFocus(): void;
-
-	/** Clear input history */
-	ClearHistory(): void;
-
-	/** Set the focus to the control for immediate access */
-	Focus(): void;
-
-	/** Get cursor line */
-	GetCursorLine(): num;
-
-	/** Get cursor position */
-	GetCursorPos(): void;
-
-	/** Get selected text */
-	GetSelectedText(): void;
-
-	/** Get selection end */
-	GetSelectionEnd(): void;
-
-	/** Get selection start */
-	GetSelectionStart(): void;
-
-	/** Returns the currently contained text */
-	GetText(): str;
-
-	/** Get the type of MUI control */
-	GetType(): str;
-
-	/** Returns the current visibility state */
-	GetVisibility(): "Show"|"Hide"|"Gone";
-
-	/** Make it gone. It was never there! */
-	Gone(): void;
-
-	/** Inserts a string at a given position */
-	InsertText(text: str, start: num_int): void;
-
-	/** Checks if the control is useable */
-	IsEnabled(): bin;
-
-	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
-
-	/** Checks if the control is currently visible */
-	IsVisible(): bin;
-
-	/** Redo an undone action */
-	Redo(): void;
-
-	/** Replaces a given range in the text with some string */
-	ReplaceText(text: str, start: num_int, end: num_int): void;
-
-	/** Change the curernt cursor position */
-	SetCursorPos(position: num_int): void;
-
-	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6933,7 +6851,7 @@ class MuiTextEditFilledA {
 }
 
 
-class MuiTextEditOutline {
+declare class MuiTextEditFilledA {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6993,7 +6911,7 @@ class MuiTextEditOutline {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -7015,7 +6933,7 @@ class MuiTextEditOutline {
 }
 
 
-class MuiTextEditOutlineA {
+declare class MuiTextEditOutline {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -7075,7 +6993,7 @@ class MuiTextEditOutlineA {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -7097,7 +7015,7 @@ class MuiTextEditOutlineA {
 }
 
 
-class MuiTextEditSearch {
+declare class MuiTextEditOutlineA {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -7157,7 +7075,89 @@ class MuiTextEditSearch {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
+
+	/** Called when content was changed by the user */
+	SetOnChange(callback: () => void): void;
+
+	/** Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard */
+	SetOnEnter(callback: () => void): void;
+
+	/** Defines position and size on absolute layouts */
+	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+
+	/** Change displayed text */
+	SetText(text: str): void;
+
+	/** Undo an action */
+	Undo(): void;
+
+	/** Define a callback function for touch events */
+	SetOnTouch(callback: () => void): void;
+}
+
+
+declare class MuiTextEditSearch {
+
+	/** Removes the focus of the control */
+	ClearFocus(): void;
+
+	/** Clear input history */
+	ClearHistory(): void;
+
+	/** Set the focus to the control for immediate access */
+	Focus(): void;
+
+	/** Get cursor line */
+	GetCursorLine(): num;
+
+	/** Get cursor position */
+	GetCursorPos(): void;
+
+	/** Get selected text */
+	GetSelectedText(): void;
+
+	/** Get selection end */
+	GetSelectionEnd(): void;
+
+	/** Get selection start */
+	GetSelectionStart(): void;
+
+	/** Returns the currently contained text */
+	GetText(): str;
+
+	/** Get the type of MUI control */
+	GetType(): str;
+
+	/** Returns the current visibility state */
+	GetVisibility(): "Show"|"Hide"|"Gone";
+
+	/** Make it gone. It was never there! */
+	Gone(): void;
+
+	/** Inserts a string at a given position */
+	InsertText(text: str, start: num_int): void;
+
+	/** Checks if the control is useable */
+	IsEnabled(): bin;
+
+	/** Checks if the control overlaps with another */
+	IsOverlap(obj: dso, depth: num_frc): bin;
+
+	/** Checks if the control is currently visible */
+	IsVisible(): bin;
+
+	/** Redo an undone action */
+	Redo(): void;
+
+	/** Replaces a given range in the text with some string */
+	ReplaceText(text: str, start: num_int, end: num_int): void;
+
+	/** Change the curernt cursor position */
+	SetCursorPos(position: num_int): void;
+
+	/** Define distances to other controls */
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -7179,7 +7179,7 @@ class MuiTextEditSearch {
 }
 
 
-class MuiTextEditUnique {
+declare class MuiTextEditUnique {
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -7239,7 +7239,7 @@ class MuiTextEditUnique {
 	SetCursorPos(position: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -7261,7 +7261,7 @@ class MuiTextEditUnique {
 }
 
 
-class MuiTextH1 {
+declare class MuiTextH1 {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -7375,10 +7375,10 @@ class MuiTextH1 {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -7402,7 +7402,7 @@ class MuiTextH1 {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -7411,16 +7411,16 @@ class MuiTextH1 {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -7463,16 +7463,16 @@ class MuiTextH1 {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTextH2 {
+declare class MuiTextH2 {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -7586,10 +7586,10 @@ class MuiTextH2 {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -7613,7 +7613,7 @@ class MuiTextH2 {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -7622,16 +7622,16 @@ class MuiTextH2 {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -7674,16 +7674,16 @@ class MuiTextH2 {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTextH3 {
+declare class MuiTextH3 {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -7797,10 +7797,10 @@ class MuiTextH3 {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -7824,7 +7824,7 @@ class MuiTextH3 {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -7833,16 +7833,16 @@ class MuiTextH3 {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -7885,16 +7885,16 @@ class MuiTextH3 {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTextH4 {
+declare class MuiTextH4 {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -8008,10 +8008,10 @@ class MuiTextH4 {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -8035,7 +8035,7 @@ class MuiTextH4 {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -8044,16 +8044,16 @@ class MuiTextH4 {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -8096,16 +8096,16 @@ class MuiTextH4 {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTextH5 {
+declare class MuiTextH5 {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -8219,10 +8219,10 @@ class MuiTextH5 {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -8246,7 +8246,7 @@ class MuiTextH5 {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -8255,16 +8255,16 @@ class MuiTextH5 {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -8307,16 +8307,16 @@ class MuiTextH5 {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTextH6 {
+declare class MuiTextH6 {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -8430,10 +8430,10 @@ class MuiTextH6 {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -8457,7 +8457,7 @@ class MuiTextH6 {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -8466,16 +8466,16 @@ class MuiTextH6 {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -8518,16 +8518,16 @@ class MuiTextH6 {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTextJumbo {
+declare class MuiTextJumbo {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -8641,10 +8641,10 @@ class MuiTextJumbo {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -8668,7 +8668,7 @@ class MuiTextJumbo {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -8677,16 +8677,16 @@ class MuiTextJumbo {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -8729,16 +8729,16 @@ class MuiTextJumbo {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTextParagraph {
+declare class MuiTextParagraph {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -8852,10 +8852,10 @@ class MuiTextParagraph {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -8879,7 +8879,7 @@ class MuiTextParagraph {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -8888,16 +8888,16 @@ class MuiTextParagraph {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -8940,16 +8940,16 @@ class MuiTextParagraph {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTextSecondary {
+declare class MuiTextSecondary {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -9063,10 +9063,10 @@ class MuiTextSecondary {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -9090,7 +9090,7 @@ class MuiTextSecondary {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
@@ -9099,16 +9099,16 @@ class MuiTextSecondary {
 	SetOnTouch(callback: () => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags his finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -9151,16 +9151,16 @@ class MuiTextSecondary {
  	 * &emsp; `x`\
  	 * &emsp; `y`\
  	 * &emsp; `w`\
- 	 * &emsp; `w`\
+ 	 * &emsp; `h`\
  	 * &emsp; `sw`\
  	 * &emsp; `sh`\
  	 * &emsp; `rot`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 }
 
 
-class MuiTimePicker {
+declare class MuiTimePicker {
 
 	/** Calls a function when the user selects a time */
 	SetOnSelect(callback: (time: str, hour: num_int, minute: num_int, pos: "AM"|"PM") => void): void;
@@ -9212,13 +9212,6 @@ class MuiTimePicker {
 	 * @param textEdit An MUI TextEdit control
 	 */
 	SetTextEdit(textEdit: obj): void;
-}
-
-
-class MuiShowMenu {
-
-	/** Calls a function when the user selects an item */
-	SetOnSelect(callback: (title: str) => void): void;
 }
 
 

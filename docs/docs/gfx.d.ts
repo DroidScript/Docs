@@ -9,7 +9,7 @@ declare type gvo = GameObject;
 /** smartwatch object */
 declare type swo = SmartWatchObject;
 /** JavaScript object */
-declare type jso = JSObject;
+declare type jso = Object;
 /** Function */
 declare type fnc = Function;
 /** List */
@@ -132,7 +132,7 @@ declare type str_uri = string;
 declare type str_url = string;
 
 
-class DsGfx {
+declare class DsGfx {
 
 	/** Adds a background to the game */
 	AddBackground(obj: GfxBackground): void;
@@ -187,7 +187,7 @@ class DsGfx {
 	CreateText(text: str, fontSize: num, fontFile: str_ptf, align: "left"|"center"|"right", callback: () => void): GfxText;
 
 	/** Returns a new texture object */
-	CreateTexture: GfxTexture;
+	CreateTexture(): GfxTexture;
 
 	/** GameView custom data */
 	data: obj;
@@ -208,7 +208,7 @@ class DsGfx {
 	 * Get time since last gfx.Pause or gfx.Play
 	 * @return Date
 	 */
-	GetTime(): jso;
+	GetTime(): Date;
 
 	/** Display height in pixels */
 	height: num_pxl;
@@ -271,13 +271,13 @@ class DsGfx {
 	SetOnKeyUp(callback: (key: str) => void): void;
 
 	/** Set callback for touch down */
-	SetOnTouchDown(callback: (x: num_frc|fractions, y: num_frc|fractions) => void): void;
+	SetOnTouchDown(callback: (x: num_frc|lst_num, y: num_frc|lst_num) => void): void;
 
 	/** Set callback for touch move */
-	SetOnTouchMove(callback: (x: num_frc|fractions, y: num_frc|fractions) => void): void;
+	SetOnTouchMove(callback: (x: num_frc|lst_num, y: num_frc|lst_num) => void): void;
 
 	/** Set callback for touch up */
-	SetOnTouchUp(callback: (x: num_frc|fractions, y: num_frc|fractions) => void): void;
+	SetOnTouchUp(callback: (x: num_frc|lst_num, y: num_frc|lst_num) => void): void;
 
 	/** Change the drawing order of an object */
 	SetOrder(object: obj, order: num): void;
@@ -299,7 +299,7 @@ class DsGfx {
 
 }
 
-class GfxPhysics {
+declare class GfxPhysics {
 
 	/**
 	 * Adds velocity to the object
@@ -348,7 +348,7 @@ class GfxPhysics {
 }
 
 
-class GfxBackground {
+declare class GfxBackground {
 
 	/** Scroll Background */
 	Scroll(x: num, y: num): void;
@@ -358,7 +358,7 @@ class GfxBackground {
 }
 
 
-class GfxCircle {
+declare class GfxCircle {
 
 	/** The alpha value */
 	alpha: num_frc;
@@ -407,7 +407,7 @@ class GfxCircle {
 }
 
 
-class GfxEllipse {
+declare class GfxEllipse {
 
 	/** The alpha value */
 	alpha: num_frc;
@@ -456,7 +456,7 @@ class GfxEllipse {
 }
 
 
-class GfxPolygon {
+declare class GfxPolygon {
 
 	/** The alpha value */
 	alpha: num_frc;
@@ -505,7 +505,7 @@ class GfxPolygon {
 }
 
 
-class GfxRectangle {
+declare class GfxRectangle {
 
 	/** The alpha value */
 	alpha: num_frc;
@@ -554,7 +554,7 @@ class GfxRectangle {
 }
 
 
-class GfxSound {
+declare class GfxSound {
 
 	/** The file url */
 	file: str;
@@ -571,7 +571,7 @@ class GfxSound {
 }
 
 
-class GfxSprite {
+declare class GfxSprite {
 
 	/** Incicates if added to game */
 	added: bin;
@@ -692,14 +692,14 @@ class GfxSprite {
 	width: num;
 
 	/** X-position on the screen */
-	x: num_frv;
+	x: num_frc;
 
 	/** Y-position on the screen */
 	y: num_frc;
 }
 
 
-class GfxSpriteSheet {
+declare class GfxSpriteSheet {
 
 	/** Extra properties */
 	data: obj;
@@ -709,7 +709,7 @@ class GfxSpriteSheet {
 }
 
 
-class GfxText {
+declare class GfxText {
 
 	/** Multiline text alignment */
 	align: "left"|"center"|"right";

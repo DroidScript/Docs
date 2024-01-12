@@ -9,7 +9,7 @@ declare type gvo = GameObject;
 /** smartwatch object */
 declare type swo = SmartWatchObject;
 /** JavaScript object */
-declare type jso = JSObject;
+declare type jso = Object;
 /** Function */
 declare type fnc = Function;
 /** List */
@@ -132,10 +132,10 @@ declare type str_uri = string;
 declare type str_url = string;
 
 
-class DsApp {
+declare class DsApp {
 
 	/** Create and add Button to Layout */
-	AddButton(layout: DsLayout, text: str, width: num_frc, height: num_frc, options: string | ("FontAwesome"|"Html"|"Monospace"|"Normal"|"Aluminium"|"Gray"|"Lego"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsButton;
+	AddButton(layout: DsLayout, text: str, width?: num_frc, height?: num_frc, options?: string | ("FontAwesome"|"Html"|"Monospace"|"Normal"|"Aluminium"|"Gray"|"Lego"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsButton;
 
 	/**
 	 * Create and add CameraView to Layout
@@ -148,7 +148,7 @@ class DsApp {
  	 * &emsp; XGA: 1024x768\
  	 * &emsp; UXGA: 1600x1200
 	 */
-	AddCameraView(layout: DsLayout, width: num_frc, height: num_frc, options: string | ("Front"|"UseBitmap"|"UseABGR"|"NoRotate"|"&lt;resolution&gt;")[]): DsCameraView;
+	AddCameraView(layout: DsLayout, width?: num_frc, height?: num_frc, options?: string | ("Front"|"UseBitmap"|"UseABGR"|"NoRotate"|"&lt;resolution&gt;")[]): DsCameraView;
 
 	/**
 	 * Create and add Button to Layout
@@ -160,16 +160,16 @@ class DsApp {
  	 * &emsp; `Icon` - allows loading of app icons\
  	 * &emsp; `NoPlay` - prevent gifs from playing automatically
 	 */
-	AddCanvas(layout: DsLayout, file: str_ptc, width: num, height: num, options: string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[], pxw: num_pxl, pxh: num_pxl): DsImage;
+	AddCanvas(layout: DsLayout, file: str_ptc, width?: num, height?: num, options?: string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[], pxw?: num_pxl, pxh?: num_pxl): DsImage;
 
 	/** Create and add CheckBox to Layout */
-	AddCheckBox(layout: DsLayout, text: str, width: num_frc, height: num_frc, options: string | ("FillX/Y"|"NoSound")[]): DsCheckBox;
+	AddCheckBox(layout: DsLayout, text: str, width?: num_frc, height?: num_frc, options?: string | ("FillX/Y"|"NoSound")[]): DsCheckBox;
 
 	/** Create and add CodeEdit to Layout */
-	AddCodeEdit(layout: DsLayout, text: str, width: num_frc, height: num_frc, options: string | ("FillX/Y")[]): DsCodeEdit;
+	AddCodeEdit(layout: DsLayout, text: str, width?: num_frc, height?: num_frc, options?: string | ("FillX/Y")[]): DsCodeEdit;
 
 	/** Adds a slide-able layout on given side */
-	AddDrawer(layout: DsLayout, side: "left"|"right", width: num_frc, grabWidth: num_frc): void;
+	AddDrawer(layout: DsLayout, side: "left"|"right", width?: num_frc, grabWidth: num_frc): void;
 
 	/**
 	 * Create and add Image to Layout
@@ -180,7 +180,7 @@ class DsApp {
  	 * &emsp; `Icon` - allows loading of app icons\
  	 * &emsp; `NoPlay` - prevent gifs from playing automatically
 	 */
-	AddImage(layout: DsLayout, file: str_ptf, width: num, height: num, options: string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[], pxw: num_pxl, pxh: num_pxl): DsImage;
+	AddImage(layout: DsLayout, file: str_ptf, width?: num, height?: num, options?: string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[], pxw?: num_pxl, pxh?: num_pxl): DsImage;
 
 	/**
 	 * Adds a layout to the app
@@ -188,7 +188,7 @@ class DsApp {
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
 	 */
-	AddLayout(layout: DsLayout, type: "Linear"|"Absolute"|"Frame"|"Card", options: "TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y"): void;
+	AddLayout(layout: DsLayout, type: "Linear"|"Absolute"|"Frame"|"Card", options?: "TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y"): void;
 
 	/**
 	 * Create and add List to Layout
@@ -198,25 +198,25 @@ class DsApp {
  	 * &emsp; `Menu` - applies various settings to make the list appear like an in-app menu\
  	 * &emsp; `Horiz` - makes title and body text flow horizontally
 	 */
-	AddList(layout: DsLayout, list: str_lst, width: num_frc, height: num_frc, options: string | ("bold"|"Expand"|"Menu"|"Horiz"|"html"|"FontAwesome"|"monospace"|"Normal"|"WhiteGrad"|"BlackGrad"|"AlumButton"|"GreenButton"|"OrangeButton"|"NoSound")[], delim: str): DsList;
+	AddList(layout: DsLayout, list: str_lst, width?: num_frc, height?: num_frc, options?: string | ("bold"|"Expand"|"Menu"|"Horiz"|"html"|"FontAwesome"|"monospace"|"Normal"|"WhiteGrad"|"BlackGrad"|"AlumButton"|"GreenButton"|"OrangeButton"|"NoSound")[], delim: str): DsList;
 
 	/** Create and add Scroller to Layout */
-	AddScroller(layout: DsLayout, width: num_frc, height: num_frc, options: string | ("FillX"|"FillY"|"FillXY"|"Horizontal"|"Vertical"|"NoScrollBar"|"ScrollFade")[]): DsScroller;
+	AddScroller(layout: DsLayout, width?: num_frc, height?: num_frc, options?: string | ("FillX"|"FillY"|"FillXY"|"Horizontal"|"Vertical"|"NoScrollBar"|"ScrollFade")[]): DsScroller;
 
 	/** Create and add SeekBar to Layout */
-	AddSeekBar(layout: DsLayout, width: num_frc, height: num_frc, options: string | ("FillX/Y")[]): DsSeekBar;
+	AddSeekBar(layout: DsLayout, width?: num_frc, height?: num_frc, options?: string | ("FillX/Y")[]): DsSeekBar;
 
 	/** Create and add Spinner to Layout */
-	AddSpinner(layout: DsLayout, list: str_com, width: num_frc, height: num_frc, options: string | ("FillX/Y"|"NoSound")[]): DsSpinner;
+	AddSpinner(layout: DsLayout, list: str_com, width?: num_frc, height?: num_frc, options?: string | ("FillX/Y"|"NoSound")[]): DsSpinner;
 
 	/** Create and add Switch toggle to Layout */
-	AddSwitch(layout: DsLayout, text: str, width: num_frc, height: num_frc, options: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsSwitch;
+	AddSwitch(layout: DsLayout, text: str, width?: num_frc, height?: num_frc, options?: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsSwitch;
 
 	/** Returns a new Tabs object */
-	AddTabs(list: str_com, width: num_frc, height: num_frc, options: "Fade"|"FontAwesome"|"NoMargins"|"VCenter"): DsTabs;
+	AddTabs(list: str_com, width?: num_frc, height?: num_frc, options?: "Fade"|"FontAwesome"|"NoMargins"|"VCenter"): DsTabs;
 
 	/** Create and add Text to Layout */
-	AddText(layout: DsLayout, text: str, width: num_frc, height: num_frc, options: string | ("AutoScale"|"AutoSize"|"Multiline"|"Left"|"Right"|"Html"|"Bold"|"Monospace"|"NoWrap"|"Log"|"FillX/Y")[]): DsText;
+	AddText(layout: DsLayout, text: str, width?: num_frc, height?: num_frc, options?: string | ("AutoScale"|"AutoSize"|"Multiline"|"Left"|"Right"|"Html"|"Bold"|"Monospace"|"NoWrap"|"Log"|"FillX/Y")[]): DsText;
 
 	/**
 	 * Create and add TextEdit to Layout
@@ -234,13 +234,13 @@ class DsApp {
  	 * &emsp; `SingleLine` - Dont break text for long lines and change 'Enter' key to 'Done'\
  	 * &emsp; `Password` - displays characters as dots
 	 */
-	AddTextEdit(layout: DsLayout, text: str, width: num_frc, height: num_frc, options: string | ("AutoSelect"|"AutoSize"|"Bold"|"Extract"|"Left"|"Center"|"Right"|"Monospace"|"NoSpell"|"NoKeyboard"|"Numbers"|"ReadOnly"|"SingleLine"|"FillX/Y"|"Password")[]): DsTextEdit;
+	AddTextEdit(layout: DsLayout, text: str, width?: num_frc, height?: num_frc, options?: string | ("AutoSelect"|"AutoSize"|"Bold"|"Extract"|"Left"|"Center"|"Right"|"Monospace"|"NoSpell"|"NoKeyboard"|"Numbers"|"ReadOnly"|"SingleLine"|"FillX/Y"|"Password")[]): DsTextEdit;
 
 	/** Create and add Toggle to Layout */
-	AddToggle(layout: DsLayout, text: str, width: num_frc, height: num_frc, options: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsToggle;
+	AddToggle(layout: DsLayout, text: str, width?: num_frc, height?: num_frc, options?: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsToggle;
 
 	/** Create and add VideoView to Layout */
-	AddVideoView(layout: DsLayout, width: num_frc, height: num_frc, options: str_com): DsVideoView;
+	AddVideoView(layout: DsLayout, width?: num_frc, height?: num_frc, options?: str_com): DsVideoView;
 
 	/**
 	 * Create and add WebView to Layout
@@ -259,16 +259,16 @@ class DsApp {
  	 * &emsp; `UseBasicInput` - makes softkeyboard useful for html code editors\
  	 * &emsp; `UseBrowser` - Open links in external browser
 	 */
-	AddWebView(layout: DsLayout, width: num_frc, height: num_frc, options: string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[], zoom: num_prc): DsWebView;
+	AddWebView(layout: DsLayout, width?: num_frc, height?: num_frc, options?: string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[], zoom?: num_prc): DsWebView;
 
 	/**
 	 * Shows a popup message with an 'OK' button to exit
 	 * @param hue -180..180
 	 */
-	Alert(message: str, title: str, options: string | ("NoDim"|"NoFocus")[], hue: num_int): void;
+	Alert(message: str, title: str, options?: string | ("NoDim"|"NoFocus")[], hue?: num_int): void;
 
 	/** Similar to setInterval */
-	Animate(callback: (time: num_mls, dtime: num_mls) => void, fps: num_fps): void;
+	Animate(callback?: (time: num_mls, dtime: num_mls) => void, fps?: num_fps): void;
 
 	/** Used for broadcasting messages between DroidScript apps */
 	Broadcast(type: "Exec", message: str): void;
@@ -277,7 +277,7 @@ class DsApp {
 	 * Send broadcast intent
 	 * @param action android action
 	 */
-	BroadcastIntent(action: str, category: str, data: str, type: str, extras: str, options: str_com): void;
+	BroadcastIntent(action: str, category: str, data: str, type: str, extras: str, options?: str_com): void;
 
 	/** Calls a phone number */
 	Call(number: "number"): void;
@@ -306,22 +306,22 @@ class DsApp {
  	 * &emsp; `persist` - keep file permission after reboot\
  	 * &emsp; `nodownload` - prevents file downloads
 	 */
-	ChooseFile(message: str, type: "mimetype", callback: (path: str_pth|str_uri, name: str) => void, fldr: str_pth, options: "persist"|"nodownload"): void;
+	ChooseFile(message: str, type: "mimetype", callback: (path: str_pth|str_uri, name: str) => void, fldr?: str_pth, options?: "persist"|"nodownload"): void;
 
 	/** Let the user choose an image */
 	ChooseImage(options: string | (""|"internal"|"external")[], callback: (path: str_pth) => void): void;
 
 	/** Let the user choose a WiFi network */
-	ChooseWifi(title1: str, title2: str, callback: (ssid: str) => void, options: string | ("force"|"large")[], extra: "ssids"): void;
+	ChooseWifi(title1: str, title2: str, callback: (ssid: str) => void, options?: string | ("force"|"large")[], extra?: "ssids"): void;
 
 	/** Clears saved web cookies */
 	ClearCookies(): void;
 
 	/** Deletes app.Save*() storage */
-	ClearData(file: str_ptf): void;
+	ClearData(file?: str_ptf): void;
 
 	/** Deletes a variable saved via app.Save*() */
-	ClearValue(name: str, file: str_ptf): void;
+	ClearValue(name: str, file?: str_ptf): void;
 
 	/** Closes the drawer layout on the given side with slide animation */
 	CloseDrawer(side: "left"|"right"): void;
@@ -330,16 +330,16 @@ class DsApp {
 	CopyFile(source: str_pth, destination: str_pth): void;
 
 	/** Copies a folder to a given destination */
-	CopyFolder(source: str_pth, destination: str_pth, overwrite: bin, filter: "pattern"): void;
+	CopyFolder(source: str_pth, destination: str_pth, overwrite?: bin, filter?: "pattern"): void;
 
 	/** Returns an AudioRecorder object */
 	CreateAudioRecorder(): DsAudioRecorder;
 
 	/** Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices */
-	CreateBluetoothList(filter: str): DsBluetoothList;
+	CreateBluetoothList(filter?: str): DsBluetoothList;
 
 	/** Communicate with other Bluetooth devices */
-	CreateBluetoothSerial(mode: "Text"|"Int"|"Hex"): DsBluetoothSerial;
+	CreateBluetoothSerial(mode?: "Text"|"Int"|"Hex"): DsBluetoothSerial;
 
 	/**
 	 * Creates a button control
@@ -347,7 +347,7 @@ class DsApp {
  	 * &emsp; `AutoShrink` - Auto-shrinks text to fit\
  	 * &emsp; `AutoSize` - Auto-sizes text to fit
 	 */
-	CreateButton(text: str, width: num_frc, height: num_frc, options: string | ("FontAwesome"|"Html"|"Monospace"|"Normal"|"Aluminium"|"Gray"|"Lego"|"SingleLine"|"Custom"|"AutoShrink"|"AutoSize"|"NoPad"|"FillX/Y"|"NoSound")[]): DsButton;
+	CreateButton(text: str, width?: num_frc, height?: num_frc, options?: string | ("FontAwesome"|"Html"|"Monospace"|"Normal"|"Aluminium"|"Gray"|"Lego"|"SingleLine"|"Custom"|"AutoShrink"|"AutoSize"|"NoPad"|"FillX/Y"|"NoSound")[]): DsButton;
 
 	/**
 	 * Returns a new CameraView object to access the device camera
@@ -361,7 +361,7 @@ class DsApp {
  	 * &emsp; XGA: 1024x768\
  	 * &emsp; UXGA: 1600x1200
 	 */
-	CreateCameraView(width: num_frc, height: num_frc, options: string | ("Front"|"UseBitmap"|"UseABGR"|"NoRotate"|"&lt;id&gt;"|"&lt;resolution&gt;")[]): DsCameraView;
+	CreateCameraView(width?: num_frc, height?: num_frc, options?: string | ("Front"|"UseBitmap"|"UseABGR"|"NoRotate"|"&lt;id&gt;"|"&lt;resolution&gt;")[]): DsCameraView;
 
 	/**
 	 * Create a blank white Image object
@@ -373,19 +373,19 @@ class DsApp {
  	 * &emsp; `Icon` - allows loading of app icons\
  	 * &emsp; `NoPlay` - prevent gifs from playing automatically
 	 */
-	CreateCanvas(file: str_ptc, width: num, height: num, options: string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[], pxw: num_pxl, pxh: num_pxl): DsImage;
+	CreateCanvas(file: str_ptc, width?: num, height?: num, options?: string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[], pxw?: num_pxl, pxh?: num_pxl): DsImage;
 
 	/** Returns a new CheckBox object */
-	CreateCheckBox(text: str, width: num_frc, height: num_frc, options: string | ("FillX/Y"|"NoSound")[]): DsCheckBox;
+	CreateCheckBox(text: str, width?: num_frc, height?: num_frc, options?: string | ("FillX/Y"|"NoSound")[]): DsCheckBox;
 
 	/** Returns a new CloudStore object */
 	CreateCloudStore(apiKey: str): DsCloudStore;
 
 	/** Returns a new CodeEdit object */
-	CreateCodeEdit(text: str, width: num_frc, height: num_frc, options: string | ("FillX/Y")[]): DsCodeEdit;
+	CreateCodeEdit(text: str, width?: num_frc, height?: num_frc, options?: string | ("FillX/Y")[]): DsCodeEdit;
 
 	/** Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it */
-	CreateCrypt(options: str_com): DsCrypt;
+	CreateCrypt(options?: str_com): DsCrypt;
 
 	/** Creates a CustomTab control */
 	CreateCustomTabs(): void;
@@ -396,17 +396,17 @@ class DsApp {
  	 * &emsp; `dialog` - Show the debug log as black overlay dialog\
  	 * &emsp; `clear` - Clear content before showing
 	 */
-	CreateDebug(options: "dialog"|"clear"): void;
+	CreateDebug(options?: "dialog"|"clear"): void;
 
 	/**
 	 * Returns a new Dialog object to display messages
 	 * @param options 
  	 * &emsp; `Old` - apply old list style affecting title style and unrounded corners
 	 */
-	CreateDialog(title: str, options: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"Fillscreen"|"Fullscreen"|"TouchModal"|"NoTouch"|"Modal"|"Kiosk"|"Old")[]): DsDialog;
+	CreateDialog(title: str, options?: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"Fillscreen"|"Fullscreen"|"TouchModal"|"NoTouch"|"Modal"|"Kiosk"|"Old")[]): DsDialog;
 
 	/** Returns a new Downloader object */
-	CreateDownloader(options: string | ("NoDialog"|"Light")[]): DsDownloader;
+	CreateDownloader(options?: string | ("NoDialog"|"Light")[]): DsDownloader;
 
 	/** Returns an Email object for user to send emails */
 	CreateEmail(account: "email", password: "password"): DsEmail;
@@ -415,16 +415,16 @@ class DsApp {
 	CreateFile(file: str_ptf, mode: "r"|"w"|"rw"): DsFile;
 
 	/** CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script */
-	CreateGame(file: str_ptf, orient: "Portrait"|"Landscape"): void;
+	CreateGame(file: str_ptf, orient?: "Portrait"|"Landscape"): void;
 
 	/** The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics */
-	CreateGameView(width: num_frc, height: num_frc, options: str_com): void;
+	CreateGameView(width: num_frc, height: num_frc, options?: str_com): void;
 
 	/**
 	 * Returns a GLView object
 	 * @param options fast2d
 	 */
-	CreateGLView(width: num_frc, height: num_frc, options: str): DsGLView;
+	CreateGLView(width: num_frc, height: num_frc, options?: str): DsGLView;
 
 	/**
 	 * Returns a new Image object
@@ -436,7 +436,7 @@ class DsApp {
  	 * &emsp; `Icon` - allows loading of app icons\
  	 * &emsp; `NoPlay` - prevent gifs from playing automatically
 	 */
-	CreateImage(file: str_ptc, width: num, height: num, options: string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[], pxw: num_pxl, pxh: num_pxl): DsImage;
+	CreateImage(file?: str_ptc, width?: num, height?: num, options?: string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[], pxw?: num_pxl, pxh?: num_pxl): DsImage;
 
 	/**
 	 * Returns a new Layout object
@@ -445,7 +445,7 @@ class DsApp {
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
 	 */
-	CreateLayout(type: "Linear"|"Absolute"|"Frame"|"Card", options: string | ("AutoSize"|"TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y")[]): DsLayout;
+	CreateLayout(type: "Linear"|"Absolute"|"Frame"|"Card", options?: string | ("AutoSize"|"TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y")[]): DsLayout;
 
 	/**
 	 * Returns a new List object
@@ -455,13 +455,13 @@ class DsApp {
  	 * &emsp; `Menu` - applies various settings to make the list appear like an in-app menu\
  	 * &emsp; `Horiz` - makes title and body text flow horizontally
 	 */
-	CreateList(list: str_lst, width: num_frc, height: num_frc, options: string | ("bold"|"Expand"|"Menu"|"Horiz"|"html"|"FontAwesome"|"monospace"|"Normal"|"WhiteGrad"|"BlackGrad"|"AlumButton"|"GreenButton"|"OrangeButton"|"NoSound")[], delim: str): DsList;
+	CreateList(list: str_lst, width?: num_frc, height?: num_frc, options?: string | ("bold"|"Expand"|"Menu"|"Horiz"|"html"|"FontAwesome"|"monospace"|"Normal"|"WhiteGrad"|"BlackGrad"|"AlumButton"|"GreenButton"|"OrangeButton"|"NoSound")[], delim?: str): DsList;
 
 	/** Returns a new ListDialog object */
-	CreateListDialog(title: str, list: str, options: "Multi"): DsListDialog;
+	CreateListDialog(title: str, list: str, options?: "Multi"): DsListDialog;
 
 	/** Returns a new Locator object */
-	CreateLocator(type: string | ("GPS"|"Network")[], options: str_com): DsLocator;
+	CreateLocator(type: string | ("GPS"|"Network")[], options?: str_com): DsLocator;
 
 	/** Returns a new MediaPlayer object */
 	CreateMediaPlayer(): DsMediaPlayer;
@@ -490,20 +490,20 @@ class DsApp {
  	 * &emsp; `nostart` - disable auto start\
  	 * &emsp; `esm` - use EcmaScript-Modules
 	 */
-	CreateNode(paths: str_pth, options: "extended"|"legacy"|"nostart"|"esm"): void;
+	CreateNode(paths: str_pth, options?: "extended"|"legacy"|"nostart"|"esm"): void;
 
 	/**
 	 * Returns a new Notification object
 	 * @param options 
  	 * &emsp; `Low` - priority
 	 */
-	CreateNotification(options: string | ("Ongoing"|"AutoCancel"|"FullScreen"|"NoVibrate"|"Low")[]): DsNotification;
+	CreateNotification(options?: string | ("Ongoing"|"AutoCancel"|"FullScreen"|"NoVibrate"|"Low")[]): DsNotification;
 
 	/** Returns a new Nxt object */
 	CreateNxt(): DsNxt;
 
 	/** Returns a new Overlay object */
-	CreateOverlay(options: string | ("ShowWhenLocked"|"TurnScreenOn"|"KeepScreenOn")[]): void;
+	CreateOverlay(options?: string | ("ShowWhenLocked"|"TurnScreenOn"|"KeepScreenOn")[]): void;
 
 	/** Returns a new PhoneState object */
 	CreatePhoneState(types: "CellLocation"|"DataConnection"|"DataActivity"|"CallState"|"ServiceState"|"SignalStrength"|"CallForwarding"|"MessageWaiting"): DsPhoneState;
@@ -512,20 +512,20 @@ class DsApp {
 	CreatePlayStore(): DsPlayStore;
 
 	/** Returns a new Scroller object */
-	CreateScroller(width: num_frc, height: num_frc, options: string | ("FillX"|"FillY"|"FillXY"|"Horizontal"|"Vertical"|"NoScrollBar"|"ScrollFade")[]): DsScroller;
+	CreateScroller(width?: num_frc, height?: num_frc, options?: string | ("FillX"|"FillY"|"FillXY"|"Horizontal"|"Vertical"|"NoScrollBar"|"ScrollFade")[]): DsScroller;
 
 	/** Returns a new SeekBar object */
-	CreateSeekBar(width: num_frc, height: num_frc, options: string | ("FillX/Y")[]): DsSeekBar;
+	CreateSeekBar(width?: num_frc, height?: num_frc, options?: string | ("FillX/Y")[]): DsSeekBar;
 
 	/** Returns a new Sensor object */
-	CreateSensor(type: "Accelerometer"|"MagneticField"|"Orientation"|"Light"|"Proximity"|"Temperature"|"GameRotation"|"GeomagneticRotation"|"Gravity"|"Gyroscope"|"HeartRate"|"Acceleration"|"Pressure"|"Humidity"|"RotationMotion"|"StepCounter"|"StepDetector", options: string | ("Slow"|"Medium"|"Fast"|"Fastest")[]): DsSensor;
+	CreateSensor(type: "Accelerometer"|"MagneticField"|"Orientation"|"Light"|"Proximity"|"Temperature"|"GameRotation"|"GeomagneticRotation"|"Gravity"|"Gyroscope"|"HeartRate"|"Acceleration"|"Pressure"|"Humidity"|"RotationMotion"|"StepCounter"|"StepDetector", options?: string | ("Slow"|"Medium"|"Fast"|"Fastest")[]): DsSensor;
 
 	/**
 	 * Returns a new Service object
 	 * @param options 
  	 * &emsp; `Persist` - attempts to force restart if service killed
 	 */
-	CreateService(packageName: "this"|"&lt;package&gt;", className: "this"|"&lt;class&gt;", callback: () => void, options: string | ("Persist")[]): DsService;
+	CreateService(packageName: "this"|"&lt;package&gt;", className: "this"|"&lt;class&gt;", callback?: () => void, options?: string | ("Persist")[]): DsService;
 
 	/**
 	 * Creates a Home-Screen shortcut to an app
@@ -533,19 +533,19 @@ class DsApp {
  	 * &emsp; `Debug` - start app in debug mode\
  	 * &emsp; `Game` - runs in GameView mode
 	 */
-	CreateShortcut(name: str, iconFile: str_ptf, file: str_ptf, options: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[]): void;
+	CreateShortcut(name: str, iconFile: str_ptf, file: str_ptf, options?: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[]): void;
 
 	/** Returns a new SMS object to send and retreive SMS messages */
 	CreateSMS(): DsSMS;
 
 	/** Returns a new SpeechRec object */
-	CreateSpeechRec(options: string | ("NoBeep"|"Partial")[]): DsSpeechRec;
+	CreateSpeechRec(options?: string | ("NoBeep"|"Partial")[]): DsSpeechRec;
 
 	/** Returns a new Spinner object */
-	CreateSpinner(list: str_com, width: num_frc, height: num_frc, options: string | ("FillX/Y"|"NoSound")[]): DsSpinner;
+	CreateSpinner(list: str_com, width?: num_frc, height?: num_frc, options?: string | ("FillX/Y"|"NoSound")[]): DsSpinner;
 
 	/** Creates a switch control */
-	CreateSwitch(text: str, width: num_frc, height: num_frc, options: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsSwitch;
+	CreateSwitch(text: str, width?: num_frc, height?: num_frc, options?: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsSwitch;
 
 	/** Returns a new Synth object */
 	CreateSynth(type: "Signal"|"VCA"|"VCF"): DsSynth;
@@ -556,17 +556,17 @@ class DsApp {
  	 * &emsp; `combine` - combines stdout and stderr\
  	 * &emsp; `builder` - force use of proc builder
 	 */
-	CreateSysProc(cmd: "sh"|"su"|"busybox", env: str, dir: str_ptd, options: string | ("combine"|"builder")[]): DsSysProc;
+	CreateSysProc(cmd: "sh"|"su"|"busybox", env: str, dir: str_ptd, options?: string | ("combine"|"builder")[]): DsSysProc;
 
 	/** Returns a new Tabs object */
-	CreateTabs(list: str_com, width: num_frc, height: num_frc, options: "Fade"|"FontAwesome"|"NoMargins"|"VCenter"): DsTabs;
+	CreateTabs(list: str_com, width?: num_frc, height?: num_frc, options?: "Fade"|"FontAwesome"|"NoMargins"|"VCenter"): DsTabs;
 
 	/**
 	 * Returns a new Text object
 	 * @param options 
  	 * &emsp; `AutoShrink` - Auto-shrinks text to fit
 	 */
-	CreateText(text: str, width: num_frc, height: num_frc, options: string | ("AutoScale"|"AutoSize"|"Multiline"|"Left"|"Right"|"Bottom"|"VCenter"|"Html"|"Bold"|"Monospace"|"AutoShrink"|"NoWrap"|"Log"|"FillX/Y")[]): DsText;
+	CreateText(text: str, width?: num_frc, height?: num_frc, options?: string | ("AutoScale"|"AutoSize"|"Multiline"|"Left"|"Right"|"Bottom"|"VCenter"|"Html"|"Bold"|"Monospace"|"AutoShrink"|"NoWrap"|"Log"|"FillX/Y")[]): DsText;
 
 	/**
 	 * Returns a new TextEdit object
@@ -584,13 +584,13 @@ class DsApp {
  	 * &emsp; `SingleLine` - Dont break text for long lines and change 'Enter' key to 'Done'\
  	 * &emsp; `Password` - displays characters as dots
 	 */
-	CreateTextEdit(text: str, width: num_frc, height: num_frc, options: string | ("AutoSelect"|"AutoSize"|"Bold"|"Extract"|"Left"|"Center"|"Right"|"Monospace"|"NoSpell"|"NoKeyboard"|"Numbers"|"ReadOnly"|"SingleLine"|"FillX/Y"|"Password")[]): DsTextEdit;
+	CreateTextEdit(text: str, width?: num_frc, height?: num_frc, options?: string | ("AutoSelect"|"AutoSize"|"Bold"|"Extract"|"Left"|"Center"|"Right"|"Monospace"|"NoSpell"|"NoKeyboard"|"Numbers"|"ReadOnly"|"SingleLine"|"FillX/Y"|"Password")[]): DsTextEdit;
 
 	/** Returns a new Theme object */
 	CreateTheme(baseTheme: "Dark"|"Light"): DsTheme;
 
 	/** Returns a new Toggle object */
-	CreateToggle(text: str, width: num_frc, height: num_frc, options: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsToggle;
+	CreateToggle(text: str, width?: num_frc, height?: num_frc, options?: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsToggle;
 
 	/**
 	 * Returns a new USBSerial object
@@ -605,7 +605,7 @@ class DsApp {
 	CreateUSBSerial(baudRate: 300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600, dataBits: 5|6|7|8, stopBits: 1|2|15, parity: 0|1|2|3|4, device: num): DsUSBSerial;
 
 	/** Returns a new VideoView object */
-	CreateVideoView(width: num_frc, height: num_frc, options: str_com): DsVideoView;
+	CreateVideoView(width?: num_frc, height?: num_frc, options?: str_com): DsVideoView;
 
 	/**
 	 * Returns a new WebServer object
@@ -616,10 +616,10 @@ class DsApp {
  	 * &emsp; `Reflect` - Reflect web socket messages back to all clients\
  	 * &emsp; `<BUFSIZE>` - “ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”
 	 */
-	CreateWebServer(port: num_int, options: string | ("ListDir"|"Upload"|"NoWelcome"|"Reflect"|"&lt;BUFSIZE&gt;")[]): DsWebServer;
+	CreateWebServer(port: num_int, options?: string | ("ListDir"|"Upload"|"NoWelcome"|"Reflect"|"&lt;BUFSIZE&gt;")[]): DsWebServer;
 
 	/** Returns a new WebSocket object */
-	CreateWebSocket(ip: str, id: str, retry: num_int, options: str): DsWebSocket;
+	CreateWebSocket(ip: str, id: str, retry: num_int, options?: str): DsWebSocket;
 
 	/**
 	 * Returns a new WebView object
@@ -641,13 +641,13 @@ class DsApp {
  	 * &emsp; `UseBrowser` - Open links in external browser\
  	 * &emsp; `Wide` - force page using “wide” viewport
 	 */
-	CreateWebView(width: num_frc, height: num_frc, options: string | ("AllowZoom"|"AutoZoom"|"ClearCookies"|"FillX/Y"|"Local"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Persist"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser"|"Wide")[], zoom: num_prc): DsWebView;
+	CreateWebView(width?: num_frc, height?: num_frc, options?: string | ("AllowZoom"|"AutoZoom"|"ClearCookies"|"FillX/Y"|"Local"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Persist"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser"|"Wide")[], zoom: num_prc): DsWebView;
 
 	/** The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user */
-	CreateWizard(title: str, width: num_frc, height: num_frc, callback: (layout: DsLayout, page: num_int) => void, options: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"TouchModal"|"NoTouch")[]): void;
+	CreateWizard(title: str, width?: num_frc, height?: num_frc, callback?: (layout: DsLayout, page: num_int) => void, options?: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"TouchModal"|"NoTouch")[]): void;
 
 	/** Returns a new YesNoDialog object */
-	CreateYesNoDialog(message: str, options: string | ("NoDim"|"NoFocus"|"TouchModal")[]): DsYesNoDialog;
+	CreateYesNoDialog(message: str, options?: string | ("NoDim"|"NoFocus"|"TouchModal")[]): DsYesNoDialog;
 
 	/** Returns a new ZipUtil object */
 	CreateZipUtil(mode: str): DsZipUtil;
@@ -680,7 +680,7 @@ class DsApp {
 	DiscoverBtDevices(filter: str, onFound: (name: str, address: str) => void, onComplete: () => void): void;
 
 	/** Download a file with Androids download manager */
-	DownloadFile(source: str, destination: str_pth, title: str, description: str, options: "NoDialog"): void;
+	DownloadFile(source: str, destination: str_pth, title: str, description: str, options?: "NoDialog"): void;
 
 	/** Allows to en- or disable the devices back key */
 	EnableBackKey(enable: bin): void;
@@ -695,7 +695,7 @@ class DsApp {
 	Exit(kill: bin): void;
 
 	/** Execute a bash script using Termux */
-	ExtExec(name: "termux", file: str_ptf, args: str, options: "hide"): void;
+	ExtExec(name: "termux", file: str_ptf, args: str, options?: "hide"): void;
 
 	/**
 	 * Extract app assets to a local directory
@@ -703,7 +703,7 @@ class DsApp {
  	 * &emsp; `DoEvents` - extract in background\
  	 * &emsp; `shallow` - extract top level
 	 */
-	ExtractAssets(source: str_pth, destination: str_pth, overwrite: bin, options: "DoEvents"|"shallow"): void;
+	ExtractAssets(source: str_pth, destination: str_pth, overwrite: bin, options?: "DoEvents"|"shallow"): void;
 
 	/** Forcefully update your plugins */
 	ExtractPlugins(): void;
@@ -718,7 +718,7 @@ class DsApp {
 	Func(name: str, ...args: all): void;
 
 	/** Google Analytics */
-	GA(command: "create"|"send"|"set"|"require"|"provide"|"remove", ...fields?: str, options: obj): void;
+	GA(command: "create"|"send"|"set"|"require"|"provide"|"remove", fields: str_com, options?: obj): void;
 
 	/** Get accesibility feature availability */
 	GetAccessibility(): { enabled: bin, exploreByTouch: bin, screenReader: bin };
@@ -808,7 +808,7 @@ class DsApp {
 	 * Get last modified date of a file or folder
 	 * @return Date
 	 */
-	GetFileDate(file: str_ptf): jso;
+	GetFileDate(file: str_ptf): Date;
 
 	/** Get the size of a file or folder */
 	GetFileSize(file: str_ptf): num_flt;
@@ -896,13 +896,13 @@ class DsApp {
 	 * @param type 
  	 * &emsp; `pid`
 	 */
-	GetPermission(type: string | ("Camera"|"ExtSDcard"|"External"|"Internal"|"Network"|"Notify"|"Storage"|"Overlay"|"SMS"|"Location"|"Calendar"|"Body"|"Contacts"|"Record"|"Phone"|"Biometric"|"Accounts"|"License"|"android.permission.*"|"usb:<pid>")[], callback: (ungranted: str_com|str_uri) => void): void;
+	GetPermission(type: string | ("Camera"|"ExtSDcard"|"External"|"Internal"|"Network"|"Notify"|"Storage"|"Overlay"|"SMS"|"Location"|"Calendar"|"Body"|"Contacts"|"Record"|"Phone"|"Biometric"|"Accounts"|"License"|"android.permission.*"|"usb:<pid>")[], callback?: (ungranted: str_com|str_uri) => void): void;
 
 	/** Get path to a private folder */
-	GetPrivateFolder(name: str, options: "external"): str_pth;
+	GetPrivateFolder(name: str, options?: "external"): str_pth;
 
 	/** Get ID of a resource */
-	GetResourceId(name: str, options: "android"): str;
+	GetResourceId(name: str, options?: "android"): str;
 
 	/** Get current device ringer mode */
 	GetRingerMode(): "Normal"|"Vibrate"|"Silent";
@@ -920,19 +920,19 @@ class DsApp {
 	GetRSSI(): num_int;
 
 	/** Get list of running apps */
-	GetRunningApps(): { user: num_int, pid: num_bin, name: str, foreground: bin }[];
+	GetRunningApps(): { user: num_int, pid: num_int, name: str, foreground: bin }[];
 
 	/** Get list of running services */
-	GetRunningServices(): { user: num_int, pid: num_bin, name: str }[];
+	GetRunningServices(): { user: num_int, pid: num_int, name: str }[];
 
 	/** Get the screen density */
 	GetScreenDensity(): num_int;
 
 	/** Get width of device screen */
-	GetScreenHeight(options: "Real"): num_pxl;
+	GetScreenHeight(options?: "Real"): num_pxl;
 
 	/** Get height of device screen */
-	GetScreenWidth(options: "Real"): num_pxl;
+	GetScreenWidth(options?: "Real"): num_pxl;
 
 	/** Get list of shared files */
 	GetSharedFiles(): str_pth[];
@@ -956,16 +956,16 @@ class DsApp {
 	GetSSID(): str;
 
 	/** Calculates text bounds */
-	GetTextBounds(txt: str, size: num, width: num_frc, obj: dso): { width: num_frc, height: num_frc };
+	GetTextBounds(txt: str, size: num, width?: num_frc, obj: dso): { width: num_frc, height: num_frc };
 
 	/** Get theme configuration */
 	GetThemeInfo(): { baseTheme: str, holo: bin, dark: bin, titleHeight: num_frc, backColor: str_col, dialogColor: str_col, btnColor: str_col, dialogBtnColor: str_col, textColor1: str_col, textColor2: str_col,btnTextColor: str_col, highlightColor: str_col };
 
 	/** Create downscaled copy of an image */
-	GetThumbnail(source: str_pth, destination: str_pth, width: num_pxl, height: num_pxl): void;
+	GetThumbnail(source: str_pth, destination: str_pth, width?: num_pxl, height?: num_pxl): void;
 
 	/** Returns the upper border distance from the app display to the device screen as height relative float or in pixels with the **px** option */
-	GetTop(options: "px"): num_frc;
+	GetTop(options?: "px"): num_frc;
 
 	/** Returns the object class name */
 	GetType(): "App";
@@ -1007,13 +1007,13 @@ class DsApp {
  	 * &emsp; `DELETE` - deletes the resource\
  	 * &emsp; `HEAD` - omit body
 	 */
-	HttpRequest(type: "GET"|"POST"|"JSON"|"PUT"|"DELETE"|"HEAD", baseUrl: str_url, path: str, params: str, callback: (error: bin, reply: str, status: num_int) => void, headers: str): void;
+	HttpRequest(type: "GET"|"POST"|"JSON"|"PUT"|"DELETE"|"HEAD", baseUrl: str_url, path: str, params: str, callback?: (error: bin, reply: str, status: num_int) => void, headers: str): void;
 
 	/** In ide */
 	InIDE(): bin;
 
 	/** Start apk installation process */
-	InstallApp(apkFile: str_ptf, callback: (packageName: str, status: str) => void, options: str): bin;
+	InstallApp(apkFile: str_ptf, callback?: (packageName: str, status: str) => void, options?: str): bin;
 
 	/** Returns true if ran from apk */
 	IsAPK(): bin;
@@ -1108,7 +1108,7 @@ class DsApp {
  	 * &emsp; `NoEmpty` - hide empty folders\
  	 * &emsp; `project` - Shows DS project folders only
 	 */
-	ListFolder(path: str_pth, filter: str, limit: num_int, options: string | ("Alphasort"|"FullPath"|"RegEx"|"Folders"|"Files"|"NoEmpty"|"project")[]): str_pth[];
+	ListFolder(path: str_pth, filter: str, limit: num_int, options?: string | ("Alphasort"|"FullPath"|"RegEx"|"Folders"|"Files"|"NoEmpty"|"project")[]): str_pth[];
 
 	/** Returns a list of granted permissions
 	 * 
@@ -1128,7 +1128,7 @@ class DsApp {
 	LoadPlugin(url: str_url): void;
 
 	/** Asynchronously import a .js file */
-	LoadScript(path: str_pth, callback: (info: { isTrusted: bin }) => void): void;
+	LoadScript(path: str_pth, callback?: (info: { isTrusted: bin }) => void): void;
 
 	/** Load saved text value to remember varibale values between multiple app starts */
 	LoadText(name: str, dflt: str, file: str_ptf): void;
@@ -1155,7 +1155,7 @@ class DsApp {
 	OpenUrl(url: str_url, type: str_mim, choose: str): void;
 
 	/** Pairs a bluetooth device with yours */
-	PairBtDevice(address: str, callback: () => void): void;
+	PairBtDevice(address: str, callback?: () => void): void;
 
 	/**
 	 * Convert file path to content uri
@@ -1191,7 +1191,7 @@ class DsApp {
 	QueryContent(uri: str_uri, columns: str_com, select: str_sql, args: lst, sort: "coloumn"): void;
 
 	/** Quit the app with showing a dialog and exit after closing */
-	Quit(msg: str, title: str, options: string | ("NoDim"|"NoFocus")[]): void;
+	Quit(msg: str, title: str, options?: string | ("NoDim"|"NoFocus")[]): void;
 
 	/**
 	 * Read the content of a local file
@@ -1227,7 +1227,7 @@ class DsApp {
 	RenameFolder(source: str_pth, destination: str_pth): void;
 
 	/** Replace text in a local file */
-	ReplaceInFile(file: str_ptf, txt: str, rep: str, options: str_com): void;
+	ReplaceInFile(file: str_ptf, txt: str, rep: str, options?: str_com): void;
 
 	/** Save a boolean value across multiple starts */
 	SaveBoolean(name: str, value: bin, file: str_ptf): void;
@@ -1250,7 +1250,7 @@ class DsApp {
 	/** Schedules background jobs defined in a Job.js file
 	 * 
 	 * See Also: CancelJob */
-	ScheduleJob(delay: num_mls, options: str): void;
+	ScheduleJob(delay: num_mls, options?: str): void;
 
 	/** Take a screen shot of your app */
 	ScreenShot(fileName: str_ptf, quality: num_prc): void;
@@ -1275,10 +1275,10 @@ class DsApp {
 	 * @param options 
  	 * &emsp; `Result` - expect a result to be passed to the callback function
 	 */
-	SendIntent(packageName: str, className: str, action: str, category: str, uri: str_uri, type: str_mim, extras: { name: str, type: "string"|"float"|"int"|"long"|"bool"|"list"|"file"|"uri"|"keydown"|"keyup", value: str }[], options: string | ("Result"|"ClearTask")[], callback: (resultCode: -1|0|1, data: { action: str, type: str, data: str, flags: num_int, extras: obj }) => void): void;
+	SendIntent(packageName: str, className: str, action: str, category: str, uri: str_uri, type: str_mim, extras: { name: str, type: "string"|"float"|"int"|"long"|"bool"|"list"|"file"|"uri"|"keydown"|"keyup", value: str }[], options?: string | ("Result"|"ClearTask")[], callback?: (resultCode: -1|0|1, data: { action: str, type: str, data: str, flags: num_int, extras: obj }) => void): void;
 
 	/** Open the EMail app and autofill fields */
-	SendMail(address: str, subject: str, body: str, attach: str_pth, type: str_mim, options: "SendTo"): void;
+	SendMail(address: str, subject: str, body: str, attach: str_pth, type: str_mim, options?: "SendTo"): void;
 
 	/** Send message from Service to main app */
 	SendMessage(message: str): void;
@@ -1295,7 +1295,7 @@ class DsApp {
  	 * &emsp; `Exact` - only works for single shot alarms\
  	 * &emsp; `App` - Opens main app if called from a service
 	 */
-	SetAlarm(type: "Set"|"Repeat"|"Cancel", id: str|num_int, callback: (id: str|num_int) => void, time: num_dat, interval: num_mls, options: string | ("ExactIdle"|"Exact"|"App")[]): void;
+	SetAlarm(type: "Set"|"Repeat"|"Cancel", id: str|num_int, callback?: (id: str|num_int) => void, time: num_dat, interval: num_mls, options?: string | ("ExactIdle"|"Exact"|"App")[]): void;
 
 	/** Load the language code from lang.json */
 	SetAppLanguage(name: str): void;
@@ -1344,7 +1344,7 @@ class DsApp {
 	 * @param options 
  	 * &emsp; `ForwardKeys` - allows the joystick key presses to pass onto the child controls of the main activity
 	 */
-	SetJoystickOptions(options: string | ("ForwardKeys")[]): void;
+	SetJoystickOptions(options?: string | ("ForwardKeys")[]): void;
 
 	/**
 	 * Blocks android functionality outside your app
@@ -1354,10 +1354,10 @@ class DsApp {
 	 * @param options 
  	 * &emsp; `Tasks` - prevents recent tasks button working
 	 */
-	SetKioskMode(mode: string | ("Power"|"Status"|"Nav"|"NavRight"|"LockTask"|"Pin")[], enable: bin, options: string | ("Black"|"Tasks")[], packages: str): void;
+	SetKioskMode(mode: string | ("Power"|"Status"|"Nav"|"NavRight"|"LockTask"|"Pin")[], enable: bin, options?: string | ("Black"|"Tasks")[], packages: str): void;
 
 	/** Set default margins */
-	SetMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Set app menu */
 	SetMenu(list: str_com, iconPath: str_ptf): void;
@@ -1369,7 +1369,7 @@ class DsApp {
 	SetNavBarColor(color: str_col): void;
 
 	/** Called on incoming Broadcasts */
-	SetOnBroadcast(callback: (type: str, msg: str) => void, action: str): void;
+	SetOnBroadcast(callback?: (type: str, msg: str) => void, action: str): void;
 
 	/** Called on app debug messages */
 	SetOnDebug(callback: () => void): void;
@@ -1391,13 +1391,13 @@ class DsApp {
 	 * @param options 
  	 * &emsp; `NoPause` - dont pause when not in foreground
 	 */
-	SetOptions(options: string | ("UseBrowser"|"NoKeys"|"ShowKeys"|"NoPause"|"NoThemeAlerts"|"IgnoreSslErrors"|"TouchModal"|"NoCors"|"NoTouch"|"NoFocus"|"Secure"|"ShowLocked"|"WakeScreen"|"ScreenOn")[]): void;
+	SetOptions(options?: string | ("UseBrowser"|"NoKeys"|"ShowKeys"|"NoPause"|"NoThemeAlerts"|"IgnoreSslErrors"|"TouchModal"|"NoCors"|"NoTouch"|"NoFocus"|"Secure"|"ShowLocked"|"WakeScreen"|"ScreenOn")[]): void;
 
 	/** Fix display orientation */
-	SetOrientation(orient: "Default"|"Landscape"|"ReverseLandscape"|"Portrait"|"ReversePortrait", callback: () => void): void;
+	SetOrientation(orient: "Default"|"Landscape"|"ReverseLandscape"|"Portrait"|"ReversePortrait", callback?: () => void): void;
 
 	/** Change app position and size */
-	SetPosition(left: num_frc, top: num_frc, width: num_frc, height: num_frc, options: "px"): void;
+	SetPosition(left: num_frc, top: num_frc, width?: num_frc, height?: num_frc, options?: "px"): void;
 
 	/** Change GUI thread priority */
 	SetPriority(level: "Low"|"Medium"|"High"): void;
@@ -1435,7 +1435,7 @@ class DsApp {
 	 * Change the user agent for html apps
 	 * @param options Add-appends to default user agent
 	 */
-	SetUserAgent(agent: str, options: str): void;
+	SetUserAgent(agent: str, options?: str): void;
 
 	/** Set user credentials in an html app for websites that require user login */
 	SetUserCreds(name: str, password: str): void;
@@ -1445,7 +1445,7 @@ class DsApp {
 	 * @param stream 
  	 * &emsp; `DTMF` - Dual Tone Multi-Frequency
 	 */
-	SetVolume(stream: "Alarm"|"DTMF"|"Music"|"Notification"|"Ring"|"System"|"Voicecall", level: num_frc, options: "ShowUI"): void;
+	SetVolume(stream: "Alarm"|"DTMF"|"Music"|"Notification"|"Ring"|"System"|"Voicecall", level: num_frc, options?: "ShowUI"): void;
 
 	/** En/Disable the mobile Wifi Access Point of the device */
 	SetWifiApEnabled(enable: bin, ssid: str, key: str): void;
@@ -1464,7 +1464,7 @@ class DsApp {
  	 * &emsp; `check`
 	 * @param options sun-moon:shows sun and moon icons instead of default check boxes
 	 */
-	ShowCheckList(title: str, list: str|{ title: str, check: bin }, callback: (data: { title: str, checked: bin }) => void, width: num_frc, height: num_frc, options: str): DsCheckList;
+	ShowCheckList(title: str, list: str|{ title: str, check: bin }, callback?: (data: { title: str, checked: bin }) => void, width?: num_frc, height?: num_frc, options?: str): DsCheckList;
 
 	/**
 	 * Opens the in-app debug console as black overlay
@@ -1472,7 +1472,7 @@ class DsApp {
  	 * &emsp; `dialog` - Show the debug log as black overlay dialog\
  	 * &emsp; `clear` - Clear content before showing
 	 */
-	ShowDebug(show: bin, options: "dialog"|"clear"): void;
+	ShowDebug(show: bin, options?: "dialog"|"clear"): void;
 
 	/** Show keyboard on a focussed control */
 	ShowKeyboard(obj: dso): bin;
@@ -1481,7 +1481,7 @@ class DsApp {
 	ShowMenu(): void;
 
 	/** Show a popup message */
-	ShowPopup(message: str, options: string | ("Bottom"|"Short"|"Long")[]): void;
+	ShowPopup(message: str, options?: string | ("Bottom"|"Short"|"Long")[]): void;
 
 	/**
 	 * Show a progress indicator
@@ -1490,16 +1490,16 @@ class DsApp {
  	 * &emsp; `NonModal` - allow background touch\
  	 * &emsp; `Solid` - shows solid background behind spinner
 	 */
-	ShowProgress(message: str, options: string | ("NoDim"|"NonModal"|"Solid")[]): void;
+	ShowProgress(message: str, options?: string | ("NoDim"|"NonModal"|"Solid")[]): void;
 
 	/** Show a progress bar dialog */
-	ShowProgressBar(title: str, percent: num_prc, options: "Light"): void;
+	ShowProgressBar(title: str, percent: num_prc, options?: "Light"): void;
 
 	/** Show a text input dialog */
-	ShowTextDialog(title: str, dflt: str, callback: (text: str) => void): void;
+	ShowTextDialog(title: str, dflt: str, callback?: (text: str) => void): void;
 
 	/** Shows a tooltip message on the screen */
-	ShowTip(message: str, left: num_frc, top: num_frc, timeOut: num_mls, options: "Down"): void;
+	ShowTip(message: str, left: num_frc, top: num_frc, timeOut: num_mls, options?: "Down"): void;
 
 	/** Simulates a drag event on an app object in a scrollable container */
 	SimulateDrag(obj: dso, x1: num_frc, y1: num_frc, x2: num_frc, y2: num_frc, step: num, pause: num): void;
@@ -1523,7 +1523,7 @@ class DsApp {
  	 * &emsp; `Game` - runs in GameView mode
 	 * @param intent { action\, type\, data\, extras }
 	 */
-	StartApp(file: str_ptf, options: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[], intent: str): void;
+	StartApp(file: str_ptf, options?: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[], intent: str): void;
 
 	/** Start remote debug server */
 	StartDebugServer(): void;
@@ -1546,10 +1546,10 @@ class DsApp {
  	 * &emsp; `log` - logs output to console\
  	 * &emsp; `noread` - dont read result (just execute)
 	 */
-	SysExec(command: str, options: "log"|"noread"|"sh"|"su", maxRead: num, timeout: num_sec): str;
+	SysExec(command: str, options?: "log"|"noread"|"sh"|"su", maxRead: num, timeout: num_sec): str;
 
 	/** Audiolize text */
-	TextToSpeech(text: str, pitch: num, rate: num, callback: () => void, stream: "music", locale: str, engine: str): void;
+	TextToSpeech(text: str, pitch: num, rate: num, callback?: () => void, stream: "music", locale: str, engine: str): void;
 
 	/** Put the app in the background */
 	ToBack(): void;
@@ -1567,21 +1567,21 @@ class DsApp {
 	UnlockDrawer(side: "left"|"right"): void;
 
 	/** Unpair a paired Bluetooth device */
-	UnpairBtDevice(address: str, callback: () => void): void;
+	UnpairBtDevice(address: str, callback?: () => void): void;
 
 	/**
 	 * Unzip a zip file
 	 * @param options 
  	 * &emsp; `spk` - Extract SPK as DS project folder
 	 */
-	UnzipFile(source: str_pth, destination: str_pth, options: "spk"): void;
+	UnzipFile(source: str_pth, destination: str_pth, options?: "spk"): void;
 
 	/**
 	 * Update the ProgressBar percentage
 	 * @param options 
  	 * &emsp; `doevents` - force v8 UI update
 	 */
-	UpdateProgressBar(percent: num_prc, options: "doevents"): void;
+	UpdateProgressBar(percent: num_prc, options?: "doevents"): void;
 
 	/**
 	 * Force UI refresh
@@ -1590,13 +1590,13 @@ class DsApp {
 	UpdateUI(ms: num_mls): void;
 
 	/** Uploads a file to a server */
-	UploadFile(url: str_url, file: str_ptf, name: str, callback: () => void): void;
+	UploadFile(url: str_url, file: str_ptf, name: str, callback?: () => void): void;
 
 	/**
 	 * Decode a URI encoded string
 	 * @param options returns DS style paths
 	 */
-	Uri2Path(uri: str_uri, options: str): str;
+	Uri2Path(uri: str_uri, options?: str): str;
 
 	/** Vibrate device in a pattern */
 	Vibrate(pattern: str_com): void;
@@ -1618,13 +1618,13 @@ class DsApp {
  	 * &emsp; `NoEmpty` - hide empty folders\
  	 * &emsp; `project` - Shows DS project folders only
 	 */
-	WalkFolder(path: str_pth, filter: str, limit: num_int, options: string | ("Alphasort"|"FullPath"|"RegEx"|"Folders"|"Files"|"NoEmpty"|"project")[]): str_pth[];
+	WalkFolder(path: str_pth, filter: str, limit: num_int, options?: string | ("Alphasort"|"FullPath"|"RegEx"|"Folders"|"Files"|"NoEmpty"|"project")[]): str_pth[];
 
 	/** Connect to a WiFi network by specifying the ssid and a password */
 	WifiConnect(ssid: str, key: str): void;
 
 	/** Scan for any available Wifi networks */
-	WifiScan(callback: (ssids: str_pip|lst) => void, options: "detail"): void;
+	WifiScan(callback?: (ssids: str_pip|lst) => void, options?: "detail"): void;
 
 	/**
 	 * Write text to a local file
@@ -1638,25 +1638,26 @@ class DsApp {
 	 * @param options 
  	 * &emsp; `spk` - Create SPK from File
 	 */
-	ZipFile(source: str_pth, destination: str_pth, options: "spk"): void;
+	ZipFile(source: str_pth, destination: str_pth, options?: "spk"): void;
 
 	/**
 	 * Compress a folder to zip
 	 * @param options 
  	 * &emsp; `spk` - Create SPK from DS project folder
 	 */
-	ZipFolder(source: str_pth, destination: str_pth, options: "spk"): void;
+	ZipFolder(source: str_pth, destination: str_pth, options?: "spk"): void;
 
 }
 
-class DsAudioRecorder {
+declare class DsAudioRecorder {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns a new list of frequency values */
 	GetData(): num_int[];
@@ -1690,14 +1691,15 @@ class DsAudioRecorder {
 }
 
 
-class DsBluetoothList {
+declare class DsBluetoothList {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the control class name */
 	GetType(): "BluetoothList";
@@ -1707,14 +1709,15 @@ class DsBluetoothList {
 }
 
 
-class DsBluetoothSerial {
+declare class DsBluetoothSerial {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Clears the Bluetooth buffer of the serial connection */
 	Clear(): void;
@@ -1775,7 +1778,7 @@ class DsBluetoothSerial {
 	SetOnReceive(callback: (data: str) => void): void;
 
 	/** Specify how to split received data */
-	SetSplitMode(mode: "End"|"Start-End"|"Size", p2: str|num_int, p3: str|num_int): void;
+	SetSplitMode(mode: "End"|"Start-End"|"Size", p2: str|num_int, p3?: str|num_int): void;
 
 	/** Set idle disconnect timeout */
 	SetTimeout(milliseconds: num_mls): void;
@@ -1785,7 +1788,7 @@ class DsBluetoothSerial {
 }
 
 
-class DsButton {
+declare class DsButton {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -1805,9 +1808,10 @@ class DsButton {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -1885,10 +1889,10 @@ class DsButton {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -1912,7 +1916,7 @@ class DsButton {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Define a callback function for touch events */
 	SetOnTouch(callback: () => void): void;
@@ -1921,7 +1925,7 @@ class DsButton {
 	SetOnLongTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -1933,7 +1937,7 @@ class DsButton {
 	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Customize the button looks */
-	SetStyle(color1: str_col, color2: str_col, radius: num_pxl, strokeClr: str_col, strokeWidth: num_pxl, shadow: num_frc): void;
+	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc): void;
 
 	/** Change displayed text */
 	SetText(text: str): void;
@@ -1973,7 +1977,7 @@ class DsButton {
 }
 
 
-class DsCameraView {
+declare class DsCameraView {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -1994,20 +1998,21 @@ class DsCameraView {
 	 * Takes a picture if a motion was detected
 	 * @param fileName File_n#_motion
 	 */
-	AutoCapture(path: str_ptd, fileName: str, maxCount: num_int): void;
+	AutoCapture(path: str_ptd, fileName: str, maxCount?: num_int): void;
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
 
 	/** Find faces in the current camera view */
-	FindFaces(maxCount: num_int): { confidence: num_frc, eyeDistance: num, midPoint: {x:num, y:num}, pose: num_int };
+	FindFaces(maxCount?: num_int): { confidence: num_frc, eyeDistance: num, midPoint: {x:num, y:num}, pose: num_int };
 
 	/** Set the focus to the control for immediate access */
 	Focus(): void;
@@ -2115,16 +2120,16 @@ class DsCameraView {
 	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
 
 	/** Define a raster for motion detection */
-	MotionMosaic(xtiles: num_int, ytiles: num_int, sensitivity: num_pxl, minPeriod: num_mls, image: DsImage): void;
+	MotionMosaic(xtiles: num_int, ytiles: num_int, sensitivity: num_pxl, minPeriod?: num_mls, image?: DsImage): void;
 
 	/** Start recording video */
-	Record(file: str_ptf, seconds: num_sec, quality: "high"|"low"|"480p"|"720p"|"1080p"|"2k"|"4k"|"8k"|"qvga"|"vga"|"cif"): void;
+	Record(file: str_ptf, seconds?: num_sec, quality?: "high"|"low"|"480p"|"720p"|"1080p"|"2k"|"4k"|"8k"|"qvga"|"vga"|"cif"): void;
 
 	/**
 	 * Keeps tracks of the average color around a given point
 	 * @param list x1\,y1\|x2\,y2\|...
 	 */
-	ReportColors(list: str_pip, callback: (data: [num,num,num][]) => void, sampSize: num_pxl, maxRate: num_mls): void;
+	ReportColors(list: str_pip, callback: (data: [num,num,num][]) => void, sampSize?: num_pxl, maxRate?: num_mls): void;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -2139,10 +2144,10 @@ class DsCameraView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2175,7 +2180,7 @@ class DsCameraView {
 	SetFocusMode(mode: "Auto"|"Picture"|"Video"|"Macro"|"EDOF"|"Fixed"|"Infinity"): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control gets focused */
 	SetOnFocus(callback: () => void): void;
@@ -2190,7 +2195,7 @@ class DsCameraView {
 	SetOrientation(angle: 0|90|180|270): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Change camera properties */
 	SetParameter(name: str, value: num|str): void;
@@ -2258,7 +2263,7 @@ class DsCameraView {
 }
 
 
-class DsCheckBox {
+declare class DsCheckBox {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -2278,9 +2283,10 @@ class DsCheckBox {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -2361,10 +2367,10 @@ class DsCheckBox {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2382,13 +2388,13 @@ class DsCheckBox {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the CheckBox was touched */
 	SetOnTouch(callback: (isChecked: bin) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2434,14 +2440,15 @@ class DsCheckBox {
 }
 
 
-class DsCloudStore {
+declare class DsCloudStore {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the control class name */
 	GetType(): "CloudStore";
@@ -2453,23 +2460,23 @@ class DsCloudStore {
 	List(filter: str, callback: (error: bin, result: {data: str_com,error: str}, status: num_int) => void): void;
 
 	/** Loads data from the cloud */
-	Load(file: str_ptf, callback: str, options: (error: bin, result: {data: all,error: str}, status: num_int) => void): void;
+	Load(file: str_ptf, callback: str, options?: (error: bin, result: {data: all,error: str}, status: num_int) => void): void;
 
 	/** Merges data in the cloud */
-	Merge(file: str_ptf, data: obj, callback: (success: bin, result: {data: str,error: str}, status: num_int) => void): void;
+	Merge(file: str_ptf, data: obj, callback?: (success: bin, result: {data: str,error: str}, status: num_int) => void): void;
 
 	/** Saves data in the cloud */
-	Save(file: str_ptf, data: all, callback: (success: bin, result: {data: str,error: str}, status: num_int) => void, options: str): void;
+	Save(file: str_ptf, data: all, callback?: (success: bin, result: {data: str,error: str}, status: num_int) => void, options?: str): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
 
 	/** Upload a file to the cloud */
-	Upload(data: str, name: str, type: str_mim, callback: (response: {error: str,name: str,folder: str,id: str,mimetype: str_mim,size: num}) => void, password: str): void;
+	Upload(data: str, name: str, type?: str_mim, callback?: (response: {error: str,name: str,folder: str,id: str,mimetype: str_mim,size: num}) => void, password?: str): void;
 }
 
 
-class DsCodeEdit {
+declare class DsCodeEdit {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -2489,9 +2496,10 @@ class DsCodeEdit {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -2599,13 +2607,13 @@ class DsCodeEdit {
 	Replace(text: str): void;
 
 	/** Replace all occurances of a string in the text */
-	ReplaceAll(text: str, newText: str, matchCase: bin, wholeWord: bin): void;
+	ReplaceAll(text: str, newText: str, matchCase?: bin, wholeWord?: bin): void;
 
 	/** Replace a range of the text with a string */
 	ReplaceText(text: str, start: num_int, end: num_int): void;
 
 	/** Search and select a string in the text */
-	Search(text: str, direction: "Up"|"Down", matchCase: bin, wholeWord: bin): void;
+	Search(text: str, direction?: "Up"|"Down", matchCase?: bin, wholeWord?: bin): void;
 
 	/** Select the whole text */
 	SelectAll(): void;
@@ -2623,10 +2631,10 @@ class DsCodeEdit {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2653,7 +2661,7 @@ class DsCodeEdit {
 	SetLanguage(ext: ".js"|".java"|".php"|".c"|".cpp"|".cs"|".rb"|".m"|".py"|".txt"): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Select between Yoyo or Touch mode */
 	SetNavigationMethod(method: "Yoyo"|"Touch"): void;
@@ -2668,7 +2676,7 @@ class DsCodeEdit {
 	SetOnKey(callback: (action: "Down"|"Move"|"Up", keyname: "VOLUME_DOWN"|"VOLUME_UP"|"BACK"|"MENU", keycode: num_int, extra: "Shift"|"Ctrl"|"Alt"|"Meta") => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2726,14 +2734,15 @@ class DsCodeEdit {
 }
 
 
-class DsCrypt {
+declare class DsCrypt {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Decrypt text with a key */
 	Decrypt(text: str, password: str): str;
@@ -2745,14 +2754,14 @@ class DsCrypt {
 	GetType(): "Crypt";
 
 	/** Get a hash from a string */
-	Hash(text: str, mode: "MD5"|"SHA"|"SHA-1"|"SHA-224"|"SHA-256"|"SHA-384"|"SHA-512", options: "Wrap"): void;
+	Hash(text: str, mode: "MD5"|"SHA"|"SHA-1"|"SHA-224"|"SHA-256"|"SHA-384"|"SHA-512", options?: "Wrap"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
 }
 
 
-class DsDialog {
+declare class DsDialog {
 
 	/** Add content layout */
 	AddLayout(layout: DsLayout): void;
@@ -2769,9 +2778,10 @@ class DsDialog {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -2855,10 +2865,10 @@ class DsDialog {
 	SetBackColor(color: str_col, radius: num_pxl): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -2873,7 +2883,7 @@ class DsDialog {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when back button was pressed while the dialog was shown */
 	SetOnBack(callback: () => void): void;
@@ -2882,10 +2892,10 @@ class DsDialog {
 	SetOnCancel(callback: () => void): void;
 
 	/** Called when user touched the control */
-	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -2906,13 +2916,13 @@ class DsDialog {
 	SetTitleDividerColor(color: str_col): void;
 
 	/** Change height of the title divider for "Old" dialogs */
-	SetTitleDividerHeight(height: num_pxl, options: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetTitleDividerHeight(height: num_pxl, options?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Change height of the title bar for "Old" dialogs */
-	SetTitleHeight(height: num_pxl, options: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
+	SetTitleHeight(height: num_pxl, options?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
 
 	/** Changes the title text size for "Old" dialogs */
-	SetTitleTextSize(size: num, options: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetTitleTextSize(size: num, options?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -2935,14 +2945,15 @@ class DsDialog {
 }
 
 
-class DsDownloader {
+declare class DsDownloader {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/**
 	 * Download file(s)
@@ -2950,7 +2961,7 @@ class DsDownloader {
  	 * &emsp; `urls`
 	 * @param fldr must not have a trailing slash
 	 */
-	Download(url: str_url|str_url[], fldr: str_pth, name: str, headers: str): void;
+	Download(url: str_url|str_url[], fldr: str_pth, name?: str, headers?: str): void;
 
 	/** Get current download progress */
 	GetProgress(): num_frc;
@@ -2984,27 +2995,28 @@ class DsDownloader {
 }
 
 
-class DsEmail {
+declare class DsEmail {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the control class name */
 	GetType(): "Email";
 
 	/** Start receiving emails from a given folder */
-	Receive(folder: str, maxCount: num_int, filter: str): void;
+	Receive(folder: str, maxCount: num_int, filter?: str): void;
 
 	/**
 	 * Send an email to someone
 	 * @param sender email address
 	 * @param recipients email address
 	 */
-	Send(subject: str, body: str, sender: str, recipients: str, attach: str_pth): void;
+	Send(subject: str, body: str, sender: str, recipients: str, attach?: str_pth): void;
 
 	/**
 	 * Set IMAP settings for receiving messages
@@ -3039,14 +3051,15 @@ class DsEmail {
 }
 
 
-class DsFile {
+declare class DsFile {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Close File */
 	Close(): void;
@@ -3061,7 +3074,7 @@ class DsFile {
 	GetType(): "File";
 
 	/** Read data from file */
-	ReadData(len: num_int, mode: "Int"|"Text"|"Hex"): void;
+	ReadData(len: num_int, mode?: "Int"|"Text"|"Hex"): void;
 
 	/** Read numeric data from file */
 	ReadNumber(type: "Byte"|"UByte"|"Bool"|"Float"|"FloatLE"|"Long"|"LongLE"|"Short"|"UShort"|"ShortLE"|"UShortLE"|"Int"|"UInt"|"IntLE"): num;
@@ -3097,10 +3110,10 @@ class DsFile {
 	 * @param data 
  	 * &emsp; `abc46` - low order 8-bit bytes
 	 */
-	WriteData(data: "FA"|"FB"|"FC"|"250"|"251"|"252"|"abc46", mode: "Hex"|"Int"|"Text"): void;
+	WriteData(data: "FA"|"FB"|"FC"|"250"|"251"|"252"|"abc46", mode?: "Hex"|"Int"|"Text"): void;
 
 	/** Write number to the file */
-	WriteNumber(data: num, type: "Byte"|"UByte"|"Bool"|"Float"|"FloatLE"|"Long"|"LongLE"|"Short"|"UShort"|"ShortLE"|"UShortLE"|"Int"|"UInt"|"IntLE"): void;
+	WriteNumber(data: num, type?: "Byte"|"UByte"|"Bool"|"Float"|"FloatLE"|"Long"|"LongLE"|"Short"|"UShort"|"ShortLE"|"UShortLE"|"Int"|"UInt"|"IntLE"): void;
 
 	/**
 	 * Writes text to file
@@ -3111,11 +3124,11 @@ class DsFile {
  	 * &emsp; `Bytes` - 8-bit bytes\
  	 * &emsp; `Char` - Write big-endian 16-bit characters
 	 */
-	WriteText(data: str|num_int[], type: "UTF"|"Bytes"|"Char"): void;
+	WriteText(data: str|num_int[], type?: "UTF"|"Bytes"|"Char"): void;
 }
 
 
-class DsGame {
+declare class DsGame {
 
 	/** Game */
 	game: DsGame;
@@ -3125,7 +3138,7 @@ class DsGame {
 }
 
 
-class DsGameView {
+declare class DsGameView {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -3139,9 +3152,10 @@ class DsGameView {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -3216,10 +3230,10 @@ class DsGameView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -3240,10 +3254,10 @@ class DsGameView {
 	SetFrameRate(fps: num_fps): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -3275,7 +3289,7 @@ class DsGameView {
 }
 
 
-class DsGLView {
+declare class DsGLView {
 
 	/** Width/height relation */
 	aspect: num_flt;
@@ -3283,9 +3297,10 @@ class DsGLView {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** [HTMLDivElement] */
 	canvas: obj;
@@ -3294,10 +3309,10 @@ class DsGLView {
 	ClearFocus(): void;
 
 	/** Create a sprite object which can be drawn on the GLView */
-	CreateImage(file: str_ptf, callback: () => void): img;
+	CreateImage(file: str_ptf, callback?: () => void): GLV_img;
 
 	/** Draw image to canvas */
-	DrawImage(image: GLV_img, x: num_frc, y: num_frc, w: num_frc, h: num_frc, angle: num_deg): void;
+	DrawImage(image: GLV_img, x: num_frc, y: num_frc, w?: num_frc, h?: num_frc, angle?: num_deg): void;
 
 	/** Draw part of a sprite to the canvas */
 	DrawSprite(sheet: GLV_img, sx: num_pxl, sy: num_pxl, sw: num_pxl, sh: num_pxl, dx: num_frc, dy: num_frc, dw: num_frc, dh: num_frc, angle: num_deg): void;
@@ -3312,7 +3327,7 @@ class DsGLView {
 	GetAbsWidth(): num_int;
 
 	/** Returns the glv context */
-	GetContext(): ctx;
+	GetContext(): GLV_ctx;
 
 	/** Get the height of the control */
 	GetHeight(options: "px"): num;
@@ -3369,10 +3384,10 @@ class DsGLView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -3384,22 +3399,22 @@ class DsGLView {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when user touched the control */
-	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags a finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -3436,7 +3451,7 @@ class DsGLView {
 	width: num_int;
 }
 
-class GLV_img {
+declare class GLV_img {
 
 	/** Width of the image */
 	width: num_int;
@@ -3444,13 +3459,13 @@ class GLV_img {
 	/** Height of the image */
 	height: num_int;
 }
-class GLV_ctx {
+declare class GLV_ctx {
 
 	/** Captures the canvas to a png image */
-	capture(x: num_pxl, y: num_pxl, w: num_pxl, h: num_pxl, fileName: str, successCallback: fnc, errorCallback: fnc): void;
+	capture(x: num_pxl, y: num_pxl, w: num_pxl, h: num_pxl, fileName: str, successCallback?: fnc, errorCallback?: fnc): void;
 
 	/** <deprecated does nothing */
-	clearRect(x: num_pxl, y: num_pxl, width: num_pxl, height: num_pxl): void;
+	clearRect(x: num_pxl, y: num_pxl, width?: num_pxl, height?: num_pxl): void;
 
 	/** Draws part of a sprite to the context */
 	drawImage(image: GLV_img, sx: num_pxl, sy: num_pxl, sw: num_pxl, sh: num_pxl, dx: num_pxl, dy: num_pxl, dw: num_pxl, dh: num_pxl): void;
@@ -3483,7 +3498,7 @@ class GLV_ctx {
 	translate(tx: num_pxl, ty: num_pxl): void;
 }
 
-class DsImage {
+declare class DsImage {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -3503,9 +3518,10 @@ class DsImage {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Clears the image content */
 	Clear(): void;
@@ -3523,7 +3539,7 @@ class DsImage {
 	DrawFrame(ms: num_mls): void;
 
 	/** Draws an Image:dso-CreateImage */
-	DrawImage(image: DsImage, x: num, y: num, w: num, h: num, angle: num_deg, mode: "ADD"|"CLEAR"|"DARKEN"|"DST"|"DST_ATOP"|"DST_IN"|"DST_OUT"|"DST_OVER"|"LIGHTEN"|"MULTIPLY"|"OVERLAY"|"SCREEN"|"SRC"|"SRC_ATOP"|"SRC_IN"|"SRC_OUT"|"SRC_OVER"|"XOR"): void;
+	DrawImage(image: DsImage, x: num, y: num, w?: num, h?: num, angle?: num_deg, mode?: "ADD"|"CLEAR"|"DARKEN"|"DST"|"DST_ATOP"|"DST_IN"|"DST_OUT"|"DST_OVER"|"LIGHTEN"|"MULTIPLY"|"OVERLAY"|"SCREEN"|"SRC"|"SRC_ATOP"|"SRC_IN"|"SRC_OUT"|"SRC_OVER"|"XOR"): void;
 
 	/**
 	 * Draws an image with a 2d transformation matrix
@@ -3584,7 +3600,7 @@ class DsImage {
 	GetPixelColor(x: num, y: num): [ num_dhx, num_dhx, num_dhx ];
 
 	/** Returns base64 encoded image data */
-	GetPixelData(format: "rawbase64"|"pngbase64"|"jpgbase64", left: num_int, top: num_int, width: num_int, height: num_int): str_b64;
+	GetPixelData(format: "rawbase64"|"pngbase64"|"jpgbase64", left?: num_int, top?: num_int, width?: num_int, height?: num_int): str_b64;
 
 	/** Returns data about position and size */
 	GetPosition(options: "screen"|"px"): { left: num, top: num, width: num, height: num };
@@ -3632,13 +3648,13 @@ class DsImage {
 	Reset(): void;
 
 	/** Rotates the content */
-	Rotate(angle: num_deg, pivotX: num, pivotY: num): void;
+	Rotate(angle: num_deg, pivotX?: num, pivotY?: num): void;
 
 	/**
 	 * Saves the image to a file on the local filesystem
 	 * @param quality for jpg files
 	 */
-	Save(fileName: str_ptf, quality: num_prc): void;
+	Save(fileName: str_ptf, quality?: num_prc): void;
 
 	/** Scales the content by the given factors */
 	Scale(x: num_fac, y: num_fac): void;
@@ -3662,10 +3678,10 @@ class DsImage {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -3686,13 +3702,13 @@ class DsImage {
 	SetFontFile(file: str_ptf): void;
 
 	/** Change the content to an other image */
-	SetImage(image: str_pth|DsImage, width: num_frc, height: num_frc, options: "rescale"): void;
+	SetImage(image: str_pth|DsImage, width?: num_frc, height?: num_frc, options?: "rescale"): void;
 
 	/** Change the stroke width */
 	SetLineWidth(width: num_pxl): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Set a minimum OnTouchMove call timeout */
 	SetMaxRate(milliseconds: num_mls): void;
@@ -3707,19 +3723,19 @@ class DsImage {
 	SetOnLongTouch(callback: (src: dso) => void): void;
 
 	/** Called when user touched the control */
-	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags a finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Change the paint color */
 	SetPaintColor(color: str_col): void;
@@ -3732,7 +3748,7 @@ class DsImage {
 	 * @param options 
  	 * &emsp; `fix` - set bitmap size
 	 */
-	SetPixelData(data: "&lt;rawbase64&gt;"|"data&colon;image/jpg;base64&comma;&lt;jpgbase64&gt;"|"data&colon;image/png;base64&comma;&lt;pngbase64&gt;", width: num, height: num, options: "px"|"icon"|"resize"|"rescale"|"square"|"fix"): void;
+	SetPixelData(data: "&lt;rawbase64&gt;"|"data&colon;image/jpg;base64&comma;&lt;jpgbase64&gt;"|"data&colon;image/png;base64&comma;&lt;pngbase64&gt;", width?: num, height?: num, options?: "px"|"icon"|"resize"|"rescale"|"square"|"fix"): void;
 
 	/** Change the pixel mode for drawing methods */
 	SetPixelMode(onoff: bin): void;
@@ -3782,10 +3798,10 @@ class DsImage {
 }
 
 
-class DsLayout {
+declare class DsLayout {
 
 	/** Add a control to the layout */
-	AddChild(child: dso, order: num_int): void;
+	AddChild(child: dso, order?: num_int): void;
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -3805,9 +3821,10 @@ class DsLayout {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Moves a child to the layout front */
 	ChildToFront(child: dso): void;
@@ -3891,10 +3908,10 @@ class DsLayout {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -3903,7 +3920,7 @@ class DsLayout {
 	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set margins of top-level children */
-	SetChildMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetChildMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/**
 	 * Change text size of top-level children
@@ -3911,7 +3928,7 @@ class DsLayout {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetChildTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetChildTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Apply corner radius to card layouts's */
 	SetCornerRadius(radius: num_pxl): void;
@@ -3929,7 +3946,7 @@ class DsLayout {
 	SetGravity(gravity: "Left"|"Top"|"Right"|"Bottom"|"VCenter"|"HCenter"|"FillX"|"FillY"|"FillXY"): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the user changed a control content */
 	SetOnChildChange(callback: (src: dso) => void): void;
@@ -3938,22 +3955,22 @@ class DsLayout {
 	SetOnLongTouch(callback: (src: dso) => void): void;
 
 	/** Called when user touched the control */
-	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags a finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Change the children orientation */
 	SetOrientation(orient: "Horizontal"|"Vertical"): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -3991,10 +4008,10 @@ class DsLayout {
 }
 
 
-class DsList {
+declare class DsList {
 
 	/** Adds an entry to the list */
-	AddItem(title: str, body: str, image: str|str_ptf): void;
+	AddItem(title: str, body?: str, image?: str|str_ptf): void;
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -4014,9 +4031,10 @@ class DsList {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -4082,7 +4100,7 @@ class DsList {
 	Hide(): void;
 
 	/** Inserts an item into the list */
-	InsertItem(index: num_int, title: str, body: str, image: str|str_ptf): void;
+	InsertItem(index: num_int, title: str, body?: str, image?: str|str_ptf): void;
 
 	/** Checks if the control is useable */
 	IsEnabled(): bin;
@@ -4109,16 +4127,16 @@ class DsList {
 	RemoveItemByIndex(index: num_int): void;
 
 	/** Scrolls to an item by its title */
-	ScrollToItem(title: str, body: str): void;
+	ScrollToItem(title: str, body?: str): void;
 
 	/** Scrolls the list to a specific index */
 	ScrollToItemByIndex(index: num_int): void;
 
 	/** Highlight an item by its title and body */
-	SelectItem(title: str, body: str, scroll: bin): void;
+	SelectItem(title: str, body?: str, scroll?: bin): void;
 
 	/** Highlight an item by its index */
-	SelectItemByIndex(index: num_int, scroll: bin): void;
+	SelectItemByIndex(index: num_int, scroll?: bin): void;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -4133,10 +4151,10 @@ class DsList {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -4145,10 +4163,10 @@ class DsList {
 	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Change coloumn widths */
-	SetColumnWidths(icon: num_frc, title: num_frc, body: num_frc, mode: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
+	SetColumnWidths(icon: num_frc, title: num_frc, body?: num_frc, mode?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
 
 	/** Changes the divider style */
-	SetDivider(height: num_frc, color: str_col): void;
+	SetDivider(height: num_frc, color?: str_col): void;
 
 	/** Auto-crop text to fit in control */
 	SetEllipsize(mode: "start"|"middle"|"end"): void;
@@ -4175,7 +4193,7 @@ class DsList {
 	SetHiTextColor2(color: str_col): void;
 
 	/** Change icon margins */
-	SetIconMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
+	SetIconMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
 
 	/** Change the icon size */
 	SetIconSize(size: num, mode: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
@@ -4196,7 +4214,7 @@ class DsList {
 	SetList(list: "title"|"title&colon;icon"|"title&colon;body&colon;icon", delim: str): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Define a callback function for touch events */
 	SetOnLongTouch(callback: (title: str, body: str, icon: str, index: num_int) => void): void;
@@ -4205,7 +4223,7 @@ class DsList {
 	SetOnTouch(callback: (title: str, body: str, icon: str, index: num_int) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -4231,7 +4249,7 @@ class DsList {
  	 * &emsp; `inner` - around each individual title and body\
  	 * &emsp; `outer` - around both title and body together
 	 */
-	SetTextMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt", options: "inner"|"outer"): void;
+	SetTextMargins(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt", options?: "inner"|"outer"): void;
 
 	/** Define a shadow around the control */
 	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
@@ -4277,7 +4295,7 @@ class DsList {
 }
 
 
-class DsListDialog {
+declare class DsListDialog {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -4291,9 +4309,10 @@ class DsListDialog {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Hides the control and removes it from the screen */
 	Dismiss(): void;
@@ -4333,14 +4352,15 @@ class DsListDialog {
 }
 
 
-class DsLocator {
+declare class DsLocator {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Calculate bearing between current and given position */
 	GetBearingTo(latitude: num, longitude: num): num;
@@ -4365,14 +4385,15 @@ class DsLocator {
 }
 
 
-class DsMediaPlayer {
+declare class DsMediaPlayer {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Close the media player */
 	Close(): void;
@@ -4433,32 +4454,33 @@ class DsMediaPlayer {
 }
 
 
-class DsMediaStore {
+declare class DsMediaStore {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Load the album art to an image */
-	GetAlbumArt(image: DsImage, id: num_int, options: "internal"|"external"): bin;
+	GetAlbumArt(image: DsImage, id: num_int, options?: "internal"|"external"): bin;
 
 	/** Load the song art to an image */
-	GetSongArt(image: DsImage, id: num_int, options: "internal"|"external"): bin;
+	GetSongArt(image: DsImage, id: num_int, options?: "internal"|"external"): bin;
 
 	/** Returns the control class name */
 	GetType(): "MediaStore";
 
 	/** Search for media albums */
-	QueryAlbums(filter: str_sql, sort: "album"|"_id"|"albumArt"|"artist"|"numSongs"|"firstYear"|"lastYear", options: "internal"|"external"): void;
+	QueryAlbums(filter: str_sql, sort: "album"|"_id"|"albumArt"|"artist"|"numSongs"|"firstYear"|"lastYear", options?: "internal"|"external"): void;
 
 	/** Search for media artists */
-	QueryArtists(filter: str_sql, sort: "_id"|"artist"|"numAlbums"|"numTracks", options: "internal"|"external"): void;
+	QueryArtists(filter: str_sql, sort: "_id"|"artist"|"numAlbums"|"numTracks", options?: "internal"|"external"): void;
 
 	/** Search for media */
-	QueryMedia(filter: str_sql, sort: "title"|"_id"|"duration"|"size"|"uri"|"album"|"albumID"|"artist"|"artistId", options: "internal"|"external"): void;
+	QueryMedia(filter: str_sql, sort: "title"|"_id"|"duration"|"size"|"uri"|"album"|"albumID"|"artist"|"artistId", options?: "internal"|"external"): void;
 
 	/** Called when album query has finished */
 	SetOnAlbumsResult(callback: (result: { album: str, id: num_int, albumArt: str_pth, artist: str, numSongs: num_int, firstYear: str, lastYear: str }[]) => void): void;
@@ -4471,7 +4493,7 @@ class DsMediaStore {
 }
 
 
-class DsNetClient {
+declare class DsNetClient {
 
 	/** Calls the OnReceive callback for incoming TCP data */
 	AutoReceive(server: str_url, port: num_int, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"): void;
@@ -4479,9 +4501,10 @@ class DsNetClient {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Closes the NetClient socket */
 	Close(): void;
@@ -4514,13 +4537,13 @@ class DsNetClient {
 	 * Receive an UDP Datagram
 	 * @param options &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
 	 */
-	ReceiveDatagram(mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", port: num_int, timeout: num, options: str): str;
+	ReceiveDatagram(mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", port: num_int, timeout: num, options?: str): str;
 
 	/**
 	 * Receive UDP datagrams
 	 * @param options &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
 	 */
-	ReceiveDatagrams(port: num_int, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", options: str): void;
+	ReceiveDatagrams(port: num_int, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", options?: str): void;
 
 	/** Receive a file via TCP from the server */
 	ReceiveFile(file: str, wait: num): str;
@@ -4541,7 +4564,7 @@ class DsNetClient {
 	SendBytes(data: num_byt[]|string | ("bytes")[], mode: "Int"|"Hex"): void;
 
 	/** Send an UDP Datagram */
-	SendDatagram(data: str, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", address: str_url, port: num_int, options: "Text"|"Hex"|"Bytes"): void;
+	SendDatagram(data: str, mode: "US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16", address: str_url, port: num_int, options?: "Text"|"Hex"|"Bytes"): void;
 
 	/**
 	 * Define data format for outgoing data
@@ -4576,7 +4599,7 @@ class DsNetClient {
 }
 
 
-class DsNode {
+declare class DsNode {
 
 	/** Returns the plugin version */
 	GetVersion(): num;
@@ -4637,14 +4660,15 @@ class DsNode {
 }
 
 
-class DsNotification {
+declare class DsNotification {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Cancel a notification with a specific id */
 	Cancel(id: "id"|"*"): void;
@@ -4653,7 +4677,7 @@ class DsNotification {
 	GetType(): "Notification";
 
 	/** Listen for any notifications */
-	Listen(options: "CheckPerms"): void;
+	Listen(options?: "CheckPerms"): void;
 
 	/** Send the notification to the user */
 	Notify(id: str): void;
@@ -4678,14 +4702,15 @@ class DsNotification {
 }
 
 
-class DsNxt {
+declare class DsNxt {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Play frequency tone */
 	Beep(frequency: num_hrz, duration: num_mls): void;
@@ -4706,7 +4731,7 @@ class DsNxt {
 	 * Commands NXT to drive motors
 	 * @param rotations -100..100
 	 */
-	Drive(motors: "A"|"B"|"C"|"ABC", power: num_prc, rotations: num_prc, options: 0|rotations): void;
+	Drive(motors: "A"|"B"|"C"|"ABC", power: num_prc, rotations: num_prc, options?: str): void;
 
 	/** Find first program file */
 	FileFindFirst(pattern: str): str;
@@ -4835,17 +4860,18 @@ class DsNxt {
 }
 
 
-class DsOverlay {
+declare class DsOverlay {
 
 	/** Adds layout to overlay */
-	AddLayout(layout: DsLayout, left: num_frc, top: num_frc, options: "px"): void;
+	AddLayout(layout: DsLayout, left: num_frc, top: num_frc, options?: "px"): void;
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the parent control object */
 	GetParent(): dso;
@@ -4857,18 +4883,19 @@ class DsOverlay {
 	RemoveLayout(layout: DsLayout): void;
 
 	/** Changes a child layout position */
-	SetPosition(layout: DsLayout, left: num_frc, top: num_frc, options: "px"): void;
+	SetPosition(layout: DsLayout, left: num_frc, top: num_frc, options?: "px"): void;
 }
 
 
-class DsPhoneState {
+declare class DsPhoneState {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the control class name */
 	GetType(): "PhoneState";
@@ -4884,14 +4911,15 @@ class DsPhoneState {
 }
 
 
-class DsPlayStore {
+declare class DsPlayStore {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/**
 	 * Get product info from Google Play
@@ -4899,20 +4927,20 @@ class DsPlayStore {
  	 * &emsp; `IAP` - In-App purchases\
  	 * &emsp; `SUBS` - subscriptions
 	 */
-	GetBillingInfo(prodIDs: str, callback: (items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void, options: "IAP"|"SUBS"): void;
+	GetBillingInfo(prodIDs: str, callback?: (items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void, options?: "IAP"|"SUBS"): void;
 
 	/** Get purchased items from Google Play */
-	GetPurchases(callback: (items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void, options: "SUBS"): void;
+	GetPurchases(callback?: (items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void, options?: "SUBS"): void;
 
 	/** Returns the control class name */
 	GetType(): "PlayStore";
 
 	/** Purchase an item on Google Play */
-	Purchase(prodID: str, token: str, callback: (prodId: str, orderId: str, purchToken: str, devToken: str, packageName: str) => void, options: "SUBS"): void;
+	Purchase(prodID: str, token: str, callback?: (prodId: str, orderId: str, purchToken: str, devToken: str, packageName: str) => void, options?: "SUBS"): void;
 }
 
 
-class DsScroller {
+declare class DsScroller {
 
 	/** Add a layout control */
 	AddChild(layout: DsLayout): void;
@@ -4935,9 +4963,10 @@ class DsScroller {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -5027,10 +5056,10 @@ class DsScroller {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -5045,10 +5074,10 @@ class DsScroller {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -5080,7 +5109,7 @@ class DsScroller {
 }
 
 
-class DsSeekBar {
+declare class DsSeekBar {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -5100,9 +5129,10 @@ class DsSeekBar {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -5177,16 +5207,16 @@ class DsSeekBar {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over", options: str): void;
+	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over", options?: str): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -5195,7 +5225,7 @@ class DsSeekBar {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Set rate of OnChange calls */
 	SetMaxRate(rate: num_mls): void;
@@ -5204,7 +5234,7 @@ class DsSeekBar {
 	SetOnChange(callback: (value: num) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -5242,14 +5272,15 @@ class DsSeekBar {
 }
 
 
-class DsSensor {
+declare class DsSensor {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Get first value of a sensor */
 	GetAzimuth(): num;
@@ -5292,14 +5323,15 @@ class DsSensor {
 }
 
 
-class DsService {
+declare class DsService {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the control class name */
 	GetType(): "Service";
@@ -5321,14 +5353,15 @@ class DsService {
 }
 
 
-class DsSMS {
+declare class DsSMS {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the control class name */
 	GetType(): "SMS";
@@ -5338,7 +5371,7 @@ class DsSMS {
 	 * @param options 
  	 * &emsp; `MultiPart` - multi-part SMS messaging
 	 */
-	Send(number: str, message: str, options: "MultiPart"): void;
+	Send(number: str, message: str, options?: "MultiPart"): void;
 
 	/** Called when user received a SMS */
 	SetOnMessage(callback: (message: str) => void): void;
@@ -5348,14 +5381,15 @@ class DsSMS {
 }
 
 
-class DsSpeechRec {
+declare class DsSpeechRec {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Stop recognition */
 	Cancel(): void;
@@ -5392,7 +5426,7 @@ class DsSpeechRec {
 }
 
 
-class DsSpinner {
+declare class DsSpinner {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -5412,9 +5446,10 @@ class DsSpinner {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -5495,10 +5530,10 @@ class DsSpinner {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -5516,7 +5551,7 @@ class DsSpinner {
 	SetList(list: str_com, delim: str): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when value changed by the user */
 	SetOnChange(callback: (item: str, index: num_int) => void): void;
@@ -5525,7 +5560,7 @@ class DsSpinner {
 	SetOnTouch(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -5571,7 +5606,7 @@ class DsSpinner {
 }
 
 
-class DsSwitch {
+declare class DsSwitch {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -5591,9 +5626,10 @@ class DsSwitch {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -5674,10 +5710,10 @@ class DsSwitch {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -5695,13 +5731,13 @@ class DsSwitch {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when user touched the control */
 	SetOnTouch(callback: (value: bin) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -5750,14 +5786,15 @@ class DsSwitch {
 }
 
 
-class DsSynth {
+declare class DsSynth {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the control class name */
 	GetType(): "Synth";
@@ -5869,21 +5906,22 @@ class DsSynth {
 }
 
 
-class DsSysProc {
+declare class DsSysProc {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/**
 	 * Read from stderr
 	 * @param options 
  	 * &emsp; `nowait` - dont wait for input
 	 */
-	Err(maxLines: num_int, options: string | ("nowait")[]): void;
+	Err(maxLines: num_int, options?: string | ("nowait")[]): void;
 
 	/** Returns the control class name */
 	GetType(): "SysProc";
@@ -5893,7 +5931,7 @@ class DsSysProc {
 	 * @param options 
  	 * &emsp; `nowait` - dont wait for input
 	 */
-	In(maxLines: num_int, options: string | ("nowait")[]): void;
+	In(maxLines: num_int, options?: string | ("nowait")[]): void;
 
 	/**
 	 * Access Java object methods via reflection
@@ -5918,7 +5956,7 @@ class DsSysProc {
 }
 
 
-class DsTabs {
+declare class DsTabs {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -5938,9 +5976,10 @@ class DsTabs {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6018,10 +6057,10 @@ class DsTabs {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -6039,7 +6078,7 @@ class DsTabs {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when current tab changed */
 	SetOnChange(callback: (name: str) => void): void;
@@ -6051,10 +6090,10 @@ class DsTabs {
 	SetOnLongTouch(callback: (src: dso) => void): void;
 
 	/** Called when user touched the control */
-	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -6103,7 +6142,7 @@ class DsTabs {
 }
 
 
-class DsText {
+declare class DsText {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -6123,9 +6162,10 @@ class DsText {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6204,7 +6244,7 @@ class DsText {
 	 * @param options 
  	 * &emsp; `Clear` - Clears the log before writing
 	 */
-	Log(message: str, options: string | ("Clear"|"Red"|"Green"|"Blue")[]): void;
+	Log(message: str, options?: string | ("Clear"|"Red"|"Green"|"Blue")[]): void;
 
 	/**
 	 * Access Java object methods via reflection
@@ -6225,10 +6265,10 @@ class DsText {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -6255,25 +6295,25 @@ class DsText {
 	SetLog(maxLines: num_int): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when the control was pressed for eons */
 	SetOnLongTouch(callback: (src: dso) => void): void;
 
 	/** Called when user touched the control */
-	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user starts touching the control */
-	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchDown(callback: (event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user drags a finger over the screen */
-	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchMove(callback: (event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when the user finger leaves te screen */
-	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouchUp(callback: (event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -6325,7 +6365,7 @@ class DsText {
 }
 
 
-class DsTextEdit {
+declare class DsTextEdit {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -6345,9 +6385,10 @@ class DsTextEdit {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6467,10 +6508,10 @@ class DsTextEdit {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -6497,7 +6538,7 @@ class DsTextEdit {
 	SetHtml(str: str_htm): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when content was changed by the user */
 	SetOnChange(callback: () => void): void;
@@ -6555,7 +6596,7 @@ class DsTextEdit {
 }
 
 
-class DsTheme {
+declare class DsTheme {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -6569,9 +6610,10 @@ class DsTheme {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Returns the control class name */
 	GetType(): "Theme";
@@ -6592,16 +6634,16 @@ class DsTheme {
 	SetBtnTextColor(color: str_col): void;
 
 	/** Define button options */
-	SetButtonOptions(options: string | ("FontAwesome"|"Html"|"Monospace"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"Normal"|"Aluminium"|"Gray"|"Lego")[]): void;
+	SetButtonOptions(options?: string | ("FontAwesome"|"Html"|"Monospace"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"Normal"|"Aluminium"|"Gray"|"Lego")[]): void;
 
 	/** Define button paddings */
-	SetButtonPadding(left: num, top: num, right: num, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetButtonPadding(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Define button style */
 	SetButtonStyle(color1: str_col, color2: str_col, radius: num_pxl, strokeClr: str_col, strokeWidth: num_pxl, shadow: num_frc, checkClr: str_col): void;
 
 	/** Define check box options */
-	SetCheckBoxOptions(options: string | ("FillX/Y")[]): void;
+	SetCheckBoxOptions(options?: string | ("FillX/Y")[]): void;
 
 	/** Define dialog button colors */
 	SetDialogBtnColor(color: str_col): void;
@@ -6628,10 +6670,10 @@ class DsTheme {
 	SetProgressBackColor(color: str_col): void;
 
 	/** Define progress options */
-	SetProgressOptions(options: string | ("NoDim"|"NonModal"|"Solid")[]): void;
+	SetProgressOptions(options?: string | ("NoDim"|"NonModal"|"Solid")[]): void;
 
 	/** Define progress bar options */
-	SetProgressBarOptions(options: "Light"): void;
+	SetProgressBarOptions(options?: "Light"): void;
 
 	/** Define progress text color */
 	SetProgressTextColor(color: str_col): void;
@@ -6640,7 +6682,7 @@ class DsTheme {
 	SetTextColor(color1: str_col, color2: str_col): void;
 
 	/** Define text edit options */
-	SetTextEditOptions(options: "underline"): void;
+	SetTextEditOptions(options?: "underline"): void;
 
 	/** Define title colors */
 	SetTitleColor(color: str_col): void;
@@ -6649,17 +6691,17 @@ class DsTheme {
 	SetTitleDividerColor(color: str_col): void;
 
 	/** Define title divider height */
-	SetTitleDividerHeight(height: num_pxl): void;
+	SetTitleDividerHeight(height?: num_pxl): void;
 
 	/** Define title height */
-	SetTitleHeight(height: num_pxl, options: string | ("px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps")[]): void;
+	SetTitleHeight(height?: num_pxl, options?: string | ("px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps")[]): void;
 
 	/** Define title text size */
-	SetTitleTextSize(size: num, options: string | ("px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps")[]): void;
+	SetTitleTextSize(size: num, options?: string | ("px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps")[]): void;
 }
 
 
-class DsToggle {
+declare class DsToggle {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -6679,9 +6721,10 @@ class DsToggle {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -6762,10 +6805,10 @@ class DsToggle {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -6783,13 +6826,13 @@ class DsToggle {
 	SetEnabled(enable: bin): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when user touched the control */
 	SetOnTouch(callback: (value: bin) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -6838,14 +6881,15 @@ class DsToggle {
 }
 
 
-class DsUSBSerial {
+declare class DsUSBSerial {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Get the 'Data Terminal Ready' state */
 	GetDTR(): void;
@@ -6910,7 +6954,7 @@ class DsUSBSerial {
 }
 
 
-class DsVideoView {
+declare class DsVideoView {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -6924,9 +6968,10 @@ class DsVideoView {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Removes the focus of the control */
 	ClearFocus(): void;
@@ -7016,10 +7061,10 @@ class DsVideoView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -7040,7 +7085,7 @@ class DsVideoView {
 	SetFile(file: str_pth|str_url): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Called when playback finished */
 	SetOnComplete(callback: () => void): void;
@@ -7055,7 +7100,7 @@ class DsVideoView {
 	SetOnSubtitle(callback: () => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -7096,20 +7141,21 @@ class DsVideoView {
 }
 
 
-class DsWebServer {
+declare class DsWebServer {
 
 	/** Redirect urls */
 	AddRedirect(pattern: str_url, location: str_url): void;
 
 	/** Called when servlet received a message */
-	AddServlet(path: "/name", callback: (args: { parameter: argument }, info: { remoteAddress: str }) => void): void;
+	AddServlet(path: "/name", callback?: (args: { parameter: argument }, info: { remoteAddress: str }) => void): void;
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Disconnect Client from WebServer */
 	Disconnect(ip: str, id: num_int): void;
@@ -7152,14 +7198,15 @@ class DsWebServer {
 }
 
 
-class DsWebSocket {
+declare class DsWebSocket {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Close web socket */
 	Close(): void;
@@ -7168,7 +7215,7 @@ class DsWebSocket {
 	 * Get js Socket instance
 	 * @return WebSocket
 	 */
-	GetSocket(): jso;
+	GetSocket(): WebSocket;
 
 	/** Check if WebSocket is open */
 	IsOpen(): bin;
@@ -7187,7 +7234,7 @@ class DsWebSocket {
 }
 
 
-class DsWebView {
+declare class DsWebView {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -7210,9 +7257,10 @@ class DsWebView {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Check if history contains a previous page */
 	CanGoBack(): bin;
@@ -7233,7 +7281,7 @@ class DsWebView {
 	ClearHistory(): void;
 
 	/** Execute JS code inside the WebView */
-	Execute(code: str_jsc, callback: (result: all) => void): void;
+	Execute(code: str_jsc, callback?: (result: all) => void): void;
 
 	/** Set the focus to the control for immediate access */
 	Focus(): void;
@@ -7314,7 +7362,7 @@ class DsWebView {
  	 * &emsp; `UseBasicInput` - makes softkeyboard useful for html code editors\
  	 * &emsp; `UseBrowser` - Open links in external browser
 	 */
-	LoadHtml(html: str_htm, baseFolder: str_ptd, options: string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoRedirect"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]): void;
+	LoadHtml(html: str_htm, baseFolder: str_ptd, options?: string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoRedirect"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]): void;
 
 	/**
 	 * Load url to WebView
@@ -7332,7 +7380,7 @@ class DsWebView {
  	 * &emsp; `UseBasicInput` - makes softkeyboard useful for html code editors\
  	 * &emsp; `UseBrowser` - Open links in external browser
 	 */
-	LoadUrl(url: str_url, options: string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoRedirect"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]): void;
+	LoadUrl(url: str_url, options?: string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoRedirect"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]): void;
 
 	/**
 	 * Access Java object methods via reflection
@@ -7359,10 +7407,10 @@ class DsWebView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: ?, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: ?, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
 
 	/** Change the background to an image */
 	SetBackground(file: str_ptf, options: "repeat"): void;
@@ -7397,7 +7445,7 @@ class DsWebView {
 	SetInject(file: str_pth): void;
 
 	/** Define distances to other controls */
-	SetMargins(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetMargins(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Scales the html text by a given factor */
 	SetTextZoom(zoom: num_frc): void;
@@ -7418,13 +7466,13 @@ class DsWebView {
 	SetOnRequest(callback: (url: str, method: str, isMain: bin, isRedirect: bin) => void): void;
 
 	/** Called when user touched the control */
-	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: &colon; [ x1: num_frc, x2: num_frc, x3: num_frc ], y: &colon; [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
+	SetOnTouch(callback: (event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void): void;
 
 	/** Called when link klicked */
 	SetOnUrl(callback: (url: str_url) => void): void;
 
 	/** Define distances to contained elements */
-	SetPadding(left: num_frc, top: num_frc, right: num_frc, bottom: num_frc, mode: "px"|"sp"|"dip"|"mm"|"pt"): void;
+	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
 	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
@@ -7448,7 +7496,7 @@ class DsWebView {
 	 * Set/Add custom user agent
 	 * @param options Add-appends to default user agent
 	 */
-	SetUserAgent(agent: str, options: str): void;
+	SetUserAgent(agent: str, options?: str): void;
 
 	/** Set authentication/login data */
 	SetUserCreds(name: str, password: str): void;
@@ -7480,14 +7528,15 @@ class DsWebView {
 }
 
 
-class DsWizard {
+declare class DsWizard {
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Hides the control and removes it from the screen */
 	Dismiss(): void;
@@ -7518,7 +7567,7 @@ class DsWizard {
 }
 
 
-class DsYesNoDialog {
+declare class DsYesNoDialog {
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -7532,9 +7581,10 @@ class DsYesNoDialog {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Hides the control and removes it from the screen */
 	Dismiss(): void;
@@ -7571,7 +7621,7 @@ class DsYesNoDialog {
 }
 
 
-class DsZipUtil {
+declare class DsZipUtil {
 
 	/** Add file to zip */
 	AddFile(name: str, file: str_ptf): void;
@@ -7582,9 +7632,10 @@ class DsZipUtil {
 	/**
 	 * Batch method calls to set object properties
 	 * @param properties 
- 	 * &emsp; `COMMAND`
+ 	 * &emsp; `command`\
+ 	 * &emsp; `args`
 	 */
-	Batch(properties: { COMMAND: args}): void;
+	Batch(properties: {[command: str]: lst}): void;
 
 	/** Close ZipUtil */
 	Close(): void;
@@ -7620,11 +7671,11 @@ class DsZipUtil {
 	Sign(fileIn: str_ptf, fileOut: str_ptf, keyStore: str_pth, password: str): bin;
 
 	/** Update zip manifest */
-	UpdateManifest(fileIn: str_ptf, fileOut: str_ptf, packageName: str, appName: str, permissions: str_com, options: string | ("Launch"|"Debug")[]): void;
+	UpdateManifest(fileIn: str_ptf, fileOut: str_ptf, packageName: str, appName: str, permissions: str_com, options?: string | ("Launch"|"Debug")[]): void;
 }
 
 
-class DsDatabase {
+declare class DsDatabase {
 
 	/** AddTransaction
 	 * @deprecated  Use ExecuteSQL instead */
@@ -7640,7 +7691,7 @@ class DsDatabase {
 	Delete(): void;
 
 	/** Execute SQL query */
-	executeSql(statement: str_sql, params: lst, success: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void, error: (t: ?, err: { message: str }) => void): void;
+	executeSql(statement: str_sql, params: lst, success: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void, error: (t: all, err: { message: str }) => void): void;
 
 	/** Execute SQL query */
 	ExecuteSql(sql: str_sql, params: lst, success: (res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void, error: (err: str) => void): void;

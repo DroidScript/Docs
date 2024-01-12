@@ -9,7 +9,7 @@ declare type gvo = GameObject;
 /** smartwatch object */
 declare type swo = SmartWatchObject;
 /** JavaScript object */
-declare type jso = JSObject;
+declare type jso = Object;
 /** Function */
 declare type fnc = Function;
 /** List */
@@ -132,7 +132,7 @@ declare type str_uri = string;
 declare type str_url = string;
 
 
-class UI {
+declare class UI {
 
 	/**
 	 * AddAccordion
@@ -141,9 +141,8 @@ class UI {
 	 * @param options one or a combination of the following: `Square` \n `Layout type `Linear` or `Absolute`
 	 * @param width Fraction of the screen width: [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return Accordion Component
 	 */
-	addAccordion(parent: obj, titles: obj, options: str_com, width: num, height: num): obj;
+	addAccordion(parent: obj, titles: obj, options: str_com, width: num, height: num): UIAccordion;
 
 	/**
 	 * AddAppBar
@@ -152,9 +151,8 @@ class UI {
 	 * @param options one or a combination of the following: \n `Menu` : Adds a menu icon on the left \n `Primary` `Secondary` `Transparent` `Inherit` `Default` : Adds a color \n `Absolute` `Static` `Fixed` `Relative` : Adds a positioning
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return AppBar Component
 	 */
-	addAppBar(parent: obj, title: str, options: str_com, width: num, height: num): obj;
+	addAppBar(parent: obj, title: str, options: str_com, width: num, height: num): UIAppBar;
 
 	/**
 	 * AddBottomNavbar
@@ -163,9 +161,8 @@ class UI {
 	 * @param options one or a combination of the following: `Hidelabels`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return BottomNavbar Component
 	 */
-	addBottomNavbar(parent: obj, navs: lst, options: str_com, width: num, height: num): obj;
+	addBottomNavbar(parent: obj, navs: lst, options: str_com, width: num, height: num): UIBottomNavbar;
 
 	/**
 	 * AddButton
@@ -174,9 +171,8 @@ class UI {
 	 * @param options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Util`: `Icon` `NoRipple` `Upload` \n `In case of upload, you can specify `Multiple` to accept multiple files.
 	 * @param width Fraction of the parent width. [0-1]
 	 * @param height Fraction of the parent height. [0-1]
-	 * @return Button Component
 	 */
-	addButton(parent: obj, text: str, options: str_com, width: num, height: num): obj;
+	addButton(parent: obj, text: str, options: str_com, width: num, height: num): UIButton;
 
 	/**
 	 * AddButtonGroup
@@ -185,9 +181,8 @@ class UI {
 	 * @param options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `Icon` `NoElevation`
 	 * @param width Fraction of the parent width. [0-1]
 	 * @param height Fraction of the parent height. [0-1]
-	 * @return ButtonGroup Component
 	 */
-	addButtonGroup(parent: obj, list: lst, options: str_com, width: num, height: num): obj;
+	addButtonGroup(parent: obj, list: lst, options: str_com, width: num, height: num): UIButtonGroup;
 
 	/**
 	 * AddCheckbox
@@ -196,9 +191,8 @@ class UI {
 	 * @param options Colors: `Primary` `Secondary` `Medium` `Small` \n `Position`: `Left` `Top` `Right` `Bottom` \n `Variant`: `Indeterminate` `Determinate`
 	 * @param width Fraction of the parent width. [0-1]
 	 * @param height Fraction of the parent height. [0-1]
-	 * @return Checkbox Component
 	 */
-	addCheckbox(parent: obj, text: str, options: str_com, width: num, height: num): obj;
+	addCheckbox(parent: obj, text: str, options: str_com, width: num, height: num): UICheckbox;
 
 	/**
 	 * AddCheckboxGroup
@@ -207,9 +201,8 @@ class UI {
 	 * @param options Colors: `Default` `Primary` `Secondary` \n `Sizes`: `Small` `Medium` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corners : `Square`
 	 * @param width Fraction of the screen width.
 	 * @param height Fraction of the screen height.
-	 * @return CheckboxGroup Component
 	 */
-	addCheckboxGroup(parent: obj, list: lst, options: str_com, width: num, height: num): obj;
+	addCheckboxGroup(parent: obj, list: lst, options: str_com, width: num, height: num): UICheckboxGroup;
 
 	/**
 	 * AddChip
@@ -218,17 +211,15 @@ class UI {
 	 * @param options Color: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` \n `Variant`: `Outlined` `Default` \n `Util`: `Touchable`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return Chip Component
 	 */
-	addChip(parent: obj, text: str, options: str_com, width: num, height: num): obj;
+	addChip(parent: obj, text: str, options: str_com, width: num, height: num): UIChip;
 
 	/**
 	 * AddDatePicker
 	 * @param date A default date value to which the datepicker begins. Format `YYYY-MM-DD`
 	 * @param options `Portrait` `Landscape`
-	 * @return DatePicker Component
 	 */
-	addDatePicker(date: str, options: str_com): obj;
+	addDatePicker(date: str, options: str_com): UIDatePicker;
 
 	/**
 	 * AddDialog
@@ -236,25 +227,22 @@ class UI {
 	 * @param body The dialog message to be shown.
 	 * @param actions A comma separated text for action buttons.
 	 * @param options Colors: `Primary` `Secondary` \n `Util`: `NoCancel` prevents the dialog from closing on action.
-	 * @return Dialog Component
 	 */
-	addDialog(title: str, body: str, actions: str, options: str_com): obj;
+	addDialog(title: str, body: str, actions: str, options: str_com): UIDialog;
 
 	/**
 	 * AddDivider
 	 * @param parent The layour where to add the divider.
 	 * @param width Fraction of the screen width. Default is 1.
 	 * @param options A comma separated Divider options. Values can be `Inset`
-	 * @return Divider Component
 	 */
-	addDivider(parent: obj, width: num, options: str): obj;
+	addDivider(parent: obj, width: num, options: str): UIDivider;
 
 	/**
 	 * AddDrawer
 	 * @param lay The drawer layout.
-	 * @return Drawer Component
 	 */
-	addDrawer(lay: obj, options: str_com): obj;
+	addDrawer(lay: obj, options: str_com): UIDrawer;
 
 	/**
 	 * AddDropdown
@@ -273,9 +261,8 @@ class UI {
 	 * @param icon The string icon of the FAB
 	 * @param options `Fixed` `Static` `Rounded` `Extended` `Left` `Right`
 	 * @param text Text to show for extended FABs.
-	 * @return FAB Component
 	 */
-	addFAB(parent: obj, icon: str, options: str_com, text: str): obj;
+	addFAB(parent: obj, icon: str, options: str_com, text: str): UIFAB;
 
 	/**
 	 * AddImage
@@ -295,9 +282,8 @@ class UI {
 	 * @param options Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions`: `FillX` `FillY` \n `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils`: `BackColor` to apply light or dark background rather than transparent.
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return Layout Component
 	 */
-	addLayout(parent: obj, type: str, options: str, width: num, height: obj): obj;
+	addLayout(parent: obj, type: str, options: str, width: num, height: obj): UILayout;
 
 	/**
 	 * AddList
@@ -306,9 +292,8 @@ class UI {
 	 * @param options Media: `Icon` `Avatar` \n `Styling`: `Dense` `Inset` \n `Util`: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return List Component
 	 */
-	addList(parent: obj, list: lst, options: str_com, width: num, height: num): obj;
+	addList(parent: obj, list: lst, options: str_com, width: num, height: num): UIList;
 
 	/**
 	 * AddMenu
@@ -317,9 +302,8 @@ class UI {
 	 * @param options Color: `Primary` `Secondary` `Error` \n List: `Dense` \n Icons: `Icon`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return Menu Component
 	 */
-	addMenu(parent: obj, list: lst, options: str_com, width: num, height: num): obj;
+	addMenu(parent: obj, list: lst, options: str_com, width: num, height: num): UIMenu;
 
 	/**
 	 * AddProgress
@@ -328,9 +312,8 @@ class UI {
 	 * @param options Color: `Primary` `Secondary` \n `Type`: `Circular` `Linear` \n `Variant`: `Determinate` `Indeterminate`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction fo the screen height. [0-1]
-	 * @return Progress Component
 	 */
-	addProgress(parent: obj, value: num, options: str_com, width: num, height: num): obj;
+	addProgress(parent: obj, value: num, options: str_com, width: num, height: num): UIProgress;
 
 	/**
 	 * AddRadioGroup
@@ -339,9 +322,8 @@ class UI {
 	 * @param options Radio Sizes: `Small` `Medium` \n `Colors`: `Primary` `Secondary` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n `Required`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return RadioGroup Component
 	 */
-	addRadioGroup(parent: obj, list: lst, options: str_com, width: num, height: num): obj;
+	addRadioGroup(parent: obj, list: lst, options: str_com, width: num, height: num): UIRadioGroup;
 
 	/**
 	 * AddSelect
@@ -350,9 +332,8 @@ class UI {
 	 * @param options Sizes: `Small` `Medium` \n `Variant`: `Filled` `Outlined` `Standard` \n `Margin`: `Dense` `Normal` \n `Utils`: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return Select Component
 	 */
-	addSelect(parent: obj, list: lst, options: str_com, width: num, height: num): obj;
+	addSelect(parent: obj, list: lst, options: str_com, width: num, height: num): UISelect;
 
 	/**
 	 * AddSlider
@@ -372,9 +353,8 @@ class UI {
 	 * @param options A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return Stepper Component
 	 */
-	addStepper(parent: obj, steps: lst, options: str, width: num, height: num): obj;
+	addStepper(parent: obj, steps: lst, options: str, width: num, height: num): UIStepper;
 
 	/**
 	 * AddSwitch
@@ -383,9 +363,8 @@ class UI {
 	 * @param options A comma separated switch options. Options can be one or a combination of the following \n Color: `Primary` `Secondary` `Default` \n `Icon Position: `Left` `Top` `Right` `Bottom` \n `Sizes`: `Small` `Medium`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return Switch Component
 	 */
-	addSwitch(parent: obj, text: str, options: str, width: num, height: num): obj;
+	addSwitch(parent: obj, text: str, options: str, width: num, height: num): UISwitch;
 
 	/**
 	 * AddSwitchGroup
@@ -394,9 +373,8 @@ class UI {
 	 * @param options Icon: `Icon` \n `Color`: `Primary` or `Secondary` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n`Divider`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return SwitchGroup Component
 	 */
-	addSwitchGroup(parent: obj, list: obj, options: str_com, width: num, height: num): obj;
+	addSwitchGroup(parent: obj, list: obj, options: str_com, width: num, height: num): UISwitchGroup;
 
 	/**
 	 * AddTabs
@@ -405,9 +383,8 @@ class UI {
 	 * @param options Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
 	 * @param width Fraction of the screen width. [0-1]
 	 * @param height Fraction of the screen height. [0-1]
-	 * @return Tabs Component
 	 */
-	addTabs(parent: obj, list: lst, options: str_com, width: num, height: num): obj;
+	addTabs(parent: obj, list: lst, options: str_com, width: num, height: num): UITabs;
 
 	/**
 	 * AddText
@@ -416,9 +393,8 @@ class UI {
 	 * @param options A comma separated string. Options can be one or a combination of the following: \n Variants: `H1` `H2` `H3` `H4` `H5` `H6` `body1` `body2` `overline` `subtitle1` `subtitle2` `button` `caption`.\nLines: `Singleline` `Multiline`.\nAlignment: `Left` `Center` `Right` `Justify`.\nColor: `Primary` `Secondary` `Error`.\nFormat `Html` `Icon` `Italize` `Monospace` `Bold` `Underline` \n `Utils`: `Touchable`
 	 * @param width Fraction of the screen width
 	 * @param height Fraction of the screen height
-	 * @return Text Component
 	 */
-	addText(parent: obj, text: str, options: str, width: num, height: num): obj;
+	addText(parent: obj, text: str, options: str, width: num, height: num): UIText;
 
 	/**
 	 * AddTextField
@@ -427,17 +403,15 @@ class UI {
 	 * @param options Color: `Primary` or `Secondary` \n `Sizes`: `Small` or `Medium` \n `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant`: `Standard` `Filled` or `Outlined` \n `Utils`: `Autofocus`
 	 * @param width Fraction of the screen width.
 	 * @param height Fraction of the screen height.
-	 * @return TextField Component
 	 */
-	addTextField(parent: obj, text: str, options: str_com, width: num, height: num): obj;
+	addTextField(parent: obj, text: str, options: str_com, width: num, height: num): UITextField;
 
 	/**
 	 * AddTimePicker
 	 * @param time A default time value to which the timepicker begins. Value is of the form `HH\:mm`
 	 * @param options `Portrait` `24H` `12H`
-	 * @return TimePicker Component
 	 */
-	addTimePicker(time: str, options: str_com): obj;
+	addTimePicker(time: str, options: str_com): UITimePicker;
 
 	/**
 	 * AddTreeView
@@ -446,9 +420,8 @@ class UI {
 	 * @param options A comma separated TreeView options.
 	 * @param width Fraction of the screen width.
 	 * @param height Fraction of the screen height.
-	 * @return TreeView Component
 	 */
-	addTreeView(parent: obj, list: obj, options: str, width: num, height: num): obj;
+	addTreeView(parent: obj, list: obj, options: str, width: num, height: num): UITreeView;
 
 	/**
 	 * AddWebView
@@ -456,26 +429,23 @@ class UI {
 	 * @param url The url of the website.
 	 * @param width Fraction of the parent width.
 	 * @param height Fraction of the parent height.
-	 * @return WebView Component
 	 */
-	addWebView(parent: obj, url: str, options: str_com, width: num, height: num): obj;
+	addWebView(parent: obj, url: str, options: str_com, width: num, height: num): UIWebView;
 
 	/**
 	 * ShowColorPicker
 	 * @param value A hexadecimal default value for the color picker.
 	 * @param options A comma separated color picker options. Values can be \n `Alpha` Includes an alpha
-	 * @return ColorPicker Component
 	 */
-	showColorPicker(value: str, options: str): obj;
+	showColorPicker(value: str, options: str): UIColorPicker;
 
 	/**
 	 * ShowDateTimePicker
 	 * @param date Default value for date of the form "MM/DD/YYYY"
 	 * @param time Default value for time of the form "HH/MM/SS"
 	 * @param format The format value that will be pass to callback. Formats can be of the form \n `MM/DD/YYYY HH:SS` `MM:YYYY HH:SS`
-	 * @return DateTimePicker Component
 	 */
-	showDateTimePicker(callback: () => void, date: str, time: str, format: str): obj;
+	showDateTimePicker(callback: () => void, date: str, time: str, format: str): UIDateTimePicker;
 
 	/**
 	 * ShowPopover
@@ -502,18 +472,17 @@ class UI {
 	 * ShowProgressDialog
 	 * @param text The text message of the progress dialog. Options can be \n `AutoCancel` to close the dialog when backdrop is click.
 	 */
-	showProgressDialog(text: str, options: str_com): ProgressDialog;
+	showProgressDialog(text: str, options: str_com): UIProgressDialog;
 
 }
 
-class UIAccordion {
+declare class UIAccordion {
 
 	/**
 	 * GetLayout
 	 * @param index The index of the accordion. You can also pass accordion title.
-	 * @return Layout Component
 	 */
-	getLayout(index: num): obj;
+	getLayout(index: num): UILayout;
 
 	/**
 	 * SetTitleText
@@ -705,7 +674,7 @@ class UIAccordion {
 }
 
 
-class UIAppBar {
+declare class UIAppBar {
 
 	/** SetOnMenu */
 	setOnMenu(callback: () => void): void;
@@ -821,7 +790,7 @@ class UIAppBar {
 }
 
 
-class UIBottomNavbar {
+declare class UIBottomNavbar {
 
 	/** SetOnContextMenu */
 	setOnContextMenu(callback: (text: str, index: num, event: obj) => void): void;
@@ -1028,7 +997,7 @@ class UIBottomNavbar {
 }
 
 
-class UIButton {
+declare class UIButton {
 
 	/** SetOnFileSelect */
 	setOnFileSelect(callback: (files: lst) => void): void;
@@ -1154,7 +1123,7 @@ class UIButton {
 }
 
 
-class UIButtonGroup {
+declare class UIButtonGroup {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (text: str, index: num, event: obj) => void): void;
@@ -1337,7 +1306,7 @@ class UIButtonGroup {
 }
 
 
-class UICheckbox {
+declare class UICheckbox {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (check: bin) => void): void;
@@ -1454,7 +1423,7 @@ class UICheckbox {
 }
 
 
-class UICheckboxGroup {
+declare class UICheckboxGroup {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (value: bin, text: str, index: num, event: obj) => void): void;
@@ -1680,7 +1649,7 @@ class UICheckboxGroup {
 }
 
 
-class UIChip {
+declare class UIChip {
 
 	/**
 	 * SetTouchable
@@ -1796,7 +1765,7 @@ class UIChip {
 }
 
 
-class UIDatePicker {
+declare class UIDatePicker {
 
 	/** Show */
 	show(): void;
@@ -1825,7 +1794,7 @@ class UIDatePicker {
 }
 
 
-class UIDialog {
+declare class UIDialog {
 
 	/** SetOnAction */
 	setOnAction(callback: (text: str, index: num) => void): void;
@@ -1841,7 +1810,7 @@ class UIDialog {
 }
 
 
-class UIDivider {
+declare class UIDivider {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
@@ -1948,7 +1917,7 @@ class UIDivider {
 }
 
 
-class UIDrawer {
+declare class UIDrawer {
 
 	/**
 	 * AddLayout
@@ -1991,7 +1960,7 @@ class UIDrawer {
 }
 
 
-class UIDropdown {
+declare class UIDropdown {
 
 	/** SetOnChange */
 	setOnChange(callback: (The: obj, index: num) => void): void;
@@ -2174,7 +2143,7 @@ class UIDropdown {
 }
 
 
-class UIFAB {
+declare class UIFAB {
 
 	/**
 	 * SetCornerRadius
@@ -2281,7 +2250,7 @@ class UIFAB {
 }
 
 
-class UIImage {
+declare class UIImage {
 
 	/** SetOnLoad */
 	setOnLoad(callback: () => void): void;
@@ -2512,7 +2481,7 @@ class UIImage {
 }
 
 
-class UILayout {
+declare class UILayout {
 
 	/**
 	 * SetChildMargins
@@ -2668,7 +2637,7 @@ class UILayout {
 }
 
 
-class UIList {
+declare class UIList {
 
 	/**
 	 * AddItem
@@ -2886,7 +2855,7 @@ class UIList {
 }
 
 
-class UIMenu {
+declare class UIMenu {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (item: str, icon: str, index: num) => void): void;
@@ -3058,7 +3027,7 @@ class UIMenu {
 }
 
 
-class UIProgress {
+declare class UIProgress {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
@@ -3165,7 +3134,7 @@ class UIProgress {
 }
 
 
-class UIRadioGroup {
+declare class UIRadioGroup {
 
 	/** SetOnChange */
 	setOnChange(callback: (index: num) => void): void;
@@ -3346,7 +3315,7 @@ class UIRadioGroup {
 }
 
 
-class UISelect {
+declare class UISelect {
 
 	/** SetOnChange */
 	setOnChange(callback: (value: str) => void): void;
@@ -3525,7 +3494,7 @@ class UISelect {
 }
 
 
-class UISlider {
+declare class UISlider {
 
 	/** SetOnChange */
 	setOnChange(callback: (value: num) => void): void;
@@ -3654,7 +3623,7 @@ class UISlider {
 }
 
 
-class UIStepper {
+declare class UIStepper {
 
 	/** SetOnComplete */
 	setOnComplete(callback: () => void): void;
@@ -3672,7 +3641,7 @@ class UIStepper {
 	 * GetLayout
 	 * @param index The index of the corresponing stepper layout
 	 */
-	getLayout(index: num): Layout;
+	getLayout(index: num): UILayout;
 
 	/**
 	 * GetLayoutIndex
@@ -3798,7 +3767,7 @@ class UIStepper {
 }
 
 
-class UISwitch {
+declare class UISwitch {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (check: bin) => void): void;
@@ -3905,7 +3874,7 @@ class UISwitch {
 }
 
 
-class UISwitchGroup {
+declare class UISwitchGroup {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (value: bin, text: str, index: num, event: obj) => void): void;
@@ -4074,7 +4043,7 @@ class UISwitchGroup {
 }
 
 
-class UITabs {
+declare class UITabs {
 
 	/** SetOnChange */
 	setOnChange(callback: (name: str, index: num) => void): void;
@@ -4125,9 +4094,8 @@ class UITabs {
 	/**
 	 * GetLayout
 	 * @param name The name of the tab. You can also pass the index of the tab.
-	 * @return Layout Component
 	 */
-	getLayout(name: str): obj;
+	getLayout(name: str): UILayout;
 
 	/**
 	 * ShowTab
@@ -4300,7 +4268,7 @@ class UITabs {
 }
 
 
-class UIText {
+declare class UIText {
 
 	/**
 	 * SetHtml
@@ -4425,7 +4393,7 @@ class UIText {
 }
 
 
-class UITextField {
+declare class UITextField {
 
 	/** SetOnEnter */
 	setOnEnter(callback: (text: str) => void): void;
@@ -4574,7 +4542,7 @@ class UITextField {
 }
 
 
-class UITimePicker {
+declare class UITimePicker {
 
 	/**
 	 * Show
@@ -4584,7 +4552,7 @@ class UITimePicker {
 }
 
 
-class UITreeView {
+declare class UITreeView {
 
 	/** SetOnTouch */
 	setOnTouch(callback: (value: str, path: str) => void): void;
@@ -4710,7 +4678,7 @@ class UITreeView {
 }
 
 
-class UIWebView {
+declare class UIWebView {
 
 	/** SetOnLoad */
 	setOnLoad(callback: () => void): void;
@@ -4820,21 +4788,21 @@ class UIWebView {
 }
 
 
-class UIshowColorPicker {
+declare class UIColorPicker {
 
 	/** GetValue */
 	getValue(): str;
 }
 
 
-class UIshowDateTimePicker {
+declare class UIDateTimePicker {
 
 	/** SetOnSelect */
 	setOnSelect(callback: (value: str) => void): void;
 }
 
 
-class UIshowPopup {
+declare class UIPopup {
 
 	/** SetOnClose */
 	setOnClose(callback: () => void): void;
@@ -4860,7 +4828,7 @@ class UIshowPopup {
 }
 
 
-class UIshowProgressDialog {
+declare class UIProgressDialog {
 
 	/** Show */
 	show(): void;

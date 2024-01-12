@@ -32,7 +32,7 @@ let regGen = RegExp(""), regHide = RegExp("");
 const app = getApp();
 const rootPath = __dirname + "/";
 // constructor name prefixes
-const regConPrefix = /^(Create|Open|Add)/i;
+const regConPrefix = /^(Create|Open|Add|show)(?=\w+)/i;
 // html char placeholders
 const _htm = { comma: ',', colon: ':', bsol: '\\', period: '.', lowbar: '_', verbar: '|', "#160": " ", nbsp: " ", ldquo: "“", rdquo: "”" };
 
@@ -482,7 +482,7 @@ const tsxTypes = {
     glo: "GLViewObject",
     // eslint-disable-next-line camelcase
     glo_img: "{ width:num_int, height:num_int }",
-    jso: "JSObject",
+    jso: "Object",
     swo: "SmartWatchObject",
     uio: "UIObject"
 };
@@ -490,7 +490,7 @@ const tsxTypes = {
 /** @type {(scopeName: string, inpt: DSInput, state: GenState) => string} */
 function generateDefinitionFile(scopeName, inpt, state) {
     /** @type {Obj<string>} */
-    const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "Ui", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx", swo: "Sw" };
+    const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "UI", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx", swo: "Sw" };
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
 
@@ -508,7 +508,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
         definition += defs.func;
         classDefinition += defs.class;
         for (const obj in defs.extra) {
-            classDefinition += `class ${obj} {\n`;
+            classDefinition += `declare class ${obj} {\n`;
             classDefinition += defs.extra[obj];
             classDefinition += `}\n`;
         }
@@ -516,7 +516,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
 
     scopeName = `Ds${scopeName[0].toUpperCase() + scopeName.slice(1)}`;
     if (scopeName === "DsUi") scopeName = "UI";
-    return `${typeDecls.join("")}\n\nclass ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
+    return `${typeDecls.join("")}\n\ndeclare class ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
 
     /** @param {string | UndefinedPartial<DSMethod>} stypes */
     function makeType(stypes, tsx = false) {
@@ -537,7 +537,8 @@ function generateDefinitionFile(scopeName, inpt, state) {
                 if (tsx) type.sub = tsxTypes[type.sub] || tsxTypes[type.main] || type.sub;
                 else type.desc = type.desc.replace(/@.*\//, '');
                 switch (type.main) {
-                    case "?":
+                    case "?": type.main = type.sub = "all";
+                    // eslint-disable-next-line no-fallthrough
                     case "all":
                     case "fnc": return type;
                     case "num":
@@ -585,6 +586,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
                         }
                         return type; //replaceTypes(inpt, state, replW(type.desc), true);
                     }
+                    case "jso": type.sub = type.desc || "Object"; return type;
                     default:
                         if (!type.main.endsWith("o"))
                             Throw(Error("unknown typex " + type.sub));
@@ -656,7 +658,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
         // fix weird GetObjects and wiz.GetButtons retval
         if (ptype.startsWith("lst") && !descStr.includes("{")) descStr = descStr.replace(/\s*(\w+):\s*([\w-]+(, )?)\s*/g, (m, n, t) => t);
         // fix GetJoystickStates {key:t: value:t} pattern
-        if (ptype === "obj") descStr = descStr.replace(/\s*(\w+):\s*(\w+):\s*value:\s*(\w+)\s*/, "[$1: $2]: $3");
+        if (ptype === "obj") descStr = descStr.replace(/\s*(\w+):\s*(\w+):\s*(\w+):\s*(\w+)\s*/, "[$1: $2]: $4");
         // fix StartApp intent
         if (ptype !== "str") descStr = descStr.replace(/&comma;/g, ",");
 
@@ -702,7 +704,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
             if (type.sub.match(/^[a-z_]+$/) && !(tDesc[type.sub] || tName[type.sub]))
                 type.sub = pAbbrev.toUpperCase() + '_' + type.sub;
 
-            params.push(`${pname}: ${type.sub}` + (dflt ? ' = ' + dflt : ''));
+            params.push(`${pname + (dflt ? '?' : '')}: ${type.sub}`); // + (dflt ? ' = ' + dflt : ''));
             if (type.desc)
                 jsparams.push(`${indent} * @param ${pname.replace("?", '')} ${type.desc.replace(/ \* /g, indent + ' * ')}\n`);
         }
@@ -743,15 +745,19 @@ function generateDefinitionFile(scopeName, inpt, state) {
         if (!func.subf) return defs;
 
         // subfunctions for classes
-        defs.class += `\nclass ${objPfx[scopeName]}${name.replace(regConPrefix, "")} {\n`;
+        defs.class += `\ndeclare class ${objPfx[scopeName]}${name.replace(regConPrefix, "")} {\n`;
         for (const subFuncName in func.subf) {
             let met = func.subf[subFuncName];
             if (typeof met === "string") met = unwrapBaseFunc(met, inpt.base);
 
             const sdefs = processFunction(subFuncName, func.abbrev || "undefined", met, indent);
             defs.class += sdefs.func;
-            for (const i in sdefs.extra)
+            for (const i in sdefs.extra) {
+                const retName = i.split("_")[1];
+                // replace previous return type with custom
+                defs.class = defs.class.replace(RegExp(`: ${retName}(?=;\\s+$)`), ': ' + i);
                 defs.extra[i] = (defs.extra[i] || "") + sdefs.extra[i];
+            }
         }
 
         for (const obj in defs.extra) {
