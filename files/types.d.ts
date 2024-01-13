@@ -16,6 +16,7 @@ declare global {
         FolderExists(p: string): boolean;
         GetFileDate(p: string): Date;
         SetDebug(d: boolean): void;
+        GetDebug(): boolean;
         ShowProgressBar(t: string): void;
         UpdateProgressBar(i: number, t: string): void;
         HideProgressBar(): void;
