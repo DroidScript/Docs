@@ -4,8 +4,8 @@
 /** # CreateDivider #
  * @abbrev dvd
  * Creates a divider which you can add to your layout
- * $$ dvd = MUI.CreateDivider(height) $$ 
- * @param {num_px} height Optional
+ * $$ dvd = MUI.CreateDivider(height?) $$ 
+ * @param {num_pxl} [height] 
  * @returns obj
 */
 

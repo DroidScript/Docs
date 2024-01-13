@@ -1,6 +1,5 @@
 
 /** ### alpha
- * @name alpha
  * @prop
  * @brief the alpha value
  * The objects alpha value
@@ -9,7 +8,6 @@
 
 
 /** ### angle
- * @name angle
  * @prop
  * @brief The rotation fraction
  * The rotation fraction of the object
@@ -18,7 +16,6 @@
 
 
 /** ### Contains
- * @name Contains
  * @brief Check if the sprite contains a point
  * Checks if a point is contained in the sprite
  * @param {num_frc} x
@@ -28,7 +25,6 @@
 
 
 /** ### data
- * @name data
  * @prop
  * @brief Extra properties
  * An object for saving individual extra properties.
@@ -37,7 +33,6 @@
 
 
 /** ### graphic
- * @name graphic
  * @prop
  * @brief PIXI graphic
  * the PIXI graphic
@@ -46,7 +41,6 @@
 
 
 /** ### group
- * @name group
  * @prop
  * @brief The object's group
  * The objects group identifier
@@ -55,7 +49,6 @@
 
 
 /** ### height
- * @name height
  * @prop
  * @brief The objects height
  * The height of the object
@@ -64,7 +57,6 @@
 
 
 /** ### pivotX
- * @name pivotX
  * @prop
  * @brief Rotation x pivot
  * The x pivot for rotations
@@ -73,7 +65,6 @@
 
 
 /** ### pivotY
- * @name pivotY
  * @prop
  * @brief Rotation y pivot
  * The y pivot for rotations
@@ -82,7 +73,6 @@
 
 
 /** ### scaleX
- * @name scaleX
  * @prop
  * @brief Horizontal scaling
  * The horizontal scaling
@@ -91,7 +81,6 @@
 
 
 /** ### scaleY
- * @name scaleY
  * @prop
  * @brief Vertical scaling
  * The vertical scaling
@@ -100,7 +89,6 @@
 
 
 /** ### SetMatrix
- * @name SetMatrix
  * @brief Set 2d transformation
  * Set the individual 2d transformation
  * @param {obj} mtx Matrix
@@ -108,13 +96,11 @@
 
 
 /** ### Update
- * @name Update
  * Updates internal properties
  */
 
 
 /** ### visible
- * @name visible
  * @prop
  * @brief Visibility state
  * Indicates the objects visibility state
@@ -123,7 +109,6 @@
 
 
 /** ### width
- * @name width
  * @prop
  * @brief Object width
  * The obects width
@@ -132,19 +117,16 @@
 
 
 /** ### PauseTween
- * @name PauseTween
  * Pause tweening.
  */
 
 
 /** ### PlayTween
- * @name PlayTween
  * Resume tweening.
  */
 
 
 /** ### SetTween
- * @name SetTween
  * @brief Setup tween methods
  * Sets up tween methods and properties without playing it.
  * @param #Tween
@@ -152,21 +134,18 @@
 
 
 /** ### StartTween
- * @name StartTween
  * @brief Start tween
  * Start tweening automatically on every rendered frame.
  */
 
 
 /** ### StepTween
- * @name StepTween
  * @brief Update tween to now
  * Updates a tween to the current time (if not paused).
  */
 
 
 /** ### Tween
- * @name Tween
  * @brief Animates the control
  * Performs an animation on the control.
  * The **target** object is for the position, size and rotation that the control has at the end of the animation.

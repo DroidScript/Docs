@@ -4,12 +4,12 @@
 /** # AddAppBar #
  * @abbrev apb
  * 
- * $$ apb = MUI.AddAppBar(parent, p1, p2, p3, options) $$ 
+ * $$ apb = MUI.AddAppBar(parent, p1?, p2?, p3?, options?) $$ 
  * @param {dso} parent @../app/CreateLayout
- * @param {str} p1 Title text|Hint
- * @param {str} p2 Material Icon
- * @param {str} p3 controls|color
- * @param {str_com} options Elegant|Modern|Default|Round|Rectangle:for Modern Appbar
+ * @param {str} [p1] Title text|Hint
+ * @param {str} [p2] Material Icon
+ * @param {str} [p3] controls|color
+ * @param {str_com} [options] Elegant|Modern|Default|Round|Rectangle:for Modern Appbar
  * @returns obj
 */
 

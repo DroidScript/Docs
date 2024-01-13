@@ -4,13 +4,13 @@
 /** # CreateTextAreaOutline #
  * @abbrev tao
  * Creates an outlined material textarea.
- * $$ tao = MUI.CreateTextAreaOutline(width, height, hint, label, color, backColor) $$ 
- * @param {num} width 
- * @param {num} height 
- * @param {str} hint Hint|Label text
- * @param {bin} label Show or hide label
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * $$ tao = MUI.CreateTextAreaOutline(width=-1, height=-1, hint?, label?, color?, backColor?) $$ 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str} [hint] Hint|Label text
+ * @param {bin} [label] Show or hide label
+ * @param {str_col} [color] 
+ * @param {str_col} [backColor] 
  * @returns obj
 */
 
@@ -22,44 +22,19 @@
 
 /** @extern ClearFocus */
 
-/** ### ClearHistory ###
- * Clear input history
- * $$ tao.ClearHistory() $$
- */
-
+/** @extern ClearHistory */
 
 /** @extern Focus */
 
-/** ### GetCursorLine ###
- * Get cursor line
- * $$ tao.GetCursorLine() $$
- * @returns num
- */
+/** @extern GetCursorLine */
 
+/** @extern GetCursorPos */
 
-/** ### GetCursorPos ###
- * Get cursor position
- * $$ tao.GetCursorPos() $$
- */
+/** @extern GetSelectedText */
 
+/** @extern GetSelectionEnd */
 
-/** ### GetSelectedText ###
- * 
- * $$ tao.GetSelectedText() $$
- */
-
-
-/** ### GetSelectionEnd ###
- * 
- * $$ tao.GetSelectionEnd() $$
- */
-
-
-/** ### GetSelectionStart ###
- * 
- * $$ tao.GetSelectionStart() $$
- */
-
+/** @extern GetSelectionStart */
 
 /** @extern GetText */
 
@@ -69,13 +44,7 @@
 
 /** @extern Gone */
 
-/** ### InsertText ###
- * Inserts a string at a given position.
- * $$ tao.InsertText(text, start) $$
- * @param {str} text 
- * @param {num_int} start 
- */
-
+/** @extern InsertText */
 
 /** @extern IsEnabled */
 
@@ -83,49 +52,23 @@
 
 /** @extern IsVisible */
 
-/** ### Redo ###
- * Redo an undone action.
- * $$ tao.Redo() $$
- */
+/** @extern Redo */
 
+/** @extern ReplaceText */
 
-/** ### ReplaceText ###
- * Replaces a given range in the text with some string.
- * $$ tao.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
- */
-
-
-/** ### SetCursorPos ###
- * Change the curernt cursor position.
- * $$ tao.SetCursorPos(position) $$
- * @param {num_int} position 
- */
-
+/** @extern SetCursorPos */
 
 /** @extern SetMargins */
 
 /** @extern SetOnChange */
 
-/** ### SetOnEnter ###
- * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * $$ tao.SetOnEnter(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnEnter */
 
 /** @extern SetPosition */
 
 /** @extern SetText */
 
-/** ### Undo ###
- * Undo an action
- * $$ tao.Undo() $$
- */
-
+/** @extern Undo */
 
 
 // ------------- SAMPLES ------------- 

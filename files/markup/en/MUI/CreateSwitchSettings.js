@@ -4,13 +4,13 @@
 /** # CreateSwitchSettings #
  * @abbrev sws
  * Creates a switchable settings that can be toggled on and off.
- * $$ sws = MUI.CreateSwitchSettings(text, width, height, value, color, backColor) $$ 
+ * $$ sws = MUI.CreateSwitchSettings(text, width?, height?, value?, color?, backColor?) $$ 
  * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {bin} value 
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * @param {num_frc} [width] 
+ * @param {num_frc} [height] 
+ * @param {bin} [value] 
+ * @param {str_col} [color] 
+ * @param {str_col} [backColor] 
  * @returns obj
 */
 

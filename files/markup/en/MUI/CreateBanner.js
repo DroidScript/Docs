@@ -4,10 +4,10 @@
 /** # CreateBanner #
  * @abbrev bnr
  * A banner dialog is a nice popup that slides from the top of your current page
- * $$ bnr = MUI.CreateBanner(text, okText, cancelText) $$ 
+ * $$ bnr = MUI.CreateBanner(text, okText?, cancelText?) $$ 
  * @param {str} text 
- * @param {str} okText Truthy button text
- * @param {str} cancelText Falsey button text
+ * @param {str} [okText] Truthy button text
+ * @param {str} [cancelText] Falsey button text
  * @returns obj
 */
 
@@ -20,7 +20,7 @@
 /** ### SetOnTouch ###
  * Calls a function when buttons are click (prev. SetOnTouchOK)
  * $$ bnr.SetOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["isOkBtnClick","btnText"],"pTypes":["bin","str"]}
+ * @param {fnc_json} callback {"pNames":["isOk","btnText"],"pTypes":["bin","str"]}
  */
 
 

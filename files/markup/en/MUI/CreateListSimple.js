@@ -5,12 +5,12 @@
  * @abbrev lss
  * @brief Creates a simple list that has an optional badge and icon with no body text.
  * Creates a simple list that has an optional badge and icon with no body text.
- * $$ lss = MUI.CreateListSimple(list, width, height, options) $$ 
+ * $$ lss = MUI.CreateListSimple(list, width=-1, height=-1, options?) $$ 
  * @param {lst} list { title:str, icon:str-Material icon, color:str_col, badge:num }
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} options Divider
- * @returns dso
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str} [options] Divider
+ * @returns obj
 */
 
 

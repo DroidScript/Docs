@@ -4,10 +4,10 @@
 /** # CreateAlert #
  * @abbrev alr
  * A nice pop-up at the top of your current layout
- * $$ alr = MUI.CreateAlert(text, icon, color) $$ 
+ * $$ alr = MUI.CreateAlert(text, icon?, color?) $$ 
  * @param {str} text Popup text
- * @param {str} icon Material icon
- * @param {str_col} color 
+ * @param {str} [icon] Material icon
+ * @param {str_col} [color] 
  * @returns obj
 */
 

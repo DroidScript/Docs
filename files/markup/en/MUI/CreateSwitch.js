@@ -4,9 +4,9 @@
 /** # CreateSwitch #
  * @abbrev swt
  * Creates a switch that can be toggled on and off.
- * $$ swt = MUI.CreateSwitch(value, color) $$ 
+ * $$ swt = MUI.CreateSwitch(value, color?) $$ 
  * @param {bin} value 
- * @param {str_col} color 
+ * @param {str_col} [color] 
  * @returns obj
 */
 

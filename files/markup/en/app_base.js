@@ -1,6 +1,5 @@
 
 /** ### Animate
- * @name Animate
  * @brief Animates a control
  * Animates the control.
  *
@@ -15,7 +14,6 @@
 
 
 /** ### AdjustColor
- * @name AdjustColor
  * @brief Adjust the visual color effect of the control
  * Adjust the visual color effect of the control by setting the Hue (by angle in degrees in a color circle), the saturation, brightness and contrast of the control.
  * @param {num} hue -180..180
@@ -26,7 +24,6 @@
 
 
 /** ### Batch
- * @name Batch
  * @brief Batch method calls to set object properties
  * Batch method calls to be able to set all object's properties at once.
  * Note that you need to specify each parameter (use “” or <js nobox>null</js> to leave some out)
@@ -36,28 +33,24 @@
 
 
 /** ### ClearFocus
- * @name ClearFocus
  * @brief Removes the focus of the control
  * Removes the focus of the control so that the user no longer has immediate access to it.
  */
 
 
 /** ### Dismiss
- * @name Dismiss
  * @brief Hides the control and removes it from the screen
  * Hide the control and remove it from the screen.
  */
 
 
 /** ### Focus
- * @name Focus
  * @brief Set the focus to the control for immediate access
  * Set the focus to the control so that the user can interact with it immediately.
  */
 
 
 /** ### GetAbsHeight
- * @name GetAbsHeight
  * @brief Get the control height in pixels
  * Get the absolute height of the control in pixels.
  * Note that unlike the objects margins its padding does change this value.
@@ -66,7 +59,6 @@
 
 
 /** ### GetAbsWidth
- * @name GetAbsWidth
  * @brief Get the control width in pixels
  * Get the absolute width of the control in pixels.
  * Note that unlike the objects margins its padding does change this value.
@@ -75,7 +67,6 @@
 
 
 /** ### GetHeight
- * @name GetHeight
  * @brief Get the height of the control
  * Get the height of the control as screen height relative float or in pixels with the **px** option.
  * Note that unlike the objects margins its padding does change this value.
@@ -85,7 +76,6 @@
 
 
 /** ### GetLeft
- * @name GetLeft
  * @brief Get distance to the left parent border
  * Get the distance from the control to the left parent border as width relative float or in pixels with the **px** option.
  * @param {str} options px
@@ -94,7 +84,6 @@
 
 
 /** ### GetParent
- * @name GetParent
  * @brief Returns the parent control object
  * Returns the parent control object where the object was added to - commonly a layout.
  * @returns dso
@@ -102,7 +91,6 @@
 
 
 /** ### GetPosition
- * @name GetPosition
  * @brief Returns data about position and size
  * Returns data about the position and size of the control.
  * If the **screen** option is given the position on the screen will be returned. Otherwise relative to the parent control.
@@ -113,15 +101,13 @@
 
 
 /** ### GetText
- * @name GetText
  * @brief Returns the currently contained text
- * Returns the current1605064214 displayed text of the control.
+ * Returns the current displayed text of the control.
  * @returns str
  */
 
 
 /** ### GetTextSize
- * @name GetTextSize
  * @brief Returns the current text size
  * Returns the current size of the contained text. If the **px** option is given the size will be retured in pixels.
  * @param {str} mode px
@@ -130,7 +116,6 @@
 
 
 /** ### GetTop
- * @name GetTop
  * @brief Get distance to the upper parent border
  * Get the distance from the control to the upper parent border as height relative float or in pixels with the **px** option.
  * @param {str} options px
@@ -139,7 +124,6 @@
 
 
 /** ### GetVisibility
- * @name GetVisibility
  * @brief Returns the current visibility state
  * Returns the current visibility state of the control. The Values are:
  * **Show**: visible
@@ -150,7 +134,6 @@
 
 
 /** ### GetWidth
- * @name GetWidth
  * @brief Get the width of the control
  * Get the width of the control as screen width relative float or in pixels with the **px** option.
  * Note that unlike the objects margins its padding does change this value.
@@ -160,21 +143,18 @@
 
 
 /** ### Gone
- * @name Gone
  * @brief Make it gone. It was never there!
  * Hides the control without consuming any more layout space as if it were never there.
  */
 
 
 /** ### Hide
- * @name Hide
  * @brief Hides the control visually
  * Hide the control but keep the layout space free.
  */
 
 
 /** ### IsEnabled
- * @name IsEnabled
  * @brief Checks if the control is useable
  * Returns whether the control is currently useable by the user.
  * @returns bin
@@ -182,7 +162,6 @@
 
 
 /** ### IsOverlap
- * @name IsOverlap
  * @brief Checks if the control overlaps with another
  * Returns whether the control overlaps with another by a given distance.
  * @param {dso} obj 
@@ -192,7 +171,6 @@
 
 
 /** ### IsVisible
- * @name IsVisible
  * @brief Checks if the control is currently visible
  * Returns whether the control is currently visible to the user, ignoring overlaying controls.
  * @returns bin
@@ -200,7 +178,6 @@
 
 
 /** ### Method
- * @name Method
  * @brief Access Java object methods via reflection
  * Allows access to other functions defined on the object in Java via reflection.
  * 
@@ -216,14 +193,12 @@
 
 
 /** ### Resize
- * @name Resize
  * @brief resize a control after device rotation
  * Resize a control after device rotation by keeping the original width/height ratios.
  */
 
 
 /** ### SetFontFile
- * @name SetFontFile
  * @brief Change the used font
  * Change the font style by defining a font file.
  * @param {str_ptf} file 
@@ -231,7 +206,6 @@
 
 
 /** ### SetBackAlpha
- * @name SetBackAlpha
  * @brief Set the background transparency by alpha value
  * Set the transparency of the background by an alpha value between **0** (_no transparency_) and **0.99** (_full transparent_) or **1** (_no transparency_) and **256** (_full transparent_)
  * @param {num} alpha 0..0.99|1..256
@@ -239,7 +213,6 @@
 
 
 /** ### SetBackColor
- * @name SetBackColor
  * @brief Change the background color
  * Changes the background color of the control.
  * @param {str_col} color 
@@ -247,7 +220,6 @@
 
 
 /** ### SetBackGradient
- * @name SetBackGradient
  * @brief Define the background color of the control with a gradient
  * Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.
  * @param {str_col} color1 
@@ -258,7 +230,6 @@
 
 
 /** ### SetBackGradientRadial
- * @name SetBackGradientRadial
  * @brief Define a radial background color gradient
  * Define a radial color gradient for the background of control.
  * @param {num_frc} x 
@@ -272,7 +243,6 @@
 
 
 /** ### SetBackground
- * @name SetBackground
  * @brief Change the background to an image
  * Changes the background to an image which can be repeated using the **repeat** option.
  * An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!
@@ -282,7 +252,6 @@
 
 
 /** ### SetColorFilter
- * @name SetColorFilter
  * @brief Adjust the visual color effect with different BlendModes
  * Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).
  * @param {str_col} color 
@@ -291,7 +260,6 @@
 
 
 /** ### SetDescription
- * @name SetDescription
  * @brief Set accesibility description
  * Set a control description for accessibility
  * @param {str} desc 
@@ -299,7 +267,6 @@
 
 
 /** ### SetEnabled
- * @name SetEnabled
  * @brief En/Disable the control
  * En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.
  * @param {bin} enable 
@@ -307,7 +274,6 @@
 
 
 /** ### SetEllipsize
- * @name SetEllipsize
  * @brief Auto-crop text to fit in control
  * Will cause the inner text to be broken with ... at the start or the end if it cannot fit in the control.
  * @param {str} mode start|middle|end
@@ -315,7 +281,6 @@
 
 
 /** ### SetHtml
- * @name SetHtml
  * @brief Set current text to html-formatted text
  * Change the current text of the control to html-formatted text.
  * @param {str_htm} str 
@@ -323,7 +288,6 @@
 
 
 /** ### SetMargins
- * @name SetMargins
  * @brief Define distances to other controls
  * Define a distance to other controls on each side of the control.
  * @param {num_frc} [left=0] 
@@ -335,7 +299,6 @@
 
 
 /** ### SetOnChange
- * @name SetOnChange
  * @brief Called when content was changed by the user
  * Called when the containing data has been changed by the user.
  * @param {fnc_json} callback {}
@@ -343,7 +306,6 @@
 
 
 /** ### SetOnFocus
- * @name SetOnFocus
  * @brief Called when the control gets focused
  * Define a callback function called when the user focuses the control.
  * @param {fnc_json} callback {}
@@ -351,7 +313,6 @@
 
 
 /** ### SetOnLongTouch
- * @name SetOnLongTouch
  * @brief Called when the control was pressed for eons
  * %cb% the object has been long pressed.
  * @param {fnc_json} callback {"pNames":["src"],"pTypes":["dso"]}
@@ -359,7 +320,6 @@
 
 
 /** ### SetOnTouch
- * @name SetOnTouch
  * @brief Define a callback function for touch events
  * Define a callback function that is called when the user touches the control.
  * @param {fnc_json} callback {}
@@ -375,7 +335,6 @@
 
 
 /** ### SetOnTouchDown
- * @name SetOnTouchDown
  * @brief Called when the user starts touching the control
  * %cb% the user started toching the control.
  * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Down, count:num_int, x: [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y: [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
@@ -383,7 +342,6 @@
 
 
 /** ### SetOnTouchMove
- * @name SetOnTouchMove
  * @brief Called when the user drags a finger over the screen
  * %cb% the user drags a finger over the screen.
  * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Move, count:num_int, x: [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y: [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
@@ -391,7 +349,6 @@
 
 
 /** ### SetOnTouchUp
- * @name SetOnTouchUp
  * @brief Called when the user finger leaves te screen
  * %cb% the users finger leaves the screen.
  * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Up, count:num_int, x: [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y: [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
@@ -399,7 +356,6 @@
 
 
 /** ### SetPadding
- * @name SetPadding
  * @brief Define distances to contained elements
  * Define distances that elements within the control are to maintain from the control borders.
  * @param {num_frc} [left=0] 
@@ -411,7 +367,6 @@
 
 
 /** ### SetPosition
- * @name SetPosition
  * @brief Defines position and size on absolute layouts
  * Defines the position and size for the control if the parent is an absolute layout.
  * @param {num} left 
@@ -423,7 +378,6 @@
 
 
 /** ### SetScale
- * @name SetScale
  * @brief Scale the control by the given factors
  * Scales the control along with its contents by the factors passed to the function.
  * @param {num_fac} x 
@@ -432,7 +386,6 @@
 
 
 /** ### SetSize
- * @name SetSize
  * @brief Change the size of the control
  * Change the size of the control in either screen relative values or in pixels if the **px** option was given.
  * @param {num} width 
@@ -441,8 +394,18 @@
  */
 
 
+/** ### SetStyle
+ * 
+ * @param {str_col} [color1='sky'] 
+ * @param {str_col} [color2='sky'] 
+ * @param {num_pxl} [radius=0] 
+ * @param {str_col} [strokeClr='sky'] 
+ * @param {num_pxl} [strokeWidth=0] 
+ * @param {num_frc} [shadow=0] 
+ */
+
+
 /** ### SetText
- * @name SetText
  * @brief Change displayed text
  * Change the currently displayed text in the control.
  * @param {str} text 
@@ -450,7 +413,6 @@
 
 
 /** ### SetTextColor
- * @name SetTextColor
  * @brief Change the text color
  * Change the text color of the contained text.
  * @param {str_col} color 
@@ -458,7 +420,6 @@
 
 
 /** ### SetTextShadow
- * @name SetTextShadow
  * @brief Define a shadow around the control
  * Define a shadow displayed around the control.
  * The sun is always shining so there has to be one. Always.
@@ -470,7 +431,6 @@
 
 
 /** ### SetTextSize
- * @name SetTextSize
  * @brief Change the text size
  * Change the size of the contained text.
  * @param {num} size 
@@ -479,14 +439,12 @@
 
 
 /** ### SetTouchable
- * @name SetTouchable
  * En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.
  * @param {bin} touchable 
  */
 
 
 /** ### SetVisibility
- * @name SetVisibility
  * @brief Change the visibility mode
  * Change the visibility of the control to one of the available modes:
  * **Show:** visible
@@ -497,14 +455,12 @@
 
 
 /** ### Show
- * @name Show
  * @brief Set the visibility to “Show”
  * Set the visibility of the control to “Show”.
  */
 
 
 /** ### Tween
- * @name Tween
  * @brief Animates the control
  * Performs an animation on the control.
  * The **target** object is for the position, size and rotation that the control has at the end of the animation.

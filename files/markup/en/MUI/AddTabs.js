@@ -4,14 +4,14 @@
 /** # AddTabs #
  * @abbrev tbf
  * Adds an MUI tab on a given layout. See @CreateTabFixed for a full documentation.
- * $$ tbf = MUI.AddTabs(parent, title, width, height, options, color, animation) $$ 
+ * $$ tbf = MUI.AddTabs(parent, title, width=-1, height=-1, options?, color?, animation?) $$ 
  * @param {dso} parent @../app/CreateLayout
  * @param {str_com} title titles
- * @param {num} width 
- * @param {num} height 
- * @param {str_com} options DS layout options|Fix
- * @param {str_col} color 
- * @param {bin} animation 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str_com} [options] DS layout options|Fix
+ * @param {str_col} [color] 
+ * @param {bin} [animation] 
  * @returns obj
 */
 

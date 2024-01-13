@@ -4,11 +4,11 @@
 /** # CreateListModern #
  * @abbrev lsm
  * 
- * $$ lsm = MUI.CreateListModern(list, width, height, options) $$ 
+ * $$ lsm = MUI.CreateListModern(list, width=-1, height=-1, options?) $$ 
  * @param {lst} list An array of object elements. See list example
- * @param {num} width 
- * @param {num} height 
- * @param {str} options Initial|Material|Avatar|RightIcon|RightNote|Selectable
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str} [options] Initial|Material|Avatar|RightIcon|RightNote|Selectable
  * @returns obj
 */
 

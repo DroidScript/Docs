@@ -4,13 +4,13 @@
 /** # CreateTextH5 #
  * @abbrev txh
  * Creates a heading text 5
- * $$ txh = MUI.CreateTextH5(text, width, height, options, color, fontWeight) $$ 
+ * $$ txh = MUI.CreateTextH5(text, width=-1, height=-1, options?, color?, fontWeight?) $$ 
  * @param {str} text 
- * @param {num} width 
- * @param {num} height 
- * @param {str} options DS text options
- * @param {str_col} color 
- * @param {str} fontWeight Thin|Light|Regular|Medium|Bold
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str} [options] DS text options
+ * @param {str_col} [color] 
+ * @param {str} [fontWeight] Thin|Light|Regular|Medium|Bold
  * @returns obj
 */
 
@@ -26,13 +26,8 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern data */
 
-                    
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -113,9 +108,9 @@
 
 /** ### Log ###
  * 
- * $$ txh.Log(msg, options) $$
+ * $$ txh.Log(msg, options?) $$
  * @param {str} msg 
- * @param {str_com} options 
+ * @param {str_com} [options] 
  */
 
 

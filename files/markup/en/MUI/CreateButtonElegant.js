@@ -4,11 +4,11 @@
 /** # CreateButtonElegant #
  * @abbrev bte
  * An elegant button
- * $$ bte = MUI.CreateButtonElegant(text, width, height, color) $$ 
+ * $$ bte = MUI.CreateButtonElegant(text, width=-1, height=-1, color?) $$ 
  * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_col} color 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_col} [color] 
  * @returns obj
 */
 
@@ -24,13 +24,8 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern data */
 
-                    
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -110,17 +105,7 @@
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * 
- * $$ bte.SetStyle(clr1, clr2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} clr1 
- * @param {str_col} clr2 
- * @param {num} radius 
- * @param {str_col} strokeClr 
- * @param {num} strokeWidth 
- * @param {num} shadow 
- */
-
+/** @extern SetStyle */
 
 /** @extern SetText */
 

@@ -5,15 +5,15 @@
  * @abbrev txa
  * @brief Adds a material filled textarea
  * Adds a material textarea on a given layout. See @CreateTextAreaFilled, @CreateTextAreaFilledA, @CreateTextAreaOutline and @CreateTextAreaOutlineA for a full documentation on each corresponding type.
- * $$ txa = MUI.AddTextArea(parent, width, height, options, hint, label, color, backColor) $$ 
+ * $$ txa = MUI.AddTextArea(parent, width=-1, height=-1, options?, hint?, label?, color?, backColor?) $$ 
  * @param {dso} parent @../app/CreateLayout
- * @param {num} width 
- * @param {num} height 
- * @param {str_com} options filled|outline|active
- * @param {str} hint Hint text
- * @param {bin} label Show or hide label
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str_com} [options] filled|outline|active
+ * @param {str} [hint] Hint text
+ * @param {bin} [label] Show or hide label
+ * @param {str_col} [color] 
+ * @param {str_col} [backColor] 
  * @returns obj
 */
 

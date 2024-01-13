@@ -4,9 +4,9 @@
 /** # CreateFAB #
  * @abbrev fab
  * Creates a floating action button
- * $$ fab = MUI.CreateFAB(icon, color) $$ 
+ * $$ fab = MUI.CreateFAB(icon, color?) $$ 
  * @param {str} icon Material icon fonts
- * @param {str_col} color 
+ * @param {str_col} [color] 
  * @returns obj
 */
 
@@ -29,8 +29,8 @@
 
 /** ### SetIconColor ###
  * Sets the text color
- * $$ fab.SetIconColor(color) $$
- * @param {str_col} color 
+ * $$ fab.SetIconColor(color?) $$
+ * @param {str_col} [color] 
  */
 
 
@@ -45,13 +45,8 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern data */
 
-                    
 /** @extern Focus */
 
 /** @extern GetAbsHeight */

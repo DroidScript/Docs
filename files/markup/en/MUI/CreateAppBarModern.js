@@ -4,11 +4,11 @@
 /** # CreateAppBarModern #
  * @abbrev abm
  * A modern appbar with a search input, leading icon and trailing icon
- * $$ abm = MUI.CreateAppBarModern(hint, controlIcon, options, color) $$ 
- * @param {str} hint Hint text for the search input
- * @param {str} controlIcon Material font for the control icon
- * @param {str} options Round|Rectangle
- * @param {str_col} color 
+ * $$ abm = MUI.CreateAppBarModern(hint?, controlIcon?, options?, color?) $$ 
+ * @param {str} [hint] Hint text for the search input
+ * @param {str} [controlIcon] Material font for the control icon
+ * @param {str} [options] Round|Rectangle
+ * @param {str_col} [color] 
  * @returns obj
 */
 
@@ -56,33 +56,15 @@
  */
 
 
-/** ### GetSelectedText ###
- * 
- * $$ abm.GetSelectedText() $$
- */
+/** @extern GetSelectedText */
 
+/** @extern GetSelectionEnd */
 
-/** ### GetSelectionEnd ###
- * 
- * $$ abm.GetSelectionEnd() $$
- */
-
-
-/** ### GetSelectionStart ###
- * 
- * $$ abm.GetSelectionStart() $$
- */
-
+/** @extern GetSelectionStart */
 
 /** @extern GetText */
 
-/** ### InsertText ###
- * Inserts a string at a given position.
- * $$ abm.InsertText(text, start) $$
- * @param {str} text 
- * @param {num_int} start 
- */
-
+/** @extern InsertText */
 
 /** ### Redo ###
  * Redo an undone action.

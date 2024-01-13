@@ -4,10 +4,10 @@
 /** # CreateFABOutline #
  * @abbrev fab
  * Creates an outlined floating action button
- * $$ fab = MUI.CreateFABOutline(icon, color, backColor) $$ 
+ * $$ fab = MUI.CreateFABOutline(icon, color?, backColor?) $$ 
  * @param {str} icon Material icon font
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * @param {str_col} [color] 
+ * @param {str_col} [backColor] 
  * @returns obj
 */
 
@@ -30,8 +30,8 @@
 
 /** ### SetIconColor ###
  * Sets the text color
- * $$ fab.SetIconColor(color) $$
- * @param {str_col} color 
+ * $$ fab.SetIconColor(color?) $$
+ * @param {str_col} [color] 
  */
 
 
@@ -46,13 +46,8 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern data */
 
-                    
 /** @extern Focus */
 
 /** @extern GetAbsHeight */

@@ -4,11 +4,11 @@
 /** # CreateMenuWithIcon #
  * @abbrev mwi
  * Advance MUI implementation of material design menu with additional icon using material icon font.
- * $$ mwi = MUI.CreateMenuWithIcon(list, width, height, position) $$ 
+ * $$ mwi = MUI.CreateMenuWithIcon(list, width?, height?, position?) $$ 
  * @param {lst} list str
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} position Top,Left|Top,Right|Bottom,Left|Bottom,Right
+ * @param {num_frc} [width] 
+ * @param {num_frc} [height] 
+ * @param {str} [position] Top,Left|Top,Right|Bottom,Left|Bottom,Right
  * @returns obj
 */
 

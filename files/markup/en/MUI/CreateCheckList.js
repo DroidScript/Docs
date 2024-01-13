@@ -4,11 +4,11 @@
 /** # CreateCheckList #
  * @abbrev chl
  * Check list is a dialog type checkbox list. Let the user select items in a nice popup
- * $$ chl = MUI.CreateCheckList(title, list, color, bottom) $$ 
+ * $$ chl = MUI.CreateCheckList(title, list, color?, bottom?) $$ 
  * @param {str} title 
  * @param {lst} list An array of objects of the form {name: string, check: boolean}
- * @param {str_col} color 
- * @param {bin} bottom 
+ * @param {str_col} [color] 
+ * @param {bin} [bottom] 
  * @returns obj
 */
 

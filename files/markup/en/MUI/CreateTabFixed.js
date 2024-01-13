@@ -4,13 +4,13 @@
 /** # CreateTabFixed #
  * @abbrev tbf
  * 
- * $$ tbf = MUI.CreateTabFixed(title, width, height, options, color, animation) $$ 
+ * $$ tbf = MUI.CreateTabFixed(title, width=-1, height=-1, options?, color?, animation?) $$ 
  * @param {str_com} title titles
- * @param {num} width 
- * @param {num} height 
- * @param {str_com} options DS layout options
- * @param {str_col} color 
- * @param {bin} animation 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str_com} [options] DS layout options
+ * @param {str_col} [color] 
+ * @param {bin} [animation] 
  * @returns obj
 */
 

@@ -4,12 +4,12 @@
 /** # CreateTextJumbo #
  * @abbrev txj
  * Creates an extra large text
- * $$ txj = MUI.CreateTextJumbo(text, width, height, options, color) $$ 
+ * $$ txj = MUI.CreateTextJumbo(text, width=-1, height=-1, options?, color?) $$ 
  * @param {str} text 
- * @param {num} width 
- * @param {num} height 
- * @param {str} options DS text options
- * @param {str_col} color 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str} [options] DS text options
+ * @param {str_col} [color] 
  * @returns obj
 */
 
@@ -25,13 +25,8 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern data */
 
-                    
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -112,9 +107,9 @@
 
 /** ### Log ###
  * 
- * $$ txj.Log(msg, options) $$
+ * $$ txj.Log(msg, options?) $$
  * @param {str} msg 
- * @param {str_com} options 
+ * @param {str_com} [options] 
  */
 
 

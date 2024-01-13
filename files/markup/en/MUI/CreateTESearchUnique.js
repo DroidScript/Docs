@@ -4,11 +4,11 @@
 /** # CreateTESearchUnique #
  * @abbrev tes
  * Creates a unique text input
- * $$ tes = MUI.CreateTESearchUnique(width, hint, icon, iconColor) $$ 
- * @param {num} width 
- * @param {str} hint Hint text
- * @param {str} icon Material icon font
- * @param {str_col} iconColor 
+ * $$ tes = MUI.CreateTESearchUnique(width?, hint?, icon?, iconColor?) $$ 
+ * @param {num} [width] 
+ * @param {str} [hint] Hint text
+ * @param {str} [icon] Material icon font
+ * @param {str_col} [iconColor] 
  * @returns obj
 */
 
@@ -20,44 +20,19 @@
 
 /** @extern ClearFocus */
 
-/** ### ClearHistory ###
- * Clear input history
- * $$ tes.ClearHistory() $$
- */
-
+/** @extern ClearHistory */
 
 /** @extern Focus */
 
-/** ### GetCursorLine ###
- * Get cursor line
- * $$ tes.GetCursorLine() $$
- * @returns num
- */
+/** @extern GetCursorLine */
 
+/** @extern GetCursorPos */
 
-/** ### GetCursorPos ###
- * Get cursor position
- * $$ tes.GetCursorPos() $$
- */
+/** @extern GetSelectedText */
 
+/** @extern GetSelectionEnd */
 
-/** ### GetSelectedText ###
- * 
- * $$ tes.GetSelectedText() $$
- */
-
-
-/** ### GetSelectionEnd ###
- * 
- * $$ tes.GetSelectionEnd() $$
- */
-
-
-/** ### GetSelectionStart ###
- * 
- * $$ tes.GetSelectionStart() $$
- */
-
+/** @extern GetSelectionStart */
 
 /** @extern GetText */
 
@@ -67,13 +42,7 @@
 
 /** @extern Gone */
 
-/** ### InsertText ###
- * Inserts a string at a given position.
- * $$ tes.InsertText(text, start) $$
- * @param {str} text 
- * @param {num_int} start 
- */
-
+/** @extern InsertText */
 
 /** @extern IsEnabled */
 
@@ -81,49 +50,23 @@
 
 /** @extern IsVisible */
 
-/** ### Redo ###
- * Redo an undone action.
- * $$ tes.Redo() $$
- */
+/** @extern Redo */
 
+/** @extern ReplaceText */
 
-/** ### ReplaceText ###
- * Replaces a given range in the text with some string.
- * $$ tes.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
- */
-
-
-/** ### SetCursorPos ###
- * Change the curernt cursor position.
- * $$ tes.SetCursorPos(position) $$
- * @param {num_int} position 
- */
-
+/** @extern SetCursorPos */
 
 /** @extern SetMargins */
 
 /** @extern SetOnChange */
 
-/** ### SetOnEnter ###
- * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * $$ tes.SetOnEnter(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnEnter */
 
 /** @extern SetPosition */
 
 /** @extern SetText */
 
-/** ### Undo ###
- * Undo an action
- * $$ tes.Undo() $$
- */
-
+/** @extern Undo */
 
 /** ### SetOnIconTouch ###
  * @brief Calls a function when icon is touch

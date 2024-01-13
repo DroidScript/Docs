@@ -4,14 +4,14 @@
 /** # CreateButtonToggle #
  * @abbrev btt
  * 
- * $$ btt = MUI.CreateButtonToggle(text, width, height, value, callback, color, backColor) $$ 
+ * $$ btt = MUI.CreateButtonToggle(text, width?, height?, value?, callback?, color?, backColor?) $$ 
  * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {bin} value 
- * @param {fnc_json} callback {}
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * @param {num_frc} [width] 
+ * @param {num_frc} [height] 
+ * @param {bin} [value] 
+ * @param {fnc_json} [callback] {}
+ * @param {str_col} [color] 
+ * @param {str_col} [backColor] 
  * @returns obj
 */
 
@@ -27,13 +27,8 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern data */
 
-                    
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -111,17 +106,7 @@
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * 
- * $$ btt.SetStyle(clr1, clr2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} clr1 
- * @param {str_col} clr2 
- * @param {num} radius 
- * @param {str_col} strokeClr 
- * @param {num} strokeWidth 
- * @param {num} shadow 
- */
-
+/** @extern SetStyle */
 
 /** @extern SetText */
 

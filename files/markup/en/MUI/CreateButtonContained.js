@@ -4,10 +4,10 @@
 /** # CreateButtonContained #
  * @abbrev btc
  * An contained material button.
- * $$ btc = MUI.CreateButtonContained(text, width, height) $$ 
+ * $$ btc = MUI.CreateButtonContained(text, width=-1, height=-1) $$ 
  * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
  * @returns obj
 */
 
@@ -23,13 +23,8 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern data */
 
-                    
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -109,17 +104,7 @@
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * 
- * $$ btc.SetStyle(clr1, clr2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} clr1 
- * @param {str_col} clr2 
- * @param {num} radius 
- * @param {str_col} strokeClr 
- * @param {num} strokeWidth 
- * @param {num} shadow 
- */
-
+/** @extern SetStyle */
 
 /** @extern SetText */
 

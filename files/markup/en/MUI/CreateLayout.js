@@ -4,10 +4,10 @@
 /** # CreateLayout #
  * @abbrev lay
  * 
- * $$ lay = MUI.CreateLayout(type, options) $$ 
+ * $$ lay = MUI.CreateLayout(type, options?) $$ 
  * @param {str} type Linear|Absolute|Frame|Card
- * @param {str} options Comma separated DroidScript layout options
- * @returns obj
+ * @param {str} [options] Comma separated DroidScript layout options
+ * @returns dso-@../app/CreateLayout
 */
 
 

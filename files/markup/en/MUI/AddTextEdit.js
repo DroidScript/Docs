@@ -4,15 +4,15 @@
 /** # AddTextEdit #
  * @abbrev ted
  * 
- * $$ ted = MUI.AddTextEdit(parent, width, options, p1, p2, p3, p4, p5) $$ 
+ * $$ ted = MUI.AddTextEdit(parent, width=-1, options?, p1?, p2?, p3?, p4?, p5?) $$ 
  * @param {dso} parent @../app/CreateLayout
- * @param {num} width 
- * @param {str} options outline|filled|unique|search|active|icon and for icon can be  left|right
- * @param {str} p1 See corresponding MUI TextEdit
- * @param {str} p2 See corresponding MUI TextEdit
- * @param {str} p3 See corresponding MUI TextEdit
- * @param {str} p4 See corresponding MUI TextEdit
- * @param {str} p5 See corresponding MUI TextEdit
+ * @param {num} [width=-1] 
+ * @param {str} [options] outline|filled|unique|search|active|icon and for icon can be  left|right
+ * @param {str} [p1] See corresponding MUI TextEdit
+ * @param {str} [p2] See corresponding MUI TextEdit
+ * @param {str} [p3] See corresponding MUI TextEdit
+ * @param {str} [p4] See corresponding MUI TextEdit
+ * @param {str} [p5] See corresponding MUI TextEdit
  * @returns obj
 */
 

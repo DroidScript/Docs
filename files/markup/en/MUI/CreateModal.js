@@ -4,13 +4,13 @@
 /** # CreateModal #
  * @abbrev mdl
  * 
- * $$ mdl = MUI.CreateModal(title, body, okTxt, cancelTxt, show, options) $$ 
+ * $$ mdl = MUI.CreateModal(title, body, okTxt?, cancelTxt?, show?, options?) $$ 
  * @param {str} title 
  * @param {str} body Body text. If you want to customize the modal layout pass an empty string.
- * @param {str} okTxt Truthy button text
- * @param {str} cancelTxt Falsy button text
- * @param {bin} show 
- * @param {str} options Dialog options with additional Full option
+ * @param {str} [okTxt] Truthy button text
+ * @param {str} [cancelTxt] Falsy button text
+ * @param {bin} [show] 
+ * @param {str} [options] Dialog options|Full
  * @returns obj
 */
 
@@ -68,8 +68,8 @@ Use **SetOnTouch** method to call a function when the user touches the control b
 /** ### SetHeaderColor ###
  * @brief Sets a new title to the modal
  * Change the background color of the header
- * $$ mdl.SetHeaderColor(color) $$
- * @param {str_col} color 
+ * $$ mdl.SetHeaderColor(color?) $$
+ * @param {str_col} [color] 
  */
 
 

@@ -135,13 +135,8 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** ### SetStyle ###
  * @brief Customize the button looks
  * Customize the look of the toggle.
- * $$ swi.SetStyle(color1='sky', color2='sky', radius=0, strokeClr='sky', strokeWidth=0, shadow=0) $$
- * @param {str_col} [color1='sky'] 
- * @param {str_col} [color2='sky'] 
- * @param {num_pxl} [radius=0] 
- * @param {str_col} [strokeClr='sky'] 
- * @param {num_pxl} [strokeWidth=0] 
- * @param {num_frc} [shadow=0] 
+ * $$ swi.SetStyle() $$
+ * @param #SetStyle
  */
 
 

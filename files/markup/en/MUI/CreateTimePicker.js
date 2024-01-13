@@ -4,10 +4,10 @@
 /** # CreateTimePicker #
  * @abbrev tmp
  * Creates a material design time picker.
- * $$ tmp = MUI.CreateTimePicker(hour, minute, color) $$ 
- * @param {num} hour [0-24]
- * @param {num} minute 0-59
- * @param {str_col} color 
+ * $$ tmp = MUI.CreateTimePicker(hour?, minute?, color?) $$ 
+ * @param {num} [hour] [0-24]
+ * @param {num} [minute] 0-59
+ * @param {str_col} [color] 
  * @returns obj
 */
 

@@ -5,11 +5,11 @@
  * @abbrev spn
  * @brief Creates a material designed dropdown or spinner.
  * Creates a material designed dropdown. Let the user select from a predefined options.
- * $$ spn = MUI.CreateSpinner(list, width, height) $$ 
+ * $$ spn = MUI.CreateSpinner(list, width=-1, height=-1) $$ 
  * @param {lst} list String. A comma separated options
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @returns dso
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @returns obj
 */
 
 

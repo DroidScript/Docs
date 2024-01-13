@@ -4,15 +4,15 @@
 /** # AddRadio #
  * @abbrev rd
  * 
- * $$ rd = MUI.AddRadio(parent, list, width, height, options, p1, color, backColor) $$ 
+ * $$ rd = MUI.AddRadio(parent, list, width=-1, height=-1, options?, p1?, color?, backColor?) $$ 
  * @param {dso} parent @../app/CreateLayout
  * @param {str_com} list strings
- * @param {num} width 
- * @param {num} height 
- * @param {str_com} options Buttons|Material|Normal
- * @param {str} p1 color|orientation
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str_com} [options] Buttons|Material|Normal
+ * @param {str} [p1] color|orientation
+ * @param {str_col} [color] 
+ * @param {str_col} [backColor] 
  * @returns obj
 */
 

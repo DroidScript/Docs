@@ -5,11 +5,11 @@
  * @abbrev mn
  * @brief Creates a simple menu
  * A simple MUI implementation of material design menu.
- * $$ mn = MUI.CreateMenu(list, width, height, position) $$ 
+ * $$ mn = MUI.CreateMenu(list, width?, height?, position?) $$ 
  * @param {str_com} list list
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} position Top,Left|Top,Right|Bottom,Left|Bottom,Right
+ * @param {num_frc} [width] 
+ * @param {num_frc} [height] 
+ * @param {str} [position] Top,Left|Top,Right|Bottom,Left|Bottom,Right
  * @returns obj
 */
 

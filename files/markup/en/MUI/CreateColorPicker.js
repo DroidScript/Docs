@@ -18,7 +18,7 @@
 /** ### SetOnSelect ###
  * Calls a function when a user click the OK button
  * $$ clp.SetOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["color"],"pTypes":["str_col-The selected color"]}
+ * @param {fnc_json} callback {"pNames":["color?"],"pTypes":["str_col-The selected color"]}
  */
 
 

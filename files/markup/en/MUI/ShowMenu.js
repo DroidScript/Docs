@@ -4,10 +4,10 @@
 /** # ShowMenu #
  * @abbrev smu
  * Show a menu on a given control.
- * $$ smu = MUI.ShowMenu(control, list, width) $$ 
+ * $$ smu = MUI.ShowMenu(control, list, width?) $$ 
  * @param {dso} control 
  * @param {str_lst} list 
- * @param {num_frc} width 
+ * @param {num_frc} [width] 
  * @returns obj
 */
 

@@ -5,11 +5,11 @@
  * @abbrev rd
  * @brief Creates a radio control. A radio control allows the user to select only one item in a list.
  * Creates a radio control by manipulation of the DroidScript's list control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.
- * $$ rd = MUI.CreateRadio(list, width, height, color) $$ 
+ * $$ rd = MUI.CreateRadio(list, width=-1, height=-1, color?) $$ 
  * @param {str_com} list strings
- * @param {num} width 
- * @param {num} height 
- * @param {str_col} color 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str_col} [color] 
  * @returns obj
 */
 
@@ -111,11 +111,11 @@
 
 /** ### InsertItem ###
  * 
- * $$ rd.InsertItem(index, title, body, image) $$
+ * $$ rd.InsertItem(index, title, body?, image?) $$
  * @param {num} index 
  * @param {str} title 
- * @param {str} body 
- * @param {str_ptf} image 
+ * @param {str} [body] 
+ * @param {str_ptf} [image] 
  */
 
 
@@ -149,9 +149,9 @@
 
 /** ### ScrollToItem ###
  * 
- * $$ rd.ScrollToItem(title, body) $$
+ * $$ rd.ScrollToItem(title, body?) $$
  * @param {str} title 
- * @param {str} body 
+ * @param {str} [body] 
  */
 
 
@@ -164,18 +164,18 @@
 
 /** ### SelectItem ###
  * 
- * $$ rd.SelectItem(title, body, scroll) $$
+ * $$ rd.SelectItem(title, body?, scroll?) $$
  * @param {str} title 
- * @param {str} body 
- * @param {?} scroll 
+ * @param {str} [body] 
+ * @param {bin} [scroll] 
  */
 
 
 /** ### SelectItemByIndex ###
  * 
- * $$ rd.SelectItemByIndex(index, scroll) $$
+ * $$ rd.SelectItemByIndex(index, scroll?) $$
  * @param {num} index 
- * @param {?} scroll 
+ * @param {bin} [scroll] 
  */
 
 
@@ -195,19 +195,19 @@
 
 /** ### SetColumnWidths ###
  * 
- * $$ rd.SetColumnWidths(icon, title, body, mode) $$
+ * $$ rd.SetColumnWidths(icon, title?, body?, mode?) $$
  * @param {?} icon 
- * @param {str} title 
- * @param {str} body 
- * @param {?} mode 
+ * @param {str} [title] 
+ * @param {str} [body] 
+ * @param {?} [mode] 
  */
 
 
 /** ### SetDivider ###
  * 
- * $$ rd.SetDivider(height, color) $$
+ * $$ rd.SetDivider(height, color?) $$
  * @param {num} height 
- * @param {str_col} color 
+ * @param {str_col} [color] 
  */
 
 
@@ -247,9 +247,9 @@
 
 /** ### SetList ###
  * 
- * $$ rd.SetList(list, delim) $$
+ * $$ rd.SetList(list, delim=',') $$
  * @param {?} list 
- * @param {str} delim 
+ * @param {str} [delim=','] 
  */
 
 
@@ -283,13 +283,13 @@
 
 /** ### SetTextMargins ###
  * 
- * $$ rd.SetTextMargins(left, top, right, bottom, mode, options) $$
- * @param {?} left 
- * @param {?} top 
- * @param {?} right 
- * @param {?} bottom 
- * @param {?} mode 
- * @param {str_com} options 
+ * $$ rd.SetTextMargins(left=0, top=0, right=0, bottom=0, mode='px', options?) $$
+ * @param {?} [left=0] 
+ * @param {?} [top=0] 
+ * @param {?} [right=0] 
+ * @param {?} [bottom=0] 
+ * @param {?} [mode='px'] 
+ * @param {str_com} [options] 
  */
 
 
@@ -297,21 +297,21 @@
 
 /** ### SetTextShadow1 ###
  * 
- * $$ rd.SetTextShadow1(radius, dx, dy, color) $$
+ * $$ rd.SetTextShadow1(radius, dx?, dy?, color?) $$
  * @param {num} radius 
- * @param {num} dx 
- * @param {num} dy 
- * @param {str_col} color 
+ * @param {num} [dx] 
+ * @param {num} [dy] 
+ * @param {str_col} [color] 
  */
 
 
 /** ### SetTextShadow2 ###
  * 
- * $$ rd.SetTextShadow2(radius, dx, dy, color) $$
+ * $$ rd.SetTextShadow2(radius, dx?, dy?, color?) $$
  * @param {num} radius 
- * @param {num} dx 
- * @param {num} dy 
- * @param {str_col} color 
+ * @param {num} [dx] 
+ * @param {num} [dy] 
+ * @param {str_col} [color] 
  */
 
 
@@ -319,17 +319,17 @@
 
 /** ### SetTextSize1 ###
  * 
- * $$ rd.SetTextSize1(size, mode) $$
+ * $$ rd.SetTextSize1(size, mode='px') $$
  * @param {?} size 
- * @param {?} mode 
+ * @param {?} [mode='px'] 
  */
 
 
 /** ### SetTextSize2 ###
  * 
- * $$ rd.SetTextSize2(size, mode) $$
+ * $$ rd.SetTextSize2(size, mode='px') $$
  * @param {?} size 
- * @param {?} mode 
+ * @param {?} [mode='px'] 
  */
 
 

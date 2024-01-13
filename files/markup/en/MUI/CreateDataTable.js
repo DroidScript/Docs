@@ -5,12 +5,12 @@
  * @abbrev tbl
  * @brief Creates a new DataTable Control.
  * 
- * $$ tbl = MUI.CreateDataTable(columns, values, width, height, options) $$ 
+ * $$ tbl = MUI.CreateDataTable(columns, values, width=-1, height=-1, options?) $$ 
  * @param {lst} columns An array of strings of the form Name:Type for column header. Where 'Name' is the column name and 'Type is the column type [Can be Sortable or Numeric]'
  * @param {lst} values An array of strings of the form Val1:Val2:Val3...
- * @param {num} width Fraction of the screen width
- * @param {num} height Fraction of the screen height
- * @param {str_com} options Selectable
+ * @param {num} [width=-1] Fraction of the screen width
+ * @param {num} [height=-1] Fraction of the screen height
+ * @param {str_com} [options] Selectable
  * @returns obj
 */
 
@@ -107,10 +107,11 @@ You can also add a footer into your table if you want controls associated with t
 
 /** ### AddFooter ###
  * Add a footer layout to the table where you can add controls.
- * $$ tbl.AddFooter(type, options, height) $$
+ * $$ tbl.AddFooter(type, options?, height?) $$
  * @param {str} type Type of layout. Can be Linear|Absolute|Frame. Default to Linear
- * @param {str} options A comma separated layout options. Default to Horizontal|Right|VCenter
- * @param {num} height A fraction of the screen height.
+ * @param {str} [options] A comma separated layout options. Default to Horizontal|Right|VCenter
+ * @param {num} [height] A fraction of the screen height.
+ * @returns dso-@../app/CreateLayout
  */
 
 

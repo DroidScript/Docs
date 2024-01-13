@@ -4,12 +4,12 @@
 /** # CreateTextEditFilled #
  * @abbrev tef
  * Creates the most common type of material text input.
- * $$ tef = MUI.CreateTextEditFilled(width, options, hint, label, color) $$ 
- * @param {num} width 
- * @param {str} options Comma separated DS TextEdit options
- * @param {str} hint Hint|Label text
- * @param {bin} label Show or hide label
- * @param {str_col} color 
+ * $$ tef = MUI.CreateTextEditFilled(width?, options?, hint?, label?, color?) $$ 
+ * @param {num} [width] 
+ * @param {str} [options] DS TextEdit options
+ * @param {str} [hint] Hint|Label text
+ * @param {bin} [label] Show or hide label
+ * @param {str_col} [color] 
  * @returns obj
 */
 
@@ -21,44 +21,19 @@
 
 /** @extern ClearFocus */
 
-/** ### ClearHistory ###
- * Clear input history
- * $$ tef.ClearHistory() $$
- */
-
+/** @extern ClearHistory */
 
 /** @extern Focus */
 
-/** ### GetCursorLine ###
- * Get cursor line
- * $$ tef.GetCursorLine() $$
- * @returns num
- */
+/** @extern GetCursorLine */
 
+/** @extern GetCursorPos */
 
-/** ### GetCursorPos ###
- * Get cursor position
- * $$ tef.GetCursorPos() $$
- */
+/** @extern GetSelectedText */
 
+/** @extern GetSelectionEnd */
 
-/** ### GetSelectedText ###
- * 
- * $$ tef.GetSelectedText() $$
- */
-
-
-/** ### GetSelectionEnd ###
- * 
- * $$ tef.GetSelectionEnd() $$
- */
-
-
-/** ### GetSelectionStart ###
- * 
- * $$ tef.GetSelectionStart() $$
- */
-
+/** @extern GetSelectionStart */
 
 /** @extern GetText */
 
@@ -68,13 +43,7 @@
 
 /** @extern Gone */
 
-/** ### InsertText ###
- * Inserts a string at a given position.
- * $$ tef.InsertText(text, start) $$
- * @param {str} text 
- * @param {num_int} start 
- */
-
+/** @extern InsertText */
 
 /** @extern IsEnabled */
 
@@ -82,49 +51,23 @@
 
 /** @extern IsVisible */
 
-/** ### Redo ###
- * Redo an undone action.
- * $$ tef.Redo() $$
- */
+/** @extern Redo */
 
+/** @extern ReplaceText */
 
-/** ### ReplaceText ###
- * Replaces a given range in the text with some string.
- * $$ tef.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
- */
-
-
-/** ### SetCursorPos ###
- * Change the curernt cursor position.
- * $$ tef.SetCursorPos(position) $$
- * @param {num_int} position 
- */
-
+/** @extern SetCursorPos */
 
 /** @extern SetMargins */
 
 /** @extern SetOnChange */
 
-/** ### SetOnEnter ###
- * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * $$ tef.SetOnEnter(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnEnter */
 
 /** @extern SetPosition */
 
 /** @extern SetText */
 
-/** ### Undo ###
- * Undo an action
- * $$ tef.Undo() $$
- */
-
+/** @extern Undo */
 
 /** @extern SetOnTouch */
 

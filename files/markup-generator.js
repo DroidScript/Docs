@@ -26,14 +26,14 @@ async function GenerateJSFile(scope, path, obj, base = {}, _navs = {}) {
     let baseStr = "";
     for (const key in base) {
         const methodData = base[key];
-        const method = methodData.name || '';
+        const method = methodData.name || key;
         const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== key;
         const _desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : "";
         usedIDs[method] ||= key;
 
         let info = "";
         // if (data.name && data.name !== key) info += ` * @name ${data.name}\n`;
-        if (methodData.name || addId) info += ` * @name ${methodData.name || key}\n`;
+        if (method !== key || addId) info += ` * @name ${method || key}\n`;
         if (methodData.isval) info += ` * @prop\n`;
         if (methodData.abbrev) info += ` * @abbrev ${methodData.abbrev}\n`;
         if (methodData.shortDesc) info += ` * @brief ${methodData.shortDesc}\n`;
@@ -133,9 +133,9 @@ function renderSubf(data, usedIDs) {
         let methodData = data.subf[method];
 
         if (typeof methodData === "string") {
-            if (!methodData.startsWith("#")) throw Error("Unexpected subf string " + methodData);
+            if (!methodData.match(/^(#|r\/)/)) throw Error("Unexpected subf string " + methodData);
             if (/[a-z]/i.test(methodData[1])) methodData = methodData.slice(1);
-            const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || '';
+            const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || methodData[1] === "/" || '';
             str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
             usedIDs[method] ||= methodData;
         }

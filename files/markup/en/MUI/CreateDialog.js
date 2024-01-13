@@ -4,12 +4,12 @@
 /** # CreateDialog #
  * @abbrev dlg
  * Creates a customizable materialize dialog.
- * $$ dlg = MUI.CreateDialog(title, body, okText, cancelText, divider) $$ 
+ * $$ dlg = MUI.CreateDialog(title, body?, okText?, cancelText?, divider?) $$ 
  * @param {str} title Title
- * @param {str} body Body text
- * @param {str} okText Truthy button text
- * @param {str} cancelText Falsey button text
- * @param {bin} divider Show divider or hide
+ * @param {str} [body] Body text
+ * @param {str} [okText] Truthy button text
+ * @param {str} [cancelText] Falsey button text
+ * @param {bin} [divider] Show divider or hide
  * @returns obj
 */
 
@@ -22,7 +22,7 @@
 /** ### SetOnTouch ###
  * Calls a function when buttons are click (prev. SetOnTouchOK)
  * $$ dlg.SetOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["isOkBtnClick","btnText"],"pTypes":["bin","str"]}
+ * @param {fnc_json} callback {"pNames":["isOk","btnText"],"pTypes":["bin","str"]}
  */
 
 

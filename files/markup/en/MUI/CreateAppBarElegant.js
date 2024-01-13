@@ -4,10 +4,10 @@
 /** # CreateAppBarElegant #
  * @abbrev abe
  * A more elegant appbar implementation
- * $$ abe = MUI.CreateAppBarElegant(title, leadingIcon, options) $$ 
+ * $$ abe = MUI.CreateAppBarElegant(title, leadingIcon?, options?) $$ 
  * @param {str} title Title text
- * @param {str} leadingIcon Material icon font
- * @param {str_com} options material icon font for the right controls
+ * @param {str} [leadingIcon] Material icon font
+ * @param {str_com} [options] material icon font for the right controls
  * @returns obj
 */
 

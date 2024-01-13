@@ -144,13 +144,8 @@ You can customize the visual look in many ways by either using one of the existi
 /** ### SetStyle ###
  * @brief Customize the button looks
  * Customize the look of the button.
- * $$ btn.SetStyle(color1='sky', color2='sky', radius=0, strokeClr='sky', strokeWidth=0, shadow=0) $$
- * @param {str_col} [color1='sky'] 
- * @param {str_col} [color2='sky'] 
- * @param {num_pxl} [radius=0] 
- * @param {str_col} [strokeClr='sky'] 
- * @param {num_pxl} [strokeWidth=0] 
- * @param {num_frc} [shadow=0] 
+ * $$ btn.SetStyle() $$
+ * @param #SetStyle
  */
 
 

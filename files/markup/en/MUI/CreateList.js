@@ -4,11 +4,11 @@
 /** # CreateList #
  * @abbrev lst
  * A manipulation of the DroidScript list object.
- * $$ lst = MUI.CreateList(list, width, height, options) $$ 
+ * $$ lst = MUI.CreateList(list, width=-1, height=-1, options?) $$ 
  * @param {str} list 
- * @param {num} width 
- * @param {num} height 
- * @param {str} options 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str} [options] 
  * @returns obj
 */
 
@@ -20,10 +20,10 @@
 
 /** ### AddItem ###
  * 
- * $$ lst.AddItem(title, body, image) $$
+ * $$ lst.AddItem(title, body?, image?) $$
  * @param {str} title 
- * @param {str} body 
- * @param {str_ptf} image 
+ * @param {str} [body] 
+ * @param {str_ptf} [image] 
  */
 
 
@@ -99,11 +99,11 @@
 
 /** ### InsertItem ###
  * 
- * $$ lst.InsertItem(index, title, body, image) $$
+ * $$ lst.InsertItem(index, title, body?, image?) $$
  * @param {num} index 
  * @param {str} title 
- * @param {str} body 
- * @param {str_ptf} image 
+ * @param {str} [body] 
+ * @param {str_ptf} [image] 
  */
 
 
@@ -137,9 +137,9 @@
 
 /** ### ScrollToItem ###
  * 
- * $$ lst.ScrollToItem(title, body) $$
+ * $$ lst.ScrollToItem(title, body?) $$
  * @param {str} title 
- * @param {str} body 
+ * @param {str} [body] 
  */
 
 
@@ -152,18 +152,18 @@
 
 /** ### SelectItem ###
  * 
- * $$ lst.SelectItem(title, body, scroll) $$
+ * $$ lst.SelectItem(title, body?, scroll=false) $$
  * @param {str} title 
- * @param {str} body 
- * @param {bin} scroll 
+ * @param {str} [body] 
+ * @param {bin} [scroll=false] 
  */
 
 
 /** ### SelectItemByIndex ###
  * 
- * $$ lst.SelectItemByIndex(index, scroll) $$
+ * $$ lst.SelectItemByIndex(index, scroll?) $$
  * @param {num} index 
- * @param {bin} scroll 
+ * @param {bin} [scroll] 
  */
 
 
@@ -183,19 +183,19 @@
 
 /** ### SetColumnWidths ###
  * 
- * $$ lst.SetColumnWidths(icon, title, body, mode) $$
+ * $$ lst.SetColumnWidths(icon, title?, body?, mode?) $$
  * @param {?} icon 
- * @param {str} title 
- * @param {str} body 
- * @param {?} mode 
+ * @param {str} [title] 
+ * @param {str} [body] 
+ * @param {?} [mode] 
  */
 
 
 /** ### SetDivider ###
  * 
- * $$ lst.SetDivider(height, color) $$
+ * $$ lst.SetDivider(height, color?) $$
  * @param {num} height 
- * @param {str_col} color 
+ * @param {str_col} [color] 
  */
 
 
@@ -246,37 +246,37 @@
 
 /** ### SetIconSize ###
  * 
- * $$ lst.SetIconSize(size, mode) $$
+ * $$ lst.SetIconSize(size, mode?) $$
  * @param {?} size 
- * @param {?} mode 
+ * @param {?} [mode] 
  */
 
 
 /** ### SetItem ###
  * 
- * $$ lst.SetItem(title, newTitle, newBody, newImage) $$
+ * $$ lst.SetItem(title, newTitle, newBody?, newImage?) $$
  * @param {str} title 
  * @param {?} newTitle 
- * @param {num} newBody 
- * @param {?} newImage 
+ * @param {num} [newBody] 
+ * @param {?} [newImage] 
  */
 
 
 /** ### SetItemByIndex ###
  * 
- * $$ lst.SetItemByIndex(index, newTitle, newBody, newImage) $$
+ * $$ lst.SetItemByIndex(index, newTitle, newBody?, newImage?) $$
  * @param {num} index 
  * @param {?} newTitle 
- * @param {num} newBody 
- * @param {?} newImage 
+ * @param {num} [newBody] 
+ * @param {?} [newImage] 
  */
 
 
 /** ### SetList ###
  * 
- * $$ lst.SetList(list, delim) $$
+ * $$ lst.SetList(list, delim=',') $$
  * @param {?} list 
- * @param {str} delim 
+ * @param {str} [delim=','] 
  */
 
 
@@ -312,13 +312,13 @@
 
 /** ### SetTextMargins ###
  * 
- * $$ lst.SetTextMargins(left, top, right, bottom, mode, options) $$
- * @param {?} left 
- * @param {?} top 
- * @param {?} right 
- * @param {?} bottom 
- * @param {?} mode 
- * @param {str_com} options 
+ * $$ lst.SetTextMargins(left=0, top=0, right=0, bottom=0, mode?, options?) $$
+ * @param {?} [left=0] 
+ * @param {?} [top=0] 
+ * @param {?} [right=0] 
+ * @param {?} [bottom=0] 
+ * @param {?} [mode] 
+ * @param {str_com} [options] 
  */
 
 
@@ -326,21 +326,21 @@
 
 /** ### SetTextShadow1 ###
  * 
- * $$ lst.SetTextShadow1(radius, dx, dy, color) $$
+ * $$ lst.SetTextShadow1(radius, dx?, dy?, color?) $$
  * @param {num} radius 
- * @param {num} dx 
- * @param {num} dy 
- * @param {str_col} color 
+ * @param {num} [dx] 
+ * @param {num} [dy] 
+ * @param {str_col} [color] 
  */
 
 
 /** ### SetTextShadow2 ###
  * 
- * $$ lst.SetTextShadow2(radius, dx, dy, color) $$
+ * $$ lst.SetTextShadow2(radius, dx?, dy?, color?) $$
  * @param {num} radius 
- * @param {num} dx 
- * @param {num} dy 
- * @param {str_col} color 
+ * @param {num} [dx] 
+ * @param {num} [dy] 
+ * @param {str_col} [color] 
  */
 
 
@@ -348,17 +348,17 @@
 
 /** ### SetTextSize1 ###
  * 
- * $$ lst.SetTextSize1(size, mode) $$
+ * $$ lst.SetTextSize1(size, mode?) $$
  * @param {?} size 
- * @param {?} mode 
+ * @param {?} [mode] 
  */
 
 
 /** ### SetTextSize2 ###
  * 
- * $$ lst.SetTextSize2(size, mode) $$
+ * $$ lst.SetTextSize2(size, mode?) $$
  * @param {?} size 
- * @param {?} mode 
+ * @param {?} [mode] 
  */
 
 

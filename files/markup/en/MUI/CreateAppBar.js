@@ -4,10 +4,10 @@
 /** # CreateAppBar #
  * @abbrev apb
  * The most common type of material design app bar.
- * $$ apb = MUI.CreateAppBar(title, leadingIcon, controls) $$ 
+ * $$ apb = MUI.CreateAppBar(title, leadingIcon?, controls?) $$ 
  * @param {str} title Title text
- * @param {str} leadingIcon A material font icon for the leading control
- * @param {str_com} controls material icon font for the right controls
+ * @param {str} [leadingIcon] A material font icon for the leading control
+ * @param {str_com} [controls] material icon font for the right controls
  * @returns obj
 */
 

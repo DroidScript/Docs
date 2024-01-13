@@ -4,11 +4,11 @@
 /** # CreateCheckbox #
  * @abbrev chc
  * Checkbox is a powerful control when you want the user to select multiple items in a group
- * $$ chc = MUI.CreateCheckbox(list, width, height, color) $$ 
+ * $$ chc = MUI.CreateCheckbox(list, width=-1, height=-1, color?) $$ 
  * @param {lst} list A comma separated string
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_col} color 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_col} [color] 
  * @returns obj
 */
 
