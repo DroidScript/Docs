@@ -5,10 +5,10 @@
  * @abbrev ldg
  * @brief Returns a new ListDialog object
  * 
- * $$ ldg = app.CreateListDialog(title, list, options) $$ 
+ * $$ ldg = app.CreateListDialog(title, list, options?) $$ 
  * @param {str} title 
  * @param {str} list 
- * @param {str} options Multi
+ * @param {str} [options] Multi
  * @returns dso-ListDialog
 */
 
@@ -54,7 +54,7 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
  * @brief Define a callback function for touch events
  * Define a callback function that is called when the user touches a list item.
  * $$ ldg.SetOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["title","checked"],"pTypes":["str","bin"]}
+ * @param {fnc_json} callback {"pNames":["title","checked?"],"pTypes":["str","bin"]}
  */
 
 

@@ -26,10 +26,10 @@
 
 /** ### Send ###
  * Send SMS message.
- * $$ sms.Send(number, message, options) $$
+ * $$ sms.Send(number, message, options?) $$
  * @param {str} number 
  * @param {str} message 
- * @param {str} options MultiPart:multi-part SMS messaging
+ * @param {str} [options] MultiPart:multi-part SMS messaging
  */
 
 

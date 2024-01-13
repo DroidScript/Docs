@@ -5,9 +5,9 @@
  * @abbrev sns
  * @brief Returns a new Sensor object
  * 
- * $$ sns = app.CreateSensor(type, options) $$ 
+ * $$ sns = app.CreateSensor(type, options?) $$ 
  * @param {str} type Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector
- * @param {str_com} options Slow|Medium|Fast|Fastest
+ * @param {str_com} [options] Slow|Medium|Fast|Fastest
  * @returns dso-Sensor
 */
 

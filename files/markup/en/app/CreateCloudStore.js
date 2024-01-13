@@ -78,31 +78,31 @@ combine the parts only when making CloudStore API calls.
 /** ### Load ###
  * @brief Loads data from the cloud.
  * Loads data from the cloud.
- * $$ cld.Load(file, callback, options) $$
+ * $$ cld.Load(file, callback, options?) $$
  * @param {str_ptf} file 
  * @param {str} callback 
- * @param {fnc_json} options {"pNames":["error","result","status"],"pTypes":["bin","obj-{data:all,error:str}","num_int"]}
+ * @param {fnc_json} [options] {"pNames":["error","result","status"],"pTypes":["bin","obj-{data:all,error:str}","num_int"]}
  */
 
 
 /** ### Merge ###
  * @brief Merges data in the cloud.
  * Merges an object with an already existing in the cloud.
- * $$ cld.Merge(file, data, callback) $$
+ * $$ cld.Merge(file, data, callback?) $$
  * @param {str_ptf} file 
  * @param {obj} data 
- * @param {fnc_json} callback {"pNames":["success","result","status"],"pTypes":["bin","obj-{data:str-Entry Saved,error:str}","num_int"]}
+ * @param {fnc_json} [callback] {"pNames":["success","result","status"],"pTypes":["bin","obj-{data:str-Entry Saved,error:str}","num_int"]}
  */
 
 
 /** ### Save ###
  * @brief Saves data in the cloud.
  * Saves data in the cloud.
- * $$ cld.Save(file, data, callback, options) $$
+ * $$ cld.Save(file, data, callback?, options?) $$
  * @param {str_ptf} file 
  * @param {all} data 
- * @param {fnc_json} callback {"pNames":["success","result","status"],"pTypes":["bin","obj-{data:str,error:str}","num_int"]}
- * @param {str} options 
+ * @param {fnc_json} [callback] {"pNames":["success","result","status"],"pTypes":["bin","obj-{data:str,error:str}","num_int"]}
+ * @param {str} [options] 
  */
 
 
@@ -110,11 +110,11 @@ combine the parts only when making CloudStore API calls.
 
 /** ### Upload ###
  * Upload a file to the cloud.
- * $$ cld.Upload(data, name, type, callback, password) $$
+ * $$ cld.Upload(data, name, type?, callback?, password?) $$
  * @param {str} data 
  * @param {str} name 
- * @param {str_mim} type 
- * @param {fnc_json} callback {"pNames":["response"],"pTypes":["obj-{error:str,name:str,folder:str,id:str,mimetype:str_mim,size:num}"]}
- * @param {str} password 
+ * @param {str_mim} [type] 
+ * @param {fnc_json} [callback] {"pNames":["response"],"pTypes":["obj-{error:str,name:str,folder:str,id:str,mimetype:str_mim,size:num}"]}
+ * @param {str} [password] 
  */
 

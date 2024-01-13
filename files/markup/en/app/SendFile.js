@@ -4,11 +4,11 @@
 /** # SendFile #
  * @brief Send a file to a remote target
  * 
- * $$ app.SendFile(file, subject, text, choose) $$ 
+ * $$ app.SendFile(file, subject?, text?, choose?) $$ 
  * @param {str_pfa} file 
- * @param {str} subject 
- * @param {str} text 
- * @param {str} choose 
+ * @param {str} [subject] 
+ * @param {str} [text] 
+ * @param {str} [choose] 
 */
 
 

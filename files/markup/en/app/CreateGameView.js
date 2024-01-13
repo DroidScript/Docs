@@ -4,10 +4,11 @@
 /** # CreateGameView #
  * @abbrev gmv
  * 
- * $$ gmv = app.CreateGameView(width, height, options) $$ 
+ * $$ gmv = app.CreateGameView(width, height, options?) $$ 
  * @param {num_frc} width 
  * @param {num_frc} height 
- * @param {str_com} options 
+ * @param {str_com} [options] 
+ * @returns dso-GameView
 */
 
 

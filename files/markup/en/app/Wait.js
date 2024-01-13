@@ -4,9 +4,9 @@
 /** # Wait #
  * @brief Perform a synchronous delay
  * 
- * $$ app.Wait(seconds, doEvents) $$ 
+ * $$ app.Wait(seconds, doEvents=false) $$ 
  * @param {num_sec} seconds 
- * @param {bin} doEvents 
+ * @param {bin} [doEvents=false] 
 */
 
 

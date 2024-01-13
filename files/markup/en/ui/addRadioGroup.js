@@ -11,7 +11,7 @@
  * @param {str_com} options Radio Sizes: `Small` `Medium` \n `Colors`: `Primary` `Secondary` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n `Required`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-RadioGroup Component
+ * @returns uio-RadioGroup
 */
 
 

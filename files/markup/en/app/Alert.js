@@ -4,11 +4,11 @@
 /** # Alert #
  * @brief Shows a popup message with an 'OK' button to exit
  * 
- * $$ app.Alert(message, title, options, hue) $$ 
+ * $$ app.Alert(message, title, options='', hue?) $$ 
  * @param {str} message 
  * @param {str} title 
- * @param {str_com} options NoDim,NoFocus
- * @param {num_int} hue -180..180
+ * @param {str_com} [options=''] NoDim,NoFocus
+ * @param {num_int} [hue] -180..180
 */
 
 

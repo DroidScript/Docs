@@ -4,11 +4,11 @@
 /** # ExtExec #
  * @brief Execute a bash script using Termux
  * 
- * $$ app.ExtExec(name, file, args, options) $$ 
+ * $$ app.ExtExec(name, file, args?, options?) $$ 
  * @param {str} name termux
  * @param {str_ptf} file 
- * @param {str} args 
- * @param {str} options hide
+ * @param {str} [args] 
+ * @param {str} [options] hide
 */
 
 

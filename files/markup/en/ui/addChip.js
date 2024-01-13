@@ -11,7 +11,7 @@
  * @param {str_com} options Color: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` \n `Variant`: `Outlined` `Default` \n `Util`: `Touchable`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-Chip Component
+ * @returns uio-Chip
 */
 
 

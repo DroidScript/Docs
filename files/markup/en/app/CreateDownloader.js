@@ -5,8 +5,8 @@
  * @abbrev dwn
  * @brief Returns a new Downloader object
  * 
- * $$ dwn = app.CreateDownloader(options) $$ 
- * @param {str_com} options NoDialog|Light
+ * $$ dwn = app.CreateDownloader(options?) $$ 
+ * @param {str_com} [options] NoDialog|Light
  * @returns dso-Downloader
 */
 
@@ -31,11 +31,11 @@ If you want to know when the download process has finished (or failed) you can d
 /** ### Download ###
  * @brief Download file(s)
  * Start downloading one or multiple files.
- * $$ dwn.Download(url, fldr, name, headers) $$
+ * $$ dwn.Download(url, fldr, name?, headers?) $$
  * @param {str_url||lst} url [urls:str_url]
  * @param {str_pth} fldr must not have a trailing slash
- * @param {str} name 
- * @param {str} headers 
+ * @param {str} [name] 
+ * @param {str} [headers] 
  */
 
 

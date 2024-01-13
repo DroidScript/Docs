@@ -14,18 +14,6 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### SetOnSelect ###
- * @brief Calls a function when the user selects an item.
- * Calls a function when the user selects an item.
- * $$ smu.SetOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["title"],"pTypes":["str-The title of the selected item."]}
- */
-
-
-
 // ------------- SAMPLES ------------- 
 
 

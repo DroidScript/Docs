@@ -6,9 +6,9 @@
  * Loads a local JavaScript file asynchronously to your app to make its functionality available in your app.
  * 
  * See Also: @Script
- * $$ app.LoadScript(path, callback) $$ 
+ * $$ app.LoadScript(path, callback?) $$ 
  * @param {str_pth} path 
- * @param {fnc_json} callback {"pNames":["info"],"pTypes":["obj-{ isTrusted:bin }"]}
+ * @param {fnc_json} [callback] {"pNames":["info"],"pTypes":["obj-{ isTrusted:bin }"]}
 */
 
 

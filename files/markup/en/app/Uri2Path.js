@@ -4,9 +4,9 @@
 /** # Uri2Path #
  * @brief Decode a URI encoded string
  * 
- * $$ app.Uri2Path(uri, options) $$ 
+ * $$ app.Uri2Path(uri, options?) $$ 
  * @param {str_uri} uri 
- * @param {str:pretty} options returns DS style paths
+ * @param {str:pretty} [options] returns DS style paths
  * @returns str
 */
 

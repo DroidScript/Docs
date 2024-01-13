@@ -5,11 +5,11 @@
  * @abbrev tab
  * @brief Returns a new Tabs object
  * 
- * $$ tab = app.CreateTabs(list, width, height, options) $$ 
+ * $$ tab = app.CreateTabs(list, width=-1, height=-1, options?) $$ 
  * @param {str_com} list 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} options Fade,FontAwesome,NoMargins,VCenter
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str} [options] Fade,FontAwesome,NoMargins,VCenter
  * @returns dso-Tabs
 */
 
@@ -159,9 +159,9 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 
 /** ### SetTextSize ###
  * 
- * $$ tab.SetTextSize(size, mode) $$
+ * $$ tab.SetTextSize(size, mode='px') $$
  * @param {num} size 
- * @param {str} mode px|sp|dip|mm|pt
+ * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
 

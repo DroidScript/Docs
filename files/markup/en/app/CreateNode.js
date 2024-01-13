@@ -4,9 +4,10 @@
 /** # CreateNode #
  * @abbrev node
  * 
- * $$ node = app.CreateNode(paths, options) $$ 
- * @param {str_pth} paths NODE_PATH env variable
- * @param {str} options extended:allow app methods in default main instance,legacy:dont use named pipes for messaging,nostart:disable auto start,esm:use EcmaScript-Modules
+ * $$ node = app.CreateNode(paths?, options?) $$ 
+ * @param {str_pth} [paths] NODE_PATH env variable
+ * @param {str} [options] extended:allow app methods in default main instance,legacy:dont use named pipes for messaging,nostart:disable auto start,esm:use EcmaScript-Modules
+ * @returns dso-Node
 */
 
 
@@ -43,9 +44,9 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### Start ###
  * Start the main Node process
- * $$ node.Start(args, paths) $$
- * @param {lst} args argument array
- * @param {lst} paths 
+ * $$ node.Start(args?, paths?) $$
+ * @param {lst} [args] argument array
+ * @param {lst} [paths] 
  */
 
 
@@ -116,9 +117,9 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### SendPipeMsg ###
  * Send a message over the message pipe
- * $$ node.SendPipeMsg(msg, isCmd) $$
+ * $$ node.SendPipeMsg(msg, isCmd=false) $$
  * @param {str} msg 
- * @param {bin} isCmd 
+ * @param {bin} [isCmd=false] 
  */
 
 
@@ -145,26 +146,26 @@ For more details have a look at the Node docs in the @../Plugins page
 
 /** ### Run ###
  * Run a NodeJS source file. Use id to run in a new context
- * $$ node.Run(file, id, newPaths) $$
+ * $$ node.Run(file, id?, newPaths?) $$
  * @param {str_pth} file 
- * @param {str:Context ID} id 
- * @param {str_lst} newPaths 
+ * @param {str:Context ID} [id] 
+ * @param {str_lst} [newPaths] 
  */
 
 
 /** ### Execute ###
  * Execute a line of code in the node process.
- * $$ node.Execute(js, id) $$
+ * $$ node.Execute(js, id?) $$
  * @param {str_jsc} js 
- * @param {str:Context ID} id 
+ * @param {str:Context ID} [id] 
  */
 
 
 /** ### AddModule ###
  * Install a node module from npmjs.org
- * $$ node.AddModule(name, dir) $$
+ * $$ node.AddModule(name, dir?) $$
  * @param {str} name name|name^ver
- * @param {str:optional target directory} dir 
+ * @param {str:optional target directory} [dir] 
  */
 
 

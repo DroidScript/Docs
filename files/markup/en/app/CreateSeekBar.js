@@ -5,10 +5,10 @@
  * @abbrev skb
  * @brief Returns a new SeekBar object
  * 
- * $$ skb = app.CreateSeekBar(width, height, options) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FillX/Y
+ * $$ skb = app.CreateSeekBar(width=-1, height=-1, options?) $$ 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] FillX/Y
  * @returns dso-SeekBar
 */
 
@@ -96,10 +96,10 @@ Use the SetOnChange method to define a function you want to be called when the S
 /** ### SetColorFilter ###
  * @brief Adjust the visual color effect with different BlendModes
  * Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).
- * $$ skb.SetColorFilter(color, mode, options) $$
+ * $$ skb.SetColorFilter(color, mode?, options?) $$
  * @param {str_col} color 
- * @param {str} mode Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over
- * @param {str} options 
+ * @param {str} [mode] Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over
+ * @param {str} [options] 
  */
 
 

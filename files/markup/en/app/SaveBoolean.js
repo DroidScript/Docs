@@ -6,10 +6,10 @@
  * Save a boolean value to remember varibale values between multiple app starts.
  * 
  * See also: @LoadBoolean.
- * $$ app.SaveBoolean(name, value, file) $$ 
+ * $$ app.SaveBoolean(name, value, file?) $$ 
  * @param {str} name 
  * @param {bin} value 
- * @param {str_ptf} file 
+ * @param {str_ptf} [file] 
 */
 
 

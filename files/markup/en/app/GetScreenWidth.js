@@ -6,8 +6,8 @@
  * Returns the total screen width of the device in pixels. With the 'Real' **option** softkeys will be included in the value.
  * 
  * See Also: @GetScreenHeight, @GetScreenDensity
- * $$ app.GetScreenWidth(options) $$ 
- * @param {str} options Real
+ * $$ app.GetScreenWidth(options?) $$ 
+ * @param {str} [options] Real
  * @returns num_pxl
 */
 

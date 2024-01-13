@@ -6,9 +6,9 @@
  * Unpairs a paired Bluetooth device by its bt address. The _callback_ argument is called when the device was successfully unpaired.
  * 
  * See Also: @PairBtDevice, @GetPairedBtDevices, @DiscoverBtDevices, @CreateBluetoothSerial
- * $$ app.UnpairBtDevice(address, callback) $$ 
+ * $$ app.UnpairBtDevice(address, callback?) $$ 
  * @param {str} address 
- * @param {fnc_json} callback {}
+ * @param {fnc_json} [callback] {}
 */
 
 

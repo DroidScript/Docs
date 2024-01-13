@@ -5,8 +5,8 @@
  * @abbrev bls
  * @brief Communicate with other Bluetooth devices
  * The CreateBluetoothSerial object is used for communicating with other Bluetooth devices.The 'Text' mode is set by default, but **int**eger and **hex**adecimal values can also be sent.
- * $$ bls = app.CreateBluetoothSerial(mode) $$ 
- * @param {str} mode Text|Int|Hex
+ * $$ bls = app.CreateBluetoothSerial(mode='Text') $$ 
+ * @param {str} [mode='Text'] Text|Int|Hex
  * @returns dso-BluetoothSerial
 */
 
@@ -128,10 +128,10 @@
  * Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls.
  * p2 and p3 have different purposes for different modes:
  * <table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
- * $$ bls.SetSplitMode(mode, p2, p3) $$
+ * $$ bls.SetSplitMode(mode, p2, p3?) $$
  * @param {str} mode End|Start-End|Size
  * @param {str||num_int} p2 
- * @param {str||num_int} p3 
+ * @param {str||num_int} [p3] 
  */
 
 

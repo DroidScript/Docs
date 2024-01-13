@@ -6,11 +6,11 @@
  * Shows a detailed error message with message, file and line in an asynchroneous dialog. You can also set it to quit the app after the user dismisses the dialog.
  * 
  * See Also: @Alert
- * $$ app.Error(message, line, file, quit) $$ 
+ * $$ app.Error(message, line, file, quit=false) $$ 
  * @param {str} message 
  * @param {num_int} line 
  * @param {str_ptf} file 
- * @param {bin} quit 
+ * @param {bin} [quit=false] 
 */
 
 

@@ -4,11 +4,11 @@
 /** # ExtractAssets #
  * @brief Extract app assets to a local directory
  * ExtractAssets allows to extract folders and files from your compiled APK to the local storage. But it works for local DroidScript projects as well. When override is false, already existant files will be kept and not overridden.
- * $$ app.ExtractAssets(source, destination, overwrite, options) $$ 
+ * $$ app.ExtractAssets(source, destination, overwrite=false, options?) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
- * @param {bin} overwrite 
- * @param {str} options DoEvents:extract in background,shallow:extract top level
+ * @param {bin} [overwrite=false] 
+ * @param {str} [options] DoEvents:extract in background,shallow:extract top level
 */
 
 

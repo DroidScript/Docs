@@ -4,10 +4,10 @@
 /** # GA #
  * @brief Google Analytics
  * 
- * $$ app.GA(command, [...fields], options) $$ 
+ * $$ app.GA(command, fields, options?) $$ 
  * @param {str} command create|send|set|require|provide|remove
- * @param {str} [...fields] 
- * @param {obj} options 
+ * @param {str_com} fields 
+ * @param {obj} [options] 
 */
 
 

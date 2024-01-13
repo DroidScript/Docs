@@ -5,10 +5,10 @@
  * @abbrev cam
  * @brief Returns a new CameraView object to access the device camera
  * 
- * $$ cam = app.CreateCameraView(width, height, options) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options Front,UseBitmap,UseABGR,NoRotate,"&lt;id&gt;":"“front,back,cam0,cam1,cam2,cam3”","&lt;resolution&gt;":"CIF: 352x288\\nQQVGA: 160x120\\nQVGA: 320x240\\nSVGA: 800x600\\nVGA: 640x480\\nXGA: 1024x768\\nUXGA: 1600x1200"
+ * $$ cam = app.CreateCameraView(width=-1, height=-1, options?) $$ 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] Front,UseBitmap,UseABGR,NoRotate,"&lt;id&gt;":"“front,back,cam0,cam1,cam2,cam3”","&lt;resolution&gt;":"CIF: 352x288\\nQQVGA: 160x120\\nQVGA: 320x240\\nSVGA: 800x600\\nVGA: 640x480\\nXGA: 1024x768\\nUXGA: 1600x1200"
  * @returns dso-CameraView
 */
 
@@ -47,10 +47,10 @@ More samples can be found in the samples section of DroidScript.
  * @brief Takes a picture if a motion was detected
  * Automatically takes pictures if a motion was detected by cam.[MotionMosaic]{switchPopup(this, 'MotionMosaic')}.
  * The first # in the filename is a placeholder for numbers increasing for every taken picture.
- * $$ cam.AutoCapture(path, fileName, maxCount) $$
+ * $$ cam.AutoCapture(path, fileName, maxCount?) $$
  * @param {str_ptd} path 
  * @param {str} fileName File_n#_motion
- * @param {num_int} maxCount 
+ * @param {num_int} [maxCount] 
  */
 
 
@@ -61,8 +61,8 @@ More samples can be found in the samples section of DroidScript.
 /** ### FindFaces ###
  * @brief Find faces in the current camera view
  * Finds faces in the current camera view.
- * $$ cam.FindFaces(maxCount) $$
- * @param {num_int} maxCount 
+ * $$ cam.FindFaces(maxCount?) $$
+ * @param {num_int} [maxCount] 
  * @returns obj-{ confidence:num_frc&comma; eyeDistance:num&comma; midPoint:"obj-{x:num&comma; y:num}"&comma; pose:num_int }
  */
 
@@ -201,33 +201,33 @@ More samples can be found in the samples section of DroidScript.
  * @brief Define a raster for motion detection
  * Defines a raster which is used for motion detection.
  * Use AutoCapture to take pictures if a motion was detected.
- * $$ cam.MotionMosaic(xtiles, ytiles, sensitivity, minPeriod, image) $$
+ * $$ cam.MotionMosaic(xtiles, ytiles, sensitivity, minPeriod?, image?) $$
  * @param {num_int} xtiles 
  * @param {num_int} ytiles 
  * @param {num_pxl} sensitivity 
- * @param {num_mls} minPeriod 
- * @param {dso} image CreateImage
+ * @param {num_mls} [minPeriod] 
+ * @param {dso} [image] CreateImage
  */
 
 
 /** ### Record ###
  * @brief Start recording video
  * Record a video to a given file. If seconds is specified, the recording will automatically stop after this time. Otherwise call cam.Stop(). For the quality, you can also pass integers found here https://developer.android.com/reference/android/media/CamcorderProfile
- * $$ cam.Record(file, seconds, quality) $$
+ * $$ cam.Record(file, seconds?, quality?) $$
  * @param {str_ptf} file 
- * @param {num_sec} seconds 
- * @param {str} quality high|low|480p|720p|1080p|2k|4k|8k|qvga|vga|cif
+ * @param {num_sec} [seconds] 
+ * @param {str} [quality] high|low|480p|720p|1080p|2k|4k|8k|qvga|vga|cif
  */
 
 
 /** ### ReportColors ###
  * @brief Keeps tracks of the average color around a given point
  * Keeps tracks of the average color around a given point.
- * $$ cam.ReportColors(list, callback, sampSize, maxRate) $$
+ * $$ cam.ReportColors(list, callback, sampSize?, maxRate?) $$
  * @param {str_pip} list x1:num_frc\,y1:num_frc\|x2:num_frc\,y2:num_frc\|...
  * @param {fnc_json} callback {"pNames":["data"],"pTypes":["lst-[[r:num,g:num,b:num]]"]}
- * @param {num_pxl} sampSize 
- * @param {num_mls} maxRate 
+ * @param {num_pxl} [sampSize] 
+ * @param {num_mls} [maxRate] 
  */
 
 

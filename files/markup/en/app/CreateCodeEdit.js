@@ -7,11 +7,11 @@
  * CreateCodeEdit is a control for premium users which is like a TextEdit but it has advanced methods.
  * 
  * <premium>
- * $$ cde = app.CreateCodeEdit(text, width, height, options) $$ 
+ * $$ cde = app.CreateCodeEdit(text, width=-1, height=-1, options?) $$ 
  * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FillX/Y
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] FillX/Y
  * @returns dso-CodeEdit
 */
 
@@ -186,11 +186,11 @@
 
 /** ### ReplaceAll ###
  * Replace all occurances of a string in the text.
- * $$ cde.ReplaceAll(text, newText, matchCase, wholeWord) $$
+ * $$ cde.ReplaceAll(text, newText, matchCase=false, wholeWord=false) $$
  * @param {str} text 
  * @param {str} newText 
- * @param {bin} matchCase 
- * @param {bin} wholeWord 
+ * @param {bin} [matchCase=false] 
+ * @param {bin} [wholeWord=false] 
  */
 
 
@@ -207,11 +207,11 @@
 /** ### Search ###
  * @brief Search and select a string in the text
  * Search for a string in the text in a given direction and selects it.
- * $$ cde.Search(text, direction, matchCase, wholeWord) $$
+ * $$ cde.Search(text, direction='Down', matchCase=false, wholeWord=false) $$
  * @param {str} text 
- * @param {str} direction Up|Down
- * @param {bin} matchCase 
- * @param {bin} wholeWord 
+ * @param {str} [direction='Down'] Up|Down
+ * @param {bin} [matchCase=false] 
+ * @param {bin} [wholeWord=false] 
  */
 
 

@@ -8,8 +8,8 @@
  * See Also: @SetData,
  * 
  * See Also: @GetData
- * $$ app.ClearData(file) $$ 
- * @param {str_ptf} file 
+ * $$ app.ClearData(file?) $$ 
+ * @param {str_ptf} [file] 
 */
 
 

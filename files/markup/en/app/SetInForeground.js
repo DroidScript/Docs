@@ -6,12 +6,12 @@
  * Set the current service to run in the foreground.
  * 
  * See Also: @StartService, @SetInBackground
- * $$ app.SetInForeground(title, text, largeIcon, smallIcon, importance) $$ 
- * @param {str} title 
- * @param {str} text 
- * @param {str_ptf} largeIcon 
- * @param {str_ptf} smallIcon 
- * @param {str} importance min|low|default|high|none
+ * $$ app.SetInForeground(title?, text?, largeIcon?, smallIcon?, importance?) $$ 
+ * @param {str} [title] 
+ * @param {str} [text] 
+ * @param {str_ptf} [largeIcon] 
+ * @param {str_ptf} [smallIcon] 
+ * @param {str} [importance] min|low|default|high|none
 */
 
 

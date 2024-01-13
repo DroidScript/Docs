@@ -11,7 +11,7 @@
  * @param {str} options A comma separated TreeView options.
  * @param {num} width Fraction of the screen width.
  * @param {num} height Fraction of the screen height.
- * @returns obj-TreeView Component
+ * @returns uio-TreeView
 */
 
 

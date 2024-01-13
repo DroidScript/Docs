@@ -3,12 +3,12 @@
 
 /** # ShowTip #
  * Shows a tooltip message on the screen.
- * $$ app.ShowTip(message, left, top, timeOut, options) $$ 
+ * $$ app.ShowTip(message, left?, top?, timeOut?, options?) $$ 
  * @param {str} message 
- * @param {num_frc} left 
- * @param {num_frc} top 
- * @param {num_mls} timeOut 
- * @param {str} options Down
+ * @param {num_frc} [left] 
+ * @param {num_frc} [top] 
+ * @param {num_mls} [timeOut] 
+ * @param {str} [options] Down
 */
 
 

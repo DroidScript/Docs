@@ -6,11 +6,11 @@
  * Executes a shell command on the android shell. **NOTE:** You have to add a '`exit`' command at the end of your script because the shell does not terminate automatically after finishing.
  * 
  * See Also: @ExtExec
- * $$ app.SysExec(command, options, maxRead, timeout) $$ 
+ * $$ app.SysExec(command, options='', maxRead?, timeout?) $$ 
  * @param {str} command 
- * @param {str} options log:logs output to console,noread:dont read result (just execute),sh|su
- * @param {num} maxRead 
- * @param {num_sec} timeout 
+ * @param {str} [options=''] log:logs output to console,noread:dont read result (just execute),sh|su
+ * @param {num} [maxRead] 
+ * @param {num_sec} [timeout] 
  * @returns str
 */
 

@@ -4,11 +4,11 @@
 /** # CopyFolder #
  * @brief Copies a folder to a given destination
  * 
- * $$ app.CopyFolder(source, destination, overwrite, filter) $$ 
+ * $$ app.CopyFolder(source, destination, overwrite=false, filter?) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
- * @param {bin} overwrite 
- * @param {str} filter pattern
+ * @param {bin} [overwrite=false] 
+ * @param {str} [filter] pattern
 */
 
 

@@ -5,11 +5,11 @@
  * @abbrev wbs
  * @brief Returns a new WebSocket object
  * 
- * $$ wbs = app.CreateWebSocket(ip, id, retry, options) $$ 
+ * $$ wbs = app.CreateWebSocket(ip, id?, retry?, options?) $$ 
  * @param {str} ip 
- * @param {str} id 
- * @param {num_int} retry 
- * @param {str} options 
+ * @param {str} [id] 
+ * @param {num_int} [retry] 
+ * @param {str} [options] 
  * @returns dso-WebSocket
 */
 

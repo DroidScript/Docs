@@ -46,42 +46,42 @@
 /** ### SetButtonOptions ###
  * @brief Define button options
  * Define standard options of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).
- * $$ thm.SetButtonOptions(options) $$
- * @param {str_com} options FontAwesome,Html,Monospace,SingleLine,Custom,NoPad,FillX/Y,Normal|Aluminium|Gray|Lego
+ * $$ thm.SetButtonOptions(options?) $$
+ * @param {str_com} [options] FontAwesome,Html,Monospace,SingleLine,Custom,NoPad,FillX/Y,Normal|Aluminium|Gray|Lego
  */
 
 
 /** ### SetButtonPadding ###
  * @brief Define button paddings
  * Define distances that elements within the control are to maintain from the control borders.
- * $$ thm.SetButtonPadding(left, top, right, bottom, mode) $$
- * @param {num} left 
- * @param {num} top 
- * @param {num} right 
- * @param {num_frc} bottom 
- * @param {str} mode px|sp|dip|mm|pt
+ * $$ thm.SetButtonPadding(left=0, top=0, right=0, bottom=0, mode='px') $$
+ * @param {num} [left=0] 
+ * @param {num} [top=0] 
+ * @param {num} [right=0] 
+ * @param {num_frc} [bottom=0] 
+ * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
 
 /** ### SetButtonStyle ###
  * @brief Define button style
  * Define standard style of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).
- * $$ thm.SetButtonStyle(color1, color2, radius, strokeClr, strokeWidth, shadow, checkClr) $$
- * @param {str_col} color1 
- * @param {str_col} color2 
- * @param {num_pxl} radius 
- * @param {str_col} strokeClr 
- * @param {num_pxl} strokeWidth 
- * @param {num_frc} shadow 
- * @param {str_col} checkClr 
+ * $$ thm.SetButtonStyle(color1='sky', color2='sky', radius=0, strokeClr='sky', strokeWidth=0, shadow=0, checkClr?) $$
+ * @param {str_col} [color1='sky'] 
+ * @param {str_col} [color2='sky'] 
+ * @param {num_pxl} [radius=0] 
+ * @param {str_col} [strokeClr='sky'] 
+ * @param {num_pxl} [strokeWidth=0] 
+ * @param {num_frc} [shadow=0] 
+ * @param {str_col} [checkClr] 
  */
 
 
 /** ### SetCheckBoxOptions ###
  * @brief Define check box options
  * Define standard options of [check boxes](CreateCheckBox.htm).
- * $$ thm.SetCheckBoxOptions(options) $$
- * @param {str_com} options FillX/Y
+ * $$ thm.SetCheckBoxOptions(options?) $$
+ * @param {str_com} [options] FillX/Y
  */
 
 
@@ -152,16 +152,16 @@
 /** ### SetProgressOptions ###
  * @brief Define progress options
  * Define standard options of [progress indicators](ShowProgress.htm).
- * $$ thm.SetProgressOptions(options) $$
- * @param {str_com} options NoDim,NonModal,Solid
+ * $$ thm.SetProgressOptions(options?) $$
+ * @param {str_com} [options] NoDim,NonModal,Solid
  */
 
 
 /** ### SetProgressBarOptions ###
  * @brief Define progress bar options
  * Define standard options of [progress bars](ShowProgressBar.htm).
- * $$ thm.SetProgressBarOptions(options) $$
- * @param {str} options Light
+ * $$ thm.SetProgressBarOptions(options?) $$
+ * @param {str} [options] Light
  */
 
 
@@ -185,8 +185,8 @@
 /** ### SetTextEditOptions ###
  * @brief Define text edit options
  * Define standard options of [text edits](CreateTextEdit.htm).
- * $$ thm.SetTextEditOptions(options) $$
- * @param {str} options underline
+ * $$ thm.SetTextEditOptions(options?) $$
+ * @param {str} [options] underline
  */
 
 
@@ -209,26 +209,26 @@
 /** ### SetTitleDividerHeight ###
  * @brief Define title divider height
  * Define standard title divider height of [dialogs](CreateDialog.htm).
- * $$ thm.SetTitleDividerHeight(height) $$
- * @param {num_pxl} height 
+ * $$ thm.SetTitleDividerHeight(height=-1) $$
+ * @param {num_pxl} [height=-1] 
  */
 
 
 /** ### SetTitleHeight ###
  * @brief Define title height
  * Define standard height of [dialogs](CreateDialog.htm).
- * $$ thm.SetTitleHeight(height, options) $$
- * @param {num_pxl} height 
- * @param {str_com} options px|dip|sp|mm|pt|pl|ps
+ * $$ thm.SetTitleHeight(height=-1, options?) $$
+ * @param {num_pxl} [height=-1] 
+ * @param {str_com} [options] px|dip|sp|mm|pt|pl|ps
  */
 
 
 /** ### SetTitleTextSize ###
  * @brief Define title text size
  * Define standard title text size of [dialogs](CreateDialog.htm).
- * $$ thm.SetTitleTextSize(size, options) $$
+ * $$ thm.SetTitleTextSize(size, options?) $$
  * @param {num} size 
- * @param {str_com} options px|dip|sp|mm|pt|pl|ps
+ * @param {str_com} [options] px|dip|sp|mm|pt|pl|ps
  */
 
 

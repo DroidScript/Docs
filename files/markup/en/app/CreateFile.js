@@ -50,9 +50,9 @@
 /** ### ReadData ###
  * @brief Read data from file
  * Reads a amount of bytes from the file.
- * $$ fil.ReadData(len, mode) $$
+ * $$ fil.ReadData(len, mode='Text') $$
  * @param {num_int} len 
- * @param {str} mode Int|Text|Hex
+ * @param {str} [mode='Text'] Int|Text|Hex
  */
 
 
@@ -106,26 +106,26 @@
 
 /** ### WriteData ###
  * Write data to the file.
- * $$ fil.WriteData(data, mode) $$
+ * $$ fil.WriteData(data, mode='Text') $$
  * @param {str} data FA\,FB\,FC|250\,251\,252|abc46:low order 8-bit bytes
- * @param {str} mode Hex|Int|Text
+ * @param {str} [mode='Text'] Hex|Int|Text
  */
 
 
 /** ### WriteNumber ###
  * @brief Write number to the file
  * Writes a number to the file.
- * $$ fil.WriteNumber(data, type) $$
+ * $$ fil.WriteNumber(data, type='Int') $$
  * @param {num} data 
- * @param {str} type Byte|UByte|Bool|Float|FloatLE|Long|LongLE|Short|UShort|ShortLE|UShortLE|Int|UInt|IntLE
+ * @param {str} [type='Int'] Byte|UByte|Bool|Float|FloatLE|Long|LongLE|Short|UShort|ShortLE|UShortLE|Int|UInt|IntLE
  */
 
 
 /** ### WriteText ###
  * writes text to file
- * $$ fil.WriteText(data, type) $$
+ * $$ fil.WriteText(data, type='Text') $$
  * @param {str||lst} data [ bytes:num_int ]
- * @param {str} type UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters
+ * @param {str} [type='Text'] UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters
  */
 
 

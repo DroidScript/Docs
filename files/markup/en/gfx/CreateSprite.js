@@ -224,7 +224,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 /** ### x
  * @prop
  * X-position on the screen.
- * @returns num_frv
+ * @returns num_frc
  */
 
                     

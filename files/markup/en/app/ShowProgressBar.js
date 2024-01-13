@@ -6,10 +6,10 @@
  * Shows a dialog with a bar indicating the current progress of a certain thing.
  * 
  * See Also: @UpdateProgressBar, @HideProgressBar
- * $$ app.ShowProgressBar(title, percent, options) $$ 
+ * $$ app.ShowProgressBar(title, percent?, options?) $$ 
  * @param {str} title 
- * @param {num_prc} percent 
- * @param {str} options Light
+ * @param {num_prc} [percent] 
+ * @param {str} [options] Light
 */
 
 

@@ -4,11 +4,11 @@
 /** # UploadFile #
  * @brief Uploads a file to a server
  * Uploads a file to a server.
- * $$ app.UploadFile(url, file, name, callback) $$ 
+ * $$ app.UploadFile(url, file, name, callback?) $$ 
  * @param {str_url} url 
  * @param {str_ptf} file 
  * @param {str} name 
- * @param {fnc_json} callback {}
+ * @param {fnc_json} [callback] {}
 */
 
 

@@ -5,9 +5,9 @@
  * Returns a string list of metadata values contained in an audio file.
  * 
  * See Also: @CreateMediaPlayer
- * $$ app.GetMetadata(file, keys) $$ 
+ * $$ app.GetMetadata(file, keys?) $$ 
  * @param {str_ptf} file 
- * @param {str_com} keys album,artist,genre,title,composer,author,duration,bitrate,width,height
+ * @param {str_com} [keys] album,artist,genre,title,composer,author,duration,bitrate,width,height
  * @returns str_com
 */
 

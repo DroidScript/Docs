@@ -6,11 +6,11 @@
  * AddDrawer adds layout as drawer on a given side. If the user swipes from this side to the other the layout will slide out.
  * 
  * See Also: @OpenDrawer, @CloseDrawer, @RemoveDrawer
- * $$ app.AddDrawer(layout, side, width, grabWidth) $$ 
+ * $$ app.AddDrawer(layout, side, width=-1, grabWidth?) $$ 
  * @param {dso} layout CreateLayout
  * @param {str} side left|right
- * @param {num_frc} width 
- * @param {num_frc} grabWidth 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [grabWidth] 
 */
 
 

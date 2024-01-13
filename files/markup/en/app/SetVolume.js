@@ -6,10 +6,10 @@
  * Set the volume of a given volume type as a number between 0 and 1.
  * 
  * See Also: @GetVolume
- * $$ app.SetVolume(stream, level, options) $$ 
+ * $$ app.SetVolume(stream, level, options?) $$ 
  * @param {str} stream Alarm|DTMF:Dual Tone Multi-Frequency|Music|Notification|Ring|System|Voicecall
  * @param {num_frc} level 
- * @param {str} options ShowUI
+ * @param {str} [options] ShowUI
 */
 
 

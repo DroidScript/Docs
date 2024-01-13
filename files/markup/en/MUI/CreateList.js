@@ -235,12 +235,12 @@
 
 /** ### SetIconMargins ###
  * 
- * $$ lst.SetIconMargins(left, top, right, bottom, mode) $$
- * @param {?} left 
- * @param {?} top 
- * @param {?} right 
- * @param {?} bottom 
- * @param {?} mode 
+ * $$ lst.SetIconMargins(left=0, top=0, right=0, bottom=0, mode='px') $$
+ * @param {?} [left=0] 
+ * @param {?} [top=0] 
+ * @param {?} [right=0] 
+ * @param {?} [bottom=0] 
+ * @param {?} [mode='px'] 
  */
 
 

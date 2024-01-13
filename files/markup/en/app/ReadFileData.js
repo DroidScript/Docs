@@ -6,9 +6,9 @@
  * Reads file data from the local filesystem and returns its contents.
  * 
  * See also: @WriteFile
- * $$ app.ReadFileData(file, mode) $$ 
+ * $$ app.ReadFileData(file, mode?) $$ 
  * @param {str_pfa} file 
- * @param {str} mode base64|hex|int|ascii
+ * @param {str} [mode] base64|hex|int|ascii
 */
 
 

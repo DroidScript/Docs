@@ -5,11 +5,11 @@
  * @abbrev txt
  * @brief Returns a new Text object
  * 
- * $$ txt = app.CreateText(text, width, height, options) $$ 
+ * $$ txt = app.CreateText(text, width=-1, height=-1, options?) $$ 
  * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options AutoScale,AutoSize,Multiline,Left|Right|Bottom|VCenter,Html,Bold,Monospace,AutoShrink:Auto-shrinks text to fit,NoWrap,Log,FillX/Y
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] AutoScale,AutoSize,Multiline,Left|Right|Bottom|VCenter,Html,Bold,Monospace,AutoShrink:Auto-shrinks text to fit,NoWrap,Log,FillX/Y
  * @returns dso-Text
 */
 
@@ -130,9 +130,9 @@ You can also set a background image/pattern or background gradient for the Text 
 /** ### Log ###
  * @brief Append line to the text
  * Append a string to the text separated with a line break
- * $$ txt.Log(message, options) $$
+ * $$ txt.Log(message, options?) $$
  * @param {str} message 
- * @param {str_com} options Clear:Clears the log before writing,Red|Green|Blue
+ * @param {str_com} [options] Clear:Clears the log before writing,Red|Green|Blue
  */
 
 

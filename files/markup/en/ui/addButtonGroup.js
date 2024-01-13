@@ -11,7 +11,7 @@
  * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `Icon` `NoElevation`
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
- * @returns obj-ButtonGroup Component
+ * @returns uio-ButtonGroup
 */
 
 

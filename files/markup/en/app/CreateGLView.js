@@ -5,10 +5,10 @@
  * @abbrev glv
  * @brief Returns a GLView object
  * 
- * $$ glv = app.CreateGLView(width, height, options) $$ 
+ * $$ glv = app.CreateGLView(width, height, options?) $$ 
  * @param {num_frc} width 
  * @param {num_frc} height 
- * @param {str} options fast2d
+ * @param {str} [options] fast2d
  * @returns dso-GLView
 */
 
@@ -69,9 +69,9 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 /** ### CreateImage ###
  * Create a sprite object which can be drawn on the GLView
- * $$ glv.CreateImage(file, callback) $$
+ * $$ glv.CreateImage(file, callback?) $$
  * @param {str_ptf} file 
- * @param {fnc_json} callback {}
+ * @param {fnc_json} [callback] {}
  * @returns obj-img
  */
 
@@ -93,13 +93,13 @@ The following example uses a sprite sheet containing 8 stages of a character run
 /** ### DrawImage ###
  * @brief Draw image to canvas
  * Draws an image to the canvas
- * $$ glv.DrawImage(image, x, y, w, h, angle) $$
+ * $$ glv.DrawImage(image, x, y, w?, h?, angle?) $$
  * @param {obj} image img
  * @param {num_frc} x 
  * @param {num_frc} y 
- * @param {num_frc} w 
- * @param {num_frc} h 
- * @param {num_deg} angle 
+ * @param {num_frc} [w] 
+ * @param {num_frc} [h] 
+ * @param {num_deg} [angle] 
  */
 
 
@@ -138,24 +138,24 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief Captures the canvas to a png image
  * Captures the current cached context to a png image.
  * The path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”
- * $$ glv.GetContext.ctx.capture(x, y, w, h, fileName, successCallback, errorCallback) $$
+ * $$ glv.GetContext.ctx.capture(x, y, w, h, fileName, successCallback?, errorCallback?) $$
  * @param {num_pxl} x 
  * @param {num_pxl} y 
  * @param {num_pxl} w 
  * @param {num_pxl} h 
  * @param {str:path relative to “/sdcard”} fileName 
- * @param {fnc} successCallback 
- * @param {fnc} errorCallback 
+ * @param {fnc} [successCallback] 
+ * @param {fnc} [errorCallback] 
  */
 
 
 /** ### GetContext.ctx.clearRect ###
  * <deprecated does nothing. ctx is automatically cleared after render()>
- * $$ glv.GetContext.ctx.clearRect(x, y, width, height) $$
+ * $$ glv.GetContext.ctx.clearRect(x, y, width=-1, height=-1) $$
  * @param {num_pxl} x 
  * @param {num_pxl} y 
- * @param {num_pxl} width 
- * @param {num_pxl} height 
+ * @param {num_pxl} [width=-1] 
+ * @param {num_pxl} [height=-1] 
  */
 
 

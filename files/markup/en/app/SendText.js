@@ -4,10 +4,10 @@
 /** # SendText #
  * @brief Share text between apps
  * 
- * $$ app.SendText(text, subject, choose) $$ 
+ * $$ app.SendText(text, subject?, choose?) $$ 
  * @param {str} text 
- * @param {str} subject 
- * @param {str} choose 
+ * @param {str} [subject] 
+ * @param {str} [choose] 
 */
 
 

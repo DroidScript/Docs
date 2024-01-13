@@ -8,7 +8,7 @@
  * $$ dtp = ui.addDatePicker(date, options) $$ 
  * @param {str} date A default date value to which the datepicker begins. Format `YYYY-MM-DD`
  * @param {str_com} options `Portrait` `Landscape`
- * @returns obj-DatePicker Component
+ * @returns uio-DatePicker
 */
 
 

@@ -11,7 +11,7 @@
  * @param {str} options A comma separated string. Options can be one or a combination of the following: \n Variants: `H1` `H2` `H3` `H4` `H5` `H6` `body1` `body2` `overline` `subtitle1` `subtitle2` `button` `caption`.\nLines: `Singleline` `Multiline`.\nAlignment: `Left` `Center` `Right` `Justify`.\nColor: `Primary` `Secondary` `Error`.\nFormat `Html` `Icon` `Italize` `Monospace` `Bold` `Underline` \n `Utils`: `Touchable`
  * @param {num} width Fraction of the screen width
  * @param {num} height Fraction of the screen height
- * @returns obj-Text Component
+ * @returns uio-Text
 */
 
 

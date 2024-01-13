@@ -5,11 +5,11 @@
  * @abbrev web
  * @brief Returns a new WebView object
  * 
- * $$ web = app.CreateWebView(width, height, options, zoom) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options AllowZoom:Allows the user to zoom the page,AutoZoom,ClearCookies:Clear all webview cookies at startup,FillX/Y,Local:loads URLs starting with / from /Storage/[AppName\]/ instead,NoAccel:for OrangePi support,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoCors:attempts to disable CORS and i-frame restrictions,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Persist:keeps file cache\, history and form data between re-loads/startups,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser,Wide:"force page using “wide” viewport"
- * @param {num_prc} zoom 
+ * $$ web = app.CreateWebView(width=-1, height=-1, options='', zoom?) $$ 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options=''] AllowZoom:Allows the user to zoom the page,AutoZoom,ClearCookies:Clear all webview cookies at startup,FillX/Y,Local:loads URLs starting with / from /Storage/[AppName\]/ instead,NoAccel:for OrangePi support,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoCors:attempts to disable CORS and i-frame restrictions,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Persist:keeps file cache\, history and form data between re-loads/startups,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser,Wide:"force page using “wide” viewport"
+ * @param {num_prc} [zoom] 
  * @returns dso-WebView
 */
 
@@ -88,9 +88,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### Execute ###
  * @brief Execute JS code inside the WebView
  * Executes JavaScript code inside the WebView and passes the result to the callback
- * $$ web.Execute(code, callback) $$
+ * $$ web.Execute(code, callback?) $$
  * @param {str_jsc} code 
- * @param {fnc_json} callback {"pNames":["result"],"pTypes":["all"]}
+ * @param {fnc_json} [callback] {"pNames":["result"],"pTypes":["all"]}
  */
 
 
@@ -173,19 +173,19 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### LoadHtml ###
  * @brief Load html to WebView
  * Loads html code to the WebView.
- * $$ web.LoadHtml(html, baseFolder, options) $$
+ * $$ web.LoadHtml(html, baseFolder?, options?) $$
  * @param {str_htm} html 
- * @param {str_ptd} baseFolder 
- * @param {str_com} options AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:"force page using “wide” viewport",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser
+ * @param {str_ptd} [baseFolder] 
+ * @param {str_com} [options] AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:"force page using “wide” viewport",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser
  */
 
 
 /** ### LoadUrl ###
  * @brief Load url to WebView
  * Loads an url to the WebView
- * $$ web.LoadUrl(url, options) $$
+ * $$ web.LoadUrl(url, options?) $$
  * @param {str_url} url 
- * @param {str_com} options AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:"force page using “wide” viewport",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser
+ * @param {str_com} [options] AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:"force page using “wide” viewport",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser
  */
 
 
@@ -230,9 +230,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### SetContextMenus ###
  * @brief Define context menus to listen for
  * Define which context menus are available for SetOnContextMenu.
- * $$ web.SetContextMenus(links, images) $$
- * @param {str} links Copy URL\,Open URL
- * @param {str} images Download Image
+ * $$ web.SetContextMenus(links?, images?) $$
+ * @param {str} [links] Copy URL\,Open URL
+ * @param {str} [images] Download Image
  */
 
 
@@ -354,9 +354,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### SetUserAgent ###
  * @brief Set/Add custom user agent
  * Defines a custom user agent or add to the default one
- * $$ web.SetUserAgent(agent, options) $$
+ * $$ web.SetUserAgent(agent, options?) $$
  * @param {str} agent 
- * @param {str} options Add-appends to default user agent
+ * @param {str} [options] Add-appends to default user agent
  */
 
 
@@ -378,10 +378,10 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * Simulates a key event on an app object.
  * 
  * You can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0).
- * $$ web.SimulateKey(keyName, modifiers, pause) $$
+ * $$ web.SimulateKey(keyName, modifiers?, pause?) $$
  * @param {str} keyName 
- * @param {str} modifiers META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON
- * @param {num} pause 
+ * @param {str} [modifiers] META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON
+ * @param {num} [pause] 
  */
 
 

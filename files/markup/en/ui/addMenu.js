@@ -11,7 +11,7 @@
  * @param {str_com} options Color: `Primary` `Secondary` `Error` \n List: `Dense` \n Icons: `Icon`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-Menu Component
+ * @returns uio-Menu
 */
 
 

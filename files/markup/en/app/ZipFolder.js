@@ -6,10 +6,10 @@
  * Recursively compresses a local folder to a zip file.
  * 
  * See Also: @ZipFile, @UnzipFile
- * $$ app.ZipFolder(source, destination, options) $$ 
+ * $$ app.ZipFolder(source, destination, options?) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
- * @param {str} options spk:Create SPK from DS project folder
+ * @param {str} [options] spk:Create SPK from DS project folder
 */
 
 

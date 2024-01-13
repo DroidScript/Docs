@@ -11,7 +11,7 @@
  * @param {str_com} options Color: `Primary` or `Secondary` \n `Sizes`: `Small` or `Medium` \n `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant`: `Standard` `Filled` or `Outlined` \n `Utils`: `Autofocus`
  * @param {num} width Fraction of the screen width.
  * @param {num} height Fraction of the screen height.
- * @returns obj-TextField Component
+ * @returns uio-TextField
 */
 
 

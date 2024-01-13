@@ -11,7 +11,7 @@
  * @param {str_com} options one or a combination of the following: `Hidelabels`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-BottomNavbar Component
+ * @returns uio-BottomNavbar
 */
 
 

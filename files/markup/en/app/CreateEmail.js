@@ -28,21 +28,21 @@
 
 /** ### Receive ###
  * Start receiving emails from a given folder.
- * $$ mail.Receive(folder, maxCount, filter) $$
+ * $$ mail.Receive(folder, maxCount, filter?) $$
  * @param {str} folder 
  * @param {num_int} maxCount 
- * @param {str} filter 
+ * @param {str} [filter] 
  */
 
 
 /** ### Send ###
  * Send an email to someone.
- * $$ mail.Send(subject, body, sender, recipients, attach) $$
+ * $$ mail.Send(subject, body, sender, recipients, attach?) $$
  * @param {str} subject 
  * @param {str} body 
  * @param {str} sender email address
  * @param {str} recipients email address
- * @param {str_pth} attach 
+ * @param {str_pth} [attach] 
  */
 
 

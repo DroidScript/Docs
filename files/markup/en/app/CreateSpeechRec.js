@@ -5,8 +5,8 @@
  * @abbrev spr
  * @brief Returns a new SpeechRec object
  * 
- * $$ spr = app.CreateSpeechRec(options) $$ 
- * @param {str_com} options NoBeep,Partial
+ * $$ spr = app.CreateSpeechRec(options?) $$ 
+ * @param {str_com} [options] NoBeep,Partial
  * @returns dso-SpeechRec
 */
 

@@ -4,12 +4,12 @@
 /** # ChooseWifi #
  * @brief Let the user choose a WiFi network
  * 
- * $$ app.ChooseWifi(title1, title2, callback, options, extra) $$ 
+ * $$ app.ChooseWifi(title1, title2, callback, options='', extra?) $$ 
  * @param {str} title1 
  * @param {str} title2 
  * @param {fnc_json} callback {"pNames":["ssid"],"pTypes":["str"]}
- * @param {str_com} options force|large
- * @param {str} extra ssids
+ * @param {str_com} [options=''] force|large
+ * @param {str} [extra] ssids
 */
 
 

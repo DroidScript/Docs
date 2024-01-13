@@ -5,9 +5,9 @@
  * @abbrev loc
  * @brief Returns a new Locator object
  * 
- * $$ loc = app.CreateLocator(type, options) $$ 
+ * $$ loc = app.CreateLocator(type, options?) $$ 
  * @param {str_com} type GPS,Network
- * @param {str_com} options 
+ * @param {str_com} [options] 
  * @returns dso-Locator
 */
 

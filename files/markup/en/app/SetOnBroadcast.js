@@ -14,7 +14,6 @@
 
 /** @Description
 Define a callback function for incoming Broadcast messages.
-Check out @../intro/AppIntents#Receive%20Broadcasts for commonly used examples.
 You can find [a list of broadcasts available for android SDK ver. 28 here](https://chromium.googlesource.com/android\_tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast\_actions.txt)
 
 

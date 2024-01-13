@@ -4,10 +4,10 @@
 /** # DiscoverBtDevices #
  * @brief Search for nearby bluetooth devices
  * 
- * $$ app.DiscoverBtDevices(filter, onFound, onComplete) $$ 
+ * $$ app.DiscoverBtDevices(filter, onFound?, onComplete?) $$ 
  * @param {str} filter 
- * @param {fnc_json} onFound {"pNames":["name","address"],"pTypes":["str","str"]}
- * @param {fnc_json} onComplete {}
+ * @param {fnc_json} [onFound] {"pNames":["name","address"],"pTypes":["str","str"]}
+ * @param {fnc_json} [onComplete] {}
 */
 
 

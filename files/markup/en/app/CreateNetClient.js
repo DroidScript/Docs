@@ -29,10 +29,10 @@ Note: A few routers block fast UDP messages by default
 /** ### AutoReceive ###
  * @brief Calls the OnReceive callback for incoming TCP data
  * Receive TCP received data automatically by calling the OnReceive callback.
- * $$ net.AutoReceive(server, port, mode) $$
+ * $$ net.AutoReceive(server, port=80, mode?) $$
  * @param {str_url} server 
- * @param {num_int} port 
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * @param {num_int} [port=80] 
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  */
 
 
@@ -47,9 +47,9 @@ Note: A few routers block fast UDP messages by default
 /** ### Connect ###
  * @brief Connect to a server
  * Connect the NetClient to a server.
- * $$ net.Connect(address, port) $$
+ * $$ net.Connect(address, port=80) $$
  * @param {str_url} address 
- * @param {num_int} port 
+ * @param {num_int} [port=80] 
  */
 
 
@@ -100,11 +100,11 @@ Note: A few routers block fast UDP messages by default
 
 /** ### ReceiveDatagram ###
  * Receive an UDP Datagram.
- * $$ net.ReceiveDatagram(mode, port, timeout, options) $$
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {num_int} port 
- * @param {num} timeout 
- * @param {str} options &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
+ * $$ net.ReceiveDatagram(mode?, port=80, timeout?, options?) $$
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * @param {num_int} [port=80] 
+ * @param {num} [timeout] 
+ * @param {str} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
  * @returns str
  */
 
@@ -112,18 +112,18 @@ Note: A few routers block fast UDP messages by default
 /** ### ReceiveDatagrams ###
  * @brief Receive UDP datagrams
  * Receive datagrams over UDP and calls the OnReceive callback for each one.
- * $$ net.ReceiveDatagrams(port, mode, options) $$
- * @param {num_int} port 
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {str} options &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
+ * $$ net.ReceiveDatagrams(port=80, mode?, options?) $$
+ * @param {num_int} [port=80] 
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * @param {str} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
  */
 
 
 /** ### ReceiveFile ###
  * Receive a file via TCP from the server.
- * $$ net.ReceiveFile(file, wait) $$
+ * $$ net.ReceiveFile(file, wait?) $$
  * @param {str} file 
- * @param {num} wait 
+ * @param {num} [wait] 
  * @returns str
  */
 
@@ -131,8 +131,8 @@ Note: A few routers block fast UDP messages by default
 /** ### ReceiveText ###
  * @brief Receive text over TCP
  * Receive text from TCP connection.
- * $$ net.ReceiveText(mode) $$
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * $$ net.ReceiveText(mode?) $$
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  * @returns str
  */
 
@@ -151,28 +151,28 @@ Note: A few routers block fast UDP messages by default
 
 /** ### SendBytes ###
  * Send bytes over TCP connection.
- * $$ net.SendBytes(data, mode) $$
+ * $$ net.SendBytes(data, mode?) $$
  * @param {lst} data [ bytes:num_byt ]||str_com-bytes:hexadecimal 00&period;&period;FF
- * @param {str} mode Int|Hex
+ * @param {str} [mode] Int|Hex
  */
 
 
 /** ### SendDatagram ###
  * Send an UDP Datagram.
- * $$ net.SendDatagram(data, mode, address, port, options) $$
+ * $$ net.SendDatagram(data, mode?, address?, port?, options?) $$
  * @param {str} data 
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {str_url} address 
- * @param {num_int} port 
- * @param {str} options Text|Hex|Bytes
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * @param {str_url} [address] 
+ * @param {num_int} [port] 
+ * @param {str} [options] Text|Hex|Bytes
  */
 
 
 /** ### SetDataMode ###
  * @brief Define data format for outgoing data
  * Enable sending data in several modes.
- * $$ net.SetDataMode(mode) $$
- * @param {str} mode Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:"UTF-16L/BE"&gt;
+ * $$ net.SetDataMode(mode?) $$
+ * @param {str} [mode] Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:"UTF-16L/BE"&gt;
  */
 
 
@@ -181,18 +181,18 @@ Note: A few routers block fast UDP messages by default
  * Tells AutoReceive how to split received data. Splitted data will result in multiple OnReceive calls.
  * p2 and p3 have different purposes for different modes:
  * <table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
- * $$ net.SetSplitMode(mode, p2, p3) $$
+ * $$ net.SetSplitMode(mode, p2?, p3?) $$
  * @param {str} mode End|Start-End|Size
- * @param {str||num_int} p2 
- * @param {str||num_int} p3 
+ * @param {str||num_int} [p2] 
+ * @param {str||num_int} [p3] 
  */
 
 
 /** ### SendText ###
  * Sends text over TCP connection.
- * $$ net.SendText(text, mode) $$
+ * $$ net.SendText(text, mode?) $$
  * @param {str} text 
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  */
 
 
@@ -233,9 +233,9 @@ Note: A few routers block fast UDP messages by default
  * Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it.
  * 
  * <premium>
- * $$ net.WakeOnLan(ip, mac) $$
+ * $$ net.WakeOnLan(ip, mac?) $$
  * @param {str} ip 
- * @param {str} mac 
+ * @param {str} [mac] 
  */
 
 

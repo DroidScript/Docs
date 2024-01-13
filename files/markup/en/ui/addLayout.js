@@ -11,7 +11,7 @@
  * @param {str} options Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions`: `FillX` `FillY` \n `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils`: `BackColor` to apply light or dark background rather than transparent.
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {obj} height Fraction of the screen height. [0-1]
- * @returns obj-Layout Component
+ * @returns uio-Layout
 */
 
 

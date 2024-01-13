@@ -8,7 +8,7 @@
  * $$ drw = ui.addDrawer(lay, options) $$ 
  * @param {obj} lay The drawer layout.
  * @param {str_com} options 
- * @returns obj-Drawer Component
+ * @returns uio-Drawer
 */
 
 

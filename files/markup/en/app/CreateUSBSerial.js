@@ -5,12 +5,12 @@
  * @abbrev usb
  * @brief Returns a new USBSerial object
  * 
- * $$ usb = app.CreateUSBSerial(baudRate, dataBits, stopBits, parity, device) $$ 
- * @param {num_int} baudRate 300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600
- * @param {num_int} dataBits 5|6|7|8
- * @param {num_int} stopBits 1|2|15
- * @param {num_int} parity 0:none|1:odd|2:even|3:mark|4:space
- * @param {num} device Product ID from Device Magager > Hardware IDs
+ * $$ usb = app.CreateUSBSerial(baudRate=9600, dataBits=8, stopBits=1, parity=0, device?) $$ 
+ * @param {num_int} [baudRate=9600] 300|600|1200|2400|4800|9600|19200|38400|57600|115200|230400|460800|921600
+ * @param {num_int} [dataBits=8] 5|6|7|8
+ * @param {num_int} [stopBits=1] 1|2|15
+ * @param {num_int} [parity=0] 0:none|1:odd|2:even|3:mark|4:space
+ * @param {num} [device] Product ID from Device Magager > Hardware IDs
  * @returns dso-USBSerial
 */
 
@@ -130,10 +130,10 @@ The default constructor values are:
  * Tells the serial listener how to split received data. Splitted data will result in multiple OnReceive calls.
  * p2 and p3 have different purposes for different modes:
  * <style type='text/css'>th{align:center;}td{padding:0 10px 0 10px;}</style><table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
- * $$ usb.SetSplitMode(mode, p2, p3) $$
+ * $$ usb.SetSplitMode(mode, p2?, p3?) $$
  * @param {str} mode End|Start-End|Size
- * @param {str||num_int} p2 
- * @param {str||num_int} p3 
+ * @param {str||num_int} [p2] 
+ * @param {str||num_int} [p3] 
  */
 
 
@@ -161,8 +161,8 @@ The default constructor values are:
 /** ### Write ###
  * @brief Send data to connected device
  * Send data over the USB serial connection to the other device.
- * $$ usb.Write(text, encoding) $$
+ * $$ usb.Write(text, encoding?) $$
  * @param {str} text 
- * @param {str} encoding US-ASCII|UTF16L/BE
+ * @param {str} [encoding] US-ASCII|UTF16L/BE
  */
 

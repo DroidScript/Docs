@@ -5,8 +5,8 @@
  * @abbrev ntf
  * @brief Returns a new Notification object
  * 
- * $$ ntf = app.CreateNotification(options) $$ 
- * @param {str_com} options Ongoing,AutoCancel,FullScreen,NoVibrate,Low:priority
+ * $$ ntf = app.CreateNotification(options?) $$ 
+ * @param {str_com} [options] Ongoing,AutoCancel,FullScreen,NoVibrate,Low:priority
  * @returns dso-Notification
 */
 
@@ -49,8 +49,8 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 /** ### Listen ###
  * @brief Listen for any notifications
  * Listens for any notification the user gets. Requires notification access by granted by android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS.
- * $$ ntf.Listen(options) $$
- * @param {str} options CheckPerms
+ * $$ ntf.Listen(options?) $$
+ * @param {str} [options] CheckPerms
  */
 
 
@@ -72,20 +72,20 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 /** ### SetLights ###
  * @brief Activate device notification LEDs
  * Activate the device notification LEDs.
- * $$ ntf.SetLights(color, onMs, offMs) $$
+ * $$ ntf.SetLights(color, onMs?, offMs?) $$
  * @param {str_col} color 
- * @param {num_mls} onMs 
- * @param {num_mls} offMs 
+ * @param {num_mls} [onMs] 
+ * @param {num_mls} [offMs] 
  */
 
 
 /** ### SetMessage ###
  * Set notification texts.
- * $$ ntf.SetMessage(ticker, title, text, extra) $$
+ * $$ ntf.SetMessage(ticker, title?, text?, extra?) $$
  * @param {str} ticker 
- * @param {str} title 
- * @param {str} text 
- * @param {str} extra Add multiline text in your notification.
+ * @param {str} [title] 
+ * @param {str} [text] 
+ * @param {str} [extra] Add multiline text in your notification.
  */
 
 

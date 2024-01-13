@@ -4,9 +4,10 @@
 /** # CreateGame #
  * @abbrev gam
  * 
- * $$ gam = app.CreateGame(file, orient) $$ 
+ * $$ gam = app.CreateGame(file, orient?) $$ 
  * @param {str_ptf} file 
- * @param {str} orient Portrait|Landscape
+ * @param {str} [orient] Portrait|Landscape
+ * @returns obj-{ game:dso-GameView, lay:dso-Layout }
 */
 
 
@@ -23,24 +24,6 @@ You can also put the cfg.Game flag at the top level of your script to write the 
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### game
- * @prop
- * 
- * @returns dso-Game
- */
-
-                    
-/** ### lay
- * @prop
- * 
- * @returns dso-CreateLayout
- */
-
-                    
 
 // ------------- SAMPLES ------------- 
 

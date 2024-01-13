@@ -319,11 +319,11 @@
  * @name SetMargins
  * @brief Define distances to other controls
  * Define a distance to other controls on each side of the control.
- * @param {num} left 
- * @param {num} top 
- * @param {num} right 
- * @param {num_frc} bottom 
- * @param {str} mode px|sp|dip|mm|pt
+ * @param {num} [left=0] 
+ * @param {num} [top=0] 
+ * @param {num} [right=0] 
+ * @param {num_frc} [bottom=0] 
+ * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
 
@@ -363,7 +363,7 @@
  * @name SetOnTouch
  * @brief Define a callback function for user toches
  * Define a callback function that is called when the user touches the control. In addition, an **event** object is passed to the callback function to obtain information about the touch **type**, the touch **position(s)**, the **amount** of touches and the **control** that was touched.
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-\"Down|Move|Up\", count:num_int, x: [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y: [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
  */
 
 
@@ -371,7 +371,7 @@
  * @name SetOnTouchDown
  * @brief Called when the user starts touching the control
  * %cb% the user started toching the control.
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Down, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Down, count:num_int, x: [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y: [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
  */
 
 
@@ -379,7 +379,7 @@
  * @name SetOnTouchMove
  * @brief Called when the user drags his finger over the screen
  * %cb% the user drags his finger over the screen.
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Move, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Move, count:num_int, x: [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y: [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
  */
 
 
@@ -387,7 +387,7 @@
  * @name SetOnTouchUp
  * @brief Called when the user finger leaves te screen
  * %cb% the users finger leaves the screen.
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Up, count:num_int, x:\"Multitouch positions\"&colon; [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y:\"Multitouch positions\"&colon; [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
+ * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-{ source:dso, action:str-Up, count:num_int, x: [ x1:num_frc&comma; x2:num_frc&comma; x3:num_frc ], y: [ y1:num_frc&comma; y2:num_frc&comma; y3:num_frc ] }"]}
  */
 
 
@@ -395,11 +395,11 @@
  * @name SetPadding
  * @brief Define distances to contained elements
  * Define distances that elements within the control are to maintain from the control borders.
- * @param {num} left 
- * @param {num} top 
- * @param {num} right 
- * @param {num_frc} bottom 
- * @param {str} mode px|sp|dip|mm|pt
+ * @param {num} [left=0] 
+ * @param {num} [top=0] 
+ * @param {num} [right=0] 
+ * @param {num_frc} [bottom=0] 
+ * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
 
@@ -509,7 +509,7 @@
  * If you have **jojo** activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.
  * 
  * Finally the **callback** function will be called after the animation has finished. Well, it's about time!
- * @param {obj} target { x:num_frc, y:num_frc, w:num_frc, w:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }
+ * @param {obj} target { x:num_frc, y:num_frc, w:num_frc, h:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }
  * @param {num_mls} duration 
  * @param {str} type Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out
  * @param {num_int} repeat 

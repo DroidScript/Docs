@@ -11,7 +11,7 @@
  * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Util`: `Icon` `NoRipple` `Upload` \n `In case of upload, you can specify `Multiple` to accept multiple files.
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
- * @returns obj-Button Component
+ * @returns uio-Button
 */
 
 

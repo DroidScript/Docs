@@ -4,12 +4,12 @@
 /** # QueryContent #
  * @brief Queries content from the android content model
  * 
- * $$ app.QueryContent(uri, columns, select, args, sort) $$ 
+ * $$ app.QueryContent(uri, columns, select?, args?, sort?) $$ 
  * @param {str_uri} uri 
  * @param {str_com} columns 
- * @param {str_sql} select 
- * @param {lst} args 
- * @param {str} sort coloumn:a coloumn specified in 'coloumns'
+ * @param {str_sql} [select] 
+ * @param {lst} [args] 
+ * @param {str} [sort] coloumn:a coloumn specified in 'coloumns'
 */
 
 

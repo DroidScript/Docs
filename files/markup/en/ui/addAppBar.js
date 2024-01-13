@@ -11,7 +11,7 @@
  * @param {str_com} options one or a combination of the following: \n `Menu` : Adds a menu icon on the left \n `Primary` `Secondary` `Transparent` `Inherit` `Default` : Adds a color \n `Absolute` `Static` `Fixed` `Relative` : Adds a positioning
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-AppBar Component
+ * @returns uio-AppBar
 */
 
 

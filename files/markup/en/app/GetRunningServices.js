@@ -5,7 +5,7 @@
  * @brief Get list of running services
  * 
  * $$ app.GetRunningServices() $$ 
- * @returns lst_obj-[{ user:num_int&comma; pid:num_bin&comma; name:str }]
+ * @returns lst_obj-[{ user:num_int&comma; pid:num_int&comma; name:str }]
 */
 
 

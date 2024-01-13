@@ -6,10 +6,10 @@
  * Load a saved number value to remember varibale values between multiple app starts.
  * 
  * See also: @SaveNumber.
- * $$ app.LoadNumber(name, default, file) $$ 
+ * $$ app.LoadNumber(name, default?, file?) $$ 
  * @param {str} name 
- * @param {num} default 
- * @param {str_ptf} file 
+ * @param {num} [default] 
+ * @param {str_ptf} [file] 
  * @returns num
 */
 

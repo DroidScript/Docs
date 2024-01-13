@@ -11,7 +11,7 @@
  * @param {str} options A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-Stepper Component
+ * @returns uio-Stepper
 */
 
 
@@ -101,7 +101,7 @@ These are the setter and getter properties for the addStepper Component.
  * Returns the layout of the corresponding step layout where you can add controls
  * $$ stp.getLayout(index) $$
  * @param {num} index The index of the corresponing stepper layout
- * @returns obj-Layout
+ * @returns uio-Layout
  */
 
 

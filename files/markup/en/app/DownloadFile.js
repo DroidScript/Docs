@@ -4,12 +4,12 @@
 /** # DownloadFile #
  * @brief Download a file with Androids download manager
  * 
- * $$ app.DownloadFile(source, destination, title, description, options) $$ 
+ * $$ app.DownloadFile(source, destination, title?, description?, options?) $$ 
  * @param {str} source 
  * @param {str_pth} destination 
- * @param {str} title 
- * @param {str} description 
- * @param {str} options NoDialog
+ * @param {str} [title] 
+ * @param {str} [description] 
+ * @param {str} [options] NoDialog
 */
 
 

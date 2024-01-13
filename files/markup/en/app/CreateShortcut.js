@@ -7,11 +7,11 @@
  * Note: since Android 9 this method prompts a system dialog
  * 
  * See also: @GetShortcuts
- * $$ app.CreateShortcut(name, iconFile, file, options) $$ 
+ * $$ app.CreateShortcut(name, iconFile, file, options?) $$ 
  * @param {str} name 
  * @param {str_ptf} iconFile 
  * @param {str_ptf} file 
- * @param {str_com} options Portrait|Landscape,Transparent,Debug:start app in debug mode,Game:runs in GameView mode|remote
+ * @param {str_com} [options] Portrait|Landscape,Transparent,Debug:start app in debug mode,Game:runs in GameView mode|remote
 */
 
 

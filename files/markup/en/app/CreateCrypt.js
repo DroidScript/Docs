@@ -5,8 +5,8 @@
  * @abbrev crp
  * @brief Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it
  * The Crypt component is used to en- or decrypt a string with a given key or to create a hash of it.
- * $$ crp = app.CreateCrypt(options) $$ 
- * @param {str_com} options 
+ * $$ crp = app.CreateCrypt(options?) $$ 
+ * @param {str_com} [options] 
  * @returns dso-Crypt
 */
 
@@ -46,10 +46,10 @@
 /** ### Hash ###
  * @brief Get a hash from a string
  * Build a hash of a string for one-way encryption.
- * $$ crp.Hash(text, mode, options) $$
+ * $$ crp.Hash(text, mode, options?) $$
  * @param {str} text 
  * @param {str} mode MD5|SHA|SHA-1|SHA-224|SHA-256|SHA-384|SHA-512
- * @param {str} options Wrap
+ * @param {str} [options] Wrap
  */
 
 

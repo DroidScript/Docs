@@ -8,7 +8,7 @@
  * $$ tpk = ui.addTimePicker(time, options) $$ 
  * @param {str} time A default time value to which the timepicker begins. Value is of the form `HH\:mm`
  * @param {str_com} options `Portrait` `24H` `12H`
- * @returns obj-TimePicker Component
+ * @returns uio-TimePicker
 */
 
 

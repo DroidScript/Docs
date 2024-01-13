@@ -7,11 +7,11 @@
  * Creates a shell SystemProcess (ie&period; “sh”, “su” if <red>root</red> or “busybox” if <blue>installed</blue>) which can be reused throughout the program.
  * 
  * If env or dir are not provided HOME and TMDDIR are set by the component.
- * $$ sys = app.CreateSysProc(cmd, env, dir, options) $$ 
+ * $$ sys = app.CreateSysProc(cmd, env, dir, options?) $$ 
  * @param {str:program name} cmd sh|su|busybox
  * @param {str} env 
  * @param {str_ptd} dir 
- * @param {str_com} options combine:combines stdout and stderr|builder:force use of proc builder
+ * @param {str_com} [options] combine:combines stdout and stderr|builder:force use of proc builder
  * @returns dso-SysProc
 */
 
@@ -26,9 +26,9 @@
 /** ### Err ###
  * @brief Read from stderr
  * Read data from stderr
- * $$ sys.Err(maxLines, options) $$
+ * $$ sys.Err(maxLines, options?) $$
  * @param {num_int} maxLines 
- * @param {str_com} options nowait:dont wait for input
+ * @param {str_com} [options] nowait:dont wait for input
  */
 
 
@@ -42,9 +42,9 @@
 /** ### In ###
  * @brief Read from stdin
  * Read data from stdin
- * $$ sys.In(maxLines, options) $$
+ * $$ sys.In(maxLines, options?) $$
  * @param {num_int} maxLines 
- * @param {str_com} options nowait:dont wait for input
+ * @param {str_com} [options] nowait:dont wait for input
  */
 
 

@@ -11,7 +11,7 @@
  * @param {str_com} options Icon: `Icon` \n `Color`: `Primary` or `Secondary` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n`Divider`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-SwitchGroup Component
+ * @returns uio-SwitchGroup
 */
 
 

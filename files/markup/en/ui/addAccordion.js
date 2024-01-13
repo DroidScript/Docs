@@ -11,7 +11,7 @@
  * @param {str_com} options one or a combination of the following: `Square` \n `Layout type `Linear` or `Absolute`
  * @param {num} width Fraction of the screen width: [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-Accordion Component
+ * @returns uio-Accordion
 */
 
 
@@ -73,7 +73,7 @@ These are the setter and getter properties for the addAccordion Component.
  * Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse
  * $$ acc.getLayout(index) $$
  * @param {num} index The index of the accordion. You can also pass accordion title.
- * @returns obj-Layout Component
+ * @returns uio-Layout
  */
 
 

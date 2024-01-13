@@ -4,10 +4,10 @@
 /** # ShowTextDialog #
  * @brief Show a text input dialog
  * Shows a text input dialog with a title to allow the user to input some text.
- * $$ app.ShowTextDialog(title, default, callback) $$ 
+ * $$ app.ShowTextDialog(title, default?, callback?) $$ 
  * @param {str} title 
- * @param {str} default 
- * @param {fnc_json} callback {"pNames":["text"],"pTypes":["str"]}
+ * @param {str} [default] 
+ * @param {fnc_json} [callback] {"pNames":["text"],"pTypes":["str"]}
 */
 
 

@@ -11,7 +11,7 @@
  * @param {str_com} options 
  * @param {num} width Fraction of the parent width.
  * @param {num} height Fraction of the parent height.
- * @returns obj-WebView Component
+ * @returns uio-WebView
 */
 
 

@@ -4,11 +4,11 @@
 /** # ListFolder #
  * @brief Get a list of files ans folders contained in a specific folder
  * 
- * $$ app.ListFolder(path, filter, limit, options) $$ 
+ * $$ app.ListFolder(path, filter?, limit?, options?) $$ 
  * @param {str_pth} path must not have a trailing slash
- * @param {str} filter 
- * @param {num_int} limit 
- * @param {str_com} options Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items,RegEx:accepts regexp patterns,Folders:list folders only,Files:list files only,NoEmpty:hide empty folders,project:Shows DS project folders only
+ * @param {str} [filter] 
+ * @param {num_int} [limit] 
+ * @param {str_com} [options] Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items,RegEx:accepts regexp patterns,Folders:list folders only,Files:list files only,NoEmpty:hide empty folders,project:Shows DS project folders only
  * @returns lst-[ paths:str_pth ]
 */
 

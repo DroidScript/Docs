@@ -2,13 +2,14 @@
 
 
 /** # addDivider #
- * @brief addDivider
  * @abbrev div
- * $$ ui.addDivider(parent, width, options) $$
+ * @brief addDivider
+ * 
+ * $$ div = ui.addDivider(parent, width, options) $$ 
  * @param {obj} parent The layour where to add the divider.
  * @param {num} width Fraction of the screen width. Default is 1.
  * @param {str} options A comma separated Divider options. Values can be `Inset`
- * @returns obj-Divider Component
+ * @returns uio-Divider
 */
 
 
@@ -58,7 +59,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### setOnTouch ###
  * @brief setOnTouch
  * Adds a callback handler when the component is touch
- * $$ undefined.setOnTouch(callback) $$
+ * $$ div.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
  */
 
@@ -66,7 +67,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
  * Adds a callback function on right click
- * $$ undefined.setOnContextMenu(callback) $$
+ * $$ div.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
  */
 
@@ -74,7 +75,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### animate ###
  * @brief animate
  * Animate the component
- * $$ undefined.animate(anim, duration) $$
+ * $$ div.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
  */
@@ -83,7 +84,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### setSize ###
  * @brief setSize
  * Sets the size of the component
- * $$ undefined.setSize(width, height) $$
+ * $$ div.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
  */
@@ -92,35 +93,35 @@ These are the setter and getter properties for the addDivider Component.
 /** ### show ###
  * @brief show
  * Show the component
- * $$ undefined.show() $$
+ * $$ div.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
  * Hide the component
- * $$ undefined.hide() $$
+ * $$ div.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
  * Destroy the component
- * $$ undefined.gone() $$
+ * $$ div.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
  * Destroy the component
- * $$ undefined.destroy() $$
+ * $$ div.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
  * Sets the x and y scaling of the component
- * $$ undefined.setScale(x, y) $$
+ * $$ div.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
  */
@@ -129,7 +130,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### getPosition ###
  * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ undefined.getPosition(options) $$
+ * $$ div.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
  */
@@ -138,7 +139,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### setMargins ###
  * @brief setMargins
  * Sets the margin of the component
- * $$ undefined.setMargins(left, top, right, bottom, mode) $$
+ * $$ div.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
  * @param {num} right Fraction of the parent width.
@@ -150,7 +151,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### setPadding ###
  * @brief setPadding
  * Sets the padding component container
- * $$ undefined.setPadding(left, top, right, bottom, mode) $$
+ * $$ div.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
  * @param {num} right Fraction of the component width. [0-1]
@@ -162,7 +163,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### setPosition ###
  * @brief setPosition
  * Sets the position of the component relative to its parent dimensions
- * $$ undefined.setPosition(left, top, mode) $$
+ * $$ div.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
  * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
@@ -172,7 +173,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### setBorder ###
  * @brief setBorder
  * Sets the border line for the component container
- * $$ undefined.setBorder(width, clr, style) $$
+ * $$ div.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
  * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
@@ -182,7 +183,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the component
- * $$ undefined.setCornerRadius(tl, tr, bl, br, mode) $$
+ * $$ div.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-Left border radius in pixels.
  * @param {num} tr Top-Right border radius in pixels.
  * @param {num} bl Bottom-Left border radius in pixels.
@@ -194,7 +195,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### bringForward ###
  * @brief bringForward
  * Bring this component forward by a given z-index
- * $$ undefined.bringForward(zIndex) $$
+ * $$ div.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
 
@@ -202,7 +203,7 @@ These are the setter and getter properties for the addDivider Component.
 /** ### sendBackward ###
  * @brief sendBackward
  * Bring this component backward by a given z-index
- * $$ undefined.sendBackward(zIndex) $$
+ * $$ div.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */
 
@@ -211,7 +212,7 @@ These are the setter and getter properties for the addDivider Component.
 // ------------- SAMPLES ------------- 
 
 
-
+    
 /**
 @sample Basic
 class Main extends App
@@ -238,9 +239,9 @@ class Main extends App
     }
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Basic
 from hybrid import ui
@@ -264,4 +265,5 @@ def OnStart():
 
     ui.addText(main, text, "Justify", 0.8)
  */
-
+    
+            

@@ -4,14 +4,14 @@
 /** # TextToSpeech #
  * @brief Audiolize text
  * 
- * $$ app.TextToSpeech(text, pitch, rate, callback, stream, locale, engine) $$ 
+ * $$ app.TextToSpeech(text, pitch?, rate?, callback?, stream?, locale?, engine?) $$ 
  * @param {str} text 
- * @param {num} pitch 
- * @param {num} rate 
- * @param {fnc_json} callback {}
- * @param {str} stream music
- * @param {str} locale 
- * @param {str} engine 
+ * @param {num} [pitch] 
+ * @param {num} [rate] 
+ * @param {fnc_json} [callback] {}
+ * @param {str} [stream] music
+ * @param {str} [locale] 
+ * @param {str} [engine] 
 */
 
 

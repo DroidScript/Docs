@@ -5,9 +5,9 @@
  * @abbrev dlg
  * @brief Returns a new Dialog object to display messages
  * 
- * $$ dlg = app.CreateDialog(title, options) $$ 
+ * $$ dlg = app.CreateDialog(title, options?) $$ 
  * @param {str} title 
- * @param {str_com} options AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,Fillscreen,Fullscreen,TouchModal,NoTouch,Modal,Kiosk,Old:apply old list style affecting title style and unrounded corners
+ * @param {str_com} [options] AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,Fillscreen,Fullscreen,TouchModal,NoTouch,Modal,Kiosk,Old:apply old list style affecting title style and unrounded corners
  * @returns dso-Dialog
 */
 
@@ -191,27 +191,27 @@ Normally the user can cancel the dialog by pressing the _BACK_ button of the dev
 /** ### SetTitleDividerHeight ###
  * @brief Change height of the title divider for "Old" dialogs
  * Changes the divider height of the dialog. Only works with "Old" option.
- * $$ dlg.SetTitleDividerHeight(height, options) $$
+ * $$ dlg.SetTitleDividerHeight(height, options?) $$
  * @param {num_pxl} height 
- * @param {str} options px|sp|dip|mm|pt
+ * @param {str} [options] px|sp|dip|mm|pt
  */
 
 
 /** ### SetTitleHeight ###
  * @brief Change height of the title bar for "Old" dialogs
  * Changes the height of the title bar. Only works with "Old" option.
- * $$ dlg.SetTitleHeight(height, options) $$
+ * $$ dlg.SetTitleHeight(height, options?) $$
  * @param {num_pxl} height 
- * @param {str_com} options px|sp|dip|mm|pt
+ * @param {str_com} [options] px|sp|dip|mm|pt
  */
 
 
 /** ### SetTitleTextSize ###
  * @brief Changes the title text size for "Old" dialogs
  * Changes the text size of the dialog title. Only works with "Old" option.
- * $$ dlg.SetTitleTextSize(size, options) $$
+ * $$ dlg.SetTitleTextSize(size, options?) $$
  * @param {num} size 
- * @param {str} options px|sp|dip|mm|pt
+ * @param {str} [options] px|sp|dip|mm|pt
  */
 
 

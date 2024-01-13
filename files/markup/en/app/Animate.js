@@ -4,9 +4,9 @@
 /** # Animate #
  * @brief Similar to setInterval
  * 
- * $$ app.Animate(callback, fps) $$ 
- * @param {fnc_json} callback {"pNames":["time","dtime"],"pTypes":["num_mls","num_mls"]}
- * @param {num_fps} fps 
+ * $$ app.Animate(callback?, fps=-1) $$ 
+ * @param {fnc_json} [callback] {"pNames":["time","dtime"],"pTypes":["num_mls","num_mls"]}
+ * @param {num_fps} [fps=-1] 
 */
 
 

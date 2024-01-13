@@ -5,10 +5,10 @@
  * Load saved text value to remember varibale values between multiple app starts.
  * 
  * See also: @SaveText.
- * $$ app.LoadText(name, default, file) $$ 
+ * $$ app.LoadText(name, default?, file?) $$ 
  * @param {str} name 
- * @param {str} default 
- * @param {str_ptf} file 
+ * @param {str} [default] 
+ * @param {str_ptf} [file] 
 */
 
 

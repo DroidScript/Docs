@@ -13,6 +13,7 @@
  * @param {num} gravity 
  * @param {num} accuracy 
  * @param {num} sleep 
+ * @returns gvo-Physics
 */
 
 

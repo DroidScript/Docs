@@ -2,12 +2,13 @@
 
 
 /** # showColorPicker #
- * @brief showColorPicker
  * @abbrev col
- * $$ ui.showColorPicker(value, options) $$
+ * @brief showColorPicker
+ * 
+ * $$ col = ui.showColorPicker(value, options) $$ 
  * @param {str} value A hexadecimal default value for the color picker.
  * @param {str} options A comma separated color picker options. Values can be \n `Alpha` Includes an alpha
- * @returns obj-ColorPicker Component
+ * @returns uio-ColorPicker
 */
 
 
@@ -29,7 +30,7 @@ These are the setter and getter properties for the showColorPicker Component.
 /** ### getValue ###
  * @brief getValue
  * Returns the hexadecimal string color value of the color picker
- * $$ undefined.getValue() $$
+ * $$ col.getValue() $$
  * @returns str
  */
 
@@ -38,7 +39,7 @@ These are the setter and getter properties for the showColorPicker Component.
 // ------------- SAMPLES ------------- 
 
 
-
+    
 /**
 @sample Basic
 class Main extends App
@@ -68,9 +69,9 @@ class Main extends App
     }
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Basic
 from hybrid import ui
@@ -93,4 +94,5 @@ def showColorPicker(event):
 def onSelect(clr):
     ui.showPopup(clr)
  */
-
+    
+            

@@ -7,10 +7,10 @@
  * When @CreateLayout arguments are passed it will create the layout just like app.CreateLayout and also add it.
  * 
  * See Also: @RemoveLayout
- * $$ app.AddLayout(layout, type, options) $$ 
+ * $$ app.AddLayout(layout, type, options?) $$ 
  * @param {dso} layout CreateLayout
  * @param {str} type Linear|Absolute|Frame|Card
- * @param {str} options TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
+ * @param {str} [options] TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
 */
 
 

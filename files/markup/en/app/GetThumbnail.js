@@ -6,11 +6,11 @@
  * Creates a downscaled copy of an existing image. Pass -1 as width or height to keep the aspect ratio.
  * 
  * See Also: @CreateImage
- * $$ app.GetThumbnail(source, destination, width, height) $$ 
+ * $$ app.GetThumbnail(source, destination, width=-1, height=-1) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
- * @param {num_pxl} width 
- * @param {num_pxl} height 
+ * @param {num_pxl} [width=-1] 
+ * @param {num_pxl} [height=-1] 
 */
 
 

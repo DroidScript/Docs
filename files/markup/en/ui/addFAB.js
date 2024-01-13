@@ -10,7 +10,7 @@
  * @param {str} icon The string icon of the FAB
  * @param {str_com} options `Fixed` `Static` `Rounded` `Extended` `Left` `Right`
  * @param {str} text Text to show for extended FABs.
- * @returns obj-FAB Component
+ * @returns uio-FAB
 */
 
 

@@ -4,8 +4,8 @@
 /** # SetJoystickOptions #
  * @brief Set options for the connected joystick
  * 
- * $$ app.SetJoystickOptions(options) $$ 
- * @param {str_com} options ForwardKeys:allows the joystick key presses to pass onto the child controls of the main activity
+ * $$ app.SetJoystickOptions(options?) $$ 
+ * @param {str_com} [options] ForwardKeys:allows the joystick key presses to pass onto the child controls of the main activity
 */
 
 

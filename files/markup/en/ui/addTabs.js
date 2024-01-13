@@ -2,15 +2,16 @@
 
 
 /** # addTabs #
- * @brief addTabs
  * @abbrev tab
- * $$ ui.addTabs(parent, list, options, width, height) $$
+ * @brief addTabs
+ * 
+ * $$ tab = ui.addTabs(parent, list, options, width, height) $$ 
  * @param {obj} parent The parent layout where to add the Tabs Component.
  * @param {lst} list An array of tab names.
  * @param {str_com} options Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-Tabs Component
+ * @returns uio-Tabs
 */
 
 
@@ -74,7 +75,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setOnChange ###
  * @brief setOnChange
  * Sets a callback function when the value of the tab changes
- * $$ undefined.setOnChange(callback) $$
+ * $$ tab.setOnChange(callback) $$
  * @param {fnc_json} callback {"pNames":["name","index"],"pTypes":["str-The tab name.","num-The index of the corresponding tab."]}
  */
 
@@ -82,7 +83,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setOnTouch ###
  * @brief setOnTouch
  * Add a callback function when a tab item i click
- * $$ undefined.setOnTouch(callback) $$
+ * $$ tab.setOnTouch(callback) $$
  * @param {fnc_json} callback {"pNames":["name","The"],"pTypes":["str-The tab name text.","num-tab item index."]}
  */
 
@@ -90,7 +91,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setTabs ###
  * @brief setTabs
  * Sets the tab titles array
- * $$ undefined.setTabs(tabs) $$
+ * $$ tab.setTabs(tabs) $$
  * @param {lst} tabs The tab titles array. See examples for format.
  */
 
@@ -98,7 +99,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### addTab ###
  * @brief addTab
  * Add or insert a tab to the Tabs Component
- * $$ undefined.addTab(name, icon, index) $$
+ * $$ tab.addTab(name, icon, index) $$
  * @param {str} name The name of the tab.
  * @param {str} icon Material icon font.
  * @param {num} index The index in which to insert the tab.
@@ -108,7 +109,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setTitleText ###
  * @brief setTitleText
  * Sets a new title for the corresponding tab
- * $$ undefined.setTitleText(index, title) $$
+ * $$ tab.setTitleText(index, title) $$
  * @param {num} index Index of the tab.
  * @param {str} title The new title.
  */
@@ -117,7 +118,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setIcon ###
  * @brief setIcon
  * Sets an icon to a corresponding tab title
- * $$ undefined.setIcon(index, icon) $$
+ * $$ tab.setIcon(index, icon) $$
  * @param {num} index The index of the tab.
  * @param {str} icon Material icon font.
  */
@@ -126,7 +127,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### removeTabByIndex ###
  * @brief removeTabByIndex
  * Removes a tab item by its corresponding index
- * $$ undefined.removeTabByIndex(index) $$
+ * $$ tab.removeTabByIndex(index) $$
  * @param {num} index The index of the corresponding tab to remove.
  */
 
@@ -134,7 +135,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### removeTabByName ###
  * @brief removeTabByName
  * Removes a tab item by its corresponding name
- * $$ undefined.removeTabByName(name) $$
+ * $$ tab.removeTabByName(name) $$
  * @param {str} name The name of the corresponding tab to remove.
  */
 
@@ -142,16 +143,16 @@ These are the setter and getter properties for the addTabs Component.
 /** ### getLayout ###
  * @brief getLayout
  * Returns the layout of the corresponding tab. You can then add components into the returned layout
- * $$ undefined.getLayout(name) $$
+ * $$ tab.getLayout(name) $$
  * @param {str} name The name of the tab. You can also pass the index of the tab.
- * @returns obj-Layout Component
+ * @returns uio-Layout
  */
 
 
 /** ### showTab ###
  * @brief showTab
  * Show a tab panel by its corresponding name. This will make the tab in active state
- * $$ undefined.showTab(name) $$
+ * $$ tab.showTab(name) $$
  * @param {str} name The name of the tab to be shown.
  */
 
@@ -159,7 +160,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### showTabByIndex ###
  * @brief showTabByIndex
  * Show a tab panel by its corresponding name. This will make the tab in active state
- * $$ undefined.showTabByIndex(index) $$
+ * $$ tab.showTabByIndex(index) $$
  * @param {num} index The index of the tab to be shown.
  */
 
@@ -168,7 +169,7 @@ These are the setter and getter properties for the addTabs Component.
  * @brief setEnabled
  * Enable or disable a tab item. Pass `index` as number if you want the corresponding tab index to be enabled or disabled
  * Pass `index` as Boolean, if you want to disable the entire Tabs component
- * $$ undefined.setEnabled(index, value) $$
+ * $$ tab.setEnabled(index, value) $$
  * @param {num} index The index of the corresponding tab. Pass `Boolean` if you want to disable the entire Tabs component.
  * @param {bin} value Values can be `true` or `false`.
  */
@@ -177,7 +178,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### getEnabled ###
  * @brief getEnabled
  * Get the enabled state of a tab
- * $$ undefined.getEnabled(index) $$
+ * $$ tab.getEnabled(index) $$
  * @param {num} index The index of the corresponding tab.
  * @returns bin
  */
@@ -186,7 +187,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setEnabledByName ###
  * @brief setEnabledByName
  * Enable or disable a tab by its name
- * $$ undefined.setEnabledByName(name, value) $$
+ * $$ tab.setEnabledByName(name, value) $$
  * @param {str} name The name of the tab.
  * @param {bin} value Values can be `true` or `false`.
  */
@@ -195,7 +196,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### getEnabledByName ###
  * @brief getEnabledByName
  * Get the enabled state of a tab by its name
- * $$ undefined.getEnabledByName(name) $$
+ * $$ tab.getEnabledByName(name) $$
  * @param {str} name The name of the tab.
  * @returns bin
  */
@@ -204,7 +205,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### showScrollButton ###
  * @brief showScrollButton
  * Determines the behavior of scroll buttons when tabs are set to `scrollable
- * $$ undefined.showScrollButton(mode) $$
+ * $$ tab.showScrollButton(mode) $$
  * @param {str} mode Values can be \n `auto` : will only present them when not all the items are visible \n `desktop` : will only present them on medium and larger viewports \n `on` : will always present them \n `off` : will never present them.
  */
 
@@ -212,7 +213,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### getLayoutIndex ###
  * @brief getLayoutIndex
  * Get the index of the corresponding layout
- * $$ undefined.getLayoutIndex(layout) $$
+ * $$ tab.getLayoutIndex(layout) $$
  * @param {obj} layout The layout to check.
  * @returns num
  */
@@ -221,7 +222,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
  * Adds a callback function on right click
- * $$ undefined.setOnContextMenu(callback) $$
+ * $$ tab.setOnContextMenu(callback) $$
  * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-The text of the tab item.","num-The index of the corresponding tab item.","obj-The pointer event object."]}
  */
 
@@ -229,7 +230,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the tab
- * $$ undefined.setCornerRadius(tl, tr, bl, br, mode) $$
+ * $$ tab.setCornerRadius(tl, tr, bl, br, mode) $$
  * @param {num} tl Top-left corner radius.
  * @param {num} tr Top-right corner radius.
  * @param {num} bl Bottom-left corner radius.
@@ -241,7 +242,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setIndicatorStyle ###
  * @brief setIndicatorStyle
  * Add a custom styling to the indicator color
- * $$ undefined.setIndicatorStyle(width, thickness, color, radius) $$
+ * $$ tab.setIndicatorStyle(width, thickness, color, radius) $$
  * @param {num} width Fraction of the tab item width. This works only on `fullWidth` tab.
  * @param {num} thickness Thickness in pixels.
  * @param {str} color Hexadecimal color of the form `#rrggbb`.
@@ -252,7 +253,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setTabPadding ###
  * @brief setTabPadding
  * Sets the padding of the tab items
- * $$ undefined.setTabPadding(left, top, right, bottom, mode) $$
+ * $$ tab.setTabPadding(left, top, right, bottom, mode) $$
  * @param {num} left The tab-item left padding.
  * @param {num} top The tab-item top padding.
  * @param {num} right The tab-item right padding.
@@ -264,7 +265,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### animate ###
  * @brief animate
  * Animate the component
- * $$ undefined.animate(anim, duration) $$
+ * $$ tab.animate(anim, duration) $$
  * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
  * @param {num} duration The time in milliseconds.
  */
@@ -273,7 +274,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setSize ###
  * @brief setSize
  * Sets the size of the component
- * $$ undefined.setSize(width, height) $$
+ * $$ tab.setSize(width, height) $$
  * @param {num} width Fraction of the parent width. [0-1]
  * @param {num} height Fraction of the parent height. [0-1]
  */
@@ -282,35 +283,35 @@ These are the setter and getter properties for the addTabs Component.
 /** ### show ###
  * @brief show
  * Show the component
- * $$ undefined.show() $$
+ * $$ tab.show() $$
  */
 
 
 /** ### hide ###
  * @brief hide
  * Hide the component
- * $$ undefined.hide() $$
+ * $$ tab.hide() $$
  */
 
 
 /** ### gone ###
  * @brief gone
  * Destroy the component
- * $$ undefined.gone() $$
+ * $$ tab.gone() $$
  */
 
 
 /** ### destroy ###
  * @brief destroy
  * Destroy the component
- * $$ undefined.destroy() $$
+ * $$ tab.destroy() $$
  */
 
 
 /** ### setScale ###
  * @brief setScale
  * Sets the x and y scaling of the component
- * $$ undefined.setScale(x, y) $$
+ * $$ tab.setScale(x, y) $$
  * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
  * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
  */
@@ -319,7 +320,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### getPosition ###
  * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ undefined.getPosition(options) $$
+ * $$ tab.getPosition(options) $$
  * @param {str} options The mode of the measurements. Values can be `px` or `%`
  * @returns obj
  */
@@ -328,7 +329,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setMargins ###
  * @brief setMargins
  * Sets the margin of the component
- * $$ undefined.setMargins(left, top, right, bottom, mode) $$
+ * $$ tab.setMargins(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the parent width.
  * @param {num} top Fraction of the parent height.
  * @param {num} right Fraction of the parent width.
@@ -340,7 +341,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setPadding ###
  * @brief setPadding
  * Sets the padding component container
- * $$ undefined.setPadding(left, top, right, bottom, mode) $$
+ * $$ tab.setPadding(left, top, right, bottom, mode) $$
  * @param {num} left Fraction of the component width.
  * @param {num} top Fraction of the component height. [0-1]
  * @param {num} right Fraction of the component width. [0-1]
@@ -352,7 +353,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setPosition ###
  * @brief setPosition
  * Sets the position of the component relative to its parent dimensions
- * $$ undefined.setPosition(left, top, mode) $$
+ * $$ tab.setPosition(left, top, mode) $$
  * @param {num} left Fraction of the parent width. [0-1]
  * @param {num} top Fraction of the screen height. [0-1]
  * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
@@ -362,7 +363,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setBorder ###
  * @brief setBorder
  * Sets the border line for the component container
- * $$ undefined.setBorder(width, clr, style) $$
+ * $$ tab.setBorder(width, clr, style) $$
  * @param {num} width Border-left thickness in pixels.
  * @param {str} clr Border color in hexadecimal form `#rrggbb`
  * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
@@ -372,7 +373,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### bringForward ###
  * @brief bringForward
  * Bring this component forward by a given z-index
- * $$ undefined.bringForward(zIndex) $$
+ * $$ tab.bringForward(zIndex) $$
  * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
  */
 
@@ -380,7 +381,7 @@ These are the setter and getter properties for the addTabs Component.
 /** ### sendBackward ###
  * @brief sendBackward
  * Bring this component backward by a given z-index
- * $$ undefined.sendBackward(zIndex) $$
+ * $$ tab.sendBackward(zIndex) $$
  * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
  */
 
@@ -389,7 +390,7 @@ These are the setter and getter properties for the addTabs Component.
 // ------------- SAMPLES ------------- 
 
 
-
+    
 /**
 @sample Basic
 class Main extends App
@@ -431,9 +432,9 @@ class Main extends App
     }
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample With Icon
 class Main extends App
@@ -479,9 +480,9 @@ class Main extends App
     }
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Swipeable tabs
 class Main extends App
@@ -523,9 +524,9 @@ class Main extends App
     }
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Open tabs dynamically
 class Main extends App
@@ -586,9 +587,9 @@ class Main extends App
     }
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Icon only
 class Main extends App
@@ -635,9 +636,9 @@ class Main extends App
     }
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Custom colors and sizes
 class Main extends App
@@ -665,9 +666,9 @@ class Main extends App
     }
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Basic
 from hybrid import ui
@@ -692,9 +693,9 @@ def OnStart():
 
     ui.addText(main, text, "Justify", 0.8)
  */
-
-
-
+    
+            
+    
 /**
 @sample Python With Icon
 from hybrid import ui
@@ -735,9 +736,9 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Swipeable tabs
 from hybrid import ui
@@ -774,9 +775,9 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Open tabs dynamically
 from hybrid import ui
@@ -826,11 +827,12 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Icon only
 
  */
-
+    
+            

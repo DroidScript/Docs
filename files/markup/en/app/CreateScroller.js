@@ -5,10 +5,10 @@
  * @abbrev scr
  * @brief Returns a new Scroller object
  * 
- * $$ scr = app.CreateScroller(width, height, options) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade
+ * $$ scr = app.CreateScroller(width=-1, height=-1, options?) $$ 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade
  * @returns dso-Scroller
 */
 

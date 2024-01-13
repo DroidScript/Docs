@@ -5,13 +5,13 @@
  * @abbrev img
  * @brief Returns a new Image object
  * 
- * $$ img = app.CreateImage(file, width, height, options, pxw, pxh) $$ 
- * @param {str_ptc} file 
- * @param {num} width 
- * @param {num} height 
- * @param {str_com} options fix:image with fixed resolution,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically
- * @param {num_pxl} pxw 
- * @param {num_pxl} pxh 
+ * $$ img = app.CreateImage(file?, width=-1, height=-1, options='', pxw=-1, pxh=-1) $$ 
+ * @param {str_ptc} [file] 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str_com} [options=''] fix:image with fixed resolution,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically
+ * @param {num_pxl} [pxw=-1] 
+ * @param {num_pxl} [pxh=-1] 
  * @returns dso-Image
 */
 
@@ -113,14 +113,14 @@ For animations you can then use the **Animate** function of the app object which
 /** ### DrawImage ###
  * Draws an Image:dso-CreateImage.
  * See [Android Developers](https://developer.android.com/reference/android/graphics/PorterDuff.Mode#enum-values_1) for 'mode' info
- * $$ img.DrawImage(image, x, y, w, h, angle, mode) $$
+ * $$ img.DrawImage(image, x, y, w?, h?, angle?, mode?) $$
  * @param {dso} image CreateImage
  * @param {num} x 
  * @param {num} y 
- * @param {num} w 
- * @param {num} h 
- * @param {num_deg} angle 
- * @param {str} mode ADD|CLEAR|DARKEN|DST|DST_ATOP|DST_IN|DST_OUT|DST_OVER|LIGHTEN|MULTIPLY|OVERLAY|SCREEN|SRC|SRC_ATOP|SRC_IN|SRC_OUT|SRC_OVER|XOR
+ * @param {num} [w] 
+ * @param {num} [h] 
+ * @param {num_deg} [angle] 
+ * @param {str} [mode] ADD|CLEAR|DARKEN|DST|DST_ATOP|DST_IN|DST_OUT|DST_OVER|LIGHTEN|MULTIPLY|OVERLAY|SCREEN|SRC|SRC_ATOP|SRC_IN|SRC_OUT|SRC_OVER|XOR
  */
 
 
@@ -220,12 +220,12 @@ For animations you can then use the **Animate** function of the app object which
 /** ### GetPixelData ###
  * @brief Returns base64 encoded image data
  * Returns the raw, png or jpg image data encoded as base64.
- * $$ img.GetPixelData(format, left, top, width, height) $$
+ * $$ img.GetPixelData(format, left?, top?, width=-1, height=-1) $$
  * @param {str} format rawbase64|pngbase64|jpgbase64
- * @param {num_int} left 
- * @param {num_int} top 
- * @param {num_int} width 
- * @param {num_int} height 
+ * @param {num_int} [left] 
+ * @param {num_int} [top] 
+ * @param {num_int} [width=-1] 
+ * @param {num_int} [height=-1] 
  * @returns str_b64
  */
 
@@ -284,18 +284,18 @@ For animations you can then use the **Animate** function of the app object which
 
 /** ### Rotate ###
  * Rotates the content.
- * $$ img.Rotate(angle, pivotX, pivotY) $$
+ * $$ img.Rotate(angle, pivotX?, pivotY?) $$
  * @param {num_deg} angle 
- * @param {num} pivotX 
- * @param {num} pivotY 
+ * @param {num} [pivotX] 
+ * @param {num} [pivotY] 
  */
 
 
 /** ### Save ###
  * Saves the image to a file on the local filesystem.
- * $$ img.Save(fileName, quality) $$
+ * $$ img.Save(fileName, quality?) $$
  * @param {str_ptf} fileName 
- * @param {num_prc} quality for jpg files
+ * @param {num_prc} [quality] for jpg files
  */
 
 
@@ -354,11 +354,11 @@ For animations you can then use the **Animate** function of the app object which
 /** ### SetImage ###
  * @brief Change the content to an other image
  * Set the content to an image:dso-"CreateImage" control or specify a path to an image which will then be loaded.
- * $$ img.SetImage(image, width, height, options) $$
+ * $$ img.SetImage(image, width=-1, height=-1, options?) $$
  * @param {str_pth||dso} image Image
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} options rescale
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str} [options] rescale
  */
 
 
@@ -426,11 +426,11 @@ For animations you can then use the **Animate** function of the app object which
 /** ### SetPixelData ###
  * @brief Set base64 encoded pixel data
  * Set the image to base64 encoded pixel data.
- * $$ img.SetPixelData(data, width, height, options) $$
+ * $$ img.SetPixelData(data, width=-1, height=-1, options?) $$
  * @param {str_b64} data &lt;rawbase64&gt;|data&colon;image/jpg;base64&comma;&lt;jpgbase64&gt;,data&colon;image/png;base64&comma;&lt;pngbase64&gt;
- * @param {num} width 
- * @param {num} height 
- * @param {str} options px,icon,resize|rescale|square,fix:set bitmap size
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
+ * @param {str} [options] px,icon,resize|rescale|square,fix:set bitmap size
  */
 
 

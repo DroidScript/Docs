@@ -5,11 +5,11 @@
  * @abbrev chk
  * @brief Returns a new CheckBox object
  * 
- * $$ chk = app.CreateCheckBox(text, width, height, options) $$ 
+ * $$ chk = app.CreateCheckBox(text, width=-1, height=-1, options?) $$ 
  * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FillX/Y,NoSound
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] FillX/Y,NoSound
  * @returns dso-CheckBox
 */
 

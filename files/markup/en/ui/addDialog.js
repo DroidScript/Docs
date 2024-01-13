@@ -10,7 +10,7 @@
  * @param {str} body The dialog message to be shown.
  * @param {str} actions A comma separated text for action buttons.
  * @param {str_com} options Colors: `Primary` `Secondary` \n `Util`: `NoCancel` prevents the dialog from closing on action.
- * @returns obj-Dialog Component
+ * @returns uio-Dialog
 */
 
 

@@ -7,8 +7,9 @@
  * Overlays are displayed above everything on the screen - even on the home screen or above other applications. Overlays can be created from services as well which makes them almost perfect for interacting with them.
  * 
  * <premium>
- * $$ ovl = app.CreateOverlay(options) $$ 
- * @param {str_com} options ShowWhenLocked,TurnScreenOn,KeepScreenOn
+ * $$ ovl = app.CreateOverlay(options?) $$ 
+ * @param {str_com} [options] ShowWhenLocked,TurnScreenOn,KeepScreenOn
+ * @returns dso-Overlay
 */
 
 
@@ -20,11 +21,11 @@
 /** ### AddLayout ###
  * @brief Adds layout to overlay
  * Adds a layout to the overlay.
- * $$ ovl.AddLayout(layout, left, top, options) $$
+ * $$ ovl.AddLayout(layout, left=0, top=0, options?) $$
  * @param {dso} layout CreateLayout
- * @param {num_frc} left 
- * @param {num_frc} top 
- * @param {str} options px
+ * @param {num_frc} [left=0] 
+ * @param {num_frc} [top=0] 
+ * @param {str} [options] px
  */
 
 
@@ -49,11 +50,11 @@
 /** ### SetPosition ###
  * @brief Changes a child layout position
  * Defines the position of a contained layout.
- * $$ ovl.SetPosition(layout, left, top, options) $$
+ * $$ ovl.SetPosition(layout, left=0, top=0, options?) $$
  * @param {dso} layout CreateLayout
- * @param {num_frc} left 
- * @param {num_frc} top 
- * @param {str} options px
+ * @param {num_frc} [left=0] 
+ * @param {num_frc} [top=0] 
+ * @param {str} [options] px
  */
 
 

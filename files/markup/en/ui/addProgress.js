@@ -11,7 +11,7 @@
  * @param {str_com} options Color: `Primary` `Secondary` \n `Type`: `Circular` `Linear` \n `Variant`: `Determinate` `Indeterminate`
  * @param {num} width Fraction of the screen width. [0-1]
  * @param {num} height Fraction fo the screen height. [0-1]
- * @returns obj-Progress Component
+ * @returns uio-Progress
 */
 
 

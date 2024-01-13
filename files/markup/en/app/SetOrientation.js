@@ -6,9 +6,9 @@
  * Set the display orientation to a fixed value. You can unlock it again passing “Default” as **orientation**.
  * 
  * See Also: @GetOrientation
- * $$ app.SetOrientation(orient, callback) $$ 
+ * $$ app.SetOrientation(orient, callback?) $$ 
  * @param {str} orient Default|Landscape|ReverseLandscape|Portrait|ReversePortrait
- * @param {fnc_json} callback {}
+ * @param {fnc_json} [callback] {}
 */
 
 

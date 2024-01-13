@@ -6,12 +6,12 @@
  * ChooseFile opens a file picker for user to select a local file or a file from GoogleDrive, OneDrive or DropBox.
  * 
  * See Also: @ReadFile
- * $$ app.ChooseFile(message, type, callback, fldr, options) $$ 
+ * $$ app.ChooseFile(message, type, callback, fldr?, options?) $$ 
  * @param {str} message 
  * @param {str} type mimetype
  * @param {fnc_json} callback {"pNames":["path","name"],"pTypes":["str_pth||str_uri","str"]}
- * @param {str_pth} fldr 
- * @param {str} options persist:keep file permission after reboot,nodownload:prevents file downloads
+ * @param {str_pth} [fldr] 
+ * @param {str} [options] persist:keep file permission after reboot,nodownload:prevents file downloads
 */
 
 

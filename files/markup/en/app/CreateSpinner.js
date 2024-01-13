@@ -5,11 +5,11 @@
  * @abbrev spn
  * @brief Returns a new Spinner object
  * 
- * $$ spn = app.CreateSpinner(list, width, height, options) $$ 
+ * $$ spn = app.CreateSpinner(list, width=-1, height=-1, options?) $$ 
  * @param {str_com} list 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FillX/Y,NoSound
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] FillX/Y,NoSound
  * @returns dso-Spinner
 */
 
@@ -113,9 +113,9 @@ Use the **SelectItem** method to select a particular item in code.
 /** ### SetList ###
  * @brief Change spinner list
  * Change the item list of the spinner.
- * $$ spn.SetList(list, delim) $$
+ * $$ spn.SetList(list, delim=',') $$
  * @param {str_com} list 
- * @param {str} delim 
+ * @param {str} [delim=','] 
  */
 
 

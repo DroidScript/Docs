@@ -5,11 +5,11 @@
  * @abbrev btn
  * @brief Creates a button control
  * 
- * $$ btn = app.CreateButton(text, width, height, options) $$ 
+ * $$ btn = app.CreateButton(text, width=-1, height=-1, options?) $$ 
  * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,AutoShrink:Auto-shrinks text to fit,AutoSize:Auto-sizes text to fit,NoPad,FillX/Y,NoSound
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,AutoShrink:Auto-shrinks text to fit,AutoSize:Auto-sizes text to fit,NoPad,FillX/Y,NoSound
  * @returns dso-Button
 */
 
@@ -144,13 +144,13 @@ You can customize the visual look in many ways by either using one of the existi
 /** ### SetStyle ###
  * @brief Customize the button looks
  * Customize the look of the button.
- * $$ btn.SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} color1 
- * @param {str_col} color2 
- * @param {num_pxl} radius 
- * @param {str_col} strokeClr 
- * @param {num_pxl} strokeWidth 
- * @param {num_frc} shadow 
+ * $$ btn.SetStyle(color1='sky', color2='sky', radius=0, strokeClr='sky', strokeWidth=0, shadow=0) $$
+ * @param {str_col} [color1='sky'] 
+ * @param {str_col} [color2='sky'] 
+ * @param {num_pxl} [radius=0] 
+ * @param {str_col} [strokeClr='sky'] 
+ * @param {num_pxl} [strokeWidth=0] 
+ * @param {num_frc} [shadow=0] 
  */
 
 

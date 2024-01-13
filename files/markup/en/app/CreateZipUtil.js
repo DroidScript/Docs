@@ -118,13 +118,13 @@
 /** ### UpdateManifest ###
  * @brief Update zip manifest
  * Updates the zip manifest
- * $$ zip.UpdateManifest(fileIn, fileOut, packageName, appName, permissions, options) $$
+ * $$ zip.UpdateManifest(fileIn, fileOut, packageName, appName, permissions?, options?) $$
  * @param {str_ptf} fileIn 
  * @param {str_ptf} fileOut 
  * @param {str} packageName 
  * @param {str} appName 
- * @param {str_com} permissions 
- * @param {str_com} options Launch,Debug
+ * @param {str_com} [permissions] 
+ * @param {str_com} [options] Launch,Debug
  */
 
 

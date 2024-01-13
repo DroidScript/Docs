@@ -5,9 +5,9 @@
  * @abbrev lay
  * @brief Returns a new Layout object
  * 
- * $$ lay = app.CreateLayout(type, options) $$ 
+ * $$ lay = app.CreateLayout(type, options?) $$ 
  * @param {str} type Linear|Absolute|Frame|Card
- * @param {str_com} options AutoSize:Resizes itself and child controls after device rotation,TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
+ * @param {str_com} [options] AutoSize:Resizes itself and child controls after device rotation,TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
  * @returns dso-Layout
 */
 
@@ -52,9 +52,9 @@ They may be used to display offers with an image and optional info text.
 /** ### AddChild ###
  * @brief Add a control to the layout
  * Adds a control to the layout.
- * $$ lay.AddChild(child, order) $$
+ * $$ lay.AddChild(child, order?) $$
  * @param {dso} child 
- * @param {num_int} order 
+ * @param {num_int} [order] 
  */
 
 
@@ -152,21 +152,21 @@ They may be used to display offers with an image and optional info text.
 
 /** ### SetChildMargins ###
  * Set margins of top-level children.
- * $$ lay.SetChildMargins(left, top, right, bottom, mode) $$
- * @param {num} left 
- * @param {num} top 
- * @param {num} right 
- * @param {num_frc} bottom 
- * @param {str} mode px|sp|dip|mm|pt
+ * $$ lay.SetChildMargins(left=0, top=0, right=0, bottom=0, mode='px') $$
+ * @param {num} [left=0] 
+ * @param {num} [top=0] 
+ * @param {num} [right=0] 
+ * @param {num_frc} [bottom=0] 
+ * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
 
 /** ### SetChildTextSize ###
  * @brief Change text size of top-level children.
  * Change the text size of top-level children.
- * $$ lay.SetChildTextSize(size, mode) $$
+ * $$ lay.SetChildTextSize(size, mode='px') $$
  * @param {num} size 
- * @param {str} mode px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution
+ * @param {str} [mode='px'] px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution
  */
 
 

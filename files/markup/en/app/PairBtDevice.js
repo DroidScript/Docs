@@ -5,9 +5,9 @@
  * Pairs a bluetooth device with yours.
  * 
  * See Also: @GetPairedBtDevices, @IsBtDevicePaired, @DiscoverBtDevices
- * $$ app.PairBtDevice(address, callback) $$ 
+ * $$ app.PairBtDevice(address, callback?) $$ 
  * @param {str} address 
- * @param {fnc_json} callback {}
+ * @param {fnc_json} [callback] {}
 */
 
 

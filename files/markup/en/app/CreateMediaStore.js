@@ -20,10 +20,10 @@
 /** ### GetAlbumArt ###
  * @brief Load the album art to an image
  * Loads the album image to an existing image:dso-CreateImage.
- * $$ med.GetAlbumArt(image, id, options) $$
+ * $$ med.GetAlbumArt(image, id, options?) $$
  * @param {dso} image CreateImage
  * @param {num_int} id 
- * @param {str} options internal|external
+ * @param {str} [options] internal|external
  * @returns bin
  */
 
@@ -31,10 +31,10 @@
 /** ### GetSongArt ###
  * @brief Load the song art to an image
  * Loads the song image to an existing image:dso-CreateImage.
- * $$ med.GetSongArt(image, id, options) $$
+ * $$ med.GetSongArt(image, id, options?) $$
  * @param {dso} image CreateImage
  * @param {num_int} id 
- * @param {str} options internal|external
+ * @param {str} [options] internal|external
  * @returns bin
  */
 
@@ -48,28 +48,28 @@
 
 /** ### QueryAlbums ###
  * Search for media albums.
- * $$ med.QueryAlbums(filter, sort, options) $$
- * @param {str_sql} filter 
- * @param {str:coloumns} sort album,\_id,albumArt,artist,numSongs,firstYear,lastYear
- * @param {str} options internal|external
+ * $$ med.QueryAlbums(filter?, sort?, options?) $$
+ * @param {str_sql} [filter] 
+ * @param {str:coloumns} [sort] album,\_id,albumArt,artist,numSongs,firstYear,lastYear
+ * @param {str} [options] internal|external
  */
 
 
 /** ### QueryArtists ###
  * Search for media artists.
- * $$ med.QueryArtists(filter, sort, options) $$
- * @param {str_sql} filter 
- * @param {str:coloumns} sort \_id,artist,numAlbums,numTracks
- * @param {str} options internal|external
+ * $$ med.QueryArtists(filter?, sort?, options?) $$
+ * @param {str_sql} [filter] 
+ * @param {str:coloumns} [sort] \_id,artist,numAlbums,numTracks
+ * @param {str} [options] internal|external
  */
 
 
 /** ### QueryMedia ###
  * Search for media.
- * $$ med.QueryMedia(filter, sort, options) $$
- * @param {str_sql} filter 
- * @param {str:coloumns} sort title,\_id,duration,size,uri,album,albumID,artist,artistId
- * @param {str} options internal|external
+ * $$ med.QueryMedia(filter?, sort?, options?) $$
+ * @param {str_sql} [filter] 
+ * @param {str:coloumns} [sort] title,\_id,duration,size,uri,album,albumID,artist,artistId
+ * @param {str} [options] internal|external
  */
 
 

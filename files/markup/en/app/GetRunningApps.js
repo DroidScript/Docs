@@ -5,7 +5,7 @@
  * @brief Get list of running apps
  * 
  * $$ app.GetRunningApps() $$ 
- * @returns lst_obj-[{ user:num_int&comma; pid:num_bin&comma; name:str&comma; foreground:bin }]
+ * @returns lst_obj-[{ user:num_int&comma; pid:num_int&comma; name:str&comma; foreground:bin }]
 */
 
 

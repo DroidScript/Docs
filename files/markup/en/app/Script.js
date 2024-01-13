@@ -4,9 +4,9 @@
 /** # Script #
  * @brief import an external JavaScript file
  * 
- * $$ app.Script(file, noDefer) $$ 
+ * $$ app.Script(file, noDefer=false) $$ 
  * @param {str_ptf} file 
- * @param {bin:load script inline} noDefer 
+ * @param {bin:load script inline} [noDefer=false] 
 */
 
 

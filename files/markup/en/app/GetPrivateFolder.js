@@ -6,9 +6,9 @@
  * Returns the path to a folder located in the apps private space which is normally not accessible by other apps or the user himself.
  * 
  * See Also: @GetAppPath, @GetPath
- * $$ app.GetPrivateFolder(name, options) $$ 
+ * $$ app.GetPrivateFolder(name, options?) $$ 
  * @param {str} name 
- * @param {str} options external
+ * @param {str} [options] external
  * @returns str_pth
 */
 

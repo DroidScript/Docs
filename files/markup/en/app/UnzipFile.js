@@ -6,10 +6,10 @@
  * Extracts the contents of a zip file to a given target folder.
  * 
  * See Also: @ZipFolder, @ZipFile
- * $$ app.UnzipFile(source, destination, options) $$ 
+ * $$ app.UnzipFile(source, destination, options?) $$ 
  * @param {str_pth} source 
  * @param {str_pth} destination 
- * @param {str} options spk:Extract SPK as DS project folder
+ * @param {str} [options] spk:Extract SPK as DS project folder
 */
 
 

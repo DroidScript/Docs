@@ -11,7 +11,7 @@
  * @param {str_com} options Colors: `Default` `Primary` `Secondary` \n `Sizes`: `Small` `Medium` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corners : `Square`
  * @param {num} width Fraction of the screen width.
  * @param {num} height Fraction of the screen height.
- * @returns obj-CheckboxGroup Component
+ * @returns uio-CheckboxGroup
 */
 
 

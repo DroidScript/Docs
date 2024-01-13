@@ -6,10 +6,10 @@
  * Save a text value to remember varibale values between multiple app starts and updates.
  * 
  * See also: @LoadText.
- * $$ app.SaveText(name, value, file) $$ 
+ * $$ app.SaveText(name, value, file?) $$ 
  * @param {str} name 
  * @param {str} value 
- * @param {str_ptf} file 
+ * @param {str_ptf} [file] 
 */
 
 

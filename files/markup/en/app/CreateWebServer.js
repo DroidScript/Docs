@@ -5,9 +5,9 @@
  * @abbrev sock
  * @brief Returns a new WebServer object
  * 
- * $$ sock = app.CreateWebServer(port, options) $$ 
+ * $$ sock = app.CreateWebServer(port, options?) $$ 
  * @param {num_int} port 
- * @param {str_com} options ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients,"&lt;BUFSIZE&gt;":"“ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”"
+ * @param {str_com} [options] ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients,"&lt;BUFSIZE&gt;":"“ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”"
  * @returns dso-WebServer
 */
 
@@ -70,7 +70,7 @@ The following example demonstrates web sockets being used to receive messages fr
  * %cb% a HTTP GET request on a given servlet name was recieved.
  * $$ sock.AddServlet(path, callback) $$
  * @param {str:url path} path /name
- * @param {fnc_json} callback {"pNames":["args","info"],"pTypes":["obj-{ parameter: argument }","obj-{ remoteAddress:str }"]}
+ * @param {fnc_json} callback {"pNames":["args","info"],"pTypes":["obj-{ parameter:str: argument:str }","obj-{ remoteAddress:str }"]}
  */
 
 
@@ -79,9 +79,9 @@ The following example demonstrates web sockets being used to receive messages fr
 /** ### Disconnect ###
  * @brief Disconnect Client from WebServer
  * Disconnects a client from the WebServer.
- * $$ sock.Disconnect(ip, id) $$
+ * $$ sock.Disconnect(ip, id?) $$
  * @param {str} ip 
- * @param {num_int} id 
+ * @param {num_int} [id] 
  */
 
 

@@ -5,11 +5,11 @@
  * @abbrev srv
  * @brief Returns a new Service object
  * 
- * $$ srv = app.CreateService(packageName, className, callback, options) $$ 
+ * $$ srv = app.CreateService(packageName, className, callback?, options?) $$ 
  * @param {str} packageName this|&lt;package&gt;
  * @param {str} className this|&lt;class&gt;
- * @param {fnc_json} callback {}
- * @param {str_com} options Persist:attempts to force restart if service killed
+ * @param {fnc_json} [callback] {}
+ * @param {str_com} [options] Persist:attempts to force restart if service killed
  * @returns dso-Service
 */
 
@@ -81,12 +81,12 @@ Inspect the debug console and see the log messages from the service in gray.
 
 /** ### SetInForeground ###
  * Run service in foreground.
- * $$ srv.SetInForeground(title, text, largeIcon, smallIcon, importance) $$
+ * $$ srv.SetInForeground(title, text?, largeIcon?, smallIcon?, importance?) $$
  * @param {str} title 
- * @param {str} text 
- * @param {str_ptf} largeIcon 
- * @param {str_ptf} smallIcon 
- * @param {str} importance none|min|low|high
+ * @param {str} [text] 
+ * @param {str_ptf} [largeIcon] 
+ * @param {str_ptf} [smallIcon] 
+ * @param {str} [importance] none|min|low|high
  */
 
 

@@ -5,10 +5,10 @@
  * @abbrev vid
  * @brief Returns a new VideoView object
  * 
- * $$ vid = app.CreateVideoView(width, height, options) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options 
+ * $$ vid = app.CreateVideoView(width=-1, height=-1, options?) $$ 
+ * @param {num_frc} [width=-1] 
+ * @param {num_frc} [height=-1] 
+ * @param {str_com} [options] 
  * @returns dso-VideoView
 */
 
