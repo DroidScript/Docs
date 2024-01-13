@@ -1,15 +1,12 @@
+declare var app: DsApp;
+declare type AppObject = DsAudioRecorder | DsBluetoothList | DsBluetoothSerial | DsButton | DsCameraView | DsCheckBox | DsCloudStore | DsCodeEdit | DsCrypt | DsDialog | DsDownloader | DsEmail | DsFile | DsGameView | DsGLView | DsImage | DsLayout | DsList | DsListDialog | DsLocator | DsMediaPlayer | DsMediaStore | DsNetClient | DsNode | DsNotification | DsNxt | DsOverlay | DsPhoneState | DsPlayStore | DsScroller | DsSeekBar | DsSensor | DsService | DsSMS | DsSpeechRec | DsSpinner | DsSwitch | DsSynth | DsSysProc | DsTabs | DsText | DsTextEdit | DsTheme | DsToggle | DsUSBSerial | DsVideoView | DsWebServer | DsWebSocket | DsWebView | DsWizard | DsYesNoDialog | DsZipUtil | DsDatabase | DsCheckList;
+/** app object */
+declare type dso = AppObject;
+
 /** all types */
 declare type all = any;
 /** Boolean */
 declare type bin = boolean;
-/** app object */
-declare type dso = AppObject;
-/** game object */
-declare type gvo = GameObject;
-/** smartwatch object */
-declare type swo = SmartWatchObject;
-/** JavaScript object */
-declare type jso = Object;
 /** Function */
 declare type fnc = Function;
 /** List */
@@ -20,8 +17,6 @@ declare type num = number;
 declare type obj = object;
 /** String */
 declare type str = string;
-/** ui object */
-declare type uio = UIObject;
 /** of objects */
 declare type lst_obj = any[];
 /** of numbers */
@@ -131,7 +126,6 @@ declare type str_uri = string;
 /** url path */
 declare type str_url = string;
 
-
 declare class DsApp {
 
 	/** Create and add Button to Layout */
@@ -169,7 +163,7 @@ declare class DsApp {
 	AddCodeEdit(layout: DsLayout, text: str, width?: num_frc, height?: num_frc, options?: string | ("FillX/Y")[]): DsCodeEdit;
 
 	/** Adds a slide-able layout on given side */
-	AddDrawer(layout: DsLayout, side: "left"|"right", width?: num_frc, grabWidth: num_frc): void;
+	AddDrawer(layout: DsLayout, side: "left"|"right", width?: num_frc, grabWidth?: num_frc): void;
 
 	/**
 	 * Create and add Image to Layout
@@ -198,7 +192,7 @@ declare class DsApp {
  	 * &emsp; `Menu` - applies various settings to make the list appear like an in-app menu\
  	 * &emsp; `Horiz` - makes title and body text flow horizontally
 	 */
-	AddList(layout: DsLayout, list: str_lst, width?: num_frc, height?: num_frc, options?: string | ("bold"|"Expand"|"Menu"|"Horiz"|"html"|"FontAwesome"|"monospace"|"Normal"|"WhiteGrad"|"BlackGrad"|"AlumButton"|"GreenButton"|"OrangeButton"|"NoSound")[], delim: str): DsList;
+	AddList(layout: DsLayout, list: str_lst, width?: num_frc, height?: num_frc, options?: string | ("bold"|"Expand"|"Menu"|"Horiz"|"html"|"FontAwesome"|"monospace"|"Normal"|"WhiteGrad"|"BlackGrad"|"AlumButton"|"GreenButton"|"OrangeButton"|"NoSound")[], delim?: str): DsList;
 
 	/** Create and add Scroller to Layout */
 	AddScroller(layout: DsLayout, width?: num_frc, height?: num_frc, options?: string | ("FillX"|"FillY"|"FillXY"|"Horizontal"|"Vertical"|"NoScrollBar"|"ScrollFade")[]): DsScroller;
@@ -414,11 +408,14 @@ declare class DsApp {
 	/** Returns a new File object */
 	CreateFile(file: str_ptf, mode: "r"|"w"|"rw"): DsFile;
 
-	/** CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script */
-	CreateGame(file: str_ptf, orient?: "Portrait"|"Landscape"): void;
+	/**
+	 * CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script
+	 * @return \{ game, lay}
+	 */
+	CreateGame(file: str_ptf, orient?: "Portrait"|"Landscape"): { game: DsGameView, lay: DsLayout};
 
 	/** The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics */
-	CreateGameView(width: num_frc, height: num_frc, options?: str_com): void;
+	CreateGameView(width: num_frc, height: num_frc, options?: str_com): DsGameView;
 
 	/** Returns a GLView object */
 	CreateGLView(width: num_frc, height: num_frc, options?: "fast2d"): DsGLView;
@@ -467,7 +464,7 @@ declare class DsApp {
 	CreateMediaStore(): DsMediaStore;
 
 	/** Add music to your app */
-	CreateMusic(): DsMusic;
+	CreateMusic(): obj;
 
 	/**
 	 * Returns a new NetClient object
@@ -487,7 +484,7 @@ declare class DsApp {
  	 * &emsp; `nostart` - disable auto start\
  	 * &emsp; `esm` - use EcmaScript-Modules
 	 */
-	CreateNode(paths?: str_pth, options?: "extended"|"legacy"|"nostart"|"esm"): void;
+	CreateNode(paths?: str_pth, options?: "extended"|"legacy"|"nostart"|"esm"): DsNode;
 
 	/**
 	 * Returns a new Notification object
@@ -500,7 +497,7 @@ declare class DsApp {
 	CreateNxt(): DsNxt;
 
 	/** Returns a new Overlay object */
-	CreateOverlay(options?: string | ("ShowWhenLocked"|"TurnScreenOn"|"KeepScreenOn")[]): void;
+	CreateOverlay(options?: string | ("ShowWhenLocked"|"TurnScreenOn"|"KeepScreenOn")[]): DsOverlay;
 
 	/** Returns a new PhoneState object */
 	CreatePhoneState(types: "CellLocation"|"DataConnection"|"DataActivity"|"CallState"|"ServiceState"|"SignalStrength"|"CallForwarding"|"MessageWaiting"): DsPhoneState;
@@ -644,7 +641,7 @@ declare class DsApp {
 	CreateWebView(width?: num_frc, height?: num_frc, options?: string | ("AllowZoom"|"AutoZoom"|"ClearCookies"|"FillX/Y"|"Local"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Persist"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser"|"Wide")[], zoom?: num_prc): DsWebView;
 
 	/** The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user */
-	CreateWizard(title: str, width?: num_frc, height?: num_frc, callback?: (layout: DsLayout, page: num_int) => void, options?: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"TouchModal"|"NoTouch")[]): void;
+	CreateWizard(title: str, width?: num_frc, height?: num_frc, callback?: (layout: DsLayout, page: num_int) => void, options?: string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"TouchModal"|"NoTouch")[]): DsWizard;
 
 	/** Returns a new YesNoDialog object */
 	CreateYesNoDialog(message: str, options?: string | ("NoDim"|"NoFocus"|"TouchModal")[]): DsYesNoDialog;
@@ -1185,7 +1182,7 @@ declare class DsApp {
 
 	/**
 	 * Convert file path to content uri
-	 * @return content://[uri]
+	 * @return `content://[uri]`
 	 */
 	Path2Uri(path: str_pth): str_ptc;
 
@@ -1288,10 +1285,10 @@ declare class DsApp {
 	Script(file: str_ptf, noDefer?: bin): void;
 
 	/** Send a file to a remote target */
-	SendFile(file: str_pfa, subject: str, text: str, choose: str): void;
+	SendFile(file: str_pfa, subject?: str, text?: str, choose?: str): void;
 
 	/** Send an image to a remote target */
-	SendImage(file: str_pfa, choose: str): void;
+	SendImage(file: str_pfa, choose?: str): void;
 
 	/**
 	 * Intens can be used to perform an operation between different applications or activities
@@ -1300,19 +1297,19 @@ declare class DsApp {
 	 * @param options <br>
  	 * &emsp; `Result` - expect a result to be passed to the callback function
 	 */
-	SendIntent(packageName: str, className: str, action: str, category: str, uri: str_uri, type: str_mim, extras: { name: str, type: "string"|"float"|"int"|"long"|"bool"|"list"|"file"|"uri"|"keydown"|"keyup", value: str }[], options?: string | ("Result"|"ClearTask")[], callback?: (resultCode: -1|0|1, data: { action: str, type: str, data: str, flags: num_int, extras: obj }) => void): void;
+	SendIntent(packageName?: str, className?: str, action?: str, category?: str, uri?: str_uri, type?: str_mim, extras?: { name: str, type: "string"|"float"|"int"|"long"|"bool"|"list"|"file"|"uri"|"keydown"|"keyup", value: str }[], options?: string | ("Result"|"ClearTask")[], callback?: (resultCode: -1|0|1, data?: { action: str, type: str, data: str, flags: num_int, extras: obj }) => void): void;
 
 	/** Open the EMail app and autofill fields */
-	SendMail(address: str, subject: str, body: str, attach: str_pth, type: str_mim, options?: "SendTo"): void;
+	SendMail(address: str, subject?: str, body?: str, attach?: str_pth, type?: str_mim, options?: "SendTo"): void;
 
 	/** Send message from Service to main app */
 	SendMessage(message: str): void;
 
 	/** Open the SMS app and autofill fields */
-	SendSMS(msg: str, number: str_num): void;
+	SendSMS(msg?: str, number?: str_num): void;
 
 	/** Share text between apps */
-	SendText(text: str, subject: str, choose: str): void;
+	SendText(text: str, subject?: str, choose?: str): void;
 
 	/**
 	 * Set alarm to open your app at a specific time
@@ -1320,7 +1317,7 @@ declare class DsApp {
  	 * &emsp; `Exact` - only works for single shot alarms\
  	 * &emsp; `App` - Opens main app if called from a service
 	 */
-	SetAlarm(type: "Set"|"Repeat"|"Cancel", id: str|num_int, callback?: (id: str|num_int) => void, time: num_dat, interval: num_mls, options?: string | ("ExactIdle"|"Exact"|"App")[]): void;
+	SetAlarm(type: "Set"|"Repeat"|"Cancel", id?: str|num_int, callback?: (id: str|num_int) => void, time?: num_dat, interval?: num_mls, options?: string | ("ExactIdle"|"Exact"|"App")[]): void;
 
 	/** Load the language code from lang.json */
 	SetAppLanguage(name: str): void;
@@ -1362,7 +1359,7 @@ declare class DsApp {
 	SetInBackground(): void;
 
 	/** Set services to run in the foreground */
-	SetInForeground(title: str, text: str, largeIcon: str_ptf, smallIcon: str_ptf, importance: "min"|"low"|"default"|"high"|"none"): void;
+	SetInForeground(title?: str, text?: str, largeIcon?: str_ptf, smallIcon?: str_ptf, importance?: "min"|"low"|"default"|"high"|"none"): void;
 
 	/**
 	 * Set options for the connected joystick
@@ -1379,22 +1376,22 @@ declare class DsApp {
 	 * @param options <br>
  	 * &emsp; `Tasks` - prevents recent tasks button working
 	 */
-	SetKioskMode(mode: string | ("Power"|"Status"|"Nav"|"NavRight"|"LockTask"|"Pin")[], enable: bin, options?: string | ("Black"|"Tasks")[], packages: str): void;
+	SetKioskMode(mode: string | ("Power"|"Status"|"Nav"|"NavRight"|"LockTask"|"Pin")[], enable?: bin, options?: string | ("Black"|"Tasks")[], packages?: str): void;
 
 	/** Set default margins */
 	SetMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Set app menu */
-	SetMenu(list: str_com, iconPath: str_ptf): void;
+	SetMenu(list: str_com, iconPath?: str_ptf): void;
 
 	/** Emulate GPS location */
-	SetMockLocation(lat: num, lng: num, accuracy: num): void;
+	SetMockLocation(lat: num, lng: num, accuracy?: num): void;
 
 	/** Set NavBar color */
 	SetNavBarColor(color: str_col): void;
 
 	/** Called on incoming Broadcasts */
-	SetOnBroadcast(callback?: (type: str, msg: str) => void, action: str): void;
+	SetOnBroadcast(callback: (type: str, msg: str) => void, action: str): void;
 
 	/** Called on app debug messages */
 	SetOnDebug(callback: () => void): void;
@@ -1473,7 +1470,7 @@ declare class DsApp {
 	SetVolume(stream: "Alarm"|"DTMF"|"Music"|"Notification"|"Ring"|"System"|"Voicecall", level: num_frc, options?: "ShowUI"): void;
 
 	/** En/Disable the mobile Wifi Access Point of the device */
-	SetWifiApEnabled(enable: bin, ssid: str, key: str): void;
+	SetWifiApEnabled(enable: bin, ssid?: str, key?: str): void;
 
 	/** En/Disable Wifi on the device */
 	SetWifiEnabled(enable: bin): void;
@@ -1483,7 +1480,7 @@ declare class DsApp {
 
 	/**
 	 * Shows a CheckList
-	 * @param list title:str\:checked:bin
+	 * @param list `title:checked`
 	 * @param options sun-moon:shows sun and moon icons instead of default check boxes
 	 */
 	ShowCheckList(title: str, list: str|{ title: str, check: bin }, callback?: (data: { title: str, checked: bin }) => void, width?: num_frc, height?: num_frc, options?: str): DsCheckList;
@@ -1515,24 +1512,24 @@ declare class DsApp {
 	ShowProgress(message: str, options?: string | ("NoDim"|"NonModal"|"Solid")[]): void;
 
 	/** Show a progress bar dialog */
-	ShowProgressBar(title: str, percent: num_prc, options?: "Light"): void;
+	ShowProgressBar(title: str, percent?: num_prc, options?: "Light"): void;
 
 	/** Show a text input dialog */
-	ShowTextDialog(title: str, dflt: str, callback?: (text: str) => void): void;
+	ShowTextDialog(title: str, dflt?: str, callback?: (text: str) => void): void;
 
 	/** Shows a tooltip message on the screen */
-	ShowTip(message: str, left: num_frc, top: num_frc, timeOut: num_mls, options?: "Down"): void;
+	ShowTip(message: str, left?: num_frc, top?: num_frc, timeOut?: num_mls, options?: "Down"): void;
 
 	/** Simulates a drag event on an app object in a scrollable container */
-	SimulateDrag(obj: dso, x1: num_frc, y1: num_frc, x2: num_frc, y2: num_frc, step: num, pause: num): void;
+	SimulateDrag(obj: dso, x1: num_frc, y1: num_frc, x2: num_frc, y2: num_frc, step?: num, pause?: num): void;
 
 	/** Simulates a key event on an app object */
-	SimulateKey(obj: dso, keyName: str, modifiers: "META_META_ON"|"META_RIGHT_ON"|"NUM_LOCK_ON"|"SCROLL_LOCK_ON"|"SHIFT_LEFT_ON"|"SHIFT_MASK"|"SHIFT_ON"|"SHIFT_RIGHT_ON"|"SYM_ON", pause: num): void;
+	SimulateKey(obj: dso, keyName: str, modifiers?: "META_META_ON"|"META_RIGHT_ON"|"NUM_LOCK_ON"|"SCROLL_LOCK_ON"|"SHIFT_LEFT_ON"|"SHIFT_MASK"|"SHIFT_ON"|"SHIFT_RIGHT_ON"|"SYM_ON", pause?: num): void;
 
 	/** Simulates a scroll event on a scrollable app object */
-	SimulateScroll(obj: dso, x: num_frc, y: num_frc, dx: num_frc, dy: num_frc, count: num, fling: num): void;
+	SimulateScroll(obj: dso, x: num_frc, y: num_frc, dx: num_frc, dy: num_frc, count?: num, fling?: num): void;
 
-	/** Simulate a touch event on a rouchable control */
+	/** Simulate a touch event on a reachable control */
 	SimulateTouch(obj: dso, x: num_frc, y: num_frc, dir: "Down"|"Move"|"Up"): void;
 
 	/** Start your DS app in an html project */
@@ -1545,7 +1542,7 @@ declare class DsApp {
  	 * &emsp; `Game` - runs in GameView mode
 	 * @param intent `{ action`, ` type`, ` data`, ` extras }`
 	 */
-	StartApp(file: str_ptf, options?: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[], intent: str): void;
+	StartApp(file: str_ptf, options?: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[], intent?: str): void;
 
 	/** Start remote debug server */
 	StartDebugServer(): void;
@@ -1568,10 +1565,10 @@ declare class DsApp {
  	 * &emsp; `log` - logs output to console\
  	 * &emsp; `noread` - dont read result (just execute)
 	 */
-	SysExec(command: str, options?: "log"|"noread"|"sh"|"su", maxRead: num, timeout: num_sec): str;
+	SysExec(command: str, options?: "log"|"noread"|"sh"|"su", maxRead?: num, timeout?: num_sec): str;
 
 	/** Audiolize text */
-	TextToSpeech(text: str, pitch: num, rate: num, callback?: () => void, stream: "music", locale: str, engine: str): void;
+	TextToSpeech(text: str, pitch?: num, rate?: num, callback?: () => void, stream?: "music", locale?: str, engine?: str): void;
 
 	/** Put the app in the background */
 	ToBack(): void;
@@ -1624,7 +1621,7 @@ declare class DsApp {
 	Vibrate(pattern: str_com): void;
 
 	/** Perform a synchronous delay */
-	Wait(seconds: num_sec, doEvents: bin): void;
+	Wait(seconds: num_sec, doEvents?: bin): void;
 
 	/** Wake the screen up */
 	WakeUp(): void;
@@ -1640,20 +1637,20 @@ declare class DsApp {
  	 * &emsp; `NoEmpty` - hide empty folders\
  	 * &emsp; `project` - Shows DS project folders only
 	 */
-	WalkFolder(path: str_pth, filter: str, limit: num_int, options?: string | ("Alphasort"|"FullPath"|"RegEx"|"Folders"|"Files"|"NoEmpty"|"project")[]): str_pth[];
+	WalkFolder(path: str_pth, filter?: str, limit?: num_int, options?: string | ("Alphasort"|"FullPath"|"RegEx"|"Folders"|"Files"|"NoEmpty"|"project")[]): str_pth[];
 
 	/** Connect to a WiFi network by specifying the ssid and a password */
 	WifiConnect(ssid: str, key: str): void;
 
 	/** Scan for any available Wifi networks */
-	WifiScan(callback?: (ssids: str_pip|lst) => void, options?: "detail"): void;
+	WifiScan(callback: (ssids: str_pip|lst) => void, options?: "detail"): void;
 
 	/**
 	 * Write text to a local file
 	 * @param encoding <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
 	 */
-	WriteFile(file: str_ptf, text: str, mode: "Append"|"ASCII", encoding: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"): void;
+	WriteFile(file: str_ptf, text: str, mode?: "Append"|"ASCII", encoding?: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"): void;
 
 	/**
 	 * Compress a file to zip
@@ -1763,7 +1760,7 @@ declare class DsBluetoothSerial {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Ask user to enable Bluetooth */
 	RequestEnable(): void;
@@ -1813,13 +1810,13 @@ declare class DsButton {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -1882,7 +1879,7 @@ declare class DsButton {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -1891,7 +1888,7 @@ declare class DsButton {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -1906,16 +1903,16 @@ declare class DsButton {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -1945,13 +1942,13 @@ declare class DsButton {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Customize the button looks */
 	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc): void;
@@ -1963,7 +1960,7 @@ declare class DsButton {
 	SetTextColor(color: str_col): void;
 
 	/** Define a shadow around the control */
-	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+	SetTextShadow(radius: num_int, dx?: num_int, dy?: num_int, color?: str_col): void;
 
 	/**
 	 * Change the text size
@@ -1971,7 +1968,7 @@ declare class DsButton {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -1983,7 +1980,7 @@ declare class DsButton {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -1996,13 +1993,13 @@ declare class DsCameraView {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Takes a picture if a motion was detected
@@ -2119,7 +2116,7 @@ declare class DsCameraView {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Returns if the camera is currently recording */
 	IsRecording(): bin;
@@ -2131,7 +2128,7 @@ declare class DsCameraView {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Define a raster for motion detection */
 	MotionMosaic(xtiles: num_int, ytiles: num_int, sensitivity: num_pxl, minPeriod?: num_mls, image?: DsImage): void;
@@ -2158,19 +2155,19 @@ declare class DsCameraView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Applies a color effect to the camera */
 	SetColorEffect(effect: "none"|"mono"|"negative"|"solarize"|"sepia"|"posterize"|"whiteboard"|"blackboard"|"aqua"|"vage-cold"|"point-blue"|"point-red-yellow"|"emboss"|"sketch"|"neon"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -2218,7 +2215,7 @@ declare class DsCameraView {
 	SetPictureSize(width: num_pxl, height: num_pxl): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Rotate the captured image */
 	SetPostRotation(angle: num_deg): void;
@@ -2230,7 +2227,7 @@ declare class DsCameraView {
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** N-/Disables the camera sound */
 	SetSound(enabled: bin): void;
@@ -2266,7 +2263,7 @@ declare class DsCameraView {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -2279,13 +2276,13 @@ declare class DsCheckBox {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -2351,7 +2348,7 @@ declare class DsCheckBox {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -2360,7 +2357,7 @@ declare class DsCheckBox {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -2375,19 +2372,19 @@ declare class DsCheckBox {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Changes the ckecked state */
 	SetChecked(checked: bin): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -2405,13 +2402,13 @@ declare class DsCheckBox {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change displayed text */
 	SetText(text: str): void;
@@ -2425,7 +2422,7 @@ declare class DsCheckBox {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -2437,7 +2434,7 @@ declare class DsCheckBox {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -2484,13 +2481,13 @@ declare class DsCodeEdit {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -2586,7 +2583,7 @@ declare class DsCodeEdit {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -2595,7 +2592,7 @@ declare class DsCodeEdit {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Paste clipboard to the current cursor position */
 	Paste(): void;
@@ -2631,16 +2628,16 @@ declare class DsCodeEdit {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Changes the color scheme of the CodeEdit */
 	SetColorScheme(scheme: "Dark"|"Light"): void;
@@ -2679,7 +2676,7 @@ declare class DsCodeEdit {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
@@ -2691,7 +2688,7 @@ declare class DsCodeEdit {
 	SetSelectMode(onOff: bin): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change displayed text */
 	SetText(text: str): void;
@@ -2705,7 +2702,7 @@ declare class DsCodeEdit {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** En/Disable device keyboard */
 	SetUseKeyboard(onOff: bin): void;
@@ -2720,7 +2717,7 @@ declare class DsCodeEdit {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -2764,7 +2761,7 @@ declare class DsDialog {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -2830,7 +2827,7 @@ declare class DsDialog {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -2839,7 +2836,7 @@ declare class DsDialog {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Removes a content layout */
 	RemoveLayout(layout: DsLayout): void;
@@ -2857,16 +2854,16 @@ declare class DsDialog {
 	SetBackColor(color: str_col, radius: num_pxl): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -2890,13 +2887,13 @@ declare class DsDialog {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Changes the dialog title */
 	SetTitle(title: str): void;
@@ -2926,7 +2923,7 @@ declare class DsDialog {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -2960,7 +2957,7 @@ declare class DsDownloader {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Called when download is cancelled */
 	SetOnCancel(callback: (file: str_pth) => void): void;
@@ -3103,16 +3100,6 @@ declare class DsFile {
 }
 
 
-declare class DsGame {
-
-	/** Game */
-	game: DsGame;
-
-	/** Lay */
-	lay: DsLayout;
-}
-
-
 declare class DsGameView {
 
 	/**
@@ -3122,7 +3109,7 @@ declare class DsGameView {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -3182,7 +3169,7 @@ declare class DsGameView {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -3191,7 +3178,7 @@ declare class DsGameView {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -3206,16 +3193,16 @@ declare class DsGameView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -3236,13 +3223,13 @@ declare class DsGameView {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -3254,7 +3241,7 @@ declare class DsGameView {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -3348,7 +3335,7 @@ declare class DsGLView {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -3357,7 +3344,7 @@ declare class DsGLView {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Render draw commands */
 	Render(): void;
@@ -3366,13 +3353,13 @@ declare class DsGLView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -3399,13 +3386,13 @@ declare class DsGLView {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** En/Disables touch events to be fired on the control */
 	SetTouchable(touchable: bin): void;
@@ -3420,7 +3407,7 @@ declare class DsGLView {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 
 	/** Width */
 	width: num_int;
@@ -3488,13 +3475,13 @@ declare class DsImage {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -3605,7 +3592,7 @@ declare class DsImage {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -3620,7 +3607,7 @@ declare class DsImage {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Moves the image content */
 	Move(x: num, y: num): void;
@@ -3659,19 +3646,19 @@ declare class DsImage {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Fills the image with a color */
 	SetColor(color: str_col): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -3736,13 +3723,13 @@ declare class DsImage {
 	SetPixelMode(onoff: bin): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change the drawn text size */
 	SetTextSize(size: num): void;
@@ -3766,7 +3753,7 @@ declare class DsImage {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 
 	/** Update the view in disabled AutoUpdate mode */
 	Update(): void;
@@ -3785,13 +3772,13 @@ declare class DsLayout {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -3857,7 +3844,7 @@ declare class DsLayout {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -3866,7 +3853,7 @@ declare class DsLayout {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Remove a child from the layout */
 	RemoveChild(child: dso): void;
@@ -3884,16 +3871,16 @@ declare class DsLayout {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set margins of top-level children */
 	SetChildMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
@@ -3949,13 +3936,13 @@ declare class DsLayout {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** En/Disables touch events to be fired on the control */
 	SetTouchable(touchable: bin): void;
@@ -3973,7 +3960,7 @@ declare class DsLayout {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -3989,13 +3976,13 @@ declare class DsList {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -4082,7 +4069,7 @@ declare class DsList {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -4091,7 +4078,7 @@ declare class DsList {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Clears the list */
 	RemoveAll(): void;
@@ -4127,16 +4114,16 @@ declare class DsList {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Change coloumn widths */
 	SetColumnWidths(icon: num_frc, title: num_frc, body?: num_frc, mode?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
@@ -4202,13 +4189,13 @@ declare class DsList {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change the text color */
 	SetTextColor(color: str_col): void;
@@ -4228,7 +4215,7 @@ declare class DsList {
 	SetTextMargins(left?: num, top?: num, right?: num, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt", options?: "inner"|"outer"): void;
 
 	/** Define a shadow around the control */
-	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+	SetTextShadow(radius: num_int, dx?: num_int, dy?: num_int, color?: str_col): void;
 
 	/** Apply shadow to titles */
 	SetTextShadow1(radius: num_deg, dx?: num_int, dy?: num_int, color?: str_col): void;
@@ -4242,7 +4229,7 @@ declare class DsList {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Set title text size */
 	SetTextSize1(size: num, mode?: string | ("px"|"sp"|"dip"|"mm"|"pt")[]): void;
@@ -4260,7 +4247,7 @@ declare class DsList {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -4273,7 +4260,7 @@ declare class DsListDialog {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -4294,19 +4281,19 @@ declare class DsListDialog {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Change the background color */
 	SetBackColor(color: str_col): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Define a callback function for touch events */
 	SetOnTouch(callback: (title: str, checked?: bin) => void): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change the text color */
 	SetTextColor(color: str_col): void;
@@ -4918,13 +4905,13 @@ declare class DsScroller {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -4990,7 +4977,7 @@ declare class DsScroller {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -4999,7 +4986,7 @@ declare class DsScroller {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Remove a scroller layout */
 	RemoveChild(child: dso): void;
@@ -5023,16 +5010,16 @@ declare class DsScroller {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -5047,13 +5034,13 @@ declare class DsScroller {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -5065,7 +5052,7 @@ declare class DsScroller {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -5078,13 +5065,13 @@ declare class DsSeekBar {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -5144,7 +5131,7 @@ declare class DsSeekBar {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -5153,7 +5140,7 @@ declare class DsSeekBar {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -5168,13 +5155,13 @@ declare class DsSeekBar {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
 	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over", options?: str): void;
@@ -5198,7 +5185,7 @@ declare class DsSeekBar {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Set value range */
 	SetRange(range: num): void;
@@ -5207,7 +5194,7 @@ declare class DsSeekBar {
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Set current seekbar value */
 	SetValue(val: num): void;
@@ -5222,7 +5209,7 @@ declare class DsSeekBar {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -5256,7 +5243,7 @@ declare class DsSensor {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Set maximum OnChange rate */
 	SetMaxRate(rate: num_mls): void;
@@ -5353,7 +5340,7 @@ declare class DsSpeechRec {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Start speech recognition */
 	Recognize(): void;
@@ -5381,13 +5368,13 @@ declare class DsSpinner {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -5450,7 +5437,7 @@ declare class DsSpinner {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -5459,7 +5446,7 @@ declare class DsSpinner {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Change current shown item */
 	SelectItem(item: str): void;
@@ -5477,16 +5464,16 @@ declare class DsSpinner {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -5510,13 +5497,13 @@ declare class DsSpinner {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change current shown item */
 	SetText(item: str): void;
@@ -5530,7 +5517,7 @@ declare class DsSpinner {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -5542,7 +5529,7 @@ declare class DsSpinner {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -5555,13 +5542,13 @@ declare class DsSwitch {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -5627,7 +5614,7 @@ declare class DsSwitch {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -5636,7 +5623,7 @@ declare class DsSwitch {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -5651,19 +5638,19 @@ declare class DsSwitch {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Change the checked state */
 	SetChecked(checked: bin): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -5681,13 +5668,13 @@ declare class DsSwitch {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Customize the button looks */
 	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc): void;
@@ -5704,7 +5691,7 @@ declare class DsSwitch {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -5716,7 +5703,7 @@ declare class DsSwitch {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -5879,7 +5866,7 @@ declare class DsSysProc {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Write to stdout */
 	Out(command: str): void;
@@ -5907,13 +5894,13 @@ declare class DsTabs {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -5976,7 +5963,7 @@ declare class DsTabs {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -5985,7 +5972,7 @@ declare class DsTabs {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -6000,16 +5987,16 @@ declare class DsTabs {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Apply corner radius to card layouts's */
 	SetCornerRadius(radius: num_pxl): void;
@@ -6039,13 +6026,13 @@ declare class DsTabs {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Set text size */
 	SetTextSize(size: num, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
@@ -6069,7 +6056,7 @@ declare class DsTabs {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 
 	parent: {
 		/** Add a new tab */
@@ -6087,13 +6074,13 @@ declare class DsText {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -6171,7 +6158,7 @@ declare class DsText {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -6187,7 +6174,7 @@ declare class DsText {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -6202,16 +6189,16 @@ declare class DsText {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Auto-crop text to fit in control */
 	SetEllipsize(mode: "start"|"middle"|"end"): void;
@@ -6253,13 +6240,13 @@ declare class DsText {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change displayed text */
 	SetText(text: str): void;
@@ -6268,7 +6255,7 @@ declare class DsText {
 	SetTextColor(color: str_col): void;
 
 	/** Define a shadow around the control */
-	SetTextShadow(radius: num_int, dx: num_int, dy: num_int, color: str_col): void;
+	SetTextShadow(radius: num_int, dx?: num_int, dy?: num_int, color?: str_col): void;
 
 	/**
 	 * Change the text size
@@ -6276,7 +6263,7 @@ declare class DsText {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** En/Disables touch events to be fired on the control */
 	SetTouchable(touchable: bin): void;
@@ -6291,7 +6278,7 @@ declare class DsText {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -6304,13 +6291,13 @@ declare class DsTextEdit {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -6409,7 +6396,7 @@ declare class DsTextEdit {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -6418,7 +6405,7 @@ declare class DsTextEdit {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Redo an undone action */
 	Redo(): void;
@@ -6439,16 +6426,16 @@ declare class DsTextEdit {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Change cursor color */
 	SetCursorColor(color: str_col): void;
@@ -6487,7 +6474,7 @@ declare class DsTextEdit {
 	SetSelection(start: num_int, stop: num_int): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Change displayed text */
 	SetText(text: str): void;
@@ -6501,7 +6488,7 @@ declare class DsTextEdit {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -6513,7 +6500,7 @@ declare class DsTextEdit {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 
 	/** Undo an action */
 	Undo(): void;
@@ -6529,7 +6516,7 @@ declare class DsTheme {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -6544,13 +6531,13 @@ declare class DsTheme {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Change the background color */
 	SetBackColor(color: str_col): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Define button text color */
 	SetBtnTextColor(color: str_col): void;
@@ -6632,13 +6619,13 @@ declare class DsToggle {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -6704,7 +6691,7 @@ declare class DsToggle {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -6713,7 +6700,7 @@ declare class DsToggle {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Set the background transparency by alpha value
@@ -6728,19 +6715,19 @@ declare class DsToggle {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Change the checked state */
 	SetChecked(checked: bin): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -6758,13 +6745,13 @@ declare class DsToggle {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Customize the button looks */
 	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc): void;
@@ -6781,7 +6768,7 @@ declare class DsToggle {
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 */
-	SetTextSize(size: num, mode: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
+	SetTextSize(size: num, mode?: "px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"): void;
 
 	/** Change the visibility mode */
 	SetVisibility(mode: "Show"|"Hide"|"Gone"): void;
@@ -6793,7 +6780,7 @@ declare class DsToggle {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -6824,7 +6811,7 @@ declare class DsUSBSerial {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/**
 	 * Define data format for outgoing data
@@ -6877,7 +6864,7 @@ declare class DsVideoView {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -6937,7 +6924,7 @@ declare class DsVideoView {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the view is currently playing */
 	IsPlaying(): bin;
@@ -6952,7 +6939,7 @@ declare class DsVideoView {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Pause the video */
 	Pause(): void;
@@ -6976,16 +6963,16 @@ declare class DsVideoView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -6995,7 +6982,7 @@ declare class DsVideoView {
 
 	/**
 	 * Set video source
-	 * @param file http(s)://url
+	 * @param file `http(s)://url`
 	 */
 	SetFile(file: str_pth|str_url): void;
 
@@ -7018,13 +7005,13 @@ declare class DsVideoView {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Scale the control by the given factors */
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Set a subtitle source */
 	SetSubtitles(file: str_ptf): void;
@@ -7045,7 +7032,7 @@ declare class DsVideoView {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -7058,7 +7045,7 @@ declare class DsWebServer {
 	 * Called when servlet received a message
 	 * @param path url path
 	 */
-	AddServlet(path: "/name", callback: (args: { parameter: argument }, info: { remoteAddress: str }) => void): void;
+	AddServlet(path: "/name", callback: (args: {[parameter: str]: str}, info: { remoteAddress: str }) => void): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -7079,7 +7066,7 @@ declare class DsWebServer {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Send message to client(s) */
 	SendText(txt: str, ip: str, id: num_int): void;
@@ -7150,13 +7137,13 @@ declare class DsWebView {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Animates a control
 	 * @param type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 */
-	Animate(type: str, callback: (type: str) => void, time: num_mls): void;
+	Animate(type: str, callback?: (type: str) => void, time?: num_mls): void;
 
 	/** Load previous page */
 	Back(): void;
@@ -7246,7 +7233,7 @@ declare class DsWebView {
 	IsEnabled(): bin;
 
 	/** Checks if the control overlaps with another */
-	IsOverlap(obj: dso, depth: num_frc): bin;
+	IsOverlap(obj: dso, depth?: num_frc): bin;
 
 	/** Checks if the control is currently visible */
 	IsVisible(): bin;
@@ -7294,7 +7281,7 @@ declare class DsWebView {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Print webpage via anddroid printer dialog */
 	Print(): void;
@@ -7315,13 +7302,13 @@ declare class DsWebView {
 	SetBackColor(color: str_col): void;
 
 	/** Define the background color of the control with a gradient */
-	SetBackGradient(color1: str_col, color2: str_col, color3: all, options: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
+	SetBackGradient(color1: str_col, color2?: str_col, color3?: all, options?: "left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"): void;
 
 	/** Define a radial background color gradient */
-	SetBackGradientRadial(x: num_frc, y: num_frc, radius: num_frc, color1: str_col, color2: str_col, color3: all, options: str_com): void;
+	SetBackGradientRadial(x: num_frc, y: num_frc, radius?: num_frc, color1?: str_col, color2?: str_col, color3?: all, options?: str_com): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Block urls from loading */
 	SetBlockedUrls(urls: str[]|"urls"): void;
@@ -7334,7 +7321,7 @@ declare class DsWebView {
 	SetContextMenus(links?: str, images?: str): void;
 
 	/** Adjust the visual color effect with different BlendModes */
-	SetColorFilter(color: str_col, mode: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
+	SetColorFilter(color: str_col, mode?: "Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"): void;
 
 	/** Set accesibility description */
 	SetDescription(desc: str): void;
@@ -7379,7 +7366,7 @@ declare class DsWebView {
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
 	/** Defines position and size on absolute layouts */
-	SetPosition(left: num, top: num, width: num, height: num, options: "px"): void;
+	SetPosition(left: num, top: num, width?: num, height?: num, options?: "px"): void;
 
 	/** Add url redirection rule */
 	SetRedirect(urlFrom: str_url, urlTo: str_url): void;
@@ -7388,7 +7375,7 @@ declare class DsWebView {
 	SetScale(x: num_fac, y: num_fac): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** En/Disable touchmode on the control */
 	SetTouchMode(mode: bin): void;
@@ -7421,7 +7408,7 @@ declare class DsWebView {
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration?: num_mls, type?: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat?: num_int, yoyo?: bin, callback?: () => void): void;
 }
 
 
@@ -7471,7 +7458,7 @@ declare class DsYesNoDialog {
 	 * @param brightness `-100..100`
 	 * @param contrast `0..100`
 	 */
-	AdjustColor(hue: num, saturation: num, brightness: num, contrast: num): void;
+	AdjustColor(hue: num, saturation?: num, brightness?: num, contrast?: num): void;
 
 	/**
 	 * Batch method calls to set object properties
@@ -7492,13 +7479,13 @@ declare class DsYesNoDialog {
 	 * Access Java object methods via reflection
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
-	Method(name: str, types: str_com, p1: str, p2: str, p3: str, p4: str): all;
+	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
 
 	/** Change the background color */
 	SetBackColor(color: str_col, radius?: num_pxl): void;
 
 	/** Change the background to an image */
-	SetBackground(file: str_ptf, options: "repeat"): void;
+	SetBackground(file: str_ptf, options?: "repeat"): void;
 
 	/** Change Yes/No button text */
 	SetButtonText(yes: str, no: str): void;
@@ -7507,7 +7494,7 @@ declare class DsYesNoDialog {
 	SetOnTouch(callback: (result: "Yes"|"No") => void): void;
 
 	/** Change the size of the control */
-	SetSize(width: num, height: num, options: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
+	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Set the visibility to “Show” */
 	Show(): void;
@@ -7622,6 +7609,19 @@ declare class DsDatabase {
 	/** Transaction
 	 * @deprecated  Use ExecuteSql instead */
 	transaction(fn: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, error?: (err: str) => void, success?: (fnc: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void): void;
+}
+
+
+declare class DsCheckList {
+
+	/** Show the check list */
+	Show(): void;
+
+	/**
+	 * Set list
+	 * @param data `title:checked`
+	 */
+	SetList(data: str|{ title: str, check: bin }): void;
 }
 
 

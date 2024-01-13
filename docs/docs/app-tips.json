@@ -13,7 +13,6 @@
 		"CreateDownloader": "Returns a new Downloader object",
 		"CreateEmail": "Returns an Email object for user to send emails",
 		"CreateFile": "Returns a new File object",
-		"CreateGame": "CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script",
 		"CreateGameView": "The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics",
 		"CreateGLView": "Returns a GLView object",
 		"CreateImage": "Returns a new Image object",
@@ -53,7 +52,8 @@
 		"CreateWizard": "The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user",
 		"CreateYesNoDialog": "Returns a new YesNoDialog object",
 		"CreateZipUtil": "Returns a new ZipUtil object",
-		"OpenDatabase": "OpenDatabase creates or opens a local database in which large amounts of data can be stored that can still be queried in a reasonable amount of time"
+		"OpenDatabase": "OpenDatabase creates or opens a local database in which large amounts of data can be stored that can still be queried in a reasonable amount of time",
+		"ShowCheckList": "Shows a CheckList"
 	},
 	"rec": {
 		"Batch": "Batch method calls to set object properties",
@@ -455,10 +455,6 @@
 		"WriteData": "Write data to the file",
 		"WriteNumber": "Write number to the file",
 		"WriteText": "Writes text to file"
-	},
-	"gam": {
-		"game": "Game",
-		"lay": "Lay"
 	},
 	"gmv": {
 		"AdjustColor": "Adjust the visual color effect of the control",
@@ -1744,5 +1740,9 @@
 		"readTransaction": "ReadTransaction\n<deprecated Use ExecuteSql instead>",
 		"startNextTransaction": "StartNextTransaction\n<deprecated Use ExecuteSql instead>",
 		"transaction": "Transaction\n<deprecated Use ExecuteSql instead>"
+	},
+	"ckl": {
+		"Show": "Show the check list",
+		"SetList": "Set list"
 	}
 }

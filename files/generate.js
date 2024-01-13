@@ -482,9 +482,8 @@ const tsxTypes = {
     glo: "GLViewObject",
     // eslint-disable-next-line camelcase
     glo_img: "{ width:num_int, height:num_int }",
-    jso: "Object",
-    swo: "SmartWatchObject",
-    uio: "UIObject"
+    uio: "UIObject",
+    muo: "MuiObject"
 };
 
 /** @type {(s:string, d:string|RegExp, l?:number) => [string]|[string,string]} */
@@ -496,13 +495,16 @@ function split1(s, d) {
 /** @type {(scopeName: string, inpt: DSInput, state: GenState) => string} */
 function generateDefinitionFile(scopeName, inpt, state) {
     /** @type {Obj<string>} */
-    const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "UI", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx", swo: "Sw" };
+    const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "UI", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx" };
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
 
     const typeDecls = Object.entries({ ...conf.tname, ...conf.tdesc })
-        .filter(([name, _]) => name.match(/^[a-z]/i))
-        .map(([name, desc]) => `/** ${desc} */\ndeclare type ${name} = ${makeType(name, true).sub};\n`);
+        .filter(([name, _]) => !name.endsWith('o') && name.match(/^[a-z]/i))
+        .map(([name, desc]) => `/** ${desc} */\ndeclare type ${name} = ${makeType(name, true).sub};`);
+
+    /** @type {Obj<string[]>} */
+    const objs = {};
 
     let definition = "";
     let classDefinition = "";
@@ -513,6 +515,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
         const defs = processFunction(funcName, scopeName, func, "\t");
         definition += defs.func;
         classDefinition += defs.class;
+
         for (const obj in defs.extra) {
             classDefinition += `declare class ${obj} {\n`;
             classDefinition += defs.extra[obj];
@@ -522,7 +525,16 @@ function generateDefinitionFile(scopeName, inpt, state) {
 
     scopeName = `Ds${scopeName[0].toUpperCase() + scopeName.slice(1)}`;
     if (scopeName === "DsUi") scopeName = "UI";
-    return `${typeDecls.join("")}\n\ndeclare class ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
+
+    typeDecls.unshift("");
+    for (const o in objs) {
+        typeDecls.unshift(`/** ${tName[o]} */\ndeclare type ${o} = ${makeType(o, true).sub};`);
+        typeDecls.unshift(`declare type ${tsxTypes[o]} = ${objs[o].join(' | ')};`);
+    }
+
+    typeDecls.unshift(`declare var ${state.curScope}: ${scopeName};`);
+    return `${typeDecls.join("\n")}\n\ndeclare class ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
+
 
     /** @param {string | UndefinedPartial<DSMethod>} stypes */
     function makeType(stypes, tsx = false) {
@@ -562,7 +574,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
                                 String.fromCharCode(Number(c)))
                             .split(/[,|]/);
 
-                        if (types.string.match(/ |\.\.|&lt;|&gt;|<|>/)) {
+                        if (types.string.match(/ |\.\.|&lt;|&gt;|<|>|:/)) {
                             if (types.descs) types.descs = "\\" + types.descs;
                             type.desc = tdesc.map(c => '`' + decodeHtml(c) + '`').join(", ") + types.descs;
                             tdesc = [type.sub];
@@ -762,9 +774,15 @@ function generateDefinitionFile(scopeName, inpt, state) {
         }
 
         if (!func.subf) return defs;
+        if (!func.retval) throw Error(`Missing ret type for ${scopeName}.${name}`);
+
+        const className = objPfx[scopeName] + name.replace(regConPrefix, '');
+        const typeKey = func.retval.split('-', 1)[0];
+        if (!objs[typeKey]) objs[typeKey] = [];
+        objs[typeKey].push(className);
 
         // subfunctions for classes
-        defs.class += `\ndeclare class ${objPfx[scopeName]}${name.replace(regConPrefix, "")} {\n`;
+        defs.class += `\ndeclare class ${className} {\n`;
         for (const subFuncName in func.subf) {
             let met = func.subf[subFuncName];
             if (typeof met === "string") met = unwrapBaseFunc(met, inpt.base);

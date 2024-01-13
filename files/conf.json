@@ -18,7 +18,7 @@
 		"bin": "Boolean",
 		"dso": "app object",
 		"gvo": "game object",
-		"swo": "smartwatch object",
+		"muo": "MUI object",
 		"jso": "JavaScript object",
 		"fnc": "Function",
 		"lst": "List",

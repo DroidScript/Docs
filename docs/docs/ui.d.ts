@@ -1,15 +1,15 @@
+declare var ui: UI;
+declare type object = UIDropdown | UIImage | UISlider | UIPopup;
+/** Object */
+declare type obj = object;
+declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIFAB | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIProgressDialog;
+/** ui object */
+declare type uio = UIObject;
+
 /** all types */
 declare type all = any;
 /** Boolean */
 declare type bin = boolean;
-/** app object */
-declare type dso = AppObject;
-/** game object */
-declare type gvo = GameObject;
-/** smartwatch object */
-declare type swo = SmartWatchObject;
-/** JavaScript object */
-declare type jso = Object;
 /** Function */
 declare type fnc = Function;
 /** List */
@@ -20,8 +20,6 @@ declare type num = number;
 declare type obj = object;
 /** String */
 declare type str = string;
-/** ui object */
-declare type uio = UIObject;
 /** of objects */
 declare type lst_obj = any[];
 /** of numbers */
@@ -130,7 +128,6 @@ declare type str_sty = string;
 declare type str_uri = string;
 /** url path */
 declare type str_url = string;
-
 
 declare class UI {
 

@@ -1,15 +1,12 @@
+declare var gfx: DsGfx;
+declare type GameObject = GfxPhysics | GfxBackground | GfxCircle | GfxEllipse | GfxPolygon | GfxRectangle | GfxSound | GfxSprite | GfxSpriteSheet | GfxText;
+/** game object */
+declare type gvo = GameObject;
+
 /** all types */
 declare type all = any;
 /** Boolean */
 declare type bin = boolean;
-/** app object */
-declare type dso = AppObject;
-/** game object */
-declare type gvo = GameObject;
-/** smartwatch object */
-declare type swo = SmartWatchObject;
-/** JavaScript object */
-declare type jso = Object;
 /** Function */
 declare type fnc = Function;
 /** List */
@@ -20,8 +17,6 @@ declare type num = number;
 declare type obj = object;
 /** String */
 declare type str = string;
-/** ui object */
-declare type uio = UIObject;
 /** of objects */
 declare type lst_obj = any[];
 /** of numbers */
@@ -131,7 +126,6 @@ declare type str_uri = string;
 /** url path */
 declare type str_url = string;
 
-
 declare class DsGfx {
 
 	/** Adds a background to the game */
@@ -141,7 +135,7 @@ declare class DsGfx {
 	AddGraphic(obj: obj, x: num_frc, y: num_frc, w: num_frc, h: num_frc, angle: num_rad, alpha: num_frc): void;
 
 	/** Adds physics to the game */
-	AddPhysics(gravity: num, accuracy: num, sleep: num): void;
+	AddPhysics(gravity: num, accuracy: num, sleep: num): GfxPhysics;
 
 	/** Adds a sprite object */
 	AddSprite(sprite: GfxSprite, x: num_frc, y: num_frc, w: num_frc, h: num_frc, angle: num_frc, alpha: num_frc): void;

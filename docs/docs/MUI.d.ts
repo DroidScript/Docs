@@ -1,15 +1,12 @@
+declare var MUI: DsMUI;
+declare type MuiObject = MuiAlert | MuiAlertSimple | MuiAppBar | MuiAppBarElegant | MuiAppBarModern | MuiBanner | MuiButtonContained | MuiButtonElegant | MuiButtonFlat | MuiButtonOutlined | MuiButtonRaised | MuiButtonRaisedO | MuiButtonRound | MuiButtonRoundO | MuiButtonToggle | MuiCard | MuiCheckbox | MuiCheckList | MuiColorPicker | MuiDataTable | MuiDatePicker | MuiDialog | MuiDivider | MuiFAB | MuiFABElegant | MuiFABOutline | MuiList | MuiListDialog | MuiListModern | MuiListSimple | MuiMenu | MuiMenuWithIcon | MuiModal | MuiRadio | MuiRadioButtons | MuiRadioMaterial | MuiSeekBar | MuiSpinner | MuiSwitch | MuiSwitchSettings | MuiTabFixed | MuiTEFilledIconLeft | MuiTEFilledIconRight | MuiTEOutlineIconLeft | MuiTEOutlineIconRight | MuiTESearchElegant | MuiTESearchUnique | MuiTextAreaFilled | MuiTextAreaFilledA | MuiTextAreaOutline | MuiTextAreaOutlineA | MuiTextEditFilled | MuiTextEditFilledA | MuiTextEditOutline | MuiTextEditOutlineA | MuiTextEditSearch | MuiTextEditUnique | MuiTextH1 | MuiTextH2 | MuiTextH3 | MuiTextH4 | MuiTextH5 | MuiTextH6 | MuiTextJumbo | MuiTextParagraph | MuiTextSecondary | MuiTimePicker;
+/** MUI object */
+declare type muo = MuiObject;
+
 /** all types */
 declare type all = any;
 /** Boolean */
 declare type bin = boolean;
-/** app object */
-declare type dso = AppObject;
-/** game object */
-declare type gvo = GameObject;
-/** smartwatch object */
-declare type swo = SmartWatchObject;
-/** JavaScript object */
-declare type jso = Object;
 /** Function */
 declare type fnc = Function;
 /** List */
@@ -20,8 +17,6 @@ declare type num = number;
 declare type obj = object;
 /** String */
 declare type str = string;
-/** ui object */
-declare type uio = UIObject;
 /** of objects */
 declare type lst_obj = any[];
 /** of numbers */
@@ -130,7 +125,6 @@ declare type str_sty = string;
 declare type str_uri = string;
 /** url path */
 declare type str_url = string;
-
 
 declare class DsMUI {
 
