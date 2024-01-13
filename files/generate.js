@@ -376,6 +376,7 @@ function generateNavigators(scope, navs, name, state, pfx) {
     app.WriteFile(state.curDoc, htmlNavi(name, addcontent, nav, !nofilter));
 }
 
+let madeTsxGlobals = false;
 /**
  * @param {DSInput} inpt
  * @param {GenState} state
@@ -391,10 +392,26 @@ function generateDocs(inpt, state) {
         }
     }
 
-    resetGlobals(state);
-    if (makeTips && "tips".match(regGen)) generateTips(inpt, state);
-    resetGlobals(state);
-    if (makeTsx && "tsx".match(regGen)) generateTsx(inpt, state);
+    if (makeTips && "tips".match(regGen)) {
+        resetGlobals(state);
+        generateTips(inpt, state);
+    }
+
+    if (makeTsx && "tsx".match(regGen)) {
+        if (!madeTsxGlobals) {
+            const tmpInpt = { base: null, navs: [], baseKeys: [], scope: {} };
+            const tmpState = Object.assign({}, state);
+            // @ts-ignore
+            tmpState.curScope = "global";
+
+            resetGlobals(tmpState);
+            generateTsx(tmpInpt, tmpState);
+            madeTsxGlobals = true;
+        }
+
+        resetGlobals(state);
+        generateTsx(inpt, state);
+    }
 }
 
 /**
@@ -448,6 +465,18 @@ function unwrapBaseFunc(met, base) {
         if (!base || !base[met]) Throw(Error("basefunc " + met + " not found!"));
         met = base[met];
     }
+
+    // load params from base
+    while (typeof met.params === "string") {
+        if (!met.params.startsWith('#')) Throw(Error(`params must have # prefix. got '${met}'`));
+        if (/[a-z]/i.test(met.params[1])) met.params = met.params.slice(1);
+        if (!base || !base[met.params])
+            Throw(Error("params " + met.params + " not found!"));
+        met.pNames = base[met.params].pNames || [];
+        met.pTypes = base[met.params].pTypes || [];
+        met.params = base[met.params].params || undefined;
+    }
+
     return met;
 }
 
@@ -456,7 +485,6 @@ function unwrapBaseFunc(met, base) {
  * @param {GenState} state
  */
 function generateTsx(inpt, state) {
-    // TODO
     state.curDoc = getDstDir(D_LANG, state, state.curScope + '.d.ts');
     console.log(`generating ${state.lang}.${state.curScope}.tsx`);
 
@@ -499,9 +527,12 @@ function generateDefinitionFile(scopeName, inpt, state) {
     /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
     const { tname: tName, tdesc: tDesc } = conf;
 
-    const typeDecls = Object.entries({ ...conf.tname, ...conf.tdesc })
-        .filter(([name, _]) => !name.endsWith('o') && name.match(/^[a-z]/i))
-        .map(([name, desc]) => `/** ${desc} */\ndeclare type ${name} = ${makeType(name, true).sub};`);
+    if (scopeName === "global") {
+        const typeDecls = Object.entries({ ...conf.tname, ...conf.tdesc })
+            .filter(([name, _]) => !name.endsWith('o') && name.match(/^[a-z]/i))
+            .map(([name, desc]) => `/** ${desc} */\ndeclare type ${name} = ${makeType(name, true).sub};`);
+        return typeDecls.join("\n");
+    }
 
     /** @type {Obj<string[]>} */
     const objs = {};
@@ -510,7 +541,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
     let classDefinition = "";
     for (const funcName in inpt.scope) {
         const func = inpt.scope[funcName];
-        if (typeof func !== 'object') continue;
+        if (typeof func !== 'object' || funcName === "_tsxdefs") continue;
 
         const defs = processFunction(funcName, scopeName, func, "\t");
         definition += defs.func;
@@ -526,10 +557,23 @@ function generateDefinitionFile(scopeName, inpt, state) {
     scopeName = `Ds${scopeName[0].toUpperCase() + scopeName.slice(1)}`;
     if (scopeName === "DsUi") scopeName = "UI";
 
-    typeDecls.unshift("");
+    /** @type {string[]} */
+    const typeDecls = [];
     for (const o in objs) {
         typeDecls.unshift(`/** ${tName[o]} */\ndeclare type ${o} = ${makeType(o, true).sub};`);
         typeDecls.unshift(`declare type ${tsxTypes[o]} = ${objs[o].join(' | ')};`);
+    }
+
+    for (let [name, type] of Object.entries(inpt.scope._tsxdefs?.subf || {})) {
+        if (typeof type !== "string") continue;
+        if (type.startsWith("r/")) {
+            // eslint-disable-next-line security/detect-non-literal-regexp
+            const reg = new RegExp(`^${type.slice(2, -1)}$`);
+            type = keys(inpt.scope)
+                .filter(n => reg.test(n))
+                .map(n => objPfx[state.curScope] + n.replace(regConPrefix, '')).join(" | ");
+        }
+        typeDecls.unshift(`declare type ${name} = ${type};`);
     }
 
     typeDecls.unshift(`declare var ${state.curScope}: ${scopeName};`);
@@ -714,7 +758,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
         if (dfunc.desc?.startsWith("#")) dfunc.desc = unwrapDesc(dfunc.desc, state);
         const func = fillMissingFuncProps(dfunc);
         // Fix MUI return types
-        if (scopeName === "MUI" && func.name?.match(regConPrefix))
+        if (scopeName === "MUI" && func.name?.match(regConPrefix) && func.retval === "obj")
             func.retval = "muo-" + func.name?.replace(regConPrefix, '');
 
         if (!func.shortDesc?.trim())
@@ -1129,17 +1173,6 @@ function getDocData(inpt, state, f, useAppPop = false) {
         state.curSubf = met.name = met.name || mkeys[k];
         // force use of entry name
         //if (mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
-
-        // load params from base
-        while (typeof met.params === "string") {
-            if (!met.params.startsWith('#')) Throw(Error(`params must have # prefix. got '${met}'`));
-            if (/[a-z]/i.test(met.params[1])) met.params = met.params.slice(1);
-            if (!base || !base[met.params])
-                Throw(Error("params " + met.params + " not found!"));
-            met.pNames = base[met.params].pNames || [];
-            met.pTypes = base[met.params].pTypes || [];
-            met.params = base[met.params].params || undefined;
-        }
 
         if (hidden(state.curSubf)) continue;
 
