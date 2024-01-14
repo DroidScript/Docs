@@ -36,44 +36,17 @@
 
 /** @extern GetHeight */
 
-/** ### GetHtml ###
- * 
- * $$ txp.GetHtml() $$
- * @returns obj
- */
-
+/** @extern GetHtml */
 
 /** @extern GetLeft */
 
-/** ### GetLineCount ###
- * 
- * $$ txp.GetLineCount() $$
- * @returns num_int
- */
+/** @extern GetLineCount */
 
+/** @extern GetLineStart */
 
-/** ### GetLineStart ###
- * 
- * $$ txp.GetLineStart(line) $$
- * @param {num_int} line 
- * @returns num_int
- */
+/** @extern GetLineTop */
 
-
-/** ### GetLineTop ###
- * 
- * $$ txp.GetLineTop(line) $$
- * @param {num_int} line 
- * @returns num
- */
-
-
-/** ### GetMaxLines ###
- * 
- * $$ txp.GetMaxLines() $$
- * @returns num_int
- */
-
+/** @extern GetMaxLines */
 
 /** @extern GetParent */
 
@@ -106,13 +79,7 @@
 
 /** @extern IsVisible */
 
-/** ### Log ###
- * 
- * $$ txp.Log(msg, options?) $$
- * @param {str} msg 
- * @param {str_com} [options] 
- */
-
+/** @extern Log */
 
 /** @extern Method */
 
@@ -138,12 +105,7 @@
 
 /** @extern SetHtml */
 
-/** ### SetLog ###
- * 
- * $$ txp.SetLog(maxLines) $$
- * @param {num_int} maxLines 
- */
-
+/** @extern SetLog */
 
 /** @extern SetMargins */
 

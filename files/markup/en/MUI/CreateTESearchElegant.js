@@ -122,13 +122,7 @@ To make a bordered input, you can pass **border** to the _option_ argument.
  */
 
 
-/** ### SetOnIconTouch ###
- * @brief Calls a function when icon is touch
- * Calls a function when icon is touch
- * $$ tes.SetOnIconTouch(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnIconTouch */
 
 /** @extern SetOnTouch */
 

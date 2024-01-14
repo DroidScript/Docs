@@ -35,44 +35,17 @@
 
 /** @extern GetHeight */
 
-/** ### GetHtml ###
- * 
- * $$ txj.GetHtml() $$
- * @returns obj
- */
-
+/** @extern GetHtml */
 
 /** @extern GetLeft */
 
-/** ### GetLineCount ###
- * 
- * $$ txj.GetLineCount() $$
- * @returns num_int
- */
+/** @extern GetLineCount */
 
+/** @extern GetLineStart */
 
-/** ### GetLineStart ###
- * 
- * $$ txj.GetLineStart(line) $$
- * @param {num_int} line 
- * @returns num_int
- */
+/** @extern GetLineTop */
 
-
-/** ### GetLineTop ###
- * 
- * $$ txj.GetLineTop(line) $$
- * @param {num_int} line 
- * @returns num
- */
-
-
-/** ### GetMaxLines ###
- * 
- * $$ txj.GetMaxLines() $$
- * @returns num_int
- */
-
+/** @extern GetMaxLines */
 
 /** @extern GetParent */
 
@@ -105,13 +78,7 @@
 
 /** @extern IsVisible */
 
-/** ### Log ###
- * 
- * $$ txj.Log(msg, options?) $$
- * @param {str} msg 
- * @param {str_com} [options] 
- */
-
+/** @extern Log */
 
 /** @extern Method */
 
@@ -137,12 +104,7 @@
 
 /** @extern SetHtml */
 
-/** ### SetLog ###
- * 
- * $$ txj.SetLog(maxLines) $$
- * @param {num_int} maxLines 
- */
-
+/** @extern SetLog */
 
 /** @extern SetMargins */
 

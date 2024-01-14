@@ -602,3 +602,55 @@
  * Undo an action
  */
 
+
+/** ### GetHtml
+ * 
+ * @returns obj
+ */
+
+
+/** ### GetLineCount
+ * 
+ * @returns num_int
+ */
+
+
+/** ### GetLineStart
+ * 
+ * @param {num_int} line 
+ * @returns num_int
+ */
+
+
+/** ### GetLineTop
+ * 
+ * @param {num_int} line 
+ * @returns num
+ */
+
+
+/** ### GetMaxLines
+ * 
+ * @returns num_int
+ */
+
+
+/** ### Log
+ * 
+ * @param {str} msg 
+ * @param {str_com} [options] 
+ */
+
+
+/** ### SetLog
+ * 
+ * @param {num_int} maxLines 
+ */
+
+
+/** ### SetOnIconTouch
+ * @brief Calls a function when icon is touch
+ * Calls a function when icon is touch
+ * @param {fnc_json} callback {}
+ */
+

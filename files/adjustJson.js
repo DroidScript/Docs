@@ -1,7 +1,12 @@
 
 const fs = require("fs");
+const { split1, ReadFile } = require("./generators/util");
 
-const opt = { strip: false, navs: false, save: false, pathtypes: false, scopes: /** @type {string[]} */ ([]), base: false, lang: "en", names: false };
+const opt = {
+    strip: false, navs: false, save: false, optimize: false,
+    pathtypes: false, scopes: /** @type {string[]} */ ([]),
+    base: false, lang: "en", names: false
+};
 
 const baseDir = "json/";
 /** @type {import("conf.json")} */
@@ -47,7 +52,7 @@ function checkNav(p) {
 const newDSFunc = () => ({
     name: undefined,
     abbrev: undefined,
-    desc: "",
+    desc: undefined,
     isval: undefined,
     pNames: undefined,
     pTypes: undefined,
@@ -63,6 +68,8 @@ function checkObj(p) {
     const o = JSON.parse(fs.readFileSync(p, 'utf8'));
     /** @type {Obj<DSFunction>} */
     const no = {};
+    /** @type {Obj<number>} */
+    const baseCache = {};
 
     for (const fn in o) {
         const f = o[fn];
@@ -76,20 +83,66 @@ function checkObj(p) {
         for (const mn in nf.subf) {
             const m = f.subf[mn];
             const nm = nf.subf[mn] = newDSFunc();
-            if (typeof m === "string") { nf.subf[mn] = f.subf[mn]; }
-            else {
-                // @ts-ignore
-                for (const k in f.subf[mn]) nm[k] = JSON.parse(JSON.stringify(m[k]));
-                curm = m.name || '';
-                if (handle(nm, mn)) delete nf.subf[mn];
+            if (typeof m === "string") {
+                nf.subf[mn] = f.subf[mn];
+                continue;
             }
+
+            if (opt.optimize) {
+                const key = mn + "^" + JSON.stringify(m);
+                baseCache[key] = (baseCache[key] || 0) + 1;
+            }
+
+            // @ts-ignore
+            for (const k in f.subf[mn]) nm[k] = JSON.parse(JSON.stringify(m[k]));
+            curm = m.name || '';
+            if (handle(nm, mn)) delete nf.subf[mn];
         }
+    }
+
+    if (opt.optimize) {
+        const baseList = Object.keys(baseCache)
+            .filter(k => baseCache[k] > 3)
+            .sort((a, b) => baseCache[b] - baseCache[a]);
+        if (baseList.length) {
+            console.log(`use base in ${p}:`);
+            console.log(baseList.map(k => baseCache[k] + ": " + k.split("^", 1)).join("\n"));
+        }
+        if (opt.save) optimizeBase(no, baseList, p.replace("obj.json", "base.json"));
     }
 
     let s = tos(no);
     if (p.endsWith("base.json")) s = s.replace(/\s+"name": /g, ' "name": ');
     if (opt.save) fs.writeFileSync(p, s);
     else console.log(s);
+}
+
+/**
+ * @param {DSScope} scope
+ * @param {string[]} baseKeys
+ * @param {string} basePath
+ */
+function optimizeBase(scope, baseKeys, basePath) {
+    /** @type {DSBase} */
+    const base = JSON.parse(ReadFile(basePath, "{}"));
+
+    for (const key of baseKeys) {
+        const [baseName, baseVal] = split1(key, "^");
+        if (base[baseName]) continue;
+
+        for (const funcName in scope) {
+            const func = scope[funcName];
+            if (!func.subf) continue;
+            const baseMet = func.subf[baseName];
+            if (typeof baseMet !== "string" && baseVal === JSON.stringify(baseMet)) {
+                base[baseName] = baseMet;
+                func.subf[baseName] = "#" + baseName;
+            }
+        }
+    }
+
+    const s = tos(base).replace(/\s+"name": /g, ' "name": ');
+    fs.writeFileSync(basePath, s);
 }
 
 /**
@@ -169,6 +222,7 @@ for (const spat of process.argv.slice(2)) {
             case "-h": case "--help": process.exit(); break;
             case "-b": case "--base": opt.base = true; break;
             case "-s": case "--save": opt.save = true; break;
+            case "-o": case "--optimize": opt.optimize = true; break;
             case "-n": case "--navs": opt.navs = true; break;
             case "-x": case "--strip": opt.strip = true; break;
             case "-pt": case "--pathtypes": opt.pathtypes = true; break;

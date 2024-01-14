@@ -68,13 +68,7 @@
 
 /** @extern Undo */
 
-/** ### SetOnIconTouch ###
- * @brief Calls a function when icon is touch
- * Calls a function when icon is touch
- * $$ tes.SetOnIconTouch(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnIconTouch */
 
 
 // ------------- SAMPLES ------------- 

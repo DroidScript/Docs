@@ -7,7 +7,7 @@
  * $$ gam = app.CreateGame(file, orient?) $$ 
  * @param {str_ptf} file 
  * @param {str} [orient] Portrait|Landscape
- * @returns obj-{ game:dso-GameView, lay:dso-Layout }
+ * @returns obj-{ game:dso-CreateGameView, lay:dso-CreateLayout }
 */
 
 

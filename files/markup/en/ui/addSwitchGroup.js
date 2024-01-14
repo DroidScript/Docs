@@ -189,129 +189,33 @@ These are the setter and getter properties for the addSwitchGroup Component.
  */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ swg.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+/** @extern animate */
 
+/** @extern setSize */
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ swg.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+/** @extern show */
 
+/** @extern hide */
 
-/** ### show ###
- * @brief show
- * Show the component
- * $$ swg.show() $$
- */
+/** @extern gone */
 
+/** @extern destroy */
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ swg.hide() $$
- */
+/** @extern setScale */
 
+/** @extern getPosition */
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ swg.gone() $$
- */
+/** @extern setMargins */
 
+/** @extern setPadding */
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ swg.destroy() $$
- */
+/** @extern setPosition */
 
+/** @extern setBorder */
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ swg.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+/** @extern bringForward */
 
-
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ swg.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
-
-
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ swg.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
-
-
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ swg.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
-
-
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ swg.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
-
-
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ swg.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
-
-
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ swg.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
-
-
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ swg.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
-
+/** @extern sendBackward */
 
 
 // ------------- SAMPLES ------------- 

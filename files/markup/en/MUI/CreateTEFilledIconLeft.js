@@ -70,13 +70,7 @@
 
 /** @extern Undo */
 
-/** ### SetOnIconTouch ###
- * @brief Calls a function when icon is touch
- * Calls a function when icon is touch
- * $$ tef.SetOnIconTouch(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnIconTouch */
 
 /** @extern SetOnTouch */
 

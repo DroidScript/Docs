@@ -61,7 +61,7 @@ declare type str_b64 = string;
 /** <br>&nbsp;&nbsp;hexadecimal: “#rrggbb”, “#aarrggbb”<br>&nbsp;&nbsp;colourName: “red”, “green”, ... */
 declare type str_col = string;
 /** comma “,” separated */
-declare type str_com = string | string[];
+declare type str_com = string|string[];
 /** comma separated email addresses or names */
 declare type str_eml = string;
 /** float */
