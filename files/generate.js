@@ -9,7 +9,7 @@ const { app } = require("./generators/app");
 const { generateDoc, htmlNavi, newNaviItem } = require("./generators/generate-htm");
 const { generateNavigators } = require("./generators/generate-navs");
 const { generateTips } = require("./generators/generate-tips");
-const { generateDefinitionFile } = require("./generators/generate-tsx");
+const { generateTsx } = require("./generators/generate-tsx");
 const { keys, getl, Throw, ReadFile, mergeObject, nothidden, tos, force, getDstDir, D_BASE, D_LANG, getSrcDir, outDir, D_VER, D_SCOPE, baseDir } = require("./generators/util");
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
@@ -185,13 +185,6 @@ function generateScope(name, state, genPattern) {
     app.ShowProgressBar(`Generating ${state.lang}.${state.curVer}.${name}.${genPattern.func || '*'}`);
     const inpt = parseInput(state);
 
-    // clear nav & scope folder for generating
-    /* if (!clear) {
-        const verDir = getDstDir(D_VER, state);
-        if (!"navs".match(regGen)) app.DeleteFolder(dstDir);
-        for (const f of app.ListFolder(verDir))
-            f.startsWith(name + "_") && app.DeleteFile(verDir + f);
-    } */
     if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
     // generate nav pages
@@ -310,18 +303,6 @@ function generateDocs(inpt, state) {
 }
 
 
-/**
- * @param {DSInput} inpt
- * @param {GenState} state
- */
-function generateTsx(inpt, state) {
-    state.curDoc = getDstDir(D_LANG, state, state.curScope + '.d.ts');
-    console.log(`generating ${state.lang}.${state.curScope}.tsx`);
-
-    const defs = generateDefinitionFile(state.curScope, inpt, state);
-    app.WriteFile(state.curDoc, defs);
-}
-
 /*----------------------------------------------------------------------------*/
 
 /** @param {GenState} state reset globals */
@@ -330,9 +311,6 @@ function resetGlobals(state) {
     state.spop = { fnc: 0, dsc: 0, mul: 0, std: 0, ukn: 0 };
     keys(conf.tname).map(k => state.spop[k] = 0);
 }
-
-
-// ---------------------------- top globs --------------------------------------
 
 /**
  * @param {string} p

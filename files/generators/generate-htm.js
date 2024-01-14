@@ -1,6 +1,6 @@
 const Prism = require('prismjs');
 const fs = require("fs");
-const { getDstDir, D_SCOPE, unwrapDesc, Throw, fillMissingFuncProps, isControl, regConPrefix, D_VER, keys, isnum, has, replW, getAbbrev, nothidden, sortAsc, unwrapBaseFunc, hidden, getAddClass, getSrcDir, ReadFile, Warn, incpop, rplop, split1 } = require('./util');
+const { getDstDir, D_SCOPE, unwrapDesc, Throw, fillMissingFuncProps, regConPrefix, D_VER, keys, isnum, has, replW, getAbbrev, nothidden, sortAsc, unwrapBaseFunc, hidden, getAddClass, getSrcDir, ReadFile, Warn, split1, special, hex } = require('./util');
 const { app } = require('./app');
 const conf = require("../conf.json");
 
@@ -67,7 +67,7 @@ function generateDoc(state, inpt, name) {
         funcLine += `${state.curScope}.${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
 
         // subfunctions of controls with popups
-        if (isControl(inpt.scope, name) && data.mets) {
+        if (ps.subf && data.mets) {
             subfuncs = subfHead
                 .replace(/%t/g, name.replace(regConPrefix, ''))
                 .replace("%f", data.mets);
@@ -264,7 +264,7 @@ function getDocData(inpt, state, f, useAppPop = false) {
     let i, fretval = "";
 
     // abbrev for controls
-    if (f.name && isControl(inpt.scope, f.name) && !f.abbrev)
+    if (f.name && f.subf && !f.abbrev)
         f.abbrev = getAbbrev(f.name);
 
     // convert constructor line
@@ -684,32 +684,41 @@ function addMarkdown(s) {
         .replace(/\\([_*~@])/g, "$1");								// consume \ escaped markdown
 }
 
-/**
- * @param {string} link
- * @param {string} text
- * @param {string} [add]
+/** increase special popup counters and returns its id
+ * @param {GenState} state
+ * @param {string} type
+ * @param {number} i
  */
+function incpop(state, type, i) {
+    if (i) state.spop[type] += i;
+    return hex(state.spop[type] || 0);
+}
+
+/** replace "&" and "|" operators with "and" and "or"
+ * @param {string} s
+ * @param {boolean} [n]
+ */
+function rplop(s, n) {
+    s = s
+        .replace(/([^\\]|^)\\(.)/g, (m, e, /** @type {string} */ c) =>
+            `${e || ''}§${(special[c] || c).charCodeAt(0)}§`)
+        .replace(/\|/g, n ? "” or “" : " or ")
+        //.split(',').sort(sortAsc).join(n ? "”, “" : ", ")
+        .replace(/,/g, n ? "”, “" : ", ")
+        .replace(/§(\d+?)§/g, (m, /** @type {number} */ c) =>
+            String.fromCharCode(Number(c)));
+    return replW(n ? '“' + s + '”' : s);
+}
+
+/** @type {(link:string, text:string, add?:string) => string} */
 function newNaviItem(link, text, add) { return naviItem.replace("%s", link).replace("%s", add || "").replace("%s", text); }
-/**
- * @param {string} id
- * @param {string} text
- * @param {string | false} [add]
- */
+/** @type {(id:string, text:string, add?:string|false) => string} */
 function newTxtPopup(id, text, add) { return txtPopup.replace("%s", id).replace("%s", add || "").replace("%s", text); }
-/**
- * @param {string} id
- * @param {string} text
- */
+/** @type {(id:string, text:string) => string} */
 function newDefPopup(id, text) { return defPopup.replace("%s", id).replace("%s", text); }
-/**
- * @param {string} name
- * @param {string} desc
- */
+/** @type {(name:string, desc:string) => string} */
 function newAppPopup(name, desc) { return appPopup.replace("%s", desc.replace(/\n|<br>/g, '\\n').replace(/'/g, "\\\\'")).replace("%s", name); }
-/**
- * @param {string} target
- * @param {string} text
- */
+/** @type {(target:string, text:string) => string} */
 function newLink(target, text) { return `<a href="${target}" data-ajax="false">${text}</a>`; }
 /** @param {string} code */
 function newCode(code) { return codeBase.replace("%s", code); }

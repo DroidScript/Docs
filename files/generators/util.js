@@ -1,5 +1,6 @@
 /** @type {DSConfig} */
 const conf = require("../conf.json");
+const path = require("path");
 const { app } = require("./app");
 
 // constructor name prefixes
@@ -14,23 +15,18 @@ const D_BASE = 0, D_LANG = 1, D_VER = 2, D_SCOPE = 3;
 const baseDir = "json/", outDir = "../out/";
 
 module.exports = {
-    regConPrefix,
-    special,
-    force,
-    split1,
-    fillMissingFuncProps,
-    unwrapDesc,
-    unwrapBaseFunc,
-    getAddClass,
-    replW,
-    incpop, rplop,
-    hex,
-    Throw,
-    Warn, getl, hidden, nothidden,
-    isnum, has, keys, sortAsc, getAbbrev,
-    isControl, ReadFile, mergeObject, tos,
-    getSrcDir, getDstDir, D_BASE, D_LANG, D_SCOPE, D_VER,
-    outDir, baseDir
+    // constants
+    regConPrefix, special, force,
+    // unwrapper
+    fillMissingFuncProps, unwrapDesc, unwrapBaseFunc,
+    // popup helper
+    getAddClass, getAbbrev,
+    // utils
+    Throw, Warn, getl, hidden, nothidden, mergeObject,
+    isnum, has, keys, sortAsc, split1, replW, hex, tos,
+    // paths
+    outDir, baseDir, ReadFile, getSrcDir, getDstDir,
+    D_BASE, D_LANG, D_SCOPE, D_VER,
 };
 
 /**
@@ -39,7 +35,8 @@ module.exports = {
  */
 function getSrcDir(level, state, file = "") {
     const dir = [state.lang, state.curVer, state.curScope];
-    return baseDir + dir.slice(0, level).join('/') + '/' + file;
+    const folder = path.resolve(__dirname, "..", baseDir, ...dir.slice(0, level));
+    return folder.replace(/\\/g, "/") + "/" + file;
 }
 
 /**
@@ -48,7 +45,8 @@ function getSrcDir(level, state, file = "") {
  */
 function getDstDir(level, state, file = "") {
     const dir = ['docs' + getl(state.lang), state.curVer, state.curScope];
-    return outDir + dir.slice(0, level).join('/') + '/' + file;
+    const folder = path.resolve(__dirname, "..", outDir, ...dir.slice(0, level));
+    return folder.replace(/\\/g, "/") + "/" + file;
 }
 
 
@@ -147,47 +145,10 @@ function replW(s, n = true) {
         .replace(/ {2}/g, "&#160;&#160;");
 }
 
-/** increase special popup counters and returns its id
- * @param {GenState} state
- * @param {string} type
- * @param {number} i
- */
-function incpop(state, type, i) {
-    if (i) state.spop[type] += i;
-    return hex(state.spop[type] || 0);
-}
-
 /** convert int to 3-digit hex
  * @param {number} v */
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
-/** returns the type name or description of a value or the value itself
- * @param {string} v */
-//function getv(v) { return tDesc[v] || tName[v] || v; }
-/** returns a comma separated list of object keys
- * @param {any} o */
-//function skeys(o) { return String(keys(o)); }
-/** replaces \ paceholders with its placeholder 'name'
- * @param {string} s */
-//function reprs(s) { return s.replace(/\n/g, "\\n").replace(/\t/g, "\\t"); }
-/** replace "&" and "|" operators with "and" and "or"
- * @param {string} s
- * @param {boolean} [n]
- */
-function rplop(s, n) {
-    s = s
-        .replace(/([^\\]|^)\\(.)/g, (m, e, /** @type {string} */ c) =>
-            `${e || ''}§${(special[c] || c).charCodeAt(0)}§`)
-        .replace(/\|/g, n ? "” or “" : " or ")
-        //.split(',').sort(sortAsc).join(n ? "”, “" : ", ")
-        .replace(/,/g, n ? "”, “" : ", ")
-        .replace(/§(\d+?)§/g, (m, /** @type {number} */ c) =>
-            String.fromCharCode(Number(c)));
-    return replW(n ? '“' + s + '”' : s);
-}
-/**
- * @param {string | Error} e
- * @returns {never}
- */
+/** @type {(e: string|Error) => never} */
 function Throw(e) { throw e; }
 /** @param {string} msg */
 function Warn(msg) { if (warnEnbl) console.error("Warning: " + msg); }
@@ -219,11 +180,6 @@ function sortAsc(a, b) {
     return la === lb ? sa < sb ? 1 : -1 : la > lb ? 1 : -1;
 }
 
-/**
- * @param {DSScope} scope
- * @param {string} name */
-function isControl(scope, name) { return Boolean(scope[name].subf); }
-
 /** @param {string} s */
 function getAbbrev(s) {
     let count = 0;
@@ -251,11 +207,7 @@ function ReadFile(file, dflt, write) {
     return dflt;
 }
 
-/**
- * @template T
- * @param {T} a
- * @param {T} b
- */
+/** @type {<T>(a: T, b: T) => T} */
 function mergeObject(a, b) {
     // inherit old from a / copy new from b
     if (a === undefined || b === undefined) return a || b;
@@ -267,7 +219,6 @@ function mergeObject(a, b) {
             else a[k] = mergeObject(a[k], b[k]);
         }
     }
-    // override primitives
     return b;
 }
 
