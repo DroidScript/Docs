@@ -1049,6 +1049,7 @@
 		"SetMargins": "Define distances to other controls",
 		"SetMaxRate": "Set rate of OnChange calls",
 		"SetOnChange": "Called when content was changed by the user",
+		"SetOnTouch": "Called when content was changed by the user",
 		"SetPadding": "Define distances to contained elements",
 		"SetPosition": "Defines position and size on absolute layouts",
 		"SetRange": "Set value range",

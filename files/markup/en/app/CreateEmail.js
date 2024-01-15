@@ -49,9 +49,9 @@
 /** ### SetIMAP ###
  * @brief Set IMAP settings for receiving messages
  * Set IMAP or POP3 settings for receiving messages.
- * $$ mail.SetIMAP(server, port) $$
+ * $$ mail.SetIMAP(server, port?) $$
  * @param {str} server imap/pop.gmail.com:google|imap/pop.mail.yahoo.com:yahoo|imap/pop.gmx.net:gmx
- * @param {num_int} port 993:imap|995:pop
+ * @param {num_int} [port] 993:imap|995:pop
  */
 
 

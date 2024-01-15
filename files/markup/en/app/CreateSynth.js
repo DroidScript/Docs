@@ -5,8 +5,8 @@
  * @abbrev syn
  * @brief Returns a new Synth object
  * 
- * $$ syn = app.CreateSynth(type) $$ 
- * @param {str} type Signal,VCA,VCF
+ * $$ syn = app.CreateSynth(type='Signal') $$ 
+ * @param {str} [type='Signal'] Signal,VCA,VCF
  * @returns dso-Synth
 */
 

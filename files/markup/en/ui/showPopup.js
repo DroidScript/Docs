@@ -5,12 +5,12 @@
  * @abbrev pop
  * @brief showPopup
  * 
- * $$ pop = ui.showPopup(msg, options, duration, action) $$ 
+ * $$ pop = ui.showPopup(msg, options?, duration?, action?) $$ 
  * @param {str} msg The message to display on the pop-up.
- * @param {str} options A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`
- * @param {num} duration Time in milliseconds. Pass this, if you don't want the default auto hide duration.
- * @param {str} action Action button text.
- * @returns obj-Popup Component.
+ * @param {str} [options] A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`
+ * @param {num} [duration] Time in milliseconds. Pass this, if you don't want the default auto hide duration.
+ * @param {str} [action] Action button text.
+ * @returns uio-Popup
 */
 
 
@@ -63,9 +63,9 @@ These are the setter and getter properties for the showPopup Component.
 /** ### setPosition ###
  * @brief setPosition
  * Updates the position of the popup
- * $$ pop.setPosition(vertical, horizontal) $$
- * @param {str} vertical Vertical alignment. Values can be `Top` `Bottom`
- * @param {str} horizontal Horizontal alignment. Values can be `Left` `Center` and `Right`
+ * $$ pop.setPosition(vertical?, horizontal?) $$
+ * @param {str} [vertical] Vertical alignment. Values can be `Top` `Bottom`
+ * @param {str} [horizontal] Horizontal alignment. Values can be `Left` `Center` and `Right`
  */
 
 

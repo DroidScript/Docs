@@ -5,9 +5,9 @@
  * @abbrev drw
  * @brief addDrawer
  * 
- * $$ drw = ui.addDrawer(lay, options) $$ 
+ * $$ drw = ui.addDrawer(lay, options?) $$ 
  * @param {obj} lay The drawer layout.
- * @param {str_com} options 
+ * @param {str_com} [options] 
  * @returns uio-Drawer
 */
 

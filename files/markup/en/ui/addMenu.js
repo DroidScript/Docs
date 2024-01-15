@@ -5,12 +5,12 @@
  * @abbrev men
  * @brief addMenu
  * 
- * $$ men = ui.addMenu(parent, list, options, width, height) $$ 
+ * $$ men = ui.addMenu(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The component where to anchor the Menu.
- * @param {lst} list A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon&colon;title` \n `Add a `colon` before an item to display it as the label text.
- * @param {str_com} options Color: `Primary` `Secondary` `Error` \n List: `Dense` \n Icons: `Icon`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {lst} [list] A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon&colon;title` \n `Add a `colon` before an item to display it as the label text.
+ * @param {str_com} [options] Color: `Primary` `Secondary` `Error` \n List: `Dense` \n Icons: `Icon`
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-Menu
 */
 

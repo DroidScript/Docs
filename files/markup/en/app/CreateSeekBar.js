@@ -125,6 +125,15 @@ Use the SetOnChange method to define a function you want to be called when the S
  */
 
 
+/** ### SetOnTouch ###
+ * @brief Called when content was changed by the user
+ * Called when the containing data has been changed by the user.
+ * <deprecated in favour of SetOnChange>
+ * $$ skb.SetOnTouch(callback) $$
+ * @param {fnc_json} callback {"pNames":["value"],"pTypes":["num"]}
+ */
+
+
 /** @extern SetPadding */
 
 /** @extern SetPosition */

@@ -59,7 +59,7 @@ declare class DsApp {
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
 	 */
-	AddLayout(layout: DsLayout, type: "Linear"|"Absolute"|"Frame"|"Card", options?: "TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y"): void;
+	AddLayout(layout: DsLayout, type?: "Linear"|"Absolute"|"Frame"|"Card", options?: "TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y"): void;
 
 	/**
 	 * Create and add List to Layout
@@ -421,7 +421,7 @@ declare class DsApp {
 	CreateSwitch(text: str, width?: num_frc, height?: num_frc, options?: string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]): DsSwitch;
 
 	/** Returns a new Synth object */
-	CreateSynth(type: "Signal"|"VCA"|"VCF"): DsSynth;
+	CreateSynth(type?: "Signal"|"VCA"|"VCF"): DsSynth;
 
 	/**
 	 * Returns a new SysProc object
@@ -1223,6 +1223,9 @@ declare class DsApp {
 	/** Control the debug level of the program */
 	SetDebug(switches: string | ("console"|"ds"|"adb"|"all")[]): void;
 
+	/** Control the debug level of the program */
+	SetDebugEnabled(onoff: bin): void;
+
 	/** Changes the dpi value for any control creatred afterwards */
 	SetDensity(dpi: num_int): void;
 
@@ -1662,7 +1665,7 @@ declare class DsBluetoothSerial {
 	SetOnConnect(callback: (name: str, address: str) => void): void;
 
 	/** Called after disconnecting from bluetooth connection */
-	SetOnDisconnect(): void;
+	SetOnDisconnect(callback: (name: str, address: str) => void): void;
 
 	/** Called after received Data via Bluetooth */
 	SetOnReceive(callback: (data: str) => void): void;
@@ -2881,7 +2884,7 @@ declare class DsEmail {
  	 * &emsp; `993` - imap\
  	 * &emsp; `995` - pop
 	 */
-	SetIMAP(server: "imap/pop.gmail.com"|"imap/pop.mail.yahoo.com"|"imap/pop.gmx.net", port: 993|995): void;
+	SetIMAP(server: "imap/pop.gmail.com"|"imap/pop.mail.yahoo.com"|"imap/pop.gmx.net", port?: 993|995): void;
 
 	/** Called when a message is received */
 	SetOnMessage(callback: (data: { from: str_eml, to: str_eml, cc: str_eml, subject: str, body: str }) => void): void;
@@ -5058,6 +5061,9 @@ declare class DsSeekBar {
 	/** Called when content was changed by the user */
 	SetOnChange(callback: (value: num) => void): void;
 
+	/** Called when content was changed by the user */
+	SetOnTouch(callback: (value: num) => void): void;
+
 	/** Define distances to contained elements */
 	SetPadding(left?: num_frc, top?: num_frc, right?: num_frc, bottom?: num_frc, mode?: "px"|"sp"|"dip"|"mm"|"pt"): void;
 
@@ -6631,7 +6637,7 @@ declare class DsToggle {
 	SetSize(width: num, height: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
 	/** Customize the button looks */
-	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc): void;
+	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc, checkClr?: str_col): void;
 
 	/** Change displayed text */
 	SetText(text: str): void;

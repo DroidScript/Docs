@@ -5,9 +5,9 @@
  * @abbrev dtp
  * @brief addDatePicker
  * 
- * $$ dtp = ui.addDatePicker(date, options) $$ 
+ * $$ dtp = ui.addDatePicker(date, options?) $$ 
  * @param {str} date A default date value to which the datepicker begins. Format `YYYY-MM-DD`
- * @param {str_com} options `Portrait` `Landscape`
+ * @param {str_com} [options] `Portrait` `Landscape`
  * @returns uio-DatePicker
 */
 
@@ -44,9 +44,9 @@ These are the setter and getter properties for the addDatePicker Component.
 /** ### setLimits ###
  * @brief setLimits
  * Set a limit to which the date picker dialog can render a date
- * $$ dtp.setLimits(past, future) $$
- * @param {str} past Date in the past of the form `YYYY-MM-DD`
- * @param {str} future Date in the future of the form `YYYY-MM-DD`
+ * $$ dtp.setLimits(past?, future?) $$
+ * @param {str} [past] Date in the past of the form `YYYY-MM-DD`
+ * @param {str} [future] Date in the future of the form `YYYY-MM-DD`
  */
 
 

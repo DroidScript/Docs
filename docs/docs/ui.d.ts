@@ -1,8 +1,5 @@
 declare var ui: UI;
-declare type object = UIDropdown | UIImage | UISlider | UIPopup;
-/** Object */
-declare type obj = object;
-declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIFAB | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIProgressDialog;
+declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopover | UIPopup | UIProgressDialog;
 /** ui object */
 declare type uio = UIObject;
 
@@ -12,8 +9,8 @@ declare class UI {
 	 * AddAccordion
 	 * @param parent The parent layout where to add the text.
 	 * @param titles An array of accordion titles.
-	 * @param options `one or a combination of the following: `Square` 
- `Layout type `Linear` or `Absolute``
+	 * @param options one or a combination of the following: `Square` 
+ `Layout type `Linear` or `Absolute`
 	 * @param width `Fraction of the screen width: [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -23,10 +20,10 @@ declare class UI {
 	 * AddAppBar
 	 * @param parent The parent layout where to add the AppBar
 	 * @param title `The title text of the appbar`
-	 * @param options `one or a combination of the following: 
+	 * @param options one or a combination of the following: 
  `Menu` : Adds a menu icon on the left 
  `Primary` `Secondary` `Transparent` `Inherit` `Default` : Adds a color 
- `Absolute` `Static` `Fixed` `Relative` : Adds a positioning`
+ `Absolute` `Static` `Fixed` `Relative` : Adds a positioning
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -36,7 +33,7 @@ declare class UI {
 	 * AddBottomNavbar
 	 * @param parent The parent layout where to add the BottomNavbar
 	 * @param navs An array whose elements are of the form `[ "Title", "Icon" ]`
-	 * @param options `one or a combination of the following: `Hidelabels``
+	 * @param options one or a combination of the following: `Hidelabels`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -46,12 +43,12 @@ declare class UI {
 	 * AddButton
 	 * @param parent The layout where to add the button.
 	 * @param text `The button text or the material icon text.`
-	 * @param options `one or a combination of the following: 
+	 * @param options one or a combination of the following: 
  Variant: `Contained` `Outlined` `Text` `Default` 
  `Color`: `Primary` `Secondary` `Default` 
  `Size`: `Small` `Medium` `Large` 
  `Util`: `Icon` `NoRipple` `Upload` 
- `In case of upload`, ` you can specify `Multiple` to accept multiple files.`
+ `In case of upload,  you can specify `Multiple` to accept multiple files.
 	 * @param width `Fraction of the parent width. [0-1]`
 	 * @param height `Fraction of the parent height. [0-1]`
 	 */
@@ -61,12 +58,12 @@ declare class UI {
 	 * AddButtonGroup
 	 * @param parent The parent layout where to add the ButtonGroup
 	 * @param list The item to be displayed on the buttn group.
-	 * @param options `one or a combination of the following: 
+	 * @param options one or a combination of the following: 
  Variant: `Contained` `Outlined` `Text` `Default` 
  `Color`: `Primary` `Secondary` `Default` 
  `Size`: `Small` `Medium` `Large` 
  `Orientation`: `Horizontal` `Vertical` 
- `Util`: `Icon` `NoElevation``
+ `Util`: `Icon` `NoElevation`
 	 * @param width `Fraction of the parent width. [0-1]`
 	 * @param height `Fraction of the parent height. [0-1]`
 	 */
@@ -76,9 +73,9 @@ declare class UI {
 	 * AddCheckbox
 	 * @param parent The layout where to add the checkbox
 	 * @param text `The label for the checkbox`
-	 * @param options `Colors: `Primary` `Secondary` `Medium` `Small` 
+	 * @param options Colors: `Primary` `Secondary` `Medium` `Small` 
  `Position`: `Left` `Top` `Right` `Bottom` 
- `Variant`: `Indeterminate` `Determinate``
+ `Variant`: `Indeterminate` `Determinate`
 	 * @param width `Fraction of the parent width. [0-1]`
 	 * @param height `Fraction of the parent height. [0-1]`
 	 */
@@ -88,11 +85,11 @@ declare class UI {
 	 * AddCheckboxGroup
 	 * @param parent The parent layout where to add the CheckboxGroup.
 	 * @param list The items to be displayed.
-	 * @param options `Colors: `Default` `Primary` `Secondary` 
+	 * @param options Colors: `Default` `Primary` `Secondary` 
  `Sizes`: `Small` `Medium` 
  `Icon Position: `Left` or `Right` 
  `Container`: `Elevated` or `Outlined` 
- `Corners : `Square``
+ `Corners : `Square`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
 	 */
@@ -102,10 +99,10 @@ declare class UI {
 	 * AddChip
 	 * @param parent The parent layout where to add the Chip.
 	 * @param text `The text on the chip.`
-	 * @param options `Color: `Primary` `Secondary` `Default` 
+	 * @param options Color: `Primary` `Secondary` `Default` 
  `Size`: `Small` `Medium` 
  `Variant`: `Outlined` `Default` 
- `Util`: `Touchable``
+ `Util`: `Touchable`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -113,8 +110,8 @@ declare class UI {
 
 	/**
 	 * AddDatePicker
-	 * @param date `A default date value to which the datepicker begins. Format `YYYY-MM-DD``
-	 * @param options ``Portrait` `Landscape``
+	 * @param date A default date value to which the datepicker begins. Format `YYYY-MM-DD`
+	 * @param options `Portrait` `Landscape`
 	 */
 	addDatePicker(date: str, options?: str_com): UIDatePicker;
 
@@ -123,8 +120,8 @@ declare class UI {
 	 * @param title `The dialog title text.`
 	 * @param body `The dialog message to be shown.`
 	 * @param actions `A comma separated text for action buttons.`
-	 * @param options `Colors: `Primary` `Secondary` 
- `Util`: `NoCancel` prevents the dialog from closing on action.`
+	 * @param options Colors: `Primary` `Secondary` 
+ `Util`: `NoCancel` prevents the dialog from closing on action.
 	 */
 	addDialog(title: str, body: str, actions?: str, options?: str_com): UIDialog;
 
@@ -132,7 +129,7 @@ declare class UI {
 	 * AddDivider
 	 * @param parent The layour where to add the divider.
 	 * @param width `Fraction of the screen width. Default is 1.`
-	 * @param options `A comma separated Divider options. Values can be `Inset``
+	 * @param options A comma separated Divider options. Values can be `Inset`
 	 */
 	addDivider(parent: obj, width?: num, options?: str): UIDivider;
 
@@ -146,23 +143,22 @@ declare class UI {
 	 * AddDropdown
 	 * @param parent The layout where to add the dropdown.
 	 * @param list The list items to show.
-	 * @param options `A comma separated Dropdown options. Can be 
+	 * @param options A comma separated Dropdown options. Can be 
  Colors: `Primary` `Secondary` `Default` 
  `Variants`: `Contained` `Outlined` `Text` 
  `Sizes`: `Small` `Medium` `Large` 
  `Orientation`: `Horizontal` `Vertical` 
- `Util`: `NoElevation``
+ `Util`: `NoElevation`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
-	 * @return Dropdown Component.
 	 */
-	addDropdown(parent: obj, list?: lst, options?: str, width?: num, height?: num): obj;
+	addDropdown(parent: obj, list?: lst, options?: str, width?: num, height?: num): UIDropdown;
 
 	/**
 	 * AddFAB
 	 * @param parent The parent layout where to add the fab
 	 * @param icon `The string icon of the FAB`
-	 * @param options ``Fixed` `Static` `Rounded` `Extended` `Left` `Right``
+	 * @param options `Fixed` `Static` `Rounded` `Extended` `Left` `Right`
 	 * @param text `Text to show for extended FABs.`
 	 */
 	addFAB(parent: obj, icon: str, options?: str_com, text?: str): UIFAB;
@@ -171,36 +167,35 @@ declare class UI {
 	 * AddImage
 	 * @param parent The parent layout where to add the image.
 	 * @param file `The path to the image.`
-	 * @param options `A comma seprated options for the image. Can be `Canvas` `Button` or `Avatar``
+	 * @param options A comma seprated options for the image. Can be `Canvas` `Button` or `Avatar`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
-	 * @return Image Component.
 	 */
-	addImage(parent: obj, file: str, options?: str, width?: num, height?: num): obj;
+	addImage(parent: obj, file: str, options?: str, width?: num, height?: num): UIImage;
 
 	/**
 	 * AddLayout
 	 * @param parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
-	 * @param type `The layout type. Values can be `Linear` `Absolute` `Frame` `Slide``
-	 * @param options `Layout options. Values can be 
+	 * @param type The layout type. Values can be `Linear` `Absolute` `Frame` `Slide`
+	 * @param options Layout options. Values can be 
  Orientation:  `Horizontal` `Vertical` 
  `Horizontal Alignment: `Left` `Center` `Right` 
  `Vertical Alignment: `Top` `VCenter` `Bottom` 
  `Dimensions`: `FillX` `FillY` 
  `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` 
- `Utils`: `BackColor` to apply light or dark background rather than transparent.`
+ `Utils`: `BackColor` to apply light or dark background rather than transparent.
 	 * @param width `Fraction of the screen width. [0-1]`
-	 * @param height Fraction of the screen height. [0-1]
+	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addLayout(parent: obj, type: str, options?: str, width?: num, height?: obj): UILayout;
+	addLayout(parent: "main"|obj, type: str, options?: str, width?: num, height?: num): UILayout;
 
 	/**
 	 * AddList
 	 * @param parent The parent layout
 	 * @param list An array of arrays. Each element is of the form `[icon, title, body, secondary]`
-	 * @param options `Media: `Icon` `Avatar` 
+	 * @param options Media: `Icon` `Avatar` 
  `Styling`: `Dense` `Inset` 
- `Util`: `Selectable` `Divider` `SecondaryText``, ` `NoRipple` to disable ripple effect`
+ `Util`: `Selectable` `Divider` `SecondaryText`,  `NoRipple` to disable ripple effect
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -210,9 +205,9 @@ declare class UI {
 	 * AddMenu
 	 * @param parent The component where to anchor the Menu.
 	 * @param list A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon&colon;title` \n `Add a `colon` before an item to display it as the label text.
-	 * @param options `Color: `Primary` `Secondary` `Error` 
+	 * @param options Color: `Primary` `Secondary` `Error` 
  List: `Dense` 
- Icons: `Icon``
+ Icons: `Icon`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -222,9 +217,9 @@ declare class UI {
 	 * AddProgress
 	 * @param parent The parent layout where to add the prgress component.
 	 * @param value `the initial value of the progress component.`
-	 * @param options `Color: `Primary` `Secondary` 
+	 * @param options Color: `Primary` `Secondary` 
  `Type`: `Circular` `Linear` 
- `Variant`: `Determinate` `Indeterminate``
+ `Variant`: `Determinate` `Indeterminate`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction fo the screen height. [0-1]`
 	 */
@@ -234,12 +229,12 @@ declare class UI {
 	 * AddRadioGroup
 	 * @param parent The parent where to add the RadioGroup component.
 	 * @param list The list items array.
-	 * @param options `Radio Sizes: `Small` `Medium` 
+	 * @param options Radio Sizes: `Small` `Medium` 
  `Colors`: `Primary` `Secondary` 
  `Icon Position: `Left` or `Right` 
  `Container`: `Elevated` or `Outlined` 
  `Corner`: `Square` 
- `Required``
+ `Required`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -249,10 +244,10 @@ declare class UI {
 	 * AddSelect
 	 * @param parent The parent layout where to add the control
 	 * @param list The list of items for the Select options
-	 * @param options `Sizes: `Small` `Medium` 
+	 * @param options Sizes: `Small` `Medium` 
  `Variant`: `Filled` `Outlined` `Standard` 
  `Margin`: `Dense` `Normal` 
- `Utils`: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth``
+ `Utils`: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -262,20 +257,19 @@ declare class UI {
 	 * AddSlider
 	 * @param parent The layout where to add the Slider Component.
 	 * @param value `The initial value of the Slider. Value must be between 0-100`, ` the default min and max values.`
-	 * @param options `Color: `Primary` `Secondary` 
+	 * @param options Color: `Primary` `Secondary` 
  `Orienation`: `Horizontal` `Vertical` 
- `Track`: `Normal` `Inverted` `False``
+ `Track`: `Normal` `Inverted` `False`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height.`
-	 * @return Slider Component.
 	 */
-	addSlider(parent: obj, value: num, options?: str_com, width?: num, height?: num): obj;
+	addSlider(parent: obj, value: num, options?: str_com, width?: num, height?: num): UISlider;
 
 	/**
 	 * AddStepper
 	 * @param parent The parent layout of the Stepper
 	 * @param steps An array of titles.
-	 * @param options `A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.`
+	 * @param options A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -285,10 +279,10 @@ declare class UI {
 	 * AddSwitch
 	 * @param parent The parent layout where to add the Switch Component.
 	 * @param text `The label text.`
-	 * @param options `A comma separated switch options. Options can be one or a combination of the following 
+	 * @param options A comma separated switch options. Options can be one or a combination of the following 
  Color: `Primary` `Secondary` `Default` 
  `Icon Position: `Left` `Top` `Right` `Bottom` 
- `Sizes`: `Small` `Medium``
+ `Sizes`: `Small` `Medium`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -298,11 +292,11 @@ declare class UI {
 	 * AddSwitchGroup
 	 * @param parent The parent layout where to add the SwitchGroup Component.
 	 * @param list The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
-	 * @param options `Icon: `Icon` 
+	 * @param options Icon: `Icon` 
  `Color`: `Primary` or `Secondary` 
  `Container`: `Elevated` or `Outlined` 
  `Corner`: `Square` 
-`Divider``
+`Divider`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -312,11 +306,11 @@ declare class UI {
 	 * AddTabs
 	 * @param parent The parent layout where to add the Tabs Component.
 	 * @param list An array of tab names.
-	 * @param options `Enable swipe: `Swipeable` 
+	 * @param options Enable swipe: `Swipeable` 
  `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` 
  `Variant`: `Standard` `Scrollable` `FullWidth` 
- `Layout`: `Linear``, ` `Absolute` 
-Utils: `Icon` `Center` `Paper``
+ `Layout`: `Linear`,  `Absolute` 
+Utils: `Icon` `Center` `Paper`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
@@ -326,13 +320,13 @@ Utils: `Icon` `Center` `Paper``
 	 * AddText
 	 * @param parent The layout control where to add the text control
 	 * @param text `The text to be displayed on the text control`
-	 * @param options `A comma separated string. Options can be one or a combination of the following: 
+	 * @param options A comma separated string. Options can be one or a combination of the following: 
  Variants: `H1` `H2` `H3` `H4` `H5` `H6` `body1` `body2` `overline` `subtitle1` `subtitle2` `button` `caption`.
 Lines: `Singleline` `Multiline`.
 Alignment: `Left` `Center` `Right` `Justify`.
 Color: `Primary` `Secondary` `Error`.
 Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline` 
- `Utils`: `Touchable``
+ `Utils`: `Touchable`
 	 * @param width `Fraction of the screen width`
 	 * @param height `Fraction of the screen height`
 	 */
@@ -342,11 +336,11 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * AddTextField
 	 * @param parent The layout where to add the TextField Component.
 	 * @param text `The initial value of the TextField`
-	 * @param options `Color: `Primary` or `Secondary` 
+	 * @param options Color: `Primary` or `Secondary` 
  `Sizes`: `Small` or `Medium` 
  `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` 
  `Variant`: `Standard` `Filled` or `Outlined` 
- `Utils`: `Autofocus``
+ `Utils`: `Autofocus`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
 	 */
@@ -354,8 +348,8 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 
 	/**
 	 * AddTimePicker
-	 * @param time `A default time value to which the timepicker begins. Value is of the form `HH:mm``
-	 * @param options ``Portrait` `24H` `12H``
+	 * @param time A default time value to which the timepicker begins. Value is of the form `HH:mm`
+	 * @param options `Portrait` `24H` `12H`
 	 */
 	addTimePicker(time: str, options?: str_com): UITimePicker;
 
@@ -381,8 +375,8 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	/**
 	 * ShowColorPicker
 	 * @param value `A hexadecimal default value for the color picker.`
-	 * @param options `A comma separated color picker options. Values can be 
- `Alpha` Includes an alpha`
+	 * @param options A comma separated color picker options. Values can be 
+ `Alpha` Includes an alpha
 	 */
 	showColorPicker(value?: str, options?: str): UIColorPicker;
 
@@ -390,8 +384,8 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * ShowDateTimePicker
 	 * @param date `Default value for date of the form "MM/DD/YYYY"`
 	 * @param time `Default value for time of the form "HH/MM/SS"`
-	 * @param format `The format value that will be pass to callback. Formats can be of the form 
- `MM/DD/YYYY HH:SS` `MM:YYYY HH:SS``\
+	 * @param format The format value that will be pass to callback. Formats can be of the form 
+ `MM/DD/YYYY HH:SS` `MM:YYYY HH:SS`\
  	 * &emsp; `HH` - MM\
  	 * &emsp; `MM` - DD\
  	 * &emsp; `HH` - MM
@@ -401,35 +395,33 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	/**
 	 * ShowPopover
 	 * @param parent UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
-	 * @param text `The text to de displayed. For displaying more data`, ` pass a `Layout``
-	 * @param position `A comma separated values representing the `anchorOrigin`, `transformOrigin` 
- `anchorOrigin` Position of the popover on its parent. Available values are `tl` for top-left`, ` `tc` for top-center`, ` `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right. 
- `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin``
+	 * @param text The text to de displayed. For displaying more data,  pass a `Layout`
+	 * @param position A comma separated values representing the `anchorOrigin, transformOrigin` 
+ `anchorOrigin` Position of the popover on its parent. Available values are `tl` for top-left,  `tc` for top-center,  `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right. 
+ `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
-	 * @return Popover Component.
 	 */
-	showPopover(parent: obj, text?: str, position?: str, width?: num, height?: num): obj;
+	showPopover(parent: obj, text?: str, position?: str, width?: num, height?: num): UIPopover;
 
 	/**
 	 * ShowPopup
 	 * @param msg `The message to display on the pop-up.`
-	 * @param options `A comma separated Menu options. Values can be 
+	 * @param options A comma separated Menu options. Values can be 
  Duration: `Short` `Long` 
  `Vertical Alignment: `Top` `Bottom` 
  `Horizontal Alignment: `Left` `Center` `Right` 
  `Action options: `Icon` or `HideOnAction` 
- `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom``
+ `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`
 	 * @param duration `Time in milliseconds. Pass this`, ` if you don't want the default auto hide duration.`
 	 * @param action `Action button text.`
-	 * @return Popup Component.
 	 */
-	showPopup(msg: str, options?: str, duration?: num, action?: str): obj;
+	showPopup(msg: str, options?: str, duration?: num, action?: str): UIPopup;
 
 	/**
 	 * ShowProgressDialog
-	 * @param text `The text message of the progress dialog. Options can be 
- `AutoCancel` to close the dialog when backdrop is click.`
+	 * @param text The text message of the progress dialog. Options can be 
+ `AutoCancel` to close the dialog when backdrop is click.
 	 */
 	showProgressDialog(text?: str, options?: str_com): UIProgressDialog;
 
@@ -453,7 +445,7 @@ declare class UIAccordion {
 	/**
 	 * SetSecondaryText
 	 * @param text The secondary text to display. You can pass arguments as string or array by following the format below. \n String: `"Secodary text 1,Secondary text 2,Secondary text 3"` \n `Array`: `[ "Secondary text 1", "Secondary text 2", "Secondary text 3" ]`
-	 * @param index `If `index` is provided`, ` the corresponding index will be updated with the new text.`
+	 * @param index If `index` is provided,  the corresponding index will be updated with the new text.
 	 */
 	setSecondaryText(text: obj, index: num): void;
 
@@ -467,7 +459,7 @@ declare class UIAccordion {
 	 * AddItem
 	 * @param title `Accordion title`
 	 * @param secondaryText `Accordion secondary text`
-	 * @param index `The index at which the accordion item will be added. If `null``, ` the item will be added at the bottom of the accordion.`
+	 * @param index The index at which the accordion item will be added. If `null`,  the item will be added at the bottom of the accordion.
 	 */
 	addItem(title: str, secondaryText: str, index: num): void;
 
@@ -492,7 +484,7 @@ declare class UIAccordion {
 	/**
 	 * SetEnabled
 	 * @param index `The index of the corresponding accordion.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -505,7 +497,7 @@ declare class UIAccordion {
 	/**
 	 * SetEnabledByName
 	 * @param name `The title of the accordion`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -529,8 +521,8 @@ declare class UIAccordion {
 
 	/**
 	 * SetTextColor
-	 * @param color1 `Color of the title text in hexadecimal format `#rrggbb``
-	 * @param color2 `Color of the secondary text in hexadecimal format `#rrggbb``
+	 * @param color1 Color of the title text in hexadecimal format `#rrggbb`
+	 * @param color2 Color of the secondary text in hexadecimal format `#rrggbb`
 	 */
 	setTextColor(color1: str, color2?: str): void;
 
@@ -540,13 +532,13 @@ declare class UIAccordion {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -562,7 +554,7 @@ declare class UIAccordion {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -588,14 +580,14 @@ declare class UIAccordion {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -605,7 +597,7 @@ declare class UIAccordion {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -615,7 +607,7 @@ declare class UIAccordion {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -623,27 +615,27 @@ declare class UIAccordion {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -666,7 +658,7 @@ declare class UIAppBar {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
@@ -678,7 +670,7 @@ declare class UIAppBar {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -694,7 +686,7 @@ declare class UIAppBar {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -720,14 +712,14 @@ declare class UIAppBar {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -737,7 +729,7 @@ declare class UIAppBar {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -747,7 +739,7 @@ declare class UIAppBar {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -755,27 +747,27 @@ declare class UIAppBar {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -857,7 +849,7 @@ declare class UIBottomNavbar {
 	/**
 	 * SetEnabled
 	 * @param index `The index of the navigation action.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -870,7 +862,7 @@ declare class UIBottomNavbar {
 	/**
 	 * SetEnabledByName
 	 * @param name `The name of the bottom navigation action.`
-	 * @param value `Values can be `true` or `false``
+	 * @param value Values can be `true` or `false`
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -891,7 +883,7 @@ declare class UIBottomNavbar {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -907,7 +899,7 @@ declare class UIBottomNavbar {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -933,14 +925,14 @@ declare class UIBottomNavbar {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -950,7 +942,7 @@ declare class UIBottomNavbar {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -960,7 +952,7 @@ declare class UIBottomNavbar {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -968,15 +960,15 @@ declare class UIBottomNavbar {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -986,19 +978,19 @@ declare class UIBottomNavbar {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -1012,8 +1004,8 @@ declare class UIButton {
 	/**
 	 * SetToolTip
 	 * @param title `The text of the tooltip`
-	 * @param pos `Position of the tooltip. 
- Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start``
+	 * @param pos Position of the tooltip. 
+ Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
 	 */
 	setToolTip(title: str, pos?: str): void;
 
@@ -1022,7 +1014,7 @@ declare class UIButton {
 	 * @param radius `The radius in pixels`
 	 * @param dx `The x-offset in pixels`
 	 * @param dy `The y-offset in pixels`
-	 * @param color `The color in hexadecimal `#rrggbb``
+	 * @param color The color in hexadecimal `#rrggbb`
 	 */
 	setTextShadow(radius: num, dx: num, dy: num, color: str): void;
 
@@ -1032,7 +1024,7 @@ declare class UIButton {
 	 * @param top `The top padding in pixels`, ``
 	 * @param right `The right padding in pixels.`
 	 * @param bottom `The bottom padding in pixels.`
-	 * @param mode ``px` `%``
+	 * @param mode `px` `%`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1042,7 +1034,7 @@ declare class UIButton {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
@@ -1054,7 +1046,7 @@ declare class UIButton {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -1070,7 +1062,7 @@ declare class UIButton {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -1096,14 +1088,14 @@ declare class UIButton {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -1113,7 +1105,7 @@ declare class UIButton {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1121,27 +1113,27 @@ declare class UIButton {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -1195,21 +1187,21 @@ declare class UIButtonGroup {
 	/**
 	 * SetToolTip
 	 * @param titles The titles for each item in the ButtonGroup.
-	 * @param pos `The positio of the tooltip. 
- Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start``
+	 * @param pos The positio of the tooltip. 
+ Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
 	 */
 	setToolTip(titles: lst, pos?: str): void;
 
 	/**
 	 * EnableElevation
-	 * @param enable ``true` or `false``
+	 * @param enable `true` or `false`
 	 */
 	enableElevation(enable: bin): void;
 
 	/**
 	 * SetEnabled
 	 * @param index `The index of the button item.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -1222,7 +1214,7 @@ declare class UIButtonGroup {
 	/**
 	 * SetEnabledByName
 	 * @param name `The button text.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -1234,7 +1226,7 @@ declare class UIButtonGroup {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -1250,7 +1242,7 @@ declare class UIButtonGroup {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -1276,14 +1268,14 @@ declare class UIButtonGroup {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -1293,7 +1285,7 @@ declare class UIButtonGroup {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1303,7 +1295,7 @@ declare class UIButtonGroup {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1311,15 +1303,15 @@ declare class UIButtonGroup {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -1329,19 +1321,19 @@ declare class UIButtonGroup {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -1367,7 +1359,7 @@ declare class UICheckbox {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -1383,7 +1375,7 @@ declare class UICheckbox {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -1409,14 +1401,14 @@ declare class UICheckbox {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -1426,7 +1418,7 @@ declare class UICheckbox {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1436,7 +1428,7 @@ declare class UICheckbox {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1444,15 +1436,15 @@ declare class UICheckbox {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -1462,19 +1454,19 @@ declare class UICheckbox {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -1501,14 +1493,14 @@ declare class UICheckboxGroup {
 	/**
 	 * SetCheckedByIndex
 	 * @param item `The item or index of the item.`
-	 * @param bool `The item value. Can be `true` or `false`.`
+	 * @param bool The item value. Can be `true` or `false`.
 	 */
 	setCheckedByIndex(item: num, bool: bin): void;
 
 	/**
 	 * SetCheckedByName
 	 * @param name `The item or index of the item.`
-	 * @param bool `The item value. Can be `true` or `false`.`
+	 * @param bool The item value. Can be `true` or `false`.
 	 */
 	setCheckedByName(name: str, bool: bin): void;
 
@@ -1556,7 +1548,7 @@ declare class UICheckboxGroup {
 	/**
 	 * SetEnabled
 	 * @param index `The index of the checkbox item.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -1569,7 +1561,7 @@ declare class UICheckboxGroup {
 	/**
 	 * SetEnabledByName
 	 * @param name `The name of the checkbox item.`
-	 * @param value `Values can be `true` or `false``
+	 * @param value Values can be `true` or `false`
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -1613,13 +1605,13 @@ declare class UICheckboxGroup {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -1635,7 +1627,7 @@ declare class UICheckboxGroup {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -1661,14 +1653,14 @@ declare class UICheckboxGroup {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -1678,7 +1670,7 @@ declare class UICheckboxGroup {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1688,7 +1680,7 @@ declare class UICheckboxGroup {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1696,27 +1688,27 @@ declare class UICheckboxGroup {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -1726,7 +1718,7 @@ declare class UIChip {
 
 	/**
 	 * SetTouchable
-	 * @param touchable ``true` or `false``
+	 * @param touchable `true` or `false`
 	 */
 	setTouchable(touchable: bin): void;
 
@@ -1739,7 +1731,7 @@ declare class UIChip {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
@@ -1751,7 +1743,7 @@ declare class UIChip {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -1767,7 +1759,7 @@ declare class UIChip {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -1793,14 +1785,14 @@ declare class UIChip {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -1810,7 +1802,7 @@ declare class UIChip {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1820,7 +1812,7 @@ declare class UIChip {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1828,27 +1820,27 @@ declare class UIChip {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -1864,8 +1856,8 @@ declare class UIDatePicker {
 
 	/**
 	 * SetLimits
-	 * @param past `Date in the past of the form `YYYY-MM-DD``
-	 * @param future `Date in the future of the form `YYYY-MM-DD``
+	 * @param past Date in the past of the form `YYYY-MM-DD`
+	 * @param future Date in the future of the form `YYYY-MM-DD`
 	 */
 	setLimits(past?: str, future?: str): void;
 
@@ -1874,7 +1866,7 @@ declare class UIDatePicker {
 
 	/**
 	 * SetFormat
-	 * @param format `A date format. Can be `YYYY-MM-DD` `MM-DD-YYYY` `DD-MM-YYYY``
+	 * @param format A date format. Can be `YYYY-MM-DD` `MM-DD-YYYY` `DD-MM-YYYY`
 	 */
 	setFormat(format: str): void;
 
@@ -1909,7 +1901,7 @@ declare class UIDivider {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -1925,7 +1917,7 @@ declare class UIDivider {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -1951,14 +1943,14 @@ declare class UIDivider {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -1968,7 +1960,7 @@ declare class UIDivider {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1978,7 +1970,7 @@ declare class UIDivider {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -1986,15 +1978,15 @@ declare class UIDivider {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2004,19 +1996,19 @@ declare class UIDivider {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -2032,19 +2024,19 @@ declare class UIDrawer {
 
 	/**
 	 * DisableSwipeToOpen
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	disableSwipeToOpen(value: bin): void;
 
 	/**
 	 * DisableBackdropTransition
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	disableBackdropTransition(value: bin): void;
 
 	/**
 	 * DisableDiscovery
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	disableDiscovery(value: bin): void;
 
@@ -2056,7 +2048,7 @@ declare class UIDrawer {
 
 	/**
 	 * Show
-	 * @param anchor `Open position. Can be `left` or `right`. Default is `left``
+	 * @param anchor Open position. Can be `left` or `right`. Default is `left`
 	 */
 	show(anchor: str): void;
 
@@ -2095,7 +2087,7 @@ declare class UIDropdown {
 	/**
 	 * SetEnabled
 	 * @param index `The index of the item.`
-	 * @param value `Values can be `true` `false`.`
+	 * @param value Values can be `true` `false`.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -2108,7 +2100,7 @@ declare class UIDropdown {
 	/**
 	 * SetEnabledByName
 	 * @param name `The name of the item.`
-	 * @param value `Values can be `true` `false`.`
+	 * @param value Values can be `true` `false`.
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -2149,7 +2141,7 @@ declare class UIDropdown {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
@@ -2161,7 +2153,7 @@ declare class UIDropdown {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -2177,7 +2169,7 @@ declare class UIDropdown {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -2203,14 +2195,14 @@ declare class UIDropdown {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -2220,7 +2212,7 @@ declare class UIDropdown {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2230,7 +2222,7 @@ declare class UIDropdown {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2238,27 +2230,27 @@ declare class UIDropdown {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -2272,7 +2264,7 @@ declare class UIFAB {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
@@ -2284,7 +2276,7 @@ declare class UIFAB {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -2300,7 +2292,7 @@ declare class UIFAB {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -2326,14 +2318,14 @@ declare class UIFAB {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -2343,7 +2335,7 @@ declare class UIFAB {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2353,7 +2345,7 @@ declare class UIFAB {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2361,27 +2353,27 @@ declare class UIFAB {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -2394,7 +2386,7 @@ declare class UIImage {
 
 	/**
 	 * EnableContextMenu
-	 * @param value `Value. Can be `true` `false``
+	 * @param value Value. Can be `true` `false`
 	 */
 	enableContextMenu(value: bin): void;
 
@@ -2521,7 +2513,7 @@ declare class UIImage {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -2537,7 +2529,7 @@ declare class UIImage {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -2563,14 +2555,14 @@ declare class UIImage {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -2580,7 +2572,7 @@ declare class UIImage {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2590,7 +2582,7 @@ declare class UIImage {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2598,15 +2590,15 @@ declare class UIImage {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2616,19 +2608,19 @@ declare class UIImage {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -2642,7 +2634,7 @@ declare class UILayout {
 	 * @param top `Top margin.`
 	 * @param right `Right margin.`
 	 * @param bottom `Bottom margin.`
-	 * @param mode ``px`. Default is a fraction of viewport.`
+	 * @param mode `px`. Default is a fraction of viewport.
 	 */
 	setChildMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2696,7 +2688,7 @@ declare class UILayout {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -2712,7 +2704,7 @@ declare class UILayout {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -2735,14 +2727,14 @@ declare class UILayout {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -2752,7 +2744,7 @@ declare class UILayout {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2762,7 +2754,7 @@ declare class UILayout {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -2770,15 +2762,15 @@ declare class UILayout {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2788,19 +2780,19 @@ declare class UILayout {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -2931,13 +2923,13 @@ declare class UIList {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -2953,7 +2945,7 @@ declare class UIList {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -2979,14 +2971,14 @@ declare class UIList {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -2996,7 +2988,7 @@ declare class UIList {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3006,7 +2998,7 @@ declare class UIList {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3014,27 +3006,27 @@ declare class UIList {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -3094,14 +3086,14 @@ declare class UIMenu {
 
 	/**
 	 * SetAutoFocus
-	 * @param bool `Value can be `true` or `false``
+	 * @param bool Value can be `true` or `false`
 	 */
 	setAutoFocus(bool: bin): void;
 
 	/**
 	 * SetEnabled
 	 * @param index `The index of the item.`
-	 * @param value `Values can be `true` or `false`. `false` to disable.`
+	 * @param value Values can be `true` or `false`. `false` to disable.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -3114,7 +3106,7 @@ declare class UIMenu {
 	/**
 	 * SetEnabledByName
 	 * @param name `The name of the corresping item the menu.`
-	 * @param value `Values can be `true` or `false`. `false` to disable an item.`
+	 * @param value Values can be `true` or `false`. `false` to disable an item.
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -3129,7 +3121,7 @@ declare class UIMenu {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -3145,7 +3137,7 @@ declare class UIMenu {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -3165,14 +3157,14 @@ declare class UIMenu {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -3182,7 +3174,7 @@ declare class UIMenu {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3192,15 +3184,15 @@ declare class UIMenu {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3210,19 +3202,19 @@ declare class UIMenu {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -3238,7 +3230,7 @@ declare class UIProgress {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -3254,7 +3246,7 @@ declare class UIProgress {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -3280,14 +3272,14 @@ declare class UIProgress {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -3297,7 +3289,7 @@ declare class UIProgress {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3307,7 +3299,7 @@ declare class UIProgress {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3315,15 +3307,15 @@ declare class UIProgress {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3333,19 +3325,19 @@ declare class UIProgress {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -3407,7 +3399,7 @@ declare class UIRadioGroup {
 	/**
 	 * SetEnabled
 	 * @param index `The index of the item.`
-	 * @param value `Values can be `true` or `false`. If `false``, ` the item will be disabled.`
+	 * @param value Values can be `true` or `false`. If `false`,  the item will be disabled.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -3420,7 +3412,7 @@ declare class UIRadioGroup {
 	/**
 	 * SetEnabledByName
 	 * @param name `The radiogroup text.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -3439,13 +3431,13 @@ declare class UIRadioGroup {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -3461,7 +3453,7 @@ declare class UIRadioGroup {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -3487,14 +3479,14 @@ declare class UIRadioGroup {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -3504,7 +3496,7 @@ declare class UIRadioGroup {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3514,7 +3506,7 @@ declare class UIRadioGroup {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3522,27 +3514,27 @@ declare class UIRadioGroup {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -3598,8 +3590,8 @@ declare class UISelect {
 
 	/**
 	 * SetEnabled
-	 * @param index ``true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param index `true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -3612,7 +3604,7 @@ declare class UISelect {
 	/**
 	 * SetEnabledByName
 	 * @param name `The name of the menu item.`
-	 * @param value `Value can be `true` or `false``
+	 * @param value Value can be `true` or `false`
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -3630,7 +3622,7 @@ declare class UISelect {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -3646,7 +3638,7 @@ declare class UISelect {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -3672,14 +3664,14 @@ declare class UISelect {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -3689,7 +3681,7 @@ declare class UISelect {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3699,7 +3691,7 @@ declare class UISelect {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3707,15 +3699,15 @@ declare class UISelect {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3725,19 +3717,19 @@ declare class UISelect {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -3775,7 +3767,7 @@ declare class UISlider {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -3791,7 +3783,7 @@ declare class UISlider {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -3817,14 +3809,14 @@ declare class UISlider {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -3834,7 +3826,7 @@ declare class UISlider {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3844,7 +3836,7 @@ declare class UISlider {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -3852,15 +3844,15 @@ declare class UISlider {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3870,19 +3862,19 @@ declare class UISlider {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -3935,7 +3927,7 @@ declare class UIStepper {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -3951,7 +3943,7 @@ declare class UIStepper {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -3977,14 +3969,14 @@ declare class UIStepper {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -3994,7 +3986,7 @@ declare class UIStepper {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4004,7 +3996,7 @@ declare class UIStepper {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4012,15 +4004,15 @@ declare class UIStepper {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4030,19 +4022,19 @@ declare class UIStepper {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -4058,7 +4050,7 @@ declare class UISwitch {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -4074,7 +4066,7 @@ declare class UISwitch {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -4100,14 +4092,14 @@ declare class UISwitch {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -4117,7 +4109,7 @@ declare class UISwitch {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4127,7 +4119,7 @@ declare class UISwitch {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4135,15 +4127,15 @@ declare class UISwitch {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4153,19 +4145,19 @@ declare class UISwitch {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -4182,7 +4174,7 @@ declare class UISwitchGroup {
 	/**
 	 * SetValueByIndex
 	 * @param index `The index of the corresponding item.`
-	 * @param val `A Values can be `true` or `false``
+	 * @param val A Values can be `true` or `false`
 	 */
 	setValueByIndex(index: num, val: bin): void;
 
@@ -4227,8 +4219,8 @@ declare class UISwitchGroup {
 
 	/**
 	 * SetEnabled
-	 * @param index `The index of the corresponding item in the list. You can also pass `Boolean` to enable or disable the switchgroup component.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param index The index of the corresponding item in the list. You can also pass `Boolean` to enable or disable the switchgroup component.
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -4247,13 +4239,13 @@ declare class UISwitchGroup {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -4269,7 +4261,7 @@ declare class UISwitchGroup {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -4295,14 +4287,14 @@ declare class UISwitchGroup {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -4312,7 +4304,7 @@ declare class UISwitchGroup {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4322,7 +4314,7 @@ declare class UISwitchGroup {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4330,27 +4322,27 @@ declare class UISwitchGroup {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -4424,8 +4416,8 @@ declare class UITabs {
 
 	/**
 	 * SetEnabled
-	 * @param index `The index of the corresponding tab. Pass `Boolean` if you want to disable the entire Tabs component.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param index The index of the corresponding tab. Pass `Boolean` if you want to disable the entire Tabs component.
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabled(index: num, value: bin): void;
 
@@ -4438,7 +4430,7 @@ declare class UITabs {
 	/**
 	 * SetEnabledByName
 	 * @param name `The name of the tab.`
-	 * @param value `Values can be `true` or `false`.`
+	 * @param value Values can be `true` or `false`.
 	 */
 	setEnabledByName(name: str, value: bin): void;
 
@@ -4450,11 +4442,11 @@ declare class UITabs {
 
 	/**
 	 * ShowScrollButton
-	 * @param mode `Values can be 
+	 * @param mode Values can be 
  `auto` : will only present them when not all the items are visible 
  `desktop` : will only present them on medium and larger viewports 
  `on` : will always present them 
- `off` : will never present them.`
+ `off` : will never present them.
 	 */
 	showScrollButton(mode: str): void;
 
@@ -4473,15 +4465,15 @@ declare class UITabs {
 	 * @param tr `Top-right corner radius.`
 	 * @param bl `Bottom-left corner radius.`
 	 * @param br `Bottom-right corner radius.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * SetIndicatorStyle
-	 * @param width `Fraction of the tab item width. This works only on `fullWidth` tab.`
+	 * @param width Fraction of the tab item width. This works only on `fullWidth` tab.
 	 * @param thickness `Thickness in pixels.`
-	 * @param color `Hexadecimal color of the form `#rrggbb`.`
+	 * @param color Hexadecimal color of the form `#rrggbb`.
 	 * @param radius `The corner radius in pixels.`
 	 */
 	setIndicatorStyle(width: num, thickness: num, color: str, radius: num): void;
@@ -4492,13 +4484,13 @@ declare class UITabs {
 	 * @param top `The tab-item top padding.`
 	 * @param right `The tab-item right padding.`
 	 * @param bottom `The tab-item bottom padding.`
-	 * @param mode `Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.`
+	 * @param mode Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
 	 */
 	setTabPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -4514,7 +4506,7 @@ declare class UITabs {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -4540,14 +4532,14 @@ declare class UITabs {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -4557,7 +4549,7 @@ declare class UITabs {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4567,7 +4559,7 @@ declare class UITabs {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4575,27 +4567,27 @@ declare class UITabs {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -4629,7 +4621,7 @@ declare class UIText {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -4645,7 +4637,7 @@ declare class UIText {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -4671,14 +4663,14 @@ declare class UIText {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -4688,7 +4680,7 @@ declare class UIText {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4698,7 +4690,7 @@ declare class UIText {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4706,15 +4698,15 @@ declare class UIText {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4724,19 +4716,19 @@ declare class UIText {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -4763,9 +4755,9 @@ declare class UITextField {
 	/**
 	 * SetStartAdornment
 	 * @param text `Text or material icon font.`
-	 * @param type `A comma separated options for start adornment control. Options can be 
+	 * @param type A comma separated options for start adornment control. Options can be 
  `Icon` : If the adornment is an icon. 
- `Touchable` : If the adornment is touchable.`
+ `Touchable` : If the adornment is touchable.
 	 */
 	setStartAdornment(text: str, type?: str): void;
 
@@ -4778,9 +4770,9 @@ declare class UITextField {
 	/**
 	 * SetEndAdornment
 	 * @param text `Text or material icon font.`
-	 * @param type `A comma separated options for end adornment control. Options can be 
+	 * @param type A comma separated options for end adornment control. Options can be 
  `Icon` : If the adornment is an icon. 
- `Touchable` : If the adornment is touchable.`
+ `Touchable` : If the adornment is touchable.
 	 */
 	setEndAdornment(text: str, type?: str): void;
 
@@ -4798,7 +4790,7 @@ declare class UITextField {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -4814,7 +4806,7 @@ declare class UITextField {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -4840,14 +4832,14 @@ declare class UITextField {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -4857,7 +4849,7 @@ declare class UITextField {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4867,7 +4859,7 @@ declare class UITextField {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -4875,15 +4867,15 @@ declare class UITextField {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4893,19 +4885,19 @@ declare class UITextField {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -4915,7 +4907,7 @@ declare class UITimePicker {
 
 	/**
 	 * Show
-	 * @param format `A time format. Can be of the form 
+	 * @param format A time format. Can be of the form 
  Hour formats 
  `H` : 0 1 ... 22 23 
  `HH` : 	00 01 ... 22 23 
@@ -4926,7 +4918,7 @@ declare class UITimePicker {
  `mm` : 00 01 ... 58 59 
  AM/PM 
  `A` : AM or PM 
- `a` : am pm`
+ `a` : am pm
 	 */
 	show(callback: (value: str) => void, format: str): bin;
 }
@@ -4961,7 +4953,7 @@ declare class UITreeView {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -4977,7 +4969,7 @@ declare class UITreeView {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -5003,14 +4995,14 @@ declare class UITreeView {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -5020,7 +5012,7 @@ declare class UITreeView {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -5030,7 +5022,7 @@ declare class UITreeView {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -5038,15 +5030,15 @@ declare class UITreeView {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -5056,19 +5048,19 @@ declare class UITreeView {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -5087,7 +5079,7 @@ declare class UIWebView {
 
 	/**
 	 * Animate
-	 * @param anim `The type of animation. Here are the available values 
+	 * @param anim The type of animation. Here are the available values 
  `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` 
  `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` 
  `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` 
@@ -5103,7 +5095,7 @@ declare class UIWebView {
  `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` 
  `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` 
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
+ `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param duration `The time in milliseconds.`
 	 */
 	animate(anim: str, duration?: num): void;
@@ -5129,14 +5121,14 @@ declare class UIWebView {
 
 	/**
 	 * SetScale
-	 * @param x `The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.`
-	 * @param y `The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.`
+	 * @param x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+	 * @param y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 */
 	setScale(x: num, y: num): void;
 
 	/**
 	 * GetPosition
-	 * @param options `The mode of the measurements. Values can be `px` or `%``
+	 * @param options The mode of the measurements. Values can be `px` or `%`
 	 */
 	getPosition(options?: str): obj;
 
@@ -5146,7 +5138,7 @@ declare class UIWebView {
 	 * @param top `Fraction of the parent height.`
 	 * @param right `Fraction of the parent width.`
 	 * @param bottom `Fraction of the parent height.`
-	 * @param mode ``px` or `%``
+	 * @param mode `px` or `%`
 	 */
 	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -5156,7 +5148,7 @@ declare class UIWebView {
 	 * @param top `Fraction of the component height. [0-1]`
 	 * @param right `Fraction of the component width. [0-1]`
 	 * @param bottom `Fraction of the component height. [0-1]`
-	 * @param mode `The size thickness mode. Can be `px``
+	 * @param mode The size thickness mode. Can be `px`
 	 */
 	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -5164,15 +5156,15 @@ declare class UIWebView {
 	 * SetPosition
 	 * @param left `Fraction of the parent width. [0-1]`
 	 * @param top `Fraction of the screen height. [0-1]`
-	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
+	 * @param mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 */
 	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
-	 * @param clr `Border color in hexadecimal form `#rrggbb``
-	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
+	 * @param clr Border color in hexadecimal form `#rrggbb`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -5182,19 +5174,19 @@ declare class UIWebView {
 	 * @param tr `Top-Right border radius in pixels.`
 	 * @param bl `Bottom-Left border radius in pixels.`
 	 * @param br `Bottom-Right border radius in pixels.`
-	 * @param mode `Unit. Values are `px` `rem` or `%`.`
+	 * @param mode Unit. Values are `px` `rem` or `%`.
 	 */
 	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
-	 * @param zIndex `The z-index. A negative value behaves like `sendBackward` method.`
+	 * @param zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 */
 	bringForward(zIndex: num): void;
 
 	/**
 	 * SendBackward
-	 * @param zIndex `The z-index. A positve value behaves like `bringForward` method.`
+	 * @param zIndex The z-index. A positve value behaves like `bringForward` method.
 	 */
 	sendBackward(zIndex: num): void;
 }
@@ -5214,6 +5206,16 @@ declare class UIDateTimePicker {
 }
 
 
+declare class UIPopover {
+
+	/** Back image */
+	backImage: str;
+
+	/** Font file */
+	fontFile: str;
+}
+
+
 declare class UIPopup {
 
 	/** SetOnClose */
@@ -5230,8 +5232,8 @@ declare class UIPopup {
 
 	/**
 	 * SetPosition
-	 * @param vertical `Vertical alignment. Values can be `Top` `Bottom``
-	 * @param horizontal `Horizontal alignment. Values can be `Left` `Center` and `Right``
+	 * @param vertical Vertical alignment. Values can be `Top` `Bottom`
+	 * @param horizontal Horizontal alignment. Values can be `Left` `Center` and `Right`
 	 */
 	setPosition(vertical?: str, horizontal?: str): void;
 

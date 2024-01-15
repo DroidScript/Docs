@@ -137,8 +137,14 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** ### SetStyle ###
  * @brief Customize the button looks
  * Costomize the look of the toggle.
- * $$ tgl.SetStyle() $$
- * @param #SetStyle
+ * $$ tgl.SetStyle(color1='sky', color2='sky', radius=0, strokeClr='sky', strokeWidth=0, shadow=0, checkClr?) $$
+ * @param {str_col} [color1='sky'] 
+ * @param {str_col} [color2='sky'] 
+ * @param {num_pxl} [radius=0] 
+ * @param {str_col} [strokeClr='sky'] 
+ * @param {num_pxl} [strokeWidth=0] 
+ * @param {num_frc} [shadow=0] 
+ * @param {str_col} [checkClr] 
  */
 
 

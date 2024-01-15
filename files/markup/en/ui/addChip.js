@@ -5,12 +5,12 @@
  * @abbrev chp
  * @brief addChip
  * 
- * $$ chp = ui.addChip(parent, text, options, width, height) $$ 
+ * $$ chp = ui.addChip(parent, text, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the Chip.
  * @param {str} text The text on the chip.
- * @param {str_com} options Color: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` \n `Variant`: `Outlined` `Default` \n `Util`: `Touchable`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {str_com} [options] Color: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` \n `Variant`: `Outlined` `Default` \n `Util`: `Touchable`
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-Chip
 */
 
@@ -88,12 +88,12 @@ These are the setter and getter properties for the addChip Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the chip
- * $$ chp.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ chp.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

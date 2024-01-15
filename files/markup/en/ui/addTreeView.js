@@ -5,12 +5,12 @@
  * @abbrev trv
  * @brief addTreeView
  * 
- * $$ trv = ui.addTreeView(parent, list, options, width, height) $$ 
+ * $$ trv = ui.addTreeView(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the TreeView component.
- * @param {obj} list An object of the treeview items. See example below.
- * @param {str} options A comma separated TreeView options.
- * @param {num} width Fraction of the screen width.
- * @param {num} height Fraction of the screen height.
+ * @param {obj} [list] An object of the treeview items. See example below.
+ * @param {str} [options] A comma separated TreeView options.
+ * @param {num} [width] Fraction of the screen width.
+ * @param {num} [height] Fraction of the screen height.
  * @returns uio-TreeView
 */
 

@@ -5,12 +5,12 @@
  * @abbrev swt
  * @brief addSwitch
  * 
- * $$ swt = ui.addSwitch(parent, text, options, width, height) $$ 
+ * $$ swt = ui.addSwitch(parent, text, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the Switch Component.
  * @param {str} text The label text.
- * @param {str} options A comma separated switch options. Options can be one or a combination of the following \n Color: `Primary` `Secondary` `Default` \n `Icon Position: `Left` `Top` `Right` `Bottom` \n `Sizes`: `Small` `Medium`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {str} [options] A comma separated switch options. Options can be one or a combination of the following \n Color: `Primary` `Secondary` `Default` \n `Icon Position: `Left` `Top` `Right` `Bottom` \n `Sizes`: `Small` `Medium`
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-Switch
 */
 

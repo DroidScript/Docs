@@ -5,12 +5,12 @@
  * @abbrev lst
  * @brief addList
  * 
- * $$ lst = ui.addList(parent, list, options, width, height) $$ 
+ * $$ lst = ui.addList(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout
- * @param {lst} list An array of arrays. Each element is of the form `[icon, title, body, secondary]`
- * @param {str_com} options Media: `Icon` `Avatar` \n `Styling`: `Dense` `Inset` \n `Util`: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {lst} [list] An array of arrays. Each element is of the form `[icon, title, body, secondary]`
+ * @param {str_com} [options] Media: `Icon` `Avatar` \n `Styling`: `Dense` `Inset` \n `Util`: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-List
 */
 
@@ -84,11 +84,11 @@ These are the setter and getter properties for the addList Component.
 /** ### addItem ###
  * @brief addItem
  * Adds an item in the list
- * $$ lst.addItem(title, body, image, index) $$
+ * $$ lst.addItem(title, body?, image?, index?) $$
  * @param {str} title The title of the item.
- * @param {str} body The text description of the item.
- * @param {str} image A material icon or image file path.
- * @param {num} index The index in which to add or insert the item.
+ * @param {str} [body] The text description of the item.
+ * @param {str} [image] A material icon or image file path.
+ * @param {num} [index] The index in which to add or insert the item.
  */
 
 
@@ -157,11 +157,11 @@ These are the setter and getter properties for the addList Component.
 /** ### setItemByIndex ###
  * @brief setItemByIndex
  * Change the content of an item in a list
- * $$ lst.setItemByIndex(index, newTitle, newBody, newImage) $$
+ * $$ lst.setItemByIndex(index, newTitle, newBody?, newImage?) $$
  * @param {num} index The index of the item to update
  * @param {str} newTitle The new title of the item
- * @param {str} newBody The new body text
- * @param {str} newImage The new icon or image
+ * @param {str} [newBody] The new body text
+ * @param {str} [newImage] The new icon or image
  */
 
 
@@ -176,11 +176,11 @@ These are the setter and getter properties for the addList Component.
 /** ### setItem ###
  * @brief setItem
  * Updates an item in the list
- * $$ lst.setItem(title, newTitle, newBody, newImage) $$
+ * $$ lst.setItem(title, newTitle, newBody?, newImage?) $$
  * @param {str} title The title of the list item to update.
  * @param {str} newTitle The new title of the list item.
- * @param {str} newBody The new description of the list item.
- * @param {str} newImage A material icon font or image file path.
+ * @param {str} [newBody] The new description of the list item.
+ * @param {str} [newImage] A material icon font or image file path.
  */
 
 
@@ -267,12 +267,12 @@ These are the setter and getter properties for the addList Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the list container
- * $$ lst.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ lst.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

@@ -152,7 +152,9 @@ function makeType(inpt, state, stypes, tsx = false) {
 
                     if (types.string.match(/ |\.\.|&lt;|&gt;|<|>|:/)) {
                         if (types.descs) types.descs = "\\" + types.descs;
-                        type.desc = tdesc.map(c => '`' + decodeHtml(c) + '`').join(", ") + types.descs;
+                        // fix ui param descriptions with '`'
+                        if (!tdesc.find(c => c.includes('`'))) tdesc = tdesc.map(c => '`' + c + '`');
+                        type.desc = tdesc.map(decodeHtml).join(", ") + types.descs;
                         tdesc = [type.sub];
                         return type;
                     }

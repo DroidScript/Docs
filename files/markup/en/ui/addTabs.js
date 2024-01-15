@@ -5,12 +5,12 @@
  * @abbrev tab
  * @brief addTabs
  * 
- * $$ tab = ui.addTabs(parent, list, options, width, height) $$ 
+ * $$ tab = ui.addTabs(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the Tabs Component.
- * @param {lst} list An array of tab names.
- * @param {str_com} options Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {lst} [list] An array of tab names.
+ * @param {str_com} [options] Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-Tabs
 */
 
@@ -84,7 +84,7 @@ These are the setter and getter properties for the addTabs Component.
  * @brief setOnTouch
  * Add a callback function when a tab item i click
  * $$ tab.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["name","The"],"pTypes":["str-The tab name text.","num-tab item index."]}
+ * @param {fnc_json} callback {"pNames":["name","index"],"pTypes":["str-The tab name text.","num-tab item index."]}
  */
 
 
@@ -230,12 +230,12 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the tab
- * $$ tab.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ tab.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 
@@ -253,12 +253,12 @@ These are the setter and getter properties for the addTabs Component.
 /** ### setTabPadding ###
  * @brief setTabPadding
  * Sets the padding of the tab items
- * $$ tab.setTabPadding(left, top, right, bottom, mode) $$
- * @param {num} left The tab-item left padding.
- * @param {num} top The tab-item top padding.
- * @param {num} right The tab-item right padding.
- * @param {num} bottom The tab-item bottom padding.
- * @param {str} mode Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
+ * $$ tab.setTabPadding(left?, top?, right?, bottom?, mode='px') $$
+ * @param {num} [left] The tab-item left padding.
+ * @param {num} [top] The tab-item top padding.
+ * @param {num} [right] The tab-item right padding.
+ * @param {num} [bottom] The tab-item bottom padding.
+ * @param {str} [mode='px'] Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
  */
 
 

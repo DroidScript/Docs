@@ -5,12 +5,12 @@
  * @abbrev stp
  * @brief addStepper
  * 
- * $$ stp = ui.addStepper(parent, steps, options, width, height) $$ 
+ * $$ stp = ui.addStepper(parent, steps?, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout of the Stepper
- * @param {lst} steps An array of titles.
- * @param {str} options A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {lst} [steps] An array of titles.
+ * @param {str} [options] A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-Stepper
 */
 

@@ -5,12 +5,12 @@
  * @abbrev swg
  * @brief addSwitchGroup
  * 
- * $$ swg = ui.addSwitchGroup(parent, list, options, width, height) $$ 
+ * $$ swg = ui.addSwitchGroup(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the SwitchGroup Component.
- * @param {obj} list The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
- * @param {str_com} options Icon: `Icon` \n `Color`: `Primary` or `Secondary` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n`Divider`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {obj} [list] The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
+ * @param {str_com} [options] Icon: `Icon` \n `Color`: `Primary` or `Secondary` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n`Divider`
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-SwitchGroup
 */
 
@@ -180,12 +180,12 @@ These are the setter and getter properties for the addSwitchGroup Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the switchgroup container
- * $$ swg.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ swg.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

@@ -5,12 +5,12 @@
  * @abbrev web
  * @brief addWebView
  * 
- * $$ web = ui.addWebView(parent, url, options, width, height) $$ 
+ * $$ web = ui.addWebView(parent, url?, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the WebView component.
- * @param {str} url The url of the website.
- * @param {str_com} options 
- * @param {num} width Fraction of the parent width.
- * @param {num} height Fraction of the parent height.
+ * @param {str} [url] The url of the website.
+ * @param {str_com} [options] 
+ * @param {num} [width] Fraction of the parent width.
+ * @param {num} [height] Fraction of the parent height.
  * @returns uio-WebView
 */
 

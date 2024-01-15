@@ -5,10 +5,10 @@
  * @abbrev div
  * @brief addDivider
  * 
- * $$ div = ui.addDivider(parent, width, options) $$ 
+ * $$ div = ui.addDivider(parent, width?, options?) $$ 
  * @param {obj} parent The layour where to add the divider.
- * @param {num} width Fraction of the screen width. Default is 1.
- * @param {str} options A comma separated Divider options. Values can be `Inset`
+ * @param {num} [width] Fraction of the screen width. Default is 1.
+ * @param {str} [options] A comma separated Divider options. Values can be `Inset`
  * @returns uio-Divider
 */
 

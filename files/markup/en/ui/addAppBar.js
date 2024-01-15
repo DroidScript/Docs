@@ -5,12 +5,12 @@
  * @abbrev apb
  * @brief addAppBar
  * 
- * $$ apb = ui.addAppBar(parent, title, options, width, height) $$ 
+ * $$ apb = ui.addAppBar(parent, title, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the AppBar
  * @param {str} title The title text of the appbar
- * @param {str_com} options one or a combination of the following: \n `Menu` : Adds a menu icon on the left \n `Primary` `Secondary` `Transparent` `Inherit` `Default` : Adds a color \n `Absolute` `Static` `Fixed` `Relative` : Adds a positioning
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {str_com} [options] one or a combination of the following: \n `Menu` : Adds a menu icon on the left \n `Primary` `Secondary` `Transparent` `Inherit` `Default` : Adds a color \n `Absolute` `Static` `Fixed` `Relative` : Adds a positioning
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-AppBar
 */
 
@@ -82,12 +82,12 @@ These are the setter and getter properties for the addAppBar Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the appbar
- * $$ apb.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ apb.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

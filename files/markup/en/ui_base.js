@@ -3,7 +3,7 @@
  * @brief animate
  * Animate the component
  * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
+ * @param {num} [duration] The time in milliseconds.
  */
 
 
@@ -38,7 +38,7 @@
 /** ### getPosition
  * @brief getPosition
  * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
+ * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
  * @returns obj
  */
 
@@ -46,20 +46,20 @@
 /** ### setMargins
  * @brief setMargins
  * Sets the margin of the component
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
+ * @param {num} [left] Fraction of the parent width.
+ * @param {num} [top] Fraction of the parent height.
+ * @param {num} [right] Fraction of the parent width.
+ * @param {num} [bottom] Fraction of the parent height.
+ * @param {str} [mode='px'] `px` or `%`
  */
 
 
 /** ### setBorder
  * @brief setBorder
  * Sets the border line for the component container
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+ * @param {num} [width] Border-left thickness in pixels.
+ * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
+ * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
  */
 
 
@@ -86,20 +86,20 @@
 /** ### setPadding
  * @brief setPadding
  * Sets the padding component container
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
+ * @param {num} [left] Fraction of the component width.
+ * @param {num} [top] Fraction of the component height. [0-1]
+ * @param {num} [right] Fraction of the component width. [0-1]
+ * @param {num} [bottom] Fraction of the component height. [0-1]
+ * @param {str} [mode='px'] The size thickness mode. Can be `px`
  */
 
 
 /** ### setPosition
  * @brief setPosition
  * Sets the position of the component relative to its parent dimensions
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
+ * @param {num} [left] Fraction of the parent width. [0-1]
+ * @param {num} [top] Fraction of the screen height. [0-1]
+ * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
  */
 
 
@@ -126,10 +126,10 @@
 /** ### setCornerRadius
  * @brief setCornerRadius
  * Sets the corner radius of the component
- * @param {num} tl Top-Left border radius in pixels.
- * @param {num} tr Top-Right border radius in pixels.
- * @param {num} bl Bottom-Left border radius in pixels.
- * @param {num} br Bottom-Right border radius in pixels.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * @param {num} [tl] Top-Left border radius in pixels.
+ * @param {num} [tr] Top-Right border radius in pixels.
+ * @param {num} [bl] Bottom-Left border radius in pixels.
+ * @param {num} [br] Bottom-Right border radius in pixels.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 

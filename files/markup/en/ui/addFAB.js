@@ -5,11 +5,11 @@
  * @abbrev fab
  * @brief addFAB
  * 
- * $$ fab = ui.addFAB(parent, icon, options, text) $$ 
+ * $$ fab = ui.addFAB(parent, icon, options?, text?) $$ 
  * @param {obj} parent The parent layout where to add the fab
  * @param {str} icon The string icon of the FAB
- * @param {str_com} options `Fixed` `Static` `Rounded` `Extended` `Left` `Right`
- * @param {str} text Text to show for extended FABs.
+ * @param {str_com} [options] `Fixed` `Static` `Rounded` `Extended` `Left` `Right`
+ * @param {str} [text] Text to show for extended FABs.
  * @returns uio-FAB
 */
 
@@ -70,12 +70,12 @@ These are the setter and getter properties for the addFAB Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the button
- * $$ fab.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ fab.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

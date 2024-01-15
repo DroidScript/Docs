@@ -111,7 +111,8 @@
 /** ### SetOnDisconnect ###
  * @brief Called after disconnecting from bluetooth connection
  * SetOnDisconnect will be called on both devices after disconnecting from an existing bluetooth connection.
- * $$ bls.SetOnDisconnect() $$
+ * $$ bls.SetOnDisconnect(callback) $$
+ * @param {fnc_json} callback {"pNames":["name","address"],"pTypes":["str","str"]}
  */
 
 

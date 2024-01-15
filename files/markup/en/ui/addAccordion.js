@@ -5,12 +5,12 @@
  * @abbrev acc
  * @brief addAccordion
  * 
- * $$ acc = ui.addAccordion(parent, titles, options, width, height) $$ 
+ * $$ acc = ui.addAccordion(parent, titles, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the text.
  * @param {obj} titles An array of accordion titles.
- * @param {str_com} options one or a combination of the following: `Square` \n `Layout type `Linear` or `Absolute`
- * @param {num} width Fraction of the screen width: [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {str_com} [options] one or a combination of the following: `Square` \n `Layout type `Linear` or `Absolute`
+ * @param {num} [width] Fraction of the screen width: [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-Accordion
 */
 
@@ -207,21 +207,21 @@ These are the setter and getter properties for the addAccordion Component.
 /** ### setTextColor ###
  * @brief setTextColor
  * Sets the color of the title and the secondary text respectively
- * $$ acc.setTextColor(color1, color2) $$
+ * $$ acc.setTextColor(color1, color2?) $$
  * @param {str} color1 Color of the title text in hexadecimal format `#rrggbb`
- * @param {str} color2 Color of the secondary text in hexadecimal format `#rrggbb`
+ * @param {str} [color2] Color of the secondary text in hexadecimal format `#rrggbb`
  */
 
 
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the top and bottom accordion panels
- * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ acc.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

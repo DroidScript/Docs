@@ -5,12 +5,12 @@
  * @abbrev tfd
  * @brief addTextField
  * 
- * $$ tfd = ui.addTextField(parent, text, options, width, height) $$ 
+ * $$ tfd = ui.addTextField(parent, text, options?, width?, height?) $$ 
  * @param {obj} parent The layout where to add the TextField Component.
  * @param {str} text The initial value of the TextField
- * @param {str_com} options Color: `Primary` or `Secondary` \n `Sizes`: `Small` or `Medium` \n `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant`: `Standard` `Filled` or `Outlined` \n `Utils`: `Autofocus`
- * @param {num} width Fraction of the screen width.
- * @param {num} height Fraction of the screen height.
+ * @param {str_com} [options] Color: `Primary` or `Secondary` \n `Sizes`: `Small` or `Medium` \n `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant`: `Standard` `Filled` or `Outlined` \n `Utils`: `Autofocus`
+ * @param {num} [width] Fraction of the screen width.
+ * @param {num} [height] Fraction of the screen height.
  * @returns uio-TextField
 */
 
@@ -107,18 +107,18 @@ These are the setter and getter properties for the addTextField Component.
 /** ### setRows ###
  * @brief setRows
  * Sets the minimum and maximum number of rows on a multiline type TextField
- * $$ tfd.setRows(min, max) $$
- * @param {num} min The minimum number of rows.
- * @param {num} max The maximum number of rows.
+ * $$ tfd.setRows(min?, max?) $$
+ * @param {num} [min] The minimum number of rows.
+ * @param {num} [max] The maximum number of rows.
  */
 
 
 /** ### setStartAdornment ###
  * @brief setStartAdornment
  * Set a start adornment control into the TextField Component
- * $$ tfd.setStartAdornment(text, type) $$
+ * $$ tfd.setStartAdornment(text, type?) $$
  * @param {str} text Text or material icon font.
- * @param {str} type A comma separated options for start adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
+ * @param {str} [type] A comma separated options for start adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
  */
 
 
@@ -141,9 +141,9 @@ These are the setter and getter properties for the addTextField Component.
 /** ### setEndAdornment ###
  * @brief setEndAdornment
  * Add an end adornment control into the TextField Component
- * $$ tfd.setEndAdornment(text, type) $$
+ * $$ tfd.setEndAdornment(text, type?) $$
  * @param {str} text Text or material icon font.
- * @param {str} type A comma separated options for end adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
+ * @param {str} [type] A comma separated options for end adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
  */
 
 

@@ -5,12 +5,12 @@
  * @abbrev btg
  * @brief addButtonGroup
  * 
- * $$ btg = ui.addButtonGroup(parent, list, options, width, height) $$ 
+ * $$ btg = ui.addButtonGroup(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the ButtonGroup
- * @param {lst} list The item to be displayed on the buttn group.
- * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `Icon` `NoElevation`
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
+ * @param {lst} [list] The item to be displayed on the buttn group.
+ * @param {str_com} [options] one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `Icon` `NoElevation`
+ * @param {num} [width] Fraction of the parent width. [0-1]
+ * @param {num} [height] Fraction of the parent height. [0-1]
  * @returns uio-ButtonGroup
 */
 
@@ -138,9 +138,9 @@ These are the setter and getter properties for the addButtonGroup Component.
 /** ### setToolTip ###
  * @brief setToolTip
  * Adds a tooltip to the ButtonGroup items
- * $$ btg.setToolTip(titles, pos) $$
+ * $$ btg.setToolTip(titles, pos='top') $$
  * @param {lst} titles The titles for each item in the ButtonGroup.
- * @param {str} pos The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
+ * @param {str} [pos='top'] The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
  */
 
 

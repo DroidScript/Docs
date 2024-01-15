@@ -5,12 +5,12 @@
  * @abbrev lay
  * @brief addLayout
  * 
- * $$ lay = ui.addLayout(parent, type, options, width, height) $$ 
- * @param {obj} parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
+ * $$ lay = ui.addLayout(parent, type, options?, width?, height?) $$ 
+ * @param {str} parent main||obj-The parent layout where to add this component. Pass a string `main` for the main layout of your app.
  * @param {str} type The layout type. Values can be `Linear` `Absolute` `Frame` `Slide`
- * @param {str} options Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions`: `FillX` `FillY` \n `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils`: `BackColor` to apply light or dark background rather than transparent.
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {obj} height Fraction of the screen height. [0-1]
+ * @param {str} [options] Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions`: `FillX` `FillY` \n `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils`: `BackColor` to apply light or dark background rather than transparent.
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-Layout
 */
 
@@ -94,12 +94,12 @@ These are the setter and getter properties for the addLayout Component.
 /** ### setChildMargins ###
  * @brief setChildMargins
  * Sets a default margins for the children of the layout component
- * $$ lay.setChildMargins(left, top, right, bottom, mode) $$
- * @param {num} left Left margin.
- * @param {num} top Top margin.
- * @param {num} right Right margin.
- * @param {num} bottom Bottom margin.
- * @param {str} mode `px`. Default is a fraction of viewport.
+ * $$ lay.setChildMargins(left?, top?, right?, bottom?, mode='px') $$
+ * @param {num} [left] Left margin.
+ * @param {num} [top] Top margin.
+ * @param {num} [right] Right margin.
+ * @param {num} [bottom] Bottom margin.
+ * @param {str} [mode='px'] `px`. Default is a fraction of viewport.
  */
 
 

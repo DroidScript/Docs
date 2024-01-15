@@ -5,13 +5,13 @@
  * @abbrev img
  * @brief addImage
  * 
- * $$ img = ui.addImage(parent, file, options, width, height) $$ 
+ * $$ img = ui.addImage(parent, file, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the image.
  * @param {str} file The path to the image.
- * @param {str} options A comma seprated options for the image. Can be `Canvas` `Button` or `Avatar`
- * @param {num} width Fraction of the screen width.
- * @param {num} height Fraction of the screen height.
- * @returns obj-Image Component.
+ * @param {str} [options] A comma seprated options for the image. Can be `Canvas` `Button` or `Avatar`
+ * @param {num} [width] Fraction of the screen width.
+ * @param {num} [height] Fraction of the screen height.
+ * @returns uio-Image
 */
 
 
@@ -115,80 +115,80 @@ These are the setter and getter properties for the addImage Component.
 /** ### drawLine ###
  * @brief drawLine
  * Draws a line between two points in the canvas
- * $$ img.drawLine(x1, y1, x2, y2, strokeColor, strokeWidth) $$
+ * $$ img.drawLine(x1, y1, x2, y2, strokeColor?, strokeWidth?) $$
  * @param {num} x1 The x-coordinate of the starting point in pixels.
  * @param {num} y1 The y-coordinate of the starting point in pixels
  * @param {num} x2 The x-coordinate of the second point in pixels.
  * @param {num} y2 The y-coordinate of the second point in pixels.
- * @param {str} strokeColor A hexadecimal color.
- * @param {num} strokeWidth The stroke thickness.
+ * @param {str} [strokeColor] A hexadecimal color.
+ * @param {num} [strokeWidth] The stroke thickness.
  */
 
 
 /** ### drawCircle ###
  * @brief drawCircle
  * Draws a circle in the canvas
- * $$ img.drawCircle(x, y, radius, fillColor, strokeColor, strokeWidth) $$
+ * $$ img.drawCircle(x, y, radius, fillColor?, strokeColor?, strokeWidth?) $$
  * @param {num} x The x-coordinate of the center of the circle in pixels.
  * @param {num} y The y-coordinate of the center of the circle in pixels.
  * @param {num} radius The radius of the circle in pixels.
- * @param {str} fillColor A hexadecimal color.
- * @param {str} strokeColor A hexadecimal color.
- * @param {num} strokeWidth The stoke thickness.
+ * @param {str} [fillColor] A hexadecimal color.
+ * @param {str} [strokeColor] A hexadecimal color.
+ * @param {num} [strokeWidth] The stoke thickness.
  */
 
 
 /** ### drawSquare ###
  * @brief drawSquare
  * Draws a square into the canvas
- * $$ img.drawSquare(x, y, width, fillColor, strokeColor, strokeWidth) $$
+ * $$ img.drawSquare(x, y, width, fillColor?, strokeColor?, strokeWidth?) $$
  * @param {num} x The position from the left of the top-left corner of the square in pixels.
  * @param {num} y The distance from the top of the top-left corner of the square in pixels.
  * @param {num} width The width of the square in pixels.
- * @param {str} fillColor A hexadecimal color.
- * @param {str} strokeColor A hexadecimal color.
- * @param {num} strokeWidth The stroke thickness in pixels.
+ * @param {str} [fillColor] A hexadecimal color.
+ * @param {str} [strokeColor] A hexadecimal color.
+ * @param {num} [strokeWidth] The stroke thickness in pixels.
  */
 
 
 /** ### drawRectangle ###
  * @brief drawRectangle
  * Draws a rectangle into the canvas
- * $$ img.drawRectangle(x1, y1, width, height, fillColor, strokeColor, strokeWidth) $$
+ * $$ img.drawRectangle(x1, y1, width, height, fillColor?, strokeColor?, strokeWidth?) $$
  * @param {num} x1 The distance from the left of the top-left corner of the rectangle in pixels.
  * @param {num} y1 The distance from the top of the top-left corner of the rectangle in pixels.
  * @param {num} width The width of the rectangle in pixels.
  * @param {num} height The height of the rectangle in pixels.
- * @param {str} fillColor A hexadecimal color.
- * @param {str} strokeColor A hexadecimal color.
- * @param {num} strokeWidth The stroke thickness.
+ * @param {str} [fillColor] A hexadecimal color.
+ * @param {str} [strokeColor] A hexadecimal color.
+ * @param {num} [strokeWidth] The stroke thickness.
  */
 
 
 /** ### drawArc ###
  * @brief drawArc
  * Draws an arc in the canvas
- * $$ img.drawArc(x, y, radius, start, end, fillColor, strokeColor, strokeWidth) $$
+ * $$ img.drawArc(x, y, radius, start, end, fillColor?, strokeColor?, strokeWidth?) $$
  * @param {num} x The x-coordinate of the center of the arc in pixels.
  * @param {num} y The y-coordinate of the center of the arc in pixels.
  * @param {num} radius The radius of the arc in pixels.
  * @param {num} start The starting angle in degress
  * @param {num} end The angle in degress in which the arc will stop.
- * @param {str} fillColor A hexadecimal color.
- * @param {str} strokeColor A hexadecimal color.
- * @param {num} strokeWidth The stroke thickness.
+ * @param {str} [fillColor] A hexadecimal color.
+ * @param {str} [strokeColor] A hexadecimal color.
+ * @param {num} [strokeWidth] The stroke thickness.
  */
 
 
 /** ### drawImage ###
  * @brief drawImage
  * Draws an image to the canvas
- * $$ img.drawImage(img, x, y, width, height) $$
+ * $$ img.drawImage(img, x?, y?, width?, height?) $$
  * @param {str} img Path to image file.
- * @param {num} x The distance from the left of the top-left corner of the image in pixels.
- * @param {num} y The distance from the top of the top-left corner of the image in pixels.
- * @param {num} width If provided, the image will be shrink or stretch to fill this width in pixels.
- * @param {num} height If provided, the height of the image will be shrink or stretch to fill this height in pixels.
+ * @param {num} [x] The distance from the left of the top-left corner of the image in pixels.
+ * @param {num} [y] The distance from the top of the top-left corner of the image in pixels.
+ * @param {num} [width] If provided, the image will be shrink or stretch to fill this width in pixels.
+ * @param {num} [height] If provided, the height of the image will be shrink or stretch to fill this height in pixels.
  */
 
 
@@ -202,31 +202,31 @@ These are the setter and getter properties for the addImage Component.
 /** ### drawPolyline ###
  * @brief drawPolyline
  * Draws a polyline on the canvas by passing an array of points
- * $$ img.drawPolyline(points, strokeColor, strokeWidth) $$
+ * $$ img.drawPolyline(points, strokeColor?, strokeWidth?) $$
  * @param {lst} points An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point.
- * @param {str} strokeColor A hexadecimal color.
- * @param {num} strokeWidth The stroke thickness.
+ * @param {str} [strokeColor] A hexadecimal color.
+ * @param {num} [strokeWidth] The stroke thickness.
  */
 
 
 /** ### drawPolygon ###
  * @brief drawPolygon
  * Draws a polygon on the canvas by passing an array of points
- * $$ img.drawPolygon(points, fillColor, strokeColor, strokeWidth) $$
+ * $$ img.drawPolygon(points, fillColor?, strokeColor?, strokeWidth?) $$
  * @param {lst} points An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point.
- * @param {str} fillColor A hexadecimal color.
- * @param {str} strokeColor A hexadecimal color.
- * @param {num} strokeWidth The stroke thickness.
+ * @param {str} [fillColor] A hexadecimal color.
+ * @param {str} [strokeColor] A hexadecimal color.
+ * @param {num} [strokeWidth] The stroke thickness.
  */
 
 
 /** ### drawPoint ###
  * @brief drawPoint
  * Draws a single pixel point in a specified coordinate
- * $$ img.drawPoint(x, y, color) $$
+ * $$ img.drawPoint(x, y, color?) $$
  * @param {num} x The x-coordinate in pixels.
  * @param {num} y The y-coordinate in pixels.
- * @param {str} color A hexadecimal color.
+ * @param {str} [color] A hexadecimal color.
  */
 
 

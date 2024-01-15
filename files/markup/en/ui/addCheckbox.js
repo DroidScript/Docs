@@ -5,12 +5,12 @@
  * @abbrev ckb
  * @brief addCheckbox
  * 
- * $$ ckb = ui.addCheckbox(parent, text, options, width, height) $$ 
+ * $$ ckb = ui.addCheckbox(parent, text, options?, width?, height?) $$ 
  * @param {obj} parent The layout where to add the checkbox
  * @param {str} text The label for the checkbox
- * @param {str_com} options Colors: `Primary` `Secondary` `Medium` `Small` \n `Position`: `Left` `Top` `Right` `Bottom` \n `Variant`: `Indeterminate` `Determinate`
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
+ * @param {str_com} [options] Colors: `Primary` `Secondary` `Medium` `Small` \n `Position`: `Left` `Top` `Right` `Bottom` \n `Variant`: `Indeterminate` `Determinate`
+ * @param {num} [width] Fraction of the parent width. [0-1]
+ * @param {num} [height] Fraction of the parent height. [0-1]
  * @returns uio-Checkbox
 */
 

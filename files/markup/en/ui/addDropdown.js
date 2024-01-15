@@ -5,13 +5,13 @@
  * @abbrev dpd
  * @brief addDropdown
  * 
- * $$ dpd = ui.addDropdown(parent, list, options, width, height) $$ 
+ * $$ dpd = ui.addDropdown(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The layout where to add the dropdown.
- * @param {lst} list The list items to show.
- * @param {str} options A comma separated Dropdown options. Can be \n Colors: `Primary` `Secondary` `Default` \n `Variants`: `Contained` `Outlined` `Text` \n `Sizes`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `NoElevation`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-Dropdown Component.
+ * @param {lst} [list] The list items to show.
+ * @param {str} [options] A comma separated Dropdown options. Can be \n Colors: `Primary` `Secondary` `Default` \n `Variants`: `Contained` `Outlined` `Text` \n `Sizes`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `NoElevation`
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
+ * @returns uio-Dropdown
 */
 
 
@@ -69,7 +69,7 @@ These are the setter and getter properties for the addDropdown Component.
  * @brief setOnChange
  * Adds a callback function on change event
  * $$ dpd.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["The","index"],"pTypes":["obj-item text.","num-The index of the corresponding item."]}
+ * @param {fnc_json} callback {"pNames":["value","index"],"pTypes":["obj-item text.","num-The index of the corresponding item."]}
  */
 
 
@@ -185,12 +185,12 @@ These are the setter and getter properties for the addDropdown Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the dropdown
- * $$ dpd.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ dpd.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

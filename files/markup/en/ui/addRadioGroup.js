@@ -5,12 +5,12 @@
  * @abbrev rdg
  * @brief addRadioGroup
  * 
- * $$ rdg = ui.addRadioGroup(parent, list, options, width, height) $$ 
+ * $$ rdg = ui.addRadioGroup(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The parent where to add the RadioGroup component.
- * @param {lst} list The list items array.
- * @param {str_com} options Radio Sizes: `Small` `Medium` \n `Colors`: `Primary` `Secondary` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n `Required`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
+ * @param {lst} [list] The list items array.
+ * @param {str_com} [options] Radio Sizes: `Small` `Medium` \n `Colors`: `Primary` `Secondary` \n `Icon Position: `Left` or `Right` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n `Required`
+ * @param {num} [width] Fraction of the screen width. [0-1]
+ * @param {num} [height] Fraction of the screen height. [0-1]
  * @returns uio-RadioGroup
 */
 
@@ -199,12 +199,12 @@ These are the setter and getter properties for the addRadioGroup Component.
 /** ### setCornerRadius ###
  * @brief setCornerRadius
  * Sets the corner radius of the radiogroup container
- * $$ rdg.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
+ * $$ rdg.setCornerRadius(tl?, tr?, bl?, br?, mode='px') $$
+ * @param {num} [tl] Top-left corner radius.
+ * @param {num} [tr] Top-right corner radius.
+ * @param {num} [bl] Bottom-left corner radius.
+ * @param {num} [br] Bottom-right corner radius.
+ * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 
