@@ -4,7 +4,7 @@
 /** # showColorPicker #
  * @abbrev col
  * @brief showColorPicker
- * 
+ * Shows a color picker. Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette.
  * $$ col = ui.showColorPicker(value?, options?) $$ 
  * @param {str} [value] A hexadecimal default value for the color picker.
  * @param {str} [options] A comma separated color picker options. Values can be \n `Alpha` Includes an alpha
@@ -12,21 +12,18 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Shows a color picker. Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette.
-
-### Properties
-These are the setter and getter properties for the showColorPicker Component.
-<smp noinl>value:"str:'Returns the value of the chosen color.'"</smp>
- */
-
 
 
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### value
+ * @prop
+ * Returns the value of the chosen color.
+ * @returns str
+ */
+
+                    
 /** ### getValue ###
  * @brief getValue
  * Returns the hexadecimal string color value of the color picker

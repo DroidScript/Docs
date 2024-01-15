@@ -29,51 +29,6 @@ Lists are continuous, vertical indexes of text or images. They are used to group
  The secondary action is an icon button by default, to display as a text passed <col nobox #4c4>secondarytext</col> option.
 
  Adding a <col nobox #4c4>selectable</col> list will disregard the <col nobox #4c4>icon</col> option.
-
-### Properties
-These are the setter and getter properties for the addList Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>avatarSize:"str:'Sets or returns the size of the avatar. Values can be <col nobox #fb8c00>Small</col> <col nobox #fb8c00>Medium</col> <col nobox #fb8c00>Large</col>'"</smp>
-<smp noinl>avatarVariant:"str:'Sets or returns the variant of the avatar. Values can be <col nobox #fb8c00>Square</col> <col nobox #fb8c00>Round</col> or <col nobox #fb8c00>Circle</col>'"</smp>
-<smp noinl>backColor:"str:'Sets or returns the background color in a hexadecimal format.'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>checkboxColor:"str:'Sets or returns the theme color of the checkbox when <col nobox #fb8c00>Selectable</col> option is enabled. Vaues can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>elevation:"num:'Sets or returns the depth of the list container. Values range from 0 to 24.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>iconColor:"str:'Sets or returns the icon color in a hexadecimal format.'"</smp>
-<smp noinl>iconSize:"num:'Sets or returns the size of the icon text.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>itemPadding:"lst:'Sets or returns the padding of each list item. See also <col nobox #fb8c00>setItemPadding</col> method.'"</smp>
-<smp noinl>label:"str:'Sets or returns the label text.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>outlined:"bin:'Sets or returns whether the container is outlined or elevated.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>selectable:"bin:'Sets or returns a boolean whether the list is selectable or not.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textColor1:"str:'Sets or returns the color of the title text in hexadecimal format.'"</smp>
-<smp noinl>textColor2:"str:'Sets or returns the color of the body text in hexadecimal format.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>textSize1:"num:'Sets or returns the size of the title text.'"</smp>
-<smp noinl>textSize2:"num:'Sets or returns the size of the body text.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
  */
 
 
@@ -81,6 +36,300 @@ These are the setter and getter properties for the addList Component.
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### absHeight
+ * @prop
+ * Returns the absolute height of the control in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absLeft
+ * @prop
+ * Returns the absolute distance of the control from the left in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absTop
+ * @prop
+ * Returns the absolute distance of the control from the top in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absWidth
+ * @prop
+ * Returns the absolute width of the control in pixels.
+ * @returns num
+ */
+
+                    
+/** ### avatarSize
+ * @prop
+ * Sets or returns the size of the avatar. Values can be <col nobox #fb8c00>Small</col> <col nobox #fb8c00>Medium</col> <col nobox #fb8c00>Large</col>
+ * @returns str
+ */
+
+                    
+/** ### avatarVariant
+ * @prop
+ * Sets or returns the variant of the avatar. Values can be <col nobox #fb8c00>Square</col> <col nobox #fb8c00>Round</col> or <col nobox #fb8c00>Circle</col>
+ * @returns str
+ */
+
+                    
+/** ### backColor
+ * @prop
+ * Sets or returns the background color in a hexadecimal format.
+ * @returns str
+ */
+
+                    
+/** ### backImage
+ * @prop
+ * The path to your image file.
+ * @returns str
+ */
+
+                    
+/** ### border
+ * @prop
+ * Sets or returns the border thickness in pixels.
+ * @returns num
+ */
+
+                    
+/** ### borderColor
+ * @prop
+ * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### borderStyle
+ * @prop
+ * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
+ * @returns str
+ */
+
+                    
+/** ### checkboxColor
+ * @prop
+ * Sets or returns the theme color of the checkbox when <col nobox #fb8c00>Selectable</col> option is enabled. Vaues can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>
+ * @returns str
+ */
+
+                    
+/** ### cornerRadius
+ * @prop
+ * Sets or returns the corner radius in pixels.
+ * @returns num
+ */
+
+                    
+/** ### disabled
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
+ * @returns bin
+ */
+
+                    
+/** ### elevation
+ * @prop
+ * Sets or returns the depth of the list container. Values range from 0 to 24.
+ * @returns num
+ */
+
+                    
+/** ### fontFile
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
+ * @returns str
+ */
+
+                    
+/** ### height
+ * @prop
+ * Sets or returns the height of the control as a fraction of the parent control.
+ * @returns num
+ */
+
+                    
+/** ### iconColor
+ * @prop
+ * Sets or returns the icon color in a hexadecimal format.
+ * @returns str
+ */
+
+                    
+/** ### iconSize
+ * @prop
+ * Sets or returns the size of the icon text.
+ * @returns num
+ */
+
+                    
+/** ### isVisible
+ * @prop
+ * Returns whether the control is visible or not.
+ * @returns bin
+ */
+
+                    
+/** ### itemPadding
+ * @prop
+ * Sets or returns the padding of each list item. See also <col nobox #fb8c00>setItemPadding</col> method.
+ * @returns lst
+ */
+
+                    
+/** ### label
+ * @prop
+ * Sets or returns the label text.
+ * @returns str
+ */
+
+                    
+/** ### left
+ * @prop
+ * Returns the distance of the control from the left.
+ * @returns num
+ */
+
+                    
+/** ### margins
+ * @prop
+ * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
+ * @returns lst
+ */
+
+                    
+/** ### opacity
+ * @prop
+ * Sets or returns the opacity of the control.
+ * @returns num
+ */
+
+                    
+/** ### options
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>options</col> of the control.
+ * @returns str
+ */
+
+                    
+/** ### outlined
+ * @prop
+ * Sets or returns whether the container is outlined or elevated.
+ * @returns bin
+ */
+
+                    
+/** ### padding
+ * @prop
+ * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
+ * @returns lst
+ */
+
+                    
+/** ### parent
+ * @prop
+ * Returns the parent layout control.
+ * @returns obj
+ */
+
+                    
+/** ### position
+ * @prop
+ * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
+ * @returns obj
+ */
+
+                    
+/** ### rotation
+ * @prop
+ * Sets or returns the angle of rotation in degrees.
+ * @returns num
+ */
+
+                    
+/** ### selectable
+ * @prop
+ * Sets or returns a boolean whether the list is selectable or not.
+ * @returns bin
+ */
+
+                    
+/** ### textColor
+ * @prop
+ * Sets or returns the color of the text.
+ * @returns str
+ */
+
+                    
+/** ### textColor1
+ * @prop
+ * Sets or returns the color of the title text in hexadecimal format.
+ * @returns str
+ */
+
+                    
+/** ### textColor2
+ * @prop
+ * Sets or returns the color of the body text in hexadecimal format.
+ * @returns str
+ */
+
+                    
+/** ### textSize
+ * @prop
+ * Sets or returns the size of the text within the control.
+ * @returns num
+ */
+
+                    
+/** ### textSize1
+ * @prop
+ * Sets or returns the size of the title text.
+ * @returns num
+ */
+
+                    
+/** ### textSize2
+ * @prop
+ * Sets or returns the size of the body text.
+ * @returns num
+ */
+
+                    
+/** ### top
+ * @prop
+ * Returns the distance of the control from the top.
+ * @returns num
+ */
+
+                    
+/** ### type
+ * @prop
+ * Returns the type of the control.
+ * @returns str
+ */
+
+                    
+/** ### visibility
+ * @prop
+ * Sets or returns the visibility of the control.
+ * @returns str
+ */
+
+                    
+/** ### width
+ * @prop
+ * Sets or returns the width of the control as a fraction of the parent control.
+ * @returns num
+ */
+
+                    
 /** ### addItem ###
  * @brief addItem
  * Adds an item in the list

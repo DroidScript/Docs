@@ -3,29 +3,36 @@
 
 /** # showPopover #
  * @brief showPopover
- * 
+ * Show a popover on any `UI Components` except Dialogs and Popups. Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.
  * $$ ui.showPopover(parent, text?, position?, width?, height?) $$ 
  * @param {obj} parent UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
  * @param {str} [text] The text to de displayed. For displaying more data, pass a `Layout`
  * @param {str} [position] A comma separated values representing the `anchorOrigin,transformOrigin` \n `anchorOrigin` Position of the popover on its parent. Available values are `tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right. \n `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`
  * @param {num} [width] Fraction of the screen width.
  * @param {num} [height] Fraction of the screen height.
- * @returns obj-Popover
+ * @returns uio-Popover
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
 
-/** @Description
-Show a popover on any <col nobox #4c4>UI Components</col> except Dialogs and Popups. Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.
 
-### Properties
-These are the setter and getter properties for the showPopover Component.
-<smp noinl>backImage:"str:'Sets or returns the path to the background image.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the font file use for the Popover.'"</smp>
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+
+
+/** ### backImage
+ * @prop
+ * Sets or returns the path to the background image.
+ * @returns str
  */
 
+                    
+/** ### fontFile
+ * @prop
+ * Sets or returns the font file use for the Popover.
+ * @returns str
+ */
 
+                    
 
 // ------------- SAMPLES ------------- 
 

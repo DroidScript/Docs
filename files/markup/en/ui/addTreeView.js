@@ -4,7 +4,7 @@
 /** # addTreeView #
  * @abbrev trv
  * @brief addTreeView
- * 
+ * Adds a TreeView component into your app. A tree view is best use in file system navigation.
  * $$ trv = ui.addTreeView(parent, list?, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the TreeView component.
  * @param {obj} [list] An object of the treeview items. See example below.
@@ -15,50 +15,221 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a TreeView component into your app. A tree view is best use in file system navigation.
-
-### Properties
-These are the setter and getter properties for the addTreeView Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>list:"obj:'Sets or returns the list object.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>value:"str:'Returns the selected item of the TreeView.'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
- */
-
 
 
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### absHeight
+ * @prop
+ * Returns the absolute height of the control in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absLeft
+ * @prop
+ * Returns the absolute distance of the control from the left in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absTop
+ * @prop
+ * Returns the absolute distance of the control from the top in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absWidth
+ * @prop
+ * Returns the absolute width of the control in pixels.
+ * @returns num
+ */
+
+                    
+/** ### backColor
+ * @prop
+ * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### backImage
+ * @prop
+ * The path to your image file.
+ * @returns str
+ */
+
+                    
+/** ### border
+ * @prop
+ * Sets or returns the border thickness in pixels.
+ * @returns num
+ */
+
+                    
+/** ### borderColor
+ * @prop
+ * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### borderStyle
+ * @prop
+ * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
+ * @returns str
+ */
+
+                    
+/** ### cornerRadius
+ * @prop
+ * Sets or returns the corner radius in pixels.
+ * @returns num
+ */
+
+                    
+/** ### disabled
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
+ * @returns bin
+ */
+
+                    
+/** ### fontFile
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
+ * @returns str
+ */
+
+                    
+/** ### height
+ * @prop
+ * Sets or returns the height of the control as a fraction of the parent control.
+ * @returns num
+ */
+
+                    
+/** ### isVisible
+ * @prop
+ * Returns whether the control is visible or not.
+ * @returns bin
+ */
+
+                    
+/** ### left
+ * @prop
+ * Returns the distance of the control from the left.
+ * @returns num
+ */
+
+                    
+/** ### list
+ * @prop
+ * Sets or returns the list object.
+ * @returns obj
+ */
+
+                    
+/** ### margins
+ * @prop
+ * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
+ * @returns lst
+ */
+
+                    
+/** ### opacity
+ * @prop
+ * Sets or returns the opacity of the control.
+ * @returns num
+ */
+
+                    
+/** ### options
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>options</col> of the control.
+ * @returns str
+ */
+
+                    
+/** ### padding
+ * @prop
+ * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
+ * @returns lst
+ */
+
+                    
+/** ### parent
+ * @prop
+ * Returns the parent layout control.
+ * @returns obj
+ */
+
+                    
+/** ### position
+ * @prop
+ * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
+ * @returns obj
+ */
+
+                    
+/** ### rotation
+ * @prop
+ * Sets or returns the angle of rotation in degrees.
+ * @returns num
+ */
+
+                    
+/** ### textColor
+ * @prop
+ * Sets or returns the color of the text.
+ * @returns str
+ */
+
+                    
+/** ### textSize
+ * @prop
+ * Sets or returns the size of the text within the control.
+ * @returns num
+ */
+
+                    
+/** ### top
+ * @prop
+ * Returns the distance of the control from the top.
+ * @returns num
+ */
+
+                    
+/** ### type
+ * @prop
+ * Returns the type of the control.
+ * @returns str
+ */
+
+                    
+/** ### value
+ * @prop
+ * Returns the selected item of the TreeView.
+ * @returns str
+ */
+
+                    
+/** ### visibility
+ * @prop
+ * Sets or returns the visibility of the control.
+ * @returns str
+ */
+
+                    
+/** ### width
+ * @prop
+ * Sets or returns the width of the control as a fraction of the parent control.
+ * @returns num
+ */
+
+                    
 /** ### setOnTouch ###
  * @brief setOnTouch
  * Add a on touch handler to the TreeView item when click

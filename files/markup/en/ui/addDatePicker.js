@@ -4,7 +4,7 @@
 /** # addDatePicker #
  * @abbrev dtp
  * @brief addDatePicker
- * 
+ * Adds a date picker component to the app.
  * $$ dtp = ui.addDatePicker(date, options?) $$ 
  * @param {str} date A default date value to which the datepicker begins. Format `YYYY-MM-DD`
  * @param {str_com} [options] `Portrait` `Landscape`
@@ -12,21 +12,18 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a date picker component to the app.
-
-### Properties
-These are the setter and getter properties for the addDatePicker Component.
-<smp noinl>format:"str:'Sets or returns the format of the selected date. Values are <col nobox #fb8c00>YYYY-MM-DD</col> <col nobox #fb8c00>MM-DD-YYYY</col> or <col nobox #fb8c00>DD-MM-YYYY</col>'"</smp>
- */
-
 
 
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### format
+ * @prop
+ * Sets or returns the format of the selected date. Values are <col nobox #fb8c00>YYYY-MM-DD</col> <col nobox #fb8c00>MM-DD-YYYY</col> or <col nobox #fb8c00>DD-MM-YYYY</col>
+ * @returns str
+ */
+
+                    
 /** ### show ###
  * @brief show
  * Show the date picker the dialog

@@ -4,7 +4,7 @@
 /** # showPopup #
  * @abbrev pop
  * @brief showPopup
- * 
+ * Shows a popup into your app.
  * $$ pop = ui.showPopup(msg, options?, duration?, action?) $$ 
  * @param {str} msg The message to display on the pop-up.
  * @param {str} [options] A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`
@@ -14,22 +14,25 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Shows a popup into your app.
-
-### Properties
-These are the setter and getter properties for the showPopup Component.
-<smp noinl>duration:"num:'Sets or returns the duration of the popup in milliseconds.'"</smp>
-<smp noinl>text:"str:'Sets or returns the text of the popup.'"</smp>
- */
-
 
 
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### duration
+ * @prop
+ * Sets or returns the duration of the popup in milliseconds.
+ * @returns num
+ */
+
+                    
+/** ### text
+ * @prop
+ * Sets or returns the text of the popup.
+ * @returns str
+ */
+
+                    
 /** ### setOnClose ###
  * @brief setOnClose
  * Adds an onClose callback to your popup

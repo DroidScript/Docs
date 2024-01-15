@@ -120,11 +120,3 @@ declare type str_sty = string;
 declare type str_uri = string;
 /** url path */
 declare type str_url = string;
-/** pretty */
-declare type str_tmp = string;
-/** frequency */
-declare type num_tmp = number;
-/** load script inline */
-declare type bin_tmp = boolean;
-/** JS SQLitePluginTransaction */
-declare type obj_tmp = object;

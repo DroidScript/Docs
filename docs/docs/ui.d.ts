@@ -1,5 +1,5 @@
 declare var ui: UI;
-declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopup | UIProgressDialog;
+declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopover | UIPopup | UIProgressDialog;
 /** ui object */
 declare type uio = UIObject;
 
@@ -401,9 +401,8 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
  `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
-	 * @return \Popover
 	 */
-	showPopover(parent: obj, text?: str, position?: str, width?: num, height?: num): Popover;
+	showPopover(parent: obj, text?: str, position?: str, width?: num, height?: num): UIPopover;
 
 	/**
 	 * ShowPopup
@@ -429,6 +428,123 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 }
 
 declare class UIAccordion {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the corner radius of the accordion panel */
+	cornerRadius: num;
+
+	/** Sets or returns whether the accordion is disabled or not */
+	disabled: bin;
+
+	/** Sets or returns the material icon font for the expand icon */
+	expandIcon: str;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the padding of each accordion item */
+	itemPadding: lst;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns whether the accordion is rounded or not */
+	rounded: bin;
+
+	/** Sets or returns the secondary text of the accordion items */
+	secondaryText: lst;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the title text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
+	textColor1: str;
+
+	/** Sets or returns the secondary text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
+	textColor2: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Sets or returns the accordion title text size */
+	textSize1: num;
+
+	/** Sets or returns the accordion secondary text size */
+	textSize2: num;
+
+	/** Sets and returns the width of the title as fraction */
+	titleWidth: num;
+
+	/** Sets or returns the list of titles for the accordion panel */
+	titles: lst;
+
+	/** Collapse or shrink a corresponding accordion by its index */
+	toggle: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/**
 	 * GetLayout
@@ -644,6 +760,108 @@ declare class UIAccordion {
 
 declare class UIAppBar {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the AppBar */
+	color: str;
+
+	/** Sets or returns the corner radius of the accordion panel */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the icon of the menu button */
+	icon: str;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the right layout of the appbar where you can add controls */
+	layout: UILayout;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns whether the appbar has menu button */
+	menu: bin;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or return the AppBar title text */
+	text: str;
+
+	/** Sets or returns the hexadecimal color of the appbar title */
+	textColor: str;
+
+	/** Sets or returns the font size of the title text */
+	textSize: num;
+
+	/** Sets or returns the variant of the title text */
+	textVariant: str;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/** SetOnMenu */
 	setOnMenu(callback: () => void): void;
 
@@ -775,6 +993,102 @@ declare class UIAppBar {
 
 
 declare class UIBottomNavbar {
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns whether the bottom navigation is disabled or enabled */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the icon color */
+	iconColor: str;
+
+	/** Sets or returns the icon font-size */
+	iconSize: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns a boolean whether the labels are shown or hidden on active state */
+	labels: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the navigation actions array */
+	list: lst;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the current value of the BottomNavbar */
+	value: num;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnContextMenu */
 	setOnContextMenu(callback: (text: str, index: num, event: obj) => void): void;
@@ -999,6 +1313,120 @@ declare class UIBottomNavbar {
 
 declare class UIButton {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** Sets or returns the accepted files for an upload button */
+	acceptedFiles: str;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the badge content */
+	badge: num;
+
+	/** Sets or returns the color of the badge */
+	badgeColor: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the button */
+	color: str;
+
+	/** Sets or returns the corner radius of the button */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the material icon font use for the leading icon */
+	icon: str;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant of the button */
+	sizeVariant: str;
+
+	/** Sets or returns the button text */
+	text: str;
+
+	/** Sets or returns the text color in hexadecimal format */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Sets or returns the tooltip text */
+	toolTip: str;
+
+	/** Sets or returns the tooltip position */
+	toolTipPosition: str;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the variant of the button */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/** SetOnFileSelect */
 	setOnFileSelect(callback: (files: lst) => void): void;
 
@@ -1141,6 +1569,111 @@ declare class UIButton {
 
 
 declare class UIButtonGroup {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the button */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the list items of the button group */
+	list: lst;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the orientation of the button group */
+	orientation: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant */
+	sizeVariant: str;
+
+	/** Sets or returns the color of the button text */
+	textColor: str;
+
+	/** Sets or returns the font size of the button text */
+	textSize: num;
+
+	/** Sets or returns the position of the tooltip */
+	toolTipPosition: str;
+
+	/** Sets or returns the list of tooltip titles */
+	toolTips: lst;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the variant */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (text: str, index: num, event: obj) => void): void;
@@ -1342,6 +1875,123 @@ declare class UIButtonGroup {
 
 declare class UICheckbox {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the material icon font for check stated */
+	checkIcon: str;
+
+	/** Sets or returns the theme color of the checkbox when checked */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Enabled or disable the checkbox component */
+	disable: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Returns whether the Checkbox is enabled or disabled */
+	enabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the color of the checkbox icon */
+	iconColor: str;
+
+	/** Sets or returns the size of the icon */
+	iconSize: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the space between the checkbox icon and the label text */
+	spaceBetween: num;
+
+	/** Sets or returns the checkbox text */
+	text: str;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the text position */
+	textPosition: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the material icon font for uncheck state */
+	uncheckIcon: str;
+
+	/** Sets or returns the checked state of the checkbox */
+	value: bin;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/** SetOnTouch */
 	setOnTouch(callback: (check: bin) => void): void;
 
@@ -1474,6 +2124,126 @@ declare class UICheckbox {
 
 
 declare class UICheckboxGroup {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the material icon font for check stated */
+	checkIcon: str;
+
+	/** Sets or returns the theme color use for the checkbox */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the depth of the container */
+	elevation: str;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the color of the checkbox icon */
+	iconColor: str;
+
+	/** Sets or returns the size of the checkbox icon */
+	iconSize: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the padding of each list item */
+	itemPadding: lst;
+
+	/** Sets or returns the label text */
+	label: str;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the list items */
+	list: lst;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns whether the container is outlined or elevated */
+	outlined: bin;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant of the Checkbox */
+	sizeVariant: str;
+
+	/** Sets or returns the space between the checkbox icon and the text */
+	spaceBetween: num;
+
+	/** Sets or returns the text color in hexadecimal format */
+	textColor: str;
+
+	/** Sets or returns the size of the checkbox icon */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the material icon font for uncheck state */
+	uncheckIcon: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (value: bin, text: str, index: num, event: obj) => void): void;
@@ -1717,6 +2487,120 @@ declare class UICheckboxGroup {
 
 declare class UIChip {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** Sets or returns the avatar */
+	avatar: str;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the chip */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the delete icon */
+	deleteIcon: str;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Returns whether the chip is enabled or disabled */
+	enabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the material icon font if icon is provided */
+	icon: str;
+
+	/** Sets or returns the icon color in hexadecimal format */
+	iconColor: str;
+
+	/** Sets or returns the font-size of the icon in css font-size format */
+	iconSize: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant */
+	sizeVariant: str;
+
+	/** Sets or returns the text of the chip */
+	text: str;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the variant of the chip */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/**
 	 * SetTouchable
 	 * @param touchable `true` or `false`
@@ -1849,6 +2733,9 @@ declare class UIChip {
 
 declare class UIDatePicker {
 
+	/** Sets or returns the format of the selected date */
+	format: str;
+
 	/** Show */
 	show(): void;
 
@@ -1878,6 +2765,18 @@ declare class UIDatePicker {
 
 declare class UIDialog {
 
+	/** Returns the layout of the dialog where you can add custom controls */
+	layout: UILayout;
+
+	/** Sets or returns the dialog text */
+	text: str;
+
+	/** Sets or returns the title text color in hexadecimal format */
+	titleColor: str;
+
+	/** Sets or returns the dialog title text */
+	titleText: str;
+
 	/** SetOnAction */
 	setOnAction(callback: (text: str, index: num) => void): void;
 
@@ -1893,6 +2792,93 @@ declare class UIDialog {
 
 
 declare class UIDivider {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the color in hexadecimal format */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
@@ -2017,6 +3003,18 @@ declare class UIDivider {
 
 declare class UIDrawer {
 
+	/** Sets or returns the anchor position of the drawer */
+	anchor: str;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the drawer */
+	disabled: bin;
+
+	/** Sets or returns the width of the swipeable area of the Drawer */
+	swipeAreaWidth: num;
+
+	/** Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <col nobox #fb8c00>[0-1]</col> */
+	width: num;
+
 	/**
 	 * AddLayout
 	 * @param lay Layout component.
@@ -2059,6 +3057,114 @@ declare class UIDrawer {
 
 
 declare class UIDropdown {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the dropdown material icon font */
+	icon: str;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the default label of the dropdown */
+	label: str;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the dropdown list */
+	list: lst;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the orientation of the dropdown buttongroup */
+	orientation: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant of the dropdown button */
+	sizeVariant: str;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the value of the Dropdown */
+	value: str;
+
+	/** Sets or returns the variant of the dropdown button */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnChange */
 	setOnChange(callback: (value: obj, index: num) => void): void;
@@ -2259,6 +3365,111 @@ declare class UIDropdown {
 
 declare class UIFAB {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color for the FAB */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the disabled state of the ripple effect */
+	disabledRipple: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the material icon font */
+	icon: str;
+
+	/** Sets or returns the size of the icon */
+	iconSize: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant of the FAB */
+	sizeVariant: str;
+
+	/** Sets or returns the text for extended FAB */
+	text: str;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the variant use for the FAB */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/**
 	 * SetCornerRadius
 	 * @param tl `Top-left corner radius.`
@@ -2381,6 +3592,123 @@ declare class UIFAB {
 
 
 declare class UIImage {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the material icon for error placeholder image */
+	errorIcon: str;
+
+	/** Sets or returns the path or url of the image file */
+	file: str;
+
+	/** Sets or returns the background color of the canvas */
+	fill: str;
+
+	/** Sets or returns the fill color used on close paths such as square, circle, rectangle or arcs */
+	fillColor: str;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the style of the end caps for a line */
+	lineCap: str;
+
+	/** Sets or returns the type of corner created when two lines meet */
+	lineJoin: str;
+
+	/** Sets or returns the current line thickness */
+	lineWidth: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the maximum miter length */
+	miterLimit: num;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the pixel data of the image */
+	pixelData: lst;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the current color of the line or stroke */
+	strokeColor: str;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the text-size for drawing in the canvas */
+	textSize: num;
+
+	/** Sets or returns the text-style for drawing in the canvas */
+	textStyle: str;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnLoad */
 	setOnLoad(callback: () => void): void;
@@ -2629,6 +3957,108 @@ declare class UIImage {
 
 declare class UILayout {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** Sets or returns the horizontal alignment of the control in a Linear Layout */
+	alignment: str;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the margins of child components */
+	childMargins: lst;
+
+	/** Sets or returns the spacing of the child control in a Linear Layout */
+	childSpacing: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the index of the current slide */
+	currentSlide: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the orientation of the controls in a Linear Layout */
+	orientation: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the vertical alignment of the controls in a Linear Layout */
+	verticalAlignment: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/**
 	 * SetChildMargins
 	 * @param left `Left margin.`
@@ -2800,6 +4230,132 @@ declare class UILayout {
 
 
 declare class UIList {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** Sets or returns the size of the avatar */
+	avatarSize: str;
+
+	/** Sets or returns the variant of the avatar */
+	avatarVariant: str;
+
+	/** Sets or returns the background color in a hexadecimal format */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the checkbox when <col nobox #fb8c00>Selectable</col> option is enabled */
+	checkboxColor: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the depth of the list container */
+	elevation: num;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the icon color in a hexadecimal format */
+	iconColor: str;
+
+	/** Sets or returns the size of the icon text */
+	iconSize: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the padding of each list item */
+	itemPadding: lst;
+
+	/** Sets or returns the label text */
+	label: str;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns whether the container is outlined or elevated */
+	outlined: bin;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns a boolean whether the list is selectable or not */
+	selectable: bin;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the color of the title text in hexadecimal format */
+	textColor1: str;
+
+	/** Sets or returns the color of the body text in hexadecimal format */
+	textColor2: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Sets or returns the size of the title text */
+	textSize1: num;
+
+	/** Sets or returns the size of the body text */
+	textSize2: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/**
 	 * AddItem
@@ -3035,6 +4591,96 @@ declare class UIList {
 
 declare class UIMenu {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the padding of each menu item */
+	itemPadding: lst;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the items in the menu */
+	list: lst;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/** SetOnTouch */
 	setOnTouch(callback: (item: str, icon: str, index: num) => void): void;
 
@@ -3223,6 +4869,105 @@ declare class UIMenu {
 
 declare class UIProgress {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the size of the circular progress control */
+	circleSize: num;
+
+	/** Sets or returns the theme color */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Sets or returns the thickness of the circular stroke */
+	thickness: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Sets or returns the type of the Progress Component */
+	type: str;
+
+	/** Sets or returns the value of the progress control */
+	value: num;
+
+	/** Sets or returns the variant of the progress component */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
 
@@ -3345,6 +5090,126 @@ declare class UIProgress {
 
 
 declare class UIRadioGroup {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the Radio Component */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the disabled state of the radio button group */
+	disabled: bin;
+
+	/** Sets or returns the depth of the RadioGroup container */
+	elevation: num;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the icon color in hexadecimal format */
+	iconColor: str;
+
+	/** Sets or returns the position of the icon */
+	iconPosition: str;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the padding of each radio item */
+	itemPadding: lst;
+
+	/** Sets or returns the label text of the RadioGroup Component */
+	label: str;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the list array */
+	list: lst;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns whether the container is outlined or elevated */
+	outlined: bin;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the size of the radio button */
+	radioSize: str;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the space between the radio button and the text */
+	spaceBetween: num;
+
+	/** Stest or returns the color of the text in hexadecimal format */
+	textColor: str;
+
+	/** Sets or returns the position of the label text */
+	textPosition: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the value of the RadioGroup Component */
+	value: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnChange */
 	setOnChange(callback: (index: num) => void): void;
@@ -3543,6 +5408,123 @@ declare class UIRadioGroup {
 
 declare class UISelect {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns a boolean value whether the component is enabled or disabled */
+	enabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the color of the icon in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
+	iconColor: str;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the label text */
+	label: str;
+
+	/** Sets or returns the color of the label text in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
+	labelColor: str;
+
+	/** Sets or returns the size of the label */
+	labelSize: num;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the list items */
+	list: lst;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the maximum height of the popup container */
+	maxHeight: num;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Sets or returns the color of the popup in hexadecimal format */
+	popupColor: str;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant of the Select Component */
+	sizeVariant: str;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the value of the Select Component */
+	value: str;
+
+	/** Sets or returns the variant of the Select Component */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/** SetOnChange */
 	setOnChange(callback: (value: str) => void): void;
 
@@ -3738,6 +5720,117 @@ declare class UISelect {
 
 declare class UISlider {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the Slider */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the marks on the Slider Component */
+	marks: bin;
+
+	/** Sets or returns the maximum value */
+	maxValue: num;
+
+	/** Sets or returns the minimum value */
+	minValue: num;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the orientation of the Slider Component */
+	orientation: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the Sider Component steps */
+	step: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Sets or returns the track properties of the Slider Component */
+	track: str;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the value of the Slider Component */
+	value: num;
+
+	/** Sets or returns the value label display type */
+	valueLabelDisplay: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/** SetOnChange */
 	setOnChange(callback: (value: num) => void): void;
 
@@ -3882,6 +5975,99 @@ declare class UISlider {
 
 
 declare class UIStepper {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** Sets or returns the active step */
+	activeStep: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the elevation of the mobile stepper */
+	elevation: num;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the orientation of the Stepper */
+	orientation: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnComplete */
 	setOnComplete(callback: () => void): void;
@@ -4043,6 +6229,120 @@ declare class UIStepper {
 
 declare class UISwitch {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the disabled state of the ripple effect */
+	disableRipple: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the edge position of the toggle */
+	edge: str;
+
+	/** Sets or returns a Boolean whether the component is enabled or disabled */
+	enable: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the icon position */
+	iconPosition: str;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns a boolean value whether this component is required or not */
+	required: bin;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant of the toggle switch */
+	sizeVariant: str;
+
+	/** Sets or returns the space between the switch icon and the label text */
+	spaceBetween: num;
+
+	/** Sets or returns the label text */
+	text: str;
+
+	/** Sets or returns the text color in hexadecimal format */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the value of the switch toggle */
+	value: bin;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/** SetOnTouch */
 	setOnTouch(callback: (check: bin) => void): void;
 
@@ -4165,6 +6465,123 @@ declare class UISwitch {
 
 
 declare class UISwitchGroup {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the edge position of the toggle */
+	edge: str;
+
+	/** Sets or returns the depth of the control container */
+	elevation: num;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the theme color <col nobox #fb8c00>Primary</col> <col nobox #fb8c00>Secondary</col> or <col nobox #fb8c00>Default</col> */
+	iconColor: str;
+
+	/** Sets or returns the size of the icon */
+	iconSize: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the padding of each switch item */
+	itemPadding: lst;
+
+	/** Sets or returns the label text */
+	label: str;
+
+	/** Sets or returns the color of the label text in hexadecimal format */
+	labelColor: str;
+
+	/** Sets or returns the size of the label text */
+	labelSize: num;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the list items */
+	list: lst;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns whether the container is outlined or elevated */
+	outlined: bin;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the theme color <col nobox #fb8c00>primary</col> or <col nobox #fb8c00>secondary</col> */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (value: bin, text: str, index: num, event: obj) => void): void;
@@ -4350,6 +6767,129 @@ declare class UISwitchGroup {
 
 
 declare class UITabs {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns a boolean value whether the tabs are centered or not */
+	centered: bin;
+
+	/** Sets or returns the theme color of the tab bar */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the elevation of the tab bar */
+	elevation: num;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the color ofthe tab icon */
+	iconColor: str;
+
+	/** Sets or returns the tab icon */
+	iconSize: num;
+
+	/** Sets or returns the color of the indicator bar */
+	indicatorColor: str;
+
+	/** Sets or returns the corner radius of the indicator bar in pixels */
+	indicatorRadius: num;
+
+	/** Sets or returns the thickness of the indicator bar in pixels */
+	indicatorThickness: num;
+
+	/** Sets or returns the width of the indicator bar as a fraction of the tab item width */
+	indicatorWidth: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the scroll button mode when tab items overflow the width of its container */
+	scrollButtonMode: str;
+
+	/** Sets or returns the height of the tab in pixels */
+	tabHeight: num;
+
+	/** Sets or returns the padding of the tab items */
+	tabPadding: num;
+
+	/** Sets or returns the theme color for the tab bar titles <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col> */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the variant of the Tabs Component */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnChange */
 	setOnChange(callback: (name: str, index: num) => void): void;
@@ -4596,6 +7136,120 @@ declare class UITabs {
 
 declare class UIText {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** Sets or returns the horizontal alignment of the text */
+	alignment: str;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns whether the text is <col nobox #fb8c00>bold</col> or not */
+	bold: bin;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the text <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col> */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the ellipsis use when the text is truncated */
+	ellipsize: str;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns whether the text is <col nobox #fb8c00>italized</col> or not */
+	italic: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the text */
+	text: str;
+
+	/** Sets or returns the text color in hexadecimal format */
+	textColor: str;
+
+	/** Sets or returns the fontsize for the text */
+	textSize: num;
+
+	/** Sets or returns the style of the text */
+	textStyle: str;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns whether the text is <col nobox #fb8c00>underlined</col> or not */
+	underline: bin;
+
+	/** Sets or returns the text variants */
+	variant: str;
+
+	/** Sets or returns the vertical alignment of the text */
+	verticalAlignment: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
 	/**
 	 * SetHtml
 	 * @param html `An html string`
@@ -4736,6 +7390,147 @@ declare class UIText {
 
 
 declare class UITextField {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** Sets or returns a boolean value whethe the input is focus when rendered into the DOM */
+	autoFocus: bin;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the theme color of the textfield component */
+	color: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Returns the end adornment text or icon */
+	endAdornment: str;
+
+	/** Sets or returns the error state of the TextField component */
+	error: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Sets or returns the helper text or the hint below the input */
+	helperText: str;
+
+	/** Sets or returns the hint text */
+	hint: str;
+
+	/** Sets or returns the input type */
+	inputType: str;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Sets or returns the label text */
+	label: str;
+
+	/** Sets return the label color in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
+	labelColor: str;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the maximum rows for a <col nobox #fb8c00>multiline</col> textfield */
+	maxRows: num;
+
+	/** Sets or returns the minimum rows for a <col nobox #fb8c00>multiline</col> textfield */
+	minRows: num;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the outline color in hexadecimal form <col nobox #fb8c00>#rrggbb</col> when the textfield is focus */
+	outlineColor: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Sets or returns the placeholder text */
+	placeholder: str;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns a boolean value whether the text field in required or not */
+	required: bin;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the size variant of the textfield */
+	sizeVariant: str;
+
+	/** Returns the start adornment text or icon */
+	startAdornment: str;
+
+	/** Sets or returns the step increment if the input is of type number; */
+	stepIncrement: num;
+
+	/** Sets or returns the text value of the TextField Component */
+	text: str;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the variant of the TextField */
+	variant: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnEnter */
 	setOnEnter(callback: (text: str) => void): void;
@@ -4906,6 +7701,9 @@ declare class UITextField {
 
 declare class UITimePicker {
 
+	/** Sets or returns the time format */
+	format: str;
+
 	/**
 	 * Show
 	 * @param format A time format. Can be of the form 
@@ -4926,6 +7724,96 @@ declare class UITimePicker {
 
 
 declare class UITreeView {
+
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the list object */
+	list: obj;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Returns the selected item of the TreeView */
+	value: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (value: str, path: str) => void): void;
@@ -5069,6 +7957,111 @@ declare class UITreeView {
 
 declare class UIWebView {
 
+	/** Returns the absolute height of the control in pixels */
+	absHeight: num;
+
+	/** Returns the absolute distance of the control from the left in pixels */
+	absLeft: num;
+
+	/** Returns the absolute distance of the control from the top in pixels */
+	absTop: num;
+
+	/** Returns the absolute width of the control in pixels */
+	absWidth: num;
+
+	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	backColor: str;
+
+	/** The path to your image file */
+	backImage: str;
+
+	/** Sets or returns the list of blocked urls */
+	blockUrls: lst;
+
+	/** Sets or returns the border thickness in pixels */
+	border: num;
+
+	/** Sets or returns the border color */
+	borderColor: str;
+
+	/** Sets or returns the border style */
+	borderStyle: str;
+
+	/** Sets or returns the corner radius in pixels */
+	cornerRadius: num;
+
+	/** Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
+	disabled: bin;
+
+	/** A reference to the webview`s window document object */
+	document: obj;
+
+	/** Sets or returns the redirect url when an error occur */
+	errorPage: str;
+
+	/** Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
+	fontFile: str;
+
+	/** Sets or returns the height of the control as a fraction of the parent control */
+	height: num;
+
+	/** Setst or returns the html loaded in the iframe */
+	html: str;
+
+	/** Returns whether the control is visible or not */
+	isVisible: bin;
+
+	/** Returns the distance of the control from the left */
+	left: num;
+
+	/** Sets or returns the margin of the control */
+	margins: lst;
+
+	/** Sets or returns the opacity of the control */
+	opacity: num;
+
+	/** Sets or returns the <col nobox #fb8c00>options</col> of the control */
+	options: str;
+
+	/** Sets or returns the padding of the control */
+	padding: lst;
+
+	/** Returns the parent layout control */
+	parent: obj;
+
+	/** Returns the position of the control */
+	position: obj;
+
+	/** Sets or returns the angle of rotation in degrees */
+	rotation: num;
+
+	/** Sets or returns the color of the text */
+	textColor: str;
+
+	/** Sets or returns the size of the text within the control */
+	textSize: num;
+
+	/** Sets or returns the text zoom of the page loaded in the web view */
+	textZoom: num;
+
+	/** Returns the distance of the control from the top */
+	top: num;
+
+	/** Returns the type of the control */
+	type: str;
+
+	/** Sets or returns the url of the webview */
+	url: str;
+
+	/** Sets or returns the visibility of the control */
+	visibility: str;
+
+	/** Sets or returns the width of the control as a fraction of the parent control */
+	width: num;
+
+	/** A reference to the webview`s window object */
+	window: obj;
+
 	/** SetOnLoad */
 	setOnLoad(callback: () => void): void;
 
@@ -5195,6 +8188,9 @@ declare class UIWebView {
 
 declare class UIColorPicker {
 
+	/** Returns the value of the chosen color */
+	value: str;
+
 	/** GetValue */
 	getValue(): str;
 }
@@ -5207,7 +8203,23 @@ declare class UIDateTimePicker {
 }
 
 
+declare class UIPopover {
+
+	/** Sets or returns the path to the background image */
+	backImage: str;
+
+	/** Sets or returns the font file use for the Popover */
+	fontFile: str;
+}
+
+
 declare class UIPopup {
+
+	/** Sets or returns the duration of the popup in milliseconds */
+	duration: num;
+
+	/** Sets or returns the text of the popup */
+	text: str;
 
 	/** SetOnClose */
 	setOnClose(callback: () => void): void;
@@ -5234,6 +8246,9 @@ declare class UIPopup {
 
 
 declare class UIProgressDialog {
+
+	/** Text */
+	text(): str;
 
 	/** Show */
 	show(): void;

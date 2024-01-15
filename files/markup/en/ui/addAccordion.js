@@ -4,7 +4,7 @@
 /** # addAccordion #
  * @abbrev acc
  * @brief addAccordion
- * 
+ * Adds an accordion or expansion panel into your app. This is very useful to display controls that are grouped together.
  * $$ acc = ui.addAccordion(parent, titles, options?, width?, height?) $$ 
  * @param {obj} parent The parent layout where to add the text.
  * @param {obj} titles An array of accordion titles.
@@ -15,59 +15,284 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds an accordion or expansion panel into your app. This is very useful to display controls that are grouped together.
-
-### Properties
-These are the setter and getter properties for the addAccordion Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius of the accordion panel. You can also pass an array of the form <col nobox #fb8c00>[tl, tr, bl, br]</col>. See also <col nobox #fb8c00>setCornerRadius</col> method.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns whether the accordion is disabled or not. <col nobox #fb8c00>True</col> only if all accordion is disable, otherwise <col nobox #fb8c00>false</col>.'"</smp>
-<smp noinl>expandIcon:"str:'Sets or returns the material icon font for the expand icon.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>itemPadding:"lst:'Sets or returns the padding of each accordion item. See also <col nobox #fb8c00>setItemPadding</col> method.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>rounded:"bin:'Sets or returns whether the accordion is rounded or not.'"</smp>
-<smp noinl>secondaryText:"lst:'Sets or returns the secondary text of the accordion items. See also <col nobox #fb8c00>setSecondaryText</col> method.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textColor1:"str:'Sets or returns the title text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>textColor2:"str:'Sets or returns the secondary text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>textSize1:"num:'Sets or returns the accordion title text size.'"</smp>
-<smp noinl>textSize2:"num:'Sets or returns the accordion secondary text size.'"</smp>
-<smp noinl>titleWidth:"num:'Sets and returns the width of the title as fraction. Useful when you have a long title.'"</smp>
-<smp noinl>titles:"lst:'Sets or returns the list of titles for the accordion panel. Each element of the titles array is a string.'"</smp>
-<smp noinl>toggle:"num:'Collapse or shrink a corresponding accordion by its index.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
- */
-
 
 
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### absHeight
+ * @prop
+ * Returns the absolute height of the control in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absLeft
+ * @prop
+ * Returns the absolute distance of the control from the left in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absTop
+ * @prop
+ * Returns the absolute distance of the control from the top in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absWidth
+ * @prop
+ * Returns the absolute width of the control in pixels.
+ * @returns num
+ */
+
+                    
+/** ### backColor
+ * @prop
+ * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### backImage
+ * @prop
+ * The path to your image file.
+ * @returns str
+ */
+
+                    
+/** ### border
+ * @prop
+ * Sets or returns the border thickness in pixels.
+ * @returns num
+ */
+
+                    
+/** ### borderColor
+ * @prop
+ * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### borderStyle
+ * @prop
+ * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
+ * @returns str
+ */
+
+                    
+/** ### cornerRadius
+ * @prop
+ * Sets or returns the corner radius of the accordion panel. You can also pass an array of the form <col nobox #fb8c00>[tl, tr, bl, br]</col>. See also <col nobox #fb8c00>setCornerRadius</col> method.
+ * @returns num
+ */
+
+                    
+/** ### disabled
+ * @prop
+ * Sets or returns whether the accordion is disabled or not. <col nobox #fb8c00>True</col> only if all accordion is disable, otherwise <col nobox #fb8c00>false</col>.
+ * @returns bin
+ */
+
+                    
+/** ### expandIcon
+ * @prop
+ * Sets or returns the material icon font for the expand icon.
+ * @returns str
+ */
+
+                    
+/** ### fontFile
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
+ * @returns str
+ */
+
+                    
+/** ### height
+ * @prop
+ * Sets or returns the height of the control as a fraction of the parent control.
+ * @returns num
+ */
+
+                    
+/** ### isVisible
+ * @prop
+ * Returns whether the control is visible or not.
+ * @returns bin
+ */
+
+                    
+/** ### itemPadding
+ * @prop
+ * Sets or returns the padding of each accordion item. See also <col nobox #fb8c00>setItemPadding</col> method.
+ * @returns lst
+ */
+
+                    
+/** ### left
+ * @prop
+ * Returns the distance of the control from the left.
+ * @returns num
+ */
+
+                    
+/** ### margins
+ * @prop
+ * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
+ * @returns lst
+ */
+
+                    
+/** ### opacity
+ * @prop
+ * Sets or returns the opacity of the control.
+ * @returns num
+ */
+
+                    
+/** ### options
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>options</col> of the control.
+ * @returns str
+ */
+
+                    
+/** ### padding
+ * @prop
+ * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
+ * @returns lst
+ */
+
+                    
+/** ### parent
+ * @prop
+ * Returns the parent layout control.
+ * @returns obj
+ */
+
+                    
+/** ### position
+ * @prop
+ * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
+ * @returns obj
+ */
+
+                    
+/** ### rotation
+ * @prop
+ * Sets or returns the angle of rotation in degrees.
+ * @returns num
+ */
+
+                    
+/** ### rounded
+ * @prop
+ * Sets or returns whether the accordion is rounded or not.
+ * @returns bin
+ */
+
+                    
+/** ### secondaryText
+ * @prop
+ * Sets or returns the secondary text of the accordion items. See also <col nobox #fb8c00>setSecondaryText</col> method.
+ * @returns lst
+ */
+
+                    
+/** ### textColor
+ * @prop
+ * Sets or returns the color of the text.
+ * @returns str
+ */
+
+                    
+/** ### textColor1
+ * @prop
+ * Sets or returns the title text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### textColor2
+ * @prop
+ * Sets or returns the secondary text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### textSize
+ * @prop
+ * Sets or returns the size of the text within the control.
+ * @returns num
+ */
+
+                    
+/** ### textSize1
+ * @prop
+ * Sets or returns the accordion title text size.
+ * @returns num
+ */
+
+                    
+/** ### textSize2
+ * @prop
+ * Sets or returns the accordion secondary text size.
+ * @returns num
+ */
+
+                    
+/** ### titleWidth
+ * @prop
+ * Sets and returns the width of the title as fraction. Useful when you have a long title.
+ * @returns num
+ */
+
+                    
+/** ### titles
+ * @prop
+ * Sets or returns the list of titles for the accordion panel. Each element of the titles array is a string.
+ * @returns lst
+ */
+
+                    
+/** ### toggle
+ * @prop
+ * Collapse or shrink a corresponding accordion by its index.
+ * @returns num
+ */
+
+                    
+/** ### top
+ * @prop
+ * Returns the distance of the control from the top.
+ * @returns num
+ */
+
+                    
+/** ### type
+ * @prop
+ * Returns the type of the control.
+ * @returns str
+ */
+
+                    
+/** ### visibility
+ * @prop
+ * Sets or returns the visibility of the control.
+ * @returns str
+ */
+
+                    
+/** ### width
+ * @prop
+ * Sets or returns the width of the control as a fraction of the parent control.
+ * @returns num
+ */
+
+                    
 /** ### getLayout ###
  * @brief getLayout
  * Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse

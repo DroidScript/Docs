@@ -3,7 +3,11 @@
 node_modules/
 
 # stuff
-/files/json/*/
+/files/json/**/*.txt
+/files/json/**/*.md
+/files/json/**/*.js
+/files/json/**/navs.json
+/files/json/**/*.json
 
 /files/version.txt
 /files/generate_dsuikit.js

@@ -4,7 +4,7 @@
 /** # addDialog #
  * @abbrev dlg
  * @brief addDialog
- * 
+ * Adds a dialog into your app.
  * $$ dlg = ui.addDialog(title, body, actions?, options?) $$ 
  * @param {str} title The dialog title text.
  * @param {str} body The dialog message to be shown.
@@ -14,24 +14,39 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a dialog into your app.
-
-### Properties
-These are the setter and getter properties for the addDialog Component.
-<smp noinl>layout:"Layout:'Returns the layout of the dialog where you can add custom controls.'"</smp>
-<smp noinl>text:"str:'Sets or returns the dialog text.'"</smp>
-<smp noinl>titleColor:"str:'Sets or returns the title text color in hexadecimal format.'"</smp>
-<smp noinl>titleText:"str:'Sets or returns the dialog title text.'"</smp>
- */
-
 
 
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### layout
+ * @prop
+ * Returns the layout of the dialog where you can add custom controls.
+ * @returns uio-Layout
+ */
+
+                    
+/** ### text
+ * @prop
+ * Sets or returns the dialog text.
+ * @returns str
+ */
+
+                    
+/** ### titleColor
+ * @prop
+ * Sets or returns the title text color in hexadecimal format.
+ * @returns str
+ */
+
+                    
+/** ### titleText
+ * @prop
+ * Sets or returns the dialog title text.
+ * @returns str
+ */
+
+                    
 /** ### setOnAction ###
  * @brief setOnAction
  * Adds a callback function when the action buttons are click

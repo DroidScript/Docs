@@ -28,49 +28,6 @@ Adds a Select Component to a given layout.
 
  If you want a list with groupings, you can add a colon <col nobox #4c4>:</col> before each item text to display as group name. Below is an example
 <js> [" : Group 1", "Option 1", "Option 2", " : Group 2", "Item 1", "Item 2"] </js>
-
-
-### Properties
-These are the setter and getter properties for the addSelect Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>enabled:"bin:'Sets or returns a boolean value whether the component is enabled or disabled.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>iconColor:"str:'Sets or returns the color of the icon in hexadecimal format <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>label:"str:'Sets or returns the label text.'"</smp>
-<smp noinl>labelColor:"str:'Sets or returns the color of the label text in hexadecimal format <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>labelSize:"num:'Sets or returns the size of the label.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>list:"lst:'Sets or returns the list items. You can also pass a comma separated string of items.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>maxHeight:"num:'Sets or returns the maximum height of the popup container.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>popupColor:"str:'Sets or returns the color of the popup in hexadecimal format.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>sizeVariant:"str:'Sets or returns the size variant of the Select Component. Values can be <col nobox #fb8c00>Small</col> or <col nobox #fb8c00>Medium</col>'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>value:"str:'Sets or returns the value of the Select Component. For Select with <col nobox #fb8c00>Multiple</col> options, the <col nobox #fb8c00>value</col> is an array of string items. You can also pass the <col nobox #fb8c00>index</col> of the selected item. Pass an array of <col nobox #fb8c00>indexes</col> for multiple selection.'"</smp>
-<smp noinl>variant:"str:'Sets or returns the variant of the Select Component. Values can be <col nobox #fb8c00>Standard</col> <col nobox #fb8c00>Filled</col> and <col nobox #fb8c00>Outlined</col>'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
  */
 
 
@@ -78,6 +35,279 @@ These are the setter and getter properties for the addSelect Component.
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### absHeight
+ * @prop
+ * Returns the absolute height of the control in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absLeft
+ * @prop
+ * Returns the absolute distance of the control from the left in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absTop
+ * @prop
+ * Returns the absolute distance of the control from the top in pixels.
+ * @returns num
+ */
+
+                    
+/** ### absWidth
+ * @prop
+ * Returns the absolute width of the control in pixels.
+ * @returns num
+ */
+
+                    
+/** ### backColor
+ * @prop
+ * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### backImage
+ * @prop
+ * The path to your image file.
+ * @returns str
+ */
+
+                    
+/** ### border
+ * @prop
+ * Sets or returns the border thickness in pixels.
+ * @returns num
+ */
+
+                    
+/** ### borderColor
+ * @prop
+ * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### borderStyle
+ * @prop
+ * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
+ * @returns str
+ */
+
+                    
+/** ### cornerRadius
+ * @prop
+ * Sets or returns the corner radius in pixels.
+ * @returns num
+ */
+
+                    
+/** ### disabled
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
+ * @returns bin
+ */
+
+                    
+/** ### enabled
+ * @prop
+ * Sets or returns a boolean value whether the component is enabled or disabled.
+ * @returns bin
+ */
+
+                    
+/** ### fontFile
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
+ * @returns str
+ */
+
+                    
+/** ### height
+ * @prop
+ * Sets or returns the height of the control as a fraction of the parent control.
+ * @returns num
+ */
+
+                    
+/** ### iconColor
+ * @prop
+ * Sets or returns the color of the icon in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### isVisible
+ * @prop
+ * Returns whether the control is visible or not.
+ * @returns bin
+ */
+
+                    
+/** ### label
+ * @prop
+ * Sets or returns the label text.
+ * @returns str
+ */
+
+                    
+/** ### labelColor
+ * @prop
+ * Sets or returns the color of the label text in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
+ * @returns str
+ */
+
+                    
+/** ### labelSize
+ * @prop
+ * Sets or returns the size of the label.
+ * @returns num
+ */
+
+                    
+/** ### left
+ * @prop
+ * Returns the distance of the control from the left.
+ * @returns num
+ */
+
+                    
+/** ### list
+ * @prop
+ * Sets or returns the list items. You can also pass a comma separated string of items.
+ * @returns lst
+ */
+
+                    
+/** ### margins
+ * @prop
+ * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
+ * @returns lst
+ */
+
+                    
+/** ### maxHeight
+ * @prop
+ * Sets or returns the maximum height of the popup container.
+ * @returns num
+ */
+
+                    
+/** ### opacity
+ * @prop
+ * Sets or returns the opacity of the control.
+ * @returns num
+ */
+
+                    
+/** ### options
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>options</col> of the control.
+ * @returns str
+ */
+
+                    
+/** ### padding
+ * @prop
+ * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
+ * @returns lst
+ */
+
+                    
+/** ### parent
+ * @prop
+ * Returns the parent layout control.
+ * @returns obj
+ */
+
+                    
+/** ### popupColor
+ * @prop
+ * Sets or returns the color of the popup in hexadecimal format.
+ * @returns str
+ */
+
+                    
+/** ### position
+ * @prop
+ * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
+ * @returns obj
+ */
+
+                    
+/** ### rotation
+ * @prop
+ * Sets or returns the angle of rotation in degrees.
+ * @returns num
+ */
+
+                    
+/** ### sizeVariant
+ * @prop
+ * Sets or returns the size variant of the Select Component. Values can be <col nobox #fb8c00>Small</col> or <col nobox #fb8c00>Medium</col>
+ * @returns str
+ */
+
+                    
+/** ### textColor
+ * @prop
+ * Sets or returns the color of the text.
+ * @returns str
+ */
+
+                    
+/** ### textSize
+ * @prop
+ * Sets or returns the size of the text within the control.
+ * @returns num
+ */
+
+                    
+/** ### top
+ * @prop
+ * Returns the distance of the control from the top.
+ * @returns num
+ */
+
+                    
+/** ### type
+ * @prop
+ * Returns the type of the control.
+ * @returns str
+ */
+
+                    
+/** ### value
+ * @prop
+ * Sets or returns the value of the Select Component. For Select with <col nobox #fb8c00>Multiple</col> options, the <col nobox #fb8c00>value</col> is an array of string items. You can also pass the <col nobox #fb8c00>index</col> of the selected item. Pass an array of <col nobox #fb8c00>indexes</col> for multiple selection.
+ * @returns str
+ */
+
+                    
+/** ### variant
+ * @prop
+ * Sets or returns the variant of the Select Component. Values can be <col nobox #fb8c00>Standard</col> <col nobox #fb8c00>Filled</col> and <col nobox #fb8c00>Outlined</col>
+ * @returns str
+ */
+
+                    
+/** ### visibility
+ * @prop
+ * Sets or returns the visibility of the control.
+ * @returns str
+ */
+
+                    
+/** ### width
+ * @prop
+ * Sets or returns the width of the control as a fraction of the parent control.
+ * @returns num
+ */
+
+                    
 /** ### setOnChange ###
  * @brief setOnChange
  * Sets a callback function when the value changes

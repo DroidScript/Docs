@@ -4,7 +4,7 @@
 /** # addDrawer #
  * @abbrev drw
  * @brief addDrawer
- * 
+ * Adds a drawer into your app.
  * $$ drw = ui.addDrawer(lay, options?) $$ 
  * @param {obj} lay The drawer layout.
  * @param {str_com} [options] 
@@ -12,24 +12,39 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a drawer into your app.
-
-### Properties
-These are the setter and getter properties for the addDrawer Component.
-<smp noinl>anchor:"str:'Sets or returns the anchor position of the drawer. Values can be <col nobox #fb8c00>left</col>, <col nobox #fb8c00>top</col>, <col nobox #fb8c00>right</col>, <col nobox #fb8c00>bottom</col>.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the drawer.'"</smp>
-<smp noinl>swipeAreaWidth:"num:'Sets or returns the width of the swipeable area of the Drawer.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <col nobox #fb8c00>[0-1]</col>.'"</smp>
- */
-
 
 
 // ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
+/** ### anchor
+ * @prop
+ * Sets or returns the anchor position of the drawer. Values can be <col nobox #fb8c00>left</col>, <col nobox #fb8c00>top</col>, <col nobox #fb8c00>right</col>, <col nobox #fb8c00>bottom</col>.
+ * @returns str
+ */
+
+                    
+/** ### disabled
+ * @prop
+ * Sets or returns the <col nobox #fb8c00>disabled</col> state of the drawer.
+ * @returns bin
+ */
+
+                    
+/** ### swipeAreaWidth
+ * @prop
+ * Sets or returns the width of the swipeable area of the Drawer.
+ * @returns num
+ */
+
+                    
+/** ### width
+ * @prop
+ * Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <col nobox #fb8c00>[0-1]</col>.
+ * @returns num
+ */
+
+                    
 /** ### addLayout ###
  * @brief addLayout
  * Adds a layout into the drawer
