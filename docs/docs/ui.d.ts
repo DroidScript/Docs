@@ -17,7 +17,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width: [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addAccordion(parent: obj, titles: obj, options: str_com, width: num, height: num): UIAccordion;
+	addAccordion(parent: obj, titles: obj, options?: str_com, width?: num, height?: num): UIAccordion;
 
 	/**
 	 * AddAppBar
@@ -30,7 +30,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addAppBar(parent: obj, title: str, options: str_com, width: num, height: num): UIAppBar;
+	addAppBar(parent: obj, title: str, options?: str_com, width?: num, height?: num): UIAppBar;
 
 	/**
 	 * AddBottomNavbar
@@ -40,7 +40,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addBottomNavbar(parent: obj, navs: lst, options: str_com, width: num, height: num): UIBottomNavbar;
+	addBottomNavbar(parent: obj, navs: lst, options?: str_com, width?: num, height?: num): UIBottomNavbar;
 
 	/**
 	 * AddButton
@@ -55,7 +55,7 @@ declare class UI {
 	 * @param width `Fraction of the parent width. [0-1]`
 	 * @param height `Fraction of the parent height. [0-1]`
 	 */
-	addButton(parent: obj, text: str, options: str_com, width: num, height: num): UIButton;
+	addButton(parent: obj, text: str, options?: str_com, width?: num, height?: num): UIButton;
 
 	/**
 	 * AddButtonGroup
@@ -70,7 +70,7 @@ declare class UI {
 	 * @param width `Fraction of the parent width. [0-1]`
 	 * @param height `Fraction of the parent height. [0-1]`
 	 */
-	addButtonGroup(parent: obj, list: lst, options: str_com, width: num, height: num): UIButtonGroup;
+	addButtonGroup(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UIButtonGroup;
 
 	/**
 	 * AddCheckbox
@@ -82,7 +82,7 @@ declare class UI {
 	 * @param width `Fraction of the parent width. [0-1]`
 	 * @param height `Fraction of the parent height. [0-1]`
 	 */
-	addCheckbox(parent: obj, text: str, options: str_com, width: num, height: num): UICheckbox;
+	addCheckbox(parent: obj, text: str, options?: str_com, width?: num, height?: num): UICheckbox;
 
 	/**
 	 * AddCheckboxGroup
@@ -96,7 +96,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
 	 */
-	addCheckboxGroup(parent: obj, list: lst, options: str_com, width: num, height: num): UICheckboxGroup;
+	addCheckboxGroup(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UICheckboxGroup;
 
 	/**
 	 * AddChip
@@ -109,14 +109,14 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addChip(parent: obj, text: str, options: str_com, width: num, height: num): UIChip;
+	addChip(parent: obj, text: str, options?: str_com, width?: num, height?: num): UIChip;
 
 	/**
 	 * AddDatePicker
 	 * @param date `A default date value to which the datepicker begins. Format `YYYY-MM-DD``
 	 * @param options ``Portrait` `Landscape``
 	 */
-	addDatePicker(date: str, options: str_com): UIDatePicker;
+	addDatePicker(date: str, options?: str_com): UIDatePicker;
 
 	/**
 	 * AddDialog
@@ -126,7 +126,7 @@ declare class UI {
 	 * @param options `Colors: `Primary` `Secondary` 
  `Util`: `NoCancel` prevents the dialog from closing on action.`
 	 */
-	addDialog(title: str, body: str, actions: str, options: str_com): UIDialog;
+	addDialog(title: str, body: str, actions?: str, options?: str_com): UIDialog;
 
 	/**
 	 * AddDivider
@@ -134,13 +134,13 @@ declare class UI {
 	 * @param width `Fraction of the screen width. Default is 1.`
 	 * @param options `A comma separated Divider options. Values can be `Inset``
 	 */
-	addDivider(parent: obj, width: num, options: str): UIDivider;
+	addDivider(parent: obj, width?: num, options?: str): UIDivider;
 
 	/**
 	 * AddDrawer
 	 * @param lay The drawer layout.
 	 */
-	addDrawer(lay: obj, options: str_com): UIDrawer;
+	addDrawer(lay: obj, options?: str_com): UIDrawer;
 
 	/**
 	 * AddDropdown
@@ -156,7 +156,7 @@ declare class UI {
 	 * @param height `Fraction of the screen height. [0-1]`
 	 * @return Dropdown Component.
 	 */
-	addDropdown(parent: obj, list: lst, options: str, width: num, height: num): obj;
+	addDropdown(parent: obj, list?: lst, options?: str, width?: num, height?: num): obj;
 
 	/**
 	 * AddFAB
@@ -165,7 +165,7 @@ declare class UI {
 	 * @param options ``Fixed` `Static` `Rounded` `Extended` `Left` `Right``
 	 * @param text `Text to show for extended FABs.`
 	 */
-	addFAB(parent: obj, icon: str, options: str_com, text: str): UIFAB;
+	addFAB(parent: obj, icon: str, options?: str_com, text?: str): UIFAB;
 
 	/**
 	 * AddImage
@@ -176,7 +176,7 @@ declare class UI {
 	 * @param height `Fraction of the screen height.`
 	 * @return Image Component.
 	 */
-	addImage(parent: obj, file: str, options: str, width: num, height: num): obj;
+	addImage(parent: obj, file: str, options?: str, width?: num, height?: num): obj;
 
 	/**
 	 * AddLayout
@@ -192,7 +192,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height Fraction of the screen height. [0-1]
 	 */
-	addLayout(parent: obj, type: str, options: str, width: num, height: obj): UILayout;
+	addLayout(parent: obj, type: str, options?: str, width?: num, height?: obj): UILayout;
 
 	/**
 	 * AddList
@@ -204,7 +204,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addList(parent: obj, list: lst, options: str_com, width: num, height: num): UIList;
+	addList(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UIList;
 
 	/**
 	 * AddMenu
@@ -216,7 +216,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addMenu(parent: obj, list: lst, options: str_com, width: num, height: num): UIMenu;
+	addMenu(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UIMenu;
 
 	/**
 	 * AddProgress
@@ -228,7 +228,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction fo the screen height. [0-1]`
 	 */
-	addProgress(parent: obj, value: num, options: str_com, width: num, height: num): UIProgress;
+	addProgress(parent: obj, value?: num, options?: str_com, width?: num, height?: num): UIProgress;
 
 	/**
 	 * AddRadioGroup
@@ -243,7 +243,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addRadioGroup(parent: obj, list: lst, options: str_com, width: num, height: num): UIRadioGroup;
+	addRadioGroup(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UIRadioGroup;
 
 	/**
 	 * AddSelect
@@ -256,7 +256,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addSelect(parent: obj, list: lst, options: str_com, width: num, height: num): UISelect;
+	addSelect(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UISelect;
 
 	/**
 	 * AddSlider
@@ -269,7 +269,7 @@ declare class UI {
 	 * @param height `Fraction of the screen height.`
 	 * @return Slider Component.
 	 */
-	addSlider(parent: obj, value: num, options: str_com, width: num, height: num): obj;
+	addSlider(parent: obj, value: num, options?: str_com, width?: num, height?: num): obj;
 
 	/**
 	 * AddStepper
@@ -279,7 +279,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addStepper(parent: obj, steps: lst, options: str, width: num, height: num): UIStepper;
+	addStepper(parent: obj, steps?: lst, options?: str, width?: num, height?: num): UIStepper;
 
 	/**
 	 * AddSwitch
@@ -292,7 +292,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addSwitch(parent: obj, text: str, options: str, width: num, height: num): UISwitch;
+	addSwitch(parent: obj, text: str, options?: str, width?: num, height?: num): UISwitch;
 
 	/**
 	 * AddSwitchGroup
@@ -306,7 +306,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addSwitchGroup(parent: obj, list: obj, options: str_com, width: num, height: num): UISwitchGroup;
+	addSwitchGroup(parent: obj, list?: obj, options?: str_com, width?: num, height?: num): UISwitchGroup;
 
 	/**
 	 * AddTabs
@@ -320,7 +320,7 @@ Utils: `Icon` `Center` `Paper``
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addTabs(parent: obj, list: lst, options: str_com, width: num, height: num): UITabs;
+	addTabs(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UITabs;
 
 	/**
 	 * AddText
@@ -336,7 +336,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param width `Fraction of the screen width`
 	 * @param height `Fraction of the screen height`
 	 */
-	addText(parent: obj, text: str, options: str, width: num, height: num): UIText;
+	addText(parent: obj, text: str, options?: str, width?: num, height?: num): UIText;
 
 	/**
 	 * AddTextField
@@ -350,14 +350,14 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
 	 */
-	addTextField(parent: obj, text: str, options: str_com, width: num, height: num): UITextField;
+	addTextField(parent: obj, text: str, options?: str_com, width?: num, height?: num): UITextField;
 
 	/**
 	 * AddTimePicker
 	 * @param time `A default time value to which the timepicker begins. Value is of the form `HH:mm``
 	 * @param options ``Portrait` `24H` `12H``
 	 */
-	addTimePicker(time: str, options: str_com): UITimePicker;
+	addTimePicker(time: str, options?: str_com): UITimePicker;
 
 	/**
 	 * AddTreeView
@@ -367,7 +367,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
 	 */
-	addTreeView(parent: obj, list: obj, options: str, width: num, height: num): UITreeView;
+	addTreeView(parent: obj, list?: obj, options?: str, width?: num, height?: num): UITreeView;
 
 	/**
 	 * AddWebView
@@ -376,7 +376,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param width `Fraction of the parent width.`
 	 * @param height `Fraction of the parent height.`
 	 */
-	addWebView(parent: obj, url: str, options: str_com, width: num, height: num): UIWebView;
+	addWebView(parent: obj, url?: str, options?: str_com, width?: num, height?: num): UIWebView;
 
 	/**
 	 * ShowColorPicker
@@ -384,7 +384,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param options `A comma separated color picker options. Values can be 
  `Alpha` Includes an alpha`
 	 */
-	showColorPicker(value: str, options: str): UIColorPicker;
+	showColorPicker(value?: str, options?: str): UIColorPicker;
 
 	/**
 	 * ShowDateTimePicker
@@ -396,7 +396,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
  	 * &emsp; `MM` - DD\
  	 * &emsp; `HH` - MM
 	 */
-	showDateTimePicker(callback: () => void, date: str, time: str, format: str): UIDateTimePicker;
+	showDateTimePicker(callback: () => void, date?: str, time?: str, format?: str): UIDateTimePicker;
 
 	/**
 	 * ShowPopover
@@ -409,7 +409,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param height `Fraction of the screen height.`
 	 * @return Popover Component.
 	 */
-	showPopover(parent: obj, text: str, position: str, width: num, height: num): obj;
+	showPopover(parent: obj, text?: str, position?: str, width?: num, height?: num): obj;
 
 	/**
 	 * ShowPopup
@@ -424,14 +424,14 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param action `Action button text.`
 	 * @return Popup Component.
 	 */
-	showPopup(msg: str, options: str, duration: num, action: str): obj;
+	showPopup(msg: str, options?: str, duration?: num, action?: str): obj;
 
 	/**
 	 * ShowProgressDialog
 	 * @param text `The text message of the progress dialog. Options can be 
  `AutoCancel` to close the dialog when backdrop is click.`
 	 */
-	showProgressDialog(text: str, options: str_com): UIProgressDialog;
+	showProgressDialog(text?: str, options?: str_com): UIProgressDialog;
 
 }
 
@@ -532,7 +532,7 @@ declare class UIAccordion {
 	 * @param color1 `Color of the title text in hexadecimal format `#rrggbb``
 	 * @param color2 `Color of the secondary text in hexadecimal format `#rrggbb``
 	 */
-	setTextColor(color1: str, color2: str): void;
+	setTextColor(color1: str, color2?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -542,7 +542,7 @@ declare class UIAccordion {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
@@ -565,7 +565,7 @@ declare class UIAccordion {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -597,7 +597,7 @@ declare class UIAccordion {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -607,7 +607,7 @@ declare class UIAccordion {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -617,7 +617,7 @@ declare class UIAccordion {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -625,7 +625,7 @@ declare class UIAccordion {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -633,7 +633,7 @@ declare class UIAccordion {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -668,7 +668,7 @@ declare class UIAppBar {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
@@ -697,7 +697,7 @@ declare class UIAppBar {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -729,7 +729,7 @@ declare class UIAppBar {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -739,7 +739,7 @@ declare class UIAppBar {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -749,7 +749,7 @@ declare class UIAppBar {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -757,7 +757,7 @@ declare class UIAppBar {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -765,7 +765,7 @@ declare class UIAppBar {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -910,7 +910,7 @@ declare class UIBottomNavbar {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -942,7 +942,7 @@ declare class UIBottomNavbar {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -952,7 +952,7 @@ declare class UIBottomNavbar {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -962,7 +962,7 @@ declare class UIBottomNavbar {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -970,7 +970,7 @@ declare class UIBottomNavbar {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -978,7 +978,7 @@ declare class UIBottomNavbar {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -988,7 +988,7 @@ declare class UIBottomNavbar {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -1015,7 +1015,7 @@ declare class UIButton {
 	 * @param pos `Position of the tooltip. 
  Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start``
 	 */
-	setToolTip(title: str, pos: str): void;
+	setToolTip(title: str, pos?: str): void;
 
 	/**
 	 * SetTextShadow
@@ -1034,7 +1034,7 @@ declare class UIButton {
 	 * @param bottom `The bottom padding in pixels.`
 	 * @param mode ``px` `%``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -1044,7 +1044,7 @@ declare class UIButton {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
@@ -1073,7 +1073,7 @@ declare class UIButton {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -1105,7 +1105,7 @@ declare class UIButton {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -1115,7 +1115,7 @@ declare class UIButton {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -1123,7 +1123,7 @@ declare class UIButton {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -1131,7 +1131,7 @@ declare class UIButton {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -1198,7 +1198,7 @@ declare class UIButtonGroup {
 	 * @param pos `The positio of the tooltip. 
  Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start``
 	 */
-	setToolTip(titles: lst, pos: str): void;
+	setToolTip(titles: lst, pos?: str): void;
 
 	/**
 	 * EnableElevation
@@ -1253,7 +1253,7 @@ declare class UIButtonGroup {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -1285,7 +1285,7 @@ declare class UIButtonGroup {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -1295,7 +1295,7 @@ declare class UIButtonGroup {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -1305,7 +1305,7 @@ declare class UIButtonGroup {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -1313,7 +1313,7 @@ declare class UIButtonGroup {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -1321,7 +1321,7 @@ declare class UIButtonGroup {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -1331,7 +1331,7 @@ declare class UIButtonGroup {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -1386,7 +1386,7 @@ declare class UICheckbox {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -1418,7 +1418,7 @@ declare class UICheckbox {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -1428,7 +1428,7 @@ declare class UICheckbox {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -1438,7 +1438,7 @@ declare class UICheckbox {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -1446,7 +1446,7 @@ declare class UICheckbox {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -1454,7 +1454,7 @@ declare class UICheckbox {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -1464,7 +1464,7 @@ declare class UICheckbox {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -1615,7 +1615,7 @@ declare class UICheckboxGroup {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
@@ -1638,7 +1638,7 @@ declare class UICheckboxGroup {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -1670,7 +1670,7 @@ declare class UICheckboxGroup {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -1680,7 +1680,7 @@ declare class UICheckboxGroup {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -1690,7 +1690,7 @@ declare class UICheckboxGroup {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -1698,7 +1698,7 @@ declare class UICheckboxGroup {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -1706,7 +1706,7 @@ declare class UICheckboxGroup {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -1741,7 +1741,7 @@ declare class UIChip {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
@@ -1770,7 +1770,7 @@ declare class UIChip {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -1802,7 +1802,7 @@ declare class UIChip {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -1812,7 +1812,7 @@ declare class UIChip {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -1822,7 +1822,7 @@ declare class UIChip {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -1830,7 +1830,7 @@ declare class UIChip {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -1838,7 +1838,7 @@ declare class UIChip {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -1867,7 +1867,7 @@ declare class UIDatePicker {
 	 * @param past `Date in the past of the form `YYYY-MM-DD``
 	 * @param future `Date in the future of the form `YYYY-MM-DD``
 	 */
-	setLimits(past: str, future: str): void;
+	setLimits(past?: str, future?: str): void;
 
 	/** SetOnSelect */
 	setOnSelect(callback: (date: str) => void): void;
@@ -1928,7 +1928,7 @@ declare class UIDivider {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -1960,7 +1960,7 @@ declare class UIDivider {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -1970,7 +1970,7 @@ declare class UIDivider {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -1980,7 +1980,7 @@ declare class UIDivider {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -1988,7 +1988,7 @@ declare class UIDivider {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -1996,7 +1996,7 @@ declare class UIDivider {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -2006,7 +2006,7 @@ declare class UIDivider {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -2068,7 +2068,7 @@ declare class UIDrawer {
 declare class UIDropdown {
 
 	/** SetOnChange */
-	setOnChange(callback: (The: obj, index: num) => void): void;
+	setOnChange(callback: (value: obj, index: num) => void): void;
 
 	/** SetOnClose */
 	setOnClose(callback: () => void): void;
@@ -2151,7 +2151,7 @@ declare class UIDropdown {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
@@ -2180,7 +2180,7 @@ declare class UIDropdown {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -2212,7 +2212,7 @@ declare class UIDropdown {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -2222,7 +2222,7 @@ declare class UIDropdown {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -2232,7 +2232,7 @@ declare class UIDropdown {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -2240,7 +2240,7 @@ declare class UIDropdown {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -2248,7 +2248,7 @@ declare class UIDropdown {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -2274,7 +2274,7 @@ declare class UIFAB {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (event: obj) => void): void;
@@ -2303,7 +2303,7 @@ declare class UIFAB {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -2335,7 +2335,7 @@ declare class UIFAB {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -2345,7 +2345,7 @@ declare class UIFAB {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -2355,7 +2355,7 @@ declare class UIFAB {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -2363,7 +2363,7 @@ declare class UIFAB {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -2371,7 +2371,7 @@ declare class UIFAB {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -2423,7 +2423,7 @@ declare class UIImage {
 	 * @param strokeColor `A hexadecimal color.`
 	 * @param strokeWidth `The stroke thickness.`
 	 */
-	drawLine(x1: num, y1: num, x2: num, y2: num, strokeColor: str, strokeWidth: num): void;
+	drawLine(x1: num, y1: num, x2: num, y2: num, strokeColor?: str, strokeWidth?: num): void;
 
 	/**
 	 * DrawCircle
@@ -2434,7 +2434,7 @@ declare class UIImage {
 	 * @param strokeColor `A hexadecimal color.`
 	 * @param strokeWidth `The stoke thickness.`
 	 */
-	drawCircle(x: num, y: num, radius: num, fillColor: str, strokeColor: str, strokeWidth: num): void;
+	drawCircle(x: num, y: num, radius: num, fillColor?: str, strokeColor?: str, strokeWidth?: num): void;
 
 	/**
 	 * DrawSquare
@@ -2445,7 +2445,7 @@ declare class UIImage {
 	 * @param strokeColor `A hexadecimal color.`
 	 * @param strokeWidth `The stroke thickness in pixels.`
 	 */
-	drawSquare(x: num, y: num, width: num, fillColor: str, strokeColor: str, strokeWidth: num): void;
+	drawSquare(x: num, y: num, width: num, fillColor?: str, strokeColor?: str, strokeWidth?: num): void;
 
 	/**
 	 * DrawRectangle
@@ -2457,7 +2457,7 @@ declare class UIImage {
 	 * @param strokeColor `A hexadecimal color.`
 	 * @param strokeWidth `The stroke thickness.`
 	 */
-	drawRectangle(x1: num, y1: num, width: num, height: num, fillColor: str, strokeColor: str, strokeWidth: num): void;
+	drawRectangle(x1: num, y1: num, width: num, height: num, fillColor?: str, strokeColor?: str, strokeWidth?: num): void;
 
 	/**
 	 * DrawArc
@@ -2470,7 +2470,7 @@ declare class UIImage {
 	 * @param strokeColor `A hexadecimal color.`
 	 * @param strokeWidth `The stroke thickness.`
 	 */
-	drawArc(x: num, y: num, radius: num, start: num, end: num, fillColor: str, strokeColor: str, strokeWidth: num): void;
+	drawArc(x: num, y: num, radius: num, start: num, end: num, fillColor?: str, strokeColor?: str, strokeWidth?: num): void;
 
 	/**
 	 * DrawImage
@@ -2480,7 +2480,7 @@ declare class UIImage {
 	 * @param width `If provided`, ` the image will be shrink or stretch to fill this width in pixels.`
 	 * @param height `If provided`, ` the height of the image will be shrink or stretch to fill this height in pixels.`
 	 */
-	drawImage(img: str, x: num, y: num, width: num, height: num): void;
+	drawImage(img: str, x?: num, y?: num, width?: num, height?: num): void;
 
 	/** Clear */
 	clear(): void;
@@ -2491,7 +2491,7 @@ declare class UIImage {
 	 * @param strokeColor `A hexadecimal color.`
 	 * @param strokeWidth `The stroke thickness.`
 	 */
-	drawPolyline(points: lst, strokeColor: str, strokeWidth: num): void;
+	drawPolyline(points: lst, strokeColor?: str, strokeWidth?: num): void;
 
 	/**
 	 * DrawPolygon
@@ -2500,7 +2500,7 @@ declare class UIImage {
 	 * @param strokeColor `A hexadecimal color.`
 	 * @param strokeWidth `The stroke thickness.`
 	 */
-	drawPolygon(points: lst, fillColor: str, strokeColor: str, strokeWidth: num): void;
+	drawPolygon(points: lst, fillColor?: str, strokeColor?: str, strokeWidth?: num): void;
 
 	/**
 	 * DrawPoint
@@ -2508,7 +2508,7 @@ declare class UIImage {
 	 * @param y `The y-coordinate in pixels.`
 	 * @param color `A hexadecimal color.`
 	 */
-	drawPoint(x: num, y: num, color: str): void;
+	drawPoint(x: num, y: num, color?: str): void;
 
 	/** SetOnTouchMove */
 	setOnTouchMove(callback: () => void): void;
@@ -2540,7 +2540,7 @@ declare class UIImage {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -2572,7 +2572,7 @@ declare class UIImage {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -2582,7 +2582,7 @@ declare class UIImage {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -2592,7 +2592,7 @@ declare class UIImage {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -2600,7 +2600,7 @@ declare class UIImage {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -2608,7 +2608,7 @@ declare class UIImage {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -2618,7 +2618,7 @@ declare class UIImage {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -2644,7 +2644,7 @@ declare class UILayout {
 	 * @param bottom `Bottom margin.`
 	 * @param mode ``px`. Default is a fraction of viewport.`
 	 */
-	setChildMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setChildMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/** Show */
 	show(): void;
@@ -2715,7 +2715,7 @@ declare class UILayout {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -2744,7 +2744,7 @@ declare class UILayout {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -2754,7 +2754,7 @@ declare class UILayout {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -2764,7 +2764,7 @@ declare class UILayout {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -2772,7 +2772,7 @@ declare class UILayout {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -2780,7 +2780,7 @@ declare class UILayout {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -2790,7 +2790,7 @@ declare class UILayout {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -2815,7 +2815,7 @@ declare class UIList {
 	 * @param image `A material icon or image file path.`
 	 * @param index `The index in which to add or insert the item.`
 	 */
-	addItem(title: str, body: str, image: str, index: num): void;
+	addItem(title: str, body?: str, image?: str, index?: num): void;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (title: str, body: str, icon: str, index: num, event: obj) => void): void;
@@ -2854,7 +2854,7 @@ declare class UIList {
 	 * @param newBody `The new body text`
 	 * @param newImage `The new icon or image`
 	 */
-	setItemByIndex(index: num, newTitle: str, newBody: str, newImage: str): void;
+	setItemByIndex(index: num, newTitle: str, newBody?: str, newImage?: str): void;
 
 	/**
 	 * GetItemByIndex
@@ -2869,7 +2869,7 @@ declare class UIList {
 	 * @param newBody `The new description of the list item.`
 	 * @param newImage `A material icon font or image file path.`
 	 */
-	setItem(title: str, newTitle: str, newBody: str, newImage: str): void;
+	setItem(title: str, newTitle: str, newBody?: str, newImage?: str): void;
 
 	/**
 	 * GetItem
@@ -2933,7 +2933,7 @@ declare class UIList {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
@@ -2956,7 +2956,7 @@ declare class UIList {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -2988,7 +2988,7 @@ declare class UIList {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -2998,7 +2998,7 @@ declare class UIList {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -3008,7 +3008,7 @@ declare class UIList {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -3016,7 +3016,7 @@ declare class UIList {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -3024,7 +3024,7 @@ declare class UIList {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -3148,7 +3148,7 @@ declare class UIMenu {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -3174,7 +3174,7 @@ declare class UIMenu {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -3184,7 +3184,7 @@ declare class UIMenu {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -3194,7 +3194,7 @@ declare class UIMenu {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -3202,7 +3202,7 @@ declare class UIMenu {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -3212,7 +3212,7 @@ declare class UIMenu {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -3257,7 +3257,7 @@ declare class UIProgress {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -3289,7 +3289,7 @@ declare class UIProgress {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -3299,7 +3299,7 @@ declare class UIProgress {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -3309,7 +3309,7 @@ declare class UIProgress {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -3317,7 +3317,7 @@ declare class UIProgress {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -3325,7 +3325,7 @@ declare class UIProgress {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -3335,7 +3335,7 @@ declare class UIProgress {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -3441,7 +3441,7 @@ declare class UIRadioGroup {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
@@ -3464,7 +3464,7 @@ declare class UIRadioGroup {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -3496,7 +3496,7 @@ declare class UIRadioGroup {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -3506,7 +3506,7 @@ declare class UIRadioGroup {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -3516,7 +3516,7 @@ declare class UIRadioGroup {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -3524,7 +3524,7 @@ declare class UIRadioGroup {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -3532,7 +3532,7 @@ declare class UIRadioGroup {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -3649,7 +3649,7 @@ declare class UISelect {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -3681,7 +3681,7 @@ declare class UISelect {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -3691,7 +3691,7 @@ declare class UISelect {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -3701,7 +3701,7 @@ declare class UISelect {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -3709,7 +3709,7 @@ declare class UISelect {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -3717,7 +3717,7 @@ declare class UISelect {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -3727,7 +3727,7 @@ declare class UISelect {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -3756,7 +3756,7 @@ declare class UISlider {
 	 * @param min `Minimum value of the slider.`
 	 * @param max `Maximum value of the slider.`
 	 */
-	setRange(min: num, max: num): void;
+	setRange(min?: num, max?: num): void;
 
 	/**
 	 * SetMarks
@@ -3794,7 +3794,7 @@ declare class UISlider {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -3826,7 +3826,7 @@ declare class UISlider {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -3836,7 +3836,7 @@ declare class UISlider {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -3846,7 +3846,7 @@ declare class UISlider {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -3854,7 +3854,7 @@ declare class UISlider {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -3862,7 +3862,7 @@ declare class UISlider {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -3872,7 +3872,7 @@ declare class UISlider {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -3954,7 +3954,7 @@ declare class UIStepper {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -3986,7 +3986,7 @@ declare class UIStepper {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -3996,7 +3996,7 @@ declare class UIStepper {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -4006,7 +4006,7 @@ declare class UIStepper {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -4014,7 +4014,7 @@ declare class UIStepper {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -4022,7 +4022,7 @@ declare class UIStepper {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -4032,7 +4032,7 @@ declare class UIStepper {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -4077,7 +4077,7 @@ declare class UISwitch {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -4109,7 +4109,7 @@ declare class UISwitch {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -4119,7 +4119,7 @@ declare class UISwitch {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -4129,7 +4129,7 @@ declare class UISwitch {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -4137,7 +4137,7 @@ declare class UISwitch {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -4145,7 +4145,7 @@ declare class UISwitch {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -4155,7 +4155,7 @@ declare class UISwitch {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -4249,7 +4249,7 @@ declare class UISwitchGroup {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * Animate
@@ -4272,7 +4272,7 @@ declare class UISwitchGroup {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -4304,7 +4304,7 @@ declare class UISwitchGroup {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -4314,7 +4314,7 @@ declare class UISwitchGroup {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -4324,7 +4324,7 @@ declare class UISwitchGroup {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -4332,7 +4332,7 @@ declare class UISwitchGroup {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -4340,7 +4340,7 @@ declare class UISwitchGroup {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -4362,7 +4362,7 @@ declare class UITabs {
 	setOnChange(callback: (name: str, index: num) => void): void;
 
 	/** SetOnTouch */
-	setOnTouch(callback: (name: str, The: num) => void): void;
+	setOnTouch(callback: (name: str, index: num) => void): void;
 
 	/**
 	 * SetTabs
@@ -4475,7 +4475,7 @@ declare class UITabs {
 	 * @param br `Bottom-right corner radius.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * SetIndicatorStyle
@@ -4494,7 +4494,7 @@ declare class UITabs {
 	 * @param bottom `The tab-item bottom padding.`
 	 * @param mode `Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.`
 	 */
-	setTabPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setTabPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * Animate
@@ -4517,7 +4517,7 @@ declare class UITabs {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -4549,7 +4549,7 @@ declare class UITabs {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -4559,7 +4559,7 @@ declare class UITabs {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -4569,7 +4569,7 @@ declare class UITabs {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -4577,7 +4577,7 @@ declare class UITabs {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -4585,7 +4585,7 @@ declare class UITabs {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * BringForward
@@ -4648,7 +4648,7 @@ declare class UIText {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -4680,7 +4680,7 @@ declare class UIText {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -4690,7 +4690,7 @@ declare class UIText {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -4700,7 +4700,7 @@ declare class UIText {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -4708,7 +4708,7 @@ declare class UIText {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -4716,7 +4716,7 @@ declare class UIText {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -4726,7 +4726,7 @@ declare class UIText {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -4758,7 +4758,7 @@ declare class UITextField {
 	 * @param min `The minimum number of rows.`
 	 * @param max `The maximum number of rows.`
 	 */
-	setRows(min: num, max: num): void;
+	setRows(min?: num, max?: num): void;
 
 	/**
 	 * SetStartAdornment
@@ -4767,7 +4767,7 @@ declare class UITextField {
  `Icon` : If the adornment is an icon. 
  `Touchable` : If the adornment is touchable.`
 	 */
-	setStartAdornment(text: str, type: str): void;
+	setStartAdornment(text: str, type?: str): void;
 
 	/** SetStartAdornmentOnTouch */
 	setStartAdornmentOnTouch(callback: () => void): void;
@@ -4782,7 +4782,7 @@ declare class UITextField {
  `Icon` : If the adornment is an icon. 
  `Touchable` : If the adornment is touchable.`
 	 */
-	setEndAdornment(text: str, type: str): void;
+	setEndAdornment(text: str, type?: str): void;
 
 	/** SetEndAdornmentOnTouch */
 	setEndAdornmentOnTouch(callback: () => void): void;
@@ -4817,7 +4817,7 @@ declare class UITextField {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -4849,7 +4849,7 @@ declare class UITextField {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -4859,7 +4859,7 @@ declare class UITextField {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -4869,7 +4869,7 @@ declare class UITextField {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -4877,7 +4877,7 @@ declare class UITextField {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -4885,7 +4885,7 @@ declare class UITextField {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -4895,7 +4895,7 @@ declare class UITextField {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -4980,7 +4980,7 @@ declare class UITreeView {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -5012,7 +5012,7 @@ declare class UITreeView {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -5022,7 +5022,7 @@ declare class UITreeView {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -5032,7 +5032,7 @@ declare class UITreeView {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -5040,7 +5040,7 @@ declare class UITreeView {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -5048,7 +5048,7 @@ declare class UITreeView {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -5058,7 +5058,7 @@ declare class UITreeView {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -5106,7 +5106,7 @@ declare class UIWebView {
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.`
 	 * @param duration `The time in milliseconds.`
 	 */
-	animate(anim: str, duration: num): void;
+	animate(anim: str, duration?: num): void;
 
 	/**
 	 * SetSize
@@ -5138,7 +5138,7 @@ declare class UIWebView {
 	 * GetPosition
 	 * @param options `The mode of the measurements. Values can be `px` or `%``
 	 */
-	getPosition(options: str): obj;
+	getPosition(options?: str): obj;
 
 	/**
 	 * SetMargins
@@ -5148,7 +5148,7 @@ declare class UIWebView {
 	 * @param bottom `Fraction of the parent height.`
 	 * @param mode ``px` or `%``
 	 */
-	setMargins(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setMargins(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPadding
@@ -5158,7 +5158,7 @@ declare class UIWebView {
 	 * @param bottom `Fraction of the component height. [0-1]`
 	 * @param mode `The size thickness mode. Can be `px``
 	 */
-	setPadding(left: num, top: num, right: num, bottom: num, mode: str): void;
+	setPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
 	/**
 	 * SetPosition
@@ -5166,7 +5166,7 @@ declare class UIWebView {
 	 * @param top `Fraction of the screen height. [0-1]`
 	 * @param mode `Unit of measurement. Can be `px` or `%` or any css unit of measurement.`
 	 */
-	setPosition(left: num, top: num, mode: str): void;
+	setPosition(left?: num, top?: num, mode?: str): void;
 
 	/**
 	 * SetBorder
@@ -5174,7 +5174,7 @@ declare class UIWebView {
 	 * @param clr `Border color in hexadecimal form `#rrggbb``
 	 * @param style `Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid``
 	 */
-	setBorder(width: num, clr: str, style: str): void;
+	setBorder(width?: num, clr?: str, style?: str): void;
 
 	/**
 	 * SetCornerRadius
@@ -5184,7 +5184,7 @@ declare class UIWebView {
 	 * @param br `Bottom-Right border radius in pixels.`
 	 * @param mode `Unit. Values are `px` `rem` or `%`.`
 	 */
-	setCornerRadius(tl: num, tr: num, bl: num, br: num, mode: str): void;
+	setCornerRadius(tl?: num, tr?: num, bl?: num, br?: num, mode?: str): void;
 
 	/**
 	 * BringForward
@@ -5233,7 +5233,7 @@ declare class UIPopup {
 	 * @param vertical `Vertical alignment. Values can be `Top` `Bottom``
 	 * @param horizontal `Horizontal alignment. Values can be `Left` `Center` and `Right``
 	 */
-	setPosition(vertical: str, horizontal: str): void;
+	setPosition(vertical?: str, horizontal?: str): void;
 
 	/** GetPosition */
 	getPosition(): obj;
