@@ -39,16 +39,24 @@
 	</div>
 
 	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
 		<p>The check list provides a similar functionality to the <docstr>“Multi”</docstr> <a href="CreateListDialog.htm" data-ajax="false">ListDiaog</a>, although you can adjust its initial check states with an object structure.</p>
 
 		<div class="samp">
 		ckl = app.ShowCheckList(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
 			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">list</a>,
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback?</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width=-1</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height=-1</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>app object:</b> CheckList
 		</div>
 
@@ -88,6 +96,16 @@
 		</div>
 
 
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>CheckList</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">SetList</a>(
+			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">data</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+		</div>
 
 	</div>
 
@@ -99,6 +117,8 @@
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">data</a>
 	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>ckl.SetList</b><br>Set list</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>ckl.Show</b><br>Show the check list</div>
 </div>
 </body>
 

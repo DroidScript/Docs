@@ -52,7 +52,7 @@
 		<div class="samp">
 		sock = app.CreateWebServer(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">port</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>app object:</b> WebServer
 		</div>
 
@@ -400,7 +400,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Disconnect</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">ip</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">id</a> )
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">id?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">GetType</a>() → <b>String:</b> <docstr>“WebServer”</docstr>
@@ -413,11 +413,11 @@
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">types?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4?</a> )
 			→ <b>all types</b>
 		</div>
 		<div class="samp">
@@ -461,10 +461,10 @@
 	<div data-role="popup" id="pop_str_url" class="ui-content"><b>String:</b> <i>url path</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('Show files in folder')">ListDir</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('Allow file uploads')">Upload</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('Ignore index.html')">NoWelcome</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('Reflect web socket messages back to all clients')">Reflect</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('“ws_64k”, “ ws_128k”, “ ws_512k”, “ ws_1M”, “ ws_5M”, “ ws_10M”')">&lt;BUFSIZE&gt;</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>url path:</i> <docstr>“/name”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { parameter: argument }</div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“boolean”</docstr>, <docstr>“char”</docstr>, <docstr>“byte”</docstr>, <docstr>“short”</docstr>, <docstr>“int”</docstr>, <docstr>“long”</docstr>, <docstr>“float”</docstr>, <docstr>“double”</docstr>, <docstr>“String”</docstr>, <docstr>“CharSequence”</docstr>, <docstr>“...”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">parameter</a>: <a href="" onclick="app.ShowPopup('String')">argument</a> }</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">remoteAddress</a> }</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_obj_001')" data-transition="pop" data-rel="popup">args</a>,
 		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">info</a>

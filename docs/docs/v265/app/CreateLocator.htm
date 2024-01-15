@@ -52,7 +52,7 @@
 		<div class="samp">
 		loc = app.CreateLocator(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>app object:</b> Locator
 		</div>
 
@@ -141,7 +141,7 @@
 	<div data-role="popup" id="pop_num_sec" class="ui-content"><b>Number:</b> <i>seconds</i></div>
 	<div data-role="popup" id="pop_str_com" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“GPS”</docstr>, <docstr>“Network”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">provider</a>, <a href="" onclick="app.ShowPopup('Number')">latitude</a>, <a href="" onclick="app.ShowPopup('Number')">longitude</a>, <a href="" onclick="app.ShowPopup('Number')">speed</a>, <a href="" onclick="app.ShowPopup('Number')">bearing</a>, <a href="" onclick="app.ShowPopup('Number')">altitude</a>, <a href="" onclick="app.ShowPopup('Number: meters')">accuracy</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">data</a>,

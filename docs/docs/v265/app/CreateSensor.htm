@@ -52,7 +52,7 @@
 		<div class="samp">
 		sns = app.CreateSensor(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>app object:</b> Sensor
 		</div>
 
@@ -266,11 +266,11 @@
 		<div class="samp">
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">types?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4?</a> )
 			→ <b>all types</b>
 		</div>
 		<div class="samp">
@@ -299,8 +299,8 @@
 	<div data-role="popup" id="pop_num_mls" class="ui-content"><b>Number:</b> <i>milliseconds</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Accelerometer”</docstr> or <docstr>“MagneticField”</docstr> or <docstr>“Orientation”</docstr> or <docstr>“Light”</docstr> or <docstr>“Proximity”</docstr> or <docstr>“Temperature”</docstr> or <docstr>“GameRotation”</docstr> or <docstr>“GeomagneticRotation”</docstr> or <docstr>“Gravity”</docstr> or <docstr>“Gyroscope”</docstr> or <docstr>“HeartRate”</docstr> or <docstr>“Acceleration”</docstr> or <docstr>“Pressure”</docstr> or <docstr>“Humidity”</docstr> or <docstr>“RotationMotion”</docstr> or <docstr>“StepCounter”</docstr> or <docstr>“StepDetector”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Slow”</docstr> or <docstr>“Medium”</docstr> or <docstr>“Fast”</docstr> or <docstr>“Fastest”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“boolean”</docstr>, <docstr>“char”</docstr>, <docstr>“byte”</docstr>, <docstr>“short”</docstr>, <docstr>“int”</docstr>, <docstr>“long”</docstr>, <docstr>“float”</docstr>, <docstr>“double”</docstr>, <docstr>“String”</docstr>, <docstr>“CharSequence”</docstr>, <docstr>“...”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('Number')">first</a>,
 		<a href="" onclick="app.ShowPopup('Number')">second</a>,

@@ -54,12 +54,12 @@
 
 		<div class="samp">
 		img = app.CreateImage(
-			<a href="#pop_str_ptc" data-transition="pop" data-rel="popup">file</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
-			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxw</a>,
-			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxh</a> )
+			<a href="#pop_str_ptc" data-transition="pop" data-rel="popup">file?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width=-1</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height=-1</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options=''</a>,
+			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxw=-1</a>,
+			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">pxh=-1</a> )
 			→ <b>app object:</b> Image
 		</div>
 
@@ -441,15 +441,15 @@
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">AdjustColor</a>(
 			<a href="#pop_num_001" data-transition="pop" data-rel="popup">hue</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">saturation</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">brightness</a>,
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">contrast</a> )
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">saturation?</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">brightness?</a>,
+			<a href="#pop_num_004" data-transition="pop" data-rel="popup">contrast?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">Animate</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">time</a> )
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback?</a>,
+			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">time?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Batch</a>(
@@ -485,10 +485,10 @@
 			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">image</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">w</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">h</a>,
-			<a href="#pop_num_deg" data-transition="pop" data-rel="popup">angle</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">w?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">h?</a>,
+			<a href="#pop_num_deg" data-transition="pop" data-rel="popup">angle?</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">mode?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">DrawImageMtx</a>(
@@ -565,10 +565,10 @@
 		<div class="samp">
 			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">GetPixelData</a>(
 			<a href="#pop_str_006" data-transition="pop" data-rel="popup">format</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">height</a> )
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">width=-1</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">height=-1</a> )
 			→ <b>String:</b> <i>base64 encoded</i>
 		</div>
 		<div class="samp">
@@ -608,7 +608,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup">IsOverlap</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth?</a> )
 			→ <b>Boolean</b>
 		</div>
 		<div class="samp">
@@ -624,11 +624,11 @@
 		<div class="samp">
 			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_lst_003" data-transition="pop" data-rel="popup">types</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">types?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4?</a> )
 			→ <b>all types</b>
 		</div>
 		<div class="samp">
@@ -645,13 +645,13 @@
 		<div class="samp">
 			<a href="#pop_dsc_029" data-transition="pop" data-rel="popup">Rotate</a>(
 			<a href="#pop_num_deg" data-transition="pop" data-rel="popup">angle</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">pivotX</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">pivotY</a> )
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">pivotX?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">pivotY?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_02a" data-transition="pop" data-rel="popup">Save</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">fileName</a>,
-			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">quality</a> )
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">quality?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">Scale</a>(
@@ -677,24 +677,24 @@
 		<div class="samp">
 			<a href="#pop_dsc_030" data-transition="pop" data-rel="popup" class="baseFunc">SetBackGradient</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color1</a>,
-			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color2</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color3</a>,
-			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color2?</a>,
+			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color3?</a>,
+			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_031" data-transition="pop" data-rel="popup" class="baseFunc">SetBackGradientRadial</a>(
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">y</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">radius</a>,
-			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color1</a>,
-			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color2</a>,
-			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color3</a>,
-			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">radius?</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color1?</a>,
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color2?</a>,
+			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color3?</a>,
+			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_032" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
-			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_033" data-transition="pop" data-rel="popup">SetColor</a>(
@@ -703,7 +703,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_034" data-transition="pop" data-rel="popup" class="baseFunc">SetColorFilter</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
-			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_00d" data-transition="pop" data-rel="popup">mode?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_035" data-transition="pop" data-rel="popup" class="baseFunc">SetDescription</a>(
@@ -720,9 +720,9 @@
 		<div class="samp">
 			<a href="#pop_dsc_038" data-transition="pop" data-rel="popup">SetImage</a>(
 			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">image</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_00d" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width=-1</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height=-1</a>,
+			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_039" data-transition="pop" data-rel="popup">SetLineWidth</a>(
@@ -730,11 +730,11 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_03a" data-transition="pop" data-rel="popup" class="baseFunc">SetMargins</a>(
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left=0</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top=0</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right=0</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom=0</a>,
+			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_03b" data-transition="pop" data-rel="popup">SetMaxRate</a>(
@@ -770,11 +770,11 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_043" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left=0</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top=0</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right=0</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">bottom=0</a>,
+			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_044" data-transition="pop" data-rel="popup">SetPaintColor</a>(
@@ -782,14 +782,14 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_045" data-transition="pop" data-rel="popup">SetPaintStyle</a>(
-			<a href="#pop_str_010" data-transition="pop" data-rel="popup">style</a> )
+			<a href="#pop_str_011" data-transition="pop" data-rel="popup">style</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_046" data-transition="pop" data-rel="popup">SetPixelData</a>(
-			<a href="#pop_str_011" data-transition="pop" data-rel="popup">data</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_012" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_012" data-transition="pop" data-rel="popup">data</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width=-1</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height=-1</a>,
+			<a href="#pop_str_013" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_047" data-transition="pop" data-rel="popup">SetPixelMode</a>(
@@ -799,9 +799,9 @@
 			<a href="#pop_dsc_048" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height?</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_049" data-transition="pop" data-rel="popup" class="baseFunc">SetScale</a>(
@@ -812,7 +812,7 @@
 			<a href="#pop_dsc_04a" data-transition="pop" data-rel="popup" class="baseFunc">SetSize</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_014" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_015" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_04b" data-transition="pop" data-rel="popup">SetTextSize</a>(
@@ -824,7 +824,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_04d" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
-			<a href="#pop_str_015" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_016" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_04e" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
@@ -841,11 +841,11 @@
 		<div class="samp">
 			<a href="#pop_dsc_051" data-transition="pop" data-rel="popup" class="baseFunc">Tween</a>(
 			<a href="#pop_obj_006" data-transition="pop" data-rel="popup">target</a>,
-			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a>,
-			<a href="#pop_str_016" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a>,
-			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">yoyo</a>,
-			<a href="#pop_fnc_008" data-transition="pop" data-rel="popup">callback</a> )
+			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration?</a>,
+			<a href="#pop_str_017" data-transition="pop" data-rel="popup">type?</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat?</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">yoyo?</a>,
+			<a href="#pop_fnc_008" data-transition="pop" data-rel="popup">callback?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_052" data-transition="pop" data-rel="popup">Update</a>()
@@ -884,28 +884,28 @@
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“px”</docstr></div>
 	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“rawbase64”</docstr> or <docstr>“pngbase64”</docstr> or <docstr>“jpgbase64”</docstr></div>
 	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
-	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
-	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>String:</b> <docstr>“repeat”</docstr></div>
-	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>String:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“color”</docstr> or <docstr>“color_burn”</docstr> or <docstr>“color_dodge”</docstr> or <docstr>“difference”</docstr> or <docstr>“exclusion”</docstr> or <docstr>“hard_light”</docstr> or <docstr>“hue”</docstr> or <docstr>“luminosity”</docstr> or <docstr>“modulate”</docstr> or <docstr>“saturation”</docstr> or <docstr>“soft_light”</docstr> or <docstr>“src”</docstr> or <docstr>“dst”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
-	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>String:</b> <docstr>“rescale”</docstr></div>
-	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_010" class="ui-content"><b>String:</b> <docstr>“Fill”</docstr> or <docstr>“Line”</docstr></div>
-	<div data-role="popup" id="pop_str_011" class="ui-content"><b>String:</b> <i>base64 encoded:</i> <docstr>“&lt;rawbase64&gt;”</docstr> or <docstr>“data:image/jpg;base64,&lt;jpgbase64&gt;”</docstr>, <docstr>“data:image/png;base64,&lt;pngbase64&gt;”</docstr></div>
-	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <docstr>“px”</docstr>, <docstr>“icon”</docstr>, <docstr>“resize”</docstr> or <docstr>“rescale”</docstr> or <docstr>“square”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('set bitmap size')">fix</a>”</docstr></div>
-	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_str_015" class="ui-content"><b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
-	<div data-role="popup" id="pop_str_016" class="ui-content"><b>String:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“boolean”</docstr>, <docstr>“char”</docstr>, <docstr>“byte”</docstr>, <docstr>“short”</docstr>, <docstr>“int”</docstr>, <docstr>“long”</docstr>, <docstr>“float”</docstr>, <docstr>“double”</docstr>, <docstr>“String”</docstr>, <docstr>“CharSequence”</docstr>, <docstr>“...”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>String:</b> <docstr>“left-right”</docstr> or <docstr>“right-left”</docstr> or <docstr>“top-bottom”</docstr> or <docstr>“bottom-top”</docstr> or <docstr>“bl-tr”</docstr> or <docstr>“br-tl”</docstr> or <docstr>“tl-br”</docstr> or <docstr>“tr-bl”</docstr></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>String:</b> <docstr>“repeat”</docstr></div>
+	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>String:</b> <docstr>“Add”</docstr> or <docstr>“Multiply”</docstr> or <docstr>“clear”</docstr> or <docstr>“darken”</docstr> or <docstr>“lighten”</docstr> or <docstr>“overlay”</docstr> or <docstr>“screen”</docstr> or <docstr>“xor”</docstr> or <docstr>“color”</docstr> or <docstr>“color_burn”</docstr> or <docstr>“color_dodge”</docstr> or <docstr>“difference”</docstr> or <docstr>“exclusion”</docstr> or <docstr>“hard_light”</docstr> or <docstr>“hue”</docstr> or <docstr>“luminosity”</docstr> or <docstr>“modulate”</docstr> or <docstr>“saturation”</docstr> or <docstr>“soft_light”</docstr> or <docstr>“src”</docstr> or <docstr>“dst”</docstr> or <docstr>“src_in”</docstr> or <docstr>“src_out”</docstr> or <docstr>“src_atop”</docstr> or <docstr>“src_over”</docstr> or <docstr>“dst_in”</docstr> or <docstr>“dst_out”</docstr> or <docstr>“dst_atop”</docstr> or <docstr>“dst_over”</docstr></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <docstr>“rescale”</docstr></div>
+	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_011" class="ui-content"><b>String:</b> <docstr>“Fill”</docstr> or <docstr>“Line”</docstr></div>
+	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <i>base64 encoded:</i> <docstr>“&lt;rawbase64&gt;”</docstr> or <docstr>“data:image/jpg;base64,&lt;jpgbase64&gt;”</docstr>, <docstr>“data:image/png;base64,&lt;pngbase64&gt;”</docstr></div>
+	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <docstr>“px”</docstr>, <docstr>“icon”</docstr>, <docstr>“resize”</docstr> or <docstr>“rescale”</docstr> or <docstr>“square”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('set bitmap size')">fix</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_015" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_str_016" class="ui-content"><b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
+	<div data-role="popup" id="pop_str_017" class="ui-content"><b>String:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
 	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i><br><b>app object:</b> Image</div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
-	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Down” or “Move” or “Up”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Down”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Move”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
-	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Up”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, <a href="" onclick="app.ShowPopup('Multitouch positions')">x</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], <a href="" onclick="app.ShowPopup('Multitouch positions')">y</a>: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Down” or “Move” or “Up”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Down”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Move”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('app object')">source</a>, <a href="" onclick="app.ShowPopup('String: “Up”')">action</a>, <a href="" onclick="app.ShowPopup('Number: integer')">count</a>, x: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x3</a> ], y: [ <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y1</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y2</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y3</a> ] }</div>
 	<div data-role="popup" id="pop_obj_006" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">h</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
 	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> CreateImage</div>
 	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> [<a href="" onclick="app.ShowPopup('Number')">a</a>, <a href="" onclick="app.ShowPopup('Number')">b</a>, <a href="" onclick="app.ShowPopup('Number')">c</a>, <a href="" onclick="app.ShowPopup('Number')">d</a>, <a href="" onclick="app.ShowPopup('Number')">tx</a>, <a href="" onclick="app.ShowPopup('Number')">ty</a>]</div>
 	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>List:</b> [ <a href="" onclick="app.ShowPopup('Number: integer')">data</a> ]</div>
-	<div data-role="popup" id="pop_lst_003" class="ui-content"><b>List:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">type</a>
 	)</div>

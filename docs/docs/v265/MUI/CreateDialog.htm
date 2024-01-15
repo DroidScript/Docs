@@ -52,10 +52,10 @@
 		<div class="samp">
 		dlg = MUI.CreateDialog(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">title</a>,
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">body</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">okText</a>,
-			<a href="#pop_str_004" data-transition="pop" data-rel="popup">cancelText</a>,
-			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">divider</a> )
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">body?</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">okText?</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">cancelText?</a>,
+			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">divider?</a> )
 			→ <b>Object</b>
 		</div>
 
@@ -227,8 +227,8 @@
 			→ <b>Object:</b> {
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a> }
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
@@ -255,7 +255,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">IsOverlap</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth?</a> )
 			→ <b>Boolean</b>
 		</div>
 		<div class="samp">
@@ -288,7 +288,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">SetTextSize</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">size</a>,
-			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">SetTitle</a>(
@@ -327,7 +327,7 @@
 	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('Boolean')">isOkBtnClick</a>,
+		<a href="" onclick="app.ShowPopup('Boolean')">isOk</a>,
 		<a href="" onclick="app.ShowPopup('String')">btnText</a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dlg.ClearFocus</b><br>Removes the focus of the control so that the user no longer has immediate access to it.</div>

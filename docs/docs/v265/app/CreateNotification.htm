@@ -51,7 +51,7 @@
 
 		<div class="samp">
 		ntf = app.CreateNotification(
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>app object:</b> Notification
 		</div>
 
@@ -122,7 +122,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Listen</a>(
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Notify</a>(
@@ -135,15 +135,15 @@
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">SetLights</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
-			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">onMs</a>,
-			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">offMs</a> )
+			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">onMs?</a>,
+			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">offMs?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">SetMessage</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">ticker</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
-			<a href="#pop_str_004" data-transition="pop" data-rel="popup">extra</a> )
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text?</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">extra?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetOnNotify</a>(
@@ -164,7 +164,7 @@
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“id”</docstr> or <docstr>“*”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“CheckPerms”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Add multiline text in your notification.”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">source</a>,
 		<a href="" onclick="app.ShowPopup('String')">title</a>,

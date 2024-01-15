@@ -52,7 +52,7 @@
 		<div class="samp">
 		swt = MUI.CreateSwitch(
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">value</a>,
-			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color?</a> )
 			→ <b>Object</b>
 		</div>
 
@@ -168,8 +168,8 @@
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">Animate</a>(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">time</a> )
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback?</a>,
+			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">time?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">ClearFocus</a>()
@@ -202,8 +202,8 @@
 			→ <b>Object:</b> {
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a> }
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
@@ -230,7 +230,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">IsOverlap</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth?</a> )
 			→ <b>Boolean</b>
 		</div>
 		<div class="samp">
@@ -248,9 +248,9 @@
 			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height?</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetValue</a>(
@@ -263,11 +263,11 @@
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">Tween</a>(
 			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">target</a>,
-			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a>,
-			<a href="#pop_str_009" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a>,
-			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">yoyo</a>,
-			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration?</a>,
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">type?</a>,
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat?</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">yoyo?</a>,
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback?</a> )
 		</div>
 
 	</div>
@@ -284,7 +284,7 @@
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
 	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
 	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“Linear.None”</docstr> or <docstr>“Quadratic.In/Out”</docstr> or <docstr>“Cubic.In/Out”</docstr> or <docstr>“Quartic.In/Out”</docstr> or <docstr>“Quintic.In/Out”</docstr> or <docstr>“Sinusoidal.In/Out”</docstr> or <docstr>“Exponential.In/Out”</docstr> or <docstr>“Circular.In/Out”</docstr> or <docstr>“Elastic.In/Out”</docstr> or <docstr>“Back.In/Out”</docstr> or <docstr>“Bounce.In/Out”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">w</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">h</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): horizontal scale')">sw</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1): vertical scale')">sh</a>, <a href="" onclick="app.ShowPopup('Number: angle in degrees (0..360)')">rot</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">type</a>
 	)</div>

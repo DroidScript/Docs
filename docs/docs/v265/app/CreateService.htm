@@ -59,8 +59,8 @@
 		srv = app.CreateService(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">packageName</a>,
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">className</a>,
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback?</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>app object:</b> Service
 		</div>
 
@@ -273,10 +273,10 @@
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetInForeground</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
-			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">largeIcon</a>,
-			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">smallIcon</a>,
-			<a href="#pop_str_004" data-transition="pop" data-rel="popup">importance</a> )
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text?</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">largeIcon?</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">smallIcon?</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">importance?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetOnMessage</a>(
@@ -294,7 +294,7 @@
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“this”</docstr> or <docstr>“&lt;class&gt;”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“<a href="" onclick="app.ShowPopup('attempts to force restart if service killed')">Persist</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“none”</docstr> or <docstr>“min”</docstr> or <docstr>“low”</docstr> or <docstr>“high”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">message</a>

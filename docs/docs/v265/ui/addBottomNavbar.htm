@@ -53,10 +53,10 @@
 		bmn = ui.addBottomNavbar(
 			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
 			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">navs</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
-			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height</a> )
-			→ <b>Object:</b> BottomNavbar Component
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options?</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width?</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height?</a> )
+			→ <b>ui object:</b> BottomNavbar
 		</div>
 
 		<p>An example of a navs array.</p>
@@ -490,19 +490,19 @@
 			<a href="#pop_num_003" data-transition="pop" data-rel="popup">index</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">animate</a>(
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">animate</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">anim</a>,
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">duration</a> )
+			<a href="#pop_num_004" data-transition="pop" data-rel="popup">duration?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">bringForward</a>(
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">bringForward</a>(
 			<a href="#pop_num_005" data-transition="pop" data-rel="popup">zIndex</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">clearSelection</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">destroy</a>()
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="baseFunc">destroy</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">getEnabled</a>(
@@ -518,15 +518,15 @@
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">getList</a>() → <b>List</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">getPosition</a>(
-			<a href="#pop_str_006" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">getPosition</a>(
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>Object</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">gone</a>()
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">gone</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">hide</a>()
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">hide</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">hideLabels</a>()
@@ -551,22 +551,22 @@
 			<a href="#pop_num_008" data-transition="pop" data-rel="popup">index</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">sendBackward</a>(
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">sendBackward</a>(
 			<a href="#pop_num_009" data-transition="pop" data-rel="popup">zIndex</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">setBorder</a>(
-			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_str_009" data-transition="pop" data-rel="popup">clr</a>,
-			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">style</a> )
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">width?</a>,
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">clr?</a>,
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">style?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">setCornerRadius</a>(
-			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">tl</a>,
-			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">tr</a>,
-			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">bl</a>,
-			<a href="#pop_num_00e" data-transition="pop" data-rel="popup">br</a>,
-			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
+			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">tl?</a>,
+			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">tr?</a>,
+			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">bl?</a>,
+			<a href="#pop_num_00e" data-transition="pop" data-rel="popup">br?</a>,
+			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">setEnabled</a>(
@@ -594,46 +594,46 @@
 			<a href="#pop_lst_002" data-transition="pop" data-rel="popup">navs</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">setMargins</a>(
-			<a href="#pop_num_012" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_013" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_num_012" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_num_013" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_010" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup" class="baseFunc">setMargins</a>(
+			<a href="#pop_num_012" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_012" data-transition="pop" data-rel="popup">right?</a>,
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">bottom?</a>,
+			<a href="#pop_str_010" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">setOnChange</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">setOnContextMenu</a>(
+			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup" class="baseFunc">setOnContextMenu</a>(
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">setOnTouch</a>(
+			<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup" class="baseFunc">setOnTouch</a>(
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">setPadding</a>(
-			<a href="#pop_num_016" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_017" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_num_018" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_num_017" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_011" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup" class="baseFunc">setPadding</a>(
+			<a href="#pop_num_016" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_017" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_018" data-transition="pop" data-rel="popup">right?</a>,
+			<a href="#pop_num_017" data-transition="pop" data-rel="popup">bottom?</a>,
+			<a href="#pop_str_011" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">setPosition</a>(
-			<a href="#pop_num_01a" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_str_012" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup" class="baseFunc">setPosition</a>(
+			<a href="#pop_num_01a" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_str_012" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup">setScale</a>(
+			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">setScale</a>(
 			<a href="#pop_num_01c" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_01d" data-transition="pop" data-rel="popup">y</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup">setSize</a>(
+			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup" class="baseFunc">setSize</a>(
 			<a href="#pop_num_01a" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_num_01f" data-transition="pop" data-rel="popup">height</a> )
 		</div>
@@ -641,7 +641,7 @@
 			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup">shiftItem</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup">show</a>()
+			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup">showLabels</a>()

@@ -112,7 +112,7 @@
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Receive</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">folder</a>,
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">maxCount</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">filter</a> )
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">filter?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Send</a>(
@@ -120,12 +120,12 @@
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">body</a>,
 			<a href="#pop_str_003" data-transition="pop" data-rel="popup">sender</a>,
 			<a href="#pop_str_003" data-transition="pop" data-rel="popup">recipients</a>,
-			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">attach</a> )
+			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">attach?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SetIMAP</a>(
 			<a href="#pop_str_005" data-transition="pop" data-rel="popup">server</a>,
-			<a href="#pop_num_001" data-transition="pop" data-rel="popup">port</a> )
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">port?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">SetOnMessage</a>(
@@ -153,7 +153,7 @@
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“email address”</docstr></div>
 	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“imap/<a href="" onclick="app.ShowPopup('google')">pop.gmail.com</a>”</docstr> or <docstr>“imap/<a href="" onclick="app.ShowPopup('yahoo')">pop.mail.yahoo.com</a>”</docstr> or <docstr>“imap/<a href="" onclick="app.ShowPopup('gmx')">pop.gmx.net</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('google')">smtp.gmail.com</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('yahoo')">smtp.mail.yahoo.com</a>”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('gmx')">mail.gmx.net</a>”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String: comma separated email addresses or names')">from</a>, <a href="" onclick="app.ShowPopup('String: comma separated email addresses or names')">to</a>, <a href="" onclick="app.ShowPopup('String: comma separated email addresses or names')">cc</a>, <a href="" onclick="app.ShowPopup('String')">subject</a>, <a href="" onclick="app.ShowPopup('String')">body</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">data</a>

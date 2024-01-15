@@ -52,7 +52,7 @@
 
 		<div class="samp">
 		syn = app.CreateSynth(
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> )
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type='Signal'</a> )
 			→ <b>app object:</b> Synth
 		</div>
 
@@ -361,7 +361,7 @@
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Signal”</docstr>, <docstr>“VCA”</docstr>, <docstr>“VCF”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“note1:duration1,note2:duration2,...”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“Sin”</docstr>, <docstr>“Saw”</docstr>, <docstr>“Square”</docstr>, <docstr>“White”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>syn.Batch</b><br>Batch method calls to be able to set all object's properties at once.<br>Note that you need to specify each parameter (use <docstr>“”</docstr> or <span class="token keyword">null</span> to leave some out)<br>Inherited methods can be called by appending an underscore to the function name (ie. txt<span class="token punctuation">.</span><span class="token function">Batch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">SetBackColor_</span><span class="token operator">:</span> <span class="token punctuation">[</span><docstr>“red”</docstr><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>syn.GetType</b><br>Returns the control class name.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>syn.PlayMidiTune</b><br>Play a comma-separated sequence of <docstr>“midi_note:duration”</docstr> pairs.</div>

@@ -258,7 +258,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Beep</a>(
 			<a href="#pop_num_hrz" data-transition="pop" data-rel="popup">frequency</a>,
-			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration</a> )
+			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Brake</a>(
@@ -278,8 +278,8 @@
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Drive</a>(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">motors</a>,
 			<a href="#pop_num_prc" data-transition="pop" data-rel="popup">power</a>,
-			<a href="#pop_num_001" data-transition="pop" data-rel="popup">rotations</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">rotations?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">FileFindFirst</a>(
@@ -329,41 +329,41 @@
 		<div class="samp">
 			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">PlaySoundFile</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
-			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat</a> )
+			<a href="#pop_num_int" data-transition="pop" data-rel="popup">repeat=0</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">ReadColorSensor</a>(
-			<a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a>,
-			<a href="#pop_str_005" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">input</a>,
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">mode?</a> )
 			→ <b>Number:</b> <i>integer:</i> 1..6 or 0..1023
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">ReadDistanceSensor</a>(
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">input</a> )
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a> )
 			→ <b>Number:</b> <i>float</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">ReadLightSensor</a>(
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">input</a>,
-			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">active</a> )
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">active?</a> )
 			→ <b>Number:</b> <i>integer:</i> 0..100
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">ReadMail</a>(
-			<a href="#pop_num_006" data-transition="pop" data-rel="popup">mailbox</a>,
-			<a href="#pop_str_006" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">remove</a> )
+			<a href="#pop_num_005" data-transition="pop" data-rel="popup">mailbox</a>,
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">type?</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">remove?</a> )
 			→ <b>String</b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">ReadSoundSensor</a>(
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">input</a>,
-			<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a>,
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode?</a> )
 			→ <b>Number:</b> <i>float</i>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">ReadTouchSensor</a>(
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">input</a> )
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a> )
 			→ <b>Boolean</b>
 		</div>
 		<div class="samp">
@@ -375,9 +375,9 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">SendMail</a>(
-			<a href="#pop_num_006" data-transition="pop" data-rel="popup">mailbox</a>,
-			<a href="#pop_str_006" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">message</a> )
+			<a href="#pop_num_005" data-transition="pop" data-rel="popup">mailbox</a>,
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">type?</a>,
+			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">message?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">SetInvert</a>(
@@ -385,7 +385,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">SetLampColor</a>(
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">input</a>,
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">input</a>,
 			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">color</a> )
 		</div>
 		<div class="samp">
@@ -412,7 +412,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup">ToColorName</a>(
-			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">val</a> )
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">val</a> )
 			→ <b>String:</b> <docstr>“black”</docstr> or <docstr>“blue”</docstr> or <docstr>“green”</docstr> or <docstr>“yellow”</docstr> or <docstr>“red”</docstr> or <docstr>“white”</docstr>
 		</div>
 
@@ -425,11 +425,10 @@
 	<div data-role="popup" id="pop_num_mls" class="ui-content"><b>Number:</b> <i>milliseconds</i></div>
 	<div data-role="popup" id="pop_num_prc" class="ui-content"><b>Number:</b> <i>percent</i></div>
 	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> <i>percent:</i> -100..100</div>
-	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> <i>float:</i> 0 or rotations</div>
-	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> <i>integer:</i> 1</div>
-	<div data-role="popup" id="pop_num_004" class="ui-content"><b>Number:</b> <i>integer:</i> 1..4</div>
-	<div data-role="popup" id="pop_num_006" class="ui-content"><b>Number:</b> <i>integer:</i> 1..10</div>
-	<div data-role="popup" id="pop_num_00b" class="ui-content"><b>Number:</b> <i>integer:</i> 1..6</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> <i>integer:</i> 1</div>
+	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> <i>integer:</i> 1..4</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> <i>integer:</i> 1..10</div>
+	<div data-role="popup" id="pop_num_00a" class="ui-content"><b>Number:</b> <i>integer:</i> 1..6</div>
 	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b>String:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A”</docstr>, <docstr>“B”</docstr>, <docstr>“C”</docstr> or <docstr>“ABC”</docstr></div>
@@ -438,7 +437,7 @@
 	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('Decibels')">DB</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('A-weighted Decibels')">DbA</a>”</docstr></div>
 	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...:</i> <docstr>“White”</docstr> or <docstr>“Red”</docstr> or <docstr>“Green”</docstr> or <docstr>“Blue”</docstr> or <docstr>“Off”</docstr></div>
 	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>String</b><br><b>Number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('Boolean')">connected</a>
 	)</div>
@@ -462,7 +461,7 @@
 	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>nxt.IsEnabled</b><br>Checks if bluetooth is enabled on the device. Its the same as nxt.IsBluetoothEnabled.</div>
 	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>nxt.IsMotorIdle</b><br>Checks if a motor is currently powered</div>
 	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>nxt.IsPaired</b><br>Checks if a Bluetooth device with a given name is paired with our device.</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>nxt.PlaySoundFile</b><br>Play a sound file for a given amount of times.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>nxt.PlaySoundFile</b><br>Play a sound file a certain amount of times.</div>
 	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>nxt.ReadColorSensor</b><br>Read a color sensor value on the input where the sensor is plugged into.<br><br>In <docstr>“ColorDetect”</docstr> mode this function returns a value between 1 and 6 which represent the colors <docstr>“black”</docstr>, <docstr>“blue”</docstr>, <docstr>“green”</docstr>, <docstr>“yellow”</docstr>, <docstr>“red”</docstr>, or <docstr>“white”</docstr>.<br>You can use the ToColorName function to convert from these six values to a color name.<br>All other modes return a value between 0 and 1023.</div>
 	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>nxt.ReadDistanceSensor</b><br>Reads the distance measured by the ultrasonic sensor in centimeters.</div>
 	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>nxt.ReadLightSensor</b><br>Reads the intensity of the light currently being 'seen' by the NXT light sensor. If active is set true an additionall white LED will be turned on while sensing.</div>

@@ -108,20 +108,20 @@
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Load</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Merge</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">data</a>,
-			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
+			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Save</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_std_all" data-transition="pop" data-rel="popup">data</a>,
-			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">SetDescription</a>(
@@ -131,9 +131,9 @@
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">Upload</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_str_mim" data-transition="pop" data-rel="popup">type</a>,
-			<a href="#pop_fnc_005" data-transition="pop" data-rel="popup">callback</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">password</a> )
+			<a href="#pop_str_mim" data-transition="pop" data-rel="popup">type?</a>,
+			<a href="#pop_fnc_005" data-transition="pop" data-rel="popup">callback?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">password?</a> )
 		</div>
 
 	</div>
@@ -143,7 +143,7 @@
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
 	<div data-role="popup" id="pop_str_mim" class="ui-content"><b>String:</b> <i>mimetype</i></div>
 	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b>String:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
 	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: comma “,” separated')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
 	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('all types')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>

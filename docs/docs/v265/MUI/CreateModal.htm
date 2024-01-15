@@ -53,10 +53,10 @@
 		mdl = MUI.CreateModal(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">body</a>,
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">okTxt</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">cancelTxt</a>,
-			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">show</a>,
-			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">okTxt?</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">cancelTxt?</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">show?</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>Object</b>
 		</div>
 
@@ -359,8 +359,8 @@
 			→ <b>Object:</b> {
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a> }
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
@@ -387,7 +387,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">IsOverlap</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth?</a> )
 			→ <b>Boolean</b>
 		</div>
 		<div class="samp">
@@ -399,7 +399,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">SetHeaderColor</a>(
-			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
+			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">SetOnClose</a>(
@@ -440,7 +440,7 @@
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Body text. If you want to customize the modal layout pass an empty string.”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“Truthy button text”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“Falsy button text”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Dialog options with additional Full option”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Dialog options”</docstr> or <docstr>“Full”</docstr></div>
 	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“px”</docstr></div>
 	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
 	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>

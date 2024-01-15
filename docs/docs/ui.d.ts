@@ -1,5 +1,5 @@
 declare var ui: UI;
-declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopover | UIPopup | UIProgressDialog;
+declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopup | UIProgressDialog;
 /** ui object */
 declare type uio = UIObject;
 
@@ -401,8 +401,9 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
  `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
+	 * @return \Popover
 	 */
-	showPopover(parent: obj, text?: str, position?: str, width?: num, height?: num): UIPopover;
+	showPopover(parent: obj, text?: str, position?: str, width?: num, height?: num): Popover;
 
 	/**
 	 * ShowPopup
@@ -5203,16 +5204,6 @@ declare class UIDateTimePicker {
 
 	/** SetOnSelect */
 	setOnSelect(callback: (value: str) => void): void;
-}
-
-
-declare class UIPopover {
-
-	/** Back image */
-	backImage: str;
-
-	/** Font file */
-	fontFile: str;
 }
 
 

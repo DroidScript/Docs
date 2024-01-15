@@ -51,7 +51,7 @@
 
 		<div class="samp">
 		dwn = app.CreateDownloader(
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>app object:</b> Downloader
 		</div>
 
@@ -111,8 +111,8 @@
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Download</a>(
 			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">url</a>,
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">fldr</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">headers</a> )
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">headers?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetProgress</a>() → <b>Number:</b> <i>fraction (0..1)</i>
@@ -129,11 +129,11 @@
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">types?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4?</a> )
 			→ <b>all types</b>
 		</div>
 		<div class="samp">
@@ -158,9 +158,9 @@
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“NoDialog”</docstr> or <docstr>“Light”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> ):</i> <docstr>“must not have a trailing slash”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“boolean”</docstr>, <docstr>“char”</docstr>, <docstr>“byte”</docstr>, <docstr>“short”</docstr>, <docstr>“int”</docstr>, <docstr>“long”</docstr>, <docstr>“float”</docstr>, <docstr>“double”</docstr>, <docstr>“String”</docstr>, <docstr>“CharSequence”</docstr>, <docstr>“...”</docstr></div>
 	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>String:</b> <i>url path</i><br><b>List:</b> [<a href="" onclick="app.ShowPopup('String: url path')">urls</a>]</div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String: path to file or folder ( “/absolute/...” or “relative/...” )')">file</a>
 	)</div>

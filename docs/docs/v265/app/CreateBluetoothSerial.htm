@@ -51,7 +51,7 @@
 
 		<div class="samp">
 		bls = app.CreateBluetoothSerial(
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">mode='Text'</a> )
 			→ <b>app object:</b> BluetoothSerial
 		</div>
 
@@ -182,11 +182,11 @@
 		<div class="samp">
 			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">types?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4?</a> )
 			→ <b>all types</b>
 		</div>
 		<div class="samp">
@@ -194,14 +194,15 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">SetDataMode</a>(
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">SetOnConnect</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">SetOnDisconnect</a>()
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">SetOnDisconnect</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">SetOnReceive</a>(
@@ -209,9 +210,9 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">SetSplitMode</a>(
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">mode</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">mode</a>,
 			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">p2</a>,
-			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">p3</a> )
+			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">p3?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">SetTimeout</a>(
@@ -228,11 +229,11 @@
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
 	<div data-role="popup" id="pop_num_mls" class="ui-content"><b>Number:</b> <i>milliseconds</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Text”</docstr> or <docstr>“Int”</docstr> or <docstr>“Hex”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('comma separated text value')">Hex</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('comma separated byte numbers')">Int</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('string of text characters')">Text</a>”</docstr> or <docstr>“&lt;<a href="" onclick="app.ShowPopup('UTF-16L/BE')">encoding</a>&gt;”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“End”</docstr> or <docstr>“Start-End”</docstr> or <docstr>“Size”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“boolean”</docstr>, <docstr>“char”</docstr>, <docstr>“byte”</docstr>, <docstr>“short”</docstr>, <docstr>“int”</docstr>, <docstr>“long”</docstr>, <docstr>“float”</docstr>, <docstr>“double”</docstr>, <docstr>“String”</docstr>, <docstr>“CharSequence”</docstr>, <docstr>“...”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('comma separated text value')">Hex</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('comma separated byte numbers')">Int</a>”</docstr> or <docstr>“<a href="" onclick="app.ShowPopup('string of text characters')">Text</a>”</docstr> or <docstr>“&lt;<a href="" onclick="app.ShowPopup('UTF-16L/BE')">encoding</a>&gt;”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“End”</docstr> or <docstr>“Start-End”</docstr> or <docstr>“Size”</docstr></div>
 	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>String</b><br><b>Number:</b> <i>integer</i></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String')">name</a>,
 		<a href="" onclick="app.ShowPopup('String')">address</a>

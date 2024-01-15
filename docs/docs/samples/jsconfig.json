@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": [
+            "ES6",
+            "DOM"
+        ],
+        "allowJs": true,
+        "checkJs": true
+    },
+    "include": [
+        "**/*.js",
+        "**/*.d.ts",
+        "../ui.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

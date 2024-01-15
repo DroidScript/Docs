@@ -52,7 +52,7 @@
 		<div class="samp">
 		ynd = app.CreateYesNoDialog(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>app object:</b> YesNoDialog
 		</div>
 
@@ -96,9 +96,9 @@
 		<div class="samp">
 			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">AdjustColor</a>(
 			<a href="#pop_num_001" data-transition="pop" data-rel="popup">hue</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">saturation</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">brightness</a>,
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">contrast</a> )
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">saturation?</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">brightness?</a>,
+			<a href="#pop_num_004" data-transition="pop" data-rel="popup">contrast?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Batch</a>(
@@ -116,22 +116,22 @@
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">types</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4</a> )
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">types?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p2?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p3?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p4?</a> )
 			→ <b>all types</b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="baseFunc">SetBackColor</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
-			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">radius</a> )
+			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">radius?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetButtonText</a>(
@@ -146,7 +146,7 @@
 			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">SetSize</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
@@ -163,10 +163,10 @@
 	<div data-role="popup" id="pop_str_col" class="ui-content"><b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
 	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b>String:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“NoDim”</docstr>, <docstr>“NoFocus”</docstr>, <docstr>“TouchModal”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“repeat”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> boolean,char,byte,short,int,long,float,double,String,CharSequence,...</div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“boolean”</docstr>, <docstr>“char”</docstr>, <docstr>“byte”</docstr>, <docstr>“short”</docstr>, <docstr>“int”</docstr>, <docstr>“long”</docstr>, <docstr>“float”</docstr>, <docstr>“double”</docstr>, <docstr>“String”</docstr>, <docstr>“CharSequence”</docstr>, <docstr>“...”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“repeat”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“px”</docstr> or <docstr>“sp”</docstr> or <docstr>“dip”</docstr> or <docstr>“dp”</docstr> or <docstr>“mm”</docstr> or <docstr>“pt”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('String')">command</a>: <a href="" onclick="app.ShowPopup('List')">args</a> }</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String: “Yes” or “No”')">result</a>
 	)</div>

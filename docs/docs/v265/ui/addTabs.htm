@@ -51,13 +51,13 @@
 		<p>Adds a Tabs Component into your layout.</p>
 
 		<div class="samp">
-		s = ui.addTabs(
+		tab = ui.addTabs(
 			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
-			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">list</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
-			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height</a> )
-			→ <b>Object:</b> Tabs Component
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">list?</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options?</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width?</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height?</a> )
+			→ <b>ui object:</b> Tabs
 		</div>
 
 		<p>Default Tab variant for mobile screens is <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">fullWidth</span> unless provided.</p>
@@ -756,16 +756,16 @@
 			<a href="#pop_num_003" data-transition="pop" data-rel="popup">index</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">animate</a>(
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">animate</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">anim</a>,
-			<a href="#pop_num_004" data-transition="pop" data-rel="popup">duration</a> )
+			<a href="#pop_num_004" data-transition="pop" data-rel="popup">duration?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">bringForward</a>(
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">bringForward</a>(
 			<a href="#pop_num_005" data-transition="pop" data-rel="popup">zIndex</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">destroy</a>()
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup" class="baseFunc">destroy</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">getEnabled</a>(
@@ -780,7 +780,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">getLayout</a>(
 			<a href="#pop_str_006" data-transition="pop" data-rel="popup">name</a> )
-			→ <b>Object:</b> Layout Component
+			→ <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">getLayoutIndex</a>(
@@ -788,15 +788,15 @@
 			→ <b>Number</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">getPosition</a>(
-			<a href="#pop_str_007" data-transition="pop" data-rel="popup">options</a> )
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">getPosition</a>(
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>Object</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">gone</a>()
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">gone</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">hide</a>()
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">hide</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">removeTabByIndex</a>(
@@ -807,22 +807,22 @@
 			<a href="#pop_str_008" data-transition="pop" data-rel="popup">name</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">sendBackward</a>(
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">sendBackward</a>(
 			<a href="#pop_num_008" data-transition="pop" data-rel="popup">zIndex</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">setBorder</a>(
-			<a href="#pop_num_009" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_str_009" data-transition="pop" data-rel="popup">clr</a>,
-			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">style</a> )
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
+			<a href="#pop_num_009" data-transition="pop" data-rel="popup">width?</a>,
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">clr?</a>,
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">style?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">setCornerRadius</a>(
-			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">tl</a>,
-			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">tr</a>,
-			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">bl</a>,
-			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">br</a>,
-			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">tl?</a>,
+			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">tr?</a>,
+			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">bl?</a>,
+			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">br?</a>,
+			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">setEnabled</a>(
@@ -847,56 +847,56 @@
 			<a href="#pop_num_012" data-transition="pop" data-rel="popup">radius</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">setMargins</a>(
-			<a href="#pop_num_013" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_014" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_num_013" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_num_014" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">setMargins</a>(
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_014" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">right?</a>,
+			<a href="#pop_num_014" data-transition="pop" data-rel="popup">bottom?</a>,
+			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">setOnChange</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">setOnContextMenu</a>(
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">setOnContextMenu</a>(
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">setOnTouch</a>(
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">setOnTouch</a>(
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">setPadding</a>(
-			<a href="#pop_num_017" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_018" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_num_019" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_num_018" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_010" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup" class="baseFunc">setPadding</a>(
+			<a href="#pop_num_017" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_018" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_019" data-transition="pop" data-rel="popup">right?</a>,
+			<a href="#pop_num_018" data-transition="pop" data-rel="popup">bottom?</a>,
+			<a href="#pop_str_010" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">setPosition</a>(
-			<a href="#pop_num_01b" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_str_011" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup" class="baseFunc">setPosition</a>(
+			<a href="#pop_num_01b" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_str_011" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">setScale</a>(
+			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup" class="baseFunc">setScale</a>(
 			<a href="#pop_num_01d" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_01e" data-transition="pop" data-rel="popup">y</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">setSize</a>(
+			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup" class="baseFunc">setSize</a>(
 			<a href="#pop_num_01b" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_num_020" data-transition="pop" data-rel="popup">height</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">setTabPadding</a>(
-			<a href="#pop_num_021" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_num_022" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_num_023" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_num_024" data-transition="pop" data-rel="popup">bottom</a>,
-			<a href="#pop_str_012" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_num_021" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_022" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_023" data-transition="pop" data-rel="popup">right?</a>,
+			<a href="#pop_num_024" data-transition="pop" data-rel="popup">bottom?</a>,
+			<a href="#pop_str_012" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">setTabs</a>(
@@ -908,7 +908,7 @@
 			<a href="#pop_str_013" data-transition="pop" data-rel="popup">title</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup">show</a>()
+			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup">showScrollButton</a>(
@@ -1034,43 +1034,43 @@
 	)</div>
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String: “The tab name text.”')">name</a>,
-		<a href="" onclick="app.ShowPopup('Number: tab item index.')">The</a>
+		<a href="" onclick="app.ShowPopup('Number: tab item index.')">index</a>
 	)</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>s.addTab</b><br>Add or insert a tab to the Tabs Component</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>s.animate</b><br>Animate the component</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>s.bringForward</b><br>Bring this component forward by a given z-index</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>s.destroy</b><br>Destroy the component</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>s.getEnabled</b><br>Get the enabled state of a tab</div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>s.getEnabledByName</b><br>Get the enabled state of a tab by its name</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>s.getLayout</b><br>Returns the layout of the corresponding tab. You can then add components into the returned layout</div>
-	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>s.getLayoutIndex</b><br>Get the index of the corresponding layout</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>s.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom</div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>s.gone</b><br>Destroy the component</div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>s.hide</b><br>Hide the component</div>
-	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>s.removeTabByIndex</b><br>Removes a tab item by its corresponding index</div>
-	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>s.removeTabByName</b><br>Removes a tab item by its corresponding name</div>
-	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>s.sendBackward</b><br>Bring this component backward by a given z-index</div>
-	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>s.setBorder</b><br>Sets the border line for the component container</div>
-	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>s.setCornerRadius</b><br>Sets the corner radius of the tab</div>
-	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>s.setEnabled</b><br>Enable or disable a tab item. Pass <kbd>index</kbd> as number if you want the corresponding tab index to be enabled or disabled<br>Pass <kbd>index</kbd> as Boolean, if you want to disable the entire Tabs component</div>
-	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>s.setEnabledByName</b><br>Enable or disable a tab by its name</div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>s.setIcon</b><br>Sets an icon to a corresponding tab title</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>s.setIndicatorStyle</b><br>Add a custom styling to the indicator color</div>
-	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>s.setMargins</b><br>Sets the margin of the component</div>
-	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>s.setOnChange</b><br>Sets a callback function when the value of the tab changes</div>
-	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>s.setOnContextMenu</b><br>Adds a callback function on right click</div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>s.setOnTouch</b><br>Add a callback function when a tab item i click</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>s.setPadding</b><br>Sets the padding component container</div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>s.setPosition</b><br>Sets the position of the component relative to its parent dimensions</div>
-	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>s.setScale</b><br>Sets the x and y scaling of the component</div>
-	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>s.setSize</b><br>Sets the size of the component</div>
-	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>s.setTabPadding</b><br>Sets the padding of the tab items</div>
-	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>s.setTabs</b><br>Sets the tab titles array</div>
-	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>s.setTitleText</b><br>Sets a new title for the corresponding tab</div>
-	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>s.show</b><br>Show the component</div>
-	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>s.showScrollButton</b><br>Determines the behavior of scroll buttons when tabs are set to `scrollable</div>
-	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>s.showTab</b><br>Show a tab panel by its corresponding name. This will make the tab in active state</div>
-	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>s.showTabByIndex</b><br>Show a tab panel by its corresponding name. This will make the tab in active state</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>tab.addTab</b><br>Add or insert a tab to the Tabs Component</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>tab.animate</b><br>Animate the component</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>tab.bringForward</b><br>Bring this component forward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>tab.destroy</b><br>Destroy the component</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>tab.getEnabled</b><br>Get the enabled state of a tab</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>tab.getEnabledByName</b><br>Get the enabled state of a tab by its name</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>tab.getLayout</b><br>Returns the layout of the corresponding tab. You can then add components into the returned layout</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>tab.getLayoutIndex</b><br>Get the index of the corresponding layout</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>tab.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>tab.gone</b><br>Destroy the component</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>tab.hide</b><br>Hide the component</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>tab.removeTabByIndex</b><br>Removes a tab item by its corresponding index</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>tab.removeTabByName</b><br>Removes a tab item by its corresponding name</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>tab.sendBackward</b><br>Bring this component backward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>tab.setBorder</b><br>Sets the border line for the component container</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>tab.setCornerRadius</b><br>Sets the corner radius of the tab</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>tab.setEnabled</b><br>Enable or disable a tab item. Pass <kbd>index</kbd> as number if you want the corresponding tab index to be enabled or disabled<br>Pass <kbd>index</kbd> as Boolean, if you want to disable the entire Tabs component</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>tab.setEnabledByName</b><br>Enable or disable a tab by its name</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>tab.setIcon</b><br>Sets an icon to a corresponding tab title</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>tab.setIndicatorStyle</b><br>Add a custom styling to the indicator color</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>tab.setMargins</b><br>Sets the margin of the component</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>tab.setOnChange</b><br>Sets a callback function when the value of the tab changes</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>tab.setOnContextMenu</b><br>Adds a callback function on right click</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>tab.setOnTouch</b><br>Add a callback function when a tab item i click</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>tab.setPadding</b><br>Sets the padding component container</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>tab.setPosition</b><br>Sets the position of the component relative to its parent dimensions</div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>tab.setScale</b><br>Sets the x and y scaling of the component</div>
+	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>tab.setSize</b><br>Sets the size of the component</div>
+	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>tab.setTabPadding</b><br>Sets the padding of the tab items</div>
+	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>tab.setTabs</b><br>Sets the tab titles array</div>
+	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>tab.setTitleText</b><br>Sets a new title for the corresponding tab</div>
+	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>tab.show</b><br>Show the component</div>
+	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>tab.showScrollButton</b><br>Determines the behavior of scroll buttons when tabs are set to `scrollable</div>
+	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>tab.showTab</b><br>Show a tab panel by its corresponding name. This will make the tab in active state</div>
+	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>tab.showTabByIndex</b><br>Show a tab panel by its corresponding name. This will make the tab in active state</div>
 </div>
 </body>
 
