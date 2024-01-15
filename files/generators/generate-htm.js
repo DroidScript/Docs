@@ -24,7 +24,7 @@ const _htm = { comma: ',', colon: ':', bsol: '\\', period: '.', lowbar: '_', ver
 
 // html templates
 let [subfBase, naviItem, switchPop, appPopup, codeBase,
-    txtPopup, defPopup, subfHead] = "";
+    txtPopup, defPopup, subfHead, propsHead] = "";
 /** @type {Obj<string>} */
 let hints = {};
 let dbg = false;
@@ -47,7 +47,9 @@ function generateDoc(state, inpt, name) {
 
     state.curDoc = getDstDir(D_SCOPE, state, ps.name.replace(/^\d+|\s+/g, '') + '.htm');
 
-    let data, funcLine = "", subfuncs = "", desc = ps.desc || "";
+    let data, funcLine = "", desc = ps.desc || "";
+    /** @type {string[]} */
+    const subfuncs = [];
 
     // get description from external file
     desc = unwrapDesc(ps.desc, state);
@@ -67,10 +69,18 @@ function generateDoc(state, inpt, name) {
         funcLine += `${state.curScope}.${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
 
         // subfunctions of controls with popups
-        if (ps.subf && data.mets) {
-            subfuncs = subfHead
-                .replace(/%t/g, name.replace(regConPrefix, ''))
-                .replace("%f", data.mets);
+        if (ps.subf) {
+            if (data.props) {
+                subfuncs.push(propsHead
+                    .replace(/%t/g, name.replace(regConPrefix, ''))
+                    .replace("%f", data.props));
+            }
+
+            if (data.mets) {
+                subfuncs.push(subfHead
+                    .replace(/%t/g, name.replace(regConPrefix, ''))
+                    .replace("%f", data.mets));
+            }
         }
     }
     // if (!desc) console.log(m);
@@ -290,7 +300,7 @@ function getDocData(inpt, state, f, useAppPop = false) {
     if (!f.subf || !keys(f.subf).length)
         return { args: smArgs, ret: fretval, mets: "" };
 
-    let k, methods = "";
+    let k, methods = "", props = "";
     // function list
     const mkeys = keys(f.subf).filter(nothidden).sort(sortAsc);
 
@@ -335,11 +345,12 @@ function getDocData(inpt, state, f, useAppPop = false) {
         if (has(state.curSubf, '.'))
             metpop = state.curSubf.split(".").fill("  ").join("") + metpop.italics();
 
-        methods += subfBase.replace(m.isval ? "\n\t\t" : "", "").replace("%s", metpop + retval);
+        if (m.isval && !met.name.includes(".")) props += subfBase.replace("\n\t\t", "").replace("%s", metpop + retval);
+        else methods += subfBase.replace(m.isval ? "\n\t\t" : "", "").replace("%s", metpop + retval);
     }
     state.curSubf = "";
 
-    return { args: String(mArgs) + " ", mets: methods, ret: fretval };
+    return { args: String(mArgs) + " ", mets: methods, props, ret: fretval };
 }
 
 /** read and return html converted example snippets file
@@ -773,6 +784,8 @@ codeBase = '\n\t\t<div class="samp">\n\t\t%s\n\t\t</div>\n\n';
 txtPopup = '\n\t\t\t<a href="#pop_%s" data-transition="pop" data-rel="popup"%s>%s</a>';
 // popup object
 defPopup = '<div data-role="popup" id="pop_%s" class="ui-content">%s</div>';
+// props list
+propsHead = `<h3>Properties</h3>\n\t\t<p><br>The following properties are available on the <strong>%t</strong> object:</p>\n\n%f`;
 // subfunction list
 subfHead = `<h3>Methods</h3>\n\t\t<p><br>The following methods are available on the <strong>%t</strong> object:</p>\n\n%f`;
 /** @type {Obj<string>} */
@@ -852,7 +865,7 @@ ${getHead(title, 0)}
 </html>\n`;
 }
 
-function htmlDoc(title = "", desc = "", subf = "", construct = "") {
+function htmlDoc(title = "", desc = "", subf = /** @type {string[]} */ ([]), construct = "") {
     title = title.replace(/^\d+\s*/, '');
     return `
 <!DOCTYPE html>
@@ -879,7 +892,7 @@ ${getHead(title, 1)}
 
 \t<div data-role="content">
 \t\t${desc.replace("%c", construct)}
-\t\t${subf}
+\t\t${subf.join("\n\t\t")}
 \t</div>
 
 \t%p

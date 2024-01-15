@@ -22,7 +22,7 @@
 /** ### layout
  * @prop
  * Returns the layout of the dialog where you can add custom controls.
- * @returns uio-Layout
+ * @returns uio-addLayout
  */
 
                     

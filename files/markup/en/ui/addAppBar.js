@@ -135,7 +135,7 @@
 /** ### layout
  * @prop
  * Returns the right layout of the appbar where you can add controls.
- * @returns uio-Layout
+ * @returns uio-addLayout
  */
 
                     
