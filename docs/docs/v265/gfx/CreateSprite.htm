@@ -43,6 +43,7 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
 				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
 			</span><br>
 		</div>
@@ -76,20 +77,34 @@
 		</div>
 
 		<p>The second way is to create a SpriteSheet using the <a href="CreateSpriteSheet.htm" data-ajax="false">CreateSpriteSheet</a> method which might come handy if a single sprite has multiple animations or if a sprite is reused but using a different sprite sheet.</p>
-		<h3>Methods</h3>
-		<p>The following methods are available on the <strong>Sprite</strong> object:</p>
+		<h3>Properties</h3>
+		<p>The following properties are available on the <strong>Sprite</strong> object:</p>
 
 		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">added</a> → <b>Boolean</b></div>
 		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">alpha</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
 		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">angle</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
 		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">aspect</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">data</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">group</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">height</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">pivotX</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">pivotY</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">scaleX</a> → <b>Number:</b> <i>factor</i></div>
+		<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">scaleY</a> → <b>Number:</b> <i>factor</i></div>
+		<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">visible</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">width</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">x</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
+		<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">y</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Sprite</strong> object:</p>
+
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="baseFunc">Contains</a>(
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">y</a> )
 			→ <b>Boolean</b>
 		</div>
-		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">data</a> → <b>Object</b></div>
 		<div class="samp">
 			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Flip</a>(
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">horiz</a>,
@@ -102,13 +117,9 @@
 			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">Goto</a>(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">frame</a> )
 		</div>
-		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">group</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">height</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
 		<div class="samp">
 			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">PauseTween</a>()
 		</div>
-		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">pivotX</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
-		<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">pivotY</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
 		<div class="samp">
 			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">Play</a>(
 			<a href="#pop_num_int" data-transition="pop" data-rel="popup">startFrame</a>,
@@ -129,8 +140,6 @@
 		<div class="samp">
 			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">PlayTween</a>()
 		</div>
-		<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">scaleX</a> → <b>Number:</b> <i>factor</i></div>
-		<div class="samp"><a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">scaleY</a> → <b>Number:</b> <i>factor</i></div>
 		<div class="samp">
 			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">SetLoop</a>(
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">loop</a> )
@@ -198,10 +207,6 @@
 		<div class="samp">
 			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">Update</a>()
 		</div>
-		<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">visible</a> → <b>Boolean</b></div>
-		<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">width</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">x</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
-		<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">y</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
 
 	</div>
 
