@@ -3,9 +3,9 @@
 
 /** # Func #
  * Call main app functions from inside a webview
- * $$ app.Func(name, args...) $$ 
+ * $$ app.Func(name, ...args) $$ 
  * @param {str} name 
- * @param {all} args... 
+ * @param {all} ...args 
 */
 
 

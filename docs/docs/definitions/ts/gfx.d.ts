@@ -1,4 +1,6 @@
 declare var gfx: DsGfx;
+declare type GfxGraphic = GfxCircle|GfxEllipse|GfxPolygon|GfxRectangle;
+declare type GfxTexture = { noframe: bin, baseTexture: obj, frame: {x:num_frc, y:num_frc, width:num_frc, height:num_frc} };
 declare type GameObject = GfxPhysics | GfxBackground | GfxCircle | GfxEllipse | GfxPolygon | GfxRectangle | GfxSound | GfxSprite | GfxSpriteSheet | GfxText;
 /** game object */
 declare type gvo = GameObject;
@@ -94,6 +96,12 @@ declare class DsGfx {
 
 	/** Current key state */
 	keyState: "Down"|"Up";
+
+	/**
+	 * Wrapper class for PIXI.js matrix
+	 * @return \Matrix
+	 */
+	Matrix(): Matrix;
 
 	/** Enables multitouch */
 	multiTouch: bin;
@@ -195,7 +203,7 @@ declare class GfxPhysics {
 
 	/**
 	 * Applies a 2D transformation matrix to the game object
-	 * @param mtx \Matrix
+	 * @param mtx Matrix
 	 */
 	SetMatrix(mtx: Matrix): void;
 
@@ -260,7 +268,7 @@ declare class GfxCircle {
 
 	/**
 	 * Set 2d transformation
-	 * @param mtx \Matrix
+	 * @param mtx Matrix
 	 */
 	SetMatrix(mtx: Matrix): void;
 
@@ -312,7 +320,7 @@ declare class GfxEllipse {
 
 	/**
 	 * Set 2d transformation
-	 * @param mtx \Matrix
+	 * @param mtx Matrix
 	 */
 	SetMatrix(mtx: Matrix): void;
 
@@ -364,7 +372,7 @@ declare class GfxPolygon {
 
 	/**
 	 * Set 2d transformation
-	 * @param mtx \Matrix
+	 * @param mtx Matrix
 	 */
 	SetMatrix(mtx: Matrix): void;
 
@@ -416,7 +424,7 @@ declare class GfxRectangle {
 
 	/**
 	 * Set 2d transformation
-	 * @param mtx \Matrix
+	 * @param mtx Matrix
 	 */
 	SetMatrix(mtx: Matrix): void;
 
@@ -515,7 +523,7 @@ declare class GfxSprite {
 
 	/**
 	 * Set 2d transformation
-	 * @param mtx \Matrix
+	 * @param mtx Matrix
 	 */
 	SetMatrix(mtx: Matrix): void;
 
@@ -536,9 +544,9 @@ declare class GfxSprite {
 
 	/**
 	 * Setup tween methods
-	 * @param target \{ x, y, w, w, sw, sh, rot }
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	SetTween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	SetTween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Start tween */
 	StartTween(): void;
@@ -554,9 +562,9 @@ declare class GfxSprite {
 
 	/**
 	 * Animates the control
-	 * @param target \{ x, y, w, w, sw, sh, rot }
+	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Updates internal properties */
 	Update(): void;
@@ -622,7 +630,7 @@ declare class GfxText {
 
 	/**
 	 * Set 2d transformation
-	 * @param mtx \Matrix
+	 * @param mtx Matrix
 	 */
 	SetMatrix(mtx: Matrix): void;
 
@@ -634,6 +642,34 @@ declare class GfxText {
 
 	/** Object width */
 	width: num;
+}
+
+
+declare class Matrix {
+
+	/**
+	 * The PIXI.js Matrix
+	 * @return Pixi Matrix
+	 */
+	mtx: obj;
+
+	/** Move by a given amount on both axes */
+	Translate(tx: num, ty: num): void;
+
+	/** Rotate by a given angle around the axes origin (0,0) */
+	Rotate(angle: num): void;
+
+	/** Scale by a given amount on both axes */
+	Scale(sx: num, sy: num): void;
+
+	/** Set the matrix elements to specific values */
+	Set(a: num, b: num, c: num, d: num, tx: num, ty: num): void;
+
+	/** Skew / Distort the object on both axes */
+	Skew(skewX: num, skewY: num): void;
+
+	/** Shortcut to app.../app/Vibrate) */
+	Transform(tx: num, ty: num, pivotX: num, pivotY: num, scaleX: num, scaleY: num, rotation: num, skewX: num, skewY: num): void;
 }
 
 

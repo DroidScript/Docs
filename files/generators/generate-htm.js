@@ -20,6 +20,10 @@ require('prismjs/components/prism-python.min.js');
 
 // html char placeholders
 const _htm = { comma: ',', colon: ':', bsol: '\\', period: '.', lowbar: '_', verbar: '|', "#160": " ", nbsp: " ", ldquo: "“", rdquo: "”" };
+/** @type {Obj<string>} */
+const tName = { ...conf.tname };
+/** @type {Obj<string>} */
+const tDesc = { ...conf.tdesc };
 
 
 // html templates
@@ -66,7 +70,9 @@ function generateDoc(state, inpt, name) {
 
         // function line with popups
         if (m.abbrev) funcLine = m.abbrev + " = ";
-        funcLine += `${state.curScope}.${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
+        const isGlob = m.subf && state.curScope !== "MUI" && m.retval?.startsWith("obj");
+        funcLine += isGlob ? 'new ' : state.curScope + '.';
+        funcLine += `${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
 
         // subfunctions of controls with popups
         if (ps.subf) {
@@ -440,8 +446,6 @@ function toHtmlSamp(name, jsSample, pySample, state) {
  * @param {DSInput} inpt
  * @param {string} stypes */
 function typeDesc(inpt, state, stypes) {
-    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
-    const { tname: tName, tdesc: tDesc } = conf;
     const types = stypes.split("||").map((/** @type {string} */ type) => [type.slice(0, 3)]
         .concat(type
             // custom type desc
@@ -497,8 +501,6 @@ function typeDesc(inpt, state, stypes) {
  */
 function toArgPop(inpt, state, name, stypes, doSwitch) {
     if (Array.isArray(stypes)) return "";
-    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
-    const { tname: tName, tdesc: tDesc } = conf;
 
     // function callbacks
     if (typeof stypes === "object") {
@@ -592,8 +594,6 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
  * @param {string} stypes
  */
 function toArgAppPop(name, stypes) {
-    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
-    const { tname: tName, tdesc: tDesc } = conf;
 
     const types = stypes.split("||")
         .map((/** @type {string} */ type) => [type.slice(0, 3)]
@@ -617,8 +617,6 @@ function toArgAppPop(name, stypes) {
  * @param {boolean} [useAppPop]
  */
 function replaceTypes(inpt, state, descStr, useAppPop) {
-    /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
-    const { tname: tName, tdesc: tDesc } = conf;
 
     const tags = /** @type {string[]} */ ([]);
     if (useAppPop) descStr = descStr.replace(/<(style|a)\b.*?>.*?<\/\1>|style=[^>]*/g, '');

@@ -9,7 +9,8 @@
 		"CreateSound": "Returns a new sound object",
 		"CreateSprite": "Returns a new sprite object",
 		"CreateSpriteSheet": "Returns a new SpriteSheet object",
-		"CreateText": "Returns a new text object"
+		"CreateText": "Returns a new text object",
+		"Matrix": "Wrapper class for PIXI.js matrix"
 	},
 	"phs": {
 		"AddShape": "Adds velocity to the object",
@@ -162,5 +163,14 @@
 		"Update": "Updates internal properties",
 		"visible": "Visibility state",
 		"width": "Object width"
+	},
+	"mtx": {
+		"mtx": "The PIXI.js Matrix",
+		"Translate": "Move by a given amount on both axes",
+		"Rotate": "Rotate by a given angle around the axes origin (0,0)",
+		"Scale": "Scale by a given amount on both axes",
+		"Set": "Set the matrix elements to specific values",
+		"Skew": "Skew / Distort the object on both axes",
+		"Transform": "Shortcut to app.@../app/Vibrate)"
 	}
 }

@@ -63,6 +63,7 @@ ${info} * ${_desc}
         const fileName = key + ".js";
         const outputFile = folder + fileName;
         const data = obj[key];
+        data.name ||= key;
 
         str += renderInfo(scope, key, data);
 
@@ -133,9 +134,12 @@ function renderSubf(data, usedIDs) {
         let methodData = data.subf[method];
 
         if (typeof methodData === "string") {
-            if (!methodData.match(/^(#|r\/)/)) throw Error("Unexpected subf string " + methodData);
-            if (/[a-z]/i.test(methodData[1])) methodData = methodData.slice(1);
-            const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || methodData[1] === "/" || '';
+            const isDef = data.name === "_tsxdefs";
+            if (!isDef && !methodData.startsWith('#'))
+                throw Error("Unexpected subf string " + methodData);
+
+            if (/^#[a-z]/i.test(methodData)) methodData = methodData.slice(1);
+            const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || isDef || '';
             str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
             usedIDs[method] ||= methodData;
         }

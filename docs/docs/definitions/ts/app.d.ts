@@ -3150,13 +3150,13 @@ declare class DsGLView {
 
 	/**
 	 * Draw image to canvas
-	 * @param image \img
+	 * @param image img
 	 */
 	DrawImage(image: GLV_img, x: num_frc, y: num_frc, w?: num_frc, h?: num_frc, angle?: num_deg): void;
 
 	/**
 	 * Draw part of a sprite to the canvas
-	 * @param sheet \img
+	 * @param sheet img
 	 */
 	DrawSprite(sheet: GLV_img, sx: num_pxl, sy: num_pxl, sw: num_pxl, sh: num_pxl, dx: num_frc, dy: num_frc, dw: num_frc, dh: num_frc, angle: num_deg): void;
 
@@ -3314,7 +3314,7 @@ declare class GLV_ctx {
 
 	/**
 	 * Draws part of a sprite to the context
-	 * @param image \img
+	 * @param image img
 	 */
 	drawImage(image: GLV_img, sx: num_pxl, sy: num_pxl, sw: num_pxl, sh: num_pxl, dx: num_pxl, dy: num_pxl, dw: num_pxl, dh: num_pxl): void;
 
