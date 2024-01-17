@@ -4,6 +4,9 @@ const { keys, regConPrefix, split1, special, replW, Throw, unwrapDesc, fillMissi
 
 module.exports = { generateTsx };
 
+/** @typedef {{name:string; type:string; desc:string; dflt:string}} ParamDef */
+/** @typedef {{main:string, sub:string, desc:string}} TypeDef */
+
 /** @type {Obj<string>} */
 const tsxTypes = {
     str: "string",
@@ -51,12 +54,6 @@ function generateTsx(inpt, state, mode) {
 
     const defs = generateDefinitionFile(state.curScope, inpt, state);
     app.WriteFile(state.curDoc, defs);
-}
-
-/** @type {(name:string, type:string, desc?:string) => string} */
-function declareType(name, type, desc = "") {
-    if (JSDOC) return `/** @typedef {${type}} ${name} ${desc && desc + ' '}*/`;
-    return (desc ? `/** ${desc} */\n` : '') + `declare type ${name} = ${type};`;
 }
 
 /** @type {(scopeName: string, inpt: DSInput, state: GenState) => string} */
@@ -129,6 +126,180 @@ function generateDefinitionFile(scopeName, inpt, state) {
     if (JSDOC) typeDecls.unshift(`/** @type {${scopeName}} */\nvar ${state.curScope};`);
     else typeDecls.unshift(`declare var ${state.curScope}: ${scopeName};`);
     return `${typeDecls.join("\n")}\n\n${JSDOC ? '' : 'declare '}class ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
+}
+
+/** @type {(name:string, type:string, desc?:string) => string} */
+function declareType(name, type, desc = "") {
+    if (JSDOC) return `/** @typedef {${type}} ${name} ${desc && desc + ' '}*/`;
+    return (desc ? `/** ${desc} */\n` : '') + `declare type ${name} = ${type};`;
+}
+
+/**
+ * @param {ParamDef[]} params
+ * @param {TypeDef} retval
+ */
+function declareCallback(params, retval) {
+    const args = params.map(p => `${p.name + (p.dflt ? '?' : '')}: ${p.type}`);
+    return `(${args.join(", ")}) => ${retval.sub || 'void'}`;
+}
+
+/**
+ * @param {string} name
+ * @param {string} desc
+ * @param {ParamDef[]} params
+ * @param {TypeDef} retval
+ * @param {boolean|undefined} isval
+ * @param {string} indent
+ */
+function declareFunction(name, desc, params, retval, isval, indent) {
+    let docStr = "";
+    if (JSDOC) {
+        const args = params.map(p => p.name.replace('?', ''));
+
+        const jsparams = params.map(p => {
+            if (p.name.startsWith("...")) {
+                p.name = p.name.slice(3);
+                p.type = `(${p.type})[]`;
+            }
+            p.desc = p.desc.replace(/^\\/, '').replace(/ \* /g, indent + ' * ');
+            if (p.dflt) p.name = `[${p.name}=${p.dflt}]`;
+            else if (p.name.endsWith("?")) p.name = `[${p.name.slice(0, -1)}]`;
+            return `${indent} * @param {${p.type}} ${p.name} ${p.desc}\n`;
+        });
+
+        retval.desc = retval.desc.replace(/^\\/, '');
+        if (!isval) jsparams.push(`${indent} * @return {${retval.sub || 'void'}} ${retval.desc}\n`);
+
+        if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
+        else if (isval) docStr += `\n${indent}/** @type {${retval.sub || 'void'}} ${desc} */\n`;
+        else docStr += `\n${indent}/** ${desc} */\n`;
+
+        if (isval) docStr += `${indent}${name};\n`;
+        else docStr += `${indent}${name}(${args.join(", ")}) {return}\n`;
+    }
+    else {
+        const args = params.map(p => `${p.dflt ? p.name + '?' : p.name}: ${p.type}`);
+
+        params = params.filter(p => p.desc);
+        retval.desc = retval.desc.replace(/^\\(?=[^{}])/, '');
+        const jsparams = params.map(p => {
+            p.desc = p.desc.replace(/^\\(?=[^{}])/, '').replace(/ \* /g, indent + ' * ');
+            return `${indent} * @param ${p.name.replace("?", '')} ${p.desc}\n`;
+        });
+
+        if (retval.desc) jsparams.push(`${indent} * @return ${retval.desc}\n`);
+
+        if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
+        else docStr += `\n${indent}/** ${desc} */\n`;
+
+        const argStr = isval ? args.join(', ') : `(${args.join(", ")})`;
+        docStr += `${indent}${name}${argStr}: ${retval.sub || 'void'};\n`;
+    }
+    return docStr;
+}
+
+/**
+ * @param {DSInput} inpt
+ * @param {GenState} state
+ * @param {string} name
+ * @param {string} pAbbrev
+ * @param {DSFunction} dfunc
+ */
+function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = false) {
+    const defs = {
+        func: "", class: "",
+        /** @type {Obj<string>} */
+        extra: {},
+        /** @type {string} */
+        className: ""
+    };
+
+    dfunc.name ||= name;
+    if (dfunc.desc?.startsWith("#")) dfunc.desc = unwrapDesc(dfunc.desc, state);
+    const func = fillMissingFuncProps(dfunc);
+    // Fix MUI return types
+    if (state.curScope === "MUI" && func.name?.match(regConPrefix) && func.retval === "obj")
+        func.retval = "muo-" + func.name?.replace(regConPrefix, '');
+
+    if (!func.shortDesc?.trim())
+        func.shortDesc = func.desc.split(/\.\s/)[0];
+
+    func.shortDesc = func.shortDesc
+        .replace(/@/g, '')
+        .replace(/\n/g, `\n${indent} * `)
+        .replace(/<(premium|deprecated|xfeature)(.*?)>/g, "@$1 $2");
+
+    const params = [];
+    for (const i in func.pNames) {
+        const [pname, dflt] = func.pNames[i]
+            .replace("default", "dflt")
+            .split("=");
+        const ptype = func.pTypes[i];
+        const type = makeType(inpt, state, ptype);
+        if (type.sub.match(/^[a-z_]+$/) && !(tDesc[type.sub] || tName[type.sub]))
+            type.sub = pAbbrev.toUpperCase() + '_' + type.sub;
+
+        params.push({ name: pname, type: type.sub, desc: type.desc, dflt });
+    }
+
+    // eslint-disable-next-line prefer-const
+    let retval = makeType(inpt, state, func.retval || "");
+
+    // callbacks
+    if (isCb) {
+        defs.func += declareCallback(params, retval);
+        return defs;
+    }
+
+    // sub properties
+    if (name.includes(".")) {
+        const [fname, fobj, fcon] = name.split(".").reverse();
+        const key = fcon ? `${pAbbrev.toUpperCase()}_${fobj}` : fobj;
+        const s = defs.extra[key] || "";
+        defs.extra[key] = s + declareFunction(fname, func.shortDesc, params, retval, func.isval, indent);
+    }
+    else {
+        defs.func += declareFunction(name, func.shortDesc, params, retval, func.isval, indent);
+    }
+
+    if (!func.subf) return defs;
+    if (!func.retval) throw Error(`Missing ret type for ${state.curScope}.${name}`);
+
+    const isGlobal = func.subf && state.curScope !== "MUI" && func.retval.startsWith("obj");
+    if (isGlobal) defs.func = "";
+    const className = (isGlobal ? '' : objPfx[state.curScope]) + name.replace(regConPrefix, '');
+    defs.className = className;
+
+    // subfunctions for classes
+    defs.class += JSDOC ? '\n' : '\ndeclare ';
+    defs.class += `class ${className} {\n`;
+    for (const subFuncName in func.subf) {
+        let met = func.subf[subFuncName];
+        if (typeof met === "string") met = unwrapBaseFunc(met, inpt.base);
+
+        const sdefs = processFunction(inpt, state, subFuncName, func.abbrev || "undefined", met, indent);
+        defs.class += sdefs.func;
+        for (const i in sdefs.extra) {
+            const retName = i.split("_")[1];
+            // replace previous return type with custom
+            if (JSDOC)
+                defs.class = defs.class.replace(RegExp(`(.* @return) {${retName}} `), `$1 {${i}} `);
+            else
+                defs.class = defs.class.replace(RegExp(`: ${retName}(?=;\\s+$)`), ': ' + i);
+            defs.extra[i] = (defs.extra[i] || "") + sdefs.extra[i];
+        }
+    }
+
+    for (const obj in defs.extra) {
+        if (obj.match(/^[a-z]/)) {
+            defs.class += `\n${indent}${obj}${JSDOC ? ' =' : ':'} {`;
+            defs.class += defs.extra[obj].replace(/\n/g, "\n" + indent);
+            defs.class += `}\n`;
+            delete defs.extra[obj];
+        }
+    }
+    defs.class += "}\n\n";
+    return defs;
 }
 
 /**
@@ -298,170 +469,6 @@ function replaceTsxTypes(inpt, state, descStr, ptype, names = false) {
         nameString: nameString && '\\' + nameString,
         descs: types.length ? types.join("\\") : ''
     };
-}
-
-/** @typedef {{name:string; type:string; desc:string; dflt:string}} ParamDef */
-/** @typedef {{main:string, sub:string, desc:string}} TypeDef */
-
-/**
- * @param {ParamDef[]} params
- * @param {TypeDef} retval
- */
-function declareCallback(params, retval) {
-    const args = params.map(p => `${p.name + (p.dflt ? '?' : '')}: ${p.type}`);
-    return `(${args.join(", ")}) => ${retval.sub || 'void'}`;
-}
-
-/**
- * @param {string} name
- * @param {string} desc
- * @param {ParamDef[]} params
- * @param {TypeDef} retval
- * @param {boolean|undefined} isval
- * @param {string} indent
- */
-function declareFunction(name, desc, params, retval, isval, indent) {
-    let docStr = "";
-    if (JSDOC) {
-        const args = params.map(p => p.name.replace('?', ''));
-
-        const jsparams = params.map(p => {
-            if (p.name.startsWith("...")) {
-                p.name = p.name.slice(3);
-                p.type = `(${p.type})[]`;
-            }
-            if (p.dflt) p.name = `[${p.name}=${p.dflt}]`;
-            else if (p.name.endsWith("?")) p.name = `[${p.name.slice(0, -1)}]`;
-            return `${indent} * @param {${p.type}} ${p.name} ${p.desc.replace(/^\\/, '').replace(/ \* /g, indent + ' * ')}\n`;
-        });
-
-        if (!isval) jsparams.push(`${indent} * @return {${retval.sub || 'void'}} ${retval.desc}\n`);
-
-        if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
-        else if (isval) docStr += `\n${indent}/** @type {${retval.sub || 'void'}} ${desc} */\n`;
-        else docStr += `\n${indent}/** ${desc} */\n`;
-
-        if (isval) docStr += `${indent}${name};\n`;
-        else docStr += `${indent}${name}(${args.join(", ")}) {return}\n`;
-    }
-    else {
-        const args = params.map(p => `${p.dflt ? p.name + '?' : p.name}: ${p.type}`);
-
-        params = params.filter(p => p.desc);
-        const jsparams = params.map(p =>
-            `${indent} * @param ${p.name.replace("?", '')} ${p.desc.replace(/^\\(?=[^{}])/, '').replace(/ \* /g, indent + ' * ')}\n`);
-        if (retval.desc) jsparams.push(`${indent} * @return ${retval.desc}\n`);
-
-        if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
-        else docStr += `\n${indent}/** ${desc} */\n`;
-
-        const argStr = isval ? args.join(', ') : `(${args.join(", ")})`;
-        docStr += `${indent}${name}${argStr}: ${retval.sub || 'void'};\n`;
-    }
-    return docStr;
-}
-
-/**
- * @param {DSInput} inpt
- * @param {GenState} state
- * @param {string} name
- * @param {string} pAbbrev
- * @param {DSFunction} dfunc
- */
-function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = false) {
-    const defs = {
-        func: "", class: "",
-        /** @type {Obj<string>} */
-        extra: {},
-        /** @type {string} */
-        className: ""
-    };
-
-    dfunc.name ||= name;
-    if (dfunc.desc?.startsWith("#")) dfunc.desc = unwrapDesc(dfunc.desc, state);
-    const func = fillMissingFuncProps(dfunc);
-    // Fix MUI return types
-    if (state.curScope === "MUI" && func.name?.match(regConPrefix) && func.retval === "obj")
-        func.retval = "muo-" + func.name?.replace(regConPrefix, '');
-
-    if (!func.shortDesc?.trim())
-        func.shortDesc = func.desc.split(/\.\s/)[0];
-
-    func.shortDesc = func.shortDesc
-        .replace(/@/g, '')
-        .replace(/\n/g, `\n${indent} * `)
-        .replace(/<(premium|deprecated|xfeature)(.*?)>/g, "@$1 $2");
-
-    const params = [];
-    for (const i in func.pNames) {
-        const [pname, dflt] = func.pNames[i]
-            .replace("default", "dflt")
-            .split("=");
-        const ptype = func.pTypes[i];
-        const type = makeType(inpt, state, ptype);
-        if (type.sub.match(/^[a-z_]+$/) && !(tDesc[type.sub] || tName[type.sub]))
-            type.sub = pAbbrev.toUpperCase() + '_' + type.sub;
-
-        params.push({ name: pname, type: type.sub, desc: type.desc, dflt });
-    }
-
-    // eslint-disable-next-line prefer-const
-    let retval = makeType(inpt, state, func.retval || "");
-
-    // callbacks
-    if (isCb) {
-        defs.func += declareCallback(params, retval);
-        return defs;
-    }
-
-    // sub properties
-    if (name.includes(".")) {
-        const [fname, fobj, fcon] = name.split(".").reverse();
-        const key = fcon ? `${pAbbrev.toUpperCase()}_${fobj}` : fobj;
-        const s = defs.extra[key] || "";
-        defs.extra[key] = s + declareFunction(fname, func.shortDesc, params, retval, func.isval, indent);
-    }
-    else {
-        defs.func += declareFunction(name, func.shortDesc, params, retval, func.isval, indent);
-    }
-
-    if (!func.subf) return defs;
-    if (!func.retval) throw Error(`Missing ret type for ${state.curScope}.${name}`);
-
-    const isGlob = func.subf && state.curScope !== "MUI" && func.retval.startsWith("obj");
-    const className = (isGlob ? '' : objPfx[state.curScope]) + name.replace(regConPrefix, '');
-    defs.className = className;
-
-    // subfunctions for classes
-    defs.class += JSDOC ? '\n' : '\ndeclare ';
-    defs.class += `class ${className} {\n`;
-    for (const subFuncName in func.subf) {
-        let met = func.subf[subFuncName];
-        if (typeof met === "string") met = unwrapBaseFunc(met, inpt.base);
-
-        const sdefs = processFunction(inpt, state, subFuncName, func.abbrev || "undefined", met, indent);
-        defs.class += sdefs.func;
-        for (const i in sdefs.extra) {
-            const retName = i.split("_")[1];
-            // replace previous return type with custom
-            if (JSDOC)
-                defs.class = defs.class.replace(RegExp(`(.* @return) {${retName}} `), `$1 {${i}} `);
-            else
-                defs.class = defs.class.replace(RegExp(`: ${retName}(?=;\\s+$)`), ': ' + i);
-            defs.extra[i] = (defs.extra[i] || "") + sdefs.extra[i];
-        }
-    }
-
-    for (const obj in defs.extra) {
-        if (obj.match(/^[a-z]/)) {
-            defs.class += `\n${indent}${obj}${JSDOC ? ' =' : ':'} {`;
-            defs.class += defs.extra[obj].replace(/\n/g, "\n" + indent);
-            defs.class += `}\n`;
-            delete defs.extra[obj];
-        }
-    }
-    defs.class += "}\n\n";
-    return defs;
 }
 
 /** @param {string} str */

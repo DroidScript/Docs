@@ -3144,7 +3144,7 @@ declare class DsGLView {
 
 	/**
 	 * Create a sprite object which can be drawn on the GLView
-	 * @return \img
+	 * @return img
 	 */
 	CreateImage(file: str_ptf, callback?: () => void): GLV_img;
 
@@ -3171,7 +3171,7 @@ declare class DsGLView {
 
 	/**
 	 * Returns the glv context
-	 * @return \ctx
+	 * @return ctx
 	 */
 	GetContext(): GLV_ctx;
 

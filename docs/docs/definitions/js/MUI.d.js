@@ -1671,7 +1671,7 @@ class MuiAlert {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -1812,7 +1812,7 @@ class MuiAlertSimple {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -1963,7 +1963,7 @@ class MuiAppBar {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -2155,7 +2155,7 @@ class MuiAppBarElegant {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -2509,7 +2509,7 @@ class MuiBanner {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -2653,7 +2653,7 @@ class MuiButtonContained {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -3035,7 +3035,7 @@ class MuiButtonElegant {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -3425,7 +3425,7 @@ class MuiButtonFlat {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -3807,7 +3807,7 @@ class MuiButtonOutlined {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -4189,7 +4189,7 @@ class MuiButtonRaised {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -4579,7 +4579,7 @@ class MuiButtonRaisedO {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -4969,7 +4969,7 @@ class MuiButtonRound {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -5359,7 +5359,7 @@ class MuiButtonRoundO {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -5749,7 +5749,7 @@ class MuiButtonText {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -6131,7 +6131,7 @@ class MuiButtonToggle {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -6520,7 +6520,7 @@ class MuiCard {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -6715,7 +6715,7 @@ class MuiCheckbox {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -6927,7 +6927,7 @@ class MuiCheckList {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -7049,7 +7049,7 @@ class MuiColorPicker {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -7211,7 +7211,7 @@ class MuiDataTable {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -7391,7 +7391,7 @@ class MuiDatePicker {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -7545,7 +7545,7 @@ class MuiDialog {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -7761,7 +7761,7 @@ class MuiFAB {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -7989,7 +7989,7 @@ class MuiFABElegant {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -8217,7 +8217,7 @@ class MuiFABOutline {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -8454,7 +8454,7 @@ class MuiList {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -9044,7 +9044,7 @@ class MuiListDialog {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -9303,7 +9303,7 @@ class MuiListModern {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -9514,7 +9514,7 @@ class MuiListSimple {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -9720,7 +9720,7 @@ class MuiMenu {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -9854,7 +9854,7 @@ class MuiMenuWithIcon {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -10022,7 +10022,7 @@ class MuiModal {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -10181,7 +10181,7 @@ class MuiRadio {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -10764,7 +10764,7 @@ class MuiRadioButtons {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -11003,7 +11003,7 @@ class MuiRadioMaterial {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -11190,7 +11190,7 @@ class MuiSeekBar {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -11383,7 +11383,7 @@ class MuiSpinner {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -11573,7 +11573,7 @@ class MuiSwitch {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -11740,7 +11740,7 @@ class MuiSwitchSettings {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -11908,7 +11908,7 @@ class MuiTabFixed {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -15026,7 +15026,7 @@ class MuiTextH1 {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -15471,7 +15471,7 @@ class MuiTextH2 {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -15916,7 +15916,7 @@ class MuiTextH3 {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -16361,7 +16361,7 @@ class MuiTextH4 {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -16806,7 +16806,7 @@ class MuiTextH5 {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -17251,7 +17251,7 @@ class MuiTextH6 {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -17696,7 +17696,7 @@ class MuiTextJumbo {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -18141,7 +18141,7 @@ class MuiTextParagraph {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -18586,7 +18586,7 @@ class MuiTextSecondary {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -18996,7 +18996,7 @@ class MuiTimePicker {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 

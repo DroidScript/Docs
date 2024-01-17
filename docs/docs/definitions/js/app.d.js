@@ -570,7 +570,7 @@ class DsApp {
 	 * CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script
 	 * @param {str_ptf} file 
 	 * @param {"Portrait"|"Landscape"} [orient] 
-	 * @return {{ game: DsGameView, lay: DsLayout}} \{ game, lay}
+	 * @return {{ game: DsGameView, lay: DsLayout}} { game, lay}
 	 */
 	CreateGame(file, orient) {return}
 
@@ -1149,7 +1149,7 @@ class DsApp {
 
 	/**
 	 * Get accesibility feature availability
-	 * @return {{ enabled: bin, exploreByTouch: bin, screenReader: bin }} \{ enabled, exploreByTouch, screenReader }
+	 * @return {{ enabled: bin, exploreByTouch: bin, screenReader: bin }} { enabled, exploreByTouch, screenReader }
 	 */
 	GetAccessibility() {return}
 
@@ -1343,7 +1343,7 @@ class DsApp {
 
 	/**
 	 * Get received intent data
-	 * @return {{ action: str, type: str, data: str, flags: num_int, extras: { app_intent: str, app_file: str_pth, app_options: str } }} \{ action, type, data, flags, extras: { app_intent, app_file, app_options } }
+	 * @return {{ action: str, type: str, data: str, flags: num_int, extras: { app_intent: str, app_file: str_pth, app_options: str } }} { action, type, data, flags, extras: { app_intent, app_file, app_options } }
 	 */
 	GetIntent() {return}
 
@@ -1377,7 +1377,7 @@ class DsApp {
 	/**
 	 * Get joystick key states object
 	 * @param {num_int} id 
-	 * @return {{[key: str]: num}} \{ key: value }
+	 * @return {{[key: str]: num}} { key: value }
 	 */
 	GetJoystickStates(id) {return}
 
@@ -1415,7 +1415,7 @@ class DsApp {
 
 	/**
 	 * Get RAM memory information
-	 * @return {{ avail: num_byt, low: bin, threshold: num_byt, total: num_byt }} \{ avail, low, threshold, total }
+	 * @return {{ avail: num_byt, low: bin, threshold: num_byt, total: num_byt }} { avail, low, threshold, total }
 	 */
 	GetMemoryInfo() {return}
 
@@ -1616,13 +1616,13 @@ class DsApp {
 	 * @param {num} [size] 
 	 * @param {num_frc} [width] 
 	 * @param {dso} [obj] 
-	 * @return {{ width: num_frc, height: num_frc }} \{ width, height }
+	 * @return {{ width: num_frc, height: num_frc }} { width, height }
 	 */
 	GetTextBounds(txt, size, width, obj) {return}
 
 	/**
 	 * Get theme configuration
-	 * @return {{ baseTheme: str, holo: bin, dark: bin, titleHeight: num_frc, backColor: str_col, dialogColor: str_col, btnColor: str_col, dialogBtnColor: str_col, textColor1: str_col, textColor2: str_col,btnTextColor: str_col, highlightColor: str_col }} \{ baseTheme, holo, dark, titleHeight, backColor, dialogColor, btnColor, dialogBtnColor, textColor1, textColor2,btnTextColor, highlightColor }
+	 * @return {{ baseTheme: str, holo: bin, dark: bin, titleHeight: num_frc, backColor: str_col, dialogColor: str_col, btnColor: str_col, dialogBtnColor: str_col, textColor1: str_col, textColor2: str_col,btnTextColor: str_col, highlightColor: str_col }} { baseTheme, holo, dark, titleHeight, backColor, dialogColor, btnColor, dialogBtnColor, textColor1, textColor2,btnTextColor, highlightColor }
 	 */
 	GetThemeInfo() {return}
 
@@ -3379,7 +3379,7 @@ class DsButton {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -3743,7 +3743,7 @@ class DsCameraView {
 	/**
 	 * Find faces in the current camera view
 	 * @param {num_int} [maxCount] 
-	 * @return {{ confidence: num_frc, eyeDistance: num, midPoint: {x:num, y:num}, pose: num_int }} \{ confidence, eyeDistance, midPoint, pose }
+	 * @return {{ confidence: num_frc, eyeDistance: num, midPoint: {x:num, y:num}, pose: num_int }} { confidence, eyeDistance, midPoint, pose }
 	 */
 	FindFaces(maxCount) {return}
 
@@ -3850,7 +3850,7 @@ class DsCameraView {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -4351,7 +4351,7 @@ class DsCheckBox {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -4817,7 +4817,7 @@ class DsCodeEdit {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -5382,7 +5382,7 @@ class DsDialog {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -6041,7 +6041,7 @@ class DsGameView {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -6304,7 +6304,7 @@ class DsGLView {
 	 * Create a sprite object which can be drawn on the GLView
 	 * @param {str_ptf} file 
 	 * @param {() => void} [callback] 
-	 * @return {GLV_img} \img
+	 * @return {GLV_img} img
 	 */
 	CreateImage(file, callback) {return}
 
@@ -6356,7 +6356,7 @@ class DsGLView {
 
 	/**
 	 * Returns the glv context
-	 * @return {GLV_ctx} \ctx
+	 * @return {GLV_ctx} ctx
 	 */
 	GetContext() {return}
 
@@ -6383,7 +6383,7 @@ class DsGLView {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -6958,7 +6958,7 @@ class DsImage {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -7023,7 +7023,7 @@ class DsImage {
 	/**
 	 * Measures the size of a given text
 	 * @param {str} txt 
-	 * @return {{ width: num_frc, height: num_frc }} \{ width, height }
+	 * @return {{ width: num_frc, height: num_frc }} { width, height }
 	 */
 	MeasureText(txt) {return}
 
@@ -7500,7 +7500,7 @@ class DsLayout {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -7913,14 +7913,14 @@ class DsList {
 	/**
 	 * Returns item data by a title
 	 * @param {str} title 
-	 * @return {{ title: str, body: str, image: str_pth }} \{ title, body, image }
+	 * @return {{ title: str, body: str, image: str_pth }} { title, body, image }
 	 */
 	GetItem(title) {return}
 
 	/**
 	 * Returns item data by an index
 	 * @param {num_int} index 
-	 * @return {{ title: str, body: str, image: str_pth }} \{ title, body, image }
+	 * @return {{ title: str, body: str, image: str_pth }} { title, body, image }
 	 */
 	GetItemByIndex(index) {return}
 
@@ -7953,7 +7953,7 @@ class DsList {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -9767,7 +9767,7 @@ class DsScroller {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -10101,7 +10101,7 @@ class DsSeekBar {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -10709,7 +10709,7 @@ class DsSpinner {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -11080,7 +11080,7 @@ class DsSwitch {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -11798,7 +11798,7 @@ class DsTabs {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -12202,7 +12202,7 @@ class DsText {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -12677,7 +12677,7 @@ class DsTextEdit {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -13328,7 +13328,7 @@ class DsToggle {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -13823,7 +13823,7 @@ class DsVideoView {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 
@@ -14440,7 +14440,7 @@ class DsWebView {
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
-	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
+	 * @return {{ left: num, top: num, width: num, height: num }} { left, top, width, height }
 	 */
 	GetPosition(options) {return}
 

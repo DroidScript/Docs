@@ -97,12 +97,6 @@ declare class DsGfx {
 	/** Current key state */
 	keyState: "Down"|"Up";
 
-	/**
-	 * Wrapper class for PIXI.js matrix
-	 * @return \Matrix
-	 */
-	Matrix(): Matrix;
-
 	/** Enables multitouch */
 	multiTouch: bin;
 
