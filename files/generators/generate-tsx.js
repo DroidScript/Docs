@@ -39,10 +39,15 @@ let JSDOC = false;
  * @param {"js"|"ts"} mode
  */
 function generateTsx(inpt, state, mode) {
-    state.curDoc = getDstDir(D_LANG, state, 'definitions/' + state.curScope + '.d.' + mode);
-    console.log(`generating ${state.lang}.${state.curScope}.d.` + mode);
-    app.MakeFolder(state.curDoc.slice(0, state.curDoc.lastIndexOf('/')));
     JSDOC = mode === "js";
+
+    const curDir = getDstDir(D_LANG, state, `definitions/${mode}/`);
+    state.curDoc = curDir + `${state.curScope}.d.${mode}`;
+    console.log(`generating ${state.lang}.${state.curScope}.d.` + mode);
+
+    app.MakeFolder(curDir);
+    if (JSDOC) app.WriteFile(`${curDir}jsconfig.json`, '{"compilerOptions": {"checkJs": true}}');
+    else app.WriteFile(`${curDir}tsconfig.json`, '{}');
 
     const defs = generateDefinitionFile(state.curScope, inpt, state);
     app.WriteFile(state.curDoc, defs);
@@ -71,10 +76,11 @@ function generateDefinitionFile(scopeName, inpt, state) {
     for (const funcName in inpt.scope) {
         const func = inpt.scope[funcName];
         if (typeof func !== 'object' || funcName === "_tsxdefs") continue;
+        const isGlob = func.subf && state.curScope !== "MUI" && func.retval?.startsWith("obj");
 
         const defs = processFunction(inpt, state, funcName, scopeName, func, "\t");
 
-        if (defs.className && func.retval) {
+        if (defs.className && func.retval && !isGlob) {
             const typeKey = func.retval.split('-', 1)[0];
             if (!objs[typeKey]) objs[typeKey] = [];
             objs[typeKey].push(defs.className);
@@ -91,9 +97,6 @@ function generateDefinitionFile(scopeName, inpt, state) {
         }
     }
 
-    scopeName = `Ds${scopeName[0].toUpperCase() + scopeName.slice(1)}`;
-    if (scopeName === "DsUi") scopeName = "UI";
-
     /** @type {string[]} */
     const typeDecls = [];
     for (const o in objs) {
@@ -105,14 +108,23 @@ function generateDefinitionFile(scopeName, inpt, state) {
     for (let [name, type] of Object.entries(inpt.scope._tsxdefs?.subf || {})) {
         if (typeof type !== "string") continue;
         if (type.startsWith("r/")) {
+            name = objPfx[scopeName] + name;
             // eslint-disable-next-line security/detect-non-literal-regexp
             const reg = new RegExp(`^${type.slice(2, -1)}$`);
             type = keys(inpt.scope)
                 .filter(n => reg.test(n))
                 .map(n => objPfx[state.curScope] + n.replace(regConPrefix, '')).join(" | ");
+        } else if (type.startsWith("{") && type.endsWith("}")) {
+            type = type.slice(1, -1);
+        }
+        else {
+            throw Error("Unknown _tsxdefs type " + type);
         }
         typeDecls.unshift(declareType(name, type));
     }
+
+    scopeName = `Ds${scopeName[0].toUpperCase() + scopeName.slice(1)}`;
+    if (scopeName === "DsUi") scopeName = "UI";
 
     if (JSDOC) typeDecls.unshift(`/** @type {${scopeName}} */\nvar ${state.curScope};`);
     else typeDecls.unshift(`declare var ${state.curScope}: ${scopeName};`);
@@ -314,26 +326,30 @@ function declareFunction(name, desc, params, retval, isval, indent) {
         const args = params.map(p => p.name.replace('?', ''));
 
         const jsparams = params.map(p => {
+            if (p.name.startsWith("...")) {
+                p.name = p.name.slice(3);
+                p.type = `(${p.type})[]`;
+            }
             if (p.dflt) p.name = `[${p.name}=${p.dflt}]`;
             else if (p.name.endsWith("?")) p.name = `[${p.name.slice(0, -1)}]`;
-            return `${indent} * @param {${p.type}} ${p.name} ${p.desc.replace(/ \* /g, indent + ' * ')}\n`;
+            return `${indent} * @param {${p.type}} ${p.name} ${p.desc.replace(/^\\/, '').replace(/ \* /g, indent + ' * ')}\n`;
         });
 
-        const tag = isval ? 'type' : 'return';
-        jsparams.push(`${indent} * @${tag} {${retval.sub || 'void'}} ${retval.desc}\n`);
+        if (!isval) jsparams.push(`${indent} * @return {${retval.sub || 'void'}} ${retval.desc}\n`);
 
         if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
+        else if (isval) docStr += `\n${indent}/** @type {${retval.sub || 'void'}} ${desc} */\n`;
         else docStr += `\n${indent}/** ${desc} */\n`;
 
         if (isval) docStr += `${indent}${name};\n`;
-        else docStr += `${indent}${name}(${args.join(", ")}) {}\n`;
+        else docStr += `${indent}${name}(${args.join(", ")}) {return}\n`;
     }
     else {
         const args = params.map(p => `${p.dflt ? p.name + '?' : p.name}: ${p.type}`);
 
         params = params.filter(p => p.desc);
         const jsparams = params.map(p =>
-            `${indent} * @param ${p.name.replace("?", '')} ${p.desc.replace(/ \* /g, indent + ' * ')}\n`);
+            `${indent} * @param ${p.name.replace("?", '')} ${p.desc.replace(/^\\(?=[^{}])/, '').replace(/ \* /g, indent + ' * ')}\n`);
         if (retval.desc) jsparams.push(`${indent} * @return ${retval.desc}\n`);
 
         if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
@@ -380,7 +396,6 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
     for (const i in func.pNames) {
         const [pname, dflt] = func.pNames[i]
             .replace("default", "dflt")
-            .replace(/(\w+)\.\.\./, "...$1")
             .split("=");
         const ptype = func.pTypes[i];
         const type = makeType(inpt, state, ptype);
@@ -413,7 +428,8 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
     if (!func.subf) return defs;
     if (!func.retval) throw Error(`Missing ret type for ${state.curScope}.${name}`);
 
-    const className = objPfx[state.curScope] + name.replace(regConPrefix, '');
+    const isGlob = func.subf && state.curScope !== "MUI" && func.retval.startsWith("obj");
+    const className = (isGlob ? '' : objPfx[state.curScope]) + name.replace(regConPrefix, '');
     defs.className = className;
 
     // subfunctions for classes
@@ -428,7 +444,10 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
         for (const i in sdefs.extra) {
             const retName = i.split("_")[1];
             // replace previous return type with custom
-            defs.class = defs.class.replace(RegExp(`: ${retName}(?=;\\s+$)`), ': ' + i);
+            if (JSDOC)
+                defs.class = defs.class.replace(RegExp(`(.* @return) {${retName}} `), `$1 {${i}} `);
+            else
+                defs.class = defs.class.replace(RegExp(`: ${retName}(?=;\\s+$)`), ': ' + i);
             defs.extra[i] = (defs.extra[i] || "") + sdefs.extra[i];
         }
     }

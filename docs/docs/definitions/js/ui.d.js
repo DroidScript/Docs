@@ -15,7 +15,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIAccordion} 
 	 */
-	addAccordion(parent, titles, options, width, height) {}
+	addAccordion(parent, titles, options, width, height) {return}
 
 	/**
 	 * AddAppBar
@@ -29,7 +29,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIAppBar} 
 	 */
-	addAppBar(parent, title, options, width, height) {}
+	addAppBar(parent, title, options, width, height) {return}
 
 	/**
 	 * AddBottomNavbar
@@ -40,7 +40,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIBottomNavbar} 
 	 */
-	addBottomNavbar(parent, navs, options, width, height) {}
+	addBottomNavbar(parent, navs, options, width, height) {return}
 
 	/**
 	 * AddButton
@@ -56,7 +56,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the parent height. [0-1]`
 	 * @return {UIButton} 
 	 */
-	addButton(parent, text, options, width, height) {}
+	addButton(parent, text, options, width, height) {return}
 
 	/**
 	 * AddButtonGroup
@@ -72,7 +72,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the parent height. [0-1]`
 	 * @return {UIButtonGroup} 
 	 */
-	addButtonGroup(parent, list, options, width, height) {}
+	addButtonGroup(parent, list, options, width, height) {return}
 
 	/**
 	 * AddCheckbox
@@ -85,7 +85,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the parent height. [0-1]`
 	 * @return {UICheckbox} 
 	 */
-	addCheckbox(parent, text, options, width, height) {}
+	addCheckbox(parent, text, options, width, height) {return}
 
 	/**
 	 * AddCheckboxGroup
@@ -100,7 +100,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height.`
 	 * @return {UICheckboxGroup} 
 	 */
-	addCheckboxGroup(parent, list, options, width, height) {}
+	addCheckboxGroup(parent, list, options, width, height) {return}
 
 	/**
 	 * AddChip
@@ -114,7 +114,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIChip} 
 	 */
-	addChip(parent, text, options, width, height) {}
+	addChip(parent, text, options, width, height) {return}
 
 	/**
 	 * AddDatePicker
@@ -122,7 +122,7 @@ class UI {
 	 * @param {str_com} [options] `Portrait` `Landscape`
 	 * @return {UIDatePicker} 
 	 */
-	addDatePicker(date, options) {}
+	addDatePicker(date, options) {return}
 
 	/**
 	 * AddDialog
@@ -133,7 +133,7 @@ class UI {
  `Util`: `NoCancel` prevents the dialog from closing on action.
 	 * @return {UIDialog} 
 	 */
-	addDialog(title, body, actions, options) {}
+	addDialog(title, body, actions, options) {return}
 
 	/**
 	 * AddDivider
@@ -142,7 +142,7 @@ class UI {
 	 * @param {str} [options] A comma separated Divider options. Values can be `Inset`
 	 * @return {UIDivider} 
 	 */
-	addDivider(parent, width, options) {}
+	addDivider(parent, width, options) {return}
 
 	/**
 	 * AddDrawer
@@ -150,7 +150,7 @@ class UI {
 	 * @param {str_com} [options] 
 	 * @return {UIDrawer} 
 	 */
-	addDrawer(lay, options) {}
+	addDrawer(lay, options) {return}
 
 	/**
 	 * AddDropdown
@@ -166,7 +166,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIDropdown} 
 	 */
-	addDropdown(parent, list, options, width, height) {}
+	addDropdown(parent, list, options, width, height) {return}
 
 	/**
 	 * AddFAB
@@ -176,7 +176,7 @@ class UI {
 	 * @param {str} [text] `Text to show for extended FABs.`
 	 * @return {UIFAB} 
 	 */
-	addFAB(parent, icon, options, text) {}
+	addFAB(parent, icon, options, text) {return}
 
 	/**
 	 * AddImage
@@ -187,7 +187,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height.`
 	 * @return {UIImage} 
 	 */
-	addImage(parent, file, options, width, height) {}
+	addImage(parent, file, options, width, height) {return}
 
 	/**
 	 * AddLayout
@@ -204,7 +204,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UILayout} 
 	 */
-	addLayout(parent, type, options, width, height) {}
+	addLayout(parent, type, options, width, height) {return}
 
 	/**
 	 * AddList
@@ -217,7 +217,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIList} 
 	 */
-	addList(parent, list, options, width, height) {}
+	addList(parent, list, options, width, height) {return}
 
 	/**
 	 * AddMenu
@@ -230,7 +230,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIMenu} 
 	 */
-	addMenu(parent, list, options, width, height) {}
+	addMenu(parent, list, options, width, height) {return}
 
 	/**
 	 * AddProgress
@@ -243,7 +243,7 @@ class UI {
 	 * @param {num} [height] `Fraction fo the screen height. [0-1]`
 	 * @return {UIProgress} 
 	 */
-	addProgress(parent, value, options, width, height) {}
+	addProgress(parent, value, options, width, height) {return}
 
 	/**
 	 * AddRadioGroup
@@ -259,7 +259,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIRadioGroup} 
 	 */
-	addRadioGroup(parent, list, options, width, height) {}
+	addRadioGroup(parent, list, options, width, height) {return}
 
 	/**
 	 * AddSelect
@@ -273,7 +273,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UISelect} 
 	 */
-	addSelect(parent, list, options, width, height) {}
+	addSelect(parent, list, options, width, height) {return}
 
 	/**
 	 * AddSlider
@@ -286,7 +286,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height.`
 	 * @return {UISlider} 
 	 */
-	addSlider(parent, value, options, width, height) {}
+	addSlider(parent, value, options, width, height) {return}
 
 	/**
 	 * AddStepper
@@ -297,7 +297,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UIStepper} 
 	 */
-	addStepper(parent, steps, options, width, height) {}
+	addStepper(parent, steps, options, width, height) {return}
 
 	/**
 	 * AddSwitch
@@ -311,7 +311,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UISwitch} 
 	 */
-	addSwitch(parent, text, options, width, height) {}
+	addSwitch(parent, text, options, width, height) {return}
 
 	/**
 	 * AddSwitchGroup
@@ -326,7 +326,7 @@ class UI {
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UISwitchGroup} 
 	 */
-	addSwitchGroup(parent, list, options, width, height) {}
+	addSwitchGroup(parent, list, options, width, height) {return}
 
 	/**
 	 * AddTabs
@@ -341,7 +341,7 @@ Utils: `Icon` `Center` `Paper`
 	 * @param {num} [height] `Fraction of the screen height. [0-1]`
 	 * @return {UITabs} 
 	 */
-	addTabs(parent, list, options, width, height) {}
+	addTabs(parent, list, options, width, height) {return}
 
 	/**
 	 * AddText
@@ -358,7 +358,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param {num} [height] `Fraction of the screen height`
 	 * @return {UIText} 
 	 */
-	addText(parent, text, options, width, height) {}
+	addText(parent, text, options, width, height) {return}
 
 	/**
 	 * AddTextField
@@ -373,7 +373,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param {num} [height] `Fraction of the screen height.`
 	 * @return {UITextField} 
 	 */
-	addTextField(parent, text, options, width, height) {}
+	addTextField(parent, text, options, width, height) {return}
 
 	/**
 	 * AddTimePicker
@@ -381,7 +381,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param {str_com} [options] `Portrait` `24H` `12H`
 	 * @return {UITimePicker} 
 	 */
-	addTimePicker(time, options) {}
+	addTimePicker(time, options) {return}
 
 	/**
 	 * AddTreeView
@@ -392,7 +392,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param {num} [height] `Fraction of the screen height.`
 	 * @return {UITreeView} 
 	 */
-	addTreeView(parent, list, options, width, height) {}
+	addTreeView(parent, list, options, width, height) {return}
 
 	/**
 	 * AddWebView
@@ -403,7 +403,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param {num} [height] `Fraction of the parent height.`
 	 * @return {UIWebView} 
 	 */
-	addWebView(parent, url, options, width, height) {}
+	addWebView(parent, url, options, width, height) {return}
 
 	/**
 	 * ShowColorPicker
@@ -412,7 +412,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
  `Alpha` Includes an alpha
 	 * @return {UIColorPicker} 
 	 */
-	showColorPicker(value, options) {}
+	showColorPicker(value, options) {return}
 
 	/**
 	 * ShowDateTimePicker
@@ -426,7 +426,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
  	 * &emsp; `HH` - MM
 	 * @return {UIDateTimePicker} 
 	 */
-	showDateTimePicker(callback, date, time, format) {}
+	showDateTimePicker(callback, date, time, format) {return}
 
 	/**
 	 * ShowPopover
@@ -439,7 +439,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param {num} [height] `Fraction of the screen height.`
 	 * @return {UIPopover} 
 	 */
-	showPopover(parent, text, position, width, height) {}
+	showPopover(parent, text, position, width, height) {return}
 
 	/**
 	 * ShowPopup
@@ -454,7 +454,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param {str} [action] `Action button text.`
 	 * @return {UIPopup} 
 	 */
-	showPopup(msg, options, duration, action) {}
+	showPopup(msg, options, duration, action) {return}
 
 	/**
 	 * ShowProgressDialog
@@ -463,244 +463,127 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 * @param {str_com} [options] 
 	 * @return {UIProgressDialog} 
 	 */
-	showProgressDialog(text, options) {}
+	showProgressDialog(text, options) {return}
 
 }
 
 class UIAccordion {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the corner radius of the accordion panel
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius of the accordion panel */
 	cornerRadius;
 
-	/**
-	 * Sets or returns whether the accordion is disabled or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the accordion is disabled or not */
 	disabled;
 
-	/**
-	 * Sets or returns the material icon font for the expand icon
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon font for the expand icon */
 	expandIcon;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the padding of each accordion item
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of each accordion item */
 	itemPadding;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns whether the accordion is rounded or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the accordion is rounded or not */
 	rounded;
 
-	/**
-	 * Sets or returns the secondary text of the accordion items
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the secondary text of the accordion items */
 	secondaryText;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the title text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the title text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
 	textColor1;
 
-	/**
-	 * Sets or returns the secondary text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the secondary text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
 	textColor2;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Sets or returns the accordion title text size
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the accordion title text size */
 	textSize1;
 
-	/**
-	 * Sets or returns the accordion secondary text size
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the accordion secondary text size */
 	textSize2;
 
-	/**
-	 * Sets and returns the width of the title as fraction
-	 * @type {num} 
-	 */
+	/** @type {num} Sets and returns the width of the title as fraction */
 	titleWidth;
 
-	/**
-	 * Sets or returns the list of titles for the accordion panel
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the list of titles for the accordion panel */
 	titles;
 
-	/**
-	 * Collapse or shrink a corresponding accordion by its index
-	 * @type {num} 
-	 */
+	/** @type {num} Collapse or shrink a corresponding accordion by its index */
 	toggle;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -708,7 +591,7 @@ class UIAccordion {
 	 * @param {num} index `The index of the accordion. You can also pass accordion title.`
 	 * @return {UILayout} 
 	 */
-	getLayout(index) {}
+	getLayout(index) {return}
 
 	/**
 	 * SetTitleText
@@ -716,7 +599,7 @@ class UIAccordion {
 	 * @param {str} title `The new title text.`
 	 * @return {void} 
 	 */
-	setTitleText(index, title) {}
+	setTitleText(index, title) {return}
 
 	/**
 	 * SetSecondaryText
@@ -724,14 +607,14 @@ class UIAccordion {
 	 * @param {num} index If `index` is provided,  the corresponding index will be updated with the new text.
 	 * @return {void} 
 	 */
-	setSecondaryText(text, index) {}
+	setSecondaryText(text, index) {return}
 
 	/**
 	 * SetExpandIcon
 	 * @param {str} icon `A material icon`
 	 * @return {void} 
 	 */
-	setExpandIcon(icon) {}
+	setExpandIcon(icon) {return}
 
 	/**
 	 * AddItem
@@ -740,33 +623,33 @@ class UIAccordion {
 	 * @param {num} index The index at which the accordion item will be added. If `null`,  the item will be added at the bottom of the accordion.
 	 * @return {void} 
 	 */
-	addItem(title, secondaryText, index) {}
+	addItem(title, secondaryText, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the corresponding accordion to remove.`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} title `The title of the corresponding accordion to remove.`
 	 * @return {void} 
 	 */
-	removeItemByName(title) {}
+	removeItemByName(title) {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * SetEnabled
@@ -774,14 +657,14 @@ class UIAccordion {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the accordion item.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -789,35 +672,35 @@ class UIAccordion {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The title of the accordion.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * GetLayoutIndex
 	 * @param {obj} layout The layout to check.
 	 * @return {num} 
 	 */
-	getLayoutIndex(layout) {}
+	getLayoutIndex(layout) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(index: num, expand: bin) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(title: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetTextColor
@@ -825,7 +708,7 @@ class UIAccordion {
 	 * @param {str} [color2] Color of the secondary text in hexadecimal format `#rrggbb`
 	 * @return {void} 
 	 */
-	setTextColor(color1, color2) {}
+	setTextColor(color1, color2) {return}
 
 	/**
 	 * SetCornerRadius
@@ -836,7 +719,7 @@ class UIAccordion {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * Animate
@@ -860,7 +743,7 @@ class UIAccordion {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -868,31 +751,31 @@ class UIAccordion {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -900,14 +783,14 @@ class UIAccordion {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -918,7 +801,7 @@ class UIAccordion {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -929,7 +812,7 @@ class UIAccordion {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -938,7 +821,7 @@ class UIAccordion {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -947,228 +830,126 @@ class UIAccordion {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIAppBar {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the AppBar
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the AppBar */
 	color;
 
-	/**
-	 * Sets or returns the corner radius of the accordion panel
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius of the accordion panel */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the icon of the menu button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the icon of the menu button */
 	icon;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the right layout of the appbar where you can add controls
-	 * @type {UILayout} 
-	 */
+	/** @type {UILayout} Returns the right layout of the appbar where you can add controls */
 	layout;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns whether the appbar has menu button
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the appbar has menu button */
 	menu;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or return the AppBar title text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or return the AppBar title text */
 	text;
 
-	/**
-	 * Sets or returns the hexadecimal color of the appbar title
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the hexadecimal color of the appbar title */
 	textColor;
 
-	/**
-	 * Sets or returns the font size of the title text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the font size of the title text */
 	textSize;
 
-	/**
-	 * Sets or returns the variant of the title text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the title text */
 	textVariant;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -1176,14 +957,14 @@ class UIAppBar {
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnMenu(callback) {}
+	setOnMenu(callback) {return}
 
 	/**
 	 * AddLayout
 	 * @param {obj} lay The layout where to add controls
 	 * @return {void} 
 	 */
-	addLayout(lay) {}
+	addLayout(lay) {return}
 
 	/**
 	 * SetCornerRadius
@@ -1194,21 +975,21 @@ class UIAppBar {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -1232,7 +1013,7 @@ class UIAppBar {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -1240,31 +1021,31 @@ class UIAppBar {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -1272,14 +1053,14 @@ class UIAppBar {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -1290,7 +1071,7 @@ class UIAppBar {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -1301,7 +1082,7 @@ class UIAppBar {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -1310,7 +1091,7 @@ class UIAppBar {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -1319,216 +1100,120 @@ class UIAppBar {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIBottomNavbar {
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns whether the bottom navigation is disabled or enabled
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the bottom navigation is disabled or enabled */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the icon color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the icon color */
 	iconColor;
 
-	/**
-	 * Sets or returns the icon font-size
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the icon font-size */
 	iconSize;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns a boolean whether the labels are shown or hidden on active state
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns a boolean whether the labels are shown or hidden on active state */
 	labels;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the navigation actions array
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the navigation actions array */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the current value of the BottomNavbar
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the current value of the BottomNavbar */
 	value;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -1536,40 +1221,40 @@ class UIBottomNavbar {
 	 * @param {(text: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {lst} navs The navigation actions array. See `navs` param above for format.
 	 * @return {void} 
 	 */
-	setList(navs) {}
+	setList(navs) {return}
 
 	/**
 	 * GetList
 	 * @return {lst} 
 	 */
-	getList() {}
+	getList() {return}
 
 	/**
 	 * SelectItem
 	 * @param {str} name `The name to be set to active`
 	 * @return {void} 
 	 */
-	selectItem(name) {}
+	selectItem(name) {return}
 
 	/**
 	 * SelectItemByIndex
 	 * @param {num} index `The index of the bottom navigation action to be selected`
 	 * @return {void} 
 	 */
-	selectItemByIndex(index) {}
+	selectItemByIndex(index) {return}
 
 	/**
 	 * ClearSelection
 	 * @return {void} 
 	 */
-	clearSelection() {}
+	clearSelection() {return}
 
 	/**
 	 * SetItemByIndex
@@ -1578,7 +1263,7 @@ class UIBottomNavbar {
 	 * @param {str} newIcon `Material icon`
 	 * @return {void} 
 	 */
-	setItemByIndex(index, newName, newIcon) {}
+	setItemByIndex(index, newName, newIcon) {return}
 
 	/**
 	 * SetIcon
@@ -1586,7 +1271,7 @@ class UIBottomNavbar {
 	 * @param {str} newIcon `Material icon`
 	 * @return {void} 
 	 */
-	setIcon(index, newIcon) {}
+	setIcon(index, newIcon) {return}
 
 	/**
 	 * AddItem
@@ -1595,40 +1280,40 @@ class UIBottomNavbar {
 	 * @param {num} index `The index in which to add the action.`
 	 * @return {void} 
 	 */
-	addItem(name, icon, index) {}
+	addItem(name, icon, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the navigation action to be remove`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the navigation action to be remove.`
 	 * @return {void} 
 	 */
-	removeItemByName(name) {}
+	removeItemByName(name) {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(text: str, index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetEnabled
@@ -1636,14 +1321,14 @@ class UIBottomNavbar {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the navigation action.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -1651,33 +1336,33 @@ class UIBottomNavbar {
 	 * @param {bin} value Values can be `true` or `false`
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The name of the bottom navigation action.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * ShowLabels
 	 * @return {void} 
 	 */
-	showLabels() {}
+	showLabels() {return}
 
 	/**
 	 * HideLabels
 	 * @return {void} 
 	 */
-	hideLabels() {}
+	hideLabels() {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * Animate
@@ -1701,7 +1386,7 @@ class UIBottomNavbar {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -1709,31 +1394,31 @@ class UIBottomNavbar {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -1741,14 +1426,14 @@ class UIBottomNavbar {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -1759,7 +1444,7 @@ class UIBottomNavbar {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -1770,7 +1455,7 @@ class UIBottomNavbar {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -1779,7 +1464,7 @@ class UIBottomNavbar {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -1788,7 +1473,7 @@ class UIBottomNavbar {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -1799,252 +1484,138 @@ class UIBottomNavbar {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIButton {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * Sets or returns the accepted files for an upload button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the accepted files for an upload button */
 	acceptedFiles;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the badge content
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the badge content */
 	badge;
 
-	/**
-	 * Sets or returns the color of the badge
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the badge */
 	badgeColor;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the button */
 	color;
 
-	/**
-	 * Sets or returns the corner radius of the button
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius of the button */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the material icon font use for the leading icon
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon font use for the leading icon */
 	icon;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant of the button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant of the button */
 	sizeVariant;
 
-	/**
-	 * Sets or returns the button text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the button text */
 	text;
 
-	/**
-	 * Sets or returns the text color in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text color in hexadecimal format */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Sets or returns the tooltip text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the tooltip text */
 	toolTip;
 
-	/**
-	 * Sets or returns the tooltip position
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the tooltip position */
 	toolTipPosition;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the variant of the button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the button */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -2052,7 +1623,7 @@ class UIButton {
 	 * @param {(files: lst) => void} callback 
 	 * @return {void} 
 	 */
-	setOnFileSelect(callback) {}
+	setOnFileSelect(callback) {return}
 
 	/**
 	 * SetToolTip
@@ -2061,7 +1632,7 @@ class UIButton {
  Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
 	 * @return {void} 
 	 */
-	setToolTip(title, pos) {}
+	setToolTip(title, pos) {return}
 
 	/**
 	 * SetTextShadow
@@ -2071,7 +1642,7 @@ class UIButton {
 	 * @param {str} color The color in hexadecimal `#rrggbb`
 	 * @return {void} 
 	 */
-	setTextShadow(radius, dx, dy, color) {}
+	setTextShadow(radius, dx, dy, color) {return}
 
 	/**
 	 * SetPadding
@@ -2082,7 +1653,7 @@ class UIButton {
 	 * @param {str} [mode='px'] `px` `%`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetCornerRadius
@@ -2093,21 +1664,21 @@ class UIButton {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -2131,7 +1702,7 @@ class UIButton {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -2139,31 +1710,31 @@ class UIButton {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -2171,14 +1742,14 @@ class UIButton {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -2189,7 +1760,7 @@ class UIButton {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -2198,7 +1769,7 @@ class UIButton {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -2207,234 +1778,129 @@ class UIButton {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIButtonGroup {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the button */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the list items of the button group
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the list items of the button group */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the orientation of the button group
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the orientation of the button group */
 	orientation;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant */
 	sizeVariant;
 
-	/**
-	 * Sets or returns the color of the button text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the button text */
 	textColor;
 
-	/**
-	 * Sets or returns the font size of the button text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the font size of the button text */
 	textSize;
 
-	/**
-	 * Sets or returns the position of the tooltip
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the position of the tooltip */
 	toolTipPosition;
 
-	/**
-	 * Sets or returns the list of tooltip titles
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the list of tooltip titles */
 	toolTips;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the variant
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -2442,21 +1908,21 @@ class UIButtonGroup {
 	 * @param {(text: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(text: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {str} items `A comma separated list or an array`
 	 * @return {void} 
 	 */
-	setList(items) {}
+	setList(items) {return}
 
 	/**
 	 * SetItemByIndex
@@ -2464,40 +1930,40 @@ class UIButtonGroup {
 	 * @param {num} index `The index of the item.`
 	 * @return {void} 
 	 */
-	setItemByIndex(item, index) {}
+	setItemByIndex(item, index) {return}
 
 	/**
 	 * AddItem
 	 * @param {str} item `The additional item.`
 	 * @return {void} 
 	 */
-	addItem(item) {}
+	addItem(item) {return}
 
 	/**
 	 * RemoveItemIndex
 	 * @param {num} index `The index of the item to be remove.`
 	 * @return {void} 
 	 */
-	removeItemIndex(index) {}
+	removeItemIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the item to be remove.`
 	 * @return {void} 
 	 */
-	removeItemByName(name) {}
+	removeItemByName(name) {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * SetToolTip
@@ -2506,14 +1972,14 @@ class UIButtonGroup {
  Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
 	 * @return {void} 
 	 */
-	setToolTip(titles, pos) {}
+	setToolTip(titles, pos) {return}
 
 	/**
 	 * EnableElevation
 	 * @param {bin} enable `true` or `false`
 	 * @return {void} 
 	 */
-	enableElevation(enable) {}
+	enableElevation(enable) {return}
 
 	/**
 	 * SetEnabled
@@ -2521,14 +1987,14 @@ class UIButtonGroup {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the button item in the button group.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -2536,14 +2002,14 @@ class UIButtonGroup {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The button text.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * Animate
@@ -2567,7 +2033,7 @@ class UIButtonGroup {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -2575,31 +2041,31 @@ class UIButtonGroup {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -2607,14 +2073,14 @@ class UIButtonGroup {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -2625,7 +2091,7 @@ class UIButtonGroup {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -2636,7 +2102,7 @@ class UIButtonGroup {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -2645,7 +2111,7 @@ class UIButtonGroup {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -2654,7 +2120,7 @@ class UIButtonGroup {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -2665,258 +2131,141 @@ class UIButtonGroup {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UICheckbox {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the material icon font for check stated
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon font for check stated */
 	checkIcon;
 
-	/**
-	 * Sets or returns the theme color of the checkbox when checked
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the checkbox when checked */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Enabled or disable the checkbox component
-	 * @type {bin} 
-	 */
+	/** @type {bin} Enabled or disable the checkbox component */
 	disable;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Returns whether the Checkbox is enabled or disabled
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the Checkbox is enabled or disabled */
 	enabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the color of the checkbox icon
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the checkbox icon */
 	iconColor;
 
-	/**
-	 * Sets or returns the size of the icon
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the icon */
 	iconSize;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the space between the checkbox icon and the label text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the space between the checkbox icon and the label text */
 	spaceBetween;
 
-	/**
-	 * Sets or returns the checkbox text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the checkbox text */
 	text;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the text position
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text position */
 	textPosition;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the material icon font for uncheck state
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon font for uncheck state */
 	uncheckIcon;
 
-	/**
-	 * Sets or returns the checked state of the checkbox
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the checked state of the checkbox */
 	value;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -2924,7 +2273,7 @@ class UICheckbox {
 	 * @param {(check: bin) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetIcon
@@ -2932,20 +2281,20 @@ class UICheckbox {
 	 * @param {str} unchecked `Material icon for unchecked state`
 	 * @return {void} 
 	 */
-	setIcon(checked, unchecked) {}
+	setIcon(checked, unchecked) {return}
 
 	/**
 	 * GetIcon
 	 * @return {obj} 
 	 */
-	getIcon() {}
+	getIcon() {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -2969,7 +2318,7 @@ class UICheckbox {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -2977,31 +2326,31 @@ class UICheckbox {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -3009,14 +2358,14 @@ class UICheckbox {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -3027,7 +2376,7 @@ class UICheckbox {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -3038,7 +2387,7 @@ class UICheckbox {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -3047,7 +2396,7 @@ class UICheckbox {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -3056,7 +2405,7 @@ class UICheckbox {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -3067,264 +2416,144 @@ class UICheckbox {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UICheckboxGroup {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the material icon font for check stated
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon font for check stated */
 	checkIcon;
 
-	/**
-	 * Sets or returns the theme color use for the checkbox
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color use for the checkbox */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the depth of the container
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the depth of the container */
 	elevation;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the color of the checkbox icon
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the checkbox icon */
 	iconColor;
 
-	/**
-	 * Sets or returns the size of the checkbox icon
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the checkbox icon */
 	iconSize;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the padding of each list item
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of each list item */
 	itemPadding;
 
-	/**
-	 * Sets or returns the label text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the label text */
 	label;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the list items
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the list items */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns whether the container is outlined or elevated
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the container is outlined or elevated */
 	outlined;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant of the Checkbox
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant of the Checkbox */
 	sizeVariant;
 
-	/**
-	 * Sets or returns the space between the checkbox icon and the text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the space between the checkbox icon and the text */
 	spaceBetween;
 
-	/**
-	 * Sets or returns the text color in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text color in hexadecimal format */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the checkbox icon
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the checkbox icon */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the material icon font for uncheck state
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon font for uncheck state */
 	uncheckIcon;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -3332,14 +2561,14 @@ class UICheckboxGroup {
 	 * @param {(value: bin, text: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(values: lst) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetIcon
@@ -3347,13 +2576,13 @@ class UICheckboxGroup {
 	 * @param {str} unchecked `Material icon font`
 	 * @return {void} 
 	 */
-	setIcon(checked, unchecked) {}
+	setIcon(checked, unchecked) {return}
 
 	/**
 	 * GetIcon
 	 * @return {obj} 
 	 */
-	getIcon() {}
+	getIcon() {return}
 
 	/**
 	 * SetCheckedByIndex
@@ -3361,7 +2590,7 @@ class UICheckboxGroup {
 	 * @param {bin} bool The item value. Can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setCheckedByIndex(item, bool) {}
+	setCheckedByIndex(item, bool) {return}
 
 	/**
 	 * SetCheckedByName
@@ -3369,27 +2598,27 @@ class UICheckboxGroup {
 	 * @param {bin} bool The item value. Can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setCheckedByName(name, bool) {}
+	setCheckedByName(name, bool) {return}
 
 	/**
 	 * GetCheckedItems
 	 * @return {str} 
 	 */
-	getCheckedItems() {}
+	getCheckedItems() {return}
 
 	/**
 	 * GetCheckedByIndex
 	 * @param {num} index `The index of the corresponding item.`
 	 * @return {bin} 
 	 */
-	getCheckedByIndex(index) {}
+	getCheckedByIndex(index) {return}
 
 	/**
 	 * GetCheckedByName
 	 * @param {str} name `The index of the corresponding item.`
 	 * @return {bin} 
 	 */
-	getCheckedByName(name) {}
+	getCheckedByName(name) {return}
 
 	/**
 	 * SetTextByIndex
@@ -3397,7 +2626,7 @@ class UICheckboxGroup {
 	 * @param {str} val `The new text to replace.`
 	 * @return {void} 
 	 */
-	setTextByIndex(index, val) {}
+	setTextByIndex(index, val) {return}
 
 	/**
 	 * SetTextByName
@@ -3405,21 +2634,21 @@ class UICheckboxGroup {
 	 * @param {str} val `The new text to replace`
 	 * @return {void} 
 	 */
-	setTextByName(name, val) {}
+	setTextByName(name, val) {return}
 
 	/**
 	 * GetText
 	 * @param {num} index `The index of the list`
 	 * @return {str} 
 	 */
-	getText(index) {}
+	getText(index) {return}
 
 	/**
 	 * SetList
 	 * @param {obj} list The new list items for the checkbox group.
 	 * @return {void} 
 	 */
-	setList(list) {}
+	setList(list) {return}
 
 	/**
 	 * SetEnabled
@@ -3427,14 +2656,14 @@ class UICheckboxGroup {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the checkbox item.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -3442,14 +2671,14 @@ class UICheckboxGroup {
 	 * @param {bin} value Values can be `true` or `false`
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The checkbox item.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * AddItem
@@ -3457,40 +2686,40 @@ class UICheckboxGroup {
 	 * @param {num} index `The index in which to insert the item.`
 	 * @return {void} 
 	 */
-	addItem(text, index) {}
+	addItem(text, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the corresponding item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} title `The title text of the corresponding checkbox item.`
 	 * @return {void} 
 	 */
-	removeItemByName(title) {}
+	removeItemByName(title) {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(label: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetCornerRadius
@@ -3501,7 +2730,7 @@ class UICheckboxGroup {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * Animate
@@ -3525,7 +2754,7 @@ class UICheckboxGroup {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -3533,31 +2762,31 @@ class UICheckboxGroup {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -3565,14 +2794,14 @@ class UICheckboxGroup {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -3583,7 +2812,7 @@ class UICheckboxGroup {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -3594,7 +2823,7 @@ class UICheckboxGroup {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -3603,7 +2832,7 @@ class UICheckboxGroup {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -3612,252 +2841,138 @@ class UICheckboxGroup {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIChip {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * Sets or returns the avatar
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the avatar */
 	avatar;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the chip
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the chip */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the delete icon
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the delete icon */
 	deleteIcon;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Returns whether the chip is enabled or disabled
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the chip is enabled or disabled */
 	enabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the material icon font if icon is provided
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon font if icon is provided */
 	icon;
 
-	/**
-	 * Sets or returns the icon color in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the icon color in hexadecimal format */
 	iconColor;
 
-	/**
-	 * Sets or returns the font-size of the icon in css font-size format
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the font-size of the icon in css font-size format */
 	iconSize;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant */
 	sizeVariant;
 
-	/**
-	 * Sets or returns the text of the chip
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text of the chip */
 	text;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the variant of the chip
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the chip */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -3865,14 +2980,14 @@ class UIChip {
 	 * @param {bin} touchable `true` or `false`
 	 * @return {void} 
 	 */
-	setTouchable(touchable) {}
+	setTouchable(touchable) {return}
 
 	/**
 	 * SetOnDelete
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnDelete(callback) {}
+	setOnDelete(callback) {return}
 
 	/**
 	 * SetCornerRadius
@@ -3883,21 +2998,21 @@ class UIChip {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -3921,7 +3036,7 @@ class UIChip {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -3929,31 +3044,31 @@ class UIChip {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -3961,14 +3076,14 @@ class UIChip {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -3979,7 +3094,7 @@ class UIChip {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -3990,7 +3105,7 @@ class UIChip {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -3999,7 +3114,7 @@ class UIChip {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -4008,43 +3123,40 @@ class UIChip {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIDatePicker {
 
-	/**
-	 * Sets or returns the format of the selected date
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the format of the selected date */
 	format;
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * SetLimits
@@ -4052,54 +3164,42 @@ class UIDatePicker {
 	 * @param {str} [future] Date in the future of the form `YYYY-MM-DD`
 	 * @return {void} 
 	 */
-	setLimits(past, future) {}
+	setLimits(past, future) {return}
 
 	/**
 	 * SetOnSelect
 	 * @param {(date: str) => void} callback 
 	 * @return {void} 
 	 */
-	setOnSelect(callback) {}
+	setOnSelect(callback) {return}
 
 	/**
 	 * SetFormat
 	 * @param {str} format A date format. Can be `YYYY-MM-DD` `MM-DD-YYYY` `DD-MM-YYYY`
 	 * @return {void} 
 	 */
-	setFormat(format) {}
+	setFormat(format) {return}
 
 	/**
 	 * IsVisible
 	 * @return {bin} 
 	 */
-	isVisible() {}
+	isVisible() {return}
 }
 
 
 class UIDialog {
 
-	/**
-	 * Returns the layout of the dialog where you can add custom controls
-	 * @type {UILayout} 
-	 */
+	/** @type {UILayout} Returns the layout of the dialog where you can add custom controls */
 	layout;
 
-	/**
-	 * Sets or returns the dialog text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the dialog text */
 	text;
 
-	/**
-	 * Sets or returns the title text color in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the title text color in hexadecimal format */
 	titleColor;
 
-	/**
-	 * Sets or returns the dialog title text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the dialog title text */
 	titleText;
 
 	/**
@@ -4107,203 +3207,116 @@ class UIDialog {
 	 * @param {(text: str, index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnAction(callback) {}
+	setOnAction(callback) {return}
 
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnClose(callback) {}
+	setOnClose(callback) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 }
 
 
 class UIDivider {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the color in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color in hexadecimal format */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -4311,14 +3324,14 @@ class UIDivider {
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -4342,7 +3355,7 @@ class UIDivider {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -4350,31 +3363,31 @@ class UIDivider {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -4382,14 +3395,14 @@ class UIDivider {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -4400,7 +3413,7 @@ class UIDivider {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -4411,7 +3424,7 @@ class UIDivider {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -4420,7 +3433,7 @@ class UIDivider {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -4429,7 +3442,7 @@ class UIDivider {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -4440,48 +3453,36 @@ class UIDivider {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIDrawer {
 
-	/**
-	 * Sets or returns the anchor position of the drawer
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the anchor position of the drawer */
 	anchor;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the drawer
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the drawer */
 	disabled;
 
-	/**
-	 * Sets or returns the width of the swipeable area of the Drawer
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the swipeable area of the Drawer */
 	swipeAreaWidth;
 
-	/**
-	 * Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <col nobox #fb8c00>[0-1]</col>
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <col nobox #fb8c00>[0-1]</col> */
 	width;
 
 	/**
@@ -4489,274 +3490,166 @@ class UIDrawer {
 	 * @param {obj} lay Layout component.
 	 * @return {void} 
 	 */
-	addLayout(lay) {}
+	addLayout(lay) {return}
 
 	/**
 	 * DisableSwipeToOpen
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	disableSwipeToOpen(value) {}
+	disableSwipeToOpen(value) {return}
 
 	/**
 	 * DisableBackdropTransition
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	disableBackdropTransition(value) {}
+	disableBackdropTransition(value) {return}
 
 	/**
 	 * DisableDiscovery
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	disableDiscovery(value) {}
+	disableDiscovery(value) {return}
 
 	/**
 	 * SetOnOpen
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnOpen(callback) {}
+	setOnOpen(callback) {return}
 
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnClose(callback) {}
+	setOnClose(callback) {return}
 
 	/**
 	 * Show
 	 * @param {str} anchor Open position. Can be `left` or `right`. Default is `left`
 	 * @return {void} 
 	 */
-	show(anchor) {}
+	show(anchor) {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 }
 
 
 class UIDropdown {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the dropdown material icon font
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the dropdown material icon font */
 	icon;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the default label of the dropdown
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the default label of the dropdown */
 	label;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the dropdown list
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the dropdown list */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the orientation of the dropdown buttongroup
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the orientation of the dropdown buttongroup */
 	orientation;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant of the dropdown button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant of the dropdown button */
 	sizeVariant;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the value of the Dropdown
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the value of the Dropdown */
 	value;
 
-	/**
-	 * Sets or returns the variant of the dropdown button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the dropdown button */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -4764,21 +3657,21 @@ class UIDropdown {
 	 * @param {(value: obj, index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnClose(callback) {}
+	setOnClose(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {lst} val The list of new items t display.
 	 * @return {void} 
 	 */
-	setList(val) {}
+	setList(val) {return}
 
 	/**
 	 * SetItemByIndex
@@ -4786,14 +3679,14 @@ class UIDropdown {
 	 * @param {num} index `The index of the item to update.`
 	 * @return {void} 
 	 */
-	setItemByIndex(item, index) {}
+	setItemByIndex(item, index) {return}
 
 	/**
 	 * GetItemByIndex
 	 * @param {num} index `The index of corresponding item.`
 	 * @return {str} 
 	 */
-	getItemByIndex(index) {}
+	getItemByIndex(index) {return}
 
 	/**
 	 * SetEnabled
@@ -4801,14 +3694,14 @@ class UIDropdown {
 	 * @param {bin} value Values can be `true` `false`.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the item.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -4816,14 +3709,14 @@ class UIDropdown {
 	 * @param {bin} value Values can be `true` `false`.
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The name of the corresponding menu item.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * AddItem
@@ -4831,33 +3724,33 @@ class UIDropdown {
 	 * @param {num} index `The index in which to insert the menu item.`
 	 * @return {void} 
 	 */
-	addItem(name, index) {}
+	addItem(name, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the menu item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the menu item.`
 	 * @return {void} 
 	 */
-	removeItemByName(name) {}
+	removeItemByName(name) {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * SetCornerRadius
@@ -4868,21 +3761,21 @@ class UIDropdown {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -4906,7 +3799,7 @@ class UIDropdown {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -4914,31 +3807,31 @@ class UIDropdown {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -4946,14 +3839,14 @@ class UIDropdown {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -4964,7 +3857,7 @@ class UIDropdown {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -4975,7 +3868,7 @@ class UIDropdown {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -4984,7 +3877,7 @@ class UIDropdown {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -4993,234 +3886,129 @@ class UIDropdown {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIFAB {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color for the FAB
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color for the FAB */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the disabled state of the ripple effect
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the disabled state of the ripple effect */
 	disabledRipple;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the material icon font
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon font */
 	icon;
 
-	/**
-	 * Sets or returns the size of the icon
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the icon */
 	iconSize;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant of the FAB
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant of the FAB */
 	sizeVariant;
 
-	/**
-	 * Sets or returns the text for extended FAB
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text for extended FAB */
 	text;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the variant use for the FAB
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant use for the FAB */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -5232,21 +4020,21 @@ class UIFAB {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -5270,7 +4058,7 @@ class UIFAB {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -5278,31 +4066,31 @@ class UIFAB {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -5310,14 +4098,14 @@ class UIFAB {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -5328,7 +4116,7 @@ class UIFAB {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -5339,7 +4127,7 @@ class UIFAB {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -5348,7 +4136,7 @@ class UIFAB {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -5357,258 +4145,141 @@ class UIFAB {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIImage {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the material icon for error placeholder image
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the material icon for error placeholder image */
 	errorIcon;
 
-	/**
-	 * Sets or returns the path or url of the image file
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the path or url of the image file */
 	file;
 
-	/**
-	 * Sets or returns the background color of the canvas
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the background color of the canvas */
 	fill;
 
-	/**
-	 * Sets or returns the fill color used on close paths such as square, circle, rectangle or arcs
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the fill color used on close paths such as square, circle, rectangle or arcs */
 	fillColor;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the style of the end caps for a line
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the style of the end caps for a line */
 	lineCap;
 
-	/**
-	 * Sets or returns the type of corner created when two lines meet
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the type of corner created when two lines meet */
 	lineJoin;
 
-	/**
-	 * Sets or returns the current line thickness
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the current line thickness */
 	lineWidth;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the maximum miter length
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the maximum miter length */
 	miterLimit;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the pixel data of the image
-	 * @type {lst} 
-	 */
+	/** @type {lst} Returns the pixel data of the image */
 	pixelData;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the current color of the line or stroke
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the current color of the line or stroke */
 	strokeColor;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the text-size for drawing in the canvas
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the text-size for drawing in the canvas */
 	textSize;
 
-	/**
-	 * Sets or returns the text-style for drawing in the canvas
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text-style for drawing in the canvas */
 	textStyle;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -5616,21 +4287,21 @@ class UIImage {
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnLoad(callback) {}
+	setOnLoad(callback) {return}
 
 	/**
 	 * EnableContextMenu
 	 * @param {bin} value Value. Can be `true` `false`
 	 * @return {void} 
 	 */
-	enableContextMenu(value) {}
+	enableContextMenu(value) {return}
 
 	/**
 	 * SetImage
 	 * @param {str} file `The path to the image file.`
 	 * @return {void} 
 	 */
-	setImage(file) {}
+	setImage(file) {return}
 
 	/**
 	 * GetPixelColor
@@ -5638,13 +4309,13 @@ class UIImage {
 	 * @param {num} y `The y-coordinate of the pixel from the top.`
 	 * @return {lst} 
 	 */
-	getPixelColor(x, y) {}
+	getPixelColor(x, y) {return}
 
 	/**
 	 * GetPixelData
 	 * @return {str} 
 	 */
-	getPixelData() {}
+	getPixelData() {return}
 
 	/**
 	 * DrawLine
@@ -5656,7 +4327,7 @@ class UIImage {
 	 * @param {num} [strokeWidth] `The stroke thickness.`
 	 * @return {void} 
 	 */
-	drawLine(x1, y1, x2, y2, strokeColor, strokeWidth) {}
+	drawLine(x1, y1, x2, y2, strokeColor, strokeWidth) {return}
 
 	/**
 	 * DrawCircle
@@ -5668,7 +4339,7 @@ class UIImage {
 	 * @param {num} [strokeWidth] `The stoke thickness.`
 	 * @return {void} 
 	 */
-	drawCircle(x, y, radius, fillColor, strokeColor, strokeWidth) {}
+	drawCircle(x, y, radius, fillColor, strokeColor, strokeWidth) {return}
 
 	/**
 	 * DrawSquare
@@ -5680,7 +4351,7 @@ class UIImage {
 	 * @param {num} [strokeWidth] `The stroke thickness in pixels.`
 	 * @return {void} 
 	 */
-	drawSquare(x, y, width, fillColor, strokeColor, strokeWidth) {}
+	drawSquare(x, y, width, fillColor, strokeColor, strokeWidth) {return}
 
 	/**
 	 * DrawRectangle
@@ -5693,7 +4364,7 @@ class UIImage {
 	 * @param {num} [strokeWidth] `The stroke thickness.`
 	 * @return {void} 
 	 */
-	drawRectangle(x1, y1, width, height, fillColor, strokeColor, strokeWidth) {}
+	drawRectangle(x1, y1, width, height, fillColor, strokeColor, strokeWidth) {return}
 
 	/**
 	 * DrawArc
@@ -5707,7 +4378,7 @@ class UIImage {
 	 * @param {num} [strokeWidth] `The stroke thickness.`
 	 * @return {void} 
 	 */
-	drawArc(x, y, radius, start, end, fillColor, strokeColor, strokeWidth) {}
+	drawArc(x, y, radius, start, end, fillColor, strokeColor, strokeWidth) {return}
 
 	/**
 	 * DrawImage
@@ -5718,13 +4389,13 @@ class UIImage {
 	 * @param {num} [height] `If provided`, ` the height of the image will be shrink or stretch to fill this height in pixels.`
 	 * @return {void} 
 	 */
-	drawImage(img, x, y, width, height) {}
+	drawImage(img, x, y, width, height) {return}
 
 	/**
 	 * Clear
 	 * @return {void} 
 	 */
-	clear() {}
+	clear() {return}
 
 	/**
 	 * DrawPolyline
@@ -5733,7 +4404,7 @@ class UIImage {
 	 * @param {num} [strokeWidth] `The stroke thickness.`
 	 * @return {void} 
 	 */
-	drawPolyline(points, strokeColor, strokeWidth) {}
+	drawPolyline(points, strokeColor, strokeWidth) {return}
 
 	/**
 	 * DrawPolygon
@@ -5743,7 +4414,7 @@ class UIImage {
 	 * @param {num} [strokeWidth] `The stroke thickness.`
 	 * @return {void} 
 	 */
-	drawPolygon(points, fillColor, strokeColor, strokeWidth) {}
+	drawPolygon(points, fillColor, strokeColor, strokeWidth) {return}
 
 	/**
 	 * DrawPoint
@@ -5752,28 +4423,28 @@ class UIImage {
 	 * @param {str} [color] `A hexadecimal color.`
 	 * @return {void} 
 	 */
-	drawPoint(x, y, color) {}
+	drawPoint(x, y, color) {return}
 
 	/**
 	 * SetOnTouchMove
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouchMove(callback) {}
+	setOnTouchMove(callback) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -5797,7 +4468,7 @@ class UIImage {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -5805,31 +4476,31 @@ class UIImage {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -5837,14 +4508,14 @@ class UIImage {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -5855,7 +4526,7 @@ class UIImage {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -5866,7 +4537,7 @@ class UIImage {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -5875,7 +4546,7 @@ class UIImage {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -5884,7 +4555,7 @@ class UIImage {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -5895,228 +4566,126 @@ class UIImage {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UILayout {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * Sets or returns the horizontal alignment of the control in a Linear Layout
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the horizontal alignment of the control in a Linear Layout */
 	alignment;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the margins of child components
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margins of child components */
 	childMargins;
 
-	/**
-	 * Sets or returns the spacing of the child control in a Linear Layout
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the spacing of the child control in a Linear Layout */
 	childSpacing;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the index of the current slide
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the index of the current slide */
 	currentSlide;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the orientation of the controls in a Linear Layout
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the orientation of the controls in a Linear Layout */
 	orientation;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the vertical alignment of the controls in a Linear Layout
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the vertical alignment of the controls in a Linear Layout */
 	verticalAlignment;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -6128,80 +4697,80 @@ class UILayout {
 	 * @param {str} [mode='px'] `px`. Default is a fraction of viewport.
 	 * @return {void} 
 	 */
-	setChildMargins(left, top, right, bottom, mode) {}
+	setChildMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Goto
 	 * @param {num} index `Index of a given layout.`
 	 * @return {void} 
 	 */
-	goto(index) {}
+	goto(index) {return}
 
 	/**
 	 * GetCurrentSlide
 	 * @return {num} 
 	 */
-	getCurrentSlide() {}
+	getCurrentSlide() {return}
 
 	/**
 	 * Next
 	 * @return {void} 
 	 */
-	next() {}
+	next() {return}
 
 	/**
 	 * Previous
 	 * @return {void} 
 	 */
-	previous() {}
+	previous() {return}
 
 	/**
 	 * GetChildOrder
 	 * @param {obj} child The child component of the layout.
 	 * @return {num} 
 	 */
-	getChildOrder(child) {}
+	getChildOrder(child) {return}
 
 	/**
 	 * ChildToFront
 	 * @param {obj} child The child object of the layout.
 	 * @return {void} 
 	 */
-	childToFront(child) {}
+	childToFront(child) {return}
 
 	/**
 	 * HasChild
 	 * @param {obj} child The child component to check.
 	 * @return {bin} 
 	 */
-	hasChild(child) {}
+	hasChild(child) {return}
 
 	/**
 	 * RemoveChild
 	 * @param {obj} child The child component to be remove.
 	 * @return {void} 
 	 */
-	removeChild(child) {}
+	removeChild(child) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -6225,7 +4794,7 @@ class UILayout {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -6233,25 +4802,25 @@ class UILayout {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -6259,14 +4828,14 @@ class UILayout {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -6277,7 +4846,7 @@ class UILayout {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -6288,7 +4857,7 @@ class UILayout {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -6297,7 +4866,7 @@ class UILayout {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -6306,7 +4875,7 @@ class UILayout {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -6317,276 +4886,150 @@ class UILayout {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIList {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * Sets or returns the size of the avatar
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size of the avatar */
 	avatarSize;
 
-	/**
-	 * Sets or returns the variant of the avatar
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the avatar */
 	avatarVariant;
 
-	/**
-	 * Sets or returns the background color in a hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the background color in a hexadecimal format */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the checkbox when <col nobox #fb8c00>Selectable</col> option is enabled
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the checkbox when <col nobox #fb8c00>Selectable</col> option is enabled */
 	checkboxColor;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the depth of the list container
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the depth of the list container */
 	elevation;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the icon color in a hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the icon color in a hexadecimal format */
 	iconColor;
 
-	/**
-	 * Sets or returns the size of the icon text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the icon text */
 	iconSize;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the padding of each list item
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of each list item */
 	itemPadding;
 
-	/**
-	 * Sets or returns the label text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the label text */
 	label;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns whether the container is outlined or elevated
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the container is outlined or elevated */
 	outlined;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns a boolean whether the list is selectable or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns a boolean whether the list is selectable or not */
 	selectable;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the color of the title text in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the title text in hexadecimal format */
 	textColor1;
 
-	/**
-	 * Sets or returns the color of the body text in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the body text in hexadecimal format */
 	textColor2;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Sets or returns the size of the title text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the title text */
 	textSize1;
 
-	/**
-	 * Sets or returns the size of the body text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the body text */
 	textSize2;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -6597,61 +5040,61 @@ class UIList {
 	 * @param {num} [index] `The index in which to add or insert the item.`
 	 * @return {void} 
 	 */
-	addItem(title, body, image, index) {}
+	addItem(title, body, image, index) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(title: str, body: str, icon: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnSelect
 	 * @param {(title: str, index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnSelect(callback) {}
+	setOnSelect(callback) {return}
 
 	/**
 	 * SetOnAction
 	 * @param {(icon: str, index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnAction(callback) {}
+	setOnAction(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(title: str, body: str, icon: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * GetSelectedItems
 	 * @return {void} 
 	 */
-	getSelectedItems() {}
+	getSelectedItems() {return}
 
 	/**
 	 * GetSelectedTitles
 	 * @return {void} 
 	 */
-	getSelectedTitles() {}
+	getSelectedTitles() {return}
 
 	/**
 	 * SetList
 	 * @param {lst} list A comma separated list of items or an array. See the list format above.
 	 * @return {void} 
 	 */
-	setList(list) {}
+	setList(list) {return}
 
 	/**
 	 * SetSelectable
 	 * @param {bin} selectable `If true`, ` make the list selectable. Otherwise`, ` list is not selectable`
 	 * @return {void} 
 	 */
-	setSelectable(selectable) {}
+	setSelectable(selectable) {return}
 
 	/**
 	 * SetItemByIndex
@@ -6661,14 +5104,14 @@ class UIList {
 	 * @param {str} [newImage] `The new icon or image`
 	 * @return {void} 
 	 */
-	setItemByIndex(index, newTitle, newBody, newImage) {}
+	setItemByIndex(index, newTitle, newBody, newImage) {return}
 
 	/**
 	 * GetItemByIndex
 	 * @param {num} index `Returns the item in a list as an object of the following format { title`, ` body`, ` image }`
 	 * @return {void} 
 	 */
-	getItemByIndex(index) {}
+	getItemByIndex(index) {return}
 
 	/**
 	 * SetItem
@@ -6678,53 +5121,53 @@ class UIList {
 	 * @param {str} [newImage] `A material icon font or image file path.`
 	 * @return {void} 
 	 */
-	setItem(title, newTitle, newBody, newImage) {}
+	setItem(title, newTitle, newBody, newImage) {return}
 
 	/**
 	 * GetItem
 	 * @param {str} title `Returns the item in a list as an object of the following format { title`, ` body`, ` image }`
 	 * @return {void} 
 	 */
-	getItem(title) {}
+	getItem(title) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the item to remove`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The title of the list to remove.`
 	 * @return {void} 
 	 */
-	removeItemByName(name) {}
+	removeItemByName(name) {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * DeselectAll
 	 * @return {void} 
 	 */
-	deselectAll() {}
+	deselectAll() {return}
 
 	/**
 	 * SelectItemByIndex
 	 * @param {num} index `The index to be selected.`
 	 * @return {void} 
 	 */
-	selectItemByIndex(index) {}
+	selectItemByIndex(index) {return}
 
 	/**
 	 * SetTitleText
@@ -6732,7 +5175,7 @@ class UIList {
 	 * @param {str} title `The new title text.`
 	 * @return {void} 
 	 */
-	setTitleText(index, title) {}
+	setTitleText(index, title) {return}
 
 	/**
 	 * SetBodyText
@@ -6740,7 +5183,7 @@ class UIList {
 	 * @param {str} newText `The new secondary text.`
 	 * @return {void} 
 	 */
-	setBodyText(index, newText) {}
+	setBodyText(index, newText) {return}
 
 	/**
 	 * SetIcon
@@ -6748,7 +5191,7 @@ class UIList {
 	 * @param {str} icon `Material icon font.`
 	 * @return {void} 
 	 */
-	setIcon(index, icon) {}
+	setIcon(index, icon) {return}
 
 	/**
 	 * SetCornerRadius
@@ -6759,7 +5202,7 @@ class UIList {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * Animate
@@ -6783,7 +5226,7 @@ class UIList {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -6791,31 +5234,31 @@ class UIList {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -6823,14 +5266,14 @@ class UIList {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -6841,7 +5284,7 @@ class UIList {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -6852,7 +5295,7 @@ class UIList {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -6861,7 +5304,7 @@ class UIList {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -6870,204 +5313,114 @@ class UIList {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIMenu {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the padding of each menu item
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of each menu item */
 	itemPadding;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the items in the menu
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the items in the menu */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -7075,27 +5428,27 @@ class UIMenu {
 	 * @param {(item: str, icon: str, index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * Show
 	 * @param {obj} parent The component where to anchor the menu. It can be a `Button` or an `Image`.
 	 * @return {void} 
 	 */
-	show(parent) {}
+	show(parent) {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * SetList
 	 * @param {lst} list The list items to show.
 	 * @return {void} 
 	 */
-	setList(list) {}
+	setList(list) {return}
 
 	/**
 	 * AddItem
@@ -7103,33 +5456,33 @@ class UIMenu {
 	 * @param {num} index `The index at which to add the item.`
 	 * @return {void} 
 	 */
-	addItem(name, index) {}
+	addItem(name, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByName(name) {}
+	removeItemByName(name) {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * SetPosition
@@ -7137,14 +5490,14 @@ class UIMenu {
 	 * @param {num} top `The position of the menu from the top of the parent or anchor component. The unit is in pixels.`
 	 * @return {void} 
 	 */
-	setPosition(left, top) {}
+	setPosition(left, top) {return}
 
 	/**
 	 * SetAutoFocus
 	 * @param {bin} bool Value can be `true` or `false`
 	 * @return {void} 
 	 */
-	setAutoFocus(bool) {}
+	setAutoFocus(bool) {return}
 
 	/**
 	 * SetEnabled
@@ -7152,14 +5505,14 @@ class UIMenu {
 	 * @param {bin} value Values can be `true` or `false`. `false` to disable.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the item.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -7167,21 +5520,21 @@ class UIMenu {
 	 * @param {bin} value Values can be `true` or `false`. `false` to disable an item.
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The name of the item.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -7205,7 +5558,7 @@ class UIMenu {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -7213,19 +5566,19 @@ class UIMenu {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -7233,14 +5586,14 @@ class UIMenu {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -7251,7 +5604,7 @@ class UIMenu {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -7262,7 +5615,7 @@ class UIMenu {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetBorder
@@ -7271,7 +5624,7 @@ class UIMenu {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -7282,222 +5635,123 @@ class UIMenu {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIProgress {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the size of the circular progress control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the circular progress control */
 	circleSize;
 
-	/**
-	 * Sets or returns the theme color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Sets or returns the thickness of the circular stroke
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the thickness of the circular stroke */
 	thickness;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Sets or returns the type of the Progress Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the type of the Progress Component */
 	type;
 
-	/**
-	 * Sets or returns the value of the progress control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the value of the progress control */
 	value;
 
-	/**
-	 * Sets or returns the variant of the progress component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the progress component */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -7505,14 +5759,14 @@ class UIProgress {
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -7536,7 +5790,7 @@ class UIProgress {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -7544,31 +5798,31 @@ class UIProgress {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -7576,14 +5830,14 @@ class UIProgress {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -7594,7 +5848,7 @@ class UIProgress {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -7605,7 +5859,7 @@ class UIProgress {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -7614,7 +5868,7 @@ class UIProgress {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -7623,7 +5877,7 @@ class UIProgress {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -7634,264 +5888,144 @@ class UIProgress {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIRadioGroup {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the Radio Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the Radio Component */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the disabled state of the radio button group
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the disabled state of the radio button group */
 	disabled;
 
-	/**
-	 * Sets or returns the depth of the RadioGroup container
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the depth of the RadioGroup container */
 	elevation;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the icon color in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the icon color in hexadecimal format */
 	iconColor;
 
-	/**
-	 * Sets or returns the position of the icon
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the position of the icon */
 	iconPosition;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the padding of each radio item
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of each radio item */
 	itemPadding;
 
-	/**
-	 * Sets or returns the label text of the RadioGroup Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the label text of the RadioGroup Component */
 	label;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the list array
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the list array */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns whether the container is outlined or elevated
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the container is outlined or elevated */
 	outlined;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the size of the radio button
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size of the radio button */
 	radioSize;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the space between the radio button and the text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the space between the radio button and the text */
 	spaceBetween;
 
-	/**
-	 * Stest or returns the color of the text in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Stest or returns the color of the text in hexadecimal format */
 	textColor;
 
-	/**
-	 * Sets or returns the position of the label text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the position of the label text */
 	textPosition;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the value of the RadioGroup Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the value of the RadioGroup Component */
 	value;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -7899,21 +6033,21 @@ class UIRadioGroup {
 	 * @param {(index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(checked: bin, label: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {str} val `A comma separated items`
 	 * @return {void} 
 	 */
-	setList(val) {}
+	setList(val) {return}
 
 	/**
 	 * SetItemByIndex
@@ -7921,7 +6055,7 @@ class UIRadioGroup {
 	 * @param {num} index `The index to of the item to be updated`
 	 * @return {void} 
 	 */
-	setItemByIndex(item, index) {}
+	setItemByIndex(item, index) {return}
 
 	/**
 	 * SetItemByName
@@ -7929,7 +6063,7 @@ class UIRadioGroup {
 	 * @param {str} text `The new text to replaced the name of the item.`
 	 * @return {void} 
 	 */
-	setItemByName(name, text) {}
+	setItemByName(name, text) {return}
 
 	/**
 	 * AddItem
@@ -7937,33 +6071,33 @@ class UIRadioGroup {
 	 * @param {num} index `The index in which to add the item.`
 	 * @return {void} 
 	 */
-	addItem(name, index) {}
+	addItem(name, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByName(name) {}
+	removeItemByName(name) {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * SetEnabled
@@ -7971,14 +6105,14 @@ class UIRadioGroup {
 	 * @param {bin} value Values can be `true` or `false`. If `false`,  the item will be disabled.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the corresponding item.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -7986,21 +6120,21 @@ class UIRadioGroup {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The radiogroup text.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(label: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetCornerRadius
@@ -8011,7 +6145,7 @@ class UIRadioGroup {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * Animate
@@ -8035,7 +6169,7 @@ class UIRadioGroup {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -8043,31 +6177,31 @@ class UIRadioGroup {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -8075,14 +6209,14 @@ class UIRadioGroup {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -8093,7 +6227,7 @@ class UIRadioGroup {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -8104,7 +6238,7 @@ class UIRadioGroup {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -8113,7 +6247,7 @@ class UIRadioGroup {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -8122,258 +6256,141 @@ class UIRadioGroup {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UISelect {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns a boolean value whether the component is enabled or disabled
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns a boolean value whether the component is enabled or disabled */
 	enabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the color of the icon in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the icon in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
 	iconColor;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the label text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the label text */
 	label;
 
-	/**
-	 * Sets or returns the color of the label text in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the label text in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
 	labelColor;
 
-	/**
-	 * Sets or returns the size of the label
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the label */
 	labelSize;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the list items
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the list items */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the maximum height of the popup container
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the maximum height of the popup container */
 	maxHeight;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Sets or returns the color of the popup in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the popup in hexadecimal format */
 	popupColor;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant of the Select Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant of the Select Component */
 	sizeVariant;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the value of the Select Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the value of the Select Component */
 	value;
 
-	/**
-	 * Sets or returns the variant of the Select Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the Select Component */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -8381,21 +6398,21 @@ class UISelect {
 	 * @param {(value: str) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetOnOpen
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnOpen(callback) {}
+	setOnOpen(callback) {return}
 
 	/**
 	 * SetOnClose
 	 * @param {(value: str) => void} callback 
 	 * @return {void} 
 	 */
-	setOnClose(callback) {}
+	setOnClose(callback) {return}
 
 	/**
 	 * AddItem
@@ -8403,47 +6420,47 @@ class UISelect {
 	 * @param {num} index `The index in which to add the item.`
 	 * @return {void} 
 	 */
-	addItem(item, index) {}
+	addItem(item, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the corresponding item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByName(name) {}
+	removeItemByName(name) {return}
 
 	/**
 	 * ShifItem
 	 * @return {void} 
 	 */
-	shifItem() {}
+	shifItem() {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * GetItem
 	 * @param {num} index `The index of the item.`
 	 * @return {void} 
 	 */
-	getItem(index) {}
+	getItem(index) {return}
 
 	/**
 	 * SetList
 	 * @param {obj} items A comma separated string or array of options
 	 * @return {void} 
 	 */
-	setList(items) {}
+	setList(items) {return}
 
 	/**
 	 * SetEnabled
@@ -8451,14 +6468,14 @@ class UISelect {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the corresponding item in the select menu.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -8466,28 +6483,28 @@ class UISelect {
 	 * @param {bin} value Value can be `true` or `false`
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The name of the menu item.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -8511,7 +6528,7 @@ class UISelect {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -8519,31 +6536,31 @@ class UISelect {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -8551,14 +6568,14 @@ class UISelect {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -8569,7 +6586,7 @@ class UISelect {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -8580,7 +6597,7 @@ class UISelect {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -8589,7 +6606,7 @@ class UISelect {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -8598,7 +6615,7 @@ class UISelect {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -8609,246 +6626,135 @@ class UISelect {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UISlider {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the Slider
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the Slider */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the marks on the Slider Component
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the marks on the Slider Component */
 	marks;
 
-	/**
-	 * Sets or returns the maximum value
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the maximum value */
 	maxValue;
 
-	/**
-	 * Sets or returns the minimum value
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the minimum value */
 	minValue;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the orientation of the Slider Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the orientation of the Slider Component */
 	orientation;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the Sider Component steps
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the Sider Component steps */
 	step;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Sets or returns the track properties of the Slider Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the track properties of the Slider Component */
 	track;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the value of the Slider Component
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the value of the Slider Component */
 	value;
 
-	/**
-	 * Sets or returns the value label display type
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the value label display type */
 	valueLabelDisplay;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -8856,14 +6762,14 @@ class UISlider {
 	 * @param {(value: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetOnSelect
 	 * @param {(value: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnSelect(callback) {}
+	setOnSelect(callback) {return}
 
 	/**
 	 * SetRange
@@ -8871,34 +6777,34 @@ class UISlider {
 	 * @param {num} [max] `Maximum value of the slider.`
 	 * @return {void} 
 	 */
-	setRange(min, max) {}
+	setRange(min, max) {return}
 
 	/**
 	 * SetMarks
 	 * @param {obj} val The marks on the Slider Component.
 	 * @return {void} 
 	 */
-	setMarks(val) {}
+	setMarks(val) {return}
 
 	/**
 	 * GetMarks
 	 * @return {bin} 
 	 */
-	getMarks() {}
+	getMarks() {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -8922,7 +6828,7 @@ class UISlider {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -8930,31 +6836,31 @@ class UISlider {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -8962,14 +6868,14 @@ class UISlider {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -8980,7 +6886,7 @@ class UISlider {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -8991,7 +6897,7 @@ class UISlider {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -9000,7 +6906,7 @@ class UISlider {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -9009,7 +6915,7 @@ class UISlider {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -9020,210 +6926,117 @@ class UISlider {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIStepper {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * Sets or returns the active step
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the active step */
 	activeStep;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the elevation of the mobile stepper
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the elevation of the mobile stepper */
 	elevation;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the orientation of the Stepper
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the orientation of the Stepper */
 	orientation;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -9231,47 +7044,47 @@ class UIStepper {
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnComplete(callback) {}
+	setOnComplete(callback) {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * NextStep
 	 * @return {void} 
 	 */
-	nextStep() {}
+	nextStep() {return}
 
 	/**
 	 * PreviousStep
 	 * @return {void} 
 	 */
-	previousStep() {}
+	previousStep() {return}
 
 	/**
 	 * GetLayout
 	 * @param {num} index `The index of the corresponing stepper layout`
 	 * @return {UILayout} 
 	 */
-	getLayout(index) {}
+	getLayout(index) {return}
 
 	/**
 	 * GetLayoutIndex
 	 * @param {obj} layout The layout to check.
 	 * @return {num} 
 	 */
-	getLayoutIndex(layout) {}
+	getLayoutIndex(layout) {return}
 
 	/**
 	 * RemoveStep
 	 * @param {num} index `The index of the step to remove.`
 	 * @return {void} 
 	 */
-	removeStep(index) {}
+	removeStep(index) {return}
 
 	/**
 	 * SetTitleText
@@ -9279,21 +7092,21 @@ class UIStepper {
 	 * @param {str} title `The new title text.`
 	 * @return {void} 
 	 */
-	setTitleText(index, title) {}
+	setTitleText(index, title) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -9317,7 +7130,7 @@ class UIStepper {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -9325,31 +7138,31 @@ class UIStepper {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -9357,14 +7170,14 @@ class UIStepper {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -9375,7 +7188,7 @@ class UIStepper {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -9386,7 +7199,7 @@ class UIStepper {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -9395,7 +7208,7 @@ class UIStepper {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -9404,7 +7217,7 @@ class UIStepper {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -9415,252 +7228,138 @@ class UIStepper {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UISwitch {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the disabled state of the ripple effect
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the disabled state of the ripple effect */
 	disableRipple;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the edge position of the toggle
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the edge position of the toggle */
 	edge;
 
-	/**
-	 * Sets or returns a Boolean whether the component is enabled or disabled
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns a Boolean whether the component is enabled or disabled */
 	enable;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the icon position
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the icon position */
 	iconPosition;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns a boolean value whether this component is required or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns a boolean value whether this component is required or not */
 	required;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant of the toggle switch
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant of the toggle switch */
 	sizeVariant;
 
-	/**
-	 * Sets or returns the space between the switch icon and the label text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the space between the switch icon and the label text */
 	spaceBetween;
 
-	/**
-	 * Sets or returns the label text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the label text */
 	text;
 
-	/**
-	 * Sets or returns the text color in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text color in hexadecimal format */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the value of the switch toggle
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the value of the switch toggle */
 	value;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -9668,14 +7367,14 @@ class UISwitch {
 	 * @param {(check: bin) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -9699,7 +7398,7 @@ class UISwitch {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -9707,31 +7406,31 @@ class UISwitch {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -9739,14 +7438,14 @@ class UISwitch {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -9757,7 +7456,7 @@ class UISwitch {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -9768,7 +7467,7 @@ class UISwitch {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -9777,7 +7476,7 @@ class UISwitch {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -9786,7 +7485,7 @@ class UISwitch {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -9797,258 +7496,141 @@ class UISwitch {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UISwitchGroup {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the edge position of the toggle
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the edge position of the toggle */
 	edge;
 
-	/**
-	 * Sets or returns the depth of the control container
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the depth of the control container */
 	elevation;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the theme color <col nobox #fb8c00>Primary</col> <col nobox #fb8c00>Secondary</col> or <col nobox #fb8c00>Default</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color <col nobox #fb8c00>Primary</col> <col nobox #fb8c00>Secondary</col> or <col nobox #fb8c00>Default</col> */
 	iconColor;
 
-	/**
-	 * Sets or returns the size of the icon
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the icon */
 	iconSize;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the padding of each switch item
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of each switch item */
 	itemPadding;
 
-	/**
-	 * Sets or returns the label text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the label text */
 	label;
 
-	/**
-	 * Sets or returns the color of the label text in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the label text in hexadecimal format */
 	labelColor;
 
-	/**
-	 * Sets or returns the size of the label text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the label text */
 	labelSize;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the list items
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the list items */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns whether the container is outlined or elevated
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the container is outlined or elevated */
 	outlined;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the theme color <col nobox #fb8c00>primary</col> or <col nobox #fb8c00>secondary</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color <col nobox #fb8c00>primary</col> or <col nobox #fb8c00>secondary</col> */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -10056,14 +7638,14 @@ class UISwitchGroup {
 	 * @param {(value: bin, text: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(values: lst) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetValueByIndex
@@ -10071,21 +7653,21 @@ class UISwitchGroup {
 	 * @param {bin} val A Values can be `true` or `false`
 	 * @return {void} 
 	 */
-	setValueByIndex(index, val) {}
+	setValueByIndex(index, val) {return}
 
 	/**
 	 * GetValueByIndex
 	 * @param {num} index `The index of the corresponding item.`
 	 * @return {bin} 
 	 */
-	getValueByIndex(index) {}
+	getValueByIndex(index) {return}
 
 	/**
 	 * SetList
 	 * @param {obj} lst The list array or a comma separated list.
 	 * @return {void} 
 	 */
-	setList(lst) {}
+	setList(lst) {return}
 
 	/**
 	 * AddItem
@@ -10095,33 +7677,33 @@ class UISwitchGroup {
 	 * @param {num} index `The index in which to insert the item. Default is at the bottom of the list.`
 	 * @return {void} 
 	 */
-	addItem(title, icon, value, index) {}
+	addItem(title, icon, value, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the corresponding item to remove.`
 	 * @return {void} 
 	 */
-	removeItemByIndex(index) {}
+	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} title `The title text of the SwitchGroup item.`
 	 * @return {void} 
 	 */
-	removeItemByName(title) {}
+	removeItemByName(title) {return}
 
 	/**
 	 * PopItem
 	 * @return {void} 
 	 */
-	popItem() {}
+	popItem() {return}
 
 	/**
 	 * ShiftItem
 	 * @return {void} 
 	 */
-	shiftItem() {}
+	shiftItem() {return}
 
 	/**
 	 * SetEnabled
@@ -10129,21 +7711,21 @@ class UISwitchGroup {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the corresponding item in the switch group.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(text: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetCornerRadius
@@ -10154,7 +7736,7 @@ class UISwitchGroup {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * Animate
@@ -10178,7 +7760,7 @@ class UISwitchGroup {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -10186,31 +7768,31 @@ class UISwitchGroup {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -10218,14 +7800,14 @@ class UISwitchGroup {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -10236,7 +7818,7 @@ class UISwitchGroup {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -10247,7 +7829,7 @@ class UISwitchGroup {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -10256,7 +7838,7 @@ class UISwitchGroup {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -10265,270 +7847,147 @@ class UISwitchGroup {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UITabs {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns a boolean value whether the tabs are centered or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns a boolean value whether the tabs are centered or not */
 	centered;
 
-	/**
-	 * Sets or returns the theme color of the tab bar
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the tab bar */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the elevation of the tab bar
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the elevation of the tab bar */
 	elevation;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the color ofthe tab icon
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color ofthe tab icon */
 	iconColor;
 
-	/**
-	 * Sets or returns the tab icon
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the tab icon */
 	iconSize;
 
-	/**
-	 * Sets or returns the color of the indicator bar
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the indicator bar */
 	indicatorColor;
 
-	/**
-	 * Sets or returns the corner radius of the indicator bar in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius of the indicator bar in pixels */
 	indicatorRadius;
 
-	/**
-	 * Sets or returns the thickness of the indicator bar in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the thickness of the indicator bar in pixels */
 	indicatorThickness;
 
-	/**
-	 * Sets or returns the width of the indicator bar as a fraction of the tab item width
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the indicator bar as a fraction of the tab item width */
 	indicatorWidth;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the scroll button mode when tab items overflow the width of its container
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the scroll button mode when tab items overflow the width of its container */
 	scrollButtonMode;
 
-	/**
-	 * Sets or returns the height of the tab in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the tab in pixels */
 	tabHeight;
 
-	/**
-	 * Sets or returns the padding of the tab items
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the padding of the tab items */
 	tabPadding;
 
-	/**
-	 * Sets or returns the theme color for the tab bar titles <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color for the tab bar titles <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col> */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the variant of the Tabs Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the Tabs Component */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -10536,21 +7995,21 @@ class UITabs {
 	 * @param {(name: str, index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(name: str, index: num) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetTabs
 	 * @param {lst} tabs The tab titles array. See examples for format.
 	 * @return {void} 
 	 */
-	setTabs(tabs) {}
+	setTabs(tabs) {return}
 
 	/**
 	 * AddTab
@@ -10559,7 +8018,7 @@ class UITabs {
 	 * @param {num} index `The index in which to insert the tab.`
 	 * @return {void} 
 	 */
-	addTab(name, icon, index) {}
+	addTab(name, icon, index) {return}
 
 	/**
 	 * SetTitleText
@@ -10567,7 +8026,7 @@ class UITabs {
 	 * @param {str} title `The new title.`
 	 * @return {void} 
 	 */
-	setTitleText(index, title) {}
+	setTitleText(index, title) {return}
 
 	/**
 	 * SetIcon
@@ -10575,42 +8034,42 @@ class UITabs {
 	 * @param {str} icon `Material icon font.`
 	 * @return {void} 
 	 */
-	setIcon(index, icon) {}
+	setIcon(index, icon) {return}
 
 	/**
 	 * RemoveTabByIndex
 	 * @param {num} index `The index of the corresponding tab to remove.`
 	 * @return {void} 
 	 */
-	removeTabByIndex(index) {}
+	removeTabByIndex(index) {return}
 
 	/**
 	 * RemoveTabByName
 	 * @param {str} name `The name of the corresponding tab to remove.`
 	 * @return {void} 
 	 */
-	removeTabByName(name) {}
+	removeTabByName(name) {return}
 
 	/**
 	 * GetLayout
 	 * @param {str} name `The name of the tab. You can also pass the index of the tab.`
 	 * @return {UILayout} 
 	 */
-	getLayout(name) {}
+	getLayout(name) {return}
 
 	/**
 	 * ShowTab
 	 * @param {str} name `The name of the tab to be shown.`
 	 * @return {void} 
 	 */
-	showTab(name) {}
+	showTab(name) {return}
 
 	/**
 	 * ShowTabByIndex
 	 * @param {num} index `The index of the tab to be shown.`
 	 * @return {void} 
 	 */
-	showTabByIndex(index) {}
+	showTabByIndex(index) {return}
 
 	/**
 	 * SetEnabled
@@ -10618,14 +8077,14 @@ class UITabs {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabled(index, value) {}
+	setEnabled(index, value) {return}
 
 	/**
 	 * GetEnabled
 	 * @param {num} index `The index of the corresponding tab.`
 	 * @return {bin} 
 	 */
-	getEnabled(index) {}
+	getEnabled(index) {return}
 
 	/**
 	 * SetEnabledByName
@@ -10633,14 +8092,14 @@ class UITabs {
 	 * @param {bin} value Values can be `true` or `false`.
 	 * @return {void} 
 	 */
-	setEnabledByName(name, value) {}
+	setEnabledByName(name, value) {return}
 
 	/**
 	 * GetEnabledByName
 	 * @param {str} name `The name of the tab.`
 	 * @return {bin} 
 	 */
-	getEnabledByName(name) {}
+	getEnabledByName(name) {return}
 
 	/**
 	 * ShowScrollButton
@@ -10651,21 +8110,21 @@ class UITabs {
  `off` : will never present them.
 	 * @return {void} 
 	 */
-	showScrollButton(mode) {}
+	showScrollButton(mode) {return}
 
 	/**
 	 * GetLayoutIndex
 	 * @param {obj} layout The layout to check.
 	 * @return {num} 
 	 */
-	getLayoutIndex(layout) {}
+	getLayoutIndex(layout) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(text: str, index: num, event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetCornerRadius
@@ -10676,7 +8135,7 @@ class UITabs {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetIndicatorStyle
@@ -10686,7 +8145,7 @@ class UITabs {
 	 * @param {num} radius `The corner radius in pixels.`
 	 * @return {void} 
 	 */
-	setIndicatorStyle(width, thickness, color, radius) {}
+	setIndicatorStyle(width, thickness, color, radius) {return}
 
 	/**
 	 * SetTabPadding
@@ -10697,7 +8156,7 @@ class UITabs {
 	 * @param {str} [mode='px'] Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
 	 * @return {void} 
 	 */
-	setTabPadding(left, top, right, bottom, mode) {}
+	setTabPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Animate
@@ -10721,7 +8180,7 @@ class UITabs {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -10729,31 +8188,31 @@ class UITabs {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -10761,14 +8220,14 @@ class UITabs {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -10779,7 +8238,7 @@ class UITabs {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -10790,7 +8249,7 @@ class UITabs {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -10799,7 +8258,7 @@ class UITabs {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -10808,252 +8267,138 @@ class UITabs {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIText {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * Sets or returns the horizontal alignment of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the horizontal alignment of the text */
 	alignment;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns whether the text is <col nobox #fb8c00>bold</col> or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the text is <col nobox #fb8c00>bold</col> or not */
 	bold;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the text <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the text <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col> */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the ellipsis use when the text is truncated
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the ellipsis use when the text is truncated */
 	ellipsize;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns whether the text is <col nobox #fb8c00>italized</col> or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the text is <col nobox #fb8c00>italized</col> or not */
 	italic;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text */
 	text;
 
-	/**
-	 * Sets or returns the text color in hexadecimal format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text color in hexadecimal format */
 	textColor;
 
-	/**
-	 * Sets or returns the fontsize for the text
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the fontsize for the text */
 	textSize;
 
-	/**
-	 * Sets or returns the style of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the style of the text */
 	textStyle;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns whether the text is <col nobox #fb8c00>underlined</col> or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns whether the text is <col nobox #fb8c00>underlined</col> or not */
 	underline;
 
-	/**
-	 * Sets or returns the text variants
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text variants */
 	variant;
 
-	/**
-	 * Sets or returns the vertical alignment of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the vertical alignment of the text */
 	verticalAlignment;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -11061,13 +8406,13 @@ class UIText {
 	 * @param {str} html `An html string`
 	 * @return {void} 
 	 */
-	setHtml(html) {}
+	setHtml(html) {return}
 
 	/**
 	 * GetHtml
 	 * @return {str} 
 	 */
-	getHtml() {}
+	getHtml() {return}
 
 	/**
 	 * SetTextShadow
@@ -11077,21 +8422,21 @@ class UIText {
 	 * @param {obj} color A hexadecimal color e.g. `#aarrggbb`
 	 * @return {void} 
 	 */
-	setTextShadow(radius, dx, dy, color) {}
+	setTextShadow(radius, dx, dy, color) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -11115,7 +8460,7 @@ class UIText {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -11123,31 +8468,31 @@ class UIText {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -11155,14 +8500,14 @@ class UIText {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -11173,7 +8518,7 @@ class UIText {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -11184,7 +8529,7 @@ class UIText {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -11193,7 +8538,7 @@ class UIText {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -11202,7 +8547,7 @@ class UIText {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -11213,306 +8558,165 @@ class UIText {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UITextField {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * Sets or returns a boolean value whethe the input is focus when rendered into the DOM
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns a boolean value whethe the input is focus when rendered into the DOM */
 	autoFocus;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the theme color of the textfield component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the theme color of the textfield component */
 	color;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Returns the end adornment text or icon
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the end adornment text or icon */
 	endAdornment;
 
-	/**
-	 * Sets or returns the error state of the TextField component
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the error state of the TextField component */
 	error;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Sets or returns the helper text or the hint below the input
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the helper text or the hint below the input */
 	helperText;
 
-	/**
-	 * Sets or returns the hint text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the hint text */
 	hint;
 
-	/**
-	 * Sets or returns the input type
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the input type */
 	inputType;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Sets or returns the label text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the label text */
 	label;
 
-	/**
-	 * Sets return the label color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} Sets return the label color in hexadecimal format <col nobox #fb8c00>#rrggbb</col> */
 	labelColor;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the maximum rows for a <col nobox #fb8c00>multiline</col> textfield
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the maximum rows for a <col nobox #fb8c00>multiline</col> textfield */
 	maxRows;
 
-	/**
-	 * Sets or returns the minimum rows for a <col nobox #fb8c00>multiline</col> textfield
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the minimum rows for a <col nobox #fb8c00>multiline</col> textfield */
 	minRows;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the outline color in hexadecimal form <col nobox #fb8c00>#rrggbb</col> when the textfield is focus
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the outline color in hexadecimal form <col nobox #fb8c00>#rrggbb</col> when the textfield is focus */
 	outlineColor;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Sets or returns the placeholder text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the placeholder text */
 	placeholder;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns a boolean value whether the text field in required or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns a boolean value whether the text field in required or not */
 	required;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the size variant of the textfield
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the size variant of the textfield */
 	sizeVariant;
 
-	/**
-	 * Returns the start adornment text or icon
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the start adornment text or icon */
 	startAdornment;
 
-	/**
-	 * Sets or returns the step increment if the input is of type number;
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the step increment if the input is of type number; */
 	stepIncrement;
 
-	/**
-	 * Sets or returns the text value of the TextField Component
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text value of the TextField Component */
 	text;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the variant of the TextField
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the variant of the TextField */
 	variant;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -11520,21 +8724,21 @@ class UITextField {
 	 * @param {(text: str) => void} callback 
 	 * @return {void} 
 	 */
-	setOnEnter(callback) {}
+	setOnEnter(callback) {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(text: str) => void} callback 
 	 * @return {void} 
 	 */
-	setOnChange(callback) {}
+	setOnChange(callback) {return}
 
 	/**
 	 * SetOnFocus
 	 * @param {(focus: bin) => void} callback 
 	 * @return {void} 
 	 */
-	setOnFocus(callback) {}
+	setOnFocus(callback) {return}
 
 	/**
 	 * SetRows
@@ -11542,7 +8746,7 @@ class UITextField {
 	 * @param {num} [max] `The maximum number of rows.`
 	 * @return {void} 
 	 */
-	setRows(min, max) {}
+	setRows(min, max) {return}
 
 	/**
 	 * SetStartAdornment
@@ -11552,20 +8756,20 @@ class UITextField {
  `Touchable` : If the adornment is touchable.
 	 * @return {void} 
 	 */
-	setStartAdornment(text, type) {}
+	setStartAdornment(text, type) {return}
 
 	/**
 	 * SetStartAdornmentOnTouch
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setStartAdornmentOnTouch(callback) {}
+	setStartAdornmentOnTouch(callback) {return}
 
 	/**
 	 * GetStartAdornment
 	 * @return {str} 
 	 */
-	getStartAdornment() {}
+	getStartAdornment() {return}
 
 	/**
 	 * SetEndAdornment
@@ -11575,34 +8779,34 @@ class UITextField {
  `Touchable` : If the adornment is touchable.
 	 * @return {void} 
 	 */
-	setEndAdornment(text, type) {}
+	setEndAdornment(text, type) {return}
 
 	/**
 	 * SetEndAdornmentOnTouch
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setEndAdornmentOnTouch(callback) {}
+	setEndAdornmentOnTouch(callback) {return}
 
 	/**
 	 * GetEndAdornment
 	 * @return {str} 
 	 */
-	getEndAdornment() {}
+	getEndAdornment() {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -11626,7 +8830,7 @@ class UITextField {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -11634,31 +8838,31 @@ class UITextField {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -11666,14 +8870,14 @@ class UITextField {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -11684,7 +8888,7 @@ class UITextField {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -11695,7 +8899,7 @@ class UITextField {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -11704,7 +8908,7 @@ class UITextField {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -11713,7 +8917,7 @@ class UITextField {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -11724,30 +8928,27 @@ class UITextField {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UITimePicker {
 
-	/**
-	 * Sets or returns the time format
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the time format */
 	format;
 
 	/**
@@ -11767,190 +8968,100 @@ class UITimePicker {
  `a` : am pm
 	 * @return {bin} 
 	 */
-	show(callback, format) {}
+	show(callback, format) {return}
 }
 
 
 class UITreeView {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the list object
-	 * @type {obj} 
-	 */
+	/** @type {obj} Sets or returns the list object */
 	list;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Returns the selected item of the TreeView
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the selected item of the TreeView */
 	value;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
 	/**
@@ -11958,14 +9069,14 @@ class UITreeView {
 	 * @param {(value: str, path: str) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {obj} obj The list object of the treeview items. See example above.
 	 * @return {void} 
 	 */
-	setList(obj) {}
+	setList(obj) {return}
 
 	/**
 	 * AddItem
@@ -11973,21 +9084,21 @@ class UITreeView {
 	 * @param {obj} obj See list object for more info.
 	 * @return {void} 
 	 */
-	addItem(name, obj) {}
+	addItem(name, obj) {return}
 
 	/**
 	 * GetItem
 	 * @param {str} name `The parent name of the tree items.`
 	 * @return {obj} 
 	 */
-	getItem(name) {}
+	getItem(name) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -12011,7 +9122,7 @@ class UITreeView {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -12019,31 +9130,31 @@ class UITreeView {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -12051,14 +9162,14 @@ class UITreeView {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -12069,7 +9180,7 @@ class UITreeView {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -12080,7 +9191,7 @@ class UITreeView {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -12089,7 +9200,7 @@ class UITreeView {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -12098,7 +9209,7 @@ class UITreeView {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -12109,234 +9220,129 @@ class UITreeView {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIWebView {
 
-	/**
-	 * Returns the absolute height of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/**
-	 * Returns the absolute distance of the control from the left in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/**
-	 * Returns the absolute distance of the control from the top in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/**
-	 * Returns the absolute width of the control in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/**
-	 * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
-	 * @type {str} 
-	 */
+	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/**
-	 * The path to your image file
-	 * @type {str} 
-	 */
+	/** @type {str} The path to your image file */
 	backImage;
 
-	/**
-	 * Sets or returns the list of blocked urls
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the list of blocked urls */
 	blockUrls;
 
-	/**
-	 * Sets or returns the border thickness in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/**
-	 * Sets or returns the border color
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border color */
 	borderColor;
 
-	/**
-	 * Sets or returns the border style
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/**
-	 * Sets or returns the corner radius in pixels
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the corner radius in pixels */
 	cornerRadius;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control
-	 * @type {bin} 
-	 */
+	/** @type {bin} Sets or returns the <col nobox #fb8c00>disabled</col> state of the control */
 	disabled;
 
-	/**
-	 * A reference to the webview`s window document object
-	 * @type {obj} 
-	 */
+	/** @type {obj} A reference to the webview`s window document object */
 	document;
 
-	/**
-	 * Sets or returns the redirect url when an error occur
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the redirect url when an error occur */
 	errorPage;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use */
 	fontFile;
 
-	/**
-	 * Sets or returns the height of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the height of the control as a fraction of the parent control */
 	height;
 
-	/**
-	 * Setst or returns the html loaded in the iframe
-	 * @type {str} 
-	 */
+	/** @type {str} Setst or returns the html loaded in the iframe */
 	html;
 
-	/**
-	 * Returns whether the control is visible or not
-	 * @type {bin} 
-	 */
+	/** @type {bin} Returns whether the control is visible or not */
 	isVisible;
 
-	/**
-	 * Returns the distance of the control from the left
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/**
-	 * Sets or returns the margin of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the margin of the control */
 	margins;
 
-	/**
-	 * Sets or returns the opacity of the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the opacity of the control */
 	opacity;
 
-	/**
-	 * Sets or returns the <col nobox #fb8c00>options</col> of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/**
-	 * Sets or returns the padding of the control
-	 * @type {lst} 
-	 */
+	/** @type {lst} Sets or returns the padding of the control */
 	padding;
 
-	/**
-	 * Returns the parent layout control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the parent layout control */
 	parent;
 
-	/**
-	 * Returns the position of the control
-	 * @type {obj} 
-	 */
+	/** @type {obj} Returns the position of the control */
 	position;
 
-	/**
-	 * Sets or returns the angle of rotation in degrees
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the angle of rotation in degrees */
 	rotation;
 
-	/**
-	 * Sets or returns the color of the text
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the color of the text */
 	textColor;
 
-	/**
-	 * Sets or returns the size of the text within the control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the size of the text within the control */
 	textSize;
 
-	/**
-	 * Sets or returns the text zoom of the page loaded in the web view
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the text zoom of the page loaded in the web view */
 	textZoom;
 
-	/**
-	 * Returns the distance of the control from the top
-	 * @type {num} 
-	 */
+	/** @type {num} Returns the distance of the control from the top */
 	top;
 
-	/**
-	 * Returns the type of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the type of the control */
 	type;
 
-	/**
-	 * Sets or returns the url of the webview
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the url of the webview */
 	url;
 
-	/**
-	 * Sets or returns the visibility of the control
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the visibility of the control */
 	visibility;
 
-	/**
-	 * Sets or returns the width of the control as a fraction of the parent control
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the width of the control as a fraction of the parent control */
 	width;
 
-	/**
-	 * A reference to the webview`s window object
-	 * @type {obj} 
-	 */
+	/** @type {obj} A reference to the webview`s window object */
 	window;
 
 	/**
@@ -12344,21 +9350,21 @@ class UIWebView {
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnLoad(callback) {}
+	setOnLoad(callback) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnTouch(callback) {}
+	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
 	 * @return {void} 
 	 */
-	setOnContextMenu(callback) {}
+	setOnContextMenu(callback) {return}
 
 	/**
 	 * Animate
@@ -12382,7 +9388,7 @@ class UIWebView {
 	 * @param {num} [duration] `The time in milliseconds.`
 	 * @return {void} 
 	 */
-	animate(anim, duration) {}
+	animate(anim, duration) {return}
 
 	/**
 	 * SetSize
@@ -12390,31 +9396,31 @@ class UIWebView {
 	 * @param {num} height `Fraction of the parent height. [0-1]`
 	 * @return {void} 
 	 */
-	setSize(width, height) {}
+	setSize(width, height) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * Gone
 	 * @return {void} 
 	 */
-	gone() {}
+	gone() {return}
 
 	/**
 	 * Destroy
 	 * @return {void} 
 	 */
-	destroy() {}
+	destroy() {return}
 
 	/**
 	 * SetScale
@@ -12422,14 +9428,14 @@ class UIWebView {
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 	 * @return {void} 
 	 */
-	setScale(x, y) {}
+	setScale(x, y) {return}
 
 	/**
 	 * GetPosition
 	 * @param {str} [options] The mode of the measurements. Values can be `px` or `%`
 	 * @return {obj} 
 	 */
-	getPosition(options) {}
+	getPosition(options) {return}
 
 	/**
 	 * SetMargins
@@ -12440,7 +9446,7 @@ class UIWebView {
 	 * @param {str} [mode='px'] `px` or `%`
 	 * @return {void} 
 	 */
-	setMargins(left, top, right, bottom, mode) {}
+	setMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPadding
@@ -12451,7 +9457,7 @@ class UIWebView {
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
 	 * @return {void} 
 	 */
-	setPadding(left, top, right, bottom, mode) {}
+	setPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * SetPosition
@@ -12460,7 +9466,7 @@ class UIWebView {
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
 	 * @return {void} 
 	 */
-	setPosition(left, top, mode) {}
+	setPosition(left, top, mode) {return}
 
 	/**
 	 * SetBorder
@@ -12469,7 +9475,7 @@ class UIWebView {
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
 	 * @return {void} 
 	 */
-	setBorder(width, clr, style) {}
+	setBorder(width, clr, style) {return}
 
 	/**
 	 * SetCornerRadius
@@ -12480,37 +9486,34 @@ class UIWebView {
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
 	 * @return {void} 
 	 */
-	setCornerRadius(tl, tr, bl, br, mode) {}
+	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
 	 * @return {void} 
 	 */
-	bringForward(zIndex) {}
+	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
 	 * @return {void} 
 	 */
-	sendBackward(zIndex) {}
+	sendBackward(zIndex) {return}
 }
 
 
 class UIColorPicker {
 
-	/**
-	 * Returns the value of the chosen color
-	 * @type {str} 
-	 */
+	/** @type {str} Returns the value of the chosen color */
 	value;
 
 	/**
 	 * GetValue
 	 * @return {str} 
 	 */
-	getValue() {}
+	getValue() {return}
 }
 
 
@@ -12521,38 +9524,26 @@ class UIDateTimePicker {
 	 * @param {(value: str) => void} callback 
 	 * @return {void} 
 	 */
-	setOnSelect(callback) {}
+	setOnSelect(callback) {return}
 }
 
 
 class UIPopover {
 
-	/**
-	 * Sets or returns the path to the background image
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the path to the background image */
 	backImage;
 
-	/**
-	 * Sets or returns the font file use for the Popover
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the font file use for the Popover */
 	fontFile;
 }
 
 
 class UIPopup {
 
-	/**
-	 * Sets or returns the duration of the popup in milliseconds
-	 * @type {num} 
-	 */
+	/** @type {num} Sets or returns the duration of the popup in milliseconds */
 	duration;
 
-	/**
-	 * Sets or returns the text of the popup
-	 * @type {str} 
-	 */
+	/** @type {str} Sets or returns the text of the popup */
 	text;
 
 	/**
@@ -12560,26 +9551,26 @@ class UIPopup {
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnClose(callback) {}
+	setOnClose(callback) {return}
 
 	/**
 	 * SetOnAction
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnAction(callback) {}
+	setOnAction(callback) {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * SetPosition
@@ -12587,13 +9578,13 @@ class UIPopup {
 	 * @param {str} [horizontal] Horizontal alignment. Values can be `Left` `Center` and `Right`
 	 * @return {void} 
 	 */
-	setPosition(vertical, horizontal) {}
+	setPosition(vertical, horizontal) {return}
 
 	/**
 	 * GetPosition
 	 * @return {obj} 
 	 */
-	getPosition() {}
+	getPosition() {return}
 }
 
 
@@ -12603,26 +9594,26 @@ class UIProgressDialog {
 	 * Text
 	 * @return {str} 
 	 */
-	text() {}
+	text() {return}
 
 	/**
 	 * Show
 	 * @return {void} 
 	 */
-	show() {}
+	show() {return}
 
 	/**
 	 * Hide
 	 * @return {void} 
 	 */
-	hide() {}
+	hide() {return}
 
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	setOnClose(callback) {}
+	setOnClose(callback) {return}
 }
 
 

@@ -14,7 +14,7 @@ class DsApp {
 	 * @param {string | ("FontAwesome"|"Html"|"Monospace"|"Normal"|"Aluminium"|"Gray"|"Lego"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsButton} 
 	 */
-	AddButton(layout, text, width, height, options) {}
+	AddButton(layout, text, width, height, options) {return}
 
 	/**
 	 * Create and add CameraView to Layout
@@ -31,7 +31,7 @@ class DsApp {
  	 * &emsp; UXGA: 1600x1200
 	 * @return {DsCameraView} 
 	 */
-	AddCameraView(layout, width, height, options) {}
+	AddCameraView(layout, width, height, options) {return}
 
 	/**
 	 * Create and add Button to Layout
@@ -50,7 +50,7 @@ class DsApp {
 	 * @param {num_pxl} [pxh=-1] 
 	 * @return {DsImage} 
 	 */
-	AddCanvas(layout, file, width, height, options, pxw, pxh) {}
+	AddCanvas(layout, file, width, height, options, pxw, pxh) {return}
 
 	/**
 	 * Create and add CheckBox to Layout
@@ -61,7 +61,7 @@ class DsApp {
 	 * @param {string | ("FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsCheckBox} 
 	 */
-	AddCheckBox(layout, text, width, height, options) {}
+	AddCheckBox(layout, text, width, height, options) {return}
 
 	/**
 	 * Create and add CodeEdit to Layout
@@ -72,7 +72,7 @@ class DsApp {
 	 * @param {string | ("FillX/Y")[]} [options] 
 	 * @return {DsCodeEdit} 
 	 */
-	AddCodeEdit(layout, text, width, height, options) {}
+	AddCodeEdit(layout, text, width, height, options) {return}
 
 	/**
 	 * Adds a slide-able layout on given side
@@ -82,7 +82,7 @@ class DsApp {
 	 * @param {num_frc} [grabWidth] 
 	 * @return {void} 
 	 */
-	AddDrawer(layout, side, width, grabWidth) {}
+	AddDrawer(layout, side, width, grabWidth) {return}
 
 	/**
 	 * Create and add Image to Layout
@@ -100,7 +100,7 @@ class DsApp {
 	 * @param {num_pxl} [pxh=-1] 
 	 * @return {DsImage} 
 	 */
-	AddImage(layout, file, width, height, options, pxw, pxh) {}
+	AddImage(layout, file, width, height, options, pxw, pxh) {return}
 
 	/**
 	 * Adds a layout to the app
@@ -111,7 +111,7 @@ class DsApp {
  	 * &emsp; `TouchSpy` - spies for touch events on all children
 	 * @return {void} 
 	 */
-	AddLayout(layout, type, options) {}
+	AddLayout(layout, type, options) {return}
 
 	/**
 	 * Create and add List to Layout
@@ -124,10 +124,10 @@ class DsApp {
  	 * &emsp; `Expand` - Expand list to full height inside scrollers\
  	 * &emsp; `Menu` - applies various settings to make the list appear like an in-app menu\
  	 * &emsp; `Horiz` - makes title and body text flow horizontally
-	 * @param {str} [delim=',] 
+	 * @param {str} [delim=','] 
 	 * @return {DsList} 
 	 */
-	AddList(layout, list, width, height, options, delim) {}
+	AddList(layout, list, width, height, options, delim) {return}
 
 	/**
 	 * Create and add Scroller to Layout
@@ -137,7 +137,7 @@ class DsApp {
 	 * @param {string | ("FillX"|"FillY"|"FillXY"|"Horizontal"|"Vertical"|"NoScrollBar"|"ScrollFade")[]} [options] 
 	 * @return {DsScroller} 
 	 */
-	AddScroller(layout, width, height, options) {}
+	AddScroller(layout, width, height, options) {return}
 
 	/**
 	 * Create and add SeekBar to Layout
@@ -147,7 +147,7 @@ class DsApp {
 	 * @param {string | ("FillX/Y")[]} [options] 
 	 * @return {DsSeekBar} 
 	 */
-	AddSeekBar(layout, width, height, options) {}
+	AddSeekBar(layout, width, height, options) {return}
 
 	/**
 	 * Create and add Spinner to Layout
@@ -158,7 +158,7 @@ class DsApp {
 	 * @param {string | ("FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsSpinner} 
 	 */
-	AddSpinner(layout, list, width, height, options) {}
+	AddSpinner(layout, list, width, height, options) {return}
 
 	/**
 	 * Create and add Switch toggle to Layout
@@ -169,7 +169,7 @@ class DsApp {
 	 * @param {string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsSwitch} 
 	 */
-	AddSwitch(layout, text, width, height, options) {}
+	AddSwitch(layout, text, width, height, options) {return}
 
 	/**
 	 * Returns a new Tabs object
@@ -179,7 +179,7 @@ class DsApp {
 	 * @param {"Fade"|"FontAwesome"|"NoMargins"|"VCenter"} [options] 
 	 * @return {DsTabs} 
 	 */
-	AddTabs(list, width, height, options) {}
+	AddTabs(list, width, height, options) {return}
 
 	/**
 	 * Create and add Text to Layout
@@ -190,7 +190,7 @@ class DsApp {
 	 * @param {string | ("AutoScale"|"AutoSize"|"Multiline"|"Left"|"Right"|"Html"|"Bold"|"Monospace"|"NoWrap"|"Log"|"FillX/Y")[]} [options] 
 	 * @return {DsText} 
 	 */
-	AddText(layout, text, width, height, options) {}
+	AddText(layout, text, width, height, options) {return}
 
 	/**
 	 * Create and add TextEdit to Layout
@@ -213,7 +213,7 @@ class DsApp {
  	 * &emsp; `Password` - displays characters as dots
 	 * @return {DsTextEdit} 
 	 */
-	AddTextEdit(layout, text, width, height, options) {}
+	AddTextEdit(layout, text, width, height, options) {return}
 
 	/**
 	 * Create and add Toggle to Layout
@@ -224,7 +224,7 @@ class DsApp {
 	 * @param {string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsToggle} 
 	 */
-	AddToggle(layout, text, width, height, options) {}
+	AddToggle(layout, text, width, height, options) {return}
 
 	/**
 	 * Create and add VideoView to Layout
@@ -234,7 +234,7 @@ class DsApp {
 	 * @param {str_com} [options] 
 	 * @return {DsVideoView} 
 	 */
-	AddVideoView(layout, width, height, options) {}
+	AddVideoView(layout, width, height, options) {return}
 
 	/**
 	 * Create and add WebView to Layout
@@ -258,7 +258,7 @@ class DsApp {
 	 * @param {num_prc} [zoom] 
 	 * @return {DsWebView} 
 	 */
-	AddWebView(layout, width, height, options, zoom) {}
+	AddWebView(layout, width, height, options, zoom) {return}
 
 	/**
 	 * Shows a popup message with an 'OK' button to exit
@@ -268,7 +268,7 @@ class DsApp {
 	 * @param {num_int} [hue] `-180..180`
 	 * @return {void} 
 	 */
-	Alert(message, title, options, hue) {}
+	Alert(message, title, options, hue) {return}
 
 	/**
 	 * Similar to setInterval
@@ -276,7 +276,7 @@ class DsApp {
 	 * @param {num_fps} [fps=-1] 
 	 * @return {void} 
 	 */
-	Animate(callback, fps) {}
+	Animate(callback, fps) {return}
 
 	/**
 	 * Used for broadcasting messages between DroidScript apps
@@ -284,7 +284,7 @@ class DsApp {
 	 * @param {str} message 
 	 * @return {void} 
 	 */
-	Broadcast(type, message) {}
+	Broadcast(type, message) {return}
 
 	/**
 	 * Send broadcast intent
@@ -296,41 +296,41 @@ class DsApp {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	BroadcastIntent(action, category, data, type, extras, options) {}
+	BroadcastIntent(action, category, data, type, extras, options) {return}
 
 	/**
 	 * Calls a phone number
 	 * @param {"number"} number 
 	 * @return {void} 
 	 */
-	Call(number) {}
+	Call(number) {return}
 
 	/**
 	 * Cancel background job
 	 * @return {void} 
 	 */
-	CancelJob() {}
+	CancelJob() {return}
 
 	/**
 	 * Checks if app is licensed with Google Play
 	 * @param {str_b64} key `GPlay license key`
 	 * @return {void} 
 	 */
-	CheckLicense(key) {}
+	CheckLicense(key) {return}
 
 	/**
 	 * Checks if permission was granted
 	 * @param {"Camera"|"Storage"|"ExtSDcard"|"Network"|"Notify"|"Location"|"SMS"|"Calendar"|"Body"|"Contacts"|"Record"|"Biometric"|"Phone"|"Accounts"|"License"|"android.permission.*"} type 
 	 * @return {str[]} 
 	 */
-	CheckPermission(type) {}
+	CheckPermission(type) {return}
 
 	/**
 	 * Let the user choose an google account
 	 * @param {(account: "email") => void} callback 
 	 * @return {void} 
 	 */
-	ChooseAccount(callback) {}
+	ChooseAccount(callback) {return}
 
 	/**
 	 * Let the user choose an image
@@ -338,7 +338,7 @@ class DsApp {
 	 * @param {(name: str, data: str) => void} callback 
 	 * @return {void} 
 	 */
-	ChooseContact(type, callback) {}
+	ChooseContact(type, callback) {return}
 
 	/**
 	 * Let the user choose a file
@@ -351,7 +351,7 @@ class DsApp {
  	 * &emsp; `nodownload` - prevents file downloads
 	 * @return {void} 
 	 */
-	ChooseFile(message, type, callback, fldr, options) {}
+	ChooseFile(message, type, callback, fldr, options) {return}
 
 	/**
 	 * Let the user choose an image
@@ -359,7 +359,7 @@ class DsApp {
 	 * @param {(path: str_pth) => void} callback 
 	 * @return {void} 
 	 */
-	ChooseImage(options, callback) {}
+	ChooseImage(options, callback) {return}
 
 	/**
 	 * Let the user choose a WiFi network
@@ -370,20 +370,20 @@ class DsApp {
 	 * @param {"ssids"} [extra] 
 	 * @return {void} 
 	 */
-	ChooseWifi(title1, title2, callback, options, extra) {}
+	ChooseWifi(title1, title2, callback, options, extra) {return}
 
 	/**
 	 * Clears saved web cookies
 	 * @return {void} 
 	 */
-	ClearCookies() {}
+	ClearCookies() {return}
 
 	/**
 	 * Deletes app.Save*() storage
 	 * @param {str_ptf} [file] 
 	 * @return {void} 
 	 */
-	ClearData(file) {}
+	ClearData(file) {return}
 
 	/**
 	 * Deletes a variable saved via app.Save*()
@@ -391,14 +391,14 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {void} 
 	 */
-	ClearValue(name, file) {}
+	ClearValue(name, file) {return}
 
 	/**
 	 * Closes the drawer layout on the given side with slide animation
 	 * @param {"left"|"right"} side 
 	 * @return {void} 
 	 */
-	CloseDrawer(side) {}
+	CloseDrawer(side) {return}
 
 	/**
 	 * Copies a file to a given destination
@@ -406,7 +406,7 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @return {void} 
 	 */
-	CopyFile(source, destination) {}
+	CopyFile(source, destination) {return}
 
 	/**
 	 * Copies a folder to a given destination
@@ -416,27 +416,27 @@ class DsApp {
 	 * @param {"pattern"} [filter] 
 	 * @return {void} 
 	 */
-	CopyFolder(source, destination, overwrite, filter) {}
+	CopyFolder(source, destination, overwrite, filter) {return}
 
 	/**
 	 * Returns an AudioRecorder object
 	 * @return {DsAudioRecorder} 
 	 */
-	CreateAudioRecorder() {}
+	CreateAudioRecorder() {return}
 
 	/**
 	 * Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices
 	 * @param {str} [filter] 
 	 * @return {DsBluetoothList} 
 	 */
-	CreateBluetoothList(filter) {}
+	CreateBluetoothList(filter) {return}
 
 	/**
 	 * Communicate with other Bluetooth devices
 	 * @param {"Text"|"Int"|"Hex"} [mode='Text'] 
 	 * @return {DsBluetoothSerial} 
 	 */
-	CreateBluetoothSerial(mode) {}
+	CreateBluetoothSerial(mode) {return}
 
 	/**
 	 * Creates a button control
@@ -448,7 +448,7 @@ class DsApp {
  	 * &emsp; `AutoSize` - Auto-sizes text to fit
 	 * @return {DsButton} 
 	 */
-	CreateButton(text, width, height, options) {}
+	CreateButton(text, width, height, options) {return}
 
 	/**
 	 * Returns a new CameraView object to access the device camera
@@ -465,7 +465,7 @@ class DsApp {
  	 * &emsp; UXGA: 1600x1200
 	 * @return {DsCameraView} 
 	 */
-	CreateCameraView(width, height, options) {}
+	CreateCameraView(width, height, options) {return}
 
 	/**
 	 * Create a blank white Image object
@@ -483,7 +483,7 @@ class DsApp {
 	 * @param {num_pxl} [pxh=-1] 
 	 * @return {DsImage} 
 	 */
-	CreateCanvas(file, width, height, options, pxw, pxh) {}
+	CreateCanvas(file, width, height, options, pxw, pxh) {return}
 
 	/**
 	 * Returns a new CheckBox object
@@ -493,14 +493,14 @@ class DsApp {
 	 * @param {string | ("FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsCheckBox} 
 	 */
-	CreateCheckBox(text, width, height, options) {}
+	CreateCheckBox(text, width, height, options) {return}
 
 	/**
 	 * Returns a new CloudStore object
 	 * @param {str} apiKey 
 	 * @return {DsCloudStore} 
 	 */
-	CreateCloudStore(apiKey) {}
+	CreateCloudStore(apiKey) {return}
 
 	/**
 	 * Returns a new CodeEdit object
@@ -510,20 +510,20 @@ class DsApp {
 	 * @param {string | ("FillX/Y")[]} [options] 
 	 * @return {DsCodeEdit} 
 	 */
-	CreateCodeEdit(text, width, height, options) {}
+	CreateCodeEdit(text, width, height, options) {return}
 
 	/**
 	 * Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it
 	 * @param {str_com} [options] 
 	 * @return {DsCrypt} 
 	 */
-	CreateCrypt(options) {}
+	CreateCrypt(options) {return}
 
 	/**
 	 * Creates a CustomTab control
 	 * @return {void} 
 	 */
-	CreateCustomTabs() {}
+	CreateCustomTabs() {return}
 
 	/**
 	 * Shows a debug log overlay
@@ -532,7 +532,7 @@ class DsApp {
  	 * &emsp; `clear` - Clear content before showing
 	 * @return {void} 
 	 */
-	CreateDebug(options) {}
+	CreateDebug(options) {return}
 
 	/**
 	 * Returns a new Dialog object to display messages
@@ -541,14 +541,14 @@ class DsApp {
  	 * &emsp; `Old` - apply old list style affecting title style and unrounded corners
 	 * @return {DsDialog} 
 	 */
-	CreateDialog(title, options) {}
+	CreateDialog(title, options) {return}
 
 	/**
 	 * Returns a new Downloader object
 	 * @param {string | ("NoDialog"|"Light")[]} [options] 
 	 * @return {DsDownloader} 
 	 */
-	CreateDownloader(options) {}
+	CreateDownloader(options) {return}
 
 	/**
 	 * Returns an Email object for user to send emails
@@ -556,7 +556,7 @@ class DsApp {
 	 * @param {"password"} password 
 	 * @return {DsEmail} 
 	 */
-	CreateEmail(account, password) {}
+	CreateEmail(account, password) {return}
 
 	/**
 	 * Returns a new File object
@@ -564,7 +564,7 @@ class DsApp {
 	 * @param {"r"|"w"|"rw"} mode 
 	 * @return {DsFile} 
 	 */
-	CreateFile(file, mode) {}
+	CreateFile(file, mode) {return}
 
 	/**
 	 * CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script
@@ -572,7 +572,7 @@ class DsApp {
 	 * @param {"Portrait"|"Landscape"} [orient] 
 	 * @return {{ game: DsGameView, lay: DsLayout}} \{ game, lay}
 	 */
-	CreateGame(file, orient) {}
+	CreateGame(file, orient) {return}
 
 	/**
 	 * The GameView is a blindingly fast container for game development with a physics engine and PIXI as underlying sprite container which uses the GPU to render graphics
@@ -581,7 +581,7 @@ class DsApp {
 	 * @param {str_com} [options] 
 	 * @return {DsGameView} 
 	 */
-	CreateGameView(width, height, options) {}
+	CreateGameView(width, height, options) {return}
 
 	/**
 	 * Returns a GLView object
@@ -590,7 +590,7 @@ class DsApp {
 	 * @param {"fast2d"} [options] 
 	 * @return {DsGLView} 
 	 */
-	CreateGLView(width, height, options) {}
+	CreateGLView(width, height, options) {return}
 
 	/**
 	 * Returns a new Image object
@@ -608,7 +608,7 @@ class DsApp {
 	 * @param {num_pxl} [pxh=-1] 
 	 * @return {DsImage} 
 	 */
-	CreateImage(file, width, height, options, pxw, pxh) {}
+	CreateImage(file, width, height, options, pxw, pxh) {return}
 
 	/**
 	 * Returns a new Layout object
@@ -619,7 +619,7 @@ class DsApp {
  	 * &emsp; `TouchSpy` - spies for touch events on all children
 	 * @return {DsLayout} 
 	 */
-	CreateLayout(type, options) {}
+	CreateLayout(type, options) {return}
 
 	/**
 	 * Returns a new List object
@@ -634,7 +634,7 @@ class DsApp {
 	 * @param {str} [delim=','] 
 	 * @return {DsList} 
 	 */
-	CreateList(list, width, height, options, delim) {}
+	CreateList(list, width, height, options, delim) {return}
 
 	/**
 	 * Returns a new ListDialog object
@@ -643,7 +643,7 @@ class DsApp {
 	 * @param {"Multi"} [options] 
 	 * @return {DsListDialog} 
 	 */
-	CreateListDialog(title, list, options) {}
+	CreateListDialog(title, list, options) {return}
 
 	/**
 	 * Returns a new Locator object
@@ -651,25 +651,25 @@ class DsApp {
 	 * @param {str_com} [options] 
 	 * @return {DsLocator} 
 	 */
-	CreateLocator(type, options) {}
+	CreateLocator(type, options) {return}
 
 	/**
 	 * Returns a new MediaPlayer object
 	 * @return {DsMediaPlayer} 
 	 */
-	CreateMediaPlayer() {}
+	CreateMediaPlayer() {return}
 
 	/**
 	 * Returns a new MediaStore object
 	 * @return {DsMediaStore} 
 	 */
-	CreateMediaStore() {}
+	CreateMediaStore() {return}
 
 	/**
 	 * Add music to your app
 	 * @return {obj} 
 	 */
-	CreateMusic() {}
+	CreateMusic() {return}
 
 	/**
 	 * Returns a new NetClient object
@@ -679,7 +679,7 @@ class DsApp {
  	 * &emsp; `Raw` - drop 4 Byte header before every message
 	 * @return {DsNetClient} 
 	 */
-	CreateNetClient(type) {}
+	CreateNetClient(type) {return}
 
 	/**
 	 * Creates a NodeJS background process with all the functionality of common node.js
@@ -691,7 +691,7 @@ class DsApp {
  	 * &emsp; `esm` - use EcmaScript-Modules
 	 * @return {DsNode} 
 	 */
-	CreateNode(paths, options) {}
+	CreateNode(paths, options) {return}
 
 	/**
 	 * Returns a new Notification object
@@ -699,33 +699,33 @@ class DsApp {
  	 * &emsp; `Low` - priority
 	 * @return {DsNotification} 
 	 */
-	CreateNotification(options) {}
+	CreateNotification(options) {return}
 
 	/**
 	 * Returns a new Nxt object
 	 * @return {DsNxt} 
 	 */
-	CreateNxt() {}
+	CreateNxt() {return}
 
 	/**
 	 * Returns a new Overlay object
 	 * @param {string | ("ShowWhenLocked"|"TurnScreenOn"|"KeepScreenOn")[]} [options] 
 	 * @return {DsOverlay} 
 	 */
-	CreateOverlay(options) {}
+	CreateOverlay(options) {return}
 
 	/**
 	 * Returns a new PhoneState object
 	 * @param {"CellLocation"|"DataConnection"|"DataActivity"|"CallState"|"ServiceState"|"SignalStrength"|"CallForwarding"|"MessageWaiting"} types 
 	 * @return {DsPhoneState} 
 	 */
-	CreatePhoneState(types) {}
+	CreatePhoneState(types) {return}
 
 	/**
 	 * Returns a new PlayStore object
 	 * @return {DsPlayStore} 
 	 */
-	CreatePlayStore() {}
+	CreatePlayStore() {return}
 
 	/**
 	 * Returns a new Scroller object
@@ -734,7 +734,7 @@ class DsApp {
 	 * @param {string | ("FillX"|"FillY"|"FillXY"|"Horizontal"|"Vertical"|"NoScrollBar"|"ScrollFade")[]} [options] 
 	 * @return {DsScroller} 
 	 */
-	CreateScroller(width, height, options) {}
+	CreateScroller(width, height, options) {return}
 
 	/**
 	 * Returns a new SeekBar object
@@ -743,7 +743,7 @@ class DsApp {
 	 * @param {string | ("FillX/Y")[]} [options] 
 	 * @return {DsSeekBar} 
 	 */
-	CreateSeekBar(width, height, options) {}
+	CreateSeekBar(width, height, options) {return}
 
 	/**
 	 * Returns a new Sensor object
@@ -751,7 +751,7 @@ class DsApp {
 	 * @param {string | ("Slow"|"Medium"|"Fast"|"Fastest")[]} [options] 
 	 * @return {DsSensor} 
 	 */
-	CreateSensor(type, options) {}
+	CreateSensor(type, options) {return}
 
 	/**
 	 * Returns a new Service object
@@ -762,7 +762,7 @@ class DsApp {
  	 * &emsp; `Persist` - attempts to force restart if service killed
 	 * @return {DsService} 
 	 */
-	CreateService(packageName, className, callback, options) {}
+	CreateService(packageName, className, callback, options) {return}
 
 	/**
 	 * Creates a Home-Screen shortcut to an app
@@ -774,20 +774,20 @@ class DsApp {
  	 * &emsp; `Game` - runs in GameView mode
 	 * @return {void} 
 	 */
-	CreateShortcut(name, iconFile, file, options) {}
+	CreateShortcut(name, iconFile, file, options) {return}
 
 	/**
 	 * Returns a new SMS object to send and retreive SMS messages
 	 * @return {DsSMS} 
 	 */
-	CreateSMS() {}
+	CreateSMS() {return}
 
 	/**
 	 * Returns a new SpeechRec object
 	 * @param {string | ("NoBeep"|"Partial")[]} [options] 
 	 * @return {DsSpeechRec} 
 	 */
-	CreateSpeechRec(options) {}
+	CreateSpeechRec(options) {return}
 
 	/**
 	 * Returns a new Spinner object
@@ -797,7 +797,7 @@ class DsApp {
 	 * @param {string | ("FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsSpinner} 
 	 */
-	CreateSpinner(list, width, height, options) {}
+	CreateSpinner(list, width, height, options) {return}
 
 	/**
 	 * Creates a switch control
@@ -807,14 +807,14 @@ class DsApp {
 	 * @param {string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsSwitch} 
 	 */
-	CreateSwitch(text, width, height, options) {}
+	CreateSwitch(text, width, height, options) {return}
 
 	/**
 	 * Returns a new Synth object
 	 * @param {"Signal"|"VCA"|"VCF"} [type='Signal'] 
 	 * @return {DsSynth} 
 	 */
-	CreateSynth(type) {}
+	CreateSynth(type) {return}
 
 	/**
 	 * Returns a new SysProc object
@@ -826,7 +826,7 @@ class DsApp {
  	 * &emsp; `builder` - force use of proc builder
 	 * @return {DsSysProc} 
 	 */
-	CreateSysProc(cmd, env, dir, options) {}
+	CreateSysProc(cmd, env, dir, options) {return}
 
 	/**
 	 * Returns a new Tabs object
@@ -836,7 +836,7 @@ class DsApp {
 	 * @param {"Fade"|"FontAwesome"|"NoMargins"|"VCenter"} [options] 
 	 * @return {DsTabs} 
 	 */
-	CreateTabs(list, width, height, options) {}
+	CreateTabs(list, width, height, options) {return}
 
 	/**
 	 * Returns a new Text object
@@ -847,7 +847,7 @@ class DsApp {
  	 * &emsp; `AutoShrink` - Auto-shrinks text to fit
 	 * @return {DsText} 
 	 */
-	CreateText(text, width, height, options) {}
+	CreateText(text, width, height, options) {return}
 
 	/**
 	 * Returns a new TextEdit object
@@ -869,14 +869,14 @@ class DsApp {
  	 * &emsp; `Password` - displays characters as dots
 	 * @return {DsTextEdit} 
 	 */
-	CreateTextEdit(text, width, height, options) {}
+	CreateTextEdit(text, width, height, options) {return}
 
 	/**
 	 * Returns a new Theme object
 	 * @param {"Dark"|"Light"} baseTheme 
 	 * @return {DsTheme} 
 	 */
-	CreateTheme(baseTheme) {}
+	CreateTheme(baseTheme) {return}
 
 	/**
 	 * Returns a new Toggle object
@@ -886,7 +886,7 @@ class DsApp {
 	 * @param {string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
 	 * @return {DsToggle} 
 	 */
-	CreateToggle(text, width, height, options) {}
+	CreateToggle(text, width, height, options) {return}
 
 	/**
 	 * Returns a new USBSerial object
@@ -902,7 +902,7 @@ class DsApp {
 	 * @param {num} [device] `Product ID from Device Magager > Hardware IDs`
 	 * @return {DsUSBSerial} 
 	 */
-	CreateUSBSerial(baudRate, dataBits, stopBits, parity, device) {}
+	CreateUSBSerial(baudRate, dataBits, stopBits, parity, device) {return}
 
 	/**
 	 * Returns a new VideoView object
@@ -911,7 +911,7 @@ class DsApp {
 	 * @param {str_com} [options] 
 	 * @return {DsVideoView} 
 	 */
-	CreateVideoView(width, height, options) {}
+	CreateVideoView(width, height, options) {return}
 
 	/**
 	 * Returns a new WebServer object
@@ -924,7 +924,7 @@ class DsApp {
  	 * &emsp; `<BUFSIZE>` - “ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”
 	 * @return {DsWebServer} 
 	 */
-	CreateWebServer(port, options) {}
+	CreateWebServer(port, options) {return}
 
 	/**
 	 * Returns a new WebSocket object
@@ -934,7 +934,7 @@ class DsApp {
 	 * @param {str} [options] 
 	 * @return {DsWebSocket} 
 	 */
-	CreateWebSocket(ip, id, retry, options) {}
+	CreateWebSocket(ip, id, retry, options) {return}
 
 	/**
 	 * Returns a new WebView object
@@ -960,7 +960,7 @@ class DsApp {
 	 * @param {num_prc} [zoom] 
 	 * @return {DsWebView} 
 	 */
-	CreateWebView(width, height, options, zoom) {}
+	CreateWebView(width, height, options, zoom) {return}
 
 	/**
 	 * The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user
@@ -971,7 +971,7 @@ class DsApp {
 	 * @param {string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"TouchModal"|"NoTouch")[]} [options] 
 	 * @return {DsWizard} 
 	 */
-	CreateWizard(title, width, height, callback, options) {}
+	CreateWizard(title, width, height, callback, options) {return}
 
 	/**
 	 * Returns a new YesNoDialog object
@@ -979,63 +979,63 @@ class DsApp {
 	 * @param {string | ("NoDim"|"NoFocus"|"TouchModal")[]} [options] 
 	 * @return {DsYesNoDialog} 
 	 */
-	CreateYesNoDialog(message, options) {}
+	CreateYesNoDialog(message, options) {return}
 
 	/**
 	 * Returns a new ZipUtil object
 	 * @param {str} mode 
 	 * @return {DsZipUtil} 
 	 */
-	CreateZipUtil(mode) {}
+	CreateZipUtil(mode) {return}
 
 	/**
 	 * Debug messages to the console
 	 * @param {str} message 
 	 * @return {void} 
 	 */
-	Debug(message) {}
+	Debug(message) {return}
 
 	/**
 	 * Deletes a database
 	 * @param {str} name 
 	 * @return {void} 
 	 */
-	DeleteDatabase(name) {}
+	DeleteDatabase(name) {return}
 
 	/**
 	 * Deletes a file
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	DeleteFile(file) {}
+	DeleteFile(file) {return}
 
 	/**
 	 * Delete a folder
 	 * @param {str_ptd} folder 
 	 * @return {void} 
 	 */
-	DeleteFolder(folder) {}
+	DeleteFolder(folder) {return}
 
 	/**
 	 * Destroy a layout
 	 * @param {DsLayout} layout 
 	 * @return {void} 
 	 */
-	DestroyLayout(layout) {}
+	DestroyLayout(layout) {return}
 
 	/**
 	 * Disable specific device keys
 	 * @param {str_com} keyList `VOLUME_DOWN`, `VOLUME_UP`, `FORWARD`, `BACK`, `MENU`, `ENTER`, `...`
 	 * @return {void} 
 	 */
-	DisableKeys(keyList) {}
+	DisableKeys(keyList) {return}
 
 	/**
 	 * Suppress all touch events
 	 * @param {bin} disable 
 	 * @return {void} 
 	 */
-	DisableTouch(disable) {}
+	DisableTouch(disable) {return}
 
 	/**
 	 * Search for nearby bluetooth devices
@@ -1044,7 +1044,7 @@ class DsApp {
 	 * @param {() => void} [onComplete] 
 	 * @return {void} 
 	 */
-	DiscoverBtDevices(filter, onFound, onComplete) {}
+	DiscoverBtDevices(filter, onFound, onComplete) {return}
 
 	/**
 	 * Download a file with Androids download manager
@@ -1055,14 +1055,14 @@ class DsApp {
 	 * @param {"NoDialog"} [options] 
 	 * @return {void} 
 	 */
-	DownloadFile(source, destination, title, description, options) {}
+	DownloadFile(source, destination, title, description, options) {return}
 
 	/**
 	 * Allows to en- or disable the devices back key
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	EnableBackKey(enable) {}
+	EnableBackKey(enable) {return}
 
 	/**
 	 * Show an error message
@@ -1072,21 +1072,21 @@ class DsApp {
 	 * @param {bin} [quit=false] 
 	 * @return {void} 
 	 */
-	Error(message, line, file, quit) {}
+	Error(message, line, file, quit) {return}
 
 	/**
 	 * Execute js code from your app or a WebWiew
 	 * @param {str_jsc} js 
 	 * @return {void} 
 	 */
-	Execute(js) {}
+	Execute(js) {return}
 
 	/**
 	 * Close and stop the app
 	 * @param {bin} kill 
 	 * @return {void} 
 	 */
-	Exit(kill) {}
+	Exit(kill) {return}
 
 	/**
 	 * Execute a bash script using Termux
@@ -1096,7 +1096,7 @@ class DsApp {
 	 * @param {"hide"} [options] 
 	 * @return {void} 
 	 */
-	ExtExec(name, file, args, options) {}
+	ExtExec(name, file, args, options) {return}
 
 	/**
 	 * Extract app assets to a local directory
@@ -1108,35 +1108,35 @@ class DsApp {
  	 * &emsp; `shallow` - extract top level
 	 * @return {void} 
 	 */
-	ExtractAssets(source, destination, overwrite, options) {}
+	ExtractAssets(source, destination, overwrite, options) {return}
 
 	/**
 	 * Forcefully update your plugins
 	 * @return {void} 
 	 */
-	ExtractPlugins() {}
+	ExtractPlugins() {return}
 
 	/**
 	 * Checks if the file exists
 	 * @param {str_ptf} file 
 	 * @return {bin} 
 	 */
-	FileExists(file) {}
+	FileExists(file) {return}
 
 	/**
 	 * Checks if the folder exists
 	 * @param {str_ptd} folder 
 	 * @return {bin} 
 	 */
-	FolderExists(folder) {}
+	FolderExists(folder) {return}
 
 	/**
 	 * Call main app functions from inside a webview
 	 * @param {str} name 
-	 * @param {all} ...args 
+	 * @param {(all)[]} args 
 	 * @return {void} 
 	 */
-	Func(name, ...args) {}
+	Func(name, ...args) {return}
 
 	/**
 	 * Google Analytics
@@ -1145,226 +1145,226 @@ class DsApp {
 	 * @param {obj} [options] 
 	 * @return {void} 
 	 */
-	GA(command, fields, options) {}
+	GA(command, fields, options) {return}
 
 	/**
 	 * Get accesibility feature availability
 	 * @return {{ enabled: bin, exploreByTouch: bin, screenReader: bin }} \{ enabled, exploreByTouch, screenReader }
 	 */
-	GetAccessibility() {}
+	GetAccessibility() {return}
 
 	/**
 	 * Returns a string of all known account names on the device separated with comma ','
 	 * @return {str_com} 
 	 */
-	GetAccounts() {}
+	GetAccounts() {return}
 
 	/**
 	 * GetActivities returns a list of object of currently running activities
 	 * @return {{ label: str, packageName: str, className: str }[]} 
 	 */
-	GetActivities() {}
+	GetActivities() {return}
 
 	/**
 	 * Convert language name to its code or get current language code
 	 * @param {str} name 
 	 * @return {str} 
 	 */
-	GetAppLangCode(name) {}
+	GetAppLangCode(name) {return}
 
 	/**
 	 * Get translation languages
 	 * @return {str[]} 
 	 */
-	GetAppLanguages() {}
+	GetAppLanguages() {return}
 
 	/**
 	 * Get current app name
 	 * @return {str} 
 	 */
-	GetAppName() {}
+	GetAppName() {return}
 
 	/**
 	 * Get path to app assets
 	 * @return {str_pth} 
 	 */
-	GetAppPath() {}
+	GetAppPath() {return}
 
 	/**
 	 * Get current battery level
 	 * @return {num_prc} 
 	 */
-	GetBatteryLevel() {}
+	GetBatteryLevel() {return}
 
 	/**
 	 * Get the bluetooth address
 	 * @return {str} 
 	 */
-	GetBluetoothAddress() {}
+	GetBluetoothAddress() {return}
 
 	/**
 	 * Get the bluetooth name
 	 * @return {str} 
 	 */
-	GetBluetoothName() {}
+	GetBluetoothName() {return}
 
 	/**
 	 * Returns Bluetooth type connected state
 	 * @param {"a2dp"|"headset"|"gatt"|"health"} type 
 	 * @return {"Connected"|"Disconnected"} 
 	 */
-	GetBtProfileState(type) {}
+	GetBtProfileState(type) {return}
 
 	/**
 	 * Get APK build number
 	 * @return {num_int} 
 	 */
-	GetBuildNum() {}
+	GetBuildNum() {return}
 
 	/**
 	 * Get current charge type
 	 * @return {"AC"|"USB"|"Wireless"|"None"} 
 	 */
-	GetChargeType() {}
+	GetChargeType() {return}
 
 	/**
 	 * Get latest clipboard text
 	 * @return {str} 
 	 */
-	GetClipboardText() {}
+	GetClipboardText() {return}
 
 	/**
 	 * Get user country name
 	 * @return {str} 
 	 */
-	GetCountry() {}
+	GetCountry() {return}
 
 	/**
 	 * Get users country code
 	 * @return {str} 
 	 */
-	GetCountryCode() {}
+	GetCountryCode() {return}
 
 	/**
 	 * Retreive saved data
 	 * @param {str} name 
 	 * @return {str} 
 	 */
-	GetData(name) {}
+	GetData(name) {return}
 
 	/**
 	 * Get apps database folder
 	 * @return {str_pth} 
 	 */
-	GetDatabaseFolder() {}
+	GetDatabaseFolder() {return}
 
 	/**
 	 * Returns the current active debug switches
 	 * @return {string | ("console"|"ds"|"adb"|"all")[]} 
 	 */
-	GetDebug() {}
+	GetDebug() {return}
 
 	/**
 	 * Get devces default orientation
 	 * @return {"Portrait"|"Landscape"} 
 	 */
-	GetDefaultOrientation() {}
+	GetDefaultOrientation() {return}
 
 	/**
 	 * Get device ID
 	 * @return {str} 
 	 */
-	GetDeviceId() {}
+	GetDeviceId() {return}
 
 	/**
 	 * Get apps display height
 	 * @return {num_pxl} 
 	 */
-	GetDisplayHeight() {}
+	GetDisplayHeight() {return}
 
 	/**
 	 * Get apps display width
 	 * @return {num_pxl} 
 	 */
-	GetDisplayWidth() {}
+	GetDisplayWidth() {return}
 
 	/**
 	 * Get current drawer state
 	 * @param {"left"|"right"} side 
 	 * @return {"Open"|"Closed"} 
 	 */
-	GetDrawerState(side) {}
+	GetDrawerState(side) {return}
 
 	/**
 	 * Get current DS version
 	 * @return {num_flt} 
 	 */
-	GetDSVersion() {}
+	GetDSVersion() {return}
 
 	/**
 	 * Get environment variable
 	 * @param {str} name `PATH`, `...`
 	 * @return {str} 
 	 */
-	GetEnv(name) {}
+	GetEnv(name) {return}
 
 	/**
 	 * Get external sdcard folder
 	 * @return {str_pth} 
 	 */
-	GetExternalFolder() {}
+	GetExternalFolder() {return}
 
 	/**
 	 * Get last modified date of a file or folder
 	 * @param {str_ptf} file 
 	 * @return {Date} Date
 	 */
-	GetFileDate(file) {}
+	GetFileDate(file) {return}
 
 	/**
 	 * Get the size of a file or folder
 	 * @param {str_ptf} file 
 	 * @return {num_flt} 
 	 */
-	GetFileSize(file) {}
+	GetFileSize(file) {return}
 
 	/**
 	 * Get remaining storage size
 	 * @param {"internal"|"external"} mode 
 	 * @return {num_gbt} 
 	 */
-	GetFreeSpace(mode) {}
+	GetFreeSpace(mode) {return}
 
 	/**
 	 * Get data about installed apps
 	 * @return {{ packageName: str, className: str, uid: num_int, targetSdkVersion: num_int, dataDir: str_pth, sourceDir: str_pth, publicSourceDir: str_pth, nativeLibraryDir: str_pth }[]} 
 	 */
-	GetInstalledApps() {}
+	GetInstalledApps() {return}
 
 	/**
 	 * Get received intent data
 	 * @return {{ action: str, type: str, data: str, flags: num_int, extras: { app_intent: str, app_file: str_pth, app_options: str } }} \{ action, type, data, flags, extras: { app_intent, app_file, app_options } }
 	 */
-	GetIntent() {}
+	GetIntent() {return}
 
 	/**
 	 * Get internal storage path
 	 * @return {str_pth} 
 	 */
-	GetInternalFolder() {}
+	GetInternalFolder() {return}
 
 	/**
 	 * Get network IP address
 	 * @return {str} 
 	 */
-	GetIPAddress() {}
+	GetIPAddress() {return}
 
 	/**
 	 * Returns the name of a conected joystick
 	 * @param {num_int} id 
 	 * @return {str} 
 	 */
-	GetJoystickName(id) {}
+	GetJoystickName(id) {return}
 
 	/**
 	 * Returns the state of a connected joystick
@@ -1372,38 +1372,38 @@ class DsApp {
 	 * @param {str} key `A`, `B`, `C`, `X`, `Y`, `Z`, `R1`, `L1`, `Left`, `Right`, `Up`, `Down`, `Start`, `ThumbLeft`, `ThumbRight`, `axis-0..9`, `btn-1..12`
 	 * @return {num} 
 	 */
-	GetJoystickState(id, key) {}
+	GetJoystickState(id, key) {return}
 
 	/**
 	 * Get joystick key states object
 	 * @param {num_int} id 
 	 * @return {{[key: str]: num}} \{ key: value }
 	 */
-	GetJoystickStates(id) {}
+	GetJoystickStates(id) {return}
 
 	/**
 	 * Get current keyboard height
 	 * @return {num_pxl} 
 	 */
-	GetKeyboardHeight() {}
+	GetKeyboardHeight() {return}
 
 	/**
 	 * Get device language
 	 * @return {str} 
 	 */
-	GetLanguage() {}
+	GetLanguage() {return}
 
 	/**
 	 * Get user language code
 	 * @return {str} 
 	 */
-	GetLanguageCode() {}
+	GetLanguageCode() {return}
 
 	/**
 	 * Get devices MAC address
 	 * @return {str} 
 	 */
-	GetMacAddress() {}
+	GetMacAddress() {return}
 
 	/**
 	 * Get a path to an unambiguous media file
@@ -1411,13 +1411,13 @@ class DsApp {
 	 * @param {str} ext 
 	 * @return {str_pth} 
 	 */
-	GetMediaFile(folder, ext) {}
+	GetMediaFile(folder, ext) {return}
 
 	/**
 	 * Get RAM memory information
 	 * @return {{ avail: num_byt, low: bin, threshold: num_byt, total: num_byt }} \{ avail, low, threshold, total }
 	 */
-	GetMemoryInfo() {}
+	GetMemoryInfo() {return}
 
 	/**
 	 * Returns a string list of metadata values contained in an audio file
@@ -1425,67 +1425,67 @@ class DsApp {
 	 * @param {string | ("album"|"artist"|"genre"|"title"|"composer"|"author"|"duration"|"bitrate"|"width"|"height")[]} [keys] 
 	 * @return {str_com} 
 	 */
-	GetMetadata(file, keys) {}
+	GetMetadata(file, keys) {return}
 
 	/**
 	 * Get device model name
 	 * @return {str} 
 	 */
-	GetModel() {}
+	GetModel() {return}
 
 	/**
 	 * Get APK name
 	 * @return {str} 
 	 */
-	GetName() {}
+	GetName() {return}
 
 	/**
 	 * Get the caller notification id
 	 * @return {str} 
 	 */
-	GetNotifyId() {}
+	GetNotifyId() {return}
 
 	/**
 	 * Get map of created DroidScript objects
 	 * @return {dso[]} 
 	 */
-	GetObjects() {}
+	GetObjects() {return}
 
 	/**
 	 * Get app options
 	 * @return {string | ("portrait"|"landscape"|"dark"|"light"|"holo"|"node"|"hybrid"|"mui"|"transparent"|"debug"|"remote"|"noswapify")[]} 
 	 */
-	GetOptions() {}
+	GetOptions() {return}
 
 	/**
 	 * Get current screen orientation
 	 * @return {"Portrait"|"Landscape"} 
 	 */
-	GetOrientation() {}
+	GetOrientation() {return}
 
 	/**
 	 * Get API target level
 	 * @return {num_int} 
 	 */
-	GetOSVersion() {}
+	GetOSVersion() {return}
 
 	/**
 	 * Get APK package name
 	 * @return {str} 
 	 */
-	GetPackageName() {}
+	GetPackageName() {return}
 
 	/**
 	 * Get list of paired bluetooth devices
 	 * @return {{ name: str, address: str }[]} 
 	 */
-	GetPairedBtDevices() {}
+	GetPairedBtDevices() {return}
 
 	/**
 	 * Get APK's local storage path
 	 * @return {str_pth} 
 	 */
-	GetPath() {}
+	GetPath() {return}
 
 	/**
 	 * GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder
@@ -1493,7 +1493,7 @@ class DsApp {
 	 * @param {(ungranted: str_com|str_uri) => void} [callback] 
 	 * @return {void} 
 	 */
-	GetPermission(type, callback) {}
+	GetPermission(type, callback) {return}
 
 	/**
 	 * Get path to a private folder
@@ -1501,7 +1501,7 @@ class DsApp {
 	 * @param {"external"} [options] 
 	 * @return {str_pth} 
 	 */
-	GetPrivateFolder(name, options) {}
+	GetPrivateFolder(name, options) {return}
 
 	/**
 	 * Get ID of a resource
@@ -1509,106 +1509,106 @@ class DsApp {
 	 * @param {"android"} [options] 
 	 * @return {str} 
 	 */
-	GetResourceId(name, options) {}
+	GetResourceId(name, options) {return}
 
 	/**
 	 * Get current device ringer mode
 	 * @return {"Normal"|"Vibrate"|"Silent"} 
 	 */
-	GetRingerMode() {}
+	GetRingerMode() {return}
 
 	/**
 	 * Get device rotation
 	 * @return {0|90|180|270} 
 	 */
-	GetRotation() {}
+	GetRotation() {return}
 
 	/**
 	 * Returns the routers ip address
 	 * @return {str} `ip address`
 	 */
-	GetRouterAddress() {}
+	GetRouterAddress() {return}
 
 	/**
 	 * Get RSSI in dBm
 	 * @return {num_int} `-127..-30`
 	 */
-	GetRSSI() {}
+	GetRSSI() {return}
 
 	/**
 	 * Get list of running apps
 	 * @return {{ user: num_int, pid: num_int, name: str, foreground: bin }[]} 
 	 */
-	GetRunningApps() {}
+	GetRunningApps() {return}
 
 	/**
 	 * Get list of running services
 	 * @return {{ user: num_int, pid: num_int, name: str }[]} 
 	 */
-	GetRunningServices() {}
+	GetRunningServices() {return}
 
 	/**
 	 * Get the screen density
 	 * @return {num_int} 
 	 */
-	GetScreenDensity() {}
+	GetScreenDensity() {return}
 
 	/**
 	 * Get width of device screen
 	 * @param {"Real"} [options] 
 	 * @return {num_pxl} 
 	 */
-	GetScreenHeight(options) {}
+	GetScreenHeight(options) {return}
 
 	/**
 	 * Get height of device screen
 	 * @param {"Real"} [options] 
 	 * @return {num_pxl} 
 	 */
-	GetScreenWidth(options) {}
+	GetScreenWidth(options) {return}
 
 	/**
 	 * Get list of shared files
 	 * @return {str_pth[]} 
 	 */
-	GetSharedFiles() {}
+	GetSharedFiles() {return}
 
 	/**
 	 * Get value of shared text
 	 * @return {str} 
 	 */
-	GetSharedText() {}
+	GetSharedText() {return}
 
 	/**
 	 * Get associated app shortcuts
 	 * @return {lst} 
 	 */
-	GetShortcuts() {}
+	GetShortcuts() {return}
 
 	/**
 	 * Checks if the speaker is enabled for phone calls
 	 * @return {bin} 
 	 */
-	GetSpeakerPhone() {}
+	GetSpeakerPhone() {return}
 
 	/**
 	 * Get full path to a special media folder
 	 * @param {"DCIM"|"Pictures"|"Movies"|"Downloads"|"Documents"|"Music"} name 
 	 * @return {str_pth} 
 	 */
-	GetSpecialFolder(name) {}
+	GetSpecialFolder(name) {return}
 
 	/**
 	 * Get tts engines
 	 * @return {str[]} 
 	 */
-	GetSpeechEngines() {}
+	GetSpeechEngines() {return}
 
 	/**
 	 * Get WiFi network SSID (name)
 	 * @return {str} 
 	 */
-	GetSSID() {}
+	GetSSID() {return}
 
 	/**
 	 * Calculates text bounds
@@ -1618,13 +1618,13 @@ class DsApp {
 	 * @param {dso} [obj] 
 	 * @return {{ width: num_frc, height: num_frc }} \{ width, height }
 	 */
-	GetTextBounds(txt, size, width, obj) {}
+	GetTextBounds(txt, size, width, obj) {return}
 
 	/**
 	 * Get theme configuration
 	 * @return {{ baseTheme: str, holo: bin, dark: bin, titleHeight: num_frc, backColor: str_col, dialogColor: str_col, btnColor: str_col, dialogBtnColor: str_col, textColor1: str_col, textColor2: str_col,btnTextColor: str_col, highlightColor: str_col }} \{ baseTheme, holo, dark, titleHeight, backColor, dialogColor, btnColor, dialogBtnColor, textColor1, textColor2,btnTextColor, highlightColor }
 	 */
-	GetThemeInfo() {}
+	GetThemeInfo() {return}
 
 	/**
 	 * Create downscaled copy of an image
@@ -1634,75 +1634,75 @@ class DsApp {
 	 * @param {num_pxl} [height=-1] 
 	 * @return {void} 
 	 */
-	GetThumbnail(source, destination, width, height) {}
+	GetThumbnail(source, destination, width, height) {return}
 
 	/**
 	 * Returns the upper border distance from the app display to the device screen as height relative float or in pixels with the **px** option
 	 * @param {"px"} [options] 
 	 * @return {num_frc} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the object class name
 	 * @return {"App"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get current user email
 	 * @return {str_acc} 
 	 */
-	GetUser() {}
+	GetUser() {return}
 
 	/**
 	 * Get apk version number
 	 * @return {num} 
 	 */
-	GetVersion() {}
+	GetVersion() {return}
 
 	/**
 	 * Get volume of a given audio type
 	 * @param {"alarm"|"dtmf"|"music"|"notification"|"ring"|"system"|"voicecall"} stream 
 	 * @return {num_frc} 
 	 */
-	GetVolume(stream) {}
+	GetVolume(stream) {return}
 
 	/**
 	 * Puts the phone into sleep mode
 	 * @return {void} 
 	 */
-	GoToSleep() {}
+	GoToSleep() {return}
 
 	/**
 	 * Checks if device has soft keys
 	 * @return {bin} 
 	 */
-	HasSoftNav() {}
+	HasSoftNav() {return}
 
 	/**
 	 * Hide the main app layout
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Hide the device keyboard
 	 * @return {void} 
 	 */
-	HideKeyboard() {}
+	HideKeyboard() {return}
 
 	/**
 	 * Hide progress indicator
 	 * @return {void} 
 	 */
-	HideProgress() {}
+	HideProgress() {return}
 
 	/**
 	 * Hide progress bar dialog
 	 * @return {void} 
 	 */
-	HideProgressBar() {}
+	HideProgressBar() {return}
 
 	/**
 	 * Send Http request
@@ -1720,13 +1720,13 @@ class DsApp {
 	 * @param {str} [headers] 
 	 * @return {void} 
 	 */
-	HttpRequest(type, baseUrl, path, params, callback, headers) {}
+	HttpRequest(type, baseUrl, path, params, callback, headers) {return}
 
 	/**
 	 * In ide
 	 * @return {bin} 
 	 */
-	InIDE() {}
+	InIDE() {return}
 
 	/**
 	 * Start apk installation process
@@ -1735,168 +1735,168 @@ class DsApp {
 	 * @param {str} [options] 
 	 * @return {bin} 
 	 */
-	InstallApp(apkFile, callback, options) {}
+	InstallApp(apkFile, callback, options) {return}
 
 	/**
 	 * Returns true if ran from apk
 	 * @return {bin} 
 	 */
-	IsAPK() {}
+	IsAPK() {return}
 
 	/**
 	 * Check if package is installed
 	 * @param {str} packageName 
 	 * @return {bin} 
 	 */
-	IsAppInstalled(packageName) {}
+	IsAppInstalled(packageName) {return}
 
 	/**
 	 * Check bluetooth enabled
 	 * @return {bin} 
 	 */
-	IsBluetoothEnabled() {}
+	IsBluetoothEnabled() {return}
 
 	/**
 	 * Check if bluetooth is on
 	 * @return {bin} 
 	 */
-	IsBluetoothOn() {}
+	IsBluetoothOn() {return}
 
 	/**
 	 * Check bt paired state to other device
 	 * @param {str} name 
 	 * @return {bin} 
 	 */
-	IsBtDevicePaired(name) {}
+	IsBtDevicePaired(name) {return}
 
 	/**
 	 * Check whether device is charging
 	 * @return {bin} 
 	 */
-	IsCharging() {}
+	IsCharging() {return}
 
 	/**
 	 * Check if device OS is ChromeOS
 	 * @return {bin} 
 	 */
-	IsChrome() {}
+	IsChrome() {return}
 
 	/**
 	 * Check if device is connected to any network
 	 * @return {bin} 
 	 */
-	IsConnected() {}
+	IsConnected() {return}
 
 	/**
 	 * Check whether app is debugging
 	 * @return {bin} 
 	 */
-	IsDebugging() {}
+	IsDebugging() {return}
 
 	/**
 	 * Check if debug view is currently shown
 	 * @return {bin} 
 	 */
-	IsDebugVisible() {}
+	IsDebugVisible() {return}
 
 	/**
 	 * Check if path leads to a folder
 	 * @param {str_ptd} folder 
 	 * @return {bin} 
 	 */
-	IsFolder(folder) {}
+	IsFolder(folder) {return}
 
 	/**
 	 * Check whether device keyboard is shown
 	 * @return {bin} 
 	 */
-	IsKeyboardShown() {}
+	IsKeyboardShown() {return}
 
 	/**
 	 * Check if location method is enabled
 	 * @param {"GPS"|"Network"} mode 
 	 * @return {bin} 
 	 */
-	IsLocationEnabled(mode) {}
+	IsLocationEnabled(mode) {return}
 
 	/**
 	 * Check if NavBar is on righthand side
 	 * @return {bin} 
 	 */
-	IsNavBarOnRight() {}
+	IsNavBarOnRight() {return}
 
 	/**
 	 * Check if apk version increased
 	 * @return {bin} 
 	 */
-	IsNewVersion() {}
+	IsNewVersion() {return}
 
 	/**
 	 * Check if device is in portrait mode
 	 * @return {bin} 
 	 */
-	IsPortrait() {}
+	IsPortrait() {return}
 
 	/**
 	 * Check if user has a DroidScript Premium subscription
 	 * @return {bin} 
 	 */
-	IsPremium() {}
+	IsPremium() {return}
 
 	/**
 	 * Indicates 'scoped storage' on Android 10+
 	 * @return {bin} 
 	 */
-	IsScoped() {}
+	IsScoped() {return}
 
 	/**
 	 * Check if device screen is on
 	 * @return {bin} 
 	 */
-	IsScreenOn() {}
+	IsScreenOn() {return}
 
 	/**
 	 * Check id app is a service
 	 * @return {bin} 
 	 */
-	IsService() {}
+	IsService() {return}
 
 	/**
 	 * Check if app has finished loading
 	 * @return {bin} 
 	 */
-	IsStarted() {}
+	IsStarted() {return}
 
 	/**
 	 * Check if user device is a tablet
 	 * @return {bin} 
 	 */
-	IsTablet() {}
+	IsTablet() {return}
 
 	/**
 	 * Check if OS is AndroidThings
 	 * @return {bin} 
 	 */
-	IsTV() {}
+	IsTV() {return}
 
 	/**
 	 * Check if the mobile Wifi Access Point is enabled
 	 * @return {bin} 
 	 */
-	IsWifiApEnabled() {}
+	IsWifiApEnabled() {return}
 
 	/**
 	 * Check if WiFi is enabled
 	 * @return {bin} 
 	 */
-	IsWifiEnabled() {}
+	IsWifiEnabled() {return}
 
 	/**
 	 * Kill an app by its pid
 	 * @param {num_int} pid 
 	 * @return {void} 
 	 */
-	KillApp(pid) {}
+	KillApp(pid) {return}
 
 	/**
 	 * Launch or search an app
@@ -1904,7 +1904,7 @@ class DsApp {
 	 * @param {bin} [noPlay] `dont search`
 	 * @return {void} 
 	 */
-	LaunchApp(packageName, noPlay) {}
+	LaunchApp(packageName, noPlay) {return}
 
 	/**
 	 * Get a list of files ans folders contained in a specific folder
@@ -1921,7 +1921,7 @@ class DsApp {
  	 * &emsp; `project` - Shows DS project folders only
 	 * @return {str_pth[]} 
 	 */
-	ListFolder(path, filter, limit, options) {}
+	ListFolder(path, filter, limit, options) {return}
 
 	/**
 	 * Returns a list of granted permissions
@@ -1930,7 +1930,7 @@ class DsApp {
 	 * @param {"Camera"|"Storage"|"ExtSDcard"|"Network"|"Notify"|"Location"|"SMS"|"Calendar"|"Body"|"Contacts"|"Record"|"Biometric"|"Phone"|"Accounts"|"License"} type 
 	 * @return {str_uri[]} 
 	 */
-	ListPermissions(type) {}
+	ListPermissions(type) {return}
 
 	/**
 	 * Load saved boolean value
@@ -1939,7 +1939,7 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {bin} 
 	 */
-	LoadBoolean(name, dflt, file) {}
+	LoadBoolean(name, dflt, file) {return}
 
 	/**
 	 * Load saved json object
@@ -1948,7 +1948,7 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {obj} 
 	 */
-	LoadJson(name, dflt, file) {}
+	LoadJson(name, dflt, file) {return}
 
 	/**
 	 * Load saved boolean value
@@ -1957,14 +1957,14 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {num} 
 	 */
-	LoadNumber(name, dflt, file) {}
+	LoadNumber(name, dflt, file) {return}
 
 	/**
 	 * Load an installed plugin to your app
 	 * @param {str_url} url 
 	 * @return {void} 
 	 */
-	LoadPlugin(url) {}
+	LoadPlugin(url) {return}
 
 	/**
 	 * Asynchronously import a .js file
@@ -1972,7 +1972,7 @@ class DsApp {
 	 * @param {(info: { isTrusted: bin }) => void} [callback] 
 	 * @return {void} 
 	 */
-	LoadScript(path, callback) {}
+	LoadScript(path, callback) {return}
 
 	/**
 	 * Load saved text value to remember varibale values between multiple app starts
@@ -1981,41 +1981,41 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {void} 
 	 */
-	LoadText(name, dflt, file) {}
+	LoadText(name, dflt, file) {return}
 
 	/**
 	 * Lock the device
 	 * @return {void} 
 	 */
-	Lock() {}
+	Lock() {return}
 
 	/**
 	 * Hide and lock a drawer
 	 * @param {"left"|"right"} side 
 	 * @return {void} 
 	 */
-	LockDrawer(side) {}
+	LockDrawer(side) {return}
 
 	/**
 	 * Create new folder in the local fs
 	 * @param {str_ptd} folder 
 	 * @return {void} 
 	 */
-	MakeFolder(folder) {}
+	MakeFolder(folder) {return}
 
 	/**
 	 * OpenDatabase creates or opens a local database in which large amounts of data can be stored that can still be queried in a reasonable amount of time
 	 * @param {str} name 
 	 * @return {DsDatabase} 
 	 */
-	OpenDatabase(name) {}
+	OpenDatabase(name) {return}
 
 	/**
 	 * Opens the drawer layout on the given side with slide animation
 	 * @param {"left"|"right"} side 
 	 * @return {void} 
 	 */
-	OpenDrawer(side) {}
+	OpenDrawer(side) {return}
 
 	/**
 	 * Allow user to open a file with an external app
@@ -2024,7 +2024,7 @@ class DsApp {
 	 * @param {str} [choose] 
 	 * @return {void} 
 	 */
-	OpenFile(file, type, choose) {}
+	OpenFile(file, type, choose) {return}
 
 	/**
 	 * Allow user to open an url with an external app
@@ -2033,7 +2033,7 @@ class DsApp {
 	 * @param {str} [choose] 
 	 * @return {void} 
 	 */
-	OpenUrl(url, type, choose) {}
+	OpenUrl(url, type, choose) {return}
 
 	/**
 	 * Pairs a bluetooth device with yours
@@ -2041,35 +2041,35 @@ class DsApp {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	PairBtDevice(address, callback) {}
+	PairBtDevice(address, callback) {return}
 
 	/**
 	 * Convert file path to content uri
 	 * @param {str_pth} path 
 	 * @return {str_ptc} `content://[uri]`
 	 */
-	Path2Uri(path) {}
+	Path2Uri(path) {return}
 
 	/**
 	 * Pin app on screen
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	PinScreen(enable) {}
+	PinScreen(enable) {return}
 
 	/**
 	 * Play specific ringtone type
 	 * @param {"Alarm"|"Notification"|"Ringtone"} type 
 	 * @return {void} 
 	 */
-	PlayRingtone(type) {}
+	PlayRingtone(type) {return}
 
 	/**
 	 * Plays a local or remote sound file
 	 * @param {str_ptf|str_url} file 
 	 * @return {void} 
 	 */
-	PlaySound(file) {}
+	PlaySound(file) {return}
 
 	/**
 	 * Prevent screen from locking after some time
@@ -2078,13 +2078,13 @@ class DsApp {
  	 * &emsp; `Partial` - CPU always on,Screen and Keyboard off
 	 * @return {void} 
 	 */
-	PreventScreenLock(mode) {}
+	PreventScreenLock(mode) {return}
 
 	/**
 	 * Prevent Wifi from powering down
 	 * @return {void} 
 	 */
-	PreventWifiSleep() {}
+	PreventWifiSleep() {return}
 
 	/**
 	 * Queries content from the android content model
@@ -2096,7 +2096,7 @@ class DsApp {
  	 * &emsp; `coloumn` - a coloumn specified in 'coloumns'
 	 * @return {void} 
 	 */
-	QueryContent(uri, columns, select, args, sort) {}
+	QueryContent(uri, columns, select, args, sort) {return}
 
 	/**
 	 * Quit the app with showing a dialog and exit after closing
@@ -2105,7 +2105,7 @@ class DsApp {
 	 * @param {string | ("NoDim"|"NoFocus")[]} [options] 
 	 * @return {void} 
 	 */
-	Quit(msg, title, options) {}
+	Quit(msg, title, options) {return}
 
 	/**
 	 * Read the content of a local file
@@ -2114,7 +2114,7 @@ class DsApp {
  	 * &emsp; `ISO-8859-1` - Latin-1
 	 * @return {void} 
 	 */
-	ReadFile(file, encoding) {}
+	ReadFile(file, encoding) {return}
 
 	/**
 	 * Read local file content data
@@ -2122,35 +2122,35 @@ class DsApp {
 	 * @param {"base64"|"hex"|"int"|"ascii"} [mode] 
 	 * @return {void} 
 	 */
-	ReadFileData(file, mode) {}
+	ReadFileData(file, mode) {return}
 
 	/**
 	 * Convert short to full path
 	 * @param {str_pth} path 
 	 * @return {void} 
 	 */
-	RealPath(path) {}
+	RealPath(path) {return}
 
 	/**
 	 * Read assets from given folder
 	 * @param {str_ptd} dir 
 	 * @return {void} 
 	 */
-	RedirectAssets(dir) {}
+	RedirectAssets(dir) {return}
 
 	/**
 	 * Remove drawer layout from a given side
 	 * @param {"left"|"right"} side 
 	 * @return {void} 
 	 */
-	RemoveDrawer(side) {}
+	RemoveDrawer(side) {return}
 
 	/**
 	 * Removes a layout added to the app
 	 * @param {DsLayout} layout 
 	 * @return {void} 
 	 */
-	RemoveLayout(layout) {}
+	RemoveLayout(layout) {return}
 
 	/**
 	 * Removes a granted permission
@@ -2159,7 +2159,7 @@ class DsApp {
 	 * @param {str_uri} uri 
 	 * @return {void} 
 	 */
-	RemovePermission(uri) {}
+	RemovePermission(uri) {return}
 
 	/**
 	 * Rename or move a local file
@@ -2167,7 +2167,7 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @return {void} 
 	 */
-	RenameFile(source, destination) {}
+	RenameFile(source, destination) {return}
 
 	/**
 	 * Rename or move a local folder
@@ -2175,7 +2175,7 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @return {void} 
 	 */
-	RenameFolder(source, destination) {}
+	RenameFolder(source, destination) {return}
 
 	/**
 	 * Replace text in a local file
@@ -2185,7 +2185,7 @@ class DsApp {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	ReplaceInFile(file, txt, rep, options) {}
+	ReplaceInFile(file, txt, rep, options) {return}
 
 	/**
 	 * Save a boolean value across multiple starts
@@ -2194,13 +2194,13 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {void} 
 	 */
-	SaveBoolean(name, value, file) {}
+	SaveBoolean(name, value, file) {return}
 
 	/**
 	 * Save web cookies
 	 * @return {void} 
 	 */
-	SaveCookies() {}
+	SaveCookies() {return}
 
 	/**
 	 * Save a json object across multiple starts
@@ -2209,7 +2209,7 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {void} 
 	 */
-	SaveJson(name, value, file) {}
+	SaveJson(name, value, file) {return}
 
 	/**
 	 * Save a number value across multiple starts
@@ -2218,7 +2218,7 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {void} 
 	 */
-	SaveNumber(name, value, file) {}
+	SaveNumber(name, value, file) {return}
 
 	/**
 	 * Save a text value across multiple starts
@@ -2227,14 +2227,14 @@ class DsApp {
 	 * @param {str_ptf} [file] 
 	 * @return {void} 
 	 */
-	SaveText(name, value, file) {}
+	SaveText(name, value, file) {return}
 
 	/**
 	 * Adds media files to phone gallery
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	ScanFile(file) {}
+	ScanFile(file) {return}
 
 	/**
 	 * Schedules background jobs defined in a Job.js file
@@ -2244,7 +2244,7 @@ class DsApp {
 	 * @param {str} [options] 
 	 * @return {void} 
 	 */
-	ScheduleJob(delay, options) {}
+	ScheduleJob(delay, options) {return}
 
 	/**
 	 * Take a screen shot of your app
@@ -2252,7 +2252,7 @@ class DsApp {
 	 * @param {num_prc} [quality] 
 	 * @return {void} 
 	 */
-	ScreenShot(fileName, quality) {}
+	ScreenShot(fileName, quality) {return}
 
 	/**
 	 * Import an external JavaScript file
@@ -2260,7 +2260,7 @@ class DsApp {
 	 * @param {bin} [noDefer=false] `load script inline`
 	 * @return {void} 
 	 */
-	Script(file, noDefer) {}
+	Script(file, noDefer) {return}
 
 	/**
 	 * Send a file to a remote target
@@ -2270,7 +2270,7 @@ class DsApp {
 	 * @param {str} [choose] 
 	 * @return {void} 
 	 */
-	SendFile(file, subject, text, choose) {}
+	SendFile(file, subject, text, choose) {return}
 
 	/**
 	 * Send an image to a remote target
@@ -2278,7 +2278,7 @@ class DsApp {
 	 * @param {str} [choose] 
 	 * @return {void} 
 	 */
-	SendImage(file, choose) {}
+	SendImage(file, choose) {return}
 
 	/**
 	 * Intens can be used to perform an operation between different applications or activities
@@ -2294,7 +2294,7 @@ class DsApp {
 	 * @param {(resultCode: -1|0|1, data?: { action: str, type: str, data: str, flags: num_int, extras: obj }) => void} [callback] 
 	 * @return {void} 
 	 */
-	SendIntent(packageName, className, action, category, uri, type, extras, options, callback) {}
+	SendIntent(packageName, className, action, category, uri, type, extras, options, callback) {return}
 
 	/**
 	 * Open the EMail app and autofill fields
@@ -2306,14 +2306,14 @@ class DsApp {
 	 * @param {"SendTo"} [options] 
 	 * @return {void} 
 	 */
-	SendMail(address, subject, body, attach, type, options) {}
+	SendMail(address, subject, body, attach, type, options) {return}
 
 	/**
 	 * Send message from Service to main app
 	 * @param {str} message 
 	 * @return {void} 
 	 */
-	SendMessage(message) {}
+	SendMessage(message) {return}
 
 	/**
 	 * Open the SMS app and autofill fields
@@ -2321,7 +2321,7 @@ class DsApp {
 	 * @param {str_num} [number] 
 	 * @return {void} 
 	 */
-	SendSMS(msg, number) {}
+	SendSMS(msg, number) {return}
 
 	/**
 	 * Share text between apps
@@ -2330,7 +2330,7 @@ class DsApp {
 	 * @param {str} [choose] 
 	 * @return {void} 
 	 */
-	SendText(text, subject, choose) {}
+	SendText(text, subject, choose) {return}
 
 	/**
 	 * Set alarm to open your app at a specific time
@@ -2344,56 +2344,56 @@ class DsApp {
  	 * &emsp; `App` - Opens main app if called from a service
 	 * @return {void} 
 	 */
-	SetAlarm(type, id, callback, time, interval, options) {}
+	SetAlarm(type, id, callback, time, interval, options) {return}
 
 	/**
 	 * Load the language code from lang.json
 	 * @param {str} name 
 	 * @return {void} 
 	 */
-	SetAppLanguage(name) {}
+	SetAppLanguage(name) {return}
 
 	/**
 	 * Autostart APK when device boots
 	 * @param {"App"|"Service"|"None"} auto 
 	 * @return {void} 
 	 */
-	SetAutoBoot(auto) {}
+	SetAutoBoot(auto) {return}
 
 	/**
 	 * Autostart DroidScript Project on DS restart
 	 * @param {str} appName 
 	 * @return {void} 
 	 */
-	SetAutoStart(appName) {}
+	SetAutoStart(appName) {return}
 
 	/**
 	 * Automatically enable the WiFi editor
 	 * @param {bin} auto 
 	 * @return {void} 
 	 */
-	SetAutoWifi(auto) {}
+	SetAutoWifi(auto) {return}
 
 	/**
 	 * Change the app's background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Enable Bluetooth on the device
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetBluetoothEnabled(enable) {}
+	SetBluetoothEnabled(enable) {return}
 
 	/**
 	 * Change the device clipboard text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetClipboardText(text) {}
+	SetClipboardText(text) {return}
 
 	/**
 	 * Save data while app is running
@@ -2401,41 +2401,41 @@ class DsApp {
 	 * @param {str} value 
 	 * @return {void} 
 	 */
-	SetData(name, value) {}
+	SetData(name, value) {return}
 
 	/**
 	 * Control the debug level of the program
 	 * @param {string | ("console"|"ds"|"adb"|"all")[]} switches 
 	 * @return {void} 
 	 */
-	SetDebug(switches) {}
+	SetDebug(switches) {return}
 
 	/**
 	 * Control the debug level of the program
 	 * @param {bin} onoff 
 	 * @return {void} 
 	 */
-	SetDebugEnabled(onoff) {}
+	SetDebugEnabled(onoff) {return}
 
 	/**
 	 * Changes the dpi value for any control creatred afterwards
 	 * @param {num_int} dpi 
 	 * @return {void} 
 	 */
-	SetDensity(dpi) {}
+	SetDensity(dpi) {return}
 
 	/**
 	 * Filter/ignore certain errors
 	 * @param {str} regex `regex pattern`
 	 * @return {void} 
 	 */
-	SetErrorFilter(regex) {}
+	SetErrorFilter(regex) {return}
 
 	/**
 	 * Set services to run in the background
 	 * @return {void} 
 	 */
-	SetInBackground() {}
+	SetInBackground() {return}
 
 	/**
 	 * Set services to run in the foreground
@@ -2446,7 +2446,7 @@ class DsApp {
 	 * @param {"min"|"low"|"default"|"high"|"none"} [importance] 
 	 * @return {void} 
 	 */
-	SetInForeground(title, text, largeIcon, smallIcon, importance) {}
+	SetInForeground(title, text, largeIcon, smallIcon, importance) {return}
 
 	/**
 	 * Set options for the connected joystick
@@ -2454,7 +2454,7 @@ class DsApp {
  	 * &emsp; `ForwardKeys` - allows the joystick key presses to pass onto the child controls of the main activity
 	 * @return {void} 
 	 */
-	SetJoystickOptions(options) {}
+	SetJoystickOptions(options) {return}
 
 	/**
 	 * Blocks android functionality outside your app
@@ -2467,7 +2467,7 @@ class DsApp {
 	 * @param {str} [packages] 
 	 * @return {void} 
 	 */
-	SetKioskMode(mode, enable, options, packages) {}
+	SetKioskMode(mode, enable, options, packages) {return}
 
 	/**
 	 * Set default margins
@@ -2478,7 +2478,7 @@ class DsApp {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Set app menu
@@ -2486,7 +2486,7 @@ class DsApp {
 	 * @param {str_ptf} [iconPath] 
 	 * @return {void} 
 	 */
-	SetMenu(list, iconPath) {}
+	SetMenu(list, iconPath) {return}
 
 	/**
 	 * Emulate GPS location
@@ -2495,14 +2495,14 @@ class DsApp {
 	 * @param {num} [accuracy] 
 	 * @return {void} 
 	 */
-	SetMockLocation(lat, lng, accuracy) {}
+	SetMockLocation(lat, lng, accuracy) {return}
 
 	/**
 	 * Set NavBar color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetNavBarColor(color) {}
+	SetNavBarColor(color) {return}
 
 	/**
 	 * Called on incoming Broadcasts
@@ -2510,42 +2510,42 @@ class DsApp {
 	 * @param {str} action 
 	 * @return {void} 
 	 */
-	SetOnBroadcast(callback, action) {}
+	SetOnBroadcast(callback, action) {return}
 
 	/**
 	 * Called on app debug messages
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnDebug(callback) {}
+	SetOnDebug(callback) {return}
 
 	/**
 	 * Called on thrown JS errors
 	 * @param {(error: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnError(callback) {}
+	SetOnError(callback) {return}
 
 	/**
 	 * Catch key events fired in your app
 	 * @param {(action: "DOWN"|"UP", name: str, keycode: num_int, extrakeys: "Shift"|"Ctrl"|"Alt"|"Meta") => void} callback 
 	 * @return {void} 
 	 */
-	SetOnKey(callback) {}
+	SetOnKey(callback) {return}
 
 	/**
 	 * Called on keyboard visibility changes
 	 * @param {(shown: bin) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnShowKeyboard(callback) {}
+	SetOnShowKeyboard(callback) {return}
 
 	/**
 	 * Called on WiFi connected state changes
 	 * @param {(state: "CONNECTING"|"CONNECTED"|"DISCONNECTED", ssid: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnWifiChange(callback) {}
+	SetOnWifiChange(callback) {return}
 
 	/**
 	 * Define global app options
@@ -2553,7 +2553,7 @@ class DsApp {
  	 * &emsp; `NoPause` - dont pause when not in foreground
 	 * @return {void} 
 	 */
-	SetOptions(options) {}
+	SetOptions(options) {return}
 
 	/**
 	 * Fix display orientation
@@ -2561,7 +2561,7 @@ class DsApp {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	SetOrientation(orient, callback) {}
+	SetOrientation(orient, callback) {return}
 
 	/**
 	 * Change app position and size
@@ -2572,56 +2572,56 @@ class DsApp {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change GUI thread priority
 	 * @param {"Low"|"Medium"|"High"} level 
 	 * @return {void} 
 	 */
-	SetPriority(level) {}
+	SetPriority(level) {return}
 
 	/**
 	 * Set current device ringer mode
 	 * @param {"Normal"|"Vibrate"|"Silent"} mode 
 	 * @return {void} 
 	 */
-	SetRingerMode(mode) {}
+	SetRingerMode(mode) {return}
 
 	/**
 	 * Change screen brightness
 	 * @param {num_frc} level 
 	 * @return {void} 
 	 */
-	SetScreenBrightness(level) {}
+	SetScreenBrightness(level) {return}
 
 	/**
 	 * Changes the screen mode of your application
 	 * @param {"Default"|"Normal"|"Full"|"Game"} mode 
 	 * @return {void} 
 	 */
-	SetScreenMode(mode) {}
+	SetScreenMode(mode) {return}
 
 	/**
 	 * Auto-Launch Project when shared data received
 	 * @param {"AppName"} name 
 	 * @return {void} 
 	 */
-	SetSharedApp(name) {}
+	SetSharedApp(name) {return}
 
 	/**
 	 * En/Disable speaker for phone calls
 	 * @param {bin} on 
 	 * @return {void} 
 	 */
-	SetSpeakerPhone(on) {}
+	SetSpeakerPhone(on) {return}
 
 	/**
 	 * Set status bar color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetStatusBarColor(color) {}
+	SetStatusBarColor(color) {return}
 
 	/**
 	 * Set default text size
@@ -2631,14 +2631,14 @@ class DsApp {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the theme of your app to any created [Theme Object](CreateTheme.htm)
 	 * @param {DsTheme} theme 
 	 * @return {void} 
 	 */
-	SetTheme(theme) {}
+	SetTheme(theme) {return}
 
 	/**
 	 * Change the user agent for html apps
@@ -2646,7 +2646,7 @@ class DsApp {
 	 * @param {str} [options] `Add-appends to default user agent`
 	 * @return {void} 
 	 */
-	SetUserAgent(agent, options) {}
+	SetUserAgent(agent, options) {return}
 
 	/**
 	 * Set user credentials in an html app for websites that require user login
@@ -2654,7 +2654,7 @@ class DsApp {
 	 * @param {str} password 
 	 * @return {void} 
 	 */
-	SetUserCreds(name, password) {}
+	SetUserCreds(name, password) {return}
 
 	/**
 	 * Change volume of a given audio type
@@ -2664,7 +2664,7 @@ class DsApp {
 	 * @param {"ShowUI"} [options] 
 	 * @return {void} 
 	 */
-	SetVolume(stream, level, options) {}
+	SetVolume(stream, level, options) {return}
 
 	/**
 	 * En/Disable the mobile Wifi Access Point of the device
@@ -2673,20 +2673,20 @@ class DsApp {
 	 * @param {str} [key] 
 	 * @return {void} 
 	 */
-	SetWifiApEnabled(enable, ssid, key) {}
+	SetWifiApEnabled(enable, ssid, key) {return}
 
 	/**
 	 * En/Disable Wifi on the device
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetWifiEnabled(enable) {}
+	SetWifiEnabled(enable) {return}
 
 	/**
 	 * Show main app layout
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Shows a CheckList
@@ -2698,7 +2698,7 @@ class DsApp {
 	 * @param {str} [options] sun-moon:shows sun and moon icons instead of default check boxes
 	 * @return {DsCheckList} 
 	 */
-	ShowCheckList(title, list, callback, width, height, options) {}
+	ShowCheckList(title, list, callback, width, height, options) {return}
 
 	/**
 	 * Opens the in-app debug console as black overlay
@@ -2708,20 +2708,20 @@ class DsApp {
  	 * &emsp; `clear` - Clear content before showing
 	 * @return {void} 
 	 */
-	ShowDebug(show, options) {}
+	ShowDebug(show, options) {return}
 
 	/**
 	 * Show keyboard on a focussed control
 	 * @param {dso} obj 
 	 * @return {bin} 
 	 */
-	ShowKeyboard(obj) {}
+	ShowKeyboard(obj) {return}
 
 	/**
 	 * Show the in-app menu
 	 * @return {void} 
 	 */
-	ShowMenu() {}
+	ShowMenu() {return}
 
 	/**
 	 * Show a popup message
@@ -2729,7 +2729,7 @@ class DsApp {
 	 * @param {string | ("Bottom"|"Short"|"Long")[]} [options] 
 	 * @return {void} 
 	 */
-	ShowPopup(message, options) {}
+	ShowPopup(message, options) {return}
 
 	/**
 	 * Show a progress indicator
@@ -2740,7 +2740,7 @@ class DsApp {
  	 * &emsp; `Solid` - shows solid background behind spinner
 	 * @return {void} 
 	 */
-	ShowProgress(message, options) {}
+	ShowProgress(message, options) {return}
 
 	/**
 	 * Show a progress bar dialog
@@ -2749,7 +2749,7 @@ class DsApp {
 	 * @param {"Light"} [options] 
 	 * @return {void} 
 	 */
-	ShowProgressBar(title, percent, options) {}
+	ShowProgressBar(title, percent, options) {return}
 
 	/**
 	 * Show a text input dialog
@@ -2758,7 +2758,7 @@ class DsApp {
 	 * @param {(text: str) => void} [callback] 
 	 * @return {void} 
 	 */
-	ShowTextDialog(title, dflt, callback) {}
+	ShowTextDialog(title, dflt, callback) {return}
 
 	/**
 	 * Shows a tooltip message on the screen
@@ -2769,7 +2769,7 @@ class DsApp {
 	 * @param {"Down"} [options] 
 	 * @return {void} 
 	 */
-	ShowTip(message, left, top, timeOut, options) {}
+	ShowTip(message, left, top, timeOut, options) {return}
 
 	/**
 	 * Simulates a drag event on an app object in a scrollable container
@@ -2782,7 +2782,7 @@ class DsApp {
 	 * @param {num} [pause] 
 	 * @return {void} 
 	 */
-	SimulateDrag(obj, x1, y1, x2, y2, step, pause) {}
+	SimulateDrag(obj, x1, y1, x2, y2, step, pause) {return}
 
 	/**
 	 * Simulates a key event on an app object
@@ -2792,7 +2792,7 @@ class DsApp {
 	 * @param {num} [pause] 
 	 * @return {void} 
 	 */
-	SimulateKey(obj, keyName, modifiers, pause) {}
+	SimulateKey(obj, keyName, modifiers, pause) {return}
 
 	/**
 	 * Simulates a scroll event on a scrollable app object
@@ -2805,7 +2805,7 @@ class DsApp {
 	 * @param {num} [fling] 
 	 * @return {void} 
 	 */
-	SimulateScroll(obj, x, y, dx, dy, count, fling) {}
+	SimulateScroll(obj, x, y, dx, dy, count, fling) {return}
 
 	/**
 	 * Simulate a touch event on a reachable control
@@ -2815,13 +2815,13 @@ class DsApp {
 	 * @param {"Down"|"Move"|"Up"} dir 
 	 * @return {void} 
 	 */
-	SimulateTouch(obj, x, y, dir) {}
+	SimulateTouch(obj, x, y, dir) {return}
 
 	/**
 	 * Start your DS app in an html project
 	 * @return {void} 
 	 */
-	Start() {}
+	Start() {return}
 
 	/**
 	 * Starts an app in a new window
@@ -2832,13 +2832,13 @@ class DsApp {
 	 * @param {str} [intent] `{ action`, ` type`, ` data`, ` extras }`
 	 * @return {void} 
 	 */
-	StartApp(file, options, intent) {}
+	StartApp(file, options, intent) {return}
 
 	/**
 	 * Start remote debug server
 	 * @return {void} 
 	 */
-	StartDebugServer() {}
+	StartDebugServer() {return}
 
 	/**
 	 * Starts a parallel service
@@ -2846,26 +2846,26 @@ class DsApp {
 	 * @param {str} className 
 	 * @return {void} 
 	 */
-	StartService(packageName, className) {}
+	StartService(packageName, className) {return}
 
 	/**
 	 * Stop an app started via StartApp
 	 * @param {str_pth} name 
 	 * @return {void} 
 	 */
-	StopApp(name) {}
+	StopApp(name) {return}
 
 	/**
 	 * Stop a running debug server
 	 * @return {void} 
 	 */
-	StopDebugServer() {}
+	StopDebugServer() {return}
 
 	/**
 	 * Stops a running app service
 	 * @return {void} 
 	 */
-	StopService() {}
+	StopService() {return}
 
 	/**
 	 * Execute a shell command on the android shell
@@ -2877,7 +2877,7 @@ class DsApp {
 	 * @param {num_sec} [timeout] 
 	 * @return {str} 
 	 */
-	SysExec(command, options, maxRead, timeout) {}
+	SysExec(command, options, maxRead, timeout) {return}
 
 	/**
 	 * Audiolize text
@@ -2890,19 +2890,19 @@ class DsApp {
 	 * @param {str} [engine] 
 	 * @return {void} 
 	 */
-	TextToSpeech(text, pitch, rate, callback, stream, locale, engine) {}
+	TextToSpeech(text, pitch, rate, callback, stream, locale, engine) {return}
 
 	/**
 	 * Put the app in the background
 	 * @return {void} 
 	 */
-	ToBack() {}
+	ToBack() {return}
 
 	/**
 	 * Bring your app to the foreground
 	 * @return {void} 
 	 */
-	ToFront() {}
+	ToFront() {return}
 
 	/**
 	 * Translate “Ok” and “Cancel” buttons
@@ -2910,20 +2910,20 @@ class DsApp {
 	 * @param {str} Cancel 
 	 * @return {void} 
 	 */
-	Translate(Ok, Cancel) {}
+	Translate(Ok, Cancel) {return}
 
 	/**
 	 * Unlocks the device
 	 * @return {void} 
 	 */
-	Unlock() {}
+	Unlock() {return}
 
 	/**
 	 * Unlock a locked drawer
 	 * @param {"left"|"right"} side 
 	 * @return {void} 
 	 */
-	UnlockDrawer(side) {}
+	UnlockDrawer(side) {return}
 
 	/**
 	 * Unpair a paired Bluetooth device
@@ -2931,7 +2931,7 @@ class DsApp {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	UnpairBtDevice(address, callback) {}
+	UnpairBtDevice(address, callback) {return}
 
 	/**
 	 * Unzip a zip file
@@ -2941,7 +2941,7 @@ class DsApp {
  	 * &emsp; `spk` - Extract SPK as DS project folder
 	 * @return {void} 
 	 */
-	UnzipFile(source, destination, options) {}
+	UnzipFile(source, destination, options) {return}
 
 	/**
 	 * Update the ProgressBar percentage
@@ -2950,14 +2950,14 @@ class DsApp {
  	 * &emsp; `doevents` - force v8 UI update
 	 * @return {void} 
 	 */
-	UpdateProgressBar(percent, options) {}
+	UpdateProgressBar(percent, options) {return}
 
 	/**
 	 * Force UI refresh
 	 * @param {num_mls} ms `Update Rate`
 	 * @return {void} 
 	 */
-	UpdateUI(ms) {}
+	UpdateUI(ms) {return}
 
 	/**
 	 * Uploads a file to a server
@@ -2967,7 +2967,7 @@ class DsApp {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	UploadFile(url, file, name, callback) {}
+	UploadFile(url, file, name, callback) {return}
 
 	/**
 	 * Decode a URI encoded string
@@ -2975,14 +2975,14 @@ class DsApp {
 	 * @param {str} [options] `returns DS style paths`
 	 * @return {str} 
 	 */
-	Uri2Path(uri, options) {}
+	Uri2Path(uri, options) {return}
 
 	/**
 	 * Vibrate device in a pattern
 	 * @param {str_com} pattern 
 	 * @return {void} 
 	 */
-	Vibrate(pattern) {}
+	Vibrate(pattern) {return}
 
 	/**
 	 * Perform a synchronous delay
@@ -2990,13 +2990,13 @@ class DsApp {
 	 * @param {bin} [doEvents=false] 
 	 * @return {void} 
 	 */
-	Wait(seconds, doEvents) {}
+	Wait(seconds, doEvents) {return}
 
 	/**
 	 * Wake the screen up
 	 * @return {void} 
 	 */
-	WakeUp() {}
+	WakeUp() {return}
 
 	/**
 	 * Lists the contents of a folder recursively
@@ -3013,7 +3013,7 @@ class DsApp {
  	 * &emsp; `project` - Shows DS project folders only
 	 * @return {str_pth[]} 
 	 */
-	WalkFolder(path, filter, limit, options) {}
+	WalkFolder(path, filter, limit, options) {return}
 
 	/**
 	 * Connect to a WiFi network by specifying the ssid and a password
@@ -3021,7 +3021,7 @@ class DsApp {
 	 * @param {str} key 
 	 * @return {void} 
 	 */
-	WifiConnect(ssid, key) {}
+	WifiConnect(ssid, key) {return}
 
 	/**
 	 * Scan for any available Wifi networks
@@ -3029,7 +3029,7 @@ class DsApp {
 	 * @param {"detail"} [options] 
 	 * @return {void} 
 	 */
-	WifiScan(callback, options) {}
+	WifiScan(callback, options) {return}
 
 	/**
 	 * Write text to a local file
@@ -3040,7 +3040,7 @@ class DsApp {
  	 * &emsp; `ISO-8859-1` - Latin-1
 	 * @return {void} 
 	 */
-	WriteFile(file, text, mode, encoding) {}
+	WriteFile(file, text, mode, encoding) {return}
 
 	/**
 	 * Compress a file to zip
@@ -3050,7 +3050,7 @@ class DsApp {
  	 * &emsp; `spk` - Create SPK from File
 	 * @return {void} 
 	 */
-	ZipFile(source, destination, options) {}
+	ZipFile(source, destination, options) {return}
 
 	/**
 	 * Compress a folder to zip
@@ -3060,7 +3060,7 @@ class DsApp {
  	 * &emsp; `spk` - Create SPK from DS project folder
 	 * @return {void} 
 	 */
-	ZipFolder(source, destination, options) {}
+	ZipFolder(source, destination, options) {return}
 
 }
 
@@ -3068,73 +3068,73 @@ class DsAudioRecorder {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns a new list of frequency values
 	 * @return {num_int[]} 
 	 */
-	GetData() {}
+	GetData() {return}
 
 	/**
 	 * Returns the PMPO value (Peak music power output)
 	 * @return {num_flt} 
 	 */
-	GetPeak() {}
+	GetPeak() {return}
 
 	/**
 	 * Returns the RMS value (Root Mean Square)
 	 * @return {num_flt} 
 	 */
-	GetRMS() {}
+	GetRMS() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"AudioRecorder"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Pause the recording
 	 * @return {void} 
 	 */
-	Pause() {}
+	Pause() {return}
 
 	/**
 	 * Define the recording file
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	SetFile(file) {}
+	SetFile(file) {return}
 
 	/**
 	 * Define the Recording frequency
 	 * @param {8000|11025|22050|44100|48000} frequency 
 	 * @return {void} 
 	 */
-	SetFrequency(frequency) {}
+	SetFrequency(frequency) {return}
 
 	/**
 	 * Define the recording file
 	 * @param {"Default"|"Camcorder"|"Mic"|"Unprocessed"|"Voicecommunication"|"Voiceperformance"|"Voicerecognition"} src 
 	 * @return {void} 
 	 */
-	SetSource(src) {}
+	SetSource(src) {return}
 
 	/**
 	 * Start recording to the specified file
 	 * @return {void} 
 	 */
-	Start() {}
+	Start() {return}
 
 	/**
 	 * Stop recording
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -3142,23 +3142,23 @@ class DsBluetoothList {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"BluetoothList"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {(name: str, address: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 }
 
 
@@ -3166,16 +3166,16 @@ class DsBluetoothSerial {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Clears the Bluetooth buffer of the serial connection
 	 * @return {void} 
 	 */
-	Clear() {}
+	Clear() {return}
 
 	/**
 	 * Connect a Bluetooth device
@@ -3183,45 +3183,45 @@ class DsBluetoothSerial {
 	 * @param {str} channel 
 	 * @return {void} 
 	 */
-	Connect(name, channel) {}
+	Connect(name, channel) {return}
 
 	/**
 	 * Disconnect the Bluetooth connection
 	 * @return {void} 
 	 */
-	Disconnect() {}
+	Disconnect() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"BluetoothSerial"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Checks if Bluetooth is enabled or not
 	 * @return {bin} 
 	 */
-	IsBluetoothEnabled() {}
+	IsBluetoothEnabled() {return}
 
 	/**
 	 * Checks if a Bluetooth connection exists to another device
 	 * @return {bin} 
 	 */
-	IsConnected() {}
+	IsConnected() {return}
 
 	/**
 	 * Check pairing status to another device
 	 * @param {str} name 
 	 * @return {bin} 
 	 */
-	IsPaired(name) {}
+	IsPaired(name) {return}
 
 	/**
 	 * Listen <s>or stop listening</s> for incoming messages
 	 * @param {bin} enabled 
 	 * @return {void} 
 	 */
-	Listen(enabled) {}
+	Listen(enabled) {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -3233,13 +3233,13 @@ class DsBluetoothSerial {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Ask user to enable Bluetooth
 	 * @return {void} 
 	 */
-	RequestEnable() {}
+	RequestEnable() {return}
 
 	/**
 	 * Define data format for outgoing data
@@ -3250,7 +3250,7 @@ class DsBluetoothSerial {
  	 * &emsp; `encoding` - UTF-16L/BE
 	 * @return {void} 
 	 */
-	SetDataMode(mode) {}
+	SetDataMode(mode) {return}
 
 	/**
 	 * If the device has sent the connection request
@@ -3263,21 +3263,21 @@ class DsBluetoothSerial {
 	 * @param {(name: str, address: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnConnect(callback) {}
+	SetOnConnect(callback) {return}
 
 	/**
 	 * Called after disconnecting from bluetooth connection
 	 * @param {(name: str, address: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnDisconnect(callback) {}
+	SetOnDisconnect(callback) {return}
 
 	/**
 	 * Called after received Data via Bluetooth
 	 * @param {(data: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnReceive(callback) {}
+	SetOnReceive(callback) {return}
 
 	/**
 	 * Specify how to split received data
@@ -3286,21 +3286,21 @@ class DsBluetoothSerial {
 	 * @param {str|num_int} [p3] 
 	 * @return {void} 
 	 */
-	SetSplitMode(mode, p2, p3) {}
+	SetSplitMode(mode, p2, p3) {return}
 
 	/**
 	 * Set idle disconnect timeout
 	 * @param {num_mls} milliseconds 
 	 * @return {void} 
 	 */
-	SetTimeout(milliseconds) {}
+	SetTimeout(milliseconds) {return}
 
 	/**
 	 * Send data to connected device
 	 * @param {str} data 
 	 * @return {void} 
 	 */
-	Write(data) {}
+	Write(data) {return}
 }
 
 
@@ -3314,7 +3314,7 @@ class DsButton {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -3323,122 +3323,122 @@ class DsButton {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Returns the currently contained text
 	 * @return {str} 
 	 */
-	GetText() {}
+	GetText() {return}
 
 	/**
 	 * Returns the current text size
 	 * @param {"px"} mode 
 	 * @return {num} 
 	 */
-	GetTextSize(mode) {}
+	GetTextSize(mode) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Button"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -3446,13 +3446,13 @@ class DsButton {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -3464,27 +3464,27 @@ class DsButton {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -3494,7 +3494,7 @@ class DsButton {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -3507,7 +3507,7 @@ class DsButton {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -3515,7 +3515,7 @@ class DsButton {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -3523,42 +3523,42 @@ class DsButton {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
 	 * @return {void} 
 	 */
-	SetEllipsize(mode) {}
+	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	SetFontFile(file) {}
+	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
 	 * @return {void} 
 	 */
-	SetHtml(str) {}
+	SetHtml(str) {return}
 
 	/**
 	 * Define distances to other controls
@@ -3569,21 +3569,21 @@ class DsButton {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the button was long pressed
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnLongTouch(callback) {}
+	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -3594,7 +3594,7 @@ class DsButton {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -3605,7 +3605,7 @@ class DsButton {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -3613,7 +3613,7 @@ class DsButton {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -3622,7 +3622,7 @@ class DsButton {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Customize the button looks
@@ -3634,21 +3634,21 @@ class DsButton {
 	 * @param {num_frc} [shadow=0] 
 	 * @return {void} 
 	 */
-	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {}
+	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetText(text) {}
+	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Define a shadow around the control
@@ -3658,7 +3658,7 @@ class DsButton {
 	 * @param {str_col} [color] 
 	 * @return {void} 
 	 */
-	SetTextShadow(radius, dx, dy, color) {}
+	SetTextShadow(radius, dx, dy, color) {return}
 
 	/**
 	 * Change the text size
@@ -3668,24 +3668,24 @@ class DsButton {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -3693,7 +3693,7 @@ class DsButton {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -3707,7 +3707,7 @@ class DsCameraView {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -3716,7 +3716,7 @@ class DsCameraView {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Takes a picture if a motion was detected
@@ -3725,107 +3725,107 @@ class DsCameraView {
 	 * @param {num_int} [maxCount] 
 	 * @return {void} 
 	 */
-	AutoCapture(path, fileName, maxCount) {}
+	AutoCapture(path, fileName, maxCount) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Find faces in the current camera view
 	 * @param {num_int} [maxCount] 
 	 * @return {{ confidence: num_frc, eyeDistance: num, midPoint: {x:num, y:num}, pose: num_int }} \{ confidence, eyeDistance, midPoint, pose }
 	 */
-	FindFaces(maxCount) {}
+	FindFaces(maxCount) {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Returns the device camera count
 	 * @return {num_int} 
 	 */
-	GetCameraCount() {}
+	GetCameraCount() {return}
 
 	/**
 	 * Returns a new list of available color effects
 	 * @return {"none"|"mono"|"negative"|"solarize"|"sepia"|"posterize"|"whiteboard"|"blackboard"|"aqua"|"vage-cold"|"point-blue"|"point-red-yellow"|"emboss"|"sketch"|"neon"} 
 	 */
-	GetColorEffects() {}
+	GetColorEffects() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Returns the camera height
 	 * @return {num_frc} 
 	 */
-	GetImageHeight() {}
+	GetImageHeight() {return}
 
 	/**
 	 * Returns the camera width
 	 * @return {num_frc} 
 	 */
-	GetImageWidth() {}
+	GetImageWidth() {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the hightst possible zoom value
 	 * @return {num} 
 	 */
-	GetMaxZoom() {}
+	GetMaxZoom() {return}
 
 	/**
 	 * Get camera parameters
 	 * @return {str_smc} `key1=value1;key2=value2;...`
 	 */
-	GetParameters() {}
+	GetParameters() {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns a new list of possible picture dimensions
 	 * @return {str_com} `w1 x h1`, `w2 x h2`, `...`
 	 */
-	GetPictureSizes() {}
+	GetPictureSizes() {return}
 
 	/**
 	 * Returns base64 pixel data as raw bitmap, png or jpg format
@@ -3845,70 +3845,70 @@ class DsCameraView {
 	 * @param {num_frc} height 
 	 * @return {str_b64} 
 	 */
-	GetPixelData(format, left, top, width, height) {}
+	GetPixelData(format, left, top, width, height) {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"CameraView"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Returns the curent zoom value
 	 * @return {num} 
 	 */
-	GetZoom() {}
+	GetZoom() {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Returns if the current camera supports flashlight
 	 * @return {bin} 
 	 */
-	HasFlash() {}
+	HasFlash() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -3916,19 +3916,19 @@ class DsCameraView {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Returns if the camera is currently recording
 	 * @return {bin} 
 	 */
-	IsRecording() {}
+	IsRecording() {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -3940,7 +3940,7 @@ class DsCameraView {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Define a raster for motion detection
@@ -3951,7 +3951,7 @@ class DsCameraView {
 	 * @param {DsImage} [image] 
 	 * @return {void} 
 	 */
-	MotionMosaic(xtiles, ytiles, sensitivity, minPeriod, image) {}
+	MotionMosaic(xtiles, ytiles, sensitivity, minPeriod, image) {return}
 
 	/**
 	 * Start recording video
@@ -3960,7 +3960,7 @@ class DsCameraView {
 	 * @param {"high"|"low"|"480p"|"720p"|"1080p"|"2k"|"4k"|"8k"|"qvga"|"vga"|"cif"} [quality] 
 	 * @return {void} 
 	 */
-	Record(file, seconds, quality) {}
+	Record(file, seconds, quality) {return}
 
 	/**
 	 * Keeps tracks of the average color around a given point
@@ -3970,27 +3970,27 @@ class DsCameraView {
 	 * @param {num_mls} [maxRate] 
 	 * @return {void} 
 	 */
-	ReportColors(list, callback, sampSize, maxRate) {}
+	ReportColors(list, callback, sampSize, maxRate) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -4000,7 +4000,7 @@ class DsCameraView {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -4013,7 +4013,7 @@ class DsCameraView {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -4021,14 +4021,14 @@ class DsCameraView {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Applies a color effect to the camera
 	 * @param {"none"|"mono"|"negative"|"solarize"|"sepia"|"posterize"|"whiteboard"|"blackboard"|"aqua"|"vage-cold"|"point-blue"|"point-red-yellow"|"emboss"|"sketch"|"neon"} effect 
 	 * @return {void} 
 	 */
-	SetColorEffect(effect) {}
+	SetColorEffect(effect) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -4036,14 +4036,14 @@ class DsCameraView {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * Define two camera view duplicate targets
@@ -4051,21 +4051,21 @@ class DsCameraView {
 	 * @param {DsImage} image2 
 	 * @return {void} 
 	 */
-	SetDuplicateImage(image1, image2) {}
+	SetDuplicateImage(image1, image2) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * En-/Disables the camera flash
 	 * @param {bin} onoff 
 	 * @return {void} 
 	 */
-	SetFlash(onoff) {}
+	SetFlash(onoff) {return}
 
 	/**
 	 * Change focus mode
@@ -4075,7 +4075,7 @@ class DsCameraView {
  	 * &emsp; `EDOF` - Extended Depth Of Field for continuous digital focusing
 	 * @return {void} 
 	 */
-	SetFocusMode(mode) {}
+	SetFocusMode(mode) {return}
 
 	/**
 	 * Define distances to other controls
@@ -4086,35 +4086,35 @@ class DsCameraView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control gets focused
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnFocus(callback) {}
+	SetOnFocus(callback) {return}
 
 	/**
 	 * Called when cam.AutoCapture took a picture
 	 * @param {(file: str_pth) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnPicture(callback) {}
+	SetOnPicture(callback) {return}
 
 	/**
 	 * Called if the camera is ready for use
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnReady(callback) {}
+	SetOnReady(callback) {return}
 
 	/**
 	 * Rotates the camera view
 	 * @param {0|90|180|270} angle 
 	 * @return {void} 
 	 */
-	SetOrientation(angle) {}
+	SetOrientation(angle) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -4125,7 +4125,7 @@ class DsCameraView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Change camera properties
@@ -4133,7 +4133,7 @@ class DsCameraView {
 	 * @param {num|str} value 
 	 * @return {void} 
 	 */
-	SetParameter(name, value) {}
+	SetParameter(name, value) {return}
 
 	/**
 	 * Define a custom picture size in pixels
@@ -4141,7 +4141,7 @@ class DsCameraView {
 	 * @param {num_pxl} height 
 	 * @return {void} 
 	 */
-	SetPictureSize(width, height) {}
+	SetPictureSize(width, height) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -4152,21 +4152,21 @@ class DsCameraView {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Rotate the captured image
 	 * @param {num_deg} angle 
 	 * @return {void} 
 	 */
-	SetPostRotation(angle) {}
+	SetPostRotation(angle) {return}
 
 	/**
 	 * Define a preview image for captured pictures
 	 * @param {DsImage} image 
 	 * @return {void} 
 	 */
-	SetPreviewImage(image) {}
+	SetPreviewImage(image) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -4174,7 +4174,7 @@ class DsCameraView {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -4183,14 +4183,14 @@ class DsCameraView {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * N-/Disables the camera sound
 	 * @param {bin} enabled 
 	 * @return {void} 
 	 */
-	SetSound(enabled) {}
+	SetSound(enabled) {return}
 
 	/**
 	 * Define custom video recording size
@@ -4198,45 +4198,45 @@ class DsCameraView {
 	 * @param {num_pxl} height 
 	 * @return {void} 
 	 */
-	SetVideoSize(width, height) {}
+	SetVideoSize(width, height) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Change the zoom value of the camera
 	 * @param {num} level 
 	 * @return {void} 
 	 */
-	SetZoom(level) {}
+	SetZoom(level) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Start the camera preview on the display
 	 * @return {void} 
 	 */
-	StartPreview() {}
+	StartPreview() {return}
 
 	/**
 	 * Stop recording video
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 
 	/**
 	 * Stop the camera preview on the display
 	 * @return {void} 
 	 */
-	StopPreview() {}
+	StopPreview() {return}
 
 	/**
 	 * Streams the camera view to a local ip
@@ -4247,18 +4247,18 @@ class DsCameraView {
 	 * @param {num_mtu} mtu 
 	 * @return {void} 
 	 */
-	Stream(ip, port, quality, fps, mtu) {}
+	Stream(ip, port, quality, fps, mtu) {return}
 
 	/**
 	 * Save the current camera view to a file
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	TakePicture(file) {}
+	TakePicture(file) {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -4266,7 +4266,7 @@ class DsCameraView {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -4280,7 +4280,7 @@ class DsCheckBox {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -4289,128 +4289,128 @@ class DsCheckBox {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get current checked state
 	 * @return {bin} 
 	 */
-	GetChecked() {}
+	GetChecked() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Returns the currently contained text
 	 * @return {str} 
 	 */
-	GetText() {}
+	GetText() {return}
 
 	/**
 	 * Returns the current text size
 	 * @param {"px"} mode 
 	 * @return {num} 
 	 */
-	GetTextSize(mode) {}
+	GetTextSize(mode) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"CheckBox"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -4418,13 +4418,13 @@ class DsCheckBox {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -4436,27 +4436,27 @@ class DsCheckBox {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -4466,7 +4466,7 @@ class DsCheckBox {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -4479,7 +4479,7 @@ class DsCheckBox {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -4487,14 +4487,14 @@ class DsCheckBox {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Changes the ckecked state
 	 * @param {bin} checked 
 	 * @return {void} 
 	 */
-	SetChecked(checked) {}
+	SetChecked(checked) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -4502,21 +4502,21 @@ class DsCheckBox {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define distances to other controls
@@ -4527,14 +4527,14 @@ class DsCheckBox {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the CheckBox was touched
 	 * @param {(isChecked: bin) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -4545,7 +4545,7 @@ class DsCheckBox {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -4556,7 +4556,7 @@ class DsCheckBox {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -4564,7 +4564,7 @@ class DsCheckBox {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -4573,21 +4573,21 @@ class DsCheckBox {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetText(text) {}
+	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Change the text size
@@ -4597,24 +4597,24 @@ class DsCheckBox {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -4622,7 +4622,7 @@ class DsCheckBox {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -4630,16 +4630,16 @@ class DsCloudStore {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"CloudStore"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Deletes a file in the cloud
@@ -4647,7 +4647,7 @@ class DsCloudStore {
 	 * @param {(success: bin, result: {data: str,error: str}, status: num_int) => void} callback 
 	 * @return {void} 
 	 */
-	Delete(file, callback) {}
+	Delete(file, callback) {return}
 
 	/**
 	 * Lists files of the cloud
@@ -4655,7 +4655,7 @@ class DsCloudStore {
 	 * @param {(error: bin, result: {data: str_com,error: str}, status: num_int) => void} callback 
 	 * @return {void} 
 	 */
-	List(filter, callback) {}
+	List(filter, callback) {return}
 
 	/**
 	 * Loads data from the cloud
@@ -4664,7 +4664,7 @@ class DsCloudStore {
 	 * @param {(error: bin, result: {data: all,error: str}, status: num_int) => void} [options] 
 	 * @return {void} 
 	 */
-	Load(file, callback, options) {}
+	Load(file, callback, options) {return}
 
 	/**
 	 * Merges data in the cloud
@@ -4673,7 +4673,7 @@ class DsCloudStore {
 	 * @param {(success: bin, result: {data: str,error: str}, status: num_int) => void} [callback] 
 	 * @return {void} 
 	 */
-	Merge(file, data, callback) {}
+	Merge(file, data, callback) {return}
 
 	/**
 	 * Saves data in the cloud
@@ -4683,14 +4683,14 @@ class DsCloudStore {
 	 * @param {str} [options] 
 	 * @return {void} 
 	 */
-	Save(file, data, callback, options) {}
+	Save(file, data, callback, options) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * Upload a file to the cloud
@@ -4701,7 +4701,7 @@ class DsCloudStore {
 	 * @param {str} [password] 
 	 * @return {void} 
 	 */
-	Upload(data, name, type, callback, password) {}
+	Upload(data, name, type, callback, password) {return}
 }
 
 
@@ -4715,7 +4715,7 @@ class DsCodeEdit {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -4724,190 +4724,190 @@ class DsCodeEdit {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Clears the undo/redo history
 	 * @return {void} 
 	 */
-	ClearHistory() {}
+	ClearHistory() {return}
 
 	/**
 	 * Copy selected text to the clipboard
 	 * @return {void} 
 	 */
-	Copy() {}
+	Copy() {return}
 
 	/**
 	 * Cut selected text to the clipboard
 	 * @return {void} 
 	 */
-	Cut() {}
+	Cut() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the current cursor line index
 	 * @return {num_int} 
 	 */
-	GetCursorLine() {}
+	GetCursorLine() {return}
 
 	/**
 	 * Get the cursor position in the text
 	 * @return {num_int} 
 	 */
-	GetCursorPos() {}
+	GetCursorPos() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Get the start character index of a line
 	 * @param {num_int} line 
 	 * @return {num_int} 
 	 */
-	GetLineStart(line) {}
+	GetLineStart(line) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get the selected text
 	 * @return {str} 
 	 */
-	GetSelectedText() {}
+	GetSelectedText() {return}
 
 	/**
 	 * Get selection end position
 	 * @return {num_int} 
 	 */
-	GetSelectionEnd() {}
+	GetSelectionEnd() {return}
 
 	/**
 	 * Get selection start position
 	 * @return {num_int} 
 	 */
-	GetSelectionStart() {}
+	GetSelectionStart() {return}
 
 	/**
 	 * Get current selection state
 	 * @return {bin} 
 	 */
-	GetSelectMode() {}
+	GetSelectMode() {return}
 
 	/**
 	 * Returns the currently contained text
 	 * @return {str} 
 	 */
-	GetText() {}
+	GetText() {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"CodeEdit"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Underlines a certain line in the text
 	 * @param {num_int} line 
 	 * @return {void} 
 	 */
-	HighlightLine(line) {}
+	HighlightLine(line) {return}
 
 	/**
 	 * Insert text at the cursor
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	InsertText(text) {}
+	InsertText(text) {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -4915,13 +4915,13 @@ class DsCodeEdit {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -4933,26 +4933,26 @@ class DsCodeEdit {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Paste clipboard to the current cursor position
 	 * @return {void} 
 	 */
-	Paste() {}
+	Paste() {return}
 
 	/**
 	 * Redo an undone action
 	 * @return {void} 
 	 */
-	Redo() {}
+	Redo() {return}
 
 	/**
 	 * Replace the selected text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	Replace(text) {}
+	Replace(text) {return}
 
 	/**
 	 * Replace all occurances of a string in the text
@@ -4962,7 +4962,7 @@ class DsCodeEdit {
 	 * @param {bin} [wholeWord=false] 
 	 * @return {void} 
 	 */
-	ReplaceAll(text, newText, matchCase, wholeWord) {}
+	ReplaceAll(text, newText, matchCase, wholeWord) {return}
 
 	/**
 	 * Replace a range of the text with a string
@@ -4971,7 +4971,7 @@ class DsCodeEdit {
 	 * @param {num_int} end 
 	 * @return {void} 
 	 */
-	ReplaceText(text, start, end) {}
+	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Search and select a string in the text
@@ -4981,33 +4981,33 @@ class DsCodeEdit {
 	 * @param {bin} [wholeWord=false] 
 	 * @return {void} 
 	 */
-	Search(text, direction, matchCase, wholeWord) {}
+	Search(text, direction, matchCase, wholeWord) {return}
 
 	/**
 	 * Select the whole text
 	 * @return {void} 
 	 */
-	SelectAll() {}
+	SelectAll() {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -5017,7 +5017,7 @@ class DsCodeEdit {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -5030,7 +5030,7 @@ class DsCodeEdit {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -5038,7 +5038,7 @@ class DsCodeEdit {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -5046,49 +5046,49 @@ class DsCodeEdit {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Changes the color scheme of the CodeEdit
 	 * @param {"Dark"|"Light"} scheme 
 	 * @return {void} 
 	 */
-	SetColorScheme(scheme) {}
+	SetColorScheme(scheme) {return}
 
 	/**
 	 * Change the current cursor position
 	 * @param {num_int} position 
 	 * @return {void} 
 	 */
-	SetCursorPos(position) {}
+	SetCursorPos(position) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
 	 * @return {void} 
 	 */
-	SetHtml(str) {}
+	SetHtml(str) {return}
 
 	/**
 	 * Change the highlighted language syntax
 	 * @param {".js"|".java"|".php"|".c"|".cpp"|".cs"|".rb"|".m"|".py"|".txt"} ext 
 	 * @return {void} 
 	 */
-	SetLanguage(ext) {}
+	SetLanguage(ext) {return}
 
 	/**
 	 * Define distances to other controls
@@ -5099,35 +5099,35 @@ class DsCodeEdit {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Select between Yoyo or Touch mode
 	 * @param {"Yoyo"|"Touch"} method 
 	 * @return {void} 
 	 */
-	SetNavigationMethod(method) {}
+	SetNavigationMethod(method) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChange(callback) {}
+	SetOnChange(callback) {return}
 
 	/**
 	 * Define a Yoyo double-tap callback function
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnDoubleTap(callback) {}
+	SetOnDoubleTap(callback) {return}
 
 	/**
 	 * Define a key-event callback function
 	 * @param {(action: "Down"|"Move"|"Up", keyname: "VOLUME_DOWN"|"VOLUME_UP"|"BACK"|"MENU", keycode: num_int, extra: "Shift"|"Ctrl"|"Alt"|"Meta") => void} callback 
 	 * @return {void} 
 	 */
-	SetOnKey(callback) {}
+	SetOnKey(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -5138,7 +5138,7 @@ class DsCodeEdit {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -5149,7 +5149,7 @@ class DsCodeEdit {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -5157,7 +5157,7 @@ class DsCodeEdit {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Selects part of the text in a given range
@@ -5165,14 +5165,14 @@ class DsCodeEdit {
 	 * @param {num_int} stop 
 	 * @return {void} 
 	 */
-	SetSelection(start, stop) {}
+	SetSelection(start, stop) {return}
 
 	/**
 	 * En/Disable cursor selection mode
 	 * @param {bin} onOff 
 	 * @return {void} 
 	 */
-	SetSelectMode(onOff) {}
+	SetSelectMode(onOff) {return}
 
 	/**
 	 * Change the size of the control
@@ -5181,21 +5181,21 @@ class DsCodeEdit {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetText(text) {}
+	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Change the text size
@@ -5205,31 +5205,31 @@ class DsCodeEdit {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disable device keyboard
 	 * @param {bin} onOff 
 	 * @return {void} 
 	 */
-	SetUseKeyboard(onOff) {}
+	SetUseKeyboard(onOff) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -5237,13 +5237,13 @@ class DsCodeEdit {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
 	/**
 	 * Undo an action
 	 * @return {void} 
 	 */
-	Undo() {}
+	Undo() {return}
 }
 
 
@@ -5251,10 +5251,10 @@ class DsCrypt {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Decrypt text with a key
@@ -5262,7 +5262,7 @@ class DsCrypt {
 	 * @param {str} password 
 	 * @return {str} 
 	 */
-	Decrypt(text, password) {}
+	Decrypt(text, password) {return}
 
 	/**
 	 * Encrypt text with a key
@@ -5270,13 +5270,13 @@ class DsCrypt {
 	 * @param {str} password 
 	 * @return {str} 
 	 */
-	Encrypt(text, password) {}
+	Encrypt(text, password) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Crypt"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get a hash from a string
@@ -5285,14 +5285,14 @@ class DsCrypt {
 	 * @param {"Wrap"} [options] 
 	 * @return {void} 
 	 */
-	Hash(text, mode, options) {}
+	Hash(text, mode, options) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 }
 
 
@@ -5303,7 +5303,7 @@ class DsDialog {
 	 * @param {DsLayout} layout 
 	 * @return {void} 
 	 */
-	AddLayout(layout) {}
+	AddLayout(layout) {return}
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -5313,128 +5313,128 @@ class DsDialog {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Hides the control and removes it from the screen
 	 * @return {void} 
 	 */
-	Dismiss() {}
+	Dismiss() {return}
 
 	/**
 	 * En/Disables hiding via presing the back key
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	EnableBackKey(enable) {}
+	EnableBackKey(enable) {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get title bar height
 	 * @return {num_pxl} 
 	 */
-	GetTitleHeight() {}
+	GetTitleHeight() {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Dialog"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -5442,13 +5442,13 @@ class DsDialog {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -5460,27 +5460,27 @@ class DsDialog {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Removes a content layout
 	 * @param {DsLayout} layout 
 	 * @return {void} 
 	 */
-	RemoveLayout(layout) {}
+	RemoveLayout(layout) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
@@ -5488,7 +5488,7 @@ class DsDialog {
 	 * @param {num_pxl} radius 
 	 * @return {void} 
 	 */
-	SetBackColor(color, radius) {}
+	SetBackColor(color, radius) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -5498,7 +5498,7 @@ class DsDialog {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -5511,7 +5511,7 @@ class DsDialog {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -5519,7 +5519,7 @@ class DsDialog {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -5527,21 +5527,21 @@ class DsDialog {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define distances to other controls
@@ -5552,28 +5552,28 @@ class DsDialog {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when back button was pressed while the dialog was shown
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnBack(callback) {}
+	SetOnBack(callback) {return}
 
 	/**
 	 * Called when the dialog is cancelled
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnCancel(callback) {}
+	SetOnCancel(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -5584,7 +5584,7 @@ class DsDialog {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -5595,7 +5595,7 @@ class DsDialog {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -5603,7 +5603,7 @@ class DsDialog {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -5612,28 +5612,28 @@ class DsDialog {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Changes the dialog title
 	 * @param {str} title 
 	 * @return {void} 
 	 */
-	SetTitle(title) {}
+	SetTitle(title) {return}
 
 	/**
 	 * Changes the color of the dialog title
 	 * @param {str_col} clr 
 	 * @return {void} 
 	 */
-	SetTitleColor(clr) {}
+	SetTitleColor(clr) {return}
 
 	/**
 	 * Changes the title divider height for "Old" dialogs
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTitleDividerColor(color) {}
+	SetTitleDividerColor(color) {return}
 
 	/**
 	 * Change height of the title divider for "Old" dialogs
@@ -5641,7 +5641,7 @@ class DsDialog {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetTitleDividerHeight(height, options) {}
+	SetTitleDividerHeight(height, options) {return}
 
 	/**
 	 * Change height of the title bar for "Old" dialogs
@@ -5649,7 +5649,7 @@ class DsDialog {
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [options] 
 	 * @return {void} 
 	 */
-	SetTitleHeight(height, options) {}
+	SetTitleHeight(height, options) {return}
 
 	/**
 	 * Changes the title text size for "Old" dialogs
@@ -5657,24 +5657,24 @@ class DsDialog {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetTitleTextSize(size, options) {}
+	SetTitleTextSize(size, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -5682,7 +5682,7 @@ class DsDialog {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -5690,10 +5690,10 @@ class DsDownloader {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Download file(s)
@@ -5703,31 +5703,31 @@ class DsDownloader {
 	 * @param {str} [headers] 
 	 * @return {void} 
 	 */
-	Download(url, fldr, name, headers) {}
+	Download(url, fldr, name, headers) {return}
 
 	/**
 	 * Get current download progress
 	 * @return {num_frc} 
 	 */
-	GetProgress() {}
+	GetProgress() {return}
 
 	/**
 	 * Get target download size in bytes
 	 * @return {num_byt} 
 	 */
-	GetSize() {}
+	GetSize() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Downloader"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get download completed state
 	 * @return {bin} 
 	 */
-	IsComplete() {}
+	IsComplete() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -5739,35 +5739,35 @@ class DsDownloader {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Called when download is cancelled
 	 * @param {(file: str_pth) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnCancel(callback) {}
+	SetOnCancel(callback) {return}
 
 	/**
 	 * Called when downloads are finished
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnComplete(callback) {}
+	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when a file is downloaded
 	 * @param {(path: str_pth) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnDownload(callback) {}
+	SetOnDownload(callback) {return}
 
 	/**
 	 * Called when an error occurred while downloading
 	 * @param {(error: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnError(callback) {}
+	SetOnError(callback) {return}
 }
 
 
@@ -5775,16 +5775,16 @@ class DsEmail {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Email"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Start receiving emails from a given folder
@@ -5793,7 +5793,7 @@ class DsEmail {
 	 * @param {str} [filter] 
 	 * @return {void} 
 	 */
-	Receive(folder, maxCount, filter) {}
+	Receive(folder, maxCount, filter) {return}
 
 	/**
 	 * Send an email to someone
@@ -5804,7 +5804,7 @@ class DsEmail {
 	 * @param {str_pth} [attach] 
 	 * @return {void} 
 	 */
-	Send(subject, body, sender, recipients, attach) {}
+	Send(subject, body, sender, recipients, attach) {return}
 
 	/**
 	 * Set IMAP settings for receiving messages
@@ -5817,21 +5817,21 @@ class DsEmail {
  	 * &emsp; `995` - pop
 	 * @return {void} 
 	 */
-	SetIMAP(server, port) {}
+	SetIMAP(server, port) {return}
 
 	/**
 	 * Called when a message is received
 	 * @param {(data: { from: str_eml, to: str_eml, cc: str_eml, subject: str, body: str }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnMessage(callback) {}
+	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when a status changed
 	 * @param {(status: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnStatus(callback) {}
+	SetOnStatus(callback) {return}
 
 	/**
 	 * Set SMTP settings for sending messages
@@ -5845,7 +5845,7 @@ class DsEmail {
  	 * &emsp; `587` - gmx
 	 * @return {void} 
 	 */
-	SetSMTP(server, port) {}
+	SetSMTP(server, port) {return}
 }
 
 
@@ -5853,34 +5853,34 @@ class DsFile {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Close File
 	 * @return {void} 
 	 */
-	Close() {}
+	Close() {return}
 
 	/**
 	 * Get file size in bytes
 	 * @return {num_byt} 
 	 */
-	GetLength() {}
+	GetLength() {return}
 
 	/**
 	 * Get pointer position
 	 * @return {void} 
 	 */
-	GetPointer() {}
+	GetPointer() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"File"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Read data from file
@@ -5888,14 +5888,14 @@ class DsFile {
 	 * @param {"Int"|"Text"|"Hex"} [mode='Text'] 
 	 * @return {void} 
 	 */
-	ReadData(len, mode) {}
+	ReadData(len, mode) {return}
 
 	/**
 	 * Read numeric data from file
 	 * @param {"Byte"|"UByte"|"Bool"|"Float"|"FloatLE"|"Long"|"LongLE"|"Short"|"UShort"|"ShortLE"|"UShortLE"|"Int"|"UInt"|"IntLE"} type 
 	 * @return {num} 
 	 */
-	ReadNumber(type) {}
+	ReadNumber(type) {return}
 
 	/**
 	 * Read data as text
@@ -5905,7 +5905,7 @@ class DsFile {
  	 * &emsp; `Char` - read big-endian 16-bit character
 	 * @return {str} 
 	 */
-	ReadText(type) {}
+	ReadText(type) {return}
 
 	/**
 	 * Asynchronously read data as text
@@ -5915,28 +5915,28 @@ class DsFile {
 	 * @param {(data: str) => void} callback 
 	 * @return {void} 
 	 */
-	ReadTextAsync(type, callback) {}
+	ReadTextAsync(type, callback) {return}
 
 	/**
 	 * CHange pointer position to a given byte in the file
 	 * @param {num_int} offset 
 	 * @return {void} 
 	 */
-	Seek(offset) {}
+	Seek(offset) {return}
 
 	/**
 	 * Allocate memory for a file
 	 * @param {num_int} len 
 	 * @return {void} 
 	 */
-	SetLength(len) {}
+	SetLength(len) {return}
 
 	/**
 	 * Let the pointer skip some bytes
 	 * @param {num_int} bytes 
 	 * @return {void} 
 	 */
-	Skip(bytes) {}
+	Skip(bytes) {return}
 
 	/**
 	 * Write data to the file
@@ -5945,7 +5945,7 @@ class DsFile {
 	 * @param {"Hex"|"Int"|"Text"} [mode='Text'] 
 	 * @return {void} 
 	 */
-	WriteData(data, mode) {}
+	WriteData(data, mode) {return}
 
 	/**
 	 * Write number to the file
@@ -5953,7 +5953,7 @@ class DsFile {
 	 * @param {"Byte"|"UByte"|"Bool"|"Float"|"FloatLE"|"Long"|"LongLE"|"Short"|"UShort"|"ShortLE"|"UShortLE"|"Int"|"UInt"|"IntLE"} [type='Int'] 
 	 * @return {void} 
 	 */
-	WriteNumber(data, type) {}
+	WriteNumber(data, type) {return}
 
 	/**
 	 * Writes text to file
@@ -5964,7 +5964,7 @@ class DsFile {
  	 * &emsp; `Char` - Write big-endian 16-bit characters
 	 * @return {void} 
 	 */
-	WriteText(data, type) {}
+	WriteText(data, type) {return}
 }
 
 
@@ -5978,116 +5978,116 @@ class DsGameView {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Execute code inside the GameView
 	 * @param {str_jsc} js 
 	 * @return {void} 
 	 */
-	Execute(js) {}
+	Execute(js) {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {void} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -6095,13 +6095,13 @@ class DsGameView {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -6113,27 +6113,27 @@ class DsGameView {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -6143,7 +6143,7 @@ class DsGameView {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -6156,7 +6156,7 @@ class DsGameView {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -6164,7 +6164,7 @@ class DsGameView {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -6172,35 +6172,35 @@ class DsGameView {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define the game source file
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	SetFile(file) {}
+	SetFile(file) {return}
 
 	/**
 	 * Change the target framerate
 	 * @param {num_fps} fps 
 	 * @return {void} 
 	 */
-	SetFrameRate(fps) {}
+	SetFrameRate(fps) {return}
 
 	/**
 	 * Define distances to other controls
@@ -6211,7 +6211,7 @@ class DsGameView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -6222,7 +6222,7 @@ class DsGameView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -6233,7 +6233,7 @@ class DsGameView {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -6241,7 +6241,7 @@ class DsGameView {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -6250,24 +6250,24 @@ class DsGameView {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -6275,48 +6275,42 @@ class DsGameView {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
 class DsGLView {
 
-	/**
-	 * Width/height relation
-	 * @type {num_flt} 
-	 */
+	/** @type {num_flt} Width/height relation */
 	aspect;
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
-	/**
-	 * [HTMLDivElement]
-	 * @type {obj} 
-	 */
+	/** @type {obj} [HTMLDivElement] */
 	canvas;
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Create a sprite object which can be drawn on the GLView
 	 * @param {str_ptf} file 
 	 * @param {() => void} [callback] 
-	 * @return {img} \img
+	 * @return {GLV_img} \img
 	 */
-	CreateImage(file, callback) {}
+	CreateImage(file, callback) {return}
 
 	/**
 	 * Draw image to canvas
-	 * @param {GLV_img} image \img
+	 * @param {GLV_img} image img
 	 * @param {num_frc} x 
 	 * @param {num_frc} y 
 	 * @param {num_frc} [w] 
@@ -6324,11 +6318,11 @@ class DsGLView {
 	 * @param {num_deg} [angle] 
 	 * @return {void} 
 	 */
-	DrawImage(image, x, y, w, h, angle) {}
+	DrawImage(image, x, y, w, h, angle) {return}
 
 	/**
 	 * Draw part of a sprite to the canvas
-	 * @param {GLV_img} sheet \img
+	 * @param {GLV_img} sheet img
 	 * @param {num_pxl} sx 
 	 * @param {num_pxl} sy 
 	 * @param {num_pxl} sw 
@@ -6340,108 +6334,105 @@ class DsGLView {
 	 * @param {num_deg} angle 
 	 * @return {void} 
 	 */
-	DrawSprite(sheet, sx, sy, sw, sh, dx, dy, dw, dh, angle) {}
+	DrawSprite(sheet, sx, sy, sw, sh, dx, dy, dw, dh, angle) {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Returns the glv context
-	 * @return {ctx} \ctx
+	 * @return {GLV_ctx} \ctx
 	 */
-	GetContext() {}
+	GetContext() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"GLView"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
-	/**
-	 * Height
-	 * @type {num_int} 
-	 */
+	/** @type {num_int} Height */
 	height;
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -6449,13 +6440,13 @@ class DsGLView {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -6467,20 +6458,20 @@ class DsGLView {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Render draw commands
 	 * @return {void} 
 	 */
-	Render() {}
+	Render() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -6490,7 +6481,7 @@ class DsGLView {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -6503,7 +6494,7 @@ class DsGLView {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -6511,21 +6502,21 @@ class DsGLView {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define distances to other controls
@@ -6536,35 +6527,35 @@ class DsGLView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchDown(callback) {}
+	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchMove(callback) {}
+	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchUp(callback) {}
+	SetOnTouchUp(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -6575,7 +6566,7 @@ class DsGLView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -6586,7 +6577,7 @@ class DsGLView {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -6594,7 +6585,7 @@ class DsGLView {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -6603,31 +6594,31 @@ class DsGLView {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
 	 * @return {void} 
 	 */
-	SetTouchable(touchable) {}
+	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -6635,27 +6626,18 @@ class DsGLView {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
-	/**
-	 * Width
-	 * @type {num_int} 
-	 */
+	/** @type {num_int} Width */
 	width;
 }
 
 class GLV_img {
 
-	/**
-	 * Width of the image
-	 * @type {num_int} 
-	 */
+	/** @type {num_int} Width of the image */
 	width;
 
-	/**
-	 * Height of the image
-	 * @type {num_int} 
-	 */
+	/** @type {num_int} Height of the image */
 	height;
 }
 class GLV_ctx {
@@ -6671,7 +6653,7 @@ class GLV_ctx {
 	 * @param {fnc} [errorCallback] 
 	 * @return {void} 
 	 */
-	capture(x, y, w, h, fileName, successCallback, errorCallback) {}
+	capture(x, y, w, h, fileName, successCallback, errorCallback) {return}
 
 	/**
 	 * <deprecated does nothing
@@ -6681,11 +6663,11 @@ class GLV_ctx {
 	 * @param {num_pxl} [height=-1] 
 	 * @return {void} 
 	 */
-	clearRect(x, y, width, height) {}
+	clearRect(x, y, width, height) {return}
 
 	/**
 	 * Draws part of a sprite to the context
-	 * @param {GLV_img} image \img
+	 * @param {GLV_img} image img
 	 * @param {num_pxl} sx 
 	 * @param {num_pxl} sy 
 	 * @param {num_pxl} sw 
@@ -6696,38 +6678,38 @@ class GLV_ctx {
 	 * @param {num_pxl} dh 
 	 * @return {void} 
 	 */
-	drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) {}
+	drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) {return}
 
 	/**
 	 * Render draw commands
 	 * @return {void} 
 	 */
-	render() {}
+	render() {return}
 
 	/**
 	 * Reset all transformations to default
 	 * @return {void} 
 	 */
-	resetTransform() {}
+	resetTransform() {return}
 
 	/**
 	 * Restore saved context
 	 * @return {void} 
 	 */
-	restore() {}
+	restore() {return}
 
 	/**
 	 * Rotates the transformation matrix
 	 * @param {num_rad} angle 
 	 * @return {void} 
 	 */
-	rotate(angle) {}
+	rotate(angle) {return}
 
 	/**
 	 * Saves current context
 	 * @return {void} 
 	 */
-	save() {}
+	save() {return}
 
 	/**
 	 * Scale the transformation matrix
@@ -6735,7 +6717,7 @@ class GLV_ctx {
 	 * @param {num_frc} d 
 	 * @return {void} 
 	 */
-	scale(a, d) {}
+	scale(a, d) {return}
 
 	/**
 	 * Set current matrix
@@ -6747,7 +6729,7 @@ class GLV_ctx {
 	 * @param {num} ty 
 	 * @return {void} 
 	 */
-	setTransform(a, b, c, d, tx, ty) {}
+	setTransform(a, b, c, d, tx, ty) {return}
 
 	/**
 	 * Transform the current matrix
@@ -6759,7 +6741,7 @@ class GLV_ctx {
 	 * @param {num} ty 
 	 * @return {void} 
 	 */
-	transform(a, b, c, d, tx, ty) {}
+	transform(a, b, c, d, tx, ty) {return}
 
 	/**
 	 * 'Move' the transformation matrix
@@ -6767,7 +6749,7 @@ class GLV_ctx {
 	 * @param {num_pxl} ty 
 	 * @return {void} 
 	 */
-	translate(tx, ty) {}
+	translate(tx, ty) {return}
 }
 
 class DsImage {
@@ -6780,7 +6762,7 @@ class DsImage {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -6789,26 +6771,26 @@ class DsImage {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Clears the image content
 	 * @return {void} 
 	 */
-	Clear() {}
+	Clear() {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn
@@ -6820,7 +6802,7 @@ class DsImage {
 	 * @param {num_deg} sweep 
 	 * @return {void} 
 	 */
-	DrawArc(x1, y1, x2, y2, start, sweep) {}
+	DrawArc(x1, y1, x2, y2, start, sweep) {return}
 
 	/**
 	 * Draws a Circle
@@ -6829,14 +6811,14 @@ class DsImage {
 	 * @param {num} radius `width relative`
 	 * @return {void} 
 	 */
-	DrawCircle(x, y, radius) {}
+	DrawCircle(x, y, radius) {return}
 
 	/**
 	 * Draw gif frame on a specific time
 	 * @param {num_mls} ms 
 	 * @return {void} 
 	 */
-	DrawFrame(ms) {}
+	DrawFrame(ms) {return}
 
 	/**
 	 * Draws an Image:dso-CreateImage
@@ -6849,7 +6831,7 @@ class DsImage {
 	 * @param {"ADD"|"CLEAR"|"DARKEN"|"DST"|"DST_ATOP"|"DST_IN"|"DST_OUT"|"DST_OVER"|"LIGHTEN"|"MULTIPLY"|"OVERLAY"|"SCREEN"|"SRC"|"SRC_ATOP"|"SRC_IN"|"SRC_OUT"|"SRC_OVER"|"XOR"} [mode] 
 	 * @return {void} 
 	 */
-	DrawImage(image, x, y, w, h, angle, mode) {}
+	DrawImage(image, x, y, w, h, angle, mode) {return}
 
 	/**
 	 * Draws an image with a 2d transformation matrix
@@ -6857,7 +6839,7 @@ class DsImage {
 	 * @param {[num, num, num, num, num, num]} matrix 
 	 * @return {void} 
 	 */
-	DrawImageMtx(image, matrix) {}
+	DrawImageMtx(image, matrix) {return}
 
 	/**
 	 * Draws a line
@@ -6867,7 +6849,7 @@ class DsImage {
 	 * @param {num} y2 
 	 * @return {void} 
 	 */
-	DrawLine(x1, y1, x2, y2) {}
+	DrawLine(x1, y1, x2, y2) {return}
 
 	/**
 	 * Draws a single pixel
@@ -6875,7 +6857,7 @@ class DsImage {
 	 * @param {num} y 
 	 * @return {void} 
 	 */
-	DrawPoint(x, y) {}
+	DrawPoint(x, y) {return}
 
 	/**
 	 * Draws a rectangle
@@ -6885,7 +6867,7 @@ class DsImage {
 	 * @param {num} y2 
 	 * @return {void} 
 	 */
-	DrawRectangle(x1, y1, x2, y2) {}
+	DrawRectangle(x1, y1, x2, y2) {return}
 
 	/**
 	 * Draws a vertically centered sample graph
@@ -6893,7 +6875,7 @@ class DsImage {
 	 * @param {num} range 
 	 * @return {void} 
 	 */
-	DrawSamples(data, range) {}
+	DrawSamples(data, range) {return}
 
 	/**
 	 * Draws a text
@@ -6902,57 +6884,57 @@ class DsImage {
 	 * @param {num} y 
 	 * @return {void} 
 	 */
-	DrawText(txt, x, y) {}
+	DrawText(txt, x, y) {return}
 
 	/**
 	 * Applies modifications to the image data
 	 * @return {void} 
 	 */
-	Flatten() {}
+	Flatten() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the name set via SetName
 	 * @return {str} 
 	 */
-	GetName() {}
+	GetName() {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns color values of a pixel
@@ -6960,7 +6942,7 @@ class DsImage {
 	 * @param {num} y 
 	 * @return {[ num_dhx, num_dhx, num_dhx ]} 
 	 */
-	GetPixelColor(x, y) {}
+	GetPixelColor(x, y) {return}
 
 	/**
 	 * Returns base64 encoded image data
@@ -6971,58 +6953,58 @@ class DsImage {
 	 * @param {num_int} [height=-1] 
 	 * @return {str_b64} 
 	 */
-	GetPixelData(format, left, top, width, height) {}
+	GetPixelData(format, left, top, width, height) {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Image"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -7030,20 +7012,20 @@ class DsImage {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Measures the size of a given text
 	 * @param {str} txt 
 	 * @return {{ width: num_frc, height: num_frc }} \{ width, height }
 	 */
-	MeasureText(txt) {}
+	MeasureText(txt) {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -7055,7 +7037,7 @@ class DsImage {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Moves the image content
@@ -7063,13 +7045,13 @@ class DsImage {
 	 * @param {num} y 
 	 * @return {void} 
 	 */
-	Move(x, y) {}
+	Move(x, y) {return}
 
 	/**
 	 * Reset all transformations
 	 * @return {void} 
 	 */
-	Reset() {}
+	Reset() {return}
 
 	/**
 	 * Rotates the content
@@ -7078,7 +7060,7 @@ class DsImage {
 	 * @param {num} [pivotY] 
 	 * @return {void} 
 	 */
-	Rotate(angle, pivotX, pivotY) {}
+	Rotate(angle, pivotX, pivotY) {return}
 
 	/**
 	 * Saves the image to a file on the local filesystem
@@ -7086,7 +7068,7 @@ class DsImage {
 	 * @param {num_prc} [quality] `for jpg files`
 	 * @return {void} 
 	 */
-	Save(fileName, quality) {}
+	Save(fileName, quality) {return}
 
 	/**
 	 * Scales the content by the given factors
@@ -7094,41 +7076,41 @@ class DsImage {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	Scale(x, y) {}
+	Scale(x, y) {return}
 
 	/**
 	 * Change the alpha value
 	 * @param {num_dhx} alpha 
 	 * @return {void} 
 	 */
-	SetAlpha(alpha) {}
+	SetAlpha(alpha) {return}
 
 	/**
 	 * En/Disables automatic view updates
 	 * @param {bin} onoff 
 	 * @return {void} 
 	 */
-	SetAutoUpdate(onoff) {}
+	SetAutoUpdate(onoff) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -7138,7 +7120,7 @@ class DsImage {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -7151,7 +7133,7 @@ class DsImage {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -7159,14 +7141,14 @@ class DsImage {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Fills the image with a color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetColor(color) {}
+	SetColor(color) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -7174,28 +7156,28 @@ class DsImage {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	SetFontFile(file) {}
+	SetFontFile(file) {return}
 
 	/**
 	 * Change the content to an other image
@@ -7205,14 +7187,14 @@ class DsImage {
 	 * @param {"rescale"} [options] 
 	 * @return {void} 
 	 */
-	SetImage(image, width, height, options) {}
+	SetImage(image, width, height, options) {return}
 
 	/**
 	 * Change the stroke width
 	 * @param {num_pxl} width 
 	 * @return {void} 
 	 */
-	SetLineWidth(width) {}
+	SetLineWidth(width) {return}
 
 	/**
 	 * Define distances to other controls
@@ -7223,63 +7205,63 @@ class DsImage {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Set a minimum OnTouchMove call timeout
 	 * @param {num_mls} milliseconds 
 	 * @return {void} 
 	 */
-	SetMaxRate(milliseconds) {}
+	SetMaxRate(milliseconds) {return}
 
 	/**
 	 * Change the name of the image
 	 * @param {str} name 
 	 * @return {void} 
 	 */
-	SetName(name) {}
+	SetName(name) {return}
 
 	/**
 	 * Called when image has loaded asynchronously
 	 * @param {(img: DsImage) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnLoad(callback) {}
+	SetOnLoad(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnLongTouch(callback) {}
+	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchDown(callback) {}
+	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchMove(callback) {}
+	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchUp(callback) {}
+	SetOnTouchUp(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -7290,21 +7272,21 @@ class DsImage {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Change the paint color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetPaintColor(color) {}
+	SetPaintColor(color) {return}
 
 	/**
 	 * Change the paint style
 	 * @param {"Fill"|"Line"} style 
 	 * @return {void} 
 	 */
-	SetPaintStyle(style) {}
+	SetPaintStyle(style) {return}
 
 	/**
 	 * Set base64 encoded pixel data
@@ -7315,14 +7297,14 @@ class DsImage {
  	 * &emsp; `fix` - set bitmap size
 	 * @return {void} 
 	 */
-	SetPixelData(data, width, height, options) {}
+	SetPixelData(data, width, height, options) {return}
 
 	/**
 	 * Change the pixel mode for drawing methods
 	 * @param {bin} onoff 
 	 * @return {void} 
 	 */
-	SetPixelMode(onoff) {}
+	SetPixelMode(onoff) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -7333,7 +7315,7 @@ class DsImage {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -7341,7 +7323,7 @@ class DsImage {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -7350,34 +7332,34 @@ class DsImage {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the drawn text size
 	 * @param {num} size 
 	 * @return {void} 
 	 */
-	SetTextSize(size) {}
+	SetTextSize(size) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
 	 * @return {void} 
 	 */
-	SetTouchable(touchable) {}
+	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Skews the content
@@ -7385,18 +7367,18 @@ class DsImage {
 	 * @param {num} y 
 	 * @return {void} 
 	 */
-	Skew(x, y) {}
+	Skew(x, y) {return}
 
 	/**
 	 * Applies a transformation matrix to the content
 	 * @param {lst} matrix 
 	 * @return {void} 
 	 */
-	Transform(matrix) {}
+	Transform(matrix) {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -7404,13 +7386,13 @@ class DsImage {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
 	/**
 	 * Update the view in disabled AutoUpdate mode
 	 * @return {void} 
 	 */
-	Update() {}
+	Update() {return}
 }
 
 
@@ -7422,7 +7404,7 @@ class DsLayout {
 	 * @param {num_int} [order] 
 	 * @return {void} 
 	 */
-	AddChild(child, order) {}
+	AddChild(child, order) {return}
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -7432,7 +7414,7 @@ class DsLayout {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -7441,130 +7423,130 @@ class DsLayout {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Moves a child to the layout front
 	 * @param {dso} child 
 	 * @return {void} 
 	 */
-	ChildToFront(child) {}
+	ChildToFront(child) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Destroys and removes a child from the layout
 	 * @param {dso} child 
 	 * @return {void} 
 	 */
-	DestroyChild(child) {}
+	DestroyChild(child) {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Returns the z order of a child
 	 * @param {dso} child 
 	 * @return {num_int} 
 	 */
-	GetChildOrder(child) {}
+	GetChildOrder(child) {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Layout"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -7572,13 +7554,13 @@ class DsLayout {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -7590,34 +7572,34 @@ class DsLayout {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Remove a child from the layout
 	 * @param {dso} child 
 	 * @return {void} 
 	 */
-	RemoveChild(child) {}
+	RemoveChild(child) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -7627,7 +7609,7 @@ class DsLayout {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -7640,7 +7622,7 @@ class DsLayout {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -7648,7 +7630,7 @@ class DsLayout {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -7656,7 +7638,7 @@ class DsLayout {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set margins of top-level children
@@ -7667,7 +7649,7 @@ class DsLayout {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetChildMargins(left, top, right, bottom, mode) {}
+	SetChildMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Change text size of top-level children
@@ -7677,42 +7659,42 @@ class DsLayout {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetChildTextSize(size, mode) {}
+	SetChildTextSize(size, mode) {return}
 
 	/**
 	 * Apply corner radius to card layouts's
 	 * @param {num_pxl} radius 
 	 * @return {void} 
 	 */
-	SetCornerRadius(radius) {}
+	SetCornerRadius(radius) {return}
 
 	/**
 	 * Apply shadow to card layouts's
 	 * @param {num_pxl} elevation 
 	 * @return {void} 
 	 */
-	SetElevation(elevation) {}
+	SetElevation(elevation) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Adjust the placing of contained children
 	 * @param {"Left"|"Top"|"Right"|"Bottom"|"VCenter"|"HCenter"|"FillX"|"FillY"|"FillXY"} gravity 
 	 * @return {void} 
 	 */
-	SetGravity(gravity) {}
+	SetGravity(gravity) {return}
 
 	/**
 	 * Define distances to other controls
@@ -7723,56 +7705,56 @@ class DsLayout {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the user changed a control content
 	 * @param {(src: dso) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChildChange(callback) {}
+	SetOnChildChange(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnLongTouch(callback) {}
+	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchDown(callback) {}
+	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchMove(callback) {}
+	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchUp(callback) {}
+	SetOnTouchUp(callback) {return}
 
 	/**
 	 * Change the children orientation
 	 * @param {"Horizontal"|"Vertical"} orient 
 	 * @return {void} 
 	 */
-	SetOrientation(orient) {}
+	SetOrientation(orient) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -7783,7 +7765,7 @@ class DsLayout {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -7794,7 +7776,7 @@ class DsLayout {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -7802,7 +7784,7 @@ class DsLayout {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -7811,38 +7793,38 @@ class DsLayout {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
 	 * @return {void} 
 	 */
-	SetTouchable(touchable) {}
+	SetTouchable(touchable) {return}
 
 	/**
 	 * Enable touch event forwarding
 	 * @param {bin} through 
 	 * @return {void} 
 	 */
-	SetTouchThrough(through) {}
+	SetTouchThrough(through) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -7850,7 +7832,7 @@ class DsLayout {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -7863,7 +7845,7 @@ class DsList {
 	 * @param {str|str_ptf} [image] 
 	 * @return {void} 
 	 */
-	AddItem(title, body, image) {}
+	AddItem(title, body, image) {return}
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -7873,7 +7855,7 @@ class DsList {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -7882,143 +7864,143 @@ class DsList {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Expand the list to the full height inside scrollers
 	 * @return {void} 
 	 */
-	Expand() {}
+	Expand() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Returns item data by a title
 	 * @param {str} title 
 	 * @return {{ title: str, body: str, image: str_pth }} \{ title, body, image }
 	 */
-	GetItem(title) {}
+	GetItem(title) {return}
 
 	/**
 	 * Returns item data by an index
 	 * @param {num_int} index 
 	 * @return {{ title: str, body: str, image: str_pth }} \{ title, body, image }
 	 */
-	GetItemByIndex(index) {}
+	GetItemByIndex(index) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the list length
 	 * @return {num_int} 
 	 */
-	GetLength() {}
+	GetLength() {return}
 
 	/**
 	 * Returns the whole list as object
 	 * @param {str} delim 
 	 * @return {{ title: str, body: str, image: str_pth }[]|str} `title1[DELIM]title2[DELIM]...`
 	 */
-	GetList(delim) {}
+	GetList(delim) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Returns the current text size
 	 * @param {"px"} mode 
 	 * @return {num} 
 	 */
-	GetTextSize(mode) {}
+	GetTextSize(mode) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"List"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Inserts an item into the list
@@ -8028,13 +8010,13 @@ class DsList {
 	 * @param {str|str_ptf} [image] 
 	 * @return {void} 
 	 */
-	InsertItem(index, title, body, image) {}
+	InsertItem(index, title, body, image) {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -8042,13 +8024,13 @@ class DsList {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -8060,27 +8042,27 @@ class DsList {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Clears the list
 	 * @return {void} 
 	 */
-	RemoveAll() {}
+	RemoveAll() {return}
 
 	/**
 	 * Removes an item by its title
 	 * @param {str} title 
 	 * @return {void} 
 	 */
-	RemoveItem(title) {}
+	RemoveItem(title) {return}
 
 	/**
 	 * Removes an item by its index
 	 * @param {num_int} index 
 	 * @return {void} 
 	 */
-	RemoveItemByIndex(index) {}
+	RemoveItemByIndex(index) {return}
 
 	/**
 	 * Scrolls to an item by its title
@@ -8088,14 +8070,14 @@ class DsList {
 	 * @param {str} [body] 
 	 * @return {void} 
 	 */
-	ScrollToItem(title, body) {}
+	ScrollToItem(title, body) {return}
 
 	/**
 	 * Scrolls the list to a specific index
 	 * @param {num_int} index 
 	 * @return {void} 
 	 */
-	ScrollToItemByIndex(index) {}
+	ScrollToItemByIndex(index) {return}
 
 	/**
 	 * Highlight an item by its title and body
@@ -8104,7 +8086,7 @@ class DsList {
 	 * @param {bin} [scroll] 
 	 * @return {void} 
 	 */
-	SelectItem(title, body, scroll) {}
+	SelectItem(title, body, scroll) {return}
 
 	/**
 	 * Highlight an item by its index
@@ -8112,27 +8094,27 @@ class DsList {
 	 * @param {bin} [scroll=false] 
 	 * @return {void} 
 	 */
-	SelectItemByIndex(index, scroll) {}
+	SelectItemByIndex(index, scroll) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -8142,7 +8124,7 @@ class DsList {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -8155,7 +8137,7 @@ class DsList {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -8163,7 +8145,7 @@ class DsList {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -8171,7 +8153,7 @@ class DsList {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Change coloumn widths
@@ -8181,7 +8163,7 @@ class DsList {
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetColumnWidths(icon, title, body, mode) {}
+	SetColumnWidths(icon, title, body, mode) {return}
 
 	/**
 	 * Changes the divider style
@@ -8189,63 +8171,63 @@ class DsList {
 	 * @param {str_col} [color] 
 	 * @return {void} 
 	 */
-	SetDivider(height, color) {}
+	SetDivider(height, color) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
 	 * @return {void} 
 	 */
-	SetEllipsize(mode) {}
+	SetEllipsize(mode) {return}
 
 	/**
 	 * Auto-crop titles to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
 	 * @return {void} 
 	 */
-	SetEllipsize1(mode) {}
+	SetEllipsize1(mode) {return}
 
 	/**
 	 * Auto-crop bodys to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
 	 * @return {void} 
 	 */
-	SetEllipsize2(mode) {}
+	SetEllipsize2(mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	SetFontFile(file) {}
+	SetFontFile(file) {return}
 
 	/**
 	 * Change selected title highlight color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetHiTextColor1(color) {}
+	SetHiTextColor1(color) {return}
 
 	/**
 	 * Change selected body highlight color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetHiTextColor2(color) {}
+	SetHiTextColor2(color) {return}
 
 	/**
 	 * Change icon margins
@@ -8256,7 +8238,7 @@ class DsList {
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetIconMargins(left, top, right, bottom, mode) {}
+	SetIconMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Change the icon size
@@ -8264,7 +8246,7 @@ class DsList {
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetIconSize(size, mode) {}
+	SetIconSize(size, mode) {return}
 
 	/**
 	 * Change the content of an element by its title
@@ -8274,7 +8256,7 @@ class DsList {
 	 * @param {str_ptf} [newImage] 
 	 * @return {void} 
 	 */
-	SetItem(title, newTitle, newBody, newImage) {}
+	SetItem(title, newTitle, newBody, newImage) {return}
 
 	/**
 	 * Change the content of an element by its index
@@ -8284,7 +8266,7 @@ class DsList {
 	 * @param {str_ptf} [newImage] 
 	 * @return {void} 
 	 */
-	SetItemByIndex(index, newTitle, newBody, newImage) {}
+	SetItemByIndex(index, newTitle, newBody, newImage) {return}
 
 	/**
 	 * Set item color
@@ -8293,7 +8275,7 @@ class DsList {
 	 * @param {str_col} [backClr] 
 	 * @return {void} 
 	 */
-	SetItemColor(name, textClr, backClr) {}
+	SetItemColor(name, textClr, backClr) {return}
 
 	/**
 	 * Set item color by index
@@ -8302,7 +8284,7 @@ class DsList {
 	 * @param {str_col} [backClr] 
 	 * @return {void} 
 	 */
-	SetItemColorByIndex(index, textClr, backClr) {}
+	SetItemColorByIndex(index, textClr, backClr) {return}
 
 	/**
 	 * Set the content of the whole list
@@ -8310,7 +8292,7 @@ class DsList {
 	 * @param {str} [delim=','] 
 	 * @return {void} 
 	 */
-	SetList(list, delim) {}
+	SetList(list, delim) {return}
 
 	/**
 	 * Define distances to other controls
@@ -8321,21 +8303,21 @@ class DsList {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {(title: str, body?: str, icon?: str, index?: num_int) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnLongTouch(callback) {}
+	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {(title: str, body?: str, icon?: str, index?: num_int) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -8346,7 +8328,7 @@ class DsList {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -8357,7 +8339,7 @@ class DsList {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -8365,7 +8347,7 @@ class DsList {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -8374,28 +8356,28 @@ class DsList {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Change the default text color of titles
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor1(color) {}
+	SetTextColor1(color) {return}
 
 	/**
 	 * Change the default text color of bodies
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor2(color) {}
+	SetTextColor2(color) {return}
 
 	/**
 	 * Define distances to other controls
@@ -8409,7 +8391,7 @@ class DsList {
  	 * &emsp; `outer` - around both title and body together
 	 * @return {void} 
 	 */
-	SetTextMargins(left, top, right, bottom, mode, options) {}
+	SetTextMargins(left, top, right, bottom, mode, options) {return}
 
 	/**
 	 * Define a shadow around the control
@@ -8419,7 +8401,7 @@ class DsList {
 	 * @param {str_col} [color] 
 	 * @return {void} 
 	 */
-	SetTextShadow(radius, dx, dy, color) {}
+	SetTextShadow(radius, dx, dy, color) {return}
 
 	/**
 	 * Apply shadow to titles
@@ -8429,7 +8411,7 @@ class DsList {
 	 * @param {str_col} [color='black'] 
 	 * @return {void} 
 	 */
-	SetTextShadow1(radius, dx, dy, color) {}
+	SetTextShadow1(radius, dx, dy, color) {return}
 
 	/**
 	 * Apply shadow to bodies
@@ -8439,7 +8421,7 @@ class DsList {
 	 * @param {str_col} [color='black'] 
 	 * @return {void} 
 	 */
-	SetTextShadow2(radius, dx, dy, color) {}
+	SetTextShadow2(radius, dx, dy, color) {return}
 
 	/**
 	 * Change the text size
@@ -8449,7 +8431,7 @@ class DsList {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * Set title text size
@@ -8457,7 +8439,7 @@ class DsList {
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetTextSize1(size, mode) {}
+	SetTextSize1(size, mode) {return}
 
 	/**
 	 * Set body text size
@@ -8465,24 +8447,24 @@ class DsList {
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetTextSize2(size, mode) {}
+	SetTextSize2(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -8490,7 +8472,7 @@ class DsList {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -8504,32 +8486,32 @@ class DsListDialog {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Hides the control and removes it from the screen
 	 * @return {void} 
 	 */
-	Dismiss() {}
+	Dismiss() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"ListDialog"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -8541,14 +8523,14 @@ class DsListDialog {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Change the background to an image
@@ -8556,14 +8538,14 @@ class DsListDialog {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {(title: str, checked?: bin) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Change the size of the control
@@ -8572,27 +8554,27 @@ class DsListDialog {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Change the dialog title
 	 * @param {str} title 
 	 * @return {void} 
 	 */
-	SetTitle(title) {}
+	SetTitle(title) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 }
 
 
@@ -8600,10 +8582,10 @@ class DsLocator {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Calculate bearing between current and given position
@@ -8611,7 +8593,7 @@ class DsLocator {
 	 * @param {num} longitude 
 	 * @return {num} 
 	 */
-	GetBearingTo(latitude, longitude) {}
+	GetBearingTo(latitude, longitude) {return}
 
 	/**
 	 * Calculate distance between current and given position in meters
@@ -8619,39 +8601,39 @@ class DsLocator {
 	 * @param {num} longitude 
 	 * @return {num} 
 	 */
-	GetDistanceTo(latitude, longitude) {}
+	GetDistanceTo(latitude, longitude) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Locator"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Called when some of the values changed
 	 * @param {(data: { provider: str, latitude: num, longitude: num, speed: num, bearing: num, altitude: num, accuracy: num_met }, time: num_mls) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChange(callback) {}
+	SetOnChange(callback) {return}
 
 	/**
 	 * Locator update frequency in seconds
 	 * @param {num_sec} rate 
 	 * @return {void} 
 	 */
-	SetRate(rate) {}
+	SetRate(rate) {return}
 
 	/**
 	 * Start locator
 	 * @return {void} 
 	 */
-	Start() {}
+	Start() {return}
 
 	/**
 	 * Stop locator
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -8659,120 +8641,120 @@ class DsMediaPlayer {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Close the media player
 	 * @return {void} 
 	 */
-	Close() {}
+	Close() {return}
 
 	/**
 	 * Get the song length in seconds
 	 * @return {num_sec} 
 	 */
-	GetDuration() {}
+	GetDuration() {return}
 
 	/**
 	 * Get  elapsed playtime in seconds
 	 * @return {num_sec} 
 	 */
-	GetPosition() {}
+	GetPosition() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"MediaPlayer"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns if the player is looping
 	 * @return {void} 
 	 */
-	IsLooping() {}
+	IsLooping() {return}
 
 	/**
 	 * Get current playing state
 	 * @return {void} 
 	 */
-	IsPlaying() {}
+	IsPlaying() {return}
 
 	/**
 	 * Returns if player is useable yet
 	 * @return {void} 
 	 */
-	IsReady() {}
+	IsReady() {return}
 
 	/**
 	 * Pause the current playing song
 	 * @return {void} 
 	 */
-	Pause() {}
+	Pause() {return}
 
 	/**
 	 * Play the current loaded song from the last paused time or from a given start time in in seconds
 	 * @return {void} 
 	 */
-	Play() {}
+	Play() {return}
 
 	/**
 	 * Seek the player to a given time in seconds
 	 * @param {num_flt} time 
 	 * @return {void} 
 	 */
-	SeekTo(time) {}
+	SeekTo(time) {return}
 
 	/**
 	 * Load a sound file to the player
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	SetFile(file) {}
+	SetFile(file) {return}
 
 	/**
 	 * Set looping mode
 	 * @param {bin} loop 
 	 * @return {void} 
 	 */
-	SetLooping(loop) {}
+	SetLooping(loop) {return}
 
 	/**
 	 * Called when the player has finished playing a track
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnComplete(callback) {}
+	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when the player is ready for use
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnReady(callback) {}
+	SetOnReady(callback) {return}
 
 	/**
 	 * Called when ply.Seek has finished
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnSeekDone(callback) {}
+	SetOnSeekDone(callback) {return}
 
 	/**
 	 * Set the playback speed
 	 * @param {num_fac} speed 
 	 * @return {void} 
 	 */
-	SetSpeed(speed) {}
+	SetSpeed(speed) {return}
 
 	/**
 	 * Set the playback pitch
 	 * @param {num_fac} pitch 
 	 * @return {void} 
 	 */
-	SetPitch(pitch) {}
+	SetPitch(pitch) {return}
 
 	/**
 	 * Set the playback volume
@@ -8780,13 +8762,13 @@ class DsMediaPlayer {
 	 * @param {num_prc} right 
 	 * @return {void} 
 	 */
-	SetVolume(left, right) {}
+	SetVolume(left, right) {return}
 
 	/**
 	 * Stop playing a song
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -8794,10 +8776,10 @@ class DsMediaStore {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Load the album art to an image
@@ -8806,7 +8788,7 @@ class DsMediaStore {
 	 * @param {"internal"|"external"} [options] 
 	 * @return {bin} 
 	 */
-	GetAlbumArt(image, id, options) {}
+	GetAlbumArt(image, id, options) {return}
 
 	/**
 	 * Load the song art to an image
@@ -8815,13 +8797,13 @@ class DsMediaStore {
 	 * @param {"internal"|"external"} [options] 
 	 * @return {bin} 
 	 */
-	GetSongArt(image, id, options) {}
+	GetSongArt(image, id, options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"MediaStore"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Search for media albums
@@ -8830,7 +8812,7 @@ class DsMediaStore {
 	 * @param {"internal"|"external"} [options] 
 	 * @return {void} 
 	 */
-	QueryAlbums(filter, sort, options) {}
+	QueryAlbums(filter, sort, options) {return}
 
 	/**
 	 * Search for media artists
@@ -8839,7 +8821,7 @@ class DsMediaStore {
 	 * @param {"internal"|"external"} [options] 
 	 * @return {void} 
 	 */
-	QueryArtists(filter, sort, options) {}
+	QueryArtists(filter, sort, options) {return}
 
 	/**
 	 * Search for media
@@ -8848,28 +8830,28 @@ class DsMediaStore {
 	 * @param {"internal"|"external"} [options] 
 	 * @return {void} 
 	 */
-	QueryMedia(filter, sort, options) {}
+	QueryMedia(filter, sort, options) {return}
 
 	/**
 	 * Called when album query has finished
 	 * @param {(result: { album: str, id: num_int, albumArt: str_pth, artist: str, numSongs: num_int, firstYear: str, lastYear: str }[]) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnAlbumsResult(callback) {}
+	SetOnAlbumsResult(callback) {return}
 
 	/**
 	 * Called when artist query has finished
 	 * @param {(result: { id: num_int, artist: str, numAlbums: num_int, numTracks: num_int }[]) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnArtistsResult(callback) {}
+	SetOnArtistsResult(callback) {return}
 
 	/**
 	 * Called when media query has finished
 	 * @param {(result: { title: str, id: num_int, duration: num_mls, size: num_byt, uri: str_uri, album: str, albumID: num_int, artist: str, artistId: num_int }[]) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnMediaResult(callback) {}
+	SetOnMediaResult(callback) {return}
 }
 
 
@@ -8882,20 +8864,20 @@ class DsNetClient {
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
 	 * @return {void} 
 	 */
-	AutoReceive(server, port, mode) {}
+	AutoReceive(server, port, mode) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Closes the NetClient socket
 	 * @return {void} 
 	 */
-	Close() {}
+	Close() {return}
 
 	/**
 	 * Connect to a server
@@ -8903,51 +8885,51 @@ class DsNetClient {
 	 * @param {num_int} [port=80] 
 	 * @return {void} 
 	 */
-	Connect(address, port) {}
+	Connect(address, port) {return}
 
 	/**
 	 * Disconnect from server
 	 * @return {void} 
 	 */
-	Disconnect() {}
+	Disconnect() {return}
 
 	/**
 	 * Downloads a file via TCP from the server
 	 * @param {str_url} file 
 	 * @return {void} 
 	 */
-	DownloadFile(file) {}
+	DownloadFile(file) {return}
 
 	/**
 	 * Returns the broadcast address of UDP connections
 	 * @return {str} 
 	 */
-	GetBroadcastAddress() {}
+	GetBroadcastAddress() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"NetClient"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get NetClient connected state
 	 * @return {void} 
 	 */
-	IsConnected() {}
+	IsConnected() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Receive data as bytes
 	 * @param {"Int"|"Hex"} mode 
 	 * @return {num_byt[]} 
 	 */
-	ReceiveBytes(mode) {}
+	ReceiveBytes(mode) {return}
 
 	/**
 	 * Receive an UDP Datagram
@@ -8958,7 +8940,7 @@ class DsNetClient {
  	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
 	 * @return {str} 
 	 */
-	ReceiveDatagram(mode, port, timeout, options) {}
+	ReceiveDatagram(mode, port, timeout, options) {return}
 
 	/**
 	 * Receive UDP datagrams
@@ -8968,7 +8950,7 @@ class DsNetClient {
  	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
 	 * @return {void} 
 	 */
-	ReceiveDatagrams(port, mode, options) {}
+	ReceiveDatagrams(port, mode, options) {return}
 
 	/**
 	 * Receive a file via TCP from the server
@@ -8976,14 +8958,14 @@ class DsNetClient {
 	 * @param {num} [wait] 
 	 * @return {str} 
 	 */
-	ReceiveFile(file, wait) {}
+	ReceiveFile(file, wait) {return}
 
 	/**
 	 * Receive text over TCP
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
 	 * @return {str} 
 	 */
-	ReceiveText(mode) {}
+	ReceiveText(mode) {return}
 
 	/**
 	 * Receive video over UDP
@@ -8991,7 +8973,7 @@ class DsNetClient {
 	 * @param {DsImage} img 
 	 * @return {str} 
 	 */
-	ReceiveVideoStream(port, img) {}
+	ReceiveVideoStream(port, img) {return}
 
 	/**
 	 * Send bytes over TCP connection
@@ -9000,7 +8982,7 @@ class DsNetClient {
 	 * @param {"Int"|"Hex"} [mode] 
 	 * @return {void} 
 	 */
-	SendBytes(data, mode) {}
+	SendBytes(data, mode) {return}
 
 	/**
 	 * Send an UDP Datagram
@@ -9011,7 +8993,7 @@ class DsNetClient {
 	 * @param {"Text"|"Hex"|"Bytes"} [options] 
 	 * @return {void} 
 	 */
-	SendDatagram(data, mode, address, port, options) {}
+	SendDatagram(data, mode, address, port, options) {return}
 
 	/**
 	 * Define data format for outgoing data
@@ -9022,7 +9004,7 @@ class DsNetClient {
  	 * &emsp; `encoding` - UTF-16L/BE
 	 * @return {void} 
 	 */
-	SetDataMode(mode) {}
+	SetDataMode(mode) {return}
 
 	/**
 	 * Specify how to split received data
@@ -9031,7 +9013,7 @@ class DsNetClient {
 	 * @param {str|num_int} [p3] 
 	 * @return {void} 
 	 */
-	SetSplitMode(mode, p2, p3) {}
+	SetSplitMode(mode, p2, p3) {return}
 
 	/**
 	 * Sends text over TCP connection
@@ -9039,35 +9021,35 @@ class DsNetClient {
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
 	 * @return {void} 
 	 */
-	SendText(text, mode) {}
+	SendText(text, mode) {return}
 
 	/**
 	 * Called when TCP connected or failed to connect to a server
 	 * @param {(connected: bin) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnConnect(callback) {}
+	SetOnConnect(callback) {return}
 
 	/**
 	 * Called when a file download has finished
 	 * @param {(something: num_int) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnDownload(callback) {}
+	SetOnDownload(callback) {return}
 
 	/**
 	 * Called when a TCP NetClient received some data via AutoReceive
 	 * @param {(address: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnReceive(callback) {}
+	SetOnReceive(callback) {return}
 
 	/**
 	 * Timeout between two receive checks
 	 * @param {num_sec} seconds 
 	 * @return {void} 
 	 */
-	SetTimeout(seconds) {}
+	SetTimeout(seconds) {return}
 
 	/**
 	 * Wake up devices if they are configured to
@@ -9075,7 +9057,7 @@ class DsNetClient {
 	 * @param {str} [mac] 
 	 * @return {void} 
 	 */
-	WakeOnLan(ip, mac) {}
+	WakeOnLan(ip, mac) {return}
 }
 
 
@@ -9085,7 +9067,7 @@ class DsNode {
 	 * Returns the plugin version
 	 * @return {num} 
 	 */
-	GetVersion() {}
+	GetVersion() {return}
 
 	/**
 	 * Start the main Node process
@@ -9093,42 +9075,42 @@ class DsNode {
 	 * @param {lst} [paths] 
 	 * @return {void} 
 	 */
-	Start(args, paths) {}
+	Start(args, paths) {return}
 
 	/**
 	 * Define a callback function which is called when the Node component is ready for use
 	 * @param {() => void} cb 
 	 * @return {void} 
 	 */
-	SetOnReady(cb) {}
+	SetOnReady(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process has exited
 	 * @param {() => void} cb 
 	 * @return {void} 
 	 */
-	SetOnDone(cb) {}
+	SetOnDone(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process prints to stdout
 	 * @param {(stdout: str) => void} cb 
 	 * @return {void} 
 	 */
-	SetOnOutput(cb) {}
+	SetOnOutput(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process prints to stderr
 	 * @param {(msg: str) => void} cb 
 	 * @return {void} 
 	 */
-	SetOnError(cb) {}
+	SetOnError(cb) {return}
 
 	/**
 	 * Define a callback function which is called when a system/pipe message was received from the node process
 	 * @param {(msg: str) => void} cb 
 	 * @return {void} 
 	 */
-	SetOnMessage(cb) {}
+	SetOnMessage(cb) {return}
 
 	/**
 	 * Set a process environment variable
@@ -9136,28 +9118,28 @@ class DsNode {
 	 * @param {str} val 
 	 * @return {void} 
 	 */
-	SetEnv(name, val) {}
+	SetEnv(name, val) {return}
 
 	/**
 	 * Get a process environment variable
 	 * @param {str} name 
 	 * @return {str} 
 	 */
-	GetEnv(name) {}
+	GetEnv(name) {return}
 
 	/**
 	 * Open a message pipe
 	 * @param {bin} isCmd 
 	 * @return {void} 
 	 */
-	OpenMsgPipe(isCmd) {}
+	OpenMsgPipe(isCmd) {return}
 
 	/**
 	 * Close a message pipe
 	 * @param {bin} isCmd 
 	 * @return {void} 
 	 */
-	CloseMsgPipe(isCmd) {}
+	CloseMsgPipe(isCmd) {return}
 
 	/**
 	 * Send a message over the message pipe
@@ -9165,26 +9147,26 @@ class DsNode {
 	 * @param {bin} [isCmd=false] 
 	 * @return {void} 
 	 */
-	SendPipeMsg(msg, isCmd) {}
+	SendPipeMsg(msg, isCmd) {return}
 
 	/**
 	 * Send a message to the running node process
 	 * @param {str} msg 
 	 * @return {void} 
 	 */
-	SendMessage(msg) {}
+	SendMessage(msg) {return}
 
 	/**
 	 * Returns if the Node component is ready for use
 	 * @return {bin} 
 	 */
-	IsReady() {}
+	IsReady() {return}
 
 	/**
 	 * Returns if the node process exited
 	 * @return {bin} 
 	 */
-	IsDone() {}
+	IsDone() {return}
 
 	/**
 	 * Run a NodeJS source file
@@ -9193,7 +9175,7 @@ class DsNode {
 	 * @param {str_lst} [newPaths] 
 	 * @return {void} 
 	 */
-	Run(file, id, newPaths) {}
+	Run(file, id, newPaths) {return}
 
 	/**
 	 * Execute a line of code in the node process
@@ -9201,7 +9183,7 @@ class DsNode {
 	 * @param {str} [id] `Context ID`
 	 * @return {void} 
 	 */
-	Execute(js, id) {}
+	Execute(js, id) {return}
 
 	/**
 	 * Install a node module from npmjs.org
@@ -9209,7 +9191,7 @@ class DsNode {
 	 * @param {str} [dir] `optional target directory`
 	 * @return {void} 
 	 */
-	AddModule(name, dir) {}
+	AddModule(name, dir) {return}
 }
 
 
@@ -9217,44 +9199,44 @@ class DsNotification {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Cancel a notification with a specific id
 	 * @param {"id"|"*"} id 
 	 * @return {void} 
 	 */
-	Cancel(id) {}
+	Cancel(id) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Notification"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Listen for any notifications
 	 * @param {"CheckPerms"} [options] 
 	 * @return {void} 
 	 */
-	Listen(options) {}
+	Listen(options) {return}
 
 	/**
 	 * Send the notification to the user
 	 * @param {str} id 
 	 * @return {void} 
 	 */
-	Notify(id) {}
+	Notify(id) {return}
 
 	/**
 	 * Set a large image in the notification
 	 * @param {str_ptf} image 
 	 * @return {void} 
 	 */
-	SetLargeImage(image) {}
+	SetLargeImage(image) {return}
 
 	/**
 	 * Activate device notification LEDs
@@ -9263,7 +9245,7 @@ class DsNotification {
 	 * @param {num_mls} [offMs] 
 	 * @return {void} 
 	 */
-	SetLights(color, onMs, offMs) {}
+	SetLights(color, onMs, offMs) {return}
 
 	/**
 	 * Set notification texts
@@ -9273,21 +9255,21 @@ class DsNotification {
 	 * @param {str} [extra] `Add multiline text in your notification.`
 	 * @return {void} 
 	 */
-	SetMessage(ticker, title, text, extra) {}
+	SetMessage(ticker, title, text, extra) {return}
 
 	/**
 	 * Called when notification intercepted
 	 * @param {(source: str, title: str, message: str, extra: str, type: "Normal") => void} callback 
 	 * @return {void} 
 	 */
-	SetOnNotify(callback) {}
+	SetOnNotify(callback) {return}
 
 	/**
 	 * Set a small image icon
 	 * @param {str_ptf} image 
 	 * @return {void} 
 	 */
-	SetSmallImage(image) {}
+	SetSmallImage(image) {return}
 }
 
 
@@ -9295,10 +9277,10 @@ class DsNxt {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Play frequency tone
@@ -9306,33 +9288,33 @@ class DsNxt {
 	 * @param {num_mls} [duration] 
 	 * @return {void} 
 	 */
-	Beep(frequency, duration) {}
+	Beep(frequency, duration) {return}
 
 	/**
 	 * Brakes motors smoothly
 	 * @param {"A"|"B"|"C"|"ABC"} motors 
 	 * @return {void} 
 	 */
-	Brake(motors) {}
+	Brake(motors) {return}
 
 	/**
 	 * Check if device is connected to NXT
 	 * @return {bin} 
 	 */
-	CheckConnection() {}
+	CheckConnection() {return}
 
 	/**
 	 * Connect to NXT
 	 * @param {str} name 
 	 * @return {void} 
 	 */
-	Connect(name) {}
+	Connect(name) {return}
 
 	/**
 	 * Disconnect NXT
 	 * @return {void} 
 	 */
-	Disconnect() {}
+	Disconnect() {return}
 
 	/**
 	 * Commands NXT to drive motors
@@ -9342,84 +9324,84 @@ class DsNxt {
 	 * @param {str} [options] 
 	 * @return {void} 
 	 */
-	Drive(motors, power, rotations, options) {}
+	Drive(motors, power, rotations, options) {return}
 
 	/**
 	 * Find first program file
 	 * @param {str} pattern 
 	 * @return {str} 
 	 */
-	FileFindFirst(pattern) {}
+	FileFindFirst(pattern) {return}
 
 	/**
 	 * Find next program file on the NXT
 	 * @param {str} handle 
 	 * @return {str} 
 	 */
-	FileFindNext(handle) {}
+	FileFindNext(handle) {return}
 
 	/**
 	 * Returns NXT Bt address
 	 * @return {str} 
 	 */
-	GetBtAddress() {}
+	GetBtAddress() {return}
 
 	/**
 	 * Returns NXT Bt name
 	 * @return {str} 
 	 */
-	GetBtName() {}
+	GetBtName() {return}
 
 	/**
 	 * Returns the current running program name
 	 * @return {str} 
 	 */
-	GetCurrentProgram() {}
+	GetCurrentProgram() {return}
 
 	/**
 	 * Returns a new wheel encoder value
 	 * @param {"A"|"B"|"C"|"ABC"} motor 
 	 * @return {num_int} 
 	 */
-	GetRotationCount(motor) {}
+	GetRotationCount(motor) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Nxt"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Checks if bt is enabled
 	 * @return {bin} 
 	 */
-	IsBluetoothEnabled() {}
+	IsBluetoothEnabled() {return}
 
 	/**
 	 * Checks if NXT is connected
 	 * @return {bin} 
 	 */
-	IsConnected() {}
+	IsConnected() {return}
 
 	/**
 	 * Checks if bt is enabled
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Check if a motor is powered
 	 * @param {"A"|"B"|"C"|"ABC"} motor 
 	 * @return {void} 
 	 */
-	IsMotorIdle(motor) {}
+	IsMotorIdle(motor) {return}
 
 	/**
 	 * Checks if the device is paired with an other
 	 * @param {str} name 
 	 * @return {bin} 
 	 */
-	IsPaired(name) {}
+	IsPaired(name) {return}
 
 	/**
 	 * Play a sound file a certain amount of times
@@ -9427,7 +9409,7 @@ class DsNxt {
 	 * @param {num_int} [repeat=0] 
 	 * @return {void} 
 	 */
-	PlaySoundFile(file, repeat) {}
+	PlaySoundFile(file, repeat) {return}
 
 	/**
 	 * Read a color sensor value on the input where the sensor is plugged into
@@ -9435,14 +9417,14 @@ class DsNxt {
 	 * @param {"ColorDetect"|"LightSense"|"RedSense"|"GreenSense"|"BlueSense"} [mode] 
 	 * @return {num_int} `1..6 or 0..1023`
 	 */
-	ReadColorSensor(input, mode) {}
+	ReadColorSensor(input, mode) {return}
 
 	/**
 	 * Get measured ultrasinic distance in cm
 	 * @param {num_int} input `1..4`
 	 * @return {num_flt} 
 	 */
-	ReadDistanceSensor(input) {}
+	ReadDistanceSensor(input) {return}
 
 	/**
 	 * Measures the light intensity
@@ -9450,7 +9432,7 @@ class DsNxt {
 	 * @param {bin} [active] 
 	 * @return {num_int} `0..100`
 	 */
-	ReadLightSensor(input, active) {}
+	ReadLightSensor(input, active) {return}
 
 	/**
 	 * Reads a message from the NXT brick's mail box
@@ -9459,7 +9441,7 @@ class DsNxt {
 	 * @param {bin} [remove] 
 	 * @return {str} 
 	 */
-	ReadMail(mailbox, type, remove) {}
+	ReadMail(mailbox, type, remove) {return}
 
 	/**
 	 * Measure the sound pressure level
@@ -9469,27 +9451,27 @@ class DsNxt {
  	 * &emsp; `DbA` - A-weighted Decibels
 	 * @return {num_flt} 
 	 */
-	ReadSoundSensor(input, mode) {}
+	ReadSoundSensor(input, mode) {return}
 
 	/**
 	 * Check if the touch sensor is pressed
 	 * @param {num_int} input `1..4`
 	 * @return {bin} 
 	 */
-	ReadTouchSensor(input) {}
+	ReadTouchSensor(input) {return}
 
 	/**
 	 * Request enabling bluetooth if it isn't
 	 * @return {void} 
 	 */
-	RequestEnable() {}
+	RequestEnable() {return}
 
 	/**
 	 * Reset wheel encoder offset to 0
 	 * @param {"A"|"B"|"C"|"ABC"} motors 
 	 * @return {void} 
 	 */
-	Reset(motors) {}
+	Reset(motors) {return}
 
 	/**
 	 * Sends a message to the NXT brick's mail box
@@ -9498,14 +9480,14 @@ class DsNxt {
 	 * @param {str|num_int} [message] 
 	 * @return {void} 
 	 */
-	SendMail(mailbox, type, message) {}
+	SendMail(mailbox, type, message) {return}
 
 	/**
 	 * Inverts the direction of motor commands
 	 * @param {bin} invert 
 	 * @return {void} 
 	 */
-	SetInvert(invert) {}
+	SetInvert(invert) {return}
 
 	/**
 	 * Change sensor LED color
@@ -9513,54 +9495,54 @@ class DsNxt {
 	 * @param {"White"|"Red"|"Green"|"Blue"|"Off"} color 
 	 * @return {void} 
 	 */
-	SetLampColor(input, color) {}
+	SetLampColor(input, color) {return}
 
 	/**
 	 * Called when NXT connection established or failed
 	 * @param {(connected: bin) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnConnect(callback) {}
+	SetOnConnect(callback) {return}
 
 	/**
 	 * Called when bt connection established
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnConnected(callback) {}
+	SetOnConnected(callback) {return}
 
 	/**
 	 * Shows a list of paired NXT devices to connect to
 	 * @return {void} 
 	 */
-	ShowDevices() {}
+	ShowDevices() {return}
 
 	/**
 	 * Starts an NXT-G program on the NXT brick if available
 	 * @param {str_pth} name 
 	 * @return {void} 
 	 */
-	StartProgram(name) {}
+	StartProgram(name) {return}
 
 	/**
 	 * Stop powering some motors
 	 * @param {"A"|"B"|"C"|"ABC"} motors 
 	 * @return {void} 
 	 */
-	Stop(motors) {}
+	Stop(motors) {return}
 
 	/**
 	 * Stops the current running program
 	 * @return {void} 
 	 */
-	StopProgram() {}
+	StopProgram() {return}
 
 	/**
 	 * Convert color number to its name
 	 * @param {num_int} val `1..6`
 	 * @return {"black"|"blue"|"green"|"yellow"|"red"|"white"} 
 	 */
-	ToColorName(val) {}
+	ToColorName(val) {return}
 }
 
 
@@ -9574,33 +9556,33 @@ class DsOverlay {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	AddLayout(layout, left, top, options) {}
+	AddLayout(layout, left, top, options) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {void} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Remove layout from overlay
 	 * @param {DsLayout} layout 
 	 * @return {void} 
 	 */
-	RemoveLayout(layout) {}
+	RemoveLayout(layout) {return}
 
 	/**
 	 * Changes a child layout position
@@ -9610,7 +9592,7 @@ class DsOverlay {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(layout, left, top, options) {}
+	SetPosition(layout, left, top, options) {return}
 }
 
 
@@ -9618,35 +9600,35 @@ class DsPhoneState {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"PhoneState"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Called when a phone state has changed
 	 * @param {(type: "CellLocation"|"DataConnection"|"DataActivity"|"CallState"|"ServiceState"|"SignalStrength"|"CallForwarding"|"MessageWaiting", data: all) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChange(callback) {}
+	SetOnChange(callback) {return}
 
 	/**
 	 * Start listening
 	 * @return {void} 
 	 */
-	Start() {}
+	Start() {return}
 
 	/**
 	 * Stop listening
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -9654,10 +9636,10 @@ class DsPlayStore {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Get product info from Google Play
@@ -9668,7 +9650,7 @@ class DsPlayStore {
  	 * &emsp; `SUBS` - subscriptions
 	 * @return {void} 
 	 */
-	GetBillingInfo(prodIDs, callback, options) {}
+	GetBillingInfo(prodIDs, callback, options) {return}
 
 	/**
 	 * Get purchased items from Google Play
@@ -9676,13 +9658,13 @@ class DsPlayStore {
 	 * @param {"SUBS"} [options] 
 	 * @return {void} 
 	 */
-	GetPurchases(callback, options) {}
+	GetPurchases(callback, options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"PlayStore"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Purchase an item on Google Play
@@ -9692,7 +9674,7 @@ class DsPlayStore {
 	 * @param {"SUBS"} [options] 
 	 * @return {void} 
 	 */
-	Purchase(prodID, token, callback, options) {}
+	Purchase(prodID, token, callback, options) {return}
 }
 
 
@@ -9703,7 +9685,7 @@ class DsScroller {
 	 * @param {DsLayout} layout 
 	 * @return {void} 
 	 */
-	AddChild(layout) {}
+	AddChild(layout) {return}
 
 	/**
 	 * Adjust the visual color effect of the control
@@ -9713,7 +9695,7 @@ class DsScroller {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -9722,128 +9704,128 @@ class DsScroller {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Devil rises and takes a child with him to hell
 	 * @param {DsLayout} layout 
 	 * @return {void} 
 	 */
-	DestroyChild(layout) {}
+	DestroyChild(layout) {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get horizontal scroll bar position
 	 * @return {num_frc} 
 	 */
-	GetScrollX() {}
+	GetScrollX() {return}
 
 	/**
 	 * Get vertical scroll bar position
 	 * @return {num_frc} 
 	 */
-	GetScrollY() {}
+	GetScrollY() {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Scroller"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -9851,13 +9833,13 @@ class DsScroller {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -9869,14 +9851,14 @@ class DsScroller {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Remove a scroller layout
 	 * @param {dso} child 
 	 * @return {void} 
 	 */
-	RemoveChild(child) {}
+	RemoveChild(child) {return}
 
 	/**
 	 * Scroll relative to the current position
@@ -9884,7 +9866,7 @@ class DsScroller {
 	 * @param {num_frc} y 
 	 * @return {void} 
 	 */
-	ScrollBy(x, y) {}
+	ScrollBy(x, y) {return}
 
 	/**
 	 * Scrolls to a given position
@@ -9892,27 +9874,27 @@ class DsScroller {
 	 * @param {num_frc} y 
 	 * @return {void} 
 	 */
-	ScrollTo(x, y) {}
+	ScrollTo(x, y) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -9922,7 +9904,7 @@ class DsScroller {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -9935,7 +9917,7 @@ class DsScroller {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -9943,7 +9925,7 @@ class DsScroller {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -9951,21 +9933,21 @@ class DsScroller {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define distances to other controls
@@ -9976,7 +9958,7 @@ class DsScroller {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -9987,7 +9969,7 @@ class DsScroller {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -9998,7 +9980,7 @@ class DsScroller {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -10006,7 +9988,7 @@ class DsScroller {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -10015,24 +9997,24 @@ class DsScroller {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -10040,7 +10022,7 @@ class DsScroller {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -10054,7 +10036,7 @@ class DsSeekBar {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -10063,115 +10045,115 @@ class DsSeekBar {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"SeekBar"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get current value
 	 * @return {num} 
 	 */
-	GetValue() {}
+	GetValue() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -10179,13 +10161,13 @@ class DsSeekBar {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -10197,27 +10179,27 @@ class DsSeekBar {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -10227,7 +10209,7 @@ class DsSeekBar {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -10240,7 +10222,7 @@ class DsSeekBar {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -10248,7 +10230,7 @@ class DsSeekBar {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -10257,21 +10239,21 @@ class DsSeekBar {
 	 * @param {str} [options] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode, options) {}
+	SetColorFilter(color, mode, options) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define distances to other controls
@@ -10282,28 +10264,28 @@ class DsSeekBar {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Set rate of OnChange calls
 	 * @param {num_mls} rate 
 	 * @return {void} 
 	 */
-	SetMaxRate(rate) {}
+	SetMaxRate(rate) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {(value: num) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChange(callback) {}
+	SetOnChange(callback) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {(value: num) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -10314,7 +10296,7 @@ class DsSeekBar {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -10325,14 +10307,14 @@ class DsSeekBar {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Set value range
 	 * @param {num} range 
 	 * @return {void} 
 	 */
-	SetRange(range) {}
+	SetRange(range) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -10340,7 +10322,7 @@ class DsSeekBar {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -10349,31 +10331,31 @@ class DsSeekBar {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Set current seekbar value
 	 * @param {num} val 
 	 * @return {void} 
 	 */
-	SetValue(val) {}
+	SetValue(val) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -10381,7 +10363,7 @@ class DsSeekBar {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -10389,46 +10371,46 @@ class DsSensor {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Get first value of a sensor
 	 * @return {num} 
 	 */
-	GetAzimuth() {}
+	GetAzimuth() {return}
 
 	/**
 	 * Returns a list of builtin sensors in your device
 	 * @return {str_com} 
 	 */
-	GetNames() {}
+	GetNames() {return}
 
 	/**
 	 * Get second value of a sensor
 	 * @return {num} 
 	 */
-	GetPitch() {}
+	GetPitch() {return}
 
 	/**
 	 * Get third value of a sensor
 	 * @return {num} 
 	 */
-	GetRoll() {}
+	GetRoll() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Sensor"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get all values from sensor
 	 * @return {[ num_mls, num, num, num ]} 
 	 */
-	GetValues() {}
+	GetValues() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -10440,40 +10422,40 @@ class DsSensor {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set maximum OnChange rate
 	 * @param {num_mls} rate 
 	 * @return {void} 
 	 */
-	SetMaxRate(rate) {}
+	SetMaxRate(rate) {return}
 
 	/**
 	 * Set minimum value difference which triggers OnChange
 	 * @param {num} min 
 	 * @return {void} 
 	 */
-	SetMinChange(min) {}
+	SetMinChange(min) {return}
 
 	/**
 	 * Called when a sensor value has changed
 	 * @param {(first: num, second: num, third: num, time: num_mls) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChange(callback) {}
+	SetOnChange(callback) {return}
 
 	/**
 	 * Start the sensor
 	 * @return {void} 
 	 */
-	Start() {}
+	Start() {return}
 
 	/**
 	 * Stop the sensor
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -10481,29 +10463,29 @@ class DsService {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Service"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Send message to service
 	 * @param {str} message 
 	 * @return {void} 
 	 */
-	SendMessage(message) {}
+	SendMessage(message) {return}
 
 	/**
 	 * Run service in background
 	 * @return {void} 
 	 */
-	SetInBackground() {}
+	SetInBackground() {return}
 
 	/**
 	 * Run service in foreground
@@ -10514,20 +10496,20 @@ class DsService {
 	 * @param {"none"|"min"|"low"|"high"} [importance] 
 	 * @return {void} 
 	 */
-	SetInForeground(title, text, largeIcon, smallIcon, importance) {}
+	SetInForeground(title, text, largeIcon, smallIcon, importance) {return}
 
 	/**
 	 * Called when service sent a message
 	 * @param {(message: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnMessage(callback) {}
+	SetOnMessage(callback) {return}
 
 	/**
 	 * Stop service
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -10535,16 +10517,16 @@ class DsSMS {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"SMS"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Send SMS message
@@ -10554,21 +10536,21 @@ class DsSMS {
  	 * &emsp; `MultiPart` - multi-part SMS messaging
 	 * @return {void} 
 	 */
-	Send(number, message, options) {}
+	Send(number, message, options) {return}
 
 	/**
 	 * Called when user received a SMS
 	 * @param {(message: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnMessage(callback) {}
+	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when a status has changed
 	 * @param {(status: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnStatus(callback) {}
+	SetOnStatus(callback) {return}
 }
 
 
@@ -10576,34 +10558,34 @@ class DsSpeechRec {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Stop recognition
 	 * @return {void} 
 	 */
-	Cancel() {}
+	Cancel() {return}
 
 	/**
 	 * Returns the RMS value (Root Mean Square) from the audio recorder
 	 * @return {num_flt} 
 	 */
-	GetRMS() {}
+	GetRMS() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"SpeechRec"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Check whether SpeechRec is listening
 	 * @return {bin} 
 	 */
-	IsListening() {}
+	IsListening() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -10615,40 +10597,40 @@ class DsSpeechRec {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Start speech recognition
 	 * @return {void} 
 	 */
-	Recognize() {}
+	Recognize() {return}
 
 	/**
 	 * Called when an error occured
 	 * @param {(error: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnError(callback) {}
+	SetOnError(callback) {return}
 
 	/**
 	 * Called when SpeechRec is ready for use
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnReady(callback) {}
+	SetOnReady(callback) {return}
 
 	/**
 	 * Called when text was recognized
 	 * @param {(result: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnResult(callback) {}
+	SetOnResult(callback) {return}
 
 	/**
 	 * Stop recording and start recognition
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -10662,7 +10644,7 @@ class DsSpinner {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -10671,122 +10653,122 @@ class DsSpinner {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Returns the currently contained text
 	 * @return {str} 
 	 */
-	GetText() {}
+	GetText() {return}
 
 	/**
 	 * Returns the current text size
 	 * @param {"px"} mode 
 	 * @return {num} 
 	 */
-	GetTextSize(mode) {}
+	GetTextSize(mode) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Spinner"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -10794,13 +10776,13 @@ class DsSpinner {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -10812,34 +10794,34 @@ class DsSpinner {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Change current shown item
 	 * @param {str} item 
 	 * @return {void} 
 	 */
-	SelectItem(item) {}
+	SelectItem(item) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -10849,7 +10831,7 @@ class DsSpinner {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -10862,7 +10844,7 @@ class DsSpinner {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -10870,7 +10852,7 @@ class DsSpinner {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -10878,21 +10860,21 @@ class DsSpinner {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Change spinner list
@@ -10900,7 +10882,7 @@ class DsSpinner {
 	 * @param {str} [delim=','] 
 	 * @return {void} 
 	 */
-	SetList(list, delim) {}
+	SetList(list, delim) {return}
 
 	/**
 	 * Define distances to other controls
@@ -10911,21 +10893,21 @@ class DsSpinner {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when value changed by the user
 	 * @param {(item: str, index: num_int) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChange(callback) {}
+	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -10936,7 +10918,7 @@ class DsSpinner {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -10947,7 +10929,7 @@ class DsSpinner {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -10955,7 +10937,7 @@ class DsSpinner {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -10964,21 +10946,21 @@ class DsSpinner {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change current shown item
 	 * @param {str} item 
 	 * @return {void} 
 	 */
-	SetText(item) {}
+	SetText(item) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Change the text size
@@ -10988,24 +10970,24 @@ class DsSpinner {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -11013,7 +10995,7 @@ class DsSpinner {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -11027,7 +11009,7 @@ class DsSwitch {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -11036,128 +11018,128 @@ class DsSwitch {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Checks if switch is activated
 	 * @return {bin} 
 	 */
-	GetChecked() {}
+	GetChecked() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Returns the currently contained text
 	 * @return {str} 
 	 */
-	GetText() {}
+	GetText() {return}
 
 	/**
 	 * Returns the current text size
 	 * @param {"px"} mode 
 	 * @return {num} 
 	 */
-	GetTextSize(mode) {}
+	GetTextSize(mode) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Switch"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -11165,13 +11147,13 @@ class DsSwitch {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -11183,27 +11165,27 @@ class DsSwitch {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -11213,7 +11195,7 @@ class DsSwitch {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -11226,7 +11208,7 @@ class DsSwitch {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -11234,14 +11216,14 @@ class DsSwitch {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Change the checked state
 	 * @param {bin} checked 
 	 * @return {void} 
 	 */
-	SetChecked(checked) {}
+	SetChecked(checked) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -11249,21 +11231,21 @@ class DsSwitch {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define distances to other controls
@@ -11274,14 +11256,14 @@ class DsSwitch {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(value: bin) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -11292,7 +11274,7 @@ class DsSwitch {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -11303,7 +11285,7 @@ class DsSwitch {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -11311,7 +11293,7 @@ class DsSwitch {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -11320,7 +11302,7 @@ class DsSwitch {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Customize the button looks
@@ -11332,21 +11314,21 @@ class DsSwitch {
 	 * @param {num_frc} [shadow=0] 
 	 * @return {void} 
 	 */
-	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {}
+	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetText(text) {}
+	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Change the text size
@@ -11356,24 +11338,24 @@ class DsSwitch {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -11381,7 +11363,7 @@ class DsSwitch {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -11389,30 +11371,30 @@ class DsSynth {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Synth"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Play a sequence of notes
 	 * @param {str_com} tune `note1:duration1,note2:duration2,...`
 	 * @return {void} 
 	 */
-	PlayMidiTune(tune) {}
+	PlayMidiTune(tune) {return}
 
 	/**
 	 * Play a single note
 	 * @param {num_int} note `0..125`
 	 * @return {void} 
 	 */
-	PlayNote(note) {}
+	PlayNote(note) {return}
 
 	/**
 	 * Plays a frequency tone
@@ -11420,42 +11402,42 @@ class DsSynth {
 	 * @param {num_mls} duration 
 	 * @return {void} 
 	 */
-	PlayTone(frequency, duration) {}
+	PlayTone(frequency, duration) {return}
 
 	/**
 	 * Change delay effect difference
 	 * @param {num_mls} milliseconds 
 	 * @return {void} 
 	 */
-	SetDelay(milliseconds) {}
+	SetDelay(milliseconds) {return}
 
 	/**
 	 * Enables the delay effect (plays every note a second time after a given delay)
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetDelayEnabled(enable) {}
+	SetDelayEnabled(enable) {return}
 
 	/**
 	 * Adds a delay feedback effect
 	 * @param {num_frc} feedback 
 	 * @return {void} 
 	 */
-	SetFeedback(feedback) {}
+	SetFeedback(feedback) {return}
 
 	/**
 	 * Set current frequency
 	 * @param {num} frequency 
 	 * @return {void} 
 	 */
-	SetFrequency(frequency) {}
+	SetFrequency(frequency) {return}
 
 	/**
 	 * Set whole note length
 	 * @param {num_sec} duration 
 	 * @return {void} 
 	 */
-	SetNoteLength(duration) {}
+	SetNoteLength(duration) {return}
 
 	/**
 	 * Initializes phaser
@@ -11465,42 +11447,42 @@ class DsSynth {
 	 * @param {num_frc} feedback 
 	 * @return {void} 
 	 */
-	SetPhaser(drywet, rate, range, feedback) {}
+	SetPhaser(drywet, rate, range, feedback) {return}
 
 	/**
 	 * Control unprocessed/delayed signals ratio
 	 * @param {num_frc} drywet 
 	 * @return {void} 
 	 */
-	SetPhaserDryWet(drywet) {}
+	SetPhaserDryWet(drywet) {return}
 
 	/**
 	 * En/Disables phaser effect
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetPhaserEnabled(enable) {}
+	SetPhaserEnabled(enable) {return}
 
 	/**
 	 * Enables phaser feedback
 	 * @param {num_frc} feedback 
 	 * @return {void} 
 	 */
-	SetPhaserFeedback(feedback) {}
+	SetPhaserFeedback(feedback) {return}
 
 	/**
 	 * Set sweep range
 	 * @param {num} range 
 	 * @return {void} 
 	 */
-	SetPhaserRange(range) {}
+	SetPhaserRange(range) {return}
 
 	/**
 	 * Set sweeps per second
 	 * @param {num} rate 
 	 * @return {void} 
 	 */
-	SetPhaserRate(rate) {}
+	SetPhaserRate(rate) {return}
 
 	/**
 	 * Initializes the VCA
@@ -11510,42 +11492,42 @@ class DsSynth {
 	 * @param {num_mls} release 
 	 * @return {void} 
 	 */
-	SetVca(attack, decay, sustain, release) {}
+	SetVca(attack, decay, sustain, release) {return}
 
 	/**
 	 * Set a time of maximum volume
 	 * @param {num_mls} attack 
 	 * @return {void} 
 	 */
-	SetVcaAttack(attack) {}
+	SetVcaAttack(attack) {return}
 
 	/**
 	 * Controls time when volume is lowered to sustain
 	 * @param {num_mls} decay 
 	 * @return {void} 
 	 */
-	SetVcaDecay(decay) {}
+	SetVcaDecay(decay) {return}
 
 	/**
 	 * En/Disables VCA effect
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetVcaEnabled(enable) {}
+	SetVcaEnabled(enable) {return}
 
 	/**
 	 * Set a time of minimum volume
 	 * @param {num} release mls
 	 * @return {void} 
 	 */
-	SetVcaRelease(release) {}
+	SetVcaRelease(release) {return}
 
 	/**
 	 * Set a basis volume
 	 * @param {num_frc} sustain 
 	 * @return {void} 
 	 */
-	SetVcaSustain(sustain) {}
+	SetVcaSustain(sustain) {return}
 
 	/**
 	 * Initialize the VCF effect
@@ -11558,63 +11540,63 @@ class DsSynth {
 	 * @param {num_frc} depth 
 	 * @return {void} 
 	 */
-	SetVcf(attack, decay, sustain, release, cuttoff, resonance, depth) {}
+	SetVcf(attack, decay, sustain, release, cuttoff, resonance, depth) {return}
 
 	/**
 	 * Set a time of maximum frequencies
 	 * @param {num_mls} attack 
 	 * @return {void} 
 	 */
-	SetVcfAttack(attack) {}
+	SetVcfAttack(attack) {return}
 
 	/**
 	 * Set a maximum frequency which will never be exceeded
 	 * @param {num} cuttoff frequency
 	 * @return {void} 
 	 */
-	SetVcfCutoff(cuttoff) {}
+	SetVcfCutoff(cuttoff) {return}
 
 	/**
 	 * Controls time when frequency is lowered to sustain
 	 * @param {num_mls} decay 
 	 * @return {void} 
 	 */
-	SetVcfDecay(decay) {}
+	SetVcfDecay(decay) {return}
 
 	/**
 	 * Set filter strength
 	 * @param {num_frc} depth 
 	 * @return {void} 
 	 */
-	SetVcfDepth(depth) {}
+	SetVcfDepth(depth) {return}
 
 	/**
 	 * En/Disables VCF effect
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetVcfEnabled(enable) {}
+	SetVcfEnabled(enable) {return}
 
 	/**
 	 * Set a time of minimum frequency
 	 * @param {num_mls} release 
 	 * @return {void} 
 	 */
-	SetVcfRelease(release) {}
+	SetVcfRelease(release) {return}
 
 	/**
 	 * Adds a resonance tone
 	 * @param {num_frc} resonance 
 	 * @return {void} 
 	 */
-	SetVcfResonance(resonance) {}
+	SetVcfResonance(resonance) {return}
 
 	/**
 	 * Set a basis frequency
 	 * @param {num_frc} sustain 
 	 * @return {void} 
 	 */
-	SetVcfSustain(sustain) {}
+	SetVcfSustain(sustain) {return}
 
 	/**
 	 * Set master volume
@@ -11622,26 +11604,26 @@ class DsSynth {
 	 * @param {num_frc} right 
 	 * @return {void} 
 	 */
-	SetVolume(left, right) {}
+	SetVolume(left, right) {return}
 
 	/**
 	 * Set the wave shape of the synthesizer
 	 * @param {"Sin"|"Saw"|"Square"|"White"} shape 
 	 * @return {void} 
 	 */
-	SetWaveShape(shape) {}
+	SetWaveShape(shape) {return}
 
 	/**
 	 * Start playing
 	 * @return {void} 
 	 */
-	Start() {}
+	Start() {return}
 
 	/**
 	 * Stop playing
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -11649,10 +11631,10 @@ class DsSysProc {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Read from stderr
@@ -11661,13 +11643,13 @@ class DsSysProc {
  	 * &emsp; `nowait` - dont wait for input
 	 * @return {void} 
 	 */
-	Err(maxLines, options) {}
+	Err(maxLines, options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"SysProc"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Read from stdin
@@ -11676,7 +11658,7 @@ class DsSysProc {
  	 * &emsp; `nowait` - dont wait for input
 	 * @return {void} 
 	 */
-	In(maxLines, options) {}
+	In(maxLines, options) {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -11688,35 +11670,35 @@ class DsSysProc {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Write to stdout
 	 * @param {str} command 
 	 * @return {void} 
 	 */
-	Out(command) {}
+	Out(command) {return}
 
 	/**
 	 * Read first byte of a file
 	 * @param {str_ptf} file 
 	 * @return {num_byt} 
 	 */
-	ReadFileAsByte(file) {}
+	ReadFileAsByte(file) {return}
 
 	/**
 	 * Called when stderr changed
 	 * @param {(data: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnError(callback) {}
+	SetOnError(callback) {return}
 
 	/**
 	 * Called when stdout changed
 	 * @param {(data: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnInput(callback) {}
+	SetOnInput(callback) {return}
 
 	/**
 	 * Write binary data to file
@@ -11724,7 +11706,7 @@ class DsSysProc {
 	 * @param {str} data 
 	 * @return {void} 
 	 */
-	WriteToFile(file, data) {}
+	WriteToFile(file, data) {return}
 }
 
 
@@ -11738,7 +11720,7 @@ class DsTabs {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -11747,122 +11729,122 @@ class DsTabs {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get current tab name
 	 * @return {str} 
 	 */
-	GetCurrentTabName() {}
+	GetCurrentTabName() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get tab content layout
 	 * @param {str} name 
 	 * @return {DsLayout} 
 	 */
-	GetLayout(name) {}
+	GetLayout(name) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Tabs"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -11870,13 +11852,13 @@ class DsTabs {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -11888,27 +11870,27 @@ class DsTabs {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -11918,7 +11900,7 @@ class DsTabs {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -11931,7 +11913,7 @@ class DsTabs {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -11939,7 +11921,7 @@ class DsTabs {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -11947,28 +11929,28 @@ class DsTabs {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Apply corner radius to card layouts's
 	 * @param {num_pxl} radius 
 	 * @return {void} 
 	 */
-	SetCornerRadius(radius) {}
+	SetCornerRadius(radius) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define distances to other controls
@@ -11979,35 +11961,35 @@ class DsTabs {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when current tab changed
 	 * @param {(name: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChange(callback) {}
+	SetOnChange(callback) {return}
 
 	/**
 	 * Called when the user changed a control content
 	 * @param {(src: dso) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChildChange(callback) {}
+	SetOnChildChange(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnLongTouch(callback) {}
+	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -12018,7 +12000,7 @@ class DsTabs {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -12029,7 +12011,7 @@ class DsTabs {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -12037,7 +12019,7 @@ class DsTabs {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -12046,7 +12028,7 @@ class DsTabs {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Set text size
@@ -12054,45 +12036,45 @@ class DsTabs {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
 	 * @return {void} 
 	 */
-	SetTouchable(touchable) {}
+	SetTouchable(touchable) {return}
 
 	/**
 	 * Enable touch event forwarding
 	 * @param {bin} through 
 	 * @return {void} 
 	 */
-	SetTouchThrough(through) {}
+	SetTouchThrough(through) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Switch current tab
 	 * @param {str} name 
 	 * @return {void} 
 	 */
-	ShowTab(name) {}
+	ShowTab(name) {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -12100,7 +12082,7 @@ class DsTabs {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
 	parent = {
 		/**
@@ -12108,7 +12090,7 @@ class DsTabs {
 		 * @param {str} name 
 		 * @return {void} 
 		 */
-		AddTab(name) {}
+		AddTab(name) {return}
 	}
 }
 
@@ -12123,7 +12105,7 @@ class DsText {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -12132,154 +12114,154 @@ class DsText {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Return html formatted text
 	 * @return {str_htm} 
 	 */
-	GetHtml() {}
+	GetHtml() {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Get amount of text lines
 	 * @return {num_int} 
 	 */
-	GetLineCount() {}
+	GetLineCount() {return}
 
 	/**
 	 * Get the start character index of a line
 	 * @param {num_int} line 
 	 * @return {num_int} 
 	 */
-	GetLineStart(line) {}
+	GetLineStart(line) {return}
 
 	/**
 	 * Get line top position on screen
 	 * @param {num_int} line 
 	 * @return {num_frc} 
 	 */
-	GetLineTop(line) {}
+	GetLineTop(line) {return}
 
 	/**
 	 * Get amount of lines fitting in the control
 	 * @return {num_int} 
 	 */
-	GetMaxLines() {}
+	GetMaxLines() {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Returns the currently contained text
 	 * @return {str} 
 	 */
-	GetText() {}
+	GetText() {return}
 
 	/**
 	 * Returns the current text size
 	 * @param {"px"} mode 
 	 * @return {num} 
 	 */
-	GetTextSize(mode) {}
+	GetTextSize(mode) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Text"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -12287,13 +12269,13 @@ class DsText {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Append line to the text
@@ -12302,7 +12284,7 @@ class DsText {
  	 * &emsp; `Clear` - Clears the log before writing
 	 * @return {void} 
 	 */
-	Log(message, options) {}
+	Log(message, options) {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -12314,27 +12296,27 @@ class DsText {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -12344,7 +12326,7 @@ class DsText {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -12357,7 +12339,7 @@ class DsText {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -12365,7 +12347,7 @@ class DsText {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -12373,49 +12355,49 @@ class DsText {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
 	 * @return {void} 
 	 */
-	SetEllipsize(mode) {}
+	SetEllipsize(mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	SetFontFile(file) {}
+	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
 	 * @return {void} 
 	 */
-	SetHtml(str) {}
+	SetHtml(str) {return}
 
 	/**
 	 * Set maximum log length
 	 * @param {num_int} maxLines 
 	 * @return {void} 
 	 */
-	SetLog(maxLines) {}
+	SetLog(maxLines) {return}
 
 	/**
 	 * Define distances to other controls
@@ -12426,42 +12408,42 @@ class DsText {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnLongTouch(callback) {}
+	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchDown(callback) {}
+	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchMove(callback) {}
+	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchUp(callback) {}
+	SetOnTouchUp(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -12472,7 +12454,7 @@ class DsText {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -12483,7 +12465,7 @@ class DsText {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -12491,7 +12473,7 @@ class DsText {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -12500,21 +12482,21 @@ class DsText {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetText(text) {}
+	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Define a shadow around the control
@@ -12524,7 +12506,7 @@ class DsText {
 	 * @param {str_col} [color] 
 	 * @return {void} 
 	 */
-	SetTextShadow(radius, dx, dy, color) {}
+	SetTextShadow(radius, dx, dy, color) {return}
 
 	/**
 	 * Change the text size
@@ -12534,31 +12516,31 @@ class DsText {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
 	 * @return {void} 
 	 */
-	SetTouchable(touchable) {}
+	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -12566,7 +12548,7 @@ class DsText {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -12580,7 +12562,7 @@ class DsTextEdit {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -12589,184 +12571,184 @@ class DsTextEdit {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Clear undo/redo history
 	 * @return {void} 
 	 */
-	ClearHistory() {}
+	ClearHistory() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the current cursor line index
 	 * @return {num_int} 
 	 */
-	GetCursorLine() {}
+	GetCursorLine() {return}
 
 	/**
 	 * Get the cursor position in the text
 	 * @return {num_int} 
 	 */
-	GetCursorPos() {}
+	GetCursorPos() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Return html formatted text
 	 * @return {str_htm} 
 	 */
-	GetHtml() {}
+	GetHtml() {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Get amount of text lines
 	 * @return {num_int} 
 	 */
-	GetLineCount() {}
+	GetLineCount() {return}
 
 	/**
 	 * Get the start character index of a line
 	 * @param {num_int} line 
 	 * @return {num_int} 
 	 */
-	GetLineStart(line) {}
+	GetLineStart(line) {return}
 
 	/**
 	 * Get line top position on screen
 	 * @param {num_int} line 
 	 * @return {num_frc} 
 	 */
-	GetLineTop(line) {}
+	GetLineTop(line) {return}
 
 	/**
 	 * Get amount of lines fitting in the control
 	 * @return {num_int} 
 	 */
-	GetMaxLines() {}
+	GetMaxLines() {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get the selected text
 	 * @return {str} 
 	 */
-	GetSelectedText() {}
+	GetSelectedText() {return}
 
 	/**
 	 * Get selection end position
 	 * @return {num_int} 
 	 */
-	GetSelectionEnd() {}
+	GetSelectionEnd() {return}
 
 	/**
 	 * Get selection start position
 	 * @return {num_int} 
 	 */
-	GetSelectionStart() {}
+	GetSelectionStart() {return}
 
 	/**
 	 * Returns the currently contained text
 	 * @return {str} 
 	 */
-	GetText() {}
+	GetText() {return}
 
 	/**
 	 * Returns the current text size
 	 * @param {"px"} mode 
 	 * @return {num} 
 	 */
-	GetTextSize(mode) {}
+	GetTextSize(mode) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"TextEdit"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Insert text at a given position
@@ -12774,13 +12756,13 @@ class DsTextEdit {
 	 * @param {num_int} start 
 	 * @return {void} 
 	 */
-	InsertText(text, start) {}
+	InsertText(text, start) {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -12788,13 +12770,13 @@ class DsTextEdit {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -12806,13 +12788,13 @@ class DsTextEdit {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Redo an undone action
 	 * @return {void} 
 	 */
-	Redo() {}
+	Redo() {return}
 
 	/**
 	 * Replace a range of the text with a string
@@ -12821,27 +12803,27 @@ class DsTextEdit {
 	 * @param {num_int} end 
 	 * @return {void} 
 	 */
-	ReplaceText(text, start, end) {}
+	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -12851,7 +12833,7 @@ class DsTextEdit {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -12864,7 +12846,7 @@ class DsTextEdit {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -12872,7 +12854,7 @@ class DsTextEdit {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -12880,49 +12862,49 @@ class DsTextEdit {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Change cursor color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetCursorColor(color) {}
+	SetCursorColor(color) {return}
 
 	/**
 	 * Change the current cursor position
 	 * @param {num_int} position 
 	 * @return {void} 
 	 */
-	SetCursorPos(position) {}
+	SetCursorPos(position) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Shows a grey default text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetHint(text) {}
+	SetHint(text) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
 	 * @return {void} 
 	 */
-	SetHtml(str) {}
+	SetHtml(str) {return}
 
 	/**
 	 * Define distances to other controls
@@ -12933,35 +12915,35 @@ class DsTextEdit {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnChange(callback) {}
+	SetOnChange(callback) {return}
 
 	/**
 	 * Called when user pressed 'Done' or 'Enter'
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnEnter(callback) {}
+	SetOnEnter(callback) {return}
 
 	/**
 	 * Called when the control gets focused
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnFocus(callback) {}
+	SetOnFocus(callback) {return}
 
 	/**
 	 * Set selection color
 	 * @param {str_col} col 
 	 * @return {void} 
 	 */
-	SetSelectColor(col) {}
+	SetSelectColor(col) {return}
 
 	/**
 	 * Select text in a given range
@@ -12969,7 +12951,7 @@ class DsTextEdit {
 	 * @param {num_int} stop 
 	 * @return {void} 
 	 */
-	SetSelection(start, stop) {}
+	SetSelection(start, stop) {return}
 
 	/**
 	 * Change the size of the control
@@ -12978,21 +12960,21 @@ class DsTextEdit {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetText(text) {}
+	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Change the text size
@@ -13002,24 +12984,24 @@ class DsTextEdit {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -13027,13 +13009,13 @@ class DsTextEdit {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
 	/**
 	 * Undo an action
 	 * @return {void} 
 	 */
-	Undo() {}
+	Undo() {return}
 }
 
 
@@ -13047,20 +13029,20 @@ class DsTheme {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Theme"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -13072,14 +13054,14 @@ class DsTheme {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Change the background to an image
@@ -13087,21 +13069,21 @@ class DsTheme {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Define button text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBtnTextColor(color) {}
+	SetBtnTextColor(color) {return}
 
 	/**
 	 * Define button options
 	 * @param {string | ("FontAwesome"|"Html"|"Monospace"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"Normal"|"Aluminium"|"Gray"|"Lego")[]} [options] 
 	 * @return {void} 
 	 */
-	SetButtonOptions(options) {}
+	SetButtonOptions(options) {return}
 
 	/**
 	 * Define button paddings
@@ -13112,7 +13094,7 @@ class DsTheme {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetButtonPadding(left, top, right, bottom, mode) {}
+	SetButtonPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Define button style
@@ -13125,91 +13107,91 @@ class DsTheme {
 	 * @param {str_col} [checkClr] 
 	 * @return {void} 
 	 */
-	SetButtonStyle(color1, color2, radius, strokeClr, strokeWidth, shadow, checkClr) {}
+	SetButtonStyle(color1, color2, radius, strokeClr, strokeWidth, shadow, checkClr) {return}
 
 	/**
 	 * Define check box options
 	 * @param {string | ("FillX/Y")[]} [options] 
 	 * @return {void} 
 	 */
-	SetCheckBoxOptions(options) {}
+	SetCheckBoxOptions(options) {return}
 
 	/**
 	 * Define dialog button colors
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetDialogBtnColor(color) {}
+	SetDialogBtnColor(color) {return}
 
 	/**
 	 * Define dialog button text colors
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetDialogBtnTxtColor(color) {}
+	SetDialogBtnTxtColor(color) {return}
 
 	/**
 	 * Define dialog background colors
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetDialogColor(color) {}
+	SetDialogColor(color) {return}
 
 	/**
 	 * Define dialog corner radius
 	 * @param {num_pxl} radius 
 	 * @return {void} 
 	 */
-	SetDialogCornerRadius(radius) {}
+	SetDialogCornerRadius(radius) {return}
 
 	/**
 	 * Define whether to dim dialog background
 	 * @param {bin} dim 
 	 * @return {void} 
 	 */
-	SetDimBehind(dim) {}
+	SetDimBehind(dim) {return}
 
 	/**
 	 * Define highlight colors
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetHighlightColor(color) {}
+	SetHighlightColor(color) {return}
 
 	/**
 	 * Define list divider colors
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetListDividerColor(color) {}
+	SetListDividerColor(color) {return}
 
 	/**
 	 * Define progress background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetProgressBackColor(color) {}
+	SetProgressBackColor(color) {return}
 
 	/**
 	 * Define progress options
 	 * @param {string | ("NoDim"|"NonModal"|"Solid")[]} [options] 
 	 * @return {void} 
 	 */
-	SetProgressOptions(options) {}
+	SetProgressOptions(options) {return}
 
 	/**
 	 * Define progress bar options
 	 * @param {"Light"} [options] 
 	 * @return {void} 
 	 */
-	SetProgressBarOptions(options) {}
+	SetProgressBarOptions(options) {return}
 
 	/**
 	 * Define progress text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetProgressTextColor(color) {}
+	SetProgressTextColor(color) {return}
 
 	/**
 	 * Define control text color
@@ -13217,35 +13199,35 @@ class DsTheme {
 	 * @param {str_col} color2 
 	 * @return {void} 
 	 */
-	SetTextColor(color1, color2) {}
+	SetTextColor(color1, color2) {return}
 
 	/**
 	 * Define text edit options
 	 * @param {"underline"} [options] 
 	 * @return {void} 
 	 */
-	SetTextEditOptions(options) {}
+	SetTextEditOptions(options) {return}
 
 	/**
 	 * Define title colors
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTitleColor(color) {}
+	SetTitleColor(color) {return}
 
 	/**
 	 * Define title divider colors
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTitleDividerColor(color) {}
+	SetTitleDividerColor(color) {return}
 
 	/**
 	 * Define title divider height
 	 * @param {num_pxl} [height=-1] 
 	 * @return {void} 
 	 */
-	SetTitleDividerHeight(height) {}
+	SetTitleDividerHeight(height) {return}
 
 	/**
 	 * Define title height
@@ -13253,7 +13235,7 @@ class DsTheme {
 	 * @param {string | ("px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps")[]} [options] 
 	 * @return {void} 
 	 */
-	SetTitleHeight(height, options) {}
+	SetTitleHeight(height, options) {return}
 
 	/**
 	 * Define title text size
@@ -13261,7 +13243,7 @@ class DsTheme {
 	 * @param {string | ("px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps")[]} [options] 
 	 * @return {void} 
 	 */
-	SetTitleTextSize(size, options) {}
+	SetTitleTextSize(size, options) {return}
 }
 
 
@@ -13275,7 +13257,7 @@ class DsToggle {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -13284,128 +13266,128 @@ class DsToggle {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Checks if toggle is activated
 	 * @return {bin} 
 	 */
-	GetChecked() {}
+	GetChecked() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Returns the currently contained text
 	 * @return {str} 
 	 */
-	GetText() {}
+	GetText() {return}
 
 	/**
 	 * Returns the current text size
 	 * @param {"px"} mode 
 	 * @return {num} 
 	 */
-	GetTextSize(mode) {}
+	GetTextSize(mode) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Toggle"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -13413,13 +13395,13 @@ class DsToggle {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -13431,27 +13413,27 @@ class DsToggle {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -13461,7 +13443,7 @@ class DsToggle {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -13474,7 +13456,7 @@ class DsToggle {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -13482,14 +13464,14 @@ class DsToggle {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Change the checked state
 	 * @param {bin} checked 
 	 * @return {void} 
 	 */
-	SetChecked(checked) {}
+	SetChecked(checked) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -13497,21 +13479,21 @@ class DsToggle {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define distances to other controls
@@ -13522,14 +13504,14 @@ class DsToggle {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(value: bin) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -13540,7 +13522,7 @@ class DsToggle {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -13551,7 +13533,7 @@ class DsToggle {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -13559,7 +13541,7 @@ class DsToggle {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -13568,7 +13550,7 @@ class DsToggle {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Customize the button looks
@@ -13581,21 +13563,21 @@ class DsToggle {
 	 * @param {str_col} [checkClr] 
 	 * @return {void} 
 	 */
-	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow, checkClr) {}
+	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow, checkClr) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetText(text) {}
+	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetTextColor(color) {}
+	SetTextColor(color) {return}
 
 	/**
 	 * Change the text size
@@ -13605,24 +13587,24 @@ class DsToggle {
  	 * &emsp; `ps` - scales text in proportion with device resolution
 	 * @return {void} 
 	 */
-	SetTextSize(size, mode) {}
+	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -13630,7 +13612,7 @@ class DsToggle {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -13638,40 +13620,40 @@ class DsUSBSerial {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Get the 'Data Terminal Ready' state
 	 * @return {void} 
 	 */
-	GetDTR() {}
+	GetDTR() {return}
 
 	/**
 	 * Get the 'Request To Send' state
 	 * @return {void} 
 	 */
-	GetRTS() {}
+	GetRTS() {return}
 
 	/**
 	 * Get the 'Carrier Detect' state
 	 * @return {void} 
 	 */
-	GetCD() {}
+	GetCD() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"USBSerial"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Actively checks if a USB device is connected
 	 * @return {bin} 
 	 */
-	IsConnected() {}
+	IsConnected() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -13683,7 +13665,7 @@ class DsUSBSerial {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Define data format for outgoing data
@@ -13694,42 +13676,42 @@ class DsUSBSerial {
  	 * &emsp; `encoding` - UTF-16L/BE
 	 * @return {void} 
 	 */
-	SetDataMode(mode) {}
+	SetDataMode(mode) {return}
 
 	/**
 	 * Raises the Data Terminal Ready state
 	 * @param {bin} onOff 
 	 * @return {void} 
 	 */
-	SetDTR(onOff) {}
+	SetDTR(onOff) {return}
 
 	/**
 	 * Set maximum bytes to received
 	 * @param {num_int} bytes 
 	 * @return {void} 
 	 */
-	SetMaxRead(bytes) {}
+	SetMaxRead(bytes) {return}
 
 	/**
 	 * Set maximum bytes to send
 	 * @param {num_int} bytes 
 	 * @return {void} 
 	 */
-	SetMaxWrite(bytes) {}
+	SetMaxWrite(bytes) {return}
 
 	/**
 	 * Called after received Data via USB
 	 * @param {(data: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnReceive(callback) {}
+	SetOnReceive(callback) {return}
 
 	/**
 	 * Raises the Request To Send state
 	 * @param {bin} onOff 
 	 * @return {void} 
 	 */
-	SetRTS(onOff) {}
+	SetRTS(onOff) {return}
 
 	/**
 	 * Specify how to split received data
@@ -13738,26 +13720,26 @@ class DsUSBSerial {
 	 * @param {str|num_int} [p3] 
 	 * @return {void} 
 	 */
-	SetSplitMode(mode, p2, p3) {}
+	SetSplitMode(mode, p2, p3) {return}
 
 	/**
 	 * Set timeout
 	 * @param {num_mls} ms 
 	 * @return {void} 
 	 */
-	SetTimeout(ms) {}
+	SetTimeout(ms) {return}
 
 	/**
 	 * Start listening to serial port
 	 * @return {void} 
 	 */
-	Start() {}
+	Start() {return}
 
 	/**
 	 * Stop listening to serial port
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 
 	/**
 	 * Send data to connected device
@@ -13765,7 +13747,7 @@ class DsUSBSerial {
 	 * @param {"US-ASCII"|"UTF16L/BE"} [encoding] 
 	 * @return {void} 
 	 */
-	Write(text, encoding) {}
+	Write(text, encoding) {return}
 }
 
 
@@ -13779,115 +13761,115 @@ class DsVideoView {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get video duration in seconds
 	 * @return {num_flt} 
 	 */
-	GetDuration() {}
+	GetDuration() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"VideoView"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -13895,25 +13877,25 @@ class DsVideoView {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the view is currently playing
 	 * @return {bin} 
 	 */
-	IsPlaying() {}
+	IsPlaying() {return}
 
 	/**
 	 * Check if the video is ready for playback
 	 * @return {bin} 
 	 */
-	IsReady() {}
+	IsReady() {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -13925,46 +13907,46 @@ class DsVideoView {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Pause the video
 	 * @return {void} 
 	 */
-	Pause() {}
+	Pause() {return}
 
 	/**
 	 * Play video
 	 * @return {void} 
 	 */
-	Play() {}
+	Play() {return}
 
 	/**
 	 * Seek to a given playback time
 	 * @param {num_int} seconds 
 	 * @return {void} 
 	 */
-	SeekTo(seconds) {}
+	SeekTo(seconds) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -13974,7 +13956,7 @@ class DsVideoView {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -13987,7 +13969,7 @@ class DsVideoView {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -13995,7 +13977,7 @@ class DsVideoView {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -14003,28 +13985,28 @@ class DsVideoView {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Set video source
 	 * @param {str_pth|str_url} file `http(s)://url`
 	 * @return {void} 
 	 */
-	SetFile(file) {}
+	SetFile(file) {return}
 
 	/**
 	 * Define distances to other controls
@@ -14035,35 +14017,35 @@ class DsVideoView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when playback finished
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnComplete(callback) {}
+	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when an error occured
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnError(callback) {}
+	SetOnError(callback) {return}
 
 	/**
 	 * Called when video is ready for playback
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnReady(callback) {}
+	SetOnReady(callback) {return}
 
 	/**
 	 * Called when subtitle text changed
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnSubtitle(callback) {}
+	SetOnSubtitle(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -14074,7 +14056,7 @@ class DsVideoView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -14085,7 +14067,7 @@ class DsVideoView {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -14093,7 +14075,7 @@ class DsVideoView {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -14102,21 +14084,21 @@ class DsVideoView {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Set a subtitle source
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	SetSubtitles(file) {}
+	SetSubtitles(file) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Change the playback volume
@@ -14124,23 +14106,23 @@ class DsVideoView {
 	 * @param {num_prc} right 
 	 * @return {void} 
 	 */
-	SetVolume(left, right) {}
+	SetVolume(left, right) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Stop video playback
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -14148,7 +14130,7 @@ class DsVideoView {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -14160,7 +14142,7 @@ class DsWebServer {
 	 * @param {str_url} location 
 	 * @return {void} 
 	 */
-	AddRedirect(pattern, location) {}
+	AddRedirect(pattern, location) {return}
 
 	/**
 	 * Called when servlet received a message
@@ -14168,14 +14150,14 @@ class DsWebServer {
 	 * @param {(args: {[parameter: str]: str}, info: { remoteAddress: str }) => void} callback 
 	 * @return {void} 
 	 */
-	AddServlet(path, callback) {}
+	AddServlet(path, callback) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Disconnect Client from WebServer
@@ -14183,19 +14165,19 @@ class DsWebServer {
 	 * @param {num_int} [id] 
 	 * @return {void} 
 	 */
-	Disconnect(ip, id) {}
+	Disconnect(ip, id) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"WebServer"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get connected clients
 	 * @return {{ remoteAddress: str, id: num_int }[]} 
 	 */
-	GetWebSockClients() {}
+	GetWebSockClients() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -14207,7 +14189,7 @@ class DsWebServer {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Send message to client(s)
@@ -14216,54 +14198,54 @@ class DsWebServer {
 	 * @param {num_int} id 
 	 * @return {void} 
 	 */
-	SendText(txt, ip, id) {}
+	SendText(txt, ip, id) {return}
 
 	/**
 	 * Set server root folder
 	 * @param {str_ptd} folder 
 	 * @return {void} 
 	 */
-	SetFolder(folder) {}
+	SetFolder(folder) {return}
 
 	/**
 	 * Called when received client message
 	 * @param {(msg: str, ip: str, id: num_int) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnReceive(callback) {}
+	SetOnReceive(callback) {return}
 
 	/**
 	 * Called when file uploaded to server
 	 * @param {(filename: str, ip: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnUpload(callback) {}
+	SetOnUpload(callback) {return}
 
 	/**
 	 * Respond to incoming HTTP request
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	SetResponse(text) {}
+	SetResponse(text) {return}
 
 	/**
 	 * Defile file upload destination
 	 * @param {str_ptd} folder 
 	 * @return {void} 
 	 */
-	SetUploadFolder(folder) {}
+	SetUploadFolder(folder) {return}
 
 	/**
 	 * Start server
 	 * @return {void} 
 	 */
-	Start() {}
+	Start() {return}
 
 	/**
 	 * Stop server
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 }
 
 
@@ -14271,56 +14253,56 @@ class DsWebSocket {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Close web socket
 	 * @return {void} 
 	 */
-	Close() {}
+	Close() {return}
 
 	/**
 	 * Get js Socket instance
 	 * @return {WebSocket} WebSocket
 	 */
-	GetSocket() {}
+	GetSocket() {return}
 
 	/**
 	 * Check if WebSocket is open
 	 * @return {bin} 
 	 */
-	IsOpen() {}
+	IsOpen() {return}
 
 	/**
 	 * Send message to server
 	 * @param {str} message 
 	 * @return {void} 
 	 */
-	Send(message) {}
+	Send(message) {return}
 
 	/**
 	 * Called when WebSocket was closed
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnClose(callback) {}
+	SetOnClose(callback) {return}
 
 	/**
 	 * Called when received message from server
 	 * @param {(message: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnMessage(callback) {}
+	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when WebSocket is open
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetOnOpen(callback) {}
+	SetOnOpen(callback) {return}
 }
 
 
@@ -14334,7 +14316,7 @@ class DsWebView {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Animates a control
@@ -14343,57 +14325,57 @@ class DsWebView {
 	 * @param {num_mls} [time] 
 	 * @return {void} 
 	 */
-	Animate(type, callback, time) {}
+	Animate(type, callback, time) {return}
 
 	/**
 	 * Load previous page
 	 * @return {void} 
 	 */
-	Back() {}
+	Back() {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Check if history contains a previous page
 	 * @return {bin} 
 	 */
-	CanGoBack() {}
+	CanGoBack() {return}
 
 	/**
 	 * Check if history has a following page
 	 * @return {bin} 
 	 */
-	CanGoForward() {}
+	CanGoForward() {return}
 
 	/**
 	 * Capture WebView as png
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	Capture(file) {}
+	Capture(file) {return}
 
 	/**
 	 * Clear all cookies
 	 * @return {void} 
 	 */
-	ClearCookies() {}
+	ClearCookies() {return}
 
 	/**
 	 * Removes the focus of the control
 	 * @return {void} 
 	 */
-	ClearFocus() {}
+	ClearFocus() {return}
 
 	/**
 	 * Clears the page history for Back() and Forward()
 	 * @return {void} 
 	 */
-	ClearHistory() {}
+	ClearHistory() {return}
 
 	/**
 	 * Execute JS code inside the WebView
@@ -14401,122 +14383,122 @@ class DsWebView {
 	 * @param {(result: all) => void} [callback] 
 	 * @return {void} 
 	 */
-	Execute(code, callback) {}
+	Execute(code, callback) {return}
 
 	/**
 	 * Set the focus to the control for immediate access
 	 * @return {void} 
 	 */
-	Focus() {}
+	Focus() {return}
 
 	/**
 	 * Load following page
 	 * @return {void} 
 	 */
-	Forward() {}
+	Forward() {return}
 
 	/**
 	 * Call functions defined inside a webview
 	 * @param {str} name 
-	 * @param {all} ...args 
+	 * @param {(all)[]} args 
 	 * @return {void} 
 	 */
-	Func(name, ...args) {}
+	Func(name, ...args) {return}
 
 	/**
 	 * Get the control height in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsHeight() {}
+	GetAbsHeight() {return}
 
 	/**
 	 * Get the control width in pixels
 	 * @return {num_int} 
 	 */
-	GetAbsWidth() {}
+	GetAbsWidth() {return}
 
 	/**
 	 * Get the height of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetHeight(options) {}
+	GetHeight(options) {return}
 
 	/**
 	 * Get distance to the left parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetLeft(options) {}
+	GetLeft(options) {return}
 
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
 	 */
-	GetParent() {}
+	GetParent() {return}
 
 	/**
 	 * Returns data about position and size
 	 * @param {"screen"|"px"} options 
 	 * @return {{ left: num, top: num, width: num, height: num }} \{ left, top, width, height }
 	 */
-	GetPosition(options) {}
+	GetPosition(options) {return}
 
 	/**
 	 * Get distance to the upper parent border
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetTop(options) {}
+	GetTop(options) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"WebView"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get current url
 	 * @return {str_url} 
 	 */
-	GetUrl() {}
+	GetUrl() {return}
 
 	/**
 	 * Get starting url
 	 * @return {str_url} 
 	 */
-	GetHomeUrl() {}
+	GetHomeUrl() {return}
 
 	/**
 	 * Returns the current visibility state
 	 * @return {"Show"|"Hide"|"Gone"} 
 	 */
-	GetVisibility() {}
+	GetVisibility() {return}
 
 	/**
 	 * Get the width of the control
 	 * @param {"px"} options 
 	 * @return {num} 
 	 */
-	GetWidth(options) {}
+	GetWidth(options) {return}
 
 	/**
 	 * Make it gone. It was never there!
 	 * @return {void} 
 	 */
-	Gone() {}
+	Gone() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is useable
 	 * @return {bin} 
 	 */
-	IsEnabled() {}
+	IsEnabled() {return}
 
 	/**
 	 * Checks if the control overlaps with another
@@ -14524,19 +14506,19 @@ class DsWebView {
 	 * @param {num_frc} [depth] 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj, depth) {}
+	IsOverlap(obj, depth) {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Returns if the page failed to load
 	 * @return {bin} 
 	 */
-	LoadFailed() {}
+	LoadFailed() {return}
 
 	/**
 	 * Load html to WebView
@@ -14557,7 +14539,7 @@ class DsWebView {
  	 * &emsp; `UseBrowser` - Open links in external browser
 	 * @return {void} 
 	 */
-	LoadHtml(html, baseFolder, options) {}
+	LoadHtml(html, baseFolder, options) {return}
 
 	/**
 	 * Load url to WebView
@@ -14577,7 +14559,7 @@ class DsWebView {
  	 * &emsp; `UseBrowser` - Open links in external browser
 	 * @return {void} 
 	 */
-	LoadUrl(url, options) {}
+	LoadUrl(url, options) {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -14589,39 +14571,39 @@ class DsWebView {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Print webpage via anddroid printer dialog
 	 * @return {void} 
 	 */
-	Print() {}
+	Print() {return}
 
 	/**
 	 * Reload current page
 	 * @return {void} 
 	 */
-	Reload() {}
+	Reload() {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
 	 * @return {void} 
 	 */
-	SetBackAlpha(alpha) {}
+	SetBackAlpha(alpha) {return}
 
 	/**
 	 * Resize a control after device rotation
 	 * @return {void} 
 	 */
-	Resize() {}
+	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @return {void} 
 	 */
-	SetBackColor(color) {}
+	SetBackColor(color) {return}
 
 	/**
 	 * Define the background color of the control with a gradient
@@ -14631,7 +14613,7 @@ class DsWebView {
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradient(color1, color2, color3, options) {}
+	SetBackGradient(color1, color2, color3, options) {return}
 
 	/**
 	 * Define a radial background color gradient
@@ -14644,7 +14626,7 @@ class DsWebView {
 	 * @param {str_com} [options] 
 	 * @return {void} 
 	 */
-	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {}
+	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
 	/**
 	 * Change the background to an image
@@ -14652,14 +14634,14 @@ class DsWebView {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Block urls from loading
 	 * @param {str[]|"urls"} urls 
 	 * @return {void} 
 	 */
-	SetBlockedUrls(urls) {}
+	SetBlockedUrls(urls) {return}
 
 	/**
 	 * Define context menus to listen for
@@ -14667,7 +14649,7 @@ class DsWebView {
 	 * @param {str} [images] `Download Image`
 	 * @return {void} 
 	 */
-	SetContextMenus(links, images) {}
+	SetContextMenus(links, images) {return}
 
 	/**
 	 * Adjust the visual color effect with different BlendModes
@@ -14675,35 +14657,35 @@ class DsWebView {
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @return {void} 
 	 */
-	SetColorFilter(color, mode) {}
+	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
 	 * @return {void} 
 	 */
-	SetDescription(desc) {}
+	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	SetEnabled(enable) {}
+	SetEnabled(enable) {return}
 
 	/**
 	 * Define error page
 	 * @param {str_url} url 
 	 * @return {void} 
 	 */
-	SetErrorPage(url) {}
+	SetErrorPage(url) {return}
 
 	/**
 	 * Inject scripts on page load
 	 * @param {str_pth} file 
 	 * @return {void} 
 	 */
-	SetInject(file) {}
+	SetInject(file) {return}
 
 	/**
 	 * Define distances to other controls
@@ -14714,63 +14696,63 @@ class DsWebView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetMargins(left, top, right, bottom, mode) {}
+	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Scales the html text by a given factor
 	 * @param {num_frc} zoom 
 	 * @return {void} 
 	 */
-	SetTextZoom(zoom) {}
+	SetTextZoom(zoom) {return}
 
 	/**
 	 * Called when message logged to console
 	 * @param {(msg: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnConsole(callback) {}
+	SetOnConsole(callback) {return}
 
 	/**
 	 * Called when a context menu was used
 	 * @param {(item: str, url: str, img: str, type: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnContextMenu(callback) {}
+	SetOnContextMenu(callback) {return}
 
 	/**
 	 * Called when an error occured
 	 * @param {(error: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnError(callback) {}
+	SetOnError(callback) {return}
 
 	/**
 	 * Called when loading progress changed
 	 * @param {(progress: num_prc) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnProgress(callback) {}
+	SetOnProgress(callback) {return}
 
 	/**
 	 * Traps HTTP Requests
 	 * @param {(url: str, method: str, isMain: bin, isRedirect: bin) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnRequest(callback) {}
+	SetOnRequest(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when link klicked
 	 * @param {(url: str_url) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnUrl(callback) {}
+	SetOnUrl(callback) {return}
 
 	/**
 	 * Define distances to contained elements
@@ -14781,7 +14763,7 @@ class DsWebView {
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
 	 * @return {void} 
 	 */
-	SetPadding(left, top, right, bottom, mode) {}
+	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Defines position and size on absolute layouts
@@ -14792,7 +14774,7 @@ class DsWebView {
 	 * @param {"px"} [options] 
 	 * @return {void} 
 	 */
-	SetPosition(left, top, width, height, options) {}
+	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Add url redirection rule
@@ -14800,7 +14782,7 @@ class DsWebView {
 	 * @param {str_url} urlTo 
 	 * @return {void} 
 	 */
-	SetRedirect(urlFrom, urlTo) {}
+	SetRedirect(urlFrom, urlTo) {return}
 
 	/**
 	 * Scale the control by the given factors
@@ -14808,7 +14790,7 @@ class DsWebView {
 	 * @param {num_fac} y 
 	 * @return {void} 
 	 */
-	SetScale(x, y) {}
+	SetScale(x, y) {return}
 
 	/**
 	 * Change the size of the control
@@ -14817,21 +14799,21 @@ class DsWebView {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * En/Disable touchmode on the control
 	 * @param {bin} mode 
 	 * @return {void} 
 	 */
-	SetTouchMode(mode) {}
+	SetTouchMode(mode) {return}
 
 	/**
 	 * Define which URLs open in browser
 	 * @param {str} urlFilter 
 	 * @return {void} 
 	 */
-	SetUseBrowser(urlFilter) {}
+	SetUseBrowser(urlFilter) {return}
 
 	/**
 	 * Set/Add custom user agent
@@ -14839,7 +14821,7 @@ class DsWebView {
 	 * @param {str} [options] `Add-appends to default user agent`
 	 * @return {void} 
 	 */
-	SetUserAgent(agent, options) {}
+	SetUserAgent(agent, options) {return}
 
 	/**
 	 * Set authentication/login data
@@ -14847,20 +14829,20 @@ class DsWebView {
 	 * @param {str} password 
 	 * @return {void} 
 	 */
-	SetUserCreds(name, password) {}
+	SetUserCreds(name, password) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
 	 * @return {void} 
 	 */
-	SetVisibility(mode) {}
+	SetVisibility(mode) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Simulate key event
@@ -14869,17 +14851,17 @@ class DsWebView {
 	 * @param {num} [pause] 
 	 * @return {void} 
 	 */
-	SimulateKey(keyName, modifiers, pause) {}
+	SimulateKey(keyName, modifiers, pause) {return}
 
 	/**
 	 * Stop loading processes
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, h, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
 	 * @param {num_int} [repeat] 
@@ -14887,7 +14869,7 @@ class DsWebView {
 	 * @param {() => void} [callback] 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
 
 
@@ -14895,64 +14877,64 @@ class DsWizard {
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Hides the control and removes it from the screen
 	 * @return {void} 
 	 */
-	Dismiss() {}
+	Dismiss() {return}
 
 	/**
 	 * Indicate that wizard finished
 	 * @return {void} 
 	 */
-	Finish() {}
+	Finish() {return}
 
 	/**
 	 * Returns list of wiz control buttons
 	 * @return {[DsButton, DsButton, DsButton]} 
 	 */
-	GetButtons() {}
+	GetButtons() {return}
 
 	/**
 	 * Get wiz dialog object
 	 * @return {DsDialog} 
 	 */
-	GetDialog() {}
+	GetDialog() {return}
 
 	/**
 	 * Get wiz content layout
 	 * @return {DsLayout} 
 	 */
-	GetLayout() {}
+	GetLayout() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"Wizard"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Checks if the control is currently visible
 	 * @return {bin} 
 	 */
-	IsVisible() {}
+	IsVisible() {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 }
 
 
@@ -14966,32 +14948,32 @@ class DsYesNoDialog {
 	 * @param {num} [contrast] `0..100`
 	 * @return {void} 
 	 */
-	AdjustColor(hue, saturation, brightness, contrast) {}
+	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Hides the control and removes it from the screen
 	 * @return {void} 
 	 */
-	Dismiss() {}
+	Dismiss() {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"YesNoDialog"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Hides the control visually
 	 * @return {void} 
 	 */
-	Hide() {}
+	Hide() {return}
 
 	/**
 	 * Access Java object methods via reflection
@@ -15003,7 +14985,7 @@ class DsYesNoDialog {
 	 * @param {str} [p4] 
 	 * @return {all} 
 	 */
-	Method(name, types, p1, p2, p3, p4) {}
+	Method(name, types, p1, p2, p3, p4) {return}
 
 	/**
 	 * Change the background color
@@ -15011,7 +14993,7 @@ class DsYesNoDialog {
 	 * @param {num_pxl} [radius] 
 	 * @return {void} 
 	 */
-	SetBackColor(color, radius) {}
+	SetBackColor(color, radius) {return}
 
 	/**
 	 * Change the background to an image
@@ -15019,7 +15001,7 @@ class DsYesNoDialog {
 	 * @param {"repeat"} [options] 
 	 * @return {void} 
 	 */
-	SetBackground(file, options) {}
+	SetBackground(file, options) {return}
 
 	/**
 	 * Change Yes/No button text
@@ -15027,14 +15009,14 @@ class DsYesNoDialog {
 	 * @param {str} no 
 	 * @return {void} 
 	 */
-	SetButtonText(yes, no) {}
+	SetButtonText(yes, no) {return}
 
 	/**
 	 * Called when user selects Yes or No
 	 * @param {(result: "Yes"|"No") => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouch(callback) {}
+	SetOnTouch(callback) {return}
 
 	/**
 	 * Change the size of the control
@@ -15043,13 +15025,13 @@ class DsYesNoDialog {
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 * @return {void} 
 	 */
-	SetSize(width, height, options) {}
+	SetSize(width, height, options) {return}
 
 	/**
 	 * Set the visibility to “Show”
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 }
 
 
@@ -15061,7 +15043,7 @@ class DsZipUtil {
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	AddFile(name, file) {}
+	AddFile(name, file) {return}
 
 	/**
 	 * Add text to the zip
@@ -15069,34 +15051,34 @@ class DsZipUtil {
 	 * @param {str} text 
 	 * @return {void} 
 	 */
-	AddText(name, text) {}
+	AddText(name, text) {return}
 
 	/**
 	 * Batch method calls to set object properties
-	 * @param {{[command: str]: lst}} properties \{ command: args }
+	 * @param {{[command: str]: lst}} properties { command: args }
 	 * @return {void} 
 	 */
-	Batch(properties) {}
+	Batch(properties) {return}
 
 	/**
 	 * Close ZipUtil
 	 * @return {void} 
 	 */
-	Close() {}
+	Close() {return}
 
 	/**
 	 * Create zip file
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	Create(file) {}
+	Create(file) {return}
 
 	/**
 	 * Create debug keystore file
 	 * @param {str_ptf} file debug.keystore
 	 * @return {void} 
 	 */
-	CreateDebugKey(file) {}
+	CreateDebugKey(file) {return}
 
 	/**
 	 * Create a user keystore file
@@ -15106,7 +15088,7 @@ class DsZipUtil {
 	 * @param {str} organization 
 	 * @return {void} 
 	 */
-	CreateKey(file, password, name, organization) {}
+	CreateKey(file, password, name, organization) {return}
 
 	/**
 	 * Extract file from zip
@@ -15114,27 +15096,27 @@ class DsZipUtil {
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	Extract(name, file) {}
+	Extract(name, file) {return}
 
 	/**
 	 * Returns the control class name
 	 * @return {"ZipUtil"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
 	/**
 	 * Get contained file list
 	 * @param {str_pth} path 
 	 * @return {str_com} 
 	 */
-	List(path) {}
+	List(path) {return}
 
 	/**
 	 * Open existing zip
 	 * @param {str_ptf} file 
 	 * @return {void} 
 	 */
-	Open(file) {}
+	Open(file) {return}
 
 	/**
 	 * Sign and check zip against keystore file
@@ -15144,7 +15126,7 @@ class DsZipUtil {
 	 * @param {str} password 
 	 * @return {bin} 
 	 */
-	Sign(fileIn, fileOut, keyStore, password) {}
+	Sign(fileIn, fileOut, keyStore, password) {return}
 
 	/**
 	 * Update zip manifest
@@ -15156,7 +15138,7 @@ class DsZipUtil {
 	 * @param {string | ("Launch"|"Debug")[]} [options] 
 	 * @return {void} 
 	 */
-	UpdateManifest(fileIn, fileOut, packageName, appName, permissions, options) {}
+	UpdateManifest(fileIn, fileOut, packageName, appName, permissions, options) {return}
 }
 
 
@@ -15168,7 +15150,7 @@ class DsDatabase {
 	 * @param {obj} transaction JS SQLitePluginTransaction
 	 * @return {void} 
 	 */
-	addTransaction(transaction) {}
+	addTransaction(transaction) {return}
 
 	/**
 	 * Close the database
@@ -15176,19 +15158,19 @@ class DsDatabase {
 	 * @param {(msg: str) => void} [error] 
 	 * @return {void} 
 	 */
-	close(success, error) {}
+	close(success, error) {return}
 
 	/**
 	 * Close the database
 	 * @return {void} 
 	 */
-	Close() {}
+	Close() {return}
 
 	/**
 	 * Delete the database
 	 * @return {void} 
 	 */
-	Delete() {}
+	Delete() {return}
 
 	/**
 	 * Execute SQL query
@@ -15198,7 +15180,7 @@ class DsDatabase {
 	 * @param {(t: all, err: { message: str }) => void} [error] 
 	 * @return {void} 
 	 */
-	executeSql(statement, params, success, error) {}
+	executeSql(statement, params, success, error) {return}
 
 	/**
 	 * Execute SQL query
@@ -15208,24 +15190,21 @@ class DsDatabase {
 	 * @param {(err: str) => void} [error] 
 	 * @return {void} 
 	 */
-	ExecuteSql(sql, params, success, error) {}
+	ExecuteSql(sql, params, success, error) {return}
 
 	/**
 	 * Get database name
 	 * @return {str} 
 	 */
-	GetName() {}
+	GetName() {return}
 
 	/**
 	 * Returns the component class name
 	 * @return {"Database"} 
 	 */
-	GetType() {}
+	GetType() {return}
 
-	/**
-	 * Database name
-	 * @type {str} 
-	 */
+	/** @type {str} Database name */
 	name;
 
 	/**
@@ -15234,7 +15213,7 @@ class DsDatabase {
 	 * @param {(msg: str) => void} [error] 
 	 * @return {void} 
 	 */
-	open(success, error) {}
+	open(success, error) {return}
 
 	/**
 	 * ReadTransaction
@@ -15244,14 +15223,14 @@ class DsDatabase {
 	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
 	 * @return {void} 
 	 */
-	readTransaction(fn, error, success) {}
+	readTransaction(fn, error, success) {return}
 
 	/**
 	 * StartNextTransaction
 	 * 	 * deprecated  Use ExecuteSql instead
 	 * @return {void} 
 	 */
-	startNextTransaction() {}
+	startNextTransaction() {return}
 
 	/**
 	 * Transaction
@@ -15261,7 +15240,7 @@ class DsDatabase {
 	 * @param {(fnc: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
 	 * @return {void} 
 	 */
-	transaction(fn, error, success) {}
+	transaction(fn, error, success) {return}
 }
 
 
@@ -15271,14 +15250,14 @@ class DsCheckList {
 	 * Show the check list
 	 * @return {void} 
 	 */
-	Show() {}
+	Show() {return}
 
 	/**
 	 * Set list
 	 * @param {str|{ title: str, check: bin }} data `title:checked`
 	 * @return {void} 
 	 */
-	SetList(data) {}
+	SetList(data) {return}
 }
 
 

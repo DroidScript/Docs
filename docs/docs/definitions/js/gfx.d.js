@@ -1,5 +1,7 @@
 /** @type {DsGfx} */
 var gfx;
+/** @typedef {GfxCircle|GfxEllipse|GfxPolygon|GfxRectangle} GfxGraphic */
+/** @typedef {{ noframe: bin, baseTexture: obj, frame: {x:num_frc, y:num_frc, width:num_frc, height:num_frc} }} GfxTexture */
 /** @typedef {GfxPhysics | GfxBackground | GfxCircle | GfxEllipse | GfxPolygon | GfxRectangle | GfxSound | GfxSprite | GfxSpriteSheet | GfxText} GameObject */
 /** @typedef {GameObject} gvo game object */
 
@@ -10,7 +12,7 @@ class DsGfx {
 	 * @param {GfxBackground} obj 
 	 * @return {void} 
 	 */
-	AddBackground(obj) {}
+	AddBackground(obj) {return}
 
 	/**
 	 * Adds a basic shape object to the game
@@ -23,7 +25,7 @@ class DsGfx {
 	 * @param {num_frc} alpha 
 	 * @return {void} 
 	 */
-	AddGraphic(obj, x, y, w, h, angle, alpha) {}
+	AddGraphic(obj, x, y, w, h, angle, alpha) {return}
 
 	/**
 	 * Adds physics to the game
@@ -32,7 +34,7 @@ class DsGfx {
 	 * @param {num} sleep 
 	 * @return {GfxPhysics} 
 	 */
-	AddPhysics(gravity, accuracy, sleep) {}
+	AddPhysics(gravity, accuracy, sleep) {return}
 
 	/**
 	 * Adds a sprite object
@@ -45,7 +47,7 @@ class DsGfx {
 	 * @param {num_frc} alpha 
 	 * @return {void} 
 	 */
-	AddSprite(sprite, x, y, w, h, angle, alpha) {}
+	AddSprite(sprite, x, y, w, h, angle, alpha) {return}
 
 	/**
 	 * Adds a text object
@@ -56,19 +58,16 @@ class DsGfx {
 	 * @param {num_frc} alpha 
 	 * @return {void} 
 	 */
-	AddText(obj, x, y, angle, alpha) {}
+	AddText(obj, x, y, angle, alpha) {return}
 
 	/**
 	 * Executes code in the main app
 	 * @param {str_jsc} js 
 	 * @return {void} 
 	 */
-	AppExec(js) {}
+	AppExec(js) {return}
 
-	/**
-	 * The display aspect ratio
-	 * @type {num} 
-	 */
+	/** @type {num} The display aspect ratio */
 	aspect;
 
 	/**
@@ -77,7 +76,7 @@ class DsGfx {
 	 * @param {string | ("stretch")[]} options 
 	 * @return {GfxBackground} 
 	 */
-	CreateBackground(file, options) {}
+	CreateBackground(file, options) {return}
 
 	/**
 	 * Creates a circle
@@ -89,7 +88,7 @@ class DsGfx {
 	 * @param {str} group 
 	 * @return {GfxCircle} 
 	 */
-	CreateCircle(width, color, lineWidth, lineColor, lineAlpha, group) {}
+	CreateCircle(width, color, lineWidth, lineColor, lineAlpha, group) {return}
 
 	/**
 	 * Creates an ellipse
@@ -102,7 +101,7 @@ class DsGfx {
 	 * @param {str} group 
 	 * @return {GfxEllipse} 
 	 */
-	CreateEllipse(width, height, color, lineWidth, lineColor, lineAlpha, group) {}
+	CreateEllipse(width, height, color, lineWidth, lineColor, lineAlpha, group) {return}
 
 	/**
 	 * Creates a polygonal game object
@@ -116,7 +115,7 @@ class DsGfx {
 	 * @param {str} group 
 	 * @return {GfxPolygon} 
 	 */
-	CreatePolygon(points, pivotX, pivotY, color, lineWidth, lineColor, lineAlpha, group) {}
+	CreatePolygon(points, pivotX, pivotY, color, lineWidth, lineColor, lineAlpha, group) {return}
 
 	/**
 	 * Creates a rectangle
@@ -129,14 +128,14 @@ class DsGfx {
 	 * @param {str} group 
 	 * @return {GfxRectangle} 
 	 */
-	CreateRectangle(width, height, color, lineWidth, lineColor, lineAlpha, group) {}
+	CreateRectangle(width, height, color, lineWidth, lineColor, lineAlpha, group) {return}
 
 	/**
 	 * Returns a new sound object
 	 * @param {str_ptf} file 
 	 * @return {GfxSound} 
 	 */
-	CreateSound(file) {}
+	CreateSound(file) {return}
 
 	/**
 	 * Returns a new sprite object
@@ -145,7 +144,7 @@ class DsGfx {
 	 * @param {() => void} callback 
 	 * @return {GfxSprite} 
 	 */
-	CreateSprite(file, group, callback) {}
+	CreateSprite(file, group, callback) {return}
 
 	/**
 	 * Returns a new SpriteSheet object
@@ -153,7 +152,7 @@ class DsGfx {
 	 * @param {() => void} callback 
 	 * @return {GfxSpriteSheet} 
 	 */
-	CreateSpriteSheet(file, callback) {}
+	CreateSpriteSheet(file, callback) {return}
 
 	/**
 	 * Returns a new text object
@@ -164,18 +163,15 @@ class DsGfx {
 	 * @param {() => void} callback 
 	 * @return {GfxText} 
 	 */
-	CreateText(text, fontSize, fontFile, align, callback) {}
+	CreateText(text, fontSize, fontFile, align, callback) {return}
 
 	/**
 	 * Returns a new texture object
 	 * @return {GfxTexture} 
 	 */
-	CreateTexture() {}
+	CreateTexture() {return}
 
-	/**
-	 * GameView custom data
-	 * @type {obj} 
-	 */
+	/** @type {obj} GameView custom data */
 	data;
 
 	/**
@@ -183,7 +179,7 @@ class DsGfx {
 	 * @param {bin} enabled 
 	 * @return {void} 
 	 */
-	EnablePhysics(enabled) {}
+	EnablePhysics(enabled) {return}
 
 	/**
 	 * Enclose an area with a physics fence
@@ -195,32 +191,29 @@ class DsGfx {
 	 * @param {num} offset 
 	 * @return {void} 
 	 */
-	Enclose(groupId, options, density, bounce, friction, offset) {}
+	Enclose(groupId, options, density, bounce, friction, offset) {return}
 
 	/**
 	 * Get joystick states
 	 * @param {str} id 
 	 * @return {obj} 
 	 */
-	GetJoystick(id) {}
+	GetJoystick(id) {return}
 
 	/**
 	 * Get object's order index
 	 * @param {gvo} object 
 	 * @return {num_int} 
 	 */
-	GetOrder(object) {}
+	GetOrder(object) {return}
 
 	/**
 	 * Get time since last gfx.Pause or gfx.Play
 	 * @return {Date} Date
 	 */
-	GetTime() {}
+	GetTime() {return}
 
-	/**
-	 * Display height in pixels
-	 * @type {num_pxl} 
-	 */
+	/** @type {num_pxl} Display height in pixels */
 	height;
 
 	/**
@@ -230,89 +223,80 @@ class DsGfx {
 	 * @param {num} depth 
 	 * @return {bin} 
 	 */
-	IsOverlap(obj1, obj2, depth) {}
+	IsOverlap(obj1, obj2, depth) {return}
 
 	/**
 	 * Get paused state
 	 * @return {bin} 
 	 */
-	IsPaused() {}
+	IsPaused() {return}
 
-	/**
-	 * True when game is ready
-	 * @type {bin} 
-	 */
+	/** @type {bin} True when game is ready */
 	isReady;
 
-	/**
-	 * Currently pressed key
-	 * @type {str} 
-	 */
+	/** @type {str} Currently pressed key */
 	keyDown;
 
-	/**
-	 * Current key state
-	 * @type {"Down"|"Up"} 
-	 */
+	/** @type {"Down"|"Up"} Current key state */
 	keyState;
 
 	/**
-	 * Enables multitouch
-	 * @type {bin} 
+	 * Wrapper class for PIXI.js matrix
+	 * @return {Matrix} \Matrix
 	 */
+	Matrix() {return}
+
+	/** @type {bin} Enables multitouch */
 	multiTouch;
 
-	/**
-	 * List of active objects
-	 * @type {lst_obj} 
-	 */
+	/** @type {lst_obj} List of active objects */
 	objects;
 
 	/**
 	 * Pause game
 	 * @return {void} 
 	 */
-	Pause() {}
+	Pause() {return}
 
 	/**
 	 * Start or resume game
 	 * @return {void} 
 	 */
-	Play() {}
+	Play() {return}
 
 	/**
 	 * Restart game from scratch
 	 * @return {void} 
 	 */
-	Reload() {}
+	Reload() {return}
 
 	/**
 	 * Remove background from game
 	 * @param {GfxBackground} obj 
 	 * @return {void} 
 	 */
-	RemoveBackground(obj) {}
+	RemoveBackground(obj) {return}
 
 	/**
 	 * Remove graphic from game
 	 * @param {GfxGraphic} obj 
 	 * @return {void} 
 	 */
-	RemoveGraphic(obj) {}
+	RemoveGraphic(obj) {return}
 
 	/**
 	 * Remove sprite from game
 	 * @param {GfxSprite} sprite 
 	 * @return {void} 
 	 */
-	RemoveSprite(sprite) {}
+	RemoveSprite(sprite) {return}
 
 	/**
 	 * Remove text from game
 	 * @param {GfxText} obj 
 	 * @return {void} 
 	 */
-	RemoveText(obj) {}
+	RemoveText(obj) {return}
 
 	/**
 	 * Synchronously import a .js file
@@ -320,56 +304,56 @@ class DsGfx {
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	Script(uri, callback) {}
+	Script(uri, callback) {return}
 
 	/**
 	 * Set solid background color
 	 * @param {str_col} col 
 	 * @return {void} 
 	 */
-	SetBackColor(col) {}
+	SetBackColor(col) {return}
 
 	/**
 	 * Define a callback which is called when two [Physics objects](AddPhysics.htm) collide
 	 * @param {(a: gvo, b: gvo) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnCollide(callback) {}
+	SetOnCollide(callback) {return}
 
 	/**
 	 * Define a KeyDown callback
 	 * @param {(key: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnKeyDown(callback) {}
+	SetOnKeyDown(callback) {return}
 
 	/**
 	 * Define a KeyUp callback
 	 * @param {(key: str) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnKeyUp(callback) {}
+	SetOnKeyUp(callback) {return}
 
 	/**
 	 * Set callback for touch down
 	 * @param {(x: num_frc|lst_num, y: num_frc|lst_num) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchDown(callback) {}
+	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Set callback for touch move
 	 * @param {(x: num_frc|lst_num, y: num_frc|lst_num) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchMove(callback) {}
+	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Set callback for touch up
 	 * @param {(x: num_frc|lst_num, y: num_frc|lst_num) => void} callback 
 	 * @return {void} 
 	 */
-	SetOnTouchUp(callback) {}
+	SetOnTouchUp(callback) {return}
 
 	/**
 	 * Change the drawing order of an object
@@ -377,7 +361,7 @@ class DsGfx {
 	 * @param {num} order 
 	 * @return {void} 
 	 */
-	SetOrder(object, order) {}
+	SetOrder(object, order) {return}
 
 	/**
 	 * Swap drawing order of two objects
@@ -385,12 +369,9 @@ class DsGfx {
 	 * @param {gvo} object2 
 	 * @return {void} 
 	 */
-	SwapOrder(object1, object2) {}
+	SwapOrder(object1, object2) {return}
 
-	/**
-	 * Gfx version number
-	 * @type {str} 1.1
-	 */
+	/** @type {str} Gfx version number */
 	version;
 
 	/**
@@ -398,12 +379,9 @@ class DsGfx {
 	 * @param {str} pattern 
 	 * @return {void} 
 	 */
-	Vibrate(pattern) {}
+	Vibrate(pattern) {return}
 
-	/**
-	 * Display width
-	 * @type {num_pxl} 
-	 */
+	/** @type {num_pxl} Display width */
 	width;
 
 }
@@ -416,7 +394,7 @@ class GfxPhysics {
 	 * @param {[num_frc, num_frc][]} points 
 	 * @return {void} 
 	 */
-	AddShape(type, points) {}
+	AddShape(type, points) {return}
 
 	/**
 	 * Adds velocity to the object
@@ -426,7 +404,7 @@ class GfxPhysics {
 	 * @param {bin} bodyRelative 
 	 * @return {void} 
 	 */
-	AddVelocity(x, y, angular, bodyRelative) {}
+	AddVelocity(x, y, angular, bodyRelative) {return}
 
 	/**
 	 * Applies an impulse p=m*v to the object
@@ -436,7 +414,7 @@ class GfxPhysics {
 	 * @param {num} offsetY `-1..1`
 	 * @return {void} 
 	 */
-	ApplyImpulse(x, y, offsetX, offsetY) {}
+	ApplyImpulse(x, y, offsetX, offsetY) {return}
 
 	/**
 	 * Checks if a point is in the hitbox
@@ -444,34 +422,34 @@ class GfxPhysics {
 	 * @param {num_frc} y 
 	 * @return {bin} 
 	 */
-	Contains(x, y) {}
+	Contains(x, y) {return}
 
 	/**
 	 * Temporally En/Disables physics for the game object
 	 * @param {bin} enable 
 	 * @return {void} 
 	 */
-	EnablePhysics(enable) {}
+	EnablePhysics(enable) {return}
 
 	/**
 	 * Returns the total velocity or a component of it
 	 * @param {"x"|"y"|"angular"} component 
 	 * @return {num} 
 	 */
-	GetVelocity(component) {}
+	GetVelocity(component) {return}
 
 	/**
 	 * Removes physics from the game oblect
 	 * @return {void} 
 	 */
-	RemovePhysics() {}
+	RemovePhysics() {return}
 
 	/**
 	 * Applies a 2D transformation matrix to the game object
-	 * @param {Matrix} mtx \Matrix
+	 * @param {Matrix} mtx Matrix
 	 * @return {void} 
 	 */
-	SetMatrix(mtx) {}
+	SetMatrix(mtx) {return}
 
 	/**
 	 * Set physics properties
@@ -484,7 +462,7 @@ class GfxPhysics {
 	 * @param {num} angularDamp 
 	 * @return {void} 
 	 */
-	SetPhysics(groupId, type, density, bounce, friction, linearDamp, angularDamp) {}
+	SetPhysics(groupId, type, density, bounce, friction, linearDamp, angularDamp) {return}
 
 	/**
 	 * Define the collision shape
@@ -493,7 +471,7 @@ class GfxPhysics {
 	 * @param {num_frc} height 
 	 * @return {void} 
 	 */
-	SetShape(shape, width, height) {}
+	SetShape(shape, width, height) {return}
 
 	/**
 	 * Set the object velocity
@@ -503,13 +481,13 @@ class GfxPhysics {
 	 * @param {bin} bodyRelative 
 	 * @return {void} 
 	 */
-	SetVelocity(x, y, angular, bodyRelative) {}
+	SetVelocity(x, y, angular, bodyRelative) {return}
 
 	/**
 	 * Update internal physics properties
 	 * @return {void} 
 	 */
-	UpdatePhysics() {}
+	UpdatePhysics() {return}
 }
 
 
@@ -521,28 +499,19 @@ class GfxBackground {
 	 * @param {num} y 
 	 * @return {void} 
 	 */
-	Scroll(x, y) {}
+	Scroll(x, y) {return}
 
-	/**
-	 * Indicates if ready for use
-	 * @type {bin} 
-	 */
+	/** @type {bin} Indicates if ready for use */
 	loaded;
 }
 
 
 class GfxCircle {
 
-	/**
-	 * The alpha value
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The alpha value */
 	alpha;
 
-	/**
-	 * The rotation fraction
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The rotation fraction */
 	angle;
 
 	/**
@@ -551,95 +520,59 @@ class GfxCircle {
 	 * @param {num_frc} y 
 	 * @return {bin} 
 	 */
-	Contains(x, y) {}
+	Contains(x, y) {return}
 
-	/**
-	 * Extra properties
-	 * @type {obj} 
-	 */
+	/** @type {obj} Extra properties */
 	data;
 
-	/**
-	 * PIXI graphic
-	 * @type {obj} 
-	 */
+	/** @type {obj} PIXI graphic */
 	graphic;
 
-	/**
-	 * The object's group
-	 * @type {str} 
-	 */
+	/** @type {str} The object's group */
 	group;
 
-	/**
-	 * The objects height
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The objects height */
 	height;
 
-	/**
-	 * Rotation x pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation x pivot */
 	pivotX;
 
-	/**
-	 * Rotation y pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation y pivot */
 	pivotY;
 
-	/**
-	 * Horizontal scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Horizontal scaling */
 	scaleX;
 
-	/**
-	 * Vertical scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Vertical scaling */
 	scaleY;
 
 	/**
 	 * Set 2d transformation
-	 * @param {Matrix} mtx \Matrix
+	 * @param {Matrix} mtx Matrix
 	 * @return {void} 
 	 */
-	SetMatrix(mtx) {}
+	SetMatrix(mtx) {return}
 
 	/**
 	 * Updates internal properties
 	 * @return {void} 
 	 */
-	Update() {}
+	Update() {return}
 
-	/**
-	 * Visibility state
-	 * @type {bin} 
-	 */
+	/** @type {bin} Visibility state */
 	visible;
 
-	/**
-	 * Object width
-	 * @type {num} 
-	 */
+	/** @type {num} Object width */
 	width;
 }
 
 
 class GfxEllipse {
 
-	/**
-	 * The alpha value
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The alpha value */
 	alpha;
 
-	/**
-	 * The rotation fraction
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The rotation fraction */
 	angle;
 
 	/**
@@ -648,95 +581,59 @@ class GfxEllipse {
 	 * @param {num_frc} y 
 	 * @return {bin} 
 	 */
-	Contains(x, y) {}
+	Contains(x, y) {return}
 
-	/**
-	 * Extra properties
-	 * @type {obj} 
-	 */
+	/** @type {obj} Extra properties */
 	data;
 
-	/**
-	 * PIXI graphic
-	 * @type {obj} 
-	 */
+	/** @type {obj} PIXI graphic */
 	graphic;
 
-	/**
-	 * The object's group
-	 * @type {str} 
-	 */
+	/** @type {str} The object's group */
 	group;
 
-	/**
-	 * The objects height
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The objects height */
 	height;
 
-	/**
-	 * Rotation x pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation x pivot */
 	pivotX;
 
-	/**
-	 * Rotation y pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation y pivot */
 	pivotY;
 
-	/**
-	 * Horizontal scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Horizontal scaling */
 	scaleX;
 
-	/**
-	 * Vertical scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Vertical scaling */
 	scaleY;
 
 	/**
 	 * Set 2d transformation
-	 * @param {Matrix} mtx \Matrix
+	 * @param {Matrix} mtx Matrix
 	 * @return {void} 
 	 */
-	SetMatrix(mtx) {}
+	SetMatrix(mtx) {return}
 
 	/**
 	 * Updates internal properties
 	 * @return {void} 
 	 */
-	Update() {}
+	Update() {return}
 
-	/**
-	 * Visibility state
-	 * @type {bin} 
-	 */
+	/** @type {bin} Visibility state */
 	visible;
 
-	/**
-	 * Object width
-	 * @type {num} 
-	 */
+	/** @type {num} Object width */
 	width;
 }
 
 
 class GfxPolygon {
 
-	/**
-	 * The alpha value
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The alpha value */
 	alpha;
 
-	/**
-	 * The rotation fraction
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The rotation fraction */
 	angle;
 
 	/**
@@ -745,95 +642,59 @@ class GfxPolygon {
 	 * @param {num_frc} y 
 	 * @return {bin} 
 	 */
-	Contains(x, y) {}
+	Contains(x, y) {return}
 
-	/**
-	 * Extra properties
-	 * @type {obj} 
-	 */
+	/** @type {obj} Extra properties */
 	data;
 
-	/**
-	 * PIXI graphic
-	 * @type {obj} 
-	 */
+	/** @type {obj} PIXI graphic */
 	graphic;
 
-	/**
-	 * The object's group
-	 * @type {str} 
-	 */
+	/** @type {str} The object's group */
 	group;
 
-	/**
-	 * The objects height
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The objects height */
 	height;
 
-	/**
-	 * Rotation x pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation x pivot */
 	pivotX;
 
-	/**
-	 * Rotation y pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation y pivot */
 	pivotY;
 
-	/**
-	 * Horizontal scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Horizontal scaling */
 	scaleX;
 
-	/**
-	 * Vertical scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Vertical scaling */
 	scaleY;
 
 	/**
 	 * Set 2d transformation
-	 * @param {Matrix} mtx \Matrix
+	 * @param {Matrix} mtx Matrix
 	 * @return {void} 
 	 */
-	SetMatrix(mtx) {}
+	SetMatrix(mtx) {return}
 
 	/**
 	 * Updates internal properties
 	 * @return {void} 
 	 */
-	Update() {}
+	Update() {return}
 
-	/**
-	 * Visibility state
-	 * @type {bin} 
-	 */
+	/** @type {bin} Visibility state */
 	visible;
 
-	/**
-	 * Object width
-	 * @type {num} 
-	 */
+	/** @type {num} Object width */
 	width;
 }
 
 
 class GfxRectangle {
 
-	/**
-	 * The alpha value
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The alpha value */
 	alpha;
 
-	/**
-	 * The rotation fraction
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The rotation fraction */
 	angle;
 
 	/**
@@ -842,96 +703,63 @@ class GfxRectangle {
 	 * @param {num_frc} y 
 	 * @return {bin} 
 	 */
-	Contains(x, y) {}
+	Contains(x, y) {return}
 
-	/**
-	 * Extra properties
-	 * @type {obj} 
-	 */
+	/** @type {obj} Extra properties */
 	data;
 
-	/**
-	 * PIXI graphic
-	 * @type {obj} 
-	 */
+	/** @type {obj} PIXI graphic */
 	graphic;
 
-	/**
-	 * The object's group
-	 * @type {str} 
-	 */
+	/** @type {str} The object's group */
 	group;
 
-	/**
-	 * The objects height
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The objects height */
 	height;
 
-	/**
-	 * Rotation x pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation x pivot */
 	pivotX;
 
-	/**
-	 * Rotation y pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation y pivot */
 	pivotY;
 
-	/**
-	 * Horizontal scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Horizontal scaling */
 	scaleX;
 
-	/**
-	 * Vertical scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Vertical scaling */
 	scaleY;
 
 	/**
 	 * Set 2d transformation
-	 * @param {Matrix} mtx \Matrix
+	 * @param {Matrix} mtx Matrix
 	 * @return {void} 
 	 */
-	SetMatrix(mtx) {}
+	SetMatrix(mtx) {return}
 
 	/**
 	 * Updates internal properties
 	 * @return {void} 
 	 */
-	Update() {}
+	Update() {return}
 
-	/**
-	 * Visibility state
-	 * @type {bin} 
-	 */
+	/** @type {bin} Visibility state */
 	visible;
 
-	/**
-	 * Object width
-	 * @type {num} 
-	 */
+	/** @type {num} Object width */
 	width;
 }
 
 
 class GfxSound {
 
-	/**
-	 * The file url
-	 * @type {str} 
-	 */
+	/** @type {str} The file url */
 	file;
 
 	/**
 	 * Pause the track
 	 * @return {void} 
 	 */
-	Pause() {}
+	Pause() {return}
 
 	/**
 	 * Play the soundtrack
@@ -940,34 +768,22 @@ class GfxSound {
 	 * @param {num_mls} gap `time gap between two loops`
 	 * @return {void} 
 	 */
-	Play(loop, delay, gap) {}
+	Play(loop, delay, gap) {return}
 }
 
 
 class GfxSprite {
 
-	/**
-	 * Incicates if added to game
-	 * @type {bin} 
-	 */
+	/** @type {bin} Incicates if added to game */
 	added;
 
-	/**
-	 * The alpha value
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The alpha value */
 	alpha;
 
-	/**
-	 * The rotation fraction
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The rotation fraction */
 	angle;
 
-	/**
-	 * Sprite aspect ratio
-	 * @type {num} 
-	 */
+	/** @type {num} Sprite aspect ratio */
 	aspect;
 
 	/**
@@ -976,12 +792,9 @@ class GfxSprite {
 	 * @param {num_frc} y 
 	 * @return {bin} 
 	 */
-	Contains(x, y) {}
+	Contains(x, y) {return}
 
-	/**
-	 * Extra properties
-	 * @type {obj} 
-	 */
+	/** @type {obj} Extra properties */
 	data;
 
 	/**
@@ -990,49 +803,37 @@ class GfxSprite {
 	 * @param {bin} vert 
 	 * @return {void} 
 	 */
-	Flip(horiz, vert) {}
+	Flip(horiz, vert) {return}
 
 	/**
 	 * Get current frame
 	 * @return {num_int} 
 	 */
-	GetFrame() {}
+	GetFrame() {return}
 
 	/**
 	 * Go to animation frame
 	 * @param {num_int} frame 
 	 * @return {void} 
 	 */
-	Goto(frame) {}
+	Goto(frame) {return}
 
-	/**
-	 * The object's group
-	 * @type {str} 
-	 */
+	/** @type {str} The object's group */
 	group;
 
-	/**
-	 * The objects height
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The objects height */
 	height;
 
 	/**
 	 * Pause tweening
 	 * @return {void} 
 	 */
-	PauseTween() {}
+	PauseTween() {return}
 
-	/**
-	 * Rotation x pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation x pivot */
 	pivotX;
 
-	/**
-	 * Rotation y pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation y pivot */
 	pivotY;
 
 	/**
@@ -1042,7 +843,7 @@ class GfxSprite {
 	 * @param {bin} loop 
 	 * @return {void} 
 	 */
-	Play(startFrame, speed, loop) {}
+	Play(startFrame, speed, loop) {return}
 
 	/**
 	 * Play range of animation frames
@@ -1052,31 +853,25 @@ class GfxSprite {
 	 * @param {bin} loop 
 	 * @return {void} 
 	 */
-	PlayRange(firstFrame, lastFrame, speed, loop) {}
+	PlayRange(firstFrame, lastFrame, speed, loop) {return}
 
 	/**
 	 * Play to animation frame
 	 * @param {num_int} frame 
 	 * @return {void} 
 	 */
-	PlayTo(frame) {}
+	PlayTo(frame) {return}
 
 	/**
 	 * Resume tweening
 	 * @return {void} 
 	 */
-	PlayTween() {}
+	PlayTween() {return}
 
-	/**
-	 * Horizontal scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Horizontal scaling */
 	scaleX;
 
-	/**
-	 * Vertical scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Vertical scaling */
 	scaleY;
 
 	/**
@@ -1084,21 +879,21 @@ class GfxSprite {
 	 * @param {bin} loop 
 	 * @return {void} 
 	 */
-	SetLoop(loop) {}
+	SetLoop(loop) {return}
 
 	/**
 	 * Set 2d transformation
-	 * @param {Matrix} mtx \Matrix
+	 * @param {Matrix} mtx Matrix
 	 * @return {void} 
 	 */
-	SetMatrix(mtx) {}
+	SetMatrix(mtx) {return}
 
 	/**
 	 * Set animation speed
 	 * @param {num} speed 
 	 * @return {void} 
 	 */
-	SetPlaySpeed(speed) {}
+	SetPlaySpeed(speed) {return}
 
 	/**
 	 * Set animation frame range
@@ -1109,7 +904,7 @@ class GfxSprite {
 	 * @param {num} speed 
 	 * @return {void} 
 	 */
-	SetRange(firstFrame, lastFrame, loop, play, speed) {}
+	SetRange(firstFrame, lastFrame, loop, play, speed) {return}
 
 	/**
 	 * Set sprite size
@@ -1117,25 +912,25 @@ class GfxSprite {
 	 * @param {num_frc} h 
 	 * @return {void} 
 	 */
-	SetSize(w, h) {}
+	SetSize(w, h) {return}
 
 	/**
 	 * Change animation
 	 * @param {GfxSpriteSheet} sheet 
 	 * @return {void} 
 	 */
-	SetSpriteSheet(sheet) {}
+	SetSpriteSheet(sheet) {return}
 
 	/**
 	 * Change sprite texture
 	 * @param {GfxTexture} tx 
 	 * @return {void} 
 	 */
-	SetTexture(tx) {}
+	SetTexture(tx) {return}
 
 	/**
 	 * Setup tween methods
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, w, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} duration 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} type 
 	 * @param {num_int} repeat 
@@ -1143,36 +938,36 @@ class GfxSprite {
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	SetTween(target, duration, type, repeat, yoyo, callback) {}
+	SetTween(target, duration, type, repeat, yoyo, callback) {return}
 
 	/**
 	 * Start tween
 	 * @return {void} 
 	 */
-	StartTween() {}
+	StartTween() {return}
 
 	/**
 	 * Update tween to now
 	 * @return {void} 
 	 */
-	StepTween() {}
+	StepTween() {return}
 
 	/**
 	 * Stop animation
 	 * @return {void} 
 	 */
-	Stop() {}
+	Stop() {return}
 
 	/**
 	 * Stop animation on frame
 	 * @param {num_int} frame 
 	 * @return {void} 
 	 */
-	StopAt(frame) {}
+	StopAt(frame) {return}
 
 	/**
 	 * Animates the control
-	 * @param {{ x: num_frc, y: num_frc, w: num_frc, w: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target \{ x, y, w, w, sw, sh, rot }
+	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} duration 
 	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} type 
 	 * @param {num_int} repeat 
@@ -1180,74 +975,47 @@ class GfxSprite {
 	 * @param {() => void} callback 
 	 * @return {void} 
 	 */
-	Tween(target, duration, type, repeat, yoyo, callback) {}
+	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
 	/**
 	 * Updates internal properties
 	 * @return {void} 
 	 */
-	Update() {}
+	Update() {return}
 
-	/**
-	 * Visibility state
-	 * @type {bin} 
-	 */
+	/** @type {bin} Visibility state */
 	visible;
 
-	/**
-	 * Object width
-	 * @type {num} 
-	 */
+	/** @type {num} Object width */
 	width;
 
-	/**
-	 * X-position on the screen
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} X-position on the screen */
 	x;
 
-	/**
-	 * Y-position on the screen
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Y-position on the screen */
 	y;
 }
 
 
 class GfxSpriteSheet {
 
-	/**
-	 * Extra properties
-	 * @type {obj} 
-	 */
+	/** @type {obj} Extra properties */
 	data;
 
-	/**
-	 * Loaded indicator
-	 * @type {bin} 
-	 */
+	/** @type {bin} Loaded indicator */
 	loaded;
 }
 
 
 class GfxText {
 
-	/**
-	 * Multiline text alignment
-	 * @type {"left"|"center"|"right"} 
-	 */
+	/** @type {"left"|"center"|"right"} Multiline text alignment */
 	align;
 
-	/**
-	 * The alpha value
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The alpha value */
 	alpha;
 
-	/**
-	 * The rotation fraction
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The rotation fraction */
 	angle;
 
 	/**
@@ -1256,74 +1024,112 @@ class GfxText {
 	 * @param {num_frc} y 
 	 * @return {bin} 
 	 */
-	Contains(x, y) {}
+	Contains(x, y) {return}
 
-	/**
-	 * Source file
-	 * @type {str_pth} 
-	 */
+	/** @type {str_pth} Source file */
 	file;
 
-	/**
-	 * Pixel font size
-	 * @type {num_pxl} 
-	 */
+	/** @type {num_pxl} Pixel font size */
 	fontSize;
 
-	/**
-	 * The objects height
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} The objects height */
 	height;
 
-	/**
-	 * Rotation x pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation x pivot */
 	pivotX;
 
-	/**
-	 * Rotation y pivot
-	 * @type {num_frc} 
-	 */
+	/** @type {num_frc} Rotation y pivot */
 	pivotY;
 
-	/**
-	 * Horizontal scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Horizontal scaling */
 	scaleX;
 
-	/**
-	 * Vertical scaling
-	 * @type {num_fac} 
-	 */
+	/** @type {num_fac} Vertical scaling */
 	scaleY;
 
 	/**
 	 * Set 2d transformation
-	 * @param {Matrix} mtx \Matrix
+	 * @param {Matrix} mtx Matrix
 	 * @return {void} 
 	 */
-	SetMatrix(mtx) {}
+	SetMatrix(mtx) {return}
 
 	/**
 	 * Updates internal properties
 	 * @return {void} 
 	 */
-	Update() {}
+	Update() {return}
 
-	/**
-	 * Visibility state
-	 * @type {bin} 
-	 */
+	/** @type {bin} Visibility state */
 	visible;
 
-	/**
-	 * Object width
-	 * @type {num} 
-	 */
+	/** @type {num} Object width */
 	width;
+}
+
+
+class Matrix {
+
+	/** @type {obj} The PIXI.js Matrix */
+	mtx;
+
+	/**
+	 * Move by a given amount on both axes
+	 * @param {num} tx 
+	 * @param {num} ty 
+	 * @return {void} 
+	 */
+	Translate(tx, ty) {return}
+
+	/**
+	 * Rotate by a given angle around the axes origin (0,0)
+	 * @param {num} angle 
+	 * @return {void} 
+	 */
+	Rotate(angle) {return}
+
+	/**
+	 * Scale by a given amount on both axes
+	 * @param {num} sx 
+	 * @param {num} sy 
+	 * @return {void} 
+	 */
+	Scale(sx, sy) {return}
+
+	/**
+	 * Set the matrix elements to specific values
+	 * @param {num} a 
+	 * @param {num} b 
+	 * @param {num} c 
+	 * @param {num} d 
+	 * @param {num} tx 
+	 * @param {num} ty 
+	 * @return {void} 
+	 */
+	Set(a, b, c, d, tx, ty) {return}
+
+	/**
+	 * Skew / Distort the object on both axes
+	 * @param {num} skewX 
+	 * @param {num} skewY 
+	 * @return {void} 
+	 */
+	Skew(skewX, skewY) {return}
+
+	/**
+	 * Shortcut to app.../app/Vibrate)
+	 * @param {num} tx 
+	 * @param {num} ty 
+	 * @param {num} pivotX 
+	 * @param {num} pivotY 
+	 * @param {num} scaleX 
+	 * @param {num} scaleY 
+	 * @param {num} rotation 
+	 * @param {num} skewX 
+	 * @param {num} skewY 
+	 * @return {void} 
+	 */
+	Transform(tx, ty, pivotX, pivotY, scaleX, scaleY, rotation, skewX, skewY) {return}
 }
 
 
