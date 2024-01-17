@@ -182,7 +182,7 @@ class UI {
 	 * AddImage
 	 * @param {obj} parent The parent layout where to add the image.
 	 * @param {str} file `The path to the image.`
-	 * @param {str} [options] A comma seprated options for the image. Can be `Canvas` `Button` or `Avatar`
+	 * @param {str} [options='Image'] A comma seprated options for the image. Can be `Image` `Canvas` `Button` or `Avatar`
 	 * @param {num} [width] `Fraction of the screen width.`
 	 * @param {num} [height] `Fraction of the screen height.`
 	 * @return {UIImage} 
@@ -5833,6 +5833,7 @@ class UISelect {
 	/**
 	 * GetItem
 	 * @param {num} index `The index of the item.`
+	 * @return {num} 
 	 */
 	getItem(index) {return}
 

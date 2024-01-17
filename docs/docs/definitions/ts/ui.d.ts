@@ -167,7 +167,7 @@ declare class UI {
 	 * AddImage
 	 * @param parent The parent layout where to add the image.
 	 * @param file `The path to the image.`
-	 * @param options A comma seprated options for the image. Can be `Canvas` `Button` or `Avatar`
+	 * @param options A comma seprated options for the image. Can be `Image` `Canvas` `Button` or `Avatar`
 	 * @param width `Fraction of the screen width.`
 	 * @param height `Fraction of the screen height.`
 	 */
@@ -5565,7 +5565,7 @@ declare class UISelect {
 	 * GetItem
 	 * @param index `The index of the item.`
 	 */
-	getItem(index: num): void;
+	getItem(index: num): num;
 
 	/**
 	 * SetList

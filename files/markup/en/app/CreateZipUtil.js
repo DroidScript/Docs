@@ -48,6 +48,7 @@
  * Creates a new zip file.
  * $$ zip.Create(file) $$
  * @param {str_ptf} file 
+ * @returns nil
  */
 
 
@@ -56,6 +57,7 @@
  * Creates a Debuk keystore file
  * $$ zip.CreateDebugKey(file) $$
  * @param {str_ptf} file debug.keystore
+ * @returns nil
  */
 
 
@@ -67,6 +69,7 @@
  * @param {str} password 
  * @param {str} name 
  * @param {str} organization 
+ * @returns nil
  */
 
 

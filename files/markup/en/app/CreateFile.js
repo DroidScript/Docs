@@ -36,8 +36,8 @@
 /** ### GetPointer ###
  * @brief Get pointer position
  * Returns the current pointer position in the file.
- * @returns num_int
  * $$ fil.GetPointer() $$
+ * @returns num_int
  */
 
 

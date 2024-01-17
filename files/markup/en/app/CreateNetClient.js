@@ -15,8 +15,8 @@
 
 /** @Description
 NetClients can be used to communicate with servers on the web. You can choose between two different protocols:
-	The connection based _**T**ransmission**C**ontrol**P**rotocol_ which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.
-	The connectionless _**U**ser**D**atagram**P**rotocol_ which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.
+    The connection based _**T**ransmission**C**ontrol**P**rotocol_ which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.
+    The connectionless _**U**ser**D**atagram**P**rotocol_ which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.
 
 Note: A few routers block fast UDP messages by default
  */
@@ -85,6 +85,7 @@ Note: A few routers block fast UDP messages by default
  * @brief Get NetClient connected state
  * Checks if the NetClient is connected to a server.
  * $$ net.IsConnected() $$
+ * @returns bin
  */
 
 
@@ -253,26 +254,26 @@ function OnStart()
     web = app.CreateWebView( 1, .5, "ignoreerrors" );
     lay.AddChild( web );
 
-	txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" );
-	txt.SetTextSize( 12 );
-	lay.AddChild( txt );
+    txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" );
+    txt.SetTextSize( 12 );
+    lay.AddChild( txt );
 
     app.AddLayout( lay );
 
-	<b>net = app.CreateNetClient( "TCP,Raw" );
-	net.SetOnConnect( net_OnConnect );
-	net.Connect( "www.randomfunfacts.com", 80 );</b>
+    <b>net = app.CreateNetClient( "TCP,Raw" );
+    net.SetOnConnect( net_OnConnect );
+    net.Connect( "www.randomfunfacts.com", 80 );</b>
 }
 
 function net_OnConnect( connected )
 {
-	if( !connected ) return app.ShowPopup( "Failed to connect!" );
+    if( !connected ) return app.ShowPopup( "Failed to connect!" );
 
-	net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
+    net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
 
-	var msg = "", s = "";
-	do msg += s = net.ReceiveText( "UTF-8" );
-	while( s.length > 0 );
+    var msg = "", s = "";
+    do msg += s = net.ReceiveText( "UTF-8" );
+    while( s.length > 0 );
 
     txt.SetText( msg );
     web.LoadHtml( msg );
@@ -292,27 +293,27 @@ function OnStart()
     web = app.CreateWebView( 1, .5, "ignoreerrors" );
     lay.AddChild( web );
 
-	txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" );
-	txt.SetTextSize( 12 );
-	lay.AddChild( txt );
+    txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" );
+    txt.SetTextSize( 12 );
+    lay.AddChild( txt );
 
     app.AddLayout( lay );
 
-	<b>net = app.CreateNetClient( "TCP,Raw" );
-	net.SetOnConnect( net_OnConnect );
-	net.SetOnReceive( OnReceive );
-	net.AutoReceive( "www.randomfunfacts.com", 80, "UTF-8" );</b>
+    <b>net = app.CreateNetClient( "TCP,Raw" );
+    net.SetOnConnect( net_OnConnect );
+    net.SetOnReceive( OnReceive );
+    net.AutoReceive( "www.randomfunfacts.com", 80, "UTF-8" );</b>
 }
 
 var sent = false;
 function net_OnConnect( connected )
 {
-	if( !connected ) return app.ShowPopup( "Failed to connect!" );
+    if( !connected ) return app.ShowPopup( "Failed to connect!" );
 
     if( sent ) return sent = msg != "";
     else sent = true;
 
-	net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
+    net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
 }
 
 var msg = "";

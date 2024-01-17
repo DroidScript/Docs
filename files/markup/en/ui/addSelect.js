@@ -375,8 +375,8 @@ Adds a Select Component to a given layout.
  * @brief getItem
  * Returns the item at a given index
  * $$ sel.getItem(index) $$
- * @return num
  * @param {num} index The index of the item.
+ * @returns num
  */
 
 

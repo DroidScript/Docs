@@ -1,3 +1,4 @@
+const { stat } = require("fs-extra");
 const conf = require("../conf.json");
 const { app } = require("./app");
 const { keys, regConPrefix, split1, special, replW, Throw, unwrapDesc, fillMissingFuncProps, unwrapBaseFunc, getDstDir, D_LANG } = require("./util");
@@ -173,8 +174,8 @@ function declareFunction(state, name, desc, params, retval, isval, indent) {
         retval.desc = retval.desc.replace(/^\\/, '');
         if (!isval && retval.sub) jsparams.push(`${indent} * @return {${retval.sub}} ${retval.desc}\n`);
         if (isval && !retval.sub) console.error("value " + name + " with no type");
-        if (name.match(/^get/i) && !retval.sub && !params.find(v => v.name === "callback"))
-            console.error(`Get method ${state.curFunc}.${name} with no type`);
+        if (name.match(/^(get|is|create)/i) && !retval.sub && !params.find(v => v.name === "callback"))
+            console.error(`Method ${state.curFunc}${name === state.curFunc ? '' : '.' + name} with no type`);
 
         if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
         else if (isval) docStr += `\n${indent}/** @type {${retval.sub}} ${desc} */\n`;

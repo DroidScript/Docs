@@ -9,7 +9,7 @@
  * $$ app.WriteFile(file, text, mode?, encoding?) $$ 
  * @param {str_ptf} file 
  * @param {str} text 
- * @param {str} [mode] Append|ASCII
+ * @param {str} [mode] Append|ASCII|Base64
  * @param {str} [encoding] US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1
 */
 

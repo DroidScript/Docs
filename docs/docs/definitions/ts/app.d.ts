@@ -262,7 +262,7 @@ declare class DsApp {
 	CreateCrypt(options?: str_com): DsCrypt;
 
 	/** Creates a CustomTab control */
-	CreateCustomTabs(): void;
+	CreateCustomTabs(): obj;
 
 	/**
 	 * Shows a debug log overlay
@@ -409,7 +409,7 @@ declare class DsApp {
  	 * &emsp; `Debug` - start app in debug mode\
  	 * &emsp; `Game` - runs in GameView mode
 	 */
-	CreateShortcut(name: str, iconFile: str_ptf, file: str_ptf, options?: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[]): void;
+	CreateShortcut(name: str, iconFile: str_ptf, file: str_ptf, options?: string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[]): nil;
 
 	/** Returns a new SMS object to send and retreive SMS messages */
 	CreateSMS(): DsSMS;
@@ -1533,7 +1533,7 @@ declare class DsApp {
 	 * @param encoding <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
 	 */
-	WriteFile(file: str_ptf, text: str, mode?: "Append"|"ASCII", encoding?: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"): void;
+	WriteFile(file: str_ptf, text: str, mode?: "Append"|"ASCII"|"Base64", encoding?: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"): void;
 
 	/**
 	 * Compress a file to zip
@@ -4241,13 +4241,13 @@ declare class DsMediaPlayer {
 	GetType(): "MediaPlayer";
 
 	/** Returns if the player is looping */
-	IsLooping(): void;
+	IsLooping(): bin;
 
 	/** Get current playing state */
-	IsPlaying(): void;
+	IsPlaying(): bin;
 
 	/** Returns if player is useable yet */
-	IsReady(): void;
+	IsReady(): bin;
 
 	/** Pause the current playing song */
 	Pause(): void;
@@ -4363,7 +4363,7 @@ declare class DsNetClient {
 	GetType(): "NetClient";
 
 	/** Get NetClient connected state */
-	IsConnected(): void;
+	IsConnected(): bin;
 
 	/** Checks if the control is useable */
 	IsEnabled(): bin;
@@ -4610,7 +4610,7 @@ declare class DsNxt {
 	IsEnabled(): bin;
 
 	/** Check if a motor is powered */
-	IsMotorIdle(motor: "A"|"B"|"C"|"ABC"): void;
+	IsMotorIdle(motor: "A"|"B"|"C"|"ABC"): bin;
 
 	/** Checks if the device is paired with an other */
 	IsPaired(name: str): bin;
@@ -7414,19 +7414,19 @@ declare class DsZipUtil {
 	Close(): void;
 
 	/** Create zip file */
-	Create(file: str_ptf): void;
+	Create(file: str_ptf): nil;
 
 	/**
 	 * Create debug keystore file
 	 * @param file debug.keystore
 	 */
-	CreateDebugKey(file: str_ptf): void;
+	CreateDebugKey(file: str_ptf): nil;
 
 	/**
 	 * Create a user keystore file
 	 * @param file user.keystore
 	 */
-	CreateKey(file: str_ptf, password: str, name: str, organization: str): void;
+	CreateKey(file: str_ptf, password: str, name: str, organization: str): nil;
 
 	/**
 	 * Extract file from zip

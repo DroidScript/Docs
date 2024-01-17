@@ -64,8 +64,8 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 
 /** ### GetType ###
  * Returns the control class name.
- * @returns str-GameView
  * $$ gmv.GetType() $$
+ * @returns str-GameView
  */
 
 

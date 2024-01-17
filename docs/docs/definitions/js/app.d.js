@@ -495,7 +495,10 @@ class DsApp {
 	 */
 	CreateCrypt(options) {return}
 
-	/** Creates a CustomTab control */
+	/**
+	 * Creates a CustomTab control
+	 * @return {obj} 
+	 */
 	CreateCustomTabs() {return}
 
 	/**
@@ -744,6 +747,7 @@ class DsApp {
 	 * @param {string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[]} [options] <br>
  	 * &emsp; `Debug` - start app in debug mode\
  	 * &emsp; `Game` - runs in GameView mode
+	 * @return {nil} 
 	 */
 	CreateShortcut(name, iconFile, file, options) {return}
 
@@ -2820,7 +2824,7 @@ class DsApp {
 	 * Write text to a local file
 	 * @param {str_ptf} file 
 	 * @param {str} text 
-	 * @param {"Append"|"ASCII"} [mode] 
+	 * @param {"Append"|"ASCII"|"Base64"} [mode] 
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"} [encoding] <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
 	 */
@@ -7760,13 +7764,22 @@ class DsMediaPlayer {
 	 */
 	GetType() {return}
 
-	/** Returns if the player is looping */
+	/**
+	 * Returns if the player is looping
+	 * @return {bin} 
+	 */
 	IsLooping() {return}
 
-	/** Get current playing state */
+	/**
+	 * Get current playing state
+	 * @return {bin} 
+	 */
 	IsPlaying() {return}
 
-	/** Returns if player is useable yet */
+	/**
+	 * Returns if player is useable yet
+	 * @return {bin} 
+	 */
 	IsReady() {return}
 
 	/** Pause the current playing song */
@@ -7958,7 +7971,10 @@ class DsNetClient {
 	 */
 	GetType() {return}
 
-	/** Get NetClient connected state */
+	/**
+	 * Get NetClient connected state
+	 * @return {bin} 
+	 */
 	IsConnected() {return}
 
 	/**
@@ -8393,6 +8409,7 @@ class DsNxt {
 	/**
 	 * Check if a motor is powered
 	 * @param {"A"|"B"|"C"|"ABC"} motor 
+	 * @return {bin} 
 	 */
 	IsMotorIdle(motor) {return}
 
@@ -13357,12 +13374,14 @@ class DsZipUtil {
 	/**
 	 * Create zip file
 	 * @param {str_ptf} file 
+	 * @return {nil} 
 	 */
 	Create(file) {return}
 
 	/**
 	 * Create debug keystore file
 	 * @param {str_ptf} file debug.keystore
+	 * @return {nil} 
 	 */
 	CreateDebugKey(file) {return}
 
@@ -13372,6 +13391,7 @@ class DsZipUtil {
 	 * @param {str} password 
 	 * @param {str} name 
 	 * @param {str} organization 
+	 * @return {nil} 
 	 */
 	CreateKey(file, password, name, organization) {return}
 

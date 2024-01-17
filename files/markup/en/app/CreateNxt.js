@@ -154,6 +154,7 @@
  * Checks if a motor is currently powered
  * $$ nxt.IsMotorIdle(motor) $$
  * @param {str} motor A,B,C|ABC
+ * @returns bin
  */
 
 

@@ -64,6 +64,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Returns if the player is looping.
  * Checks if the media player will replay the song from the begining if it has finished.
  * $$ ply.IsLooping() $$
+ * @returns bin
  */
 
 
@@ -71,6 +72,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Get current playing state
  * Checks if the media player is currently playing.
  * $$ ply.IsPlaying() $$
+ * @returns bin
  */
 
 
@@ -78,6 +80,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Returns if player is useable yet
  * Checks if the media player is ready for use.
  * $$ ply.IsReady() $$
+ * @returns bin
  */
 
 
@@ -180,20 +183,20 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 @sample Playing Audio
 function OnStart()
 {
-	<b>player = app.CreateMediaPlayer();
+    <b>player = app.CreateMediaPlayer();
     player.SetOnReady(Play);
-	player.SetOnComplete( player_OnComplete );
-	player.SetFile( "/Sys/Snd/Poing.ogg" );</b>
+    player.SetOnComplete( player_OnComplete );
+    player.SetFile( "/Sys/Snd/Poing.ogg" );</b>
 }
 
 function Play()
 {
-	player.Play();
+    player.Play();
 }
 
 function player_OnComplete()
 {
-	app.ShowPopup( "OnComplete" );
+    app.ShowPopup( "OnComplete" );
 }
  */
     

@@ -35,8 +35,8 @@
 
 /** ### GetType ###
  * Returns the control class name.
- * @returns str-Overlay
  * $$ ovl.GetType() $$
+ * @returns str-Overlay
  */
 
 
