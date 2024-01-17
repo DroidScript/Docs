@@ -21,7 +21,7 @@ function getApp() {
         WriteFile: (p, s) => fs.writeFileSync(absPth(p), s),
         DeleteFile: (p) => fs.unlinkSync(absPth(p)),
         ListFolder: (p) => fs.readdirSync(absPth(p)),
-        MakeFolder: (p) => fs.mkdirSync(absPth(p)),
+        MakeFolder: (p) => fs.mkdirSync(absPth(p), { recursive: true }),
         CopyFolder: (a, b) => fs.copySync(absPth(a), absPth(b)),
         DeleteFolder: (p) => rimraf.sync(absPth(p)),
         IsFile: (p) => fs.lstatSync(absPth(p)).isFile(),

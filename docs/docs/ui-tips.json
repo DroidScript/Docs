@@ -33,7 +33,6 @@
 		"addWebView": "AddWebView",
 		"showColorPicker": "ShowColorPicker",
 		"showDateTimePicker": "ShowDateTimePicker",
-		"showPopover": "ShowPopover",
 		"showPopup": "ShowPopup",
 		"showProgressDialog": "ShowProgressDialog"
 	},
@@ -1745,10 +1744,6 @@
 	"col": {
 		"value": "Returns the value of the chosen color",
 		"getValue": "GetValue"
-	},
-	"pvr": {
-		"backImage": "Sets or returns the path to the background image",
-		"fontFile": "Sets or returns the font file use for the Popover"
 	},
 	"pop": {
 		"duration": "Sets or returns the duration of the popup in milliseconds",

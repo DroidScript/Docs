@@ -31,26 +31,35 @@ const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "UI", MUI: "Mui", muo: "Mu
 
 /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
 const { tname: tName, tdesc: tDesc } = conf;
+let JSDOC = false;
 
 /**
  * @param {DSInput} inpt
  * @param {GenState} state
+ * @param {"js"|"ts"} mode
  */
-function generateTsx(inpt, state) {
-    state.curDoc = getDstDir(D_LANG, state, state.curScope + '.d.ts');
-    console.log(`generating ${state.lang}.${state.curScope}.tsx`);
+function generateTsx(inpt, state, mode) {
+    state.curDoc = getDstDir(D_LANG, state, 'definitions/' + state.curScope + '.d.' + mode);
+    console.log(`generating ${state.lang}.${state.curScope}.d.` + mode);
+    app.MakeFolder(state.curDoc.slice(0, state.curDoc.lastIndexOf('/')));
+    JSDOC = mode === "js";
 
     const defs = generateDefinitionFile(state.curScope, inpt, state);
     app.WriteFile(state.curDoc, defs);
 }
 
+/** @type {(name:string, type:string, desc?:string) => string} */
+function declareType(name, type, desc = "") {
+    if (JSDOC) return `/** @typedef {${type}} ${name} ${desc && desc + ' '}*/`;
+    return (desc ? `/** ${desc} */\n` : '') + `declare type ${name} = ${type};`;
+}
+
 /** @type {(scopeName: string, inpt: DSInput, state: GenState) => string} */
 function generateDefinitionFile(scopeName, inpt, state) {
-
     if (scopeName === "global") {
         const typeDecls = Object.entries({ ...conf.tname, ...conf.tdesc })
             .filter(([name, _]) => !name.endsWith('o') && name.match(/^[a-z]/i))
-            .map(([name, desc]) => `/** ${desc} */\ndeclare type ${name} = ${makeType(inpt, state, name, true).sub};`);
+            .map(([name, desc]) => declareType(name, makeType(inpt, state, name, true).sub, desc));
         return typeDecls.join("\n");
     }
 
@@ -75,7 +84,8 @@ function generateDefinitionFile(scopeName, inpt, state) {
         classDefinition += defs.class;
 
         for (const obj in defs.extra) {
-            classDefinition += `declare class ${obj} {\n`;
+            if (!JSDOC) classDefinition += 'declare ';
+            classDefinition += `class ${obj} {\n`;
             classDefinition += defs.extra[obj];
             classDefinition += `}\n`;
         }
@@ -87,8 +97,8 @@ function generateDefinitionFile(scopeName, inpt, state) {
     /** @type {string[]} */
     const typeDecls = [];
     for (const o in objs) {
-        typeDecls.unshift(`/** ${tName[o]} */\ndeclare type ${o} = ${makeType(inpt, state, o, true).sub};`);
-        typeDecls.unshift(`declare type ${tsxTypes[o]} = ${objs[o].join(' | ')};`);
+        typeDecls.unshift(declareType(o, makeType(inpt, state, o, true).sub, tName[o]));
+        typeDecls.unshift(declareType(tsxTypes[o], objs[o].join(' | ')));
     }
 
     // eslint-disable-next-line prefer-const
@@ -101,11 +111,12 @@ function generateDefinitionFile(scopeName, inpt, state) {
                 .filter(n => reg.test(n))
                 .map(n => objPfx[state.curScope] + n.replace(regConPrefix, '')).join(" | ");
         }
-        typeDecls.unshift(`declare type ${name} = ${type};`);
+        typeDecls.unshift(declareType(name, type));
     }
 
-    typeDecls.unshift(`declare var ${state.curScope}: ${scopeName};`);
-    return `${typeDecls.join("\n")}\n\ndeclare class ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
+    if (JSDOC) typeDecls.unshift(`/** @type {${scopeName}} */\nvar ${state.curScope};`);
+    else typeDecls.unshift(`declare var ${state.curScope}: ${scopeName};`);
+    return `${typeDecls.join("\n")}\n\n${JSDOC ? '' : 'declare '}class ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
 }
 
 /**
@@ -277,6 +288,62 @@ function replaceTsxTypes(inpt, state, descStr, ptype, names = false) {
     };
 }
 
+/** @typedef {{name:string; type:string; desc:string; dflt:string}} ParamDef */
+/** @typedef {{main:string, sub:string, desc:string}} TypeDef */
+
+/**
+ * @param {ParamDef[]} params
+ * @param {TypeDef} retval
+ */
+function declareCallback(params, retval) {
+    const args = params.map(p => `${p.name + (p.dflt ? '?' : '')}: ${p.type}`);
+    return `(${args.join(", ")}) => ${retval.sub || 'void'}`;
+}
+
+/**
+ * @param {string} name
+ * @param {string} desc
+ * @param {ParamDef[]} params
+ * @param {TypeDef} retval
+ * @param {boolean|undefined} isval
+ * @param {string} indent
+ */
+function declareFunction(name, desc, params, retval, isval, indent) {
+    let docStr = "";
+    if (JSDOC) {
+        const args = params.map(p => p.name.replace('?', ''));
+
+        const jsparams = params.map(p => {
+            if (p.dflt) p.name = `[${p.name}=${p.dflt}]`;
+            else if (p.name.endsWith("?")) p.name = `[${p.name.slice(0, -1)}]`;
+            return `${indent} * @param {${p.type}} ${p.name} ${p.desc.replace(/ \* /g, indent + ' * ')}\n`;
+        });
+
+        const tag = isval ? 'type' : 'return';
+        jsparams.push(`${indent} * @${tag} {${retval.sub || 'void'}} ${retval.desc}\n`);
+
+        if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
+        else docStr += `\n${indent}/** ${desc} */\n`;
+
+        if (isval) docStr += `${indent}${name};\n`;
+        else docStr += `${indent}${name}(${args.join(", ")}) {}\n`;
+    }
+    else {
+        const args = params.map(p => `${p.dflt ? p.name + '?' : p.name}: ${p.type}`);
+
+        params = params.filter(p => p.desc);
+        const jsparams = params.map(p =>
+            `${indent} * @param ${p.name.replace("?", '')} ${p.desc.replace(/ \* /g, indent + ' * ')}\n`);
+        if (retval.desc) jsparams.push(`${indent} * @return ${retval.desc}\n`);
+
+        if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
+        else docStr += `\n${indent}/** ${desc} */\n`;
+
+        const argStr = isval ? args.join(', ') : `(${args.join(", ")})`;
+        docStr += `${indent}${name}${argStr}: ${retval.sub || 'void'};\n`;
+    }
+    return docStr;
+}
 
 /**
  * @param {DSInput} inpt
@@ -309,7 +376,7 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
         .replace(/\n/g, `\n${indent} * `)
         .replace(/<(premium|deprecated|xfeature)(.*?)>/g, "@$1 $2");
 
-    const params = [], jsparams = [];
+    const params = [];
     for (const i in func.pNames) {
         const [pname, dflt] = func.pNames[i]
             .replace("default", "dflt")
@@ -320,41 +387,27 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
         if (type.sub.match(/^[a-z_]+$/) && !(tDesc[type.sub] || tName[type.sub]))
             type.sub = pAbbrev.toUpperCase() + '_' + type.sub;
 
-        params.push(`${pname + (dflt ? '?' : '')}: ${type.sub}`); // + (dflt ? ' = ' + dflt : ''));
-        if (type.desc)
-            jsparams.push(`${indent} * @param ${pname.replace("?", '')} ${type.desc.replace(/ \* /g, indent + ' * ')}\n`);
+        params.push({ name: pname, type: type.sub, desc: type.desc, dflt });
     }
 
     // eslint-disable-next-line prefer-const
-    let { sub: rtype, desc: rdesc } = makeType(inpt, state, func.retval || "");
-    const args = func.isval ? '' : `(${params.join(', ')})`;
+    let retval = makeType(inpt, state, func.retval || "");
 
     // callbacks
     if (isCb) {
-        defs.func += `${args} => ${rtype || 'void'}`;
+        defs.func += declareCallback(params, retval);
         return defs;
     }
-
-    // return value
-    if (rdesc) jsparams.push(`${indent} * @return ${rdesc}\n`);
 
     // sub properties
     if (name.includes(".")) {
         const [fname, fobj, fcon] = name.split(".").reverse();
         const key = fcon ? `${pAbbrev.toUpperCase()}_${fobj}` : fobj;
-        let tempDef = defs.extra[key] || "";
-
-        if (jsparams.length) tempDef += `\n${indent}/**\n${indent} * ${func.shortDesc || ''}\n${jsparams.join('')}${indent} */\n`;
-        else tempDef += `\n${indent}/** ${func.shortDesc} */\n`;
-
-        tempDef += `${indent}${fname}${args}: ${rtype || 'void'};\n`;
-        defs.extra[key] = tempDef;
+        const s = defs.extra[key] || "";
+        defs.extra[key] = s + declareFunction(fname, func.shortDesc, params, retval, func.isval, indent);
     }
     else {
-        if (jsparams.length) defs.func += `\n${indent}/**\n${indent} * ${func.shortDesc || ''}\n${jsparams.join('')}${indent} */\n`;
-        else defs.func += `\n${indent}/** ${func.shortDesc} */\n`;
-
-        defs.func += `${indent}${name}${args}: ${rtype || 'void'};\n`;
+        defs.func += declareFunction(name, func.shortDesc, params, retval, func.isval, indent);
     }
 
     if (!func.subf) return defs;
@@ -364,7 +417,8 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
     defs.className = className;
 
     // subfunctions for classes
-    defs.class += `\ndeclare class ${className} {\n`;
+    defs.class += JSDOC ? '\n' : '\ndeclare ';
+    defs.class += `class ${className} {\n`;
     for (const subFuncName in func.subf) {
         let met = func.subf[subFuncName];
         if (typeof met === "string") met = unwrapBaseFunc(met, inpt.base);
@@ -381,7 +435,7 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
 
     for (const obj in defs.extra) {
         if (obj.match(/^[a-z]/)) {
-            defs.class += `\n${indent}${obj}: {`;
+            defs.class += `\n${indent}${obj}${JSDOC ? ' =' : ':'} {`;
             defs.class += defs.extra[obj].replace(/\n/g, "\n" + indent);
             defs.class += `}\n`;
             delete defs.extra[obj];

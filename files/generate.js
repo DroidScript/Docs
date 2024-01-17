@@ -293,12 +293,18 @@ function generateDocs(inpt, state) {
             tmpState.curScope = "global";
 
             resetGlobals(tmpState);
-            generateTsx(tmpInpt, tmpState);
+            generateTsx(tmpInpt, tmpState, "ts");
+
+            resetGlobals(tmpState);
+            generateTsx(tmpInpt, tmpState, "js");
             madeTsxGlobals = true;
         }
 
         resetGlobals(state);
-        generateTsx(inpt, state);
+        generateTsx(inpt, state, "ts");
+
+        resetGlobals(state);
+        generateTsx(inpt, state, "js");
     }
 }
 
