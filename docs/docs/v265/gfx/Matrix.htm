@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Matrix</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>Matrix</h1>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Wrapper class for PIXI.js matrix.</p>
+
+		<div class="samp">
+		mtx = new Matrix( ) → <b>Object:</b> Matrix
+		</div>
+
+		<p>Construct with <span class="samp samp-inline"><span class="token keyword">new</span> <span class="token class-name">Matrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span></p>
+		<h3>Properties</h3>
+		<p>The following properties are available on the <strong>Matrix</strong> object:</p>
+
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">mtx</a> → <b>Object:</b> Pixi Matrix</div>
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Matrix</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Rotate</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">angle</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">Scale</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">sx</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">sy</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">Set</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">a</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">b</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">c</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">d</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">tx</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">ty</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Skew</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">skewX</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">skewY</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Transform</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">tx</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">ty</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">pivotX</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">pivotY</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">scaleX</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">scaleY</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">rotation</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">skewX</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">skewY</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Translate</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">tx</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">ty</a> )
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content">The PIXI.js Matrix</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>mtx.Rotate</b><br>Rotate by a given angle around the axes origin (0,0)</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>mtx.Scale</b><br>Scale by a given amount on both axes</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>mtx.Set</b><br>Set the matrix elements to specific values</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>mtx.Skew</b><br>Skew / Distort the object on both axes</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>mtx.Transform</b><br>Shortcut to app.<a href="../app/Vibrate.htm" data-ajax="false">Vibrate</a>)</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>mtx.Translate</b><br>Move by a given amount on both axes</div>
+</div>
+</body>
+
+</html>

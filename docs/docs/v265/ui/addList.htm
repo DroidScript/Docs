@@ -547,10 +547,18 @@
 		<div class="samp">
 			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">getItem</a>(
 			<a href="#pop_str_006" data-transition="pop" data-rel="popup">title</a> )
+			→ <b>Object:</b> {
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">body</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">image</a> }
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">getItemByIndex</a>(
 			<a href="#pop_num_006" data-transition="pop" data-rel="popup">index</a> )
+			→ <b>Object:</b> {
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">body</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">image</a> }
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">getPosition</a>(
@@ -558,10 +566,11 @@
 			→ <b>Object</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">getSelectedItems</a>()
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">getSelectedItems</a>() → <b>List:</b> <i>of numbers</i>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">getSelectedTitles</a>()
+			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">getSelectedTitles</a>() → <b>List:</b> [
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">titles</a> ]
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup" class="baseFunc">gone</a>()
@@ -697,6 +706,7 @@
 	</div>
 
 	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> If true,  make the list selectable. Otherwise,  list is not selectable</div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
 	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width. [0-1]</div>
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The index in which to add or insert the item.</div>
