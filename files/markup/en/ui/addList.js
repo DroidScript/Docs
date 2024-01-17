@@ -376,6 +376,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 /** ### getSelectedItems ###
  * @brief getSelectedItems
  * Returns an array of indexes of the selected items
+ * @returns lst_num
  * $$ lst.getSelectedItems() $$
  */
 
@@ -383,6 +384,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 /** ### getSelectedTitles ###
  * @brief getSelectedTitles
  * Returns an array of titles of selected items
+ * @returns lst-[ titles:str ]
  * $$ lst.getSelectedTitles() $$
  */
 
@@ -418,6 +420,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
  * @brief getItemByIndex
  * Get the item in a list by its corresponding index
  * $$ lst.getItemByIndex(index) $$
+ * @returns obj-{ title:str, body:str, image:str }
  * @param {num} index Returns the item in a list as an object of the following format { title, body, image }
  */
 
@@ -437,6 +440,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
  * @brief getItem
  * Get the item in the list by its correspding title
  * $$ lst.getItem(title) $$
+ * @returns obj-{ title:str, body:str, image:str }
  * @param {str} title Returns the item in a list as an object of the following format { title, body, image }
  */
 

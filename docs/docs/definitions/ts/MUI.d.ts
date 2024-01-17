@@ -1225,10 +1225,10 @@ declare class MuiAppBarModern {
 	Focus(): void;
 
 	/** Get cursor line */
-	GetCursorLine(): void;
+	GetCursorLine(): num;
 
 	/** Get cursor pos */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -5897,7 +5897,7 @@ declare class MuiTEFilledIconLeft {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -5982,7 +5982,7 @@ declare class MuiTEFilledIconRight {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6067,7 +6067,7 @@ declare class MuiTEOutlineIconLeft {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6152,7 +6152,7 @@ declare class MuiTEOutlineIconRight {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6237,7 +6237,7 @@ declare class MuiTESearchElegant {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6325,7 +6325,7 @@ declare class MuiTESearchUnique {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6407,7 +6407,7 @@ declare class MuiTextAreaFilled {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6486,7 +6486,7 @@ declare class MuiTextAreaFilledA {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6565,7 +6565,7 @@ declare class MuiTextAreaOutline {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6644,7 +6644,7 @@ declare class MuiTextAreaOutlineA {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6723,7 +6723,7 @@ declare class MuiTextEditFilled {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6805,7 +6805,7 @@ declare class MuiTextEditFilledA {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6887,7 +6887,7 @@ declare class MuiTextEditOutline {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -6969,7 +6969,7 @@ declare class MuiTextEditOutlineA {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -7051,7 +7051,7 @@ declare class MuiTextEditSearch {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;
@@ -7133,7 +7133,7 @@ declare class MuiTextEditUnique {
 	GetCursorLine(): num;
 
 	/** Get cursor position */
-	GetCursorPos(): void;
+	GetCursorPos(): num;
 
 	/** Get the selected text */
 	GetSelectedText(): str;

@@ -45,13 +45,13 @@
 /** @extern Focus */
 
 /** ### GetCursorLine ###
- * 
+ * @returns num
  * $$ abm.GetCursorLine() $$
  */
 
 
 /** ### GetCursorPos ###
- * 
+ * @returns num
  * $$ abm.GetCursorPos() $$
  */
 

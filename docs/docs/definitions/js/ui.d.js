@@ -4603,10 +4603,16 @@ class UIList {
 	 */
 	setOnContextMenu(callback) {return}
 
-	/** GetSelectedItems */
+	/**
+	 * GetSelectedItems
+	 * @return {lst_num} 
+	 */
 	getSelectedItems() {return}
 
-	/** GetSelectedTitles */
+	/**
+	 * GetSelectedTitles
+	 * @return {str[]} 
+	 */
 	getSelectedTitles() {return}
 
 	/**
@@ -4633,6 +4639,7 @@ class UIList {
 	/**
 	 * GetItemByIndex
 	 * @param {num} index `Returns the item in a list as an object of the following format { title`, ` body`, ` image }`
+	 * @return {{ title: str, body: str, image: str }} { title, body, image }
 	 */
 	getItemByIndex(index) {return}
 
@@ -4648,6 +4655,7 @@ class UIList {
 	/**
 	 * GetItem
 	 * @param {str} title `Returns the item in a list as an object of the following format { title`, ` body`, ` image }`
+	 * @return {{ title: str, body: str, image: str }} { title, body, image }
 	 */
 	getItem(title) {return}
 

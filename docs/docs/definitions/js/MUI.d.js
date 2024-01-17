@@ -2198,10 +2198,16 @@ class MuiAppBarModern {
 	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
-	/** Get cursor line */
+	/**
+	 * Get cursor line
+	 * @return {num} 
+	 */
 	GetCursorLine() {return}
 
-	/** Get cursor pos */
+	/**
+	 * Get cursor pos
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -10771,7 +10777,10 @@ class MuiTEFilledIconLeft {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -10929,7 +10938,10 @@ class MuiTEFilledIconRight {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -11087,7 +11099,10 @@ class MuiTEOutlineIconLeft {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -11245,7 +11260,10 @@ class MuiTEOutlineIconRight {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -11403,7 +11421,10 @@ class MuiTESearchElegant {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -11567,7 +11588,10 @@ class MuiTESearchUnique {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -11719,7 +11743,10 @@ class MuiTextAreaFilled {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -11865,7 +11892,10 @@ class MuiTextAreaFilledA {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -12011,7 +12041,10 @@ class MuiTextAreaOutline {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -12157,7 +12190,10 @@ class MuiTextAreaOutlineA {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -12303,7 +12339,10 @@ class MuiTextEditFilled {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -12455,7 +12494,10 @@ class MuiTextEditFilledA {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -12607,7 +12649,10 @@ class MuiTextEditOutline {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -12759,7 +12804,10 @@ class MuiTextEditOutlineA {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -12911,7 +12959,10 @@ class MuiTextEditSearch {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**
@@ -13063,7 +13114,10 @@ class MuiTextEditUnique {
 	 */
 	GetCursorLine() {return}
 
-	/** Get cursor position */
+	/**
+	 * Get cursor position
+	 * @return {num} 
+	 */
 	GetCursorPos() {return}
 
 	/**

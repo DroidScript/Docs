@@ -4379,10 +4379,10 @@ declare class UIList {
 	setOnContextMenu(callback: (title: str, body: str, icon: str, index: num, event: obj) => void): void;
 
 	/** GetSelectedItems */
-	getSelectedItems(): void;
+	getSelectedItems(): lst_num;
 
 	/** GetSelectedTitles */
-	getSelectedTitles(): void;
+	getSelectedTitles(): str[];
 
 	/**
 	 * SetList
@@ -4408,8 +4408,9 @@ declare class UIList {
 	/**
 	 * GetItemByIndex
 	 * @param index `Returns the item in a list as an object of the following format { title`, ` body`, ` image }`
+	 * @return \{ title, body, image }
 	 */
-	getItemByIndex(index: num): void;
+	getItemByIndex(index: num): { title: str, body: str, image: str };
 
 	/**
 	 * SetItem
@@ -4423,8 +4424,9 @@ declare class UIList {
 	/**
 	 * GetItem
 	 * @param title `Returns the item in a list as an object of the following format { title`, ` body`, ` image }`
+	 * @return \{ title, body, image }
 	 */
-	getItem(title: str): void;
+	getItem(title: str): { title: str, body: str, image: str };
 
 	/**
 	 * RemoveItemByIndex

@@ -787,7 +787,7 @@ declare class DsApp {
 	 * GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder
 	 * @param type `Camera`, `ExtSDcard`, `External`, `Internal`, `Network`, `Notify`, `Storage`, `Overlay`, `SMS`, `Location`, `Calendar`, `Body`, `Contacts`, `Record`, `Phone`, `Biometric`, `Accounts`, `License`, `android.permission.*`, `usb:<pid>`
 	 */
-	GetPermission(type: str_com, callback?: (ungranted: str_com|str_uri) => void): void;
+	GetPermission(type: str_com, callback: (ungranted: str_com|str_uri) => void): void;
 
 	/** Get path to a private folder */
 	GetPrivateFolder(name: str, options?: "external"): str_pth;
@@ -862,7 +862,7 @@ declare class DsApp {
 	GetThemeInfo(): { baseTheme: str, holo: bin, dark: bin, titleHeight: num_frc, backColor: str_col, dialogColor: str_col, btnColor: str_col, dialogBtnColor: str_col, textColor1: str_col, textColor2: str_col,btnTextColor: str_col, highlightColor: str_col };
 
 	/** Create downscaled copy of an image */
-	GetThumbnail(source: str_pth, destination: str_pth, width?: num_pxl, height?: num_pxl): void;
+	GetThumbnail(source: str_pth, destination: str_pth, width?: num_pxl, height?: num_pxl): nil;
 
 	/** Returns the upper border distance from the app display to the device screen as height relative float or in pixels with the **px** option */
 	GetTop(options?: "px"): num_frc;
@@ -1034,7 +1034,7 @@ declare class DsApp {
 	LoadScript(path: str_pth, callback?: (info: { isTrusted: bin }) => void): void;
 
 	/** Load saved text value to remember varibale values between multiple app starts */
-	LoadText(name: str, dflt?: str, file?: str_ptf): void;
+	LoadText(name: str, dflt?: str, file?: str_ptf): str;
 
 	/** Lock the device */
 	Lock(): void;
@@ -1101,10 +1101,10 @@ declare class DsApp {
 	 * @param encoding <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
 	 */
-	ReadFile(file: str_ptc, encoding?: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"|"base64"): void;
+	ReadFile(file: str_ptc, encoding?: "US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"|"base64"): str;
 
 	/** Read local file content data */
-	ReadFileData(file: str_pfa, mode?: "base64"|"hex"|"int"|"ascii"): void;
+	ReadFileData(file: str_pfa, mode?: "base64"|"hex"|"int"|"ascii"): lst;
 
 	/** Convert short to full path */
 	RealPath(path: str_pth): void;
@@ -2925,7 +2925,7 @@ declare class DsFile {
 	GetLength(): num_byt;
 
 	/** Get pointer position */
-	GetPointer(): void;
+	GetPointer(): num_int;
 
 	/** Returns the control class name */
 	GetType(): "File";
@@ -3034,7 +3034,7 @@ declare class DsGameView {
 	GetTop(options: "px"): num;
 
 	/** Returns the control class name */
-	GetType(): void;
+	GetType(): "GameView";
 
 	/** Returns the current visibility state */
 	GetVisibility(): "Show"|"Hide"|"Gone";
@@ -4720,7 +4720,7 @@ declare class DsOverlay {
 	GetParent(): dso;
 
 	/** Returns the control class name */
-	GetType(): void;
+	GetType(): "Overlay";
 
 	/** Remove layout from overlay */
 	RemoveLayout(layout: DsLayout): void;
@@ -4766,10 +4766,10 @@ declare class DsPlayStore {
  	 * &emsp; `IAP` - In-App purchases\
  	 * &emsp; `SUBS` - subscriptions
 	 */
-	GetBillingInfo(prodIDs: str, callback?: (items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void, options?: "IAP"|"SUBS"): void;
+	GetBillingInfo(prodIDs: str, callback: (items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void, options?: "IAP"|"SUBS"): void;
 
 	/** Get purchased items from Google Play */
-	GetPurchases(callback?: (items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void, options?: "SUBS"): void;
+	GetPurchases(callback: (items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void, options?: "SUBS"): void;
 
 	/** Returns the control class name */
 	GetType(): "PlayStore";
@@ -6682,13 +6682,13 @@ declare class DsUSBSerial {
 	Batch(properties: {[command: str]: lst}): void;
 
 	/** Get the 'Data Terminal Ready' state */
-	GetDTR(): void;
+	GetDTR(): bin;
 
 	/** Get the 'Request To Send' state */
-	GetRTS(): void;
+	GetRTS(): bin;
 
 	/** Get the 'Carrier Detect' state */
-	GetCD(): void;
+	GetCD(): bin;
 
 	/** Returns the control class name */
 	GetType(): "USBSerial";

@@ -9,6 +9,7 @@
  * @param {str} name 
  * @param {str} [default] 
  * @param {str_ptf} [file] 
+ * @returns str
 */
 
 

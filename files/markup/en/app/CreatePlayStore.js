@@ -31,7 +31,7 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
  * Get product info of paid items from Google Play.
  * $$ pls.GetBillingInfo(prodIDs, callback?, options?) $$
  * @param {str} prodIDs 
- * @param {fnc_json} [callback] {"pNames":["items"],"pTypes":["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]}
+ * @param {fnc_json} callback {"pNames":["items"],"pTypes":["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]}
  * @param {str} [options] IAP:In-App purchases|SUBS:subscriptions
  */
 
@@ -40,7 +40,7 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
  * @brief Get purchased items from Google Play.
  * Get product info of purchased items from Google Play.
  * $$ pls.GetPurchases(callback?, options?) $$
- * @param {fnc_json} [callback] {"pNames":["items"],"pTypes":["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]}
+ * @param {fnc_json} callback {"pNames":["items"],"pTypes":["lst_obj-[{ skuDetailsToken:str&comma; productId:str&comma; type:str&comma; price:str&comma; price_amount_micros:num_int&comma; price_currency_code:str&comma; title:str&comma; description:str }]"]}
  * @param {str} [options] SUBS
  */
 

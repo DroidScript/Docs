@@ -11,6 +11,7 @@
  * @param {str_pth} destination 
  * @param {num_pxl} [width=-1] 
  * @param {num_pxl} [height=-1] 
+ * @returns nil
 */
 
 

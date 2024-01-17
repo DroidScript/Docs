@@ -541,6 +541,7 @@
 
 /** ### GetCursorPos
  * Get cursor position
+ * @returns num
  */
 
 

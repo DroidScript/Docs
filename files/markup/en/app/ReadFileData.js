@@ -9,6 +9,7 @@
  * $$ app.ReadFileData(file, mode?) $$ 
  * @param {str_pfa} file 
  * @param {str} [mode] base64|hex|int|ascii
+ * @returns lst
 */
 
 

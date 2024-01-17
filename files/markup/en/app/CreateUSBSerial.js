@@ -42,6 +42,7 @@ The default constructor values are:
 /** ### GetDTR ###
  * @brief Get the 'Data Terminal Ready' state
  * Get the **D**ata **T**erminal **R**eady state which indicates the terminal is ready for communications and may initiate a communication channel.
+ * @returns bin
  * $$ usb.GetDTR() $$
  */
 
@@ -49,6 +50,7 @@ The default constructor values are:
 /** ### GetRTS ###
  * @brief Get the 'Request To Send' state
  * Get the **R**equest **T**o **S**end state that indicates that you may send data to the target device.
+ * @returns bin
  * $$ usb.GetRTS() $$
  */
 
@@ -56,6 +58,7 @@ The default constructor values are:
 /** ### GetCD ###
  * @brief Get the 'Carrier Detect' state
  * Raises the **C**arrier **D**etect bit from the unterlying UART protocol. It can usually be used to detect if a serial device is connected or has been terminated.
+ * @returns bin
  * $$ usb.GetCD() $$
  */
 

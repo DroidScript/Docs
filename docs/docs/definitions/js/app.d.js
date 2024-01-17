@@ -1441,7 +1441,7 @@ class DsApp {
 	/**
 	 * GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder
 	 * @param {str_com} type `Camera`, `ExtSDcard`, `External`, `Internal`, `Network`, `Notify`, `Storage`, `Overlay`, `SMS`, `Location`, `Calendar`, `Body`, `Contacts`, `Record`, `Phone`, `Biometric`, `Accounts`, `License`, `android.permission.*`, `usb:<pid>`
-	 * @param {(ungranted: str_com|str_uri) => void} [callback] 
+	 * @param {(ungranted: str_com|str_uri) => void} callback 
 	 */
 	GetPermission(type, callback) {return}
 
@@ -1582,6 +1582,7 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @param {num_pxl} [width=-1] 
 	 * @param {num_pxl} [height=-1] 
+	 * @return {nil} 
 	 */
 	GetThumbnail(source, destination, width, height) {return}
 
@@ -1908,6 +1909,7 @@ class DsApp {
 	 * @param {str} name 
 	 * @param {str} [dflt] 
 	 * @param {str_ptf} [file] 
+	 * @return {str} 
 	 */
 	LoadText(name, dflt, file) {return}
 
@@ -2022,6 +2024,7 @@ class DsApp {
 	 * @param {str_ptc} file 
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"|"base64"} [encoding] <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
+	 * @return {str} 
 	 */
 	ReadFile(file, encoding) {return}
 
@@ -2029,6 +2032,7 @@ class DsApp {
 	 * Read local file content data
 	 * @param {str_pfa} file 
 	 * @param {"base64"|"hex"|"int"|"ascii"} [mode] 
+	 * @return {lst} 
 	 */
 	ReadFileData(file, mode) {return}
 
@@ -5306,7 +5310,10 @@ class DsFile {
 	 */
 	GetLength() {return}
 
-	/** Get pointer position */
+	/**
+	 * Get pointer position
+	 * @return {num_int} 
+	 */
 	GetPointer() {return}
 
 	/**
@@ -5468,7 +5475,10 @@ class DsGameView {
 	 */
 	GetTop(options) {return}
 
-	/** Returns the control class name */
+	/**
+	 * Returns the control class name
+	 * @return {"GameView"} 
+	 */
 	GetType() {return}
 
 	/**
@@ -8541,7 +8551,10 @@ class DsOverlay {
 	 */
 	GetParent() {return}
 
-	/** Returns the control class name */
+	/**
+	 * Returns the control class name
+	 * @return {"Overlay"} 
+	 */
 	GetType() {return}
 
 	/**
@@ -8600,7 +8613,7 @@ class DsPlayStore {
 	/**
 	 * Get product info from Google Play
 	 * @param {str} prodIDs 
-	 * @param {(items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} [callback] 
+	 * @param {(items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} callback 
 	 * @param {"IAP"|"SUBS"} [options] <br>
  	 * &emsp; `IAP` - In-App purchases\
  	 * &emsp; `SUBS` - subscriptions
@@ -8609,7 +8622,7 @@ class DsPlayStore {
 
 	/**
 	 * Get purchased items from Google Play
-	 * @param {(items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} [callback] 
+	 * @param {(items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} callback 
 	 * @param {"SUBS"} [options] 
 	 */
 	GetPurchases(callback, options) {return}
@@ -12106,13 +12119,22 @@ class DsUSBSerial {
 	 */
 	Batch(properties) {return}
 
-	/** Get the 'Data Terminal Ready' state */
+	/**
+	 * Get the 'Data Terminal Ready' state
+	 * @return {bin} 
+	 */
 	GetDTR() {return}
 
-	/** Get the 'Request To Send' state */
+	/**
+	 * Get the 'Request To Send' state
+	 * @return {bin} 
+	 */
 	GetRTS() {return}
 
-	/** Get the 'Carrier Detect' state */
+	/**
+	 * Get the 'Carrier Detect' state
+	 * @return {bin} 
+	 */
 	GetCD() {return}
 
 	/**
