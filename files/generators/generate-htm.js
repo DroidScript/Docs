@@ -471,6 +471,7 @@ function typeDesc(inpt, state, stypes) {
 
             //allow limited values for parameters
             switch (type[0]) {
+                case "nil":
                 case "num": return s[i] + rplop(type[2]);
                 case "str": return s[i] + rplop(type[2], true);
                 case "lst":
@@ -552,6 +553,7 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
             case "num":
             case "str":
             case "bin":
+            case "nil":
                 if (type.length === 3 && has(type[2], ':'))
                     type[2] = replaceTypes(inpt, state, type[2], true);
                 return s2[i] + rplop(type[2], type[0] === "str");

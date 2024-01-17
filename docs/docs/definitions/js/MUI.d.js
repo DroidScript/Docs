@@ -1598,42 +1598,28 @@ class MuiAlert {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
 	 * Calls a function when alert is close
 	 * @param {(isBtnClick: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnClose(callback) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -1689,10 +1675,7 @@ class MuiAlert {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -1725,56 +1708,40 @@ class MuiAlertSimple {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
 	 * Calls a function when button is click
 	 * @param {(isBtnClick: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -1830,10 +1797,7 @@ class MuiAlertSimple {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -1859,14 +1823,12 @@ class MuiAlertSimple {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 }
@@ -1877,55 +1839,43 @@ class MuiAppBar {
 	/**
 	 * Sets a new heading icon
 	 * @param {str} newIcon `New material icon font`
-	 * @return {void} 
 	 */
 	SetMenuIcon(newIcon) {return}
 
 	/**
 	 * Change the color of the heading icon
 	 * @param {str_col} newColor `New color of the heading icon`
-	 * @return {void} 
 	 */
 	SetMenuIconColor(newColor) {return}
 
 	/**
 	 * Calls a function when the right controls are click
 	 * @param {(btnTxt: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnControlTouch(callback) {return}
 
 	/**
 	 * Calls a function when the heading icon is click
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnMenuTouch(callback) {return}
 
 	/**
 	 * Sets a new title
 	 * @param {str} newTitle `New title text`
-	 * @return {void} 
 	 */
 	SetTitleText(newTitle) {return}
 
 	/**
 	 * Change the color of the title
 	 * @param {str_col} newColor 
-	 * @return {void} 
 	 */
 	SetTitleTextColor(newColor) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -1987,16 +1937,10 @@ class MuiAppBar {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -2022,7 +1966,6 @@ class MuiAppBar {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -2033,21 +1976,16 @@ class MuiAppBar {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -2058,7 +1996,6 @@ class MuiAppBar {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -2069,55 +2006,43 @@ class MuiAppBarElegant {
 	/**
 	 * Sets a new heading icon
 	 * @param {str} newIcon `New material icon font`
-	 * @return {void} 
 	 */
 	SetMenuIcon(newIcon) {return}
 
 	/**
 	 * Change the color of the heading icon
 	 * @param {str_col} newColor `New color of the heading icon`
-	 * @return {void} 
 	 */
 	SetMenuIconColor(newColor) {return}
 
 	/**
 	 * Calls a function when the right controls are click
 	 * @param {(btnTxt: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnControlTouch(callback) {return}
 
 	/**
 	 * Calls a function when the heading icon is click
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnMenuTouch(callback) {return}
 
 	/**
 	 * Sets a new title
 	 * @param {str} newTitle `New title text`
-	 * @return {void} 
 	 */
 	SetTitleText(newTitle) {return}
 
 	/**
 	 * Change the color of the title
 	 * @param {str_col} newColor 
-	 * @return {void} 
 	 */
 	SetTitleTextColor(newColor) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -2179,16 +2104,10 @@ class MuiAppBarElegant {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -2214,7 +2133,6 @@ class MuiAppBarElegant {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -2225,21 +2143,16 @@ class MuiAppBarElegant {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -2250,7 +2163,6 @@ class MuiAppBarElegant {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -2268,45 +2180,28 @@ class MuiAppBarModern {
 	/**
 	 * Calls a function when right control is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnControlTouch(callback) {return}
 
 	/**
 	 * Call a function when the menu icon is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnMenuTouch(callback) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear history
-	 * @return {void} 
-	 */
+	/** Clear history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
-	/**
-	 * Get cursor line
-	 * @return {void} 
-	 */
+	/** Get cursor line */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor pos
-	 * @return {void} 
-	 */
+	/** Get cursor pos */
 	GetCursorPos() {return}
 
 	/**
@@ -2337,14 +2232,10 @@ class MuiAppBarModern {
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -2352,35 +2243,30 @@ class MuiAppBarModern {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user focuses the control
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnFocus(callback) {return}
 
@@ -2391,21 +2277,16 @@ class MuiAppBarModern {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 }
 
@@ -2415,34 +2296,27 @@ class MuiBanner {
 	/**
 	 * Calls a function when buttons are click (prev
 	 * @param {(isOk: bin, btnText: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -2452,26 +2326,16 @@ class MuiBanner {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -2533,10 +2397,7 @@ class MuiBanner {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -2562,21 +2423,18 @@ class MuiBanner {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
 	/**
 	 * Called when the dialog or control has been closed
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnClose(callback) {return}
 }
@@ -2590,7 +2448,6 @@ class MuiButtonContained {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -2599,23 +2456,16 @@ class MuiButtonContained {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -2696,16 +2546,10 @@ class MuiButtonContained {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -2743,20 +2587,15 @@ class MuiButtonContained {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -2766,7 +2605,6 @@ class MuiButtonContained {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -2779,7 +2617,6 @@ class MuiButtonContained {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -2787,7 +2624,6 @@ class MuiButtonContained {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -2795,35 +2631,30 @@ class MuiButtonContained {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -2834,21 +2665,18 @@ class MuiButtonContained {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -2859,7 +2687,6 @@ class MuiButtonContained {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -2870,7 +2697,6 @@ class MuiButtonContained {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -2878,7 +2704,6 @@ class MuiButtonContained {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -2887,7 +2712,6 @@ class MuiButtonContained {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -2899,21 +2723,18 @@ class MuiButtonContained {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -2923,7 +2744,6 @@ class MuiButtonContained {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -2933,21 +2753,16 @@ class MuiButtonContained {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -2958,7 +2773,6 @@ class MuiButtonContained {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -2972,7 +2786,6 @@ class MuiButtonElegant {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -2981,23 +2794,16 @@ class MuiButtonElegant {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -3078,16 +2884,10 @@ class MuiButtonElegant {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -3125,20 +2925,15 @@ class MuiButtonElegant {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -3148,7 +2943,6 @@ class MuiButtonElegant {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -3161,7 +2955,6 @@ class MuiButtonElegant {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -3169,7 +2962,6 @@ class MuiButtonElegant {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -3177,35 +2969,30 @@ class MuiButtonElegant {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -3216,21 +3003,18 @@ class MuiButtonElegant {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -3241,7 +3025,6 @@ class MuiButtonElegant {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -3252,7 +3035,6 @@ class MuiButtonElegant {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -3260,7 +3042,6 @@ class MuiButtonElegant {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -3269,7 +3050,6 @@ class MuiButtonElegant {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -3281,21 +3061,18 @@ class MuiButtonElegant {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -3305,7 +3082,6 @@ class MuiButtonElegant {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -3315,21 +3091,16 @@ class MuiButtonElegant {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -3340,7 +3111,6 @@ class MuiButtonElegant {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -3348,7 +3118,6 @@ class MuiButtonElegant {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 }
@@ -3362,7 +3131,6 @@ class MuiButtonFlat {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -3371,23 +3139,16 @@ class MuiButtonFlat {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -3468,16 +3229,10 @@ class MuiButtonFlat {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -3515,20 +3270,15 @@ class MuiButtonFlat {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -3538,7 +3288,6 @@ class MuiButtonFlat {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -3551,7 +3300,6 @@ class MuiButtonFlat {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -3559,7 +3307,6 @@ class MuiButtonFlat {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -3567,35 +3314,30 @@ class MuiButtonFlat {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -3606,21 +3348,18 @@ class MuiButtonFlat {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -3631,7 +3370,6 @@ class MuiButtonFlat {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -3642,7 +3380,6 @@ class MuiButtonFlat {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -3650,7 +3387,6 @@ class MuiButtonFlat {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -3659,7 +3395,6 @@ class MuiButtonFlat {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -3671,21 +3406,18 @@ class MuiButtonFlat {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -3695,7 +3427,6 @@ class MuiButtonFlat {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -3705,21 +3436,16 @@ class MuiButtonFlat {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -3730,7 +3456,6 @@ class MuiButtonFlat {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -3744,7 +3469,6 @@ class MuiButtonOutlined {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -3753,23 +3477,16 @@ class MuiButtonOutlined {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -3850,16 +3567,10 @@ class MuiButtonOutlined {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -3897,20 +3608,15 @@ class MuiButtonOutlined {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -3920,7 +3626,6 @@ class MuiButtonOutlined {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -3933,7 +3638,6 @@ class MuiButtonOutlined {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -3941,7 +3645,6 @@ class MuiButtonOutlined {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -3949,35 +3652,30 @@ class MuiButtonOutlined {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -3988,21 +3686,18 @@ class MuiButtonOutlined {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -4013,7 +3708,6 @@ class MuiButtonOutlined {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -4024,7 +3718,6 @@ class MuiButtonOutlined {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -4032,7 +3725,6 @@ class MuiButtonOutlined {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -4041,7 +3733,6 @@ class MuiButtonOutlined {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -4053,21 +3744,18 @@ class MuiButtonOutlined {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -4077,7 +3765,6 @@ class MuiButtonOutlined {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -4087,21 +3774,16 @@ class MuiButtonOutlined {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -4112,7 +3794,6 @@ class MuiButtonOutlined {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -4126,7 +3807,6 @@ class MuiButtonRaised {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -4135,23 +3815,16 @@ class MuiButtonRaised {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -4232,16 +3905,10 @@ class MuiButtonRaised {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -4279,20 +3946,15 @@ class MuiButtonRaised {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -4302,7 +3964,6 @@ class MuiButtonRaised {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -4315,7 +3976,6 @@ class MuiButtonRaised {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -4323,7 +3983,6 @@ class MuiButtonRaised {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -4331,35 +3990,30 @@ class MuiButtonRaised {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -4370,21 +4024,18 @@ class MuiButtonRaised {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -4395,7 +4046,6 @@ class MuiButtonRaised {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -4406,7 +4056,6 @@ class MuiButtonRaised {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -4414,7 +4063,6 @@ class MuiButtonRaised {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -4423,7 +4071,6 @@ class MuiButtonRaised {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -4435,21 +4082,18 @@ class MuiButtonRaised {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -4459,7 +4103,6 @@ class MuiButtonRaised {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -4469,21 +4112,16 @@ class MuiButtonRaised {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -4494,7 +4132,6 @@ class MuiButtonRaised {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -4502,7 +4139,6 @@ class MuiButtonRaised {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 }
@@ -4516,7 +4152,6 @@ class MuiButtonRaisedO {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -4525,23 +4160,16 @@ class MuiButtonRaisedO {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -4622,16 +4250,10 @@ class MuiButtonRaisedO {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -4669,20 +4291,15 @@ class MuiButtonRaisedO {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -4692,7 +4309,6 @@ class MuiButtonRaisedO {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -4705,7 +4321,6 @@ class MuiButtonRaisedO {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -4713,7 +4328,6 @@ class MuiButtonRaisedO {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -4721,35 +4335,30 @@ class MuiButtonRaisedO {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -4760,21 +4369,18 @@ class MuiButtonRaisedO {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -4785,7 +4391,6 @@ class MuiButtonRaisedO {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -4796,7 +4401,6 @@ class MuiButtonRaisedO {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -4804,7 +4408,6 @@ class MuiButtonRaisedO {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -4813,7 +4416,6 @@ class MuiButtonRaisedO {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -4825,21 +4427,18 @@ class MuiButtonRaisedO {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -4849,7 +4448,6 @@ class MuiButtonRaisedO {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -4859,21 +4457,16 @@ class MuiButtonRaisedO {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -4884,7 +4477,6 @@ class MuiButtonRaisedO {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -4892,7 +4484,6 @@ class MuiButtonRaisedO {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 }
@@ -4906,7 +4497,6 @@ class MuiButtonRound {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -4915,23 +4505,16 @@ class MuiButtonRound {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -5012,16 +4595,10 @@ class MuiButtonRound {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -5059,20 +4636,15 @@ class MuiButtonRound {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -5082,7 +4654,6 @@ class MuiButtonRound {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -5095,7 +4666,6 @@ class MuiButtonRound {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -5103,7 +4673,6 @@ class MuiButtonRound {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -5111,35 +4680,30 @@ class MuiButtonRound {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -5150,21 +4714,18 @@ class MuiButtonRound {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -5175,7 +4736,6 @@ class MuiButtonRound {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -5186,7 +4746,6 @@ class MuiButtonRound {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -5194,7 +4753,6 @@ class MuiButtonRound {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -5203,7 +4761,6 @@ class MuiButtonRound {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -5215,21 +4772,18 @@ class MuiButtonRound {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -5239,7 +4793,6 @@ class MuiButtonRound {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -5249,21 +4802,16 @@ class MuiButtonRound {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -5274,7 +4822,6 @@ class MuiButtonRound {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -5282,7 +4829,6 @@ class MuiButtonRound {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 }
@@ -5296,7 +4842,6 @@ class MuiButtonRoundO {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -5305,23 +4850,16 @@ class MuiButtonRoundO {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -5402,16 +4940,10 @@ class MuiButtonRoundO {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -5449,20 +4981,15 @@ class MuiButtonRoundO {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -5472,7 +4999,6 @@ class MuiButtonRoundO {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -5485,7 +5011,6 @@ class MuiButtonRoundO {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -5493,7 +5018,6 @@ class MuiButtonRoundO {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -5501,35 +5025,30 @@ class MuiButtonRoundO {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -5540,21 +5059,18 @@ class MuiButtonRoundO {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -5565,7 +5081,6 @@ class MuiButtonRoundO {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -5576,7 +5091,6 @@ class MuiButtonRoundO {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -5584,7 +5098,6 @@ class MuiButtonRoundO {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -5593,7 +5106,6 @@ class MuiButtonRoundO {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -5605,21 +5117,18 @@ class MuiButtonRoundO {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -5629,7 +5138,6 @@ class MuiButtonRoundO {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -5639,21 +5147,16 @@ class MuiButtonRoundO {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -5664,7 +5167,6 @@ class MuiButtonRoundO {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -5672,7 +5174,6 @@ class MuiButtonRoundO {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 }
@@ -5686,7 +5187,6 @@ class MuiButtonText {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -5695,23 +5195,16 @@ class MuiButtonText {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -5792,16 +5285,10 @@ class MuiButtonText {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -5839,20 +5326,15 @@ class MuiButtonText {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -5862,7 +5344,6 @@ class MuiButtonText {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -5875,7 +5356,6 @@ class MuiButtonText {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -5883,7 +5363,6 @@ class MuiButtonText {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -5891,35 +5370,30 @@ class MuiButtonText {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -5930,21 +5404,18 @@ class MuiButtonText {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -5955,7 +5426,6 @@ class MuiButtonText {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -5966,7 +5436,6 @@ class MuiButtonText {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -5974,7 +5443,6 @@ class MuiButtonText {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -5983,7 +5451,6 @@ class MuiButtonText {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -5995,21 +5462,18 @@ class MuiButtonText {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -6019,7 +5483,6 @@ class MuiButtonText {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -6029,21 +5492,16 @@ class MuiButtonText {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -6054,7 +5512,6 @@ class MuiButtonText {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -6068,7 +5525,6 @@ class MuiButtonToggle {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -6077,23 +5533,16 @@ class MuiButtonToggle {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -6174,16 +5623,10 @@ class MuiButtonToggle {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -6221,20 +5664,15 @@ class MuiButtonToggle {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -6244,7 +5682,6 @@ class MuiButtonToggle {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -6257,7 +5694,6 @@ class MuiButtonToggle {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -6265,7 +5701,6 @@ class MuiButtonToggle {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -6273,35 +5708,30 @@ class MuiButtonToggle {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -6312,14 +5742,12 @@ class MuiButtonToggle {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
@@ -6330,7 +5758,6 @@ class MuiButtonToggle {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -6341,7 +5768,6 @@ class MuiButtonToggle {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -6349,7 +5775,6 @@ class MuiButtonToggle {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -6358,7 +5783,6 @@ class MuiButtonToggle {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -6370,21 +5794,18 @@ class MuiButtonToggle {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -6394,7 +5815,6 @@ class MuiButtonToggle {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -6404,21 +5824,16 @@ class MuiButtonToggle {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -6429,7 +5844,6 @@ class MuiButtonToggle {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -6437,7 +5851,6 @@ class MuiButtonToggle {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 }
@@ -6448,41 +5861,31 @@ class MuiCard {
 	/**
 	 * Calls a function when buttons are click
 	 * @param {(btnText: str, cardName: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnButtonTouch(callback) {return}
 
 	/**
 	 * Calls a function when the image is click
 	 * @param {(cardName: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnImageTouch(callback) {return}
 
 	/**
 	 * Calls a function when avatar is click
 	 * @param {(cardName: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnAvatarTouch(callback) {return}
 
 	/**
 	 * Calls a function when title item is click
 	 * @param {(title: str, cardName: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTitleTouch(callback) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -6544,16 +5947,10 @@ class MuiCard {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -6579,7 +5976,6 @@ class MuiCard {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -6590,7 +5986,6 @@ class MuiCard {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -6601,21 +5996,16 @@ class MuiCard {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -6626,7 +6016,6 @@ class MuiCard {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -6637,7 +6026,6 @@ class MuiCheckbox {
 	/**
 	 * Calls a function when the checkbox is click
 	 * @param {(index: num_int, checked: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -6650,34 +6038,25 @@ class MuiCheckbox {
 	/**
 	 * Checks the corresponding item/items in the checkbox list
 	 * @param {num_int} index `You can also pass an array of indexes e.g. [1`, ` 3]`
-	 * @return {void} 
 	 */
 	CheckItemByIndex(index) {return}
 
 	/**
 	 * Unchecks the corresponding item/items in the checkbox list
 	 * @param {num_int} index `You can also pass an array of indexes e.g. [1`, ` 3]`
-	 * @return {void} 
 	 */
 	UncheckItemByIndex(index) {return}
 
 	/**
 	 * Change the height of the control
 	 * @param {num} height `Fraction of the screen height`
-	 * @return {void} 
 	 */
 	SetHeight(height) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -6745,16 +6124,10 @@ class MuiCheckbox {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -6780,7 +6153,6 @@ class MuiCheckbox {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -6791,7 +6163,6 @@ class MuiCheckbox {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -6802,21 +6173,16 @@ class MuiCheckbox {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -6827,7 +6193,6 @@ class MuiCheckbox {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -6838,27 +6203,19 @@ class MuiCheckList {
 	/**
 	 * Calls a function when the checklist is submitted
 	 * @param {(lst: lst) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSubmit(callback) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
 	 * Change the height of the control
 	 * @param {num} height `Fraction of the screen height`
-	 * @return {void} 
 	 */
 	SetHeight(height) {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -6876,20 +6233,13 @@ class MuiCheckList {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -6945,10 +6295,7 @@ class MuiCheckList {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -6968,14 +6315,12 @@ class MuiCheckList {
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
 	/**
 	 * Pass texedit control to display input values
 	 * @param {obj} textEdit An MUI TextEdit control
-	 * @return {void} 
 	 */
 	SetTextEdit(textEdit) {return}
 }
@@ -6986,20 +6331,13 @@ class MuiColorPicker {
 	/**
 	 * Calls a function when a user click the OK button
 	 * @param {(color?: str_col) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -7084,7 +6422,6 @@ class MuiColorPicker {
 	/**
 	 * Pass texedit control to display input values
 	 * @param {obj} textEdit An MUI TextEdit control
-	 * @return {void} 
 	 */
 	SetTextEdit(textEdit) {return}
 }
@@ -7095,63 +6432,54 @@ class MuiDataTable {
 	/**
 	 * Append a row to the table
 	 * @param {str} row `A colon ':' separated entries for the new row.`
-	 * @return {void} 
 	 */
 	AppendRow(row) {return}
 
 	/**
 	 * Prepend a row to the table
 	 * @param {str} row `A colon ':' separated entries for the new row.`
-	 * @return {void} 
 	 */
 	PrependRow(row) {return}
 
 	/**
 	 * Remove a row at a given index or indexes
 	 * @param {lst} index An array of indexes you want to remove. It can also be just a number for a single index.
-	 * @return {void} 
 	 */
 	RemoveRows(index) {return}
 
 	/**
 	 * Get the selected rows
 	 * @param {(indexes: lst) => void} callback 
-	 * @return {void} 
 	 */
 	GetSelectedRows(callback) {return}
 
 	/**
 	 * Calls a function when the selection status of the table changes
 	 * @param {(isTrue: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelectionStatus(callback) {return}
 
 	/**
 	 * Calls a function when a row in the table is click
 	 * @param {(row: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Calls a function when the Table is ready and rendered already
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReady(callback) {return}
 
 	/**
 	 * Calls a function when the Table is on progress
 	 * @param {(value: num) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnProgress(callback) {return}
 
 	/**
 	 * Set the rows of the table to a new values of data
 	 * @param {lst} values A comma separated strings of the form "Val1:Val2:Val3:..."
-	 * @return {void} 
 	 */
 	SetRows(values) {return}
 
@@ -7164,16 +6492,10 @@ class MuiDataTable {
 	 */
 	AddFooter(type, options, height) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -7235,16 +6557,10 @@ class MuiDataTable {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -7270,7 +6586,6 @@ class MuiDataTable {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -7281,7 +6596,6 @@ class MuiDataTable {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -7292,21 +6606,16 @@ class MuiDataTable {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -7317,7 +6626,6 @@ class MuiDataTable {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -7328,20 +6636,13 @@ class MuiDatePicker {
 	/**
 	 * Calls a function when a user click the OK button
 	 * @param {(date: str, yyyy: num_int, mm: num_int, dd: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -7426,7 +6727,6 @@ class MuiDatePicker {
 	/**
 	 * Pass texedit control to display input values
 	 * @param {obj} textEdit An MUI TextEdit control
-	 * @return {void} 
 	 */
 	SetTextEdit(textEdit) {return}
 }
@@ -7437,34 +6737,27 @@ class MuiDialog {
 	/**
 	 * Calls a function when buttons are click (prev
 	 * @param {(isOk: bin, btnText: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -7474,40 +6767,28 @@ class MuiDialog {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Sets a new title text
 	 * @param {str} newTitle `New title text`
-	 * @return {void} 
 	 */
 	SetTitle(newTitle) {return}
 
 	/**
 	 * Change the color of the title text
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTitleColor(color) {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -7569,10 +6850,7 @@ class MuiDialog {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -7598,21 +6876,18 @@ class MuiDialog {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
 	/**
 	 * Called when the dialog or control has been closed
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnClose(callback) {return}
 }
@@ -7620,16 +6895,10 @@ class MuiDialog {
 
 class MuiDivider {
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -7653,14 +6922,12 @@ class MuiDivider {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 }
@@ -7671,28 +6938,24 @@ class MuiFAB {
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Sets a new material icon
 	 * @param {str} icon `Material icon font`
-	 * @return {void} 
 	 */
 	SetIcon(icon) {return}
 
 	/**
 	 * Sets the text color
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetIconColor(color) {return}
 
@@ -7707,23 +6970,16 @@ class MuiFAB {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -7791,16 +7047,10 @@ class MuiFAB {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -7826,7 +7076,6 @@ class MuiFAB {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -7837,7 +7086,6 @@ class MuiFAB {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -7848,21 +7096,16 @@ class MuiFAB {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -7873,7 +7116,6 @@ class MuiFAB {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -7881,14 +7123,12 @@ class MuiFAB {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 }
@@ -7899,28 +7139,24 @@ class MuiFABElegant {
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Sets a new material icon
 	 * @param {str} icon `Material icon font`
-	 * @return {void} 
 	 */
 	SetIcon(icon) {return}
 
 	/**
 	 * Sets the text color
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetIconColor(color) {return}
 
@@ -7935,23 +7171,16 @@ class MuiFABElegant {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -8019,16 +7248,10 @@ class MuiFABElegant {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -8054,7 +7277,6 @@ class MuiFABElegant {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -8065,7 +7287,6 @@ class MuiFABElegant {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -8076,21 +7297,16 @@ class MuiFABElegant {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -8101,7 +7317,6 @@ class MuiFABElegant {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -8109,14 +7324,12 @@ class MuiFABElegant {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 }
@@ -8127,28 +7340,24 @@ class MuiFABOutline {
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Sets a new material icon
 	 * @param {str} icon `Material icon font`
-	 * @return {void} 
 	 */
 	SetIcon(icon) {return}
 
 	/**
 	 * Sets the text color
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetIconColor(color) {return}
 
@@ -8163,23 +7372,16 @@ class MuiFABOutline {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -8247,16 +7449,10 @@ class MuiFABOutline {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -8282,7 +7478,6 @@ class MuiFABOutline {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -8293,7 +7488,6 @@ class MuiFABOutline {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -8304,21 +7498,16 @@ class MuiFABOutline {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -8329,7 +7518,6 @@ class MuiFABOutline {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -8337,14 +7525,12 @@ class MuiFABOutline {
 	 * Change the color of the control
 	 * @param {str_col} color 
 	 * @param {str_col} backColor 
-	 * @return {void} 
 	 */
 	SetColor(color, backColor) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 }
@@ -8357,7 +7543,6 @@ class MuiList {
 	 * @param {str} title 
 	 * @param {str} [body] 
 	 * @param {str_ptf} [image] 
-	 * @return {void} 
 	 */
 	AddItem(title, body, image) {return}
 
@@ -8367,7 +7552,6 @@ class MuiList {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -8376,20 +7560,13 @@ class MuiList {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -8491,16 +7668,10 @@ class MuiList {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -8509,7 +7680,6 @@ class MuiList {
 	 * @param {str} title 
 	 * @param {str} [body] 
 	 * @param {str_ptf} [image] 
-	 * @return {void} 
 	 */
 	InsertItem(index, title, body, image) {return}
 
@@ -8545,23 +7715,18 @@ class MuiList {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Remove all
-	 * @return {void} 
-	 */
+	/** Remove all */
 	RemoveAll() {return}
 
 	/**
 	 * Remove item
 	 * @param {str} title 
-	 * @return {void} 
 	 */
 	RemoveItem(title) {return}
 
 	/**
 	 * Remove item by index
 	 * @param {num} index 
-	 * @return {void} 
 	 */
 	RemoveItemByIndex(index) {return}
 
@@ -8569,14 +7734,12 @@ class MuiList {
 	 * Scroll to item
 	 * @param {str} title 
 	 * @param {str} [body] 
-	 * @return {void} 
 	 */
 	ScrollToItem(title, body) {return}
 
 	/**
 	 * Scroll to item by index
 	 * @param {num} index 
-	 * @return {void} 
 	 */
 	ScrollToItemByIndex(index) {return}
 
@@ -8585,7 +7748,6 @@ class MuiList {
 	 * @param {str} title 
 	 * @param {str} [body] 
 	 * @param {bin} [scroll=false] 
-	 * @return {void} 
 	 */
 	SelectItem(title, body, scroll) {return}
 
@@ -8593,27 +7755,21 @@ class MuiList {
 	 * Select item by index
 	 * @param {num} index 
 	 * @param {bin} [scroll] 
-	 * @return {void} 
 	 */
 	SelectItemByIndex(index, scroll) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -8623,7 +7779,6 @@ class MuiList {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -8636,7 +7791,6 @@ class MuiList {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -8644,7 +7798,6 @@ class MuiList {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -8652,7 +7805,6 @@ class MuiList {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
@@ -8662,7 +7814,6 @@ class MuiList {
 	 * @param {str} [title] 
 	 * @param {str} [body] 
 	 * @param {all} [mode] 
-	 * @return {void} 
 	 */
 	SetColumnWidths(icon, title, body, mode) {return}
 
@@ -8670,56 +7821,48 @@ class MuiList {
 	 * Set divider
 	 * @param {num} height 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetDivider(height, color) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * Set ellipsize1
 	 * @param {all} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize1(mode) {return}
 
 	/**
 	 * Set ellipsize2
 	 * @param {all} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize2(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set hi text color1
 	 * @param {all} clr 
-	 * @return {void} 
 	 */
 	SetHiTextColor1(clr) {return}
 
 	/**
 	 * Set hi text color2
 	 * @param {all} clr 
-	 * @return {void} 
 	 */
 	SetHiTextColor2(clr) {return}
 
@@ -8730,7 +7873,6 @@ class MuiList {
 	 * @param {all} [right=0] 
 	 * @param {all} [bottom=0] 
 	 * @param {all} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetIconMargins(left, top, right, bottom, mode) {return}
 
@@ -8738,7 +7880,6 @@ class MuiList {
 	 * Set icon size
 	 * @param {all} size 
 	 * @param {all} [mode] 
-	 * @return {void} 
 	 */
 	SetIconSize(size, mode) {return}
 
@@ -8748,7 +7889,6 @@ class MuiList {
 	 * @param {all} newTitle 
 	 * @param {num} [newBody] 
 	 * @param {all} [newImage] 
-	 * @return {void} 
 	 */
 	SetItem(title, newTitle, newBody, newImage) {return}
 
@@ -8758,7 +7898,6 @@ class MuiList {
 	 * @param {all} newTitle 
 	 * @param {num} [newBody] 
 	 * @param {all} [newImage] 
-	 * @return {void} 
 	 */
 	SetItemByIndex(index, newTitle, newBody, newImage) {return}
 
@@ -8766,7 +7905,6 @@ class MuiList {
 	 * Set list
 	 * @param {all} list 
 	 * @param {str} [delim=','] 
-	 * @return {void} 
 	 */
 	SetList(list, delim) {return}
 
@@ -8777,21 +7915,18 @@ class MuiList {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -8802,7 +7937,6 @@ class MuiList {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -8813,7 +7947,6 @@ class MuiList {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -8821,7 +7954,6 @@ class MuiList {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -8830,28 +7962,24 @@ class MuiList {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
 	/**
 	 * Set text color1
 	 * @param {str_col} clr 
-	 * @return {void} 
 	 */
 	SetTextColor1(clr) {return}
 
 	/**
 	 * Set text color2
 	 * @param {str_col} clr 
-	 * @return {void} 
 	 */
 	SetTextColor2(clr) {return}
 
@@ -8863,7 +7991,6 @@ class MuiList {
 	 * @param {all} [bottom=0] 
 	 * @param {all} [mode] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetTextMargins(left, top, right, bottom, mode, options) {return}
 
@@ -8873,7 +8000,6 @@ class MuiList {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -8883,7 +8009,6 @@ class MuiList {
 	 * @param {num} [dx] 
 	 * @param {num} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow1(radius, dx, dy, color) {return}
 
@@ -8893,7 +8018,6 @@ class MuiList {
 	 * @param {num} [dx] 
 	 * @param {num} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow2(radius, dx, dy, color) {return}
 
@@ -8903,7 +8027,6 @@ class MuiList {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
@@ -8911,7 +8034,6 @@ class MuiList {
 	 * Set text size1
 	 * @param {all} size 
 	 * @param {all} [mode] 
-	 * @return {void} 
 	 */
 	SetTextSize1(size, mode) {return}
 
@@ -8919,21 +8041,16 @@ class MuiList {
 	 * Set text size2
 	 * @param {all} size 
 	 * @param {all} [mode] 
-	 * @return {void} 
 	 */
 	SetTextSize2(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -8944,7 +8061,6 @@ class MuiList {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -8955,27 +8071,19 @@ class MuiListDialog {
 	/**
 	 * Calls a function selects an item in the list
 	 * @param {(name: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
 	 * Change the height of the control
 	 * @param {num} height `Fraction of the screen height`
-	 * @return {void} 
 	 */
 	SetHeight(height) {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -8993,20 +8101,13 @@ class MuiListDialog {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -9062,10 +8163,7 @@ class MuiListDialog {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -9085,14 +8183,12 @@ class MuiListDialog {
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
 	/**
 	 * Pass texedit control to display input values
 	 * @param {obj} textEdit An MUI TextEdit control
-	 * @return {void} 
 	 */
 	SetTextEdit(textEdit) {return}
 }
@@ -9103,56 +8199,48 @@ class MuiListModern {
 	/**
 	 * Calls a function when an item is click
 	 * @param {(title: str, body: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Calls a function when an item in the list is select
 	 * @param {(index: num_int, isSelected: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
 	/**
 	 * Calls a function when an icon or avatar is click
 	 * @param {(index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetAvatarOnTouch(callback) {return}
 
 	/**
 	 * Enable or disable selectable option
 	 * @param {bin} selectable 
-	 * @return {void} 
 	 */
 	SetSelectable(selectable) {return}
 
 	/**
 	 * Calls a function when a right icon is click
 	 * @param {(index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetControlOnTouch(callback) {return}
 
 	/**
 	 * Appends an item at the bottom of the list
 	 * @param {obj} data A single element of the list
-	 * @return {void} 
 	 */
 	AppendItem(data) {return}
 
 	/**
 	 * Removes a single item in the list
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	RemoveItem(index) {return}
 
 	/**
 	 * Removes multiple items in the list
 	 * @param {lst} indexes An array of indexes.
-	 * @return {void} 
 	 */
 	RemoveItems(indexes) {return}
 
@@ -9160,7 +8248,6 @@ class MuiListModern {
 	 * Set a new title to a respective index
 	 * @param {str} newTitle `New title text`
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	SetTitleText(newTitle, index) {return}
 
@@ -9168,7 +8255,6 @@ class MuiListModern {
 	 * Set a new body to a respective index
 	 * @param {str} newBody `New body text`
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	SetBodyText(newBody, index) {return}
 
@@ -9176,7 +8262,6 @@ class MuiListModern {
 	 * Set a new material icon to the right icon
 	 * @param {str} newIcon `New right icon`
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	SetRightIcon(newIcon, index) {return}
 
@@ -9184,27 +8269,19 @@ class MuiListModern {
 	 * Set a new note text for a respective item on the list
 	 * @param {str} newNote `New note text`
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	SetNoteText(newNote, index) {return}
 
 	/**
 	 * Sets a new list
 	 * @param {obj} list List Modern list
-	 * @return {void} 
 	 */
 	SetList(list) {return}
 
-	/**
-	 * Removes an item at the bottom of the list
-	 * @return {void} 
-	 */
+	/** Removes an item at the bottom of the list */
 	PopItem() {return}
 
-	/**
-	 * Removes an item at the beginning of the list
-	 * @return {void} 
-	 */
+	/** Removes an item at the beginning of the list */
 	ShiftItem() {return}
 
 	/**
@@ -9229,14 +8306,12 @@ class MuiListModern {
 	/**
 	 * Highlight a respective item in the list
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	Highlight(index) {return}
 
 	/**
 	 * Removes a highlight to a respective item in the list
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	RemoveHighlight(index) {return}
 
@@ -9244,7 +8319,6 @@ class MuiListModern {
 	 * Set a new image to a respective item in the list
 	 * @param {str_ptf} newImagePath `Path to the new image`
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	SetImage(newImagePath, index) {return}
 
@@ -9252,20 +8326,13 @@ class MuiListModern {
 	 * Set item
 	 * @param {obj} data A single element of the list object
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	SetItem(data, index) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -9327,16 +8394,10 @@ class MuiListModern {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -9362,7 +8423,6 @@ class MuiListModern {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -9373,7 +8433,6 @@ class MuiListModern {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -9384,21 +8443,16 @@ class MuiListModern {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -9409,7 +8463,6 @@ class MuiListModern {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -9420,21 +8473,18 @@ class MuiListSimple {
 	/**
 	 * Calls a function when an item is click
 	 * @param {(title: str, index: num_int, icon: str, badge: num) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Appends an item at the bottom of the list
 	 * @param {obj} data A single element of the list
-	 * @return {void} 
 	 */
 	AppendItem(data) {return}
 
 	/**
 	 * Removes an item in the list
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	RemoveItem(index) {return}
 
@@ -9442,7 +8492,6 @@ class MuiListSimple {
 	 * Sets a new badge
 	 * @param {num_int} newBadge 
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	SetBadge(newBadge, index) {return}
 
@@ -9450,7 +8499,6 @@ class MuiListSimple {
 	 * Sets a new title to a corresponding item
 	 * @param {str} newTitle `New title text`
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	SetTitleText(newTitle, index) {return}
 
@@ -9463,20 +8511,13 @@ class MuiListSimple {
 	/**
 	 * Sets a new list
 	 * @param {obj} list ListSimple list
-	 * @return {void} 
 	 */
 	SetList(list) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -9538,16 +8579,10 @@ class MuiListSimple {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -9573,7 +8608,6 @@ class MuiListSimple {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -9584,7 +8618,6 @@ class MuiListSimple {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -9595,21 +8628,16 @@ class MuiListSimple {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -9620,7 +8648,6 @@ class MuiListSimple {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -9631,27 +8658,19 @@ class MuiMenu {
 	/**
 	 * Calls a function when item is click
 	 * @param {(title: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
 	/**
 	 * Set a new list of options
 	 * @param {lst} list A comma separated options
-	 * @return {void} 
 	 */
 	SetList(list) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -9669,20 +8688,13 @@ class MuiMenu {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -9738,10 +8750,7 @@ class MuiMenu {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -9761,7 +8770,6 @@ class MuiMenu {
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 }
@@ -9772,20 +8780,13 @@ class MuiMenuWithIcon {
 	/**
 	 * Calls a function when item is click
 	 * @param {(text: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -9803,20 +8804,13 @@ class MuiMenuWithIcon {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -9872,10 +8866,7 @@ class MuiMenuWithIcon {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -9895,7 +8886,6 @@ class MuiMenuWithIcon {
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 }
@@ -9906,7 +8896,6 @@ class MuiModal {
 	/**
 	 * Calls a function when control buttons are click
 	 * @param {(isOkBtnClick: bin, btnText: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -9919,41 +8908,31 @@ class MuiModal {
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
 	/**
 	 * Sets a new title to the modal
 	 * @param {str} title 
-	 * @return {void} 
 	 */
 	SetTitle(title) {return}
 
 	/**
 	 * Sets a new title to the modal
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetHeaderColor(color) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -9971,20 +8950,13 @@ class MuiModal {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -10040,10 +9012,7 @@ class MuiModal {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -10063,14 +9032,12 @@ class MuiModal {
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
 	/**
 	 * Called when the dialog or control has been closed
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnClose(callback) {return}
 }
@@ -10081,14 +9048,12 @@ class MuiRadio {
 	/**
 	 * Calls a function when the user selects an item in the list
 	 * @param {(name: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
 	/**
 	 * Checks a corresponding item
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	CheckItemByIndex(index) {return}
 
@@ -10103,20 +9068,13 @@ class MuiRadio {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -10218,16 +9176,10 @@ class MuiRadio {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -10236,7 +9188,6 @@ class MuiRadio {
 	 * @param {str} title 
 	 * @param {str} [body] 
 	 * @param {str_ptf} [image] 
-	 * @return {void} 
 	 */
 	InsertItem(index, title, body, image) {return}
 
@@ -10272,23 +9223,18 @@ class MuiRadio {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Remove all
-	 * @return {void} 
-	 */
+	/** Remove all */
 	RemoveAll() {return}
 
 	/**
 	 * Remove item
 	 * @param {str} title 
-	 * @return {void} 
 	 */
 	RemoveItem(title) {return}
 
 	/**
 	 * Remove item by index
 	 * @param {num} index 
-	 * @return {void} 
 	 */
 	RemoveItemByIndex(index) {return}
 
@@ -10296,14 +9242,12 @@ class MuiRadio {
 	 * Scroll to item
 	 * @param {str} title 
 	 * @param {str} [body] 
-	 * @return {void} 
 	 */
 	ScrollToItem(title, body) {return}
 
 	/**
 	 * Scroll to item by index
 	 * @param {num} index 
-	 * @return {void} 
 	 */
 	ScrollToItemByIndex(index) {return}
 
@@ -10312,7 +9256,6 @@ class MuiRadio {
 	 * @param {str} title 
 	 * @param {str} [body] 
 	 * @param {bin} [scroll] 
-	 * @return {void} 
 	 */
 	SelectItem(title, body, scroll) {return}
 
@@ -10320,27 +9263,21 @@ class MuiRadio {
 	 * Select item by index
 	 * @param {num} index 
 	 * @param {bin} [scroll] 
-	 * @return {void} 
 	 */
 	SelectItemByIndex(index, scroll) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -10350,7 +9287,6 @@ class MuiRadio {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -10363,7 +9299,6 @@ class MuiRadio {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -10371,7 +9306,6 @@ class MuiRadio {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -10379,7 +9313,6 @@ class MuiRadio {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
@@ -10389,7 +9322,6 @@ class MuiRadio {
 	 * @param {str} [title] 
 	 * @param {str} [body] 
 	 * @param {all} [mode] 
-	 * @return {void} 
 	 */
 	SetColumnWidths(icon, title, body, mode) {return}
 
@@ -10397,56 +9329,48 @@ class MuiRadio {
 	 * Set divider
 	 * @param {num} height 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetDivider(height, color) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * Set ellipsize1
 	 * @param {all} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize1(mode) {return}
 
 	/**
 	 * Set ellipsize2
 	 * @param {all} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize2(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set hi text color1
 	 * @param {all} clr 
-	 * @return {void} 
 	 */
 	SetHiTextColor1(clr) {return}
 
 	/**
 	 * Set hi text color2
 	 * @param {all} clr 
-	 * @return {void} 
 	 */
 	SetHiTextColor2(clr) {return}
 
@@ -10454,7 +9378,6 @@ class MuiRadio {
 	 * Set list
 	 * @param {all} list 
 	 * @param {str} [delim=','] 
-	 * @return {void} 
 	 */
 	SetList(list, delim) {return}
 
@@ -10465,21 +9388,18 @@ class MuiRadio {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -10490,7 +9410,6 @@ class MuiRadio {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -10498,7 +9417,6 @@ class MuiRadio {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -10507,28 +9425,24 @@ class MuiRadio {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
 	/**
 	 * Set text color1
 	 * @param {all} clr 
-	 * @return {void} 
 	 */
 	SetTextColor1(clr) {return}
 
 	/**
 	 * Set text color2
 	 * @param {all} clr 
-	 * @return {void} 
 	 */
 	SetTextColor2(clr) {return}
 
@@ -10540,7 +9454,6 @@ class MuiRadio {
 	 * @param {all} [bottom=0] 
 	 * @param {all} [mode='px'] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetTextMargins(left, top, right, bottom, mode, options) {return}
 
@@ -10550,7 +9463,6 @@ class MuiRadio {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -10560,7 +9472,6 @@ class MuiRadio {
 	 * @param {num} [dx] 
 	 * @param {num} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow1(radius, dx, dy, color) {return}
 
@@ -10570,7 +9481,6 @@ class MuiRadio {
 	 * @param {num} [dx] 
 	 * @param {num} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow2(radius, dx, dy, color) {return}
 
@@ -10580,7 +9490,6 @@ class MuiRadio {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
@@ -10588,7 +9497,6 @@ class MuiRadio {
 	 * Set text size1
 	 * @param {all} size 
 	 * @param {all} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetTextSize1(size, mode) {return}
 
@@ -10596,21 +9504,16 @@ class MuiRadio {
 	 * Set text size2
 	 * @param {all} size 
 	 * @param {all} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetTextSize2(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -10621,7 +9524,6 @@ class MuiRadio {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -10632,14 +9534,12 @@ class MuiRadioButtons {
 	/**
 	 * Calls a function when the user selects an item in the list
 	 * @param {(name: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
 	/**
 	 * Checks a corresponding item
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	CheckItemByIndex(index) {return}
 
@@ -10655,10 +9555,7 @@ class MuiRadioButtons {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -10668,7 +9565,6 @@ class MuiRadioButtons {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -10679,20 +9575,13 @@ class MuiRadioButtons {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Show or Hide the list
-	 * @return {void} 
-	 */
+	/** Show or Hide the list */
 	Toggle() {return}
 
 	/**
@@ -10700,20 +9589,13 @@ class MuiRadioButtons {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -10788,10 +9670,7 @@ class MuiRadioButtons {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -10817,14 +9696,12 @@ class MuiRadioButtons {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
@@ -10832,7 +9709,6 @@ class MuiRadioButtons {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -10841,14 +9717,12 @@ class MuiRadioButtons {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
@@ -10860,7 +9734,6 @@ class MuiRadioButtons {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -10871,14 +9744,12 @@ class MuiRadioMaterial {
 	/**
 	 * Calls a function when the user selects an item in the list
 	 * @param {(name: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
 	/**
 	 * Checks a corresponding item
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	CheckItemByIndex(index) {return}
 
@@ -10894,10 +9765,7 @@ class MuiRadioMaterial {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -10907,7 +9775,6 @@ class MuiRadioMaterial {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -10918,20 +9785,13 @@ class MuiRadioMaterial {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Show or Hide the list
-	 * @return {void} 
-	 */
+	/** Show or Hide the list */
 	Toggle() {return}
 
 	/**
@@ -10939,20 +9799,13 @@ class MuiRadioMaterial {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -11027,10 +9880,7 @@ class MuiRadioMaterial {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -11056,14 +9906,12 @@ class MuiRadioMaterial {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
@@ -11071,7 +9919,6 @@ class MuiRadioMaterial {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -11080,14 +9927,12 @@ class MuiRadioMaterial {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
@@ -11099,7 +9944,6 @@ class MuiRadioMaterial {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11116,21 +9960,18 @@ class MuiSeekBar {
 	/**
 	 * Set the number of decimals to the value
 	 * @param {num_int} decimals `The number of decimals`
-	 * @return {void} 
 	 */
 	SetDecimals(decimals) {return}
 
 	/**
 	 * Calls a function when the seekbar is touch
 	 * @param {(value: num) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Sets a new value to the seekbar
 	 * @param {num} value `Must be between 0 and range`
-	 * @return {void} 
 	 */
 	SetValue(value) {return}
 
@@ -11139,20 +9980,13 @@ class MuiSeekBar {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -11214,10 +10048,7 @@ class MuiSeekBar {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -11243,7 +10074,6 @@ class MuiSeekBar {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -11254,7 +10084,6 @@ class MuiSeekBar {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -11263,14 +10092,12 @@ class MuiSeekBar {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
@@ -11282,7 +10109,6 @@ class MuiSeekBar {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11293,35 +10119,30 @@ class MuiSpinner {
 	/**
 	 * Calls a function when value changes
 	 * @param {(value: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Select an option
 	 * @param {str} value `Must be one of the provided values`
-	 * @return {void} 
 	 */
 	SelectItem(value) {return}
 
 	/**
 	 * Select an option with a given index
 	 * @param {num_int} index `The index of the option in the given values`
-	 * @return {void} 
 	 */
 	SelectItemByIndex(index) {return}
 
 	/**
 	 * Sets a new list of options
 	 * @param {lst} list A comma separated values for options.
-	 * @return {void} 
 	 */
 	SetList(list) {return}
 
 	/**
 	 * Sets the hint when there is no active selection
 	 * @param {str} hint `The hint text.`
-	 * @return {void} 
 	 */
 	SetHint(hint) {return}
 
@@ -11337,14 +10158,12 @@ class MuiSpinner {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -11407,16 +10226,10 @@ class MuiSpinner {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -11442,7 +10255,6 @@ class MuiSpinner {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -11453,7 +10265,6 @@ class MuiSpinner {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -11464,21 +10275,16 @@ class MuiSpinner {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -11489,7 +10295,6 @@ class MuiSpinner {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11506,14 +10311,12 @@ class MuiSwitch {
 	/**
 	 * Calls a function when switch is click
 	 * @param {(value: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Sets the value of the switch
 	 * @param {bin} value 
-	 * @return {void} 
 	 */
 	SetValue(value) {return}
 
@@ -11522,20 +10325,13 @@ class MuiSwitch {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -11597,10 +10393,7 @@ class MuiSwitch {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -11626,7 +10419,6 @@ class MuiSwitch {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -11637,14 +10429,12 @@ class MuiSwitch {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
@@ -11656,7 +10446,6 @@ class MuiSwitch {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11673,14 +10462,12 @@ class MuiSwitchSettings {
 	/**
 	 * Calls a function when switch is click
 	 * @param {(text: str, value: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Sets the value of the switch
 	 * @param {bin} value 
-	 * @return {void} 
 	 */
 	SetValue(value) {return}
 
@@ -11689,20 +10476,13 @@ class MuiSwitchSettings {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -11764,10 +10544,7 @@ class MuiSwitchSettings {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -11793,7 +10570,6 @@ class MuiSwitchSettings {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -11804,14 +10580,12 @@ class MuiSwitchSettings {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
@@ -11823,7 +10597,6 @@ class MuiSwitchSettings {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11841,14 +10614,12 @@ class MuiTabFixed {
 	/**
 	 * Open the a tab by passing an index
 	 * @param {num} index 
-	 * @return {void} 
 	 */
 	SetActiveTabByIndex(index) {return}
 
 	/**
 	 * Calls a function when the tab is click
 	 * @param {(name: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
@@ -11857,20 +10628,13 @@ class MuiTabFixed {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -11932,10 +10696,7 @@ class MuiTabFixed {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -11961,7 +10722,6 @@ class MuiTabFixed {
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -11972,14 +10732,12 @@ class MuiTabFixed {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
@@ -11991,7 +10749,6 @@ class MuiTabFixed {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11999,22 +10756,13 @@ class MuiTabFixed {
 
 class MuiTEFilledIconLeft {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -12023,10 +10771,7 @@ class MuiTEFilledIconLeft {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -12065,17 +10810,13 @@ class MuiTEFilledIconLeft {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -12099,10 +10840,7 @@ class MuiTEFilledIconLeft {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -12110,14 +10848,12 @@ class MuiTEFilledIconLeft {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -12128,21 +10864,18 @@ class MuiTEFilledIconLeft {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -12153,34 +10886,27 @@ class MuiTEFilledIconLeft {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Calls a function when icon is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnIconTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -12188,22 +10914,13 @@ class MuiTEFilledIconLeft {
 
 class MuiTEFilledIconRight {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -12212,10 +10929,7 @@ class MuiTEFilledIconRight {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -12254,17 +10968,13 @@ class MuiTEFilledIconRight {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -12288,10 +10998,7 @@ class MuiTEFilledIconRight {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -12299,14 +11006,12 @@ class MuiTEFilledIconRight {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -12317,21 +11022,18 @@ class MuiTEFilledIconRight {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -12342,34 +11044,27 @@ class MuiTEFilledIconRight {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Calls a function when icon is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnIconTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -12377,22 +11072,13 @@ class MuiTEFilledIconRight {
 
 class MuiTEOutlineIconLeft {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -12401,10 +11087,7 @@ class MuiTEOutlineIconLeft {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -12443,17 +11126,13 @@ class MuiTEOutlineIconLeft {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -12477,10 +11156,7 @@ class MuiTEOutlineIconLeft {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -12488,14 +11164,12 @@ class MuiTEOutlineIconLeft {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -12506,21 +11180,18 @@ class MuiTEOutlineIconLeft {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -12531,34 +11202,27 @@ class MuiTEOutlineIconLeft {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Calls a function when icon is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnIconTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -12566,22 +11230,13 @@ class MuiTEOutlineIconLeft {
 
 class MuiTEOutlineIconRight {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -12590,10 +11245,7 @@ class MuiTEOutlineIconRight {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -12632,17 +11284,13 @@ class MuiTEOutlineIconRight {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -12666,10 +11314,7 @@ class MuiTEOutlineIconRight {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -12677,14 +11322,12 @@ class MuiTEOutlineIconRight {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -12695,21 +11338,18 @@ class MuiTEOutlineIconRight {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -12720,34 +11360,27 @@ class MuiTEOutlineIconRight {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Calls a function when icon is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnIconTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -12755,22 +11388,13 @@ class MuiTEOutlineIconRight {
 
 class MuiTESearchElegant {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -12779,10 +11403,7 @@ class MuiTESearchElegant {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -12821,17 +11442,13 @@ class MuiTESearchElegant {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -12855,10 +11472,7 @@ class MuiTESearchElegant {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -12866,14 +11480,12 @@ class MuiTESearchElegant {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -12884,28 +11496,24 @@ class MuiTESearchElegant {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed the icon
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetIconOnTouch(callback) {return}
 
@@ -12916,34 +11524,27 @@ class MuiTESearchElegant {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Calls a function when icon is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnIconTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -12951,22 +11552,13 @@ class MuiTESearchElegant {
 
 class MuiTESearchUnique {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -12975,10 +11567,7 @@ class MuiTESearchUnique {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -13017,17 +11606,13 @@ class MuiTESearchUnique {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -13051,10 +11636,7 @@ class MuiTESearchUnique {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -13062,14 +11644,12 @@ class MuiTESearchUnique {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -13080,21 +11660,18 @@ class MuiTESearchUnique {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -13105,27 +11682,21 @@ class MuiTESearchUnique {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Calls a function when icon is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnIconTouch(callback) {return}
 }
@@ -13133,22 +11704,13 @@ class MuiTESearchUnique {
 
 class MuiTextAreaFilled {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -13157,10 +11719,7 @@ class MuiTextAreaFilled {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -13199,17 +11758,13 @@ class MuiTextAreaFilled {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -13233,10 +11788,7 @@ class MuiTextAreaFilled {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -13244,14 +11796,12 @@ class MuiTextAreaFilled {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -13262,21 +11812,18 @@ class MuiTextAreaFilled {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -13287,43 +11834,29 @@ class MuiTextAreaFilled {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 }
 
 
 class MuiTextAreaFilledA {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -13332,10 +11865,7 @@ class MuiTextAreaFilledA {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -13374,17 +11904,13 @@ class MuiTextAreaFilledA {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -13408,10 +11934,7 @@ class MuiTextAreaFilledA {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -13419,14 +11942,12 @@ class MuiTextAreaFilledA {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -13437,21 +11958,18 @@ class MuiTextAreaFilledA {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -13462,43 +11980,29 @@ class MuiTextAreaFilledA {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 }
 
 
 class MuiTextAreaOutline {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -13507,10 +12011,7 @@ class MuiTextAreaOutline {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -13549,17 +12050,13 @@ class MuiTextAreaOutline {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -13583,10 +12080,7 @@ class MuiTextAreaOutline {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -13594,14 +12088,12 @@ class MuiTextAreaOutline {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -13612,21 +12104,18 @@ class MuiTextAreaOutline {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -13637,43 +12126,29 @@ class MuiTextAreaOutline {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 }
 
 
 class MuiTextAreaOutlineA {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -13682,10 +12157,7 @@ class MuiTextAreaOutlineA {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -13724,17 +12196,13 @@ class MuiTextAreaOutlineA {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -13758,10 +12226,7 @@ class MuiTextAreaOutlineA {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -13769,14 +12234,12 @@ class MuiTextAreaOutlineA {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -13787,21 +12250,18 @@ class MuiTextAreaOutlineA {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -13812,43 +12272,29 @@ class MuiTextAreaOutlineA {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 }
 
 
 class MuiTextEditFilled {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -13857,10 +12303,7 @@ class MuiTextEditFilled {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -13899,17 +12342,13 @@ class MuiTextEditFilled {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -13933,10 +12372,7 @@ class MuiTextEditFilled {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -13944,14 +12380,12 @@ class MuiTextEditFilled {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -13962,21 +12396,18 @@ class MuiTextEditFilled {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -13987,27 +12418,21 @@ class MuiTextEditFilled {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -14015,22 +12440,13 @@ class MuiTextEditFilled {
 
 class MuiTextEditFilledA {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -14039,10 +12455,7 @@ class MuiTextEditFilledA {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -14081,17 +12494,13 @@ class MuiTextEditFilledA {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -14115,10 +12524,7 @@ class MuiTextEditFilledA {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -14126,14 +12532,12 @@ class MuiTextEditFilledA {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -14144,21 +12548,18 @@ class MuiTextEditFilledA {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -14169,27 +12570,21 @@ class MuiTextEditFilledA {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -14197,22 +12592,13 @@ class MuiTextEditFilledA {
 
 class MuiTextEditOutline {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -14221,10 +12607,7 @@ class MuiTextEditOutline {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -14263,17 +12646,13 @@ class MuiTextEditOutline {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -14297,10 +12676,7 @@ class MuiTextEditOutline {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -14308,14 +12684,12 @@ class MuiTextEditOutline {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -14326,21 +12700,18 @@ class MuiTextEditOutline {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -14351,27 +12722,21 @@ class MuiTextEditOutline {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -14379,22 +12744,13 @@ class MuiTextEditOutline {
 
 class MuiTextEditOutlineA {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -14403,10 +12759,7 @@ class MuiTextEditOutlineA {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -14445,17 +12798,13 @@ class MuiTextEditOutlineA {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -14479,10 +12828,7 @@ class MuiTextEditOutlineA {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -14490,14 +12836,12 @@ class MuiTextEditOutlineA {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -14508,21 +12852,18 @@ class MuiTextEditOutlineA {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -14533,27 +12874,21 @@ class MuiTextEditOutlineA {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -14561,22 +12896,13 @@ class MuiTextEditOutlineA {
 
 class MuiTextEditSearch {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -14585,10 +12911,7 @@ class MuiTextEditSearch {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -14627,17 +12950,13 @@ class MuiTextEditSearch {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -14661,10 +12980,7 @@ class MuiTextEditSearch {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -14672,14 +12988,12 @@ class MuiTextEditSearch {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -14690,21 +13004,18 @@ class MuiTextEditSearch {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -14715,27 +13026,21 @@ class MuiTextEditSearch {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Calls a function when icon is touch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnIconTouch(callback) {return}
 }
@@ -14743,22 +13048,13 @@ class MuiTextEditSearch {
 
 class MuiTextEditUnique {
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear input history
-	 * @return {void} 
-	 */
+	/** Clear input history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -14767,10 +13063,7 @@ class MuiTextEditUnique {
 	 */
 	GetCursorLine() {return}
 
-	/**
-	 * Get cursor position
-	 * @return {void} 
-	 */
+	/** Get cursor position */
 	GetCursorPos() {return}
 
 	/**
@@ -14809,17 +13102,13 @@ class MuiTextEditUnique {
 	 */
 	GetVisibility() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
 	 * Inserts a string at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -14843,10 +13132,7 @@ class MuiTextEditUnique {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -14854,14 +13140,12 @@ class MuiTextEditUnique {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Change the curernt cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
@@ -14872,21 +13156,18 @@ class MuiTextEditUnique {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
@@ -14897,27 +13178,21 @@ class MuiTextEditUnique {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -14931,7 +13206,6 @@ class MuiTextH1 {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -14940,23 +13214,16 @@ class MuiTextH1 {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -15069,16 +13336,10 @@ class MuiTextH1 {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -15105,7 +13366,6 @@ class MuiTextH1 {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -15124,20 +13384,15 @@ class MuiTextH1 {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -15147,7 +13402,6 @@ class MuiTextH1 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -15160,7 +13414,6 @@ class MuiTextH1 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -15168,7 +13421,6 @@ class MuiTextH1 {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -15176,42 +13428,36 @@ class MuiTextH1 {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -15222,42 +13468,36 @@ class MuiTextH1 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -15268,7 +13508,6 @@ class MuiTextH1 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -15279,7 +13518,6 @@ class MuiTextH1 {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -15287,7 +13525,6 @@ class MuiTextH1 {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -15296,21 +13533,18 @@ class MuiTextH1 {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -15320,7 +13554,6 @@ class MuiTextH1 {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -15330,28 +13563,22 @@ class MuiTextH1 {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -15362,7 +13589,6 @@ class MuiTextH1 {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -15376,7 +13602,6 @@ class MuiTextH2 {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -15385,23 +13610,16 @@ class MuiTextH2 {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -15514,16 +13732,10 @@ class MuiTextH2 {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -15550,7 +13762,6 @@ class MuiTextH2 {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -15569,20 +13780,15 @@ class MuiTextH2 {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -15592,7 +13798,6 @@ class MuiTextH2 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -15605,7 +13810,6 @@ class MuiTextH2 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -15613,7 +13817,6 @@ class MuiTextH2 {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -15621,42 +13824,36 @@ class MuiTextH2 {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -15667,42 +13864,36 @@ class MuiTextH2 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -15713,7 +13904,6 @@ class MuiTextH2 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -15724,7 +13914,6 @@ class MuiTextH2 {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -15732,7 +13921,6 @@ class MuiTextH2 {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -15741,21 +13929,18 @@ class MuiTextH2 {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -15765,7 +13950,6 @@ class MuiTextH2 {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -15775,28 +13959,22 @@ class MuiTextH2 {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -15807,7 +13985,6 @@ class MuiTextH2 {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -15821,7 +13998,6 @@ class MuiTextH3 {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -15830,23 +14006,16 @@ class MuiTextH3 {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -15959,16 +14128,10 @@ class MuiTextH3 {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -15995,7 +14158,6 @@ class MuiTextH3 {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -16014,20 +14176,15 @@ class MuiTextH3 {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -16037,7 +14194,6 @@ class MuiTextH3 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -16050,7 +14206,6 @@ class MuiTextH3 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -16058,7 +14213,6 @@ class MuiTextH3 {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -16066,42 +14220,36 @@ class MuiTextH3 {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -16112,42 +14260,36 @@ class MuiTextH3 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -16158,7 +14300,6 @@ class MuiTextH3 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -16169,7 +14310,6 @@ class MuiTextH3 {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -16177,7 +14317,6 @@ class MuiTextH3 {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -16186,21 +14325,18 @@ class MuiTextH3 {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -16210,7 +14346,6 @@ class MuiTextH3 {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -16220,28 +14355,22 @@ class MuiTextH3 {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -16252,7 +14381,6 @@ class MuiTextH3 {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -16266,7 +14394,6 @@ class MuiTextH4 {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -16275,23 +14402,16 @@ class MuiTextH4 {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -16404,16 +14524,10 @@ class MuiTextH4 {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -16440,7 +14554,6 @@ class MuiTextH4 {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -16459,20 +14572,15 @@ class MuiTextH4 {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -16482,7 +14590,6 @@ class MuiTextH4 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -16495,7 +14602,6 @@ class MuiTextH4 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -16503,7 +14609,6 @@ class MuiTextH4 {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -16511,42 +14616,36 @@ class MuiTextH4 {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -16557,42 +14656,36 @@ class MuiTextH4 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -16603,7 +14696,6 @@ class MuiTextH4 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -16614,7 +14706,6 @@ class MuiTextH4 {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -16622,7 +14713,6 @@ class MuiTextH4 {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -16631,21 +14721,18 @@ class MuiTextH4 {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -16655,7 +14742,6 @@ class MuiTextH4 {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -16665,28 +14751,22 @@ class MuiTextH4 {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -16697,7 +14777,6 @@ class MuiTextH4 {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -16711,7 +14790,6 @@ class MuiTextH5 {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -16720,23 +14798,16 @@ class MuiTextH5 {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -16849,16 +14920,10 @@ class MuiTextH5 {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -16885,7 +14950,6 @@ class MuiTextH5 {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -16904,20 +14968,15 @@ class MuiTextH5 {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -16927,7 +14986,6 @@ class MuiTextH5 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -16940,7 +14998,6 @@ class MuiTextH5 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -16948,7 +15005,6 @@ class MuiTextH5 {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -16956,42 +15012,36 @@ class MuiTextH5 {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -17002,42 +15052,36 @@ class MuiTextH5 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -17048,7 +15092,6 @@ class MuiTextH5 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -17059,7 +15102,6 @@ class MuiTextH5 {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -17067,7 +15109,6 @@ class MuiTextH5 {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -17076,21 +15117,18 @@ class MuiTextH5 {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -17100,7 +15138,6 @@ class MuiTextH5 {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -17110,28 +15147,22 @@ class MuiTextH5 {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -17142,7 +15173,6 @@ class MuiTextH5 {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -17156,7 +15186,6 @@ class MuiTextH6 {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -17165,23 +15194,16 @@ class MuiTextH6 {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -17294,16 +15316,10 @@ class MuiTextH6 {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -17330,7 +15346,6 @@ class MuiTextH6 {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -17349,20 +15364,15 @@ class MuiTextH6 {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -17372,7 +15382,6 @@ class MuiTextH6 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -17385,7 +15394,6 @@ class MuiTextH6 {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -17393,7 +15401,6 @@ class MuiTextH6 {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -17401,42 +15408,36 @@ class MuiTextH6 {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -17447,42 +15448,36 @@ class MuiTextH6 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -17493,7 +15488,6 @@ class MuiTextH6 {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -17504,7 +15498,6 @@ class MuiTextH6 {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -17512,7 +15505,6 @@ class MuiTextH6 {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -17521,21 +15513,18 @@ class MuiTextH6 {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -17545,7 +15534,6 @@ class MuiTextH6 {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -17555,28 +15543,22 @@ class MuiTextH6 {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -17587,7 +15569,6 @@ class MuiTextH6 {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -17601,7 +15582,6 @@ class MuiTextJumbo {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -17610,23 +15590,16 @@ class MuiTextJumbo {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -17739,16 +15712,10 @@ class MuiTextJumbo {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -17775,7 +15742,6 @@ class MuiTextJumbo {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -17794,20 +15760,15 @@ class MuiTextJumbo {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -17817,7 +15778,6 @@ class MuiTextJumbo {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -17830,7 +15790,6 @@ class MuiTextJumbo {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -17838,7 +15797,6 @@ class MuiTextJumbo {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -17846,42 +15804,36 @@ class MuiTextJumbo {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -17892,42 +15844,36 @@ class MuiTextJumbo {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -17938,7 +15884,6 @@ class MuiTextJumbo {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -17949,7 +15894,6 @@ class MuiTextJumbo {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -17957,7 +15901,6 @@ class MuiTextJumbo {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -17966,21 +15909,18 @@ class MuiTextJumbo {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -17990,7 +15930,6 @@ class MuiTextJumbo {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -18000,28 +15939,22 @@ class MuiTextJumbo {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -18032,7 +15965,6 @@ class MuiTextJumbo {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -18046,7 +15978,6 @@ class MuiTextParagraph {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -18055,23 +15986,16 @@ class MuiTextParagraph {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -18184,16 +16108,10 @@ class MuiTextParagraph {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -18220,7 +16138,6 @@ class MuiTextParagraph {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -18239,20 +16156,15 @@ class MuiTextParagraph {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -18262,7 +16174,6 @@ class MuiTextParagraph {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -18275,7 +16186,6 @@ class MuiTextParagraph {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -18283,7 +16193,6 @@ class MuiTextParagraph {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -18291,42 +16200,36 @@ class MuiTextParagraph {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -18337,42 +16240,36 @@ class MuiTextParagraph {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -18383,7 +16280,6 @@ class MuiTextParagraph {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -18394,7 +16290,6 @@ class MuiTextParagraph {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -18402,7 +16297,6 @@ class MuiTextParagraph {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -18411,21 +16305,18 @@ class MuiTextParagraph {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -18435,7 +16326,6 @@ class MuiTextParagraph {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -18445,28 +16335,22 @@ class MuiTextParagraph {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -18477,7 +16361,6 @@ class MuiTextParagraph {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -18491,7 +16374,6 @@ class MuiTextSecondary {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -18500,23 +16382,16 @@ class MuiTextSecondary {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/** @type {obj} Data */
 	data;
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -18629,16 +16504,10 @@ class MuiTextSecondary {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -18665,7 +16534,6 @@ class MuiTextSecondary {
 	 * Log
 	 * @param {str} msg 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	Log(msg, options) {return}
 
@@ -18684,20 +16552,15 @@ class MuiTextSecondary {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -18707,7 +16570,6 @@ class MuiTextSecondary {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -18720,7 +16582,6 @@ class MuiTextSecondary {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -18728,7 +16589,6 @@ class MuiTextSecondary {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -18736,42 +16596,36 @@ class MuiTextSecondary {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set log
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -18782,42 +16636,36 @@ class MuiTextSecondary {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -18828,7 +16676,6 @@ class MuiTextSecondary {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -18839,7 +16686,6 @@ class MuiTextSecondary {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -18847,7 +16693,6 @@ class MuiTextSecondary {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -18856,21 +16701,18 @@ class MuiTextSecondary {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -18880,7 +16722,6 @@ class MuiTextSecondary {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -18890,28 +16731,22 @@ class MuiTextSecondary {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -18922,7 +16757,6 @@ class MuiTextSecondary {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -18933,20 +16767,13 @@ class MuiTimePicker {
 	/**
 	 * Calls a function when the user selects a time
 	 * @param {(time: str, hour: num_int, minute: num_int, pos: "AM"|"PM") => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSelect(callback) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -19031,7 +16858,6 @@ class MuiTimePicker {
 	/**
 	 * Pass texedit control to display input values
 	 * @param {obj} textEdit An MUI TextEdit control
-	 * @return {void} 
 	 */
 	SetTextEdit(textEdit) {return}
 }

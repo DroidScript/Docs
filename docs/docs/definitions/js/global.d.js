@@ -5,6 +5,7 @@
 /** @typedef {number} num Number */
 /** @typedef {object} obj Object */
 /** @typedef {string} str String */
+/** @typedef {void} nil void */
 /** @typedef {any[]} lst_obj of objects */
 /** @typedef {number[]} lst_num of numbers */
 /** @typedef {number} num_byt bytes */

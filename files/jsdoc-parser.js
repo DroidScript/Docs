@@ -12,7 +12,7 @@ const LANG = "en";
 const SRC = path.normalize(__dirname + "/markup/" + LANG);
 const DST = path.normalize(__dirname + "/json/" + LANG + "/" + conf.version);
 
-const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?,uio";
+const typx = Object.keys(conf.tname);
 /** @type {Obj<string>} */
 const types = {
     String: "str",

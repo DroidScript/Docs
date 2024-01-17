@@ -597,7 +597,6 @@ class UIAccordion {
 	 * SetTitleText
 	 * @param {num} index `The index of the corresponding title to updates.`
 	 * @param {str} title `The new title text.`
-	 * @return {void} 
 	 */
 	setTitleText(index, title) {return}
 
@@ -605,14 +604,12 @@ class UIAccordion {
 	 * SetSecondaryText
 	 * @param {obj} text The secondary text to display. You can pass arguments as string or array by following the format below. \n String: `"Secodary text 1,Secondary text 2,Secondary text 3"` \n `Array`: `[ "Secondary text 1", "Secondary text 2", "Secondary text 3" ]`
 	 * @param {num} index If `index` is provided,  the corresponding index will be updated with the new text.
-	 * @return {void} 
 	 */
 	setSecondaryText(text, index) {return}
 
 	/**
 	 * SetExpandIcon
 	 * @param {str} icon `A material icon`
-	 * @return {void} 
 	 */
 	setExpandIcon(icon) {return}
 
@@ -621,41 +618,31 @@ class UIAccordion {
 	 * @param {str} title `Accordion title`
 	 * @param {str} secondaryText `Accordion secondary text`
 	 * @param {num} index The index at which the accordion item will be added. If `null`,  the item will be added at the bottom of the accordion.
-	 * @return {void} 
 	 */
 	addItem(title, secondaryText, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the corresponding accordion to remove.`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} title `The title of the corresponding accordion to remove.`
-	 * @return {void} 
 	 */
 	removeItemByName(title) {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
 	/**
 	 * SetEnabled
 	 * @param {num} index `The index of the corresponding accordion.`
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -670,7 +657,6 @@ class UIAccordion {
 	 * SetEnabledByName
 	 * @param {str} name `The title of the accordion`
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -691,14 +677,12 @@ class UIAccordion {
 	/**
 	 * SetOnTouch
 	 * @param {(index: num, expand: bin) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(title: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -706,7 +690,6 @@ class UIAccordion {
 	 * SetTextColor
 	 * @param {str} color1 Color of the title text in hexadecimal format `#rrggbb`
 	 * @param {str} [color2] Color of the secondary text in hexadecimal format `#rrggbb`
-	 * @return {void} 
 	 */
 	setTextColor(color1, color2) {return}
 
@@ -717,7 +700,6 @@ class UIAccordion {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
@@ -741,7 +723,6 @@ class UIAccordion {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -749,39 +730,25 @@ class UIAccordion {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -799,7 +766,6 @@ class UIAccordion {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -810,7 +776,6 @@ class UIAccordion {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -819,7 +784,6 @@ class UIAccordion {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -828,21 +792,18 @@ class UIAccordion {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -955,14 +916,12 @@ class UIAppBar {
 	/**
 	 * SetOnMenu
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnMenu(callback) {return}
 
 	/**
 	 * AddLayout
 	 * @param {obj} lay The layout where to add controls
-	 * @return {void} 
 	 */
 	addLayout(lay) {return}
 
@@ -973,21 +932,18 @@ class UIAppBar {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -1011,7 +967,6 @@ class UIAppBar {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -1019,39 +974,25 @@ class UIAppBar {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -1069,7 +1010,6 @@ class UIAppBar {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -1080,7 +1020,6 @@ class UIAppBar {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -1089,7 +1028,6 @@ class UIAppBar {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -1098,21 +1036,18 @@ class UIAppBar {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -1219,14 +1154,12 @@ class UIBottomNavbar {
 	/**
 	 * SetOnContextMenu
 	 * @param {(text: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {lst} navs The navigation actions array. See `navs` param above for format.
-	 * @return {void} 
 	 */
 	setList(navs) {return}
 
@@ -1239,21 +1172,16 @@ class UIBottomNavbar {
 	/**
 	 * SelectItem
 	 * @param {str} name `The name to be set to active`
-	 * @return {void} 
 	 */
 	selectItem(name) {return}
 
 	/**
 	 * SelectItemByIndex
 	 * @param {num} index `The index of the bottom navigation action to be selected`
-	 * @return {void} 
 	 */
 	selectItemByIndex(index) {return}
 
-	/**
-	 * ClearSelection
-	 * @return {void} 
-	 */
+	/** ClearSelection */
 	clearSelection() {return}
 
 	/**
@@ -1261,7 +1189,6 @@ class UIBottomNavbar {
 	 * @param {num} index `The index to update`
 	 * @param {str} newName `The name of the navigation action`
 	 * @param {str} newIcon `Material icon`
-	 * @return {void} 
 	 */
 	setItemByIndex(index, newName, newIcon) {return}
 
@@ -1269,7 +1196,6 @@ class UIBottomNavbar {
 	 * SetIcon
 	 * @param {num} index `The index of the navigation action to update`
 	 * @param {str} newIcon `Material icon`
-	 * @return {void} 
 	 */
 	setIcon(index, newIcon) {return}
 
@@ -1278,40 +1204,30 @@ class UIBottomNavbar {
 	 * @param {str} name `The name of the navigation action`
 	 * @param {str} icon `Material icon`
 	 * @param {num} index `The index in which to add the action.`
-	 * @return {void} 
 	 */
 	addItem(name, icon, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the navigation action to be remove`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the navigation action to be remove.`
-	 * @return {void} 
 	 */
 	removeItemByName(name) {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(text: str, index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
@@ -1319,7 +1235,6 @@ class UIBottomNavbar {
 	 * SetEnabled
 	 * @param {num} index `The index of the navigation action.`
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -1334,7 +1249,6 @@ class UIBottomNavbar {
 	 * SetEnabledByName
 	 * @param {str} name `The name of the bottom navigation action.`
 	 * @param {bin} value Values can be `true` or `false`
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -1345,22 +1259,15 @@ class UIBottomNavbar {
 	 */
 	getEnabledByName(name) {return}
 
-	/**
-	 * ShowLabels
-	 * @return {void} 
-	 */
+	/** ShowLabels */
 	showLabels() {return}
 
-	/**
-	 * HideLabels
-	 * @return {void} 
-	 */
+	/** HideLabels */
 	hideLabels() {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
@@ -1384,7 +1291,6 @@ class UIBottomNavbar {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -1392,39 +1298,25 @@ class UIBottomNavbar {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -1442,7 +1334,6 @@ class UIBottomNavbar {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -1453,7 +1344,6 @@ class UIBottomNavbar {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -1462,7 +1352,6 @@ class UIBottomNavbar {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -1471,7 +1360,6 @@ class UIBottomNavbar {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -1482,21 +1370,18 @@ class UIBottomNavbar {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -1621,7 +1506,6 @@ class UIButton {
 	/**
 	 * SetOnFileSelect
 	 * @param {(files: lst) => void} callback 
-	 * @return {void} 
 	 */
 	setOnFileSelect(callback) {return}
 
@@ -1630,7 +1514,6 @@ class UIButton {
 	 * @param {str} title `The text of the tooltip`
 	 * @param {str} [pos='top'] Position of the tooltip. 
  Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
-	 * @return {void} 
 	 */
 	setToolTip(title, pos) {return}
 
@@ -1640,7 +1523,6 @@ class UIButton {
 	 * @param {num} dx `The x-offset in pixels`
 	 * @param {num} dy `The y-offset in pixels`
 	 * @param {str} color The color in hexadecimal `#rrggbb`
-	 * @return {void} 
 	 */
 	setTextShadow(radius, dx, dy, color) {return}
 
@@ -1651,7 +1533,6 @@ class UIButton {
 	 * @param {num} [right] `The right padding in pixels.`
 	 * @param {num} [bottom] `The bottom padding in pixels.`
 	 * @param {str} [mode='px'] `px` `%`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -1662,21 +1543,18 @@ class UIButton {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -1700,7 +1578,6 @@ class UIButton {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -1708,39 +1585,25 @@ class UIButton {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -1758,7 +1621,6 @@ class UIButton {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -1767,7 +1629,6 @@ class UIButton {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -1776,21 +1637,18 @@ class UIButton {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -1906,21 +1764,18 @@ class UIButtonGroup {
 	/**
 	 * SetOnTouch
 	 * @param {(text: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(text: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {str} items `A comma separated list or an array`
-	 * @return {void} 
 	 */
 	setList(items) {return}
 
@@ -1928,41 +1783,31 @@ class UIButtonGroup {
 	 * SetItemByIndex
 	 * @param {str} item `The new text`
 	 * @param {num} index `The index of the item.`
-	 * @return {void} 
 	 */
 	setItemByIndex(item, index) {return}
 
 	/**
 	 * AddItem
 	 * @param {str} item `The additional item.`
-	 * @return {void} 
 	 */
 	addItem(item) {return}
 
 	/**
 	 * RemoveItemIndex
 	 * @param {num} index `The index of the item to be remove.`
-	 * @return {void} 
 	 */
 	removeItemIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the item to be remove.`
-	 * @return {void} 
 	 */
 	removeItemByName(name) {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
 	/**
@@ -1970,14 +1815,12 @@ class UIButtonGroup {
 	 * @param {lst} titles The titles for each item in the ButtonGroup.
 	 * @param {str} [pos='top'] The positio of the tooltip. 
  Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
-	 * @return {void} 
 	 */
 	setToolTip(titles, pos) {return}
 
 	/**
 	 * EnableElevation
 	 * @param {bin} enable `true` or `false`
-	 * @return {void} 
 	 */
 	enableElevation(enable) {return}
 
@@ -1985,7 +1828,6 @@ class UIButtonGroup {
 	 * SetEnabled
 	 * @param {num} index `The index of the button item.`
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -2000,7 +1842,6 @@ class UIButtonGroup {
 	 * SetEnabledByName
 	 * @param {str} name `The button text.`
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -2031,7 +1872,6 @@ class UIButtonGroup {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -2039,39 +1879,25 @@ class UIButtonGroup {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -2089,7 +1915,6 @@ class UIButtonGroup {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -2100,7 +1925,6 @@ class UIButtonGroup {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -2109,7 +1933,6 @@ class UIButtonGroup {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -2118,7 +1941,6 @@ class UIButtonGroup {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -2129,21 +1951,18 @@ class UIButtonGroup {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -2271,7 +2090,6 @@ class UICheckbox {
 	/**
 	 * SetOnTouch
 	 * @param {(check: bin) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
@@ -2279,7 +2097,6 @@ class UICheckbox {
 	 * SetIcon
 	 * @param {str} checked `Material icon for checked state`
 	 * @param {str} unchecked `Material icon for unchecked state`
-	 * @return {void} 
 	 */
 	setIcon(checked, unchecked) {return}
 
@@ -2292,7 +2109,6 @@ class UICheckbox {
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -2316,7 +2132,6 @@ class UICheckbox {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -2324,39 +2139,25 @@ class UICheckbox {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -2374,7 +2175,6 @@ class UICheckbox {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -2385,7 +2185,6 @@ class UICheckbox {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -2394,7 +2193,6 @@ class UICheckbox {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -2403,7 +2201,6 @@ class UICheckbox {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -2414,21 +2211,18 @@ class UICheckbox {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -2559,14 +2353,12 @@ class UICheckboxGroup {
 	/**
 	 * SetOnTouch
 	 * @param {(value: bin, text: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(values: lst) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
@@ -2574,7 +2366,6 @@ class UICheckboxGroup {
 	 * SetIcon
 	 * @param {str} checked `Material icon font`
 	 * @param {str} unchecked `Material icon font`
-	 * @return {void} 
 	 */
 	setIcon(checked, unchecked) {return}
 
@@ -2588,7 +2379,6 @@ class UICheckboxGroup {
 	 * SetCheckedByIndex
 	 * @param {num} item `The item or index of the item.`
 	 * @param {bin} bool The item value. Can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setCheckedByIndex(item, bool) {return}
 
@@ -2596,7 +2386,6 @@ class UICheckboxGroup {
 	 * SetCheckedByName
 	 * @param {str} name `The item or index of the item.`
 	 * @param {bin} bool The item value. Can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setCheckedByName(name, bool) {return}
 
@@ -2624,7 +2413,6 @@ class UICheckboxGroup {
 	 * SetTextByIndex
 	 * @param {num} index `The index of the item.`
 	 * @param {str} val `The new text to replace.`
-	 * @return {void} 
 	 */
 	setTextByIndex(index, val) {return}
 
@@ -2632,7 +2420,6 @@ class UICheckboxGroup {
 	 * SetTextByName
 	 * @param {str} name `The name of the item`
 	 * @param {str} val `The new text to replace`
-	 * @return {void} 
 	 */
 	setTextByName(name, val) {return}
 
@@ -2646,7 +2433,6 @@ class UICheckboxGroup {
 	/**
 	 * SetList
 	 * @param {obj} list The new list items for the checkbox group.
-	 * @return {void} 
 	 */
 	setList(list) {return}
 
@@ -2654,7 +2440,6 @@ class UICheckboxGroup {
 	 * SetEnabled
 	 * @param {num} index `The index of the checkbox item.`
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -2669,7 +2454,6 @@ class UICheckboxGroup {
 	 * SetEnabledByName
 	 * @param {str} name `The name of the checkbox item.`
 	 * @param {bin} value Values can be `true` or `false`
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -2684,40 +2468,30 @@ class UICheckboxGroup {
 	 * AddItem
 	 * @param {str} text `The text label for the checkbox.`
 	 * @param {num} index `The index in which to insert the item.`
-	 * @return {void} 
 	 */
 	addItem(text, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the corresponding item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} title `The title text of the corresponding checkbox item.`
-	 * @return {void} 
 	 */
 	removeItemByName(title) {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(label: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -2728,7 +2502,6 @@ class UICheckboxGroup {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
@@ -2752,7 +2525,6 @@ class UICheckboxGroup {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -2760,39 +2532,25 @@ class UICheckboxGroup {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -2810,7 +2568,6 @@ class UICheckboxGroup {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -2821,7 +2578,6 @@ class UICheckboxGroup {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -2830,7 +2586,6 @@ class UICheckboxGroup {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -2839,21 +2594,18 @@ class UICheckboxGroup {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -2978,14 +2730,12 @@ class UIChip {
 	/**
 	 * SetTouchable
 	 * @param {bin} touchable `true` or `false`
-	 * @return {void} 
 	 */
 	setTouchable(touchable) {return}
 
 	/**
 	 * SetOnDelete
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnDelete(callback) {return}
 
@@ -2996,21 +2746,18 @@ class UIChip {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -3034,7 +2781,6 @@ class UIChip {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -3042,39 +2788,25 @@ class UIChip {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -3092,7 +2824,6 @@ class UIChip {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -3103,7 +2834,6 @@ class UIChip {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -3112,7 +2842,6 @@ class UIChip {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -3121,21 +2850,18 @@ class UIChip {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -3146,37 +2872,28 @@ class UIDatePicker {
 	/** @type {str} Sets or returns the format of the selected date */
 	format;
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
 	/**
 	 * SetLimits
 	 * @param {str} [past] Date in the past of the form `YYYY-MM-DD`
 	 * @param {str} [future] Date in the future of the form `YYYY-MM-DD`
-	 * @return {void} 
 	 */
 	setLimits(past, future) {return}
 
 	/**
 	 * SetOnSelect
 	 * @param {(date: str) => void} callback 
-	 * @return {void} 
 	 */
 	setOnSelect(callback) {return}
 
 	/**
 	 * SetFormat
 	 * @param {str} format A date format. Can be `YYYY-MM-DD` `MM-DD-YYYY` `DD-MM-YYYY`
-	 * @return {void} 
 	 */
 	setFormat(format) {return}
 
@@ -3205,27 +2922,19 @@ class UIDialog {
 	/**
 	 * SetOnAction
 	 * @param {(text: str, index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnAction(callback) {return}
 
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnClose(callback) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 }
 
@@ -3322,14 +3031,12 @@ class UIDivider {
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -3353,7 +3060,6 @@ class UIDivider {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -3361,39 +3067,25 @@ class UIDivider {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -3411,7 +3103,6 @@ class UIDivider {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -3422,7 +3113,6 @@ class UIDivider {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -3431,7 +3121,6 @@ class UIDivider {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -3440,7 +3129,6 @@ class UIDivider {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -3451,21 +3139,18 @@ class UIDivider {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -3488,56 +3173,46 @@ class UIDrawer {
 	/**
 	 * AddLayout
 	 * @param {obj} lay Layout component.
-	 * @return {void} 
 	 */
 	addLayout(lay) {return}
 
 	/**
 	 * DisableSwipeToOpen
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	disableSwipeToOpen(value) {return}
 
 	/**
 	 * DisableBackdropTransition
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	disableBackdropTransition(value) {return}
 
 	/**
 	 * DisableDiscovery
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	disableDiscovery(value) {return}
 
 	/**
 	 * SetOnOpen
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnOpen(callback) {return}
 
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnClose(callback) {return}
 
 	/**
 	 * Show
 	 * @param {str} anchor Open position. Can be `left` or `right`. Default is `left`
-	 * @return {void} 
 	 */
 	show(anchor) {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 }
 
@@ -3655,21 +3330,18 @@ class UIDropdown {
 	/**
 	 * SetOnChange
 	 * @param {(value: obj, index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnClose(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {lst} val The list of new items t display.
-	 * @return {void} 
 	 */
 	setList(val) {return}
 
@@ -3677,7 +3349,6 @@ class UIDropdown {
 	 * SetItemByIndex
 	 * @param {str} item `The new item text.`
 	 * @param {num} index `The index of the item to update.`
-	 * @return {void} 
 	 */
 	setItemByIndex(item, index) {return}
 
@@ -3692,7 +3363,6 @@ class UIDropdown {
 	 * SetEnabled
 	 * @param {num} index `The index of the item.`
 	 * @param {bin} value Values can be `true` `false`.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -3707,7 +3377,6 @@ class UIDropdown {
 	 * SetEnabledByName
 	 * @param {str} name `The name of the item.`
 	 * @param {bin} value Values can be `true` `false`.
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -3722,34 +3391,25 @@ class UIDropdown {
 	 * AddItem
 	 * @param {str} name `The name of the menu.`
 	 * @param {num} index `The index in which to insert the menu item.`
-	 * @return {void} 
 	 */
 	addItem(name, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the menu item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the menu item.`
-	 * @return {void} 
 	 */
 	removeItemByName(name) {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
 	/**
@@ -3759,21 +3419,18 @@ class UIDropdown {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -3797,7 +3454,6 @@ class UIDropdown {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -3805,39 +3461,25 @@ class UIDropdown {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -3855,7 +3497,6 @@ class UIDropdown {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -3866,7 +3507,6 @@ class UIDropdown {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -3875,7 +3515,6 @@ class UIDropdown {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -3884,21 +3523,18 @@ class UIDropdown {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -4018,21 +3654,18 @@ class UIFAB {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -4056,7 +3689,6 @@ class UIFAB {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -4064,39 +3696,25 @@ class UIFAB {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -4114,7 +3732,6 @@ class UIFAB {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -4125,7 +3742,6 @@ class UIFAB {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -4134,7 +3750,6 @@ class UIFAB {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -4143,21 +3758,18 @@ class UIFAB {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -4285,21 +3897,18 @@ class UIImage {
 	/**
 	 * SetOnLoad
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnLoad(callback) {return}
 
 	/**
 	 * EnableContextMenu
 	 * @param {bin} value Value. Can be `true` `false`
-	 * @return {void} 
 	 */
 	enableContextMenu(value) {return}
 
 	/**
 	 * SetImage
 	 * @param {str} file `The path to the image file.`
-	 * @return {void} 
 	 */
 	setImage(file) {return}
 
@@ -4325,7 +3934,6 @@ class UIImage {
 	 * @param {num} y2 `The y-coordinate of the second point in pixels.`
 	 * @param {str} [strokeColor] `A hexadecimal color.`
 	 * @param {num} [strokeWidth] `The stroke thickness.`
-	 * @return {void} 
 	 */
 	drawLine(x1, y1, x2, y2, strokeColor, strokeWidth) {return}
 
@@ -4337,7 +3945,6 @@ class UIImage {
 	 * @param {str} [fillColor] `A hexadecimal color.`
 	 * @param {str} [strokeColor] `A hexadecimal color.`
 	 * @param {num} [strokeWidth] `The stoke thickness.`
-	 * @return {void} 
 	 */
 	drawCircle(x, y, radius, fillColor, strokeColor, strokeWidth) {return}
 
@@ -4349,7 +3956,6 @@ class UIImage {
 	 * @param {str} [fillColor] `A hexadecimal color.`
 	 * @param {str} [strokeColor] `A hexadecimal color.`
 	 * @param {num} [strokeWidth] `The stroke thickness in pixels.`
-	 * @return {void} 
 	 */
 	drawSquare(x, y, width, fillColor, strokeColor, strokeWidth) {return}
 
@@ -4362,7 +3968,6 @@ class UIImage {
 	 * @param {str} [fillColor] `A hexadecimal color.`
 	 * @param {str} [strokeColor] `A hexadecimal color.`
 	 * @param {num} [strokeWidth] `The stroke thickness.`
-	 * @return {void} 
 	 */
 	drawRectangle(x1, y1, width, height, fillColor, strokeColor, strokeWidth) {return}
 
@@ -4376,7 +3981,6 @@ class UIImage {
 	 * @param {str} [fillColor] `A hexadecimal color.`
 	 * @param {str} [strokeColor] `A hexadecimal color.`
 	 * @param {num} [strokeWidth] `The stroke thickness.`
-	 * @return {void} 
 	 */
 	drawArc(x, y, radius, start, end, fillColor, strokeColor, strokeWidth) {return}
 
@@ -4387,14 +3991,10 @@ class UIImage {
 	 * @param {num} [y] `The distance from the top of the top-left corner of the image in pixels.`
 	 * @param {num} [width] `If provided`, ` the image will be shrink or stretch to fill this width in pixels.`
 	 * @param {num} [height] `If provided`, ` the height of the image will be shrink or stretch to fill this height in pixels.`
-	 * @return {void} 
 	 */
 	drawImage(img, x, y, width, height) {return}
 
-	/**
-	 * Clear
-	 * @return {void} 
-	 */
+	/** Clear */
 	clear() {return}
 
 	/**
@@ -4402,7 +4002,6 @@ class UIImage {
 	 * @param {lst} points An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point.
 	 * @param {str} [strokeColor] `A hexadecimal color.`
 	 * @param {num} [strokeWidth] `The stroke thickness.`
-	 * @return {void} 
 	 */
 	drawPolyline(points, strokeColor, strokeWidth) {return}
 
@@ -4412,7 +4011,6 @@ class UIImage {
 	 * @param {str} [fillColor] `A hexadecimal color.`
 	 * @param {str} [strokeColor] `A hexadecimal color.`
 	 * @param {num} [strokeWidth] `The stroke thickness.`
-	 * @return {void} 
 	 */
 	drawPolygon(points, fillColor, strokeColor, strokeWidth) {return}
 
@@ -4421,28 +4019,24 @@ class UIImage {
 	 * @param {num} x `The x-coordinate in pixels.`
 	 * @param {num} y `The y-coordinate in pixels.`
 	 * @param {str} [color] `A hexadecimal color.`
-	 * @return {void} 
 	 */
 	drawPoint(x, y, color) {return}
 
 	/**
 	 * SetOnTouchMove
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouchMove(callback) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -4466,7 +4060,6 @@ class UIImage {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -4474,39 +4067,25 @@ class UIImage {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -4524,7 +4103,6 @@ class UIImage {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -4535,7 +4113,6 @@ class UIImage {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -4544,7 +4121,6 @@ class UIImage {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -4553,7 +4129,6 @@ class UIImage {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -4564,21 +4139,18 @@ class UIImage {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -4695,20 +4267,15 @@ class UILayout {
 	 * @param {num} [right] `Right margin.`
 	 * @param {num} [bottom] `Bottom margin.`
 	 * @param {str} [mode='px'] `px`. Default is a fraction of viewport.
-	 * @return {void} 
 	 */
 	setChildMargins(left, top, right, bottom, mode) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
 	/**
 	 * Goto
 	 * @param {num} index `Index of a given layout.`
-	 * @return {void} 
 	 */
 	goto(index) {return}
 
@@ -4718,16 +4285,10 @@ class UILayout {
 	 */
 	getCurrentSlide() {return}
 
-	/**
-	 * Next
-	 * @return {void} 
-	 */
+	/** Next */
 	next() {return}
 
-	/**
-	 * Previous
-	 * @return {void} 
-	 */
+	/** Previous */
 	previous() {return}
 
 	/**
@@ -4740,7 +4301,6 @@ class UILayout {
 	/**
 	 * ChildToFront
 	 * @param {obj} child The child object of the layout.
-	 * @return {void} 
 	 */
 	childToFront(child) {return}
 
@@ -4754,21 +4314,18 @@ class UILayout {
 	/**
 	 * RemoveChild
 	 * @param {obj} child The child component to be remove.
-	 * @return {void} 
 	 */
 	removeChild(child) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -4792,7 +4349,6 @@ class UILayout {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -4800,33 +4356,22 @@ class UILayout {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -4844,7 +4389,6 @@ class UILayout {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -4855,7 +4399,6 @@ class UILayout {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -4864,7 +4407,6 @@ class UILayout {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -4873,7 +4415,6 @@ class UILayout {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -4884,21 +4425,18 @@ class UILayout {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -5038,61 +4576,48 @@ class UIList {
 	 * @param {str} [body] `The text description of the item.`
 	 * @param {str} [image] `A material icon or image file path.`
 	 * @param {num} [index] `The index in which to add or insert the item.`
-	 * @return {void} 
 	 */
 	addItem(title, body, image, index) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(title: str, body: str, icon: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnSelect
 	 * @param {(title: str, index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnSelect(callback) {return}
 
 	/**
 	 * SetOnAction
 	 * @param {(icon: str, index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnAction(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(title: str, body: str, icon: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
-	/**
-	 * GetSelectedItems
-	 * @return {void} 
-	 */
+	/** GetSelectedItems */
 	getSelectedItems() {return}
 
-	/**
-	 * GetSelectedTitles
-	 * @return {void} 
-	 */
+	/** GetSelectedTitles */
 	getSelectedTitles() {return}
 
 	/**
 	 * SetList
 	 * @param {lst} list A comma separated list of items or an array. See the list format above.
-	 * @return {void} 
 	 */
 	setList(list) {return}
 
 	/**
 	 * SetSelectable
 	 * @param {bin} selectable `If true`, ` make the list selectable. Otherwise`, ` list is not selectable`
-	 * @return {void} 
 	 */
 	setSelectable(selectable) {return}
 
@@ -5102,14 +4627,12 @@ class UIList {
 	 * @param {str} newTitle `The new title of the item`
 	 * @param {str} [newBody] `The new body text`
 	 * @param {str} [newImage] `The new icon or image`
-	 * @return {void} 
 	 */
 	setItemByIndex(index, newTitle, newBody, newImage) {return}
 
 	/**
 	 * GetItemByIndex
 	 * @param {num} index `Returns the item in a list as an object of the following format { title`, ` body`, ` image }`
-	 * @return {void} 
 	 */
 	getItemByIndex(index) {return}
 
@@ -5119,53 +4642,39 @@ class UIList {
 	 * @param {str} newTitle `The new title of the list item.`
 	 * @param {str} [newBody] `The new description of the list item.`
 	 * @param {str} [newImage] `A material icon font or image file path.`
-	 * @return {void} 
 	 */
 	setItem(title, newTitle, newBody, newImage) {return}
 
 	/**
 	 * GetItem
 	 * @param {str} title `Returns the item in a list as an object of the following format { title`, ` body`, ` image }`
-	 * @return {void} 
 	 */
 	getItem(title) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the item to remove`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The title of the list to remove.`
-	 * @return {void} 
 	 */
 	removeItemByName(name) {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
-	/**
-	 * DeselectAll
-	 * @return {void} 
-	 */
+	/** DeselectAll */
 	deselectAll() {return}
 
 	/**
 	 * SelectItemByIndex
 	 * @param {num} index `The index to be selected.`
-	 * @return {void} 
 	 */
 	selectItemByIndex(index) {return}
 
@@ -5173,7 +4682,6 @@ class UIList {
 	 * SetTitleText
 	 * @param {num} index `The index of the corresponding list item.`
 	 * @param {str} title `The new title text.`
-	 * @return {void} 
 	 */
 	setTitleText(index, title) {return}
 
@@ -5181,7 +4689,6 @@ class UIList {
 	 * SetBodyText
 	 * @param {num} index `The index of the list whose secondary text to be changed.`
 	 * @param {str} newText `The new secondary text.`
-	 * @return {void} 
 	 */
 	setBodyText(index, newText) {return}
 
@@ -5189,7 +4696,6 @@ class UIList {
 	 * SetIcon
 	 * @param {num} index `The index of the corresponding list item.`
 	 * @param {str} icon `Material icon font.`
-	 * @return {void} 
 	 */
 	setIcon(index, icon) {return}
 
@@ -5200,7 +4706,6 @@ class UIList {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
@@ -5224,7 +4729,6 @@ class UIList {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -5232,39 +4736,25 @@ class UIList {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -5282,7 +4772,6 @@ class UIList {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -5293,7 +4782,6 @@ class UIList {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -5302,7 +4790,6 @@ class UIList {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -5311,21 +4798,18 @@ class UIList {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -5426,27 +4910,21 @@ class UIMenu {
 	/**
 	 * SetOnTouch
 	 * @param {(item: str, icon: str, index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * Show
 	 * @param {obj} parent The component where to anchor the menu. It can be a `Button` or an `Image`.
-	 * @return {void} 
 	 */
 	show(parent) {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
 	/**
 	 * SetList
 	 * @param {lst} list The list items to show.
-	 * @return {void} 
 	 */
 	setList(list) {return}
 
@@ -5454,48 +4932,37 @@ class UIMenu {
 	 * AddItem
 	 * @param {str} name `The new item to be added.`
 	 * @param {num} index `The index at which to add the item.`
-	 * @return {void} 
 	 */
 	addItem(name, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByName(name) {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
 	/**
 	 * SetPosition
 	 * @param {num} left `The position of the menu from the left of the parent or anchor component. The unit is in pixels.`
 	 * @param {num} top `The position of the menu from the top of the parent or anchor component. The unit is in pixels.`
-	 * @return {void} 
 	 */
 	setPosition(left, top) {return}
 
 	/**
 	 * SetAutoFocus
 	 * @param {bin} bool Value can be `true` or `false`
-	 * @return {void} 
 	 */
 	setAutoFocus(bool) {return}
 
@@ -5503,7 +4970,6 @@ class UIMenu {
 	 * SetEnabled
 	 * @param {num} index `The index of the item.`
 	 * @param {bin} value Values can be `true` or `false`. `false` to disable.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -5518,7 +4984,6 @@ class UIMenu {
 	 * SetEnabledByName
 	 * @param {str} name `The name of the corresping item the menu.`
 	 * @param {bin} value Values can be `true` or `false`. `false` to disable an item.
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -5532,7 +4997,6 @@ class UIMenu {
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -5556,7 +5020,6 @@ class UIMenu {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -5564,27 +5027,19 @@ class UIMenu {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -5602,7 +5057,6 @@ class UIMenu {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -5613,7 +5067,6 @@ class UIMenu {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -5622,7 +5075,6 @@ class UIMenu {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -5633,21 +5085,18 @@ class UIMenu {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -5757,14 +5206,12 @@ class UIProgress {
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -5788,7 +5235,6 @@ class UIProgress {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -5796,39 +5242,25 @@ class UIProgress {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -5846,7 +5278,6 @@ class UIProgress {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -5857,7 +5288,6 @@ class UIProgress {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -5866,7 +5296,6 @@ class UIProgress {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -5875,7 +5304,6 @@ class UIProgress {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -5886,21 +5314,18 @@ class UIProgress {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -6031,21 +5456,18 @@ class UIRadioGroup {
 	/**
 	 * SetOnChange
 	 * @param {(index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(checked: bin, label: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {str} val `A comma separated items`
-	 * @return {void} 
 	 */
 	setList(val) {return}
 
@@ -6053,7 +5475,6 @@ class UIRadioGroup {
 	 * SetItemByIndex
 	 * @param {str} item `The new item name to be displayed`
 	 * @param {num} index `The index to of the item to be updated`
-	 * @return {void} 
 	 */
 	setItemByIndex(item, index) {return}
 
@@ -6061,7 +5482,6 @@ class UIRadioGroup {
 	 * SetItemByName
 	 * @param {str} name `The name of the item.`
 	 * @param {str} text `The new text to replaced the name of the item.`
-	 * @return {void} 
 	 */
 	setItemByName(name, text) {return}
 
@@ -6069,41 +5489,31 @@ class UIRadioGroup {
 	 * AddItem
 	 * @param {str} name `The new item to be added.`
 	 * @param {num} index `The index in which to add the item.`
-	 * @return {void} 
 	 */
 	addItem(name, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByName(name) {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
 	/**
 	 * SetEnabled
 	 * @param {num} index `The index of the item.`
 	 * @param {bin} value Values can be `true` or `false`. If `false`,  the item will be disabled.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -6118,7 +5528,6 @@ class UIRadioGroup {
 	 * SetEnabledByName
 	 * @param {str} name `The radiogroup text.`
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -6132,7 +5541,6 @@ class UIRadioGroup {
 	/**
 	 * SetOnContextMenu
 	 * @param {(label: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -6143,7 +5551,6 @@ class UIRadioGroup {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
@@ -6167,7 +5574,6 @@ class UIRadioGroup {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -6175,39 +5581,25 @@ class UIRadioGroup {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -6225,7 +5617,6 @@ class UIRadioGroup {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -6236,7 +5627,6 @@ class UIRadioGroup {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -6245,7 +5635,6 @@ class UIRadioGroup {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -6254,21 +5643,18 @@ class UIRadioGroup {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -6396,21 +5782,18 @@ class UISelect {
 	/**
 	 * SetOnChange
 	 * @param {(value: str) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnOpen
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnOpen(callback) {return}
 
 	/**
 	 * SetOnClose
 	 * @param {(value: str) => void} callback 
-	 * @return {void} 
 	 */
 	setOnClose(callback) {return}
 
@@ -6418,47 +5801,36 @@ class UISelect {
 	 * AddItem
 	 * @param {str} item `A new item to be added.`
 	 * @param {num} index `The index in which to add the item.`
-	 * @return {void} 
 	 */
 	addItem(item, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the corresponding item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} name `The name of the item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByName(name) {return}
 
-	/**
-	 * ShifItem
-	 * @return {void} 
-	 */
+	/** ShifItem */
 	shifItem() {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
 	/**
 	 * GetItem
 	 * @param {num} index `The index of the item.`
-	 * @return {void} 
 	 */
 	getItem(index) {return}
 
 	/**
 	 * SetList
 	 * @param {obj} items A comma separated string or array of options
-	 * @return {void} 
 	 */
 	setList(items) {return}
 
@@ -6466,7 +5838,6 @@ class UISelect {
 	 * SetEnabled
 	 * @param {num} index `true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -6481,7 +5852,6 @@ class UISelect {
 	 * SetEnabledByName
 	 * @param {str} name `The name of the menu item.`
 	 * @param {bin} value Value can be `true` or `false`
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -6495,14 +5865,12 @@ class UISelect {
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -6526,7 +5894,6 @@ class UISelect {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -6534,39 +5901,25 @@ class UISelect {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -6584,7 +5937,6 @@ class UISelect {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -6595,7 +5947,6 @@ class UISelect {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -6604,7 +5955,6 @@ class UISelect {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -6613,7 +5963,6 @@ class UISelect {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -6624,21 +5973,18 @@ class UISelect {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -6760,14 +6106,12 @@ class UISlider {
 	/**
 	 * SetOnChange
 	 * @param {(value: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnSelect
 	 * @param {(value: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnSelect(callback) {return}
 
@@ -6775,14 +6119,12 @@ class UISlider {
 	 * SetRange
 	 * @param {num} [min] `Minimum value of the slider.`
 	 * @param {num} [max] `Maximum value of the slider.`
-	 * @return {void} 
 	 */
 	setRange(min, max) {return}
 
 	/**
 	 * SetMarks
 	 * @param {obj} val The marks on the Slider Component.
-	 * @return {void} 
 	 */
 	setMarks(val) {return}
 
@@ -6795,14 +6137,12 @@ class UISlider {
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -6826,7 +6166,6 @@ class UISlider {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -6834,39 +6173,25 @@ class UISlider {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -6884,7 +6209,6 @@ class UISlider {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -6895,7 +6219,6 @@ class UISlider {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -6904,7 +6227,6 @@ class UISlider {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -6913,7 +6235,6 @@ class UISlider {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -6924,21 +6245,18 @@ class UISlider {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -7042,27 +6360,19 @@ class UIStepper {
 	/**
 	 * SetOnComplete
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnComplete(callback) {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
-	/**
-	 * NextStep
-	 * @return {void} 
-	 */
+	/** NextStep */
 	nextStep() {return}
 
-	/**
-	 * PreviousStep
-	 * @return {void} 
-	 */
+	/** PreviousStep */
 	previousStep() {return}
 
 	/**
@@ -7082,7 +6392,6 @@ class UIStepper {
 	/**
 	 * RemoveStep
 	 * @param {num} index `The index of the step to remove.`
-	 * @return {void} 
 	 */
 	removeStep(index) {return}
 
@@ -7090,21 +6399,18 @@ class UIStepper {
 	 * SetTitleText
 	 * @param {num} index `The index of the Stepper.`
 	 * @param {str} title `The new title text.`
-	 * @return {void} 
 	 */
 	setTitleText(index, title) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -7128,7 +6434,6 @@ class UIStepper {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -7136,39 +6441,25 @@ class UIStepper {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -7186,7 +6477,6 @@ class UIStepper {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -7197,7 +6487,6 @@ class UIStepper {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -7206,7 +6495,6 @@ class UIStepper {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -7215,7 +6503,6 @@ class UIStepper {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -7226,21 +6513,18 @@ class UIStepper {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -7365,14 +6649,12 @@ class UISwitch {
 	/**
 	 * SetOnTouch
 	 * @param {(check: bin) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -7396,7 +6678,6 @@ class UISwitch {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -7404,39 +6685,25 @@ class UISwitch {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -7454,7 +6721,6 @@ class UISwitch {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -7465,7 +6731,6 @@ class UISwitch {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -7474,7 +6739,6 @@ class UISwitch {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -7483,7 +6747,6 @@ class UISwitch {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -7494,21 +6757,18 @@ class UISwitch {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -7636,14 +6896,12 @@ class UISwitchGroup {
 	/**
 	 * SetOnTouch
 	 * @param {(value: bin, text: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(values: lst) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
@@ -7651,7 +6909,6 @@ class UISwitchGroup {
 	 * SetValueByIndex
 	 * @param {num} index `The index of the corresponding item.`
 	 * @param {bin} val A Values can be `true` or `false`
-	 * @return {void} 
 	 */
 	setValueByIndex(index, val) {return}
 
@@ -7665,7 +6922,6 @@ class UISwitchGroup {
 	/**
 	 * SetList
 	 * @param {obj} lst The list array or a comma separated list.
-	 * @return {void} 
 	 */
 	setList(lst) {return}
 
@@ -7675,41 +6931,31 @@ class UISwitchGroup {
 	 * @param {str} icon `Material icon font.`
 	 * @param {bin} value `The value of the item.`
 	 * @param {num} index `The index in which to insert the item. Default is at the bottom of the list.`
-	 * @return {void} 
 	 */
 	addItem(title, icon, value, index) {return}
 
 	/**
 	 * RemoveItemByIndex
 	 * @param {num} index `The index of the corresponding item to remove.`
-	 * @return {void} 
 	 */
 	removeItemByIndex(index) {return}
 
 	/**
 	 * RemoveItemByName
 	 * @param {str} title `The title text of the SwitchGroup item.`
-	 * @return {void} 
 	 */
 	removeItemByName(title) {return}
 
-	/**
-	 * PopItem
-	 * @return {void} 
-	 */
+	/** PopItem */
 	popItem() {return}
 
-	/**
-	 * ShiftItem
-	 * @return {void} 
-	 */
+	/** ShiftItem */
 	shiftItem() {return}
 
 	/**
 	 * SetEnabled
 	 * @param {num} index The index of the corresponding item in the list. You can also pass `Boolean` to enable or disable the switchgroup component.
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -7723,7 +6969,6 @@ class UISwitchGroup {
 	/**
 	 * SetOnContextMenu
 	 * @param {(text: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -7734,7 +6979,6 @@ class UISwitchGroup {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
@@ -7758,7 +7002,6 @@ class UISwitchGroup {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -7766,39 +7009,25 @@ class UISwitchGroup {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -7816,7 +7045,6 @@ class UISwitchGroup {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -7827,7 +7055,6 @@ class UISwitchGroup {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -7836,7 +7063,6 @@ class UISwitchGroup {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -7845,21 +7071,18 @@ class UISwitchGroup {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -7993,21 +7216,18 @@ class UITabs {
 	/**
 	 * SetOnChange
 	 * @param {(name: str, index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(name: str, index: num) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetTabs
 	 * @param {lst} tabs The tab titles array. See examples for format.
-	 * @return {void} 
 	 */
 	setTabs(tabs) {return}
 
@@ -8016,7 +7236,6 @@ class UITabs {
 	 * @param {str} name `The name of the tab.`
 	 * @param {str} icon `Material icon font.`
 	 * @param {num} index `The index in which to insert the tab.`
-	 * @return {void} 
 	 */
 	addTab(name, icon, index) {return}
 
@@ -8024,7 +7243,6 @@ class UITabs {
 	 * SetTitleText
 	 * @param {num} index `Index of the tab.`
 	 * @param {str} title `The new title.`
-	 * @return {void} 
 	 */
 	setTitleText(index, title) {return}
 
@@ -8032,21 +7250,18 @@ class UITabs {
 	 * SetIcon
 	 * @param {num} index `The index of the tab.`
 	 * @param {str} icon `Material icon font.`
-	 * @return {void} 
 	 */
 	setIcon(index, icon) {return}
 
 	/**
 	 * RemoveTabByIndex
 	 * @param {num} index `The index of the corresponding tab to remove.`
-	 * @return {void} 
 	 */
 	removeTabByIndex(index) {return}
 
 	/**
 	 * RemoveTabByName
 	 * @param {str} name `The name of the corresponding tab to remove.`
-	 * @return {void} 
 	 */
 	removeTabByName(name) {return}
 
@@ -8060,14 +7275,12 @@ class UITabs {
 	/**
 	 * ShowTab
 	 * @param {str} name `The name of the tab to be shown.`
-	 * @return {void} 
 	 */
 	showTab(name) {return}
 
 	/**
 	 * ShowTabByIndex
 	 * @param {num} index `The index of the tab to be shown.`
-	 * @return {void} 
 	 */
 	showTabByIndex(index) {return}
 
@@ -8075,7 +7288,6 @@ class UITabs {
 	 * SetEnabled
 	 * @param {num} index The index of the corresponding tab. Pass `Boolean` if you want to disable the entire Tabs component.
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabled(index, value) {return}
 
@@ -8090,7 +7302,6 @@ class UITabs {
 	 * SetEnabledByName
 	 * @param {str} name `The name of the tab.`
 	 * @param {bin} value Values can be `true` or `false`.
-	 * @return {void} 
 	 */
 	setEnabledByName(name, value) {return}
 
@@ -8108,7 +7319,6 @@ class UITabs {
  `desktop` : will only present them on medium and larger viewports 
  `on` : will always present them 
  `off` : will never present them.
-	 * @return {void} 
 	 */
 	showScrollButton(mode) {return}
 
@@ -8122,7 +7332,6 @@ class UITabs {
 	/**
 	 * SetOnContextMenu
 	 * @param {(text: str, index: num, event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -8133,7 +7342,6 @@ class UITabs {
 	 * @param {num} [bl] `Bottom-left corner radius.`
 	 * @param {num} [br] `Bottom-right corner radius.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
@@ -8143,7 +7351,6 @@ class UITabs {
 	 * @param {num} thickness `Thickness in pixels.`
 	 * @param {str} color Hexadecimal color of the form `#rrggbb`.
 	 * @param {num} radius `The corner radius in pixels.`
-	 * @return {void} 
 	 */
 	setIndicatorStyle(width, thickness, color, radius) {return}
 
@@ -8154,7 +7361,6 @@ class UITabs {
 	 * @param {num} [right] `The tab-item right padding.`
 	 * @param {num} [bottom] `The tab-item bottom padding.`
 	 * @param {str} [mode='px'] Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
-	 * @return {void} 
 	 */
 	setTabPadding(left, top, right, bottom, mode) {return}
 
@@ -8178,7 +7384,6 @@ class UITabs {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -8186,39 +7391,25 @@ class UITabs {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -8236,7 +7427,6 @@ class UITabs {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -8247,7 +7437,6 @@ class UITabs {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -8256,7 +7445,6 @@ class UITabs {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -8265,21 +7453,18 @@ class UITabs {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -8404,7 +7589,6 @@ class UIText {
 	/**
 	 * SetHtml
 	 * @param {str} html `An html string`
-	 * @return {void} 
 	 */
 	setHtml(html) {return}
 
@@ -8420,21 +7604,18 @@ class UIText {
 	 * @param {num} dx `X-offset of the shadow`
 	 * @param {num} dy `Y-offset of the shadow`
 	 * @param {obj} color A hexadecimal color e.g. `#aarrggbb`
-	 * @return {void} 
 	 */
 	setTextShadow(radius, dx, dy, color) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -8458,7 +7639,6 @@ class UIText {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -8466,39 +7646,25 @@ class UIText {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -8516,7 +7682,6 @@ class UIText {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -8527,7 +7692,6 @@ class UIText {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -8536,7 +7700,6 @@ class UIText {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -8545,7 +7708,6 @@ class UIText {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -8556,21 +7718,18 @@ class UIText {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -8722,21 +7881,18 @@ class UITextField {
 	/**
 	 * SetOnEnter
 	 * @param {(text: str) => void} callback 
-	 * @return {void} 
 	 */
 	setOnEnter(callback) {return}
 
 	/**
 	 * SetOnChange
 	 * @param {(text: str) => void} callback 
-	 * @return {void} 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnFocus
 	 * @param {(focus: bin) => void} callback 
-	 * @return {void} 
 	 */
 	setOnFocus(callback) {return}
 
@@ -8744,7 +7900,6 @@ class UITextField {
 	 * SetRows
 	 * @param {num} [min] `The minimum number of rows.`
 	 * @param {num} [max] `The maximum number of rows.`
-	 * @return {void} 
 	 */
 	setRows(min, max) {return}
 
@@ -8754,14 +7909,12 @@ class UITextField {
 	 * @param {str} [type] A comma separated options for start adornment control. Options can be 
  `Icon` : If the adornment is an icon. 
  `Touchable` : If the adornment is touchable.
-	 * @return {void} 
 	 */
 	setStartAdornment(text, type) {return}
 
 	/**
 	 * SetStartAdornmentOnTouch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setStartAdornmentOnTouch(callback) {return}
 
@@ -8777,14 +7930,12 @@ class UITextField {
 	 * @param {str} [type] A comma separated options for end adornment control. Options can be 
  `Icon` : If the adornment is an icon. 
  `Touchable` : If the adornment is touchable.
-	 * @return {void} 
 	 */
 	setEndAdornment(text, type) {return}
 
 	/**
 	 * SetEndAdornmentOnTouch
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setEndAdornmentOnTouch(callback) {return}
 
@@ -8797,14 +7948,12 @@ class UITextField {
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -8828,7 +7977,6 @@ class UITextField {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -8836,39 +7984,25 @@ class UITextField {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -8886,7 +8020,6 @@ class UITextField {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -8897,7 +8030,6 @@ class UITextField {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -8906,7 +8038,6 @@ class UITextField {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -8915,7 +8046,6 @@ class UITextField {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -8926,21 +8056,18 @@ class UITextField {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -9067,14 +8194,12 @@ class UITreeView {
 	/**
 	 * SetOnTouch
 	 * @param {(value: str, path: str) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetList
 	 * @param {obj} obj The list object of the treeview items. See example above.
-	 * @return {void} 
 	 */
 	setList(obj) {return}
 
@@ -9082,7 +8207,6 @@ class UITreeView {
 	 * AddItem
 	 * @param {str} name `The label text for the new item.`
 	 * @param {obj} obj See list object for more info.
-	 * @return {void} 
 	 */
 	addItem(name, obj) {return}
 
@@ -9096,7 +8220,6 @@ class UITreeView {
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -9120,7 +8243,6 @@ class UITreeView {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -9128,39 +8250,25 @@ class UITreeView {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -9178,7 +8286,6 @@ class UITreeView {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -9189,7 +8296,6 @@ class UITreeView {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -9198,7 +8304,6 @@ class UITreeView {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -9207,7 +8312,6 @@ class UITreeView {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -9218,21 +8322,18 @@ class UITreeView {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -9348,21 +8449,18 @@ class UIWebView {
 	/**
 	 * SetOnLoad
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnLoad(callback) {return}
 
 	/**
 	 * SetOnTouch
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
 	 * @param {(event: obj) => void} callback 
-	 * @return {void} 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -9386,7 +8484,6 @@ class UIWebView {
  `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` 
  `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
 	 * @param {num} [duration] `The time in milliseconds.`
-	 * @return {void} 
 	 */
 	animate(anim, duration) {return}
 
@@ -9394,39 +8491,25 @@ class UIWebView {
 	 * SetSize
 	 * @param {num} width `Fraction of the parent width. [0-1]`
 	 * @param {num} height `Fraction of the parent height. [0-1]`
-	 * @return {void} 
 	 */
 	setSize(width, height) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
-	/**
-	 * Gone
-	 * @return {void} 
-	 */
+	/** Gone */
 	gone() {return}
 
-	/**
-	 * Destroy
-	 * @return {void} 
-	 */
+	/** Destroy */
 	destroy() {return}
 
 	/**
 	 * SetScale
 	 * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 	 * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-	 * @return {void} 
 	 */
 	setScale(x, y) {return}
 
@@ -9444,7 +8527,6 @@ class UIWebView {
 	 * @param {num} [right] `Fraction of the parent width.`
 	 * @param {num} [bottom] `Fraction of the parent height.`
 	 * @param {str} [mode='px'] `px` or `%`
-	 * @return {void} 
 	 */
 	setMargins(left, top, right, bottom, mode) {return}
 
@@ -9455,7 +8537,6 @@ class UIWebView {
 	 * @param {num} [right] `Fraction of the component width. [0-1]`
 	 * @param {num} [bottom] `Fraction of the component height. [0-1]`
 	 * @param {str} [mode='px'] The size thickness mode. Can be `px`
-	 * @return {void} 
 	 */
 	setPadding(left, top, right, bottom, mode) {return}
 
@@ -9464,7 +8545,6 @@ class UIWebView {
 	 * @param {num} [left] `Fraction of the parent width. [0-1]`
 	 * @param {num} [top] `Fraction of the screen height. [0-1]`
 	 * @param {str} [mode='px'] Unit of measurement. Can be `px` or `%` or any css unit of measurement.
-	 * @return {void} 
 	 */
 	setPosition(left, top, mode) {return}
 
@@ -9473,7 +8553,6 @@ class UIWebView {
 	 * @param {num} [width] `Border-left thickness in pixels.`
 	 * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
 	 * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
-	 * @return {void} 
 	 */
 	setBorder(width, clr, style) {return}
 
@@ -9484,21 +8563,18 @@ class UIWebView {
 	 * @param {num} [bl] `Bottom-Left border radius in pixels.`
 	 * @param {num} [br] `Bottom-Right border radius in pixels.`
 	 * @param {str} [mode='px'] Unit. Values are `px` `rem` or `%`.
-	 * @return {void} 
 	 */
 	setCornerRadius(tl, tr, bl, br, mode) {return}
 
 	/**
 	 * BringForward
 	 * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
-	 * @return {void} 
 	 */
 	bringForward(zIndex) {return}
 
 	/**
 	 * SendBackward
 	 * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
-	 * @return {void} 
 	 */
 	sendBackward(zIndex) {return}
 }
@@ -9522,7 +8598,6 @@ class UIDateTimePicker {
 	/**
 	 * SetOnSelect
 	 * @param {(value: str) => void} callback 
-	 * @return {void} 
 	 */
 	setOnSelect(callback) {return}
 }
@@ -9549,34 +8624,25 @@ class UIPopup {
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnClose(callback) {return}
 
 	/**
 	 * SetOnAction
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnAction(callback) {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
 	/**
 	 * SetPosition
 	 * @param {str} [vertical] Vertical alignment. Values can be `Top` `Bottom`
 	 * @param {str} [horizontal] Horizontal alignment. Values can be `Left` `Center` and `Right`
-	 * @return {void} 
 	 */
 	setPosition(vertical, horizontal) {return}
 
@@ -9596,22 +8662,15 @@ class UIProgressDialog {
 	 */
 	text() {return}
 
-	/**
-	 * Show
-	 * @return {void} 
-	 */
+	/** Show */
 	show() {return}
 
-	/**
-	 * Hide
-	 * @return {void} 
-	 */
+	/** Hide */
 	hide() {return}
 
 	/**
 	 * SetOnClose
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	setOnClose(callback) {return}
 }

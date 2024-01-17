@@ -25,6 +25,7 @@
 		"num": "Number",
 		"obj": "Object",
 		"str": "String",
+		"nil": "void",
 		"?": "unknown",
 		"uio": "ui object"
 	},

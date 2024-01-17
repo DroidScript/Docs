@@ -20,6 +20,7 @@ const tsxTypes = {
     // eslint-disable-next-line camelcase
     lst_num: "number[]",
     all: "any",
+    nil: "void",
     dso: "AppObject",
     gvo: "GameObject",
     glo: "GLViewObject",
@@ -75,6 +76,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
         if (typeof func !== 'object' || funcName === "_tsxdefs") continue;
         const isGlob = func.subf && state.curScope !== "MUI" && func.retval?.startsWith("obj");
 
+        state.curFunc = funcName;
         const defs = processFunction(inpt, state, funcName, scopeName, func, "\t");
 
         if (defs.className && func.retval && !isGlob) {
@@ -144,6 +146,7 @@ function declareCallback(params, retval) {
 }
 
 /**
+ * @param {GenState} state
  * @param {string} name
  * @param {string} desc
  * @param {ParamDef[]} params
@@ -151,7 +154,7 @@ function declareCallback(params, retval) {
  * @param {boolean|undefined} isval
  * @param {string} indent
  */
-function declareFunction(name, desc, params, retval, isval, indent) {
+function declareFunction(state, name, desc, params, retval, isval, indent) {
     let docStr = "";
     if (JSDOC) {
         const args = params.map(p => p.name.replace('?', ''));
@@ -168,10 +171,13 @@ function declareFunction(name, desc, params, retval, isval, indent) {
         });
 
         retval.desc = retval.desc.replace(/^\\/, '');
-        if (!isval) jsparams.push(`${indent} * @return {${retval.sub || 'void'}} ${retval.desc}\n`);
+        if (!isval && retval.sub) jsparams.push(`${indent} * @return {${retval.sub}} ${retval.desc}\n`);
+        if (isval && !retval.sub) console.error("value " + name + " with no type");
+        if (name.match(/^get/i) && !retval.sub && !params.find(v => v.name === "callback"))
+            console.error(`Get method ${state.curFunc}.${name} with no type`);
 
         if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
-        else if (isval) docStr += `\n${indent}/** @type {${retval.sub || 'void'}} ${desc} */\n`;
+        else if (isval) docStr += `\n${indent}/** @type {${retval.sub}} ${desc} */\n`;
         else docStr += `\n${indent}/** ${desc} */\n`;
 
         if (isval) docStr += `${indent}${name};\n`;
@@ -256,10 +262,10 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
         const [fname, fobj, fcon] = name.split(".").reverse();
         const key = fcon ? `${pAbbrev.toUpperCase()}_${fobj}` : fobj;
         const s = defs.extra[key] || "";
-        defs.extra[key] = s + declareFunction(fname, func.shortDesc, params, retval, func.isval, indent);
+        defs.extra[key] = s + declareFunction(state, fname, func.shortDesc, params, retval, func.isval, indent);
     }
     else {
-        defs.func += declareFunction(name, func.shortDesc, params, retval, func.isval, indent);
+        defs.func += declareFunction(state, name, func.shortDesc, params, retval, func.isval, indent);
     }
 
     if (!func.subf) return defs;
@@ -330,6 +336,7 @@ function makeType(inpt, state, stypes, tsx = false) {
                 case "?": type.main = type.sub = "all";
                 // eslint-disable-next-line no-fallthrough
                 case "all":
+                case "nil":
                 case "fnc": return type;
                 case "num":
                 case "str":
@@ -344,7 +351,7 @@ function makeType(inpt, state, stypes, tsx = false) {
                             String.fromCharCode(Number(c)))
                         .split(/[,|]/);
 
-                    if (types.string.match(/ |\.\.|&lt;|&gt;|<|>|:/)) {
+                    if (types.string.match(/ |\.\.|&lt;|&gt;|[<>:*]/)) {
                         if (types.descs) types.descs = "\\" + types.descs;
                         // fix ui param descriptions with '`'
                         if (!tdesc.find(c => c.includes('`'))) tdesc = tdesc.map(c => '`' + c + '`');

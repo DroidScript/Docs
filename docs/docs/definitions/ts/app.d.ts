@@ -162,8 +162,11 @@ declare class DsApp {
 	 */
 	CheckLicense(key: str_b64): void;
 
-	/** Checks if permission was granted */
-	CheckPermission(type: "Camera"|"Storage"|"ExtSDcard"|"Network"|"Notify"|"Location"|"SMS"|"Calendar"|"Body"|"Contacts"|"Record"|"Biometric"|"Phone"|"Accounts"|"License"|"android.permission.*"): str[];
+	/**
+	 * Checks if permission was granted
+	 * @param type `Camera`, `Storage`, `ExtSDcard`, `Network`, `Notify`, `Location`, `SMS`, `Calendar`, `Body`, `Contacts`, `Record`, `Biometric`, `Phone`, `Accounts`, `License`, `android.permission.*`
+	 */
+	CheckPermission(type: str): str[];
 
 	/** Let the user choose an google account */
 	ChooseAccount(callback: (account: "email") => void): void;
@@ -1169,8 +1172,8 @@ declare class DsApp {
 
 	/**
 	 * Intens can be used to perform an operation between different applications or activities
-	 * @param action android.intent.action.*
-	 * @param category android.intent.category.*
+	 * @param action `android.intent.action.*`
+	 * @param category `android.intent.category.*`
 	 * @param options <br>
  	 * &emsp; `Result` - expect a result to be passed to the callback function
 	 */
@@ -4512,8 +4515,11 @@ declare class DsNotification {
 	 */
 	Batch(properties: {[command: str]: lst}): void;
 
-	/** Cancel a notification with a specific id */
-	Cancel(id: "id"|"*"): void;
+	/**
+	 * Cancel a notification with a specific id
+	 * @param id `id`, `*`
+	 */
+	Cancel(id: str): void;
 
 	/** Returns the control class name */
 	GetType(): "Notification";

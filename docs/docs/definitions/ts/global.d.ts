@@ -12,6 +12,8 @@ declare type num = number;
 declare type obj = object;
 /** String */
 declare type str = string;
+/** void */
+declare type nil = void;
 /** of objects */
 declare type lst_obj = any[];
 /** of numbers */

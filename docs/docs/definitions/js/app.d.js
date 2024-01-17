@@ -80,7 +80,6 @@ class DsApp {
 	 * @param {"left"|"right"} side 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [grabWidth] 
-	 * @return {void} 
 	 */
 	AddDrawer(layout, side, width, grabWidth) {return}
 
@@ -109,7 +108,6 @@ class DsApp {
 	 * @param {"TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y"} [options] <br>
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
-	 * @return {void} 
 	 */
 	AddLayout(layout, type, options) {return}
 
@@ -266,7 +264,6 @@ class DsApp {
 	 * @param {str} title 
 	 * @param {string | ("NoDim"|"NoFocus")[]} [options=''] 
 	 * @param {num_int} [hue] `-180..180`
-	 * @return {void} 
 	 */
 	Alert(message, title, options, hue) {return}
 
@@ -274,7 +271,6 @@ class DsApp {
 	 * Similar to setInterval
 	 * @param {(time: num_mls, dtime: num_mls) => void} [callback] 
 	 * @param {num_fps} [fps=-1] 
-	 * @return {void} 
 	 */
 	Animate(callback, fps) {return}
 
@@ -282,7 +278,6 @@ class DsApp {
 	 * Used for broadcasting messages between DroidScript apps
 	 * @param {"Exec"} type 
 	 * @param {str} message 
-	 * @return {void} 
 	 */
 	Broadcast(type, message) {return}
 
@@ -294,33 +289,27 @@ class DsApp {
 	 * @param {str} type 
 	 * @param {str} extras 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	BroadcastIntent(action, category, data, type, extras, options) {return}
 
 	/**
 	 * Calls a phone number
 	 * @param {"number"} number 
-	 * @return {void} 
 	 */
 	Call(number) {return}
 
-	/**
-	 * Cancel background job
-	 * @return {void} 
-	 */
+	/** Cancel background job */
 	CancelJob() {return}
 
 	/**
 	 * Checks if app is licensed with Google Play
 	 * @param {str_b64} key `GPlay license key`
-	 * @return {void} 
 	 */
 	CheckLicense(key) {return}
 
 	/**
 	 * Checks if permission was granted
-	 * @param {"Camera"|"Storage"|"ExtSDcard"|"Network"|"Notify"|"Location"|"SMS"|"Calendar"|"Body"|"Contacts"|"Record"|"Biometric"|"Phone"|"Accounts"|"License"|"android.permission.*"} type 
+	 * @param {str} type `Camera`, `Storage`, `ExtSDcard`, `Network`, `Notify`, `Location`, `SMS`, `Calendar`, `Body`, `Contacts`, `Record`, `Biometric`, `Phone`, `Accounts`, `License`, `android.permission.*`
 	 * @return {str[]} 
 	 */
 	CheckPermission(type) {return}
@@ -328,7 +317,6 @@ class DsApp {
 	/**
 	 * Let the user choose an google account
 	 * @param {(account: "email") => void} callback 
-	 * @return {void} 
 	 */
 	ChooseAccount(callback) {return}
 
@@ -336,7 +324,6 @@ class DsApp {
 	 * Let the user choose an image
 	 * @param {"Phone"|"Email"} type 
 	 * @param {(name: str, data: str) => void} callback 
-	 * @return {void} 
 	 */
 	ChooseContact(type, callback) {return}
 
@@ -349,7 +336,6 @@ class DsApp {
 	 * @param {"persist"|"nodownload"} [options] <br>
  	 * &emsp; `persist` - keep file permission after reboot\
  	 * &emsp; `nodownload` - prevents file downloads
-	 * @return {void} 
 	 */
 	ChooseFile(message, type, callback, fldr, options) {return}
 
@@ -357,7 +343,6 @@ class DsApp {
 	 * Let the user choose an image
 	 * @param {string | (""|"internal"|"external")[]} options 
 	 * @param {(path: str_pth) => void} callback 
-	 * @return {void} 
 	 */
 	ChooseImage(options, callback) {return}
 
@@ -368,20 +353,15 @@ class DsApp {
 	 * @param {(ssid: str) => void} callback 
 	 * @param {string | ("force"|"large")[]} [options=''] 
 	 * @param {"ssids"} [extra] 
-	 * @return {void} 
 	 */
 	ChooseWifi(title1, title2, callback, options, extra) {return}
 
-	/**
-	 * Clears saved web cookies
-	 * @return {void} 
-	 */
+	/** Clears saved web cookies */
 	ClearCookies() {return}
 
 	/**
 	 * Deletes app.Save*() storage
 	 * @param {str_ptf} [file] 
-	 * @return {void} 
 	 */
 	ClearData(file) {return}
 
@@ -389,14 +369,12 @@ class DsApp {
 	 * Deletes a variable saved via app.Save*()
 	 * @param {str} name 
 	 * @param {str_ptf} [file] 
-	 * @return {void} 
 	 */
 	ClearValue(name, file) {return}
 
 	/**
 	 * Closes the drawer layout on the given side with slide animation
 	 * @param {"left"|"right"} side 
-	 * @return {void} 
 	 */
 	CloseDrawer(side) {return}
 
@@ -404,7 +382,6 @@ class DsApp {
 	 * Copies a file to a given destination
 	 * @param {str_pth} source 
 	 * @param {str_pth} destination 
-	 * @return {void} 
 	 */
 	CopyFile(source, destination) {return}
 
@@ -414,7 +391,6 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @param {bin} [overwrite=false] 
 	 * @param {"pattern"} [filter] 
-	 * @return {void} 
 	 */
 	CopyFolder(source, destination, overwrite, filter) {return}
 
@@ -519,10 +495,7 @@ class DsApp {
 	 */
 	CreateCrypt(options) {return}
 
-	/**
-	 * Creates a CustomTab control
-	 * @return {void} 
-	 */
+	/** Creates a CustomTab control */
 	CreateCustomTabs() {return}
 
 	/**
@@ -530,7 +503,6 @@ class DsApp {
 	 * @param {"dialog"|"clear"} [options] <br>
  	 * &emsp; `dialog` - Show the debug log as black overlay dialog\
  	 * &emsp; `clear` - Clear content before showing
-	 * @return {void} 
 	 */
 	CreateDebug(options) {return}
 
@@ -772,7 +744,6 @@ class DsApp {
 	 * @param {string | ("Portrait"|"Landscape"|"Transparent"|"Debug"|"Game"|"remote")[]} [options] <br>
  	 * &emsp; `Debug` - start app in debug mode\
  	 * &emsp; `Game` - runs in GameView mode
-	 * @return {void} 
 	 */
 	CreateShortcut(name, iconFile, file, options) {return}
 
@@ -991,49 +962,42 @@ class DsApp {
 	/**
 	 * Debug messages to the console
 	 * @param {str} message 
-	 * @return {void} 
 	 */
 	Debug(message) {return}
 
 	/**
 	 * Deletes a database
 	 * @param {str} name 
-	 * @return {void} 
 	 */
 	DeleteDatabase(name) {return}
 
 	/**
 	 * Deletes a file
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	DeleteFile(file) {return}
 
 	/**
 	 * Delete a folder
 	 * @param {str_ptd} folder 
-	 * @return {void} 
 	 */
 	DeleteFolder(folder) {return}
 
 	/**
 	 * Destroy a layout
 	 * @param {DsLayout} layout 
-	 * @return {void} 
 	 */
 	DestroyLayout(layout) {return}
 
 	/**
 	 * Disable specific device keys
 	 * @param {str_com} keyList `VOLUME_DOWN`, `VOLUME_UP`, `FORWARD`, `BACK`, `MENU`, `ENTER`, `...`
-	 * @return {void} 
 	 */
 	DisableKeys(keyList) {return}
 
 	/**
 	 * Suppress all touch events
 	 * @param {bin} disable 
-	 * @return {void} 
 	 */
 	DisableTouch(disable) {return}
 
@@ -1042,7 +1006,6 @@ class DsApp {
 	 * @param {str} filter 
 	 * @param {(name: str, address: str) => void} [onFound] 
 	 * @param {() => void} [onComplete] 
-	 * @return {void} 
 	 */
 	DiscoverBtDevices(filter, onFound, onComplete) {return}
 
@@ -1053,14 +1016,12 @@ class DsApp {
 	 * @param {str} [title] 
 	 * @param {str} [description] 
 	 * @param {"NoDialog"} [options] 
-	 * @return {void} 
 	 */
 	DownloadFile(source, destination, title, description, options) {return}
 
 	/**
 	 * Allows to en- or disable the devices back key
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	EnableBackKey(enable) {return}
 
@@ -1070,21 +1031,18 @@ class DsApp {
 	 * @param {num_int} line 
 	 * @param {str_ptf} file 
 	 * @param {bin} [quit=false] 
-	 * @return {void} 
 	 */
 	Error(message, line, file, quit) {return}
 
 	/**
 	 * Execute js code from your app or a WebWiew
 	 * @param {str_jsc} js 
-	 * @return {void} 
 	 */
 	Execute(js) {return}
 
 	/**
 	 * Close and stop the app
 	 * @param {bin} kill 
-	 * @return {void} 
 	 */
 	Exit(kill) {return}
 
@@ -1094,7 +1052,6 @@ class DsApp {
 	 * @param {str_ptf} file 
 	 * @param {str} [args] 
 	 * @param {"hide"} [options] 
-	 * @return {void} 
 	 */
 	ExtExec(name, file, args, options) {return}
 
@@ -1106,14 +1063,10 @@ class DsApp {
 	 * @param {"DoEvents"|"shallow"} [options] <br>
  	 * &emsp; `DoEvents` - extract in background\
  	 * &emsp; `shallow` - extract top level
-	 * @return {void} 
 	 */
 	ExtractAssets(source, destination, overwrite, options) {return}
 
-	/**
-	 * Forcefully update your plugins
-	 * @return {void} 
-	 */
+	/** Forcefully update your plugins */
 	ExtractPlugins() {return}
 
 	/**
@@ -1134,7 +1087,6 @@ class DsApp {
 	 * Call main app functions from inside a webview
 	 * @param {str} name 
 	 * @param {(all)[]} args 
-	 * @return {void} 
 	 */
 	Func(name, ...args) {return}
 
@@ -1143,7 +1095,6 @@ class DsApp {
 	 * @param {"create"|"send"|"set"|"require"|"provide"|"remove"} command 
 	 * @param {str_com} fields 
 	 * @param {obj} [options] 
-	 * @return {void} 
 	 */
 	GA(command, fields, options) {return}
 
@@ -1491,7 +1442,6 @@ class DsApp {
 	 * GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the **callback** function, or in case of only “ExtSDCard” the path URI of the user-selected folder
 	 * @param {str_com} type `Camera`, `ExtSDcard`, `External`, `Internal`, `Network`, `Notify`, `Storage`, `Overlay`, `SMS`, `Location`, `Calendar`, `Body`, `Contacts`, `Record`, `Phone`, `Biometric`, `Accounts`, `License`, `android.permission.*`, `usb:<pid>`
 	 * @param {(ungranted: str_com|str_uri) => void} [callback] 
-	 * @return {void} 
 	 */
 	GetPermission(type, callback) {return}
 
@@ -1632,7 +1582,6 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @param {num_pxl} [width=-1] 
 	 * @param {num_pxl} [height=-1] 
-	 * @return {void} 
 	 */
 	GetThumbnail(source, destination, width, height) {return}
 
@@ -1668,10 +1617,7 @@ class DsApp {
 	 */
 	GetVolume(stream) {return}
 
-	/**
-	 * Puts the phone into sleep mode
-	 * @return {void} 
-	 */
+	/** Puts the phone into sleep mode */
 	GoToSleep() {return}
 
 	/**
@@ -1680,28 +1626,16 @@ class DsApp {
 	 */
 	HasSoftNav() {return}
 
-	/**
-	 * Hide the main app layout
-	 * @return {void} 
-	 */
+	/** Hide the main app layout */
 	Hide() {return}
 
-	/**
-	 * Hide the device keyboard
-	 * @return {void} 
-	 */
+	/** Hide the device keyboard */
 	HideKeyboard() {return}
 
-	/**
-	 * Hide progress indicator
-	 * @return {void} 
-	 */
+	/** Hide progress indicator */
 	HideProgress() {return}
 
-	/**
-	 * Hide progress bar dialog
-	 * @return {void} 
-	 */
+	/** Hide progress bar dialog */
 	HideProgressBar() {return}
 
 	/**
@@ -1718,7 +1652,6 @@ class DsApp {
 	 * @param {str} [params] 
 	 * @param {(error: bin, reply: str, status: num_int) => void} [callback] 
 	 * @param {str} [headers] 
-	 * @return {void} 
 	 */
 	HttpRequest(type, baseUrl, path, params, callback, headers) {return}
 
@@ -1894,7 +1827,6 @@ class DsApp {
 	/**
 	 * Kill an app by its pid
 	 * @param {num_int} pid 
-	 * @return {void} 
 	 */
 	KillApp(pid) {return}
 
@@ -1902,7 +1834,6 @@ class DsApp {
 	 * Launch or search an app
 	 * @param {str} packageName 
 	 * @param {bin} [noPlay] `dont search`
-	 * @return {void} 
 	 */
 	LaunchApp(packageName, noPlay) {return}
 
@@ -1962,7 +1893,6 @@ class DsApp {
 	/**
 	 * Load an installed plugin to your app
 	 * @param {str_url} url 
-	 * @return {void} 
 	 */
 	LoadPlugin(url) {return}
 
@@ -1970,7 +1900,6 @@ class DsApp {
 	 * Asynchronously import a .js file
 	 * @param {str_pth} path 
 	 * @param {(info: { isTrusted: bin }) => void} [callback] 
-	 * @return {void} 
 	 */
 	LoadScript(path, callback) {return}
 
@@ -1979,27 +1908,21 @@ class DsApp {
 	 * @param {str} name 
 	 * @param {str} [dflt] 
 	 * @param {str_ptf} [file] 
-	 * @return {void} 
 	 */
 	LoadText(name, dflt, file) {return}
 
-	/**
-	 * Lock the device
-	 * @return {void} 
-	 */
+	/** Lock the device */
 	Lock() {return}
 
 	/**
 	 * Hide and lock a drawer
 	 * @param {"left"|"right"} side 
-	 * @return {void} 
 	 */
 	LockDrawer(side) {return}
 
 	/**
 	 * Create new folder in the local fs
 	 * @param {str_ptd} folder 
-	 * @return {void} 
 	 */
 	MakeFolder(folder) {return}
 
@@ -2013,7 +1936,6 @@ class DsApp {
 	/**
 	 * Opens the drawer layout on the given side with slide animation
 	 * @param {"left"|"right"} side 
-	 * @return {void} 
 	 */
 	OpenDrawer(side) {return}
 
@@ -2022,7 +1944,6 @@ class DsApp {
 	 * @param {str_ptf} file 
 	 * @param {str_mim} [type] 
 	 * @param {str} [choose] 
-	 * @return {void} 
 	 */
 	OpenFile(file, type, choose) {return}
 
@@ -2031,7 +1952,6 @@ class DsApp {
 	 * @param {str_url} url 
 	 * @param {str_mim} [type] 
 	 * @param {str} [choose] 
-	 * @return {void} 
 	 */
 	OpenUrl(url, type, choose) {return}
 
@@ -2039,7 +1959,6 @@ class DsApp {
 	 * Pairs a bluetooth device with yours
 	 * @param {str} address 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	PairBtDevice(address, callback) {return}
 
@@ -2053,21 +1972,18 @@ class DsApp {
 	/**
 	 * Pin app on screen
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	PinScreen(enable) {return}
 
 	/**
 	 * Play specific ringtone type
 	 * @param {"Alarm"|"Notification"|"Ringtone"} type 
-	 * @return {void} 
 	 */
 	PlayRingtone(type) {return}
 
 	/**
 	 * Plays a local or remote sound file
 	 * @param {str_ptf|str_url} file 
-	 * @return {void} 
 	 */
 	PlaySound(file) {return}
 
@@ -2076,14 +1992,10 @@ class DsApp {
 	 * @param {bin|"Full"|"Partial"} mode <br>
  	 * &emsp; `Full` - Device can sleep,Screen and Keyboard on\
  	 * &emsp; `Partial` - CPU always on,Screen and Keyboard off
-	 * @return {void} 
 	 */
 	PreventScreenLock(mode) {return}
 
-	/**
-	 * Prevent Wifi from powering down
-	 * @return {void} 
-	 */
+	/** Prevent Wifi from powering down */
 	PreventWifiSleep() {return}
 
 	/**
@@ -2094,7 +2006,6 @@ class DsApp {
 	 * @param {lst} [args] 
 	 * @param {"coloumn"} [sort] <br>
  	 * &emsp; `coloumn` - a coloumn specified in 'coloumns'
-	 * @return {void} 
 	 */
 	QueryContent(uri, columns, select, args, sort) {return}
 
@@ -2103,7 +2014,6 @@ class DsApp {
 	 * @param {str} msg 
 	 * @param {str} [title] 
 	 * @param {string | ("NoDim"|"NoFocus")[]} [options] 
-	 * @return {void} 
 	 */
 	Quit(msg, title, options) {return}
 
@@ -2112,7 +2022,6 @@ class DsApp {
 	 * @param {str_ptc} file 
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"|"base64"} [encoding] <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
-	 * @return {void} 
 	 */
 	ReadFile(file, encoding) {return}
 
@@ -2120,35 +2029,30 @@ class DsApp {
 	 * Read local file content data
 	 * @param {str_pfa} file 
 	 * @param {"base64"|"hex"|"int"|"ascii"} [mode] 
-	 * @return {void} 
 	 */
 	ReadFileData(file, mode) {return}
 
 	/**
 	 * Convert short to full path
 	 * @param {str_pth} path 
-	 * @return {void} 
 	 */
 	RealPath(path) {return}
 
 	/**
 	 * Read assets from given folder
 	 * @param {str_ptd} dir 
-	 * @return {void} 
 	 */
 	RedirectAssets(dir) {return}
 
 	/**
 	 * Remove drawer layout from a given side
 	 * @param {"left"|"right"} side 
-	 * @return {void} 
 	 */
 	RemoveDrawer(side) {return}
 
 	/**
 	 * Removes a layout added to the app
 	 * @param {DsLayout} layout 
-	 * @return {void} 
 	 */
 	RemoveLayout(layout) {return}
 
@@ -2157,7 +2061,6 @@ class DsApp {
 	 * 	 * 
 	 * 	 * See Also: GetPermission CheckPermission ListPermissions
 	 * @param {str_uri} uri 
-	 * @return {void} 
 	 */
 	RemovePermission(uri) {return}
 
@@ -2165,7 +2068,6 @@ class DsApp {
 	 * Rename or move a local file
 	 * @param {str_pth} source 
 	 * @param {str_pth} destination 
-	 * @return {void} 
 	 */
 	RenameFile(source, destination) {return}
 
@@ -2173,7 +2075,6 @@ class DsApp {
 	 * Rename or move a local folder
 	 * @param {str_pth} source 
 	 * @param {str_pth} destination 
-	 * @return {void} 
 	 */
 	RenameFolder(source, destination) {return}
 
@@ -2183,7 +2084,6 @@ class DsApp {
 	 * @param {str} txt 
 	 * @param {str} rep 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	ReplaceInFile(file, txt, rep, options) {return}
 
@@ -2192,14 +2092,10 @@ class DsApp {
 	 * @param {str} name 
 	 * @param {bin} value 
 	 * @param {str_ptf} [file] 
-	 * @return {void} 
 	 */
 	SaveBoolean(name, value, file) {return}
 
-	/**
-	 * Save web cookies
-	 * @return {void} 
-	 */
+	/** Save web cookies */
 	SaveCookies() {return}
 
 	/**
@@ -2207,7 +2103,6 @@ class DsApp {
 	 * @param {str} name 
 	 * @param {obj} value 
 	 * @param {str_ptf} [file] 
-	 * @return {void} 
 	 */
 	SaveJson(name, value, file) {return}
 
@@ -2216,7 +2111,6 @@ class DsApp {
 	 * @param {str} name 
 	 * @param {num} value 
 	 * @param {str_ptf} [file] 
-	 * @return {void} 
 	 */
 	SaveNumber(name, value, file) {return}
 
@@ -2225,14 +2119,12 @@ class DsApp {
 	 * @param {str} name 
 	 * @param {str} value 
 	 * @param {str_ptf} [file] 
-	 * @return {void} 
 	 */
 	SaveText(name, value, file) {return}
 
 	/**
 	 * Adds media files to phone gallery
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	ScanFile(file) {return}
 
@@ -2242,7 +2134,6 @@ class DsApp {
 	 * 	 * See Also: CancelJob
 	 * @param {num_mls} delay 
 	 * @param {str} [options] 
-	 * @return {void} 
 	 */
 	ScheduleJob(delay, options) {return}
 
@@ -2250,7 +2141,6 @@ class DsApp {
 	 * Take a screen shot of your app
 	 * @param {str_ptf} fileName 
 	 * @param {num_prc} [quality] 
-	 * @return {void} 
 	 */
 	ScreenShot(fileName, quality) {return}
 
@@ -2258,7 +2148,6 @@ class DsApp {
 	 * Import an external JavaScript file
 	 * @param {str_ptf} file 
 	 * @param {bin} [noDefer=false] `load script inline`
-	 * @return {void} 
 	 */
 	Script(file, noDefer) {return}
 
@@ -2268,7 +2157,6 @@ class DsApp {
 	 * @param {str} [subject] 
 	 * @param {str} [text] 
 	 * @param {str} [choose] 
-	 * @return {void} 
 	 */
 	SendFile(file, subject, text, choose) {return}
 
@@ -2276,7 +2164,6 @@ class DsApp {
 	 * Send an image to a remote target
 	 * @param {str_pfa} file 
 	 * @param {str} [choose] 
-	 * @return {void} 
 	 */
 	SendImage(file, choose) {return}
 
@@ -2284,15 +2171,14 @@ class DsApp {
 	 * Intens can be used to perform an operation between different applications or activities
 	 * @param {str} [packageName] 
 	 * @param {str} [className] 
-	 * @param {str} [action] android.intent.action.*
-	 * @param {str} [category] android.intent.category.*
+	 * @param {str} [action] `android.intent.action.*`
+	 * @param {str} [category] `android.intent.category.*`
 	 * @param {str_uri} [uri] 
 	 * @param {str_mim} [type] 
 	 * @param {{ name: str, type: "string"|"float"|"int"|"long"|"bool"|"list"|"file"|"uri"|"keydown"|"keyup", value: str }[]} [extras] 
 	 * @param {string | ("Result"|"ClearTask")[]} [options=''] <br>
  	 * &emsp; `Result` - expect a result to be passed to the callback function
 	 * @param {(resultCode: -1|0|1, data?: { action: str, type: str, data: str, flags: num_int, extras: obj }) => void} [callback] 
-	 * @return {void} 
 	 */
 	SendIntent(packageName, className, action, category, uri, type, extras, options, callback) {return}
 
@@ -2304,14 +2190,12 @@ class DsApp {
 	 * @param {str_pth} [attach] 
 	 * @param {str_mim} [type] 
 	 * @param {"SendTo"} [options] 
-	 * @return {void} 
 	 */
 	SendMail(address, subject, body, attach, type, options) {return}
 
 	/**
 	 * Send message from Service to main app
 	 * @param {str} message 
-	 * @return {void} 
 	 */
 	SendMessage(message) {return}
 
@@ -2319,7 +2203,6 @@ class DsApp {
 	 * Open the SMS app and autofill fields
 	 * @param {str} [msg] 
 	 * @param {str_num} [number] 
-	 * @return {void} 
 	 */
 	SendSMS(msg, number) {return}
 
@@ -2328,7 +2211,6 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {str} [subject] 
 	 * @param {str} [choose] 
-	 * @return {void} 
 	 */
 	SendText(text, subject, choose) {return}
 
@@ -2342,56 +2224,48 @@ class DsApp {
 	 * @param {string | ("ExactIdle"|"Exact"|"App")[]} [options] <br>
  	 * &emsp; `Exact` - only works for single shot alarms\
  	 * &emsp; `App` - Opens main app if called from a service
-	 * @return {void} 
 	 */
 	SetAlarm(type, id, callback, time, interval, options) {return}
 
 	/**
 	 * Load the language code from lang.json
 	 * @param {str} name 
-	 * @return {void} 
 	 */
 	SetAppLanguage(name) {return}
 
 	/**
 	 * Autostart APK when device boots
 	 * @param {"App"|"Service"|"None"} auto 
-	 * @return {void} 
 	 */
 	SetAutoBoot(auto) {return}
 
 	/**
 	 * Autostart DroidScript Project on DS restart
 	 * @param {str} appName 
-	 * @return {void} 
 	 */
 	SetAutoStart(appName) {return}
 
 	/**
 	 * Automatically enable the WiFi editor
 	 * @param {bin} auto 
-	 * @return {void} 
 	 */
 	SetAutoWifi(auto) {return}
 
 	/**
 	 * Change the app's background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
 	/**
 	 * Enable Bluetooth on the device
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetBluetoothEnabled(enable) {return}
 
 	/**
 	 * Change the device clipboard text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetClipboardText(text) {return}
 
@@ -2399,42 +2273,34 @@ class DsApp {
 	 * Save data while app is running
 	 * @param {str} name 
 	 * @param {str} value 
-	 * @return {void} 
 	 */
 	SetData(name, value) {return}
 
 	/**
 	 * Control the debug level of the program
 	 * @param {string | ("console"|"ds"|"adb"|"all")[]} switches 
-	 * @return {void} 
 	 */
 	SetDebug(switches) {return}
 
 	/**
 	 * Control the debug level of the program
 	 * @param {bin} onoff 
-	 * @return {void} 
 	 */
 	SetDebugEnabled(onoff) {return}
 
 	/**
 	 * Changes the dpi value for any control creatred afterwards
 	 * @param {num_int} dpi 
-	 * @return {void} 
 	 */
 	SetDensity(dpi) {return}
 
 	/**
 	 * Filter/ignore certain errors
 	 * @param {str} regex `regex pattern`
-	 * @return {void} 
 	 */
 	SetErrorFilter(regex) {return}
 
-	/**
-	 * Set services to run in the background
-	 * @return {void} 
-	 */
+	/** Set services to run in the background */
 	SetInBackground() {return}
 
 	/**
@@ -2444,7 +2310,6 @@ class DsApp {
 	 * @param {str_ptf} [largeIcon] 
 	 * @param {str_ptf} [smallIcon] 
 	 * @param {"min"|"low"|"default"|"high"|"none"} [importance] 
-	 * @return {void} 
 	 */
 	SetInForeground(title, text, largeIcon, smallIcon, importance) {return}
 
@@ -2452,7 +2317,6 @@ class DsApp {
 	 * Set options for the connected joystick
 	 * @param {string | ("ForwardKeys")[]} [options] <br>
  	 * &emsp; `ForwardKeys` - allows the joystick key presses to pass onto the child controls of the main activity
-	 * @return {void} 
 	 */
 	SetJoystickOptions(options) {return}
 
@@ -2465,7 +2329,6 @@ class DsApp {
 	 * @param {string | ("Black"|"Tasks")[]} [options=''] <br>
  	 * &emsp; `Tasks` - prevents recent tasks button working
 	 * @param {str} [packages] 
-	 * @return {void} 
 	 */
 	SetKioskMode(mode, enable, options, packages) {return}
 
@@ -2476,7 +2339,6 @@ class DsApp {
 	 * @param {num} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -2484,7 +2346,6 @@ class DsApp {
 	 * Set app menu
 	 * @param {str_com} list 
 	 * @param {str_ptf} [iconPath] 
-	 * @return {void} 
 	 */
 	SetMenu(list, iconPath) {return}
 
@@ -2493,14 +2354,12 @@ class DsApp {
 	 * @param {num} lat 
 	 * @param {num} lng 
 	 * @param {num} [accuracy] 
-	 * @return {void} 
 	 */
 	SetMockLocation(lat, lng, accuracy) {return}
 
 	/**
 	 * Set NavBar color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetNavBarColor(color) {return}
 
@@ -2508,42 +2367,36 @@ class DsApp {
 	 * Called on incoming Broadcasts
 	 * @param {(type: str, msg: str) => void} callback 
 	 * @param {str} action 
-	 * @return {void} 
 	 */
 	SetOnBroadcast(callback, action) {return}
 
 	/**
 	 * Called on app debug messages
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnDebug(callback) {return}
 
 	/**
 	 * Called on thrown JS errors
 	 * @param {(error: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Catch key events fired in your app
 	 * @param {(action: "DOWN"|"UP", name: str, keycode: num_int, extrakeys: "Shift"|"Ctrl"|"Alt"|"Meta") => void} callback 
-	 * @return {void} 
 	 */
 	SetOnKey(callback) {return}
 
 	/**
 	 * Called on keyboard visibility changes
 	 * @param {(shown: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnShowKeyboard(callback) {return}
 
 	/**
 	 * Called on WiFi connected state changes
 	 * @param {(state: "CONNECTING"|"CONNECTED"|"DISCONNECTED", ssid: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnWifiChange(callback) {return}
 
@@ -2551,7 +2404,6 @@ class DsApp {
 	 * Define global app options
 	 * @param {string | ("UseBrowser"|"NoKeys"|"ShowKeys"|"NoPause"|"NoThemeAlerts"|"IgnoreSslErrors"|"TouchModal"|"NoCors"|"NoTouch"|"NoFocus"|"Secure"|"ShowLocked"|"WakeScreen"|"ScreenOn")[]} [options] <br>
  	 * &emsp; `NoPause` - dont pause when not in foreground
-	 * @return {void} 
 	 */
 	SetOptions(options) {return}
 
@@ -2559,7 +2411,6 @@ class DsApp {
 	 * Fix display orientation
 	 * @param {"Default"|"Landscape"|"ReverseLandscape"|"Portrait"|"ReversePortrait"} orient 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	SetOrientation(orient, callback) {return}
 
@@ -2570,56 +2421,48 @@ class DsApp {
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Change GUI thread priority
 	 * @param {"Low"|"Medium"|"High"} level 
-	 * @return {void} 
 	 */
 	SetPriority(level) {return}
 
 	/**
 	 * Set current device ringer mode
 	 * @param {"Normal"|"Vibrate"|"Silent"} mode 
-	 * @return {void} 
 	 */
 	SetRingerMode(mode) {return}
 
 	/**
 	 * Change screen brightness
 	 * @param {num_frc} level 
-	 * @return {void} 
 	 */
 	SetScreenBrightness(level) {return}
 
 	/**
 	 * Changes the screen mode of your application
 	 * @param {"Default"|"Normal"|"Full"|"Game"} mode 
-	 * @return {void} 
 	 */
 	SetScreenMode(mode) {return}
 
 	/**
 	 * Auto-Launch Project when shared data received
 	 * @param {"AppName"} name 
-	 * @return {void} 
 	 */
 	SetSharedApp(name) {return}
 
 	/**
 	 * En/Disable speaker for phone calls
 	 * @param {bin} on 
-	 * @return {void} 
 	 */
 	SetSpeakerPhone(on) {return}
 
 	/**
 	 * Set status bar color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetStatusBarColor(color) {return}
 
@@ -2629,14 +2472,12 @@ class DsApp {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode='px'] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the theme of your app to any created [Theme Object](CreateTheme.htm)
 	 * @param {DsTheme} theme 
-	 * @return {void} 
 	 */
 	SetTheme(theme) {return}
 
@@ -2644,7 +2485,6 @@ class DsApp {
 	 * Change the user agent for html apps
 	 * @param {str} agent 
 	 * @param {str} [options] `Add-appends to default user agent`
-	 * @return {void} 
 	 */
 	SetUserAgent(agent, options) {return}
 
@@ -2652,7 +2492,6 @@ class DsApp {
 	 * Set user credentials in an html app for websites that require user login
 	 * @param {str} name 
 	 * @param {str} password 
-	 * @return {void} 
 	 */
 	SetUserCreds(name, password) {return}
 
@@ -2662,7 +2501,6 @@ class DsApp {
  	 * &emsp; `DTMF` - Dual Tone Multi-Frequency
 	 * @param {num_frc} level 
 	 * @param {"ShowUI"} [options] 
-	 * @return {void} 
 	 */
 	SetVolume(stream, level, options) {return}
 
@@ -2671,21 +2509,16 @@ class DsApp {
 	 * @param {bin} enable 
 	 * @param {str} [ssid] 
 	 * @param {str} [key] 
-	 * @return {void} 
 	 */
 	SetWifiApEnabled(enable, ssid, key) {return}
 
 	/**
 	 * En/Disable Wifi on the device
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetWifiEnabled(enable) {return}
 
-	/**
-	 * Show main app layout
-	 * @return {void} 
-	 */
+	/** Show main app layout */
 	Show() {return}
 
 	/**
@@ -2706,7 +2539,6 @@ class DsApp {
 	 * @param {"dialog"|"clear"} [options] <br>
  	 * &emsp; `dialog` - Show the debug log as black overlay dialog\
  	 * &emsp; `clear` - Clear content before showing
-	 * @return {void} 
 	 */
 	ShowDebug(show, options) {return}
 
@@ -2717,17 +2549,13 @@ class DsApp {
 	 */
 	ShowKeyboard(obj) {return}
 
-	/**
-	 * Show the in-app menu
-	 * @return {void} 
-	 */
+	/** Show the in-app menu */
 	ShowMenu() {return}
 
 	/**
 	 * Show a popup message
 	 * @param {str} message 
 	 * @param {string | ("Bottom"|"Short"|"Long")[]} [options] 
-	 * @return {void} 
 	 */
 	ShowPopup(message, options) {return}
 
@@ -2738,7 +2566,6 @@ class DsApp {
  	 * &emsp; `NoDim` - Don't darken background\
  	 * &emsp; `NonModal` - allow background touch\
  	 * &emsp; `Solid` - shows solid background behind spinner
-	 * @return {void} 
 	 */
 	ShowProgress(message, options) {return}
 
@@ -2747,7 +2574,6 @@ class DsApp {
 	 * @param {str} title 
 	 * @param {num_prc} [percent] 
 	 * @param {"Light"} [options] 
-	 * @return {void} 
 	 */
 	ShowProgressBar(title, percent, options) {return}
 
@@ -2756,7 +2582,6 @@ class DsApp {
 	 * @param {str} title 
 	 * @param {str} [dflt] 
 	 * @param {(text: str) => void} [callback] 
-	 * @return {void} 
 	 */
 	ShowTextDialog(title, dflt, callback) {return}
 
@@ -2767,7 +2592,6 @@ class DsApp {
 	 * @param {num_frc} [top] 
 	 * @param {num_mls} [timeOut] 
 	 * @param {"Down"} [options] 
-	 * @return {void} 
 	 */
 	ShowTip(message, left, top, timeOut, options) {return}
 
@@ -2780,7 +2604,6 @@ class DsApp {
 	 * @param {num_frc} y2 
 	 * @param {num} [step] 
 	 * @param {num} [pause] 
-	 * @return {void} 
 	 */
 	SimulateDrag(obj, x1, y1, x2, y2, step, pause) {return}
 
@@ -2790,7 +2613,6 @@ class DsApp {
 	 * @param {str} keyName 
 	 * @param {"META_META_ON"|"META_RIGHT_ON"|"NUM_LOCK_ON"|"SCROLL_LOCK_ON"|"SHIFT_LEFT_ON"|"SHIFT_MASK"|"SHIFT_ON"|"SHIFT_RIGHT_ON"|"SYM_ON"} [modifiers] 
 	 * @param {num} [pause] 
-	 * @return {void} 
 	 */
 	SimulateKey(obj, keyName, modifiers, pause) {return}
 
@@ -2803,7 +2625,6 @@ class DsApp {
 	 * @param {num_frc} dy 
 	 * @param {num} [count] 
 	 * @param {num} [fling] 
-	 * @return {void} 
 	 */
 	SimulateScroll(obj, x, y, dx, dy, count, fling) {return}
 
@@ -2813,14 +2634,10 @@ class DsApp {
 	 * @param {num_frc} x 
 	 * @param {num_frc} y 
 	 * @param {"Down"|"Move"|"Up"} dir 
-	 * @return {void} 
 	 */
 	SimulateTouch(obj, x, y, dir) {return}
 
-	/**
-	 * Start your DS app in an html project
-	 * @return {void} 
-	 */
+	/** Start your DS app in an html project */
 	Start() {return}
 
 	/**
@@ -2830,41 +2647,29 @@ class DsApp {
  	 * &emsp; `Debug` - start app in debug mode\
  	 * &emsp; `Game` - runs in GameView mode
 	 * @param {str} [intent] `{ action`, ` type`, ` data`, ` extras }`
-	 * @return {void} 
 	 */
 	StartApp(file, options, intent) {return}
 
-	/**
-	 * Start remote debug server
-	 * @return {void} 
-	 */
+	/** Start remote debug server */
 	StartDebugServer() {return}
 
 	/**
 	 * Starts a parallel service
 	 * @param {str} packageName 
 	 * @param {str} className 
-	 * @return {void} 
 	 */
 	StartService(packageName, className) {return}
 
 	/**
 	 * Stop an app started via StartApp
 	 * @param {str_pth} name 
-	 * @return {void} 
 	 */
 	StopApp(name) {return}
 
-	/**
-	 * Stop a running debug server
-	 * @return {void} 
-	 */
+	/** Stop a running debug server */
 	StopDebugServer() {return}
 
-	/**
-	 * Stops a running app service
-	 * @return {void} 
-	 */
+	/** Stops a running app service */
 	StopService() {return}
 
 	/**
@@ -2888,40 +2693,28 @@ class DsApp {
 	 * @param {"music"} [stream] 
 	 * @param {str} [locale] 
 	 * @param {str} [engine] 
-	 * @return {void} 
 	 */
 	TextToSpeech(text, pitch, rate, callback, stream, locale, engine) {return}
 
-	/**
-	 * Put the app in the background
-	 * @return {void} 
-	 */
+	/** Put the app in the background */
 	ToBack() {return}
 
-	/**
-	 * Bring your app to the foreground
-	 * @return {void} 
-	 */
+	/** Bring your app to the foreground */
 	ToFront() {return}
 
 	/**
 	 * Translate “Ok” and “Cancel” buttons
 	 * @param {str} Ok 
 	 * @param {str} Cancel 
-	 * @return {void} 
 	 */
 	Translate(Ok, Cancel) {return}
 
-	/**
-	 * Unlocks the device
-	 * @return {void} 
-	 */
+	/** Unlocks the device */
 	Unlock() {return}
 
 	/**
 	 * Unlock a locked drawer
 	 * @param {"left"|"right"} side 
-	 * @return {void} 
 	 */
 	UnlockDrawer(side) {return}
 
@@ -2929,7 +2722,6 @@ class DsApp {
 	 * Unpair a paired Bluetooth device
 	 * @param {str} address 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	UnpairBtDevice(address, callback) {return}
 
@@ -2939,7 +2731,6 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @param {"spk"} [options] <br>
  	 * &emsp; `spk` - Extract SPK as DS project folder
-	 * @return {void} 
 	 */
 	UnzipFile(source, destination, options) {return}
 
@@ -2948,14 +2739,12 @@ class DsApp {
 	 * @param {num_prc} percent 
 	 * @param {"doevents"} [options] <br>
  	 * &emsp; `doevents` - force v8 UI update
-	 * @return {void} 
 	 */
 	UpdateProgressBar(percent, options) {return}
 
 	/**
 	 * Force UI refresh
 	 * @param {num_mls} ms `Update Rate`
-	 * @return {void} 
 	 */
 	UpdateUI(ms) {return}
 
@@ -2965,7 +2754,6 @@ class DsApp {
 	 * @param {str_ptf} file 
 	 * @param {str} name 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	UploadFile(url, file, name, callback) {return}
 
@@ -2980,7 +2768,6 @@ class DsApp {
 	/**
 	 * Vibrate device in a pattern
 	 * @param {str_com} pattern 
-	 * @return {void} 
 	 */
 	Vibrate(pattern) {return}
 
@@ -2988,14 +2775,10 @@ class DsApp {
 	 * Perform a synchronous delay
 	 * @param {num_sec} seconds 
 	 * @param {bin} [doEvents=false] 
-	 * @return {void} 
 	 */
 	Wait(seconds, doEvents) {return}
 
-	/**
-	 * Wake the screen up
-	 * @return {void} 
-	 */
+	/** Wake the screen up */
 	WakeUp() {return}
 
 	/**
@@ -3019,7 +2802,6 @@ class DsApp {
 	 * Connect to a WiFi network by specifying the ssid and a password
 	 * @param {str} ssid 
 	 * @param {str} key 
-	 * @return {void} 
 	 */
 	WifiConnect(ssid, key) {return}
 
@@ -3027,7 +2809,6 @@ class DsApp {
 	 * Scan for any available Wifi networks
 	 * @param {(ssids: str_pip|lst) => void} callback 
 	 * @param {"detail"} [options] 
-	 * @return {void} 
 	 */
 	WifiScan(callback, options) {return}
 
@@ -3038,7 +2819,6 @@ class DsApp {
 	 * @param {"Append"|"ASCII"} [mode] 
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16"|"UTF-16BE"|"UTF-16LE"|"windows-1252"|"ISO-8859-1"} [encoding] <br>
  	 * &emsp; `ISO-8859-1` - Latin-1
-	 * @return {void} 
 	 */
 	WriteFile(file, text, mode, encoding) {return}
 
@@ -3048,7 +2828,6 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @param {"spk"} [options] <br>
  	 * &emsp; `spk` - Create SPK from File
-	 * @return {void} 
 	 */
 	ZipFile(source, destination, options) {return}
 
@@ -3058,7 +2837,6 @@ class DsApp {
 	 * @param {str_pth} destination 
 	 * @param {"spk"} [options] <br>
  	 * &emsp; `spk` - Create SPK from DS project folder
-	 * @return {void} 
 	 */
 	ZipFolder(source, destination, options) {return}
 
@@ -3069,7 +2847,6 @@ class DsAudioRecorder {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -3097,43 +2874,31 @@ class DsAudioRecorder {
 	 */
 	GetType() {return}
 
-	/**
-	 * Pause the recording
-	 * @return {void} 
-	 */
+	/** Pause the recording */
 	Pause() {return}
 
 	/**
 	 * Define the recording file
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFile(file) {return}
 
 	/**
 	 * Define the Recording frequency
 	 * @param {8000|11025|22050|44100|48000} frequency 
-	 * @return {void} 
 	 */
 	SetFrequency(frequency) {return}
 
 	/**
 	 * Define the recording file
 	 * @param {"Default"|"Camcorder"|"Mic"|"Unprocessed"|"Voicecommunication"|"Voiceperformance"|"Voicerecognition"} src 
-	 * @return {void} 
 	 */
 	SetSource(src) {return}
 
-	/**
-	 * Start recording to the specified file
-	 * @return {void} 
-	 */
+	/** Start recording to the specified file */
 	Start() {return}
 
-	/**
-	 * Stop recording
-	 * @return {void} 
-	 */
+	/** Stop recording */
 	Stop() {return}
 }
 
@@ -3143,7 +2908,6 @@ class DsBluetoothList {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -3156,7 +2920,6 @@ class DsBluetoothList {
 	/**
 	 * Define a callback function for touch events
 	 * @param {(name: str, address: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -3167,28 +2930,20 @@ class DsBluetoothSerial {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Clears the Bluetooth buffer of the serial connection
-	 * @return {void} 
-	 */
+	/** Clears the Bluetooth buffer of the serial connection */
 	Clear() {return}
 
 	/**
 	 * Connect a Bluetooth device
 	 * @param {str} name 
 	 * @param {str} channel 
-	 * @return {void} 
 	 */
 	Connect(name, channel) {return}
 
-	/**
-	 * Disconnect the Bluetooth connection
-	 * @return {void} 
-	 */
+	/** Disconnect the Bluetooth connection */
 	Disconnect() {return}
 
 	/**
@@ -3219,7 +2974,6 @@ class DsBluetoothSerial {
 	/**
 	 * Listen <s>or stop listening</s> for incoming messages
 	 * @param {bin} enabled 
-	 * @return {void} 
 	 */
 	Listen(enabled) {return}
 
@@ -3235,10 +2989,7 @@ class DsBluetoothSerial {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Ask user to enable Bluetooth
-	 * @return {void} 
-	 */
+	/** Ask user to enable Bluetooth */
 	RequestEnable() {return}
 
 	/**
@@ -3248,7 +2999,6 @@ class DsBluetoothSerial {
  	 * &emsp; `Int` - comma separated byte numbers\
  	 * &emsp; `Text` - string of text characters\
  	 * &emsp; `encoding` - UTF-16L/BE
-	 * @return {void} 
 	 */
 	SetDataMode(mode) {return}
 
@@ -3261,21 +3011,18 @@ class DsBluetoothSerial {
 	 * 	 * 	name is a string with the clients bluetooth name
 	 * 	 * 	and address includes the bluetooth address
 	 * @param {(name: str, address: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnConnect(callback) {return}
 
 	/**
 	 * Called after disconnecting from bluetooth connection
 	 * @param {(name: str, address: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnDisconnect(callback) {return}
 
 	/**
 	 * Called after received Data via Bluetooth
 	 * @param {(data: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReceive(callback) {return}
 
@@ -3284,21 +3031,18 @@ class DsBluetoothSerial {
 	 * @param {"End"|"Start-End"|"Size"} mode 
 	 * @param {str|num_int} p2 
 	 * @param {str|num_int} [p3] 
-	 * @return {void} 
 	 */
 	SetSplitMode(mode, p2, p3) {return}
 
 	/**
 	 * Set idle disconnect timeout
 	 * @param {num_mls} milliseconds 
-	 * @return {void} 
 	 */
 	SetTimeout(milliseconds) {return}
 
 	/**
 	 * Send data to connected device
 	 * @param {str} data 
-	 * @return {void} 
 	 */
 	Write(data) {return}
 }
@@ -3312,7 +3056,6 @@ class DsButton {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -3321,27 +3064,19 @@ class DsButton {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -3422,16 +3157,10 @@ class DsButton {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -3469,20 +3198,15 @@ class DsButton {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -3492,7 +3216,6 @@ class DsButton {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -3505,7 +3228,6 @@ class DsButton {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -3513,7 +3235,6 @@ class DsButton {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -3521,42 +3242,36 @@ class DsButton {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -3567,21 +3282,18 @@ class DsButton {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the button was long pressed
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
@@ -3592,7 +3304,6 @@ class DsButton {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -3603,7 +3314,6 @@ class DsButton {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -3611,7 +3321,6 @@ class DsButton {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -3620,7 +3329,6 @@ class DsButton {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -3632,21 +3340,18 @@ class DsButton {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -3656,7 +3361,6 @@ class DsButton {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -3666,21 +3370,16 @@ class DsButton {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -3691,7 +3390,6 @@ class DsButton {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -3705,7 +3403,6 @@ class DsCameraView {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -3714,7 +3411,6 @@ class DsCameraView {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
@@ -3723,21 +3419,16 @@ class DsCameraView {
 	 * @param {str_ptd} path 
 	 * @param {str} fileName File_n#_motion
 	 * @param {num_int} [maxCount] 
-	 * @return {void} 
 	 */
 	AutoCapture(path, fileName, maxCount) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/**
@@ -3747,10 +3438,7 @@ class DsCameraView {
 	 */
 	FindFaces(maxCount) {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -3886,10 +3574,7 @@ class DsCameraView {
 	 */
 	GetZoom() {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/**
@@ -3898,10 +3583,7 @@ class DsCameraView {
 	 */
 	HasFlash() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -3949,7 +3631,6 @@ class DsCameraView {
 	 * @param {num_pxl} sensitivity 
 	 * @param {num_mls} [minPeriod] 
 	 * @param {DsImage} [image] 
-	 * @return {void} 
 	 */
 	MotionMosaic(xtiles, ytiles, sensitivity, minPeriod, image) {return}
 
@@ -3958,7 +3639,6 @@ class DsCameraView {
 	 * @param {str_ptf} file 
 	 * @param {num_sec} [seconds] 
 	 * @param {"high"|"low"|"480p"|"720p"|"1080p"|"2k"|"4k"|"8k"|"qvga"|"vga"|"cif"} [quality] 
-	 * @return {void} 
 	 */
 	Record(file, seconds, quality) {return}
 
@@ -3968,27 +3648,21 @@ class DsCameraView {
 	 * @param {(data: [num,num,num][]) => void} callback 
 	 * @param {num_pxl} [sampSize] 
 	 * @param {num_mls} [maxRate] 
-	 * @return {void} 
 	 */
 	ReportColors(list, callback, sampSize, maxRate) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -3998,7 +3672,6 @@ class DsCameraView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -4011,7 +3684,6 @@ class DsCameraView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -4019,14 +3691,12 @@ class DsCameraView {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Applies a color effect to the camera
 	 * @param {"none"|"mono"|"negative"|"solarize"|"sepia"|"posterize"|"whiteboard"|"blackboard"|"aqua"|"vage-cold"|"point-blue"|"point-red-yellow"|"emboss"|"sketch"|"neon"} effect 
-	 * @return {void} 
 	 */
 	SetColorEffect(effect) {return}
 
@@ -4034,14 +3704,12 @@ class DsCameraView {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
@@ -4049,21 +3717,18 @@ class DsCameraView {
 	 * Define two camera view duplicate targets
 	 * @param {DsImage} image1 
 	 * @param {DsImage} image2 
-	 * @return {void} 
 	 */
 	SetDuplicateImage(image1, image2) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * En-/Disables the camera flash
 	 * @param {bin} onoff 
-	 * @return {void} 
 	 */
 	SetFlash(onoff) {return}
 
@@ -4073,7 +3738,6 @@ class DsCameraView {
  	 * &emsp; `Picture` - for taking pictures\
  	 * &emsp; `Video` - for recording videos\
  	 * &emsp; `EDOF` - Extended Depth Of Field for continuous digital focusing
-	 * @return {void} 
 	 */
 	SetFocusMode(mode) {return}
 
@@ -4084,35 +3748,30 @@ class DsCameraView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control gets focused
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnFocus(callback) {return}
 
 	/**
 	 * Called when cam.AutoCapture took a picture
 	 * @param {(file: str_pth) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnPicture(callback) {return}
 
 	/**
 	 * Called if the camera is ready for use
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReady(callback) {return}
 
 	/**
 	 * Rotates the camera view
 	 * @param {0|90|180|270} angle 
-	 * @return {void} 
 	 */
 	SetOrientation(angle) {return}
 
@@ -4123,7 +3782,6 @@ class DsCameraView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -4131,7 +3789,6 @@ class DsCameraView {
 	 * Change camera properties
 	 * @param {str} name 
 	 * @param {num|str} value 
-	 * @return {void} 
 	 */
 	SetParameter(name, value) {return}
 
@@ -4139,7 +3796,6 @@ class DsCameraView {
 	 * Define a custom picture size in pixels
 	 * @param {num_pxl} width 
 	 * @param {num_pxl} height 
-	 * @return {void} 
 	 */
 	SetPictureSize(width, height) {return}
 
@@ -4150,21 +3806,18 @@ class DsCameraView {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Rotate the captured image
 	 * @param {num_deg} angle 
-	 * @return {void} 
 	 */
 	SetPostRotation(angle) {return}
 
 	/**
 	 * Define a preview image for captured pictures
 	 * @param {DsImage} image 
-	 * @return {void} 
 	 */
 	SetPreviewImage(image) {return}
 
@@ -4172,7 +3825,6 @@ class DsCameraView {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -4181,14 +3833,12 @@ class DsCameraView {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * N-/Disables the camera sound
 	 * @param {bin} enabled 
-	 * @return {void} 
 	 */
 	SetSound(enabled) {return}
 
@@ -4196,46 +3846,31 @@ class DsCameraView {
 	 * Define custom video recording size
 	 * @param {num_pxl} width 
 	 * @param {num_pxl} height 
-	 * @return {void} 
 	 */
 	SetVideoSize(width, height) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
 	/**
 	 * Change the zoom value of the camera
 	 * @param {num} level 
-	 * @return {void} 
 	 */
 	SetZoom(level) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Start the camera preview on the display
-	 * @return {void} 
-	 */
+	/** Start the camera preview on the display */
 	StartPreview() {return}
 
-	/**
-	 * Stop recording video
-	 * @return {void} 
-	 */
+	/** Stop recording video */
 	Stop() {return}
 
-	/**
-	 * Stop the camera preview on the display
-	 * @return {void} 
-	 */
+	/** Stop the camera preview on the display */
 	StopPreview() {return}
 
 	/**
@@ -4245,14 +3880,12 @@ class DsCameraView {
 	 * @param {num_prc} quality 
 	 * @param {num_fps} fps 
 	 * @param {num_mtu} mtu 
-	 * @return {void} 
 	 */
 	Stream(ip, port, quality, fps, mtu) {return}
 
 	/**
 	 * Save the current camera view to a file
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	TakePicture(file) {return}
 
@@ -4264,7 +3897,6 @@ class DsCameraView {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -4278,7 +3910,6 @@ class DsCheckBox {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -4287,27 +3918,19 @@ class DsCheckBox {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -4394,16 +4017,10 @@ class DsCheckBox {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -4441,20 +4058,15 @@ class DsCheckBox {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -4464,7 +4076,6 @@ class DsCheckBox {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -4477,7 +4088,6 @@ class DsCheckBox {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -4485,14 +4095,12 @@ class DsCheckBox {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Changes the ckecked state
 	 * @param {bin} checked 
-	 * @return {void} 
 	 */
 	SetChecked(checked) {return}
 
@@ -4500,21 +4108,18 @@ class DsCheckBox {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -4525,14 +4130,12 @@ class DsCheckBox {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the CheckBox was touched
 	 * @param {(isChecked: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -4543,7 +4146,6 @@ class DsCheckBox {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -4554,7 +4156,6 @@ class DsCheckBox {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -4562,7 +4163,6 @@ class DsCheckBox {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -4571,21 +4171,18 @@ class DsCheckBox {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -4595,21 +4192,16 @@ class DsCheckBox {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -4620,7 +4212,6 @@ class DsCheckBox {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -4631,7 +4222,6 @@ class DsCloudStore {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -4645,7 +4235,6 @@ class DsCloudStore {
 	 * Deletes a file in the cloud
 	 * @param {str_ptf} file 
 	 * @param {(success: bin, result: {data: str,error: str}, status: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	Delete(file, callback) {return}
 
@@ -4653,7 +4242,6 @@ class DsCloudStore {
 	 * Lists files of the cloud
 	 * @param {str} filter 
 	 * @param {(error: bin, result: {data: str_com,error: str}, status: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	List(filter, callback) {return}
 
@@ -4662,7 +4250,6 @@ class DsCloudStore {
 	 * @param {str_ptf} file 
 	 * @param {str} callback 
 	 * @param {(error: bin, result: {data: all,error: str}, status: num_int) => void} [options] 
-	 * @return {void} 
 	 */
 	Load(file, callback, options) {return}
 
@@ -4671,7 +4258,6 @@ class DsCloudStore {
 	 * @param {str_ptf} file 
 	 * @param {obj} data 
 	 * @param {(success: bin, result: {data: str,error: str}, status: num_int) => void} [callback] 
-	 * @return {void} 
 	 */
 	Merge(file, data, callback) {return}
 
@@ -4681,14 +4267,12 @@ class DsCloudStore {
 	 * @param {all} data 
 	 * @param {(success: bin, result: {data: str,error: str}, status: num_int) => void} [callback] 
 	 * @param {str} [options] 
-	 * @return {void} 
 	 */
 	Save(file, data, callback, options) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
@@ -4699,7 +4283,6 @@ class DsCloudStore {
 	 * @param {str_mim} [type] 
 	 * @param {(response: {error: str,name: str,folder: str,id: str,mimetype: str_mim,size: num}) => void} [callback] 
 	 * @param {str} [password] 
-	 * @return {void} 
 	 */
 	Upload(data, name, type, callback, password) {return}
 }
@@ -4713,7 +4296,6 @@ class DsCodeEdit {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -4722,45 +4304,28 @@ class DsCodeEdit {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clears the undo/redo history
-	 * @return {void} 
-	 */
+	/** Clears the undo/redo history */
 	ClearHistory() {return}
 
-	/**
-	 * Copy selected text to the clipboard
-	 * @return {void} 
-	 */
+	/** Copy selected text to the clipboard */
 	Copy() {return}
 
-	/**
-	 * Cut selected text to the clipboard
-	 * @return {void} 
-	 */
+	/** Cut selected text to the clipboard */
 	Cut() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -4877,29 +4442,21 @@ class DsCodeEdit {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
 	 * Underlines a certain line in the text
 	 * @param {num_int} line 
-	 * @return {void} 
 	 */
 	HighlightLine(line) {return}
 
 	/**
 	 * Insert text at the cursor
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	InsertText(text) {return}
 
@@ -4935,22 +4492,15 @@ class DsCodeEdit {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Paste clipboard to the current cursor position
-	 * @return {void} 
-	 */
+	/** Paste clipboard to the current cursor position */
 	Paste() {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
 	 * Replace the selected text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	Replace(text) {return}
 
@@ -4960,7 +4510,6 @@ class DsCodeEdit {
 	 * @param {str} newText 
 	 * @param {bin} [matchCase=false] 
 	 * @param {bin} [wholeWord=false] 
-	 * @return {void} 
 	 */
 	ReplaceAll(text, newText, matchCase, wholeWord) {return}
 
@@ -4969,7 +4518,6 @@ class DsCodeEdit {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
@@ -4979,33 +4527,24 @@ class DsCodeEdit {
 	 * @param {"Up"|"Down"} [direction='Down'] 
 	 * @param {bin} [matchCase=false] 
 	 * @param {bin} [wholeWord=false] 
-	 * @return {void} 
 	 */
 	Search(text, direction, matchCase, wholeWord) {return}
 
-	/**
-	 * Select the whole text
-	 * @return {void} 
-	 */
+	/** Select the whole text */
 	SelectAll() {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -5015,7 +4554,6 @@ class DsCodeEdit {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -5028,7 +4566,6 @@ class DsCodeEdit {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -5036,7 +4573,6 @@ class DsCodeEdit {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -5044,49 +4580,42 @@ class DsCodeEdit {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Changes the color scheme of the CodeEdit
 	 * @param {"Dark"|"Light"} scheme 
-	 * @return {void} 
 	 */
 	SetColorScheme(scheme) {return}
 
 	/**
 	 * Change the current cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Change the highlighted language syntax
 	 * @param {".js"|".java"|".php"|".c"|".cpp"|".cs"|".rb"|".m"|".py"|".txt"} ext 
-	 * @return {void} 
 	 */
 	SetLanguage(ext) {return}
 
@@ -5097,35 +4626,30 @@ class DsCodeEdit {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Select between Yoyo or Touch mode
 	 * @param {"Yoyo"|"Touch"} method 
-	 * @return {void} 
 	 */
 	SetNavigationMethod(method) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a Yoyo double-tap callback function
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnDoubleTap(callback) {return}
 
 	/**
 	 * Define a key-event callback function
 	 * @param {(action: "Down"|"Move"|"Up", keyname: "VOLUME_DOWN"|"VOLUME_UP"|"BACK"|"MENU", keycode: num_int, extra: "Shift"|"Ctrl"|"Alt"|"Meta") => void} callback 
-	 * @return {void} 
 	 */
 	SetOnKey(callback) {return}
 
@@ -5136,7 +4660,6 @@ class DsCodeEdit {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -5147,7 +4670,6 @@ class DsCodeEdit {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -5155,7 +4677,6 @@ class DsCodeEdit {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -5163,14 +4684,12 @@ class DsCodeEdit {
 	 * Selects part of the text in a given range
 	 * @param {num_int} start 
 	 * @param {num_int} stop 
-	 * @return {void} 
 	 */
 	SetSelection(start, stop) {return}
 
 	/**
 	 * En/Disable cursor selection mode
 	 * @param {bin} onOff 
-	 * @return {void} 
 	 */
 	SetSelectMode(onOff) {return}
 
@@ -5179,21 +4698,18 @@ class DsCodeEdit {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -5203,28 +4719,22 @@ class DsCodeEdit {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disable device keyboard
 	 * @param {bin} onOff 
-	 * @return {void} 
 	 */
 	SetUseKeyboard(onOff) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -5235,14 +4745,10 @@ class DsCodeEdit {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 }
 
@@ -5252,7 +4758,6 @@ class DsCrypt {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -5283,14 +4788,12 @@ class DsCrypt {
 	 * @param {str} text 
 	 * @param {"MD5"|"SHA"|"SHA-1"|"SHA-224"|"SHA-256"|"SHA-384"|"SHA-512"} mode 
 	 * @param {"Wrap"} [options] 
-	 * @return {void} 
 	 */
 	Hash(text, mode, options) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 }
@@ -5301,7 +4804,6 @@ class DsDialog {
 	/**
 	 * Add content layout
 	 * @param {DsLayout} layout 
-	 * @return {void} 
 	 */
 	AddLayout(layout) {return}
 
@@ -5311,40 +4813,28 @@ class DsDialog {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Hides the control and removes it from the screen
-	 * @return {void} 
-	 */
+	/** Hides the control and removes it from the screen */
 	Dismiss() {return}
 
 	/**
 	 * En/Disables hiding via presing the back key
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	EnableBackKey(enable) {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -5418,16 +4908,10 @@ class DsDialog {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -5465,28 +4949,22 @@ class DsDialog {
 	/**
 	 * Removes a content layout
 	 * @param {DsLayout} layout 
-	 * @return {void} 
 	 */
 	RemoveLayout(layout) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @param {num_pxl} radius 
-	 * @return {void} 
 	 */
 	SetBackColor(color, radius) {return}
 
@@ -5496,7 +4974,6 @@ class DsDialog {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -5509,7 +4986,6 @@ class DsDialog {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -5517,7 +4993,6 @@ class DsDialog {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -5525,21 +5000,18 @@ class DsDialog {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -5550,28 +5022,24 @@ class DsDialog {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when back button was pressed while the dialog was shown
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnBack(callback) {return}
 
 	/**
 	 * Called when the dialog is cancelled
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnCancel(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -5582,7 +5050,6 @@ class DsDialog {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -5593,7 +5060,6 @@ class DsDialog {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -5601,7 +5067,6 @@ class DsDialog {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -5610,28 +5075,24 @@ class DsDialog {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Changes the dialog title
 	 * @param {str} title 
-	 * @return {void} 
 	 */
 	SetTitle(title) {return}
 
 	/**
 	 * Changes the color of the dialog title
 	 * @param {str_col} clr 
-	 * @return {void} 
 	 */
 	SetTitleColor(clr) {return}
 
 	/**
 	 * Changes the title divider height for "Old" dialogs
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTitleDividerColor(color) {return}
 
@@ -5639,7 +5100,6 @@ class DsDialog {
 	 * Change height of the title divider for "Old" dialogs
 	 * @param {num_pxl} height 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetTitleDividerHeight(height, options) {return}
 
@@ -5647,7 +5107,6 @@ class DsDialog {
 	 * Change height of the title bar for "Old" dialogs
 	 * @param {num_pxl} height 
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [options] 
-	 * @return {void} 
 	 */
 	SetTitleHeight(height, options) {return}
 
@@ -5655,21 +5114,16 @@ class DsDialog {
 	 * Changes the title text size for "Old" dialogs
 	 * @param {num} size 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetTitleTextSize(size, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -5680,7 +5134,6 @@ class DsDialog {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -5691,7 +5144,6 @@ class DsDownloader {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -5701,7 +5153,6 @@ class DsDownloader {
 	 * @param {str_pth} fldr `must not have a trailing slash`
 	 * @param {str} [name] 
 	 * @param {str} [headers] 
-	 * @return {void} 
 	 */
 	Download(url, fldr, name, headers) {return}
 
@@ -5744,28 +5195,24 @@ class DsDownloader {
 	/**
 	 * Called when download is cancelled
 	 * @param {(file: str_pth) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnCancel(callback) {return}
 
 	/**
 	 * Called when downloads are finished
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when a file is downloaded
 	 * @param {(path: str_pth) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnDownload(callback) {return}
 
 	/**
 	 * Called when an error occurred while downloading
 	 * @param {(error: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnError(callback) {return}
 }
@@ -5776,7 +5223,6 @@ class DsEmail {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -5791,7 +5237,6 @@ class DsEmail {
 	 * @param {str} folder 
 	 * @param {num_int} maxCount 
 	 * @param {str} [filter] 
-	 * @return {void} 
 	 */
 	Receive(folder, maxCount, filter) {return}
 
@@ -5802,7 +5247,6 @@ class DsEmail {
 	 * @param {str} sender `email address`
 	 * @param {str} recipients `email address`
 	 * @param {str_pth} [attach] 
-	 * @return {void} 
 	 */
 	Send(subject, body, sender, recipients, attach) {return}
 
@@ -5815,21 +5259,18 @@ class DsEmail {
 	 * @param {993|995} [port] <br>
  	 * &emsp; `993` - imap\
  	 * &emsp; `995` - pop
-	 * @return {void} 
 	 */
 	SetIMAP(server, port) {return}
 
 	/**
 	 * Called when a message is received
 	 * @param {(data: { from: str_eml, to: str_eml, cc: str_eml, subject: str, body: str }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when a status changed
 	 * @param {(status: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnStatus(callback) {return}
 
@@ -5843,7 +5284,6 @@ class DsEmail {
  	 * &emsp; `465` - SSL\
  	 * &emsp; `578` - TLS (gmail, yahoo)\
  	 * &emsp; `587` - gmx
-	 * @return {void} 
 	 */
 	SetSMTP(server, port) {return}
 }
@@ -5854,14 +5294,10 @@ class DsFile {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Close File
-	 * @return {void} 
-	 */
+	/** Close File */
 	Close() {return}
 
 	/**
@@ -5870,10 +5306,7 @@ class DsFile {
 	 */
 	GetLength() {return}
 
-	/**
-	 * Get pointer position
-	 * @return {void} 
-	 */
+	/** Get pointer position */
 	GetPointer() {return}
 
 	/**
@@ -5886,7 +5319,6 @@ class DsFile {
 	 * Read data from file
 	 * @param {num_int} len 
 	 * @param {"Int"|"Text"|"Hex"} [mode='Text'] 
-	 * @return {void} 
 	 */
 	ReadData(len, mode) {return}
 
@@ -5913,28 +5345,24 @@ class DsFile {
  	 * &emsp; `Line` - read one line terminated by \\n, \\r or \\r\\n\
  	 * &emsp; `Char` - read big-endian 16-bit character
 	 * @param {(data: str) => void} callback 
-	 * @return {void} 
 	 */
 	ReadTextAsync(type, callback) {return}
 
 	/**
 	 * CHange pointer position to a given byte in the file
 	 * @param {num_int} offset 
-	 * @return {void} 
 	 */
 	Seek(offset) {return}
 
 	/**
 	 * Allocate memory for a file
 	 * @param {num_int} len 
-	 * @return {void} 
 	 */
 	SetLength(len) {return}
 
 	/**
 	 * Let the pointer skip some bytes
 	 * @param {num_int} bytes 
-	 * @return {void} 
 	 */
 	Skip(bytes) {return}
 
@@ -5943,7 +5371,6 @@ class DsFile {
 	 * @param {"FA"|"FB"|"FC"|"250"|"251"|"252"|"abc46"} data <br>
  	 * &emsp; `abc46` - low order 8-bit bytes
 	 * @param {"Hex"|"Int"|"Text"} [mode='Text'] 
-	 * @return {void} 
 	 */
 	WriteData(data, mode) {return}
 
@@ -5951,7 +5378,6 @@ class DsFile {
 	 * Write number to the file
 	 * @param {num} data 
 	 * @param {"Byte"|"UByte"|"Bool"|"Float"|"FloatLE"|"Long"|"LongLE"|"Short"|"UShort"|"ShortLE"|"UShortLE"|"Int"|"UInt"|"IntLE"} [type='Int'] 
-	 * @return {void} 
 	 */
 	WriteNumber(data, type) {return}
 
@@ -5962,7 +5388,6 @@ class DsFile {
  	 * &emsp; `UTF` - write UTF-8 encoded text\
  	 * &emsp; `Bytes` - 8-bit bytes\
  	 * &emsp; `Char` - Write big-endian 16-bit characters
-	 * @return {void} 
 	 */
 	WriteText(data, type) {return}
 }
@@ -5976,34 +5401,25 @@ class DsGameView {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/**
 	 * Execute code inside the GameView
 	 * @param {str_jsc} js 
-	 * @return {void} 
 	 */
 	Execute(js) {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -6052,10 +5468,7 @@ class DsGameView {
 	 */
 	GetTop(options) {return}
 
-	/**
-	 * Returns the control class name
-	 * @return {void} 
-	 */
+	/** Returns the control class name */
 	GetType() {return}
 
 	/**
@@ -6071,16 +5484,10 @@ class DsGameView {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -6118,20 +5525,15 @@ class DsGameView {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -6141,7 +5543,6 @@ class DsGameView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -6154,7 +5555,6 @@ class DsGameView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -6162,7 +5562,6 @@ class DsGameView {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -6170,35 +5569,30 @@ class DsGameView {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Define the game source file
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFile(file) {return}
 
 	/**
 	 * Change the target framerate
 	 * @param {num_fps} fps 
-	 * @return {void} 
 	 */
 	SetFrameRate(fps) {return}
 
@@ -6209,7 +5603,6 @@ class DsGameView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -6220,7 +5613,6 @@ class DsGameView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -6231,7 +5623,6 @@ class DsGameView {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -6239,7 +5630,6 @@ class DsGameView {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -6248,21 +5638,16 @@ class DsGameView {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -6273,7 +5658,6 @@ class DsGameView {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -6287,17 +5671,13 @@ class DsGLView {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
 	/** @type {obj} [HTMLDivElement] */
 	canvas;
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/**
@@ -6316,7 +5696,6 @@ class DsGLView {
 	 * @param {num_frc} [w] 
 	 * @param {num_frc} [h] 
 	 * @param {num_deg} [angle] 
-	 * @return {void} 
 	 */
 	DrawImage(image, x, y, w, h, angle) {return}
 
@@ -6332,14 +5711,10 @@ class DsGLView {
 	 * @param {num_frc} dw 
 	 * @param {num_frc} dh 
 	 * @param {num_deg} angle 
-	 * @return {void} 
 	 */
 	DrawSprite(sheet, sx, sy, sw, sh, dx, dy, dw, dh, angle) {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -6413,19 +5788,13 @@ class DsGLView {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
 	/** @type {num_int} Height */
 	height;
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -6460,16 +5829,12 @@ class DsGLView {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Render draw commands
-	 * @return {void} 
-	 */
+	/** Render draw commands */
 	Render() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -6479,7 +5844,6 @@ class DsGLView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -6492,7 +5856,6 @@ class DsGLView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -6500,21 +5863,18 @@ class DsGLView {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -6525,35 +5885,30 @@ class DsGLView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -6564,7 +5919,6 @@ class DsGLView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -6575,7 +5929,6 @@ class DsGLView {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -6583,7 +5936,6 @@ class DsGLView {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -6592,28 +5944,22 @@ class DsGLView {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -6624,7 +5970,6 @@ class DsGLView {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -6651,7 +5996,6 @@ class GLV_ctx {
 	 * @param {str} fileName `path relative to “/sdcard”`
 	 * @param {fnc} [successCallback] 
 	 * @param {fnc} [errorCallback] 
-	 * @return {void} 
 	 */
 	capture(x, y, w, h, fileName, successCallback, errorCallback) {return}
 
@@ -6661,7 +6005,6 @@ class GLV_ctx {
 	 * @param {num_pxl} y 
 	 * @param {num_pxl} [width=-1] 
 	 * @param {num_pxl} [height=-1] 
-	 * @return {void} 
 	 */
 	clearRect(x, y, width, height) {return}
 
@@ -6676,46 +6019,31 @@ class GLV_ctx {
 	 * @param {num_pxl} dy 
 	 * @param {num_pxl} dw 
 	 * @param {num_pxl} dh 
-	 * @return {void} 
 	 */
 	drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) {return}
 
-	/**
-	 * Render draw commands
-	 * @return {void} 
-	 */
+	/** Render draw commands */
 	render() {return}
 
-	/**
-	 * Reset all transformations to default
-	 * @return {void} 
-	 */
+	/** Reset all transformations to default */
 	resetTransform() {return}
 
-	/**
-	 * Restore saved context
-	 * @return {void} 
-	 */
+	/** Restore saved context */
 	restore() {return}
 
 	/**
 	 * Rotates the transformation matrix
 	 * @param {num_rad} angle 
-	 * @return {void} 
 	 */
 	rotate(angle) {return}
 
-	/**
-	 * Saves current context
-	 * @return {void} 
-	 */
+	/** Saves current context */
 	save() {return}
 
 	/**
 	 * Scale the transformation matrix
 	 * @param {num_frc} a 
 	 * @param {num_frc} d 
-	 * @return {void} 
 	 */
 	scale(a, d) {return}
 
@@ -6727,7 +6055,6 @@ class GLV_ctx {
 	 * @param {num} d 
 	 * @param {num} tx 
 	 * @param {num} ty 
-	 * @return {void} 
 	 */
 	setTransform(a, b, c, d, tx, ty) {return}
 
@@ -6739,7 +6066,6 @@ class GLV_ctx {
 	 * @param {num} d 
 	 * @param {num} tx 
 	 * @param {num} ty 
-	 * @return {void} 
 	 */
 	transform(a, b, c, d, tx, ty) {return}
 
@@ -6747,7 +6073,6 @@ class GLV_ctx {
 	 * 'Move' the transformation matrix
 	 * @param {num_pxl} tx 
 	 * @param {num_pxl} ty 
-	 * @return {void} 
 	 */
 	translate(tx, ty) {return}
 }
@@ -6760,7 +6085,6 @@ class DsImage {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -6769,27 +6093,19 @@ class DsImage {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Clears the image content
-	 * @return {void} 
-	 */
+	/** Clears the image content */
 	Clear() {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/**
@@ -6800,7 +6116,6 @@ class DsImage {
 	 * @param {num} y2 `corner 2`
 	 * @param {num_deg} start 
 	 * @param {num_deg} sweep 
-	 * @return {void} 
 	 */
 	DrawArc(x1, y1, x2, y2, start, sweep) {return}
 
@@ -6809,14 +6124,12 @@ class DsImage {
 	 * @param {num} x 
 	 * @param {num} y 
 	 * @param {num} radius `width relative`
-	 * @return {void} 
 	 */
 	DrawCircle(x, y, radius) {return}
 
 	/**
 	 * Draw gif frame on a specific time
 	 * @param {num_mls} ms 
-	 * @return {void} 
 	 */
 	DrawFrame(ms) {return}
 
@@ -6829,7 +6142,6 @@ class DsImage {
 	 * @param {num} [h] 
 	 * @param {num_deg} [angle] 
 	 * @param {"ADD"|"CLEAR"|"DARKEN"|"DST"|"DST_ATOP"|"DST_IN"|"DST_OUT"|"DST_OVER"|"LIGHTEN"|"MULTIPLY"|"OVERLAY"|"SCREEN"|"SRC"|"SRC_ATOP"|"SRC_IN"|"SRC_OUT"|"SRC_OVER"|"XOR"} [mode] 
-	 * @return {void} 
 	 */
 	DrawImage(image, x, y, w, h, angle, mode) {return}
 
@@ -6837,7 +6149,6 @@ class DsImage {
 	 * Draws an image with a 2d transformation matrix
 	 * @param {DsImage} image 
 	 * @param {[num, num, num, num, num, num]} matrix 
-	 * @return {void} 
 	 */
 	DrawImageMtx(image, matrix) {return}
 
@@ -6847,7 +6158,6 @@ class DsImage {
 	 * @param {num} y1 
 	 * @param {num} x2 
 	 * @param {num} y2 
-	 * @return {void} 
 	 */
 	DrawLine(x1, y1, x2, y2) {return}
 
@@ -6855,7 +6165,6 @@ class DsImage {
 	 * Draws a single pixel
 	 * @param {num} x 
 	 * @param {num} y 
-	 * @return {void} 
 	 */
 	DrawPoint(x, y) {return}
 
@@ -6865,7 +6174,6 @@ class DsImage {
 	 * @param {num} y1 
 	 * @param {num} x2 
 	 * @param {num} y2 
-	 * @return {void} 
 	 */
 	DrawRectangle(x1, y1, x2, y2) {return}
 
@@ -6873,7 +6181,6 @@ class DsImage {
 	 * Draws a vertically centered sample graph
 	 * @param {num_int[]} data 
 	 * @param {num} range 
-	 * @return {void} 
 	 */
 	DrawSamples(data, range) {return}
 
@@ -6882,20 +6189,13 @@ class DsImage {
 	 * @param {str} txt 
 	 * @param {num} x 
 	 * @param {num} y 
-	 * @return {void} 
 	 */
 	DrawText(txt, x, y) {return}
 
-	/**
-	 * Applies modifications to the image data
-	 * @return {void} 
-	 */
+	/** Applies modifications to the image data */
 	Flatten() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -6988,16 +6288,10 @@ class DsImage {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -7043,14 +6337,10 @@ class DsImage {
 	 * Moves the image content
 	 * @param {num} x 
 	 * @param {num} y 
-	 * @return {void} 
 	 */
 	Move(x, y) {return}
 
-	/**
-	 * Reset all transformations
-	 * @return {void} 
-	 */
+	/** Reset all transformations */
 	Reset() {return}
 
 	/**
@@ -7058,7 +6348,6 @@ class DsImage {
 	 * @param {num_deg} angle 
 	 * @param {num} [pivotX] 
 	 * @param {num} [pivotY] 
-	 * @return {void} 
 	 */
 	Rotate(angle, pivotX, pivotY) {return}
 
@@ -7066,7 +6355,6 @@ class DsImage {
 	 * Saves the image to a file on the local filesystem
 	 * @param {str_ptf} fileName 
 	 * @param {num_prc} [quality] `for jpg files`
-	 * @return {void} 
 	 */
 	Save(fileName, quality) {return}
 
@@ -7074,41 +6362,33 @@ class DsImage {
 	 * Scales the content by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	Scale(x, y) {return}
 
 	/**
 	 * Change the alpha value
 	 * @param {num_dhx} alpha 
-	 * @return {void} 
 	 */
 	SetAlpha(alpha) {return}
 
 	/**
 	 * En/Disables automatic view updates
 	 * @param {bin} onoff 
-	 * @return {void} 
 	 */
 	SetAutoUpdate(onoff) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -7118,7 +6398,6 @@ class DsImage {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -7131,7 +6410,6 @@ class DsImage {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -7139,14 +6417,12 @@ class DsImage {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Fills the image with a color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetColor(color) {return}
 
@@ -7154,28 +6430,24 @@ class DsImage {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
@@ -7185,14 +6457,12 @@ class DsImage {
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
 	 * @param {"rescale"} [options] 
-	 * @return {void} 
 	 */
 	SetImage(image, width, height, options) {return}
 
 	/**
 	 * Change the stroke width
 	 * @param {num_pxl} width 
-	 * @return {void} 
 	 */
 	SetLineWidth(width) {return}
 
@@ -7203,63 +6473,54 @@ class DsImage {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Set a minimum OnTouchMove call timeout
 	 * @param {num_mls} milliseconds 
-	 * @return {void} 
 	 */
 	SetMaxRate(milliseconds) {return}
 
 	/**
 	 * Change the name of the image
 	 * @param {str} name 
-	 * @return {void} 
 	 */
 	SetName(name) {return}
 
 	/**
 	 * Called when image has loaded asynchronously
 	 * @param {(img: DsImage) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLoad(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -7270,21 +6531,18 @@ class DsImage {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Change the paint color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetPaintColor(color) {return}
 
 	/**
 	 * Change the paint style
 	 * @param {"Fill"|"Line"} style 
-	 * @return {void} 
 	 */
 	SetPaintStyle(style) {return}
 
@@ -7295,14 +6553,12 @@ class DsImage {
 	 * @param {num} [height=-1] 
 	 * @param {"px"|"icon"|"resize"|"rescale"|"square"|"fix"} [options] <br>
  	 * &emsp; `fix` - set bitmap size
-	 * @return {void} 
 	 */
 	SetPixelData(data, width, height, options) {return}
 
 	/**
 	 * Change the pixel mode for drawing methods
 	 * @param {bin} onoff 
-	 * @return {void} 
 	 */
 	SetPixelMode(onoff) {return}
 
@@ -7313,7 +6569,6 @@ class DsImage {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -7321,7 +6576,6 @@ class DsImage {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -7330,49 +6584,40 @@ class DsImage {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the drawn text size
 	 * @param {num} size 
-	 * @return {void} 
 	 */
 	SetTextSize(size) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
 	 * Skews the content
 	 * @param {num} x 
 	 * @param {num} y 
-	 * @return {void} 
 	 */
 	Skew(x, y) {return}
 
 	/**
 	 * Applies a transformation matrix to the content
 	 * @param {lst} matrix 
-	 * @return {void} 
 	 */
 	Transform(matrix) {return}
 
@@ -7384,14 +6629,10 @@ class DsImage {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
-	/**
-	 * Update the view in disabled AutoUpdate mode
-	 * @return {void} 
-	 */
+	/** Update the view in disabled AutoUpdate mode */
 	Update() {return}
 }
 
@@ -7402,7 +6643,6 @@ class DsLayout {
 	 * Add a control to the layout
 	 * @param {dso} child 
 	 * @param {num_int} [order] 
-	 * @return {void} 
 	 */
 	AddChild(child, order) {return}
 
@@ -7412,7 +6652,6 @@ class DsLayout {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -7421,41 +6660,31 @@ class DsLayout {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
 	/**
 	 * Moves a child to the layout front
 	 * @param {dso} child 
-	 * @return {void} 
 	 */
 	ChildToFront(child) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/**
 	 * Destroys and removes a child from the layout
 	 * @param {dso} child 
-	 * @return {void} 
 	 */
 	DestroyChild(child) {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -7530,16 +6759,10 @@ class DsLayout {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -7577,27 +6800,21 @@ class DsLayout {
 	/**
 	 * Remove a child from the layout
 	 * @param {dso} child 
-	 * @return {void} 
 	 */
 	RemoveChild(child) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -7607,7 +6824,6 @@ class DsLayout {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -7620,7 +6836,6 @@ class DsLayout {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -7628,7 +6843,6 @@ class DsLayout {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -7636,7 +6850,6 @@ class DsLayout {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
@@ -7647,7 +6860,6 @@ class DsLayout {
 	 * @param {num} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetChildMargins(left, top, right, bottom, mode) {return}
 
@@ -7657,42 +6869,36 @@ class DsLayout {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode='px'] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetChildTextSize(size, mode) {return}
 
 	/**
 	 * Apply corner radius to card layouts's
 	 * @param {num_pxl} radius 
-	 * @return {void} 
 	 */
 	SetCornerRadius(radius) {return}
 
 	/**
 	 * Apply shadow to card layouts's
 	 * @param {num_pxl} elevation 
-	 * @return {void} 
 	 */
 	SetElevation(elevation) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Adjust the placing of contained children
 	 * @param {"Left"|"Top"|"Right"|"Bottom"|"VCenter"|"HCenter"|"FillX"|"FillY"|"FillXY"} gravity 
-	 * @return {void} 
 	 */
 	SetGravity(gravity) {return}
 
@@ -7703,56 +6909,48 @@ class DsLayout {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the user changed a control content
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChildChange(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
 	/**
 	 * Change the children orientation
 	 * @param {"Horizontal"|"Vertical"} orient 
-	 * @return {void} 
 	 */
 	SetOrientation(orient) {return}
 
@@ -7763,7 +6961,6 @@ class DsLayout {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -7774,7 +6971,6 @@ class DsLayout {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -7782,7 +6978,6 @@ class DsLayout {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -7791,35 +6986,28 @@ class DsLayout {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Enable touch event forwarding
 	 * @param {bin} through 
-	 * @return {void} 
 	 */
 	SetTouchThrough(through) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -7830,7 +7018,6 @@ class DsLayout {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -7843,7 +7030,6 @@ class DsList {
 	 * @param {str} title 
 	 * @param {str} [body] 
 	 * @param {str|str_ptf} [image] 
-	 * @return {void} 
 	 */
 	AddItem(title, body, image) {return}
 
@@ -7853,7 +7039,6 @@ class DsList {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -7862,33 +7047,22 @@ class DsList {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Expand the list to the full height inside scrollers
-	 * @return {void} 
-	 */
+	/** Expand the list to the full height inside scrollers */
 	Expand() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -7990,16 +7164,10 @@ class DsList {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -8008,7 +7176,6 @@ class DsList {
 	 * @param {str} title 
 	 * @param {str} [body] 
 	 * @param {str|str_ptf} [image] 
-	 * @return {void} 
 	 */
 	InsertItem(index, title, body, image) {return}
 
@@ -8044,23 +7211,18 @@ class DsList {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Clears the list
-	 * @return {void} 
-	 */
+	/** Clears the list */
 	RemoveAll() {return}
 
 	/**
 	 * Removes an item by its title
 	 * @param {str} title 
-	 * @return {void} 
 	 */
 	RemoveItem(title) {return}
 
 	/**
 	 * Removes an item by its index
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	RemoveItemByIndex(index) {return}
 
@@ -8068,14 +7230,12 @@ class DsList {
 	 * Scrolls to an item by its title
 	 * @param {str} title 
 	 * @param {str} [body] 
-	 * @return {void} 
 	 */
 	ScrollToItem(title, body) {return}
 
 	/**
 	 * Scrolls the list to a specific index
 	 * @param {num_int} index 
-	 * @return {void} 
 	 */
 	ScrollToItemByIndex(index) {return}
 
@@ -8084,7 +7244,6 @@ class DsList {
 	 * @param {str} title 
 	 * @param {str} [body] 
 	 * @param {bin} [scroll] 
-	 * @return {void} 
 	 */
 	SelectItem(title, body, scroll) {return}
 
@@ -8092,27 +7251,21 @@ class DsList {
 	 * Highlight an item by its index
 	 * @param {num_int} index 
 	 * @param {bin} [scroll=false] 
-	 * @return {void} 
 	 */
 	SelectItemByIndex(index, scroll) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -8122,7 +7275,6 @@ class DsList {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -8135,7 +7287,6 @@ class DsList {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -8143,7 +7294,6 @@ class DsList {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -8151,7 +7301,6 @@ class DsList {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
@@ -8161,7 +7310,6 @@ class DsList {
 	 * @param {num_frc} title 
 	 * @param {num_frc} [body] 
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetColumnWidths(icon, title, body, mode) {return}
 
@@ -8169,63 +7317,54 @@ class DsList {
 	 * Changes the divider style
 	 * @param {num_frc} height 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetDivider(height, color) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * Auto-crop titles to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize1(mode) {return}
 
 	/**
 	 * Auto-crop bodys to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize2(mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Change selected title highlight color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetHiTextColor1(color) {return}
 
 	/**
 	 * Change selected body highlight color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetHiTextColor2(color) {return}
 
@@ -8236,7 +7375,6 @@ class DsList {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetIconMargins(left, top, right, bottom, mode) {return}
 
@@ -8244,7 +7382,6 @@ class DsList {
 	 * Change the icon size
 	 * @param {num} size 
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetIconSize(size, mode) {return}
 
@@ -8254,7 +7391,6 @@ class DsList {
 	 * @param {str} newTitle 
 	 * @param {str} [newBody] 
 	 * @param {str_ptf} [newImage] 
-	 * @return {void} 
 	 */
 	SetItem(title, newTitle, newBody, newImage) {return}
 
@@ -8264,7 +7400,6 @@ class DsList {
 	 * @param {str} newTitle 
 	 * @param {str} [newBody] 
 	 * @param {str_ptf} [newImage] 
-	 * @return {void} 
 	 */
 	SetItemByIndex(index, newTitle, newBody, newImage) {return}
 
@@ -8273,7 +7408,6 @@ class DsList {
 	 * @param {str} name 
 	 * @param {str_col} textClr 
 	 * @param {str_col} [backClr] 
-	 * @return {void} 
 	 */
 	SetItemColor(name, textClr, backClr) {return}
 
@@ -8282,7 +7416,6 @@ class DsList {
 	 * @param {num_int} index 
 	 * @param {str_col} textClr 
 	 * @param {str_col} [backClr] 
-	 * @return {void} 
 	 */
 	SetItemColorByIndex(index, textClr, backClr) {return}
 
@@ -8290,7 +7423,6 @@ class DsList {
 	 * Set the content of the whole list
 	 * @param {"title"|"title&colon;icon"|"title&colon;body&colon;icon"} list 
 	 * @param {str} [delim=','] 
-	 * @return {void} 
 	 */
 	SetList(list, delim) {return}
 
@@ -8301,21 +7433,18 @@ class DsList {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {(title: str, body?: str, icon?: str, index?: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {(title: str, body?: str, icon?: str, index?: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -8326,7 +7455,6 @@ class DsList {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -8337,7 +7465,6 @@ class DsList {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -8345,7 +7472,6 @@ class DsList {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -8354,28 +7480,24 @@ class DsList {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
 	/**
 	 * Change the default text color of titles
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor1(color) {return}
 
 	/**
 	 * Change the default text color of bodies
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor2(color) {return}
 
@@ -8389,7 +7511,6 @@ class DsList {
 	 * @param {"inner"|"outer"} [options] <br>
  	 * &emsp; `inner` - around each individual title and body\
  	 * &emsp; `outer` - around both title and body together
-	 * @return {void} 
 	 */
 	SetTextMargins(left, top, right, bottom, mode, options) {return}
 
@@ -8399,7 +7520,6 @@ class DsList {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -8409,7 +7529,6 @@ class DsList {
 	 * @param {num_int} [dx=0] 
 	 * @param {num_int} [dy=0] 
 	 * @param {str_col} [color='black'] 
-	 * @return {void} 
 	 */
 	SetTextShadow1(radius, dx, dy, color) {return}
 
@@ -8419,7 +7538,6 @@ class DsList {
 	 * @param {num_int} [dx=0] 
 	 * @param {num_int} [dy=0] 
 	 * @param {str_col} [color='black'] 
-	 * @return {void} 
 	 */
 	SetTextShadow2(radius, dx, dy, color) {return}
 
@@ -8429,7 +7547,6 @@ class DsList {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
@@ -8437,7 +7554,6 @@ class DsList {
 	 * Set title text size
 	 * @param {num} size 
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetTextSize1(size, mode) {return}
 
@@ -8445,21 +7561,16 @@ class DsList {
 	 * Set body text size
 	 * @param {num} size 
 	 * @param {string | ("px"|"sp"|"dip"|"mm"|"pt")[]} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetTextSize2(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -8470,7 +7581,6 @@ class DsList {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -8484,21 +7594,16 @@ class DsListDialog {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Hides the control and removes it from the screen
-	 * @return {void} 
-	 */
+	/** Hides the control and removes it from the screen */
 	Dismiss() {return}
 
 	/**
@@ -8507,10 +7612,7 @@ class DsListDialog {
 	 */
 	GetType() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -8528,7 +7630,6 @@ class DsListDialog {
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -8536,14 +7637,12 @@ class DsListDialog {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {(title: str, checked?: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -8552,28 +7651,22 @@ class DsListDialog {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
 	/**
 	 * Change the dialog title
 	 * @param {str} title 
-	 * @return {void} 
 	 */
 	SetTitle(title) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 }
 
@@ -8583,7 +7676,6 @@ class DsLocator {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -8612,27 +7704,19 @@ class DsLocator {
 	/**
 	 * Called when some of the values changed
 	 * @param {(data: { provider: str, latitude: num, longitude: num, speed: num, bearing: num, altitude: num, accuracy: num_met }, time: num_mls) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Locator update frequency in seconds
 	 * @param {num_sec} rate 
-	 * @return {void} 
 	 */
 	SetRate(rate) {return}
 
-	/**
-	 * Start locator
-	 * @return {void} 
-	 */
+	/** Start locator */
 	Start() {return}
 
-	/**
-	 * Stop locator
-	 * @return {void} 
-	 */
+	/** Stop locator */
 	Stop() {return}
 }
 
@@ -8642,14 +7726,10 @@ class DsMediaPlayer {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Close the media player
-	 * @return {void} 
-	 */
+	/** Close the media player */
 	Close() {return}
 
 	/**
@@ -8670,89 +7750,66 @@ class DsMediaPlayer {
 	 */
 	GetType() {return}
 
-	/**
-	 * Returns if the player is looping
-	 * @return {void} 
-	 */
+	/** Returns if the player is looping */
 	IsLooping() {return}
 
-	/**
-	 * Get current playing state
-	 * @return {void} 
-	 */
+	/** Get current playing state */
 	IsPlaying() {return}
 
-	/**
-	 * Returns if player is useable yet
-	 * @return {void} 
-	 */
+	/** Returns if player is useable yet */
 	IsReady() {return}
 
-	/**
-	 * Pause the current playing song
-	 * @return {void} 
-	 */
+	/** Pause the current playing song */
 	Pause() {return}
 
-	/**
-	 * Play the current loaded song from the last paused time or from a given start time in in seconds
-	 * @return {void} 
-	 */
+	/** Play the current loaded song from the last paused time or from a given start time in in seconds */
 	Play() {return}
 
 	/**
 	 * Seek the player to a given time in seconds
 	 * @param {num_flt} time 
-	 * @return {void} 
 	 */
 	SeekTo(time) {return}
 
 	/**
 	 * Load a sound file to the player
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFile(file) {return}
 
 	/**
 	 * Set looping mode
 	 * @param {bin} loop 
-	 * @return {void} 
 	 */
 	SetLooping(loop) {return}
 
 	/**
 	 * Called when the player has finished playing a track
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when the player is ready for use
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReady(callback) {return}
 
 	/**
 	 * Called when ply.Seek has finished
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSeekDone(callback) {return}
 
 	/**
 	 * Set the playback speed
 	 * @param {num_fac} speed 
-	 * @return {void} 
 	 */
 	SetSpeed(speed) {return}
 
 	/**
 	 * Set the playback pitch
 	 * @param {num_fac} pitch 
-	 * @return {void} 
 	 */
 	SetPitch(pitch) {return}
 
@@ -8760,14 +7817,10 @@ class DsMediaPlayer {
 	 * Set the playback volume
 	 * @param {num_prc} left 
 	 * @param {num_prc} right 
-	 * @return {void} 
 	 */
 	SetVolume(left, right) {return}
 
-	/**
-	 * Stop playing a song
-	 * @return {void} 
-	 */
+	/** Stop playing a song */
 	Stop() {return}
 }
 
@@ -8777,7 +7830,6 @@ class DsMediaStore {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -8810,7 +7862,6 @@ class DsMediaStore {
 	 * @param {str_sql} [filter] 
 	 * @param {"album"|"_id"|"albumArt"|"artist"|"numSongs"|"firstYear"|"lastYear"} [sort] coloumns
 	 * @param {"internal"|"external"} [options] 
-	 * @return {void} 
 	 */
 	QueryAlbums(filter, sort, options) {return}
 
@@ -8819,7 +7870,6 @@ class DsMediaStore {
 	 * @param {str_sql} [filter] 
 	 * @param {"_id"|"artist"|"numAlbums"|"numTracks"} [sort] coloumns
 	 * @param {"internal"|"external"} [options] 
-	 * @return {void} 
 	 */
 	QueryArtists(filter, sort, options) {return}
 
@@ -8828,28 +7878,24 @@ class DsMediaStore {
 	 * @param {str_sql} [filter] 
 	 * @param {"title"|"_id"|"duration"|"size"|"uri"|"album"|"albumID"|"artist"|"artistId"} [sort] coloumns
 	 * @param {"internal"|"external"} [options] 
-	 * @return {void} 
 	 */
 	QueryMedia(filter, sort, options) {return}
 
 	/**
 	 * Called when album query has finished
 	 * @param {(result: { album: str, id: num_int, albumArt: str_pth, artist: str, numSongs: num_int, firstYear: str, lastYear: str }[]) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnAlbumsResult(callback) {return}
 
 	/**
 	 * Called when artist query has finished
 	 * @param {(result: { id: num_int, artist: str, numAlbums: num_int, numTracks: num_int }[]) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnArtistsResult(callback) {return}
 
 	/**
 	 * Called when media query has finished
 	 * @param {(result: { title: str, id: num_int, duration: num_mls, size: num_byt, uri: str_uri, album: str, albumID: num_int, artist: str, artistId: num_int }[]) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnMediaResult(callback) {return}
 }
@@ -8862,41 +7908,31 @@ class DsNetClient {
 	 * @param {str_url} server 
 	 * @param {num_int} [port=80] 
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
-	 * @return {void} 
 	 */
 	AutoReceive(server, port, mode) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Closes the NetClient socket
-	 * @return {void} 
-	 */
+	/** Closes the NetClient socket */
 	Close() {return}
 
 	/**
 	 * Connect to a server
 	 * @param {str_url} address 
 	 * @param {num_int} [port=80] 
-	 * @return {void} 
 	 */
 	Connect(address, port) {return}
 
-	/**
-	 * Disconnect from server
-	 * @return {void} 
-	 */
+	/** Disconnect from server */
 	Disconnect() {return}
 
 	/**
 	 * Downloads a file via TCP from the server
 	 * @param {str_url} file 
-	 * @return {void} 
 	 */
 	DownloadFile(file) {return}
 
@@ -8912,10 +7948,7 @@ class DsNetClient {
 	 */
 	GetType() {return}
 
-	/**
-	 * Get NetClient connected state
-	 * @return {void} 
-	 */
+	/** Get NetClient connected state */
 	IsConnected() {return}
 
 	/**
@@ -8948,7 +7981,6 @@ class DsNetClient {
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
 	 * @param {str} [options] `<BUFSIZ>`\
  	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
-	 * @return {void} 
 	 */
 	ReceiveDatagrams(port, mode, options) {return}
 
@@ -8980,7 +8012,6 @@ class DsNetClient {
 	 * @param {num_byt[]|string | ("bytes")[]} data <br>
  	 * &emsp; `bytes` - hexadecimal 00..FF
 	 * @param {"Int"|"Hex"} [mode] 
-	 * @return {void} 
 	 */
 	SendBytes(data, mode) {return}
 
@@ -8991,7 +8022,6 @@ class DsNetClient {
 	 * @param {str_url} [address] 
 	 * @param {num_int} [port] 
 	 * @param {"Text"|"Hex"|"Bytes"} [options] 
-	 * @return {void} 
 	 */
 	SendDatagram(data, mode, address, port, options) {return}
 
@@ -9002,7 +8032,6 @@ class DsNetClient {
  	 * &emsp; `Int` - comma separated byte numbers\
  	 * &emsp; `Text` - string of text characters\
  	 * &emsp; `encoding` - UTF-16L/BE
-	 * @return {void} 
 	 */
 	SetDataMode(mode) {return}
 
@@ -9011,7 +8040,6 @@ class DsNetClient {
 	 * @param {"End"|"Start-End"|"Size"} mode 
 	 * @param {str|num_int} [p2] 
 	 * @param {str|num_int} [p3] 
-	 * @return {void} 
 	 */
 	SetSplitMode(mode, p2, p3) {return}
 
@@ -9019,35 +8047,30 @@ class DsNetClient {
 	 * Sends text over TCP connection
 	 * @param {str} text 
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
-	 * @return {void} 
 	 */
 	SendText(text, mode) {return}
 
 	/**
 	 * Called when TCP connected or failed to connect to a server
 	 * @param {(connected: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnConnect(callback) {return}
 
 	/**
 	 * Called when a file download has finished
 	 * @param {(something: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnDownload(callback) {return}
 
 	/**
 	 * Called when a TCP NetClient received some data via AutoReceive
 	 * @param {(address: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReceive(callback) {return}
 
 	/**
 	 * Timeout between two receive checks
 	 * @param {num_sec} seconds 
-	 * @return {void} 
 	 */
 	SetTimeout(seconds) {return}
 
@@ -9055,7 +8078,6 @@ class DsNetClient {
 	 * Wake up devices if they are configured to
 	 * @param {str} ip 
 	 * @param {str} [mac] 
-	 * @return {void} 
 	 */
 	WakeOnLan(ip, mac) {return}
 }
@@ -9073,42 +8095,36 @@ class DsNode {
 	 * Start the main Node process
 	 * @param {lst} [args] argument array
 	 * @param {lst} [paths] 
-	 * @return {void} 
 	 */
 	Start(args, paths) {return}
 
 	/**
 	 * Define a callback function which is called when the Node component is ready for use
 	 * @param {() => void} cb 
-	 * @return {void} 
 	 */
 	SetOnReady(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process has exited
 	 * @param {() => void} cb 
-	 * @return {void} 
 	 */
 	SetOnDone(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process prints to stdout
 	 * @param {(stdout: str) => void} cb 
-	 * @return {void} 
 	 */
 	SetOnOutput(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process prints to stderr
 	 * @param {(msg: str) => void} cb 
-	 * @return {void} 
 	 */
 	SetOnError(cb) {return}
 
 	/**
 	 * Define a callback function which is called when a system/pipe message was received from the node process
 	 * @param {(msg: str) => void} cb 
-	 * @return {void} 
 	 */
 	SetOnMessage(cb) {return}
 
@@ -9116,7 +8132,6 @@ class DsNode {
 	 * Set a process environment variable
 	 * @param {str} name 
 	 * @param {str} val 
-	 * @return {void} 
 	 */
 	SetEnv(name, val) {return}
 
@@ -9130,14 +8145,12 @@ class DsNode {
 	/**
 	 * Open a message pipe
 	 * @param {bin} isCmd 
-	 * @return {void} 
 	 */
 	OpenMsgPipe(isCmd) {return}
 
 	/**
 	 * Close a message pipe
 	 * @param {bin} isCmd 
-	 * @return {void} 
 	 */
 	CloseMsgPipe(isCmd) {return}
 
@@ -9145,14 +8158,12 @@ class DsNode {
 	 * Send a message over the message pipe
 	 * @param {str} msg 
 	 * @param {bin} [isCmd=false] 
-	 * @return {void} 
 	 */
 	SendPipeMsg(msg, isCmd) {return}
 
 	/**
 	 * Send a message to the running node process
 	 * @param {str} msg 
-	 * @return {void} 
 	 */
 	SendMessage(msg) {return}
 
@@ -9173,7 +8184,6 @@ class DsNode {
 	 * @param {str_pth} file 
 	 * @param {str} [id] `Context ID`
 	 * @param {str_lst} [newPaths] 
-	 * @return {void} 
 	 */
 	Run(file, id, newPaths) {return}
 
@@ -9181,7 +8191,6 @@ class DsNode {
 	 * Execute a line of code in the node process
 	 * @param {str_jsc} js 
 	 * @param {str} [id] `Context ID`
-	 * @return {void} 
 	 */
 	Execute(js, id) {return}
 
@@ -9189,7 +8198,6 @@ class DsNode {
 	 * Install a node module from npmjs.org
 	 * @param {"name"|"name^ver"} name 
 	 * @param {str} [dir] `optional target directory`
-	 * @return {void} 
 	 */
 	AddModule(name, dir) {return}
 }
@@ -9200,14 +8208,12 @@ class DsNotification {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
 	/**
 	 * Cancel a notification with a specific id
-	 * @param {"id"|"*"} id 
-	 * @return {void} 
+	 * @param {str} id `id`, `*`
 	 */
 	Cancel(id) {return}
 
@@ -9220,21 +8226,18 @@ class DsNotification {
 	/**
 	 * Listen for any notifications
 	 * @param {"CheckPerms"} [options] 
-	 * @return {void} 
 	 */
 	Listen(options) {return}
 
 	/**
 	 * Send the notification to the user
 	 * @param {str} id 
-	 * @return {void} 
 	 */
 	Notify(id) {return}
 
 	/**
 	 * Set a large image in the notification
 	 * @param {str_ptf} image 
-	 * @return {void} 
 	 */
 	SetLargeImage(image) {return}
 
@@ -9243,7 +8246,6 @@ class DsNotification {
 	 * @param {str_col} color 
 	 * @param {num_mls} [onMs] 
 	 * @param {num_mls} [offMs] 
-	 * @return {void} 
 	 */
 	SetLights(color, onMs, offMs) {return}
 
@@ -9253,21 +8255,18 @@ class DsNotification {
 	 * @param {str} [title] 
 	 * @param {str} [text] 
 	 * @param {str} [extra] `Add multiline text in your notification.`
-	 * @return {void} 
 	 */
 	SetMessage(ticker, title, text, extra) {return}
 
 	/**
 	 * Called when notification intercepted
 	 * @param {(source: str, title: str, message: str, extra: str, type: "Normal") => void} callback 
-	 * @return {void} 
 	 */
 	SetOnNotify(callback) {return}
 
 	/**
 	 * Set a small image icon
 	 * @param {str_ptf} image 
-	 * @return {void} 
 	 */
 	SetSmallImage(image) {return}
 }
@@ -9278,7 +8277,6 @@ class DsNxt {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -9286,14 +8284,12 @@ class DsNxt {
 	 * Play frequency tone
 	 * @param {num_hrz} frequency 
 	 * @param {num_mls} [duration] 
-	 * @return {void} 
 	 */
 	Beep(frequency, duration) {return}
 
 	/**
 	 * Brakes motors smoothly
 	 * @param {"A"|"B"|"C"|"ABC"} motors 
-	 * @return {void} 
 	 */
 	Brake(motors) {return}
 
@@ -9306,14 +8302,10 @@ class DsNxt {
 	/**
 	 * Connect to NXT
 	 * @param {str} name 
-	 * @return {void} 
 	 */
 	Connect(name) {return}
 
-	/**
-	 * Disconnect NXT
-	 * @return {void} 
-	 */
+	/** Disconnect NXT */
 	Disconnect() {return}
 
 	/**
@@ -9322,7 +8314,6 @@ class DsNxt {
 	 * @param {num_prc} power 
 	 * @param {num_prc} [rotations] `-100..100`
 	 * @param {str} [options] 
-	 * @return {void} 
 	 */
 	Drive(motors, power, rotations, options) {return}
 
@@ -9392,7 +8383,6 @@ class DsNxt {
 	/**
 	 * Check if a motor is powered
 	 * @param {"A"|"B"|"C"|"ABC"} motor 
-	 * @return {void} 
 	 */
 	IsMotorIdle(motor) {return}
 
@@ -9407,7 +8397,6 @@ class DsNxt {
 	 * Play a sound file a certain amount of times
 	 * @param {str_ptf} file 
 	 * @param {num_int} [repeat=0] 
-	 * @return {void} 
 	 */
 	PlaySoundFile(file, repeat) {return}
 
@@ -9460,16 +8449,12 @@ class DsNxt {
 	 */
 	ReadTouchSensor(input) {return}
 
-	/**
-	 * Request enabling bluetooth if it isn't
-	 * @return {void} 
-	 */
+	/** Request enabling bluetooth if it isn't */
 	RequestEnable() {return}
 
 	/**
 	 * Reset wheel encoder offset to 0
 	 * @param {"A"|"B"|"C"|"ABC"} motors 
-	 * @return {void} 
 	 */
 	Reset(motors) {return}
 
@@ -9478,14 +8463,12 @@ class DsNxt {
 	 * @param {num_int} mailbox `1..10`
 	 * @param {"Text"|"Number"|"Logic"} [type] 
 	 * @param {str|num_int} [message] 
-	 * @return {void} 
 	 */
 	SendMail(mailbox, type, message) {return}
 
 	/**
 	 * Inverts the direction of motor commands
 	 * @param {bin} invert 
-	 * @return {void} 
 	 */
 	SetInvert(invert) {return}
 
@@ -9493,48 +8476,37 @@ class DsNxt {
 	 * Change sensor LED color
 	 * @param {num_int} input `1..4`
 	 * @param {"White"|"Red"|"Green"|"Blue"|"Off"} color 
-	 * @return {void} 
 	 */
 	SetLampColor(input, color) {return}
 
 	/**
 	 * Called when NXT connection established or failed
 	 * @param {(connected: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnConnect(callback) {return}
 
 	/**
 	 * Called when bt connection established
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnConnected(callback) {return}
 
-	/**
-	 * Shows a list of paired NXT devices to connect to
-	 * @return {void} 
-	 */
+	/** Shows a list of paired NXT devices to connect to */
 	ShowDevices() {return}
 
 	/**
 	 * Starts an NXT-G program on the NXT brick if available
 	 * @param {str_pth} name 
-	 * @return {void} 
 	 */
 	StartProgram(name) {return}
 
 	/**
 	 * Stop powering some motors
 	 * @param {"A"|"B"|"C"|"ABC"} motors 
-	 * @return {void} 
 	 */
 	Stop(motors) {return}
 
-	/**
-	 * Stops the current running program
-	 * @return {void} 
-	 */
+	/** Stops the current running program */
 	StopProgram() {return}
 
 	/**
@@ -9554,14 +8526,12 @@ class DsOverlay {
 	 * @param {num_frc} [left=0] 
 	 * @param {num_frc} [top=0] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	AddLayout(layout, left, top, options) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -9571,16 +8541,12 @@ class DsOverlay {
 	 */
 	GetParent() {return}
 
-	/**
-	 * Returns the control class name
-	 * @return {void} 
-	 */
+	/** Returns the control class name */
 	GetType() {return}
 
 	/**
 	 * Remove layout from overlay
 	 * @param {DsLayout} layout 
-	 * @return {void} 
 	 */
 	RemoveLayout(layout) {return}
 
@@ -9590,7 +8556,6 @@ class DsOverlay {
 	 * @param {num_frc} [left=0] 
 	 * @param {num_frc} [top=0] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(layout, left, top, options) {return}
 }
@@ -9601,7 +8566,6 @@ class DsPhoneState {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -9614,20 +8578,13 @@ class DsPhoneState {
 	/**
 	 * Called when a phone state has changed
 	 * @param {(type: "CellLocation"|"DataConnection"|"DataActivity"|"CallState"|"ServiceState"|"SignalStrength"|"CallForwarding"|"MessageWaiting", data: all) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
-	/**
-	 * Start listening
-	 * @return {void} 
-	 */
+	/** Start listening */
 	Start() {return}
 
-	/**
-	 * Stop listening
-	 * @return {void} 
-	 */
+	/** Stop listening */
 	Stop() {return}
 }
 
@@ -9637,7 +8594,6 @@ class DsPlayStore {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -9648,7 +8604,6 @@ class DsPlayStore {
 	 * @param {"IAP"|"SUBS"} [options] <br>
  	 * &emsp; `IAP` - In-App purchases\
  	 * &emsp; `SUBS` - subscriptions
-	 * @return {void} 
 	 */
 	GetBillingInfo(prodIDs, callback, options) {return}
 
@@ -9656,7 +8611,6 @@ class DsPlayStore {
 	 * Get purchased items from Google Play
 	 * @param {(items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} [callback] 
 	 * @param {"SUBS"} [options] 
-	 * @return {void} 
 	 */
 	GetPurchases(callback, options) {return}
 
@@ -9672,7 +8626,6 @@ class DsPlayStore {
 	 * @param {str} token 
 	 * @param {(prodId: str, orderId: str, purchToken: str, devToken: str, packageName: str) => void} [callback] 
 	 * @param {"SUBS"} [options] 
-	 * @return {void} 
 	 */
 	Purchase(prodID, token, callback, options) {return}
 }
@@ -9683,7 +8636,6 @@ class DsScroller {
 	/**
 	 * Add a layout control
 	 * @param {DsLayout} layout 
-	 * @return {void} 
 	 */
 	AddChild(layout) {return}
 
@@ -9693,7 +8645,6 @@ class DsScroller {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -9702,34 +8653,25 @@ class DsScroller {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
 	/**
 	 * Devil rises and takes a child with him to hell
 	 * @param {DsLayout} layout 
-	 * @return {void} 
 	 */
 	DestroyChild(layout) {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -9809,16 +8751,10 @@ class DsScroller {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -9856,7 +8792,6 @@ class DsScroller {
 	/**
 	 * Remove a scroller layout
 	 * @param {dso} child 
-	 * @return {void} 
 	 */
 	RemoveChild(child) {return}
 
@@ -9864,7 +8799,6 @@ class DsScroller {
 	 * Scroll relative to the current position
 	 * @param {num_frc} x 
 	 * @param {num_frc} y 
-	 * @return {void} 
 	 */
 	ScrollBy(x, y) {return}
 
@@ -9872,27 +8806,21 @@ class DsScroller {
 	 * Scrolls to a given position
 	 * @param {num_frc} x 
 	 * @param {num_frc} y 
-	 * @return {void} 
 	 */
 	ScrollTo(x, y) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -9902,7 +8830,6 @@ class DsScroller {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -9915,7 +8842,6 @@ class DsScroller {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -9923,7 +8849,6 @@ class DsScroller {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -9931,21 +8856,18 @@ class DsScroller {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -9956,7 +8878,6 @@ class DsScroller {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
@@ -9967,7 +8888,6 @@ class DsScroller {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -9978,7 +8898,6 @@ class DsScroller {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -9986,7 +8905,6 @@ class DsScroller {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -9995,21 +8913,16 @@ class DsScroller {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -10020,7 +8933,6 @@ class DsScroller {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -10034,7 +8946,6 @@ class DsSeekBar {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -10043,27 +8954,19 @@ class DsSeekBar {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -10137,16 +9040,10 @@ class DsSeekBar {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -10184,20 +9081,15 @@ class DsSeekBar {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -10207,7 +9099,6 @@ class DsSeekBar {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -10220,7 +9111,6 @@ class DsSeekBar {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -10228,7 +9118,6 @@ class DsSeekBar {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -10237,21 +9126,18 @@ class DsSeekBar {
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
 	 * @param {str} [options] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode, options) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -10262,28 +9148,24 @@ class DsSeekBar {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Set rate of OnChange calls
 	 * @param {num_mls} rate 
-	 * @return {void} 
 	 */
 	SetMaxRate(rate) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {(value: num) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {(value: num) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -10294,7 +9176,6 @@ class DsSeekBar {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -10305,14 +9186,12 @@ class DsSeekBar {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
 	/**
 	 * Set value range
 	 * @param {num} range 
-	 * @return {void} 
 	 */
 	SetRange(range) {return}
 
@@ -10320,7 +9199,6 @@ class DsSeekBar {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -10329,28 +9207,22 @@ class DsSeekBar {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Set current seekbar value
 	 * @param {num} val 
-	 * @return {void} 
 	 */
 	SetValue(val) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -10361,7 +9233,6 @@ class DsSeekBar {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -10372,7 +9243,6 @@ class DsSensor {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -10427,34 +9297,25 @@ class DsSensor {
 	/**
 	 * Set maximum OnChange rate
 	 * @param {num_mls} rate 
-	 * @return {void} 
 	 */
 	SetMaxRate(rate) {return}
 
 	/**
 	 * Set minimum value difference which triggers OnChange
 	 * @param {num} min 
-	 * @return {void} 
 	 */
 	SetMinChange(min) {return}
 
 	/**
 	 * Called when a sensor value has changed
 	 * @param {(first: num, second: num, third: num, time: num_mls) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
-	/**
-	 * Start the sensor
-	 * @return {void} 
-	 */
+	/** Start the sensor */
 	Start() {return}
 
-	/**
-	 * Stop the sensor
-	 * @return {void} 
-	 */
+	/** Stop the sensor */
 	Stop() {return}
 }
 
@@ -10464,7 +9325,6 @@ class DsService {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -10477,14 +9337,10 @@ class DsService {
 	/**
 	 * Send message to service
 	 * @param {str} message 
-	 * @return {void} 
 	 */
 	SendMessage(message) {return}
 
-	/**
-	 * Run service in background
-	 * @return {void} 
-	 */
+	/** Run service in background */
 	SetInBackground() {return}
 
 	/**
@@ -10494,21 +9350,16 @@ class DsService {
 	 * @param {str_ptf} [largeIcon] 
 	 * @param {str_ptf} [smallIcon] 
 	 * @param {"none"|"min"|"low"|"high"} [importance] 
-	 * @return {void} 
 	 */
 	SetInForeground(title, text, largeIcon, smallIcon, importance) {return}
 
 	/**
 	 * Called when service sent a message
 	 * @param {(message: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnMessage(callback) {return}
 
-	/**
-	 * Stop service
-	 * @return {void} 
-	 */
+	/** Stop service */
 	Stop() {return}
 }
 
@@ -10518,7 +9369,6 @@ class DsSMS {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -10534,21 +9384,18 @@ class DsSMS {
 	 * @param {str} message 
 	 * @param {"MultiPart"} [options] <br>
  	 * &emsp; `MultiPart` - multi-part SMS messaging
-	 * @return {void} 
 	 */
 	Send(number, message, options) {return}
 
 	/**
 	 * Called when user received a SMS
 	 * @param {(message: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when a status has changed
 	 * @param {(status: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnStatus(callback) {return}
 }
@@ -10559,14 +9406,10 @@ class DsSpeechRec {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Stop recognition
-	 * @return {void} 
-	 */
+	/** Stop recognition */
 	Cancel() {return}
 
 	/**
@@ -10599,37 +9442,28 @@ class DsSpeechRec {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Start speech recognition
-	 * @return {void} 
-	 */
+	/** Start speech recognition */
 	Recognize() {return}
 
 	/**
 	 * Called when an error occured
 	 * @param {(error: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Called when SpeechRec is ready for use
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReady(callback) {return}
 
 	/**
 	 * Called when text was recognized
 	 * @param {(result: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnResult(callback) {return}
 
-	/**
-	 * Stop recording and start recognition
-	 * @return {void} 
-	 */
+	/** Stop recording and start recognition */
 	Stop() {return}
 }
 
@@ -10642,7 +9476,6 @@ class DsSpinner {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -10651,27 +9484,19 @@ class DsSpinner {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -10752,16 +9577,10 @@ class DsSpinner {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -10799,27 +9618,21 @@ class DsSpinner {
 	/**
 	 * Change current shown item
 	 * @param {str} item 
-	 * @return {void} 
 	 */
 	SelectItem(item) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -10829,7 +9642,6 @@ class DsSpinner {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -10842,7 +9654,6 @@ class DsSpinner {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -10850,7 +9661,6 @@ class DsSpinner {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -10858,21 +9668,18 @@ class DsSpinner {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -10880,7 +9687,6 @@ class DsSpinner {
 	 * Change spinner list
 	 * @param {str_com} list 
 	 * @param {str} [delim=','] 
-	 * @return {void} 
 	 */
 	SetList(list, delim) {return}
 
@@ -10891,21 +9697,18 @@ class DsSpinner {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when value changed by the user
 	 * @param {(item: str, index: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -10916,7 +9719,6 @@ class DsSpinner {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -10927,7 +9729,6 @@ class DsSpinner {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -10935,7 +9736,6 @@ class DsSpinner {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -10944,21 +9744,18 @@ class DsSpinner {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change current shown item
 	 * @param {str} item 
-	 * @return {void} 
 	 */
 	SetText(item) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -10968,21 +9765,16 @@ class DsSpinner {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -10993,7 +9785,6 @@ class DsSpinner {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11007,7 +9798,6 @@ class DsSwitch {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -11016,27 +9806,19 @@ class DsSwitch {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -11123,16 +9905,10 @@ class DsSwitch {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -11170,20 +9946,15 @@ class DsSwitch {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -11193,7 +9964,6 @@ class DsSwitch {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -11206,7 +9976,6 @@ class DsSwitch {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -11214,14 +9983,12 @@ class DsSwitch {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Change the checked state
 	 * @param {bin} checked 
-	 * @return {void} 
 	 */
 	SetChecked(checked) {return}
 
@@ -11229,21 +9996,18 @@ class DsSwitch {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -11254,14 +10018,12 @@ class DsSwitch {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(value: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -11272,7 +10034,6 @@ class DsSwitch {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -11283,7 +10044,6 @@ class DsSwitch {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -11291,7 +10051,6 @@ class DsSwitch {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -11300,7 +10059,6 @@ class DsSwitch {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -11312,21 +10070,18 @@ class DsSwitch {
 	 * @param {str_col} [strokeClr='sky'] 
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -11336,21 +10091,16 @@ class DsSwitch {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -11361,7 +10111,6 @@ class DsSwitch {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11372,7 +10121,6 @@ class DsSynth {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -11385,14 +10133,12 @@ class DsSynth {
 	/**
 	 * Play a sequence of notes
 	 * @param {str_com} tune `note1:duration1,note2:duration2,...`
-	 * @return {void} 
 	 */
 	PlayMidiTune(tune) {return}
 
 	/**
 	 * Play a single note
 	 * @param {num_int} note `0..125`
-	 * @return {void} 
 	 */
 	PlayNote(note) {return}
 
@@ -11400,42 +10146,36 @@ class DsSynth {
 	 * Plays a frequency tone
 	 * @param {num} frequency frequency
 	 * @param {num_mls} duration 
-	 * @return {void} 
 	 */
 	PlayTone(frequency, duration) {return}
 
 	/**
 	 * Change delay effect difference
 	 * @param {num_mls} milliseconds 
-	 * @return {void} 
 	 */
 	SetDelay(milliseconds) {return}
 
 	/**
 	 * Enables the delay effect (plays every note a second time after a given delay)
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetDelayEnabled(enable) {return}
 
 	/**
 	 * Adds a delay feedback effect
 	 * @param {num_frc} feedback 
-	 * @return {void} 
 	 */
 	SetFeedback(feedback) {return}
 
 	/**
 	 * Set current frequency
 	 * @param {num} frequency 
-	 * @return {void} 
 	 */
 	SetFrequency(frequency) {return}
 
 	/**
 	 * Set whole note length
 	 * @param {num_sec} duration 
-	 * @return {void} 
 	 */
 	SetNoteLength(duration) {return}
 
@@ -11445,42 +10185,36 @@ class DsSynth {
 	 * @param {num} rate 
 	 * @param {num} range 
 	 * @param {num_frc} feedback 
-	 * @return {void} 
 	 */
 	SetPhaser(drywet, rate, range, feedback) {return}
 
 	/**
 	 * Control unprocessed/delayed signals ratio
 	 * @param {num_frc} drywet 
-	 * @return {void} 
 	 */
 	SetPhaserDryWet(drywet) {return}
 
 	/**
 	 * En/Disables phaser effect
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetPhaserEnabled(enable) {return}
 
 	/**
 	 * Enables phaser feedback
 	 * @param {num_frc} feedback 
-	 * @return {void} 
 	 */
 	SetPhaserFeedback(feedback) {return}
 
 	/**
 	 * Set sweep range
 	 * @param {num} range 
-	 * @return {void} 
 	 */
 	SetPhaserRange(range) {return}
 
 	/**
 	 * Set sweeps per second
 	 * @param {num} rate 
-	 * @return {void} 
 	 */
 	SetPhaserRate(rate) {return}
 
@@ -11490,42 +10224,36 @@ class DsSynth {
 	 * @param {num_mls} decay 
 	 * @param {num_frc} sustain 
 	 * @param {num_mls} release 
-	 * @return {void} 
 	 */
 	SetVca(attack, decay, sustain, release) {return}
 
 	/**
 	 * Set a time of maximum volume
 	 * @param {num_mls} attack 
-	 * @return {void} 
 	 */
 	SetVcaAttack(attack) {return}
 
 	/**
 	 * Controls time when volume is lowered to sustain
 	 * @param {num_mls} decay 
-	 * @return {void} 
 	 */
 	SetVcaDecay(decay) {return}
 
 	/**
 	 * En/Disables VCA effect
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetVcaEnabled(enable) {return}
 
 	/**
 	 * Set a time of minimum volume
 	 * @param {num} release mls
-	 * @return {void} 
 	 */
 	SetVcaRelease(release) {return}
 
 	/**
 	 * Set a basis volume
 	 * @param {num_frc} sustain 
-	 * @return {void} 
 	 */
 	SetVcaSustain(sustain) {return}
 
@@ -11538,63 +10266,54 @@ class DsSynth {
 	 * @param {num} cuttoff frequency
 	 * @param {num_frc} resonance 
 	 * @param {num_frc} depth 
-	 * @return {void} 
 	 */
 	SetVcf(attack, decay, sustain, release, cuttoff, resonance, depth) {return}
 
 	/**
 	 * Set a time of maximum frequencies
 	 * @param {num_mls} attack 
-	 * @return {void} 
 	 */
 	SetVcfAttack(attack) {return}
 
 	/**
 	 * Set a maximum frequency which will never be exceeded
 	 * @param {num} cuttoff frequency
-	 * @return {void} 
 	 */
 	SetVcfCutoff(cuttoff) {return}
 
 	/**
 	 * Controls time when frequency is lowered to sustain
 	 * @param {num_mls} decay 
-	 * @return {void} 
 	 */
 	SetVcfDecay(decay) {return}
 
 	/**
 	 * Set filter strength
 	 * @param {num_frc} depth 
-	 * @return {void} 
 	 */
 	SetVcfDepth(depth) {return}
 
 	/**
 	 * En/Disables VCF effect
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetVcfEnabled(enable) {return}
 
 	/**
 	 * Set a time of minimum frequency
 	 * @param {num_mls} release 
-	 * @return {void} 
 	 */
 	SetVcfRelease(release) {return}
 
 	/**
 	 * Adds a resonance tone
 	 * @param {num_frc} resonance 
-	 * @return {void} 
 	 */
 	SetVcfResonance(resonance) {return}
 
 	/**
 	 * Set a basis frequency
 	 * @param {num_frc} sustain 
-	 * @return {void} 
 	 */
 	SetVcfSustain(sustain) {return}
 
@@ -11602,27 +10321,19 @@ class DsSynth {
 	 * Set master volume
 	 * @param {num_frc} left 
 	 * @param {num_frc} right 
-	 * @return {void} 
 	 */
 	SetVolume(left, right) {return}
 
 	/**
 	 * Set the wave shape of the synthesizer
 	 * @param {"Sin"|"Saw"|"Square"|"White"} shape 
-	 * @return {void} 
 	 */
 	SetWaveShape(shape) {return}
 
-	/**
-	 * Start playing
-	 * @return {void} 
-	 */
+	/** Start playing */
 	Start() {return}
 
-	/**
-	 * Stop playing
-	 * @return {void} 
-	 */
+	/** Stop playing */
 	Stop() {return}
 }
 
@@ -11632,7 +10343,6 @@ class DsSysProc {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -11641,7 +10351,6 @@ class DsSysProc {
 	 * @param {num_int} maxLines 
 	 * @param {string | ("nowait")[]} [options] <br>
  	 * &emsp; `nowait` - dont wait for input
-	 * @return {void} 
 	 */
 	Err(maxLines, options) {return}
 
@@ -11656,7 +10365,6 @@ class DsSysProc {
 	 * @param {num_int} maxLines 
 	 * @param {string | ("nowait")[]} [options] <br>
  	 * &emsp; `nowait` - dont wait for input
-	 * @return {void} 
 	 */
 	In(maxLines, options) {return}
 
@@ -11675,7 +10383,6 @@ class DsSysProc {
 	/**
 	 * Write to stdout
 	 * @param {str} command 
-	 * @return {void} 
 	 */
 	Out(command) {return}
 
@@ -11689,14 +10396,12 @@ class DsSysProc {
 	/**
 	 * Called when stderr changed
 	 * @param {(data: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Called when stdout changed
 	 * @param {(data: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnInput(callback) {return}
 
@@ -11704,7 +10409,6 @@ class DsSysProc {
 	 * Write binary data to file
 	 * @param {str_ptf} file 
 	 * @param {str} data 
-	 * @return {void} 
 	 */
 	WriteToFile(file, data) {return}
 }
@@ -11718,7 +10422,6 @@ class DsTabs {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -11727,27 +10430,19 @@ class DsTabs {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -11828,16 +10523,10 @@ class DsTabs {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -11875,20 +10564,15 @@ class DsTabs {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -11898,7 +10582,6 @@ class DsTabs {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -11911,7 +10594,6 @@ class DsTabs {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -11919,7 +10601,6 @@ class DsTabs {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -11927,28 +10608,24 @@ class DsTabs {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Apply corner radius to card layouts's
 	 * @param {num_pxl} radius 
-	 * @return {void} 
 	 */
 	SetCornerRadius(radius) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -11959,35 +10636,30 @@ class DsTabs {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when current tab changed
 	 * @param {(name: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Called when the user changed a control content
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChildChange(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -11998,7 +10670,6 @@ class DsTabs {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -12009,7 +10680,6 @@ class DsTabs {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -12017,7 +10687,6 @@ class DsTabs {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -12026,7 +10695,6 @@ class DsTabs {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -12034,41 +10702,33 @@ class DsTabs {
 	 * Set text size
 	 * @param {num} size 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Enable touch event forwarding
 	 * @param {bin} through 
-	 * @return {void} 
 	 */
 	SetTouchThrough(through) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
 	 * Switch current tab
 	 * @param {str} name 
-	 * @return {void} 
 	 */
 	ShowTab(name) {return}
 
@@ -12080,7 +10740,6 @@ class DsTabs {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -12088,7 +10747,6 @@ class DsTabs {
 		/**
 		 * Add a new tab
 		 * @param {str} name 
-		 * @return {void} 
 		 */
 		AddTab(name) {return}
 	}
@@ -12103,7 +10761,6 @@ class DsText {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -12112,27 +10769,19 @@ class DsText {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -12245,16 +10894,10 @@ class DsText {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -12282,7 +10925,6 @@ class DsText {
 	 * @param {str} message 
 	 * @param {string | ("Clear"|"Red"|"Green"|"Blue")[]} [options] <br>
  	 * &emsp; `Clear` - Clears the log before writing
-	 * @return {void} 
 	 */
 	Log(message, options) {return}
 
@@ -12301,20 +10943,15 @@ class DsText {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -12324,7 +10961,6 @@ class DsText {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -12337,7 +10973,6 @@ class DsText {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -12345,7 +10980,6 @@ class DsText {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -12353,49 +10987,42 @@ class DsText {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Auto-crop text to fit in control
 	 * @param {"start"|"middle"|"end"} mode 
-	 * @return {void} 
 	 */
 	SetEllipsize(mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Change the used font
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetFontFile(file) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
 	/**
 	 * Set maximum log length
 	 * @param {num_int} maxLines 
-	 * @return {void} 
 	 */
 	SetLog(maxLines) {return}
 
@@ -12406,42 +11033,36 @@ class DsText {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when the control was pressed for eons
 	 * @param {(src: dso) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
 	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
 	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
 	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -12452,7 +11073,6 @@ class DsText {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -12463,7 +11083,6 @@ class DsText {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -12471,7 +11090,6 @@ class DsText {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -12480,21 +11098,18 @@ class DsText {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -12504,7 +11119,6 @@ class DsText {
 	 * @param {num_int} [dx] 
 	 * @param {num_int} [dy] 
 	 * @param {str_col} [color] 
-	 * @return {void} 
 	 */
 	SetTextShadow(radius, dx, dy, color) {return}
 
@@ -12514,28 +11128,22 @@ class DsText {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * En/Disables touch events to be fired on the control
 	 * @param {bin} touchable 
-	 * @return {void} 
 	 */
 	SetTouchable(touchable) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -12546,7 +11154,6 @@ class DsText {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -12560,7 +11167,6 @@ class DsTextEdit {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -12569,33 +11175,22 @@ class DsTextEdit {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clear undo/redo history
-	 * @return {void} 
-	 */
+	/** Clear undo/redo history */
 	ClearHistory() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -12738,23 +11333,16 @@ class DsTextEdit {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
 	 * Insert text at a given position
 	 * @param {str} text 
 	 * @param {num_int} start 
-	 * @return {void} 
 	 */
 	InsertText(text, start) {return}
 
@@ -12790,10 +11378,7 @@ class DsTextEdit {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Redo an undone action
-	 * @return {void} 
-	 */
+	/** Redo an undone action */
 	Redo() {return}
 
 	/**
@@ -12801,27 +11386,21 @@ class DsTextEdit {
 	 * @param {str} text 
 	 * @param {num_int} start 
 	 * @param {num_int} end 
-	 * @return {void} 
 	 */
 	ReplaceText(text, start, end) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -12831,7 +11410,6 @@ class DsTextEdit {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -12844,7 +11422,6 @@ class DsTextEdit {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -12852,7 +11429,6 @@ class DsTextEdit {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -12860,49 +11436,42 @@ class DsTextEdit {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Change cursor color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetCursorColor(color) {return}
 
 	/**
 	 * Change the current cursor position
 	 * @param {num_int} position 
-	 * @return {void} 
 	 */
 	SetCursorPos(position) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Shows a grey default text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetHint(text) {return}
 
 	/**
 	 * Set current text to html-formatted text
 	 * @param {str_htm} str 
-	 * @return {void} 
 	 */
 	SetHtml(str) {return}
 
@@ -12913,35 +11482,30 @@ class DsTextEdit {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when content was changed by the user
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Called when user pressed 'Done' or 'Enter'
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnEnter(callback) {return}
 
 	/**
 	 * Called when the control gets focused
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnFocus(callback) {return}
 
 	/**
 	 * Set selection color
 	 * @param {str_col} col 
-	 * @return {void} 
 	 */
 	SetSelectColor(col) {return}
 
@@ -12949,7 +11513,6 @@ class DsTextEdit {
 	 * Select text in a given range
 	 * @param {num_int} start 
 	 * @param {num_int} stop 
-	 * @return {void} 
 	 */
 	SetSelection(start, stop) {return}
 
@@ -12958,21 +11521,18 @@ class DsTextEdit {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -12982,21 +11542,16 @@ class DsTextEdit {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -13007,14 +11562,10 @@ class DsTextEdit {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
-	/**
-	 * Undo an action
-	 * @return {void} 
-	 */
+	/** Undo an action */
 	Undo() {return}
 }
 
@@ -13027,14 +11578,12 @@ class DsTheme {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -13059,7 +11608,6 @@ class DsTheme {
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -13067,21 +11615,18 @@ class DsTheme {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Define button text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBtnTextColor(color) {return}
 
 	/**
 	 * Define button options
 	 * @param {string | ("FontAwesome"|"Html"|"Monospace"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"Normal"|"Aluminium"|"Gray"|"Lego")[]} [options] 
-	 * @return {void} 
 	 */
 	SetButtonOptions(options) {return}
 
@@ -13092,7 +11637,6 @@ class DsTheme {
 	 * @param {num} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetButtonPadding(left, top, right, bottom, mode) {return}
 
@@ -13105,91 +11649,78 @@ class DsTheme {
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
 	 * @param {str_col} [checkClr] 
-	 * @return {void} 
 	 */
 	SetButtonStyle(color1, color2, radius, strokeClr, strokeWidth, shadow, checkClr) {return}
 
 	/**
 	 * Define check box options
 	 * @param {string | ("FillX/Y")[]} [options] 
-	 * @return {void} 
 	 */
 	SetCheckBoxOptions(options) {return}
 
 	/**
 	 * Define dialog button colors
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetDialogBtnColor(color) {return}
 
 	/**
 	 * Define dialog button text colors
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetDialogBtnTxtColor(color) {return}
 
 	/**
 	 * Define dialog background colors
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetDialogColor(color) {return}
 
 	/**
 	 * Define dialog corner radius
 	 * @param {num_pxl} radius 
-	 * @return {void} 
 	 */
 	SetDialogCornerRadius(radius) {return}
 
 	/**
 	 * Define whether to dim dialog background
 	 * @param {bin} dim 
-	 * @return {void} 
 	 */
 	SetDimBehind(dim) {return}
 
 	/**
 	 * Define highlight colors
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetHighlightColor(color) {return}
 
 	/**
 	 * Define list divider colors
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetListDividerColor(color) {return}
 
 	/**
 	 * Define progress background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetProgressBackColor(color) {return}
 
 	/**
 	 * Define progress options
 	 * @param {string | ("NoDim"|"NonModal"|"Solid")[]} [options] 
-	 * @return {void} 
 	 */
 	SetProgressOptions(options) {return}
 
 	/**
 	 * Define progress bar options
 	 * @param {"Light"} [options] 
-	 * @return {void} 
 	 */
 	SetProgressBarOptions(options) {return}
 
 	/**
 	 * Define progress text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetProgressTextColor(color) {return}
 
@@ -13197,35 +11728,30 @@ class DsTheme {
 	 * Define control text color
 	 * @param {str_col} color1 
 	 * @param {str_col} color2 
-	 * @return {void} 
 	 */
 	SetTextColor(color1, color2) {return}
 
 	/**
 	 * Define text edit options
 	 * @param {"underline"} [options] 
-	 * @return {void} 
 	 */
 	SetTextEditOptions(options) {return}
 
 	/**
 	 * Define title colors
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTitleColor(color) {return}
 
 	/**
 	 * Define title divider colors
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTitleDividerColor(color) {return}
 
 	/**
 	 * Define title divider height
 	 * @param {num_pxl} [height=-1] 
-	 * @return {void} 
 	 */
 	SetTitleDividerHeight(height) {return}
 
@@ -13233,7 +11759,6 @@ class DsTheme {
 	 * Define title height
 	 * @param {num_pxl} [height=-1] 
 	 * @param {string | ("px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps")[]} [options] 
-	 * @return {void} 
 	 */
 	SetTitleHeight(height, options) {return}
 
@@ -13241,7 +11766,6 @@ class DsTheme {
 	 * Define title text size
 	 * @param {num} size 
 	 * @param {string | ("px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps")[]} [options] 
-	 * @return {void} 
 	 */
 	SetTitleTextSize(size, options) {return}
 }
@@ -13255,7 +11779,6 @@ class DsToggle {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -13264,27 +11787,19 @@ class DsToggle {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -13371,16 +11886,10 @@ class DsToggle {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -13418,20 +11927,15 @@ class DsToggle {
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -13441,7 +11945,6 @@ class DsToggle {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -13454,7 +11957,6 @@ class DsToggle {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -13462,14 +11964,12 @@ class DsToggle {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Change the checked state
 	 * @param {bin} checked 
-	 * @return {void} 
 	 */
 	SetChecked(checked) {return}
 
@@ -13477,21 +11977,18 @@ class DsToggle {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
@@ -13502,14 +11999,12 @@ class DsToggle {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(value: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -13520,7 +12015,6 @@ class DsToggle {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -13531,7 +12025,6 @@ class DsToggle {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -13539,7 +12032,6 @@ class DsToggle {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -13548,7 +12040,6 @@ class DsToggle {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
@@ -13561,21 +12052,18 @@ class DsToggle {
 	 * @param {num_pxl} [strokeWidth=0] 
 	 * @param {num_frc} [shadow=0] 
 	 * @param {str_col} [checkClr] 
-	 * @return {void} 
 	 */
 	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow, checkClr) {return}
 
 	/**
 	 * Change displayed text
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetText(text) {return}
 
 	/**
 	 * Change the text color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetTextColor(color) {return}
 
@@ -13585,21 +12073,16 @@ class DsToggle {
 	 * @param {"px"|"dip"|"sp"|"mm"|"pt"|"pl"|"ps"} [mode] <br>
  	 * &emsp; `pl` - scales text in proportion with device resolution\
  	 * &emsp; `ps` - scales text in proportion with device resolution
-	 * @return {void} 
 	 */
 	SetTextSize(size, mode) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -13610,7 +12093,6 @@ class DsToggle {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -13621,26 +12103,16 @@ class DsUSBSerial {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Get the 'Data Terminal Ready' state
-	 * @return {void} 
-	 */
+	/** Get the 'Data Terminal Ready' state */
 	GetDTR() {return}
 
-	/**
-	 * Get the 'Request To Send' state
-	 * @return {void} 
-	 */
+	/** Get the 'Request To Send' state */
 	GetRTS() {return}
 
-	/**
-	 * Get the 'Carrier Detect' state
-	 * @return {void} 
-	 */
+	/** Get the 'Carrier Detect' state */
 	GetCD() {return}
 
 	/**
@@ -13674,42 +12146,36 @@ class DsUSBSerial {
  	 * &emsp; `Int` - comma separated byte numbers\
  	 * &emsp; `Text` - string of text characters\
  	 * &emsp; `encoding` - UTF-16L/BE
-	 * @return {void} 
 	 */
 	SetDataMode(mode) {return}
 
 	/**
 	 * Raises the Data Terminal Ready state
 	 * @param {bin} onOff 
-	 * @return {void} 
 	 */
 	SetDTR(onOff) {return}
 
 	/**
 	 * Set maximum bytes to received
 	 * @param {num_int} bytes 
-	 * @return {void} 
 	 */
 	SetMaxRead(bytes) {return}
 
 	/**
 	 * Set maximum bytes to send
 	 * @param {num_int} bytes 
-	 * @return {void} 
 	 */
 	SetMaxWrite(bytes) {return}
 
 	/**
 	 * Called after received Data via USB
 	 * @param {(data: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReceive(callback) {return}
 
 	/**
 	 * Raises the Request To Send state
 	 * @param {bin} onOff 
-	 * @return {void} 
 	 */
 	SetRTS(onOff) {return}
 
@@ -13718,34 +12184,25 @@ class DsUSBSerial {
 	 * @param {"End"|"Start-End"|"Size"} mode 
 	 * @param {str|num_int} [p2] 
 	 * @param {str|num_int} [p3] 
-	 * @return {void} 
 	 */
 	SetSplitMode(mode, p2, p3) {return}
 
 	/**
 	 * Set timeout
 	 * @param {num_mls} ms 
-	 * @return {void} 
 	 */
 	SetTimeout(ms) {return}
 
-	/**
-	 * Start listening to serial port
-	 * @return {void} 
-	 */
+	/** Start listening to serial port */
 	Start() {return}
 
-	/**
-	 * Stop listening to serial port
-	 * @return {void} 
-	 */
+	/** Stop listening to serial port */
 	Stop() {return}
 
 	/**
 	 * Send data to connected device
 	 * @param {str} text 
 	 * @param {"US-ASCII"|"UTF16L/BE"} [encoding] 
-	 * @return {void} 
 	 */
 	Write(text, encoding) {return}
 }
@@ -13759,27 +12216,19 @@ class DsVideoView {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
 	/**
@@ -13853,16 +12302,10 @@ class DsVideoView {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -13909,42 +12352,30 @@ class DsVideoView {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Pause the video
-	 * @return {void} 
-	 */
+	/** Pause the video */
 	Pause() {return}
 
-	/**
-	 * Play video
-	 * @return {void} 
-	 */
+	/** Play video */
 	Play() {return}
 
 	/**
 	 * Seek to a given playback time
 	 * @param {num_int} seconds 
-	 * @return {void} 
 	 */
 	SeekTo(seconds) {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -13954,7 +12385,6 @@ class DsVideoView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -13967,7 +12397,6 @@ class DsVideoView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -13975,7 +12404,6 @@ class DsVideoView {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -13983,28 +12411,24 @@ class DsVideoView {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Set video source
 	 * @param {str_pth|str_url} file `http(s)://url`
-	 * @return {void} 
 	 */
 	SetFile(file) {return}
 
@@ -14015,35 +12439,30 @@ class DsVideoView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Called when playback finished
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when an error occured
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Called when video is ready for playback
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReady(callback) {return}
 
 	/**
 	 * Called when subtitle text changed
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnSubtitle(callback) {return}
 
@@ -14054,7 +12473,6 @@ class DsVideoView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -14065,7 +12483,6 @@ class DsVideoView {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -14073,7 +12490,6 @@ class DsVideoView {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -14082,21 +12498,18 @@ class DsVideoView {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * Set a subtitle source
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	SetSubtitles(file) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
@@ -14104,20 +12517,13 @@ class DsVideoView {
 	 * Change the playback volume
 	 * @param {num_prc} left 
 	 * @param {num_prc} right 
-	 * @return {void} 
 	 */
 	SetVolume(left, right) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
-	/**
-	 * Stop video playback
-	 * @return {void} 
-	 */
+	/** Stop video playback */
 	Stop() {return}
 
 	/**
@@ -14128,7 +12534,6 @@ class DsVideoView {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -14140,7 +12545,6 @@ class DsWebServer {
 	 * Redirect urls
 	 * @param {str_url} pattern 
 	 * @param {str_url} location 
-	 * @return {void} 
 	 */
 	AddRedirect(pattern, location) {return}
 
@@ -14148,14 +12552,12 @@ class DsWebServer {
 	 * Called when servlet received a message
 	 * @param {"/name"} path url path
 	 * @param {(args: {[parameter: str]: str}, info: { remoteAddress: str }) => void} callback 
-	 * @return {void} 
 	 */
 	AddServlet(path, callback) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -14163,7 +12565,6 @@ class DsWebServer {
 	 * Disconnect Client from WebServer
 	 * @param {str} ip 
 	 * @param {num_int} [id] 
-	 * @return {void} 
 	 */
 	Disconnect(ip, id) {return}
 
@@ -14196,55 +12597,43 @@ class DsWebServer {
 	 * @param {str} txt 
 	 * @param {str} ip 
 	 * @param {num_int} id 
-	 * @return {void} 
 	 */
 	SendText(txt, ip, id) {return}
 
 	/**
 	 * Set server root folder
 	 * @param {str_ptd} folder 
-	 * @return {void} 
 	 */
 	SetFolder(folder) {return}
 
 	/**
 	 * Called when received client message
 	 * @param {(msg: str, ip: str, id: num_int) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnReceive(callback) {return}
 
 	/**
 	 * Called when file uploaded to server
 	 * @param {(filename: str, ip: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnUpload(callback) {return}
 
 	/**
 	 * Respond to incoming HTTP request
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	SetResponse(text) {return}
 
 	/**
 	 * Defile file upload destination
 	 * @param {str_ptd} folder 
-	 * @return {void} 
 	 */
 	SetUploadFolder(folder) {return}
 
-	/**
-	 * Start server
-	 * @return {void} 
-	 */
+	/** Start server */
 	Start() {return}
 
-	/**
-	 * Stop server
-	 * @return {void} 
-	 */
+	/** Stop server */
 	Stop() {return}
 }
 
@@ -14254,14 +12643,10 @@ class DsWebSocket {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Close web socket
-	 * @return {void} 
-	 */
+	/** Close web socket */
 	Close() {return}
 
 	/**
@@ -14279,28 +12664,24 @@ class DsWebSocket {
 	/**
 	 * Send message to server
 	 * @param {str} message 
-	 * @return {void} 
 	 */
 	Send(message) {return}
 
 	/**
 	 * Called when WebSocket was closed
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnClose(callback) {return}
 
 	/**
 	 * Called when received message from server
 	 * @param {(message: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when WebSocket is open
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetOnOpen(callback) {return}
 }
@@ -14314,7 +12695,6 @@ class DsWebView {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
@@ -14323,20 +12703,15 @@ class DsWebView {
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
 	 * @param {(type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
-	 * @return {void} 
 	 */
 	Animate(type, callback, time) {return}
 
-	/**
-	 * Load previous page
-	 * @return {void} 
-	 */
+	/** Load previous page */
 	Back() {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
@@ -14355,53 +12730,35 @@ class DsWebView {
 	/**
 	 * Capture WebView as png
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	Capture(file) {return}
 
-	/**
-	 * Clear all cookies
-	 * @return {void} 
-	 */
+	/** Clear all cookies */
 	ClearCookies() {return}
 
-	/**
-	 * Removes the focus of the control
-	 * @return {void} 
-	 */
+	/** Removes the focus of the control */
 	ClearFocus() {return}
 
-	/**
-	 * Clears the page history for Back() and Forward()
-	 * @return {void} 
-	 */
+	/** Clears the page history for Back() and Forward() */
 	ClearHistory() {return}
 
 	/**
 	 * Execute JS code inside the WebView
 	 * @param {str_jsc} code 
 	 * @param {(result: all) => void} [callback] 
-	 * @return {void} 
 	 */
 	Execute(code, callback) {return}
 
-	/**
-	 * Set the focus to the control for immediate access
-	 * @return {void} 
-	 */
+	/** Set the focus to the control for immediate access */
 	Focus() {return}
 
-	/**
-	 * Load following page
-	 * @return {void} 
-	 */
+	/** Load following page */
 	Forward() {return}
 
 	/**
 	 * Call functions defined inside a webview
 	 * @param {str} name 
 	 * @param {(all)[]} args 
-	 * @return {void} 
 	 */
 	Func(name, ...args) {return}
 
@@ -14482,16 +12839,10 @@ class DsWebView {
 	 */
 	GetWidth(options) {return}
 
-	/**
-	 * Make it gone. It was never there!
-	 * @return {void} 
-	 */
+	/** Make it gone. It was never there! */
 	Gone() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -14537,7 +12888,6 @@ class DsWebView {
  	 * &emsp; `Progress` - Shows a progress indicator when loading\
  	 * &emsp; `UseBasicInput` - makes softkeyboard useful for html code editors\
  	 * &emsp; `UseBrowser` - Open links in external browser
-	 * @return {void} 
 	 */
 	LoadHtml(html, baseFolder, options) {return}
 
@@ -14557,7 +12907,6 @@ class DsWebView {
  	 * &emsp; `Progress` - Shows a progress indicator when loading\
  	 * &emsp; `UseBasicInput` - makes softkeyboard useful for html code editors\
  	 * &emsp; `UseBrowser` - Open links in external browser
-	 * @return {void} 
 	 */
 	LoadUrl(url, options) {return}
 
@@ -14573,35 +12922,24 @@ class DsWebView {
 	 */
 	Method(name, types, p1, p2, p3, p4) {return}
 
-	/**
-	 * Print webpage via anddroid printer dialog
-	 * @return {void} 
-	 */
+	/** Print webpage via anddroid printer dialog */
 	Print() {return}
 
-	/**
-	 * Reload current page
-	 * @return {void} 
-	 */
+	/** Reload current page */
 	Reload() {return}
 
 	/**
 	 * Set the background transparency by alpha value
 	 * @param {num} alpha `0..0.99`, `1..256`
-	 * @return {void} 
 	 */
 	SetBackAlpha(alpha) {return}
 
-	/**
-	 * Resize a control after device rotation
-	 * @return {void} 
-	 */
+	/** Resize a control after device rotation */
 	Resize() {return}
 
 	/**
 	 * Change the background color
 	 * @param {str_col} color 
-	 * @return {void} 
 	 */
 	SetBackColor(color) {return}
 
@@ -14611,7 +12949,6 @@ class DsWebView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {"left-right"|"right-left"|"top-bottom"|"bottom-top"|"bl-tr"|"br-tl"|"tl-br"|"tr-bl"} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradient(color1, color2, color3, options) {return}
 
@@ -14624,7 +12961,6 @@ class DsWebView {
 	 * @param {str_col} [color2] 
 	 * @param {all} [color3] 
 	 * @param {str_com} [options] 
-	 * @return {void} 
 	 */
 	SetBackGradientRadial(x, y, radius, color1, color2, color3, options) {return}
 
@@ -14632,14 +12968,12 @@ class DsWebView {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
 	/**
 	 * Block urls from loading
 	 * @param {str[]|"urls"} urls 
-	 * @return {void} 
 	 */
 	SetBlockedUrls(urls) {return}
 
@@ -14647,7 +12981,6 @@ class DsWebView {
 	 * Define context menus to listen for
 	 * @param {str} [links] `Copy URL`, `Open URL`
 	 * @param {str} [images] `Download Image`
-	 * @return {void} 
 	 */
 	SetContextMenus(links, images) {return}
 
@@ -14655,35 +12988,30 @@ class DsWebView {
 	 * Adjust the visual color effect with different BlendModes
 	 * @param {str_col} color 
 	 * @param {"Add"|"Multiply"|"clear"|"darken"|"lighten"|"overlay"|"screen"|"xor"|"color"|"color_burn"|"color_dodge"|"difference"|"exclusion"|"hard_light"|"hue"|"luminosity"|"modulate"|"saturation"|"soft_light"|"src"|"dst"|"src_in"|"src_out"|"src_atop"|"src_over"|"dst_in"|"dst_out"|"dst_atop"|"dst_over"} [mode] 
-	 * @return {void} 
 	 */
 	SetColorFilter(color, mode) {return}
 
 	/**
 	 * Set accesibility description
 	 * @param {str} desc 
-	 * @return {void} 
 	 */
 	SetDescription(desc) {return}
 
 	/**
 	 * En/Disable the control
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	SetEnabled(enable) {return}
 
 	/**
 	 * Define error page
 	 * @param {str_url} url 
-	 * @return {void} 
 	 */
 	SetErrorPage(url) {return}
 
 	/**
 	 * Inject scripts on page load
 	 * @param {str_pth} file 
-	 * @return {void} 
 	 */
 	SetInject(file) {return}
 
@@ -14694,63 +13022,54 @@ class DsWebView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetMargins(left, top, right, bottom, mode) {return}
 
 	/**
 	 * Scales the html text by a given factor
 	 * @param {num_frc} zoom 
-	 * @return {void} 
 	 */
 	SetTextZoom(zoom) {return}
 
 	/**
 	 * Called when message logged to console
 	 * @param {(msg: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnConsole(callback) {return}
 
 	/**
 	 * Called when a context menu was used
 	 * @param {(item: str, url: str, img: str, type: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnContextMenu(callback) {return}
 
 	/**
 	 * Called when an error occured
 	 * @param {(error: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Called when loading progress changed
 	 * @param {(progress: num_prc) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnProgress(callback) {return}
 
 	/**
 	 * Traps HTTP Requests
 	 * @param {(url: str, method: str, isMain: bin, isRedirect: bin) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnRequest(callback) {return}
 
 	/**
 	 * Called when user touched the control
 	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when link klicked
 	 * @param {(url: str_url) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnUrl(callback) {return}
 
@@ -14761,7 +13080,6 @@ class DsWebView {
 	 * @param {num_frc} [right=0] 
 	 * @param {num_frc} [bottom=0] 
 	 * @param {"px"|"sp"|"dip"|"mm"|"pt"} [mode='px'] 
-	 * @return {void} 
 	 */
 	SetPadding(left, top, right, bottom, mode) {return}
 
@@ -14772,7 +13090,6 @@ class DsWebView {
 	 * @param {num} [width] 
 	 * @param {num} [height] 
 	 * @param {"px"} [options] 
-	 * @return {void} 
 	 */
 	SetPosition(left, top, width, height, options) {return}
 
@@ -14780,7 +13097,6 @@ class DsWebView {
 	 * Add url redirection rule
 	 * @param {str_url} urlFrom 
 	 * @param {str_url} urlTo 
-	 * @return {void} 
 	 */
 	SetRedirect(urlFrom, urlTo) {return}
 
@@ -14788,7 +13104,6 @@ class DsWebView {
 	 * Scale the control by the given factors
 	 * @param {num_fac} x 
 	 * @param {num_fac} y 
-	 * @return {void} 
 	 */
 	SetScale(x, y) {return}
 
@@ -14797,21 +13112,18 @@ class DsWebView {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
 	/**
 	 * En/Disable touchmode on the control
 	 * @param {bin} mode 
-	 * @return {void} 
 	 */
 	SetTouchMode(mode) {return}
 
 	/**
 	 * Define which URLs open in browser
 	 * @param {str} urlFilter 
-	 * @return {void} 
 	 */
 	SetUseBrowser(urlFilter) {return}
 
@@ -14819,7 +13131,6 @@ class DsWebView {
 	 * Set/Add custom user agent
 	 * @param {str} agent 
 	 * @param {str} [options] `Add-appends to default user agent`
-	 * @return {void} 
 	 */
 	SetUserAgent(agent, options) {return}
 
@@ -14827,21 +13138,16 @@ class DsWebView {
 	 * Set authentication/login data
 	 * @param {str} name 
 	 * @param {str} password 
-	 * @return {void} 
 	 */
 	SetUserCreds(name, password) {return}
 
 	/**
 	 * Change the visibility mode
 	 * @param {"Show"|"Hide"|"Gone"} mode 
-	 * @return {void} 
 	 */
 	SetVisibility(mode) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 
 	/**
@@ -14849,14 +13155,10 @@ class DsWebView {
 	 * @param {str} keyName 
 	 * @param {"META_META_ON"|"META_RIGHT_ON"|"NUM_LOCK_ON"|"SCROLL_LOCK_ON"|"SHIFT_LEFT_ON"|"SHIFT_MASK"|"SHIFT_ON"|"SHIFT_RIGHT_ON"|"SYM_ON"} [modifiers] 
 	 * @param {num} [pause] 
-	 * @return {void} 
 	 */
 	SimulateKey(keyName, modifiers, pause) {return}
 
-	/**
-	 * Stop loading processes
-	 * @return {void} 
-	 */
+	/** Stop loading processes */
 	Stop() {return}
 
 	/**
@@ -14867,7 +13169,6 @@ class DsWebView {
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -14878,20 +13179,13 @@ class DsWizard {
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Hides the control and removes it from the screen
-	 * @return {void} 
-	 */
+	/** Hides the control and removes it from the screen */
 	Dismiss() {return}
 
-	/**
-	 * Indicate that wizard finished
-	 * @return {void} 
-	 */
+	/** Indicate that wizard finished */
 	Finish() {return}
 
 	/**
@@ -14918,10 +13212,7 @@ class DsWizard {
 	 */
 	GetType() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -14930,10 +13221,7 @@ class DsWizard {
 	 */
 	IsVisible() {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 }
 
@@ -14946,21 +13234,16 @@ class DsYesNoDialog {
 	 * @param {num} [saturation] `-100..100`
 	 * @param {num} [brightness] `-100..100`
 	 * @param {num} [contrast] `0..100`
-	 * @return {void} 
 	 */
 	AdjustColor(hue, saturation, brightness, contrast) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Hides the control and removes it from the screen
-	 * @return {void} 
-	 */
+	/** Hides the control and removes it from the screen */
 	Dismiss() {return}
 
 	/**
@@ -14969,10 +13252,7 @@ class DsYesNoDialog {
 	 */
 	GetType() {return}
 
-	/**
-	 * Hides the control visually
-	 * @return {void} 
-	 */
+	/** Hides the control visually */
 	Hide() {return}
 
 	/**
@@ -14991,7 +13271,6 @@ class DsYesNoDialog {
 	 * Change the background color
 	 * @param {str_col} color 
 	 * @param {num_pxl} [radius] 
-	 * @return {void} 
 	 */
 	SetBackColor(color, radius) {return}
 
@@ -14999,7 +13278,6 @@ class DsYesNoDialog {
 	 * Change the background to an image
 	 * @param {str_ptf} file 
 	 * @param {"repeat"} [options] 
-	 * @return {void} 
 	 */
 	SetBackground(file, options) {return}
 
@@ -15007,14 +13285,12 @@ class DsYesNoDialog {
 	 * Change Yes/No button text
 	 * @param {str} yes 
 	 * @param {str} no 
-	 * @return {void} 
 	 */
 	SetButtonText(yes, no) {return}
 
 	/**
 	 * Called when user selects Yes or No
 	 * @param {(result: "Yes"|"No") => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -15023,14 +13299,10 @@ class DsYesNoDialog {
 	 * @param {num} width 
 	 * @param {num} height 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
-	 * @return {void} 
 	 */
 	SetSize(width, height, options) {return}
 
-	/**
-	 * Set the visibility to “Show”
-	 * @return {void} 
-	 */
+	/** Set the visibility to “Show” */
 	Show() {return}
 }
 
@@ -15041,7 +13313,6 @@ class DsZipUtil {
 	 * Add file to zip
 	 * @param {str} name `zip path`
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	AddFile(name, file) {return}
 
@@ -15049,34 +13320,27 @@ class DsZipUtil {
 	 * Add text to the zip
 	 * @param {str} name `zip path`
 	 * @param {str} text 
-	 * @return {void} 
 	 */
 	AddText(name, text) {return}
 
 	/**
 	 * Batch method calls to set object properties
 	 * @param {{[command: str]: lst}} properties { command: args }
-	 * @return {void} 
 	 */
 	Batch(properties) {return}
 
-	/**
-	 * Close ZipUtil
-	 * @return {void} 
-	 */
+	/** Close ZipUtil */
 	Close() {return}
 
 	/**
 	 * Create zip file
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	Create(file) {return}
 
 	/**
 	 * Create debug keystore file
 	 * @param {str_ptf} file debug.keystore
-	 * @return {void} 
 	 */
 	CreateDebugKey(file) {return}
 
@@ -15086,7 +13350,6 @@ class DsZipUtil {
 	 * @param {str} password 
 	 * @param {str} name 
 	 * @param {str} organization 
-	 * @return {void} 
 	 */
 	CreateKey(file, password, name, organization) {return}
 
@@ -15094,7 +13357,6 @@ class DsZipUtil {
 	 * Extract file from zip
 	 * @param {str} name `zip path`
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	Extract(name, file) {return}
 
@@ -15114,7 +13376,6 @@ class DsZipUtil {
 	/**
 	 * Open existing zip
 	 * @param {str_ptf} file 
-	 * @return {void} 
 	 */
 	Open(file) {return}
 
@@ -15136,7 +13397,6 @@ class DsZipUtil {
 	 * @param {str} appName 
 	 * @param {str_com} [permissions] 
 	 * @param {string | ("Launch"|"Debug")[]} [options] 
-	 * @return {void} 
 	 */
 	UpdateManifest(fileIn, fileOut, packageName, appName, permissions, options) {return}
 }
@@ -15148,7 +13408,6 @@ class DsDatabase {
 	 * AddTransaction
 	 * 	 * deprecated  Use ExecuteSQL instead
 	 * @param {obj} transaction JS SQLitePluginTransaction
-	 * @return {void} 
 	 */
 	addTransaction(transaction) {return}
 
@@ -15156,20 +13415,13 @@ class DsDatabase {
 	 * Close the database
 	 * @param {(msg: str) => void} [success] 
 	 * @param {(msg: str) => void} [error] 
-	 * @return {void} 
 	 */
 	close(success, error) {return}
 
-	/**
-	 * Close the database
-	 * @return {void} 
-	 */
+	/** Close the database */
 	Close() {return}
 
-	/**
-	 * Delete the database
-	 * @return {void} 
-	 */
+	/** Delete the database */
 	Delete() {return}
 
 	/**
@@ -15178,7 +13430,6 @@ class DsDatabase {
 	 * @param {lst} [params] 
 	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
 	 * @param {(t: all, err: { message: str }) => void} [error] 
-	 * @return {void} 
 	 */
 	executeSql(statement, params, success, error) {return}
 
@@ -15188,7 +13439,6 @@ class DsDatabase {
 	 * @param {lst} [params] 
 	 * @param {(res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
 	 * @param {(err: str) => void} [error] 
-	 * @return {void} 
 	 */
 	ExecuteSql(sql, params, success, error) {return}
 
@@ -15211,7 +13461,6 @@ class DsDatabase {
 	 * Open database
 	 * @param {() => void} [success] 
 	 * @param {(msg: str) => void} [error] 
-	 * @return {void} 
 	 */
 	open(success, error) {return}
 
@@ -15221,15 +13470,11 @@ class DsDatabase {
 	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void} fn 
 	 * @param {(err: str) => void} [error] 
 	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
-	 * @return {void} 
 	 */
 	readTransaction(fn, error, success) {return}
 
-	/**
-	 * StartNextTransaction
-	 * 	 * deprecated  Use ExecuteSql instead
-	 * @return {void} 
-	 */
+	/** StartNextTransaction
+	 * 	 * deprecated  Use ExecuteSql instead */
 	startNextTransaction() {return}
 
 	/**
@@ -15238,7 +13483,6 @@ class DsDatabase {
 	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void} fn 
 	 * @param {(err: str) => void} [error] 
 	 * @param {(fnc: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
-	 * @return {void} 
 	 */
 	transaction(fn, error, success) {return}
 }
@@ -15246,16 +13490,12 @@ class DsDatabase {
 
 class DsCheckList {
 
-	/**
-	 * Show the check list
-	 * @return {void} 
-	 */
+	/** Show the check list */
 	Show() {return}
 
 	/**
 	 * Set list
 	 * @param {str|{ title: str, check: bin }} data `title:checked`
-	 * @return {void} 
 	 */
 	SetList(data) {return}
 }

@@ -10,7 +10,6 @@ class DsGfx {
 	/**
 	 * Adds a background to the game
 	 * @param {GfxBackground} obj 
-	 * @return {void} 
 	 */
 	AddBackground(obj) {return}
 
@@ -23,7 +22,6 @@ class DsGfx {
 	 * @param {num_frc} h 
 	 * @param {num_rad} angle 
 	 * @param {num_frc} alpha 
-	 * @return {void} 
 	 */
 	AddGraphic(obj, x, y, w, h, angle, alpha) {return}
 
@@ -45,7 +43,6 @@ class DsGfx {
 	 * @param {num_frc} h 
 	 * @param {num_frc} angle 
 	 * @param {num_frc} alpha 
-	 * @return {void} 
 	 */
 	AddSprite(sprite, x, y, w, h, angle, alpha) {return}
 
@@ -56,14 +53,12 @@ class DsGfx {
 	 * @param {num_frc} y 
 	 * @param {num_frc} angle 
 	 * @param {num_frc} alpha 
-	 * @return {void} 
 	 */
 	AddText(obj, x, y, angle, alpha) {return}
 
 	/**
 	 * Executes code in the main app
 	 * @param {str_jsc} js 
-	 * @return {void} 
 	 */
 	AppExec(js) {return}
 
@@ -177,7 +172,6 @@ class DsGfx {
 	/**
 	 * En/Disables the physics engine
 	 * @param {bin} enabled 
-	 * @return {void} 
 	 */
 	EnablePhysics(enabled) {return}
 
@@ -189,7 +183,6 @@ class DsGfx {
 	 * @param {num} bounce 
 	 * @param {num} friction 
 	 * @param {num} offset 
-	 * @return {void} 
 	 */
 	Enclose(groupId, options, density, bounce, friction, offset) {return}
 
@@ -246,49 +239,36 @@ class DsGfx {
 	/** @type {lst_obj} List of active objects */
 	objects;
 
-	/**
-	 * Pause game
-	 * @return {void} 
-	 */
+	/** Pause game */
 	Pause() {return}
 
-	/**
-	 * Start or resume game
-	 * @return {void} 
-	 */
+	/** Start or resume game */
 	Play() {return}
 
-	/**
-	 * Restart game from scratch
-	 * @return {void} 
-	 */
+	/** Restart game from scratch */
 	Reload() {return}
 
 	/**
 	 * Remove background from game
 	 * @param {GfxBackground} obj 
-	 * @return {void} 
 	 */
 	RemoveBackground(obj) {return}
 
 	/**
 	 * Remove graphic from game
 	 * @param {GfxGraphic} obj 
-	 * @return {void} 
 	 */
 	RemoveGraphic(obj) {return}
 
 	/**
 	 * Remove sprite from game
 	 * @param {GfxSprite} sprite 
-	 * @return {void} 
 	 */
 	RemoveSprite(sprite) {return}
 
 	/**
 	 * Remove text from game
 	 * @param {GfxText} obj 
-	 * @return {void} 
 	 */
 	RemoveText(obj) {return}
 
@@ -296,56 +276,48 @@ class DsGfx {
 	 * Synchronously import a .js file
 	 * @param {str_uri} uri 
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	Script(uri, callback) {return}
 
 	/**
 	 * Set solid background color
 	 * @param {str_col} col 
-	 * @return {void} 
 	 */
 	SetBackColor(col) {return}
 
 	/**
 	 * Define a callback which is called when two [Physics objects](AddPhysics.htm) collide
 	 * @param {(a: gvo, b: gvo) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnCollide(callback) {return}
 
 	/**
 	 * Define a KeyDown callback
 	 * @param {(key: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnKeyDown(callback) {return}
 
 	/**
 	 * Define a KeyUp callback
 	 * @param {(key: str) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnKeyUp(callback) {return}
 
 	/**
 	 * Set callback for touch down
 	 * @param {(x: num_frc|lst_num, y: num_frc|lst_num) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Set callback for touch move
 	 * @param {(x: num_frc|lst_num, y: num_frc|lst_num) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Set callback for touch up
 	 * @param {(x: num_frc|lst_num, y: num_frc|lst_num) => void} callback 
-	 * @return {void} 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -353,7 +325,6 @@ class DsGfx {
 	 * Change the drawing order of an object
 	 * @param {obj} object 
 	 * @param {num} order 
-	 * @return {void} 
 	 */
 	SetOrder(object, order) {return}
 
@@ -361,7 +332,6 @@ class DsGfx {
 	 * Swap drawing order of two objects
 	 * @param {gvo} object1 
 	 * @param {gvo} object2 
-	 * @return {void} 
 	 */
 	SwapOrder(object1, object2) {return}
 
@@ -371,7 +341,6 @@ class DsGfx {
 	/**
 	 * Shortcut to app.../app/Vibrate)
 	 * @param {str} pattern 
-	 * @return {void} 
 	 */
 	Vibrate(pattern) {return}
 
@@ -386,7 +355,6 @@ class GfxPhysics {
 	 * Adds velocity to the object
 	 * @param {"Polygon"} type 
 	 * @param {[num_frc, num_frc][]} points 
-	 * @return {void} 
 	 */
 	AddShape(type, points) {return}
 
@@ -396,7 +364,6 @@ class GfxPhysics {
 	 * @param {num} y 
 	 * @param {num} angular 
 	 * @param {bin} bodyRelative 
-	 * @return {void} 
 	 */
 	AddVelocity(x, y, angular, bodyRelative) {return}
 
@@ -406,7 +373,6 @@ class GfxPhysics {
 	 * @param {num} y 
 	 * @param {num} offsetX `-1..1`
 	 * @param {num} offsetY `-1..1`
-	 * @return {void} 
 	 */
 	ApplyImpulse(x, y, offsetX, offsetY) {return}
 
@@ -421,7 +387,6 @@ class GfxPhysics {
 	/**
 	 * Temporally En/Disables physics for the game object
 	 * @param {bin} enable 
-	 * @return {void} 
 	 */
 	EnablePhysics(enable) {return}
 
@@ -432,16 +397,12 @@ class GfxPhysics {
 	 */
 	GetVelocity(component) {return}
 
-	/**
-	 * Removes physics from the game oblect
-	 * @return {void} 
-	 */
+	/** Removes physics from the game oblect */
 	RemovePhysics() {return}
 
 	/**
 	 * Applies a 2D transformation matrix to the game object
 	 * @param {Matrix} mtx Matrix
-	 * @return {void} 
 	 */
 	SetMatrix(mtx) {return}
 
@@ -454,7 +415,6 @@ class GfxPhysics {
 	 * @param {num} friction 
 	 * @param {num} linearDamp 
 	 * @param {num} angularDamp 
-	 * @return {void} 
 	 */
 	SetPhysics(groupId, type, density, bounce, friction, linearDamp, angularDamp) {return}
 
@@ -463,7 +423,6 @@ class GfxPhysics {
 	 * @param {"rect"|"round"} shape 
 	 * @param {num_frc} width 
 	 * @param {num_frc} height 
-	 * @return {void} 
 	 */
 	SetShape(shape, width, height) {return}
 
@@ -473,14 +432,10 @@ class GfxPhysics {
 	 * @param {num} y 
 	 * @param {num} angular 
 	 * @param {bin} bodyRelative 
-	 * @return {void} 
 	 */
 	SetVelocity(x, y, angular, bodyRelative) {return}
 
-	/**
-	 * Update internal physics properties
-	 * @return {void} 
-	 */
+	/** Update internal physics properties */
 	UpdatePhysics() {return}
 }
 
@@ -491,7 +446,6 @@ class GfxBackground {
 	 * Scroll Background
 	 * @param {num} x 
 	 * @param {num} y 
-	 * @return {void} 
 	 */
 	Scroll(x, y) {return}
 
@@ -543,14 +497,10 @@ class GfxCircle {
 	/**
 	 * Set 2d transformation
 	 * @param {Matrix} mtx Matrix
-	 * @return {void} 
 	 */
 	SetMatrix(mtx) {return}
 
-	/**
-	 * Updates internal properties
-	 * @return {void} 
-	 */
+	/** Updates internal properties */
 	Update() {return}
 
 	/** @type {bin} Visibility state */
@@ -604,14 +554,10 @@ class GfxEllipse {
 	/**
 	 * Set 2d transformation
 	 * @param {Matrix} mtx Matrix
-	 * @return {void} 
 	 */
 	SetMatrix(mtx) {return}
 
-	/**
-	 * Updates internal properties
-	 * @return {void} 
-	 */
+	/** Updates internal properties */
 	Update() {return}
 
 	/** @type {bin} Visibility state */
@@ -665,14 +611,10 @@ class GfxPolygon {
 	/**
 	 * Set 2d transformation
 	 * @param {Matrix} mtx Matrix
-	 * @return {void} 
 	 */
 	SetMatrix(mtx) {return}
 
-	/**
-	 * Updates internal properties
-	 * @return {void} 
-	 */
+	/** Updates internal properties */
 	Update() {return}
 
 	/** @type {bin} Visibility state */
@@ -726,14 +668,10 @@ class GfxRectangle {
 	/**
 	 * Set 2d transformation
 	 * @param {Matrix} mtx Matrix
-	 * @return {void} 
 	 */
 	SetMatrix(mtx) {return}
 
-	/**
-	 * Updates internal properties
-	 * @return {void} 
-	 */
+	/** Updates internal properties */
 	Update() {return}
 
 	/** @type {bin} Visibility state */
@@ -749,10 +687,7 @@ class GfxSound {
 	/** @type {str} The file url */
 	file;
 
-	/**
-	 * Pause the track
-	 * @return {void} 
-	 */
+	/** Pause the track */
 	Pause() {return}
 
 	/**
@@ -760,7 +695,6 @@ class GfxSound {
 	 * @param {bin} loop 
 	 * @param {num_mls} delay `delay before playback start`
 	 * @param {num_mls} gap `time gap between two loops`
-	 * @return {void} 
 	 */
 	Play(loop, delay, gap) {return}
 }
@@ -795,7 +729,6 @@ class GfxSprite {
 	 * Flip sprite
 	 * @param {bin} horiz 
 	 * @param {bin} vert 
-	 * @return {void} 
 	 */
 	Flip(horiz, vert) {return}
 
@@ -808,7 +741,6 @@ class GfxSprite {
 	/**
 	 * Go to animation frame
 	 * @param {num_int} frame 
-	 * @return {void} 
 	 */
 	Goto(frame) {return}
 
@@ -818,10 +750,7 @@ class GfxSprite {
 	/** @type {num_frc} The objects height */
 	height;
 
-	/**
-	 * Pause tweening
-	 * @return {void} 
-	 */
+	/** Pause tweening */
 	PauseTween() {return}
 
 	/** @type {num_frc} Rotation x pivot */
@@ -835,7 +764,6 @@ class GfxSprite {
 	 * @param {num_int} startFrame 
 	 * @param {num_int} speed 
 	 * @param {bin} loop 
-	 * @return {void} 
 	 */
 	Play(startFrame, speed, loop) {return}
 
@@ -845,21 +773,16 @@ class GfxSprite {
 	 * @param {num_int} lastFrame 
 	 * @param {num} speed 
 	 * @param {bin} loop 
-	 * @return {void} 
 	 */
 	PlayRange(firstFrame, lastFrame, speed, loop) {return}
 
 	/**
 	 * Play to animation frame
 	 * @param {num_int} frame 
-	 * @return {void} 
 	 */
 	PlayTo(frame) {return}
 
-	/**
-	 * Resume tweening
-	 * @return {void} 
-	 */
+	/** Resume tweening */
 	PlayTween() {return}
 
 	/** @type {num_fac} Horizontal scaling */
@@ -871,21 +794,18 @@ class GfxSprite {
 	/**
 	 * Set animation looping
 	 * @param {bin} loop 
-	 * @return {void} 
 	 */
 	SetLoop(loop) {return}
 
 	/**
 	 * Set 2d transformation
 	 * @param {Matrix} mtx Matrix
-	 * @return {void} 
 	 */
 	SetMatrix(mtx) {return}
 
 	/**
 	 * Set animation speed
 	 * @param {num} speed 
-	 * @return {void} 
 	 */
 	SetPlaySpeed(speed) {return}
 
@@ -896,7 +816,6 @@ class GfxSprite {
 	 * @param {bin} loop 
 	 * @param {bin} play 
 	 * @param {num} speed 
-	 * @return {void} 
 	 */
 	SetRange(firstFrame, lastFrame, loop, play, speed) {return}
 
@@ -904,21 +823,18 @@ class GfxSprite {
 	 * Set sprite size
 	 * @param {num_frc} w 
 	 * @param {num_frc} h 
-	 * @return {void} 
 	 */
 	SetSize(w, h) {return}
 
 	/**
 	 * Change animation
 	 * @param {GfxSpriteSheet} sheet 
-	 * @return {void} 
 	 */
 	SetSpriteSheet(sheet) {return}
 
 	/**
 	 * Change sprite texture
 	 * @param {GfxTexture} tx 
-	 * @return {void} 
 	 */
 	SetTexture(tx) {return}
 
@@ -930,32 +846,21 @@ class GfxSprite {
 	 * @param {num_int} repeat 
 	 * @param {bin} yoyo 
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	SetTween(target, duration, type, repeat, yoyo, callback) {return}
 
-	/**
-	 * Start tween
-	 * @return {void} 
-	 */
+	/** Start tween */
 	StartTween() {return}
 
-	/**
-	 * Update tween to now
-	 * @return {void} 
-	 */
+	/** Update tween to now */
 	StepTween() {return}
 
-	/**
-	 * Stop animation
-	 * @return {void} 
-	 */
+	/** Stop animation */
 	Stop() {return}
 
 	/**
 	 * Stop animation on frame
 	 * @param {num_int} frame 
-	 * @return {void} 
 	 */
 	StopAt(frame) {return}
 
@@ -967,14 +872,10 @@ class GfxSprite {
 	 * @param {num_int} repeat 
 	 * @param {bin} yoyo 
 	 * @param {() => void} callback 
-	 * @return {void} 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
-	/**
-	 * Updates internal properties
-	 * @return {void} 
-	 */
+	/** Updates internal properties */
 	Update() {return}
 
 	/** @type {bin} Visibility state */
@@ -1044,14 +945,10 @@ class GfxText {
 	/**
 	 * Set 2d transformation
 	 * @param {Matrix} mtx Matrix
-	 * @return {void} 
 	 */
 	SetMatrix(mtx) {return}
 
-	/**
-	 * Updates internal properties
-	 * @return {void} 
-	 */
+	/** Updates internal properties */
 	Update() {return}
 
 	/** @type {bin} Visibility state */
@@ -1071,14 +968,12 @@ class Matrix {
 	 * Move by a given amount on both axes
 	 * @param {num} tx 
 	 * @param {num} ty 
-	 * @return {void} 
 	 */
 	Translate(tx, ty) {return}
 
 	/**
 	 * Rotate by a given angle around the axes origin (0,0)
 	 * @param {num} angle 
-	 * @return {void} 
 	 */
 	Rotate(angle) {return}
 
@@ -1086,7 +981,6 @@ class Matrix {
 	 * Scale by a given amount on both axes
 	 * @param {num} sx 
 	 * @param {num} sy 
-	 * @return {void} 
 	 */
 	Scale(sx, sy) {return}
 
@@ -1098,7 +992,6 @@ class Matrix {
 	 * @param {num} d 
 	 * @param {num} tx 
 	 * @param {num} ty 
-	 * @return {void} 
 	 */
 	Set(a, b, c, d, tx, ty) {return}
 
@@ -1106,7 +999,6 @@ class Matrix {
 	 * Skew / Distort the object on both axes
 	 * @param {num} skewX 
 	 * @param {num} skewY 
-	 * @return {void} 
 	 */
 	Skew(skewX, skewY) {return}
 
@@ -1121,7 +1013,6 @@ class Matrix {
 	 * @param {num} rotation 
 	 * @param {num} skewX 
 	 * @param {num} skewY 
-	 * @return {void} 
 	 */
 	Transform(tx, ty, pivotX, pivotY, scaleX, scaleY, rotation, skewX, skewY) {return}
 }
