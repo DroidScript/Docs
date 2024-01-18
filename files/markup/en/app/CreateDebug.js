@@ -8,6 +8,7 @@
  * See Also: @SetDebug, @Debug
  * $$ app.CreateDebug(options?) $$ 
  * @param {str} [options] dialog:Show the debug log as black overlay dialog|clear:Clear content before showing
+ * @returns nil
 */
 
 

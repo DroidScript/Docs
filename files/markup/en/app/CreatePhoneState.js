@@ -6,7 +6,7 @@
  * @brief Returns a new PhoneState object
  * 
  * $$ pst = app.CreatePhoneState(types) $$ 
- * @param {str} types CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting
+ * @param {str_lst} types CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting
  * @returns dso-PhoneState
 */
 

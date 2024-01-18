@@ -1,4 +1,3 @@
-const { stat } = require("fs-extra");
 const conf = require("../conf.json");
 const { app } = require("./app");
 const { keys, regConPrefix, split1, special, replW, Throw, unwrapDesc, fillMissingFuncProps, unwrapBaseFunc, getDstDir, D_LANG } = require("./util");
@@ -352,7 +351,7 @@ function makeType(inpt, state, stypes, tsx = false) {
                             String.fromCharCode(Number(c)))
                         .split(/[,|]/);
 
-                    if (types.string.match(/ |\.\.|&lt;|&gt;|[<>:*]/)) {
+                    if (types.string.match(/ |\.\.|&lt;|&gt;|[<>:*/]/)) {
                         if (types.descs) types.descs = "\\" + types.descs;
                         // fix ui param descriptions with '`'
                         if (!tdesc.find(c => c.includes('`'))) tdesc = tdesc.map(c => '`' + c + '`');

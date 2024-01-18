@@ -31,7 +31,7 @@
  * @brief Brakes motors smoothly
  * Brakes motors by lowering the input power.
  * $$ nxt.Brake(motors) $$
- * @param {str} motors A,B,C|ABC
+ * @param {str} motors A,B,C,AB,AC,BC,ABC
  */
 
 
@@ -61,7 +61,7 @@
 /** ### Drive ###
  * commands NXT to drive motors
  * $$ nxt.Drive(motors, power, rotations?, options?) $$
- * @param {str} motors A,B,C|ABC
+ * @param {str} motors A,B,C,AB,AC,BC,ABC
  * @param {num_prc} power 
  * @param {num_prc} [rotations] -100..100
  * @param {str} [options] 
@@ -113,7 +113,7 @@
  * @brief Returns a new wheel encoder value.
  * Returns the wheel encoder value of a motor.
  * $$ nxt.GetRotationCount(motor) $$
- * @param {str} motor A,B,C|ABC
+ * @param {str} motor A,B,C,AB,AC,BC,ABC
  * @returns num_int
  */
 
@@ -153,7 +153,7 @@
  * @brief Check if a motor is powered
  * Checks if a motor is currently powered
  * $$ nxt.IsMotorIdle(motor) $$
- * @param {str} motor A,B,C|ABC
+ * @param {str} motor A,B,C,AB,AC,BC,ABC
  * @returns bin
  */
 
@@ -182,7 +182,7 @@
  * You can use the ToColorName function to convert from these six values to a color name.
  * All other modes return a value between 0 and 1023.
  * $$ nxt.ReadColorSensor(input, mode?) $$
- * @param {num_int} input 1
+ * @param {num_int} input 
  * @param {str} [mode] ColorDetect|LightSense|RedSense|GreenSense|BlueSense
  * @returns num_int-1..6 or 0..1023
  */
@@ -246,7 +246,7 @@
 /** ### Reset ###
  * Reset wheel encoder offset to 0.
  * $$ nxt.Reset(motors) $$
- * @param {str} motors A,B,C|ABC
+ * @param {str} motors A,B,C,AB,AC,BC,ABC
  */
 
 
@@ -309,7 +309,7 @@
 /** ### Stop ###
  * Stop powering some motors.
  * $$ nxt.Stop(motors) $$
- * @param {str} motors A,B,C|ABC
+ * @param {str} motors A,B,C,AB,AC,BC,ABC
  */
 
 

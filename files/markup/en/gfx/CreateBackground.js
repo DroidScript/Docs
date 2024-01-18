@@ -7,7 +7,7 @@
  * Creates a background
  * $$ bck = gfx.CreateBackground(file, options) $$ 
  * @param {str_ptf} file 
- * @param {str_com} options stretch
+ * @param {str_com} [options] stretch
  * @returns gvo-Background
 */
 

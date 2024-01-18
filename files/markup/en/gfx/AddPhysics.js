@@ -10,9 +10,9 @@
  * 
  * _The method list below shows the __functions which are added to game objects__ when using physics._
  * $$ phs = gfx.AddPhysics(gravity, accuracy, sleep) $$ 
- * @param {num} gravity 
- * @param {num} accuracy 
- * @param {num} sleep 
+ * @param {num} [gravity] 
+ * @param {num} [accuracy] 
+ * @param {num} [sleep] 
  * @returns gvo-Physics
 */
 
@@ -37,8 +37,8 @@
  * $$ phs.AddVelocity(x, y, angular, bodyRelative) $$
  * @param {num} x 
  * @param {num} y 
- * @param {num} angular 
- * @param {bin} bodyRelative 
+ * @param {num} [angular] 
+ * @param {bin} [bodyRelative] 
  */
 
 
@@ -48,8 +48,8 @@
  * $$ phs.ApplyImpulse(x, y, offsetX, offsetY) $$
  * @param {num} x 
  * @param {num} y 
- * @param {num} offsetX -1..1
- * @param {num} offsetY -1..1
+ * @param {num} [offsetX=0] -1..1
+ * @param {num} [offsetY=0] -1..1
  */
 
 
@@ -96,13 +96,13 @@
  * @brief Set physics properties
  * Set the physics properties for the game object.
  * $$ phs.SetPhysics(groupId, type, density, bounce, friction, linearDamp, angularDamp) $$
- * @param {str} groupId 
- * @param {str} type moveable|fixed
- * @param {num} density 
- * @param {num} bounce 
- * @param {num} friction 
- * @param {num} linearDamp 
- * @param {num} angularDamp 
+ * @param {str||num} groupId 
+ * @param {str} type moveable|fixed|dynamic
+ * @param {num} [density] 
+ * @param {num} [bounce] 
+ * @param {num} [friction] 
+ * @param {num} [linearDamp] 
+ * @param {num} [angularDamp] 
  */
 
 
@@ -111,8 +111,8 @@
  * Defines the shape for collision detection of the object.
  * $$ phs.SetShape(shape, width, height) $$
  * @param {str} shape rect|round
- * @param {num_frc} width 
- * @param {num_frc} height 
+ * @param {num_frc} [width] 
+ * @param {num_frc} [height] 
  */
 
 
@@ -122,8 +122,8 @@
  * $$ phs.SetVelocity(x, y, angular, bodyRelative) $$
  * @param {num} x 
  * @param {num} y 
- * @param {num} angular 
- * @param {bin} bodyRelative 
+ * @param {num} [angular] 
+ * @param {bin} [bodyRelative] 
  */
 
 

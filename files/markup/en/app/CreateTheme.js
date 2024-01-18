@@ -8,7 +8,7 @@
  * 
  * <premium>
  * $$ thm = app.CreateTheme(baseTheme) $$ 
- * @param {str} baseTheme Dark|Light
+ * @param {str} baseTheme Dark|Light|Default
  * @returns dso-Theme
 */
 
@@ -178,7 +178,7 @@
  * Define standard text color of controls.
  * $$ thm.SetTextColor(color1, color2) $$
  * @param {str_col} color1 
- * @param {str_col} color2 
+ * @param {str_col} [color2] 
  */
 
 

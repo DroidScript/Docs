@@ -35,7 +35,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 /** ### Cancel ###
  * Cancel a notification with a specific id.
  * $$ ntf.Cancel(id) $$
- * @param {str} id id|*
+ * @param {str} [id] id|*
  */
 
 
@@ -57,7 +57,7 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 /** ### Notify ###
  * Send the notification to the user.
  * $$ ntf.Notify(id) $$
- * @param {str} id 
+ * @param {str} [id] 
  */
 
 

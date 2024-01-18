@@ -11,7 +11,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FontAwesome"|"Html"|"Monospace"|"Normal"|"Aluminium"|"Gray"|"Lego"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `FontAwesome`, `Html`, `Monospace`, `Normal`, `Aluminium`, `Gray`, `Lego`, `SingleLine`, `Custom`, `NoPad`, `FillX/Y`, `NoSound`
 	 * @return {DsButton} 
 	 */
 	AddButton(layout, text, width, height, options) {return}
@@ -36,7 +36,6 @@ class DsApp {
 	/**
 	 * Create and add Button to Layout
 	 * @param {DsLayout} layout 
-	 * @param {str_ptc} file 
 	 * @param {num} [width=-1] 
 	 * @param {num} [height=-1] 
 	 * @param {string | ("fix"|"alias"|"px"|"Button"|"ScaleCenter"|"async"|"FontAwesome"|"Resize"|"TouchThrough"|"Icon"|"wallpaper"|"NoPlay")[]} [options=''] <br>
@@ -50,7 +49,7 @@ class DsApp {
 	 * @param {num_pxl} [pxh=-1] 
 	 * @return {DsImage} 
 	 */
-	AddCanvas(layout, file, width, height, options, pxw, pxh) {return}
+	AddCanvas(layout, width, height, options, pxw, pxh) {return}
 
 	/**
 	 * Create and add CheckBox to Layout
@@ -58,7 +57,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`, `NoSound`
 	 * @return {DsCheckBox} 
 	 */
 	AddCheckBox(layout, text, width, height, options) {return}
@@ -69,7 +68,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FillX/Y")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`
 	 * @return {DsCodeEdit} 
 	 */
 	AddCodeEdit(layout, text, width, height, options) {return}
@@ -77,7 +76,7 @@ class DsApp {
 	/**
 	 * Adds a slide-able layout on given side
 	 * @param {DsLayout} layout 
-	 * @param {"left"|"right"} side 
+	 * @param {"Left"|"Right"} side 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [grabWidth] 
 	 */
@@ -105,9 +104,10 @@ class DsApp {
 	 * Adds a layout to the app
 	 * @param {DsLayout} layout 
 	 * @param {"Linear"|"Absolute"|"Frame"|"Card"} [type] 
-	 * @param {"TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y"} [options] <br>
+	 * @param {str_lst} [options] `TouchThrough`, `TouchSpy`, `Left`, `Top`, `Right`, `Bottom`, `Center`, `H/VCenter`, `Wrap`, `Horizontal`, `Vertical`, `FillX/Y`\
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
+	 * @return {DsLayout} 
 	 */
 	AddLayout(layout, type, options) {return}
 
@@ -142,7 +142,7 @@ class DsApp {
 	 * @param {DsLayout} layout 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FillX/Y")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`
 	 * @return {DsSeekBar} 
 	 */
 	AddSeekBar(layout, width, height, options) {return}
@@ -153,7 +153,7 @@ class DsApp {
 	 * @param {str_com} list 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`, `NoSound`
 	 * @return {DsSpinner} 
 	 */
 	AddSpinner(layout, list, width, height, options) {return}
@@ -164,7 +164,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `Monospace`, `Custom`, `NoPad`, `FillX/Y`, `NoSound`
 	 * @return {DsSwitch} 
 	 */
 	AddSwitch(layout, text, width, height, options) {return}
@@ -185,7 +185,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("AutoScale"|"AutoSize"|"Multiline"|"Left"|"Right"|"Html"|"Bold"|"Monospace"|"NoWrap"|"Log"|"FillX/Y")[]} [options] 
+	 * @param {str_com} [options] `AutoScale`, `AutoSize`, `Multiline`, `Left`, `Right`, `Html`, `Bold`, `Monospace`, `NoWrap`, `Log`, `FillX/Y`
 	 * @return {DsText} 
 	 */
 	AddText(layout, text, width, height, options) {return}
@@ -196,7 +196,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("AutoSelect"|"AutoSize"|"Bold"|"Extract"|"Left"|"Center"|"Right"|"Monospace"|"NoSpell"|"NoKeyboard"|"Numbers"|"ReadOnly"|"SingleLine"|"FillX/Y"|"Password")[]} [options] <br>
+	 * @param {str_com} [options] `AutoSelect`, `AutoSize`, `Bold`, `Extract`, `Left`, `Center`, `Right`, `Monospace`, `NoSpell`, `NoKeyboard`, `Numbers`, `ReadOnly`, `SingleLine`, `FillX/Y`, `Password`\
  	 * &emsp; `AutoSelect` - Select all Text if user enter the Textedit\
  	 * &emsp; `AutoSize` - Expand or shrink the control automatically so the text fits in the Textedit\
  	 * &emsp; `Bold` - Write bold text\
@@ -219,7 +219,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `Monospace`, `Custom`, `NoPad`, `FillX/Y`, `NoSound`
 	 * @return {DsToggle} 
 	 */
 	AddToggle(layout, text, width, height, options) {return}
@@ -239,7 +239,7 @@ class DsApp {
 	 * @param {DsLayout} layout 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]} [options=''] <br>
+	 * @param {str_com} [options=''] `AllowZoom`, `AutoZoom`, `Wide`, `FillX/Y`, `NoAccel`, `NoActionBar`, `IgnoreErrors`, `IgnoreSSLErrors`, `NoApp`, `NoCapture`, `NoCors`, `NoLocate`, `NoLongTouch`, `NoPause`, `NoScrollBars`, `Overview`, `Progress`, `ScrollFade`, `UseBasicInput`, `UseBrowser`\
  	 * &emsp; `AllowZoom` - Allows the user to zoom the page\
  	 * &emsp; `Wide` - force page using “wide” viewport\
  	 * &emsp; `NoAccel` - for OrangePi support\
@@ -261,7 +261,7 @@ class DsApp {
 	/**
 	 * Shows a popup message with an 'OK' button to exit
 	 * @param {str} message 
-	 * @param {str} title 
+	 * @param {str} [title] 
 	 * @param {string | ("NoDim"|"NoFocus")[]} [options=''] 
 	 * @param {num_int} [hue] `-180..180`
 	 */
@@ -330,7 +330,7 @@ class DsApp {
 	/**
 	 * Let the user choose a file
 	 * @param {str} message 
-	 * @param {"mimetype"} type 
+	 * @param {str} type `file mimetype`
 	 * @param {(path: str_pth|str_uri, name: str) => void} callback 
 	 * @param {str_pth} [fldr] 
 	 * @param {"persist"|"nodownload"} [options] <br>
@@ -374,7 +374,7 @@ class DsApp {
 
 	/**
 	 * Closes the drawer layout on the given side with slide animation
-	 * @param {"left"|"right"} side 
+	 * @param {"Left"|"Right"} [side] 
 	 */
 	CloseDrawer(side) {return}
 
@@ -419,7 +419,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FontAwesome"|"Html"|"Monospace"|"Normal"|"Aluminium"|"Gray"|"Lego"|"SingleLine"|"Custom"|"AutoShrink"|"AutoSize"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] <br>
+	 * @param {str_com} [options] `FontAwesome`, `Html`, `Monospace`, `Normal`, `Aluminium`, `Gray`, `Lego`, `SingleLine`, `Custom`, `AutoShrink`, `AutoSize`, `NoPad`, `FillX/Y`, `NoSound`\
  	 * &emsp; `AutoShrink` - Auto-shrinks text to fit\
  	 * &emsp; `AutoSize` - Auto-sizes text to fit
 	 * @return {DsButton} 
@@ -466,7 +466,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`, `NoSound`
 	 * @return {DsCheckBox} 
 	 */
 	CreateCheckBox(text, width, height, options) {return}
@@ -483,7 +483,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FillX/Y")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`
 	 * @return {DsCodeEdit} 
 	 */
 	CreateCodeEdit(text, width, height, options) {return}
@@ -506,6 +506,7 @@ class DsApp {
 	 * @param {"dialog"|"clear"} [options] <br>
  	 * &emsp; `dialog` - Show the debug log as black overlay dialog\
  	 * &emsp; `clear` - Clear content before showing
+	 * @return {nil} 
 	 */
 	CreateDebug(options) {return}
 
@@ -527,8 +528,8 @@ class DsApp {
 
 	/**
 	 * Returns an Email object for user to send emails
-	 * @param {"email"} account 
-	 * @param {"password"} password 
+	 * @param {str} account `account email`
+	 * @param {str} password `account password`
 	 * @return {DsEmail} 
 	 */
 	CreateEmail(account, password) {return}
@@ -588,7 +589,7 @@ class DsApp {
 	/**
 	 * Returns a new Layout object
 	 * @param {"Linear"|"Absolute"|"Frame"|"Card"} type 
-	 * @param {string | ("AutoSize"|"TouchThrough"|"TouchSpy"|"Left"|"Top"|"Right"|"Bottom"|"Center"|"H/VCenter"|"Wrap"|"Horizontal"|"Vertical"|"FillX/Y")[]} [options] <br>
+	 * @param {str_com} [options] `AutoSize`, `TouchThrough`, `TouchSpy`, `Left`, `Top`, `Right`, `Bottom`, `Center`, `H/VCenter`, `Wrap`, `Horizontal`, `Vertical`, `FillX/Y`\
  	 * &emsp; `AutoSize` - Resizes itself and child controls after device rotation\
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
@@ -598,7 +599,7 @@ class DsApp {
 
 	/**
 	 * Returns a new List object
-	 * @param {str_lst} list 
+	 * @param {str_com} list 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
 	 * @param {string | ("bold"|"Expand"|"Menu"|"Horiz"|"html"|"FontAwesome"|"monospace"|"Normal"|"WhiteGrad"|"BlackGrad"|"AlumButton"|"GreenButton"|"OrangeButton"|"NoSound")[]} [options=''] <br>
@@ -615,7 +616,7 @@ class DsApp {
 	 * Returns a new ListDialog object
 	 * @param {str} title 
 	 * @param {str} list 
-	 * @param {"Multi"} [options] 
+	 * @param {"Multi"|"AutoCancel"} [options] 
 	 * @return {DsListDialog} 
 	 */
 	CreateListDialog(title, list, options) {return}
@@ -715,7 +716,7 @@ class DsApp {
 	 * Returns a new SeekBar object
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FillX/Y")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`
 	 * @return {DsSeekBar} 
 	 */
 	CreateSeekBar(width, height, options) {return}
@@ -769,7 +770,7 @@ class DsApp {
 	 * @param {str_com} list 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`, `NoSound`
 	 * @return {DsSpinner} 
 	 */
 	CreateSpinner(list, width, height, options) {return}
@@ -779,14 +780,14 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `Monospace`, `Custom`, `NoPad`, `FillX/Y`, `NoSound`
 	 * @return {DsSwitch} 
 	 */
 	CreateSwitch(text, width, height, options) {return}
 
 	/**
 	 * Returns a new Synth object
-	 * @param {"Signal"|"VCA"|"VCF"} [type='Signal'] 
+	 * @param {string | ("Signal"|"VCA"|"VCF")[]} [type='Signal'] 
 	 * @return {DsSynth} 
 	 */
 	CreateSynth(type) {return}
@@ -794,8 +795,8 @@ class DsApp {
 	/**
 	 * Returns a new SysProc object
 	 * @param {"sh"|"su"|"busybox"} cmd program name
-	 * @param {str} env 
-	 * @param {str_ptd} dir 
+	 * @param {str} [env] 
+	 * @param {str_ptd} [dir] 
 	 * @param {string | ("combine"|"builder")[]} [options] <br>
  	 * &emsp; `combine` - combines stdout and stderr\
  	 * &emsp; `builder` - force use of proc builder
@@ -818,7 +819,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("AutoScale"|"AutoSize"|"Multiline"|"Left"|"Right"|"Bottom"|"VCenter"|"Html"|"Bold"|"Monospace"|"AutoShrink"|"NoWrap"|"Log"|"FillX/Y")[]} [options] <br>
+	 * @param {str_com} [options] `AutoScale`, `AutoSize`, `Multiline`, `Left`, `Right`, `Bottom`, `VCenter`, `Html`, `Bold`, `Monospace`, `AutoShrink`, `NoWrap`, `Log`, `FillX/Y`\
  	 * &emsp; `AutoShrink` - Auto-shrinks text to fit
 	 * @return {DsText} 
 	 */
@@ -829,7 +830,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("AutoSelect"|"AutoSize"|"Bold"|"Extract"|"Left"|"Center"|"Right"|"Monospace"|"NoSpell"|"NoKeyboard"|"Numbers"|"ReadOnly"|"SingleLine"|"FillX/Y"|"Password")[]} [options] <br>
+	 * @param {str_com} [options] `AutoSelect`, `AutoSize`, `Bold`, `Extract`, `Left`, `Center`, `Right`, `Monospace`, `NoSpell`, `NoKeyboard`, `Numbers`, `ReadOnly`, `SingleLine`, `FillX/Y`, `Password`\
  	 * &emsp; `AutoSelect` - Select all Text if user enter the Textedit\
  	 * &emsp; `AutoSize` - Expand or shrink the control automatically so the text fits in the Textedit\
  	 * &emsp; `Bold` - Write bold text\
@@ -848,7 +849,7 @@ class DsApp {
 
 	/**
 	 * Returns a new Theme object
-	 * @param {"Dark"|"Light"} baseTheme 
+	 * @param {"Dark"|"Light"|"Default"} baseTheme 
 	 * @return {DsTheme} 
 	 */
 	CreateTheme(baseTheme) {return}
@@ -858,7 +859,7 @@ class DsApp {
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("Monospace"|"Custom"|"NoPad"|"FillX/Y"|"NoSound")[]} [options] 
+	 * @param {str_com} [options] `Monospace`, `Custom`, `NoPad`, `FillX/Y`, `NoSound`
 	 * @return {DsToggle} 
 	 */
 	CreateToggle(text, width, height, options) {return}
@@ -915,7 +916,7 @@ class DsApp {
 	 * Returns a new WebView object
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {string | ("AllowZoom"|"AutoZoom"|"ClearCookies"|"FillX/Y"|"Local"|"NoAccel"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoCors"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoScrollBars"|"Overview"|"Persist"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser"|"Wide")[]} [options=''] <br>
+	 * @param {str_com} [options=''] `AllowZoom`, `AutoZoom`, `ClearCookies`, `FillX/Y`, `Local`, `NoAccel`, `NoActionBar`, `IgnoreErrors`, `IgnoreSSLErrors`, `NoApp`, `NoCapture`, `NoCors`, `NoLocate`, `NoLongTouch`, `NoPause`, `NoScrollBars`, `Overview`, `Persist`, `Progress`, `ScrollFade`, `UseBasicInput`, `UseBrowser`, `Wide`\
  	 * &emsp; `AllowZoom` - Allows the user to zoom the page\
  	 * &emsp; `ClearCookies` - Clear all webview cookies at startup\
  	 * &emsp; `Local` - loads URLs starting with / from /Storage/[AppName\]/ instead\
@@ -1046,7 +1047,7 @@ class DsApp {
 
 	/**
 	 * Close and stop the app
-	 * @param {bin} kill 
+	 * @param {bin} [kill] 
 	 */
 	Exit(kill) {return}
 
@@ -1941,7 +1942,7 @@ class DsApp {
 
 	/**
 	 * Opens the drawer layout on the given side with slide animation
-	 * @param {"left"|"right"} side 
+	 * @param {"Left"|"Right"} [side] 
 	 */
 	OpenDrawer(side) {return}
 
@@ -2009,9 +2010,10 @@ class DsApp {
 	 * @param {str_uri} uri 
 	 * @param {str_com} columns 
 	 * @param {str_sql} [select] 
-	 * @param {lst} [args] 
+	 * @param {str_lst} [args] 
 	 * @param {"coloumn"} [sort] <br>
  	 * &emsp; `coloumn` - a coloumn specified in 'coloumns'
+	 * @return {any[]} 
 	 */
 	QueryContent(uri, columns, select, args, sort) {return}
 
@@ -2183,7 +2185,7 @@ class DsApp {
 	 * @param {str} [category] `android.intent.category.*`
 	 * @param {str_uri} [uri] 
 	 * @param {str_mim} [type] 
-	 * @param {{ name: str, type: "string"|"float"|"int"|"long"|"bool"|"list"|"file"|"uri"|"keydown"|"keyup", value: str }[]} [extras] 
+	 * @param {str|{ name: str, type: "string"|"float"|"int"|"long"|"bool"|"list"|"file"|"uri"|"keydown"|"keyup", value: str }[]} [extras] 
 	 * @param {string | ("Result"|"ClearTask")[]} [options=''] <br>
  	 * &emsp; `Result` - expect a result to be passed to the callback function
 	 * @param {(resultCode: -1|0|1, data?: { action: str, type: str, data: str, flags: num_int, extras: obj }) => void} [callback] 
@@ -2532,7 +2534,7 @@ class DsApp {
 	/**
 	 * Shows a CheckList
 	 * @param {str} title 
-	 * @param {str|{ title: str, check: bin }} list `title:checked`
+	 * @param {str|{ title: str, check: bin }[]} list `title:checked`
 	 * @param {(data: { title: str, checked: bin }) => void} [callback] 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
@@ -2569,7 +2571,7 @@ class DsApp {
 
 	/**
 	 * Show a progress indicator
-	 * @param {str} message 
+	 * @param {str} [message] 
 	 * @param {string | ("NoDim"|"NonModal"|"Solid")[]} [options] <br>
  	 * &emsp; `NoDim` - Don't darken background\
  	 * &emsp; `NonModal` - allow background touch\
@@ -2947,7 +2949,7 @@ class DsBluetoothSerial {
 	/**
 	 * Connect a Bluetooth device
 	 * @param {str} name 
-	 * @param {str} channel 
+	 * @param {str} [channel] 
 	 */
 	Connect(name, channel) {return}
 
@@ -3036,7 +3038,7 @@ class DsBluetoothSerial {
 
 	/**
 	 * Specify how to split received data
-	 * @param {"End"|"Start-End"|"Size"} mode 
+	 * @param {"End"|"Start-End"|"Size"|"Head"} mode 
 	 * @param {str|num_int} p2 
 	 * @param {str|num_int} [p3] 
 	 */
@@ -3334,8 +3336,8 @@ class DsButton {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -3394,7 +3396,7 @@ class DsButton {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -3766,6 +3768,12 @@ class DsCameraView {
 	SetOnFocus(callback) {return}
 
 	/**
+	 * Called when cam.MotionMosaic detected a motion
+	 * @param {(data: lst_num) => void} callback 
+	 */
+	SetOnMotion(callback) {return}
+
+	/**
 	 * Called when cam.AutoCapture took a picture
 	 * @param {(file: str_pth) => void} callback 
 	 */
@@ -3838,8 +3846,8 @@ class DsCameraView {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -3901,7 +3909,7 @@ class DsCameraView {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -4176,8 +4184,8 @@ class DsCheckBox {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -4216,7 +4224,7 @@ class DsCheckBox {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -4703,8 +4711,8 @@ class DsCodeEdit {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -4749,7 +4757,7 @@ class DsCodeEdit {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -4796,6 +4804,7 @@ class DsCrypt {
 	 * @param {str} text 
 	 * @param {"MD5"|"SHA"|"SHA-1"|"SHA-224"|"SHA-256"|"SHA-384"|"SHA-512"} mode 
 	 * @param {"Wrap"} [options] 
+	 * @return {str} 
 	 */
 	Hash(text, mode, options) {return}
 
@@ -5080,8 +5089,8 @@ class DsDialog {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -5138,7 +5147,7 @@ class DsDialog {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -5260,7 +5269,7 @@ class DsEmail {
 
 	/**
 	 * Set IMAP settings for receiving messages
-	 * @param {"imap/pop.gmail.com"|"imap/pop.mail.yahoo.com"|"imap/pop.gmx.net"} server <br>
+	 * @param {str} server `imap/pop.gmail.com`, `imap/pop.mail.yahoo.com`, `imap/pop.gmx.net`\
  	 * &emsp; `pop.gmail.com` - google\
  	 * &emsp; `pop.mail.yahoo.com` - yahoo\
  	 * &emsp; `pop.gmx.net` - gmx
@@ -5649,8 +5658,8 @@ class DsGameView {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -5668,7 +5677,7 @@ class DsGameView {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -5955,8 +5964,8 @@ class DsGLView {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -5980,7 +5989,7 @@ class DsGLView {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -6595,8 +6604,8 @@ class DsImage {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -6639,7 +6648,7 @@ class DsImage {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -6997,8 +7006,8 @@ class DsLayout {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -7028,7 +7037,7 @@ class DsLayout {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -7491,8 +7500,8 @@ class DsList {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -7591,7 +7600,7 @@ class DsList {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -7662,8 +7671,8 @@ class DsListDialog {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -7891,7 +7900,7 @@ class DsMediaStore {
 	/**
 	 * Search for media artists
 	 * @param {str_sql} [filter] 
-	 * @param {"_id"|"artist"|"numAlbums"|"numTracks"} [sort] coloumns
+	 * @param {"_id"|"artist"|"numAlbums"|"numTracks"|""} [sort] coloumns
 	 * @param {"internal"|"external"} [options] 
 	 */
 	QueryArtists(filter, sort, options) {return}
@@ -7899,7 +7908,7 @@ class DsMediaStore {
 	/**
 	 * Search for media
 	 * @param {str_sql} [filter] 
-	 * @param {"title"|"_id"|"duration"|"size"|"uri"|"album"|"albumID"|"artist"|"artistId"} [sort] coloumns
+	 * @param {string | ("title"|"_id"|"duration"|"size"|"uri"|"album"|"albumID"|"artist"|"artistId")[]} [sort] coloumns
 	 * @param {"internal"|"external"} [options] 
 	 */
 	QueryMedia(filter, sort, options) {return}
@@ -7995,7 +8004,7 @@ class DsNetClient {
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
 	 * @param {num_int} [port=80] 
 	 * @param {num} [timeout] 
-	 * @param {str} [options] `<BUFSIZ>`\
+	 * @param {str_lst} [options] `<BUFSIZ>`\
  	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
 	 * @return {str} 
 	 */
@@ -8005,7 +8014,7 @@ class DsNetClient {
 	 * Receive UDP datagrams
 	 * @param {num_int} [port=80] 
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
-	 * @param {str} [options] `<BUFSIZ>`\
+	 * @param {str_lst} [options] `<BUFSIZ>`\
  	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
 	 */
 	ReceiveDatagrams(port, mode, options) {return}
@@ -8239,7 +8248,7 @@ class DsNotification {
 
 	/**
 	 * Cancel a notification with a specific id
-	 * @param {str} id `id`, `*`
+	 * @param {str} [id] `id`, `*`
 	 */
 	Cancel(id) {return}
 
@@ -8257,7 +8266,7 @@ class DsNotification {
 
 	/**
 	 * Send the notification to the user
-	 * @param {str} id 
+	 * @param {str} [id] 
 	 */
 	Notify(id) {return}
 
@@ -8315,7 +8324,7 @@ class DsNxt {
 
 	/**
 	 * Brakes motors smoothly
-	 * @param {"A"|"B"|"C"|"ABC"} motors 
+	 * @param {"A"|"B"|"C"|"AB"|"AC"|"BC"|"ABC"} motors 
 	 */
 	Brake(motors) {return}
 
@@ -8336,7 +8345,7 @@ class DsNxt {
 
 	/**
 	 * Commands NXT to drive motors
-	 * @param {"A"|"B"|"C"|"ABC"} motors 
+	 * @param {"A"|"B"|"C"|"AB"|"AC"|"BC"|"ABC"} motors 
 	 * @param {num_prc} power 
 	 * @param {num_prc} [rotations] `-100..100`
 	 * @param {str} [options] 
@@ -8377,7 +8386,7 @@ class DsNxt {
 
 	/**
 	 * Returns a new wheel encoder value
-	 * @param {"A"|"B"|"C"|"ABC"} motor 
+	 * @param {"A"|"B"|"C"|"AB"|"AC"|"BC"|"ABC"} motor 
 	 * @return {num_int} 
 	 */
 	GetRotationCount(motor) {return}
@@ -8408,7 +8417,7 @@ class DsNxt {
 
 	/**
 	 * Check if a motor is powered
-	 * @param {"A"|"B"|"C"|"ABC"} motor 
+	 * @param {"A"|"B"|"C"|"AB"|"AC"|"BC"|"ABC"} motor 
 	 * @return {bin} 
 	 */
 	IsMotorIdle(motor) {return}
@@ -8429,7 +8438,7 @@ class DsNxt {
 
 	/**
 	 * Read a color sensor value on the input where the sensor is plugged into
-	 * @param {1} input 
+	 * @param {num_int} input 
 	 * @param {"ColorDetect"|"LightSense"|"RedSense"|"GreenSense"|"BlueSense"} [mode] 
 	 * @return {num_int} `1..6 or 0..1023`
 	 */
@@ -8481,7 +8490,7 @@ class DsNxt {
 
 	/**
 	 * Reset wheel encoder offset to 0
-	 * @param {"A"|"B"|"C"|"ABC"} motors 
+	 * @param {"A"|"B"|"C"|"AB"|"AC"|"BC"|"ABC"} motors 
 	 */
 	Reset(motors) {return}
 
@@ -8529,7 +8538,7 @@ class DsNxt {
 
 	/**
 	 * Stop powering some motors
-	 * @param {"A"|"B"|"C"|"ABC"} motors 
+	 * @param {"A"|"B"|"C"|"AB"|"AC"|"BC"|"ABC"} motors 
 	 */
 	Stop(motors) {return}
 
@@ -8940,8 +8949,8 @@ class DsScroller {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -8959,7 +8968,7 @@ class DsScroller {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -9234,8 +9243,8 @@ class DsSeekBar {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -9259,7 +9268,7 @@ class DsSeekBar {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -9771,8 +9780,8 @@ class DsSpinner {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -9811,7 +9820,7 @@ class DsSpinner {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -10086,8 +10095,8 @@ class DsSwitch {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -10137,7 +10146,7 @@ class DsSwitch {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -10295,7 +10304,7 @@ class DsSynth {
 	 * @param {num_mls} release 
 	 * @param {num} cuttoff frequency
 	 * @param {num_frc} resonance 
-	 * @param {num_frc} depth 
+	 * @param {num_frc} [depth] 
 	 */
 	SetVcf(attack, decay, sustain, release, cuttoff, resonance, depth) {return}
 
@@ -10722,8 +10731,8 @@ class DsTabs {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -10766,7 +10775,7 @@ class DsTabs {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -11125,8 +11134,8 @@ class DsText {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -11180,7 +11189,7 @@ class DsText {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -11548,8 +11557,8 @@ class DsTextEdit {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -11588,7 +11597,7 @@ class DsTextEdit {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -11656,7 +11665,7 @@ class DsTheme {
 
 	/**
 	 * Define button options
-	 * @param {string | ("FontAwesome"|"Html"|"Monospace"|"SingleLine"|"Custom"|"NoPad"|"FillX/Y"|"Normal"|"Aluminium"|"Gray"|"Lego")[]} [options] 
+	 * @param {str_com} [options] `FontAwesome`, `Html`, `Monospace`, `SingleLine`, `Custom`, `NoPad`, `FillX/Y`, `Normal`, `Aluminium`, `Gray`, `Lego`
 	 */
 	SetButtonOptions(options) {return}
 
@@ -11684,7 +11693,7 @@ class DsTheme {
 
 	/**
 	 * Define check box options
-	 * @param {string | ("FillX/Y")[]} [options] 
+	 * @param {str_com} [options] `FillX/Y`
 	 */
 	SetCheckBoxOptions(options) {return}
 
@@ -11757,7 +11766,7 @@ class DsTheme {
 	/**
 	 * Define control text color
 	 * @param {str_col} color1 
-	 * @param {str_col} color2 
+	 * @param {str_col} [color2] 
 	 */
 	SetTextColor(color1, color2) {return}
 
@@ -12067,8 +12076,8 @@ class DsToggle {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -12119,7 +12128,7 @@ class DsToggle {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -12241,7 +12250,7 @@ class DsUSBSerial {
 	/**
 	 * Send data to connected device
 	 * @param {str} text 
-	 * @param {"US-ASCII"|"UTF16L/BE"} [encoding] 
+	 * @param {str} [encoding] `US-ASCII`, `UTF16L/BE`
 	 */
 	Write(text, encoding) {return}
 }
@@ -12534,8 +12543,8 @@ class DsVideoView {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -12569,7 +12578,7 @@ class DsVideoView {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -12589,7 +12598,7 @@ class DsWebServer {
 
 	/**
 	 * Called when servlet received a message
-	 * @param {"/name"} path url path
+	 * @param {str} path `/endpoint name`
 	 * @param {(args: {[parameter: str]: str}, info: { remoteAddress: str }) => void} callback 
 	 */
 	AddServlet(path, callback) {return}
@@ -12914,7 +12923,7 @@ class DsWebView {
 	 * Load html to WebView
 	 * @param {str_htm} html 
 	 * @param {str_ptd} [baseFolder] 
-	 * @param {string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoRedirect"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]} [options] <br>
+	 * @param {str_com} [options] `AllowZoom`, `AutoZoom`, `Wide`, `FillX/Y`, `NoActionBar`, `IgnoreErrors`, `IgnoreSSLErrors`, `NoApp`, `NoCapture`, `NoLocate`, `NoLongTouch`, `NoPause`, `NoRedirect`, `NoScrollBars`, `Overview`, `Progress`, `ScrollFade`, `UseBasicInput`, `UseBrowser`\
  	 * &emsp; `AllowZoom` - Allows the user to zoom the page\
  	 * &emsp; `Wide` - force page using “wide” viewport\
  	 * &emsp; `NoActionBar` - prevents copy/paste popup\
@@ -12933,7 +12942,7 @@ class DsWebView {
 	/**
 	 * Load url to WebView
 	 * @param {str_url} url 
-	 * @param {string | ("AllowZoom"|"AutoZoom"|"Wide"|"FillX/Y"|"NoActionBar"|"IgnoreErrors"|"IgnoreSSLErrors"|"NoApp"|"NoCapture"|"NoLocate"|"NoLongTouch"|"NoPause"|"NoRedirect"|"NoScrollBars"|"Overview"|"Progress"|"ScrollFade"|"UseBasicInput"|"UseBrowser")[]} [options] <br>
+	 * @param {str_com} [options] `AllowZoom`, `AutoZoom`, `Wide`, `FillX/Y`, `NoActionBar`, `IgnoreErrors`, `IgnoreSSLErrors`, `NoApp`, `NoCapture`, `NoLocate`, `NoLongTouch`, `NoPause`, `NoRedirect`, `NoScrollBars`, `Overview`, `Progress`, `ScrollFade`, `UseBasicInput`, `UseBrowser`\
  	 * &emsp; `AllowZoom` - Allows the user to zoom the page\
  	 * &emsp; `Wide` - force page using “wide” viewport\
  	 * &emsp; `NoActionBar` - prevents copy/paste popup\
@@ -13148,8 +13157,8 @@ class DsWebView {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}
@@ -13204,7 +13213,7 @@ class DsWebView {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} [duration] 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} [type] 
+	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
 	 * @param {() => void} [callback] 
@@ -13335,8 +13344,8 @@ class DsYesNoDialog {
 
 	/**
 	 * Change the size of the control
-	 * @param {num} width 
-	 * @param {num} height 
+	 * @param {num} [width=-1] 
+	 * @param {num} [height=-1] 
 	 * @param {"px"|"sp"|"dip"|"dp"|"mm"|"pt"} [options] 
 	 */
 	SetSize(width, height, options) {return}

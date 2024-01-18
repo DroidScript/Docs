@@ -7,7 +7,7 @@
  * The check list provides a similar functionality to the “Multi” [ListDiaog](CreateListDialog.htm), although you can adjust its initial check states with an object structure.
  * $$ ckl = app.ShowCheckList(title, list, callback?, width=-1, height=-1, options?) $$ 
  * @param {str} title 
- * @param {str} list title:str\:checked:bin||lst_obj-{ title:str, check:bin }
+ * @param {str} list title:str\:checked:bin||lst_obj-[{ title:str, check:bin }]
  * @param {fnc_json} [callback] {"pNames":["data"],"pTypes":["obj-{ title:str, checked:bin }"]}
  * @param {num_frc} [width=-1] 
  * @param {num_frc} [height=-1] 

@@ -198,6 +198,7 @@
 		"SetFocusMode": "Change focus mode",
 		"SetMargins": "Define distances to other controls",
 		"SetOnFocus": "Called when the control gets focused",
+		"SetOnMotion": "Called when cam.MotionMosaic detected a motion",
 		"SetOnPicture": "Called when cam.AutoCapture took a picture",
 		"SetOnReady": "Called if the camera is ready for use",
 		"SetOrientation": "Rotates the camera view",

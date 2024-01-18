@@ -285,6 +285,15 @@ More samples can be found in the samples section of DroidScript.
 
 /** @extern SetOnFocus */
 
+/** ### SetOnMotion ###
+ * @brief Called when cam.MotionMosaic detected a motion
+ * Defines a callback function which is called when cam.MotionMosaic detected a motion.
+ * The callback data parameter contains an array of detection strength. Each value corresponds to a mosaic tile.
+ * $$ cam.SetOnMotion(callback) $$
+ * @param {fnc_json} callback {"pNames":["data"],"pTypes":["lst_num"]}
+ */
+
+
 /** ### SetOnPicture ###
  * @brief Called when cam.AutoCapture took a picture
  * Defines a callback function which is called if cam.AutoCapture took a picture. The _file_ parameter contains the path to the image file.

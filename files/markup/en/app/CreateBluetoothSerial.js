@@ -29,7 +29,7 @@
  * Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.
  * $$ bls.Connect(name, channel) $$
  * @param {str} name 
- * @param {str} channel 
+ * @param {str} [channel] 
  */
 
 
@@ -130,7 +130,7 @@
  * p2 and p3 have different purposes for different modes:
  * <table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
  * $$ bls.SetSplitMode(mode, p2, p3?) $$
- * @param {str} mode End|Start-End|Size
+ * @param {str} mode End|Start-End|Size|Head
  * @param {str||num_int} p2 
  * @param {str||num_int} [p3] 
  */

@@ -18,18 +18,18 @@ class DsGfx {
 	 * @param {obj} obj 
 	 * @param {num_frc} x 
 	 * @param {num_frc} y 
-	 * @param {num_frc} w 
-	 * @param {num_frc} h 
-	 * @param {num_rad} angle 
-	 * @param {num_frc} alpha 
+	 * @param {num_frc} [w] 
+	 * @param {num_frc} [h] 
+	 * @param {num_rad} [angle] 
+	 * @param {num_frc} [alpha] 
 	 */
 	AddGraphic(obj, x, y, w, h, angle, alpha) {return}
 
 	/**
 	 * Adds physics to the game
-	 * @param {num} gravity 
-	 * @param {num} accuracy 
-	 * @param {num} sleep 
+	 * @param {num} [gravity] 
+	 * @param {num} [accuracy] 
+	 * @param {num} [sleep] 
 	 * @return {GfxPhysics} 
 	 */
 	AddPhysics(gravity, accuracy, sleep) {return}
@@ -37,12 +37,12 @@ class DsGfx {
 	/**
 	 * Adds a sprite object
 	 * @param {GfxSprite} sprite 
-	 * @param {num_frc} x 
-	 * @param {num_frc} y 
-	 * @param {num_frc} w 
-	 * @param {num_frc} h 
-	 * @param {num_frc} angle 
-	 * @param {num_frc} alpha 
+	 * @param {num_frc} [x] 
+	 * @param {num_frc} [y] 
+	 * @param {num_frc} [w] 
+	 * @param {num_frc} [h] 
+	 * @param {num_frc} [angle] 
+	 * @param {num_frc} [alpha] 
 	 */
 	AddSprite(sprite, x, y, w, h, angle, alpha) {return}
 
@@ -90,10 +90,10 @@ class DsGfx {
 	 * @param {num_frc} width 
 	 * @param {num_frc} height 
 	 * @param {num_col} color 
-	 * @param {num_pxl} lineWidth 
-	 * @param {num_col} lineColor 
-	 * @param {num_frc} lineAlpha 
-	 * @param {str} group 
+	 * @param {num_pxl} [lineWidth] 
+	 * @param {num_col} [lineColor] 
+	 * @param {num_frc} [lineAlpha] 
+	 * @param {str} [group] 
 	 * @return {GfxEllipse} 
 	 */
 	CreateEllipse(width, height, color, lineWidth, lineColor, lineAlpha, group) {return}
@@ -104,10 +104,10 @@ class DsGfx {
 	 * @param {num_frc} pivotX 
 	 * @param {num_frc} pivotY 
 	 * @param {num_col} color 
-	 * @param {num_pxl} lineWidth 
-	 * @param {num_col} lineColor 
-	 * @param {num_frc} lineAlpha 
-	 * @param {str} group 
+	 * @param {num_pxl} [lineWidth] 
+	 * @param {num_col} [lineColor] 
+	 * @param {num_frc} [lineAlpha] 
+	 * @param {str} [group] 
 	 * @return {GfxPolygon} 
 	 */
 	CreatePolygon(points, pivotX, pivotY, color, lineWidth, lineColor, lineAlpha, group) {return}
@@ -117,10 +117,10 @@ class DsGfx {
 	 * @param {num_frc} width 
 	 * @param {num_frc} height 
 	 * @param {num_col} color 
-	 * @param {num_pxl} lineWidth 
-	 * @param {num_col} lineColor 
-	 * @param {num_frc} lineAlpha 
-	 * @param {str} group 
+	 * @param {num_pxl} [lineWidth] 
+	 * @param {num_col} [lineColor] 
+	 * @param {num_frc} [lineAlpha] 
+	 * @param {str} [group] 
 	 * @return {GfxRectangle} 
 	 */
 	CreateRectangle(width, height, color, lineWidth, lineColor, lineAlpha, group) {return}
@@ -135,8 +135,8 @@ class DsGfx {
 	/**
 	 * Returns a new sprite object
 	 * @param {str_ptf} file 
-	 * @param {str} group 
-	 * @param {() => void} callback 
+	 * @param {str} [group] 
+	 * @param {() => void} [callback] 
 	 * @return {GfxSprite} 
 	 */
 	CreateSprite(file, group, callback) {return}
@@ -162,9 +162,10 @@ class DsGfx {
 
 	/**
 	 * Returns a new texture object
+	 * @param {str_pth} file 
 	 * @return {GfxTexture} 
 	 */
-	CreateTexture() {return}
+	CreateTexture(file) {return}
 
 	/** @type {obj} GameView custom data */
 	data;
@@ -179,10 +180,10 @@ class DsGfx {
 	 * Enclose an area with a physics fence
 	 * @param {str} groupId 
 	 * @param {string | ("left"|"top"|"right"|"bottom")[]} options 
-	 * @param {num} density 
-	 * @param {num} bounce 
-	 * @param {num} friction 
-	 * @param {num} offset 
+	 * @param {num} [density] 
+	 * @param {num} [bounce] 
+	 * @param {num} [friction] 
+	 * @param {num} [offset] 
 	 */
 	Enclose(groupId, options, density, bounce, friction, offset) {return}
 
@@ -281,7 +282,7 @@ class DsGfx {
 
 	/**
 	 * Set solid background color
-	 * @param {str_col} col 
+	 * @param {str_col|num} col 
 	 */
 	SetBackColor(col) {return}
 
@@ -362,8 +363,8 @@ class GfxPhysics {
 	 * Adds velocity to the object
 	 * @param {num} x 
 	 * @param {num} y 
-	 * @param {num} angular 
-	 * @param {bin} bodyRelative 
+	 * @param {num} [angular] 
+	 * @param {bin} [bodyRelative] 
 	 */
 	AddVelocity(x, y, angular, bodyRelative) {return}
 
@@ -371,8 +372,8 @@ class GfxPhysics {
 	 * Applies an impulse p=m*v to the object
 	 * @param {num} x 
 	 * @param {num} y 
-	 * @param {num} offsetX `-1..1`
-	 * @param {num} offsetY `-1..1`
+	 * @param {num} [offsetX=0] `-1..1`
+	 * @param {num} [offsetY=0] `-1..1`
 	 */
 	ApplyImpulse(x, y, offsetX, offsetY) {return}
 
@@ -408,21 +409,21 @@ class GfxPhysics {
 
 	/**
 	 * Set physics properties
-	 * @param {str} groupId 
-	 * @param {"moveable"|"fixed"} type 
-	 * @param {num} density 
-	 * @param {num} bounce 
-	 * @param {num} friction 
-	 * @param {num} linearDamp 
-	 * @param {num} angularDamp 
+	 * @param {str|num} groupId 
+	 * @param {"moveable"|"fixed"|"dynamic"} type 
+	 * @param {num} [density] 
+	 * @param {num} [bounce] 
+	 * @param {num} [friction] 
+	 * @param {num} [linearDamp] 
+	 * @param {num} [angularDamp] 
 	 */
 	SetPhysics(groupId, type, density, bounce, friction, linearDamp, angularDamp) {return}
 
 	/**
 	 * Define the collision shape
 	 * @param {"rect"|"round"} shape 
-	 * @param {num_frc} width 
-	 * @param {num_frc} height 
+	 * @param {num_frc} [width] 
+	 * @param {num_frc} [height] 
 	 */
 	SetShape(shape, width, height) {return}
 
@@ -430,8 +431,8 @@ class GfxPhysics {
 	 * Set the object velocity
 	 * @param {num} x 
 	 * @param {num} y 
-	 * @param {num} angular 
-	 * @param {bin} bodyRelative 
+	 * @param {num} [angular] 
+	 * @param {bin} [bodyRelative] 
 	 */
 	SetVelocity(x, y, angular, bodyRelative) {return}
 
@@ -842,7 +843,7 @@ class GfxSprite {
 	 * Setup tween methods
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} duration 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} type 
+	 * @param {str} type `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} repeat 
 	 * @param {bin} yoyo 
 	 * @param {() => void} callback 
@@ -868,7 +869,7 @@ class GfxSprite {
 	 * Animates the control
 	 * @param {{ x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }} target { x, y, w, h, sw, sh, rot }
 	 * @param {num_mls} duration 
-	 * @param {"Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out"} type 
+	 * @param {str} type `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} repeat 
 	 * @param {bin} yoyo 
 	 * @param {() => void} callback 

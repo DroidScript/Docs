@@ -10,7 +10,8 @@
  * $$ app.AddLayout(layout, type?, options?) $$ 
  * @param {dso} layout CreateLayout
  * @param {str} [type] Linear|Absolute|Frame|Card
- * @param {str} [options] TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
+ * @param {str_lst} [options] TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
+ * @return dso-Layout
 */
 
 

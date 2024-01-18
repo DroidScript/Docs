@@ -11,13 +11,13 @@ declare class DsGfx {
 	AddBackground(obj: GfxBackground): void;
 
 	/** Adds a basic shape object to the game */
-	AddGraphic(obj: obj, x: num_frc, y: num_frc, w: num_frc, h: num_frc, angle: num_rad, alpha: num_frc): void;
+	AddGraphic(obj: obj, x: num_frc, y: num_frc, w?: num_frc, h?: num_frc, angle?: num_rad, alpha?: num_frc): void;
 
 	/** Adds physics to the game */
-	AddPhysics(gravity: num, accuracy: num, sleep: num): GfxPhysics;
+	AddPhysics(gravity?: num, accuracy?: num, sleep?: num): GfxPhysics;
 
 	/** Adds a sprite object */
-	AddSprite(sprite: GfxSprite, x: num_frc, y: num_frc, w: num_frc, h: num_frc, angle: num_frc, alpha: num_frc): void;
+	AddSprite(sprite: GfxSprite, x?: num_frc, y?: num_frc, w?: num_frc, h?: num_frc, angle?: num_frc, alpha?: num_frc): void;
 
 	/** Adds a text object */
 	AddText(obj: GfxText, x: num_frc, y: num_frc, angle: num_frc, alpha: num_frc): void;
@@ -35,19 +35,19 @@ declare class DsGfx {
 	CreateCircle(width: num_frc, color: num_col, lineWidth: num_pxl, lineColor: num_col, lineAlpha: num_frc, group: str): GfxCircle;
 
 	/** Creates an ellipse */
-	CreateEllipse(width: num_frc, height: num_frc, color: num_col, lineWidth: num_pxl, lineColor: num_col, lineAlpha: num_frc, group: str): GfxEllipse;
+	CreateEllipse(width: num_frc, height: num_frc, color: num_col, lineWidth?: num_pxl, lineColor?: num_col, lineAlpha?: num_frc, group?: str): GfxEllipse;
 
 	/** Creates a polygonal game object */
-	CreatePolygon(points: num_frc[], pivotX: num_frc, pivotY: num_frc, color: num_col, lineWidth: num_pxl, lineColor: num_col, lineAlpha: num_frc, group: str): GfxPolygon;
+	CreatePolygon(points: num_frc[], pivotX: num_frc, pivotY: num_frc, color: num_col, lineWidth?: num_pxl, lineColor?: num_col, lineAlpha?: num_frc, group?: str): GfxPolygon;
 
 	/** Creates a rectangle */
-	CreateRectangle(width: num_frc, height: num_frc, color: num_col, lineWidth: num_pxl, lineColor: num_col, lineAlpha: num_frc, group: str): GfxRectangle;
+	CreateRectangle(width: num_frc, height: num_frc, color: num_col, lineWidth?: num_pxl, lineColor?: num_col, lineAlpha?: num_frc, group?: str): GfxRectangle;
 
 	/** Returns a new sound object */
 	CreateSound(file: str_ptf): GfxSound;
 
 	/** Returns a new sprite object */
-	CreateSprite(file: str_ptf, group: str, callback: () => void): GfxSprite;
+	CreateSprite(file: str_ptf, group?: str, callback?: () => void): GfxSprite;
 
 	/** Returns a new SpriteSheet object */
 	CreateSpriteSheet(file: str_ptf, callback: () => void): GfxSpriteSheet;
@@ -56,7 +56,7 @@ declare class DsGfx {
 	CreateText(text: str, fontSize: num, fontFile: str_ptf, align: "left"|"center"|"right", callback: () => void): GfxText;
 
 	/** Returns a new texture object */
-	CreateTexture(): GfxTexture;
+	CreateTexture(file: str_pth): GfxTexture;
 
 	/** GameView custom data */
 	data: obj;
@@ -65,7 +65,7 @@ declare class DsGfx {
 	EnablePhysics(enabled: bin): void;
 
 	/** Enclose an area with a physics fence */
-	Enclose(groupId: str, options: string | ("left"|"top"|"right"|"bottom")[], density: num, bounce: num, friction: num, offset: num): void;
+	Enclose(groupId: str, options: string | ("left"|"top"|"right"|"bottom")[], density?: num, bounce?: num, friction?: num, offset?: num): void;
 
 	/** Get joystick states */
 	GetJoystick(id: str): obj;
@@ -128,7 +128,7 @@ declare class DsGfx {
 	Script(uri: str_uri, callback: () => void): void;
 
 	/** Set solid background color */
-	SetBackColor(col: str_col): void;
+	SetBackColor(col: str_col|num): void;
 
 	/** Define a callback which is called when two [Physics objects](AddPhysics.htm) collide */
 	SetOnCollide(callback: (a: gvo, b: gvo) => void): void;
@@ -174,14 +174,14 @@ declare class GfxPhysics {
 	AddShape(type: "Polygon", points: [num_frc, num_frc][]): void;
 
 	/** Adds velocity to the object */
-	AddVelocity(x: num, y: num, angular: num, bodyRelative: bin): void;
+	AddVelocity(x: num, y: num, angular?: num, bodyRelative?: bin): void;
 
 	/**
 	 * Applies an impulse p=m*v to the object
 	 * @param offsetX `-1..1`
 	 * @param offsetY `-1..1`
 	 */
-	ApplyImpulse(x: num, y: num, offsetX: num, offsetY: num): void;
+	ApplyImpulse(x: num, y: num, offsetX?: num, offsetY?: num): void;
 
 	/** Checks if a point is in the hitbox */
 	Contains(x: num_frc, y: num_frc): bin;
@@ -202,13 +202,13 @@ declare class GfxPhysics {
 	SetMatrix(mtx: Matrix): void;
 
 	/** Set physics properties */
-	SetPhysics(groupId: str, type: "moveable"|"fixed", density: num, bounce: num, friction: num, linearDamp: num, angularDamp: num): void;
+	SetPhysics(groupId: str|num, type: "moveable"|"fixed"|"dynamic", density?: num, bounce?: num, friction?: num, linearDamp?: num, angularDamp?: num): void;
 
 	/** Define the collision shape */
-	SetShape(shape: "rect"|"round", width: num_frc, height: num_frc): void;
+	SetShape(shape: "rect"|"round", width?: num_frc, height?: num_frc): void;
 
 	/** Set the object velocity */
-	SetVelocity(x: num, y: num, angular: num, bodyRelative: bin): void;
+	SetVelocity(x: num, y: num, angular?: num, bodyRelative?: bin): void;
 
 	/** Update internal physics properties */
 	UpdatePhysics(): void;
@@ -539,8 +539,9 @@ declare class GfxSprite {
 	/**
 	 * Setup tween methods
 	 * @param target \{ x, y, w, h, sw, sh, rot }
+	 * @param type `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 */
-	SetTween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	SetTween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: str, repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Start tween */
 	StartTween(): void;
@@ -557,8 +558,9 @@ declare class GfxSprite {
 	/**
 	 * Animates the control
 	 * @param target \{ x, y, w, h, sw, sh, rot }
+	 * @param type `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: "Linear.None"|"Quadratic.In/Out"|"Cubic.In/Out"|"Quartic.In/Out"|"Quintic.In/Out"|"Sinusoidal.In/Out"|"Exponential.In/Out"|"Circular.In/Out"|"Elastic.In/Out"|"Back.In/Out"|"Bounce.In/Out", repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: str, repeat: num_int, yoyo: bin, callback: () => void): void;
 
 	/** Updates internal properties */
 	Update(): void;

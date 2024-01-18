@@ -9,8 +9,8 @@
  * If env or dir are not provided HOME and TMDDIR are set by the component.
  * $$ sys = app.CreateSysProc(cmd, env, dir, options?) $$ 
  * @param {str:program name} cmd sh|su|busybox
- * @param {str} env 
- * @param {str_ptd} dir 
+ * @param {str} [env] 
+ * @param {str_ptd} [dir] 
  * @param {str_com} [options] combine:combines stdout and stderr|builder:force use of proc builder
  * @returns dso-SysProc
 */

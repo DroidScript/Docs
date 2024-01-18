@@ -6,8 +6,8 @@
  * @brief Returns an Email object for user to send emails
  * The Email component allows us to send and receive emails without user interaction.
  * $$ mail = app.CreateEmail(account, password) $$ 
- * @param {str} account email
- * @param {str} password password
+ * @param {str} account account email
+ * @param {str} password account password
  * @returns dso-Email
 */
 

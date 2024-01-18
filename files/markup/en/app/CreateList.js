@@ -6,7 +6,7 @@
  * @brief Returns a new List object
  * 
  * $$ lst = app.CreateList(list, width=-1, height=-1, options='', delim=',') $$ 
- * @param {str_lst} list 
+ * @param {str_com} list 
  * @param {num_frc} [width=-1] 
  * @param {num_frc} [height=-1] 
  * @param {str_com} [options=''] bold:bold item titles|Expand:Expand list to full height inside scrollers,Menu:applies various settings to make the list appear like an in-app menu,Horiz:makes title and body text flow horizontally,html,FontAwesome,monospace,Normal,WhiteGrad|BlackGrad|AlumButton|GreenButton|OrangeButton,NoSound

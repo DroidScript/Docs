@@ -8,10 +8,10 @@
  * @param {obj} obj 
  * @param {num_frc} x 
  * @param {num_frc} y 
- * @param {num_frc} w 
- * @param {num_frc} h 
- * @param {num_rad} angle 
- * @param {num_frc} alpha 
+ * @param {num_frc} [w] 
+ * @param {num_frc} [h] 
+ * @param {num_rad} [angle] 
+ * @param {num_frc} [alpha] 
 */
 
 

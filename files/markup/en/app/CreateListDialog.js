@@ -8,7 +8,7 @@
  * $$ ldg = app.CreateListDialog(title, list, options?) $$ 
  * @param {str} title 
  * @param {str} list 
- * @param {str} [options] Multi
+ * @param {str} [options] Multi|AutoCancel
  * @returns dso-ListDialog
 */
 

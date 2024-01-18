@@ -5,7 +5,7 @@
  * @brief Close and stop the app
  * With Exit you can cancel and completely stop the app. You can also forcefully **kill** the app by passing true as first argument.
  * $$ app.Exit(kill) $$ 
- * @param {bin} kill 
+ * @param {bin} [kill] 
 */
 
 

@@ -10,7 +10,7 @@
  * @param {str} [category] android.intent.category.*
  * @param {str_uri} [uri] 
  * @param {str_mim} [type] 
- * @param {lst_obj} [extras] [{ name:str&comma; type:str-"string|float|int|long|bool|list|file|uri|keydown|keyup"&comma; value:str }]
+ * @param {str||lst_obj} [extras] [{ name:str&comma; type:str-"string|float|int|long|bool|list|file|uri|keydown|keyup"&comma; value:str }]
  * @param {str_com} [options=''] Result:expect a result to be passed to the callback function,ClearTask
  * @param {fnc_json} [callback] {"pNames":["resultCode","data?"],"pTypes":["num_int--1|0|1","obj-{ action:str, type:str, data:str, flags:num_int, extras:obj }"]}
 */

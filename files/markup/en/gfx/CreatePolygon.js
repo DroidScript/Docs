@@ -9,10 +9,10 @@
  * @param {num_frc} pivotX 
  * @param {num_frc} pivotY 
  * @param {num_col} color 
- * @param {num_pxl} lineWidth 
- * @param {num_col} lineColor 
- * @param {num_frc} lineAlpha 
- * @param {str} group 
+ * @param {num_pxl} [lineWidth] 
+ * @param {num_col} [lineColor] 
+ * @param {num_frc} [lineAlpha] 
+ * @param {str} [group] 
  * @returns gvo-Polygon
 */
 

@@ -8,8 +8,9 @@
  * @param {str_uri} uri 
  * @param {str_com} columns 
  * @param {str_sql} [select] 
- * @param {lst} [args] 
+ * @param {str_lst} [args] 
  * @param {str} [sort] coloumn:a coloumn specified in 'coloumns'
+ * @return lst-[any]
 */
 
 

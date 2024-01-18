@@ -388,8 +388,8 @@
 /** ### SetSize
  * @brief Change the size of the control
  * Change the size of the control in either screen relative values or in pixels if the **px** option was given.
- * @param {num} width 
- * @param {num} height 
+ * @param {num} [width=-1] 
+ * @param {num} [height=-1] 
  * @param {str} [options] px|sp|dip|dp|mm|pt
  */
 

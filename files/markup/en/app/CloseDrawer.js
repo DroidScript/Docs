@@ -6,7 +6,7 @@
  * 
  * See Also: @OpenDrawer
  * $$ app.CloseDrawer(side) $$ 
- * @param {str} side left|right
+ * @param {str} [side] Left|Right
 */
 
 

@@ -4,9 +4,9 @@
 /** # CreateSynth #
  * @abbrev syn
  * @brief Returns a new Synth object
- * 
- * $$ syn = app.CreateSynth(type='Signal') $$ 
- * @param {str} [type='Signal'] Signal,VCA,VCF
+ *
+ * $$ syn = app.CreateSynth(type='Signal') $$
+ * @param {str_com} [type='Signal'] Signal,VCA|VCF
  * @returns dso-Synth
 */
 
@@ -20,10 +20,10 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 ### Some descriptions
 **note length:** default is 2.56 seconds.
 **midi note:** like n'th key on a keyboard between 0 and ~125. 12 keys are one octave. Ie. the 4'th octave:
-	C:60,C#:61,D:62,D#:63,E:64,F:65,F#:66,G:67,G#:68,A:69,A#:70,B:71.
+    C:60,C#:61,D:62,D#:63,E:64,F:65,F#:66,G:67,G#:68,A:69,A#:70,B:71.
 **duration:** powers of two indicating whole, half, quarter etc. up to thirty second notes.
 **frequency:** A4 equals 440 Hz. Each note frequency is 12&radic;2 (~1.06) times higher than the previous.
-	Humans can hear a range from 10 to about 20,000 Hz. My phone's range is from 0 to about 11025 Hz
+    Humans can hear a range from 10 to about 20,000 Hz. My phone's range is from 0 to about 11025 Hz
 
 **Phaser:** a sound filter which creates a series of peaks and troughs in the frequency spectrum
 **VoltageControlledAmplifier:** (Variable-Gain Amplifier) electronic amplifier that varies its gain
@@ -63,8 +63,8 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 /** ### PlayTone ###
  * Plays a frequency tone.
  * $$ syn.PlayTone(frequency, duration) $$
- * @param {num:frequency} frequency 
- * @param {num_mls} duration 
+ * @param {num:frequency} frequency
+ * @param {num_mls} duration
  */
 
 
@@ -72,14 +72,14 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Change delay effect difference
  * Change the delay effect difference
  * $$ syn.SetDelay(milliseconds) $$
- * @param {num_mls} milliseconds 
+ * @param {num_mls} milliseconds
  */
 
 
 /** ### SetDelayEnabled ###
  * Enables the delay effect (plays every note a second time after a given delay)
  * $$ syn.SetDelayEnabled(enable) $$
- * @param {bin} enable 
+ * @param {bin} enable
  */
 
 
@@ -87,7 +87,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Adds a delay feedback effect
  * Adds a feedback effect when delay is enabled
  * $$ syn.SetFeedback(feedback) $$
- * @param {num_frc} feedback 
+ * @param {num_frc} feedback
  */
 
 
@@ -95,7 +95,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Set current frequency
  * Set the current played frequency
  * $$ syn.SetFrequency(frequency) $$
- * @param {num} frequency 
+ * @param {num} frequency
  */
 
 
@@ -103,7 +103,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Set whole note length
  * Set the length of a whole note in seconds. Defaults to 2.56
  * $$ syn.SetNoteLength(duration) $$
- * @param {num_sec} duration 
+ * @param {num_sec} duration
  */
 
 
@@ -111,10 +111,10 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Initializes phaser
  * Initializes the phaser effect
  * $$ syn.SetPhaser(drywet, rate, range, feedback) $$
- * @param {num_frc} drywet 
- * @param {num} rate 
- * @param {num} range 
- * @param {num_frc} feedback 
+ * @param {num_frc} drywet
+ * @param {num} rate
+ * @param {num} range
+ * @param {num_frc} feedback
  */
 
 
@@ -122,45 +122,45 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Control unprocessed/delayed signals ratio
  * Control producing of unprocessed (0) and delayed (1) signals (whatever this means)
  * $$ syn.SetPhaserDryWet(drywet) $$
- * @param {num_frc} drywet 
+ * @param {num_frc} drywet
  */
 
 
 /** ### SetPhaserEnabled ###
  * En/Disables phaser effect
  * $$ syn.SetPhaserEnabled(enable) $$
- * @param {bin} enable 
+ * @param {bin} enable
  */
 
 
 /** ### SetPhaserFeedback ###
  * Enables phaser feedback
  * $$ syn.SetPhaserFeedback(feedback) $$
- * @param {num_frc} feedback 
+ * @param {num_frc} feedback
  */
 
 
 /** ### SetPhaserRange ###
  * Set sweep range
  * $$ syn.SetPhaserRange(range) $$
- * @param {num} range 
+ * @param {num} range
  */
 
 
 /** ### SetPhaserRate ###
  * Set sweeps per second
  * $$ syn.SetPhaserRate(rate) $$
- * @param {num} rate 
+ * @param {num} rate
  */
 
 
 /** ### SetVca ###
  * Initializes the VCA
  * $$ syn.SetVca(attack, decay, sustain, release) $$
- * @param {num_mls} attack 
- * @param {num_mls} decay 
- * @param {num_frc} sustain 
- * @param {num_mls} release 
+ * @param {num_mls} attack
+ * @param {num_mls} decay
+ * @param {num_frc} sustain
+ * @param {num_mls} release
  */
 
 
@@ -168,7 +168,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Set a time of maximum volume
  * Set a time where the volume should reach a maximum
  * $$ syn.SetVcaAttack(attack) $$
- * @param {num_mls} attack 
+ * @param {num_mls} attack
  */
 
 
@@ -176,14 +176,14 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Controls time when volume is lowered to sustain
  * Controls time in which the volume is lowered to the sustain value
  * $$ syn.SetVcaDecay(decay) $$
- * @param {num_mls} decay 
+ * @param {num_mls} decay
  */
 
 
 /** ### SetVcaEnabled ###
  * En/Disables VCA effect
  * $$ syn.SetVcaEnabled(enable) $$
- * @param {bin} enable 
+ * @param {bin} enable
  */
 
 
@@ -191,27 +191,27 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief set a time of minimum volume
  * Set a time where the volume should reach a minimum
  * $$ syn.SetVcaRelease(release) $$
- * @param {num:mls} release 
+ * @param {num:mls} release
  */
 
 
 /** ### SetVcaSustain ###
  * Set a basis volume
  * $$ syn.SetVcaSustain(sustain) $$
- * @param {num_frc} sustain 
+ * @param {num_frc} sustain
  */
 
 
 /** ### SetVcf ###
  * Initialize the VCF effect
  * $$ syn.SetVcf(attack, decay, sustain, release, cuttoff, resonance, depth) $$
- * @param {num_mls} attack 
- * @param {num_mls} decay 
- * @param {num_frc} sustain 
- * @param {num_mls} release 
- * @param {num:frequency} cuttoff 
- * @param {num_frc} resonance 
- * @param {num_frc} depth 
+ * @param {num_mls} attack
+ * @param {num_mls} decay
+ * @param {num_frc} sustain
+ * @param {num_mls} release
+ * @param {num:frequency} cuttoff
+ * @param {num_frc} resonance
+ * @param {num_frc} [depth]
  */
 
 
@@ -219,14 +219,14 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Set a time of maximum frequencies
  * Set a time where the frequencies should reach a maximum
  * $$ syn.SetVcfAttack(attack) $$
- * @param {num_mls} attack 
+ * @param {num_mls} attack
  */
 
 
 /** ### SetVcfCutoff ###
  * Set a maximum frequency which will never be exceeded
  * $$ syn.SetVcfCutoff(cuttoff) $$
- * @param {num:frequency} cuttoff 
+ * @param {num:frequency} cuttoff
  */
 
 
@@ -234,7 +234,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Controls time when frequency is lowered to sustain
  * Controls time in which the frequency is lowered to the sustain value.
  * $$ syn.SetVcfDecay(decay) $$
- * @param {num_mls} decay 
+ * @param {num_mls} decay
  */
 
 
@@ -242,14 +242,14 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Set filter strength
  * Set the strength of the Vcf filter
  * $$ syn.SetVcfDepth(depth) $$
- * @param {num_frc} depth 
+ * @param {num_frc} depth
  */
 
 
 /** ### SetVcfEnabled ###
  * En/Disables VCF effect
  * $$ syn.SetVcfEnabled(enable) $$
- * @param {bin} enable 
+ * @param {bin} enable
  */
 
 
@@ -257,21 +257,21 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief set a time of minimum frequency
  * Set a time where the volume should reach a minimum
  * $$ syn.SetVcfRelease(release) $$
- * @param {num_mls} release 
+ * @param {num_mls} release
  */
 
 
 /** ### SetVcfResonance ###
  * Adds a resonance tone
  * $$ syn.SetVcfResonance(resonance) $$
- * @param {num_frc} resonance 
+ * @param {num_frc} resonance
  */
 
 
 /** ### SetVcfSustain ###
  * Set a basis frequency
  * $$ syn.SetVcfSustain(sustain) $$
- * @param {num_frc} sustain 
+ * @param {num_frc} sustain
  */
 
 
@@ -279,8 +279,8 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
  * @brief Set master volume
  * Set the overall synthesizer volume
  * $$ syn.SetVolume(left, right) $$
- * @param {num_frc} left 
- * @param {num_frc} right 
+ * @param {num_frc} left
+ * @param {num_frc} right
  */
 
 
@@ -307,7 +307,7 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 // ------------- SAMPLES ------------- 
 
 
-    
+
 /**
 @sample Tetris Theme
 function OnStart()
@@ -326,9 +326,9 @@ function OnStart()
     );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Multiple Synths Song
 function OnStart()
@@ -357,9 +357,9 @@ function OnStart()
     setTimeout('synth2.PlayMidiTune("59:8,59:4,59:8,62:8,59:4,57:8,55:8,57:4,55:8,54:2")', 5*5120);
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Tetris Theme
 from native import app
@@ -378,9 +378,9 @@ def OnStart():
         "74:8,72:8,71:4,71:8,72:8,74:4,76:4,72:4,69:4,69:4"
     )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Multiple Synths Song
 from native import app
@@ -415,5 +415,4 @@ def OnStart():
     setTimeout(playSynth2, 4*5120)
     setTimeout(playSynth2, 5*5120)
  */
-    
-            
+

@@ -8,7 +8,7 @@
  * See Also: @OpenDrawer, @CloseDrawer, @RemoveDrawer
  * $$ app.AddDrawer(layout, side, width=-1, grabWidth?) $$ 
  * @param {dso} layout CreateLayout
- * @param {str} side left|right
+ * @param {str} side Left|Right
  * @param {num_frc} [width=-1] 
  * @param {num_frc} [grabWidth] 
 */

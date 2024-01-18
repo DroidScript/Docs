@@ -69,7 +69,7 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Called when servlet received a message
  * %cb% a HTTP GET request on a given servlet name was recieved.
  * $$ sock.AddServlet(path, callback) $$
- * @param {str:url path} path /name
+ * @param {str:url path} path /endpoint name
  * @param {fnc_json} callback {"pNames":["args","info"],"pTypes":["obj-{ parameter:str: argument:str }","obj-{ remoteAddress:str }"]}
  */
 

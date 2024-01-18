@@ -50,7 +50,7 @@
  * Search for media albums.
  * $$ med.QueryAlbums(filter?, sort?, options?) $$
  * @param {str_sql} [filter] 
- * @param {str:coloumns} [sort] album,\_id,albumArt,artist,numSongs,firstYear,lastYear
+ * @param {str:coloumns} [sort] album,\_id,albumArt,artist,numSongs,firstYear,lastYear|
  * @param {str} [options] internal|external
  */
 
@@ -59,7 +59,7 @@
  * Search for media artists.
  * $$ med.QueryArtists(filter?, sort?, options?) $$
  * @param {str_sql} [filter] 
- * @param {str:coloumns} [sort] \_id,artist,numAlbums,numTracks
+ * @param {str:coloumns} [sort] \_id,artist,numAlbums,numTracks,
  * @param {str} [options] internal|external
  */
 
@@ -68,7 +68,7 @@
  * Search for media.
  * $$ med.QueryMedia(filter?, sort?, options?) $$
  * @param {str_sql} [filter] 
- * @param {str:coloumns} [sort] title,\_id,duration,size,uri,album,albumID,artist,artistId
+ * @param {str_com:coloumns} [sort] title,\_id,duration,size,uri,album,albumID,artist,artistId
  * @param {str} [options] internal|external
  */
 
