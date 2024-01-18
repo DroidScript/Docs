@@ -4,20 +4,20 @@
 /** # Lock #
  * @brief Lock the device
  * Locks the device.
- * 
+ *
  * <red>**Requires Root**</red>
- * 
+ *
  * See Also: @Unlock
- * $$ app.Lock() $$ 
+ * $$ app.Lock() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
@@ -37,9 +37,9 @@ function btn_OnTouch()
 	app.ShowPopup( "Locked" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
@@ -57,5 +57,3 @@ def btn_OnTouch():
     app.Lock()
     app.ShowPopup("Locked")
  */
-    
-            

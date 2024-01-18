@@ -4,12 +4,12 @@
 /** # CreateTextParagraph #
  * @abbrev txp
  * Creates a paragraph text
- * $$ txp = MUI.CreateTextParagraph(text, width=-1, height=-1, options?, color?, fontWeight?) $$ 
- * @param {str} text 
- * @param {num} [width=-1] 
- * @param {num} [height=-1] 
+ * $$ txp = MUI.CreateTextParagraph(text, width=-1, height=-1, options?, color?, fontWeight?) $$
+ * @param {str} text
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
  * @param {str} [options] DS text options
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @param {str} [fontWeight] Thin|Light|Regular|Medium|Bold
  * @returns obj
 */
@@ -17,7 +17,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -59,7 +59,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ txp.GetType() $$
  * @returns str-Text
  */
@@ -144,10 +144,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Paragraph-Sample
 cfg.Light
@@ -172,9 +172,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Paragraph-Sample
 # cfg.Light, cfg.MUI
@@ -198,5 +198,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

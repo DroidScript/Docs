@@ -4,7 +4,7 @@
 /** # AddPicker #
  * @abbrev pck
  * Adds a picker dialog such as time, date or color. See @CreateDatePicker, @CreateTimePicker and @CreateColorPicker for a full documentation.
- * $$ pck = MUI.AddPicker(parent, options?) $$ 
+ * $$ pck = MUI.AddPicker(parent, options?) $$
  * @param {dso} parent @../app/CreateTextEdit
  * @param {str} [options] Date|Color|Time
  * @returns obj
@@ -13,10 +13,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample AddPicker
 cfg.Light
@@ -57,9 +57,9 @@ function ShowColorPicker()
     cPkr.Show()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python AddPicker
 # cfg.Light, cfg.MUI
@@ -95,5 +95,3 @@ def ShowDatePicker():
 def ShowColorPicker():
     cPkr.Show()
  */
-    
-            

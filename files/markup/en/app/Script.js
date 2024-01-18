@@ -3,14 +3,14 @@
 
 /** # Script #
  * @brief import an external JavaScript file
- * 
- * $$ app.Script(file, noDefer=false) $$ 
- * @param {str_ptf} file 
- * @param {bin:load script inline} [noDefer=false] 
+ *
+ * $$ app.Script(file, noDefer=false) $$
+ * @param {str_ptf} file
+ * @param {bin:load script inline} [noDefer=false]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Loads a local JavaScript file to your app to make its functionality available in your app.
@@ -22,10 +22,10 @@ See Also: @LoadScript
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Deferred Loading (recommended)
 app.WriteFile( "script.js", "var num = 7;\nfunction computeNum() { return 6 * num; }" );
@@ -36,9 +36,9 @@ function OnStart() {
     app.Alert( computeNum(), "computed number: " );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Inline Loading
 app.WriteFile( "script.js", "var num = 7;\nfunction computeNum() { return 6 * num; }" );
@@ -51,9 +51,9 @@ function OnStart() {
     app.Alert( computeNum(), "computed number: " );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Deferred Loading (recommended)
 from native import app
@@ -65,9 +65,9 @@ def OnStart():
     app.ShowPopup( "script.js loaded." )
     app.Alert( computeNum(), "computed number: " )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Inline Loading
 from native import app
@@ -81,5 +81,3 @@ def OnStart():
     app.ShowPopup( "script.js loaded." )
     app.Alert( computeNum(), "computed number: " )
  */
-    
-            

@@ -4,21 +4,21 @@
 /** # SaveNumber #
  * @brief Save a number value across multiple starts
  * Save a number value to remember varibale values between multiple app starts and updates.
- * 
+ *
  * See also: @LoadNumber.
- * $$ app.SaveNumber(name, value, file?) $$ 
- * @param {str} name 
- * @param {num} value 
- * @param {str_ptf} [file] 
+ * $$ app.SaveNumber(name, value, file?) $$
+ * @param {str} name
+ * @param {num} value
+ * @param {str_ptf} [file]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Click Counter
 var clicks = 0, file = "demofile";
@@ -42,9 +42,9 @@ function btn_OnTouch()
 	app.ShowPopup( "Clicks: " + clicks );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Click Counter
 from native import app
@@ -69,5 +69,3 @@ def btn_OnTouch():
     app.SaveNumber("clicks", clicks, file)
     app.ShowPopup("Clicks: " + str(clicks))
  */
-    
-            

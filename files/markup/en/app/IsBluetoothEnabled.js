@@ -4,19 +4,19 @@
 /** # IsBluetoothEnabled #
  * @brief Check bluetooth enabled
  * Return whether bluetooth was enabled.
- * 
+ *
  * See Also: @SetBluetoothEnabled
- * $$ app.IsBluetoothEnabled() $$ 
+ * $$ app.IsBluetoothEnabled() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Bluetooth Status
 function OnStart()
@@ -32,11 +32,11 @@ function OnStart()
     );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -50,5 +50,3 @@ def OnStart():
         ("on" if state else "off")
     )
  */
-    
-            

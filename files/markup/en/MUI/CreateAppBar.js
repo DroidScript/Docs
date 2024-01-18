@@ -4,7 +4,7 @@
 /** # CreateAppBar #
  * @abbrev apb
  * The most common type of material design app bar.
- * $$ apb = MUI.CreateAppBar(title, leadingIcon?, controls?) $$ 
+ * $$ apb = MUI.CreateAppBar(title, leadingIcon?, controls?) $$
  * @param {str} title Title text
  * @param {str} [leadingIcon] A material font icon for the leading control
  * @param {str_com} [controls] material icon font for the right controls
@@ -14,7 +14,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetMenuIcon ###
@@ -55,7 +55,7 @@
 /** ### SetTitleTextColor ###
  * Change the color of the title
  * $$ apb.SetTitleTextColor(newColor) $$
- * @param {str_col} newColor 
+ * @param {str_col} newColor
  */
 
 
@@ -102,10 +102,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Just a title
 cfg.Light
@@ -144,9 +144,9 @@ function OnStart()
     *_
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Sample page
 cfg.Light
@@ -195,9 +195,9 @@ function OnMenuTouch()
     lay.Animate("SlideToBottom")
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Complete controls
 cfg.Light
@@ -228,9 +228,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark mode
 cfg.Dark
@@ -274,9 +274,9 @@ function OnControlTouch(text, index)
     app.ShowPopup("You click " + text + ": Control index = "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark mode
 # cfg.Dark, cfg.MUI
@@ -314,5 +314,3 @@ def OnMenuTouch():
 def OnControlTouch(text, index):
     app.ShowPopup("You click " + text + ": Control index = "+index)
  */
-    
-            

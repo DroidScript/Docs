@@ -4,17 +4,17 @@
 /** # GetMemoryInfo #
  * @brief Get RAM memory information
  * Returns an object containing informations about the RAM memory.
- * $$ app.GetMemoryInfo() $$ 
+ * $$ app.GetMemoryInfo() $$
  * @returns obj-{ avail:num_byt&comma; low:bin&comma; threshold:num_byt&comma; total:num_byt }
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -24,9 +24,9 @@ function OnStart()
     app.Alert( s.replace( /,/g, ",\n ") );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Show Memory
 function OnStart()
@@ -57,9 +57,9 @@ function ShowMemory() {
     txt.SetHtml( text.fontcolor( color ));
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -69,9 +69,9 @@ def OnStart():
     s = str(mem).replace(",", ",\n")
     app.Alert(s)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Memory
 from native import app
@@ -101,5 +101,3 @@ def ShowMemory(time, dtime):
 
     txt.SetHtml(text.fontcolor(color))
  */
-    
-            

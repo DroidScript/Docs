@@ -4,18 +4,18 @@
 /** # CreateAppBarModern #
  * @abbrev abm
  * A modern appbar with a search input, leading icon and trailing icon
- * $$ abm = MUI.CreateAppBarModern(hint?, controlIcon?, options?, color?) $$ 
+ * $$ abm = MUI.CreateAppBarModern(hint?, controlIcon?, options?, color?) $$
  * @param {str} [hint] Hint text for the search input
  * @param {str} [controlIcon] Material font for the control icon
  * @param {str} [options] Round|Rectangle
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern GetHeight */
@@ -37,7 +37,7 @@
 /** @extern ClearFocus */
 
 /** ### ClearHistory ###
- * 
+ *
  * $$ abm.ClearHistory() $$
  */
 
@@ -45,14 +45,14 @@
 /** @extern Focus */
 
 /** ### GetCursorLine ###
- * 
+ *
  * $$ abm.GetCursorLine() $$
  * @returns num
  */
 
 
 /** ### GetCursorPos ###
- * 
+ *
  * $$ abm.GetCursorPos() $$
  * @returns num
  */
@@ -77,16 +77,16 @@
 /** ### ReplaceText ###
  * Replaces a given range in the text with some string.
  * $$ abm.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
+ * @param {str} text
+ * @param {num_int} start
+ * @param {num_int} end
  */
 
 
 /** ### SetCursorPos ###
  * Change the curernt cursor position.
  * $$ abm.SetCursorPos(position) $$
- * @param {num_int} position 
+ * @param {num_int} position
  */
 
 
@@ -117,10 +117,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -151,9 +151,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Sample page
 cfg.Light
@@ -197,9 +197,9 @@ function OnCtrlTouch()
     app.ShowPopup("You click for more options.")
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark mode
 cfg.Dark
@@ -230,9 +230,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -262,9 +262,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sample page
 # cfg.Light, cfg.MUI
@@ -304,9 +304,9 @@ def OnMenuTouch():
 def OnCtrlTouch():
     app.ShowPopup("You click for more options.")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark mode
 # cfg.Dark, cfg.MUI
@@ -336,5 +336,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

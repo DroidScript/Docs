@@ -4,18 +4,18 @@
 /** # CreateButtonOutlined #
  * @abbrev bto
  * An outlined material button
- * $$ bto = MUI.CreateButtonOutlined(text, width=-1, height=-1, options?) $$ 
- * @param {str} text 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
- * @param {str} [options] 
+ * $$ bto = MUI.CreateButtonOutlined(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str} [options]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -47,7 +47,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ bto.GetType() $$
  * @returns str-Button
  */

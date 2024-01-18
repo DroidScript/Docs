@@ -3,21 +3,21 @@
 
 /** # ShowTip #
  * Shows a tooltip message on the screen.
- * $$ app.ShowTip(message, left?, top?, timeOut?, options?) $$ 
- * @param {str} message 
- * @param {num_frc} [left] 
- * @param {num_frc} [top] 
- * @param {num_mls} [timeOut] 
+ * $$ app.ShowTip(message, left?, top?, timeOut?, options?) $$
+ * @param {str} message
+ * @param {num_frc} [left]
+ * @param {num_frc} [top]
+ * @param {num_mls} [timeOut]
  * @param {str} [options] Down
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Tool-Tip
 function OnStart()
@@ -33,9 +33,9 @@ function OnStart()
     app.ShowTip( "Type some text here", pos.left, pos.top, 3000, "Down" );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Tool-Tip
 from native import app
@@ -51,5 +51,3 @@ def OnStart():
     pos = edt.GetPosition( "screen" )
     app.ShowTip( "Type some text here", pos.left, pos.top, 3000, "Down" )
  */
-    
-            

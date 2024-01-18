@@ -5,7 +5,7 @@
  * @abbrev bls
  * @brief Communicate with other Bluetooth devices
  * The CreateBluetoothSerial object is used for communicating with other Bluetooth devices.The 'Text' mode is set by default, but **int**eger and **hex**adecimal values can also be sent.
- * $$ bls = app.CreateBluetoothSerial(mode='Text') $$ 
+ * $$ bls = app.CreateBluetoothSerial(mode='Text') $$
  * @param {str} [mode='Text'] Text|Int|Hex
  * @returns dso-BluetoothSerial
 */
@@ -13,7 +13,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -28,8 +28,8 @@
  * @brief Connect a Bluetooth device
  * Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.
  * $$ bls.Connect(name, channel?) $$
- * @param {str} name 
- * @param {str} [channel] 
+ * @param {str} name
+ * @param {str} [channel]
  */
 
 
@@ -65,7 +65,7 @@
  * @brief Check pairing status to another device
  * Checks if a specific device is paired using its Bt name.
  * $$ bls.IsPaired(name) $$
- * @param {str} name 
+ * @param {str} name
  * @returns bin
  */
 
@@ -74,7 +74,7 @@
  * @brief Listen <s>or stop listening</s> for incoming messages
  * Listen to your serial connection for any incoming mesages by passing <i>true</i> as first argument, <s>or stop listening by passing false</s>. It has to be called before an other device can connect with yours via bt.Connect.
  * $$ bls.Listen(enabled) $$
- * @param {bin} enabled 
+ * @param {bin} enabled
  */
 
 
@@ -99,7 +99,7 @@
  * If the device has sent the connection request
  * 	name is of type boolean (true if the connection was established successful)
  * 	and address is your BluetoothSerial object
- * 
+ *
  * if the device has received the connection request
  * 	name is a string with the clients bluetooth name
  * 	and address includes the bluetooth address.
@@ -131,8 +131,8 @@
  * <table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
  * $$ bls.SetSplitMode(mode, p2, p3?) $$
  * @param {str} mode End|Start-End|Size|Head
- * @param {str||num_int} p2 
- * @param {str||num_int} [p3] 
+ * @param {str||num_int} p2
+ * @param {str||num_int} [p3]
  */
 
 
@@ -140,7 +140,7 @@
  * @brief Set idle disconnect timeout
  * Set a timeout after which the connection will canceled when no communication happened
  * $$ bls.SetTimeout(milliseconds) $$
- * @param {num_mls} milliseconds 
+ * @param {num_mls} milliseconds
  */
 
 
@@ -148,15 +148,15 @@
  * @brief Send data to connected device
  * Send data over the Bluetooth serial connection to the other device.
  * $$ bls.Write(data) $$
- * @param {str} data 
+ * @param {str} data
  */
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Connect to Device
 function OnStart()
@@ -198,9 +198,9 @@ function bt_OnConnect( ok, data )
         app.ShowPopup( "Failed to connect!" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Connect to Device
 from native import app
@@ -240,5 +240,3 @@ def bt_OnConnect( ok, data ):
     else:
         app.ShowPopup( "Failed to connect!" )
  */
-    
-            

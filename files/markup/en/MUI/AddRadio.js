@@ -3,21 +3,21 @@
 
 /** # AddRadio #
  * @abbrev rd
- * 
- * $$ rd = MUI.AddRadio(parent, list, width=-1, height=-1, options?, p1?, color?, backColor?) $$ 
+ *
+ * $$ rd = MUI.AddRadio(parent, list, width=-1, height=-1, options?, p1?, color?, backColor?) $$
  * @param {dso} parent @../app/CreateLayout
  * @param {str_com} list strings
- * @param {num} [width=-1] 
- * @param {num} [height=-1] 
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
  * @param {str_com} [options] Buttons|Material|Normal
  * @param {str} [p1] color|orientation
- * @param {str_col} [color] 
- * @param {str_col} [backColor] 
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Adds a radio material input. See @CreateRadio, @CreateRadioButtons and @CreateRadioMaterial for a full documentation. The param p1 depends on the type of an MUI button. It can be a color for normal radio or orientation 'vertical or horizontal' for material and button type.
@@ -25,10 +25,10 @@ Adds a radio material input. See @CreateRadio, @CreateRadioButtons and @CreateRa
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample AddPicker
 cfg.Light
@@ -53,9 +53,9 @@ function OnStart()
     app.AddLayout( lay )
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python AddPicker
 # cfg.Light, cfg.MUI
@@ -79,5 +79,3 @@ def OnStart():
     scr.AddChild(lay2)
     app.AddLayout(lay)
  */
-    
-            

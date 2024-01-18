@@ -4,20 +4,20 @@
 /** # FileExists #
  * @brief Checks if the file exists
  * FileExists Checks if a given file exists in your filesystem or not.
- * 
+ *
  * See Also: @WriteFile, @CopyFile, @RenameFile
- * $$ app.FileExists(file) $$ 
- * @param {str_ptf} file 
+ * $$ app.FileExists(file) $$
+ * @param {str_ptf} file
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -29,9 +29,9 @@ function OnStart()
     }</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -42,5 +42,3 @@ def OnStart():
     else:
         app.ShowPopup("myFile does not exist!")
  */
-    
-            

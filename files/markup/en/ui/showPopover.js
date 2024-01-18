@@ -4,7 +4,7 @@
 /** # showPopover #
  * @brief showPopover
  * Show a popover on any `UI Components` except Dialogs and Popups. Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.
- * $$ ui.showPopover(parent, text?, position?, width?, height?) $$ 
+ * $$ ui.showPopover(parent, text?, position?, width?, height?) $$
  * @param {obj} parent UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
  * @param {str} [text] The text to de displayed. For displaying more data, pass a `Layout`
  * @param {str} [position] A comma separated values representing the `anchorOrigin,transformOrigin` \n `anchorOrigin` Position of the popover on its parent. Available values are `tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right. \n `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`
@@ -16,7 +16,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### backImage
@@ -25,19 +25,19 @@
  * @returns str
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the font file use for the Popover.
  * @returns str
  */
 
-                    
-
-// ------------- SAMPLES ------------- 
 
 
-    
+// ------------- SAMPLES -------------
+
+
+
 /**
 @sample Basic
 class Main extends App
@@ -60,9 +60,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Positioning
 class Main extends App
@@ -138,9 +138,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Advanced
 class Main extends App
@@ -176,9 +176,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -198,9 +198,9 @@ def onTouch(event):
     # Display a popover when the button is clicked
     ui.showPopover(btn, "This is a text to be displayed.")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Positioning
 from hybrid import ui
@@ -273,9 +273,9 @@ def OnStart():
     btn = ui.addButton(lay2, "Bottom-Right")
     btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,br"))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Advanced
 from hybrid import ui
@@ -308,5 +308,3 @@ def onTouch(event):
     # pass the layout into the `ui.showPopover` method
     ui.showPopover(btn, lay, "bl,tr")
  */
-    
-            

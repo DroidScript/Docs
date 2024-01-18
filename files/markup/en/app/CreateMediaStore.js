@@ -5,14 +5,14 @@
  * @abbrev med
  * @brief Returns a new MediaStore object
  * The MediaStore is used to query audio information from the android provider or from the device in the “/sdcard/Music” folder.
- * $$ med = app.CreateMediaStore() $$ 
+ * $$ med = app.CreateMediaStore() $$
  * @returns dso-MediaStore
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -22,7 +22,7 @@
  * Loads the album image to an existing image:dso-CreateImage.
  * $$ med.GetAlbumArt(image, id, options?) $$
  * @param {dso} image CreateImage
- * @param {num_int} id 
+ * @param {num_int} id
  * @param {str} [options] internal|external
  * @returns bin
  */
@@ -33,7 +33,7 @@
  * Loads the song image to an existing image:dso-CreateImage.
  * $$ med.GetSongArt(image, id, options?) $$
  * @param {dso} image CreateImage
- * @param {num_int} id 
+ * @param {num_int} id
  * @param {str} [options] internal|external
  * @returns bin
  */
@@ -49,7 +49,7 @@
 /** ### QueryAlbums ###
  * Search for media albums.
  * $$ med.QueryAlbums(filter?, sort?, options?) $$
- * @param {str_sql} [filter] 
+ * @param {str_sql} [filter]
  * @param {str:coloumns} [sort] album,\_id,albumArt,artist,numSongs,firstYear,lastYear
  * @param {str} [options] internal|external
  */
@@ -58,7 +58,7 @@
 /** ### QueryArtists ###
  * Search for media artists.
  * $$ med.QueryArtists(filter?, sort?, options?) $$
- * @param {str_sql} [filter] 
+ * @param {str_sql} [filter]
  * @param {str:coloumns} [sort] \_id,artist,numAlbums,numTracks,
  * @param {str} [options] internal|external
  */
@@ -67,7 +67,7 @@
 /** ### QueryMedia ###
  * Search for media.
  * $$ med.QueryMedia(filter?, sort?, options?) $$
- * @param {str_sql} [filter] 
+ * @param {str_sql} [filter]
  * @param {str_com:coloumns} [sort] title,\_id,duration,size,uri,album,albumID,artist,artistId
  * @param {str} [options] internal|external
  */
@@ -98,10 +98,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Query Artists
 function OnStart()
@@ -130,9 +130,9 @@ function media_OnArtistsResult( result )
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Query Albums
 function OnStart()
@@ -163,9 +163,9 @@ function media_OnAlbumsResult( result )
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Query Media
 function OnStart()
@@ -194,9 +194,9 @@ function media_OnMediaResult( result )
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Query Artists
 from native import app
@@ -224,9 +224,9 @@ def media_OnArtistsResult(result):
 
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Query Albums
 from native import app
@@ -256,9 +256,9 @@ def media_OnAlbumsResult(result):
 
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Query Media
 from native import app
@@ -286,5 +286,3 @@ def media_OnMediaResult(result):
 
     app.HideProgress()
  */
-    
-            

@@ -4,8 +4,8 @@
 /** # addSlider #
  * @abbrev sld
  * @brief addSlider
- * 
- * $$ sld = ui.addSlider(parent, value, options?, width?, height?) $$ 
+ *
+ * $$ sld = ui.addSlider(parent, value, options?, width?, height?) $$
  * @param {obj} parent The layout where to add the Slider Component.
  * @param {num} value The initial value of the Slider. Value must be between 0-100, the default min and max values.
  * @param {str_com} [options] Color: `Primary` `Secondary` \n `Orienation`: `Horizontal` `Vertical` \n `Track`: `Normal` `Inverted` `False`
@@ -15,7 +15,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Adds a Slider Component into your App.
@@ -27,7 +27,7 @@ Adds a Slider Component into your App.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -36,259 +36,259 @@ Adds a Slider Component into your App.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### color
  * @prop
  * Sets or returns the theme color of the Slider. Values can be <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### marks
  * @prop
  * Sets or returns the marks on the Slider Component. The marks will be base on the <col nobox #fb8c00>step</col> property. To add a custom labels in each mark, pass an array with an object element with properties <col nobox #fb8c00>label</col> and <col nobox #fb8c00>value</col>. See marks array example below.
  * @returns bin
  */
 
-                    
+
 /** ### maxValue
  * @prop
  * Sets or returns the maximum value.
  * @returns num
  */
 
-                    
+
 /** ### minValue
  * @prop
  * Sets or returns the minimum value.
  * @returns num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### orientation
  * @prop
  * Sets or returns the orientation of the Slider Component. Values can be <col nobox #fb8c00>Vertical</col> or <col nobox #fb8c00>Horizontal</col>
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### step
  * @prop
  * Sets or returns the Sider Component steps.
  * @returns num
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the color of the text.
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### track
  * @prop
  * Sets or returns the track properties of the Slider Component. Values can be <col nobox #fb8c00>Normal</col> <col nobox #fb8c00>False</col> or <col nobox #fb8c00>Inverted</col>
  * @returns str
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### value
  * @prop
  * Sets or returns the value of the Slider Component.
  * @returns num
  */
 
-                    
+
 /** ### valueLabelDisplay
  * @prop
  * Sets or returns the value label display type. Values can be <col nobox #fb8c00>on</col> <col nobox #fb8c00>auto</col> <col nobox #fb8c00>off</col>. If <col nobox #fb8c00>on</col>, value label will always be shown. If <col nobox #fb8c00>auto</col>, value label will be shown when sliding is active. If <col nobox #fb8c00>false</col>, value label display will not be shown.
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### setOnChange ###
  * @brief setOnChange
  * Sets a callback function when the value of the Slider Component changes
@@ -367,10 +367,10 @@ Adds a Slider Component into your App.
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Marks array
 var marks = [
@@ -379,9 +379,9 @@ var marks = [
         { label: "Third stop", value: 70 }
     ]
  */
-    
-            
-    
+
+
+
 /**
 @sample Basic slider
 class Main extends App
@@ -408,9 +408,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Slider steps and marks
 class Main extends App
@@ -442,9 +442,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Slider with custom step marks
 class Main extends App
@@ -481,9 +481,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Vertical slider
 class Main extends App
@@ -510,9 +510,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button variants
 from hybrid import ui
@@ -539,9 +539,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup("Button is touch!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button theme colors
 from hybrid import ui
@@ -568,9 +568,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup("Button is touch!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button sizes
 from hybrid import ui
@@ -595,9 +595,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup("Button is touch!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button tooltips
 from hybrid import ui
@@ -623,9 +623,9 @@ def OnStart():
     btn4 = ui.addButton(main, "Bottom", "Contained,Primary")
     btn4.setToolTip("Tooltip on the bottom", "bottom")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button with icons
 from hybrid import ui
@@ -649,9 +649,9 @@ def OnStart():
     # Add a `settings` secondary icon button to the main layout
     btn4 = ui.addButton(main, "settings", "Secondary,Icon")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Buttons with badges
 from hybrid import ui
@@ -672,9 +672,9 @@ def OnStart():
     btn3  = ui.addButton(main, "With Badge", "Secondary,Outlined")
     btn3.setBadge("New", "Primary")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Upload button
 from hybrid import ui
@@ -685,5 +685,3 @@ def OnStart():
 
     # Add a primary
  */
-    
-            

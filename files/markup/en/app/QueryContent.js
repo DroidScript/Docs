@@ -3,18 +3,18 @@
 
 /** # QueryContent #
  * @brief Queries content from the android content model
- * 
- * $$ app.QueryContent(uri, columns, select?, args?, sort?) $$ 
- * @param {str_uri} uri 
- * @param {str_com} columns 
- * @param {str_sql} [select] 
- * @param {str_lst} [args] 
+ *
+ * $$ app.QueryContent(uri, columns, select?, args?, sort?) $$
+ * @param {str_uri} uri
+ * @param {str_com} columns
+ * @param {str_sql} [select]
+ * @param {str_lst} [args]
  * @param {str} [sort] coloumn:a coloumn specified in 'coloumns'
  * @returns lst-[any]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Queries content from the android content model. The **uri** typically have the syntax “content://authority/path/id”. You can find more infos about it on the [Android Developer page](https://developer.android.com/reference/android/content/ContentUris).
@@ -30,10 +30,10 @@ The **coloumns** are specific for the database you are accessing. You can get th
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Contacts
 function OnStart()
@@ -55,9 +55,9 @@ function OnStart()
     lst.SetList( list );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Contacts
 from native import app
@@ -79,5 +79,3 @@ def OnStart():
 
     lst.SetList(contact_list)
  */
-    
-            

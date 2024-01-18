@@ -3,15 +3,15 @@
 
 /** # SendText #
  * @brief Share text between apps
- * 
- * $$ app.SendText(text, subject?, choose?) $$ 
- * @param {str} text 
- * @param {str} [subject] 
- * @param {str} [choose] 
+ *
+ * $$ app.SendText(text, subject?, choose?) $$
+ * @param {str} text
+ * @param {str} [subject]
+ * @param {str} [choose]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 This Method is used for sharing text between apps.
@@ -26,10 +26,10 @@ See Also: @SendFile
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
@@ -37,9 +37,9 @@ function OnStart()
     <b>app.SendText("Hello World", "My Subject", "Choose an app");</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
@@ -47,5 +47,3 @@ from native import app
 def OnStart():
     app.SendText("Hello World", "My Subject", "Choose an app")
  */
-    
-            

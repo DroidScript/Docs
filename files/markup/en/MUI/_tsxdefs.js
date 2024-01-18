@@ -2,14 +2,14 @@
 
 
 /** # _tsxdefs #
- * 
- * $$ MUI._tsxdefs() $$ 
+ *
+ * $$ MUI._tsxdefs() $$
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Button r/CreateButton\w+/ */

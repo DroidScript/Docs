@@ -3,19 +3,19 @@
 
 /** # CreateTabFixed #
  * @abbrev tbf
- * 
- * $$ tbf = MUI.CreateTabFixed(title, width=-1, height=-1, options?, color?, animation?) $$ 
+ *
+ * $$ tbf = MUI.CreateTabFixed(title, width=-1, height=-1, options?, color?, animation?) $$
  * @param {str_com} title titles
- * @param {num} [width=-1] 
- * @param {num} [height=-1] 
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
  * @param {str_com} [options] DS layout options
- * @param {str_col} [color] 
- * @param {bin} [animation] 
+ * @param {str_col} [color]
+ * @param {bin} [animation]
  * @returns obj
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Creates a simple fixed tab.
@@ -35,7 +35,7 @@ To add a callback when the user selects a tab use the **SetOnSelect** method.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### GetLayout ###
@@ -49,7 +49,7 @@ To add a callback when the user selects a tab use the **SetOnSelect** method.
 /** ### SetActiveTabByIndex ###
  * Open the a tab by passing an index
  * $$ tbf.SetActiveTabByIndex(index) $$
- * @param {num} index 
+ * @param {num} index
  */
 
 
@@ -82,7 +82,7 @@ To add a callback when the user selects a tab use the **SetOnSelect** method.
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ tbf.GetType() $$
  * @returns str-Tab
  */
@@ -107,10 +107,10 @@ To add a callback when the user selects a tab use the **SetOnSelect** method.
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -142,9 +142,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Slide Animation
 cfg.Light
@@ -176,9 +176,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Callback
 cfg.Light
@@ -216,9 +216,9 @@ function OnSelect(name, index)
     app.ShowPopup(name+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No-options
 from native import app
@@ -244,9 +244,9 @@ def OnStart():
 def OnTouch(title, body, index):
     app.ShowPopup(title+" : "+body+" : "+index)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With-Color No Options
 from native import app
@@ -272,9 +272,9 @@ def OnStart():
 def OnTouch(title, body, index):
     app.ShowPopup(title+" : "+body+" : "+index)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Selectable
 from native import app
@@ -314,9 +314,9 @@ def GetSelectedItems():
         item = lsm.GetItem(items[i])
         app.Alert(app.JSONstringify(item))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python CreateListInitialIcon
 from native import app
@@ -338,9 +338,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python CreateListMaterialIcon
 from native import app
@@ -375,12 +375,10 @@ def GetSelectedItems():
         item = lsm.GetItem(items[i])
         app.Alert(app.JSONstringify(item))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python CreateListWithAvatar
 
  */
-    
-            

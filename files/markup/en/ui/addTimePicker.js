@@ -5,7 +5,7 @@
  * @abbrev tpk
  * @brief addTimePicker
  * Adds a time picker component to the app.
- * $$ tpk = ui.addTimePicker(time, options?) $$ 
+ * $$ tpk = ui.addTimePicker(time, options?) $$
  * @param {str} time A default time value to which the timepicker begins. Value is of the form `HH\:mm`
  * @param {str_com} [options] `Portrait` `24H` `12H`
  * @returns uio-TimePicker
@@ -14,7 +14,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### format
@@ -23,17 +23,17 @@
  * @returns str
  */
 
-                    
+
 /** ### show ###
  * @brief show
  * Show the date picker the dialog
- * 
+ *
  * Hide the date picker dialog
- * 
+ *
  * Sets a callback function to execute when date picker dialog is submitted
- * 
+ *
  * Sets the format of the date to be passed into the onSelect callback
- * 
+ *
  * Get the current visibility of the date picker
  * $$ tpk.show(callback, format) $$
  * @param {fnc_json} callback {"pNames":["value"],"pTypes":["str-The selected time of the form `HH:MM:SS`. Change the format by setting the `format` property."]}
@@ -43,10 +43,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 class Main extends App
@@ -59,7 +59,7 @@ class Main extends App
         // button to show time picker
         this.btn = ui.addButton( this.main, "Show Time Picker", "Outlined,Secondary", 0.2 )
         this.btn.setOnTouch( this.showTimePicker )
-        
+
         // Initialize time picker
         this.tpk = ui.addTimePicker()
         this.tpk.setOnSelect( this.onSelect )
@@ -77,9 +77,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -98,5 +98,3 @@ def showTimePicker(event):
 def onSelect(value):
     print(value)
  */
-    
-            

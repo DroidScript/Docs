@@ -5,7 +5,7 @@
  * @abbrev dlg
  * @brief addDialog
  * Adds a dialog into your app.
- * $$ dlg = ui.addDialog(title, body, actions?, options?) $$ 
+ * $$ dlg = ui.addDialog(title, body, actions?, options?) $$
  * @param {str} title The dialog title text.
  * @param {str} body The dialog message to be shown.
  * @param {str} [actions] A comma separated text for action buttons.
@@ -16,7 +16,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### layout
@@ -25,28 +25,28 @@
  * @returns uio-addLayout
  */
 
-                    
+
 /** ### text
  * @prop
  * Sets or returns the dialog text.
  * @returns str
  */
 
-                    
+
 /** ### titleColor
  * @prop
  * Sets or returns the title text color in hexadecimal format.
  * @returns str
  */
 
-                    
+
 /** ### titleText
  * @prop
  * Sets or returns the dialog title text.
  * @returns str
  */
 
-                    
+
 /** ### setOnAction ###
  * @brief setOnAction
  * Adds a callback function when the action buttons are click
@@ -78,10 +78,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 class Main extends App
@@ -109,9 +109,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample NoCancel
 class Main extends App
@@ -157,9 +157,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Adding controls to the dialog
 class Main extends App
@@ -209,9 +209,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -235,9 +235,9 @@ def showDialog(event):
     # Show the Dialog component when the button is clicked.
     dlg.show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python NoCancel
 from hybrid import ui
@@ -273,9 +273,9 @@ def onAction(action, index):
     else:
         ui.showPopup("Oops! You can't close me here.")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Adding controls to the dialog
 from hybrid import ui
@@ -317,5 +317,3 @@ def onAction(action, index):
         # Change the text of the text control.
         txt.text = "Email: " + tfd.text
  */
-    
-            

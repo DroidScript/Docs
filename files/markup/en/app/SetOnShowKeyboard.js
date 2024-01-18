@@ -4,19 +4,19 @@
 /** # SetOnShowKeyboard #
  * @brief Called on keyboard visibility changes
  * Define a callback function to detect when keyboard visible state has changed.
- * 
+ *
  * See Also: @ShowKeyboard, @HideKeyboard
- * $$ app.SetOnShowKeyboard(callback) $$ 
+ * $$ app.SetOnShowKeyboard(callback) $$
  * @param {fnc_json} callback {"pNames":["shown"],"pTypes":["bin"]}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Toggle Keyboard
 function OnStart()
@@ -47,9 +47,9 @@ function tgl_OnTouch( show )
     app.ShowPopup( "Keyboard shown: " + shown );
 }</b>
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Toggle Keyboard
 from native import app
@@ -79,5 +79,3 @@ def tgl_OnTouch( show ):
 <b>def OnKeyboard( shown ):
     app.ShowPopup( "Keyboard shown: " + shown )</b>
  */
-    
-            

@@ -4,14 +4,14 @@
 /** # CreateNetClient #
  * @abbrev net
  * @brief Returns a new NetClient object
- * 
- * $$ net = app.CreateNetClient(type) $$ 
+ *
+ * $$ net = app.CreateNetClient(type) $$
  * @param {str_lst} type UDP:fast but does not guarantee data correctness|TCP:slow but guarantees data correctness,Raw:drop 4 Byte header before every message
  * @returns dso-NetClient
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 NetClients can be used to communicate with servers on the web. You can choose between two different protocols:
@@ -23,15 +23,15 @@ Note: A few routers block fast UDP messages by default
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AutoReceive ###
  * @brief Calls the OnReceive callback for incoming TCP data
  * Receive TCP received data automatically by calling the OnReceive callback.
  * $$ net.AutoReceive(server, port=80, mode?) $$
- * @param {str_url} server 
- * @param {num_int} [port=80] 
+ * @param {str_url} server
+ * @param {num_int} [port=80]
  * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  */
 
@@ -48,8 +48,8 @@ Note: A few routers block fast UDP messages by default
  * @brief Connect to a server
  * Connect the NetClient to a server.
  * $$ net.Connect(address, port=80) $$
- * @param {str_url} address 
- * @param {num_int} [port=80] 
+ * @param {str_url} address
+ * @param {num_int} [port=80]
  */
 
 
@@ -63,7 +63,7 @@ Note: A few routers block fast UDP messages by default
 /** ### DownloadFile ###
  * Downloads a file via TCP from the server.
  * $$ net.DownloadFile(file) $$
- * @param {str_url} file 
+ * @param {str_url} file
  */
 
 
@@ -103,8 +103,8 @@ Note: A few routers block fast UDP messages by default
  * Receive an UDP Datagram.
  * $$ net.ReceiveDatagram(mode?, port=80, timeout?, options?) $$
  * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {num_int} [port=80] 
- * @param {num} [timeout] 
+ * @param {num_int} [port=80]
+ * @param {num} [timeout]
  * @param {str_lst} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
  * @returns str
  */
@@ -114,7 +114,7 @@ Note: A few routers block fast UDP messages by default
  * @brief Receive UDP datagrams
  * Receive datagrams over UDP and calls the OnReceive callback for each one.
  * $$ net.ReceiveDatagrams(port=80, mode?, options?) $$
- * @param {num_int} [port=80] 
+ * @param {num_int} [port=80]
  * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  * @param {str_lst} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
  */
@@ -123,8 +123,8 @@ Note: A few routers block fast UDP messages by default
 /** ### ReceiveFile ###
  * Receive a file via TCP from the server.
  * $$ net.ReceiveFile(file, wait?) $$
- * @param {str} file 
- * @param {num} [wait] 
+ * @param {str} file
+ * @param {num} [wait]
  * @returns str
  */
 
@@ -141,10 +141,10 @@ Note: A few routers block fast UDP messages by default
 /** ### ReceiveVideoStream ###
  * @brief Receive video over UDP
  * Receive video from TCP connection.
- * 
+ *
  * <premium>
  * $$ net.ReceiveVideoStream(port, img) $$
- * @param {num} port 
+ * @param {num} port
  * @param {dso} img CreateImage
  * @returns str
  */
@@ -161,10 +161,10 @@ Note: A few routers block fast UDP messages by default
 /** ### SendDatagram ###
  * Send an UDP Datagram.
  * $$ net.SendDatagram(data, mode?, address?, port?, options?) $$
- * @param {str} data 
+ * @param {str} data
  * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {str_url} [address] 
- * @param {num_int} [port] 
+ * @param {str_url} [address]
+ * @param {num_int} [port]
  * @param {str} [options] Text|Hex|Bytes
  */
 
@@ -184,15 +184,15 @@ Note: A few routers block fast UDP messages by default
  * <table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
  * $$ net.SetSplitMode(mode, p2?, p3?) $$
  * @param {str} mode End|Start-End|Size
- * @param {str||num_int} [p2] 
- * @param {str||num_int} [p3] 
+ * @param {str||num_int} [p2]
+ * @param {str||num_int} [p3]
  */
 
 
 /** ### SendText ###
  * Sends text over TCP connection.
  * $$ net.SendText(text, mode?) $$
- * @param {str} text 
+ * @param {str} text
  * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  */
 
@@ -225,26 +225,26 @@ Note: A few routers block fast UDP messages by default
  * @brief Timeout between two receive checks
  * Define an interval in which the client should check for new messages.
  * $$ net.SetTimeout(seconds) $$
- * @param {num_sec} seconds 
+ * @param {num_sec} seconds
  */
 
 
 /** ### WakeOnLan ###
  * @brief Wake up devices if they are configured to
  * Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it.
- * 
+ *
  * <premium>
  * $$ net.WakeOnLan(ip, mac?) $$
- * @param {str} ip 
- * @param {str} [mac] 
+ * @param {str} ip
+ * @param {str} [mac]
  */
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample TCP Basic
 function OnStart()
@@ -281,9 +281,9 @@ function net_OnConnect( connected )
     net.Disconnect();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample TCP AutoReceive
 function OnStart()
@@ -329,9 +329,9 @@ function OnReceive( s )
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample UDP Messaging
 function OnStart()
@@ -372,9 +372,9 @@ function CheckForMsg()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python TCP Basic
 from native import app
@@ -415,9 +415,9 @@ def net_OnConnect(connected):
 
     net.Disconnect()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python TCP AutoReceive
 from native import app
@@ -463,9 +463,9 @@ def OnReceive(s):
         web.LoadHtml(msg)
         msg = ""
  */
-    
-            
-    
+
+
+
 /**
 @sample Python UDP Messaging
 from native import app
@@ -501,5 +501,3 @@ def CheckForMsg():
         if parts[0] != id:
             app.ShowPopup(parts[1])
  */
-    
-            

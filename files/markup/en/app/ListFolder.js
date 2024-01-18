@@ -3,17 +3,17 @@
 
 /** # ListFolder #
  * @brief Get a list of files ans folders contained in a specific folder
- * 
- * $$ app.ListFolder(path, filter?, limit?, options?) $$ 
+ *
+ * $$ app.ListFolder(path, filter?, limit?, options?) $$
  * @param {str_pth} path must not have a trailing slash
- * @param {str} [filter] 
- * @param {num_int} [limit] 
+ * @param {str} [filter]
+ * @param {num_int} [limit]
  * @param {str_com} [options] Alphasort:sorts the paths in alphabetical order,FullPath:returns absolute paths to the listed items,RegEx:accepts regexp patterns,Folders:list folders only,Files:list files only,NoEmpty:hide empty folders,project:Shows DS project folders only
  * @returns lst-[ paths:str_pth ]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The ListFolder method returns a list of all files and folders in a given folder.
@@ -26,10 +26,10 @@ See Also: @WalkFolder, @IsFolder, @CreateList
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample List home directory
 function OnStart()
@@ -40,9 +40,9 @@ function OnStart()
 	ldg.Show();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample List .jpg assets
 function OnStart()
@@ -53,9 +53,9 @@ function OnStart()
 	ldg.Show();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python List home directory
 from native import app
@@ -66,9 +66,9 @@ def OnStart():
     ldg = app.CreateListDialog("/sdcard/*", list)
     ldg.Show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python List .jpg assets
 from native import app
@@ -79,5 +79,3 @@ def OnStart():
     ldg = app.CreateListDialog("/Sys/Img/*.jpg", list)
     ldg.Show()
  */
-    
-            

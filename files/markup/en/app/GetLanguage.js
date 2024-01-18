@@ -5,19 +5,19 @@
  * @brief Get device language
  * GetLanguage returns the name of the devices language (ie. “English” or “Deutsch”).
  * %c
- * 
+ *
  * See Also: @GetLanguageCode, @GetCountry
- * $$ app.GetLanguage() $$ 
+ * $$ app.GetLanguage() $$
  * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show User Language
 function OnStart()
@@ -26,16 +26,14 @@ function OnStart()
     app.Alert( lang );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     lang = app.GetLanguage()
     app.Alert( lang )
  */
-    
-            

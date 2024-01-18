@@ -4,19 +4,19 @@
 /** # CreateTextEditFilledA #
  * @abbrev tef
  * Creates an active filled material text input.
- * $$ tef = MUI.CreateTextEditFilledA(width?, options?, hint?, label?, color?) $$ 
- * @param {num} [width] 
+ * $$ tef = MUI.CreateTextEditFilledA(width?, options?, hint?, label?, color?) $$
+ * @param {num} [width]
  * @param {str} [options] DS TextEdit options
  * @param {str} [hint] Hint|Label text
  * @param {bin} [label] Show or hide label
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
@@ -72,10 +72,10 @@
 /** @extern SetOnTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample No Label
 cfg.Light
@@ -94,9 +94,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Label
 cfg.Light
@@ -115,9 +115,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SetOnEnter Callback
 cfg.Dark
@@ -142,9 +142,9 @@ function OnEnter()
     app.ShowPopup(this.GetText())
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No Label
 # cfg.Light, cfg.MUI
@@ -162,9 +162,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Label
 # cfg.Light, cfg.MUI
@@ -182,9 +182,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetOnEnter Callback
 # cfg.Dark, cfg.MUI
@@ -206,5 +206,3 @@ def OnStart():
 def OnEnter():
     app.ShowPopup(this.GetText())
  */
-    
-            

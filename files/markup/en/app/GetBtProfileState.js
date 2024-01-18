@@ -4,9 +4,9 @@
 /** # GetBtProfileState #
  * @brief Returns Bluetooth type connected state
  * Returns the Bluetooth State of a given Bt connection type.
- * 
+ *
  * See Also: @CreateBluetoothSerial
- * $$ app.GetBtProfileState(type) $$ 
+ * $$ app.GetBtProfileState(type) $$
  * @param {str} type a2dp|headset|gatt|health
  * @returns str-Connected|Disconnected
 */
@@ -14,10 +14,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Bluetooth Profile State
 function OnStart()
@@ -34,9 +34,9 @@ function OnStart()
     app.Alert( lst.join( "\n" ) );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Bluetooth Profile State
 from native import app
@@ -51,5 +51,3 @@ def OnStart():
 
     app.Alert('\n'.join(lst))
  */
-    
-            

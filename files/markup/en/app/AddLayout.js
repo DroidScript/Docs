@@ -5,9 +5,9 @@
  * @brief Adds a layout to the app
  * AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)
  * When @CreateLayout arguments are passed it will create the layout just like app.CreateLayout and also add it.
- * 
+ *
  * See Also: @RemoveLayout
- * $$ app.AddLayout(layout, type?, options?) $$ 
+ * $$ app.AddLayout(layout, type?, options?) $$
  * @param {dso} layout CreateLayout
  * @param {str} [type] Linear|Absolute|Frame|Card
  * @param {str_lst} [options] TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
@@ -17,10 +17,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Vertical
 function OnStart()
@@ -34,9 +34,9 @@ function OnStart()
 	<b>app.AddLayout( lay );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Vertical
 from native import app
@@ -50,5 +50,3 @@ def OnStart():
 
     <b>app.AddLayout( lay )</b>
  */
-    
-            

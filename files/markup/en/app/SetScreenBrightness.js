@@ -4,17 +4,17 @@
 /** # SetScreenBrightness #
  * @brief Change screen brightness
  * Change the screen brightness to a value between 0 and 1, where 0 is the lowest and 1 the highest possible brightness value.
- * $$ app.SetScreenBrightness(level) $$ 
- * @param {num_frc} level 
+ * $$ app.SetScreenBrightness(level) $$
+ * @param {num_frc} level
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample SetScreenBrightness Demo
 function OnStart()
@@ -35,9 +35,9 @@ function SetScreenBrightness( level )
     app.SetScreenBrightness( level );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetScreenBrightness Demo
 from native import app
@@ -56,5 +56,3 @@ def OnStart():
 def SetScreenBrightness( level ):
     app.SetScreenBrightness( level )
  */
-    
-            

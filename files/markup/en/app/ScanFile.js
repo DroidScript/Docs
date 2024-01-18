@@ -4,19 +4,19 @@
 /** # ScanFile #
  * @brief Adds media files to phone gallery
  * Forces android to scan an image file to appear in the phone's gallery.
- * 
+ *
  * See also: @CreateImage, @CreateCameraView, @ScreenShot.
- * $$ app.ScanFile(file) $$ 
- * @param {str_ptf} file 
+ * $$ app.ScanFile(file) $$
+ * @param {str_ptf} file
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Add Image to Gallery
 function OnStart()
@@ -30,9 +30,9 @@ function OnStart()
     app.ChooseImage();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Add Image to Gallery
 from native import app
@@ -46,5 +46,3 @@ def OnStart():
     app.ScanFile( "circle.jpg" )
     app.ChooseImage()
  */
-    
-            

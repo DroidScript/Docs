@@ -3,17 +3,17 @@
 
 /** # CreateListModern #
  * @abbrev lsm
- * 
- * $$ lsm = MUI.CreateListModern(list, width=-1, height=-1, options?) $$ 
+ *
+ * $$ lsm = MUI.CreateListModern(list, width=-1, height=-1, options?) $$
  * @param {lst} list An array of object elements. See list example
- * @param {num} [width=-1] 
- * @param {num} [height=-1] 
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
  * @param {str} [options] Initial|Material|Avatar|RightIcon|RightNote|Selectable
  * @returns obj
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 A modern implementation of list using the available controls of DroidScript.
@@ -37,7 +37,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnTouch ###
@@ -65,7 +65,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
 /** ### SetSelectable ###
  * Enable or disable selectable option.
  * $$ lsm.SetSelectable(selectable) $$
- * @param {bin} selectable 
+ * @param {bin} selectable
  */
 
 
@@ -86,7 +86,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
 /** ### RemoveItem ###
  * Removes a single item in the list.
  * $$ lsm.RemoveItem(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -101,7 +101,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
  * Set a new title to a respective index
  * $$ lsm.SetTitleText(newTitle, index) $$
  * @param {str} newTitle New title text
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -109,7 +109,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
  * Set a new body to a respective index
  * $$ lsm.SetBodyText(newBody, index) $$
  * @param {str} newBody New body text
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -117,7 +117,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
  * Set a new material icon to the right icon
  * $$ lsm.SetRightIcon(newIcon, index) $$
  * @param {str} newIcon New right icon
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -125,7 +125,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
  * Set a new note text for a respective item on the list
  * $$ lsm.SetNoteText(newNote, index) $$
  * @param {str} newNote New note text
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -158,7 +158,7 @@ ListModern has lots of very useful function you can use to manipulate your list.
 /** ### GetItem ###
  * Returns the respective item in the list
  * $$ lsm.GetItem(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  * @returns obj
  */
 
@@ -173,14 +173,14 @@ ListModern has lots of very useful function you can use to manipulate your list.
 /** ### Highlight ###
  * Highlight a respective item in the list
  * $$ lsm.Highlight(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
 /** ### RemoveHighlight ###
  * Removes a highlight to a respective item in the list
  * $$ lsm.RemoveHighlight(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -188,15 +188,15 @@ ListModern has lots of very useful function you can use to manipulate your list.
  * Set a new image to a respective item in the list
  * $$ lsm.SetImage(newImagePath, index) $$
  * @param {str_ptf} newImagePath Path to the new image
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
 /** ### SetItem ###
- * 
+ *
  * $$ lsm.SetItem(data, index) $$
  * @param {obj} data A single element of the list object
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -245,10 +245,10 @@ ListModern has lots of very useful function you can use to manipulate your list.
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample No-options
 cfg.Light
@@ -279,9 +279,9 @@ function OnTouch(title, body, index)
     app.ShowPopup(title+" : "+body+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With-Color No Options
 cfg.Light
@@ -312,9 +312,9 @@ function OnTouch(title, body, index)
     app.ShowPopup(title+" : "+body+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Selectable
 cfg.Dark
@@ -362,9 +362,9 @@ function GetSelectedItems()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample CreateListInitialIcon
 cfg.Dark
@@ -389,9 +389,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample CreateListMaterialIcon
 cfg.Dark
@@ -432,9 +432,9 @@ function GetSelectedItems()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample CreateListWithAvatar
 cfg.Light
@@ -475,9 +475,9 @@ function GetSelectedItems()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample RemoveItems
 cfg.Dark
@@ -526,9 +526,9 @@ function RemoveSelected()
     lsm.RemoveItems(items)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No-options
 # cfg.Light, cfg.MUI
@@ -556,9 +556,9 @@ def OnStart():
 def OnTouch(title, body, index):
     app.ShowPopup(title + " : " + body + " : " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With-Color No Options
 # cfg.Light, cfg.MUI
@@ -586,9 +586,9 @@ def OnStart():
 def OnTouch(title, body, index):
     app.ShowPopup(title + " : " + body + " : " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Selectable
 # cfg.Dark, cfg.MUI
@@ -631,9 +631,9 @@ def GetSelectedItems():
         item = lsm.GetItem(items[i])
         app.Alert(json.dumps(item))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python CreateListInitialIcon
 # cfg.Dark, cfg.MUI
@@ -657,9 +657,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python CreateListMaterialIcon
 # cfg.Dark, cfg.MUI
@@ -691,5 +691,3 @@ def OnStart():
 
 def GetSelected
  */
-    
-            

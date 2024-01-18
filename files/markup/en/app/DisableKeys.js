@@ -3,13 +3,13 @@
 
 /** # DisableKeys #
  * @brief Disable specific device keys
- * 
- * $$ app.DisableKeys(keyList) $$ 
+ *
+ * $$ app.DisableKeys(keyList) $$
  * @param {str_com} keyList VOLUME_DOWN,VOLUME_UP,FORWARD,BACK,MENU,ENTER,...
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 DisableKeys prevents the default behavior of several hard, soft or keyboard keys.
@@ -20,10 +20,10 @@ You can find the complete list of keycodes on the [Android Developer Page](https
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Surprise
 var prev;
@@ -54,9 +54,9 @@ function OnKey(action, name, code, extra)
     prev = action;
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Surprise
 from native import app
@@ -87,5 +87,3 @@ def OnKey(action, name, code, extra):
             lay.Animate( "SlideToBottom"  , None, 300 )
     prev = action
  */
-    
-            

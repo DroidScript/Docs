@@ -5,9 +5,9 @@
  * @abbrev tab
  * @brief addTabs
  * Adds a Tabs Component into your layout.
- * 
+ *
  *  Default Tab variant for mobile screens is <col nobox #4c4>fullWidth</col> unless provided.
- * $$ tab = ui.addTabs(parent, list?, options?, width?, height?) $$ 
+ * $$ tab = ui.addTabs(parent, list?, options?, width?, height?) $$
  * @param {obj} parent The parent layout where to add the Tabs Component.
  * @param {lst} [list] An array of tab names.
  * @param {str_com} [options] Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
@@ -19,7 +19,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -28,287 +28,287 @@
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### centered
  * @prop
  * Sets or returns a boolean value whether the tabs are centered or not.
  * @returns bin
  */
 
-                    
+
 /** ### color
  * @prop
  * Sets or returns the theme color of the tab bar. Values can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### elevation
  * @prop
  * Sets or returns the elevation of the tab bar. Make sure to pass a <col nobox #fb8c00>Paper</col> option for this to work.
  * @returns num
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### iconColor
  * @prop
  * Sets or returns the color ofthe tab icon.
  * @returns str
  */
 
-                    
+
 /** ### iconSize
  * @prop
  * Sets or returns the tab icon.
  * @returns num
  */
 
-                    
+
 /** ### indicatorColor
  * @prop
  * Sets or returns the color of the indicator bar. You can pass theme color <col nobox #fb8c00>primary</col> or <col nobox #fb8c00>secondary</col> or in hexadecimal format <col nobox #fb8c00>#rrggbb</col>.
  * @returns str
  */
 
-                    
+
 /** ### indicatorRadius
  * @prop
  * Sets or returns the corner radius of the indicator bar in pixels.
  * @returns num
  */
 
-                    
+
 /** ### indicatorThickness
  * @prop
  * Sets or returns the thickness of the indicator bar in pixels.
  * @returns num
  */
 
-                    
+
 /** ### indicatorWidth
  * @prop
  * Sets or returns the width of the indicator bar as a fraction of the tab item width. Works only on <col nobox #fb8c00>FullWidth</col> tab.
  * @returns num
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### scrollButtonMode
  * @prop
  * Sets or returns the scroll button mode when tab items overflow the width of its container. Values are <col nobox #fb8c00>auto</col> <col nobox #fb8c00>desktop</col> <col nobox #fb8c00>on</col> and <col nobox #fb8c00>of</col>.
  * @returns str
  */
 
-                    
+
 /** ### tabHeight
  * @prop
  * Sets or returns the height of the tab in pixels.
  * @returns num
  */
 
-                    
+
 /** ### tabPadding
  * @prop
  * Sets or returns the padding of the tab items. The return objects has the following props: <col nobox #fb8c00>left</col>, <col nobox #fb8c00>top</col>, <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col>. You can pass an object to set paddings on all side or see <col nobox #fb8c00>setTabPadding</col> method.
  * @returns num
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the theme color for the tab bar titles <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>. You can also pass a hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### variant
  * @prop
  * Sets or returns the variant of the Tabs Component. Values can be <col nobox #fb8c00>Standard</col> <col nobox #fb8c00>Scrollable</col> or <col nobox #fb8c00>FullWidth</col>
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### setOnChange ###
  * @brief setOnChange
  * Sets a callback function when the value of the tab changes
@@ -528,10 +528,10 @@
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 class Main extends App
@@ -573,9 +573,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Icon
 class Main extends App
@@ -621,9 +621,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Swipeable tabs
 class Main extends App
@@ -649,7 +649,7 @@ class Main extends App
         this.tab1.options = "VCenter"
         this.tab1.backColor = "yellow"
         this.txt = ui.addText(this.tab1, "<--- Swipe to the left", "Center", 1)
-        
+
         // get the second tab and add a button control.
         this.tab2 = this.tabs.getLayout(1)
         this.tab2.backColor = "green"
@@ -665,9 +665,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Open tabs dynamically
 class Main extends App
@@ -712,7 +712,7 @@ class Main extends App
             this.tabs.showTabByIndex( 2 )
         })
 
-        // get the third tab and add a button control 
+        // get the third tab and add a button control
         // to open the first tab by its tab name
         this.tab3 = this.tabs.getLayout(2)
         this.tab3.options = "VCenter"
@@ -728,9 +728,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Icon only
 class Main extends App
@@ -777,9 +777,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Custom colors and sizes
 class Main extends App
@@ -807,9 +807,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -834,9 +834,9 @@ def OnStart():
 
     ui.addText(main, text, "Justify", 0.8)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Icon
 from hybrid import ui
@@ -877,9 +877,9 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Swipeable tabs
 from hybrid import ui
@@ -916,9 +916,9 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Open tabs dynamically
 from hybrid import ui
@@ -968,12 +968,10 @@ def OnStart():
 def onChange(tab, index):
     ui.showPopup( tab + " : Index " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Icon only
 
  */
-    
-            

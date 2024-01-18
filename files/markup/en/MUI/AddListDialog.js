@@ -4,11 +4,11 @@
 /** # AddListDialog #
  * @abbrev lsd
  * Adds a more customizable list dialog or checklist dialog. See @CreateListDialog and @CreateCheckList for a full documentation on each type.
- * $$ lsd = MUI.AddListDialog(parent, title, list, color?, options?) $$ 
+ * $$ lsd = MUI.AddListDialog(parent, title, list, color?, options?) $$
  * @param {dso} parent @../app/CreateTextEdit
- * @param {str} title 
+ * @param {str} title
  * @param {lst} list An array of objects
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @param {str_com} [options] CheckList|ListDialog|Bottom
  * @returns obj
 */
@@ -16,10 +16,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample AddPicker
 cfg.Light
@@ -65,9 +65,9 @@ function ShowChecklist()
     ckl.Show()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python AddPicker
 # cfg.Light, cfg.MUI
@@ -109,5 +109,3 @@ def ShowListDialog():
 def ShowChecklist():
     ckl.Show()
  */
-    
-            

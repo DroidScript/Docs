@@ -4,22 +4,22 @@
 /** # LoadBoolean #
  * @brief Load saved boolean value
  * Load a saved boolean value to remember varibale values between multiple app starts.
- * 
+ *
  * See also: @SaveBoolean.
- * $$ app.LoadBoolean(name, default?, file?) $$ 
- * @param {str} name 
- * @param {bin} [default] 
- * @param {str_ptf} [file] 
+ * $$ app.LoadBoolean(name, default?, file?) $$
+ * @param {str} name
+ * @param {bin} [default]
+ * @param {str_ptf} [file]
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Detect First Start
 var file = "demofile";
@@ -36,11 +36,11 @@ function OnStart()
 	app.SaveBoolean( "first", false, file );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -55,5 +55,3 @@ def OnStart():
 
     app.SaveBoolean("first", False, file)
  */
-    
-            

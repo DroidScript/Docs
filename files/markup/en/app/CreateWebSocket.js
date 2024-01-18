@@ -4,17 +4,17 @@
 /** # CreateWebSocket #
  * @abbrev wbs
  * @brief Returns a new WebSocket object
- * 
- * $$ wbs = app.CreateWebSocket(ip, id?, retry?, options?) $$ 
- * @param {str} ip 
- * @param {str} [id] 
- * @param {num_int} [retry] 
- * @param {str} [options] 
+ *
+ * $$ wbs = app.CreateWebSocket(ip, id?, retry?, options?) $$
+ * @param {str} ip
+ * @param {str} [id]
+ * @param {num_int} [retry]
+ * @param {str} [options]
  * @returns dso-WebSocket
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 WebSocket are useful when constantly comminicating with a server and when a fast reaction time is required.
@@ -27,7 +27,7 @@ See Also: @CreateWebServer
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -59,7 +59,7 @@ See Also: @CreateWebServer
  * @brief Send message to server
  * Send a message to the server
  * $$ wbs.Send(message) $$
- * @param {str} message 
+ * @param {str} message
  */
 
 
@@ -88,10 +88,10 @@ See Also: @CreateWebServer
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -129,9 +129,9 @@ function OnSockClose()
     app.ShowPopup( "Disconnected" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -166,5 +166,3 @@ def OnSockOpen():
 def OnSockClose():
     app.ShowPopup("Disconnected")
  */
-    
-            

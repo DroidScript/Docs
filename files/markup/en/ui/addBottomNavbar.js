@@ -4,8 +4,8 @@
 /** # addBottomNavbar #
  * @abbrev bmn
  * @brief addBottomNavbar
- * 
- * $$ bmn = ui.addBottomNavbar(parent, navs, options?, width?, height?) $$ 
+ *
+ * $$ bmn = ui.addBottomNavbar(parent, navs, options?, width?, height?) $$
  * @param {obj} parent The parent layout where to add the BottomNavbar
  * @param {lst} navs An array whose elements are of the form `[ "Title", "Icon" ]`
  * @param {str_com} [options] one or a combination of the following: `Hidelabels`
@@ -15,7 +15,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Adds a bottom navigation bar to your app.
@@ -38,7 +38,7 @@ These are the setter and getter properties for the addBottomNavbar Component.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absLeft
@@ -47,224 +47,224 @@ These are the setter and getter properties for the addBottomNavbar Component.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns whether the bottom navigation is disabled or enabled. All navigation actions must be disabled to return <col nobox #fb8c00>true</col>. Otherwise, it will return <col nobox #fb8c00>false</col>.
  * @returns bin
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### iconColor
  * @prop
  * Sets or returns the icon color. You can pass color in a hexadecimal format or rgb format.
  * @returns str
  */
 
-                    
+
 /** ### iconSize
  * @prop
  * Sets or returns the icon font-size. You can also pass string values such as <col nobox #fb8c00>1.2rem</col> or <col nobox #fb8c00>18px</col>.
  * @returns num
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### labels
  * @prop
  * Sets or returns a boolean whether the labels are shown or hidden on active state.
  * @returns bin
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### list
  * @prop
  * Sets or returns the navigation actions array. See <col nobox #fb8c00>navs</col> params above for format.
  * @returns lst
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the color of the text.
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### value
  * @prop
  * Sets or returns the current value of the BottomNavbar. This is the index of the corresponding selected action.
  * @returns num
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### setOnContextMenu ###
  * @brief setOnContextMenu
  * Adds a callback function on right click
@@ -462,10 +462,10 @@ These are the setter and getter properties for the addBottomNavbar Component.
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Sample navs array.
 var navs = [
@@ -474,9 +474,9 @@ var navs = [
         [ "Folder", "folder" ]
     ]
  */
-    
-            
-    
+
+
+
 /**
 @sample Basic
 class Main extends App
@@ -506,9 +506,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Hide or show labels
 class Main extends App
@@ -556,9 +556,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Custom styles
 class Main extends App
@@ -589,9 +589,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sample navs array.
 from native import cfg
@@ -602,9 +602,9 @@ navs = [
     ["Folder", "folder"]
 ]
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -629,9 +629,9 @@ def OnStart():
 def onChange(text, index):
     ui.showPopup(text)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Hide or show labels
 from hybrid import ui
@@ -671,9 +671,9 @@ def hideLabels(event):
 def onChange(text, index):
     ui.showPopup(text)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Custom styles
 from hybrid import ui
@@ -701,5 +701,3 @@ def OnStart():
     # Set the icon size
     bmn.iconSize = "2rem"
  */
-    
-            

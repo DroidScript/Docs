@@ -4,14 +4,14 @@
 /** # CreateCloudStore #
  * @abbrev cld
  * @brief Returns a new CloudStore object
- * 
- * $$ cld = app.CreateCloudStore(apiKey) $$ 
- * @param {str} apiKey 
+ *
+ * $$ cld = app.CreateCloudStore(apiKey) $$
+ * @param {str} apiKey
  * @returns dso-CloudStore
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The CloudStore component allows you to easily store and retrieve app data (as a simple or complex JSON object) from a cloud.
@@ -45,7 +45,7 @@ combine the parts only when making CloudStore API calls.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -61,7 +61,7 @@ combine the parts only when making CloudStore API calls.
  * @brief Deletes a file in the cloud.
  * Deletes a file in the cloud.
  * $$ cld.Delete(file, callback) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  * @param {fnc_json} callback {"pNames":["success","result","status"],"pTypes":["bin","obj-{data:str,error:str}","num_int"]}
  */
 
@@ -70,7 +70,7 @@ combine the parts only when making CloudStore API calls.
  * @brief Lists files of the cloud.
  * Lists files of the cloud.
  * $$ cld.List(filter, callback) $$
- * @param {str} filter 
+ * @param {str} filter
  * @param {fnc_json} callback {"pNames":["error","result","status"],"pTypes":["bin","obj-{data:str_com,error:str}","num_int"]}
  */
 
@@ -79,8 +79,8 @@ combine the parts only when making CloudStore API calls.
  * @brief Loads data from the cloud.
  * Loads data from the cloud.
  * $$ cld.Load(file, callback, options?) $$
- * @param {str_ptf} file 
- * @param {str} callback 
+ * @param {str_ptf} file
+ * @param {str} callback
  * @param {fnc_json} [options] {"pNames":["error","result","status"],"pTypes":["bin","obj-{data:all,error:str}","num_int"]}
  */
 
@@ -89,8 +89,8 @@ combine the parts only when making CloudStore API calls.
  * @brief Merges data in the cloud.
  * Merges an object with an already existing in the cloud.
  * $$ cld.Merge(file, data, callback?) $$
- * @param {str_ptf} file 
- * @param {obj} data 
+ * @param {str_ptf} file
+ * @param {obj} data
  * @param {fnc_json} [callback] {"pNames":["success","result","status"],"pTypes":["bin","obj-{data:str-Entry Saved,error:str}","num_int"]}
  */
 
@@ -99,10 +99,10 @@ combine the parts only when making CloudStore API calls.
  * @brief Saves data in the cloud.
  * Saves data in the cloud.
  * $$ cld.Save(file, data, callback?, options?) $$
- * @param {str_ptf} file 
- * @param {all} data 
+ * @param {str_ptf} file
+ * @param {all} data
  * @param {fnc_json} [callback] {"pNames":["success","result","status"],"pTypes":["bin","obj-{data:str,error:str}","num_int"]}
- * @param {str} [options] 
+ * @param {str} [options]
  */
 
 
@@ -111,10 +111,9 @@ combine the parts only when making CloudStore API calls.
 /** ### Upload ###
  * Upload a file to the cloud.
  * $$ cld.Upload(data, name, type?, callback?, password?) $$
- * @param {str} data 
- * @param {str} name 
- * @param {str_mim} [type] 
+ * @param {str} data
+ * @param {str} name
+ * @param {str_mim} [type]
  * @param {fnc_json} [callback] {"pNames":["response"],"pTypes":["obj-{error:str,name:str,folder:str,id:str,mimetype:str_mim,size:num}"]}
- * @param {str} [password] 
+ * @param {str} [password]
  */
-

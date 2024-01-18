@@ -4,17 +4,17 @@
 /** # GetIPAddress #
  * @brief Get network IP address
  * GetIPAddress returns the current network ip address. It should look like “0.0.0.0” which is the default value for disabled internet connection. The individual numbers can have values between 0 and 255.
- * $$ app.GetIPAddress() $$ 
+ * $$ app.GetIPAddress() $$
  * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Device IP
 function OnStart()
@@ -23,16 +23,14 @@ function OnStart()
     app.Alert( ip );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     ip = app.GetIPAddress()
     app.Alert( ip )
  */
-    
-            

@@ -4,8 +4,8 @@
 /** # addList #
  * @abbrev lst
  * @brief addList
- * 
- * $$ lst = ui.addList(parent, list?, options?, width?, height?) $$ 
+ *
+ * $$ lst = ui.addList(parent, list?, options?, width?, height?) $$
  * @param {obj} parent The parent layout
  * @param {lst} [list] An array of arrays. Each element is of the form `[icon, title, body, secondary]`
  * @param {str_com} [options] Media: `Icon` `Avatar` \n `Styling`: `Dense` `Inset` \n `Util`: `Selectable` `Divider` `SecondaryText`, `NoRipple` to disable ripple effect
@@ -15,7 +15,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Lists are continuous, vertical indexes of text or images. They are used to group together related pieces of data or informations to highlight association with each other and easy to read. They are frequently used for navigation as well as displaying general content.
@@ -33,7 +33,7 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -42,294 +42,294 @@ Lists are continuous, vertical indexes of text or images. They are used to group
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### avatarSize
  * @prop
  * Sets or returns the size of the avatar. Values can be <col nobox #fb8c00>Small</col> <col nobox #fb8c00>Medium</col> <col nobox #fb8c00>Large</col>
  * @returns str
  */
 
-                    
+
 /** ### avatarVariant
  * @prop
  * Sets or returns the variant of the avatar. Values can be <col nobox #fb8c00>Square</col> <col nobox #fb8c00>Round</col> or <col nobox #fb8c00>Circle</col>
  * @returns str
  */
 
-                    
+
 /** ### backColor
  * @prop
  * Sets or returns the background color in a hexadecimal format.
  * @returns str
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### checkboxColor
  * @prop
  * Sets or returns the theme color of the checkbox when <col nobox #fb8c00>Selectable</col> option is enabled. Vaues can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### elevation
  * @prop
  * Sets or returns the depth of the list container. Values range from 0 to 24.
  * @returns num
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### iconColor
  * @prop
  * Sets or returns the icon color in a hexadecimal format.
  * @returns str
  */
 
-                    
+
 /** ### iconSize
  * @prop
  * Sets or returns the size of the icon text.
  * @returns num
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### itemPadding
  * @prop
  * Sets or returns the padding of each list item. See also <col nobox #fb8c00>setItemPadding</col> method.
  * @returns lst
  */
 
-                    
+
 /** ### label
  * @prop
  * Sets or returns the label text.
  * @returns str
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### outlined
  * @prop
  * Sets or returns whether the container is outlined or elevated.
  * @returns bin
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### selectable
  * @prop
  * Sets or returns a boolean whether the list is selectable or not.
  * @returns bin
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the color of the text.
  * @returns str
  */
 
-                    
+
 /** ### textColor1
  * @prop
  * Sets or returns the color of the title text in hexadecimal format.
  * @returns str
  */
 
-                    
+
 /** ### textColor2
  * @prop
  * Sets or returns the color of the body text in hexadecimal format.
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### textSize1
  * @prop
  * Sets or returns the size of the title text.
  * @returns num
  */
 
-                    
+
 /** ### textSize2
  * @prop
  * Sets or returns the size of the body text.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### addItem ###
  * @brief addItem
  * Adds an item in the list
@@ -558,10 +558,10 @@ Lists are continuous, vertical indexes of text or images. They are used to group
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic list
 class Main extends App
@@ -587,9 +587,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample List with icon and body
 class Main extends App
@@ -631,9 +631,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Contacts list
 class Main extends App
@@ -666,9 +666,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Elevated list
 class Main extends App
@@ -704,9 +704,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Outlined List
 class Main extends App
@@ -742,9 +742,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Selectable List
 class Main extends App
@@ -781,9 +781,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic list
 from hybrid import ui
@@ -795,5 +795,3 @@ def OnStart():
 
             lst = ui.addList(main, list,
  */
-    
-            

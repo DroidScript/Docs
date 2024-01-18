@@ -4,21 +4,21 @@
 /** # SetPosition #
  * @brief Change app position and size
  * Change the main app's position and size. Mostly used for transparent apps.
- * $$ app.SetPosition(left, top, width=-1, height=-1, options?) $$ 
- * @param {num_frc} left 
- * @param {num_frc} top 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ * $$ app.SetPosition(left, top, width=-1, height=-1, options?) $$
+ * @param {num_frc} left
+ * @param {num_frc} top
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @param {str} [options] px
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample SetPosition
 function OnStart()
@@ -34,9 +34,9 @@ function OnStart()
 	app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetPosition
 from native import app
@@ -52,5 +52,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

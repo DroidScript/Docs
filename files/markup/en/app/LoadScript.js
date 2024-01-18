@@ -4,20 +4,20 @@
 /** # LoadScript #
  * @brief Asynchronously import a .js file
  * Loads a local JavaScript file asynchronously to your app to make its functionality available in your app.
- * 
+ *
  * See Also: @Script
- * $$ app.LoadScript(path, callback?) $$ 
- * @param {str_pth} path 
+ * $$ app.LoadScript(path, callback?) $$
+ * @param {str_pth} path
  * @param {fnc_json} [callback] {"pNames":["info"],"pTypes":["obj-{ isTrusted:bin }"]}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Compute the Answer to the Ultimate Question of Life, the Universe, and Everything
 var scriptJS = `
@@ -35,9 +35,9 @@ function OnLoad() {
     app.Alert( computeNum(), "computed number: " );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Compute the Answer to the Ultimate Question of Life, the Universe, and Everything
 from native import app
@@ -56,5 +56,3 @@ def OnLoad():
     app.ShowPopup( "script.js loaded." )
     app.Alert( computeNum(), "computed number: " )
  */
-    
-            

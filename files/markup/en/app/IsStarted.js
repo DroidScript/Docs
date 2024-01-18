@@ -4,17 +4,17 @@
 /** # IsStarted #
  * @brief Check if app has finished loading
  * Checks if the app has finished loading. It will return true after OnStart has returned.
- * $$ app.IsStarted() $$ 
+ * $$ app.IsStarted() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Started
 setTimeout('app.Alert( app.IsStarted(), "Started in global:" );');
@@ -25,9 +25,9 @@ function OnStart()
     app.Alert( started, "Started in OnStart:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Started
 from native import app
@@ -38,5 +38,3 @@ def OnStart():
     started = app.IsStarted()
     app.Alert( started, "Started in OnStart:" )
  */
-    
-            

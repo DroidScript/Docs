@@ -4,19 +4,19 @@
 /** # CreateButtonFlat #
  * @abbrev btf
  * Just a flat button.
- * $$ btf = MUI.CreateButtonFlat(text, width=-1, height=-1, color?, backColor?) $$ 
- * @param {str} text 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
- * @param {str_col} [color] 
- * @param {str_col} [backColor] 
+ * $$ btf = MUI.CreateButtonFlat(text, width=-1, height=-1, color?, backColor?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -48,7 +48,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ btf.GetType() $$
  * @returns str-Button
  */
@@ -123,10 +123,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -151,9 +151,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark
 cfg.Dark
@@ -178,9 +178,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Add Method
 cfg.Light
@@ -197,9 +197,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Light
 # cfg.Light, cfg.MUI
@@ -223,9 +223,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark
 # cfg.Dark, cfg.MUI
@@ -249,9 +249,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Add Method
 # cfg.Light, cfg.MUI
@@ -267,5 +267,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

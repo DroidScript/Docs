@@ -3,13 +3,13 @@
 
 /** # GetRunningApps #
  * @brief Get list of running apps
- * 
- * $$ app.GetRunningApps() $$ 
+ *
+ * $$ app.GetRunningApps() $$
  * @returns lst_obj-[{ user:num_int&comma; pid:num_int&comma; name:str&comma; foreground:bin }]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Returns a list of objects containing info about all currently running apps in the fore- or background.
@@ -22,10 +22,10 @@ See Also: @GetRunningServices, @GetInstalledApps
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Running Apps
 function OnStart()
@@ -55,9 +55,9 @@ function OnStart()
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Is In Foreground
 function OnStart()
@@ -78,9 +78,9 @@ function CheckForeground()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Running Apps
 from native import app
@@ -104,9 +104,9 @@ def OnStart():
 
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Is In Foreground
 from native import app
@@ -124,5 +124,3 @@ def CheckForeground(time, dtime):
         if a.name == name:
             app.ShowPopup("In Foreground: " + str(a.foreground))
  */
-    
-            

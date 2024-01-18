@@ -5,9 +5,9 @@
  * @abbrev thm
  * @brief Returns a new Theme object
  * Returns a Theme object.
- * 
+ *
  * <premium>
- * $$ thm = app.CreateTheme(baseTheme) $$ 
+ * $$ thm = app.CreateTheme(baseTheme) $$
  * @param {str} baseTheme Dark|Light|Default
  * @returns dso-Theme
 */
@@ -15,7 +15,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -39,7 +39,7 @@
  * @brief Define button text color
  * Define the standard text color of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).
  * $$ thm.SetBtnTextColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -55,10 +55,10 @@
  * @brief Define button paddings
  * Define distances that elements within the control are to maintain from the control borders.
  * $$ thm.SetButtonPadding(left=0, top=0, right=0, bottom=0, mode='px') $$
- * @param {num} [left=0] 
- * @param {num} [top=0] 
- * @param {num} [right=0] 
- * @param {num_frc} [bottom=0] 
+ * @param {num} [left=0]
+ * @param {num} [top=0]
+ * @param {num} [right=0]
+ * @param {num_frc} [bottom=0]
  * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
@@ -67,13 +67,13 @@
  * @brief Define button style
  * Define standard style of [buttons](CreateButton.htm) and [toggles](CreateToggle.htm).
  * $$ thm.SetButtonStyle(color1='sky', color2='sky', radius=0, strokeClr='sky', strokeWidth=0, shadow=0, checkClr?) $$
- * @param {str_col} [color1='sky'] 
- * @param {str_col} [color2='sky'] 
- * @param {num_pxl} [radius=0] 
- * @param {str_col} [strokeClr='sky'] 
- * @param {num_pxl} [strokeWidth=0] 
- * @param {num_frc} [shadow=0] 
- * @param {str_col} [checkClr] 
+ * @param {str_col} [color1='sky']
+ * @param {str_col} [color2='sky']
+ * @param {num_pxl} [radius=0]
+ * @param {str_col} [strokeClr='sky']
+ * @param {num_pxl} [strokeWidth=0]
+ * @param {num_frc} [shadow=0]
+ * @param {str_col} [checkClr]
  */
 
 
@@ -89,7 +89,7 @@
  * @brief Define dialog button colors
  * Define standard button colors of [dialogs](CreateDialog.htm).
  * $$ thm.SetDialogBtnColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -97,7 +97,7 @@
  * @brief Define dialog button text colors
  * Define standard button text colors of [dialogs](CreateDialog.htm).
  * $$ thm.SetDialogBtnTxtColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -105,7 +105,7 @@
  * @brief Define dialog background colors
  * Define standard background colors of [dialogs](CreateDialog.htm).
  * $$ thm.SetDialogColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -113,7 +113,7 @@
  * @brief Define dialog corner radius
  * Define standard corder radius of [dialogs](CreateDialog.htm).
  * $$ thm.SetDialogCornerRadius(radius) $$
- * @param {num_pxl} radius 
+ * @param {num_pxl} radius
  */
 
 
@@ -121,7 +121,7 @@
  * @brief Define whether to dim dialog background
  * En/Disables standard dimming of [dialogs](CreateDialog.htm).
  * $$ thm.SetDimBehind(dim) $$
- * @param {bin} dim 
+ * @param {bin} dim
  */
 
 
@@ -129,7 +129,7 @@
  * @brief Define highlight colors
  * Define standard highlight colors.
  * $$ thm.SetHighlightColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -137,7 +137,7 @@
  * @brief Define list divider colors
  * Define standard divider colors of [lists](CreateList.htm).
  * $$ thm.SetListDividerColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -145,7 +145,7 @@
  * @brief Define progress background color
  * Define standard background progress color of [progress indicators](ShowProgress.htm).
  * $$ thm.SetProgressBackColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -169,7 +169,7 @@
  * @brief Define progress text color
  * Define standard text color of [progress indicators](ShowProgress.htm).
  * $$ thm.SetProgressTextColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -177,8 +177,8 @@
  * @brief Define control text color
  * Define standard text color of controls.
  * $$ thm.SetTextColor(color1, color2?) $$
- * @param {str_col} color1 
- * @param {str_col} [color2] 
+ * @param {str_col} color1
+ * @param {str_col} [color2]
  */
 
 
@@ -194,7 +194,7 @@
  * @brief Define title colors
  * Define standard title text color of [dialogs](CreateDialog.htm).
  * $$ thm.SetTitleColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -202,7 +202,7 @@
  * @brief Define title divider colors
  * Define standard title divider color of [dialogs](CreateDialog.htm).
  * $$ thm.SetTitleDividerColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -210,7 +210,7 @@
  * @brief Define title divider height
  * Define standard title divider height of [dialogs](CreateDialog.htm).
  * $$ thm.SetTitleDividerHeight(height=-1) $$
- * @param {num_pxl} [height=-1] 
+ * @param {num_pxl} [height=-1]
  */
 
 
@@ -218,7 +218,7 @@
  * @brief Define title height
  * Define standard height of [dialogs](CreateDialog.htm).
  * $$ thm.SetTitleHeight(height=-1, options?) $$
- * @param {num_pxl} [height=-1] 
+ * @param {num_pxl} [height=-1]
  * @param {str_com} [options] px|dip|sp|mm|pt|pl|ps
  */
 
@@ -227,16 +227,16 @@
  * @brief Define title text size
  * Define standard title text size of [dialogs](CreateDialog.htm).
  * $$ thm.SetTitleTextSize(size, options?) $$
- * @param {num} size 
+ * @param {num} size
  * @param {str_com} [options] px|dip|sp|mm|pt|pl|ps
  */
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Hackers Theme
 function OnStart()
@@ -279,9 +279,9 @@ function SetHackerTheme()
     app.SetTheme( theme );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Hackers Theme
 from native import app
@@ -322,5 +322,3 @@ def SetHackerTheme():
     theme.AdjustColor( -76 )
     app.SetTheme( theme )
  */
-    
-            

@@ -4,8 +4,8 @@
 /** # addTextField #
  * @abbrev tfd
  * @brief addTextField
- * 
- * $$ tfd = ui.addTextField(parent, text, options?, width?, height?) $$ 
+ *
+ * $$ tfd = ui.addTextField(parent, text, options?, width?, height?) $$
  * @param {obj} parent The layout where to add the TextField Component.
  * @param {str} text The initial value of the TextField
  * @param {str_com} [options] Color: `Primary` or `Secondary` \n `Sizes`: `Small` or `Medium` \n `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant`: `Standard` `Filled` or `Outlined` \n `Utils`: `Autofocus`
@@ -15,7 +15,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Add a textfield component into your app. Collect inputs from users. Inputs can be a number, text, emails, passwords and more. Just pass the corresponding type into
@@ -27,7 +27,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -36,329 +36,329 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### autoFocus
  * @prop
  * Sets or returns a boolean value whethe the input is focus when rendered into the DOM.
  * @returns bin
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### color
  * @prop
  * Sets or returns the theme color of the textfield component.
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### endAdornment
  * @prop
  * Returns the end adornment text or icon.
  * @returns str
  */
 
-                    
+
 /** ### error
  * @prop
  * Sets or returns the error state of the TextField component.
  * @returns bin
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### helperText
  * @prop
  * Sets or returns the helper text or the hint below the input.
  * @returns str
  */
 
-                    
+
 /** ### hint
  * @prop
  * Sets or returns the hint text. It`s the same as the <col nobox #fb8c00>placeholder</col> property.
  * @returns str
  */
 
-                    
+
 /** ### inputType
  * @prop
  * Sets or returns the input type. See <col nobox #fb8c00>type</col> params for available values.
  * @returns str
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### label
  * @prop
  * Sets or returns the label text.
  * @returns str
  */
 
-                    
+
 /** ### labelColor
  * @prop
  * Sets return the label color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
  * @returns str
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### maxRows
  * @prop
  * Sets or returns the maximum rows for a <col nobox #fb8c00>multiline</col> textfield.
  * @returns num
  */
 
-                    
+
 /** ### minRows
  * @prop
  * Sets or returns the minimum rows for a <col nobox #fb8c00>multiline</col> textfield.
  * @returns num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### outlineColor
  * @prop
  * Sets or returns the outline color in hexadecimal form <col nobox #fb8c00>#rrggbb</col> when the textfield is focus.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### placeholder
  * @prop
  * Sets or returns the placeholder text.
  * @returns str
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### required
  * @prop
  * Sets or returns a boolean value whether the text field in required or not.
  * @returns bin
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### sizeVariant
  * @prop
  * Sets or returns the size variant of the textfield. Values can be <col nobox #fb8c00>Small</col> or <col nobox #fb8c00>Medium</col>
  * @returns str
  */
 
-                    
+
 /** ### startAdornment
  * @prop
  * Returns the start adornment text or icon.
  * @returns str
  */
 
-                    
+
 /** ### stepIncrement
  * @prop
  * Sets or returns the step increment if the input is of type number;
  * @returns num
  */
 
-                    
+
 /** ### text
  * @prop
  * Sets or returns the text value of the TextField Component.
  * @returns str
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the color of the text.
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### variant
  * @prop
  * Sets or returns the variant of the TextField. Values can be <col nobox #fb8c00>Standard</col> <col nobox #fb8c00>Filled</col> or <col nobox #fb8c00>Outlined</col>
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### setOnEnter ###
  * @brief setOnEnter
  * Sets a callback function on `enter` or `submit` event
@@ -477,10 +477,10 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Textfield variants
 class Main extends App
@@ -519,9 +519,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Callbacks
 class Main extends App
@@ -571,9 +571,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Multiline textfield
 class Main extends App
@@ -594,9 +594,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Advance textfield
 class Main extends App
@@ -655,9 +655,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Textfield variants
 from hybrid import ui
@@ -692,9 +692,9 @@ def onChange(value):
     popup.text = value
     popup.show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Callbacks
 from hybrid import ui
@@ -736,9 +736,9 @@ def btn_onTouch(event):
     popup.text = "Value : " + tfd.text
     popup.show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Multiline textfield
 from hybrid import ui
@@ -756,9 +756,9 @@ def OnStart():
     tfd.label = "Enter description"
     tfd.setRows(3, 6)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Advance textfield
 from hybrid import ui
@@ -792,5 +792,3 @@ def OnStart():
     ui.addText(main,  "End text adornment", "Left,Overline", 0.7)
     tfd3 = ui.addTextField(main, "", "Outlined,Secondary,
  */
-    
-            

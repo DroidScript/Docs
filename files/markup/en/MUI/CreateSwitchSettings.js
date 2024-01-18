@@ -4,20 +4,20 @@
 /** # CreateSwitchSettings #
  * @abbrev sws
  * Creates a switchable settings that can be toggled on and off.
- * $$ sws = MUI.CreateSwitchSettings(text, width?, height?, value?, color?, backColor?) $$ 
- * @param {str} text 
- * @param {num_frc} [width] 
- * @param {num_frc} [height] 
- * @param {bin} [value] 
- * @param {str_col} [color] 
- * @param {str_col} [backColor] 
+ * $$ sws = MUI.CreateSwitchSettings(text, width?, height?, value?, color?, backColor?) $$
+ * @param {str} text
+ * @param {num_frc} [width]
+ * @param {num_frc} [height]
+ * @param {bin} [value]
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### GetValue ###
@@ -38,7 +38,7 @@
 /** ### SetValue ###
  * Sets the value of the switch
  * $$ sws.SetValue(value) $$
- * @param {bin} value 
+ * @param {bin} value
  */
 
 
@@ -63,7 +63,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ sws.GetType() $$
  * @returns str-Seekbar
  */
@@ -88,10 +88,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -116,9 +116,9 @@ function OnTouch(text, value)
     app.ShowPopup(text+" : "+value)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample More Settings
 cfg.Dark
@@ -153,9 +153,9 @@ function OnTouch(text, value)
     app.ShowPopup(text+" : "+value)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python More Settings
 # cfg.Dark, cfg.MUI
@@ -185,5 +185,3 @@ def OnStart():
 def OnTouch(text, value):
     app.ShowPopup(text+" : "+value)
  */
-    
-            

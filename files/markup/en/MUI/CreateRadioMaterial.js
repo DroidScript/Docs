@@ -4,20 +4,20 @@
 /** # CreateRadioMaterial #
  * @abbrev rdm
  * Creates a material radio control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.
- * $$ rdm = MUI.CreateRadioMaterial(list, width?, height?, orientation?, color?, backColor?) $$ 
+ * $$ rdm = MUI.CreateRadioMaterial(list, width?, height?, orientation?, color?, backColor?) $$
  * @param {lst} list A comma separated strings
- * @param {num} [width] 
- * @param {num} [height] 
+ * @param {num} [width]
+ * @param {num} [height]
  * @param {str} [orientation] Vertical|Horizontal
- * @param {str_col} [color] 
- * @param {str_col} [backColor] 
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSelect ###
@@ -31,7 +31,7 @@
 /** ### CheckItemByIndex ###
  * Checks a corresponding item
  * $$ rdm.CheckItemByIndex(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -73,7 +73,7 @@
 /** ### GetItem ###
  * Returns the corresponding item
  * $$ rdm.GetItem(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  * @returns str-title
  */
 
@@ -94,7 +94,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ rdm.GetType() $$
  * @returns str-Radio
  */
@@ -123,10 +123,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -146,9 +146,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With callback
 cfg.Light
@@ -174,9 +174,9 @@ function OnTouch(name, index)
     app.ShowPopup(name+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Horizontal
 cfg.Dark
@@ -202,9 +202,9 @@ function OnTouch(name, index)
     app.ShowPopup(name+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -223,9 +223,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With callback
 # cfg.Light, cfg.MUI
@@ -248,9 +248,9 @@ def OnStart():
 def OnTouch(name, index):
     app.ShowPopup(name + " : " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Horizontal
 # cfg.Dark, cfg.MUI
@@ -273,5 +273,3 @@ def OnStart():
 def OnTouch(name, index):
     app.ShowPopup(name + " : " + str(index))
  */
-    
-            

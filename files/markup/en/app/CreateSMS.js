@@ -5,14 +5,14 @@
  * @abbrev sms
  * Returns a new SMS object to send and retreive SMS messages.
  * <xfeature>
- * $$ sms = app.CreateSMS() $$ 
+ * $$ sms = app.CreateSMS() $$
  * @returns dso-SMS
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -27,8 +27,8 @@
 /** ### Send ###
  * Send SMS message.
  * $$ sms.Send(number, message, options?) $$
- * @param {str} number 
- * @param {str} message 
+ * @param {str} number
+ * @param {str} message
  * @param {str} [options] MultiPart:multi-part SMS messaging
  */
 
@@ -47,4 +47,3 @@
  * $$ sms.SetOnStatus(callback) $$
  * @param {fnc_json} callback {"pNames":["status"],"pTypes":["str"]}
  */
-

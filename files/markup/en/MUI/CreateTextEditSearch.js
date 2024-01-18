@@ -4,19 +4,19 @@
 /** # CreateTextEditSearch #
  * @abbrev tes
  * Creates a customize search style text input.
- * $$ tes = MUI.CreateTextEditSearch(width?, options?, hint?, label?, backColor?) $$ 
- * @param {num} [width] 
+ * $$ tes = MUI.CreateTextEditSearch(width?, options?, hint?, label?, backColor?) $$
+ * @param {num} [width]
  * @param {str} [options] DS TextEdit options
  * @param {str} [hint] Hint text
- * @param {str_col} [label] 
- * @param {str_col} [backColor] 
+ * @param {str_col} [label]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
@@ -72,10 +72,10 @@
 /** @extern SetOnIconTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Search
 cfg.Light
@@ -94,9 +94,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SetOnEnter Callback
 cfg.Dark
@@ -121,9 +121,9 @@ function OnEnter()
     app.ShowPopup(this.GetText())
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Search
 from native import app
@@ -139,9 +139,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetOnEnter Callback
 from native import app
@@ -162,5 +162,3 @@ def OnStart():
 def OnEnter():
     app.ShowPopup(tef.GetText())
  */
-    
-            

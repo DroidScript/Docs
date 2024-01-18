@@ -4,10 +4,10 @@
 /** # AddFAB #
  * @abbrev fab
  * Adds a floating action button. See @CreateFAB, @CreateFABElegant and @CreateFABOutline for a full documentation.
- * $$ fab = MUI.AddFAB(parent, icon?, color?, options?) $$ 
+ * $$ fab = MUI.AddFAB(parent, icon?, color?, options?) $$
  * @param {dso} parent @../app/CreateLayout
  * @param {str} [icon] Material icon fonts
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @param {str_com} [options] outline|elegant|default
  * @returns obj
 */
@@ -15,10 +15,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample AddFAB
 cfg.Light
@@ -35,9 +35,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python AddFAB
 # cfg.Light, cfg.MUI
@@ -53,5 +53,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

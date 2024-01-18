@@ -4,22 +4,22 @@
 /** # OpenDatabase #
  * @abbrev db
  * OpenDatabase creates or opens a local database in which large amounts of data can be stored that can still be queried in a reasonable amount of time.
- * $$ db = app.OpenDatabase(name) $$ 
- * @param {str} name 
+ * $$ db = app.OpenDatabase(name) $$
+ * @param {str} name
  * @returns dso-Database
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### addTransaction ###
  * addTransaction
  * <deprecated Use ExecuteSQL instead>
  * $$ db.addTransaction(transaction) $$
- * @param {obj:JS SQLitePluginTransaction} transaction 
+ * @param {obj:JS SQLitePluginTransaction} transaction
  */
 
 
@@ -50,8 +50,8 @@
  * Executes a SQL query
  * <deprecated Use ExecuteSql instead>
  * $$ db.executeSql(statement, params?, success?, error?) $$
- * @param {str_sql} statement 
- * @param {lst} [params] 
+ * @param {str_sql} statement
+ * @param {lst} [params]
  * @param {fnc_json} [success] {"pNames":["tx","res"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }","obj-{ rows: { item(i): { id:num, data:all, data_num:num } } }","obj-{ length:num_int, rowsAffected:num_int, rows: { item(i): { id:num, data:all, data_num:num } } }"]}
  * @param {fnc_json} [error] {"pNames":["t","err"],"pTypes":["?","obj-{ message:str }"]}
  */
@@ -61,8 +61,8 @@
  * @brief Execute SQL query
  * Executes a SQL query
  * $$ db.ExecuteSql(sql, params?, success?, error?) $$
- * @param {str_sql} sql 
- * @param {lst} [params] 
+ * @param {str_sql} sql
+ * @param {lst} [params]
  * @param {fnc_json} [success] {"pNames":["res"],"pTypes":["obj-{ length:num_int, rowsAffected:num_int, rows: { item(i): { id:num, data:all, data_num:num } } }"]}
  * @param {fnc_json} [error] {"pNames":["err"],"pTypes":["str"]}
  */
@@ -91,7 +91,7 @@
  * @returns str
  */
 
-                    
+
 /** ### open ###
  * @brief Open database
  * Opens the database
@@ -127,4 +127,3 @@
  * @param {fnc_json} [error] {"pNames":["err"],"pTypes":["str"]}
  * @param {fnc_json} [success] {"pNames":["fnc","res"],"pTypes":[{"pNames":["tx"],"pTypes":["obj-{ db: { openargs: { name:str, dblocation:str }, dbname:str, name:str }, txlock:bin, readOnly:bin, executes: [{ success:str, qid:num_int, sql:str_sql, params:lst }] }"]},"obj-{ length:num_int, rowsAffected:num_int, rows: { item(i): { id:num, data:all, data_num:num } } }"]}
  */
-

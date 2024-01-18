@@ -5,7 +5,7 @@
  * @abbrev acc
  * @brief addAccordion
  * Adds an accordion or expansion panel into your app. This is very useful to display controls that are grouped together.
- * $$ acc = ui.addAccordion(parent, titles, options?, width?, height?) $$ 
+ * $$ acc = ui.addAccordion(parent, titles, options?, width?, height?) $$
  * @param {obj} parent The parent layout where to add the text.
  * @param {obj} titles An array of accordion titles.
  * @param {str_com} [options] one or a combination of the following: `Square` \n `Layout type `Linear` or `Absolute`
@@ -17,7 +17,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -26,273 +26,273 @@
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius of the accordion panel. You can also pass an array of the form <col nobox #fb8c00>[tl, tr, bl, br]</col>. See also <col nobox #fb8c00>setCornerRadius</col> method.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns whether the accordion is disabled or not. <col nobox #fb8c00>True</col> only if all accordion is disable, otherwise <col nobox #fb8c00>false</col>.
  * @returns bin
  */
 
-                    
+
 /** ### expandIcon
  * @prop
  * Sets or returns the material icon font for the expand icon.
  * @returns str
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### itemPadding
  * @prop
  * Sets or returns the padding of each accordion item. See also <col nobox #fb8c00>setItemPadding</col> method.
  * @returns lst
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### rounded
  * @prop
  * Sets or returns whether the accordion is rounded or not.
  * @returns bin
  */
 
-                    
+
 /** ### secondaryText
  * @prop
  * Sets or returns the secondary text of the accordion items. See also <col nobox #fb8c00>setSecondaryText</col> method.
  * @returns lst
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the color of the text.
  * @returns str
  */
 
-                    
+
 /** ### textColor1
  * @prop
  * Sets or returns the title text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
  * @returns str
  */
 
-                    
+
 /** ### textColor2
  * @prop
  * Sets or returns the secondary text color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### textSize1
  * @prop
  * Sets or returns the accordion title text size.
  * @returns num
  */
 
-                    
+
 /** ### textSize2
  * @prop
  * Sets or returns the accordion secondary text size.
  * @returns num
  */
 
-                    
+
 /** ### titleWidth
  * @prop
  * Sets and returns the width of the title as fraction. Useful when you have a long title.
  * @returns num
  */
 
-                    
+
 /** ### titles
  * @prop
  * Sets or returns the list of titles for the accordion panel. Each element of the titles array is a string.
  * @returns lst
  */
 
-                    
+
 /** ### toggle
  * @prop
  * Collapse or shrink a corresponding accordion by its index.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### getLayout ###
  * @brief getLayout
  * Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse
@@ -479,10 +479,10 @@
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Complete accordion implementation
 class Main extends App
@@ -523,7 +523,7 @@ class Main extends App
         this.tfd = ui.addTextField(this.lay3, "", "Outlined", 0.3)
         this.tfd.label = "Enter some text"
     }
-    
+
     onTouch(index, expand)
     {
         var msg = `${this.accords[index]} is ${expand ? "open" : "close"}`
@@ -531,9 +531,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Items manipulation
 class Main extends App
@@ -585,9 +585,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Custom styles
 class Main extends App
@@ -623,9 +623,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Complete accordion implementation
 from hybrid import ui
@@ -670,9 +670,9 @@ def onTouch(index, expand):
     msg = f"{accords[index]} is {'open' if expand else 'close'}"
     ui.showPopup(msg)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Items manipulation
 from hybrid import ui
@@ -717,9 +717,9 @@ def btn3_onTouch(event):
     acc.removeItemByIndex(2)
     ui.showPopup("Second item is removed")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Custom styles
 from hybrid import ui
@@ -752,5 +752,3 @@ def OnStart():
     # Sets the expand icon
     acc.expandIcon = "favorite"
  */
-    
-            

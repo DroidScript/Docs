@@ -4,17 +4,17 @@
 /** # SetErrorFilter #
  * @brief Filter/ignore certain errors
  * Allow filtering out certain errors for nodejs apps.
- * $$ app.SetErrorFilter(regex) $$ 
+ * $$ app.SetErrorFilter(regex) $$
  * @param {str} regex regex pattern
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Filter Errors
 function OnStart()
@@ -24,9 +24,9 @@ function OnStart()
     app.Alert( "Error was ignored" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Filter Errors
 from native import app
@@ -36,5 +36,3 @@ def OnStart():
     raise Error( "My Custom Error" )
     app.Alert( "Error was ignored" )
  */
-    
-            

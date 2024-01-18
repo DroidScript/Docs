@@ -4,16 +4,16 @@
 /** # Start #
  * @brief Start your DS app in an html project
  * Starts your DS app in an html project. Call it in the document.onload function in order to initialize DroidScript and execute your OnStart() function.
- * $$ app.Start() $$ 
+ * $$ app.Start() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Html App
 <html>
@@ -33,9 +33,9 @@
 </body>
 </html>
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Html App
 from native import app
@@ -53,5 +53,3 @@ from native import app
 </body>
 </html>
  */
-    
-            

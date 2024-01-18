@@ -5,16 +5,16 @@
  * @abbrev drw
  * @brief addDrawer
  * Adds a drawer into your app.
- * $$ drw = ui.addDrawer(lay, options?) $$ 
+ * $$ drw = ui.addDrawer(lay, options?) $$
  * @param {obj} lay The drawer layout.
- * @param {str_com} [options] 
+ * @param {str_com} [options]
  * @returns uio-Drawer
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### anchor
@@ -23,28 +23,28 @@
  * @returns str
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the drawer.
  * @returns bin
  */
 
-                    
+
 /** ### swipeAreaWidth
  * @prop
  * Sets or returns the width of the swipeable area of the Drawer.
  * @returns num
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position <col nobox #fb8c00>[0-1]</col>.
  * @returns num
  */
 
-                    
+
 /** ### addLayout ###
  * @brief addLayout
  * Adds a layout into the drawer
@@ -109,10 +109,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Drawer Implementation
 class Main extends App
@@ -187,9 +187,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Drawer Anchor Positions
 class Main extends App
@@ -267,9 +267,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Drawer Implementation
 from hybrid import ui
@@ -312,5 +312,3 @@ def OnStart():
 
         def onSelect(
  */
-    
-            

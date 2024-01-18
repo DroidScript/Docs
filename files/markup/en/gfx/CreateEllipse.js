@@ -5,21 +5,21 @@
  * @abbrev elp
  * @brief Creates an ellipse
  * Creates a elliptical game object.
- * $$ elp = gfx.CreateEllipse(width, height, color, lineWidth?, lineColor?, lineAlpha?, group?) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {num_col} color 
- * @param {num_pxl} [lineWidth] 
- * @param {num_col} [lineColor] 
- * @param {num_frc} [lineAlpha] 
- * @param {str} [group] 
+ * $$ elp = gfx.CreateEllipse(width, height, color, lineWidth?, lineColor?, lineAlpha?, group?) $$
+ * @param {num_frc} width
+ * @param {num_frc} height
+ * @param {num_col} color
+ * @param {num_pxl} [lineWidth]
+ * @param {num_col} [lineColor]
+ * @param {num_frc} [lineAlpha]
+ * @param {str} [group]
  * @returns gvo-Ellipse
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern alpha */
@@ -53,12 +53,12 @@
 /** @extern width */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 cfg.Game;
 
 function OnLoad()
@@ -72,11 +72,11 @@ function OnReady()
     gfx.Play();
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 # cfg.Game
 
 def OnLoad():
@@ -87,5 +87,3 @@ def OnReady():
     gfx.AddGraphic(ellipse, 0.1, 0.2)
     gfx.Play()
  */
-    
-            

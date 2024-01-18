@@ -3,8 +3,8 @@
 
 /** # AddAppBar #
  * @abbrev apb
- * 
- * $$ apb = MUI.AddAppBar(parent, p1?, p2?, p3?, options?) $$ 
+ *
+ * $$ apb = MUI.AddAppBar(parent, p1?, p2?, p3?, options?) $$
  * @param {dso} parent @../app/CreateLayout
  * @param {str} [p1] Title text|Hint
  * @param {str} [p2] Material Icon
@@ -14,7 +14,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Adds an appbar on a given layout. See @CreateAppBar, @CreateAppBarElegant and @CreateAppBarModern for a full documentation. The parameters p1, p2 and p3 depends on the type of appbar. Refer to each type for more info. Example for @CreateAppBar and @CreateAppBarElegant 'ps' is 'title', 'p2' is 'logoIcon' and 'p3' is 'controls'. For @CreateAppBarModern 'p1' is 'hint','p2' is 'controlIcon' and 'p3' is 'color'.
@@ -22,10 +22,10 @@ Adds an appbar on a given layout. See @CreateAppBar, @CreateAppBarElegant and @C
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample AddAppBar
 cfg.Light
@@ -41,9 +41,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python AddAppBar
 # cfg.Light, cfg.MUI
@@ -60,5 +60,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

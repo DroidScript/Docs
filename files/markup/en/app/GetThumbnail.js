@@ -4,23 +4,23 @@
 /** # GetThumbnail #
  * @brief Create downscaled copy of an image
  * Creates a downscaled copy of an existing image. Pass -1 as width or height to keep the aspect ratio.
- * 
+ *
  * See Also: @CreateImage
- * $$ app.GetThumbnail(source, destination, width=-1, height=-1) $$ 
- * @param {str_pth} source 
- * @param {str_pth} destination 
- * @param {num_pxl} [width=-1] 
- * @param {num_pxl} [height=-1] 
+ * $$ app.GetThumbnail(source, destination, width=-1, height=-1) $$
+ * @param {str_pth} source
+ * @param {str_pth} destination
+ * @param {num_pxl} [width=-1]
+ * @param {num_pxl} [height=-1]
  * @returns nil
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Create Thumbnail
 function OnStart()
@@ -37,9 +37,9 @@ function OnStart()
     app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Create Thumbnail
 from native import app
@@ -56,5 +56,3 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            

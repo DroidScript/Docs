@@ -5,15 +5,15 @@
  * @abbrev btl
  * @brief Returns a new BluetoothList object with selectable list of paired and discovered Bluetooth devices
  * CreateBluetoothList shows an Android dialog which allows the user to select a Bluetooth device from paired and discovered devices. See Also: @GetPairedBtDevices, @DiscoverBtDevices.
- * $$ btl = app.CreateBluetoothList(filter?) $$ 
- * @param {str} [filter] 
+ * $$ btl = app.CreateBluetoothList(filter?) $$
+ * @param {str} [filter]
  * @returns dso-BluetoothList
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -34,10 +34,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -51,9 +51,9 @@ function OnBtList(name, address)
     app.Alert("Name: " + name + "\nAddress: " + address, "Result");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -65,5 +65,3 @@ def OnStart():
 def OnBtList(name, address):
     app.Alert("Name: " + name + "\nAddress: " + address, "Result")
  */
-    
-            

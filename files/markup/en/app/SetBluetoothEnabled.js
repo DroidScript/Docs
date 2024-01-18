@@ -4,19 +4,19 @@
 /** # SetBluetoothEnabled #
  * @brief Enable Bluetooth on the device
  * Enables Bluetooth on the device.
- * 
+ *
  * See Also: @IsBluetoothEnabled, @IsBluetoothOn, @CreateBluetoothSerial
- * $$ app.SetBluetoothEnabled(enable) $$ 
- * @param {bin} enable 
+ * $$ app.SetBluetoothEnabled(enable) $$
+ * @param {bin} enable
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Enabling Bluetooth
 function OnStart()
@@ -30,9 +30,9 @@ function OnStart()
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample En/Disable Bluetooth
 var itv = 0;
@@ -100,9 +100,9 @@ function checkBtOff()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enabling Bluetooth
 from native import app
@@ -118,9 +118,9 @@ def OnStart():
         cnt += 1
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python En/Disable Bluetooth
 from native import app
@@ -174,5 +174,3 @@ def checkBtOff():
         app.ClearInterval( itv )
         itv = 0
  */
-    
-            

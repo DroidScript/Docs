@@ -4,16 +4,16 @@
 /** # CreateSwitch #
  * @abbrev swt
  * Creates a switch that can be toggled on and off.
- * $$ swt = MUI.CreateSwitch(value, color?) $$ 
- * @param {bin} value 
- * @param {str_col} [color] 
+ * $$ swt = MUI.CreateSwitch(value, color?) $$
+ * @param {bin} value
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### GetValue ###
@@ -34,7 +34,7 @@
 /** ### SetValue ###
  * Sets the value of the switch
  * $$ swt.SetValue(value) $$
- * @param {bin} value 
+ * @param {bin} value
  */
 
 
@@ -59,7 +59,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ swt.GetType() $$
  * @returns str-Seekbar
  */
@@ -84,10 +84,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -112,9 +112,9 @@ function OnTouch(value)
     app.ShowPopup(value)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Value & Color
 cfg.Light
@@ -139,9 +139,9 @@ function OnTouch(value)
     app.ShowPopup(value)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -164,9 +164,9 @@ def OnStart():
 def OnTouch(value):
     app.ShowPopup(value)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Value & Color
 # cfg.Light, cfg.MUI
@@ -189,5 +189,3 @@ def OnStart():
 def OnTouch(value):
     app.ShowPopup(value)
  */
-    
-            

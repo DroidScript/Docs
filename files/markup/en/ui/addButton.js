@@ -5,9 +5,9 @@
  * @abbrev btn
  * @brief addButton
  * Adds a button control into your app.
- * 
+ *
  *  In case of <col nobox #4c4>Upload</col>, you can specify <col nobox #4c4>Multiple</col> to accept multiple files.
- * $$ btn = ui.addButton(parent, text, options?, width?, height?) $$ 
+ * $$ btn = ui.addButton(parent, text, options?, width?, height?) $$
  * @param {obj} parent The layout where to add the button.
  * @param {str} text The button text or the material icon text.
  * @param {str_com} [options] one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Util`: `Icon` `NoRipple` `Upload` \n `In case of upload, you can specify `Multiple` to accept multiple files.
@@ -19,7 +19,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -28,266 +28,266 @@
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### acceptedFiles
  * @prop
  * Sets or returns the accepted files for an upload button.
  * @returns str
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### badge
  * @prop
  * Sets or returns the badge content. You can pass a <col nobox #fb8c00>string</col>
  * @returns num
  */
 
-                    
+
 /** ### badgeColor
  * @prop
  * Sets or returns the color of the badge. Values can be <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>
  * @returns str
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### color
  * @prop
  * Sets or returns the theme color of the button. Values can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> <col nobox #fb8c00>Secondary</col> <col nobox #fb8c00>Inherit</col>
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius of the button.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### icon
  * @prop
  * Sets or returns the material icon font use for the leading icon.
  * @returns str
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### sizeVariant
  * @prop
  * Sets or returns the size variant of the button. Values can be <col nobox #fb8c00>small</col> <col nobox #fb8c00>medium</col> or <col nobox #fb8c00>large</col>
  * @returns str
  */
 
-                    
+
 /** ### text
  * @prop
  * Sets or returns the button text.
  * @returns str
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the text color in hexadecimal format.
  * @returns str_col
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### toolTip
  * @prop
  * Sets or returns the tooltip text.
  * @returns str
  */
 
-                    
+
 /** ### toolTipPosition
  * @prop
  * Sets or returns the tooltip position. Values can be <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> or <col nobox #fb8c00>bottom</col>
  * @returns str
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### variant
  * @prop
  * Sets or returns the variant of the button. Values can be <col nobox #fb8c00>Contained</col> <col nobox #fb8c00>Outlined</col> or <col nobox #fb8c00>Text</col>
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### setOnFileSelect ###
  * @brief setOnFileSelect
  * Sets a callback on file select
@@ -371,10 +371,10 @@
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Button variants
 class Main extends App
@@ -406,9 +406,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Button theme colors
 class Main extends App
@@ -440,9 +440,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Button sizes
 class Main extends App
@@ -472,9 +472,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Button tooltips
 class Main extends App
@@ -507,9 +507,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Button with icons
 class Main extends App
@@ -538,9 +538,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Buttons with badges
 class Main extends App
@@ -566,9 +566,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Upload button
 class Main extends App
@@ -594,9 +594,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button variants
 from hybrid import ui
@@ -617,9 +617,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button theme colors
 from hybrid import ui
@@ -640,9 +640,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button sizes
 from hybrid import ui
@@ -661,9 +661,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button tooltips
 from hybrid import ui
@@ -684,9 +684,9 @@ def OnStart():
     btn4 = ui.addButton(main, "Bottom", "Contained,Primary")
     btn4.setToolTip("Tooltip on the bottom", "bottom")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button with icons
 from hybrid import ui
@@ -705,9 +705,9 @@ def OnStart():
 
     btn4 = ui.addButton(main, "settings", "Secondary,Icon")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Buttons with badges
 from hybrid import ui
@@ -724,9 +724,9 @@ def OnStart():
     btn3 = ui.addButton(main, "With Badge", "Secondary,Outlined")
     btn3.setBadge("New", "Primary")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Upload button
 from hybrid import ui
@@ -741,5 +741,3 @@ def onFileSelect(files):
     file = files[0]
     ui.showPopup( f"{file.name} is selected." )
  */
-    
-            

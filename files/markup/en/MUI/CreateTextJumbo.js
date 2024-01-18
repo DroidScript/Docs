@@ -4,19 +4,19 @@
 /** # CreateTextJumbo #
  * @abbrev txj
  * Creates an extra large text
- * $$ txj = MUI.CreateTextJumbo(text, width=-1, height=-1, options?, color?) $$ 
- * @param {str} text 
- * @param {num} [width=-1] 
- * @param {num} [height=-1] 
+ * $$ txj = MUI.CreateTextJumbo(text, width=-1, height=-1, options?, color?) $$
+ * @param {str} text
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
  * @param {str} [options] DS text options
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -58,7 +58,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ txj.GetType() $$
  * @returns str-Text
  */
@@ -143,10 +143,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Sample
 cfg.Light
@@ -166,9 +166,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sample
 # cfg.Light, cfg.MUI
@@ -187,5 +187,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

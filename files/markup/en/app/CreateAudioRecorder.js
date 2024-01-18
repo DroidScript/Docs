@@ -4,13 +4,13 @@
 /** # CreateAudioRecorder #
  * @abbrev rec
  * @brief Returns an AudioRecorder object
- * 
- * $$ rec = app.CreateAudioRecorder() $$ 
+ *
+ * $$ rec = app.CreateAudioRecorder() $$
  * @returns dso-AudioRecorder
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The AudioRecorder object can be used to listen for sound and record it to a file.
@@ -26,7 +26,7 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -71,7 +71,7 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
  * @brief Define the recording file
  * Define the file where the recorder should record to.
  * $$ rec.SetFile(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
@@ -105,10 +105,10 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 var file = "/sdcard/demofile.wav";
@@ -132,9 +132,9 @@ function StopRecording()
 	ply.SetOnReady( ply.Play );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -158,5 +158,3 @@ def StopRecording():
     ply.SetFile( file )
     ply.SetOnReady( ply.Play )
  */
-    
-            

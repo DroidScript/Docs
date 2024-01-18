@@ -4,7 +4,7 @@
 /** # GetFreeSpace #
  * @brief Get remaining storage size
  * Returns the free space of the internal or external storage in GigaBytes.
- * $$ app.GetFreeSpace(mode) $$ 
+ * $$ app.GetFreeSpace(mode) $$
  * @param {str} mode internal|external
  * @returns num_gbt
 */
@@ -12,10 +12,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show remaining internal and external storage
 function OnStart()
@@ -30,9 +30,9 @@ function OnStart()
     app.Alert( text );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show remaining internal and external storage
 from native import app
@@ -45,5 +45,3 @@ def OnStart():
 
     app.Alert(text)
  */
-    
-            

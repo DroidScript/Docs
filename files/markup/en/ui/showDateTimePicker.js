@@ -5,9 +5,9 @@
  * @abbrev dtp
  * @brief showDateTimePicker
  * Show a DateTimePicker where the user can select a date and time.
- * 
+ *
  *  If you want a date picker only see <col nobox #4c4>DatePicker</col> or if you want time picker only see <col nobox #4c4>TimePicker</col>
- * $$ dtp = ui.showDateTimePicker(callback, date?, time?, format?) $$ 
+ * $$ dtp = ui.showDateTimePicker(callback, date?, time?, format?) $$
  * @param {fnc_json} callback {}
  * @param {str} [date] Default value for date of the form "MM/DD/YYYY"
  * @param {str} [time] Default value for time of the form "HH/MM/SS"
@@ -18,7 +18,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### setOnSelect ###
@@ -30,10 +30,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample DateTimePicker
 class Main extends App 
@@ -57,9 +57,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python DateTimePicker
 from hybrid import ui
@@ -76,5 +76,3 @@ def btn_onTouch(event):
 def onDateTime(val):
     ui.showPopup(val)
  */
-    
-            

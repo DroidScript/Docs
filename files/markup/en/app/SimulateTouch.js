@@ -4,20 +4,20 @@
 /** # SimulateTouch #
  * @brief Simulate a touch event on a reachable control
  * Simulates a touch event on a reachable control.
- * $$ app.SimulateTouch(obj, x, y, dir) $$ 
- * @param {dso} obj 
- * @param {num_frc} x 
- * @param {num_frc} y 
+ * $$ app.SimulateTouch(obj, x, y, dir) $$
+ * @param {dso} obj
+ * @param {num_frc} x
+ * @param {num_frc} y
  * @param {str} dir Down|Move|Up
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Pressing Buttons
 function OnStart()
@@ -44,9 +44,9 @@ function btn_OnTouch()
 	app.ShowPopup( "Hello World " + i++ );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Pressing Buttons
 from native import app
@@ -72,5 +72,3 @@ def btn_OnTouch():
     app.ShowPopup( "Hello World " + str(i) )
     i += 1
  */
-    
-            

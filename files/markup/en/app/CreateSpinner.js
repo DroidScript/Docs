@@ -4,17 +4,17 @@
 /** # CreateSpinner #
  * @abbrev spn
  * @brief Returns a new Spinner object
- * 
- * $$ spn = app.CreateSpinner(list, width=-1, height=-1, options?) $$ 
- * @param {str_com} list 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ *
+ * $$ spn = app.CreateSpinner(list, width=-1, height=-1, options?) $$
+ * @param {str_com} list
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @param {str_com} [options] FillX/Y,NoSound
  * @returns dso-Spinner
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Create Spinners using the CreateSpinner method of the app object.
@@ -29,7 +29,7 @@ Use the **SelectItem** method to select a particular item in code.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -88,7 +88,7 @@ Use the **SelectItem** method to select a particular item in code.
  * Change the current shown item
  * <deprecated Use SetText instead>
  * $$ spn.SelectItem(item) $$
- * @param {str} item 
+ * @param {str} item
  */
 
 
@@ -114,8 +114,8 @@ Use the **SelectItem** method to select a particular item in code.
  * @brief Change spinner list
  * Change the item list of the spinner.
  * $$ spn.SetList(list, delim=',') $$
- * @param {str_com} list 
- * @param {str} [delim=','] 
+ * @param {str_com} list
+ * @param {str} [delim=',']
  */
 
 
@@ -150,7 +150,7 @@ Use the **SelectItem** method to select a particular item in code.
  * @brief Change current shown item
  * Change the current shown item
  * $$ spn.SetText(item) $$
- * @param {str} item 
+ * @param {str} item
  */
 
 
@@ -165,10 +165,10 @@ Use the **SelectItem** method to select a particular item in code.
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -188,9 +188,9 @@ function ShowSelection( item )
 	app.ShowPopup( "Selected = " + item );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -208,5 +208,3 @@ def OnStart():
 def ShowSelection(item, index):
     app.ShowPopup("Selected = " + item)
  */
-    
-            

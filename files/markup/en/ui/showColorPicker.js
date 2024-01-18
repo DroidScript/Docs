@@ -5,7 +5,7 @@
  * @abbrev col
  * @brief showColorPicker
  * Shows a color picker. Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette.
- * $$ col = ui.showColorPicker(value?, options?) $$ 
+ * $$ col = ui.showColorPicker(value?, options?) $$
  * @param {str} [value] A hexadecimal default value for the color picker.
  * @param {str} [options] A comma separated color picker options. Values can be \n `Alpha` Includes an alpha
  * @returns uio-ColorPicker
@@ -14,7 +14,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### value
@@ -23,7 +23,7 @@
  * @returns str
  */
 
-                    
+
 /** ### getValue ###
  * @brief getValue
  * Returns the hexadecimal string color value of the color picker
@@ -33,10 +33,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 class Main extends App
@@ -66,9 +66,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -91,5 +91,3 @@ def showColorPicker(event):
 def onSelect(clr):
     ui.showPopup(clr)
  */
-    
-            

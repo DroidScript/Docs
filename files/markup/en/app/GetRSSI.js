@@ -3,13 +3,13 @@
 
 /** # GetRSSI #
  * @brief Get RSSI in dBm
- * 
- * $$ app.GetRSSI() $$ 
+ *
+ * $$ app.GetRSSI() $$
  * @returns num_int--127..-30
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Returns the current _**R**eceived **S**ignal **S**trength **I**ndication_ which is a measurement of the power present in a received WiFi signal in dBm (decibel milliwatt).
@@ -63,10 +63,10 @@ See Also: @SetWifiEnabled, @IsWifiEnabled
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show RSSI
 function OnStart()
@@ -80,9 +80,9 @@ function ShowRSSI()
     app.ShowPopup( rssi );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show RSSI
 from native import app
@@ -94,5 +94,3 @@ def ShowRSSI(time, dtime):
     rssi = app.GetRSSI()
     app.ShowPopup(str(rssi))
  */
-    
-            

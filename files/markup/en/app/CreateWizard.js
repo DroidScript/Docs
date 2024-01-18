@@ -3,18 +3,18 @@
 
 /** # CreateWizard #
  * @abbrev wiz
- * 
- * $$ wiz = app.CreateWizard(title, width=-1, height=-1, callback?, options?) $$ 
- * @param {str} title 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ *
+ * $$ wiz = app.CreateWizard(title, width=-1, height=-1, callback?, options?) $$
+ * @param {str} title
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @param {fnc_json} [callback] {"pNames":["layout","page"],"pTypes":["dso-CreateLayout","num_int"]}
  * @param {str_com} [options] AutoCancel|NoCancel,NoTitle,NoFocus,NoDim,NoKeys,TouchModal,NoTouch
  * @returns dso-Wizard
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user.
@@ -33,7 +33,7 @@ In case the user cancels the wizard the index is **-1**.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -85,10 +85,10 @@ In case the user cancels the wizard the index is **-1**.
 /** @extern Show */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
@@ -143,9 +143,9 @@ function OnWizard( lay, page )
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
@@ -192,5 +192,3 @@ def OnWizard(lay, page):
     elif page == -1:
         app.ShowPopup("Wizard cancelled")
  */
-    
-            

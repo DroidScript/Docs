@@ -4,10 +4,10 @@
 /** # CreateMenuWithIcon #
  * @abbrev mwi
  * Advance MUI implementation of material design menu with additional icon using material icon font.
- * $$ mwi = MUI.CreateMenuWithIcon(list, width?, height?, position?) $$ 
+ * $$ mwi = MUI.CreateMenuWithIcon(list, width?, height?, position?) $$
  * @param {lst} list str
- * @param {num_frc} [width] 
- * @param {num_frc} [height] 
+ * @param {num_frc} [width]
+ * @param {num_frc} [height]
  * @param {str} [position] Top,Left|Top,Right|Bottom,Left|Bottom,Right
  * @returns obj
 */
@@ -15,7 +15,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSelect ###
@@ -64,10 +64,10 @@
 /** @extern SetVisibility */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -101,9 +101,9 @@ function OnSelect(choice)
     app.ShowPopup(choice)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark & Bottom,Right
 cfg.Light
@@ -137,9 +137,9 @@ function OnSelect(choice, index)
     app.ShowPopup(choice+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -169,9 +169,9 @@ def ShowMenu():
 def OnSelect(choice, index):
     app.ShowPopup(choice)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark & Bottom,Right
 # cfg.Light, cfg.MUI
@@ -201,5 +201,3 @@ def ShowMenu():
 def OnSelect(choice, index):
     app.ShowPopup(choice + " : " + str(index))
  */
-    
-            

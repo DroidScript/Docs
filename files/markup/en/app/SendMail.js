@@ -3,18 +3,18 @@
 
 /** # SendMail #
  * @brief Open the EMail app and autofill fields
- * 
- * $$ app.SendMail(address, subject?, body?, attach?, type?, options?) $$ 
- * @param {str} address 
- * @param {str} [subject] 
- * @param {str} [body] 
- * @param {str_pth} [attach] 
- * @param {str_mim} [type] 
+ *
+ * $$ app.SendMail(address, subject?, body?, attach?, type?, options?) $$
+ * @param {str} address
+ * @param {str} [subject]
+ * @param {str} [body]
+ * @param {str_pth} [attach]
+ * @param {str_mim} [type]
  * @param {str} [options] SendTo
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Send an EMail to someone using the default mail application. The passed argumets will be auto-filled.
@@ -36,10 +36,10 @@ See Also: @SendSMS, @SendFile
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -48,9 +48,9 @@ function OnStart()
     <b>app.SendMail( "myfriend@gmail.com", "MySubject", "Hello", "/sdcard/Hello.png" );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -59,5 +59,3 @@ def OnStart():
     app.CopyFile("/Sys/Img/Hello.png", "/sdcard/Hello.png")
     app.SendMail("myfriend@gmail.com", "MySubject", "Hello", "/sdcard/Hello.png")
  */
-    
-            

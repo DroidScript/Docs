@@ -7,19 +7,19 @@
  * Adds the Box2D physics engine to your game.
  * <sample Billiard>
  * <sample Collision>
- * 
+ *
  * _The method list below shows the __functions which are added to game objects__ when using physics._
- * $$ phs = gfx.AddPhysics(gravity?, accuracy?, sleep?) $$ 
- * @param {num} [gravity] 
- * @param {num} [accuracy] 
- * @param {num} [sleep] 
+ * $$ phs = gfx.AddPhysics(gravity?, accuracy?, sleep?) $$
+ * @param {num} [gravity]
+ * @param {num} [accuracy]
+ * @param {num} [sleep]
  * @returns gvo-Physics
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AddShape ###
@@ -35,10 +35,10 @@
  * @brief Adds velocity to the object
  * Adds linear and angular velocity to the object
  * $$ phs.AddVelocity(x, y, angular?, bodyRelative?) $$
- * @param {num} x 
- * @param {num} y 
- * @param {num} [angular] 
- * @param {bin} [bodyRelative] 
+ * @param {num} x
+ * @param {num} y
+ * @param {num} [angular]
+ * @param {bin} [bodyRelative]
  */
 
 
@@ -46,8 +46,8 @@
  * @brief Applies an impulse p=m*v to the object
  * Applies an impulse (impulse=velocity*mass) to the object
  * $$ phs.ApplyImpulse(x, y, offsetX=0, offsetY=0) $$
- * @param {num} x 
- * @param {num} y 
+ * @param {num} x
+ * @param {num} y
  * @param {num} [offsetX=0] -1..1
  * @param {num} [offsetY=0] -1..1
  */
@@ -57,8 +57,8 @@
  * @brief Checks if a point is in the hitbox
  * Checks if a given point is in the hitbox
  * $$ phs.Contains(x, y) $$
- * @param {num_frc} x 
- * @param {num_frc} y 
+ * @param {num_frc} x
+ * @param {num_frc} y
  * @returns bin
  */
 
@@ -66,7 +66,7 @@
 /** ### EnablePhysics ###
  * Temporally En/Disables physics for the game object.
  * $$ phs.EnablePhysics(enable) $$
- * @param {bin} enable 
+ * @param {bin} enable
  */
 
 
@@ -96,13 +96,13 @@
  * @brief Set physics properties
  * Set the physics properties for the game object.
  * $$ phs.SetPhysics(groupId, type, density?, bounce?, friction?, linearDamp?, angularDamp?) $$
- * @param {str||num} groupId 
+ * @param {str||num} groupId
  * @param {str} type moveable|fixed|dynamic
- * @param {num} [density] 
- * @param {num} [bounce] 
- * @param {num} [friction] 
- * @param {num} [linearDamp] 
- * @param {num} [angularDamp] 
+ * @param {num} [density]
+ * @param {num} [bounce]
+ * @param {num} [friction]
+ * @param {num} [linearDamp]
+ * @param {num} [angularDamp]
  */
 
 
@@ -111,8 +111,8 @@
  * Defines the shape for collision detection of the object.
  * $$ phs.SetShape(shape, width?, height?) $$
  * @param {str} shape rect|round
- * @param {num_frc} [width] 
- * @param {num_frc} [height] 
+ * @param {num_frc} [width]
+ * @param {num_frc} [height]
  */
 
 
@@ -120,10 +120,10 @@
  * @brief Set the object velocity
  * Set the velocity of the game object.
  * $$ phs.SetVelocity(x, y, angular?, bodyRelative?) $$
- * @param {num} x 
- * @param {num} y 
- * @param {num} [angular] 
- * @param {bin} [bodyRelative] 
+ * @param {num} x
+ * @param {num} y
+ * @param {num} [angular]
+ * @param {bin} [bodyRelative]
  */
 
 
@@ -135,10 +135,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Billiard
 cfg.Game;
@@ -167,9 +167,9 @@ function OnReady()
     gfx.Play();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Collision
 cfg.Game;
@@ -199,9 +199,9 @@ function OnReady()
         squeak.Play( false, 0, 0 );
 }</b>
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Billiard
 # cfg.Game
@@ -227,9 +227,9 @@ def OnReady():
 
     gfx.Play()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Collision
 # cfg.Game
@@ -253,5 +253,3 @@ def OnCollide(a, b):
     if a.group == "bunnies":
         squeak.Play(False, 0, 0)
  */
-    
-            

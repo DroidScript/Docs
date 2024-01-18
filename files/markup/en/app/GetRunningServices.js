@@ -3,13 +3,13 @@
 
 /** # GetRunningServices #
  * @brief Get list of running services
- * 
- * $$ app.GetRunningServices() $$ 
+ *
+ * $$ app.GetRunningServices() $$
  * @returns lst_obj-[{ user:num_int&comma; pid:num_int&comma; name:str }]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Returns a list of objects containing info about all currently running services in the background.
@@ -22,10 +22,10 @@ See Also: @GetRunningApps, @GetInstalledApps
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Running Services
 function OnStart()
@@ -54,9 +54,9 @@ function OnStart()
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Running Services
 from native import app
@@ -80,5 +80,3 @@ def OnStart():
 
     app.HideProgress()
  */
-    
-            

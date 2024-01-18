@@ -4,17 +4,17 @@
 /** # HasSoftNav #
  * @brief Checks if device has soft keys
  * Checks if the device has a soft navigation bar on the screen.
- * $$ app.HasSoftNav() $$ 
+ * $$ app.HasSoftNav() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Softkeys
 function OnStart()
@@ -23,9 +23,9 @@ function OnStart()
     app.Alert( hasSoftNav, "Has Soft Keys:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Softkeys
 from native import app
@@ -34,5 +34,3 @@ def OnStart():
     hasSoftNav = app.HasSoftNav()
     app.Alert(hasSoftNav, "Has Soft Keys:")
  */
-    
-            

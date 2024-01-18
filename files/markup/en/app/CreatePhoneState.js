@@ -4,14 +4,14 @@
 /** # CreatePhoneState #
  * @abbrev pst
  * @brief Returns a new PhoneState object
- * 
- * $$ pst = app.CreatePhoneState(types) $$ 
+ *
+ * $$ pst = app.CreatePhoneState(types) $$
  * @param {str_lst} types CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting
  * @returns dso-PhoneState
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The PhoneState component is able to detect phone state changes.
@@ -30,7 +30,7 @@ The callback data depends on the type:
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -63,10 +63,10 @@ The callback data depends on the type:
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
@@ -94,9 +94,9 @@ function state_OnChange( type, data )
     txt.SetHtml( log.join("<br>") );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
@@ -123,5 +123,3 @@ def state_OnChange(type, data):
     log.append("<b>" + type + ":</b><br>\t" + str(data))
     txt.SetHtml("<br>".join(log))
  */
-    
-            

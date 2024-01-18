@@ -5,7 +5,7 @@
  * @abbrev mail
  * @brief Returns an Email object for user to send emails
  * The Email component allows us to send and receive emails without user interaction.
- * $$ mail = app.CreateEmail(account, password) $$ 
+ * $$ mail = app.CreateEmail(account, password) $$
  * @param {str} account account email
  * @param {str} password account password
  * @returns dso-Email
@@ -14,7 +14,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -29,20 +29,20 @@
 /** ### Receive ###
  * Start receiving emails from a given folder.
  * $$ mail.Receive(folder, maxCount, filter?) $$
- * @param {str} folder 
- * @param {num_int} maxCount 
- * @param {str} [filter] 
+ * @param {str} folder
+ * @param {num_int} maxCount
+ * @param {str} [filter]
  */
 
 
 /** ### Send ###
  * Send an email to someone.
  * $$ mail.Send(subject, body, sender, recipients, attach?) $$
- * @param {str} subject 
- * @param {str} body 
+ * @param {str} subject
+ * @param {str} body
  * @param {str} sender email address
  * @param {str} recipients email address
- * @param {str_pth} [attach] 
+ * @param {str_pth} [attach]
  */
 
 
@@ -80,10 +80,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -102,9 +102,9 @@ function email_OnStatus( status )
 	app.ShowPopup( status );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -121,5 +121,3 @@ def email_OnStatus( status ):
     app.HideProgress()
     app.ShowPopup( status )
  */
-    
-            

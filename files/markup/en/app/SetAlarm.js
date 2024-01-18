@@ -4,22 +4,22 @@
 /** # SetAlarm #
  * @brief Set alarm to open your app at a specific time
  * Set a time when you want your app to start automatically if it is not already opened. When the alarm is fired, the global _OnAlarm_ event will be fired.
- * $$ app.SetAlarm(type, id?, callback?, time?, interval?, options?) $$ 
+ * $$ app.SetAlarm(type, id?, callback?, time?, interval?, options?) $$
  * @param {str} type Set|Repeat|Cancel
- * @param {str||num_int} [id] 
+ * @param {str||num_int} [id]
  * @param {fnc_json} [callback] {"pNames":["id"],"pTypes":["str||num_int"]}
- * @param {num_dat} [time] 
- * @param {num_mls} [interval] 
+ * @param {num_dat} [time]
+ * @param {num_mls} [interval]
  * @param {str_com} [options] ExactIdle|Exact:only works for single shot alarms,App:Opens main app if called from a service
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Set Alarm
 function OnStart()
@@ -35,9 +35,9 @@ function OnAlarm( id )
     app.ShowPopup( "Got Alarm: id = " + id );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Set Alarm
 from native import app
@@ -52,5 +52,3 @@ def OnStart():
 def OnAlarm(id):
     app.ShowPopup("Got Alarm: id = " + str(id))
  */
-    
-            

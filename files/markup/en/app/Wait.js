@@ -3,14 +3,14 @@
 
 /** # Wait #
  * @brief Perform a synchronous delay
- * 
- * $$ app.Wait(seconds, doEvents=false) $$ 
- * @param {num_sec} seconds 
- * @param {bin} [doEvents=false] 
+ *
+ * $$ app.Wait(seconds, doEvents=false) $$
+ * @param {num_sec} seconds
+ * @param {bin} [doEvents=false]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Performs a **synchronous** delay in your program which effectively pauses it. You can enable processing (input) events by setting doEvents to <js nobox>true</js>.
@@ -22,10 +22,10 @@ Be careful when using this method without doevents in your code as Android quick
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Synchronous delay
 function OnStart()
@@ -35,9 +35,9 @@ function OnStart()
     app.ShowPopup( "Done." );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Synchronous delay
 from native import app
@@ -47,5 +47,3 @@ def OnStart():
     app.Wait(5)
     app.ShowPopup("Done.")
  */
-    
-            

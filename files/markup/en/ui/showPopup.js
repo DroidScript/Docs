@@ -5,7 +5,7 @@
  * @abbrev pop
  * @brief showPopup
  * Shows a popup into your app.
- * $$ pop = ui.showPopup(msg, options?, duration?, action?) $$ 
+ * $$ pop = ui.showPopup(msg, options?, duration?, action?) $$
  * @param {str} msg The message to display on the pop-up.
  * @param {str} [options] A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`
  * @param {num} [duration] Time in milliseconds. Pass this, if you don't want the default auto hide duration.
@@ -16,7 +16,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### duration
@@ -25,14 +25,14 @@
  * @returns num
  */
 
-                    
+
 /** ### text
  * @prop
  * Sets or returns the text of the popup.
  * @returns str
  */
 
-                    
+
 /** ### setOnClose ###
  * @brief setOnClose
  * Adds an onClose callback to your popup
@@ -81,10 +81,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 class Main extends App
@@ -108,9 +108,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Popups with transitions
 class Main extends App
@@ -143,9 +143,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Transition
 class Main extends App
@@ -166,7 +166,7 @@ class Main extends App
     {
         // Show a popup with additional action
         this.snackbar = ui.showPopup("Please login to continue", "Bottom,Center", "", "Login")
-        
+
         // Add a callback handler when the action is touched
         this.snackbar.setOnAction( this.onAction )
     }
@@ -179,9 +179,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -194,9 +194,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup("Hello from popup!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Popups with transitions
 from hybrid import ui
@@ -215,9 +215,9 @@ def onTouch1(event):
 def onTouch2(event):
     ui.showPopup("Hello world.", "Bottom,Slide", 1500)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Transition
 from hybrid import ui
@@ -236,5 +236,3 @@ def onAction():
     snackbar.hide()
     ui.showPopup("Login is click. Show login Page.")
  */
-    
-            

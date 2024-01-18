@@ -4,20 +4,20 @@
 /** # IsBtDevicePaired #
  * @brief Check bt paired state to other device
  * Checks if a given bluetooth device was paired with the user device.
- * 
+ *
  * See Also: @GetPairedBtDevices, @UnpairBtDevice
- * $$ app.IsBtDevicePaired(name) $$ 
- * @param {str} name 
+ * $$ app.IsBtDevicePaired(name) $$
+ * @param {str} name
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Paired
 function OnStart()
@@ -35,9 +35,9 @@ function OnStart()
         <b>app.ShowPopup( "No Paired devices found" );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Check Paired from Available
 function OnStart()
@@ -61,9 +61,9 @@ function bt_OnComplete() {
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Pairing and Unpairing bluetooth devices
 function OnStart()
@@ -120,9 +120,9 @@ function OnUnpair() {
     app.Alert( name + "  " + address, "Unpairing successful!" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Paired
 from native import app
@@ -140,9 +140,9 @@ def OnStart():
     else:
         app.ShowPopup("No Paired devices found")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Paired from Available
 from native import app
@@ -164,9 +164,9 @@ def bt_OnFound(name, address):
 def bt_OnComplete():
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Pairing and Unpairing bluetooth devices
 from native import app
@@ -215,5 +215,3 @@ def OnPair(name, address):
 def OnUnpair():
     app.Alert(name + "  " + address, "Unpairing successful!")
  */
-    
-            

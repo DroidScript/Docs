@@ -3,16 +3,16 @@
 
 /** # ExtExec #
  * @brief Execute a bash script using Termux
- * 
- * $$ app.ExtExec(name, file, args?, options?) $$ 
+ *
+ * $$ app.ExtExec(name, file, args?, options?) $$
  * @param {str} name termux
- * @param {str_ptf} file 
- * @param {str} [args] 
+ * @param {str_ptf} file
+ * @param {str} [args]
  * @param {str} [options] hide
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 ExtExec allows you to execute Linux shell commands in the powerful Linux environment provided by the free app called Termux.
@@ -36,10 +36,10 @@ ln -s /sdcard/termux/scripts .termux/tasker</bash>Finally you can run a termux s
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Open Termux and pass arguments
 function OnStart()
@@ -49,9 +49,9 @@ function OnStart()
     if( err ) app.Alert( "Termux Error:" + err );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Execute in Background and retreive output
 var itv, lock = "/sdcard/.termuxlock";
@@ -101,9 +101,9 @@ function CheckReady()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Open Termux and pass arguments
 from native import app
@@ -114,9 +114,9 @@ def OnStart():
     if err:
         app.Alert("Termux Error:" + err)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Execute in Background and retrieve output
 from native import app
@@ -160,5 +160,3 @@ def CheckReady():
 
         txt.SetText(text)
  */
-    
-            

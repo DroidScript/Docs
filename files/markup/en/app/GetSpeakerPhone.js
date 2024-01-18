@@ -3,19 +3,19 @@
 
 /** # GetSpeakerPhone #
  * Checks if the speaker is enabled for phone calls. Returns false if no call is active.
- * 
+ *
  * See also: @SetSpeakerPhone.
- * $$ app.GetSpeakerPhone() $$ 
+ * $$ app.GetSpeakerPhone() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show if Speaker is Enabled
 function OnStart()
@@ -24,9 +24,9 @@ function OnStart()
     app.Alert( speaker );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show if Speaker is Enabled
 from native import app
@@ -35,5 +35,3 @@ def OnStart():
     speaker = app.GetSpeakerPhone()
     app.Alert(str(speaker))
  */
-    
-            

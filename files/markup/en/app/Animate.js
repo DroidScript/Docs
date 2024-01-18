@@ -3,14 +3,14 @@
 
 /** # Animate #
  * @brief Similar to setInterval
- * 
- * $$ app.Animate(callback?, fps=-1) $$ 
+ *
+ * $$ app.Animate(callback?, fps=-1) $$
  * @param {fnc_json} [callback] {"pNames":["time","dtime"],"pTypes":["num_mls","num_mls"]}
- * @param {num_fps} [fps=-1] 
+ * @param {num_fps} [fps=-1]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Animate calls a function repeatedly like setInterval() but with the current time (Date.getTime()) and the difference to the last call in milliseconds as parameter.
@@ -31,10 +31,10 @@ When using _cfg.NoDom_; you cannot use JavaScripts _setInterval_ but only the _A
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Multiple Animation loops
 function OnStart()
@@ -72,9 +72,9 @@ function loop(t, dt)
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Digital Clock
 function OnStart()
@@ -98,9 +98,9 @@ function OnAnimate( time, dtime )
     txt.SetText( new Date().toLocaleString() + "\n" + time );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SpeedTest
 cfg.No_Dom;
@@ -129,9 +129,9 @@ function OnAnimate( time, dtime )
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Multiple Animation loops
 from native import app
@@ -167,9 +167,9 @@ def loop(t, dt):
         txt2.SetText(str(++n2) + "\tdt: " + str(t - t2))
         t2 = t
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Digital Clock
 from native import app
@@ -193,9 +193,9 @@ def OnStart():
 def OnAnimate(time, dtime):
     txt.SetText(str(new Date().toLocaleString()) + "\n" + str(time))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SpeedTest
 # cfg.No_Dom
@@ -225,5 +225,3 @@ def OnAnimate(time, dtime):
         ltime = time
         c = 0
  */
-    
-            

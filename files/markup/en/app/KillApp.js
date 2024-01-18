@@ -4,17 +4,17 @@
 /** # KillApp #
  * @brief Kill an app by its pid
  * Kills a running app by its process ID. You can retreive a list of all running apps with their pids using the @GetRunningApps function of the **app** object.
- * $$ app.KillApp(pid) $$ 
- * @param {num_int} pid 
+ * $$ app.KillApp(pid) $$
+ * @param {num_int} pid
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
@@ -28,9 +28,9 @@ function OnStart()
     app.ShowPopup( "Done" ); // not shown
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
@@ -44,5 +44,3 @@ def OnStart():
     app.KillApp( pid )</b>
     app.ShowPopup( "Done" ) # not shown
  */
-    
-            

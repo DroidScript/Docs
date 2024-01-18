@@ -5,7 +5,7 @@
  * @abbrev txt
  * @brief addText
  * Adds a text to your app.
- * $$ txt = ui.addText(parent, text, options?, width?, height?) $$ 
+ * $$ txt = ui.addText(parent, text, options?, width?, height?) $$
  * @param {obj} parent The layout control where to add the text control
  * @param {str} text The text to be displayed on the text control
  * @param {str} [options] A comma separated string. Options can be one or a combination of the following: \n Variants: `H1` `H2` `H3` `H4` `H5` `H6` `body1` `body2` `overline` `subtitle1` `subtitle2` `button` `caption`.\nLines: `Singleline` `Multiline`.\nAlignment: `Left` `Center` `Right` `Justify`.\nColor: `Primary` `Secondary` `Error`.\nFormat `Html` `Icon` `Italize` `Monospace` `Bold` `Underline` \n `Utils`: `Touchable`
@@ -17,7 +17,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -26,266 +26,266 @@
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### alignment
  * @prop
  * Sets or returns the horizontal alignment of the text. Values can be <col nobox #fb8c00>Left</col> <col nobox #fb8c00>Center</col> <col nobox #fb8c00>Right</col> or <col nobox #fb8c00>Justify</col>.
  * @returns str
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### bold
  * @prop
  * Sets or returns whether the text is <col nobox #fb8c00>bold</col> or not.
  * @returns bin
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### color
  * @prop
  * Sets or returns the theme color of the text <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>. You can also pass hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### ellipsize
  * @prop
  * Sets or returns the ellipsis use when the text is truncated. Values can be <col nobox #fb8c00>Ellipsis</col> <col nobox #fb8c00>End</col> or <col nobox #fb8c00>Start</col>
  * @returns str
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### italic
  * @prop
  * Sets or returns whether the text is <col nobox #fb8c00>italized</col> or not.
  * @returns bin
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### text
  * @prop
  * Sets or returns the text.
  * @returns str
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the text color in hexadecimal format.
  * @returns str_col
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the fontsize for the text. You can also pass values such as <col nobox #fb8c00>1.2em</col>.
  * @returns num
  */
 
-                    
+
 /** ### textStyle
  * @prop
  * Sets or returns the style of the text. Values can be <col nobox #fb8c00>italic</col> or <col nobox #fb8c00>normal</col>.
  * @returns str
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### underline
  * @prop
  * Sets or returns whether the text is <col nobox #fb8c00>underlined</col> or not.
  * @returns bin
  */
 
-                    
+
 /** ### variant
  * @prop
  * Sets or returns the text variants. See <col nobox #fb8c00>options</col> param above for available values.
  * @returns str
  */
 
-                    
+
 /** ### verticalAlignment
  * @prop
  * Sets or returns the vertical alignment of the text. Values can be <col nobox #fb8c00>Top</col> <col nobox #fb8c00>Center</col> or <col nobox #fb8c00>Bottom</col>.
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### setHtml ###
  * @brief setHtml
  * Sets an html on the text control
@@ -348,10 +348,10 @@
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic text control
 class Main extends App
@@ -376,9 +376,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Heading variants
 class Main extends App
@@ -406,9 +406,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Other variants
 class Main extends App
@@ -436,9 +436,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Alignments and colors
 class Main extends App
@@ -469,9 +469,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Icons
 class Main extends App
@@ -502,9 +502,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Html formatted text
 class Main extends App
@@ -523,9 +523,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic text control
 class Main extends App
@@ -544,9 +544,9 @@ class Main extends App
     onTouch()
         ui.showPopup( "You touched the text!" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Heading variants
 class Main extends App
@@ -570,9 +570,9 @@ class Main extends App
 
         this.h6 = ui.addText( this.main, "Heading 6", "H6" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Other variants
 class Main extends App
@@ -596,9 +596,9 @@ class Main extends App
 
         this.text = ui.addText( this.main, t, "caption" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Alignments and colors
 class Main extends App
@@ -625,9 +625,9 @@ class Main extends App
         this.txt4 = ui.addText( this.main, t, "body1,Center,Bottom,TextSecondary", 0.9, 0.1)
         this.txt4.backColor = "#e0e0e0"
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Icons
 class Main extends App
@@ -652,9 +652,9 @@ class Main extends App
     onTouch()
         ui.showPopup( "You touch the icon!" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Html formatted text
 class Main extends App
@@ -669,5 +669,3 @@ class Main extends App
         #  Add text control to the main layout by passing `Html` option
         this.txt = ui.addText(this.main, t, "html")
  */
-    
-            

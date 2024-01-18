@@ -3,16 +3,16 @@
 
 /** # CopyFolder #
  * @brief Copies a folder to a given destination
- * 
- * $$ app.CopyFolder(source, destination, overwrite=false, filter?) $$ 
- * @param {str_pth} source 
- * @param {str_pth} destination 
- * @param {bin} [overwrite=false] 
+ *
+ * $$ app.CopyFolder(source, destination, overwrite=false, filter?) $$
+ * @param {str_pth} source
+ * @param {str_pth} destination
+ * @param {bin} [overwrite=false]
  * @param {str} [filter] pattern
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 CopyFolder copies a folder and its contents to a given destination. If an item already exists in the destination it will not be overwritten unless overwrite is true.
@@ -24,12 +24,12 @@ See Also: @RenameFolder, @DeleteFolder, @FolderExists
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 function OnStart()
 {
     app.MakeFolder("myFolder");
@@ -41,11 +41,11 @@ function OnStart()
 	    app.ShowPopup("myFolder does not exist in /sdcard/!");
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -57,5 +57,3 @@ def OnStart():
     else:
         app.ShowPopup("myFolder does not exist in /sdcard/!")
  */
-    
-            

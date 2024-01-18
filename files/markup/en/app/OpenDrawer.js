@@ -3,19 +3,19 @@
 
 /** # OpenDrawer #
  * Opens the drawer layout on the given side with slide animation.
- * 
+ *
  * See Also: @AddDrawer
- * $$ app.OpenDrawer(side?) $$ 
+ * $$ app.OpenDrawer(side?) $$
  * @param {str} [side] Left|Right
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Open and Close Drawer via Button
 function OnStart()
@@ -55,9 +55,9 @@ function btn_OnTouch()
         app.CloseDrawer( "left" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Open and Close Drawer via Button
 from native import app
@@ -95,5 +95,3 @@ def btn_OnTouch():
 	else: # "Open"
 		app.CloseDrawer( "left" )
  */
-    
-            

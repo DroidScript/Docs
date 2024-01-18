@@ -4,18 +4,18 @@
 /** # CreateCheckList #
  * @abbrev chl
  * Check list is a dialog type checkbox list. Let the user select items in a nice popup
- * $$ chl = MUI.CreateCheckList(title, list, color?, bottom?) $$ 
- * @param {str} title 
+ * $$ chl = MUI.CreateCheckList(title, list, color?, bottom?) $$
+ * @param {str} title
  * @param {lst} list An array of objects of the form {name: string, check: boolean}
- * @param {str_col} [color] 
- * @param {bin} [bottom] 
+ * @param {str_col} [color]
+ * @param {bin} [bottom]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSubmit ###
@@ -68,10 +68,10 @@
 /** @extern SetTextEdit */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -110,9 +110,9 @@ function OnSubmit(lst)
     app.ShowPopup(JSON.stringify(lst))   
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark, Bottom
 cfg.Dark
@@ -151,9 +151,9 @@ function OnSubmit(lst)
     app.ShowPopup(JSON.stringify(lst))   
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Light
 # cfg.Light, cfg.MUI
@@ -189,9 +189,9 @@ def ShowCheckList():
 def OnSubmit(lst):
     app.ShowPopup(json.dumps(lst))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark, Bottom
 # cfg.Dark, cfg.MUI
@@ -227,5 +227,3 @@ def ShowCheckList():
 def OnSubmit(lst):
     app.ShowPopup(json.dumps(lst))
  */
-    
-            

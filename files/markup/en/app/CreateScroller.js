@@ -4,16 +4,16 @@
 /** # CreateScroller #
  * @abbrev scr
  * @brief Returns a new Scroller object
- * 
- * $$ scr = app.CreateScroller(width=-1, height=-1, options?) $$ 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ *
+ * $$ scr = app.CreateScroller(width=-1, height=-1, options?) $$
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @param {str_com} [options] FillX|FillY|FillXY,Horizontal|Vertical,NoScrollBar,ScrollFade
  * @returns dso-Scroller
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 If you have much data to display which doesn't fit in the area availabe, you probably want to use a **Scroller**. The options for the Scroller are the same as the LinearLayout fill options, which set how a Scroller sizes within it's parent:- “FillX”, “FillY” and “FillXY”. By default Scrollers will auto-size to wrap their contents.
@@ -23,7 +23,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AddChild ###
@@ -109,7 +109,7 @@ To add other controls to your scroller you need to put them in a scroller [layou
  * @brief Remove a scroller layout
  * Removes a scroller layout from the scroller.
  * $$ scr.RemoveChild(child) $$
- * @param {dso} child 
+ * @param {dso} child
  */
 
 
@@ -117,8 +117,8 @@ To add other controls to your scroller you need to put them in a scroller [layou
  * @brief Scroll relative to the current position
  * Scrolls relatively to the current scroll bar positions.
  * $$ scr.ScrollBy(x, y) $$
- * @param {num_frc} x 
- * @param {num_frc} y 
+ * @param {num_frc} x
+ * @param {num_frc} y
  */
 
 
@@ -126,8 +126,8 @@ To add other controls to your scroller you need to put them in a scroller [layou
  * @brief Scrolls to a given position
  * Scrolls to a given fixed position.
  * $$ scr.ScrollTo(x, y) $$
- * @param {num_frc} x 
- * @param {num_frc} y 
+ * @param {num_frc} x
+ * @param {num_frc} y
  */
 
 
@@ -166,10 +166,10 @@ To add other controls to your scroller you need to put them in a scroller [layou
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -188,9 +188,9 @@ function OnStart()
 	app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -209,5 +209,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

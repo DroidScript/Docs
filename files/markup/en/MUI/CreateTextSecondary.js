@@ -4,12 +4,12 @@
 /** # CreateTextSecondary #
  * @abbrev txs
  * Creates a secondary text
- * $$ txs = MUI.CreateTextSecondary(text, width=-1, height=-1, options?, color?, fontWeight?) $$ 
- * @param {str} text 
- * @param {num} [width=-1] 
- * @param {num} [height=-1] 
+ * $$ txs = MUI.CreateTextSecondary(text, width=-1, height=-1, options?, color?, fontWeight?) $$
+ * @param {str} text
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
  * @param {str} [options] DS text options
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @param {str} [fontWeight] Thin|Light|Regular|Medium|Bold
  * @returns obj
 */
@@ -17,7 +17,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -59,7 +59,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ txs.GetType() $$
  * @returns str-Text
  */
@@ -144,10 +144,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample All Headings
 cfg.Light
@@ -172,9 +172,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python All Headings
 from native import app
@@ -196,5 +196,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

@@ -4,8 +4,8 @@
 /** # addStepper #
  * @abbrev stp
  * @brief addStepper
- * 
- * $$ stp = ui.addStepper(parent, steps?, options?, width?, height?) $$ 
+ *
+ * $$ stp = ui.addStepper(parent, steps?, options?, width?, height?) $$
  * @param {obj} parent The parent layout of the Stepper
  * @param {lst} [steps] An array of titles.
  * @param {str} [options] A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.
@@ -15,7 +15,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Adds a Stepper to a given layout. A stepper can display a series of steps or information that a user can navigate forward or backward.
@@ -29,7 +29,7 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -38,217 +38,217 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### activeStep
  * @prop
  * Sets or returns the active step.
  * @returns num
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### elevation
  * @prop
  * Sets or returns the elevation of the mobile stepper. Value ranges from <col nobox #fb8c00>0</col> to <col nobox #fb8c00>24</col>.
  * @returns num
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### orientation
  * @prop
  * Sets or returns the orientation of the Stepper. Values can be <col nobox #fb8c00>Horizontal</col> or <col nobox #fb8c00>Vertical</col>.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the color of the text.
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### setOnComplete ###
  * @brief setOnComplete
  * Adds a callback function to be called when the stepper is complete
@@ -349,10 +349,10 @@ Adds a Stepper to a given layout. A stepper can display a series of steps or inf
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic stepper
 class Main extends App
@@ -389,9 +389,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Vertical stepper
 class Main extends App
@@ -446,9 +446,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Mobile Stepper
 class Main extends App
@@ -495,9 +495,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Autoswipe and Fraction Mobile Stepper
 class Main extends App
@@ -546,9 +546,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Progress control implementation
 from hybrid import ui
@@ -571,9 +571,9 @@ def OnStart():
     prog4 = ui.addProgress(main, None, "Circular,Secondary,indeterminate")
     prog4.circleSize = 100
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Setting progress value
 from hybrid import ui
@@ -600,9 +600,9 @@ def onTouch(event):
     else:
         ui.showPopup("Progress is complete!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic stepper
 from hybrid import ui
@@ -633,9 +633,9 @@ def next(event):
 def back(event):
     stp.previousStep()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Vertical stepper
 from hybrid import ui
@@ -684,9 +684,9 @@ def next(event):
 def back():
     stp.previousStep()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Mobile Stepper
 from hybrid import ui
@@ -728,9 +728,9 @@ def OnStart():
 def onChange(index):
     ui.showPopup("Layout index " + str(index))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Autoswipe and Fraction Mobile Stepper
 from hybrid import ui
@@ -765,5 +765,3 @@ def OnStart():
     # Get the third layout on the stepper
     lay3
  */
-    
-            

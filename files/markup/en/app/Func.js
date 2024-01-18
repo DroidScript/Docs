@@ -3,18 +3,18 @@
 
 /** # Func #
  * Call main app functions from inside a webview
- * $$ app.Func(name, ...args) $$ 
- * @param {str} name 
- * @param {all} ...args 
+ * $$ app.Func(name, ...args) $$
+ * @param {str} name
+ * @param {all} ...args
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample WebView Greeter
 var html = `
@@ -60,9 +60,9 @@ function greetWeb() {
     web.Func("greetWeb", "App");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python WebView Greeter
 from native import app
@@ -105,5 +105,3 @@ def greetApp(name):
 def greetWeb():
     web.Func("greetWeb", "App")
  */
-    
-            

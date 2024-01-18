@@ -4,20 +4,20 @@
 /** # ShowDebug #
  * @brief Opens the in-app debug console as black overlay
  * Show/Hide the debug console as black overlay in your app.
- * 
+ *
  * See Also: @Debug, @IsDebugVisible
- * $$ app.ShowDebug(show, options?) $$ 
- * @param {bin} show 
+ * $$ app.ShowDebug(show, options?) $$
+ * @param {bin} show
  * @param {str} [options] dialog:Show the debug log as black overlay dialog|clear:Clear content before showing
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Debug Overlay
 function OnStart()
@@ -35,9 +35,9 @@ function ShowDebug( show )
     <b>app.ShowDebug( show );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Debug Dialog
 function OnStart()
@@ -64,9 +64,9 @@ function OnBack()
 	}
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Debug Overlay
 from native import app
@@ -82,9 +82,9 @@ def OnStart():
 def ShowDebug(show):
     app.ShowDebug(show)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Debug Dialog
 from native import app
@@ -108,5 +108,3 @@ def OnBack():
     else:
         app.Exit()
  */
-    
-            

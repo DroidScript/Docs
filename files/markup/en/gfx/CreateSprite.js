@@ -4,16 +4,16 @@
 /** # CreateSprite #
  * @abbrev spr
  * @brief Returns a new sprite object
- * 
- * $$ spr = gfx.CreateSprite(file, group?, callback?) $$ 
- * @param {str_ptf} file 
- * @param {str} [group] 
+ *
+ * $$ spr = gfx.CreateSprite(file, group?, callback?) $$
+ * @param {str_ptf} file
+ * @param {str} [group]
  * @param {fnc_json} [callback] {}
  * @returns gvo-CreateSprite
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Creates a sprite object based on an image file containing a sprite or a spritesheet.
@@ -40,7 +40,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### added
@@ -50,7 +50,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @returns bin
  */
 
-                    
+
 /** @extern alpha */
 
 /** @extern angle */
@@ -62,7 +62,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @returns num
  */
 
-                    
+
 /** @extern Contains */
 
 /** @extern data */
@@ -71,8 +71,8 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief Flip sprite
  * Flips the sprite on the horizontal and/or the vertical axis.
  * $$ spr.Flip(horiz, vert) $$
- * @param {bin} horiz 
- * @param {bin} vert 
+ * @param {bin} horiz
+ * @param {bin} vert
  */
 
 
@@ -88,7 +88,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief go to animation frame
  * Displays a specific frame of an animation
  * $$ spr.Goto(frame) $$
- * @param {num_int} frame 
+ * @param {num_int} frame
  */
 
 
@@ -106,9 +106,9 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief play sprite animation
  * Start playing the sprite animation
  * $$ spr.Play(startFrame, speed, loop) $$
- * @param {num_int} startFrame 
- * @param {num_int} speed 
- * @param {bin} loop 
+ * @param {num_int} startFrame
+ * @param {num_int} speed
+ * @param {bin} loop
  */
 
 
@@ -116,10 +116,10 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief play range of animation frames
  * Start playing the sprite animation in a given frame range
  * $$ spr.PlayRange(firstFrame, lastFrame, speed, loop) $$
- * @param {num_int} firstFrame 
- * @param {num_int} lastFrame 
- * @param {num} speed 
- * @param {bin} loop 
+ * @param {num_int} firstFrame
+ * @param {num_int} lastFrame
+ * @param {num} speed
+ * @param {bin} loop
  */
 
 
@@ -127,7 +127,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief play to animation frame
  * Play the animation until a specific frame is reached
  * $$ spr.PlayTo(frame) $$
- * @param {num_int} frame 
+ * @param {num_int} frame
  */
 
 
@@ -141,7 +141,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief Set animation looping
  * Define if the animation should loop or stop at the end
  * $$ spr.SetLoop(loop) $$
- * @param {bin} loop 
+ * @param {bin} loop
  */
 
 
@@ -151,7 +151,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief Set animation speed
  * Define at which speed the animation will play. 1 equals to 60 fps
  * $$ spr.SetPlaySpeed(speed) $$
- * @param {num} speed 
+ * @param {num} speed
  */
 
 
@@ -159,11 +159,11 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief Set animation frame range
  * Define the frame range the animation should show.
  * $$ spr.SetRange(firstFrame, lastFrame, loop, play, speed) $$
- * @param {num_int} firstFrame 
- * @param {num_int} lastFrame 
- * @param {bin} loop 
- * @param {bin} play 
- * @param {num} speed 
+ * @param {num_int} firstFrame
+ * @param {num_int} lastFrame
+ * @param {bin} loop
+ * @param {bin} play
+ * @param {num} speed
  */
 
 
@@ -171,8 +171,8 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief Set sprite size
  * Set the sprite size on the screen
  * $$ spr.SetSize(w, h) $$
- * @param {num_frc} w 
- * @param {num_frc} h 
+ * @param {num_frc} w
+ * @param {num_frc} h
  */
 
 
@@ -209,7 +209,7 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @brief Stop animation on frame
  * Causes the animation to stop playing at a specific frame
  * $$ spr.StopAt(frame) $$
- * @param {num_int} frame 
+ * @param {num_int} frame
  */
 
 
@@ -227,11 +227,9 @@ The second way is to create a SpriteSheet using the @CreateSpriteSheet method wh
  * @returns num_frc
  */
 
-                    
+
 /** ### y
  * @prop
  * Y-position on the screen.
  * @returns num_frc
  */
-
-                    

@@ -4,17 +4,17 @@
 /** # SendMessage #
  * @brief Send message from Service to main app
  * Send a message from a Service to the main app.
- * $$ app.SendMessage(message) $$ 
- * @param {str} message 
+ * $$ app.SendMessage(message) $$
+ * @param {str} message
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Services
 //our Service.js code.
@@ -98,9 +98,9 @@ function OnServiceMessage( msg )
     txt.SetText( "Count: " + msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Services
 from native import app
@@ -176,5 +176,3 @@ def OnServiceReady():
 def OnServiceMessage( msg ):
     txt.SetText( "Count: " + msg )
  */
-    
-            

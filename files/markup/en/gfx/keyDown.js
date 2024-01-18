@@ -4,8 +4,6 @@
 /** # keyDown #
  * @prop
  * Currently pressed key
- * $$ gfx.keyDown() $$ 
+ * $$ gfx.keyDown() $$
  * @returns str
 */
-
-

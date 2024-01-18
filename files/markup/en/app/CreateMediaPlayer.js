@@ -4,13 +4,13 @@
 /** # CreateMediaPlayer #
  * @abbrev ply
  * @brief Returns a new MediaPlayer object
- * 
- * $$ ply = app.CreateMediaPlayer() $$ 
+ *
+ * $$ ply = app.CreateMediaPlayer() $$
  * @returns dso-MediaPlayer
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The MediaPlayer object can be used to play sound files from the phone or tablet.
@@ -25,7 +25,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -99,7 +99,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 /** ### SeekTo ###
  * Seek the player to a given time in seconds.
  * $$ ply.SeekTo(time) $$
- * @param {num_flt} time 
+ * @param {num_flt} time
  */
 
 
@@ -107,7 +107,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Load a sound file to the player
  * Load a sound file to the media player.
  * $$ ply.SetFile(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
@@ -115,7 +115,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Set looping mode
  * Define whether the media player should replay the song when completed.
  * $$ ply.SetLooping(loop) $$
- * @param {bin} loop 
+ * @param {bin} loop
  */
 
 
@@ -147,7 +147,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Set the playback speed
  * Change the speed of the playing song.
  * $$ ply.SetSpeed(speed) $$
- * @param {num_fac} speed 
+ * @param {num_fac} speed
  */
 
 
@@ -155,7 +155,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Set the playback pitch
  * Change the pitch of the playing song.
  * $$ ply.SetPitch(pitch) $$
- * @param {num_fac} pitch 
+ * @param {num_fac} pitch
  */
 
 
@@ -163,8 +163,8 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Set the playback volume
  * Change the volume of the playing song.
  * $$ ply.SetVolume(left, right) $$
- * @param {num_prc} left 
- * @param {num_prc} right 
+ * @param {num_prc} left
+ * @param {num_prc} right
  */
 
 
@@ -175,10 +175,10 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Playing Audio
 function OnStart()
@@ -199,9 +199,9 @@ function player_OnComplete()
     app.ShowPopup( "OnComplete" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Playing Audio
 from native import app
@@ -219,5 +219,3 @@ def Play():
 def player_OnComplete():
     app.ShowPopup("OnComplete")
  */
-    
-            

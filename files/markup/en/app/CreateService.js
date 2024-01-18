@@ -4,8 +4,8 @@
 /** # CreateService #
  * @abbrev srv
  * @brief Returns a new Service object
- * 
- * $$ srv = app.CreateService(packageName, className, callback?, options?) $$ 
+ *
+ * $$ srv = app.CreateService(packageName, className, callback?, options?) $$
  * @param {str} packageName this|&lt;package&gt;
  * @param {str} className this|&lt;class&gt;
  * @param {fnc_json} [callback] {}
@@ -14,7 +14,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Services run in the background and can be used to monitor online databases, local communication ports or changes in data on the file system. They can also trigger notifications to the user and launch apps when changes or timeouts occur.
@@ -53,7 +53,7 @@ Inspect the debug console and see the log messages from the service in gray.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -69,7 +69,7 @@ Inspect the debug console and see the log messages from the service in gray.
  * @brief Send message to service
  * Sends a message to the service.
  * $$ srv.SendMessage(message) $$
- * @param {str} message 
+ * @param {str} message
  */
 
 
@@ -82,10 +82,10 @@ Inspect the debug console and see the log messages from the service in gray.
 /** ### SetInForeground ###
  * Run service in foreground.
  * $$ srv.SetInForeground(title, text?, largeIcon?, smallIcon?, importance?) $$
- * @param {str} title 
- * @param {str} [text] 
- * @param {str_ptf} [largeIcon] 
- * @param {str_ptf} [smallIcon] 
+ * @param {str} title
+ * @param {str} [text]
+ * @param {str_ptf} [largeIcon]
+ * @param {str_ptf} [smallIcon]
  * @param {str} [importance] none|min|low|high
  */
 
@@ -106,10 +106,10 @@ Inspect the debug console and see the log messages from the service in gray.
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Services
 //our Service.js code.
@@ -193,9 +193,9 @@ function OnServiceMessage( msg )
     txt.SetText( "Count: " + msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Services
 from native import app
@@ -273,5 +273,3 @@ def OnServiceReady():
 def OnServiceMessage( msg ):
     txt.SetText( "Count: " + msg )
  */
-    
-            

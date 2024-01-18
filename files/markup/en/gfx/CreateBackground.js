@@ -5,8 +5,8 @@
  * @abbrev bck
  * @brief Returns a new background
  * Creates a background
- * $$ bck = gfx.CreateBackground(file, options) $$ 
- * @param {str_ptf} file 
+ * $$ bck = gfx.CreateBackground(file, options) $$
+ * @param {str_ptf} file
  * @param {str_com} options stretch
  * @returns gvo-Background
 */
@@ -14,15 +14,15 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### Scroll ###
  * @brief Scroll Background
  * Scrolls the background by a given value
  * $$ bck.Scroll(x, y) $$
- * @param {num} x 
- * @param {num} y 
+ * @param {num} x
+ * @param {num} y
  */
 
 
@@ -33,12 +33,12 @@
  * @returns bin
  */
 
-                    
-
-// ------------- SAMPLES ------------- 
 
 
-    
+// ------------- SAMPLES -------------
+
+
+
 /**
 @sample Scroll
 cfg.Game;
@@ -59,9 +59,9 @@ function OnAnimate(t,dt)
     <b>sky.Scroll(-dt/1000, 0);</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Scroll
 # cfg.Game
@@ -77,5 +77,3 @@ def OnReady():
 def OnAnimate(t, dt):
     sky.Scroll(-dt/1000, 0)
  */
-    
-            

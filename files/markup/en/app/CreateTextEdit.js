@@ -4,17 +4,17 @@
 /** # CreateTextEdit #
  * @abbrev edt
  * @brief Returns a new TextEdit object
- * 
- * $$ edt = app.CreateTextEdit(text, width=-1, height=-1, options?) $$ 
- * @param {str} text 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ *
+ * $$ edt = app.CreateTextEdit(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @param {str_com} [options] AutoSelect:Select all Text if user enter the Textedit,AutoSize:Expand or shrink the control automatically so the text fits in the Textedit,Bold:Write bold text,Extract:enables full screen keyboard in landscape mode,Left:Justify the text to the left|Center:Justify the text in the middle|Right:Justify the text to the right|Monospace,NoSpell:Disable the spell-checker,NoKeyboard:Shows no Keyboard|Numbers,ReadOnly:The user cant change the Text,SingleLine:Dont break text for long lines and change 'Enter' key to 'Done',FillX/Y,Password:displays characters as dots
  * @returns dso-TextEdit
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 If you want the user to enter custom data you probably need the **TextEdit** control. For number input only you can apply the “numbers” **option**.
@@ -32,7 +32,7 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -96,7 +96,7 @@ You can also set a background image/pattern or background gradient for the List 
  * @brief Get the start character index of a line
  * Returns at which character in the text a certain line begins.
  * $$ edt.GetLineStart(line) $$
- * @param {num_int} line 
+ * @param {num_int} line
  * @returns num_int
  */
 
@@ -105,7 +105,7 @@ You can also set a background image/pattern or background gradient for the List 
  * @brief Get line top position on screen
  * Returns the top position of a given line on the screen.
  * $$ edt.GetLineTop(line) $$
- * @param {num_int} line 
+ * @param {num_int} line
  * @returns num_frc
  */
 
@@ -171,8 +171,8 @@ You can also set a background image/pattern or background gradient for the List 
  * @brief Insert text at a given position
  * Inserts a string at a given position.
  * $$ edt.InsertText(text, start) $$
- * @param {str} text 
- * @param {num_int} start 
+ * @param {str} text
+ * @param {num_int} start
  */
 
 
@@ -194,9 +194,9 @@ You can also set a background image/pattern or background gradient for the List 
  * @brief Replace a range of the text with a string
  * Replaces a given range in the text with some string.
  * $$ edt.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
+ * @param {str} text
+ * @param {num_int} start
+ * @param {num_int} end
  */
 
 
@@ -218,14 +218,14 @@ You can also set a background image/pattern or background gradient for the List 
  * @brief Change cursor color
  * Changes the cursor color.
  * $$ edt.SetCursorColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
 /** ### SetCursorPos ###
  * Change the current cursor position.
  * $$ edt.SetCursorPos(position) $$
- * @param {num_int} position 
+ * @param {num_int} position
  */
 
 
@@ -237,7 +237,7 @@ You can also set a background image/pattern or background gradient for the List 
  * @brief Shows a grey default text
  * Set a grey default which is shown when the edit is empty
  * $$ edt.SetHint(text) $$
- * @param {str} text 
+ * @param {str} text
  */
 
 
@@ -262,7 +262,7 @@ You can also set a background image/pattern or background gradient for the List 
  * @brief Set selection color
  * Set the background color for selected text.
  * $$ edt.SetSelectColor(col) $$
- * @param {str_col} col 
+ * @param {str_col} col
  */
 
 
@@ -270,8 +270,8 @@ You can also set a background image/pattern or background gradient for the List 
  * @brief Select text in a given range
  * Selects part of the text in a given range.
  * $$ edt.SetSelection(start, stop) $$
- * @param {num_int} start 
- * @param {num_int} stop 
+ * @param {num_int} start
+ * @param {num_int} stop
  */
 
 
@@ -296,10 +296,10 @@ You can also set a background image/pattern or background gradient for the List 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Using OnChange
 function OnStart()
@@ -322,9 +322,9 @@ function edt_OnChange()
     txt.SetText( edt.GetText() );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Blue on White
 function OnStart()
@@ -339,9 +339,9 @@ function OnStart()
     app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Password
 function OnStart()
@@ -362,9 +362,9 @@ function edt_OnEnter()
     app.ShowPopup( password );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Using OnChange
 from native import app
@@ -386,9 +386,9 @@ def OnStart():
 def edt_OnChange():
     txt.SetText( edt.GetText() )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Blue on White
 from native import app
@@ -403,9 +403,9 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Password
 from native import app
@@ -425,5 +425,3 @@ def edt_OnEnter():
     password = edt.GetText()
     app.ShowPopup( password )
  */
-    
-            

@@ -5,9 +5,9 @@
  * @abbrev ovl
  * @brief Returns a new Overlay object
  * Overlays are displayed above everything on the screen - even on the home screen or above other applications. Overlays can be created from services as well which makes them almost perfect for interacting with them.
- * 
+ *
  * <premium>
- * $$ ovl = app.CreateOverlay(options?) $$ 
+ * $$ ovl = app.CreateOverlay(options?) $$
  * @param {str_com} [options] ShowWhenLocked,TurnScreenOn,KeepScreenOn
  * @returns dso-Overlay
 */
@@ -15,7 +15,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AddLayout ###
@@ -23,8 +23,8 @@
  * Adds a layout to the overlay.
  * $$ ovl.AddLayout(layout, left=0, top=0, options?) $$
  * @param {dso} layout CreateLayout
- * @param {num_frc} [left=0] 
- * @param {num_frc} [top=0] 
+ * @param {num_frc} [left=0]
+ * @param {num_frc} [top=0]
  * @param {str} [options] px
  */
 
@@ -53,17 +53,17 @@
  * Defines the position of a contained layout.
  * $$ ovl.SetPosition(layout, left=0, top=0, options?) $$
  * @param {dso} layout CreateLayout
- * @param {num_frc} [left=0] 
- * @param {num_frc} [top=0] 
+ * @param {num_frc} [left=0]
+ * @param {num_frc} [top=0]
  * @param {str} [options] px
  */
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Memory Monitor
 cfg.Portrait;
@@ -101,9 +101,9 @@ function Update( time )
     img.Update();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Memory Monitor
 # cfg.Portrait
@@ -140,5 +140,3 @@ def Update(time, dtime):
     img.DrawSamples(lst, 50)
     img.Update()
  */
-    
-            

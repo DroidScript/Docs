@@ -5,15 +5,15 @@
  * @abbrev crp
  * @brief Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it
  * The Crypt component is used to en- or decrypt a string with a given key or to create a hash of it.
- * $$ crp = app.CreateCrypt(options?) $$ 
- * @param {str_com} [options] 
+ * $$ crp = app.CreateCrypt(options?) $$
+ * @param {str_com} [options]
  * @returns dso-Crypt
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -21,8 +21,8 @@
 /** ### Decrypt ###
  * Decrypt text with a key.
  * $$ crp.Decrypt(text, password) $$
- * @param {str} text 
- * @param {str} password 
+ * @param {str} text
+ * @param {str} password
  * @returns str
  */
 
@@ -30,8 +30,8 @@
 /** ### Encrypt ###
  * Encrypt text with a key.
  * $$ crp.Encrypt(text, password) $$
- * @param {str} text 
- * @param {str} password 
+ * @param {str} text
+ * @param {str} password
  * @returns str
  */
 
@@ -47,7 +47,7 @@
  * @brief Get a hash from a string
  * Build a hash of a string for one-way encryption.
  * $$ crp.Hash(text, mode, options?) $$
- * @param {str} text 
+ * @param {str} text
  * @param {str} mode MD5|SHA|SHA-1|SHA-224|SHA-256|SHA-384|SHA-512
  * @param {str} [options] Wrap
  * @returns str
@@ -57,10 +57,10 @@
 /** @extern SetDescription */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -80,9 +80,9 @@ function OnStart()
     );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Encrypt using device id
 function OnStart()
@@ -119,9 +119,9 @@ function OnAction( result )
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -141,9 +141,9 @@ def OnStart():
         "Data"
     )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Encrypt using device id
 from native import app
@@ -172,5 +172,3 @@ def OnAction(result):
         result = crp.Decrypt(this.data["text"], app.GetDeviceId())
         ShowDialog(result)
  */
-    
-            

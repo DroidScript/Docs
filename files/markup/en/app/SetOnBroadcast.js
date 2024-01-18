@@ -3,14 +3,14 @@
 
 /** # SetOnBroadcast #
  * @brief Called on incoming Broadcasts
- * 
- * $$ app.SetOnBroadcast(callback, action) $$ 
+ *
+ * $$ app.SetOnBroadcast(callback, action) $$
  * @param {fnc_json} callback {"pNames":["type","msg"],"pTypes":["str","str"]}
- * @param {str} action 
+ * @param {str} action
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Define a callback function for incoming Broadcast messages.
@@ -20,4 +20,3 @@ You can find [a list of broadcasts available for android SDK ver. 28 here](https
 
 See also: @Broadcast
  */
-

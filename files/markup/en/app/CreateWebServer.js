@@ -4,15 +4,15 @@
 /** # CreateWebServer #
  * @abbrev sock
  * @brief Returns a new WebServer object
- * 
- * $$ sock = app.CreateWebServer(port, options?) $$ 
- * @param {num_int} port 
+ *
+ * $$ sock = app.CreateWebServer(port, options?) $$
+ * @param {num_int} port
  * @param {str_com} [options] ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients,"&lt;BUFSIZE&gt;":"“ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”"
  * @returns dso-WebServer
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Web servers form the foundation of the web, especially the Internet of Things (IoT). Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.
@@ -53,15 +53,15 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AddRedirect ###
  * @brief Redirect urls
  * Redirects a url pattern (with \* wildcards) to a target location
  * $$ sock.AddRedirect(pattern, location) $$
- * @param {str_url} pattern 
- * @param {str_url} location 
+ * @param {str_url} pattern
+ * @param {str_url} location
  */
 
 
@@ -80,8 +80,8 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Disconnect Client from WebServer
  * Disconnects a client from the WebServer.
  * $$ sock.Disconnect(ip, id?) $$
- * @param {str} ip 
- * @param {num_int} [id] 
+ * @param {str} ip
+ * @param {num_int} [id]
  */
 
 
@@ -108,9 +108,9 @@ The following example demonstrates web sockets being used to receive messages fr
  * If no id is given, all clients of the specified ip are notified.
  * If neither ip nor id is given, the message will be sent to all connected clients.
  * $$ sock.SendText(txt, ip, id) $$
- * @param {str} txt 
- * @param {str} ip 
- * @param {num_int} id 
+ * @param {str} txt
+ * @param {str} ip
+ * @param {num_int} id
  */
 
 
@@ -118,7 +118,7 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Set server root folder
  * Specifies the root folder of the server.
  * $$ sock.SetFolder(folder) $$
- * @param {str_ptd} folder 
+ * @param {str_ptd} folder
  */
 
 
@@ -142,7 +142,7 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Respond to incoming HTTP request
  * Responds to an incoming HTTP request
  * $$ sock.SetResponse(text) $$
- * @param {str} text 
+ * @param {str} text
  */
 
 
@@ -150,7 +150,7 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Defile file upload destination
  * Set a folder where uploaded files are to be placed.
  * $$ sock.SetUploadFolder(folder) $$
- * @param {str_ptd} folder 
+ * @param {str_ptd} folder
  */
 
 
@@ -168,10 +168,10 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -184,9 +184,9 @@ function OnStart()
     serv.Start();</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Servlets
 function OnStart()
@@ -206,9 +206,9 @@ function OnServlet( request, info )
 	app.ShowPopup(  info.remoteAddress + " says: " + request.msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Send and Receive messages
 var indexhtml = `
@@ -315,9 +315,9 @@ function serv_OnReceive( msg, ip ) {
 	txtMsg.SetText( ip + ": " + msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -330,9 +330,9 @@ def OnStart():
     serv.SetFolder( "/sdcard/DroidScript" )
     serv.Start()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Servlets
 from native import app
@@ -351,9 +351,9 @@ def OnServlet( request, info ):
     serv.SetResponse( "Got it!" )
     app.ShowPopup(  info.remoteAddress + " says: " + request.msg )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Send and Receive messages
 from native import app
@@ -459,5 +459,3 @@ def SendMessage():
 def serv_OnReceive( msg, ip, id):
     txtMsg.SetText( ip + ": " + msg )
  */
-    
-            

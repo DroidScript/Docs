@@ -4,19 +4,19 @@
 /** # IsTablet #
  * @brief Check if user device is a tablet
  * Checks if the user device is a tablet.
- * 
+ *
  * See Also: @IsChrome
- * $$ app.IsTablet() $$ 
+ * $$ app.IsTablet() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Tablet
 function OnStart()
@@ -25,9 +25,9 @@ function OnStart()
 	app.ShowPopup( tablet, "Is Tablet:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Tablet
 from native import app
@@ -36,5 +36,3 @@ def OnStart():
     tablet = app.IsTablet()
     app.ShowPopup(str(tablet), "Is Tablet:")
  */
-    
-            

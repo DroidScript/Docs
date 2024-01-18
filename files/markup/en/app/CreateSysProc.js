@@ -5,12 +5,12 @@
  * @abbrev sys
  * @brief Returns a new SysProc object
  * Creates a shell SystemProcess (ie&period; “sh”, “su” if <red>root</red> or “busybox” if <blue>installed</blue>) which can be reused throughout the program.
- * 
+ *
  * If env or dir are not provided HOME and TMDDIR are set by the component.
- * $$ sys = app.CreateSysProc(cmd, env?, dir?, options?) $$ 
+ * $$ sys = app.CreateSysProc(cmd, env?, dir?, options?) $$
  * @param {str:program name} cmd sh|su|busybox
- * @param {str} [env] 
- * @param {str_ptd} [dir] 
+ * @param {str} [env]
+ * @param {str_ptd} [dir]
  * @param {str_com} [options] combine:combines stdout and stderr|builder:force use of proc builder
  * @returns dso-SysProc
 */
@@ -18,7 +18,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -27,7 +27,7 @@
  * @brief Read from stderr
  * Read data from stderr
  * $$ sys.Err(maxLines, options?) $$
- * @param {num_int} maxLines 
+ * @param {num_int} maxLines
  * @param {str_com} [options] nowait:dont wait for input
  */
 
@@ -43,7 +43,7 @@
  * @brief Read from stdin
  * Read data from stdin
  * $$ sys.In(maxLines, options?) $$
- * @param {num_int} maxLines 
+ * @param {num_int} maxLines
  * @param {str_com} [options] nowait:dont wait for input
  */
 
@@ -54,7 +54,7 @@
  * @brief Write to stdout
  * Writes a command to stdout. A trailing linebreak will execute it.
  * $$ sys.Out(command) $$
- * @param {str} command 
+ * @param {str} command
  */
 
 
@@ -62,7 +62,7 @@
  * @brief Read first byte of a file
  * Returns the first byte of a file.
  * $$ sys.ReadFileAsByte(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  * @returns num_byt
  */
 
@@ -87,16 +87,16 @@
  * @brief Write binary data to file
  * Write a binary string to a file.
  * $$ sys.WriteToFile(file, data) $$
- * @param {str_ptf} file 
- * @param {str} data 
+ * @param {str_ptf} file
+ * @param {str} data
  */
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -125,9 +125,9 @@ function sys_OnError( msg )
     txt.Log( msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Colored
 function OnStart()
@@ -174,9 +174,9 @@ function sys_OnError( msg )
     scr.ScrollTo( 0, txt.GetHeight() );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -202,9 +202,9 @@ def sys_OnInput( msg ):
 def sys_OnError( msg ):
     txt.Log( msg )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Colored
 from native import app
@@ -245,5 +245,3 @@ def sys_OnError( msg ):
     txt.Log( msg, "red" )
     scr.ScrollTo( 0, txt.GetHeight() )
  */
-    
-            

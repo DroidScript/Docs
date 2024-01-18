@@ -3,17 +3,17 @@
 
 /** # GetRouterAddress #
  * Returns the routers ip address. (Its typically your own IP but ending with a .1, ie. 192.168.178.1)
- * $$ app.GetRouterAddress() $$ 
+ * $$ app.GetRouterAddress() $$
  * @returns str:ip address
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Get Router Address
 function OnStart()
@@ -22,9 +22,9 @@ function OnStart()
     app.Alert(ip);
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Get Router Address
 from native import app
@@ -33,5 +33,3 @@ def OnStart():
     ip = app.GetRouterAddress()
     app.Alert(ip)
  */
-    
-            

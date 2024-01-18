@@ -4,21 +4,21 @@
 /** # CreateTEOutlineIconLeft #
  * @abbrev teo
  * Creates a material outlined text input with icon on the left.
- * $$ teo = MUI.CreateTEOutlineIconLeft(width, options?, icon?, hint?, label?, color?, backColor?) $$ 
- * @param {num} width 
+ * $$ teo = MUI.CreateTEOutlineIconLeft(width, options?, icon?, hint?, label?, color?, backColor?) $$
+ * @param {num} width
  * @param {str_com} [options] DS TextEdit options|Round
  * @param {str} [icon] Material icon font
  * @param {str} [hint] Hint|Label text
  * @param {bin} [label] Show or hide label
- * @param {str_col} [color] 
- * @param {str_col} [backColor] 
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
@@ -76,10 +76,10 @@
 /** @extern SetOnTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample No Label
 cfg.Light
@@ -98,9 +98,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark With Label
 cfg.Dark
@@ -119,9 +119,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Round
 cfg.Light
@@ -140,9 +140,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SetOnEnter Callback
 cfg.Light
@@ -167,9 +167,9 @@ function OnEnter()
     app.ShowPopup(this.GetText())
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No Label
 # cfg.Light, cfg.MUI
@@ -187,9 +187,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark With Label
 # cfg.Dark, cfg.MUI
@@ -207,9 +207,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Round
 # cfg.Light, cfg.MUI
@@ -227,9 +227,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetOnEnter Callback
 # cfg.Light, cfg.MUI
@@ -251,5 +251,3 @@ def OnStart():
 def OnEnter():
     app.ShowPopup(this.GetText())
  */
-    
-            

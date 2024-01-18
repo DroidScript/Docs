@@ -4,19 +4,19 @@
 /** # GetPairedBtDevices #
  * @brief Get list of paired bluetooth devices
  * Returns a list of objects containing the name and bluetooth address of paired devices. Note that Bluetooth must be turned on to receive this information.
- * 
+ *
  * See Also: @UnpairBtDevice, @CreateBluetoothSerial, @DiscoverBtDevices
- * $$ app.GetPairedBtDevices() $$ 
+ * $$ app.GetPairedBtDevices() $$
  * @returns lst_obj-[{ name:str&comma; address:str }]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show
 var itv;
@@ -51,11 +51,11 @@ function checkBtOn()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -82,5 +82,3 @@ def checkBtOn():
         for d in devices:
             lst.AddItem(d.name, d.address)
  */
-    
-            

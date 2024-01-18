@@ -4,18 +4,18 @@
 /** # CreateTESearchUnique #
  * @abbrev tes
  * Creates a unique text input
- * $$ tes = MUI.CreateTESearchUnique(width?, hint?, icon?, iconColor?) $$ 
- * @param {num} [width] 
+ * $$ tes = MUI.CreateTESearchUnique(width?, hint?, icon?, iconColor?) $$
+ * @param {num} [width]
  * @param {str} [hint] Hint text
  * @param {str} [icon] Material icon font
- * @param {str_col} [iconColor] 
+ * @param {str_col} [iconColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
@@ -71,10 +71,10 @@
 /** @extern SetOnIconTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Search
 cfg.Light
@@ -93,9 +93,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark
 cfg.Dark
@@ -114,9 +114,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Search
 # cfg.Light, cfg.MUI
@@ -135,9 +135,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark
 # cfg.Dark, cfg.MUI
@@ -156,5 +156,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

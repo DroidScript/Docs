@@ -4,16 +4,16 @@
 /** # CreateListDialog #
  * @abbrev ldg
  * @brief Returns a new ListDialog object
- * 
- * $$ ldg = app.CreateListDialog(title, list, options?) $$ 
- * @param {str} title 
- * @param {str} list 
+ *
+ * $$ ldg = app.CreateListDialog(title, list, options?) $$
+ * @param {str} title
+ * @param {str} list
  * @param {str} [options] Multi|AutoCancel
  * @returns dso-ListDialog
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 If you want a quick way to let the user select one or even multiple items of a given dataset you can use the ListDialog.
@@ -26,7 +26,7 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -65,17 +65,17 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
 /** ### SetTitle ###
  * Change the dialog title.
  * $$ ldg.SetTitle(title) $$
- * @param {str} title 
+ * @param {str} title
  */
 
 
 /** @extern Show */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -90,9 +90,9 @@ function dlg_OnTouch( item )
 	app.ShowPopup( item );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Multi
 function OnStart()
@@ -107,9 +107,9 @@ function dlg_OnTouch( item, isChecked )
 	app.ShowPopup( item + " isChecked = " + isChecked );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -122,9 +122,9 @@ def OnStart():
 def dlg_OnTouch( item, checked):
     app.ShowPopup( item )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Multi
 from native import app
@@ -137,5 +137,3 @@ def OnStart():
 def dlg_OnTouch( item, isChecked ):
     app.ShowPopup( item + " isChecked = " + str(isChecked) )
  */
-    
-            

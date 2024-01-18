@@ -4,8 +4,8 @@
 /** # addSelect #
  * @abbrev sel
  * @brief addSelect
- * 
- * $$ sel = ui.addSelect(parent, list?, options?, width?, height?) $$ 
+ *
+ * $$ sel = ui.addSelect(parent, list?, options?, width?, height?) $$
  * @param {obj} parent The parent layout where to add the control
  * @param {lst} [list] The list of items for the Select options
  * @param {str_com} [options] Sizes: `Small` `Medium` \n `Variant`: `Filled` `Outlined` `Standard` \n `Margin`: `Dense` `Normal` \n `Utils`: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`
@@ -15,7 +15,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Adds a Select Component to a given layout.
@@ -32,7 +32,7 @@ Adds a Select Component to a given layout.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -41,273 +41,273 @@ Adds a Select Component to a given layout.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### enabled
  * @prop
  * Sets or returns a boolean value whether the component is enabled or disabled.
  * @returns bin
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### iconColor
  * @prop
  * Sets or returns the color of the icon in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
  * @returns str
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### label
  * @prop
  * Sets or returns the label text.
  * @returns str
  */
 
-                    
+
 /** ### labelColor
  * @prop
  * Sets or returns the color of the label text in hexadecimal format <col nobox #fb8c00>#rrggbb</col>
  * @returns str
  */
 
-                    
+
 /** ### labelSize
  * @prop
  * Sets or returns the size of the label.
  * @returns num
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### list
  * @prop
  * Sets or returns the list items. You can also pass a comma separated string of items.
  * @returns lst
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### maxHeight
  * @prop
  * Sets or returns the maximum height of the popup container.
  * @returns num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### popupColor
  * @prop
  * Sets or returns the color of the popup in hexadecimal format.
  * @returns str
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### sizeVariant
  * @prop
  * Sets or returns the size variant of the Select Component. Values can be <col nobox #fb8c00>Small</col> or <col nobox #fb8c00>Medium</col>
  * @returns str
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the color of the text.
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Returns the type of the control.
  * @returns str
  */
 
-                    
+
 /** ### value
  * @prop
  * Sets or returns the value of the Select Component. For Select with <col nobox #fb8c00>Multiple</col> options, the <col nobox #fb8c00>value</col> is an array of string items. You can also pass the <col nobox #fb8c00>index</col> of the selected item. Pass an array of <col nobox #fb8c00>indexes</col> for multiple selection.
  * @returns str
  */
 
-                    
+
 /** ### variant
  * @prop
  * Sets or returns the variant of the Select Component. Values can be <col nobox #fb8c00>Standard</col> <col nobox #fb8c00>Filled</col> and <col nobox #fb8c00>Outlined</col>
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### setOnChange ###
  * @brief setOnChange
  * Sets a callback function when the value changes
@@ -459,10 +459,10 @@ Adds a Select Component to a given layout.
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 class Main extends App
@@ -491,9 +491,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Group title
 class Main extends App
@@ -523,9 +523,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Multiple selection
 class Main extends App
@@ -553,9 +553,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Outlined and small
 class Main extends App
@@ -584,9 +584,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Radiogroup items
 class Main extends App
@@ -614,9 +614,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Grouped list items
 class Main extends App
@@ -643,9 +643,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Multiple radiogroup with titles
 class Main extends App
@@ -672,9 +672,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -701,9 +701,9 @@ def onChange(text):
 
 app.add(Main())
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Group title
 from hybrid import ui
@@ -731,9 +731,9 @@ def onChange(text):
 
 app.add(Main())
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Multiple selection
 from hybrid import ui
@@ -760,9 +760,9 @@ def onChange(items):
 
 app.add(Main())
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Outlined and small
 from hybrid import ui
@@ -789,9 +789,9 @@ def onChange(item):
 
 app.add(Main())
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Radiogroup items
 from hybrid import ui
@@ -817,9 +817,9 @@ def onChange(item):
 
 app.add(Main())
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Grouped list items
 from hybrid import ui
@@ -844,9 +844,9 @@ def onChange(item):
 
 app.add(Main())
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Multiple radiogroup with titles
 from hybrid import ui
@@ -869,5 +869,3 @@ def OnStart():
 def onChange(items):
     ui.show
  */
-    
-            

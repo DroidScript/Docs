@@ -4,20 +4,20 @@
 /** # RenameFile #
  * @brief Rename or move a local file
  * Renames a file on the local filesystem. This method can also be used to move a file to a whole other destination.
- * 
+ *
  * See Also: @WriteFile, @CopyFile, @DeleteFile
- * $$ app.RenameFile(source, destination) $$ 
- * @param {str_pth} source 
- * @param {str_pth} destination 
+ * $$ app.RenameFile(source, destination) $$
+ * @param {str_pth} source
+ * @param {str_pth} destination
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -28,9 +28,9 @@ function OnStart()
 	<b>app.RenameFile( oldfile, newfile );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -41,5 +41,3 @@ def OnStart():
     app.WriteFile(oldfile, "Created: " + str(app.Date()))
     app.RenameFile(oldfile, newfile)
  */
-    
-            

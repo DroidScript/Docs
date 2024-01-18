@@ -4,19 +4,19 @@
 /** # AppExec #
  * @brief Executes code in the main app
  * Executes some code in the main app.
- * $$ gfx.AppExec(js) $$ 
- * @param {str_jsc} js 
+ * $$ gfx.AppExec(js) $$
+ * @param {str_jsc} js
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 cfg.Game;
 
 function OnLoad()
@@ -26,11 +26,11 @@ function OnLoad()
 
 function OnReady() {}
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 # cfg.Game
 
 from native import app
@@ -41,5 +41,3 @@ def OnLoad():
 def OnReady():
     pass
  */
-    
-            

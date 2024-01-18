@@ -4,25 +4,25 @@
 /** # SetInForeground #
  * @brief Set services to run in the foreground
  * Set the current service to run in the foreground.
- * 
+ *
  * See Also: @StartService, @SetInBackground
- * $$ app.SetInForeground(title?, text?, largeIcon?, smallIcon?, importance?) $$ 
- * @param {str} [title] 
- * @param {str} [text] 
- * @param {str_ptf} [largeIcon] 
- * @param {str_ptf} [smallIcon] 
+ * $$ app.SetInForeground(title?, text?, largeIcon?, smallIcon?, importance?) $$
+ * @param {str} [title]
+ * @param {str} [text]
+ * @param {str_ptf} [largeIcon]
+ * @param {str_ptf} [smallIcon]
  * @param {str} [importance] min|low|default|high|none
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 var serviceJS = `
 function OnStart()
 {
@@ -57,11 +57,11 @@ function tgl_OnTouch( fg )
     else svc.SendMessage( "bg" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 serviceJS = """
@@ -99,5 +99,3 @@ def tgl_OnTouch(fg):
     else:
         svc.SendMessage("bg")
  */
-    
-            

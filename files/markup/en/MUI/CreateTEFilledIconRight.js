@@ -4,20 +4,20 @@
 /** # CreateTEFilledIconRight #
  * @abbrev tef
  * Creates a filled text input with icon on the right
- * $$ tef = MUI.CreateTEFilledIconRight(width, options?, icon?, hint?, label?, color?) $$ 
- * @param {num} width 
+ * $$ tef = MUI.CreateTEFilledIconRight(width, options?, icon?, hint?, label?, color?) $$
+ * @param {num} width
  * @param {str_com} [options] DS TextEdit options
  * @param {str} [icon] Material icon font
  * @param {str} [hint] Hint or label text
  * @param {bin} [label] Show or hide label
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
@@ -75,10 +75,10 @@
 /** @extern SetOnTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample No Label
 cfg.Light
@@ -97,9 +97,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark With Label
 cfg.Dark
@@ -118,9 +118,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SetOnEnter Callback
 cfg.Light
@@ -145,9 +145,9 @@ function OnEnter()
     app.ShowPopup(this.GetText())
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No Label
 # cfg.Light, cfg.MUI
@@ -166,9 +166,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark With Label
 # cfg.Dark, cfg.MUI
@@ -187,9 +187,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetOnEnter Callback
 # cfg.Light, cfg.MUI
@@ -212,5 +212,3 @@ def OnStart():
 def OnEnter():
     app.ShowPopup(this.GetText())
  */
-    
-            

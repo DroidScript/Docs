@@ -1,4 +1,3 @@
-
 /** ### Animate
  * @brief Animates a control
  * Animates the control.
@@ -9,7 +8,7 @@
  * 	“static”-animations which keep the visible state.
  * @param {str} type NewsPaper|Jelly|Flash|RubberBand|Swing|TaDa|Bounce|Fall|FallRotate|<br><img width='300px' src='../animate.png'></img>
  * @param {fnc_json} [callback] {"pNames":["type"],"pTypes":["str"]}
- * @param {num_mls} [time] 
+ * @param {num_mls} [time]
  */
 
 
@@ -164,8 +163,8 @@
 /** ### IsOverlap
  * @brief Checks if the control overlaps with another
  * Returns whether the control overlaps with another by a given distance.
- * @param {dso} obj 
- * @param {num_frc} [depth] 
+ * @param {dso} obj
+ * @param {num_frc} [depth]
  * @returns bin
  */
 
@@ -180,14 +179,14 @@
 /** ### Method
  * @brief Access Java object methods via reflection
  * Allows access to other functions defined on the object in Java via reflection.
- * 
+ *
  * <premium>
- * @param {str} name 
+ * @param {str} name
  * @param {str_com} [types] boolean,char,byte,short,int,long,float,double,String,CharSequence,...
- * @param {str} [p1] 
- * @param {str} [p2] 
- * @param {str} [p3] 
- * @param {str} [p4] 
+ * @param {str} [p1]
+ * @param {str} [p2]
+ * @param {str} [p3]
+ * @param {str} [p4]
  * @returns all
  */
 
@@ -201,7 +200,7 @@
 /** ### SetFontFile
  * @brief Change the used font
  * Change the font style by defining a font file.
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
@@ -215,16 +214,16 @@
 /** ### SetBackColor
  * @brief Change the background color
  * Changes the background color of the control.
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
 /** ### SetBackGradient
  * @brief Define the background color of the control with a gradient
  * Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.
- * @param {str_col} color1 
- * @param {str_col} [color2] 
- * @param {?} [color3] 
+ * @param {str_col} color1
+ * @param {str_col} [color2]
+ * @param {?} [color3]
  * @param {str} [options] left-right|right-left|top-bottom|bottom-top|bl-tr|br-tl|tl-br|tr-bl
  */
 
@@ -232,13 +231,13 @@
 /** ### SetBackGradientRadial
  * @brief Define a radial background color gradient
  * Define a radial color gradient for the background of control.
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @param {num_frc} [radius] 
- * @param {str_col} [color1] 
- * @param {str_col} [color2] 
- * @param {?} [color3] 
- * @param {str_com} [options] 
+ * @param {num_frc} x
+ * @param {num_frc} y
+ * @param {num_frc} [radius]
+ * @param {str_col} [color1]
+ * @param {str_col} [color2]
+ * @param {?} [color3]
+ * @param {str_com} [options]
  */
 
 
@@ -246,7 +245,7 @@
  * @brief Change the background to an image
  * Changes the background to an image which can be repeated using the **repeat** option.
  * An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  * @param {str} [options] repeat
  */
 
@@ -254,7 +253,7 @@
 /** ### SetColorFilter
  * @brief Adjust the visual color effect with different BlendModes
  * Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).
- * @param {str_col} color 
+ * @param {str_col} color
  * @param {str} [mode] Add|Multiply|clear|darken|lighten|overlay|screen|xor|color|color_burn|color_dodge|difference|exclusion|hard_light|hue|luminosity|modulate|saturation|soft_light|src|dst|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over
  */
 
@@ -262,14 +261,14 @@
 /** ### SetDescription
  * @brief Set accesibility description
  * Set a control description for accessibility
- * @param {str} desc 
+ * @param {str} desc
  */
 
 
 /** ### SetEnabled
  * @brief En/Disable the control
  * En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.
- * @param {bin} enable 
+ * @param {bin} enable
  */
 
 
@@ -283,17 +282,17 @@
 /** ### SetHtml
  * @brief Set current text to html-formatted text
  * Change the current text of the control to html-formatted text.
- * @param {str_htm} str 
+ * @param {str_htm} str
  */
 
 
 /** ### SetMargins
  * @brief Define distances to other controls
  * Define a distance to other controls on each side of the control.
- * @param {num_frc} [left=0] 
- * @param {num_frc} [top=0] 
- * @param {num_frc} [right=0] 
- * @param {num_frc} [bottom=0] 
+ * @param {num_frc} [left=0]
+ * @param {num_frc} [top=0]
+ * @param {num_frc} [right=0]
+ * @param {num_frc} [bottom=0]
  * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
@@ -358,10 +357,10 @@
 /** ### SetPadding
  * @brief Define distances to contained elements
  * Define distances that elements within the control are to maintain from the control borders.
- * @param {num_frc} [left=0] 
- * @param {num_frc} [top=0] 
- * @param {num_frc} [right=0] 
- * @param {num_frc} [bottom=0] 
+ * @param {num_frc} [left=0]
+ * @param {num_frc} [top=0]
+ * @param {num_frc} [right=0]
+ * @param {num_frc} [bottom=0]
  * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
@@ -369,10 +368,10 @@
 /** ### SetPosition
  * @brief Defines position and size on absolute layouts
  * Defines the position and size for the control if the parent is an absolute layout.
- * @param {num} left 
- * @param {num} top 
- * @param {num} [width] 
- * @param {num} [height] 
+ * @param {num} left
+ * @param {num} top
+ * @param {num} [width]
+ * @param {num} [height]
  * @param {str} [options] px
  */
 
@@ -380,42 +379,42 @@
 /** ### SetScale
  * @brief Scale the control by the given factors
  * Scales the control along with its contents by the factors passed to the function.
- * @param {num_fac} x 
- * @param {num_fac} y 
+ * @param {num_fac} x
+ * @param {num_fac} y
  */
 
 
 /** ### SetSize
  * @brief Change the size of the control
  * Change the size of the control in either screen relative values or in pixels if the **px** option was given.
- * @param {num} [width=-1] 
- * @param {num} [height=-1] 
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
  * @param {str} [options] px|sp|dip|dp|mm|pt
  */
 
 
 /** ### SetStyle
- * 
- * @param {str_col} [color1='sky'] 
- * @param {str_col} [color2='sky'] 
- * @param {num_pxl} [radius=0] 
- * @param {str_col} [strokeClr='sky'] 
- * @param {num_pxl} [strokeWidth=0] 
- * @param {num_frc} [shadow=0] 
+ *
+ * @param {str_col} [color1='sky']
+ * @param {str_col} [color2='sky']
+ * @param {num_pxl} [radius=0]
+ * @param {str_col} [strokeClr='sky']
+ * @param {num_pxl} [strokeWidth=0]
+ * @param {num_frc} [shadow=0]
  */
 
 
 /** ### SetText
  * @brief Change displayed text
  * Change the currently displayed text in the control.
- * @param {str} text 
+ * @param {str} text
  */
 
 
 /** ### SetTextColor
  * @brief Change the text color
  * Change the text color of the contained text.
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -423,24 +422,24 @@
  * @brief Define a shadow around the control
  * Define a shadow displayed around the control.
  * The sun is always shining so there has to be one. Always.
- * @param {num_int} radius 
- * @param {num_int} [dx] 
- * @param {num_int} [dy] 
- * @param {str_col} [color] 
+ * @param {num_int} radius
+ * @param {num_int} [dx]
+ * @param {num_int} [dy]
+ * @param {str_col} [color]
  */
 
 
 /** ### SetTextSize
  * @brief Change the text size
  * Change the size of the contained text.
- * @param {num} size 
+ * @param {num} size
  * @param {str} [mode] px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution
  */
 
 
 /** ### SetTouchable
  * En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.
- * @param {bin} touchable 
+ * @param {bin} touchable
  */
 
 
@@ -464,19 +463,18 @@
  * @brief Animates the control
  * Performs an animation on the control.
  * The **target** object is for the position, size and rotation that the control has at the end of the animation.
- * 
+ *
  * The **type** specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.
- * 
+ *
  * With the amount of **repeat**s you can control how many times you want to play the animation.
- * 
+ *
  * If you have **jojo** activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.
- * 
+ *
  * Finally the **callback** function will be called after the animation has finished. Well, it's about time!
  * @param {obj} target { x:num_frc, y:num_frc, w:num_frc, h:num_frc, sw:num_frc-horizontal scale, sh:num_frc-vertical scale, rot:num_deg }
- * @param {num_mls} [duration] 
+ * @param {num_mls} [duration]
  * @param {str} [type] Linear.None|Quadratic.In/Out|Cubic.In/Out|Quartic.In/Out|Quintic.In/Out|Sinusoidal.In/Out|Exponential.In/Out|Circular.In/Out|Elastic.In/Out|Back.In/Out|Bounce.In/Out
- * @param {num_int} [repeat] 
- * @param {bin} [yoyo] 
+ * @param {num_int} [repeat]
+ * @param {bin} [yoyo]
  * @param {fnc_json} [callback] {}
  */
-

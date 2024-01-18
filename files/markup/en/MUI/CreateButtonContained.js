@@ -4,17 +4,17 @@
 /** # CreateButtonContained #
  * @abbrev btc
  * An contained material button.
- * $$ btc = MUI.CreateButtonContained(text, width=-1, height=-1) $$ 
- * @param {str} text 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ * $$ btc = MUI.CreateButtonContained(text, width=-1, height=-1) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -46,7 +46,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ btc.GetType() $$
  * @returns str-Button
  */

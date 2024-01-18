@@ -4,20 +4,20 @@
 /** # FolderExists #
  * @brief Checks if the folder exists
  * Checks if a given folder exits or not.
- * 
+ *
  * See Also: @MakeFolder, @CopyFolder, @RenameFolder
- * $$ app.FolderExists(folder) $$ 
- * @param {str_ptd} folder 
+ * $$ app.FolderExists(folder) $$
+ * @param {str_ptd} folder
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -28,9 +28,9 @@ function OnStart()
 	    app.ShowPopup("myFolder does not exist!");</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -41,5 +41,3 @@ def OnStart():
     else:
         app.ShowPopup("myFolder does not exist!")
  */
-    
-            

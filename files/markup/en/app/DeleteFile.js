@@ -4,19 +4,19 @@
 /** # DeleteFile #
  * @brief Deletes a file
  * DeleteFile deletes a given file from the filesystem. This makes it hard to restore it!
- * 
+ *
  * See Also: @WriteFile, @RenameFile, @FileExists
- * $$ app.DeleteFile(file) $$ 
- * @param {str_ptf} file 
+ * $$ app.DeleteFile(file) $$
+ * @param {str_ptf} file
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Delete created file
 function OnStart()
@@ -31,11 +31,11 @@ function OnStart()
 	    app.ShowPopup("myFile was deleted!");
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -48,5 +48,3 @@ def OnStart():
     else:
         app.ShowPopup("myFile was deleted!")
  */
-    
-            

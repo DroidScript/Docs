@@ -4,8 +4,8 @@
 /** # CreateTextEditUnique #
  * @abbrev teu
  * Creates a unique textedit customization.
- * $$ teu = MUI.CreateTextEditUnique(width?, hint?, icon?, iconColor?) $$ 
- * @param {num} [width] 
+ * $$ teu = MUI.CreateTextEditUnique(width?, hint?, icon?, iconColor?) $$
+ * @param {num} [width]
  * @param {str} [hint] Hint text
  * @param {str} [icon] Material icon font
  * @param {str_col} [iconColor] Icon color
@@ -15,7 +15,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
@@ -71,10 +71,10 @@
 /** @extern SetOnTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Unique Text Input
 cfg.Light
@@ -93,9 +93,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Unique Text Input
 # cfg.Light, cfg.MUI
@@ -113,5 +113,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

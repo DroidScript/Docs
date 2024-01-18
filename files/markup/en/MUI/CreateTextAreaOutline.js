@@ -4,20 +4,20 @@
 /** # CreateTextAreaOutline #
  * @abbrev tao
  * Creates an outlined material textarea.
- * $$ tao = MUI.CreateTextAreaOutline(width=-1, height=-1, hint?, label?, color?, backColor?) $$ 
- * @param {num} [width=-1] 
- * @param {num} [height=-1] 
+ * $$ tao = MUI.CreateTextAreaOutline(width=-1, height=-1, hint?, label?, color?, backColor?) $$
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
  * @param {str} [hint] Hint|Label text
  * @param {bin} [label] Show or hide label
- * @param {str_col} [color] 
- * @param {str_col} [backColor] 
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
@@ -71,10 +71,10 @@
 /** @extern Undo */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample No Label
 cfg.Light
@@ -93,9 +93,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Label
 cfg.Light
@@ -114,9 +114,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SetOnEnter Callback
 cfg.Dark
@@ -141,9 +141,9 @@ function OnEnter()
     app.ShowPopup(this.GetText())
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No Label
 # cfg.Light, cfg.MUI
@@ -161,9 +161,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Label
 # cfg.Light, cfg.MUI
@@ -181,9 +181,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetOnEnter Callback
 # cfg.Dark, cfg.MUI
@@ -205,5 +205,3 @@ def OnStart():
 def OnEnter():
     app.ShowPopup(this.GetText())
  */
-    
-            

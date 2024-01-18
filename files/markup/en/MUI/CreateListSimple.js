@@ -5,10 +5,10 @@
  * @abbrev lss
  * @brief Creates a simple list that has an optional badge and icon with no body text.
  * Creates a simple list that has an optional badge and icon with no body text.
- * $$ lss = MUI.CreateListSimple(list, width=-1, height=-1, options?) $$ 
+ * $$ lss = MUI.CreateListSimple(list, width=-1, height=-1, options?) $$
  * @param {lst} list { title:str, icon:str-Material icon, color:str_col, badge:num }
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @param {str} [options] Divider
  * @returns obj
 */
@@ -16,7 +16,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnTouch ###
@@ -36,7 +36,7 @@
 /** ### RemoveItem ###
  * Removes an item in the list.
  * $$ lss.RemoveItem(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -44,8 +44,8 @@
  * @brief Sets a new badge
  * Set the badge of the corresponding item
  * $$ lss.SetBadge(newBadge, index) $$
- * @param {num_int} newBadge 
- * @param {num_int} index 
+ * @param {num_int} newBadge
+ * @param {num_int} index
  */
 
 
@@ -53,7 +53,7 @@
  * Sets a new title to a corresponding item
  * $$ lss.SetTitleText(newTitle, index) $$
  * @param {str} newTitle New title text
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -116,10 +116,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -150,9 +150,9 @@ function OnTouch(title, index, icon, badge)
     app.ShowPopup(title+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Icon & Color
 cfg.Light
@@ -177,9 +177,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Icon, Color & Badge
 cfg.Light
@@ -204,9 +204,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Badge Color
 cfg.Light
@@ -231,9 +231,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark With Divider
 cfg.Dark
@@ -258,9 +258,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -288,9 +288,9 @@ def OnStart():
 def OnTouch(title, index, icon, badge):
     app.ShowPopup(title+" : "+index)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Icon & Color
 # cfg.Light, cfg.MUI
@@ -314,9 +314,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Icon, Color & Badge
 # cfg.Light, cfg.MUI
@@ -340,9 +340,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Badge Color
 # cfg.Light, cfg.MUI
@@ -366,9 +366,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark With Divider
 # cfg.Dark, cfg.MUI
@@ -392,5 +392,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

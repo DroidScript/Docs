@@ -4,14 +4,14 @@
 /** # CreateSpeechRec #
  * @abbrev spr
  * @brief Returns a new SpeechRec object
- * 
- * $$ spr = app.CreateSpeechRec(options?) $$ 
+ *
+ * $$ spr = app.CreateSpeechRec(options?) $$
  * @param {str_com} [options] NoBeep,Partial
  * @returns dso-SpeechRec
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The **SpeechRec** object can be used to listen for and recognize speech.
@@ -27,7 +27,7 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -102,10 +102,10 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -144,11 +144,11 @@ function speech_OnError()
 	app.ShowPopup( "Please speak more clearly!" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -178,5 +178,3 @@ def speech_OnResult( results ):
 def speech_OnError():
     app.ShowPopup( "Please speak more clearly!" )
  */
-    
-            

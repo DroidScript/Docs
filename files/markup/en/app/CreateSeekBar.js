@@ -4,16 +4,16 @@
 /** # CreateSeekBar #
  * @abbrev skb
  * @brief Returns a new SeekBar object
- * 
- * $$ skb = app.CreateSeekBar(width=-1, height=-1, options?) $$ 
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ *
+ * $$ skb = app.CreateSeekBar(width=-1, height=-1, options?) $$
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @param {str_com} [options] FillX/Y
  * @returns dso-SeekBar
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 SeekBars are bars with a moveable pointer which let the user select a value in a given range.
@@ -23,7 +23,7 @@ Use the SetOnChange method to define a function you want to be called when the S
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -97,9 +97,9 @@ Use the SetOnChange method to define a function you want to be called when the S
  * @brief Adjust the visual color effect with different BlendModes
  * Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the [Android Developer page](https://developer.android.com/reference/android/graphics/BlendMode.html).
  * $$ skb.SetColorFilter(color, mode?, options?) $$
- * @param {str_col} color 
+ * @param {str_col} color
  * @param {str} [mode] Add|Multiply|clear|darken|lighten|overlay|screen|xor|src_in|src_out|src_atop|src_over|dst_in|dst_out|dst_atop|dst_over
- * @param {str} [options] 
+ * @param {str} [options]
  */
 
 
@@ -113,7 +113,7 @@ Use the SetOnChange method to define a function you want to be called when the S
  * @brief Set rate of OnChange calls
  * Change the minimum timeout in milliseconds between two OnChange calls.
  * $$ skb.SetMaxRate(rate) $$
- * @param {num_mls} rate 
+ * @param {num_mls} rate
  */
 
 
@@ -142,7 +142,7 @@ Use the SetOnChange method to define a function you want to be called when the S
  * @brief Set value range.
  * Change the value which represents 100% of the seek bar. Default is 100
  * $$ skb.SetRange(range) $$
- * @param {num} range 
+ * @param {num} range
  */
 
 
@@ -154,7 +154,7 @@ Use the SetOnChange method to define a function you want to be called when the S
  * @brief Set current seekbar value
  * Change the current seekbar value in the defined range.
  * $$ skb.SetValue(val) $$
- * @param {num} val 
+ * @param {num} val
  */
 
 
@@ -165,10 +165,10 @@ Use the SetOnChange method to define a function you want to be called when the S
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -189,9 +189,9 @@ function skb_OnTouch( value )
 	app.ShowPopup( "Value = " + value );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -210,5 +210,3 @@ def OnStart():
 def skb_OnTouch(value):
     app.ShowPopup("Value = " + str(value))
  */
-    
-            

@@ -5,16 +5,16 @@
  * @brief Hide progress bar dialog
  * Hides a previously shown progress bar dialog.
  * See also @ShowProgressBar, @UpdateProgressBar.
- * $$ app.HideProgressBar() $$ 
+ * $$ app.HideProgressBar() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Progress Bar
 function OnStart()
@@ -27,11 +27,11 @@ function OnStart()
 	app.HideProgressBar();</b>
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -42,5 +42,3 @@ def OnStart():
 
     app.HideProgressBar()
  */
-    
-            

@@ -4,15 +4,15 @@
 /** # CreateLocator #
  * @abbrev loc
  * @brief Returns a new Locator object
- * 
- * $$ loc = app.CreateLocator(type, options?) $$ 
+ *
+ * $$ loc = app.CreateLocator(type, options?) $$
  * @param {str_com} type GPS,Network
- * @param {str_com} [options] 
+ * @param {str_com} [options]
  * @returns dso-Locator
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The Locator component can be used to find your whereabouts on the planet using either your device's GPS or information from your network. The provider specifies where the locator should retreive its information from . “Network” means get the location from the cell network and wifi, “GPS” tells the locator to use the device's GPS
@@ -23,7 +23,7 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -32,8 +32,8 @@ To get regulat updates about your current positino use the **SetOnChange** funct
  * @brief Calculate bearing between current and given position
  * Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.
  * $$ loc.GetBearingTo(latitude, longitude) $$
- * @param {num} latitude 
- * @param {num} longitude 
+ * @param {num} latitude
+ * @param {num} longitude
  * @returns num
  */
 
@@ -42,8 +42,8 @@ To get regulat updates about your current positino use the **SetOnChange** funct
  * @brief Calculate distance between current and given position in meters
  * Returns the approximate distance in meters between this location and the given location.
  * $$ loc.GetDistanceTo(latitude, longitude) $$
- * @param {num} latitude 
- * @param {num} longitude 
+ * @param {num} latitude
+ * @param {num} longitude
  * @returns num
  */
 
@@ -67,7 +67,7 @@ To get regulat updates about your current positino use the **SetOnChange** funct
  * @brief Locator update frequency in seconds
  * Set Locator update frequency in seconds
  * $$ loc.SetRate(rate) $$
- * @param {num_sec} rate 
+ * @param {num_sec} rate
  */
 
 
@@ -86,10 +86,10 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Get Location Updates
 function OnStart()
@@ -106,9 +106,9 @@ function loc_OnChange(pos)
 	app.ShowPopup( msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Get Location Updates
 from native import app
@@ -123,5 +123,3 @@ def loc_OnChange(pos, time):
     msg = str(pos.latitude) + ", " + str(pos.longitude)
     app.ShowPopup(msg)
  */
-    
-            

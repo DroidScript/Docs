@@ -5,7 +5,7 @@
  * @abbrev dtp
  * @brief addDatePicker
  * Adds a date picker component to the app.
- * $$ dtp = ui.addDatePicker(date, options?) $$ 
+ * $$ dtp = ui.addDatePicker(date, options?) $$
  * @param {str} date A default date value to which the datepicker begins. Format `YYYY-MM-DD`
  * @param {str_com} [options] `Portrait` `Landscape`
  * @returns uio-DatePicker
@@ -14,7 +14,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### format
@@ -23,7 +23,7 @@
  * @returns str
  */
 
-                    
+
 /** ### show ###
  * @brief show
  * Show the date picker the dialog
@@ -72,10 +72,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Default
 class Main extends App 
@@ -101,9 +101,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Default
 class Main extends App 
@@ -129,9 +129,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With initial value & portrait
 class Main extends App 
@@ -157,9 +157,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With limits & callback
 class Main extends App 
@@ -191,9 +191,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Default
 from hybrid import ui
@@ -215,9 +215,9 @@ def showDatePicker(event):
     # Display the date picker dialog
     dtp.show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With initial value & portrait
 from hybrid import ui
@@ -239,9 +239,9 @@ def showDatePicker(event):
     # Display the date picker dialog
     dtp.show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With limits & callback
 from hybrid import ui
@@ -268,5 +268,3 @@ def showDatePicker(event):
 def onSelect(value):
     app.ShowPopup(value)
  */
-    
-            

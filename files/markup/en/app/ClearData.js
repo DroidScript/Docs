@@ -4,21 +4,21 @@
 /** # ClearData #
  * @brief Deletes app.Save*() storage
  * ClearData deletes variables saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.
- * 
+ *
  * See Also: @SetData,
- * 
+ *
  * See Also: @GetData
- * $$ app.ClearData(file?) $$ 
- * @param {str_ptf} [file] 
+ * $$ app.ClearData(file?) $$
+ * @param {str_ptf} [file]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Save, Load and Clear Data
 var file = "demofile";
@@ -53,9 +53,9 @@ function getValues()
         "first start: " + app.LoadBoolean( "first", true, file ) + "\n");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Save, Load and Clear Data
 from native import app
@@ -87,5 +87,3 @@ def getValues():
         "click count: " + app.LoadNumber( "clicks", 0, file ) + "\n" +
         "first start: " + app.LoadBoolean( "first", True, file ) + "\n")
  */
-    
-            

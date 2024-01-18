@@ -3,22 +3,22 @@
 
 /** # CreateButtonToggle #
  * @abbrev btt
- * 
- * $$ btt = MUI.CreateButtonToggle(text, width?, height?, value?, callback?, color?, backColor?) $$ 
- * @param {str} text 
- * @param {num_frc} [width] 
- * @param {num_frc} [height] 
- * @param {bin} [value] 
+ *
+ * $$ btt = MUI.CreateButtonToggle(text, width?, height?, value?, callback?, color?, backColor?) $$
+ * @param {str} text
+ * @param {num_frc} [width]
+ * @param {num_frc} [height]
+ * @param {bin} [value]
  * @param {fnc_json} [callback] {}
- * @param {str_col} [color] 
- * @param {str_col} [backColor] 
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -50,7 +50,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ btt.GetType() $$
  * @returns str-Button
  */
@@ -125,10 +125,10 @@
 /** @extern SetColor */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -152,9 +152,9 @@ function OnToggle(v)
     app.ShowPopup(v)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Light
 # cfg.Light, cfg.MUI
@@ -175,5 +175,3 @@ def OnStart():
 def OnToggle(v):
     app.ShowPopup(v)
  */
-    
-            

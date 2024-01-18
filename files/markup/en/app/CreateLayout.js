@@ -4,15 +4,15 @@
 /** # CreateLayout #
  * @abbrev lay
  * @brief Returns a new Layout object
- * 
- * $$ lay = app.CreateLayout(type, options?) $$ 
+ *
+ * $$ lay = app.CreateLayout(type, options?) $$
  * @param {str} type Linear|Absolute|Frame|Card
  * @param {str_com} [options] AutoSize:Resizes itself and child controls after device rotation,TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
  * @returns dso-Layout
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Layouts are container objects which are used to visually organize graphical objects (controls), such as text, buttons and images on the screen. There are 4 types of layouts: _**“Linear”**_, _**“Absolute”**_, _**“Frame”**_ and _**“Card”**_.
@@ -46,15 +46,15 @@ They may be used to display offers with an image and optional info text.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AddChild ###
  * @brief Add a control to the layout
  * Adds a control to the layout.
  * $$ lay.AddChild(child, order?) $$
- * @param {dso} child 
- * @param {num_int} [order] 
+ * @param {dso} child
+ * @param {num_int} [order]
  */
 
 
@@ -68,7 +68,7 @@ They may be used to display offers with an image and optional info text.
  * @brief Moves a child to the layout front
  * Moves a child in front of all other children.
  * $$ lay.ChildToFront(child) $$
- * @param {dso} child 
+ * @param {dso} child
  */
 
 
@@ -77,7 +77,7 @@ They may be used to display offers with an image and optional info text.
 /** ### DestroyChild ###
  * Destroys and removes a child from the layout.
  * $$ lay.DestroyChild(child) $$
- * @param {dso} child 
+ * @param {dso} child
  */
 
 
@@ -90,7 +90,7 @@ They may be used to display offers with an image and optional info text.
 /** ### GetChildOrder ###
  * Returns the z order of a child.
  * $$ lay.GetChildOrder(child) $$
- * @param {dso} child 
+ * @param {dso} child
  * @returns num_int
  */
 
@@ -132,7 +132,7 @@ They may be used to display offers with an image and optional info text.
  * @brief Remove a child from the layout
  * Removes a child from the layout.
  * $$ lay.RemoveChild(child) $$
- * @param {dso} child 
+ * @param {dso} child
  */
 
 
@@ -153,10 +153,10 @@ They may be used to display offers with an image and optional info text.
 /** ### SetChildMargins ###
  * Set margins of top-level children.
  * $$ lay.SetChildMargins(left=0, top=0, right=0, bottom=0, mode='px') $$
- * @param {num} [left=0] 
- * @param {num} [top=0] 
- * @param {num} [right=0] 
- * @param {num_frc} [bottom=0] 
+ * @param {num} [left=0]
+ * @param {num} [top=0]
+ * @param {num} [right=0]
+ * @param {num_frc} [bottom=0]
  * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
@@ -165,7 +165,7 @@ They may be used to display offers with an image and optional info text.
  * @brief Change text size of top-level children.
  * Change the text size of top-level children.
  * $$ lay.SetChildTextSize(size, mode='px') $$
- * @param {num} size 
+ * @param {num} size
  * @param {str} [mode='px'] px|dip|sp|mm|pt|pl:scales text in proportion with device resolution|ps:scales text in proportion with device resolution
  */
 
@@ -174,7 +174,7 @@ They may be used to display offers with an image and optional info text.
  * @brief Apply corner radius to card layouts's
  * Applies a corner radius to card layouts.
  * $$ lay.SetCornerRadius(radius) $$
- * @param {num_pxl} radius 
+ * @param {num_pxl} radius
  */
 
 
@@ -182,7 +182,7 @@ They may be used to display offers with an image and optional info text.
  * @brief Apply shadow to card layouts's
  * Applies a shadow to card layouts.
  * $$ lay.SetElevation(elevation) $$
- * @param {num_pxl} elevation 
+ * @param {num_pxl} elevation
  */
 
 
@@ -238,7 +238,7 @@ They may be used to display offers with an image and optional info text.
  * @brief Enable touch event forwarding
  * Define whether the layout should forward OnTouch events to underlying controls.
  * $$ lay.SetTouchThrough(through) $$
- * @param {bin} through 
+ * @param {bin} through
  */
 
 
@@ -249,10 +249,10 @@ They may be used to display offers with an image and optional info text.
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Vertical
 function OnStart()
@@ -271,9 +271,9 @@ function OnStart()
 	app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Horizontal
 function OnStart()
@@ -292,9 +292,9 @@ function OnStart()
 	app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Combined
 function OnStart()
@@ -320,9 +320,9 @@ function OnStart()
 	app.AddLayout( layVert );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Image Swap
 function OnStart()
@@ -354,9 +354,9 @@ function btn_OnTouch()
 	   img2.SetVisibility( "Hide" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Vertical
 from native import app
@@ -375,9 +375,9 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Horizontal
 from native import app
@@ -396,9 +396,9 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Combined
 from native import app
@@ -424,9 +424,9 @@ def OnStart():
 
     app.AddLayout( layVert )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Image Swap
 from native import app
@@ -457,5 +457,3 @@ def btn_OnTouch():
     else:
         img2.SetVisibility( "Hide" )
  */
-    
-            

@@ -5,16 +5,16 @@
  * @abbrev prd
  * @brief showProgressDialog
  * Shows a progress dialog component into your app.
- * $$ prd = ui.showProgressDialog(text?, options?) $$ 
+ * $$ prd = ui.showProgressDialog(text?, options?) $$
  * @param {str} [text] The text message of the progress dialog. Options can be \n `AutoCancel` to close the dialog when backdrop is click.
- * @param {str_com} [options] 
+ * @param {str_com} [options]
  * @returns uio-ProgressDialog
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### text ###
@@ -48,10 +48,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Progress Dialog
 class Main extends App
@@ -75,9 +75,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Nocancel progress dialog
 class Main extends App
@@ -107,9 +107,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Progress Dialog
 from hybrid import ui
@@ -122,9 +122,9 @@ def OnStart():
 def onTouch(event):
     ui.showProgressDialog("Loading...", "AutoCancel")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Nocancel progress dialog
 from hybrid import ui
@@ -143,5 +143,3 @@ def onTouch(event):
 
     app.SetTimeout(hideProgressDialog, 2000)
  */
-    
-            

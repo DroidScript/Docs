@@ -4,20 +4,20 @@
 /** # CopyFile #
  * @brief Copies a file to a given destination
  * CopyFile copies a file to a given destination. The target must locate to the actual target file, not the folder. An existing file will be overridden.
- * 
+ *
  * See Also: @RenameFile, @DeleteFile, @FileExists
- * $$ app.CopyFile(source, destination) $$ 
- * @param {str_pth} source 
- * @param {str_pth} destination 
+ * $$ app.CopyFile(source, destination) $$
+ * @param {str_pth} source
+ * @param {str_pth} destination
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Copy file
 function OnStart()
@@ -32,9 +32,9 @@ function OnStart()
 	    app.ShowPopup("myFile does not exist in /sdcard/!");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Copy file
 from native import app
@@ -49,5 +49,3 @@ def OnStart():
     else:
         app.ShowPopup("myFile does not exist in /sdcard/!")
  */
-    
-            

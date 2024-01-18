@@ -4,17 +4,17 @@
 /** # CreateTimePicker #
  * @abbrev tmp
  * Creates a material design time picker.
- * $$ tmp = MUI.CreateTimePicker(hour?, minute?, color?) $$ 
+ * $$ tmp = MUI.CreateTimePicker(hour?, minute?, color?) $$
  * @param {num} [hour] [0-24]
  * @param {num} [minute] 0-59
- * @param {str_col} [color] 
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSelect ###
@@ -56,10 +56,10 @@
 /** @extern SetTextEdit */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Default Time
 cfg.Light
@@ -92,9 +92,9 @@ function OnSelect(time, hh, mm, pos)
     app.ShowPopup(hh+":"+mm+":"+pos)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Custom Time
 cfg.Dark
@@ -127,9 +127,9 @@ function OnSelect(time, hh, mm, pos)
     app.ShowPopup(hh+":"+mm+":"+pos)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Default Time
 # cfg.Light, cfg.MUI
@@ -159,9 +159,9 @@ def ShowPicker():
 def OnSelect(time, hh, mm, pos):
     app.ShowPopup(hh+":"+mm+":"+pos)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Custom Time
 # cfg.Dark, cfg.MUI
@@ -191,5 +191,3 @@ def ShowPicker():
 def OnSelect(time, hh, mm, pos):
     app.ShowPopup(hh+":"+mm+":"+pos)
  */
-    
-            

@@ -4,8 +4,8 @@
 /** # addProgress #
  * @abbrev prg
  * @brief addProgress
- * 
- * $$ prg = ui.addProgress(parent, value?, options?, width?, height?) $$ 
+ *
+ * $$ prg = ui.addProgress(parent, value?, options?, width?, height?) $$
  * @param {obj} parent The parent layout where to add the prgress component.
  * @param {num} [value] the initial value of the progress component.
  * @param {str_com} [options] Color: `Primary` `Secondary` \n `Type`: `Circular` `Linear` \n `Variant`: `Determinate` `Indeterminate`
@@ -15,7 +15,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Adds a progress component into your app.
@@ -27,7 +27,7 @@ Adds a progress component into your app.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### absHeight
@@ -36,231 +36,231 @@ Adds a progress component into your app.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
  * @returns num_pxl
  */
 
-                    
+
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### backImage
  * @prop
  * The path to your image file.
  * @returns str_pth
  */
 
-                    
+
 /** ### border
  * @prop
  * Sets or returns the border thickness in pixels.
  * @returns num
  */
 
-                    
+
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
  * @returns str_col
  */
 
-                    
+
 /** ### borderStyle
  * @prop
  * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
  * @returns str
  */
 
-                    
+
 /** ### circleSize
  * @prop
  * Sets or returns the size of the circular progress control. This will assume a pixel unit.
  * @returns num
  */
 
-                    
+
 /** ### color
  * @prop
  * Sets or returns the theme color. Values can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>
  * @returns str
  */
 
-                    
+
 /** ### cornerRadius
  * @prop
  * Sets or returns the corner radius in pixels.
  * @returns num
  */
 
-                    
+
 /** ### disabled
  * @prop
  * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
  * @returns bin
  */
 
-                    
+
 /** ### fontFile
  * @prop
  * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
  * @returns str
  */
 
-                    
+
 /** ### height
  * @prop
  * Sets or returns the height of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** ### isVisible
  * @prop
  * Returns whether the control is visible or not.
  * @returns bin
  */
 
-                    
+
 /** ### left
  * @prop
  * Returns the distance of the control from the left.
  * @returns num
  */
 
-                    
+
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### opacity
  * @prop
  * Sets or returns the opacity of the control.
  * @returns num
  */
 
-                    
+
 /** ### options
  * @prop
  * Sets or returns the <col nobox #fb8c00>options</col> of the control.
  * @returns str
  */
 
-                    
+
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
  * @returns num||lst_num
  */
 
-                    
+
 /** ### parent
  * @prop
  * Returns the parent layout control.
  * @returns uio-Layout
  */
 
-                    
+
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
  * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
-                    
+
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
  * @returns num_deg
  */
 
-                    
+
 /** ### textColor
  * @prop
  * Sets or returns the color of the text.
  * @returns str
  */
 
-                    
+
 /** ### textSize
  * @prop
  * Sets or returns the size of the text within the control.
  * @returns num
  */
 
-                    
+
 /** ### thickness
  * @prop
  * Sets or returns the thickness of the circular stroke.
  * @returns num
  */
 
-                    
+
 /** ### top
  * @prop
  * Returns the distance of the control from the top.
  * @returns num
  */
 
-                    
+
 /** ### type
  * @prop
  * Sets or returns the type of the Progress Component. Values can be <col nobox #fb8c00>Linear</col> or <col nobox #fb8c00>Circular</col>
  * @returns str
  */
 
-                    
+
 /** ### value
  * @prop
  * Sets or returns the value of the progress control.
  * @returns num
  */
 
-                    
+
 /** ### variant
  * @prop
  * Sets or returns the variant of the progress component. Values can be <col nobox #fb8c00>Determinate</col> or <col nobox #fb8c00>Indeterminate</col>.
  * @returns str
  */
 
-                    
+
 /** ### visibility
  * @prop
  * Sets or returns the visibility of the control.
  * @returns str
  */
 
-                    
+
 /** ### width
  * @prop
  * Sets or returns the width of the control as a fraction of the parent control.
  * @returns num
  */
 
-                    
+
 /** @extern setOnTouch */
 
 /** @extern setOnContextMenu */
@@ -296,10 +296,10 @@ Adds a progress component into your app.
 /** @extern sendBackward */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Progress control implementation
 class Main extends App
@@ -325,9 +325,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Setting progress value
 class Main extends App
@@ -362,9 +362,9 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic Image
 from hybrid import ui
@@ -384,9 +384,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup("You touched the mango!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Avatar
 from hybrid import ui
@@ -407,9 +407,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup("You touched the mango!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button
 from hybrid import ui
@@ -430,9 +430,9 @@ def OnStart():
 def onTouch(event):
     ui.showPopup("You touched the mango!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Drawings
 from hybrid import ui
@@ -472,9 +472,9 @@ def OnStart():
     img.lineJoin = "miter"
     img.drawPolyline(points, "blue", 10)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Text and Shapes
 from hybrid import ui
@@ -503,9 +503,9 @@ def OnStart():
     img.drawText("Hello", 30, 225, "", "", 3)
     img.drawText("World", 10, 325, "", "", 3)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Analog Clock
 from hybrid import ui
@@ -556,5 +556,3 @@ def draw():
     hour = date.getHours() if date.getHours() <= 12 else date.getHours() - 12
     minutes = date.getMinutes()
  */
-    
-            

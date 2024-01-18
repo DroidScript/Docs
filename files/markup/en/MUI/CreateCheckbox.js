@@ -4,18 +4,18 @@
 /** # CreateCheckbox #
  * @abbrev chc
  * Checkbox is a powerful control when you want the user to select multiple items in a group
- * $$ chc = MUI.CreateCheckbox(list, width=-1, height=-1, color?) $$ 
+ * $$ chc = MUI.CreateCheckbox(list, width=-1, height=-1, color?) $$
  * @param {lst} list A comma separated string
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
- * @param {str_col} [color] 
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnTouch ###
@@ -95,10 +95,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -115,9 +115,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark
 cfg.Dark
@@ -140,9 +140,9 @@ function OnCheckBox(index, value)
 	app.ShowPopup(lst[index] + " is "+value)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Light
 # cfg.Light, cfg.MUI
@@ -158,9 +158,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark
 # cfg.Dark, cfg.MUI
@@ -181,5 +181,3 @@ def OnStart():
 def OnCheckBox(index, value):
     app.ShowPopup(lst[index] + " is " + value)
  */
-    
-            

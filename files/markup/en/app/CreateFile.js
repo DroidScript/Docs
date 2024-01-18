@@ -5,8 +5,8 @@
  * @abbrev fil
  * @brief Returns a new File object
  * Returns a File object.
- * $$ fil = app.CreateFile(file, mode) $$ 
- * @param {str_ptf} file 
+ * $$ fil = app.CreateFile(file, mode) $$
+ * @param {str_ptf} file
  * @param {str} mode r|w|rw
  * @returns dso-File
 */
@@ -14,7 +14,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
@@ -52,7 +52,7 @@
  * @brief Read data from file
  * Reads a amount of bytes from the file.
  * $$ fil.ReadData(len, mode='Text') $$
- * @param {num_int} len 
+ * @param {num_int} len
  * @param {str} [mode='Text'] Int|Text|Hex
  */
 
@@ -86,14 +86,14 @@
 /** ### Seek ###
  * CHange pointer position to a given byte in the file.
  * $$ fil.Seek(offset) $$
- * @param {num_int} offset 
+ * @param {num_int} offset
  */
 
 
 /** ### SetLength ###
  * Allocate memory for a file.
  * $$ fil.SetLength(len) $$
- * @param {num_int} len 
+ * @param {num_int} len
  */
 
 
@@ -101,7 +101,7 @@
  * @brief Let the pointer skip some bytes
  * Let the pointer skip a given number of bytes.
  * $$ fil.Skip(bytes) $$
- * @param {num_int} bytes 
+ * @param {num_int} bytes
  */
 
 
@@ -117,7 +117,7 @@
  * @brief Write number to the file
  * Writes a number to the file.
  * $$ fil.WriteNumber(data, type='Int') $$
- * @param {num} data 
+ * @param {num} data
  * @param {str} [type='Int'] Byte|UByte|Bool|Float|FloatLE|Long|LongLE|Short|UShort|ShortLE|UShortLE|Int|UInt|IntLE
  */
 
@@ -131,10 +131,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function btn_OnTouch()
@@ -159,9 +159,9 @@ function btn_OnTouch()
 	file.Close();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -186,5 +186,3 @@ def btn_OnTouch():
 
     file.Close()
  */
-    
-            

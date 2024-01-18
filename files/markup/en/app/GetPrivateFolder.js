@@ -4,10 +4,10 @@
 /** # GetPrivateFolder #
  * @brief Get path to a private folder
  * Returns the path to a folder located in the apps private space which is normally not accessible by other apps or the user himself.
- * 
+ *
  * See Also: @GetAppPath, @GetPath
- * $$ app.GetPrivateFolder(name, options?) $$ 
- * @param {str} name 
+ * $$ app.GetPrivateFolder(name, options?) $$
+ * @param {str} name
  * @param {str} [options] external
  * @returns str_pth
 */
@@ -15,10 +15,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show
 function OnStart()
@@ -27,9 +27,9 @@ function OnStart()
     app.Alert( path );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show
 from native import app
@@ -38,5 +38,3 @@ def OnStart():
     path = app.GetPrivateFolder( "temp" )
     app.Alert( path )
  */
-    
-            

@@ -4,20 +4,20 @@
 /** # CreateTextEditOutline #
  * @abbrev teo
  * Creates an outlined material text input.
- * $$ teo = MUI.CreateTextEditOutline(width?, options?, hint?, label?, color?, backColor?) $$ 
- * @param {num} [width] 
+ * $$ teo = MUI.CreateTextEditOutline(width?, options?, hint?, label?, color?, backColor?) $$
+ * @param {num} [width]
  * @param {str} [options] DS TextEdit options|Round
  * @param {str} [hint] Hint|Label text
  * @param {bin} [label] Show or hide label
- * @param {str_col} [color] 
- * @param {str_col} [backColor] 
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
@@ -73,10 +73,10 @@
 /** @extern SetOnTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample No Label
 cfg.Light
@@ -95,9 +95,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Label
 cfg.Light
@@ -116,9 +116,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SetOnEnter Callback
 cfg.Dark
@@ -143,9 +143,9 @@ function OnEnter()
     app.ShowPopup(this.GetText())
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetOnEnter Callback
 # cfg.Dark, cfg.MUI
@@ -168,5 +168,3 @@ def OnStart():
 def OnEnter():
     app.ShowPopup(tef.GetText())
  */
-    
-            

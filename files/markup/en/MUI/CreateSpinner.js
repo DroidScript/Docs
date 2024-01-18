@@ -5,17 +5,17 @@
  * @abbrev spn
  * @brief Creates a material designed dropdown or spinner.
  * Creates a material designed dropdown. Let the user select from a predefined options.
- * $$ spn = MUI.CreateSpinner(list, width=-1, height=-1) $$ 
+ * $$ spn = MUI.CreateSpinner(list, width=-1, height=-1) $$
  * @param {lst} list String. A comma separated options
- * @param {num_frc} [width=-1] 
- * @param {num_frc} [height=-1] 
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnChange ###
@@ -100,10 +100,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -128,9 +128,9 @@ function OnChange(value, index)
     app.ShowPopup(value)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -152,5 +152,3 @@ def OnStart():
 def OnChange(value, index):
     app.ShowPopup(value)
  */
-    
-            

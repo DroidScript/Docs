@@ -4,19 +4,19 @@
 /** # Debug #
  * @brief Debug messages to the console
  * This function is an app equivalent to console.log(msg) which writes text into a console visible in debug mode “true” or “console”.
- * 
+ *
  * See Also: @SetDebug
- * $$ app.Debug(message) $$ 
- * @param {str} message 
+ * $$ app.Debug(message) $$
+ * @param {str} message
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demonstration
 function OnStart()
@@ -27,9 +27,9 @@ function OnStart()
 	<b>app.Debug("\n\t\tHello World!");</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demonstration
 from native import app
@@ -40,5 +40,3 @@ def OnStart():
 
     app.Debug("\n\t\tHello World!")
  */
-    
-            

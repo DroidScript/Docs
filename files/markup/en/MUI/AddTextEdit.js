@@ -3,10 +3,10 @@
 
 /** # AddTextEdit #
  * @abbrev ted
- * 
- * $$ ted = MUI.AddTextEdit(parent, width=-1, options?, p1?, p2?, p3?, p4?, p5?) $$ 
+ *
+ * $$ ted = MUI.AddTextEdit(parent, width=-1, options?, p1?, p2?, p3?, p4?, p5?) $$
  * @param {dso} parent @../app/CreateLayout
- * @param {num} [width=-1] 
+ * @param {num} [width=-1]
  * @param {str} [options] outline|filled|unique|search|active|icon and for icon can be  left|right
  * @param {str} [p1] See corresponding MUI TextEdit
  * @param {str} [p2] See corresponding MUI TextEdit
@@ -17,7 +17,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Adds a TextEdit control to a given layout. See @CreateTextEditFilled, @CreateTextEditFilledA, @CreateTextEditOutline, @CreateTextEditOutlineA, @CreateTEFilledIconLeft, @CreateTEFilledIconRight, @CreateTEOutlineIconLeft, @CreateTEOutlineIconRight, @CreateTESearchElegant, @CreateTESearchUnique, @CreateTextEditSearch and @CreateTextEditUnique for full documentation on each type of MUI TextEdit. For p1, p2, p3, p4 and p5 parameters, these are the params after the options. You can refer to the corresponding Create*** method to see what this parameters are. Example for @CreateTextEditFilled 'p1' is 'hint', 'p2' is 'label' and 'p3' is 'color'. For @CreateTextEditOutline 'p1' is 'hint', 'p2' is 'label', 'p3' is 'color' and 'p4' is 'backColor'.
@@ -25,10 +25,10 @@ Adds a TextEdit control to a given layout. See @CreateTextEditFilled, @CreateTex
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample AddTextEdit
 cfg.Light
@@ -47,9 +47,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python AddTextEdit
 # cfg.Light, cfg.MUI
@@ -69,5 +69,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
