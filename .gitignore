@@ -11,6 +11,7 @@ node_modules/
 
 /files/version.txt
 /files/generate_dsuikit.js
+files/test/
 /out/
 /app/
 /version.txt

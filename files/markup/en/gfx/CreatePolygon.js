@@ -4,7 +4,7 @@
 /** # CreatePolygon #
  * @abbrev pol
  * Creates a polygonal game object.
- * $$ pol = gfx.CreatePolygon(points, pivotX, pivotY, color, lineWidth, lineColor, lineAlpha, group) $$ 
+ * $$ pol = gfx.CreatePolygon(points, pivotX, pivotY, color, lineWidth?, lineColor?, lineAlpha?, group?) $$ 
  * @param {lst} points [ point_x_y:num_frc ]
  * @param {num_frc} pivotX 
  * @param {num_frc} pivotY 

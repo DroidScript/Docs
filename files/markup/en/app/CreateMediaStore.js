@@ -50,7 +50,7 @@
  * Search for media albums.
  * $$ med.QueryAlbums(filter?, sort?, options?) $$
  * @param {str_sql} [filter] 
- * @param {str:coloumns} [sort] album,\_id,albumArt,artist,numSongs,firstYear,lastYear|
+ * @param {str:coloumns} [sort] album,\_id,albumArt,artist,numSongs,firstYear,lastYear
  * @param {str} [options] internal|external
  */
 

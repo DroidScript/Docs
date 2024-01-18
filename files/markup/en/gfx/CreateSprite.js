@@ -5,7 +5,7 @@
  * @abbrev spr
  * @brief Returns a new sprite object
  * 
- * $$ spr = gfx.CreateSprite(file, group, callback) $$ 
+ * $$ spr = gfx.CreateSprite(file, group?, callback?) $$ 
  * @param {str_ptf} file 
  * @param {str} [group] 
  * @param {fnc_json} [callback] {}

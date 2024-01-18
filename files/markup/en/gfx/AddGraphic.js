@@ -4,7 +4,7 @@
 /** # AddGraphic #
  * Adds a basic shape object to the game.
  * See Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon
- * $$ gfx.AddGraphic(obj, x, y, w, h, angle, alpha) $$ 
+ * $$ gfx.AddGraphic(obj, x, y, w?, h?, angle?, alpha?) $$ 
  * @param {obj} obj 
  * @param {num_frc} x 
  * @param {num_frc} y 

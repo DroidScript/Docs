@@ -469,28 +469,28 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 
 class UIAccordion {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -520,7 +520,7 @@ class UIAccordion {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -529,16 +529,16 @@ class UIAccordion {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {bin} Sets or returns whether the accordion is rounded or not */
@@ -811,28 +811,28 @@ class UIAccordion {
 
 class UIAppBar {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -865,7 +865,7 @@ class UIAppBar {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {bin} Sets or returns whether the appbar has menu button */
@@ -877,16 +877,16 @@ class UIAppBar {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or return the AppBar title text */
@@ -1055,25 +1055,25 @@ class UIAppBar {
 
 class UIBottomNavbar {
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -1109,7 +1109,7 @@ class UIBottomNavbar {
 	/** @type {lst} Sets or returns the navigation actions array */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -1118,16 +1118,16 @@ class UIBottomNavbar {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the color of the text */
@@ -1389,25 +1389,25 @@ class UIBottomNavbar {
 
 class UIButton {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
 	/** @type {str} Sets or returns the accepted files for an upload button */
 	acceptedFiles;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the badge content */
@@ -1419,7 +1419,7 @@ class UIButton {
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -1449,7 +1449,7 @@ class UIButton {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -1458,16 +1458,16 @@ class UIButton {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant of the button */
@@ -1476,7 +1476,7 @@ class UIButton {
 	/** @type {str} Sets or returns the button text */
 	text;
 
-	/** @type {str} Sets or returns the text color in hexadecimal format */
+	/** @type {str_col} Sets or returns the text color in hexadecimal format */
 	textColor;
 
 	/** @type {num} Sets or returns the size of the text within the control */
@@ -1656,28 +1656,28 @@ class UIButton {
 
 class UIButtonGroup {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -1707,7 +1707,7 @@ class UIButtonGroup {
 	/** @type {lst} Sets or returns the list items of the button group */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -1719,16 +1719,16 @@ class UIButtonGroup {
 	/** @type {str} Sets or returns the orientation of the button group */
 	orientation;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant */
@@ -1970,28 +1970,28 @@ class UIButtonGroup {
 
 class UICheckbox {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -2033,7 +2033,7 @@ class UICheckbox {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -2042,16 +2042,16 @@ class UICheckbox {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {num} Sets or returns the space between the checkbox icon and the label text */
@@ -2230,28 +2230,28 @@ class UICheckbox {
 
 class UICheckboxGroup {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -2299,7 +2299,7 @@ class UICheckboxGroup {
 	/** @type {lst} Sets or returns the list items */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -2311,16 +2311,16 @@ class UICheckboxGroup {
 	/** @type {bin} Sets or returns whether the container is outlined or elevated */
 	outlined;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant of the Checkbox */
@@ -2329,7 +2329,7 @@ class UICheckboxGroup {
 	/** @type {num} Sets or returns the space between the checkbox icon and the text */
 	spaceBetween;
 
-	/** @type {str} Sets or returns the text color in hexadecimal format */
+	/** @type {str_col} Sets or returns the text color in hexadecimal format */
 	textColor;
 
 	/** @type {num} Sets or returns the size of the checkbox icon */
@@ -2613,31 +2613,31 @@ class UICheckboxGroup {
 
 class UIChip {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
 	/** @type {str} Sets or returns the avatar */
 	avatar;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -2679,7 +2679,7 @@ class UIChip {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -2688,16 +2688,16 @@ class UIChip {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant */
@@ -2941,34 +2941,34 @@ class UIDialog {
 
 class UIDivider {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
 	borderStyle;
 
-	/** @type {str} Sets or returns the color in hexadecimal format */
+	/** @type {str_col} Sets or returns the color in hexadecimal format */
 	color;
 
 	/** @type {num} Sets or returns the corner radius in pixels */
@@ -2989,7 +2989,7 @@ class UIDivider {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -2998,16 +2998,16 @@ class UIDivider {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the color of the text */
@@ -3219,28 +3219,28 @@ class UIDrawer {
 
 class UIDropdown {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -3276,7 +3276,7 @@ class UIDropdown {
 	/** @type {lst} Sets or returns the dropdown list */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -3288,16 +3288,16 @@ class UIDropdown {
 	/** @type {str} Sets or returns the orientation of the dropdown buttongroup */
 	orientation;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant of the dropdown button */
@@ -3542,28 +3542,28 @@ class UIDropdown {
 
 class UIFAB {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -3599,7 +3599,7 @@ class UIFAB {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -3608,16 +3608,16 @@ class UIFAB {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant of the FAB */
@@ -3777,28 +3777,28 @@ class UIFAB {
 
 class UIImage {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -3843,7 +3843,7 @@ class UIImage {
 	/** @type {num} Sets or returns the current line thickness */
 	lineWidth;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the maximum miter length */
@@ -3855,19 +3855,19 @@ class UIImage {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
 	/** @type {lst} Returns the pixel data of the image */
 	pixelData;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the current color of the line or stroke */
@@ -4158,31 +4158,31 @@ class UIImage {
 
 class UILayout {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
 	/** @type {str} Sets or returns the horizontal alignment of the control in a Linear Layout */
 	alignment;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -4215,7 +4215,7 @@ class UILayout {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -4227,16 +4227,16 @@ class UILayout {
 	/** @type {str} Sets or returns the orientation of the controls in a Linear Layout */
 	orientation;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the color of the text */
@@ -4444,16 +4444,16 @@ class UILayout {
 
 class UIList {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
 	/** @type {str} Sets or returns the size of the avatar */
@@ -4465,13 +4465,13 @@ class UIList {
 	/** @type {str} Sets or returns the background color in a hexadecimal format */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -4513,7 +4513,7 @@ class UIList {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -4525,16 +4525,16 @@ class UIList {
 	/** @type {bin} Sets or returns whether the container is outlined or elevated */
 	outlined;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {bin} Sets or returns a boolean whether the list is selectable or not */
@@ -4825,28 +4825,28 @@ class UIList {
 
 class UIMenu {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -4876,7 +4876,7 @@ class UIMenu {
 	/** @type {lst} Sets or returns the items in the menu */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -4885,16 +4885,16 @@ class UIMenu {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the color of the text */
@@ -5112,28 +5112,28 @@ class UIMenu {
 
 class UIProgress {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -5163,7 +5163,7 @@ class UIProgress {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -5172,16 +5172,16 @@ class UIProgress {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the color of the text */
@@ -5341,28 +5341,28 @@ class UIProgress {
 
 class UIRadioGroup {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -5407,7 +5407,7 @@ class UIRadioGroup {
 	/** @type {lst} Sets or returns the list array */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -5419,19 +5419,19 @@ class UIRadioGroup {
 	/** @type {bin} Sets or returns whether the container is outlined or elevated */
 	outlined;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
 	/** @type {str} Sets or returns the size of the radio button */
 	radioSize;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {num} Sets or returns the space between the radio button and the text */
@@ -5670,28 +5670,28 @@ class UIRadioGroup {
 
 class UISelect {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -5733,7 +5733,7 @@ class UISelect {
 	/** @type {lst} Sets or returns the list items */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the maximum height of the popup container */
@@ -5745,19 +5745,19 @@ class UISelect {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
 	/** @type {str} Sets or returns the color of the popup in hexadecimal format */
 	popupColor;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant of the Select Component */
@@ -6001,28 +6001,28 @@ class UISelect {
 
 class UISlider {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -6049,7 +6049,7 @@ class UISlider {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {bin} Sets or returns the marks on the Slider Component */
@@ -6070,16 +6070,16 @@ class UISlider {
 	/** @type {str} Sets or returns the orientation of the Slider Component */
 	orientation;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {num} Sets or returns the Sider Component steps */
@@ -6273,31 +6273,31 @@ class UISlider {
 
 class UIStepper {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
 	/** @type {num} Sets or returns the active step */
 	activeStep;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -6324,7 +6324,7 @@ class UIStepper {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -6336,16 +6336,16 @@ class UIStepper {
 	/** @type {str} Sets or returns the orientation of the Stepper */
 	orientation;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the color of the text */
@@ -6541,28 +6541,28 @@ class UIStepper {
 
 class UISwitch {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -6601,7 +6601,7 @@ class UISwitch {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -6610,19 +6610,19 @@ class UISwitch {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
 	/** @type {bin} Sets or returns a boolean value whether this component is required or not */
 	required;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant of the toggle switch */
@@ -6634,7 +6634,7 @@ class UISwitch {
 	/** @type {str} Sets or returns the label text */
 	text;
 
-	/** @type {str} Sets or returns the text color in hexadecimal format */
+	/** @type {str_col} Sets or returns the text color in hexadecimal format */
 	textColor;
 
 	/** @type {num} Sets or returns the size of the text within the control */
@@ -6785,28 +6785,28 @@ class UISwitch {
 
 class UISwitchGroup {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -6860,7 +6860,7 @@ class UISwitchGroup {
 	/** @type {lst} Sets or returns the list items */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -6872,16 +6872,16 @@ class UISwitchGroup {
 	/** @type {bin} Sets or returns whether the container is outlined or elevated */
 	outlined;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the theme color <col nobox #fb8c00>primary</col> or <col nobox #fb8c00>secondary</col> */
@@ -7099,28 +7099,28 @@ class UISwitchGroup {
 
 class UITabs {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -7171,7 +7171,7 @@ class UITabs {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -7180,16 +7180,16 @@ class UITabs {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the scroll button mode when tab items overflow the width of its container */
@@ -7481,25 +7481,25 @@ class UITabs {
 
 class UIText {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
 	/** @type {str} Sets or returns the horizontal alignment of the text */
 	alignment;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {bin} Sets or returns whether the text is <col nobox #fb8c00>bold</col> or not */
@@ -7508,7 +7508,7 @@ class UIText {
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -7541,7 +7541,7 @@ class UIText {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -7550,22 +7550,22 @@ class UIText {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the text */
 	text;
 
-	/** @type {str} Sets or returns the text color in hexadecimal format */
+	/** @type {str_col} Sets or returns the text color in hexadecimal format */
 	textColor;
 
 	/** @type {num} Sets or returns the fontsize for the text */
@@ -7746,31 +7746,31 @@ class UIText {
 
 class UITextField {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
 	/** @type {bin} Sets or returns a boolean value whethe the input is focus when rendered into the DOM */
 	autoFocus;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -7818,7 +7818,7 @@ class UITextField {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the maximum rows for a <col nobox #fb8c00>multiline</col> textfield */
@@ -7836,22 +7836,22 @@ class UITextField {
 	/** @type {str} Sets or returns the outline color in hexadecimal form <col nobox #fb8c00>#rrggbb</col> when the textfield is focus */
 	outlineColor;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
 	/** @type {str} Sets or returns the placeholder text */
 	placeholder;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
 	/** @type {bin} Sets or returns a boolean value whether the text field in required or not */
 	required;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the size variant of the textfield */
@@ -8110,28 +8110,28 @@ class UITimePicker {
 
 class UITreeView {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -8158,7 +8158,7 @@ class UITreeView {
 	/** @type {obj} Sets or returns the list object */
 	list;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -8167,16 +8167,16 @@ class UITreeView {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the color of the text */
@@ -8350,22 +8350,22 @@ class UITreeView {
 
 class UIWebView {
 
-	/** @type {num} Returns the absolute height of the control in pixels */
+	/** @type {num_pxl} Returns the absolute height of the control in pixels */
 	absHeight;
 
-	/** @type {num} Returns the absolute distance of the control from the left in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the left in pixels */
 	absLeft;
 
-	/** @type {num} Returns the absolute distance of the control from the top in pixels */
+	/** @type {num_pxl} Returns the absolute distance of the control from the top in pixels */
 	absTop;
 
-	/** @type {num} Returns the absolute width of the control in pixels */
+	/** @type {num_pxl} Returns the absolute width of the control in pixels */
 	absWidth;
 
-	/** @type {str} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
+	/** @type {str_col} A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
 	backColor;
 
-	/** @type {str} The path to your image file */
+	/** @type {str_pth} The path to your image file */
 	backImage;
 
 	/** @type {lst} Sets or returns the list of blocked urls */
@@ -8374,7 +8374,7 @@ class UIWebView {
 	/** @type {num} Sets or returns the border thickness in pixels */
 	border;
 
-	/** @type {str} Sets or returns the border color */
+	/** @type {str_col} Sets or returns the border color */
 	borderColor;
 
 	/** @type {str} Sets or returns the border style */
@@ -8407,7 +8407,7 @@ class UIWebView {
 	/** @type {num} Returns the distance of the control from the left */
 	left;
 
-	/** @type {lst} Sets or returns the margin of the control */
+	/** @type {num|lst_num} Sets or returns the margin of the control */
 	margins;
 
 	/** @type {num} Sets or returns the opacity of the control */
@@ -8416,16 +8416,16 @@ class UIWebView {
 	/** @type {str} Sets or returns the <col nobox #fb8c00>options</col> of the control */
 	options;
 
-	/** @type {lst} Sets or returns the padding of the control */
+	/** @type {num|lst_num} Sets or returns the padding of the control */
 	padding;
 
-	/** @type {obj} Returns the parent layout control */
+	/** @type {UILayout} Returns the parent layout control */
 	parent;
 
-	/** @type {obj} Returns the position of the control */
+	/** @type {{ left: num, top: num, right: num, bottom: num }} Returns the position of the control */
 	position;
 
-	/** @type {num} Sets or returns the angle of rotation in degrees */
+	/** @type {num_deg} Sets or returns the angle of rotation in degrees */
 	rotation;
 
 	/** @type {str} Sets or returns the color of the text */

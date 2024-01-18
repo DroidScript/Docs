@@ -176,7 +176,7 @@
 /** ### SetTextColor ###
  * @brief Define control text color
  * Define standard text color of controls.
- * $$ thm.SetTextColor(color1, color2) $$
+ * $$ thm.SetTextColor(color1, color2?) $$
  * @param {str_col} color1 
  * @param {str_col} [color2] 
  */

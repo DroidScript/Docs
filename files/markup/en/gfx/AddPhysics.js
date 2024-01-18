@@ -9,7 +9,7 @@
  * <sample Collision>
  * 
  * _The method list below shows the __functions which are added to game objects__ when using physics._
- * $$ phs = gfx.AddPhysics(gravity, accuracy, sleep) $$ 
+ * $$ phs = gfx.AddPhysics(gravity?, accuracy?, sleep?) $$ 
  * @param {num} [gravity] 
  * @param {num} [accuracy] 
  * @param {num} [sleep] 
@@ -34,7 +34,7 @@
 /** ### AddVelocity ###
  * @brief Adds velocity to the object
  * Adds linear and angular velocity to the object
- * $$ phs.AddVelocity(x, y, angular, bodyRelative) $$
+ * $$ phs.AddVelocity(x, y, angular?, bodyRelative?) $$
  * @param {num} x 
  * @param {num} y 
  * @param {num} [angular] 
@@ -45,7 +45,7 @@
 /** ### ApplyImpulse ###
  * @brief Applies an impulse p=m*v to the object
  * Applies an impulse (impulse=velocity*mass) to the object
- * $$ phs.ApplyImpulse(x, y, offsetX, offsetY) $$
+ * $$ phs.ApplyImpulse(x, y, offsetX=0, offsetY=0) $$
  * @param {num} x 
  * @param {num} y 
  * @param {num} [offsetX=0] -1..1
@@ -95,7 +95,7 @@
 /** ### SetPhysics ###
  * @brief Set physics properties
  * Set the physics properties for the game object.
- * $$ phs.SetPhysics(groupId, type, density, bounce, friction, linearDamp, angularDamp) $$
+ * $$ phs.SetPhysics(groupId, type, density?, bounce?, friction?, linearDamp?, angularDamp?) $$
  * @param {str||num} groupId 
  * @param {str} type moveable|fixed|dynamic
  * @param {num} [density] 
@@ -109,7 +109,7 @@
 /** ### SetShape ###
  * @brief Define the collision shape
  * Defines the shape for collision detection of the object.
- * $$ phs.SetShape(shape, width, height) $$
+ * $$ phs.SetShape(shape, width?, height?) $$
  * @param {str} shape rect|round
  * @param {num_frc} [width] 
  * @param {num_frc} [height] 
@@ -119,7 +119,7 @@
 /** ### SetVelocity ###
  * @brief Set the object velocity
  * Set the velocity of the game object.
- * $$ phs.SetVelocity(x, y, angular, bodyRelative) $$
+ * $$ phs.SetVelocity(x, y, angular?, bodyRelative?) $$
  * @param {num} x 
  * @param {num} y 
  * @param {num} [angular] 

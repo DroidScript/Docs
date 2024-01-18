@@ -25,28 +25,28 @@
 /** ### absHeight
  * @prop
  * Returns the absolute height of the control in pixels.
- * @returns num
+ * @returns num_pxl
  */
 
                     
 /** ### absLeft
  * @prop
  * Returns the absolute distance of the control from the left in pixels.
- * @returns num
+ * @returns num_pxl
  */
 
                     
 /** ### absTop
  * @prop
  * Returns the absolute distance of the control from the top in pixels.
- * @returns num
+ * @returns num_pxl
  */
 
                     
 /** ### absWidth
  * @prop
  * Returns the absolute width of the control in pixels.
- * @returns num
+ * @returns num_pxl
  */
 
                     
@@ -60,14 +60,14 @@
 /** ### backColor
  * @prop
  * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
- * @returns str
+ * @returns str_col
  */
 
                     
 /** ### backImage
  * @prop
  * The path to your image file.
- * @returns str
+ * @returns str_pth
  */
 
                     
@@ -81,7 +81,7 @@
 /** ### borderColor
  * @prop
  * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
- * @returns str
+ * @returns str_col
  */
 
                     
@@ -179,7 +179,7 @@
 /** ### margins
  * @prop
  * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
- * @returns lst
+ * @returns num||lst_num
  */
 
                     
@@ -200,28 +200,28 @@
 /** ### padding
  * @prop
  * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
- * @returns lst
+ * @returns num||lst_num
  */
 
                     
 /** ### parent
  * @prop
  * Returns the parent layout control.
- * @returns obj
+ * @returns uio-Layout
  */
 
                     
 /** ### position
  * @prop
  * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
- * @returns obj
+ * @returns obj-{ left:num, top:num, right:num, bottom:num }
  */
 
                     
 /** ### rotation
  * @prop
  * Sets or returns the angle of rotation in degrees.
- * @returns num
+ * @returns num_deg
  */
 
                     

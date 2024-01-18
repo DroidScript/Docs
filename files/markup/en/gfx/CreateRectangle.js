@@ -5,7 +5,7 @@
  * @abbrev rct
  * @brief Creates a rectangle
  * Creates a rectangular game object.
- * $$ rct = gfx.CreateRectangle(width, height, color, lineWidth, lineColor, lineAlpha, group) $$ 
+ * $$ rct = gfx.CreateRectangle(width, height, color, lineWidth?, lineColor?, lineAlpha?, group?) $$ 
  * @param {num_frc} width 
  * @param {num_frc} height 
  * @param {num_col} color 

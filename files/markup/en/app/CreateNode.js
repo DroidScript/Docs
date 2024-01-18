@@ -3,8 +3,8 @@
 
 /** # CreateNode #
  * @abbrev node
- *
- * $$ node = app.CreateNode(paths?, options?) $$
+ * 
+ * $$ node = app.CreateNode(paths?, options?) $$ 
  * @param {str_pth} [paths] NODE_PATH env variable
  * @param {str_lst} [options] extended:allow app methods in default main instance,legacy:dont use named pipes for messaging,nostart:disable auto start,esm:use EcmaScript-Modules
  * @returns dso-Node
@@ -46,7 +46,7 @@ For more details have a look at the Node docs in the @../Plugins page
  * Start the main Node process
  * $$ node.Start(args?, paths?) $$
  * @param {lst} [args] argument array
- * @param {lst} [paths]
+ * @param {lst} [paths] 
  */
 
 
@@ -88,15 +88,15 @@ For more details have a look at the Node docs in the @../Plugins page
 /** ### SetEnv ###
  * Set a process environment variable.
  * $$ node.SetEnv(name, val) $$
- * @param {str} name
- * @param {str} val
+ * @param {str} name 
+ * @param {str} val 
  */
 
 
 /** ### GetEnv ###
  * Get a process environment variable.
  * $$ node.GetEnv(name) $$
- * @param {str} name
+ * @param {str} name 
  * @returns str
  */
 
@@ -104,29 +104,29 @@ For more details have a look at the Node docs in the @../Plugins page
 /** ### OpenMsgPipe ###
  * Open a message pipe
  * $$ node.OpenMsgPipe(isCmd) $$
- * @param {bin} isCmd
+ * @param {bin} isCmd 
  */
 
 
 /** ### CloseMsgPipe ###
  * Close a message pipe
  * $$ node.CloseMsgPipe(isCmd) $$
- * @param {bin} isCmd
+ * @param {bin} isCmd 
  */
 
 
 /** ### SendPipeMsg ###
  * Send a message over the message pipe
  * $$ node.SendPipeMsg(msg, isCmd=false) $$
- * @param {str} msg
- * @param {bin} [isCmd=false]
+ * @param {str} msg 
+ * @param {bin} [isCmd=false] 
  */
 
 
 /** ### SendMessage ###
  * Send a message to the running node process. Calls cb of parent.SetOnMessage
  * $$ node.SendMessage(msg) $$
- * @param {str} msg
+ * @param {str} msg 
  */
 
 
@@ -147,17 +147,17 @@ For more details have a look at the Node docs in the @../Plugins page
 /** ### Run ###
  * Run a NodeJS source file. Use id to run in a new context
  * $$ node.Run(file, id?, newPaths?) $$
- * @param {str_pth} file
- * @param {str:Context ID} [id]
- * @param {str_lst} [newPaths]
+ * @param {str_pth} file 
+ * @param {str:Context ID} [id] 
+ * @param {str_lst} [newPaths] 
  */
 
 
 /** ### Execute ###
  * Execute a line of code in the node process.
  * $$ node.Execute(js, id?) $$
- * @param {str_jsc} js
- * @param {str:Context ID} [id]
+ * @param {str_jsc} js 
+ * @param {str:Context ID} [id] 
  */
 
 
@@ -165,7 +165,7 @@ For more details have a look at the Node docs in the @../Plugins page
  * Install a node module from npmjs.org
  * $$ node.AddModule(name, dir?) $$
  * @param {str} name name|name^ver
- * @param {str:optional target directory} [dir]
+ * @param {str:optional target directory} [dir] 
  */
 
 
@@ -173,7 +173,7 @@ For more details have a look at the Node docs in the @../Plugins page
 // ------------- SAMPLES ------------- 
 
 
-
+    
 /**
 @sample Basic
 var nodeJs = 'console.log("Hello World");\nconsole.error("Hello Error");\n'
@@ -199,9 +199,9 @@ function node_OnReady()
     node.Run("node_script.js");
 }
  */
-
-
-
+    
+            
+    
 /**
 @sample Python Basic
 from native import app
@@ -236,4 +236,5 @@ def OnStart():
 def node_OnReady():
     node.Run("node_script.js")
  */
-
+    
+            

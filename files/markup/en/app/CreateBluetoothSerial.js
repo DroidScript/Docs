@@ -27,7 +27,7 @@
 /** ### Connect ###
  * @brief Connect a Bluetooth device
  * Connect to a Bluetooth device via its address. The oppenent must have called bt.Listen before.
- * $$ bls.Connect(name, channel) $$
+ * $$ bls.Connect(name, channel?) $$
  * @param {str} name 
  * @param {str} [channel] 
  */

@@ -5,7 +5,7 @@
  * @abbrev elp
  * @brief Creates an ellipse
  * Creates a elliptical game object.
- * $$ elp = gfx.CreateEllipse(width, height, color, lineWidth, lineColor, lineAlpha, group) $$ 
+ * $$ elp = gfx.CreateEllipse(width, height, color, lineWidth?, lineColor?, lineAlpha?, group?) $$ 
  * @param {num_frc} width 
  * @param {num_frc} height 
  * @param {num_col} color 

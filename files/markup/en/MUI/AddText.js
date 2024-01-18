@@ -9,7 +9,7 @@
  * @param {str} text 
  * @param {num} [width=-1] 
  * @param {num} [height=-1] 
- * @param {str} [options] DS text options|Thin|Light|Regular|Medium|Bold,h1|h2|h3|h4|h5|h6|secondary|jumbo|paragraph
+ * @param {str_lst} [options] DS text options|Thin|Light|Regular|Medium|Bold,h1|h2|h3|h4|h5|h6|secondary|jumbo|paragraph
  * @param {str_col} [color] 
  * @returns obj
 */

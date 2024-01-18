@@ -5,7 +5,7 @@
  * Closes the drawer layout on the given side with slide animation.
  * 
  * See Also: @OpenDrawer
- * $$ app.CloseDrawer(side) $$ 
+ * $$ app.CloseDrawer(side?) $$ 
  * @param {str} [side] Left|Right
 */
 

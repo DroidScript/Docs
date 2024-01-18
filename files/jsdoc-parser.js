@@ -413,7 +413,7 @@ function HandleComment(c, name, func, json, objJson) {
             let g = p.type.split(/[_\s:-]/)[0], v;
             if (types[g]) v = types[g];
             else if (typx.includes(g)) v = p.type;
-            else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p.type;
+            else console.log(`unknown prop type ${g} in ${name}`), v = "obj-" + p.type;
             met.retval = v;
         }
         else if (line.includes("@prop")) {
@@ -431,7 +431,7 @@ function HandleComment(c, name, func, json, objJson) {
                 let g = p.type.split(/[_\s:-]/)[0], v;
                 if (types[g]) v = types[g];
                 else if (typx.includes(g)) v = p.type;
-                else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p.type;
+                else console.log(`unknown prop type ${g} in ${name}`), v = "obj-" + p.type;
                 met.retval = v;
             }
             else { obj.isval = true; }
@@ -490,7 +490,7 @@ function HandleComment(c, name, func, json, objJson) {
         else if (line.includes("@return")) {
             const f = line.split(/returns?/)[1].trim(), g = f.split(/[_\s:-]/)[0];
             if (types[g]) obj.retval = types[g];
-            else if (typx.includes(g)) obj.retval = f;
+            else if (!g.split("||").find(t => !typx.includes(t))) obj.retval = f;
             else console.log(`unknown ret type ${g} in ${name}`), obj.retval = "obj-" + f;
         }
 

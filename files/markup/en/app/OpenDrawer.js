@@ -5,7 +5,7 @@
  * Opens the drawer layout on the given side with slide animation.
  * 
  * See Also: @AddDrawer
- * $$ app.OpenDrawer(side) $$ 
+ * $$ app.OpenDrawer(side?) $$ 
  * @param {str} [side] Left|Right
 */
 

@@ -10,7 +10,7 @@
  * @param {str_sql} [select] 
  * @param {str_lst} [args] 
  * @param {str} [sort] coloumn:a coloumn specified in 'coloumns'
- * @return lst-[any]
+ * @returns lst-[any]
 */
 
 

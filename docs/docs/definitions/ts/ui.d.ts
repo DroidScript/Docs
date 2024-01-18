@@ -430,28 +430,28 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 declare class UIAccordion {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -481,7 +481,7 @@ declare class UIAccordion {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -490,16 +490,19 @@ declare class UIAccordion {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns whether the accordion is rounded or not */
 	rounded: bin;
@@ -761,28 +764,28 @@ declare class UIAccordion {
 declare class UIAppBar {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -815,7 +818,7 @@ declare class UIAppBar {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns whether the appbar has menu button */
 	menu: bin;
@@ -827,16 +830,19 @@ declare class UIAppBar {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or return the AppBar title text */
 	text: str;
@@ -995,25 +1001,25 @@ declare class UIAppBar {
 declare class UIBottomNavbar {
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -1049,7 +1055,7 @@ declare class UIBottomNavbar {
 	list: lst;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -1058,16 +1064,19 @@ declare class UIBottomNavbar {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the color of the text */
 	textColor: str;
@@ -1314,25 +1323,25 @@ declare class UIBottomNavbar {
 declare class UIButton {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** Sets or returns the accepted files for an upload button */
 	acceptedFiles: str;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the badge content */
 	badge: num;
@@ -1344,7 +1353,7 @@ declare class UIButton {
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -1374,7 +1383,7 @@ declare class UIButton {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -1383,16 +1392,19 @@ declare class UIButton {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant of the button */
 	sizeVariant: str;
@@ -1401,7 +1413,7 @@ declare class UIButton {
 	text: str;
 
 	/** Sets or returns the text color in hexadecimal format */
-	textColor: str;
+	textColor: str_col;
 
 	/** Sets or returns the size of the text within the control */
 	textSize: num;
@@ -1571,28 +1583,28 @@ declare class UIButton {
 declare class UIButtonGroup {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -1622,7 +1634,7 @@ declare class UIButtonGroup {
 	list: lst;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -1634,16 +1646,19 @@ declare class UIButtonGroup {
 	orientation: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant */
 	sizeVariant: str;
@@ -1876,28 +1891,28 @@ declare class UIButtonGroup {
 declare class UICheckbox {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -1939,7 +1954,7 @@ declare class UICheckbox {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -1948,16 +1963,19 @@ declare class UICheckbox {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the space between the checkbox icon and the label text */
 	spaceBetween: num;
@@ -2126,28 +2144,28 @@ declare class UICheckbox {
 declare class UICheckboxGroup {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -2195,7 +2213,7 @@ declare class UICheckboxGroup {
 	list: lst;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -2207,16 +2225,19 @@ declare class UICheckboxGroup {
 	outlined: bin;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant of the Checkbox */
 	sizeVariant: str;
@@ -2225,7 +2246,7 @@ declare class UICheckboxGroup {
 	spaceBetween: num;
 
 	/** Sets or returns the text color in hexadecimal format */
-	textColor: str;
+	textColor: str_col;
 
 	/** Sets or returns the size of the checkbox icon */
 	textSize: num;
@@ -2488,31 +2509,31 @@ declare class UICheckboxGroup {
 declare class UIChip {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** Sets or returns the avatar */
 	avatar: str;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -2554,7 +2575,7 @@ declare class UIChip {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -2563,16 +2584,19 @@ declare class UIChip {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant */
 	sizeVariant: str;
@@ -2794,34 +2818,34 @@ declare class UIDialog {
 declare class UIDivider {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
 
 	/** Sets or returns the color in hexadecimal format */
-	color: str;
+	color: str_col;
 
 	/** Sets or returns the corner radius in pixels */
 	cornerRadius: num;
@@ -2842,7 +2866,7 @@ declare class UIDivider {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -2851,16 +2875,19 @@ declare class UIDivider {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the color of the text */
 	textColor: str;
@@ -3059,28 +3086,28 @@ declare class UIDrawer {
 declare class UIDropdown {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -3116,7 +3143,7 @@ declare class UIDropdown {
 	list: lst;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -3128,16 +3155,19 @@ declare class UIDropdown {
 	orientation: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant of the dropdown button */
 	sizeVariant: str;
@@ -3366,28 +3396,28 @@ declare class UIDropdown {
 declare class UIFAB {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -3423,7 +3453,7 @@ declare class UIFAB {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -3432,16 +3462,19 @@ declare class UIFAB {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant of the FAB */
 	sizeVariant: str;
@@ -3594,28 +3627,28 @@ declare class UIFAB {
 declare class UIImage {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -3660,7 +3693,7 @@ declare class UIImage {
 	lineWidth: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the maximum miter length */
 	miterLimit: num;
@@ -3672,19 +3705,22 @@ declare class UIImage {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
 	/** Returns the pixel data of the image */
 	pixelData: lst;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the current color of the line or stroke */
 	strokeColor: str;
@@ -3958,31 +3994,31 @@ declare class UIImage {
 declare class UILayout {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** Sets or returns the horizontal alignment of the control in a Linear Layout */
 	alignment: str;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -4015,7 +4051,7 @@ declare class UILayout {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -4027,16 +4063,19 @@ declare class UILayout {
 	orientation: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the color of the text */
 	textColor: str;
@@ -4232,16 +4271,16 @@ declare class UILayout {
 declare class UIList {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** Sets or returns the size of the avatar */
 	avatarSize: str;
@@ -4253,13 +4292,13 @@ declare class UIList {
 	backColor: str;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -4301,7 +4340,7 @@ declare class UIList {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -4313,16 +4352,19 @@ declare class UIList {
 	outlined: bin;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns a boolean whether the list is selectable or not */
 	selectable: bin;
@@ -4594,28 +4636,28 @@ declare class UIList {
 declare class UIMenu {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -4645,7 +4687,7 @@ declare class UIMenu {
 	list: lst;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -4654,16 +4696,19 @@ declare class UIMenu {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the color of the text */
 	textColor: str;
@@ -4872,28 +4917,28 @@ declare class UIMenu {
 declare class UIProgress {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -4923,7 +4968,7 @@ declare class UIProgress {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -4932,16 +4977,19 @@ declare class UIProgress {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the color of the text */
 	textColor: str;
@@ -5094,28 +5142,28 @@ declare class UIProgress {
 declare class UIRadioGroup {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -5160,7 +5208,7 @@ declare class UIRadioGroup {
 	list: lst;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -5172,19 +5220,22 @@ declare class UIRadioGroup {
 	outlined: bin;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the size of the radio button */
 	radioSize: str;
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the space between the radio button and the text */
 	spaceBetween: num;
@@ -5411,28 +5462,28 @@ declare class UIRadioGroup {
 declare class UISelect {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -5474,7 +5525,7 @@ declare class UISelect {
 	list: lst;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the maximum height of the popup container */
 	maxHeight: num;
@@ -5486,19 +5537,22 @@ declare class UISelect {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
 	/** Sets or returns the color of the popup in hexadecimal format */
 	popupColor: str;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant of the Select Component */
 	sizeVariant: str;
@@ -5723,28 +5777,28 @@ declare class UISelect {
 declare class UISlider {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -5771,7 +5825,7 @@ declare class UISlider {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the marks on the Slider Component */
 	marks: bin;
@@ -5792,16 +5846,19 @@ declare class UISlider {
 	orientation: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the Sider Component steps */
 	step: num;
@@ -5979,31 +6036,31 @@ declare class UISlider {
 declare class UIStepper {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** Sets or returns the active step */
 	activeStep: num;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -6030,7 +6087,7 @@ declare class UIStepper {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -6042,16 +6099,19 @@ declare class UIStepper {
 	orientation: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the color of the text */
 	textColor: str;
@@ -6232,28 +6292,28 @@ declare class UIStepper {
 declare class UISwitch {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -6292,7 +6352,7 @@ declare class UISwitch {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -6301,19 +6361,22 @@ declare class UISwitch {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns a boolean value whether this component is required or not */
 	required: bin;
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant of the toggle switch */
 	sizeVariant: str;
@@ -6325,7 +6388,7 @@ declare class UISwitch {
 	text: str;
 
 	/** Sets or returns the text color in hexadecimal format */
-	textColor: str;
+	textColor: str_col;
 
 	/** Sets or returns the size of the text within the control */
 	textSize: num;
@@ -6469,28 +6532,28 @@ declare class UISwitch {
 declare class UISwitchGroup {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -6544,7 +6607,7 @@ declare class UISwitchGroup {
 	list: lst;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -6556,16 +6619,19 @@ declare class UISwitchGroup {
 	outlined: bin;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the theme color <col nobox #fb8c00>primary</col> or <col nobox #fb8c00>secondary</col> */
 	textColor: str;
@@ -6771,28 +6837,28 @@ declare class UISwitchGroup {
 declare class UITabs {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -6843,7 +6909,7 @@ declare class UITabs {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -6852,16 +6918,19 @@ declare class UITabs {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the scroll button mode when tab items overflow the width of its container */
 	scrollButtonMode: str;
@@ -7139,25 +7208,25 @@ declare class UITabs {
 declare class UIText {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** Sets or returns the horizontal alignment of the text */
 	alignment: str;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns whether the text is <col nobox #fb8c00>bold</col> or not */
 	bold: bin;
@@ -7166,7 +7235,7 @@ declare class UIText {
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -7199,7 +7268,7 @@ declare class UIText {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -7208,22 +7277,25 @@ declare class UIText {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the text */
 	text: str;
 
 	/** Sets or returns the text color in hexadecimal format */
-	textColor: str;
+	textColor: str_col;
 
 	/** Sets or returns the fontsize for the text */
 	textSize: num;
@@ -7394,31 +7466,31 @@ declare class UIText {
 declare class UITextField {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** Sets or returns a boolean value whethe the input is focus when rendered into the DOM */
 	autoFocus: bin;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -7466,7 +7538,7 @@ declare class UITextField {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the maximum rows for a <col nobox #fb8c00>multiline</col> textfield */
 	maxRows: num;
@@ -7484,22 +7556,25 @@ declare class UITextField {
 	outlineColor: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
 	/** Sets or returns the placeholder text */
 	placeholder: str;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns a boolean value whether the text field in required or not */
 	required: bin;
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the size variant of the textfield */
 	sizeVariant: str;
@@ -7728,28 +7803,28 @@ declare class UITimePicker {
 declare class UITreeView {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the border thickness in pixels */
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -7776,7 +7851,7 @@ declare class UITreeView {
 	list: obj;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -7785,16 +7860,19 @@ declare class UITreeView {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the color of the text */
 	textColor: str;
@@ -7960,22 +8038,22 @@ declare class UITreeView {
 declare class UIWebView {
 
 	/** Returns the absolute height of the control in pixels */
-	absHeight: num;
+	absHeight: num_pxl;
 
 	/** Returns the absolute distance of the control from the left in pixels */
-	absLeft: num;
+	absLeft: num_pxl;
 
 	/** Returns the absolute distance of the control from the top in pixels */
-	absTop: num;
+	absTop: num_pxl;
 
 	/** Returns the absolute width of the control in pixels */
-	absWidth: num;
+	absWidth: num_pxl;
 
 	/** A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col> */
-	backColor: str;
+	backColor: str_col;
 
 	/** The path to your image file */
-	backImage: str;
+	backImage: str_pth;
 
 	/** Sets or returns the list of blocked urls */
 	blockUrls: lst;
@@ -7984,7 +8062,7 @@ declare class UIWebView {
 	border: num;
 
 	/** Sets or returns the border color */
-	borderColor: str;
+	borderColor: str_col;
 
 	/** Sets or returns the border style */
 	borderStyle: str;
@@ -8017,7 +8095,7 @@ declare class UIWebView {
 	left: num;
 
 	/** Sets or returns the margin of the control */
-	margins: lst;
+	margins: num|lst_num;
 
 	/** Sets or returns the opacity of the control */
 	opacity: num;
@@ -8026,16 +8104,19 @@ declare class UIWebView {
 	options: str;
 
 	/** Sets or returns the padding of the control */
-	padding: lst;
+	padding: num|lst_num;
 
 	/** Returns the parent layout control */
-	parent: obj;
+	parent: UILayout;
 
-	/** Returns the position of the control */
-	position: obj;
+	/**
+	 * Returns the position of the control
+	 * @return \{ left, top, right, bottom }
+	 */
+	position: { left: num, top: num, right: num, bottom: num };
 
 	/** Sets or returns the angle of rotation in degrees */
-	rotation: num;
+	rotation: num_deg;
 
 	/** Sets or returns the color of the text */
 	textColor: str;
