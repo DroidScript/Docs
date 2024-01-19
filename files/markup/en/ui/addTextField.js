@@ -30,33 +30,13 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
 // ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
-/** ### absHeight
- * @prop
- * Returns the absolute height of the control in pixels.
- * @returns num_pxl
- */
+/** @extern absHeight */
 
+/** @extern absLeft */
 
-/** ### absLeft
- * @prop
- * Returns the absolute distance of the control from the left in pixels.
- * @returns num_pxl
- */
+/** @extern absTop */
 
-
-/** ### absTop
- * @prop
- * Returns the absolute distance of the control from the top in pixels.
- * @returns num_pxl
- */
-
-
-/** ### absWidth
- * @prop
- * Returns the absolute width of the control in pixels.
- * @returns num_pxl
- */
-
+/** @extern absWidth */
 
 /** ### autoFocus
  * @prop
@@ -65,40 +45,15 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### backColor
- * @prop
- * A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>
- * @returns str_col
- */
+/** @extern backColor */
 
+/** @extern backImage */
 
-/** ### backImage
- * @prop
- * The path to your image file.
- * @returns str_pth
- */
+/** @extern border */
 
+/** @extern borderColor */
 
-/** ### border
- * @prop
- * Sets or returns the border thickness in pixels.
- * @returns num
- */
-
-
-/** ### borderColor
- * @prop
- * Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>
- * @returns str_col
- */
-
-
-/** ### borderStyle
- * @prop
- * Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.
- * @returns str
- */
-
+/** @extern borderStyle */
 
 /** ### color
  * @prop
@@ -107,19 +62,9 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### cornerRadius
- * @prop
- * Sets or returns the corner radius in pixels.
- * @returns num
- */
+/** @extern cornerRadius */
 
-
-/** ### disabled
- * @prop
- * Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.
- * @returns bin
- */
-
+/** @extern disabled */
 
 /** ### endAdornment
  * @prop
@@ -135,19 +80,9 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### fontFile
- * @prop
- * Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.
- * @returns str
- */
+/** @extern fontFile */
 
-
-/** ### height
- * @prop
- * Sets or returns the height of the control as a fraction of the parent control.
- * @returns num
- */
-
+/** @extern height */
 
 /** ### helperText
  * @prop
@@ -170,19 +105,9 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### isVisible
- * @prop
- * Returns whether the control is visible or not.
- * @returns bin
- */
+/** @extern isVisible */
 
-
-/** ### label
- * @prop
- * Sets or returns the label text.
- * @returns str
- */
-
+/** @extern label */
 
 /** ### labelColor
  * @prop
@@ -191,19 +116,9 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### left
- * @prop
- * Returns the distance of the control from the left.
- * @returns num
- */
+/** @extern left */
 
-
-/** ### margins
- * @prop
- * Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.
- * @returns num||lst_num
- */
-
+/** @extern margins */
 
 /** ### maxRows
  * @prop
@@ -219,19 +134,9 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### opacity
- * @prop
- * Sets or returns the opacity of the control.
- * @returns num
- */
+/** @extern opacity */
 
-
-/** ### options
- * @prop
- * Sets or returns the <col nobox #fb8c00>options</col> of the control.
- * @returns str
- */
-
+/** @extern options */
 
 /** ### outlineColor
  * @prop
@@ -240,19 +145,9 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### padding
- * @prop
- * Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
- * @returns num||lst_num
- */
+/** @extern padding */
 
-
-/** ### parent
- * @prop
- * Returns the parent layout control.
- * @returns uio-Layout
- */
-
+/** @extern parent */
 
 /** ### placeholder
  * @prop
@@ -261,12 +156,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### position
- * @prop
- * Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.
- * @returns obj-{ left:num, top:num, right:num, bottom:num }
- */
-
+/** @extern position */
 
 /** ### required
  * @prop
@@ -275,12 +165,7 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### rotation
- * @prop
- * Sets or returns the angle of rotation in degrees.
- * @returns num_deg
- */
-
+/** @extern rotation */
 
 /** ### sizeVariant
  * @prop
@@ -310,33 +195,13 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### textColor
- * @prop
- * Sets or returns the color of the text.
- * @returns str
- */
+/** @extern textColor */
 
+/** @extern textSize */
 
-/** ### textSize
- * @prop
- * Sets or returns the size of the text within the control.
- * @returns num
- */
+/** @extern top */
 
-
-/** ### top
- * @prop
- * Returns the distance of the control from the top.
- * @returns num
- */
-
-
-/** ### type
- * @prop
- * Returns the type of the control.
- * @returns str
- */
-
+/** @extern type */
 
 /** ### variant
  * @prop
@@ -345,19 +210,9 @@ Add a textfield component into your app. Collect inputs from users. Inputs can b
  */
 
 
-/** ### visibility
- * @prop
- * Sets or returns the visibility of the control.
- * @returns str
- */
+/** @extern visibility */
 
-
-/** ### width
- * @prop
- * Sets or returns the width of the control as a fraction of the parent control.
- * @returns num
- */
-
+/** @extern width */
 
 /** ### setOnEnter ###
  * @brief setOnEnter

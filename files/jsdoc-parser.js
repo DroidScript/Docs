@@ -384,7 +384,7 @@ function HandleComment(c, name, func, json, objJson) {
         line = line.trim();
         const obj = isCA ? func : met;
 
-        if (line.includes("###") && !isCA) {
+        if (line.match(/^[ */]+###/) && !isCA) {
             const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
             const ref = /\d/.test(method[0]) ? '#' : '';
             json[ref + method] = met = newDSFunc();
@@ -392,14 +392,14 @@ function HandleComment(c, name, func, json, objJson) {
         }
 
         // exclude these lines
-        else if (line.includes("@jdocs")) { /* empty */ }
+        else if (line.match(/^[ */]+@jdocs/)) { /* empty */ }
 
-        else if (line.includes("##") && !isCA) {
+        else if (line.match(/^[ */]+##/) && !isCA) {
             // met += line;
         }
 
         // isCA = false
-        else if (line.includes("@prop") && line.includes("{")) {
+        else if (line.match(/^[ */]+@prop/) && line.includes("{")) {
             const l = line.split("@prop")[1].trim(),
                 p = extractParams(l),
                 ts = p.type.split('||').map(t => types[p.type] || t);
@@ -416,7 +416,7 @@ function HandleComment(c, name, func, json, objJson) {
             else console.log(`unknown prop type ${g} in ${name}`), v = "obj-" + p.type;
             met.retval = v;
         }
-        else if (line.includes("@prop")) {
+        else if (line.match(/^[ */]+@prop/)) {
             if (line.includes("{")) {
                 const l = line.split("@prop")[1].trim(),
                     p = extractParams(l),
@@ -437,11 +437,11 @@ function HandleComment(c, name, func, json, objJson) {
             else { obj.isval = true; }
         }
 
-        else if (line.includes("@name")) {
+        else if (line.match(/^[ */]+@name/)) {
             obj.name = line.substring(line.indexOf("@name") + 5).trim();
         }
 
-        else if (line.includes("@brief")) {
+        else if (line.match(/^[ */]+@brief/)) {
             obj.shortDesc = line.substring(line.indexOf("@brief") + 6).trim();
         }
 
@@ -449,7 +449,7 @@ function HandleComment(c, name, func, json, objJson) {
             obj.params = line.split("@param")[1].trim();
         }
 
-        else if (line.includes("@param")) {
+        else if (line.match(/^[ */]+@param/)) {
             const l = line.split("@param")[1].trim();
             const p = extractParams(l);
             let d;
@@ -479,7 +479,7 @@ function HandleComment(c, name, func, json, objJson) {
             afterCmpParam = true;
         }
 
-        else if (line.includes("#") && !func.desc) {
+        else if (line.match(/^[ */]+#/) && !func.desc) {
             isCA = true;
             func = objJson[name] = newDSFunc();
             // if( parent && isChild ) {
@@ -487,18 +487,18 @@ function HandleComment(c, name, func, json, objJson) {
             // }
         }
 
-        else if (line.includes("@return")) {
+        else if (line.match(/^[ */]+@return/)) {
             const f = line.split(/returns?/)[1].trim(), g = f.split(/[_\s:-]/)[0];
             if (types[g]) obj.retval = types[g];
             else if (!g.split("||").find(t => !typx.includes(t))) obj.retval = f;
             else console.log(`unknown ret type ${g} in ${name}`), obj.retval = "obj-" + f;
         }
 
-        else if (line.includes("@img")) { /* empty */ }
-        else if (line.includes("@@")) { /* empty */ }
+        else if (line.match(/^[ */]+@img/)) { /* empty */ }
+        else if (line.match(/^[ */]+@@/)) { /* empty */ }
         else if (line.startsWith("* $ ")) { /* empty */ }
 
-        else if (line.includes("$$")) {
+        else if (line.match(/^[ */]+\$\$/)) {
             if (!line.includes('(')) obj.isval = true;
             if (isCA && afterCmpParam) {
                 const match = line.match(/\$\$(.*?)\$\$/) || [];
@@ -506,7 +506,7 @@ function HandleComment(c, name, func, json, objJson) {
             }
         }
 
-        else if (line.includes("@abbrev")) { func.abbrev = line.split("abbrev")[1].trim(); }
+        else if (line.match(/^[ */]+@abbrev/)) { func.abbrev = line.split("abbrev")[1].trim(); }
         else if (line.trim() === "*") { obj.desc += "\n"; }
         else if (line.trim() === "*/" || !line.trim()) { /* empty */ }
         else { obj.desc += line.trim().replace(/^\* | \* /g, '\n'); }
