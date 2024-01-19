@@ -241,7 +241,7 @@
 /** ### parent
  * @prop
  * Returns the parent layout control.
- * @returns uio-Layout
+ * @returns uio-addLayout
  */
 
 
