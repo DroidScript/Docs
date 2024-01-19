@@ -335,7 +335,8 @@ function getDocData(inpt, state, f, useAppPop = false) {
 
         let metpop = newPopup(state, "dsc", state.curSubf,
             addMarkdown(replaceTypes(inpt, state, replW(mdesc), true)),
-            getAddClass(m, state) || (has(inpt.baseKeys, state.curSubf) ? ' class="baseFunc"' : ""));
+            getAddClass(m, state) || (has(inpt.baseKeys, state.curSubf) &&
+                (!m.isval || state.curScope !== "ui") ? ' class="baseFunc"' : ""));
 
         if (m.isval) {
             metpop = metpop.trim();

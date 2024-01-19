@@ -360,7 +360,7 @@
  * @param {num} [top] The tab-item top padding.
  * @param {num} [right] The tab-item right padding.
  * @param {num} [bottom] The tab-item bottom padding.
- * @param {str} [mode='px'] Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
+ * @param {str} [mode='px'] Unit of measurement. You can pass `%` `rem` `vw`.
  */
 
 

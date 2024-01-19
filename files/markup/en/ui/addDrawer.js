@@ -97,7 +97,7 @@
  * @brief show
  * Open the drawer dynamically
  * $$ drw.show(anchor) $$
- * @param {str} anchor Open position. Can be `left` or `right`. Default is `left`
+ * @param {str} [anchor='left'] Open position. Can be `left` or `right`.
  */
 
 

@@ -128,7 +128,7 @@ declare class UI {
 	/**
 	 * AddDivider
 	 * @param parent The layour where to add the divider.
-	 * @param width `Fraction of the screen width. Default is 1.`
+	 * @param width `Fraction of the screen width.`
 	 * @param options A comma separated Divider options. Values can be `Inset`
 	 */
 	addDivider(parent: obj, width?: num, options?: str): UIDivider;
@@ -743,7 +743,7 @@ declare class UIAccordion {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -980,7 +980,7 @@ declare class UIAppBar {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -1292,7 +1292,7 @@ declare class UIBottomNavbar {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -1562,7 +1562,7 @@ declare class UIButton {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -1860,7 +1860,7 @@ declare class UIButtonGroup {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2113,7 +2113,7 @@ declare class UICheckbox {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2488,7 +2488,7 @@ declare class UICheckboxGroup {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2737,7 +2737,7 @@ declare class UIChip {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3000,7 +3000,7 @@ declare class UIDivider {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3074,9 +3074,9 @@ declare class UIDrawer {
 
 	/**
 	 * Show
-	 * @param anchor Open position. Can be `left` or `right`. Default is `left`
+	 * @param anchor Open position. Can be `left` or `right`.
 	 */
-	show(anchor: str): void;
+	show(anchor?: str): void;
 
 	/** Hide */
 	hide(): void;
@@ -3375,7 +3375,7 @@ declare class UIDropdown {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3606,7 +3606,7 @@ declare class UIFAB {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3963,7 +3963,7 @@ declare class UIImage {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4240,7 +4240,7 @@ declare class UILayout {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4615,7 +4615,7 @@ declare class UIList {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4886,7 +4886,7 @@ declare class UIMenu {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -5111,7 +5111,7 @@ declare class UIProgress {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -5441,7 +5441,7 @@ declare class UIRadioGroup {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -5746,7 +5746,7 @@ declare class UISelect {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -6005,7 +6005,7 @@ declare class UISlider {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -6261,7 +6261,7 @@ declare class UIStepper {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -6501,7 +6501,7 @@ declare class UISwitch {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -6816,7 +6816,7 @@ declare class UISwitchGroup {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -7096,7 +7096,7 @@ declare class UITabs {
 	 * @param top `The tab-item top padding.`
 	 * @param right `The tab-item right padding.`
 	 * @param bottom `The tab-item bottom padding.`
-	 * @param mode Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
+	 * @param mode Unit of measurement. You can pass `%` `rem` `vw`.
 	 */
 	setTabPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -7187,7 +7187,7 @@ declare class UITabs {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -7435,7 +7435,7 @@ declare class UIText {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -7748,7 +7748,7 @@ declare class UITextField {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -8007,7 +8007,7 @@ declare class UITreeView {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -8241,7 +8241,7 @@ declare class UIWebView {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 

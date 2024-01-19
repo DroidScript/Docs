@@ -21,7 +21,7 @@ declare class DsMUI {
 	/**
 	 * Adds a simple alert with a single button
 	 * @param text `Text of the alert`
-	 * @param btnText `Button text. Default is OKAY`
+	 * @param btnText `Button text.`
 	 */
 	AddAlertSimple(text: str, btnText?: str, color?: str_col): MuiAlertSimple;
 
@@ -459,7 +459,7 @@ declare class DsMUI {
 	/**
 	 * Create a simple alert with a single button
 	 * @param text `Text of the alert`
-	 * @param btnText `Button text. Default is OKAY`
+	 * @param btnText `Button text.`
 	 */
 	CreateAlertSimple(text: str, btnText?: str, color?: str_col): MuiAlertSimple;
 

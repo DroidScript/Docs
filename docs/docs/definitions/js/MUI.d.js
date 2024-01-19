@@ -23,7 +23,7 @@ class DsMUI {
 	/**
 	 * Adds a simple alert with a single button
 	 * @param {str} text `Text of the alert`
-	 * @param {str} [btnText] `Button text. Default is OKAY`
+	 * @param {str} [btnText='OKAY'] `Button text.`
 	 * @param {str_col} [color] 
 	 * @return {MuiAlertSimple} 
 	 */
@@ -862,7 +862,7 @@ class DsMUI {
 	/**
 	 * Create a simple alert with a single button
 	 * @param {str} text `Text of the alert`
-	 * @param {str} [btnText] `Button text. Default is OKAY`
+	 * @param {str} [btnText='OKAY'] `Button text.`
 	 * @param {str_col} [color] 
 	 * @return {MuiAlertSimple} 
 	 */
