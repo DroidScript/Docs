@@ -21,6 +21,7 @@ function getApp() {
         WriteFile: (p, s) => fs.writeFileSync(absPth(p), s),
         DeleteFile: (p) => fs.unlinkSync(absPth(p)),
         ListFolder: (p) => fs.readdirSync(absPth(p)),
+        WalkFolder,
         MakeFolder: (p) => fs.mkdirSync(absPth(p), { recursive: true }),
         CopyFolder: (a, b) => fs.copySync(absPth(a), absPth(b)),
         DeleteFolder: (p) => rimraf.sync(absPth(p)),
@@ -38,4 +39,42 @@ function getApp() {
         Alert: console.log
     };
     return _app;
+}
+
+/**
+ * @param {string} dirPath
+ * @param {string} filter
+ * @param {number} depth
+ * @return {Obj<WalkDir[]>}
+ */
+function WalkFolder(dirPath, filter = "", depth = -1) {
+    if (!depth) return {};
+
+    /** @type {Obj<WalkDir[]>} */
+    const walkDirs = {};
+    const folders = [absPth(dirPath)];
+    for (let i = 0; i < folders.length; i++) {
+        dirPath = folders[i];
+        /** @type {WalkDir[]} */
+        const files = [];
+
+        const fileList = fs.readdirSync(dirPath);
+        for (const fileName of fileList) {
+            const filePath = path.join(dirPath, fileName);
+            const fileStat = fs.statSync(filePath);
+            if (fileStat.isDirectory()) folders.push(filePath);
+            if (filter && !fileName.includes(filter)) continue;
+
+            files.push({
+                name: fileName,
+                isFile: fileStat.isFile(),
+                modified: fileStat.mtimeMs,
+                size: fileStat.size,
+                hidden: fileName[0] === "."
+            });
+        }
+
+        if (files.length) walkDirs[dirPath] = files;
+    }
+    return walkDirs;
 }

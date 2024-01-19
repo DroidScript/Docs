@@ -101,6 +101,16 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "smartDeclareSamples",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/smartDeclareSamples.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "test",
             "cwd": "${workspaceFolder}/files/test",
             "skipFiles": [

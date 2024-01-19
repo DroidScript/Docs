@@ -21,9 +21,17 @@ declare global {
         UpdateProgressBar(i: number, t: string): void;
         HideProgressBar(): void;
         ShowPopup(s: string): void;
+        WalkFolder(path: string, filter?: string, depth?: number): Obj<WalkDir[]>;
         Alert(s: string): void;
     }
 
+    type WalkDir = {
+        name: string;
+        isFile: boolean;
+        modified: number;
+        size: number;
+        hidden: boolean;
+    }
 
     declare class DSMethod {
         name?: string;
