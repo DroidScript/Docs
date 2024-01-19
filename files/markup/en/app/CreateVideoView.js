@@ -33,6 +33,8 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** @extern Focus */

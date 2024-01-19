@@ -27,6 +27,8 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetAzimuth ###
  * @brief Get first value of a sensor
  * Returns the first/x/azimuth value of a sensor.
@@ -134,21 +136,21 @@ function OnStart()
 @sample Accelerometer
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
-	lay.AddChild( txt );
-	app.AddLayout( lay );
+    txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
+    lay.AddChild( txt );
+    app.AddLayout( lay );
 
-	<b>sns = app.CreateSensor( "Accelerometer" );
-	sns.SetOnChange( sns_OnChange );
-	sns.Start();</b>
+    <b>sns = app.CreateSensor( "Accelerometer" );
+    sns.SetOnChange( sns_OnChange );
+    sns.Start();</b>
 
 }
 
 function sns_OnChange( x, y, z, time )
 {
-	txt.SetText( "x=" + x + "\n y=" + y + "\n z=" + z );
+    txt.SetText( "x=" + x + "\n y=" + y + "\n z=" + z );
 }
  */
 
@@ -158,24 +160,24 @@ function sns_OnChange( x, y, z, time )
 @sample Orientation
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
-	lay.AddChild( txt );
-	app.AddLayout( lay );
+    txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
+    lay.AddChild( txt );
+    app.AddLayout( lay );
 
-	<b>sns = app.CreateSensor( "Orientation" );
-	sns.SetOnChange( sns_OnChange );
-	sns.Start();</b>
+    <b>sns = app.CreateSensor( "Orientation" );
+    sns.SetOnChange( sns_OnChange );
+    sns.Start();</b>
 
 }
 
 function sns_OnChange( azimuth, pitch, roll, time )
 {
-	var msg = " azimuth = " + azimuth.toFixed(1);
-	msg += "\n pitch = " + pitch.toFixed(1);
-	msg += "\n roll = " + roll.toFixed(1);
-	txt.SetText( msg );
+    var msg = " azimuth = " + azimuth.toFixed(1);
+    msg += "\n pitch = " + pitch.toFixed(1);
+    msg += "\n roll = " + roll.toFixed(1);
+    txt.SetText( msg );
 }
  */
 
@@ -185,20 +187,20 @@ function sns_OnChange( azimuth, pitch, roll, time )
 @sample Light
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.8, 0.3 );
-	lay.AddChild( txt );
-	app.AddLayout( lay );
+    txt = app.CreateText( "", 0.8, 0.3 );
+    lay.AddChild( txt );
+    app.AddLayout( lay );
 
-	<b>sns = app.CreateSensor( "Light" );
-	sns.SetOnChange( sns_OnChange );
-	sns.Start();</b>
+    <b>sns = app.CreateSensor( "Light" );
+    sns.SetOnChange( sns_OnChange );
+    sns.Start();</b>
 }
 
 function sns_OnChange( lux )
 {
-	txt.SetText( "level = " + lux + " lux" );
+    txt.SetText( "level = " + lux + " lux" );
 }
  */
 

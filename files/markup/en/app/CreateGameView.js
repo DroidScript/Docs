@@ -36,6 +36,8 @@ If you prefer to work on a PC you can even run and debug your GameView code in a
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** ### Execute ###

@@ -38,6 +38,8 @@ Use the **SelectItem** method to select a particular item in code.
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** @extern Focus */
@@ -173,19 +175,19 @@ Use the **SelectItem** method to select a particular item in code.
 @sample Example
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
 <b>	spin = app.CreateSpinner( "Bilbo,Frodo,Gandalf", 0.4 );
-	spin.SetOnChange( ShowSelection );
-	spin.SelectItem( "Frodo" );
-	lay.AddChild( spin );
+    spin.SetOnChange( ShowSelection );
+    spin.SelectItem( "Frodo" );
+    lay.AddChild( spin );
 
 </b>	app.AddLayout( lay );
 }
 
 function ShowSelection( item )
 {
-	app.ShowPopup( "Selected = " + item );
+    app.ShowPopup( "Selected = " + item );
 }
  */
 

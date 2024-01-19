@@ -39,6 +39,8 @@ The default constructor values are:
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetDTR ###
  * @brief Get the 'Data Terminal Ready' state
  * Get the **D**ata **T**erminal **R**eady state which indicates the terminal is ready for communications and may initiate a communication channel.

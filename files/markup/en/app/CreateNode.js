@@ -6,7 +6,7 @@
  *
  * $$ node = app.CreateNode(paths?, options?) $$
  * @param {str_pth} [paths] NODE_PATH env variable
- * @param {str_lst} [options] extended:allow app methods in default main instance,legacy:dont use named pipes for messaging,nostart:disable auto start,esm:use EcmaScript-Modules
+ * @param {str_com} [options] extended:allow app methods in default main instance,legacy:dont use named pipes for messaging,nostart:disable auto start,esm:use EcmaScript-Modules
  * @returns dso-Node
 */
 

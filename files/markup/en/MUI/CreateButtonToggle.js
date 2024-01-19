@@ -27,6 +27,8 @@
 
 /** @extern ClearFocus */
 
+/** @extern Batch */
+
 /** @extern data */
 
 /** @extern Focus */
@@ -141,8 +143,8 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonToggle("BUTTON", 0.35, null, false, OnToggle)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonToggle("BUTTON", 0.35, null, false, OnToggle)
+        lay.AddChild(btn)
 
     app.AddLayout(lay)
 }

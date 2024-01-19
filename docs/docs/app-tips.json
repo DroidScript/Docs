@@ -57,6 +57,7 @@
 	},
 	"rec": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetData": "Returns a new list of frequency values",
 		"GetPeak": "Returns the PMPO value (Peak music power output)",
 		"GetRMS": "Returns the RMS value (Root Mean Square)",
@@ -70,11 +71,13 @@
 	},
 	"btl": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetType": "Returns the control class name",
 		"SetOnTouch": "Define a callback function for touch events"
 	},
 	"bls": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Clear": "Clears the Bluetooth buffer of the serial connection",
 		"Connect": "Connect a Bluetooth device",
 		"Disconnect": "Disconnect the Bluetooth connection",
@@ -97,6 +100,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -150,6 +154,7 @@
 		"Animate": "Animates a control",
 		"AutoCapture": "Takes a picture if a motion was detected",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"FindFaces": "Find faces in the current camera view",
 		"Focus": "Set the focus to the control for immediate access",
@@ -226,6 +231,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -272,6 +278,7 @@
 	},
 	"cld": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetType": "Returns the control class name",
 		"Delete": "Deletes a file in the cloud",
 		"List": "Lists files of the cloud",
@@ -285,6 +292,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"ClearHistory": "Clears the undo/redo history",
 		"Copy": "Copy selected text to the clipboard",
@@ -358,6 +366,7 @@
 	},
 	"crp": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Decrypt": "Decrypt text with a key",
 		"Encrypt": "Encrypt text with a key",
 		"GetType": "Returns the control class name",
@@ -368,6 +377,7 @@
 		"AddLayout": "Add content layout",
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Dismiss": "Hides the control and removes it from the screen",
 		"EnableBackKey": "En/Disables hiding via presing the back key",
@@ -419,6 +429,7 @@
 	},
 	"dwn": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Download": "Download file(s)",
 		"GetProgress": "Get current download progress",
 		"GetSize": "Get target download size in bytes",
@@ -432,6 +443,7 @@
 	},
 	"mail": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetType": "Returns the control class name",
 		"Receive": "Start receiving emails from a given folder",
 		"Send": "Send an email to someone",
@@ -442,6 +454,7 @@
 	},
 	"fil": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Close": "Close File",
 		"GetLength": "Get file size in bytes",
 		"GetPointer": "Get pointer position",
@@ -460,6 +473,7 @@
 	"gmv": {
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Execute": "Execute code inside the GameView",
 		"Focus": "Set the focus to the control for immediate access",
@@ -502,6 +516,7 @@
 	"glv": {
 		"aspect": "Width/height relation",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"canvas": "[HTMLDivElement]",
 		"ClearFocus": "Removes the focus of the control",
 		"CreateImage": "Create a sprite object which can be drawn on the GLView",
@@ -566,6 +581,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Clear": "Clears the image content",
 		"ClearFocus": "Removes the focus of the control",
 		"DrawArc": "Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn",
@@ -651,6 +667,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ChildToFront": "Moves a child to the layout front",
 		"ClearFocus": "Removes the focus of the control",
 		"DestroyChild": "Destroys and removes a child from the layout",
@@ -710,6 +727,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Expand": "Expand the list to the full height inside scrollers",
 		"Focus": "Set the focus to the control for immediate access",
@@ -790,6 +808,7 @@
 	"ldg": {
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Dismiss": "Hides the control and removes it from the screen",
 		"GetType": "Returns the control class name",
 		"Hide": "Hides the control visually",
@@ -804,6 +823,7 @@
 	},
 	"loc": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetBearingTo": "Calculate bearing between current and given position",
 		"GetDistanceTo": "Calculate distance between current and given position in meters",
 		"GetType": "Returns the control class name",
@@ -814,6 +834,7 @@
 	},
 	"ply": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Close": "Close the media player",
 		"GetDuration": "Get the song length in seconds",
 		"GetPosition": "Get  elapsed playtime in seconds",
@@ -836,6 +857,7 @@
 	},
 	"med": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetAlbumArt": "Load the album art to an image",
 		"GetSongArt": "Load the song art to an image",
 		"GetType": "Returns the control class name",
@@ -849,6 +871,7 @@
 	"net": {
 		"AutoReceive": "Calls the OnReceive callback for incoming TCP data",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Close": "Closes the NetClient socket",
 		"Connect": "Connect to a server",
 		"Disconnect": "Disconnect from server",
@@ -896,6 +919,7 @@
 	},
 	"ntf": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Cancel": "Cancel a notification with a specific id",
 		"GetType": "Returns the control class name",
 		"Listen": "Listen for any notifications",
@@ -908,6 +932,7 @@
 	},
 	"nxt": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Beep": "Play frequency tone",
 		"Brake": "Brakes motors smoothly",
 		"CheckConnection": "Check if device is connected to NXT",
@@ -949,6 +974,7 @@
 	"ovl": {
 		"AddLayout": "Adds layout to overlay",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetParent": "Returns the parent control object",
 		"GetType": "Returns the control class name",
 		"RemoveLayout": "Remove layout from overlay",
@@ -956,6 +982,7 @@
 	},
 	"pst": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetType": "Returns the control class name",
 		"SetOnChange": "Called when a phone state has changed",
 		"Start": "Start listening",
@@ -963,6 +990,7 @@
 	},
 	"pls": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetBillingInfo": "Get product info from Google Play",
 		"GetPurchases": "Get purchased items from Google Play",
 		"GetType": "Returns the control class name",
@@ -973,6 +1001,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"DestroyChild": "Devil rises and takes a child with him to hell",
 		"Focus": "Set the focus to the control for immediate access",
@@ -1019,6 +1048,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1063,6 +1093,7 @@
 	},
 	"sns": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetAzimuth": "Get first value of a sensor",
 		"GetNames": "Returns a list of builtin sensors in your device",
 		"GetPitch": "Get second value of a sensor",
@@ -1078,6 +1109,7 @@
 	},
 	"srv": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetType": "Returns the control class name",
 		"SendMessage": "Send message to service",
 		"SetInBackground": "Run service in background",
@@ -1087,6 +1119,7 @@
 	},
 	"sms": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetType": "Returns the control class name",
 		"Send": "Send SMS message",
 		"SetOnMessage": "Called when user received a SMS",
@@ -1094,6 +1127,7 @@
 	},
 	"spr": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Cancel": "Stop recognition",
 		"GetRMS": "Returns the RMS value (Root Mean Square) from the audio recorder",
 		"GetType": "Returns the control class name",
@@ -1109,6 +1143,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1158,6 +1193,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1205,6 +1241,7 @@
 	},
 	"syn": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetType": "Returns the control class name",
 		"PlayMidiTune": "Play a sequence of notes",
 		"PlayNote": "Play a single note",
@@ -1242,6 +1279,7 @@
 	},
 	"sys": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Err": "Read from stderr",
 		"GetType": "Returns the control class name",
 		"In": "Read from stdin",
@@ -1256,6 +1294,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1308,6 +1347,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1370,6 +1410,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"ClearHistory": "Clear undo/redo history",
 		"Focus": "Set the focus to the control for immediate access",
@@ -1435,6 +1476,7 @@
 	"thm": {
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetType": "Returns the control class name",
 		"Method": "Access Java object methods via reflection",
 		"SetBackColor": "Change the background color",
@@ -1467,6 +1509,7 @@
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Animate": "Animates a control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1514,6 +1557,7 @@
 	},
 	"usb": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"GetDTR": "Get the 'Data Terminal Ready' state",
 		"GetRTS": "Get the 'Request To Send' state",
 		"GetCD": "Get the 'Carrier Detect' state",
@@ -1535,6 +1579,7 @@
 	"vid": {
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"ClearFocus": "Removes the focus of the control",
 		"Focus": "Set the focus to the control for immediate access",
 		"GetAbsHeight": "Get the control height in pixels",
@@ -1589,6 +1634,7 @@
 		"AddRedirect": "Redirect urls",
 		"AddServlet": "Called when servlet received a message",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Disconnect": "Disconnect Client from WebServer",
 		"GetType": "Returns the control class name",
 		"GetWebSockClients": "Get connected clients",
@@ -1604,6 +1650,7 @@
 	},
 	"wbs": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Close": "Close web socket",
 		"GetSocket": "Get js Socket instance",
 		"IsOpen": "Check if WebSocket is open",
@@ -1617,6 +1664,7 @@
 		"Animate": "Animates a control",
 		"Back": "Load previous page",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"CanGoBack": "Check if history contains a previous page",
 		"CanGoForward": "Check if history has a following page",
 		"Capture": "Capture WebView as png",
@@ -1689,6 +1737,7 @@
 	},
 	"wiz": {
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Dismiss": "Hides the control and removes it from the screen",
 		"Finish": "Indicate that wizard finished",
 		"GetButtons": "Returns list of wiz control buttons",
@@ -1702,6 +1751,7 @@
 	"ynd": {
 		"AdjustColor": "Adjust the visual color effect of the control",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Dismiss": "Hides the control and removes it from the screen",
 		"GetType": "Returns the control class name",
 		"Hide": "Hides the control visually",
@@ -1717,6 +1767,7 @@
 		"AddFile": "Add file to zip",
 		"AddText": "Add text to the zip",
 		"Batch": "Batch method calls to set object properties",
+		"data": "Extra properties",
 		"Close": "Close ZipUtil",
 		"Create": "Create zip file",
 		"CreateDebugKey": "Create debug keystore file",

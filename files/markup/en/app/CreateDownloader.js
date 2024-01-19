@@ -28,6 +28,8 @@ If you want to know when the download process has finished (or failed) you can d
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Download ###
  * @brief Download file(s)
  * Start downloading one or multiple files.
@@ -113,17 +115,17 @@ If you want to know when the download process has finished (or failed) you can d
 @sample Example
 function OnStart()
 {
-	var srcFileUrl = "http://sgarman.net/downloadable.txt";
-	var targetDir = "/sdcard";
+    var srcFileUrl = "http://sgarman.net/downloadable.txt";
+    var targetDir = "/sdcard";
 
-	<b>dload = app.CreateDownloader();
-	dload.SetOnComplete( dload_OnComplete );
-	dload.Download( srcFileUrl, targetDir );</b>
+    <b>dload = app.CreateDownloader();
+    dload.SetOnComplete( dload_OnComplete );
+    dload.Download( srcFileUrl, targetDir );</b>
 }
 
 function dload_OnComplete()
 {
-	app.ShowPopup("Download complete");
+    app.ShowPopup("Download complete");
 }
  */
 

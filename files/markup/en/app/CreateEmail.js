@@ -19,6 +19,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ mail.GetType() $$
@@ -88,18 +90,18 @@
 @sample Example
 function OnStart()
 {
-	<b>email = app.CreateEmail( "mymail@gmail.com", "MyPass" );
-	email.SetSMTP( "smtp.gmail.com", 465 );
-	email.SetOnStatus( email_OnStatus );</b>
+    <b>email = app.CreateEmail( "mymail@gmail.com", "MyPass" );
+    email.SetSMTP( "smtp.gmail.com", 465 );
+    email.SetOnStatus( email_OnStatus );</b>
 
-	app.ShowProgress( "Sending..." );
-	email.Send( "My Subjewct", "My Content", "mymail@yahoo.com", "myothermail@gmail.com" );
+    app.ShowProgress( "Sending..." );
+    email.Send( "My Subjewct", "My Content", "mymail@yahoo.com", "myothermail@gmail.com" );
 }
 
 function email_OnStatus( status )
 {
-	app.HideProgress();
-	app.ShowPopup( status );
+    app.HideProgress();
+    app.ShowPopup( status );
 }
  */
 

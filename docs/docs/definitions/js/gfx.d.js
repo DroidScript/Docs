@@ -136,7 +136,7 @@ class DsGfx {
 	 * Returns a new sprite object
 	 * @param {str_ptf} file 
 	 * @param {str} [group] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: GfxSprite) => void} [callback] 
 	 * @return {GfxSprite} 
 	 */
 	CreateSprite(file, group, callback) {return}
@@ -144,7 +144,7 @@ class DsGfx {
 	/**
 	 * Returns a new SpriteSheet object
 	 * @param {str_ptf} file 
-	 * @param {() => void} callback 
+	 * @param {(this: GfxSpriteSheet) => void} callback 
 	 * @return {GfxSpriteSheet} 
 	 */
 	CreateSpriteSheet(file, callback) {return}
@@ -155,7 +155,7 @@ class DsGfx {
 	 * @param {num} fontSize 
 	 * @param {str_ptf} fontFile 
 	 * @param {"left"|"center"|"right"} align 
-	 * @param {() => void} callback 
+	 * @param {(this: GfxText) => void} callback 
 	 * @return {GfxText} 
 	 */
 	CreateText(text, fontSize, fontFile, align, callback) {return}
@@ -167,7 +167,7 @@ class DsGfx {
 	 */
 	CreateTexture(file) {return}
 
-	/** @type {obj} GameView custom data */
+	/** @type {{ key: str, value: all }} GameView custom data */
 	data;
 
 	/**
@@ -471,7 +471,7 @@ class GfxCircle {
 	 */
 	Contains(x, y) {return}
 
-	/** @type {obj} Extra properties */
+	/** @type {{ key: str, value: all }} Extra properties */
 	data;
 
 	/** @type {obj} PIXI graphic */
@@ -528,7 +528,7 @@ class GfxEllipse {
 	 */
 	Contains(x, y) {return}
 
-	/** @type {obj} Extra properties */
+	/** @type {{ key: str, value: all }} Extra properties */
 	data;
 
 	/** @type {obj} PIXI graphic */
@@ -585,7 +585,7 @@ class GfxPolygon {
 	 */
 	Contains(x, y) {return}
 
-	/** @type {obj} Extra properties */
+	/** @type {{ key: str, value: all }} Extra properties */
 	data;
 
 	/** @type {obj} PIXI graphic */
@@ -642,7 +642,7 @@ class GfxRectangle {
 	 */
 	Contains(x, y) {return}
 
-	/** @type {obj} Extra properties */
+	/** @type {{ key: str, value: all }} Extra properties */
 	data;
 
 	/** @type {obj} PIXI graphic */
@@ -723,7 +723,7 @@ class GfxSprite {
 	 */
 	Contains(x, y) {return}
 
-	/** @type {obj} Extra properties */
+	/** @type {{ key: str, value: all }} Extra properties */
 	data;
 
 	/**
@@ -846,7 +846,7 @@ class GfxSprite {
 	 * @param {str} type `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} repeat 
 	 * @param {bin} yoyo 
-	 * @param {() => void} callback 
+	 * @param {(this: GfxSprite) => void} callback 
 	 */
 	SetTween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -872,7 +872,7 @@ class GfxSprite {
 	 * @param {str} type `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} repeat 
 	 * @param {bin} yoyo 
-	 * @param {() => void} callback 
+	 * @param {(this: GfxSprite) => void} callback 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -895,7 +895,7 @@ class GfxSprite {
 
 class GfxSpriteSheet {
 
-	/** @type {obj} Extra properties */
+	/** @type {{ key: str, value: all }} Extra properties */
 	data;
 
 	/** @type {bin} Loaded indicator */

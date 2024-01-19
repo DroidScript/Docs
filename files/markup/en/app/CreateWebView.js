@@ -46,6 +46,8 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### CanGoBack ###
  * @brief Check if history contains a previous page
  * Check whether the user can travel back in history.
@@ -403,20 +405,20 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 @sample Remote
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	 <b>web = app.CreateWebView( 1, 1, "Progress" );
-	 web.SetOnProgress( web_OnProgess );
-	 lay.AddChild( web );</b>
+     <b>web = app.CreateWebView( 1, 1, "Progress" );
+     web.SetOnProgress( web_OnProgess );
+     lay.AddChild( web );</b>
 
-	 app.AddLayout( lay );
+     app.AddLayout( lay );
 
-	 web.LoadUrl( "http:///www.google.com" );
+     web.LoadUrl( "http:///www.google.com" );
 }
 
 function web_OnProgess( progress )
 {
-	 app.Debug( "progress = " + progress );
+     app.Debug( "progress = " + progress );
 }
  */
 
@@ -426,15 +428,15 @@ function web_OnProgess( progress )
 @sample Local File
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	 <b>web = app.CreateWebView( 0.8, 0.8 );
-	 web.SetBackColor( "#00000000" );
-	 lay.AddChild( web );</b>
+     <b>web = app.CreateWebView( 0.8, 0.8 );
+     web.SetBackColor( "#00000000" );
+     lay.AddChild( web );</b>
 
-	 app.AddLayout( lay );
+     app.AddLayout( lay );
 
-	 web.LoadUrl( "file:///Sys/Html/Page.htm" );
+     web.LoadUrl( "file:///Sys/Html/Page.htm" );
 }
  */
 
@@ -444,21 +446,21 @@ function OnStart()
 @sample Direct Html
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	<b>web = app.CreateWebView( 0.8, 0.8 );
-	web.SetBackColor( "#00000000" );
-	lay.AddChild( web );</b>
+    <b>web = app.CreateWebView( 0.8, 0.8 );
+    web.SetBackColor( "#00000000" );
+    lay.AddChild( web );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
-	html = "<html><body><center>" +
-		"    <img src='Img/Droid2.png'>" +
-		"    <div style='color:white; font-size:30;'>" +
-		"    Hello World!</div><br>" +
-		"</center></body></html>";
+    html = "<html><body><center>" +
+        "    <img src='Img/Droid2.png'>" +
+        "    <div style='color:white; font-size:30;'>" +
+        "    Hello World!</div><br>" +
+        "</center></body></html>";
 
-	web.LoadHtml( html, "file:///Sys/" );
+    web.LoadHtml( html, "file:///Sys/" );
 }
  */
 

@@ -37,6 +37,8 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** @extern Focus */

@@ -35,6 +35,8 @@ The callback data depends on the type:
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ pst.GetType() $$
@@ -71,16 +73,16 @@ The callback data depends on the type:
 @sample Demo
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.95, 0.95, "multiline,left" );
-	txt.SetTextSize( 14 );
-	lay.AddChild( txt );
+    txt = app.CreateText( "", 0.95, 0.95, "multiline,left" );
+    txt.SetTextSize( 14 );
+    lay.AddChild( txt );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
-	var types = "CellLocation,DataConnection,DataActivity,CallState,"
-	    + "ServiceState,SignalStrength,CallForwarding,MessageWaiting";
+    var types = "CellLocation,DataConnection,DataActivity,CallState,"
+        + "ServiceState,SignalStrength,CallForwarding,MessageWaiting";
 
     state = app.CreatePhoneState( types );
     state.SetOnChange( state_OnChange );

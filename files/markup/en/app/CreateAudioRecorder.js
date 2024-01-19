@@ -31,6 +31,8 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetData ###
  * @brief Returns a new list of frequency values
  * Returns a list of frequency values. The amount is dependent on the set frequency.
@@ -114,22 +116,22 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 var file = "/sdcard/demofile.wav";
 function OnStart()
 {
-	<b>rec = app.CreateAudioRecorder();
-	rec.SetFile( file );
-	rec.Start();</b>
+    <b>rec = app.CreateAudioRecorder();
+    rec.SetFile( file );
+    rec.Start();</b>
 
-	app.ShowPopup( "Please speak" );
-	setTimeout( StopRecording, 5000 );
+    app.ShowPopup( "Please speak" );
+    setTimeout( StopRecording, 5000 );
 }
 
 function StopRecording()
 {
     rec.Stop();
-	app.ShowPopup( "Finished recording. Now playing" );
+    app.ShowPopup( "Finished recording. Now playing" );
 
     ply = app.CreateMediaPlayer();
-	ply.SetFile( file );
-	ply.SetOnReady( ply.Play );
+    ply.SetFile( file );
+    ply.SetOnReady( ply.Play );
 }
  */
 

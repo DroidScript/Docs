@@ -37,6 +37,14 @@
  */
 
 
+/** ### data
+ * @prop
+ * @brief Extra properties
+ * An object for saving individual extra properties.
+ * @returns obj-{ key:str, value:all }
+ */
+
+
 /** ### Dismiss
  * @brief Hides the control and removes it from the screen
  * Hide the control and remove it from the screen.

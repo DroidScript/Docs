@@ -30,6 +30,8 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Close ###
  * @brief Close the media player.
  * Close the media player and thus make it unuseable for further use.

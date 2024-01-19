@@ -235,6 +235,7 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
         .replace(/\n/g, `\n${indent} * `)
         .replace(/<(premium|deprecated|xfeature)(.*?)>/g, "@$1 $2");
 
+    /** @type {ParamDef[]} */
     const params = [];
     for (const i in func.pNames) {
         const [pname, dflt] = func.pNames[i]
@@ -253,6 +254,12 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
 
     // callbacks
     if (isCb) {
+        if (inpt.scope[state.curFunc].subf) {
+            params.unshift({
+                name: "this", desc: "source object", dflt: "",
+                type: objPfx[state.curScope] + state.curFunc.replace(regConPrefix, ''),
+            });
+        }
         defs.func += declareCallback(params, retval);
         return defs;
     }

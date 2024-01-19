@@ -58,6 +58,8 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### canvas
  * @prop
  * [HTMLDivElement]
@@ -515,19 +517,19 @@ function touched(img, ev) {
 from native import app
 
 def OnStart():
-    global glview, img
-    lay = app.CreateLayout( "Linear", "FillXY" )
+	global glview, img
+	lay = app.CreateLayout( "Linear", "FillXY" )
 
-    glview = app.CreateGLView(1, 1, "Fast2d")
-    lay.AddChild(glview)
+	glview = app.CreateGLView(1, 1, "Fast2d")
+	lay.AddChild(glview)
 
-    img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame )
+	img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame )
 
-    app.AddLayout(lay)
+	app.AddLayout(lay)
 
 def DrawFrame():
-    glview.DrawImage( img, 0.25, 0.3, 0.5, -1, 45 )
-    glview.Render()
+	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, 45 )
+	glview.Render()
  */
 
 
@@ -539,26 +541,26 @@ from native import app
 angle = 0
 
 def OnStart():
-    global glview, img
-    lay = app.CreateLayout( "Linear", "FillXY" )
+	global glview, img
+	lay = app.CreateLayout( "Linear", "FillXY" )
 
-    glview = app.CreateGLView(1, 1, "Fast2d")
-    lay.AddChild(glview)
+	glview = app.CreateGLView(1, 1, "Fast2d")
+	lay.AddChild(glview)
 
-    img = glview.CreateImage("/Sys/Img/Hello.png", StartRendering)
+	img = glview.CreateImage("/Sys/Img/Hello.png", StartRendering)
 
-    app.AddLayout(lay)
+	app.AddLayout(lay)
 
 def StartRendering():
-    app.SetInterval(DrawFrame, 1000/30 )
+	app.SetInterval(DrawFrame, 1000/30 )
 
 def DrawFrame():
-    glview.DrawImage( img, 0.25, 0.3, 0.5, -1, angle )
+	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, angle )
 
-    angle = angle + 10
-    if( angle == 360 ) angle = 0
+	angle = angle + 10
+	if( angle == 360 ) angle = 0
 
-    glview.Render()
+	glview.Render()
  */
 
 
@@ -573,30 +575,30 @@ srcHeight = 60
 frameCount = 0
 
 def OnStart():
-    global glview, img
-    lay = app.CreateLayout( "Linear", "FillXY" )
+	global glview, img
+	lay = app.CreateLayout( "Linear", "FillXY" )
 
-    glview = app.CreateGLView(1, 1, "Fast2d")
-    lay.AddChild(glview)
+	glview = app.CreateGLView(1, 1, "Fast2d")
+	lay.AddChild(glview)
 
-    img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering )
+	img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering )
 
-    app.AddLayout(lay)
+	app.AddLayout(lay)
 
 def StartRendering():
-    app.SetInterval( DrawFrame, 1000/30 )
+	app.SetInterval( DrawFrame, 1000/30 )
 
 def DrawFrame():
-    spriteIndex = app.MathFloor(frameCount / 2) % spriteCount
+	spriteIndex = app.MathFloor(frameCount / 2) % spriteCount
 
-    sx = spriteIndex * srcWidth
-    sy = 0
+	sx = spriteIndex * srcWidth
+	sy = 0
 
-    glview.DrawSprite( img, sx, sy, srcWidth, srcHeight,
-                0.3, 0.4, 0.3, -1 )
+	glview.DrawSprite( img, sx, sy, srcWidth, srcHeight,
+				0.3, 0.4, 0.3, -1 )
 
-    glview.Render()
-    frameCount += 1
+	glview.Render()
+	frameCount += 1
  */
 
 
@@ -608,43 +610,43 @@ from native import app
 objects = []
 
 def OnStart():
-    global glv, name, X, Y, W, H
-    lay = app.CreateLayout( "linear" )
+	global glv, name, X, Y, W, H
+	lay = app.CreateLayout( "linear" )
 
-    glv = app.CreateGLView( 1, 1, "Fast2d" )
-    glv.SetOnTouchUp( touch )
+	glv = app.CreateGLView( 1, 1, "Fast2d" )
+	glv.SetOnTouchUp( touch )
 
-    img1 = glv.CreateImage( "/Sys/Img/Hello.png" )
-    img1.name = "img1"
-    img1.X = 0.1; img1.Y = 0.3
-    img1.W = 0.7; img1.H = 0.4
-    objects.append(img1)
+	img1 = glv.CreateImage( "/Sys/Img/Hello.png" )
+	img1.name = "img1"
+	img1.X = 0.1; img1.Y = 0.3
+	img1.W = 0.7; img1.H = 0.4
+	objects.append(img1)
 
-    img2 = glv.CreateImage( "/Sys/Img/Droid1.png", startRender )
-    img2.name = "img2"
-    img2.X = 0.5; img2.Y = 0.5
-    img2.W = 0.5; img2.H = 0.3
-    objects.append(img2)
+	img2 = glv.CreateImage( "/Sys/Img/Droid1.png", startRender )
+	img2.name = "img2"
+	img2.X = 0.5; img2.Y = 0.5
+	img2.W = 0.5; img2.H = 0.3
+	objects.append(img2)
 
-    lay.AddChild( glv )
+	lay.AddChild( glv )
 
-    app.AddLayout( lay )
+	app.AddLayout( lay )
 
 def startRender():
-    for obj in objects:
-        draw(obj)
-    glv.Render()
+	for obj in objects:
+		draw(obj)
+	glv.Render()
 
 def touch(ev):
-    for obj in objects:
-        if touched(obj, ev):
-            app.ShowPopup( "touched " + obj.name )
-            break
+	for obj in objects:
+		if touched(obj, ev):
+			app.ShowPopup( "touched " + obj.name )
+			break
 
 def draw(obj):
-    glv.DrawImage( obj, obj.X, obj.Y, obj.W, obj.H, 0 )
+	glv.DrawImage( obj, obj.X, obj.Y, obj.W, obj.H, 0 )
 
 def touched(obj, ev):
-    return obj.X < ev.X and obj.X + obj.W > ev.X \
-        and obj.Y < ev.Y and obj.Y + obj.H > ev.Y
+	return obj.X < ev.X and obj.X + obj.W > ev.X \
+		and obj.Y < ev.Y and obj.Y + obj.H > ev.Y
  */

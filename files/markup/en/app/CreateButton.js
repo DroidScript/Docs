@@ -23,7 +23,7 @@ btn.SetOnTouch( btn\_OnTouch );
 
 function btn\_OnTouch()
 {
-	// your OnTouch code goes here
+    // your OnTouch code goes here
 }
 </js>
 
@@ -51,6 +51,8 @@ You can customize the visual look in many ways by either using one of the existi
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -172,18 +174,18 @@ You can customize the visual look in many ways by either using one of the existi
 @sample Default Size
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
 <b>	btn = app.CreateButton( "Press Me" );
-	btn.SetOnTouch( SayHello );
-	lay.AddChild( btn );</b>
+    btn.SetOnTouch( SayHello );
+    lay.AddChild( btn );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function SayHello()
 {
-	app.ShowPopup("Hello World!");
+    app.ShowPopup("Hello World!");
 }
  */
 
@@ -193,18 +195,18 @@ function SayHello()
 @sample Fixed Size
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
 <b>	btn = app.CreateButton( "Press Me", 0.5, 0.2 );
-	btn.SetOnTouch( SayHello );
-	lay.AddChild( btn );</b>
+    btn.SetOnTouch( SayHello );
+    lay.AddChild( btn );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function SayHello()
 {
-	app.ShowPopup("Hello World!");
+    app.ShowPopup("Hello World!");
 }
  */
 
@@ -214,19 +216,19 @@ function SayHello()
 @sample Fill Layout Width
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
-	lay.SetPadding( 0.02, 0.02, 0.02, 0.02 );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay.SetPadding( 0.02, 0.02, 0.02, 0.02 );
 
 <b>	btn = app.CreateButton( "Press Me", -1, -1, "FillX" );
-	btn.SetOnTouch( SayHello );
-	lay.AddChild( btn );</b>
+    btn.SetOnTouch( SayHello );
+    lay.AddChild( btn );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function SayHello()
 {
-	app.ShowPopup("Hello World!");
+    app.ShowPopup("Hello World!");
 }
  */
 
@@ -236,19 +238,19 @@ function SayHello()
 @sample Change Style
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "Vertical,FillXY" );
-	lay.SetPadding( 0.1, 0.1, 0.1, 0 );
+    lay = app.CreateLayout( "Linear", "Vertical,FillXY" );
+    lay.SetPadding( 0.1, 0.1, 0.1, 0 );
 
 <b>	b1 = app.CreateButton( "Normal", -1, -1, "FillX" );
-	lay.AddChild( b1 );
+    lay.AddChild( b1 );
 
-	b2 = app.CreateButton( "Gray", -1, -1, "FillX,Gray" );
-	lay.AddChild( b2 );
+    b2 = app.CreateButton( "Gray", -1, -1, "FillX,Gray" );
+    lay.AddChild( b2 );
 
-	b3 = app.CreateButton( "Alum", -1, -1, "FillX,Alum" );
-	lay.AddChild( b3 );</b>
+    b3 = app.CreateButton( "Alum", -1, -1, "FillX,Alum" );
+    lay.AddChild( b3 );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
 

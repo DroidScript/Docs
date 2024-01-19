@@ -72,6 +72,8 @@ For animations you can then use the **Animate** function of the app object which
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Clear ###
  * @brief Clears the image content
  * Clears everything on the image except the background.
@@ -430,7 +432,7 @@ For animations you can then use the **Animate** function of the app object which
  * @param {str_b64} data &lt;rawbase64&gt;|data&colon;image/jpg;base64&comma;&lt;jpgbase64&gt;,data&colon;image/png;base64&comma;&lt;pngbase64&gt;
  * @param {num} [width=-1]
  * @param {num} [height=-1]
- * @param {str_lst} [options] px,icon,resize|rescale|square,fix:set bitmap size
+ * @param {str_com} [options] px,icon,resize|rescale|square,fix:set bitmap size
  */
 
 

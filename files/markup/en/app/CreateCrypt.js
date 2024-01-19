@@ -18,6 +18,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Decrypt ###
  * Decrypt text with a key.
  * $$ crp.Decrypt(text, password) $$
@@ -87,8 +89,8 @@ function OnStart()
 @sample Encrypt using device id
 function OnStart()
 {
-	crp = app.CreateCrypt();
-	ShowDialog( "Hello World" );
+    crp = app.CreateCrypt();
+    ShowDialog( "Hello World" );
 }
 
 function ShowDialog( data )
@@ -98,11 +100,11 @@ function ShowDialog( data )
 
 function OnText( text )
 {
-	var dlg = app.CreateYesNoDialog( "Choose option", "NoCancel" );
-	dlg.SetOnTouch( OnAction );
-	dlg.data.text = text;
+    var dlg = app.CreateYesNoDialog( "Choose option", "NoCancel" );
+    dlg.SetOnTouch( OnAction );
+    dlg.data.text = text;
     dlg.Show();
-	dlg.SetButtonText( "Encrypt", "Decrypt" );
+    dlg.SetButtonText( "Encrypt", "Decrypt" );
 }
 
 function OnAction( result )

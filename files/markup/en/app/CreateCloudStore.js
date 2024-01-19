@@ -50,6 +50,8 @@ combine the parts only when making CloudStore API calls.
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ cld.GetType() $$

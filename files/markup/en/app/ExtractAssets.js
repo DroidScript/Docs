@@ -8,7 +8,7 @@
  * @param {str_pth} source
  * @param {str_pth} destination
  * @param {bin} [overwrite=false]
- * @param {str_lst} [options] DoEvents:extract in background,shallow:extract top level
+ * @param {str_com} [options] DoEvents:extract in background,shallow:extract top level
 */
 
 

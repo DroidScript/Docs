@@ -32,6 +32,8 @@ If you use more than one notification, **app.GetNotifyId** can be used to check 
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Cancel ###
  * Cancel a notification with a specific id.
  * $$ ntf.Cancel(id?) $$

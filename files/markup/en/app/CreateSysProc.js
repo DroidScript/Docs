@@ -23,6 +23,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Err ###
  * @brief Read from stderr
  * Read data from stderr

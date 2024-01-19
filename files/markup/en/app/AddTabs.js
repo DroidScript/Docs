@@ -9,6 +9,6 @@
  * @param {str_com} list
  * @param {num_frc} [width=-1]
  * @param {num_frc} [height=-1]
- * @param {str_lst} [options] Fade,FontAwesome,NoMargins,VCenter
+ * @param {str_com} [options] Fade,FontAwesome,NoMargins,VCenter
  * @returns dso-Tabs
 */

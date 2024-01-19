@@ -25,6 +25,8 @@
 
 /** @extern ClearFocus */
 
+/** @extern Batch */
+
 /** @extern data */
 
 /** @extern Focus */

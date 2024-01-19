@@ -36,6 +36,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Close ###
  * @brief Close ZipUtil
  * Closes the zip util.
@@ -192,14 +194,14 @@ function OnStart()
 from native import app
 
 def OnStart():
-    name = app.GetAppName()
-    file = "/sdcard/" + name + ".zip"
+	name = app.GetAppName()
+	file = "/sdcard/" + name + ".zip"
 
-    zip = app.CreateZipUtil()
-    zip.Open(file)
-    list = zip.List("").split(",")
-    app.Alert("\n".join(list))
-    zip.Close()
+	zip = app.CreateZipUtil()
+	zip.Open(file)
+	list = zip.List("").split(",")
+	app.Alert("\n".join(list))
+	zip.Close()
  */
 
 
@@ -209,26 +211,26 @@ def OnStart():
 from native import app
 
 def OnStart():
-    global name, fldr, zip
-    name = app.GetAppName()
-    fldr = app.GetPath() + "/" + name
-    file = "/sdcard/" + name + ".zip"
-    app.ShowProgress()
+	global name, fldr, zip
+	name = app.GetAppName()
+	fldr = app.GetPath() + "/" + name
+	file = "/sdcard/" + name + ".zip"
+	app.ShowProgress()
 
-    zip = app.CreateZipUtil()
-    zip.Create(file)
-    AddFolder(zip, name, fldr)
-    zip.Close()
+	zip = app.CreateZipUtil()
+	zip.Create(file)
+	AddFolder(zip, name, fldr)
+	zip.Close()
 
-    app.HideProgress()
-    app.ShowPopup("saved to " + file)
+	app.HideProgress()
+	app.ShowPopup("saved to " + file)
 
 def AddFolder(zip, name, fldr):
-    list = app.ListFolder(fldr, "")
-    for i in range(len(list)):
-        title = list[i]
-        if not app.IsFolder(fldr + "/" + title):
-            zip.AddFile(name + "/" + title, fldr + "/" + title)
-        else:
-            AddFolder(zip, name + "/" + title, fldr + "/" + title)
+	list = app.ListFolder(fldr, "")
+	for i in range(len(list)):
+		title = list[i]
+		if not app.IsFolder(fldr + "/" + title):
+			zip.AddFile(name + "/" + title, fldr + "/" + title)
+		else:
+			AddFolder(zip, name + "/" + title, fldr + "/" + title)
  */

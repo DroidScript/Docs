@@ -58,6 +58,8 @@ Inspect the debug console and see the log messages from the service in gray.
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ srv.GetType() $$

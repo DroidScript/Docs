@@ -37,6 +37,8 @@ Returns a Synth object which can produces a variety of sounds, sound effects and
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ syn.GetType() $$

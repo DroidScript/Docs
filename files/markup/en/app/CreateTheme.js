@@ -22,6 +22,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ thm.GetType() $$
@@ -243,7 +245,7 @@ function OnStart()
 {
     SetHackerTheme();
 
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
     skb = app.CreateSeekBar( .8 );
     skb.SetValue( 50 );
@@ -253,8 +255,8 @@ function OnStart()
     spn.SetMargins( 0, .05, 0, .05 );
     lay.AddChild( spn );
 
-	tgl = app.CreateToggle( "Toggle", .3, .1 );
-	lay.AddChild( tgl );
+    tgl = app.CreateToggle( "Toggle", .3, .1 );
+    lay.AddChild( tgl );
 
     edt = app.CreateTextEdit( "Hello World", .8 );
     edt.SetMargins( 0, .05, 0, .05 );
@@ -263,9 +265,9 @@ function OnStart()
     chk = app.CreateCheckBox( "Check me", .3 );
     lay.AddChild( chk );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
-	app.Alert( "My Text", "Custom theme" );
+    app.Alert( "My Text", "Custom theme" );
 }
 
 function SetHackerTheme()

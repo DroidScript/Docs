@@ -25,6 +25,8 @@
 
 /** @extern ClearFocus */
 
+/** @extern Batch */
+
 /** @extern data */
 
 /** @extern Focus */
@@ -139,14 +141,14 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonFlat("BUTTON", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("BUTTON", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+        lay.AddChild(btn)
 
     app.AddLayout(lay)
 }
@@ -166,14 +168,14 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonFlat("BUTTON", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("BUTTON", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+        lay.AddChild(btn)
 
     app.AddLayout(lay)
 }
@@ -189,7 +191,7 @@ cfg.MUI
 function OnStart()
 {
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    
+
         btn1 = MUI.AddButtonFlat(lay, "BUTTON 1", 0.35)
         btn2 = MUI.AddButtonFlat(lay, "[fa-heart] BUTTON 2", 0.35)
         btn3 = MUI.AddButtonFlat(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)

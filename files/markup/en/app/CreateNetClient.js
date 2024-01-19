@@ -38,6 +38,8 @@ Note: A few routers block fast UDP messages by default
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Close ###
  * Closes the NetClient socket.
  * $$ net.Close() $$
@@ -105,7 +107,7 @@ Note: A few routers block fast UDP messages by default
  * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  * @param {num_int} [port=80]
  * @param {num} [timeout]
- * @param {str_lst} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
+ * @param {str_com} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
  * @returns str
  */
 
@@ -116,7 +118,7 @@ Note: A few routers block fast UDP messages by default
  * $$ net.ReceiveDatagrams(port=80, mode?, options?) $$
  * @param {num_int} [port=80]
  * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {str_lst} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
+ * @param {str_com} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
  */
 
 

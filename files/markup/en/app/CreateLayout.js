@@ -64,6 +64,8 @@ They may be used to display offers with an image and optional info text.
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### ChildToFront ###
  * @brief Moves a child to the layout front
  * Moves a child in front of all other children.
@@ -257,18 +259,18 @@ They may be used to display offers with an image and optional info text.
 @sample Vertical
 function OnStart()
 {
-	<b>lay = app.CreateLayout( "Linear", "Vertical" );</b>
+    <b>lay = app.CreateLayout( "Linear", "Vertical" );</b>
 
-	btnA = app.CreateButton( "A", 0.2, 0.1 );
-	lay.AddChild( btnA );
+    btnA = app.CreateButton( "A", 0.2, 0.1 );
+    lay.AddChild( btnA );
 
-	btnB = app.CreateButton( "B", 0.2, 0.1 );
-	lay.AddChild( btnB );
+    btnB = app.CreateButton( "B", 0.2, 0.1 );
+    lay.AddChild( btnB );
 
-	btnC = app.CreateButton( "C", 0.2, 0.1 );
-	lay.AddChild( btnC );
+    btnC = app.CreateButton( "C", 0.2, 0.1 );
+    lay.AddChild( btnC );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
 
@@ -278,18 +280,18 @@ function OnStart()
 @sample Horizontal
 function OnStart()
 {
-	<b>lay = app.CreateLayout( "Linear", "Horizontal,FillXY" );</b>
+    <b>lay = app.CreateLayout( "Linear", "Horizontal,FillXY" );</b>
 
-	btnA = app.CreateButton( "A", 0.2, 0.1 );
-	lay.AddChild( btnA );
+    btnA = app.CreateButton( "A", 0.2, 0.1 );
+    lay.AddChild( btnA );
 
-	btnB = app.CreateButton( "B", 0.2, 0.1 );
-	lay.AddChild( btnB );
+    btnB = app.CreateButton( "B", 0.2, 0.1 );
+    lay.AddChild( btnB );
 
-	btnC = app.CreateButton( "C", 0.2, 0.1 );
-	lay.AddChild( btnC );
+    btnC = app.CreateButton( "C", 0.2, 0.1 );
+    lay.AddChild( btnC );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
 
@@ -299,25 +301,25 @@ function OnStart()
 @sample Combined
 function OnStart()
 {
-	layVert = app.CreateLayout( "Linear", "Vertical,FillXY" );
+    layVert = app.CreateLayout( "Linear", "Vertical,FillXY" );
 
-	btnA = app.CreateButton( "A", 0.6, 0.1 );
-	layVert.AddChild( btnA );
+    btnA = app.CreateButton( "A", 0.6, 0.1 );
+    layVert.AddChild( btnA );
 
-	<b>layHoriz = app.CreateLayout( "Linear", "Horizontal" );
-	layVert.AddChild( layHoriz );</b>
+    <b>layHoriz = app.CreateLayout( "Linear", "Horizontal" );
+    layVert.AddChild( layHoriz );</b>
 
-	btnB1 = app.CreateButton( "B1", 0.2, 0.1 );
-	layHoriz.AddChild( btnB1 );
-	btnB2 = app.CreateButton( "B2", 0.2, 0.1 );
-	layHoriz.AddChild( btnB2 );
-	btnB3 = app.CreateButton( "B3", 0.2, 0.1 );
-	layHoriz.AddChild( btnB3 );
+    btnB1 = app.CreateButton( "B1", 0.2, 0.1 );
+    layHoriz.AddChild( btnB1 );
+    btnB2 = app.CreateButton( "B2", 0.2, 0.1 );
+    layHoriz.AddChild( btnB2 );
+    btnB3 = app.CreateButton( "B3", 0.2, 0.1 );
+    layHoriz.AddChild( btnB3 );
 
-	btnC = app.CreateButton( "C", 0.6, 0.1 );
-	layVert.AddChild( btnC );
+    btnC = app.CreateButton( "C", 0.6, 0.1 );
+    layVert.AddChild( btnC );
 
-	app.AddLayout( layVert );
+    app.AddLayout( layVert );
 }
  */
 
@@ -327,31 +329,31 @@ function OnStart()
 @sample Image Swap
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>layFrm = app.CreateLayout( "Frame" );</b>
-	img1 = app.CreateImage( "/Sys/Img/Droid1.png", 0.5 );
-	layFrm.AddChild( img1 );
+    <b>layFrm = app.CreateLayout( "Frame" );</b>
+    img1 = app.CreateImage( "/Sys/Img/Droid1.png", 0.5 );
+    layFrm.AddChild( img1 );
 
-	img2 = app.CreateImage( "/Sys/Img/Hello.png", 0.5 );
-	img2.SetVisibility( "Hide" );
-	layFrm.AddChild( img2 );
-	lay.AddChild( layFrm );
+    img2 = app.CreateImage( "/Sys/Img/Hello.png", 0.5 );
+    img2.SetVisibility( "Hide" );
+    layFrm.AddChild( img2 );
+    lay.AddChild( layFrm );
 
-	btn = app.CreateButton( "Press Me" );
-	btn.SetMargins( 0,0.1,0,0 );
-	btn.SetOnTouch( btn_OnTouch );
-	lay.AddChild( btn );
+    btn = app.CreateButton( "Press Me" );
+    btn.SetMargins( 0,0.1,0,0 );
+    btn.SetOnTouch( btn_OnTouch );
+    lay.AddChild( btn );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function btn_OnTouch()
 {
-	if( img2.GetVisibility() == "Hide" )
-    	img2.SetVisibility( "Show" );
-	else
-	   img2.SetVisibility( "Hide" );
+    if( img2.GetVisibility() == "Hide" )
+        img2.SetVisibility( "Show" );
+    else
+       img2.SetVisibility( "Hide" );
 }
  */
 

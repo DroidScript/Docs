@@ -31,6 +31,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern GetParent */
 
 /** ### GetType ###
@@ -71,14 +73,14 @@ cfg.Portrait;
 function OnStart()
 {
     app.ToBack();
-	lay = app.CreateLayout( "Linear" );
+    lay = app.CreateLayout( "Linear" );
 
     img = app.CreateImage( null, .3, .1 );
     img.SetBackColor( "#66333333" );
     img.SetAutoUpdate( false );
     lay.AddChild( img );
 
-	ovl = app.CreateOverlay();
+    ovl = app.CreateOverlay();
     ovl.AddLayout( lay, 0.8, app.GetTop() );
 
     app.Animate( Update, 1 );

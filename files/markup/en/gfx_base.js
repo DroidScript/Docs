@@ -27,7 +27,7 @@
  * @prop
  * @brief Extra properties
  * An object for saving individual extra properties.
- * @returns obj
+ * @returns obj-{ key:str, value:all }
  */
 
 

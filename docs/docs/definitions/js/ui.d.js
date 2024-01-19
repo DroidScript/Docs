@@ -416,7 +416,7 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 
 	/**
 	 * ShowDateTimePicker
-	 * @param {() => void} callback 
+	 * @param {(this: UIDateTimePicker) => void} callback 
 	 * @param {str} [date] `Default value for date of the form "MM/DD/YYYY"`
 	 * @param {str} [time] `Default value for time of the form "HH/MM/SS"`
 	 * @param {str} [format] The format value that will be pass to callback. Formats can be of the form 
@@ -676,13 +676,13 @@ class UIAccordion {
 
 	/**
 	 * SetOnTouch
-	 * @param {(index: num, expand: bin) => void} callback 
+	 * @param {(this: UIAccordion, index: num, expand: bin) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(title: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UIAccordion, title: str, index: num, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -915,7 +915,7 @@ class UIAppBar {
 
 	/**
 	 * SetOnMenu
-	 * @param {() => void} callback 
+	 * @param {(this: UIAppBar) => void} callback 
 	 */
 	setOnMenu(callback) {return}
 
@@ -937,13 +937,13 @@ class UIAppBar {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIAppBar, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIAppBar, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -1153,7 +1153,7 @@ class UIBottomNavbar {
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(text: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UIBottomNavbar, text: str, index: num, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -1227,7 +1227,7 @@ class UIBottomNavbar {
 
 	/**
 	 * SetOnChange
-	 * @param {(text: str, index: num) => void} callback 
+	 * @param {(this: UIBottomNavbar, text: str, index: num) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
@@ -1267,7 +1267,7 @@ class UIBottomNavbar {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIBottomNavbar, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
@@ -1505,7 +1505,7 @@ class UIButton {
 
 	/**
 	 * SetOnFileSelect
-	 * @param {(files: lst) => void} callback 
+	 * @param {(this: UIButton, files: lst) => void} callback 
 	 */
 	setOnFileSelect(callback) {return}
 
@@ -1548,13 +1548,13 @@ class UIButton {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIButton, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIButton, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -1763,13 +1763,13 @@ class UIButtonGroup {
 
 	/**
 	 * SetOnTouch
-	 * @param {(text: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UIButtonGroup, text: str, index: num, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(text: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UIButtonGroup, text: str, index: num, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -2089,7 +2089,7 @@ class UICheckbox {
 
 	/**
 	 * SetOnTouch
-	 * @param {(check: bin) => void} callback 
+	 * @param {(this: UICheckbox, check: bin) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
@@ -2108,7 +2108,7 @@ class UICheckbox {
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UICheckbox, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -2352,13 +2352,13 @@ class UICheckboxGroup {
 
 	/**
 	 * SetOnTouch
-	 * @param {(value: bin, text: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UICheckboxGroup, value: bin, text: str, index: num, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnChange
-	 * @param {(values: lst) => void} callback 
+	 * @param {(this: UICheckboxGroup, values: lst) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
@@ -2491,7 +2491,7 @@ class UICheckboxGroup {
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(label: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UICheckboxGroup, label: str, index: num, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -2735,7 +2735,7 @@ class UIChip {
 
 	/**
 	 * SetOnDelete
-	 * @param {() => void} callback 
+	 * @param {(this: UIChip) => void} callback 
 	 */
 	setOnDelete(callback) {return}
 
@@ -2751,13 +2751,13 @@ class UIChip {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIChip, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIChip, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -2887,7 +2887,7 @@ class UIDatePicker {
 
 	/**
 	 * SetOnSelect
-	 * @param {(date: str) => void} callback 
+	 * @param {(this: UIDatePicker, date: str) => void} callback 
 	 */
 	setOnSelect(callback) {return}
 
@@ -2921,13 +2921,13 @@ class UIDialog {
 
 	/**
 	 * SetOnAction
-	 * @param {(text: str, index: num) => void} callback 
+	 * @param {(this: UIDialog, text: str, index: num) => void} callback 
 	 */
 	setOnAction(callback) {return}
 
 	/**
 	 * SetOnClose
-	 * @param {() => void} callback 
+	 * @param {(this: UIDialog) => void} callback 
 	 */
 	setOnClose(callback) {return}
 
@@ -3030,13 +3030,13 @@ class UIDivider {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIDivider, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIDivider, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -3196,13 +3196,13 @@ class UIDrawer {
 
 	/**
 	 * SetOnOpen
-	 * @param {() => void} callback 
+	 * @param {(this: UIDrawer) => void} callback 
 	 */
 	setOnOpen(callback) {return}
 
 	/**
 	 * SetOnClose
-	 * @param {() => void} callback 
+	 * @param {(this: UIDrawer) => void} callback 
 	 */
 	setOnClose(callback) {return}
 
@@ -3329,13 +3329,13 @@ class UIDropdown {
 
 	/**
 	 * SetOnChange
-	 * @param {(value: obj, index: num) => void} callback 
+	 * @param {(this: UIDropdown, value: obj, index: num) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnClose
-	 * @param {() => void} callback 
+	 * @param {(this: UIDropdown) => void} callback 
 	 */
 	setOnClose(callback) {return}
 
@@ -3424,13 +3424,13 @@ class UIDropdown {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIDropdown, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIDropdown, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -3659,13 +3659,13 @@ class UIFAB {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIFAB, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIFAB, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -3896,7 +3896,7 @@ class UIImage {
 
 	/**
 	 * SetOnLoad
-	 * @param {() => void} callback 
+	 * @param {(this: UIImage) => void} callback 
 	 */
 	setOnLoad(callback) {return}
 
@@ -4024,19 +4024,19 @@ class UIImage {
 
 	/**
 	 * SetOnTouchMove
-	 * @param {() => void} callback 
+	 * @param {(this: UIImage) => void} callback 
 	 */
 	setOnTouchMove(callback) {return}
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIImage, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIImage, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -4319,13 +4319,13 @@ class UILayout {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UILayout, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UILayout, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -4581,25 +4581,25 @@ class UIList {
 
 	/**
 	 * SetOnTouch
-	 * @param {(title: str, body: str, icon: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UIList, title: str, body: str, icon: str, index: num, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnSelect
-	 * @param {(title: str, index: num) => void} callback 
+	 * @param {(this: UIList, title: str, index: num) => void} callback 
 	 */
 	setOnSelect(callback) {return}
 
 	/**
 	 * SetOnAction
-	 * @param {(icon: str, index: num) => void} callback 
+	 * @param {(this: UIList, icon: str, index: num) => void} callback 
 	 */
 	setOnAction(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(title: str, body: str, icon: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UIList, title: str, body: str, icon: str, index: num, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -4917,7 +4917,7 @@ class UIMenu {
 
 	/**
 	 * SetOnTouch
-	 * @param {(item: str, icon: str, index: num) => void} callback 
+	 * @param {(this: UIMenu, item: str, icon: str, index: num) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
@@ -5004,7 +5004,7 @@ class UIMenu {
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIMenu, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -5213,13 +5213,13 @@ class UIProgress {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIProgress, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIProgress, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -5463,13 +5463,13 @@ class UIRadioGroup {
 
 	/**
 	 * SetOnChange
-	 * @param {(index: num) => void} callback 
+	 * @param {(this: UIRadioGroup, index: num) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnTouch
-	 * @param {(checked: bin, label: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UIRadioGroup, checked: bin, label: str, index: num, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
@@ -5548,7 +5548,7 @@ class UIRadioGroup {
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(label: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UIRadioGroup, label: str, index: num, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -5789,19 +5789,19 @@ class UISelect {
 
 	/**
 	 * SetOnChange
-	 * @param {(value: str) => void} callback 
+	 * @param {(this: UISelect, value: str) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnOpen
-	 * @param {() => void} callback 
+	 * @param {(this: UISelect) => void} callback 
 	 */
 	setOnOpen(callback) {return}
 
 	/**
 	 * SetOnClose
-	 * @param {(value: str) => void} callback 
+	 * @param {(this: UISelect, value: str) => void} callback 
 	 */
 	setOnClose(callback) {return}
 
@@ -5873,13 +5873,13 @@ class UISelect {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UISelect, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UISelect, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -6114,13 +6114,13 @@ class UISlider {
 
 	/**
 	 * SetOnChange
-	 * @param {(value: num) => void} callback 
+	 * @param {(this: UISlider, value: num) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnSelect
-	 * @param {(value: num) => void} callback 
+	 * @param {(this: UISlider, value: num) => void} callback 
 	 */
 	setOnSelect(callback) {return}
 
@@ -6145,13 +6145,13 @@ class UISlider {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UISlider, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UISlider, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -6368,13 +6368,13 @@ class UIStepper {
 
 	/**
 	 * SetOnComplete
-	 * @param {() => void} callback 
+	 * @param {(this: UIStepper) => void} callback 
 	 */
 	setOnComplete(callback) {return}
 
 	/**
 	 * SetOnChange
-	 * @param {(index: num) => void} callback 
+	 * @param {(this: UIStepper, index: num) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
@@ -6413,13 +6413,13 @@ class UIStepper {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIStepper, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIStepper, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -6657,13 +6657,13 @@ class UISwitch {
 
 	/**
 	 * SetOnTouch
-	 * @param {(check: bin) => void} callback 
+	 * @param {(this: UISwitch, check: bin) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UISwitch, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -6904,13 +6904,13 @@ class UISwitchGroup {
 
 	/**
 	 * SetOnTouch
-	 * @param {(value: bin, text: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UISwitchGroup, value: bin, text: str, index: num, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnChange
-	 * @param {(values: lst) => void} callback 
+	 * @param {(this: UISwitchGroup, values: lst) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
@@ -6977,7 +6977,7 @@ class UISwitchGroup {
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(text: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UISwitchGroup, text: str, index: num, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -7224,13 +7224,13 @@ class UITabs {
 
 	/**
 	 * SetOnChange
-	 * @param {(name: str, index: num) => void} callback 
+	 * @param {(this: UITabs, name: str, index: num) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnTouch
-	 * @param {(name: str, index: num) => void} callback 
+	 * @param {(this: UITabs, name: str, index: num) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
@@ -7340,7 +7340,7 @@ class UITabs {
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(text: str, index: num, event: obj) => void} callback 
+	 * @param {(this: UITabs, text: str, index: num, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -7618,13 +7618,13 @@ class UIText {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIText, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIText, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -7889,19 +7889,19 @@ class UITextField {
 
 	/**
 	 * SetOnEnter
-	 * @param {(text: str) => void} callback 
+	 * @param {(this: UITextField, text: str) => void} callback 
 	 */
 	setOnEnter(callback) {return}
 
 	/**
 	 * SetOnChange
-	 * @param {(text: str) => void} callback 
+	 * @param {(this: UITextField, text: str) => void} callback 
 	 */
 	setOnChange(callback) {return}
 
 	/**
 	 * SetOnFocus
-	 * @param {(focus: bin) => void} callback 
+	 * @param {(this: UITextField, focus: bin) => void} callback 
 	 */
 	setOnFocus(callback) {return}
 
@@ -7923,7 +7923,7 @@ class UITextField {
 
 	/**
 	 * SetStartAdornmentOnTouch
-	 * @param {() => void} callback 
+	 * @param {(this: UITextField) => void} callback 
 	 */
 	setStartAdornmentOnTouch(callback) {return}
 
@@ -7944,7 +7944,7 @@ class UITextField {
 
 	/**
 	 * SetEndAdornmentOnTouch
-	 * @param {() => void} callback 
+	 * @param {(this: UITextField) => void} callback 
 	 */
 	setEndAdornmentOnTouch(callback) {return}
 
@@ -7956,13 +7956,13 @@ class UITextField {
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UITextField, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UITextField, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -8089,7 +8089,7 @@ class UITimePicker {
 
 	/**
 	 * Show
-	 * @param {(value: str) => void} callback 
+	 * @param {(this: UITimePicker, value: str) => void} callback 
 	 * @param {str} format A time format. Can be of the form 
  Hour formats 
  `H` : 0 1 ... 22 23 
@@ -8202,7 +8202,7 @@ class UITreeView {
 
 	/**
 	 * SetOnTouch
-	 * @param {(value: str, path: str) => void} callback 
+	 * @param {(this: UITreeView, value: str, path: str) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
@@ -8228,7 +8228,7 @@ class UITreeView {
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UITreeView, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -8457,19 +8457,19 @@ class UIWebView {
 
 	/**
 	 * SetOnLoad
-	 * @param {() => void} callback 
+	 * @param {(this: UIWebView) => void} callback 
 	 */
 	setOnLoad(callback) {return}
 
 	/**
 	 * SetOnTouch
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIWebView, event: obj) => void} callback 
 	 */
 	setOnTouch(callback) {return}
 
 	/**
 	 * SetOnContextMenu
-	 * @param {(event: obj) => void} callback 
+	 * @param {(this: UIWebView, event: obj) => void} callback 
 	 */
 	setOnContextMenu(callback) {return}
 
@@ -8606,7 +8606,7 @@ class UIDateTimePicker {
 
 	/**
 	 * SetOnSelect
-	 * @param {(value: str) => void} callback 
+	 * @param {(this: UIDateTimePicker, value: str) => void} callback 
 	 */
 	setOnSelect(callback) {return}
 }
@@ -8632,13 +8632,13 @@ class UIPopup {
 
 	/**
 	 * SetOnClose
-	 * @param {() => void} callback 
+	 * @param {(this: UIPopup) => void} callback 
 	 */
 	setOnClose(callback) {return}
 
 	/**
 	 * SetOnAction
-	 * @param {() => void} callback 
+	 * @param {(this: UIPopup) => void} callback 
 	 */
 	setOnAction(callback) {return}
 
@@ -8679,7 +8679,7 @@ class UIProgressDialog {
 
 	/**
 	 * SetOnClose
-	 * @param {() => void} callback 
+	 * @param {(this: UIProgressDialog) => void} callback 
 	 */
 	setOnClose(callback) {return}
 }

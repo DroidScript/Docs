@@ -40,6 +40,8 @@ To add other controls to your scroller you need to put them in a scroller [layou
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** ### DestroyChild ###
@@ -174,18 +176,18 @@ To add other controls to your scroller you need to put them in a scroller [layou
 @sample Example
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "FillXY" );
+    lay = app.CreateLayout( "Linear", "FillXY" );
 
-	<b>scroll = app.CreateScroller( 1.0, 1.0 );
-	lay.AddChild( scroll );
+    <b>scroll = app.CreateScroller( 1.0, 1.0 );
+    lay.AddChild( scroll );
 
-	layScroll = app.CreateLayout( "Linear", "Left" );
-	scroll.AddChild( layScroll );
+    layScroll = app.CreateLayout( "Linear", "Left" );
+    scroll.AddChild( layScroll );
 
-	img = app.CreateImage( "/Sys/Img/Hello.png", 2.0, 2.0 );
-	layScroll.AddChild( img );</b>
+    img = app.CreateImage( "/Sys/Img/Hello.png", 2.0, 2.0 );
+    layScroll.AddChild( img );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
 

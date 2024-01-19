@@ -10,7 +10,7 @@
  * $$ app.AddLayout(layout, type?, options?) $$
  * @param {dso} layout CreateLayout
  * @param {str} [type] Linear|Absolute|Frame|Card
- * @param {str_lst} [options] TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
+ * @param {str_com} [options] TouchThrough:forwards touch events to underlying children,TouchSpy:spies for touch events on all children,Left|Top|Right|Bottom|Center|H/VCenter,Wrap,Horizontal|Vertical,FillX/Y
  * @returns dso-Layout
 */
 
@@ -25,13 +25,13 @@
 @sample Vertical
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
+    lay = app.CreateLayout( "Linear", "FillXY,VCenter" );
 
-	txt = app.CreateText( "Hello" );
-	txt.SetTextSize( 50 );
-	lay.AddChild( txt );
+    txt = app.CreateText( "Hello" );
+    txt.SetTextSize( 50 );
+    lay.AddChild( txt );
 
-	<b>app.AddLayout( lay );</b>
+    <b>app.AddLayout( lay );</b>
 }
  */
 

@@ -26,6 +26,8 @@ Subscriptions can be cancelled in the Google Play App found on your device (they
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetBillingInfo ###
  * @brief Get product info from Google Play.
  * Get product info of paid items from Google Play.

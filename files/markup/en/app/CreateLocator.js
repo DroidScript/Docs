@@ -28,6 +28,8 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetBearingTo ###
  * @brief Calculate bearing between current and given position
  * Returns the approximate initial bearing in degrees East of true North when traveling along the shortest path between this location and the given location.
@@ -94,16 +96,16 @@ To get regulat updates about your current positino use the **SetOnChange** funct
 @sample Get Location Updates
 function OnStart()
 {
-	<b>loc = app.CreateLocator("GPS,Network");
-	loc.SetOnChange(loc_OnChange);
-	loc.Start();
-	app.ShowPopup("Locating");</b>
+    <b>loc = app.CreateLocator("GPS,Network");
+    loc.SetOnChange(loc_OnChange);
+    loc.Start();
+    app.ShowPopup("Locating");</b>
 }
 
 function loc_OnChange(pos)
 {
-	var msg = pos.latitude + ", " + pos.longitude;
-	app.ShowPopup( msg );
+    var msg = pos.latitude + ", " + pos.longitude;
+    app.ShowPopup( msg );
 }
  */
 

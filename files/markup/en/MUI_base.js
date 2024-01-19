@@ -40,7 +40,7 @@
 /** ### data
  * @prop
  *
- * @returns obj
+ * @returns obj-{ key:str, value:all }
  */
 
 

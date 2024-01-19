@@ -18,6 +18,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Clear ###
  * Clears the Bluetooth buffer of the serial connection.
  * $$ bls.Clear() $$
@@ -165,8 +167,8 @@ function OnStart()
     if( !app.IsBluetoothEnabled() )
         app.SetBluetoothEnabled( true );
 
-	while( !app.IsBluetoothOn() ) app.Wait(.4);
-	app.HideProgress();
+    while( !app.IsBluetoothOn() ) app.Wait(.4);
+    app.HideProgress();
 
     <b>bt = app.CreateBluetoothSerial();
     bt.SetOnConnect( bt_OnConnect );

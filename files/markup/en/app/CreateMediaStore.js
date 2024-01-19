@@ -17,6 +17,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetAlbumArt ###
  * @brief Load the album art to an image
  * Loads the album image to an existing image:dso-CreateImage.

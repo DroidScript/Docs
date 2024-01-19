@@ -42,6 +42,8 @@ You can also set a background image/pattern or background gradient for the Text 
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** @extern Focus */

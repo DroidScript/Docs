@@ -27,6 +27,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** ### ClearHistory ###
@@ -350,15 +352,15 @@
 @sample dark scheme
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	<b>cde = app.CreateCodeEdit( "", 1, 1 );
-	cde.SetText(app.ReadFile("/assets/templates/js/Simple.js"))
-	cde.SetLanguage(".js");
-	cde.SetColorScheme( "dark" );
-	lay.AddChild( cde );</b>
+    <b>cde = app.CreateCodeEdit( "", 1, 1 );
+    cde.SetText(app.ReadFile("/assets/templates/js/Simple.js"))
+    cde.SetLanguage(".js");
+    cde.SetColorScheme( "dark" );
+    lay.AddChild( cde );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
 

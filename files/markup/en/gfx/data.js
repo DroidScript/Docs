@@ -5,5 +5,5 @@
  * @prop
  * GameView custom data
  * $$ gfx.data() $$
- * @returns obj
+ * @returns obj-{ key:str, value:all }
 */

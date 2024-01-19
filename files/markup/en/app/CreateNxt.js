@@ -18,6 +18,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Beep ###
  * @brief Play frequency tone
  * Play tone with given frequency for a given time in milliseconds.

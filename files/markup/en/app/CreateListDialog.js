@@ -33,6 +33,8 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern Dismiss */
 
 /** ### GetType ###
@@ -80,14 +82,14 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
 @sample Basic
 function OnStart()
 {
-	<b>dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
-	dlg.SetOnTouch( dlg_OnTouch );
-	dlg.Show();</b>
+    <b>dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
+    dlg.SetOnTouch( dlg_OnTouch );
+    dlg.Show();</b>
 }
 
 function dlg_OnTouch( item )
 {
-	app.ShowPopup( item );
+    app.ShowPopup( item );
 }
  */
 
@@ -97,14 +99,14 @@ function dlg_OnTouch( item )
 @sample Multi
 function OnStart()
 {
-	<b>dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" );
-	dlg.SetOnTouch( dlg_OnTouch );
-	dlg.Show();</b>
+    <b>dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" );
+    dlg.SetOnTouch( dlg_OnTouch );
+    dlg.Show();</b>
 }
 
 function dlg_OnTouch( item, isChecked )
 {
-	app.ShowPopup( item + " isChecked = " + isChecked );
+    app.ShowPopup( item + " isChecked = " + isChecked );
 }
  */
 

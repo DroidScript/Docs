@@ -35,6 +35,8 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** @extern Focus */
@@ -153,18 +155,18 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 @sample Example
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>chk = app.CreateCheckBox( "Enable Stuff" );
-	chk.SetOnTouch( ShowState );
-	lay.AddChild( chk );
+    <b>chk = app.CreateCheckBox( "Enable Stuff" );
+    chk.SetOnTouch( ShowState );
+    lay.AddChild( chk );
 
-	app.AddLayout( lay );</b>
+    app.AddLayout( lay );</b>
 }
 
 function ShowState( isChecked )
 {
-	app.ShowPopup( "Checked = " + isChecked, "Short" );
+    app.ShowPopup( "Checked = " + isChecked, "Short" );
 }
  */
 

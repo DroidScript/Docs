@@ -32,6 +32,8 @@ See Also: @CreateWebServer
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Close ###
  * @brief Close web socket
  * Close the web socket.

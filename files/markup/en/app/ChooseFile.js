@@ -11,7 +11,7 @@
  * @param {str} type file mimetype
  * @param {fnc_json} callback {"pNames":["path","name"],"pTypes":["str_pth||str_uri","str"]}
  * @param {str_pth} [fldr]
- * @param {str_lst} [options] persist:keep file permission after reboot,nodownload:prevents file downloads
+ * @param {str_com} [options] persist:keep file permission after reboot,nodownload:prevents file downloads
 */
 
 

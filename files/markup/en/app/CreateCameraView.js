@@ -56,6 +56,8 @@ More samples can be found in the samples section of DroidScript.
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** ### FindFaces ###
@@ -408,12 +410,12 @@ More samples can be found in the samples section of DroidScript.
 
 /** ### Stream ###
  * Streams the camera view to a local ip.
- * $$ cam.Stream(ip, port, quality, fps, mtu) $$
+ * $$ cam.Stream(ip, port?, quality?, fps?, mtu?) $$
  * @param {str} ip
- * @param {num_int} port
- * @param {num_prc} quality
- * @param {num_fps} fps
- * @param {num_mtu} mtu
+ * @param {num_int} [port]
+ * @param {num_prc} [quality]
+ * @param {num_fps} [fps]
+ * @param {num_mtu} [mtu]
  */
 
 

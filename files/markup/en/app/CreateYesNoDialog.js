@@ -21,6 +21,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern Dismiss */
 
 /** ### GetType ###

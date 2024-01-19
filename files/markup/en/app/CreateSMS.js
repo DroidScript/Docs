@@ -17,6 +17,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ sms.GetType() $$

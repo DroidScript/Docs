@@ -104,7 +104,7 @@ class DsApp {
 	 * Adds a layout to the app
 	 * @param {DsLayout} layout 
 	 * @param {"Linear"|"Absolute"|"Frame"|"Card"} [type] 
-	 * @param {str_lst} [options] `TouchThrough`, `TouchSpy`, `Left`, `Top`, `Right`, `Bottom`, `Center`, `H/VCenter`, `Wrap`, `Horizontal`, `Vertical`, `FillX/Y`\
+	 * @param {str_com} [options] `TouchThrough`, `TouchSpy`, `Left`, `Top`, `Right`, `Bottom`, `Center`, `H/VCenter`, `Wrap`, `Horizontal`, `Vertical`, `FillX/Y`\
  	 * &emsp; `TouchThrough` - forwards touch events to underlying children\
  	 * &emsp; `TouchSpy` - spies for touch events on all children
 	 * @return {DsLayout} 
@@ -174,7 +174,7 @@ class DsApp {
 	 * @param {str_com} list 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {"Fade"|"FontAwesome"|"NoMargins"|"VCenter"} [options] 
+	 * @param {string | ("Fade"|"FontAwesome"|"NoMargins"|"VCenter")[]} [options] 
 	 * @return {DsTabs} 
 	 */
 	AddTabs(list, width, height, options) {return}
@@ -333,7 +333,7 @@ class DsApp {
 	 * @param {str} type `file mimetype`
 	 * @param {(path: str_pth|str_uri, name: str) => void} callback 
 	 * @param {str_pth} [fldr] 
-	 * @param {"persist"|"nodownload"} [options] <br>
+	 * @param {string | ("persist"|"nodownload")[]} [options] <br>
  	 * &emsp; `persist` - keep file permission after reboot\
  	 * &emsp; `nodownload` - prevents file downloads
 	 */
@@ -660,7 +660,7 @@ class DsApp {
 	/**
 	 * Creates a NodeJS background process with all the functionality of common node.js
 	 * @param {str_pth} [paths] `NODE_PATH env variable`
-	 * @param {"extended"|"legacy"|"nostart"|"esm"} [options] <br>
+	 * @param {string | ("extended"|"legacy"|"nostart"|"esm")[]} [options] <br>
  	 * &emsp; `extended` - allow app methods in default main instance\
  	 * &emsp; `legacy` - dont use named pipes for messaging\
  	 * &emsp; `nostart` - disable auto start\
@@ -733,7 +733,7 @@ class DsApp {
 	 * Returns a new Service object
 	 * @param {str} packageName `this`, `<package>`
 	 * @param {str} className `this`, `<class>`
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsService) => void} [callback] 
 	 * @param {string | ("Persist")[]} [options] <br>
  	 * &emsp; `Persist` - attempts to force restart if service killed
 	 * @return {DsService} 
@@ -809,7 +809,7 @@ class DsApp {
 	 * @param {str_com} list 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {"Fade"|"FontAwesome"|"NoMargins"|"VCenter"} [options] 
+	 * @param {string | ("Fade"|"FontAwesome"|"NoMargins"|"VCenter")[]} [options] 
 	 * @return {DsTabs} 
 	 */
 	CreateTabs(list, width, height, options) {return}
@@ -943,7 +943,7 @@ class DsApp {
 	 * @param {str} title 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
-	 * @param {(layout: DsLayout, page: num_int) => void} [callback] 
+	 * @param {(this: DsWizard, layout: DsLayout, page: num_int) => void} [callback] 
 	 * @param {string | ("AutoCancel"|"NoCancel"|"NoTitle"|"NoFocus"|"NoDim"|"NoKeys"|"TouchModal"|"NoTouch")[]} [options] 
 	 * @return {DsWizard} 
 	 */
@@ -1065,7 +1065,7 @@ class DsApp {
 	 * @param {str_pth} source 
 	 * @param {str_pth} destination 
 	 * @param {bin} [overwrite=false] 
-	 * @param {"DoEvents"|"shallow"} [options] <br>
+	 * @param {string | ("DoEvents"|"shallow")[]} [options] <br>
  	 * &emsp; `DoEvents` - extract in background\
  	 * &emsp; `shallow` - extract top level
 	 */
@@ -2535,7 +2535,7 @@ class DsApp {
 	 * Shows a CheckList
 	 * @param {str} title 
 	 * @param {str|{ title: str, check: bin }[]} list `title:checked`
-	 * @param {(data: { title: str, checked: bin }) => void} [callback] 
+	 * @param {(this: DsCheckList, data: { title: str, checked: bin }) => void} [callback] 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
 	 * @param {str} [options] sun-moon:shows sun and moon icons instead of default check boxes
@@ -2860,6 +2860,9 @@ class DsAudioRecorder {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Returns a new list of frequency values
 	 * @return {num_int[]} 
@@ -2921,6 +2924,9 @@ class DsBluetoothList {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Returns the control class name
 	 * @return {"BluetoothList"} 
@@ -2929,7 +2935,7 @@ class DsBluetoothList {
 
 	/**
 	 * Define a callback function for touch events
-	 * @param {(name: str, address: str) => void} callback 
+	 * @param {(this: DsBluetoothList, name: str, address: str) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 }
@@ -2942,6 +2948,9 @@ class DsBluetoothSerial {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Clears the Bluetooth buffer of the serial connection */
 	Clear() {return}
@@ -3020,19 +3029,19 @@ class DsBluetoothSerial {
 	 * 	 * if the device has received the connection request
 	 * 	 * 	name is a string with the clients bluetooth name
 	 * 	 * 	and address includes the bluetooth address
-	 * @param {(name: str, address: str) => void} callback 
+	 * @param {(this: DsBluetoothSerial, name: str, address: str) => void} callback 
 	 */
 	SetOnConnect(callback) {return}
 
 	/**
 	 * Called after disconnecting from bluetooth connection
-	 * @param {(name: str, address: str) => void} callback 
+	 * @param {(this: DsBluetoothSerial, name: str, address: str) => void} callback 
 	 */
 	SetOnDisconnect(callback) {return}
 
 	/**
 	 * Called after received Data via Bluetooth
-	 * @param {(data: str) => void} callback 
+	 * @param {(this: DsBluetoothSerial, data: str) => void} callback 
 	 */
 	SetOnReceive(callback) {return}
 
@@ -3072,7 +3081,7 @@ class DsButton {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsButton, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -3082,6 +3091,9 @@ class DsButton {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -3297,13 +3309,13 @@ class DsButton {
 
 	/**
 	 * Define a callback function for touch events
-	 * @param {() => void} callback 
+	 * @param {(this: DsButton) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the button was long pressed
-	 * @param {() => void} callback 
+	 * @param {(this: DsButton) => void} callback 
 	 */
 	SetOnLongTouch(callback) {return}
 
@@ -3399,7 +3411,7 @@ class DsButton {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsButton) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -3419,7 +3431,7 @@ class DsCameraView {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsCameraView, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -3437,6 +3449,9 @@ class DsCameraView {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -3655,7 +3670,7 @@ class DsCameraView {
 	/**
 	 * Keeps tracks of the average color around a given point
 	 * @param {str_pip} list `x1`, `y1`, `x2`, `y2`, `...`
-	 * @param {(data: [num,num,num][]) => void} callback 
+	 * @param {(this: DsCameraView, data: [num,num,num][]) => void} callback 
 	 * @param {num_pxl} [sampSize] 
 	 * @param {num_mls} [maxRate] 
 	 */
@@ -3763,25 +3778,25 @@ class DsCameraView {
 
 	/**
 	 * Called when the control gets focused
-	 * @param {() => void} callback 
+	 * @param {(this: DsCameraView) => void} callback 
 	 */
 	SetOnFocus(callback) {return}
 
 	/**
 	 * Called when cam.MotionMosaic detected a motion
-	 * @param {(data: lst_num) => void} callback 
+	 * @param {(this: DsCameraView, data: lst_num) => void} callback 
 	 */
 	SetOnMotion(callback) {return}
 
 	/**
 	 * Called when cam.AutoCapture took a picture
-	 * @param {(file: str_pth) => void} callback 
+	 * @param {(this: DsCameraView, file: str_pth) => void} callback 
 	 */
 	SetOnPicture(callback) {return}
 
 	/**
 	 * Called if the camera is ready for use
-	 * @param {() => void} callback 
+	 * @param {(this: DsCameraView) => void} callback 
 	 */
 	SetOnReady(callback) {return}
 
@@ -3892,10 +3907,10 @@ class DsCameraView {
 	/**
 	 * Streams the camera view to a local ip
 	 * @param {str} ip 
-	 * @param {num_int} port 
-	 * @param {num_prc} quality 
-	 * @param {num_fps} fps 
-	 * @param {num_mtu} mtu 
+	 * @param {num_int} [port] 
+	 * @param {num_prc} [quality] 
+	 * @param {num_fps} [fps] 
+	 * @param {num_mtu} [mtu] 
 	 */
 	Stream(ip, port, quality, fps, mtu) {return}
 
@@ -3912,7 +3927,7 @@ class DsCameraView {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsCameraView) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -3932,7 +3947,7 @@ class DsCheckBox {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsCheckBox, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -3942,6 +3957,9 @@ class DsCheckBox {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -4151,7 +4169,7 @@ class DsCheckBox {
 
 	/**
 	 * Called when the CheckBox was touched
-	 * @param {(isChecked: bin) => void} callback 
+	 * @param {(this: DsCheckBox, isChecked: bin) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -4227,7 +4245,7 @@ class DsCheckBox {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsCheckBox) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -4241,6 +4259,9 @@ class DsCloudStore {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Returns the control class name
 	 * @return {"CloudStore"} 
@@ -4250,14 +4271,14 @@ class DsCloudStore {
 	/**
 	 * Deletes a file in the cloud
 	 * @param {str_ptf} file 
-	 * @param {(success: bin, result: {data: str,error: str}, status: num_int) => void} callback 
+	 * @param {(this: DsCloudStore, success: bin, result: {data: str,error: str}, status: num_int) => void} callback 
 	 */
 	Delete(file, callback) {return}
 
 	/**
 	 * Lists files of the cloud
 	 * @param {str} filter 
-	 * @param {(error: bin, result: {data: str_com,error: str}, status: num_int) => void} callback 
+	 * @param {(this: DsCloudStore, error: bin, result: {data: str_com,error: str}, status: num_int) => void} callback 
 	 */
 	List(filter, callback) {return}
 
@@ -4265,7 +4286,7 @@ class DsCloudStore {
 	 * Loads data from the cloud
 	 * @param {str_ptf} file 
 	 * @param {str} callback 
-	 * @param {(error: bin, result: {data: all,error: str}, status: num_int) => void} [options] 
+	 * @param {(this: DsCloudStore, error: bin, result: {data: all,error: str}, status: num_int) => void} [options] 
 	 */
 	Load(file, callback, options) {return}
 
@@ -4273,7 +4294,7 @@ class DsCloudStore {
 	 * Merges data in the cloud
 	 * @param {str_ptf} file 
 	 * @param {obj} data 
-	 * @param {(success: bin, result: {data: str,error: str}, status: num_int) => void} [callback] 
+	 * @param {(this: DsCloudStore, success: bin, result: {data: str,error: str}, status: num_int) => void} [callback] 
 	 */
 	Merge(file, data, callback) {return}
 
@@ -4281,7 +4302,7 @@ class DsCloudStore {
 	 * Saves data in the cloud
 	 * @param {str_ptf} file 
 	 * @param {all} data 
-	 * @param {(success: bin, result: {data: str,error: str}, status: num_int) => void} [callback] 
+	 * @param {(this: DsCloudStore, success: bin, result: {data: str,error: str}, status: num_int) => void} [callback] 
 	 * @param {str} [options] 
 	 */
 	Save(file, data, callback, options) {return}
@@ -4297,7 +4318,7 @@ class DsCloudStore {
 	 * @param {str} data 
 	 * @param {str} name 
 	 * @param {str_mim} [type] 
-	 * @param {(response: {error: str,name: str,folder: str,id: str,mimetype: str_mim,size: num}) => void} [callback] 
+	 * @param {(this: DsCloudStore, response: {error: str,name: str,folder: str,id: str,mimetype: str_mim,size: num}) => void} [callback] 
 	 * @param {str} [password] 
 	 */
 	Upload(data, name, type, callback, password) {return}
@@ -4318,7 +4339,7 @@ class DsCodeEdit {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsCodeEdit, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -4328,6 +4349,9 @@ class DsCodeEdit {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -4653,19 +4677,19 @@ class DsCodeEdit {
 
 	/**
 	 * Called when content was changed by the user
-	 * @param {() => void} callback 
+	 * @param {(this: DsCodeEdit) => void} callback 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a Yoyo double-tap callback function
-	 * @param {() => void} callback 
+	 * @param {(this: DsCodeEdit) => void} callback 
 	 */
 	SetOnDoubleTap(callback) {return}
 
 	/**
 	 * Define a key-event callback function
-	 * @param {(action: "Down"|"Move"|"Up", keyname: "VOLUME_DOWN"|"VOLUME_UP"|"BACK"|"MENU", keycode: num_int, extra: "Shift"|"Ctrl"|"Alt"|"Meta") => void} callback 
+	 * @param {(this: DsCodeEdit, action: "Down"|"Move"|"Up", keyname: "VOLUME_DOWN"|"VOLUME_UP"|"BACK"|"MENU", keycode: num_int, extra: "Shift"|"Ctrl"|"Alt"|"Meta") => void} callback 
 	 */
 	SetOnKey(callback) {return}
 
@@ -4760,7 +4784,7 @@ class DsCodeEdit {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsCodeEdit) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -4776,6 +4800,9 @@ class DsCrypt {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Decrypt text with a key
@@ -4838,6 +4865,9 @@ class DsDialog {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -5044,19 +5074,19 @@ class DsDialog {
 
 	/**
 	 * Called when back button was pressed while the dialog was shown
-	 * @param {() => void} callback 
+	 * @param {(this: DsDialog) => void} callback 
 	 */
 	SetOnBack(callback) {return}
 
 	/**
 	 * Called when the dialog is cancelled
-	 * @param {() => void} callback 
+	 * @param {(this: DsDialog) => void} callback 
 	 */
 	SetOnCancel(callback) {return}
 
 	/**
 	 * Called when user touched the control
-	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsDialog, event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -5150,7 +5180,7 @@ class DsDialog {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsDialog) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -5163,6 +5193,9 @@ class DsDownloader {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Download file(s)
@@ -5211,25 +5244,25 @@ class DsDownloader {
 
 	/**
 	 * Called when download is cancelled
-	 * @param {(file: str_pth) => void} callback 
+	 * @param {(this: DsDownloader, file: str_pth) => void} callback 
 	 */
 	SetOnCancel(callback) {return}
 
 	/**
 	 * Called when downloads are finished
-	 * @param {() => void} callback 
+	 * @param {(this: DsDownloader) => void} callback 
 	 */
 	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when a file is downloaded
-	 * @param {(path: str_pth) => void} callback 
+	 * @param {(this: DsDownloader, path: str_pth) => void} callback 
 	 */
 	SetOnDownload(callback) {return}
 
 	/**
 	 * Called when an error occurred while downloading
-	 * @param {(error: str) => void} callback 
+	 * @param {(this: DsDownloader, error: str) => void} callback 
 	 */
 	SetOnError(callback) {return}
 }
@@ -5242,6 +5275,9 @@ class DsEmail {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Returns the control class name
@@ -5281,13 +5317,13 @@ class DsEmail {
 
 	/**
 	 * Called when a message is received
-	 * @param {(data: { from: str_eml, to: str_eml, cc: str_eml, subject: str, body: str }) => void} callback 
+	 * @param {(this: DsEmail, data: { from: str_eml, to: str_eml, cc: str_eml, subject: str, body: str }) => void} callback 
 	 */
 	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when a status changed
-	 * @param {(status: str) => void} callback 
+	 * @param {(this: DsEmail, status: str) => void} callback 
 	 */
 	SetOnStatus(callback) {return}
 
@@ -5313,6 +5349,9 @@ class DsFile {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Close File */
 	Close() {return}
@@ -5364,7 +5403,7 @@ class DsFile {
 	 * @param {"Line"|"Char"} type <br>
  	 * &emsp; `Line` - read one line terminated by \\n, \\r or \\r\\n\
  	 * &emsp; `Char` - read big-endian 16-bit character
-	 * @param {(data: str) => void} callback 
+	 * @param {(this: DsFile, data: str) => void} callback 
 	 */
 	ReadTextAsync(type, callback) {return}
 
@@ -5429,6 +5468,9 @@ class DsGameView {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -5680,7 +5722,7 @@ class DsGameView {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsGameView) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -5697,6 +5739,9 @@ class DsGLView {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/** @type {obj} [HTMLDivElement] */
 	canvas;
 
@@ -5706,7 +5751,7 @@ class DsGLView {
 	/**
 	 * Create a sprite object which can be drawn on the GLView
 	 * @param {str_ptf} file 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsGLView) => void} [callback] 
 	 * @return {GLV_img} img
 	 */
 	CreateImage(file, callback) {return}
@@ -5913,25 +5958,25 @@ class DsGLView {
 
 	/**
 	 * Called when user touched the control
-	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsGLView, event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
-	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsGLView, event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
-	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsGLView, event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
-	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsGLView, event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -5992,7 +6037,7 @@ class DsGLView {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsGLView) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -6114,7 +6159,7 @@ class DsImage {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsImage, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -6124,6 +6169,9 @@ class DsImage {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Clears the image content */
 	Clear() {return}
@@ -6513,37 +6561,37 @@ class DsImage {
 
 	/**
 	 * Called when image has loaded asynchronously
-	 * @param {(img: DsImage) => void} callback 
+	 * @param {(this: DsImage, img: DsImage) => void} callback 
 	 */
 	SetOnLoad(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
-	 * @param {(src: dso) => void} callback 
+	 * @param {(this: DsImage, src: dso) => void} callback 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
-	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsImage, event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
-	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsImage, event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
-	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsImage, event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
-	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsImage, event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -6574,7 +6622,7 @@ class DsImage {
 	 * @param {str_b64} data `<rawbase64>`, `data:image/jpg;base64,<jpgbase64>`, `data:image/png;base64,<pngbase64>`
 	 * @param {num} [width=-1] 
 	 * @param {num} [height=-1] 
-	 * @param {"px"|"icon"|"resize"|"rescale"|"square"|"fix"} [options] <br>
+	 * @param {string | ("px"|"icon"|"resize"|"rescale"|"square"|"fix")[]} [options] <br>
  	 * &emsp; `fix` - set bitmap size
 	 */
 	SetPixelData(data, width, height, options) {return}
@@ -6651,7 +6699,7 @@ class DsImage {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsImage) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -6681,7 +6729,7 @@ class DsLayout {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsLayout, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -6691,6 +6739,9 @@ class DsLayout {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Moves a child to the layout front
@@ -6937,37 +6988,37 @@ class DsLayout {
 
 	/**
 	 * Called when the user changed a control content
-	 * @param {(src: dso) => void} callback 
+	 * @param {(this: DsLayout, src: dso) => void} callback 
 	 */
 	SetOnChildChange(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
-	 * @param {(src: dso) => void} callback 
+	 * @param {(this: DsLayout, src: dso) => void} callback 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
-	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsLayout, event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
-	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsLayout, event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
-	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsLayout, event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
-	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsLayout, event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -7040,7 +7091,7 @@ class DsLayout {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsLayout) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -7068,7 +7119,7 @@ class DsList {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsList, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -7078,6 +7129,9 @@ class DsList {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -7461,13 +7515,13 @@ class DsList {
 
 	/**
 	 * Define a callback function for touch events
-	 * @param {(title: str, body?: str, icon?: str, index?: num_int) => void} callback 
+	 * @param {(this: DsList, title: str, body?: str, icon?: str, index?: num_int) => void} callback 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
-	 * @param {(title: str, body?: str, icon?: str, index?: num_int) => void} callback 
+	 * @param {(this: DsList, title: str, body?: str, icon?: str, index?: num_int) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -7603,7 +7657,7 @@ class DsList {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsList) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -7625,6 +7679,9 @@ class DsListDialog {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Hides the control and removes it from the screen */
 	Dismiss() {return}
@@ -7665,7 +7722,7 @@ class DsListDialog {
 
 	/**
 	 * Define a callback function for touch events
-	 * @param {(title: str, checked?: bin) => void} callback 
+	 * @param {(this: DsListDialog, title: str, checked?: bin) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -7702,6 +7759,9 @@ class DsLocator {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Calculate bearing between current and given position
 	 * @param {num} latitude 
@@ -7726,7 +7786,7 @@ class DsLocator {
 
 	/**
 	 * Called when some of the values changed
-	 * @param {(data: { provider: str, latitude: num, longitude: num, speed: num, bearing: num, altitude: num, accuracy: num_met }, time: num_mls) => void} callback 
+	 * @param {(this: DsLocator, data: { provider: str, latitude: num, longitude: num, speed: num, bearing: num, altitude: num, accuracy: num_met }, time: num_mls) => void} callback 
 	 */
 	SetOnChange(callback) {return}
 
@@ -7751,6 +7811,9 @@ class DsMediaPlayer {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Close the media player */
 	Close() {return}
@@ -7817,19 +7880,19 @@ class DsMediaPlayer {
 
 	/**
 	 * Called when the player has finished playing a track
-	 * @param {() => void} callback 
+	 * @param {(this: DsMediaPlayer) => void} callback 
 	 */
 	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when the player is ready for use
-	 * @param {() => void} callback 
+	 * @param {(this: DsMediaPlayer) => void} callback 
 	 */
 	SetOnReady(callback) {return}
 
 	/**
 	 * Called when ply.Seek has finished
-	 * @param {() => void} callback 
+	 * @param {(this: DsMediaPlayer) => void} callback 
 	 */
 	SetOnSeekDone(callback) {return}
 
@@ -7864,6 +7927,9 @@ class DsMediaStore {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Load the album art to an image
@@ -7915,19 +7981,19 @@ class DsMediaStore {
 
 	/**
 	 * Called when album query has finished
-	 * @param {(result: { album: str, id: num_int, albumArt: str_pth, artist: str, numSongs: num_int, firstYear: str, lastYear: str }[]) => void} callback 
+	 * @param {(this: DsMediaStore, result: { album: str, id: num_int, albumArt: str_pth, artist: str, numSongs: num_int, firstYear: str, lastYear: str }[]) => void} callback 
 	 */
 	SetOnAlbumsResult(callback) {return}
 
 	/**
 	 * Called when artist query has finished
-	 * @param {(result: { id: num_int, artist: str, numAlbums: num_int, numTracks: num_int }[]) => void} callback 
+	 * @param {(this: DsMediaStore, result: { id: num_int, artist: str, numAlbums: num_int, numTracks: num_int }[]) => void} callback 
 	 */
 	SetOnArtistsResult(callback) {return}
 
 	/**
 	 * Called when media query has finished
-	 * @param {(result: { title: str, id: num_int, duration: num_mls, size: num_byt, uri: str_uri, album: str, albumID: num_int, artist: str, artistId: num_int }[]) => void} callback 
+	 * @param {(this: DsMediaStore, result: { title: str, id: num_int, duration: num_mls, size: num_byt, uri: str_uri, album: str, albumID: num_int, artist: str, artistId: num_int }[]) => void} callback 
 	 */
 	SetOnMediaResult(callback) {return}
 }
@@ -7948,6 +8014,9 @@ class DsNetClient {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Closes the NetClient socket */
 	Close() {return}
@@ -8004,7 +8073,7 @@ class DsNetClient {
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
 	 * @param {num_int} [port=80] 
 	 * @param {num} [timeout] 
-	 * @param {str_lst} [options] `<BUFSIZ>`\
+	 * @param {str_com} [options] `<BUFSIZ>`\
  	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
 	 * @return {str} 
 	 */
@@ -8014,7 +8083,7 @@ class DsNetClient {
 	 * Receive UDP datagrams
 	 * @param {num_int} [port=80] 
 	 * @param {"US-ASCII"|"UTF-8"|"UTF-16LE"|"UTF-16BE"|"UTF-16"} [mode] 
-	 * @param {str_lst} [options] `<BUFSIZ>`\
+	 * @param {str_com} [options] `<BUFSIZ>`\
  	 * &emsp; `BUFSIZ` - “1k,2k,4k,8k,16k,32k,64k”
 	 */
 	ReceiveDatagrams(port, mode, options) {return}
@@ -8087,19 +8156,19 @@ class DsNetClient {
 
 	/**
 	 * Called when TCP connected or failed to connect to a server
-	 * @param {(connected: bin) => void} callback 
+	 * @param {(this: DsNetClient, connected: bin) => void} callback 
 	 */
 	SetOnConnect(callback) {return}
 
 	/**
 	 * Called when a file download has finished
-	 * @param {(something: num_int) => void} callback 
+	 * @param {(this: DsNetClient, something: num_int) => void} callback 
 	 */
 	SetOnDownload(callback) {return}
 
 	/**
 	 * Called when a TCP NetClient received some data via AutoReceive
-	 * @param {(address: str) => void} callback 
+	 * @param {(this: DsNetClient, address: str) => void} callback 
 	 */
 	SetOnReceive(callback) {return}
 
@@ -8135,31 +8204,31 @@ class DsNode {
 
 	/**
 	 * Define a callback function which is called when the Node component is ready for use
-	 * @param {() => void} cb 
+	 * @param {(this: DsNode) => void} cb 
 	 */
 	SetOnReady(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process has exited
-	 * @param {() => void} cb 
+	 * @param {(this: DsNode) => void} cb 
 	 */
 	SetOnDone(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process prints to stdout
-	 * @param {(stdout: str) => void} cb 
+	 * @param {(this: DsNode, stdout: str) => void} cb 
 	 */
 	SetOnOutput(cb) {return}
 
 	/**
 	 * Define a callback function which is called when the node process prints to stderr
-	 * @param {(msg: str) => void} cb 
+	 * @param {(this: DsNode, msg: str) => void} cb 
 	 */
 	SetOnError(cb) {return}
 
 	/**
 	 * Define a callback function which is called when a system/pipe message was received from the node process
-	 * @param {(msg: str) => void} cb 
+	 * @param {(this: DsNode, msg: str) => void} cb 
 	 */
 	SetOnMessage(cb) {return}
 
@@ -8246,6 +8315,9 @@ class DsNotification {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Cancel a notification with a specific id
 	 * @param {str} [id] `id`, `*`
@@ -8295,7 +8367,7 @@ class DsNotification {
 
 	/**
 	 * Called when notification intercepted
-	 * @param {(source: str, title: str, message: str, extra: str, type: "Normal") => void} callback 
+	 * @param {(this: DsNotification, source: str, title: str, message: str, extra: str, type: "Normal") => void} callback 
 	 */
 	SetOnNotify(callback) {return}
 
@@ -8314,6 +8386,9 @@ class DsNxt {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Play frequency tone
@@ -8517,13 +8592,13 @@ class DsNxt {
 
 	/**
 	 * Called when NXT connection established or failed
-	 * @param {(connected: bin) => void} callback 
+	 * @param {(this: DsNxt, connected: bin) => void} callback 
 	 */
 	SetOnConnect(callback) {return}
 
 	/**
 	 * Called when bt connection established
-	 * @param {() => void} callback 
+	 * @param {(this: DsNxt) => void} callback 
 	 */
 	SetOnConnected(callback) {return}
 
@@ -8571,6 +8646,9 @@ class DsOverlay {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Returns the parent control object
 	 * @return {dso} 
@@ -8608,6 +8686,9 @@ class DsPhoneState {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Returns the control class name
 	 * @return {"PhoneState"} 
@@ -8616,7 +8697,7 @@ class DsPhoneState {
 
 	/**
 	 * Called when a phone state has changed
-	 * @param {(type: "CellLocation"|"DataConnection"|"DataActivity"|"CallState"|"ServiceState"|"SignalStrength"|"CallForwarding"|"MessageWaiting", data: all) => void} callback 
+	 * @param {(this: DsPhoneState, type: "CellLocation"|"DataConnection"|"DataActivity"|"CallState"|"ServiceState"|"SignalStrength"|"CallForwarding"|"MessageWaiting", data: all) => void} callback 
 	 */
 	SetOnChange(callback) {return}
 
@@ -8636,10 +8717,13 @@ class DsPlayStore {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Get product info from Google Play
 	 * @param {str} prodIDs 
-	 * @param {(items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} callback 
+	 * @param {(this: DsPlayStore, items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} callback 
 	 * @param {"IAP"|"SUBS"} [options] <br>
  	 * &emsp; `IAP` - In-App purchases\
  	 * &emsp; `SUBS` - subscriptions
@@ -8648,7 +8732,7 @@ class DsPlayStore {
 
 	/**
 	 * Get purchased items from Google Play
-	 * @param {(items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} callback 
+	 * @param {(this: DsPlayStore, items: { skuDetailsToken: str, productId: str, type: str, price: str, price_amount_micros: num_int, price_currency_code: str, title: str, description: str }[]) => void} callback 
 	 * @param {"SUBS"} [options] 
 	 */
 	GetPurchases(callback, options) {return}
@@ -8663,7 +8747,7 @@ class DsPlayStore {
 	 * Purchase an item on Google Play
 	 * @param {str} prodID 
 	 * @param {str} token 
-	 * @param {(prodId: str, orderId: str, purchToken: str, devToken: str, packageName: str) => void} [callback] 
+	 * @param {(this: DsPlayStore, prodId: str, orderId: str, purchToken: str, devToken: str, packageName: str) => void} [callback] 
 	 * @param {"SUBS"} [options] 
 	 */
 	Purchase(prodID, token, callback, options) {return}
@@ -8690,7 +8774,7 @@ class DsScroller {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsScroller, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -8700,6 +8784,9 @@ class DsScroller {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -8971,7 +9058,7 @@ class DsScroller {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsScroller) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -8991,7 +9078,7 @@ class DsSeekBar {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsSeekBar, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -9001,6 +9088,9 @@ class DsSeekBar {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -9198,13 +9288,13 @@ class DsSeekBar {
 
 	/**
 	 * Called when content was changed by the user
-	 * @param {(value: num) => void} callback 
+	 * @param {(this: DsSeekBar, value: num) => void} callback 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Called when content was changed by the user
-	 * @param {(value: num) => void} callback 
+	 * @param {(this: DsSeekBar, value: num) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -9271,7 +9361,7 @@ class DsSeekBar {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsSeekBar) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -9284,6 +9374,9 @@ class DsSensor {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Get first value of a sensor
@@ -9347,7 +9440,7 @@ class DsSensor {
 
 	/**
 	 * Called when a sensor value has changed
-	 * @param {(first: num, second: num, third: num, time: num_mls) => void} callback 
+	 * @param {(this: DsSensor, first: num, second: num, third: num, time: num_mls) => void} callback 
 	 */
 	SetOnChange(callback) {return}
 
@@ -9366,6 +9459,9 @@ class DsService {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Returns the control class name
@@ -9394,7 +9490,7 @@ class DsService {
 
 	/**
 	 * Called when service sent a message
-	 * @param {(message: str) => void} callback 
+	 * @param {(this: DsService, message: str) => void} callback 
 	 */
 	SetOnMessage(callback) {return}
 
@@ -9410,6 +9506,9 @@ class DsSMS {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Returns the control class name
@@ -9428,13 +9527,13 @@ class DsSMS {
 
 	/**
 	 * Called when user received a SMS
-	 * @param {(message: str) => void} callback 
+	 * @param {(this: DsSMS, message: str) => void} callback 
 	 */
 	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when a status has changed
-	 * @param {(status: str) => void} callback 
+	 * @param {(this: DsSMS, status: str) => void} callback 
 	 */
 	SetOnStatus(callback) {return}
 }
@@ -9447,6 +9546,9 @@ class DsSpeechRec {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Stop recognition */
 	Cancel() {return}
@@ -9486,19 +9588,19 @@ class DsSpeechRec {
 
 	/**
 	 * Called when an error occured
-	 * @param {(error: str) => void} callback 
+	 * @param {(this: DsSpeechRec, error: str) => void} callback 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Called when SpeechRec is ready for use
-	 * @param {() => void} callback 
+	 * @param {(this: DsSpeechRec) => void} callback 
 	 */
 	SetOnReady(callback) {return}
 
 	/**
 	 * Called when text was recognized
-	 * @param {(result: str) => void} callback 
+	 * @param {(this: DsSpeechRec, result: str) => void} callback 
 	 */
 	SetOnResult(callback) {return}
 
@@ -9521,7 +9623,7 @@ class DsSpinner {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsSpinner, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -9531,6 +9633,9 @@ class DsSpinner {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -9741,13 +9846,13 @@ class DsSpinner {
 
 	/**
 	 * Called when value changed by the user
-	 * @param {(item: str, index: num_int) => void} callback 
+	 * @param {(this: DsSpinner, item: str, index: num_int) => void} callback 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Define a callback function for touch events
-	 * @param {() => void} callback 
+	 * @param {(this: DsSpinner) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -9823,7 +9928,7 @@ class DsSpinner {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsSpinner) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -9843,7 +9948,7 @@ class DsSwitch {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsSwitch, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -9853,6 +9958,9 @@ class DsSwitch {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -10062,7 +10170,7 @@ class DsSwitch {
 
 	/**
 	 * Called when user touched the control
-	 * @param {(value: bin) => void} callback 
+	 * @param {(this: DsSwitch, value: bin) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -10149,7 +10257,7 @@ class DsSwitch {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsSwitch) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -10162,6 +10270,9 @@ class DsSynth {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Returns the control class name
@@ -10385,6 +10496,9 @@ class DsSysProc {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/**
 	 * Read from stderr
 	 * @param {num_int} maxLines 
@@ -10434,13 +10548,13 @@ class DsSysProc {
 
 	/**
 	 * Called when stderr changed
-	 * @param {(data: str) => void} callback 
+	 * @param {(this: DsSysProc, data: str) => void} callback 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Called when stdout changed
-	 * @param {(data: str) => void} callback 
+	 * @param {(this: DsSysProc, data: str) => void} callback 
 	 */
 	SetOnInput(callback) {return}
 
@@ -10467,7 +10581,7 @@ class DsTabs {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsTabs, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -10477,6 +10591,9 @@ class DsTabs {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -10680,25 +10797,25 @@ class DsTabs {
 
 	/**
 	 * Called when current tab changed
-	 * @param {(name: str) => void} callback 
+	 * @param {(this: DsTabs, name: str) => void} callback 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Called when the user changed a control content
-	 * @param {(src: dso) => void} callback 
+	 * @param {(this: DsTabs, src: dso) => void} callback 
 	 */
 	SetOnChildChange(callback) {return}
 
 	/**
 	 * Called when the control was pressed for eons
-	 * @param {(src: dso) => void} callback 
+	 * @param {(this: DsTabs, src: dso) => void} callback 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
-	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsTabs, event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -10778,7 +10895,7 @@ class DsTabs {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsTabs) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -10806,7 +10923,7 @@ class DsText {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsText, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -10816,6 +10933,9 @@ class DsText {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -11077,31 +11197,31 @@ class DsText {
 
 	/**
 	 * Called when the control was pressed for eons
-	 * @param {(src: dso) => void} callback 
+	 * @param {(this: DsText, src: dso) => void} callback 
 	 */
 	SetOnLongTouch(callback) {return}
 
 	/**
 	 * Called when user touched the control
-	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsText, event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when the user starts touching the control
-	 * @param {(event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsText, event: { source: dso, action: "Down", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchDown(callback) {return}
 
 	/**
 	 * Called when the user drags a finger over the screen
-	 * @param {(event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsText, event: { source: dso, action: "Move", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchMove(callback) {return}
 
 	/**
 	 * Called when the user finger leaves te screen
-	 * @param {(event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsText, event: { source: dso, action: "Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouchUp(callback) {return}
 
@@ -11192,7 +11312,7 @@ class DsText {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsText) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -11212,7 +11332,7 @@ class DsTextEdit {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsTextEdit, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -11222,6 +11342,9 @@ class DsTextEdit {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -11526,19 +11649,19 @@ class DsTextEdit {
 
 	/**
 	 * Called when content was changed by the user
-	 * @param {() => void} callback 
+	 * @param {(this: DsTextEdit) => void} callback 
 	 */
 	SetOnChange(callback) {return}
 
 	/**
 	 * Called when user pressed 'Done' or 'Enter'
-	 * @param {() => void} callback 
+	 * @param {(this: DsTextEdit) => void} callback 
 	 */
 	SetOnEnter(callback) {return}
 
 	/**
 	 * Called when the control gets focused
-	 * @param {() => void} callback 
+	 * @param {(this: DsTextEdit) => void} callback 
 	 */
 	SetOnFocus(callback) {return}
 
@@ -11600,7 +11723,7 @@ class DsTextEdit {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsTextEdit) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 
@@ -11625,6 +11748,9 @@ class DsTheme {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Returns the control class name
@@ -11824,7 +11950,7 @@ class DsToggle {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsToggle, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -11834,6 +11960,9 @@ class DsToggle {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -12043,7 +12172,7 @@ class DsToggle {
 
 	/**
 	 * Called when user touched the control
-	 * @param {(value: bin) => void} callback 
+	 * @param {(this: DsToggle, value: bin) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -12131,7 +12260,7 @@ class DsToggle {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsToggle) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -12144,6 +12273,9 @@ class DsUSBSerial {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Get the 'Data Terminal Ready' state
@@ -12217,7 +12349,7 @@ class DsUSBSerial {
 
 	/**
 	 * Called after received Data via USB
-	 * @param {(data: str) => void} callback 
+	 * @param {(this: DsUSBSerial, data: str) => void} callback 
 	 */
 	SetOnReceive(callback) {return}
 
@@ -12272,6 +12404,9 @@ class DsVideoView {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Removes the focus of the control */
 	ClearFocus() {return}
@@ -12492,25 +12627,25 @@ class DsVideoView {
 
 	/**
 	 * Called when playback finished
-	 * @param {() => void} callback 
+	 * @param {(this: DsVideoView) => void} callback 
 	 */
 	SetOnComplete(callback) {return}
 
 	/**
 	 * Called when an error occured
-	 * @param {() => void} callback 
+	 * @param {(this: DsVideoView) => void} callback 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Called when video is ready for playback
-	 * @param {() => void} callback 
+	 * @param {(this: DsVideoView) => void} callback 
 	 */
 	SetOnReady(callback) {return}
 
 	/**
 	 * Called when subtitle text changed
-	 * @param {() => void} callback 
+	 * @param {(this: DsVideoView) => void} callback 
 	 */
 	SetOnSubtitle(callback) {return}
 
@@ -12581,7 +12716,7 @@ class DsVideoView {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsVideoView) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -12599,7 +12734,7 @@ class DsWebServer {
 	/**
 	 * Called when servlet received a message
 	 * @param {str} path `/endpoint name`
-	 * @param {(args: {[parameter: str]: str}, info: { remoteAddress: str }) => void} callback 
+	 * @param {(this: DsWebServer, args: {[parameter: str]: str}, info: { remoteAddress: str }) => void} callback 
 	 */
 	AddServlet(path, callback) {return}
 
@@ -12608,6 +12743,9 @@ class DsWebServer {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Disconnect Client from WebServer
@@ -12656,13 +12794,13 @@ class DsWebServer {
 
 	/**
 	 * Called when received client message
-	 * @param {(msg: str, ip: str, id: num_int) => void} callback 
+	 * @param {(this: DsWebServer, msg: str, ip: str, id: num_int) => void} callback 
 	 */
 	SetOnReceive(callback) {return}
 
 	/**
 	 * Called when file uploaded to server
-	 * @param {(filename: str, ip: str) => void} callback 
+	 * @param {(this: DsWebServer, filename: str, ip: str) => void} callback 
 	 */
 	SetOnUpload(callback) {return}
 
@@ -12694,6 +12832,9 @@ class DsWebSocket {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/** Close web socket */
 	Close() {return}
 
@@ -12717,19 +12858,19 @@ class DsWebSocket {
 
 	/**
 	 * Called when WebSocket was closed
-	 * @param {() => void} callback 
+	 * @param {(this: DsWebSocket) => void} callback 
 	 */
 	SetOnClose(callback) {return}
 
 	/**
 	 * Called when received message from server
-	 * @param {(message: str) => void} callback 
+	 * @param {(this: DsWebSocket, message: str) => void} callback 
 	 */
 	SetOnMessage(callback) {return}
 
 	/**
 	 * Called when WebSocket is open
-	 * @param {() => void} callback 
+	 * @param {(this: DsWebSocket) => void} callback 
 	 */
 	SetOnOpen(callback) {return}
 }
@@ -12749,7 +12890,7 @@ class DsWebView {
 	/**
 	 * Animates a control
 	 * @param {str} type `NewsPaper`, `Jelly`, `Flash`, `RubberBand`, `Swing`, `TaDa`, `Bounce`, `Fall`, `FallRotate`, `<br><img width='300px' src='../animate.png'></img>`
-	 * @param {(type: str) => void} [callback] 
+	 * @param {(this: DsWebView, type: str) => void} [callback] 
 	 * @param {num_mls} [time] 
 	 */
 	Animate(type, callback, time) {return}
@@ -12762,6 +12903,9 @@ class DsWebView {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/**
 	 * Check if history contains a previous page
@@ -12793,7 +12937,7 @@ class DsWebView {
 	/**
 	 * Execute JS code inside the WebView
 	 * @param {str_jsc} code 
-	 * @param {(result: all) => void} [callback] 
+	 * @param {(this: DsWebView, result: all) => void} [callback] 
 	 */
 	Execute(code, callback) {return}
 
@@ -13081,43 +13225,43 @@ class DsWebView {
 
 	/**
 	 * Called when message logged to console
-	 * @param {(msg: str) => void} callback 
+	 * @param {(this: DsWebView, msg: str) => void} callback 
 	 */
 	SetOnConsole(callback) {return}
 
 	/**
 	 * Called when a context menu was used
-	 * @param {(item: str, url: str, img: str, type: str) => void} callback 
+	 * @param {(this: DsWebView, item: str, url: str, img: str, type: str) => void} callback 
 	 */
 	SetOnContextMenu(callback) {return}
 
 	/**
 	 * Called when an error occured
-	 * @param {(error: str) => void} callback 
+	 * @param {(this: DsWebView, error: str) => void} callback 
 	 */
 	SetOnError(callback) {return}
 
 	/**
 	 * Called when loading progress changed
-	 * @param {(progress: num_prc) => void} callback 
+	 * @param {(this: DsWebView, progress: num_prc) => void} callback 
 	 */
 	SetOnProgress(callback) {return}
 
 	/**
 	 * Traps HTTP Requests
-	 * @param {(url: str, method: str, isMain: bin, isRedirect: bin) => void} callback 
+	 * @param {(this: DsWebView, url: str, method: str, isMain: bin, isRedirect: bin) => void} callback 
 	 */
 	SetOnRequest(callback) {return}
 
 	/**
 	 * Called when user touched the control
-	 * @param {(event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
+	 * @param {(this: DsWebView, event: { source: dso, action: "Down"|"Move"|"Up", count: num_int, x: [ x1: num_frc, x2: num_frc, x3: num_frc ], y: [ y1: num_frc, y2: num_frc, y3: num_frc ] }) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
 	/**
 	 * Called when link klicked
-	 * @param {(url: str_url) => void} callback 
+	 * @param {(this: DsWebView, url: str_url) => void} callback 
 	 */
 	SetOnUrl(callback) {return}
 
@@ -13216,7 +13360,7 @@ class DsWebView {
 	 * @param {str} [type] `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 * @param {num_int} [repeat] 
 	 * @param {bin} [yoyo] 
-	 * @param {() => void} [callback] 
+	 * @param {(this: DsWebView) => void} [callback] 
 	 */
 	Tween(target, duration, type, repeat, yoyo, callback) {return}
 }
@@ -13229,6 +13373,9 @@ class DsWizard {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Hides the control and removes it from the screen */
 	Dismiss() {return}
@@ -13291,6 +13438,9 @@ class DsYesNoDialog {
 	 */
 	Batch(properties) {return}
 
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
+
 	/** Hides the control and removes it from the screen */
 	Dismiss() {return}
 
@@ -13338,7 +13488,7 @@ class DsYesNoDialog {
 
 	/**
 	 * Called when user selects Yes or No
-	 * @param {(result: "Yes"|"No") => void} callback 
+	 * @param {(this: DsYesNoDialog, result: "Yes"|"No") => void} callback 
 	 */
 	SetOnTouch(callback) {return}
 
@@ -13376,6 +13526,9 @@ class DsZipUtil {
 	 * @param {{[command: str]: lst}} properties { command: args }
 	 */
 	Batch(properties) {return}
+
+	/** @type {{ key: str, value: all }} Extra properties */
+	data;
 
 	/** Close ZipUtil */
 	Close() {return}
@@ -13464,8 +13617,8 @@ class DsDatabase {
 
 	/**
 	 * Close the database
-	 * @param {(msg: str) => void} [success] 
-	 * @param {(msg: str) => void} [error] 
+	 * @param {(this: DsDatabase, msg: str) => void} [success] 
+	 * @param {(this: DsDatabase, msg: str) => void} [error] 
 	 */
 	close(success, error) {return}
 
@@ -13479,8 +13632,8 @@ class DsDatabase {
 	 * Execute SQL query
 	 * @param {str_sql} statement 
 	 * @param {lst} [params] 
-	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
-	 * @param {(t: all, err: { message: str }) => void} [error] 
+	 * @param {(this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
+	 * @param {(this: DsDatabase, t: all, err: { message: str }) => void} [error] 
 	 */
 	executeSql(statement, params, success, error) {return}
 
@@ -13488,8 +13641,8 @@ class DsDatabase {
 	 * Execute SQL query
 	 * @param {str_sql} sql 
 	 * @param {lst} [params] 
-	 * @param {(res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
-	 * @param {(err: str) => void} [error] 
+	 * @param {(this: DsDatabase, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
+	 * @param {(this: DsDatabase, err: str) => void} [error] 
 	 */
 	ExecuteSql(sql, params, success, error) {return}
 
@@ -13510,17 +13663,17 @@ class DsDatabase {
 
 	/**
 	 * Open database
-	 * @param {() => void} [success] 
-	 * @param {(msg: str) => void} [error] 
+	 * @param {(this: DsDatabase) => void} [success] 
+	 * @param {(this: DsDatabase, msg: str) => void} [error] 
 	 */
 	open(success, error) {return}
 
 	/**
 	 * ReadTransaction
 	 * 	 * deprecated  Use ExecuteSql instead
-	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void} fn 
-	 * @param {(err: str) => void} [error] 
-	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
+	 * @param {(this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void} fn 
+	 * @param {(this: DsDatabase, err: str) => void} [error] 
+	 * @param {(this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
 	 */
 	readTransaction(fn, error, success) {return}
 
@@ -13531,9 +13684,9 @@ class DsDatabase {
 	/**
 	 * Transaction
 	 * 	 * deprecated  Use ExecuteSql instead
-	 * @param {(tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void} fn 
-	 * @param {(err: str) => void} [error] 
-	 * @param {(fnc: (tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
+	 * @param {(this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void} fn 
+	 * @param {(this: DsDatabase, err: str) => void} [error] 
+	 * @param {(this: DsDatabase, fnc: (this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
 	 */
 	transaction(fn, error, success) {return}
 }

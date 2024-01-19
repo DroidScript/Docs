@@ -19,6 +19,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Close ###
  * Close File
  * $$ fil.Close() $$
@@ -139,24 +141,24 @@
 @sample Example
 function btn_OnTouch()
 {
-	var file = app.CreateFile( "/sdcard/test.txt", "rw" );
+    var file = app.CreateFile( "/sdcard/test.txt", "rw" );
 
-	file.WriteText( "Hello", "Char" );
-	var len = file.GetLength();
-	console.log( "file len: " + len );
+    file.WriteText( "Hello", "Char" );
+    var len = file.GetLength();
+    console.log( "file len: " + len );
 
-	file.Seek( len );
-	file.WriteNumber( 77, "Byte" );
-	file.WriteData( "66,121,101", "Int" );
+    file.Seek( len );
+    file.WriteNumber( 77, "Byte" );
+    file.WriteData( "66,121,101", "Int" );
 
-	file.Seek( 0 );
-	var data = file.ReadData( 2 );
-	console.log( "first two bytes:" + data[0] + "," + data[1] );
+    file.Seek( 0 );
+    var data = file.ReadData( 2 );
+    console.log( "first two bytes:" + data[0] + "," + data[1] );
 
-	file.Seek( 0 );
-	alert( file.ReadText( "Line" ) );
+    file.Seek( 0 );
+    alert( file.ReadText( "Line" ) );
 
-	file.Close();
+    file.Close();
 }
  */
 

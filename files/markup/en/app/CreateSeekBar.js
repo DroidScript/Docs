@@ -32,6 +32,8 @@ Use the SetOnChange method to define a function you want to be called when the S
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern ClearFocus */
 
 /** @extern Focus */
@@ -173,20 +175,20 @@ Use the SetOnChange method to define a function you want to be called when the S
 @sample Example
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>skb = app.CreateSeekBar( 0.8 );
-	skb.SetRange( 1.0 );
-	skb.SetValue( 0.5 );
-	skb.SetOnTouch( skb_OnTouch );
-	lay.AddChild( skb );</b>
+    <b>skb = app.CreateSeekBar( 0.8 );
+    skb.SetRange( 1.0 );
+    skb.SetValue( 0.5 );
+    skb.SetOnTouch( skb_OnTouch );
+    lay.AddChild( skb );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function skb_OnTouch( value )
 {
-	app.ShowPopup( "Value = " + value );
+    app.ShowPopup( "Value = " + value );
 }
  */
 

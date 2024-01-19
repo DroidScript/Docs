@@ -76,6 +76,8 @@ The following example demonstrates web sockets being used to receive messages fr
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Disconnect ###
  * @brief Disconnect Client from WebServer
  * Disconnects a client from the WebServer.
@@ -194,16 +196,16 @@ function OnStart()
     var ip = app.GetIPAddress();
     app.Alert( ip +":8080", "Type the following address into your browser" );
 
-	<b>serv = app.CreateWebServer( 8080, "Upload,ListDir" );
-	serv.SetFolder( "/sdcard/DroidScript" );
-	serv.AddServlet( "/message", OnServlet );
-	serv.Start();</b>
+    <b>serv = app.CreateWebServer( 8080, "Upload,ListDir" );
+    serv.SetFolder( "/sdcard/DroidScript" );
+    serv.AddServlet( "/message", OnServlet );
+    serv.Start();</b>
 }
 
 function OnServlet( request, info )
 {
-	serv.SetResponse( "Got it!" );
-	app.ShowPopup(  info.remoteAddress + " says: " + request.msg );
+    serv.SetResponse( "Got it!" );
+    app.ShowPopup(  info.remoteAddress + " says: " + request.msg );
 }
  */
 
@@ -214,48 +216,48 @@ function OnServlet( request, info )
 var indexhtml = `
 <html>
 <head>
-	<title>WebSockets Demo</title>
+    <title>WebSockets Demo</title>
 
-	<script>
-		var count = 0;
+    <script>
+        var count = 0;
 
-		function Connect()
-		{
-			// Open web socket to phone.
-			ws = new WebSocket( "ws://" + window.location.host );
-			ws.onopen = ws_onopen;
-			ws.onmessage = ws_onmessage;
-			ws.onclose = ws_onclose;
-			ws.onerror = ws_onerror;
-		}
+        function Connect()
+        {
+            // Open web socket to phone.
+            ws = new WebSocket( "ws://" + window.location.host );
+            ws.onopen = ws_onopen;
+            ws.onmessage = ws_onmessage;
+            ws.onclose = ws_onclose;
+            ws.onerror = ws_onerror;
+        }
 
-		function Send() {
-			ws.send( "Hello " + count++ );
-		}
+        function Send() {
+            ws.send( "Hello " + count++ );
+        }
 
-		function ws_onopen() {
-			id_info.innerHTML = "Socket Open";
-		}
+        function ws_onopen() {
+            id_info.innerHTML = "Socket Open";
+        }
 
-		function ws_onmessage( msg ) {
-			id_info.innerHTML = msg.data;
-		}
+        function ws_onmessage( msg ) {
+            id_info.innerHTML = msg.data;
+        }
 
-		function ws_onclose() {
-			id_info.innerHTML = "Socket Closed";
-		}
+        function ws_onclose() {
+            id_info.innerHTML = "Socket Closed";
+        }
 
-		function ws_onerror(e) {
-			id_info.innerHTML = "Socket Error: " + e.data;
-		}
-	</script>
+        function ws_onerror(e) {
+            id_info.innerHTML = "Socket Error: " + e.data;
+        }
+    </script>
 </head>
 
 <body>
-	<h2>DroidScript WebSockets Demo</h2>
-	<div id="id_info">Ready</div>
-	<button onclick="Connect()">Connect</button>
-	<button onclick="Send()">Send Message</button>
+    <h2>DroidScript WebSockets Demo</h2>
+    <div id="id_info">Ready</div>
+    <button onclick="Connect()">Connect</button>
+    <button onclick="Send()">Send Message</button>
 </body>
 </html>`;
 
@@ -270,49 +272,49 @@ function OnStart()
     ip = app.GetIPAddress();
     app.Alert( ip +":8080", "Type the following address into your browser" );
 
-	app.PreventWifiSleep();
+    app.PreventWifiSleep();
 
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "No connected clients.", 0.8, 0.3, "AutoScale,MultiLine" );
-	txt.SetTextSize( 22 );
-	lay.AddChild( txt );
+    txt = app.CreateText( "No connected clients.", 0.8, 0.3, "AutoScale,MultiLine" );
+    txt.SetTextSize( 22 );
+    lay.AddChild( txt );
 
-	txtMsg = app.CreateText( "", 0.8, 0.3, "AutoScale,MultiLine" );
-	txtMsg.SetTextSize( 22 );
-	lay.AddChild( txtMsg );
+    txtMsg = app.CreateText( "", 0.8, 0.3, "AutoScale,MultiLine" );
+    txtMsg.SetTextSize( 22 );
+    lay.AddChild( txtMsg );
 
-	btn = app.CreateButton( "Send Message", 0.4, 0.1);
-	btn.SetMargins( 0, 0.05, 0, 0 );
-	btn.SetOnTouch( SendMessage );
-	lay.AddChild( btn );
+    btn = app.CreateButton( "Send Message", 0.4, 0.1);
+    btn.SetMargins( 0, 0.05, 0, 0 );
+    btn.SetOnTouch( SendMessage );
+    lay.AddChild( btn );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
-	serv = app.CreateWebServer( 8080 );
-	serv.SetFolder( app.GetAppPath() );
-	serv.SetOnReceive( serv_OnReceive );
-	serv.Start();
+    serv = app.CreateWebServer( 8080 );
+    serv.SetFolder( app.GetAppPath() );
+    serv.SetOnReceive( serv_OnReceive );
+    serv.Start();
 
-	setInterval( ShowConnections, 3000 );
+    setInterval( ShowConnections, 3000 );
 }
 
 function ShowConnections()
 {
-	var clients = serv.GetWebSockClients();
-	var list = [];
-	for( var i = 0; i < clients.length; i++ )
-		list.push(clients[i].remoteAddress);
+    var clients = serv.GetWebSockClients();
+    var list = [];
+    for( var i = 0; i < clients.length; i++ )
+        list.push(clients[i].remoteAddress);
 
-	if(list.length) txt.SetText( list.join("\n") );
+    if(list.length) txt.SetText( list.join("\n") );
 }
 
 function SendMessage() {
-	serv.SendText( "Hello " + count++ )
+    serv.SendText( "Hello " + count++ )
 }
 
 function serv_OnReceive( msg, ip ) {
-	txtMsg.SetText( ip + ": " + msg );
+    txtMsg.SetText( ip + ": " + msg );
 }
  */
 

@@ -47,19 +47,22 @@ declare class DsGfx {
 	CreateSound(file: str_ptf): GfxSound;
 
 	/** Returns a new sprite object */
-	CreateSprite(file: str_ptf, group?: str, callback?: () => void): GfxSprite;
+	CreateSprite(file: str_ptf, group?: str, callback?: (this: GfxSprite) => void): GfxSprite;
 
 	/** Returns a new SpriteSheet object */
-	CreateSpriteSheet(file: str_ptf, callback: () => void): GfxSpriteSheet;
+	CreateSpriteSheet(file: str_ptf, callback: (this: GfxSpriteSheet) => void): GfxSpriteSheet;
 
 	/** Returns a new text object */
-	CreateText(text: str, fontSize: num, fontFile: str_ptf, align: "left"|"center"|"right", callback: () => void): GfxText;
+	CreateText(text: str, fontSize: num, fontFile: str_ptf, align: "left"|"center"|"right", callback: (this: GfxText) => void): GfxText;
 
 	/** Returns a new texture object */
 	CreateTexture(file: str_pth): GfxTexture;
 
-	/** GameView custom data */
-	data: obj;
+	/**
+	 * GameView custom data
+	 * @return \{ key, value }
+	 */
+	data: { key: str, value: all };
 
 	/** En/Disables the physics engine */
 	EnablePhysics(enabled: bin): void;
@@ -236,8 +239,11 @@ declare class GfxCircle {
 	/** Check if the sprite contains a point */
 	Contains(x: num_frc, y: num_frc): bin;
 
-	/** Extra properties */
-	data: obj;
+	/**
+	 * Extra properties
+	 * @return \{ key, value }
+	 */
+	data: { key: str, value: all };
 
 	/** PIXI graphic */
 	graphic: obj;
@@ -288,8 +294,11 @@ declare class GfxEllipse {
 	/** Check if the sprite contains a point */
 	Contains(x: num_frc, y: num_frc): bin;
 
-	/** Extra properties */
-	data: obj;
+	/**
+	 * Extra properties
+	 * @return \{ key, value }
+	 */
+	data: { key: str, value: all };
 
 	/** PIXI graphic */
 	graphic: obj;
@@ -340,8 +349,11 @@ declare class GfxPolygon {
 	/** Check if the sprite contains a point */
 	Contains(x: num_frc, y: num_frc): bin;
 
-	/** Extra properties */
-	data: obj;
+	/**
+	 * Extra properties
+	 * @return \{ key, value }
+	 */
+	data: { key: str, value: all };
 
 	/** PIXI graphic */
 	graphic: obj;
@@ -392,8 +404,11 @@ declare class GfxRectangle {
 	/** Check if the sprite contains a point */
 	Contains(x: num_frc, y: num_frc): bin;
 
-	/** Extra properties */
-	data: obj;
+	/**
+	 * Extra properties
+	 * @return \{ key, value }
+	 */
+	data: { key: str, value: all };
 
 	/** PIXI graphic */
 	graphic: obj;
@@ -467,8 +482,11 @@ declare class GfxSprite {
 	/** Check if the sprite contains a point */
 	Contains(x: num_frc, y: num_frc): bin;
 
-	/** Extra properties */
-	data: obj;
+	/**
+	 * Extra properties
+	 * @return \{ key, value }
+	 */
+	data: { key: str, value: all };
 
 	/** Flip sprite */
 	Flip(horiz: bin, vert: bin): void;
@@ -541,7 +559,7 @@ declare class GfxSprite {
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 * @param type `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 */
-	SetTween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: str, repeat: num_int, yoyo: bin, callback: () => void): void;
+	SetTween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: str, repeat: num_int, yoyo: bin, callback: (this: GfxSprite) => void): void;
 
 	/** Start tween */
 	StartTween(): void;
@@ -560,7 +578,7 @@ declare class GfxSprite {
 	 * @param target \{ x, y, w, h, sw, sh, rot }
 	 * @param type `Linear.None`, `Quadratic.In/Out`, `Cubic.In/Out`, `Quartic.In/Out`, `Quintic.In/Out`, `Sinusoidal.In/Out`, `Exponential.In/Out`, `Circular.In/Out`, `Elastic.In/Out`, `Back.In/Out`, `Bounce.In/Out`
 	 */
-	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: str, repeat: num_int, yoyo: bin, callback: () => void): void;
+	Tween(target: { x: num_frc, y: num_frc, w: num_frc, h: num_frc, sw: num_frc, sh: num_frc, rot: num_deg }, duration: num_mls, type: str, repeat: num_int, yoyo: bin, callback: (this: GfxSprite) => void): void;
 
 	/** Updates internal properties */
 	Update(): void;
@@ -581,8 +599,11 @@ declare class GfxSprite {
 
 declare class GfxSpriteSheet {
 
-	/** Extra properties */
-	data: obj;
+	/**
+	 * Extra properties
+	 * @return \{ key, value }
+	 */
+	data: { key: str, value: all };
 
 	/** Loaded indicator */
 	loaded: bin;

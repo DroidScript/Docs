@@ -32,6 +32,8 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Cancel ###
  * @brief Stop recognition
  * Stop recognizing speech and break other processes.
@@ -110,38 +112,38 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 @sample Example
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	btn = app.CreateButton( "Talk To Me", 0.3, 0.1 );
-	btn.SetOnTouch( btn_OnTouch );
-	lay.AddChild( btn );
+    btn = app.CreateButton( "Talk To Me", 0.3, 0.1 );
+    btn.SetOnTouch( btn_OnTouch );
+    lay.AddChild( btn );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
 <b>	speech = app.CreateSpeechRec();
-	speech.SetOnReady( speech_OnReady );
-	speech.SetOnResult( speech_OnResult );
-	speech.SetOnError( speech_OnError );
+    speech.SetOnReady( speech_OnReady );
+    speech.SetOnResult( speech_OnResult );
+    speech.SetOnError( speech_OnError );
 </b>}
 
 function btn_OnTouch()
 {
-	speech.Recognize();
+    speech.Recognize();
 }
 
 function speech_OnReady()
 {
-	app.ShowPopup( "Listening...", "Short" );
+    app.ShowPopup( "Listening...", "Short" );
 }
 
 function speech_OnResult( results )
 {
-	app.ShowPopup( results[0] );
+    app.ShowPopup( results[0] );
 }
 
 function speech_OnError()
 {
-	app.ShowPopup( "Please speak more clearly!" );
+    app.ShowPopup( "Please speak more clearly!" );
 }
  */
 

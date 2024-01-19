@@ -38,6 +38,8 @@ In case the user cancels the wizard the index is **-1**.
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** @extern Dismiss */
 
 /** ### Finish ###

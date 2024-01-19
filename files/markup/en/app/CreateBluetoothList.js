@@ -18,6 +18,8 @@
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ btl.GetType() $$
