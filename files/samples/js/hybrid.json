@@ -1,0 +1,8 @@
+[
+  { "title": "Hello", "desc": "Classic Hello World sample", "isPremium": true, "type": "js" },
+  { "title": "Drawer", "desc": "Show a slide out menu drawer", "isPremium": true, "type": "js" },
+  { "title": "Images", "desc": "Display local or remote images", "isPremium": true, "type": "js" },
+  { "title": "Tabs", "desc": "Use tabs to group controls", "isPremium": true, "type": "js" },
+  { "title": "Theme", "desc": "Set light or dark themes", "isPremium": true, "type": "js" },
+  { "title": "WebViews", "desc": "Display external web content", "isPremium": true, "type": "js" }
+]

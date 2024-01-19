@@ -1,0 +1,13 @@
+[
+  { "title": "Audio Output", "desc": "Play a sound file", "type": "js" },
+  { "title": "Audio Player", "desc": "Simple audio player", "type": "js" },
+  { "title": "Audio Record", "desc": "Audio recording demo", "type": "js" },
+  { "title": "Audio Sample", "desc": "Extract audio samples and display a waveform", "type": "js" },
+  { "title": "Audio Signal", "desc": "Signal generator", "type": "js" },
+  { "title": "Audio Synth", "desc": "Software synthesizer", "exclude": "iot,tv", "type": "js" },
+  { "title": "Audio MIDI-Tune", "desc": "Play a simple MIDI tune", "exclude": "iot", "type": "js" },
+  { "title": "Sound Board", "desc": "Simple sound board demo", "exclude": "iot", "type": "js" },
+  { "title": "Music Sequencer", "desc": "Interactive music sequencer", "exclude": "iot", "type": "js" },
+  { "title": "Synth Song Player", "desc": "Plays a synthesized tune", "exclude": "iot", "type": "js" },
+  { "title": "MediaStore", "desc": "Query the media store for music", "type": "js" }
+]
