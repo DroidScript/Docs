@@ -45,8 +45,11 @@ ${info} * ${_desc}
 
         baseStr += extractParams(methodData, usedIDs);
 
-        if (methodData.retval)
-            baseStr += ` * @returns ${methodData.retval}\n`;
+        if (methodData.retval) {
+            const retData = parseParamType("", methodData.retval);
+            if (retData.desc) retData.type += '-' + retData.desc;
+            baseStr += ` * @returns ${retData.type}\n`;
+        }
 
         baseStr += ` */\n\n`;
     }
@@ -69,8 +72,11 @@ ${info} * ${_desc}
 
         str += extractParams(data, usedIDs);
 
-        if (data.retval)
-            str += ` * @returns ${data.retval}\n`;
+        if (data.retval) {
+            const retData = parseParamType("", data.retval);
+            if (retData.desc) retData.type += '-' + retData.desc;
+            str += ` * @returns ${retData.type}\n`;
+        }
 
 
         str += '*/\n\n\n';
@@ -165,8 +171,11 @@ function renderSubf(data, usedIDs) {
 
             str += extractParams(methodData, usedIDs);
 
-            if (methodData.retval)
-                str += ` * @returns ${methodData.retval}\n`;
+            if (methodData.retval) {
+                const retData = parseParamType("", methodData.retval);
+                retData.type += retData.desc ? '-' + retData.desc : '';
+                str += ` * @returns ${retData.type}\n`;
+            }
 
             str += ` */\n\n`;
         }
@@ -177,6 +186,22 @@ function renderSubf(data, usedIDs) {
 const split0 = (s = '', t = '') => s.substring(0, s.indexOf(t)) || s;
 const split1 = (s = '', t = '') => s.slice(s.indexOf(t)).substring(1);
 
+/** @type {(pName:string, pDef:string|UndefinedPartial<DSMethod>) => {name:string, type:string, desc:string}} */
+function parseParamType(pName, pDef) {
+    let pDesc = "", pType = "";
+    if (typeof pDef === "object" || pName === "callback" && !pDef) {
+        pType = "fnc_json";
+        pDesc = pDef && JSON.stringify(pDef);
+    } else if (typeof pDef === "string") {
+        pType = split0(pDef, "-");
+        pDesc = split1(pDef, "-");
+    }
+    const name = pName
+        .replace(/^(.*)=(.*)$/, "[$1=$2]")
+        .replace(/^(.*)\?$/, "[$1]");
+    return { name, type: pType, desc: pDesc.replace(/\n/g, "\\n") };
+}
+
 /** @type {(methodData:DSFunction, usedIDs:Obj<string>) => string} */
 function extractParams(methodData, usedIDs) {
     if (methodData.params) return ` * @param ${usedIDs[methodData.params] || methodData.params}\n`;
@@ -184,19 +209,8 @@ function extractParams(methodData, usedIDs) {
     let str = "";
     if (methodData.pNames && methodData.pTypes) {
         for (let i = 0; i < methodData.pNames.length; i++) {
-            let pDesc = "", pType = "";
-            const pName = methodData.pNames[i], pDef = methodData.pTypes[i];
-            if (typeof pDef === "object" || pName === "callback" && !pDef) {
-                pType = "fnc_json";
-                pDesc = pDef && JSON.stringify(pDef);
-            } else if (typeof pDef === "string") {
-                pType = split0(pDef, "-");
-                pDesc = split1(pDef, "-");
-            }
-            const name = methodData.pNames[i]
-                .replace(/^(.*)=(.*)$/, "[$1=$2]")
-                .replace(/^(.*)\?$/, "[$1]");
-            str += ` * @param {${pType}} ${name} ${pDesc.replace(/\n/g, "\\n")}\n`;
+            const pData = parseParamType(methodData.pNames[i], methodData.pTypes[i]);
+            str += ` * @param {${pData.type}} ${pData.name} ${pData.desc}\n`;
         }
     }
     return str;

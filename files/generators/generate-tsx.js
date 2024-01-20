@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 const conf = require("../conf.json");
 const { app } = require("./app");
 const { keys, regConPrefix, split1, special, replW, Throw, unwrapDesc, fillMissingFuncProps, unwrapBaseFunc, getDstDir, D_LANG } = require("./util");
@@ -10,28 +12,27 @@ module.exports = { generateTsx };
 /** @type {Obj<string>} */
 const tsxTypes = {
     str: "string",
-    // eslint-disable-next-line camelcase
     str_com: "string|string[]",
     num: "number",
     obj: "object",
     bin: "boolean",
     fnc: "Function",
     lst: "any[]",
-    // eslint-disable-next-line camelcase
     lst_num: "number[]",
+    lst_bin: "boolean[]",
+    lst_str: "string[]",
     all: "any",
     nil: "void",
     dso: "AppObject",
     gvo: "GameObject",
     glo: "GLViewObject",
-    // eslint-disable-next-line camelcase
     glo_img: "{ width:num_int, height:num_int }",
     uio: "UIObject",
     muo: "MuiObject"
 };
 
 /** @type {Obj<string>} */
-const objPfx = { app: "Ds", dso: "Ds", ui: "UI", uio: "UI", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx" };
+const objPfx = { app: "Ds", global: "Ds", dso: "Ds", ui: "UI", uio: "UI", MUI: "Mui", muo: "Mui", gfx: "Gfx", gvo: "Gfx" };
 
 /** @type {{tname: Obj<string>, tdesc: Obj<string>}} */
 const { tname: tName, tdesc: tDesc } = conf;
@@ -59,27 +60,21 @@ function generateTsx(inpt, state, mode) {
 
 /** @type {(scopeName: string, inpt: DSInput, state: GenState) => string} */
 function generateDefinitionFile(scopeName, inpt, state) {
-    if (scopeName === "global") {
-        const typeDecls = Object.entries({ ...conf.tname, ...conf.tdesc })
-            .filter(([name, _]) => !name.endsWith('o') && name.match(/^[a-z]/i))
-            .map(([name, desc]) => declareType(name, makeType(inpt, state, name, true).sub, desc));
-        return typeDecls.join("\n");
-    }
-
     /** @type {Obj<string[]>} */
     const objs = {};
+    const isGlobal = scopeName === "global";
 
     let definition = "";
     let classDefinition = "";
     for (const funcName in inpt.scope) {
         const func = inpt.scope[funcName];
         if (typeof func !== 'object' || funcName === "_tsxdefs") continue;
-        const isGlob = func.subf && state.curScope !== "MUI" && func.retval?.startsWith("obj");
+        const isGlob = func.subf && state.curScope !== "MUI" && typeof func.retval === "string" && func.retval?.startsWith("obj");
 
         state.curFunc = funcName;
-        const defs = processFunction(inpt, state, funcName, scopeName, func, "\t");
+        const defs = processFunction(inpt, state, funcName, scopeName, func, isGlobal ? '' : '\t', isGlobal);
 
-        if (defs.className && func.retval && !isGlob) {
+        if (defs.className && typeof func.retval === "string" && !isGlob) {
             const typeKey = func.retval.split('-', 1)[0];
             if (!objs[typeKey]) objs[typeKey] = [];
             objs[typeKey].push(defs.className);
@@ -98,13 +93,20 @@ function generateDefinitionFile(scopeName, inpt, state) {
 
     /** @type {string[]} */
     const typeDecls = [];
-    for (const o in objs) {
-        typeDecls.unshift(declareType(o, makeType(inpt, state, o, true).sub, tName[o]));
-        typeDecls.unshift(declareType(tsxTypes[o], objs[o].join(' | ')));
+    let scopeClass = `Ds${scopeName[0].toUpperCase() + scopeName.slice(1)}`;
+    if (scopeClass === "DsUi") scopeClass = "UI";
+
+    if (isGlobal) {
+        for (const [name, desc] of Object.entries({ ...conf.tname, ...conf.tdesc })) {
+            if (!name.endsWith('o') && name.match(/^[a-z]/i))
+                typeDecls.push(declareType(name, makeType(inpt, state, name, true).sub, desc));
+        }
     }
+    else if (JSDOC) { typeDecls.push(`/** @type {${scopeClass}} */\nvar ${state.curScope};`); }
+    else { typeDecls.push(`declare var ${state.curScope}: ${scopeClass};`); }
 
     // eslint-disable-next-line prefer-const
-    for (let [name, type] of Object.entries(inpt.scope._tsxdefs?.subf || {})) {
+    for (let [name, type] of Object.entries(inpt.scope._tsxdefs?.subf || {}).reverse()) {
         if (typeof type !== "string") continue;
         if (type.startsWith("r/")) {
             name = objPfx[scopeName] + name;
@@ -119,15 +121,16 @@ function generateDefinitionFile(scopeName, inpt, state) {
         else {
             throw Error("Unknown _tsxdefs type " + type);
         }
-        typeDecls.unshift(declareType(name, type));
+        typeDecls.push(declareType(name, type));
     }
 
-    scopeName = `Ds${scopeName[0].toUpperCase() + scopeName.slice(1)}`;
-    if (scopeName === "DsUi") scopeName = "UI";
+    for (const o of Object.keys(objs)) {
+        typeDecls.push(declareType(tsxTypes[o], objs[o].join(' | ')));
+        typeDecls.push(declareType(o, makeType(inpt, state, o, true).sub, tName[o]));
+    }
 
-    if (JSDOC) typeDecls.unshift(`/** @type {${scopeName}} */\nvar ${state.curScope};`);
-    else typeDecls.unshift(`declare var ${state.curScope}: ${scopeName};`);
-    return `${typeDecls.join("\n")}\n\n${JSDOC ? '' : 'declare '}class ${scopeName} {\n${definition}\n}\n${classDefinition}\n`;
+    if (!isGlobal) definition = `${JSDOC ? '' : 'declare '}class ${scopeClass} {\n${definition}\n}`;
+    return `${typeDecls.join("\n")}\n\n${definition}\n${classDefinition}\n`;
 }
 
 /** @type {(name:string, type:string, desc?:string) => string} */
@@ -153,8 +156,9 @@ function declareCallback(params, retval) {
  * @param {TypeDef} retval
  * @param {boolean|undefined} isval
  * @param {string} indent
+ * @param {boolean} isGlobal
  */
-function declareFunction(state, name, desc, params, retval, isval, indent) {
+function declareFunction(state, name, desc, params, retval, isval, indent, isGlobal) {
     let docStr = "";
     if (JSDOC) {
         const args = params.map(p => p.name.replace('?', ''));
@@ -180,6 +184,7 @@ function declareFunction(state, name, desc, params, retval, isval, indent) {
         else if (isval) docStr += `\n${indent}/** @type {${retval.sub}} ${desc} */\n`;
         else docStr += `\n${indent}/** ${desc} */\n`;
 
+        if (isGlobal) name = isval ? `const ${name} = null` : `function ${name}`;
         if (isval) docStr += `${indent}${name};\n`;
         else docStr += `${indent}${name}(${args.join(", ")}) {return}\n`;
     }
@@ -199,6 +204,7 @@ function declareFunction(state, name, desc, params, retval, isval, indent) {
         else docStr += `\n${indent}/** ${desc} */\n`;
 
         const argStr = isval ? args.join(', ') : `(${args.join(", ")})`;
+        if (isGlobal) indent += isval ? 'declare const ' : 'declare function ';
         docStr += `${indent}${name}${argStr}: ${retval.sub || 'void'};\n`;
     }
     return docStr;
@@ -210,8 +216,9 @@ function declareFunction(state, name, desc, params, retval, isval, indent) {
  * @param {string} name
  * @param {string} pAbbrev
  * @param {DSFunction} dfunc
+ * @param {string} indent
  */
-function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = false) {
+function processFunction(inpt, state, name, pAbbrev, dfunc, indent, isGlobalScope = false, isCb = false) {
     const defs = {
         func: "", class: "",
         /** @type {Obj<string>} */
@@ -251,6 +258,8 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
 
     // eslint-disable-next-line prefer-const
     let retval = makeType(inpt, state, func.retval || "");
+    if (isGlobalScope && retval.main === "obj")
+        retval.sub = objPfx[state.curScope] + func.name?.replace(regConPrefix, '');
 
     // callbacks
     if (isCb) {
@@ -269,18 +278,18 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
         const [fname, fobj, fcon] = name.split(".").reverse();
         const key = fcon ? `${pAbbrev.toUpperCase()}_${fobj}` : fobj;
         const s = defs.extra[key] || "";
-        defs.extra[key] = s + declareFunction(state, fname, func.shortDesc, params, retval, func.isval, indent);
+        defs.extra[key] = s + declareFunction(state, fname, func.shortDesc, params, retval, func.isval, indent, isGlobalScope);
     }
     else {
-        defs.func += declareFunction(state, name, func.shortDesc, params, retval, func.isval, indent);
+        defs.func += declareFunction(state, name, func.shortDesc, params, retval, func.isval, indent, isGlobalScope);
     }
 
     if (!func.subf) return defs;
     if (!func.retval) throw Error(`Missing ret type for ${state.curScope}.${name}`);
 
-    const isGlobal = func.subf && state.curScope !== "MUI" && func.retval.startsWith("obj");
-    if (isGlobal) defs.func = "";
-    const className = (isGlobal ? '' : objPfx[state.curScope]) + name.replace(regConPrefix, '');
+    const isGlobalObj = func.subf && !isGlobalScope && typeof func.retval === "string" && func.retval.startsWith("obj");
+    if (isGlobalObj) defs.func = "";
+    const className = (isGlobalObj ? '' : objPfx[state.curScope]) + name.replace(regConPrefix, '');
     defs.className = className;
 
     // subfunctions for classes
@@ -290,7 +299,7 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
         let met = func.subf[subFuncName];
         if (typeof met === "string") met = unwrapBaseFunc(met, inpt.base);
 
-        const sdefs = processFunction(inpt, state, subFuncName, func.abbrev || "undefined", met, indent);
+        const sdefs = processFunction(inpt, state, subFuncName, func.abbrev || "undefined", met, '\t');
         defs.class += sdefs.func;
         for (const i in sdefs.extra) {
             const retName = i.split("_")[1];
@@ -322,7 +331,7 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent = "", isCb = 
  */
 function makeType(inpt, state, stypes, tsx = false) {
     if (typeof stypes === "object")
-        return { main: "fnc", sub: processFunction(inpt, state, "callback", "cb", stypes, "\t", true).func, desc: "" };
+        return { main: "fnc", sub: processFunction(inpt, state, "callback", "cb", stypes, "\t", false, true).func, desc: "" };
 
     const types1 = stypes.split("||").map(stype => {
         const [sub, desc] = split1(stype, "-");

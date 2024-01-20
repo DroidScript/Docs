@@ -4,7 +4,8 @@
 		"app": "Reference",
 		"gfx": "Game Engine",
 		"MUI": "Material UI",
-		"ui": "Hybrid UI"
+		"ui": "Hybrid UI",
+		"global": "Global Helpers"
 	},
 	"langs": {
 		"en": "English"

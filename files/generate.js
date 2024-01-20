@@ -263,7 +263,6 @@ function parseInput(state) {
     return { navs, scope, base, baseKeys };
 }
 
-let madeTsxGlobals = false;
 /**
  * @param {DSInput} inpt
  * @param {GenState} state
@@ -280,26 +279,12 @@ function generateDocs(inpt, state) {
         }
     }
 
-    if (makeTips && "tips".match(regGen)) {
+    if (makeTips && "tips".match(regGen) && state.curScope !== "global") {
         resetGlobals(state);
         generateTips(inpt, state);
     }
 
     if (makeTsx && "tsx".match(regGen)) {
-        if (!madeTsxGlobals) {
-            const tmpInpt = { base: null, navs: [], baseKeys: [], scope: {} };
-            const tmpState = Object.assign({}, state);
-            // @ts-ignore
-            tmpState.curScope = "global";
-
-            resetGlobals(tmpState);
-            generateTsx(tmpInpt, tmpState, "ts");
-
-            resetGlobals(tmpState);
-            generateTsx(tmpInpt, tmpState, "js");
-            madeTsxGlobals = true;
-        }
-
         resetGlobals(state);
         generateTsx(inpt, state, "ts");
 

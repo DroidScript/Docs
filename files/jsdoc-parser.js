@@ -487,9 +487,10 @@ function HandleComment(c, name, func, json, objJson) {
             // }
         }
 
-        else if (line.match(/^[ */]+@return/)) {
+        else if (line.match(/^[ */]+@returns?\b/)) {
             const f = line.split(/returns?/)[1].trim(), g = f.split(/[_\s:-]/)[0];
-            if (types[g]) obj.retval = types[g];
+            if (f.startsWith("fnc_json")) obj.retval = JSON.parse(f.slice(f.indexOf('-') + 1));
+            else if (types[g]) obj.retval = types[g];
             else if (!g.split("||").find(t => !typx.includes(t))) obj.retval = f;
             else console.log(`unknown ret type ${g} in ${name}`), obj.retval = "obj-" + f;
         }

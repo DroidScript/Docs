@@ -4,7 +4,7 @@ const path = require("path");
 const { app } = require("./app");
 
 // constructor name prefixes
-const regConPrefix = /^(Create|Open|Add|show)(?=\w+)/i;
+const regConPrefix = /^_?(Create|Open|Add|show)(?=\w+)/i;
 /** @type {Obj<string>} */
 const special = { n: '\n', r: '\r', t: '\t', b: '\b', f: '\f' };
 const warnEnbl = false;

@@ -5,7 +5,7 @@
  * @abbrev div
  * @brief addDivider
  * Adds a hairline divider into your layout.
- * $$ div = ui.addDivider(parent, width?, options?) $$
+ * $$ div = ui.addDivider(parent, width=1, options?) $$
  * @param {obj} parent The layour where to add the divider.
  * @param {num} [width=1] Fraction of the screen width.
  * @param {str} [options] A comma separated Divider options. Values can be `Inset`

@@ -39,7 +39,7 @@ declare global {
         shortDesc: string;
         pNames: string[];
         pTypes: (string | DSFunction)[];
-        retval?: string;
+        retval?: string | DSFunction;
         hasNav?: boolean;
         isval?: boolean;
         noCon?: boolean;
