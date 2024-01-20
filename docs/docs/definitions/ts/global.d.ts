@@ -143,8 +143,15 @@ declare function _CreatePlugin(name: str, options: str): DsPlugin;
 /** Remove extra permissions from the app when exporting APKs */
 declare function _RemovePermissions(perms: str_com): void;
 
-/** Helper class that automaticall binds the 'this' context for all methods to the current object instance */
-declare const Bound: DsBound;
+/**
+ * Helper class that automaticall binds the 'this' context for all methods to the current object instance
+ * @return class
+ */
+declare class Bound {
+
+	/** Binds the 'this' context for all methods */
+	bindMethods(ctx: all): void;
+}
 
 /** Global App configuration modes */
 declare const cfg: Dscfg;
@@ -196,13 +203,6 @@ declare class DsPlugin {
 
 	/** Calls the destroy methon on the java plugin */
 	Destroy(): void;
-}
-
-
-declare class DsBound {
-
-	/** Binds the 'this' context for all methods */
-	bindMethods(ctx: all): void;
 }
 
 

@@ -1,6 +1,6 @@
 const Prism = require('prismjs');
 const fs = require("fs");
-const { getDstDir, D_SCOPE, unwrapDesc, Throw, fillMissingFuncProps, regConPrefix, D_VER, keys, isnum, has, replW, getAbbrev, nothidden, sortAsc, unwrapBaseFunc, hidden, getAddClass, getSrcDir, ReadFile, Warn, split1, special, hex } = require('./util');
+const { getDstDir, D_SCOPE, unwrapDesc, Throw, fillMissingFuncProps, regConPrefix, D_VER, keys, isnum, has, replW, getAbbrev, sortAsc, unwrapBaseFunc, hidden, getAddClass, getSrcDir, ReadFile, Warn, split1, special, hex } = require('./util');
 const { app } = require('./app');
 const conf = require("../conf.json");
 
@@ -69,10 +69,15 @@ function generateDoc(state, inpt, name) {
         desc = m.desc;
 
         // function line with popups
-        if (m.abbrev) funcLine = m.abbrev + " = ";
-        const isGlob = m.subf && state.curScope !== "MUI" && m.retval?.startsWith("obj");
-        funcLine += isGlob ? 'new ' : state.curScope + '.';
-        funcLine += `${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
+        if (m.retval === "obj-class") {
+            funcLine = `class ${m.abbrev} extends ${name} {}`;
+        }
+        else {
+            if (m.abbrev) funcLine = m.abbrev + " = ";
+            const isGlob = m.subf && state.curScope !== "MUI" && typeof m.retval === "string" && m.retval?.startsWith("obj");
+            if (state.curScope !== "global") funcLine += isGlob ? 'new ' : state.curScope + '.';
+            funcLine += `${name}` + (m.isval ? '' : `(${data.args})`) + data.ret;
+        }
 
         // subfunctions of controls with popups
         if (ps.subf) {
@@ -302,14 +307,14 @@ function getDocData(inpt, state, f, useAppPop = false) {
     if (f.retval)
         fretval = (f.pNames.length ? "\n\t\t\t" : " ") + "→ " + typeDesc(inpt, state, f.retval);
 
+    const mkeys = keys(f.subf || []).sort(sortAsc);
+
     // return data if there are no subfunction
-    if (!f.subf || !keys(f.subf).length)
+    if (!f.subf || !mkeys.length)
         return { args: smArgs, ret: fretval, mets: "" };
 
-    let k, methods = "", props = "";
     // function list
-    const mkeys = keys(f.subf).filter(nothidden).sort(sortAsc);
-
+    let k, methods = "", props = "";
     if (dbg) app.UpdateProgressBar(state.progress, state.curScope + '.' + f.name + " generate subfunctions");
     for (k = 0; k < mkeys.length; k++) {
         let met = f.subf[mkeys[k]], retval = "";
@@ -321,7 +326,7 @@ function getDocData(inpt, state, f, useAppPop = false) {
         // force use of entry name
         //if (mkeys[k].endsWith('!')) met.name = mkeys[k].slice(0, mkeys[k].length - 1);
 
-        if (hidden(state.curSubf)) continue;
+        if (state.curScope !== "global" && hidden(state.curSubf)) continue;
 
         const m = fillMissingFuncProps(met);
 
@@ -445,8 +450,16 @@ function toHtmlSamp(name, jsSample, pySample, state) {
 /** returns a formatted description of a type - used for subfunction return values
  * @param {GenState} state
  * @param {DSInput} inpt
- * @param {string} stypes */
+ * @param {string | DSFunction} stypes */
 function typeDesc(inpt, state, stypes) {
+    if (typeof stypes === "object") {
+        var popup = toArgPop(inpt, state, null, stypes);
+        const popId = (popup.match(/#pop_([0-9a-z_]+)/) || [])[1];
+        const pop = Object.entries(state.popDefs).find(pdef => pdef[1] === popId);
+        if (pop) delete state.popDefs[pop[0]];
+        return pop ? pop[0] : popup;
+    }
+
     const types = stypes.split("||").map((/** @type {string} */ type) => [type.slice(0, 3)]
         .concat(type
             // custom type desc
@@ -497,7 +510,7 @@ function typeDesc(inpt, state, stypes) {
 /** nearly equal to typeDesc, but returns an app.popup for arguments
  * @param {DSInput} inpt
  * @param {GenState} state
- * @param {string} name
+ * @param {string | null} name
  * @param {DSFunction | string} stypes
  * @param {boolean} [doSwitch]
  */
@@ -507,14 +520,14 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
     // function callbacks
     if (typeof stypes === "object") {
         if (stypes.pNames === undefined) stypes.pNames = [];
-        let s1 = newPopup(state, "fnc", name,
+        let s1 = newPopup(state, "fnc", name || '',
             ("<b>function</b>(\n\t\t" + stypes.pNames.map(
                 function makeFuncPop(n, i) {
                     if (Array.isArray(stypes) || !stypes.pTypes) return "";
                     const val = stypes.pTypes[i];
-                    if (typeof val === "object" || has("lst,obj", val.slice(0, 3)))
+                    if (typeof val === "object" || has("lst,obj", val.slice(0, 3)) || name === null)
                         // for lists and objects in callback parameters switch popups
-                        return toArgPop(inpt, state, n, val, true);
+                        return toArgPop(inpt, state, n, val, Boolean(name !== null));
                     return toArgAppPop(n, val);
                 }
             ).join(",\n\t\t") + "\n\t)").replace(/\(\s+\)/, "()"), false
@@ -522,6 +535,7 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
         if (doSwitch) s1 = s1.trim().replace(/href="#pop_(..._...)"/, 'href="" ' + switchPop);
         return s1;
     }
+    name ||= '';
 
     // multiple types
     const types = stypes.split("||").map(

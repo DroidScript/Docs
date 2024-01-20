@@ -94,8 +94,15 @@ function _CreatePlugin(name, options) {return}
  */
 function _RemovePermissions(perms) {return}
 
-/** @type {DsBound} Helper class that automaticall binds the 'this' context for all methods to the current object instance */
-const Bound = null;
+/** Helper class that automaticall binds the 'this' context for all methods to the current object instance */
+class Bound {
+
+	/**
+	 * Binds the 'this' context for all methods
+	 * @param {all} ctx 
+	 */
+	bindMethods(ctx) {return}
+}
 
 /** @type {Dscfg} Global App configuration modes */
 const cfg = null;
@@ -228,16 +235,6 @@ class DsPlugin {
 
 	/** Calls the destroy methon on the java plugin */
 	Destroy() {return}
-}
-
-
-class DsBound {
-
-	/**
-	 * Binds the 'this' context for all methods
-	 * @param {all} ctx 
-	 */
-	bindMethods(ctx) {return}
 }
 
 

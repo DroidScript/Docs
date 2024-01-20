@@ -20,7 +20,6 @@ files/samples?*/
 samples*.txt
 
 # hidden files
-_*.htm
 ~*
 *.key
 *-test*

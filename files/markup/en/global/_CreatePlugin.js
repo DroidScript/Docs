@@ -75,7 +75,7 @@
  * Sends an image to the java plugin
  * $$ undefined.SendImg(cmd, img?, width?, height?) $$
  * @param {str} cmd
- * @param {dso} [img] CreateImage
+ * @param {dso} [img] @../app/CreateImage
  * @param {num_int} [width]
  * @param {num_int} [height]
  * @returns str
@@ -86,7 +86,7 @@
  * Sends a camera view to the java plugin
  * $$ undefined.SendCam(cmd, cam) $$
  * @param {str} cmd
- * @param {dso} cam CreateCameraView
+ * @param {dso} cam @../app/CreateCameraView
  * @returns str
  */
 

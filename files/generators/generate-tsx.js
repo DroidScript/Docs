@@ -181,6 +181,7 @@ function declareFunction(state, name, desc, params, retval, isval, indent, isGlo
             console.error(`Method ${state.curFunc}${name === state.curFunc ? '' : '.' + name} with no type`);
 
         if (jsparams.length) docStr += `\n${indent}/**\n${indent} * ${desc || ''}\n${jsparams.join('')}${indent} */\n`;
+        else if (retval.desc === 'class') docStr += `\n${indent}/** ${desc} */\n`;
         else if (isval) docStr += `\n${indent}/** @type {${retval.sub}} ${desc} */\n`;
         else docStr += `\n${indent}/** ${desc} */\n`;
 
@@ -273,6 +274,7 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent, isGlobalScop
         return defs;
     }
 
+    const isClass = func.retval === 'obj-class';
     // sub properties
     if (name.includes(".")) {
         const [fname, fobj, fcon] = name.split(".").reverse();
@@ -289,7 +291,7 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent, isGlobalScop
 
     const isGlobalObj = func.subf && !isGlobalScope && typeof func.retval === "string" && func.retval.startsWith("obj");
     if (isGlobalObj) defs.func = "";
-    const className = (isGlobalObj ? '' : objPfx[state.curScope]) + name.replace(regConPrefix, '');
+    const className = (isGlobalObj || isClass ? '' : objPfx[state.curScope]) + name.replace(regConPrefix, '');
     defs.className = className;
 
     // subfunctions for classes
@@ -321,6 +323,13 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent, isGlobalScop
         }
     }
     defs.class += "}\n\n";
+
+    if (isClass) {
+        defs.func = defs.func.replace(/\n.*?;\n?$/, '\n');
+        defs.func += defs.class.trim() + '\n';
+        defs.class = '';
+    }
+
     return defs;
 }
 

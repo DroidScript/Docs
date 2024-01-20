@@ -269,7 +269,8 @@ function parseInput(state) {
  */
 function generateDocs(inpt, state) {
     if (!nogen) {
-        const lst = keys(inpt.scope).filter(nothidden).filter(n => Boolean(n.match(regGen)));
+        const lst = keys(inpt.scope)
+            .filter(n => (state.curScope === "global" || nothidden(n)) && regGen.test(n));
         for (let i = 0; i < lst.length; i++) {
             state.progress = Math.floor(100 * i / lst.length);
             app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
