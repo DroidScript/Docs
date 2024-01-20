@@ -7,7 +7,7 @@
  * Adds a SwitchGroup Component into your layout. A switchgroup is a list whose items can be toggled between `on` and `off`.
  * $$ swg = ui.addSwitchGroup(parent, list?, options?, width?, height?) $$
  * @param {obj} parent The parent layout where to add the SwitchGroup Component.
- * @param {obj} [list] The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
+ * @param {str_com} [list] The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
  * @param {str_com} [options] Icon: `Icon` \n `Color`: `Primary` or `Secondary` \n `Container`: `Elevated` or `Outlined` \n `Corner`: `Square` \n`Divider`
  * @param {num} [width] Fraction of the screen width. [0-1]
  * @param {num} [height] Fraction of the screen height. [0-1]
@@ -142,6 +142,14 @@
 /** @extern visibility */
 
 /** @extern width */
+
+/** ### setLabel ###
+ * @brief setLabel
+ * Sets the label text of the SwitchGroup
+ * $$ swg.setLabel(label) $$
+ * @param {str} label
+ */
+
 
 /** ### setOnTouch ###
  * @brief setOnTouch

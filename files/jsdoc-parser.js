@@ -324,7 +324,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                 const [_m, _n, _, _k = ''] = c.value.match(/@\s*extern\s+(\S+)(\s+(#\S+|r\/[^/]+\/|\{.*\}))?/i) || [];
                 if (!baseJson[_k || _n] && name !== "_tsxdefs")
                     Throw(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`);
-                else json[_n] = _k || '#' + _n;
+                else json[_n] = _k ? _k.replace(/\\n/g, "\n").replace(/\\t/g, "\t") : '#' + _n;
             }
 
             // Category

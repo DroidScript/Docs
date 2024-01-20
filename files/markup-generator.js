@@ -145,6 +145,7 @@ function renderSubf(data, usedIDs) {
                 throw Error("Unexpected subf string " + methodData);
 
             if (/^#[a-z]/i.test(methodData)) methodData = methodData.slice(1);
+            if (isDef) methodData = methodData.replace(/\n/g, "\\n").replace(/\t/g, "\\t");
             const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || isDef || '';
             str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
             usedIDs[method] ||= methodData;

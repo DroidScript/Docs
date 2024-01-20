@@ -5,9 +5,10 @@
  * @abbrev drw
  * @brief addDrawer
  * Adds a drawer into your app.
- * $$ drw = ui.addDrawer(lay, options?) $$
+ * $$ drw = ui.addDrawer(lay, options?, width?) $$
  * @param {obj} lay The drawer layout.
  * @param {str_com} [options]
+ * @param {num} [width] width of the drawer
  * @returns uio-Drawer
 */
 

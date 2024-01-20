@@ -1,5 +1,11 @@
 declare var ui: UI;
-declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopover | UIPopup | UIProgressDialog;
+declare const platform: { mobile: bin, ios: bin, android: bin, type: "mobile" | "tablet" | "desktop" };
+declare class App {
+	onStart(): void;
+	onLoad(): void;
+	onExit(): void;
+}
+declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopover | UIPopup | UIProgressDialog | UItheme;
 /** ui object */
 declare type uio = UIObject;
 
@@ -136,13 +142,14 @@ declare class UI {
 	/**
 	 * AddDrawer
 	 * @param lay The drawer layout.
+	 * @param width `width of the drawer`
 	 */
-	addDrawer(lay: obj, options?: str_com): UIDrawer;
+	addDrawer(lay: obj, options?: str_com, width?: num): UIDrawer;
 
 	/**
 	 * AddDropdown
 	 * @param parent The layout where to add the dropdown.
-	 * @param list The list items to show.
+	 * @param list `The list items to show.`
 	 * @param options A comma separated Dropdown options. Can be 
  Colors: `Primary` `Secondary` `Default` 
  `Variants`: `Contained` `Outlined` `Text` 
@@ -152,7 +159,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addDropdown(parent: obj, list?: lst, options?: str, width?: num, height?: num): UIDropdown;
+	addDropdown(parent: obj, list?: str_com, options?: str, width?: num, height?: num): UIDropdown;
 
 	/**
 	 * AddFAB
@@ -228,7 +235,7 @@ declare class UI {
 	/**
 	 * AddRadioGroup
 	 * @param parent The parent where to add the RadioGroup component.
-	 * @param list The list items array.
+	 * @param list `The list items array.`
 	 * @param options Radio Sizes: `Small` `Medium` 
  `Colors`: `Primary` `Secondary` 
  `Icon Position: `Left` or `Right` 
@@ -238,12 +245,12 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addRadioGroup(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UIRadioGroup;
+	addRadioGroup(parent: obj, list?: str_com, options?: str_com, width?: num, height?: num): UIRadioGroup;
 
 	/**
 	 * AddSelect
 	 * @param parent The parent layout where to add the control
-	 * @param list The list of items for the Select options
+	 * @param list `The list of items for the Select options`
 	 * @param options Sizes: `Small` `Medium` 
  `Variant`: `Filled` `Outlined` `Standard` 
  `Margin`: `Dense` `Normal` 
@@ -251,7 +258,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addSelect(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UISelect;
+	addSelect(parent: obj, list?: str_com, options?: str_com, width?: num, height?: num): UISelect;
 
 	/**
 	 * AddSlider
@@ -291,7 +298,7 @@ declare class UI {
 	/**
 	 * AddSwitchGroup
 	 * @param parent The parent layout where to add the SwitchGroup Component.
-	 * @param list The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
+	 * @param list The list items array whose elements can be `String` if items is text only,  or `Array` of the form `[ "icon",  "label" ]` if items is icon and text.
 	 * @param options Icon: `Icon` 
  `Color`: `Primary` or `Secondary` 
  `Container`: `Elevated` or `Outlined` 
@@ -300,12 +307,12 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addSwitchGroup(parent: obj, list?: obj, options?: str_com, width?: num, height?: num): UISwitchGroup;
+	addSwitchGroup(parent: obj, list?: str_com, options?: str_com, width?: num, height?: num): UISwitchGroup;
 
 	/**
 	 * AddTabs
 	 * @param parent The parent layout where to add the Tabs Component.
-	 * @param list An array of tab names.
+	 * @param list `An array of tab names.`
 	 * @param options Enable swipe: `Swipeable` 
  `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` 
  `Variant`: `Standard` `Scrollable` `FullWidth` 
@@ -314,7 +321,7 @@ Utils: `Icon` `Center` `Paper`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addTabs(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UITabs;
+	addTabs(parent: obj, list?: str_com, options?: str_com, width?: num, height?: num): UITabs;
 
 	/**
 	 * AddText
@@ -372,6 +379,9 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 */
 	addWebView(parent: obj, url?: str, options?: str_com, width?: num, height?: num): UIWebView;
 
+	/** Set the current theme */
+	setTheme(theme: "dark"|"light"): void;
+
 	/**
 	 * ShowColorPicker
 	 * @param value `A hexadecimal default value for the color picker.`
@@ -424,6 +434,12 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
  `AutoCancel` to close the dialog when backdrop is click.
 	 */
 	showProgressDialog(text?: str, options?: str_com): UIProgressDialog;
+
+	/** UI theme information */
+	theme: UItheme;
+
+	/** UI library version */
+	version: num;
 
 }
 
@@ -5237,6 +5253,9 @@ declare class UIRadioGroup {
 	/** Sets or returns the angle of rotation in degrees */
 	rotation: num_deg;
 
+	/** Sets the label of the RadioGroup */
+	setLabel(label: str): void;
+
 	/** Sets or returns the space between the radio button and the text */
 	spaceBetween: num;
 
@@ -6650,6 +6669,9 @@ declare class UISwitchGroup {
 
 	/** Sets or returns the width of the control as a fraction of the parent control */
 	width: num;
+
+	/** SetLabel */
+	setLabel(label: str): void;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (this: UISwitchGroup, value: bin, text: str, index: num, event: obj) => void): void;
@@ -8076,6 +8098,9 @@ declare class UIWebView {
 	/** A reference to the webview`s window document object */
 	document: obj;
 
+	/** Load the current url */
+	loadUrl(url: str_url): void;
+
 	/** Sets or returns the redirect url when an error occur */
 	errorPage: str;
 
@@ -8341,6 +8366,19 @@ declare class UIProgressDialog {
 
 	/** SetOnClose */
 	setOnClose(callback: (this: UIProgressDialog) => void): void;
+}
+
+
+declare class UItheme {
+
+	/** True if dark theme is selected, otherwise false (light theme) */
+	dark: bin;
+
+	/** Primary theme color */
+	primary: str_col;
+
+	/** Secondary theme color */
+	secondary: str_col;
 }
 
 

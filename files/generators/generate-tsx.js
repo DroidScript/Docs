@@ -121,7 +121,9 @@ function generateDefinitionFile(scopeName, inpt, state) {
         else {
             throw Error("Unknown _tsxdefs type " + type);
         }
-        typeDecls.push(declareType(name, type));
+        if (!type.startsWith("class")) type = declareType(name, type);
+        else if (!JSDOC) type = 'declare ' + type.replace(/\)\s+\{\s+\};?/g, "): void;");
+        typeDecls.push(type);
     }
 
     for (const o of Object.keys(objs)) {
@@ -135,8 +137,15 @@ function generateDefinitionFile(scopeName, inpt, state) {
 
 /** @type {(name:string, type:string, desc?:string) => string} */
 function declareType(name, type, desc = "") {
+    const isVar = type.startsWith("var");
+    const declStr = desc ? `/** ${desc} */\n` : '';
+    if (isVar) {
+        type = type.replace(/^var\s+/, '');
+        if (JSDOC) return `/** @type {${type}} ${desc && desc + ' '}*/\nconst ${name} = null;`;
+        return declStr + `declare const ${name}: ${type};`;
+    }
     if (JSDOC) return `/** @typedef {${type}} ${name} ${desc && desc + ' '}*/`;
-    return (desc ? `/** ${desc} */\n` : '') + `declare type ${name} = ${type};`;
+    return declStr + `declare type ${name} = ${type};`;
 }
 
 /**
