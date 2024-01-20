@@ -32,6 +32,8 @@
 	"tdesc": {
 		"lst_obj": "of objects",
 		"lst_num": "of numbers",
+		"lst_str": "of strings",
+		"lst_bin": "of booleans",
 		"num_byt": "bytes",
 		"num_col": "hexadecimal 0xrrggbb",
 		"num_dat": "datetime in milliseconds (from JS Date object)",
