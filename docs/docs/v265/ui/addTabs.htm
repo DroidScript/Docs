@@ -53,8 +53,8 @@
 		<div class="samp">
 		tab = ui.addTabs(
 			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
-			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">list?</a>,
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options?</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">list?</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options?</a>,
 			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width?</a>,
 			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height?</a> )
 			→ <b>ui object:</b> Tabs
@@ -354,7 +354,7 @@
 				            <span class="token keyword">this</span><span class="token punctuation">.</span>tabs<span class="token punctuation">.</span><span class="token function">showTabByIndex</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
 				        <span class="token punctuation">}</span><span class="token punctuation">)</span><br>
 				        <br>
-				        <span class="token comment">// get the third tab and add a button control </span><br>
+				        <span class="token comment">// get the third tab and add a button control</span><br>
 				        <span class="token comment">// to open the first tab by its tab name</span><br>
 				        <span class="token keyword">this</span><span class="token punctuation">.</span>tab3 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tabs<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><br>
 				        <span class="token keyword">this</span><span class="token punctuation">.</span>tab3<span class="token punctuation">.</span>options <span class="token operator">=</span> <span class="token string">"VCenter"</span><br>
@@ -542,14 +542,14 @@
 		<h3>Properties</h3>
 		<p>The following properties are available on the <strong>Tabs</strong> object:</p>
 
-		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backColor</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">backImage</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">backImage</a> → <b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">border</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">borderColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">borderColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
 		<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">borderStyle</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">centered</a> → <b>Boolean</b></div>
 		<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">color</a> → <b>String</b></div>
@@ -566,13 +566,17 @@
 		<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">indicatorWidth</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_022" data-transition="pop" data-rel="popup">isVisible</a> → <b>Boolean</b></div>
 		<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup">left</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup">margins</a> → <b>List</b></div>
+		<div class="samp"><a href="#pop_dsc_024" data-transition="pop" data-rel="popup">margins</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
 		<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">opacity</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">options</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_027" data-transition="pop" data-rel="popup">padding</a> → <b>List</b></div>
-		<div class="samp"><a href="#pop_dsc_028" data-transition="pop" data-rel="popup">parent</a> → <b>Object</b></div>
-		<div class="samp"><a href="#pop_dsc_029" data-transition="pop" data-rel="popup">position</a> → <b>Object</b></div>
-		<div class="samp"><a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">rotation</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_027" data-transition="pop" data-rel="popup">padding</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
+		<div class="samp"><a href="#pop_dsc_028" data-transition="pop" data-rel="popup">parent</a> → <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a></div>
+		<div class="samp"><a href="#pop_dsc_029" data-transition="pop" data-rel="popup">position</a> → <b>Object:</b> {
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }</div>
+		<div class="samp"><a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">rotation</a> → <b>Number:</b> <i>angle in degrees (0..360)</i></div>
 		<div class="samp"><a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">scrollButtonMode</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_044" data-transition="pop" data-rel="popup">tabHeight</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_045" data-transition="pop" data-rel="popup">tabPadding</a> → <b>Number</b></div>
@@ -589,13 +593,13 @@
 
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">addTab</a>(
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">name</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">icon</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">name</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">icon</a>,
 			<a href="#pop_num_003" data-transition="pop" data-rel="popup">index</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">animate</a>(
-			<a href="#pop_str_004" data-transition="pop" data-rel="popup">anim</a>,
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">anim</a>,
 			<a href="#pop_num_004" data-transition="pop" data-rel="popup">duration?</a> )
 		</div>
 		<div class="samp">
@@ -612,12 +616,12 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">getEnabledByName</a>(
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">name</a> )
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">name</a> )
 			→ <b>Boolean</b>
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">getLayout</a>(
-			<a href="#pop_str_006" data-transition="pop" data-rel="popup">name</a> )
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">name</a> )
 			→ <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a>
 		</div>
 		<div class="samp">
@@ -627,7 +631,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">getPosition</a>(
-			<a href="#pop_str_007" data-transition="pop" data-rel="popup">options?</a> )
+			<a href="#pop_str_008" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>Object</b>
 		</div>
 		<div class="samp">
@@ -642,7 +646,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">removeTabByName</a>(
-			<a href="#pop_str_008" data-transition="pop" data-rel="popup">name</a> )
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">name</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup" class="baseFunc">sendBackward</a>(
@@ -651,8 +655,8 @@
 		<div class="samp">
 			<a href="#pop_dsc_02f" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
 			<a href="#pop_num_009" data-transition="pop" data-rel="popup">width?</a>,
-			<a href="#pop_str_009" data-transition="pop" data-rel="popup">clr?</a>,
-			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">style?</a> )
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">clr?</a>,
+			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">style='solid'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_030" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
@@ -660,7 +664,7 @@
 			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">tr?</a>,
 			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">bl?</a>,
 			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">br?</a>,
-			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_031" data-transition="pop" data-rel="popup">setEnabled</a>(
@@ -669,19 +673,19 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_032" data-transition="pop" data-rel="popup">setEnabledByName</a>(
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">name</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">name</a>,
 			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">value</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_033" data-transition="pop" data-rel="popup">setIcon</a>(
 			<a href="#pop_num_00f" data-transition="pop" data-rel="popup">index</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">icon</a> )
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">icon</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_034" data-transition="pop" data-rel="popup">setIndicatorStyle</a>(
 			<a href="#pop_num_010" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_num_011" data-transition="pop" data-rel="popup">thickness</a>,
-			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">color</a>,
+			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">color</a>,
 			<a href="#pop_num_012" data-transition="pop" data-rel="popup">radius</a> )
 		</div>
 		<div class="samp">
@@ -690,7 +694,7 @@
 			<a href="#pop_num_014" data-transition="pop" data-rel="popup">top?</a>,
 			<a href="#pop_num_013" data-transition="pop" data-rel="popup">right?</a>,
 			<a href="#pop_num_014" data-transition="pop" data-rel="popup">bottom?</a>,
-			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_str_010" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_036" data-transition="pop" data-rel="popup">setOnChange</a>(
@@ -710,13 +714,13 @@
 			<a href="#pop_num_018" data-transition="pop" data-rel="popup">top?</a>,
 			<a href="#pop_num_019" data-transition="pop" data-rel="popup">right?</a>,
 			<a href="#pop_num_018" data-transition="pop" data-rel="popup">bottom?</a>,
-			<a href="#pop_str_010" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_str_011" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_03a" data-transition="pop" data-rel="popup" class="baseFunc">setPosition</a>(
 			<a href="#pop_num_01b" data-transition="pop" data-rel="popup">left?</a>,
 			<a href="#pop_num_002" data-transition="pop" data-rel="popup">top?</a>,
-			<a href="#pop_str_011" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_str_012" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_03b" data-transition="pop" data-rel="popup" class="baseFunc">setScale</a>(
@@ -734,27 +738,27 @@
 			<a href="#pop_num_022" data-transition="pop" data-rel="popup">top?</a>,
 			<a href="#pop_num_023" data-transition="pop" data-rel="popup">right?</a>,
 			<a href="#pop_num_024" data-transition="pop" data-rel="popup">bottom?</a>,
-			<a href="#pop_str_012" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_str_013" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_03e" data-transition="pop" data-rel="popup">setTabs</a>(
-			<a href="#pop_lst_002" data-transition="pop" data-rel="popup">tabs</a> )
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">tabs</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_03f" data-transition="pop" data-rel="popup">setTitleText</a>(
 			<a href="#pop_num_025" data-transition="pop" data-rel="popup">index</a>,
-			<a href="#pop_str_013" data-transition="pop" data-rel="popup">title</a> )
+			<a href="#pop_str_014" data-transition="pop" data-rel="popup">title</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_040" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_041" data-transition="pop" data-rel="popup">showScrollButton</a>(
-			<a href="#pop_str_014" data-transition="pop" data-rel="popup">mode</a> )
+			<a href="#pop_str_015" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_042" data-transition="pop" data-rel="popup">showTab</a>(
-			<a href="#pop_str_015" data-transition="pop" data-rel="popup">name</a> )
+			<a href="#pop_str_016" data-transition="pop" data-rel="popup">name</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_043" data-transition="pop" data-rel="popup">showTabByIndex</a>(
@@ -764,6 +768,7 @@
 	</div>
 
 	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> Values can be `true` or `false`.</div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
 	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width. [0-1]</div>
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The index in which to insert the tab.</div>
@@ -797,29 +802,29 @@
 	<div data-role="popup" id="pop_num_024" class="ui-content"><b>Number:</b> The tab-item bottom padding.</div>
 	<div data-role="popup" id="pop_num_025" class="ui-content"><b>Number:</b> Index of the tab.</div>
 	<div data-role="popup" id="pop_num_026" class="ui-content"><b>Number:</b> The index of the tab to be shown.</div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Enable swipe: `Swipeable` <br> `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` <br> `Variant`: `Standard` `Scrollable` `FullWidth` <br> `Layout`: `Linear`”</docstr>, <docstr>“ `Absolute` <br>Utils: `Icon` `Center` `Paper`”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The name of the tab.”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“Material icon font.”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
-	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“The name of the tab. You can also pass the index of the tab.”</docstr></div>
-	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
-	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“The name of the corresponding tab to remove.”</docstr></div>
-	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
-	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`”</docstr></div>
-	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
-	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <docstr>“Hexadecimal color of the form `#rrggbb`.”</docstr></div>
-	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
-	<div data-role="popup" id="pop_str_010" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
-	<div data-role="popup" id="pop_str_011" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Can be `px` or `%` or any css unit of measurement.”</docstr></div>
-	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.”</docstr></div>
-	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <docstr>“The new title.”</docstr></div>
-	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <docstr>“Values can be <br> `auto` : will only present them when not all the items are visible <br> `desktop` : will only present them on medium and larger viewports <br> `on` : will always present them <br> `off` : will never present them.”</docstr></div>
-	<div data-role="popup" id="pop_str_015" class="ui-content"><b>String:</b> <docstr>“The name of the tab to be shown.”</docstr></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“An array of tab names.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Enable swipe: `Swipeable` <br> `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` <br> `Variant`: `Standard` `Scrollable` `FullWidth` <br> `Layout`: `Linear`”</docstr>, <docstr>“ `Absolute` <br>Utils: `Icon` `Center` `Paper`”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The name of the tab.”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Material icon font.”</docstr></div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“The name of the tab. You can also pass the index of the tab.”</docstr></div>
+	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“The name of the corresponding tab to remove.”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”</docstr></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
+	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>String:</b> <docstr>“Hexadecimal color of the form `#rrggbb`.”</docstr></div>
+	<div data-role="popup" id="pop_str_010" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_011" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
+	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Can be `px` or `%` or any css unit of measurement.”</docstr></div>
+	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. You can pass `%` `rem` `vw`.”</docstr></div>
+	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <docstr>“The new title.”</docstr></div>
+	<div data-role="popup" id="pop_str_015" class="ui-content"><b>String:</b> <docstr>“Values can be <br> `auto` : will only present them when not all the items are visible <br> `desktop` : will only present them on medium and larger viewports <br> `on` : will always present them <br> `off` : will never present them.”</docstr></div>
+	<div data-role="popup" id="pop_str_016" class="ui-content"><b>String:</b> <docstr>“The name of the tab to be shown.”</docstr></div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The parent layout where to add the Tabs Component.</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> The layout to check.</div>
 	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> The pointer event object.</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> An array of tab names.</div>
-	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>List:</b> The tab titles array. See examples for format.</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> The tab titles array. See examples for format.</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
 		<a href="" onclick="app.ShowPopup('String: “The tab name.”')">name</a>,
 		<a href="" onclick="app.ShowPopup('Number: The index of the corresponding tab.')">index</a>

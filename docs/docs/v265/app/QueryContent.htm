@@ -46,8 +46,9 @@
 			<a href="#pop_str_uri" data-transition="pop" data-rel="popup">uri</a>,
 			<a href="#pop_str_com" data-transition="pop" data-rel="popup">columns</a>,
 			<a href="#pop_str_sql" data-transition="pop" data-rel="popup">select?</a>,
-			<a href="#pop_std_lst" data-transition="pop" data-rel="popup">args?</a>,
+			<a href="#pop_str_lst" data-transition="pop" data-rel="popup">args?</a>,
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">sort?</a> )
+			→ <b>List:</b> [any]
 		</div>
 
 		<p>The <b>uri</b> typically have the syntax <docstr>“content://authority/path/id”</docstr>. You can find more infos about it on the <a href="https://developer.android.com/reference/android/content/ContentUris" onclick="return OpenUrl(this.href);">Android Developer page</a>.<br>
@@ -111,8 +112,8 @@
 
 	</div>
 
-	<div data-role="popup" id="pop_std_lst" class="ui-content"><b>List</b></div>
 	<div data-role="popup" id="pop_str_com" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
+	<div data-role="popup" id="pop_str_lst" class="ui-content"><b>String:</b> <i>separated</i></div>
 	<div data-role="popup" id="pop_str_sql" class="ui-content"><b>String:</b> <i>sql code</i></div>
 	<div data-role="popup" id="pop_str_uri" class="ui-content"><b>String:</b> <i>URI encoded</i></div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“<a href="" onclick="app.ShowPopup('a coloumn specified in \'coloumns\'')">coloumn</a>”</docstr></div>

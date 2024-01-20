@@ -1,0 +1,8 @@
+{
+	"global": {
+		"Bound": "Helper class that automaticall binds the 'this' context for all methods to the current object instance"
+	},
+	"obj": {
+		"bindMethods": "Binds the 'this' context for all methods"
+	}
+}

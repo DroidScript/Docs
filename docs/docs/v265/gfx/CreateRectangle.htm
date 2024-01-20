@@ -55,10 +55,10 @@
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>,
 			<a href="#pop_num_col" data-transition="pop" data-rel="popup">color</a>,
-			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">lineWidth</a>,
-			<a href="#pop_num_col" data-transition="pop" data-rel="popup">lineColor</a>,
-			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">lineAlpha</a>,
-			<a href="#pop_std_str" data-transition="pop" data-rel="popup">group</a> )
+			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">lineWidth?</a>,
+			<a href="#pop_num_col" data-transition="pop" data-rel="popup">lineColor?</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">lineAlpha?</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">group?</a> )
 			→ <b>game object:</b> Rectangle
 		</div>
 
@@ -102,7 +102,9 @@
 
 		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">alpha</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
 		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">angle</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
-		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup" class="baseFunc">data</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup" class="baseFunc">data</a> → <b>Object:</b> {
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">key</a>,
+			<a href="#pop_std_all" data-transition="pop" data-rel="popup">value</a> }</div>
 		<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="baseFunc">graphic</a> → <b>Object</b></div>
 		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">group</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="baseFunc">height</a> → <b>Number:</b> <i>fraction (0..1)</i></div>
@@ -132,6 +134,7 @@
 
 	</div>
 
+	<div data-role="popup" id="pop_std_all" class="ui-content"><b>all types</b></div>
 	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
 	<div data-role="popup" id="pop_num_col" class="ui-content"><b>Number:</b> <i>hexadecimal 0xrrggbb</i></div>
 	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>Number:</b> <i>fraction (0..1)</i></div>

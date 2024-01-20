@@ -440,17 +440,17 @@
 		<h3>Properties</h3>
 		<p>The following properties are available on the <strong>Button</strong> object:</p>
 
-		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number:</b> <i>pixel</i></div>
 		<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">acceptedFiles</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backColor</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">backImage</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">backImage</a> → <b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">badge</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">badgeColor</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">border</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">borderColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">borderColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
 		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">borderStyle</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">color</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">cornerRadius</a> → <b>Number</b></div>
@@ -460,16 +460,20 @@
 		<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">icon</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">isVisible</a> → <b>Boolean</b></div>
 		<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">left</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">margins</a> → <b>List</b></div>
+		<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">margins</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
 		<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">opacity</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">options</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">padding</a> → <b>List</b></div>
-		<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">parent</a> → <b>Object</b></div>
-		<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">position</a> → <b>Object</b></div>
-		<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">rotation</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">padding</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
+		<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">parent</a> → <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a></div>
+		<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">position</a> → <b>Object:</b> {
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }</div>
+		<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">rotation</a> → <b>Number:</b> <i>angle in degrees (0..360)</i></div>
 		<div class="samp"><a href="#pop_dsc_030" data-transition="pop" data-rel="popup">sizeVariant</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_031" data-transition="pop" data-rel="popup">text</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_032" data-transition="pop" data-rel="popup">textColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_032" data-transition="pop" data-rel="popup">textColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
 		<div class="samp"><a href="#pop_dsc_033" data-transition="pop" data-rel="popup">textSize</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_034" data-transition="pop" data-rel="popup">toolTip</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_035" data-transition="pop" data-rel="popup">toolTipPosition</a> → <b>String</b></div>
@@ -513,7 +517,7 @@
 			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
 			<a href="#pop_num_006" data-transition="pop" data-rel="popup">width?</a>,
 			<a href="#pop_str_005" data-transition="pop" data-rel="popup">clr?</a>,
-			<a href="#pop_str_006" data-transition="pop" data-rel="popup">style?</a> )
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">style='solid'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
@@ -585,6 +589,7 @@
 
 	</div>
 
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
 	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the parent width. [0-1]</div>
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The time in milliseconds.</div>
@@ -612,7 +617,7 @@
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
 	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
-	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”</docstr></div>
 	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
 	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
 	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“`px` `%`”</docstr></div>

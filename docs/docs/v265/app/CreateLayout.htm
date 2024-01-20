@@ -47,6 +47,7 @@
 				- <a href="" onclick="jumpTo('Frame Layouts')">Frame Layouts</a><br>
 				- <a href="" onclick="jumpTo('Absolute Layouts')">Absolute Layouts</a><br>
 				- <a href="" onclick="jumpTo('Card Layouts')">Card Layouts</a><br>
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
 				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
 			</span><br>
 		</div>
@@ -293,6 +294,13 @@
 		<h3>Card Layouts</h3>
 		<p>Card Layouts are just like frame layouts, but with rounded corners and a shadow by default.<br>
 		They may be used to display offers with an image and optional info text.</p>
+		<h3>Properties</h3>
+		<p>The following properties are available on the <strong>Layout</strong> object:</p>
+
+		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">data</a> → <b>Object:</b> {
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">key</a>,
+			<a href="#pop_std_all" data-transition="pop" data-rel="popup">value</a> }</div>
+
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>Layout</strong> object:</p>
 
@@ -326,38 +334,38 @@
 			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">ClearFocus</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">DestroyChild</a>(
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">DestroyChild</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">child</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">Focus</a>()
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">Focus</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b>Number:</b> <i>integer</i>
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b>Number:</b> <i>integer</i>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b>Number:</b> <i>integer</i>
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b>Number:</b> <i>integer</i>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">GetChildOrder</a>(
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">GetChildOrder</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">child</a> )
 			→ <b>Number:</b> <i>integer</i>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">GetHeight</a>(
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">GetHeight</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>Number</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">GetLeft</a>(
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">GetLeft</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>Number</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">GetParent</a>() → <b>app object</b>
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">GetParent</a>() → <b>app object</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">GetPosition</a>(
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">GetPosition</a>(
 			<a href="#pop_str_006" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>Object:</b> {
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
@@ -366,41 +374,41 @@
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a> }
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>Number</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">GetType</a>() → <b>String:</b> <docstr>“Layout”</docstr>
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">GetType</a>() → <b>String:</b> <docstr>“Layout”</docstr>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">GetWidth</a>(
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">GetWidth</a>(
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>Number</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">Gone</a>()
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">Gone</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup" class="baseFunc">Hide</a>()
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">Hide</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b>Boolean</b>
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b>Boolean</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">IsOverlap</a>(
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">IsOverlap</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth?</a> )
 			→ <b>Boolean</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b>Boolean</b>
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b>Boolean</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
+			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup" class="premHint">Method</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
 			<a href="#pop_str_009" data-transition="pop" data-rel="popup">types?</a>,
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">p1?</a>,
@@ -410,29 +418,29 @@
 			→ <b>all types</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">RemoveChild</a>(
+			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">RemoveChild</a>(
 			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">child</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01b" data-transition="pop" data-rel="popup" class="baseFunc">Resize</a>()
+			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup" class="baseFunc">Resize</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup" class="baseFunc">SetBackAlpha</a>(
+			<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup" class="baseFunc">SetBackAlpha</a>(
 			<a href="#pop_num_005" data-transition="pop" data-rel="popup">alpha</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01d" data-transition="pop" data-rel="popup" class="baseFunc">SetBackColor</a>(
+			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup" class="baseFunc">SetBackColor</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup" class="baseFunc">SetBackGradient</a>(
+			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup" class="baseFunc">SetBackGradient</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color1</a>,
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color2?</a>,
 			<a href="#pop_std_ukn" data-transition="pop" data-rel="popup">color3?</a>,
 			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup" class="baseFunc">SetBackGradientRadial</a>(
+			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">SetBackGradientRadial</a>(
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">y</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">radius?</a>,
@@ -442,12 +450,12 @@
 			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
+			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup" class="baseFunc">SetBackground</a>(
 			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
 			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup">SetChildMargins</a>(
+			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup">SetChildMargins</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left=0</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top=0</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right=0</a>,
@@ -455,37 +463,37 @@
 			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup">SetChildTextSize</a>(
+			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup">SetChildTextSize</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">size</a>,
 			<a href="#pop_str_00d" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">SetColorFilter</a>(
+			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">SetColorFilter</a>(
 			<a href="#pop_str_col" data-transition="pop" data-rel="popup">color</a>,
 			<a href="#pop_str_00e" data-transition="pop" data-rel="popup">mode?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup">SetCornerRadius</a>(
+			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup">SetCornerRadius</a>(
 			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">radius</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup" class="baseFunc">SetDescription</a>(
+			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup" class="baseFunc">SetDescription</a>(
 			<a href="#pop_std_str" data-transition="pop" data-rel="popup">desc</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup">SetElevation</a>(
+			<a href="#pop_dsc_027" data-transition="pop" data-rel="popup">SetElevation</a>(
 			<a href="#pop_num_pxl" data-transition="pop" data-rel="popup">elevation</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_027" data-transition="pop" data-rel="popup" class="baseFunc">SetEnabled</a>(
+			<a href="#pop_dsc_028" data-transition="pop" data-rel="popup" class="baseFunc">SetEnabled</a>(
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_028" data-transition="pop" data-rel="popup">SetGravity</a>(
+			<a href="#pop_dsc_029" data-transition="pop" data-rel="popup">SetGravity</a>(
 			<a href="#pop_str_00f" data-transition="pop" data-rel="popup">gravity</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_029" data-transition="pop" data-rel="popup" class="baseFunc">SetMargins</a>(
+			<a href="#pop_dsc_02a" data-transition="pop" data-rel="popup" class="baseFunc">SetMargins</a>(
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left=0</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top=0</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right=0</a>,
@@ -493,35 +501,35 @@
 			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02a" data-transition="pop" data-rel="popup">SetOnChildChange</a>(
+			<a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">SetOnChildChange</a>(
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">SetOnLongTouch</a>(
+			<a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">SetOnLongTouch</a>(
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">SetOnTouch</a>(
+			<a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">SetOnTouch</a>(
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">SetOnTouchDown</a>(
+			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">SetOnTouchDown</a>(
 			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">SetOnTouchMove</a>(
+			<a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">SetOnTouchMove</a>(
 			<a href="#pop_fnc_005" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">SetOnTouchUp</a>(
+			<a href="#pop_dsc_030" data-transition="pop" data-rel="popup">SetOnTouchUp</a>(
 			<a href="#pop_fnc_006" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_030" data-transition="pop" data-rel="popup">SetOrientation</a>(
+			<a href="#pop_dsc_031" data-transition="pop" data-rel="popup">SetOrientation</a>(
 			<a href="#pop_str_011" data-transition="pop" data-rel="popup">orient</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_031" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
+			<a href="#pop_dsc_032" data-transition="pop" data-rel="popup" class="baseFunc">SetPadding</a>(
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">left=0</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">top=0</a>,
 			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">right=0</a>,
@@ -529,7 +537,7 @@
 			<a href="#pop_str_00c" data-transition="pop" data-rel="popup">mode='px'</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_032" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
+			<a href="#pop_dsc_033" data-transition="pop" data-rel="popup" class="baseFunc">SetPosition</a>(
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
 			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width?</a>,
@@ -537,33 +545,33 @@
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_033" data-transition="pop" data-rel="popup" class="baseFunc">SetScale</a>(
+			<a href="#pop_dsc_034" data-transition="pop" data-rel="popup" class="baseFunc">SetScale</a>(
 			<a href="#pop_num_fac" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_fac" data-transition="pop" data-rel="popup">y</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_034" data-transition="pop" data-rel="popup" class="baseFunc">SetSize</a>(
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_dsc_035" data-transition="pop" data-rel="popup" class="baseFunc">SetSize</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">width=-1</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">height=-1</a>,
 			<a href="#pop_str_014" data-transition="pop" data-rel="popup">options?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_035" data-transition="pop" data-rel="popup">SetTouchable</a>(
+			<a href="#pop_dsc_036" data-transition="pop" data-rel="popup">SetTouchable</a>(
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">touchable</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_036" data-transition="pop" data-rel="popup">SetTouchThrough</a>(
+			<a href="#pop_dsc_037" data-transition="pop" data-rel="popup">SetTouchThrough</a>(
 			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">through</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_037" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
+			<a href="#pop_dsc_038" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
 			<a href="#pop_str_015" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_038" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+			<a href="#pop_dsc_039" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_039" data-transition="pop" data-rel="popup" class="baseFunc">Tween</a>(
+			<a href="#pop_dsc_03a" data-transition="pop" data-rel="popup" class="baseFunc">Tween</a>(
 			<a href="#pop_obj_006" data-transition="pop" data-rel="popup">target</a>,
 			<a href="#pop_num_mls" data-transition="pop" data-rel="popup">duration?</a>,
 			<a href="#pop_str_016" data-transition="pop" data-rel="popup">type?</a>,
@@ -574,6 +582,7 @@
 
 	</div>
 
+	<div data-role="popup" id="pop_std_all" class="ui-content"><b>all types</b></div>
 	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>Boolean</b></div>
 	<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
 	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
@@ -638,57 +647,58 @@
 	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>lay.Batch</b><br>Batch method calls to be able to set all object's properties at once.<br>Note that you need to specify each parameter (use <docstr>“”</docstr> or <span class="token keyword">null</span> to leave some out)<br>Inherited methods can be called by appending an underscore to the function name (ie. txt<span class="token punctuation">.</span><span class="token function">Batch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">SetBackColor_</span><span class="token operator">:</span> <span class="token punctuation">[</span><docstr>“red”</docstr><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></div>
 	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>lay.ChildToFront</b><br>Moves a child in front of all other children.</div>
 	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>lay.ClearFocus</b><br>Removes the focus of the control so that the user no longer has immediate access to it.</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>lay.DestroyChild</b><br>Destroys and removes a child from the layout.</div>
-	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>lay.Focus</b><br>Set the focus to the control so that the user can interact with it immediately.</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>lay.GetAbsHeight</b><br>Get the absolute height of the control in pixels.<br>Note that unlike the objects margins its padding does change this value.</div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>lay.GetAbsWidth</b><br>Get the absolute width of the control in pixels.<br>Note that unlike the objects margins its padding does change this value.</div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>lay.GetChildOrder</b><br>Returns the z order of a child.</div>
-	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>lay.GetHeight</b><br>Get the height of the control as screen height relative float or in pixels with the <b>px</b> option.<br>Note that unlike the objects margins its padding does change this value.</div>
-	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>lay.GetLeft</b><br>Get the distance from the control to the left parent border as width relative float or in pixels with the <b>px</b> option.</div>
-	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>lay.GetParent</b><br>Returns the parent control object where the object was added to - commonly a layout.</div>
-	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>lay.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <strong>screen</strong> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <b>px</b> options turns the relative values into pixels.</div>
-	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>lay.GetTop</b><br>Get the distance from the control to the upper parent border as height relative float or in pixels with the <b>px</b> option.</div>
-	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>lay.GetType</b><br>Returns the control class name.</div>
-	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>lay.GetVisibility</b><br>Returns the current visibility state of the control. The Values are:<br><strong>Show</strong>: visible<br><strong>Hide</strong>: invisible but still consuming space<br><strong>Gone</strong>: invisible and not consuming space</div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>lay.GetWidth</b><br>Get the width of the control as screen width relative float or in pixels with the <b>px</b> option.<br>Note that unlike the objects margins its padding does change this value.</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>lay.Gone</b><br>Hides the control without consuming any more layout space as if it were never there.</div>
-	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>lay.Hide</b><br>Hide the control but keep the layout space free.</div>
-	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>lay.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
-	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>lay.IsOverlap</b><br>Returns whether the control overlaps with another by a given distance.</div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>lay.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>lay.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>lay.RemoveChild</b><br>Removes a child from the layout.</div>
-	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>lay.Resize</b><br>Resize a control after device rotation by keeping the original width/height ratios.</div>
-	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>lay.SetBackAlpha</b><br>Set the transparency of the background by an alpha value between <b>0</b> (<i>no transparency</i>) and <b>0.99</b> (<i>full transparent</i>) or <b>1</b> (<i>no transparency</i>) and <b>256</b> (<i>full transparent</i>)</div>
-	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>lay.SetBackColor</b><br>Changes the background color of the control.</div>
-	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>lay.SetBackGradient</b><br>Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.</div>
-	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>lay.SetBackGradientRadial</b><br>Define a radial color gradient for the background of control.</div>
-	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>lay.SetBackground</b><br>Changes the background to an image which can be repeated using the <strong>repeat</strong> option.<br>An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!</div>
-	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>lay.SetChildMargins</b><br>Set margins of top-level children.</div>
-	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>lay.SetChildTextSize</b><br>Change the text size of top-level children.</div>
-	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>lay.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="https://developer.android.com/reference/android/graphics/BlendMode.html" onclick="return OpenUrl(this.href);">Android Developer page</a>.</div>
-	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>lay.SetCornerRadius</b><br>Applies a corner radius to card layouts.</div>
-	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>lay.SetDescription</b><br>Set a control description for accessibility</div>
-	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>lay.SetElevation</b><br>Applies a shadow to card layouts.</div>
-	<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>lay.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
-	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>lay.SetGravity</b><br>Adjust the placing of contained children.</div>
-	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>lay.SetMargins</b><br>Define a distance to other controls on each side of the control.</div>
-	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>lay.SetOnChildChange</b><br>Defines a callback function which is called when the content of a child control has been changed by the user.</div>
-	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>lay.SetOnLongTouch</b><br>Define a callback function which is called when the object has been long pressed.</div>
-	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>lay.SetOnTouch</b><br>Define a callback function that is called when the user touches the control. In addition, an <strong>event</strong> object is passed to the callback function to obtain information about the touch <strong>type</strong>, the touch <b>position(s)</b>, the <strong>amount</strong> of touches and the <strong>control</strong> that was touched.</div>
-	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>lay.SetOnTouchDown</b><br>Define a callback function which is called when the user started toching the control.</div>
-	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>lay.SetOnTouchMove</b><br>Define a callback function which is called when the user drags a finger over the screen.</div>
-	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>lay.SetOnTouchUp</b><br>Define a callback function which is called when the users finger leaves the screen.</div>
-	<div data-role="popup" id="pop_dsc_030" class="ui-content"><b>lay.SetOrientation</b><br>Change the children orientation.</div>
-	<div data-role="popup" id="pop_dsc_031" class="ui-content"><b>lay.SetPadding</b><br>Define distances that elements within the control are to maintain from the control borders.</div>
-	<div data-role="popup" id="pop_dsc_032" class="ui-content"><b>lay.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
-	<div data-role="popup" id="pop_dsc_033" class="ui-content"><b>lay.SetScale</b><br>Scales the control along with its contents by the factors passed to the function.</div>
-	<div data-role="popup" id="pop_dsc_034" class="ui-content"><b>lay.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <b>px</b> option was given.</div>
-	<div data-role="popup" id="pop_dsc_035" class="ui-content"><b>lay.SetTouchable</b><br>En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.</div>
-	<div data-role="popup" id="pop_dsc_036" class="ui-content"><b>lay.SetTouchThrough</b><br>Define whether the layout should forward OnTouch events to underlying controls.</div>
-	<div data-role="popup" id="pop_dsc_037" class="ui-content"><b>lay.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
-	<div data-role="popup" id="pop_dsc_038" class="ui-content"><b>lay.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
-	<div data-role="popup" id="pop_dsc_039" class="ui-content"><b>lay.Tween</b><br>Performs an animation on the control.<br>The <strong>target</strong> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <strong>type</strong> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <strong>repeat</strong>s you can control how many times you want to play the animation.<br><br>If you have <strong>jojo</strong> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <strong>callback</strong> function will be called after the animation has finished. Well, it's about time!</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content">An object for saving individual extra properties.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>lay.DestroyChild</b><br>Destroys and removes a child from the layout.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>lay.Focus</b><br>Set the focus to the control so that the user can interact with it immediately.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>lay.GetAbsHeight</b><br>Get the absolute height of the control in pixels.<br>Note that unlike the objects margins its padding does change this value.</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>lay.GetAbsWidth</b><br>Get the absolute width of the control in pixels.<br>Note that unlike the objects margins its padding does change this value.</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>lay.GetChildOrder</b><br>Returns the z order of a child.</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>lay.GetHeight</b><br>Get the height of the control as screen height relative float or in pixels with the <b>px</b> option.<br>Note that unlike the objects margins its padding does change this value.</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>lay.GetLeft</b><br>Get the distance from the control to the left parent border as width relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>lay.GetParent</b><br>Returns the parent control object where the object was added to - commonly a layout.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>lay.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <strong>screen</strong> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <b>px</b> options turns the relative values into pixels.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>lay.GetTop</b><br>Get the distance from the control to the upper parent border as height relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>lay.GetType</b><br>Returns the control class name.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>lay.GetVisibility</b><br>Returns the current visibility state of the control. The Values are:<br><strong>Show</strong>: visible<br><strong>Hide</strong>: invisible but still consuming space<br><strong>Gone</strong>: invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>lay.GetWidth</b><br>Get the width of the control as screen width relative float or in pixels with the <b>px</b> option.<br>Note that unlike the objects margins its padding does change this value.</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>lay.Gone</b><br>Hides the control without consuming any more layout space as if it were never there.</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>lay.Hide</b><br>Hide the control but keep the layout space free.</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>lay.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>lay.IsOverlap</b><br>Returns whether the control overlaps with another by a given distance.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>lay.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>lay.Method</b><br>Allows access to other functions defined on the object in Java via reflection.<br><br><div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div></div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>lay.RemoveChild</b><br>Removes a child from the layout.</div>
+	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>lay.Resize</b><br>Resize a control after device rotation by keeping the original width/height ratios.</div>
+	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>lay.SetBackAlpha</b><br>Set the transparency of the background by an alpha value between <b>0</b> (<i>no transparency</i>) and <b>0.99</b> (<i>full transparent</i>) or <b>1</b> (<i>no transparency</i>) and <b>256</b> (<i>full transparent</i>)</div>
+	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>lay.SetBackColor</b><br>Changes the background color of the control.</div>
+	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>lay.SetBackGradient</b><br>Define the background color of the control with a gradient. The default gradient direction is from top to bottom, but you can change it from left to right and the reversed versions of course.</div>
+	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>lay.SetBackGradientRadial</b><br>Define a radial color gradient for the background of control.</div>
+	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>lay.SetBackground</b><br>Changes the background to an image which can be repeated using the <strong>repeat</strong> option.<br>An image which is often used with that option is '/res/drawable/pattern_carbon' - try it out!</div>
+	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>lay.SetChildMargins</b><br>Set margins of top-level children.</div>
+	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>lay.SetChildTextSize</b><br>Change the text size of top-level children.</div>
+	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>lay.SetColorFilter</b><br>Adjust the visual color effect with a color and a given BlendMode. More information about BlendMode can be found in the <a href="https://developer.android.com/reference/android/graphics/BlendMode.html" onclick="return OpenUrl(this.href);">Android Developer page</a>.</div>
+	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>lay.SetCornerRadius</b><br>Applies a corner radius to card layouts.</div>
+	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>lay.SetDescription</b><br>Set a control description for accessibility</div>
+	<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>lay.SetElevation</b><br>Applies a shadow to card layouts.</div>
+	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>lay.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
+	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>lay.SetGravity</b><br>Adjust the placing of contained children.</div>
+	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>lay.SetMargins</b><br>Define a distance to other controls on each side of the control.</div>
+	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>lay.SetOnChildChange</b><br>Defines a callback function which is called when the content of a child control has been changed by the user.</div>
+	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>lay.SetOnLongTouch</b><br>Define a callback function which is called when the object has been long pressed.</div>
+	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>lay.SetOnTouch</b><br>Define a callback function that is called when the user touches the control. In addition, an <strong>event</strong> object is passed to the callback function to obtain information about the touch <strong>type</strong>, the touch <b>position(s)</b>, the <strong>amount</strong> of touches and the <strong>control</strong> that was touched.</div>
+	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>lay.SetOnTouchDown</b><br>Define a callback function which is called when the user started toching the control.</div>
+	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>lay.SetOnTouchMove</b><br>Define a callback function which is called when the user drags a finger over the screen.</div>
+	<div data-role="popup" id="pop_dsc_030" class="ui-content"><b>lay.SetOnTouchUp</b><br>Define a callback function which is called when the users finger leaves the screen.</div>
+	<div data-role="popup" id="pop_dsc_031" class="ui-content"><b>lay.SetOrientation</b><br>Change the children orientation.</div>
+	<div data-role="popup" id="pop_dsc_032" class="ui-content"><b>lay.SetPadding</b><br>Define distances that elements within the control are to maintain from the control borders.</div>
+	<div data-role="popup" id="pop_dsc_033" class="ui-content"><b>lay.SetPosition</b><br>Defines the position and size for the control if the parent is an absolute layout.</div>
+	<div data-role="popup" id="pop_dsc_034" class="ui-content"><b>lay.SetScale</b><br>Scales the control along with its contents by the factors passed to the function.</div>
+	<div data-role="popup" id="pop_dsc_035" class="ui-content"><b>lay.SetSize</b><br>Change the size of the control in either screen relative values or in pixels if the <b>px</b> option was given.</div>
+	<div data-role="popup" id="pop_dsc_036" class="ui-content"><b>lay.SetTouchable</b><br>En/Disables touch events to be fired on the control. Other events like OnChange will still be fired.</div>
+	<div data-role="popup" id="pop_dsc_037" class="ui-content"><b>lay.SetTouchThrough</b><br>Define whether the layout should forward OnTouch events to underlying controls.</div>
+	<div data-role="popup" id="pop_dsc_038" class="ui-content"><b>lay.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_039" class="ui-content"><b>lay.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
+	<div data-role="popup" id="pop_dsc_03a" class="ui-content"><b>lay.Tween</b><br>Performs an animation on the control.<br>The <strong>target</strong> object is for the position, size and rotation that the control has at the end of the animation.<br><br>The <strong>type</strong> specifies the behavior and the speed of the animation. Separated by a dot, you must also specify whether you want to apply this behavior to the beginning (In), end (Out), or to both (InOut) times of the animation.<br><br>With the amount of <strong>repeat</strong>s you can control how many times you want to play the animation.<br><br>If you have <strong>jojo</strong> activated, the animation will alternate between forward and backward playback, so that if the repetition value is odd, the control will be at the start position again at the end of the animation.<br><br>Finally the <strong>callback</strong> function will be called after the animation has finished. Well, it's about time!</div>
 </div>
 </body>
 
