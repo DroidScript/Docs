@@ -80,20 +80,6 @@ function _AddPermissions(perms) {return}
  */
 function _AddPlugins(plugins) {return}
 
-/**
- * Creates a new plugin object to interact with a dynamically loaded java plugin
- * @param {str} name `Package Name`
- * @param {str} options 
- * @return {DsPlugin} Plugin
- */
-function _CreatePlugin(name, options) {return}
-
-/**
- * Remove extra permissions from the app when exporting APKs
- * @param {str_com} perms 
- */
-function _RemovePermissions(perms) {return}
-
 /** Helper class that automaticall binds the 'this' context for all methods to the current object instance */
 class Bound {
 
@@ -106,6 +92,14 @@ class Bound {
 
 /** @type {Dscfg} Global App configuration modes */
 const cfg = null;
+
+/**
+ * Creates a new plugin object to interact with a dynamically loaded java plugin
+ * @param {str} name `Package Name`
+ * @param {str} options 
+ * @return {DsPlugin} Plugin
+ */
+function _CreatePlugin(name, options) {return}
 
 /**
  * Shortcut for ../app/GetDisplayHeight
@@ -145,6 +139,12 @@ function include(file, noDefer) {return}
 function M(ctx, callback) {return}
 
 /**
+ * Remove extra permissions from the app when exporting APKs
+ * @param {str_com} perms 
+ */
+function _RemovePermissions(perms) {return}
+
+/**
  * Translate a string id into its respective language from the lang.json file
  * @param {str} id 
  * @param {str} [lang='en'] 
@@ -159,6 +159,55 @@ function T(id, lang) {return}
  * @return {num} 
  */
 function TW(txt, size) {return}
+
+
+class Dscfg {
+
+	/** @type {nil} Start the app in 'Game' mode */
+	Game;
+
+	/** @type {nil} Start the app in 'Landscape' mode */
+	Landscape;
+
+	/** @type {nil} Start the app in 'Portrait' mode */
+	Portrait;
+
+	/** @type {nil} Make the app transparent */
+	Transparent;
+
+	/** @type {nil} Share */
+	Share;
+
+	/** @type {nil} U sb */
+	USB;
+
+	/** @type {nil} Start the app in 'Light' mode */
+	Light;
+
+	/** @type {nil} Start the app in 'Dark' mode */
+	Dark;
+
+	/** @type {nil} Start the app in legacy 'Holo' mode */
+	Holo;
+
+	/** @type {nil} Allow the use of MaterialUI contruls in your app */
+	MUI;
+
+	/** @type {nil} Start the app as 'Node.js' process */
+	Node;
+
+	/** @type {nil} Start the app as 'Node.js' Ecma Script Module process */
+	NodeESM;
+
+	/** @type {nil} Disable DOM library to significantly increase performance */
+	Fast;
+
+	/** @type {nil} Automatically start a local server for your app */
+	Serv;
+
+	/** @type {nil} Shows a Console instead of a GUI app */
+	Console;
+}
 
 
 class DsPlugin {
@@ -235,55 +284,6 @@ class DsPlugin {
 
 	/** Calls the destroy methon on the java plugin */
 	Destroy() {return}
-}
-
-
-class Dscfg {
-
-	/** @type {nil} Start the app in 'Game' mode */
-	Game;
-
-	/** @type {nil} Start the app in 'Landscape' mode */
-	Landscape;
-
-	/** @type {nil} Start the app in 'Portrait' mode */
-	Portrait;
-
-	/** @type {nil} Make the app transparent */
-	Transparent;
-
-	/** @type {nil} Share */
-	Share;
-
-	/** @type {nil} U sb */
-	USB;
-
-	/** @type {nil} Start the app in 'Light' mode */
-	Light;
-
-	/** @type {nil} Start the app in 'Dark' mode */
-	Dark;
-
-	/** @type {nil} Start the app in legacy 'Holo' mode */
-	Holo;
-
-	/** @type {nil} Allow the use of MaterialUI contruls in your app */
-	MUI;
-
-	/** @type {nil} Start the app as 'Node.js' process */
-	Node;
-
-	/** @type {nil} Start the app as 'Node.js' Ecma Script Module process */
-	NodeESM;
-
-	/** @type {nil} Disable DOM library to significantly increase performance */
-	Fast;
-
-	/** @type {nil} Automatically start a local server for your app */
-	Serv;
-
-	/** @type {nil} Shows a Console instead of a GUI app */
-	Console;
 }
 
 

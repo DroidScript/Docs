@@ -134,16 +134,6 @@ declare function _AddPermissions(perms: str_com): void;
 declare function _AddPlugins(plugins: str_com): void;
 
 /**
- * Creates a new plugin object to interact with a dynamically loaded java plugin
- * @param name `Package Name`
- * @return Plugin
- */
-declare function _CreatePlugin(name: str, options: str): DsPlugin;
-
-/** Remove extra permissions from the app when exporting APKs */
-declare function _RemovePermissions(perms: str_com): void;
-
-/**
  * Helper class that automaticall binds the 'this' context for all methods to the current object instance
  * @return class
  */
@@ -155,6 +145,13 @@ declare class Bound {
 
 /** Global App configuration modes */
 declare const cfg: Dscfg;
+
+/**
+ * Creates a new plugin object to interact with a dynamically loaded java plugin
+ * @param name `Package Name`
+ * @return Plugin
+ */
+declare function _CreatePlugin(name: str, options: str): DsPlugin;
 
 /** Shortcut for ../app/GetDisplayHeight */
 declare function DH(): num_int;
@@ -174,36 +171,14 @@ declare function include(file: str_pth, noDefer?: bin): void;
 /** Disables callback optimization and sets a custom this context */
 declare function M(ctx: all, callback: (...args: lst) => void): (this: all, ...args: lst) => void;
 
+/** Remove extra permissions from the app when exporting APKs */
+declare function _RemovePermissions(perms: str_com): void;
+
 /** Translate a string id into its respective language from the lang.json file */
 declare function T(id: str, lang?: str): str;
 
 /** Shortcut for ../app/GetTextBounds.width */
 declare function TW(txt: str, size: num): num;
-
-
-declare class DsPlugin {
-
-	/** Returns the type of the control */
-	GetType(): "Plugin";
-
-	/** Call a function in the java plugin with up to 8 parameters */
-	Send(cmd: str, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
-
-	/** Calls a command on an internal java object with up to 8 parameters */
-	SendObj(cmd: str, obj: all, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
-
-	/** Requests to create a new object in the java plugin with up to 8 parameters, and expects a unique identifier as return value in return */
-	CreateObj(type: str, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
-
-	/** Sends an image to the java plugin */
-	SendImg(cmd: str, img?: DsImage, width?: num_int, height?: num_int): str;
-
-	/** Sends a camera view to the java plugin */
-	SendCam(cmd: str, cam: DsCameraView): str;
-
-	/** Calls the destroy methon on the java plugin */
-	Destroy(): void;
-}
 
 
 declare class Dscfg {
@@ -252,6 +227,31 @@ declare class Dscfg {
 
 	/** Shows a Console instead of a GUI app */
 	Console: nil;
+}
+
+
+declare class DsPlugin {
+
+	/** Returns the type of the control */
+	GetType(): "Plugin";
+
+	/** Call a function in the java plugin with up to 8 parameters */
+	Send(cmd: str, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
+
+	/** Calls a command on an internal java object with up to 8 parameters */
+	SendObj(cmd: str, obj: all, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
+
+	/** Requests to create a new object in the java plugin with up to 8 parameters, and expects a unique identifier as return value in return */
+	CreateObj(type: str, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
+
+	/** Sends an image to the java plugin */
+	SendImg(cmd: str, img?: DsImage, width?: num_int, height?: num_int): str;
+
+	/** Sends a camera view to the java plugin */
+	SendCam(cmd: str, cam: DsCameraView): str;
+
+	/** Calls the destroy methon on the java plugin */
+	Destroy(): void;
 }
 
 
