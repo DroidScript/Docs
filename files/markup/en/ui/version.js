@@ -4,6 +4,6 @@
 /** # version #
  * @prop
  * UI library version
- * $$ ui.version() $$
+ * $$ ui.version $$
  * @returns num
 */

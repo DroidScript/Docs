@@ -3,6 +3,6 @@
 
 /** # DW #
  * Shortcut for @../app/GetDisplayWidth
- * $$ global.DW() $$
+ * $$ DW() $$
  * @returns num_int
 */

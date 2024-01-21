@@ -6,7 +6,7 @@
  * @abbrev cfg
  * Global App configuration modes. Place it in a comment at the top of you main source file to make it effective.
  * More details about each configuration can be found in the @../intro/CodingFeatures section
- * $$ global.cfg() $$
+ * $$ cfg $$
  * @returns obj
 */
 

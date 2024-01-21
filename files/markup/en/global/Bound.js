@@ -5,7 +5,7 @@
  * @prop
  * @abbrev obj
  * Helper class that automaticall binds the 'this' context for all methods to the current object instance
- * $$ obj = global.Bound() $$
+ * $$ obj = Bound $$
  * @returns obj-class
 */
 

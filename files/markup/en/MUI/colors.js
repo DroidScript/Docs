@@ -4,7 +4,7 @@
 /** # colors #
  * @prop
  *
- * $$ MUI.colors() $$
+ * $$ MUI.colors $$
  * @returns obj
 */
 

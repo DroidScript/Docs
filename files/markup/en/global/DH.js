@@ -3,6 +3,6 @@
 
 /** # DH #
  * Shortcut for @../app/GetDisplayHeight
- * $$ global.DH() $$
+ * $$ DH() $$
  * @returns num_int
 */

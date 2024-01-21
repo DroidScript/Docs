@@ -4,6 +4,6 @@
 /** # RemovePermissions #
  * @name _RemovePermissions
  * Remove extra permissions from the app when exporting APKs
- * $$ global.RemovePermissions(perms) $$
+ * $$ _RemovePermissions(perms) $$
  * @param {str_com} perms
 */

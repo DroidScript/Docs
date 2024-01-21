@@ -129,13 +129,13 @@ function renderInfo(scope, name, data) {
     let jdocLine = "";
     if (data.abbrev && data.abbrev !== data.name) jdocLine += data.abbrev + " = ";
     if (scope !== "global" ? scope + '.' : '') jdocLine += scope + '.';
-    jdocLine += name;
+    jdocLine += data.name || name;
     if (!data.isval) jdocLine += `(${data.pNames?.join(", ") || ''})`;
 
     return `
 /** # ${name} #
 ${info} * ${_desc}
- * $$ ${jdocLine}) $$ 
+ * $$ ${jdocLine} $$ 
 `;
 }
 

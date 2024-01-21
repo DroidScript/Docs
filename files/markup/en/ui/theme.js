@@ -4,7 +4,7 @@
 /** # theme #
  * @prop
  * UI theme information
- * $$ ui.theme() $$
+ * $$ ui.theme $$
  * @returns uio-theme
 */
 
