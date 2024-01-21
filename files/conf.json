@@ -12,7 +12,7 @@
 	},
 	"vers": ["v265", "v264"],
 	"version": "v265",
-	"regHide": "^(_.*|.+\\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\\.(un)?loadTexture)$",
+	"regHide": "^(_.*|.+\\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\\.(un)?loadTexture)$",
 	"regControl": "^(Create(?!Debug).*|OpenDatabase|Odroid)$",
 	"tname": {
 		"all": "all types",

@@ -90,6 +90,17 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "generate navs",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["-c", "-n", "-N"],
+            "program": "${workspaceFolder}/files/generate.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "translate-python",
             "cwd": "${workspaceFolder}/files",
             "skipFiles": [

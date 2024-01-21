@@ -3,6 +3,7 @@
 
 /** # ide #
  * @prop
+ * @abbrev ide
  * Functions to interact with the DroidScript IDE
  * $$ global.ide() $$
  * @returns obj
@@ -46,7 +47,7 @@
 
 
 /** ### Export ###
- * Export your Game as pure HTML project. Will support `Hybrid` in a future version too
+ * Export your Game as pure HTML project. Will support “Hybrid” in a future version too
  * $$ undefined.Export(type, src, desc) $$
  * @param {str} type GameView|Html|Hybrid
  * @param {str_pth} src
@@ -55,7 +56,7 @@
 
 
 /** ### AddModule ###
- * Add a NodeJS module to your app from code. Can include specific version numbers via `name@version`
+ * Add a NodeJS module to your app from code. Can include specific version numbers via “name\@version”
  * $$ undefined.AddModule(name, overwrite?) $$
  * @param {str} name
  * @param {bin} [overwrite]

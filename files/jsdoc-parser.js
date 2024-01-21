@@ -481,6 +481,8 @@ function HandleComment(c, name, func, json, objJson) {
 
         else if (line.match(/^[ */]+#/) && !func.desc) {
             isCA = true;
+            const nameMatch = line.match(/(?=#)\s+(\S+)/);
+            name = nameMatch ? nameMatch[1] : name;
             func = objJson[name] = newDSFunc();
             // if( parent && isChild ) {
             //     met.subf = JSON.parse(JSON.stringify(parent));

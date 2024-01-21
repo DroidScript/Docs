@@ -169,15 +169,22 @@ function has(l, v) { return Boolean(l) && l.indexOf(v) > -1; }
 // function values(o) { return Object.values(o); }
 /** @ts-ignore @type {<T>(O: T) => (Extract<keyof T, string>)[]} */
 function keys(o) { return Object.keys(o); }
+/** @param {string} s */
+function invertCase(s) { return s.replace(/([a-z]*)([A-Z]*)/g, (_, a, b) => a.toUpperCase() + b.toLowerCase()); }
+
 /**
  * @param {any} a
  * @param {any} b
+ * @param {boolean} lowerFirst
  */
-function sortAsc(a, b) {
-    const sa = String(a).replace(/[^a-z0-9]/gi, "") || String(a);
-    const sb = String(b).replace(/[^a-z0-9]/gi, "") || String(b);
+function sortAsc(a, b, lowerFirst = false) {
+    const sa = String(a).replace(/[^a-z0-9_]/gi, "") || String(a);
+    const sb = String(b).replace(/[^a-z0-9_]/gi, "") || String(b);
     const la = sa.toLowerCase(), lb = sb.toLowerCase();
-    return la === lb ? sa < sb ? 1 : -1 : la > lb ? 1 : -1;
+    if (la === lb) return sa < sb ? 1 : -1;
+    if (lowerFirst === true && (sa === la || sa === lb))
+        return invertCase(sa) > invertCase(sb) ? 1 : -1;
+    return la > lb ? 1 : -1;
 }
 
 /** @param {string} s */

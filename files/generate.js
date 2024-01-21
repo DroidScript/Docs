@@ -10,7 +10,7 @@ const { generateDoc, htmlNavi, newNaviItem } = require("./generators/generate-ht
 const { generateNavigators } = require("./generators/generate-navs");
 const { generateTips } = require("./generators/generate-tips");
 const { generateTsx } = require("./generators/generate-tsx");
-const { keys, getl, Throw, ReadFile, mergeObject, nothidden, tos, force, getDstDir, D_BASE, D_LANG, getSrcDir, outDir, D_VER, D_SCOPE, baseDir } = require("./generators/util");
+const { keys, getl, Throw, ReadFile, mergeObject, nothidden, tos, force, getDstDir, D_BASE, D_LANG, getSrcDir, outDir, D_VER, D_SCOPE, baseDir, sortAsc } = require("./generators/util");
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 /** @type {GenState} */
@@ -19,7 +19,7 @@ const dfltState = {
     curScope: "app", curFunc: "", curSubf: "",
     progress: 0, popDefs: {}, spop: {}
 };
-let nogen = false, clear = false, updateVer = false, makeTsx = false, makeTips = false;
+let nogen = false, clear = false, updateVer = false, makeTsx = false, makeTips = false, makeNavs = false;
 let regGen = RegExp("");
 
 const rootPath = __dirname + "/";
@@ -187,13 +187,6 @@ function generateScope(name, state, genPattern) {
 
     if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
-    // generate nav pages
-    if ("navs".match(regGen)) {
-        generateNavigators(inpt.scope, inpt.navs, conf.scopes[state.curScope] || state.curScope, state);
-        const missNavs = Object.entries(inpt.scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
-        if (inpt.base && missNavs.length > 0) console.log(`missing navigators in ${state.curScope}: ${missNavs.join(", ")}\n`);
-    }
-
     // generate doc pages
     generateDocs(inpt, state);
     return app.HideProgressBar();
@@ -219,9 +212,9 @@ function parseInput(state) {
     if (app.FileExists(state.curDoc)) {
         newScope = JSON.parse(ReadFile(state.curDoc, "false"));
         scope = mergeObject(scope, newScope);
-        if (!keys(navs).length) navs = keys(scope);
+        if (!keys(navs).length) navs = keys(scope).sort((a, b) => sortAsc(scope[a].name || a, scope[b].name || b, true));
         // @ts-ignore
-        else navs.All = keys(scope);
+        else navs.All = keys(scope).sort((a, b) => sortAsc(scope[a].name || a, scope[b].name || b, true));
 
         // read base functions used in scope
         state.curDoc = scopeDir + "base.json";
@@ -269,8 +262,7 @@ function parseInput(state) {
  */
 function generateDocs(inpt, state) {
     if (!nogen) {
-        const lst = keys(inpt.scope)
-            .filter(n => (state.curScope === "global" || nothidden(n)) && regGen.test(n));
+        const lst = keys(inpt.scope).filter(n => nothidden(n) && regGen.test(n));
         for (let i = 0; i < lst.length; i++) {
             state.progress = Math.floor(100 * i / lst.length);
             app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
@@ -278,6 +270,13 @@ function generateDocs(inpt, state) {
             resetGlobals(state);
             generateDoc(state, inpt, lst[i]);
         }
+    }
+
+    if (makeNavs && "navs".match(regGen)) {
+        resetGlobals(state);
+        generateNavigators(inpt.scope, inpt.navs, conf.scopes[state.curScope] || state.curScope, state);
+        const missNavs = Object.entries(inpt.scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
+        if (inpt.base && missNavs.length > 0) console.log(`missing navigators in ${state.curScope}: ${missNavs.join(", ")}\n`);
     }
 
     if (makeTips && "tips".match(regGen) && state.curScope !== "global") {
@@ -377,6 +376,7 @@ function main() {
             case "-V": case "--verbose": app.SetDebug(true); break;
             case "-c": case "--clear": clear = true; break;
             case "-C": case "--clean": clean = true; break;
+            case "-N": case "--navs": makeNavs = true; break;
             case "-t": case "--tips": makeTips = true; break;
             case "-d": case "--tsx": makeTsx = true; break;
             case "-u": case "--update": updateVer = true; break;
@@ -431,7 +431,7 @@ function main() {
     }
 
     if (addcfg) app.WriteFile("conf.json", tos(conf));
-    if (!nogen) makeTips = makeTsx = true;
+    if (!nogen) makeTips = makeTsx = makeNavs = true;
 
     Generate(genPattern);
     if (startServer) {

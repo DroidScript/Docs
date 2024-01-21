@@ -72,7 +72,7 @@ function generateDefinitionFile(scopeName, inpt, state) {
         const isGlob = func.subf && state.curScope !== "MUI" && typeof func.retval === "string" && func.retval?.startsWith("obj");
 
         state.curFunc = funcName;
-        const defs = processFunction(inpt, state, funcName, scopeName, func, isGlobal ? '' : '\t', isGlobal);
+        const defs = processFunction(inpt, state, func.name || funcName, scopeName, func, isGlobal ? '' : '\t', isGlobal);
 
         if (defs.className && typeof func.retval === "string" && !isGlob) {
             const typeKey = func.retval.split('-', 1)[0];

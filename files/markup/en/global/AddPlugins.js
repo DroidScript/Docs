@@ -1,8 +1,9 @@
 // ------------- HEADER SECTION -------------
 
 
-/** # _AddPlugins #
+/** # AddPlugins #
+ * @name _AddPlugins
  * Manually include extra plugins in the app
- * $$ global._AddPlugins(plugins) $$
+ * $$ global.AddPlugins(plugins) $$
  * @param {str_com} plugins
 */

@@ -126,10 +126,16 @@ function renderInfo(scope, name, data) {
     if (data.abbrev) info += ` * @abbrev ${data.abbrev}\n`;
     if (data.shortDesc) info += ` * @brief ${data.shortDesc}\n`;
 
+    let jdocLine = "";
+    if (data.abbrev && data.abbrev !== data.name) jdocLine += data.abbrev + " = ";
+    if (scope !== "global" ? scope + '.' : '') jdocLine += scope + '.';
+    jdocLine += name;
+    if (!data.isval) jdocLine += `(${data.pNames?.join(", ") || ''})`;
+
     return `
 /** # ${name} #
 ${info} * ${_desc}
- * $$ ${data.abbrev ? data.abbrev + " = " : ""}${scope}.${name}(${data.pNames ? data.pNames.join(", ") : ""}) $$ 
+ * $$ ${jdocLine}) $$ 
 `;
 }
 

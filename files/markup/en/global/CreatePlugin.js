@@ -1,9 +1,10 @@
 // ------------- HEADER SECTION -------------
 
 
-/** # _CreatePlugin #
+/** # CreatePlugin #
+ * @name _CreatePlugin
  * Creates a new plugin object to interact with a dynamically loaded java plugin. See @../intro/CreatePlugins for more plugin information
- * $$ global._CreatePlugin(name, options) $$
+ * $$ global.CreatePlugin(name, options) $$
  * @param {str} name Package Name
  * @param {str} options
  * @returns obj-Plugin

@@ -1,8 +1,9 @@
 // ------------- HEADER SECTION -------------
 
 
-/** # _AddOptions #
+/** # AddOptions #
+ * @name _AddOptions
  * Add extra options to the app
- * $$ global._AddOptions(options) $$
+ * $$ global.AddOptions(options) $$
  * @param {str_com} options
 */

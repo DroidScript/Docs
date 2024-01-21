@@ -18,24 +18,22 @@ function generateNavigators(scope, navs, name, state, pfx) {
 
     // function list
     if (navs instanceof Array) {
-        if (state.curScope !== "global") navs = navs.filter(nothidden);
-        for (const func of navs) {
+        for (const func of navs.filter(nothidden)) {
+            const m = scope[func];
             if (!func) { nav += "<li></li>"; }
             else if (name !== 'All' && scope['_' + func]) { scope['_' + func].hasNav = true; }
-            else if (!scope[func]) { Throw(`nav to deleted method ${state.curScope}.${func}`); }
+            else if (!m) { Throw(`nav to deleted method ${state.curScope}.${func}`); }
             else {
-                scope[func].hasNav ||= (name !== 'All');
+                m.hasNav ||= (name !== 'All');
                 nav += newNaviItem(
                     state.curScope + `/${func.replace(/^\d+|\s+/g, '')}.htm`,
-                    func.replace(/^\d+\s*/, ''), getAddClass(scope[func], state));
+                    (m.name || func).replace(/^\d+\s*/, ''), getAddClass(m, state));
             }
         }
     }
     // name:target.htm or scope:categories association
     else if (navs instanceof Object) {
-        let list = keys(navs);
-        if (state.curScope !== "global") list = list.filter(nothidden);
-        for (const cat of list) {
+        for (const cat of keys(navs).filter(nothidden)) {
             let val = navs[cat];
             if (cat === '_nofilter') continue;
             if (cat.startsWith("+html")) {
