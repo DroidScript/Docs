@@ -2586,6 +2586,7 @@ class MuiButtonContained {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -2930,6 +2931,7 @@ class MuiButtonElegant {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -3281,6 +3283,7 @@ class MuiButtonFlat {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -3625,6 +3628,7 @@ class MuiButtonOutlined {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -3969,6 +3973,7 @@ class MuiButtonRaised {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -4320,6 +4325,7 @@ class MuiButtonRaisedO {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -4671,6 +4677,7 @@ class MuiButtonRound {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -5022,6 +5029,7 @@ class MuiButtonRoundO {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -5373,6 +5381,7 @@ class MuiButtonText {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -5717,6 +5726,7 @@ class MuiButtonToggle {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -7789,6 +7799,7 @@ class MuiList {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -9297,6 +9308,7 @@ class MuiRadio {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -13509,6 +13521,7 @@ class MuiTextH1 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -13911,6 +13924,7 @@ class MuiTextH2 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -14313,6 +14327,7 @@ class MuiTextH3 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -14715,6 +14730,7 @@ class MuiTextH4 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -15117,6 +15133,7 @@ class MuiTextH5 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -15519,6 +15536,7 @@ class MuiTextH6 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -15921,6 +15939,7 @@ class MuiTextJumbo {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -16323,6 +16342,7 @@ class MuiTextParagraph {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -16725,6 +16745,7 @@ class MuiTextSecondary {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 

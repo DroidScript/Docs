@@ -1454,6 +1454,7 @@ declare class MuiButtonContained {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -1641,6 +1642,7 @@ declare class MuiButtonElegant {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -1831,6 +1833,7 @@ declare class MuiButtonFlat {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -2018,6 +2021,7 @@ declare class MuiButtonOutlined {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -2205,6 +2209,7 @@ declare class MuiButtonRaised {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -2395,6 +2400,7 @@ declare class MuiButtonRaisedO {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -2585,6 +2591,7 @@ declare class MuiButtonRound {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -2775,6 +2782,7 @@ declare class MuiButtonRoundO {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -2965,6 +2973,7 @@ declare class MuiButtonText {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -3152,6 +3161,7 @@ declare class MuiButtonToggle {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -4353,6 +4363,7 @@ declare class MuiList {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -5190,6 +5201,7 @@ declare class MuiRadio {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -7455,6 +7467,7 @@ declare class MuiTextH1 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -7672,6 +7685,7 @@ declare class MuiTextH2 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -7889,6 +7903,7 @@ declare class MuiTextH3 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -8106,6 +8121,7 @@ declare class MuiTextH4 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -8323,6 +8339,7 @@ declare class MuiTextH5 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -8540,6 +8557,7 @@ declare class MuiTextH6 {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -8757,6 +8775,7 @@ declare class MuiTextJumbo {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -8974,6 +8993,7 @@ declare class MuiTextParagraph {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;
@@ -9191,6 +9211,7 @@ declare class MuiTextSecondary {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param types `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 */
 	Method(name: str, types?: str_com, p1?: str, p2?: str, p3?: str, p4?: str): all;

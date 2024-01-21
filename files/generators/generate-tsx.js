@@ -163,16 +163,20 @@ function declareCallback(params, retval) {
  * @param {string} desc
  * @param {ParamDef[]} params
  * @param {TypeDef} retval
+ * @param {string[]} hints
  * @param {boolean|undefined} isval
  * @param {string} indent
  * @param {boolean} isGlobal
  */
-function declareFunction(state, name, desc, params, retval, isval, indent, isGlobal) {
+function declareFunction(state, name, desc, params, retval, hints, isval, indent, isGlobal) {
     let docStr = "";
+    const jsparams = [];
+    for (const hint of hints) jsparams.push(hint.replace(/<(\w+.*)>/, indent + " * @$1\n"));
+
     if (JSDOC) {
         const args = params.map(p => p.name.replace('?', ''));
 
-        const jsparams = params.map(p => {
+        for (const p of params) {
             if (p.name.startsWith("...")) {
                 p.name = p.name.slice(3);
                 p.type = `(${p.type})[]`;
@@ -180,8 +184,8 @@ function declareFunction(state, name, desc, params, retval, isval, indent, isGlo
             p.desc = p.desc.replace(/^\\/, '').replace(/ \* /g, indent + ' * ');
             if (p.dflt) p.name = `[${p.name}=${p.dflt}]`;
             else if (p.name.endsWith("?")) p.name = `[${p.name.slice(0, -1)}]`;
-            return `${indent} * @param {${p.type}} ${p.name} ${p.desc}\n`;
-        });
+            jsparams.push(`${indent} * @param {${p.type}} ${p.name} ${p.desc}\n`);
+        }
 
         retval.desc = retval.desc.replace(/^\\/, '');
         if (!isval && retval.sub) jsparams.push(`${indent} * @return {${retval.sub}} ${retval.desc}\n`);
@@ -203,10 +207,10 @@ function declareFunction(state, name, desc, params, retval, isval, indent, isGlo
 
         params = params.filter(p => p.desc);
         retval.desc = retval.desc.replace(/^\\(?=[^{}])/, '');
-        const jsparams = params.map(p => {
+        for (const p of params) {
             p.desc = p.desc.replace(/^\\(?=[^{}])/, '').replace(/ \* /g, indent + ' * ');
-            return `${indent} * @param ${p.name.replace("?", '')} ${p.desc}\n`;
-        });
+            jsparams.push(`${indent} * @param ${p.name.replace("?", '')} ${p.desc}\n`);
+        }
 
         if (retval.desc) jsparams.push(`${indent} * @return ${retval.desc}\n`);
 
@@ -247,17 +251,19 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent, isGlobalScop
     if (!func.shortDesc?.trim())
         func.shortDesc = func.desc.split(/\.\s/)[0];
 
-    func.shortDesc = func.shortDesc
+    const shortDesc = func.shortDesc
         .replace(/@/g, '')
         .replace(/\n/g, `\n${indent} * `)
-        .replace(/<(premium|deprecated|xfeature)(.*?)>/g, "@$1 $2");
+        .replace(/\s*<(premium|deprecated|xfeature).*\s*/g, "");
+
+    /** @type {string[]} */
+    const hints = [];
+    func.desc.replace(/<(premium|deprecated|xfeature).*?>/g, m => (hints.push(m.replace(/@/g, '\\@')), m));
 
     /** @type {ParamDef[]} */
     const params = [];
     for (const i in func.pNames) {
-        const [pname, dflt] = func.pNames[i]
-            .replace("default", "dflt")
-            .split("=");
+        const [pname, dflt] = func.pNames[i].replace("default", "dflt").split("=");
         const ptype = func.pTypes[i];
         const type = makeType(inpt, state, ptype);
         if (type.sub.match(/^[a-z_]+$/) && !(tDesc[type.sub] || tName[type.sub]))
@@ -289,10 +295,10 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent, isGlobalScop
         const [fname, fobj, fcon] = name.split(".").reverse();
         const key = fcon ? `${pAbbrev.toUpperCase()}_${fobj}` : fobj;
         const s = defs.extra[key] || "";
-        defs.extra[key] = s + declareFunction(state, fname, func.shortDesc, params, retval, func.isval, indent, isGlobalScope);
+        defs.extra[key] = s + declareFunction(state, fname, shortDesc, params, retval, hints, func.isval, indent, isGlobalScope);
     }
     else {
-        defs.func += declareFunction(state, name, func.shortDesc, params, retval, func.isval, indent, isGlobalScope);
+        defs.func += declareFunction(state, name, shortDesc, params, retval, hints, func.isval, indent, isGlobalScope);
     }
 
     if (!func.subf) return defs;
@@ -308,7 +314,7 @@ function processFunction(inpt, state, name, pAbbrev, dfunc, indent, isGlobalScop
     defs.class += `class ${className} {\n`;
     for (const subFuncName in func.subf) {
         let met = func.subf[subFuncName];
-        if (typeof met === "string") met = unwrapBaseFunc(met, inpt.base);
+        met = unwrapBaseFunc(met, inpt.base);
 
         const sdefs = processFunction(inpt, state, subFuncName, func.abbrev || "undefined", met, '\t');
         defs.class += sdefs.func;

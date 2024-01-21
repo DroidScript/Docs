@@ -64,6 +64,7 @@ class DsApp {
 
 	/**
 	 * Create and add CodeEdit to Layout
+	 * @premium
 	 * @param {DsLayout} layout 
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
@@ -473,6 +474,7 @@ class DsApp {
 
 	/**
 	 * Returns a new CloudStore object
+	 * @premium
 	 * @param {str} apiKey 
 	 * @return {DsCloudStore} 
 	 */
@@ -480,6 +482,7 @@ class DsApp {
 
 	/**
 	 * Returns a new CodeEdit object
+	 * @premium
 	 * @param {str} text 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
@@ -679,12 +682,14 @@ class DsApp {
 
 	/**
 	 * Returns a new Nxt object
+	 * @deprecated Please install and visit the NXT-Docs from the Plugins page
 	 * @return {DsNxt} 
 	 */
 	CreateNxt() {return}
 
 	/**
 	 * Returns a new Overlay object
+	 * @premium
 	 * @param {string | ("ShowWhenLocked"|"TurnScreenOn"|"KeepScreenOn")[]} [options] 
 	 * @return {DsOverlay} 
 	 */
@@ -754,6 +759,7 @@ class DsApp {
 
 	/**
 	 * Returns a new SMS object to send and retreive SMS messages
+	 * @xfeature
 	 * @return {DsSMS} 
 	 */
 	CreateSMS() {return}
@@ -849,6 +855,7 @@ class DsApp {
 
 	/**
 	 * Returns a new Theme object
+	 * @premium
 	 * @param {"Dark"|"Light"|"Default"} baseTheme 
 	 * @return {DsTheme} 
 	 */
@@ -940,6 +947,7 @@ class DsApp {
 
 	/**
 	 * The wizard is supposed to simplify a configuration progress which requires several inputs and decisions by the user
+	 * @premium
 	 * @param {str} title 
 	 * @param {num_frc} [width=-1] 
 	 * @param {num_frc} [height=-1] 
@@ -1053,6 +1061,7 @@ class DsApp {
 
 	/**
 	 * Execute a bash script using Termux
+	 * @premium
 	 * @param {"termux"} name 
 	 * @param {str_ptf} file 
 	 * @param {str} [args] 
@@ -1097,6 +1106,7 @@ class DsApp {
 
 	/**
 	 * Google Analytics
+	 * @premium
 	 * @param {"create"|"send"|"set"|"require"|"provide"|"remove"} command 
 	 * @param {str_com} fields 
 	 * @param {obj} [options] 
@@ -1117,6 +1127,7 @@ class DsApp {
 
 	/**
 	 * GetActivities returns a list of object of currently running activities
+	 * @deprecated Filters are applied since Android 11. Full functionality can be accessed in the X-Version of DS.
 	 * @return {{ label: str, packageName: str, className: str }[]} 
 	 */
 	GetActivities() {return}
@@ -1293,6 +1304,7 @@ class DsApp {
 
 	/**
 	 * Get data about installed apps
+	 * @deprecated Filters are applied since Android 11. Full functionality can be accessed in the X-Version of DS.
 	 * @return {{ packageName: str, className: str, uid: num_int, targetSdkVersion: num_int, dataDir: str_pth, sourceDir: str_pth, publicSourceDir: str_pth, nativeLibraryDir: str_pth }[]} 
 	 */
 	GetInstalledApps() {return}
@@ -1492,12 +1504,14 @@ class DsApp {
 
 	/**
 	 * Get list of running apps
+	 * @deprecated Filters are applied since Android 11. Full functionality can be accessed in the X-Version of DS.
 	 * @return {{ user: num_int, pid: num_int, name: str, foreground: bin }[]} 
 	 */
 	GetRunningApps() {return}
 
 	/**
 	 * Get list of running services
+	 * @deprecated Filters are applied since Android 11. Full functionality can be accessed in the X-Version of DS.
 	 * @return {{ user: num_int, pid: num_int, name: str }[]} 
 	 */
 	GetRunningServices() {return}
@@ -1862,8 +1876,8 @@ class DsApp {
 
 	/**
 	 * Returns a list of granted permissions
-	 * 	 * 
-	 * 	 * See Also: GetPermission CheckPermission RemovePermission
+	 * 
+	 * See Also: GetPermission CheckPermission RemovePermission
 	 * @param {"Camera"|"Storage"|"ExtSDcard"|"Network"|"Notify"|"Location"|"SMS"|"Calendar"|"Body"|"Contacts"|"Record"|"Biometric"|"Phone"|"Accounts"|"License"} type 
 	 * @return {str_uri[]} 
 	 */
@@ -2007,6 +2021,7 @@ class DsApp {
 
 	/**
 	 * Queries content from the android content model
+	 * @premium
 	 * @param {str_uri} uri 
 	 * @param {str_com} columns 
 	 * @param {str_sql} [select] 
@@ -2068,8 +2083,8 @@ class DsApp {
 
 	/**
 	 * Removes a granted permission
-	 * 	 * 
-	 * 	 * See Also: GetPermission CheckPermission ListPermissions
+	 * 
+	 * See Also: GetPermission CheckPermission ListPermissions
 	 * @param {str_uri} uri 
 	 */
 	RemovePermission(uri) {return}
@@ -2140,8 +2155,8 @@ class DsApp {
 
 	/**
 	 * Schedules background jobs defined in a Job.js file
-	 * 	 * 
-	 * 	 * See Also: CancelJob
+	 * 
+	 * See Also: CancelJob
 	 * @param {num_mls} delay 
 	 * @param {str} [options] 
 	 */
@@ -2251,12 +2266,14 @@ class DsApp {
 
 	/**
 	 * Autostart DroidScript Project on DS restart
+	 * @deprecated in favour of ide.AutoStart
 	 * @param {str} appName 
 	 */
 	SetAutoStart(appName) {return}
 
 	/**
 	 * Automatically enable the WiFi editor
+	 * @deprecated in favour of ide.AutoWifi
 	 * @param {bin} auto 
 	 */
 	SetAutoWifi(auto) {return}
@@ -2294,6 +2311,7 @@ class DsApp {
 
 	/**
 	 * Control the debug level of the program
+	 * @deprecated in favour of \@SetDebug
 	 * @param {bin} onoff 
 	 */
 	SetDebugEnabled(onoff) {return}
@@ -2332,6 +2350,8 @@ class DsApp {
 
 	/**
 	 * Blocks android functionality outside your app
+	 * @premium
+	 * @xfeature
 	 * @param {string | ("Power"|"Status"|"Nav"|"NavRight"|"LockTask"|"Pin")[]} mode <br>
  	 * &emsp; `LockTask` - COSU kiosk\
  	 * &emsp; `Pin` - task un-/pinning
@@ -2361,6 +2381,7 @@ class DsApp {
 
 	/**
 	 * Emulate GPS location
+	 * @premium
 	 * @param {num} lat 
 	 * @param {num} lng 
 	 * @param {num} [accuracy] 
@@ -2369,6 +2390,7 @@ class DsApp {
 
 	/**
 	 * Set NavBar color
+	 * @premium
 	 * @param {str_col} color 
 	 */
 	SetNavBarColor(color) {return}
@@ -2472,6 +2494,7 @@ class DsApp {
 
 	/**
 	 * Set status bar color
+	 * @premium
 	 * @param {str_col} color 
 	 */
 	SetStatusBarColor(color) {return}
@@ -2487,6 +2510,7 @@ class DsApp {
 
 	/**
 	 * Change the theme of your app to any created [Theme Object](CreateTheme.htm)
+	 * @premium
 	 * @param {DsTheme} theme 
 	 */
 	SetTheme(theme) {return}
@@ -2769,6 +2793,7 @@ class DsApp {
 
 	/**
 	 * Decode a URI encoded string
+	 * @deprecated In recent versions of Android (10), its no longer possible to query the content database for the _data column (for security reasons) which makes it impossible to work out the original file path.
 	 * @param {str_uri} uri 
 	 * @param {str} [options] `returns DS style paths`
 	 * @return {str} 
@@ -2998,6 +3023,7 @@ class DsBluetoothSerial {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -3023,12 +3049,12 @@ class DsBluetoothSerial {
 
 	/**
 	 * If the device has sent the connection request
-	 * 	 * 	name is of type boolean (true if the connection was established successful)
-	 * 	 * 	and address is your BluetoothSerial object
-	 * 	 * 
-	 * 	 * if the device has received the connection request
-	 * 	 * 	name is a string with the clients bluetooth name
-	 * 	 * 	and address includes the bluetooth address
+	 * 	name is of type boolean (true if the connection was established successful)
+	 * 	and address is your BluetoothSerial object
+	 * 
+	 * if the device has received the connection request
+	 * 	name is a string with the clients bluetooth name
+	 * 	and address includes the bluetooth address
 	 * @param {(this: DsBluetoothSerial, name: str, address: str) => void} callback 
 	 */
 	SetOnConnect(callback) {return}
@@ -3207,6 +3233,7 @@ class DsButton {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -3639,6 +3666,7 @@ class DsCameraView {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -4079,6 +4107,7 @@ class DsCheckBox {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -4522,6 +4551,7 @@ class DsCodeEdit {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -4983,6 +5013,7 @@ class DsDialog {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -5232,6 +5263,7 @@ class DsDownloader {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -5577,6 +5609,7 @@ class DsGameView {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -5887,6 +5920,7 @@ class DsGLView {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -6068,7 +6102,8 @@ class GLV_ctx {
 	capture(x, y, w, h, fileName, successCallback, errorCallback) {return}
 
 	/**
-	 * <deprecated does nothing
+	 * 
+	 * @deprecated does nothing. ctx is automatically cleared after render()
 	 * @param {num_pxl} x 
 	 * @param {num_pxl} y 
 	 * @param {num_pxl} [width=-1] 
@@ -6394,6 +6429,7 @@ class DsImage {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -6861,6 +6897,7 @@ class DsLayout {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -7278,6 +7315,7 @@ class DsList {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -7697,6 +7735,7 @@ class DsListDialog {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -8105,6 +8144,7 @@ class DsNetClient {
 
 	/**
 	 * Receive video over UDP
+	 * @premium
 	 * @param {num} port 
 	 * @param {DsImage} img 
 	 * @return {str} 
@@ -8180,6 +8220,7 @@ class DsNetClient {
 
 	/**
 	 * Wake up devices if they are configured to
+	 * @premium
 	 * @param {str} ip 
 	 * @param {str} [mac] 
 	 */
@@ -8905,6 +8946,7 @@ class DsScroller {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -9197,6 +9239,7 @@ class DsSeekBar {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -9294,6 +9337,7 @@ class DsSeekBar {
 
 	/**
 	 * Called when content was changed by the user
+	 * @deprecated in favour of SetOnChange
 	 * @param {(this: DsSeekBar, value: num) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
@@ -9416,6 +9460,7 @@ class DsSensor {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -9573,6 +9618,7 @@ class DsSpeechRec {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -9749,6 +9795,7 @@ class DsSpinner {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -9761,6 +9808,7 @@ class DsSpinner {
 
 	/**
 	 * Change current shown item
+	 * @deprecated Use SetText instead
 	 * @param {str} item 
 	 */
 	SelectItem(item) {return}
@@ -9852,6 +9900,7 @@ class DsSpinner {
 
 	/**
 	 * Define a callback function for touch events
+	 * @deprecated Use SetOnChange instead
 	 * @param {(this: DsSpinner) => void} callback 
 	 */
 	SetOnTouch(callback) {return}
@@ -10080,6 +10129,7 @@ class DsSwitch {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -10523,6 +10573,7 @@ class DsSysProc {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -10707,6 +10758,7 @@ class DsTabs {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -11089,6 +11141,7 @@ class DsText {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -11530,6 +11583,7 @@ class DsTextEdit {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -11760,6 +11814,7 @@ class DsTheme {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -12082,6 +12137,7 @@ class DsToggle {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -12309,6 +12365,7 @@ class DsUSBSerial {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -12525,6 +12582,7 @@ class DsVideoView {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -12768,6 +12826,7 @@ class DsWebServer {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -13104,6 +13163,7 @@ class DsWebView {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -13455,6 +13515,7 @@ class DsYesNoDialog {
 
 	/**
 	 * Access Java object methods via reflection
+	 * @premium
 	 * @param {str} name 
 	 * @param {str_com} [types] `boolean`, `char`, `byte`, `short`, `int`, `long`, `float`, `double`, `String`, `CharSequence`, `...`
 	 * @param {str} [p1] 
@@ -13610,13 +13671,15 @@ class DsDatabase {
 
 	/**
 	 * AddTransaction
-	 * 	 * deprecated  Use ExecuteSQL instead
+	 *
+	 * @deprecated Use ExecuteSQL instead
 	 * @param {obj} transaction JS SQLitePluginTransaction
 	 */
 	addTransaction(transaction) {return}
 
 	/**
 	 * Close the database
+	 * @deprecated Use Close instead
 	 * @param {(this: DsDatabase, msg: str) => void} [success] 
 	 * @param {(this: DsDatabase, msg: str) => void} [error] 
 	 */
@@ -13630,6 +13693,7 @@ class DsDatabase {
 
 	/**
 	 * Execute SQL query
+	 * @deprecated Use ExecuteSql instead
 	 * @param {str_sql} statement 
 	 * @param {lst} [params] 
 	 * @param {(this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
@@ -13658,11 +13722,15 @@ class DsDatabase {
 	 */
 	GetType() {return}
 
-	/** @type {str} Database name */
+	/**
+	 * Database name
+	 * @deprecated use GetName instead
+	 */
 	name;
 
 	/**
 	 * Open database
+	 * @deprecated
 	 * @param {(this: DsDatabase) => void} [success] 
 	 * @param {(this: DsDatabase, msg: str) => void} [error] 
 	 */
@@ -13670,20 +13738,25 @@ class DsDatabase {
 
 	/**
 	 * ReadTransaction
-	 * 	 * deprecated  Use ExecuteSql instead
+	 *
+	 * @deprecated Use ExecuteSql instead
 	 * @param {(this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void} fn 
 	 * @param {(this: DsDatabase, err: str) => void} [error] 
 	 * @param {(this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }, res: { rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
 	 */
 	readTransaction(fn, error, success) {return}
 
-	/** StartNextTransaction
-	 * 	 * deprecated  Use ExecuteSql instead */
+	/**
+	 * StartNextTransaction
+	 *
+	 * @deprecated Use ExecuteSql instead
+	 */
 	startNextTransaction() {return}
 
 	/**
 	 * Transaction
-	 * 	 * deprecated  Use ExecuteSql instead
+	 *
+	 * @deprecated Use ExecuteSql instead
 	 * @param {(this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void} fn 
 	 * @param {(this: DsDatabase, err: str) => void} [error] 
 	 * @param {(this: DsDatabase, fnc: (this: DsDatabase, tx: { db: { openargs: { name: str, dblocation: str }, dbname: str, name: str }, txlock: bin, readOnly: bin, executes: [{ success: str, qid: num_int, sql: str_sql, params: lst }] }) => void, res: { length: num_int, rowsAffected: num_int, rows: { item(i): { id: num, data: all, data_num: num } } }) => void} [success] 
