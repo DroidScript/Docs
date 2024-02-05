@@ -8,6 +8,7 @@ const conf = require("./conf.json");
 const { app } = require("./generators/app");
 const { generateDoc, htmlNavi, newNaviItem } = require("./generators/generate-htm");
 const { generateNavigators } = require("./generators/generate-navs");
+const { generateMarkdown } = require("./generators/generate-md");
 const { generateTips } = require("./generators/generate-tips");
 const { generateTsx } = require("./generators/generate-tsx");
 const { keys, getl, Throw, ReadFile, mergeObject, nothidden, tos, force, getDstDir, D_BASE, D_LANG, getSrcDir, outDir, D_VER, D_SCOPE, baseDir, sortAsc } = require("./generators/util");
@@ -19,7 +20,7 @@ const dfltState = {
     curScope: "app", curFunc: "", curSubf: "",
     progress: 0, popDefs: {}, spop: {}
 };
-let nogen = false, clear = false, updateVer = false, makeTsx = false, makeTips = false, makeNavs = false;
+let nogen = false, clear = false, updateVer = false, makeTsx = false, makeTips = false, makeNavs = false, makeMd = false;
 let regGen = RegExp("");
 
 const rootPath = __dirname + "/";
@@ -146,7 +147,11 @@ function generateVersion(ver, state, genPattern) {
         hadError = true;
     }
 
-    app.WriteFile(curDir + "index.txt", "");
+    // reset index.txt
+    if (!nogen) app.WriteFile(curDir + "index.txt", "");
+    // reset Docs.md
+    if (makeMd && "md".match(regGen))
+        app.WriteFile(curDir + "Docs.md", "# DroidScript Documentation\n\n");
 
     // generate all scopes
     keys(conf.scopes)
@@ -240,7 +245,7 @@ function parseInput(state) {
     }
     else // no json file available
     {
-        regGen = RegExp("(?=^(tips|tsx)$)[]|(?!^(tips|tsx)$)^.*" + regGen.source);
+        regGen = RegExp("(?=^(tips|tsx|md)$)[]|(?!^(tips|tsx|md)$)^.*" + regGen.source);
         // add files from scope folder to be generated
         newScope = {}; base = null; navs = [];
 
@@ -282,6 +287,11 @@ function generateDocs(inpt, state) {
     if (makeTips && "tips".match(regGen) && state.curScope !== "global") {
         resetGlobals(state);
         generateTips(inpt, state);
+    }
+
+    if (makeMd && "md".match(regGen)) {
+        resetGlobals(state);
+        generateMarkdown(inpt, state);
     }
 
     if (makeTsx && "tsx".match(regGen)) {
@@ -378,6 +388,7 @@ function main() {
             case "-C": case "--clean": clean = true; break;
             case "-N": case "--navs": makeNavs = true; break;
             case "-t": case "--tips": makeTips = true; break;
+            case "-m": case "--md": case "--markdown": makeMd = true; break;
             case "-d": case "--tsx": makeTsx = true; break;
             case "-u": case "--update": updateVer = true; break;
             case "-h": case "--help": app.Alert(help); process.exit(0);
@@ -431,7 +442,7 @@ function main() {
     }
 
     if (addcfg) app.WriteFile("conf.json", tos(conf));
-    if (!nogen) makeTips = makeTsx = makeNavs = true;
+    if (!nogen) makeTips = makeTsx = makeNavs = makeMd = true;
 
     Generate(genPattern);
     if (startServer) {

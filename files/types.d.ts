@@ -5,6 +5,7 @@ declare global {
     declare type App = {
         ReadFile(p: string): string;
         WriteFile(p: string, s: string): void;
+        AppendFile(p: string, s: string): void;
         DeleteFile(p: string): void;
         ListFolder(p: string): string[];
         MakeFolder(p: string): void;
