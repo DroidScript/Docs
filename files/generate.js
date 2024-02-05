@@ -154,15 +154,15 @@ function generateVersion(ver, state, genPattern) {
         app.WriteFile(curDir + "Docs.md", "# DroidScript Documentation\n\n");
 
     // generate all scopes
-    keys(conf.scopes)
-        .filter(s => s.match(genPattern.scope) !== null)
-        .forEach(scopeName => {
-            try { generateScope(scopeName, state, genPattern); }
-            catch (e) {
-                console.error(/*\x1b[31m*/ `while generating ${state.curScope} ${state.curDoc || ''}: ${state.curSubf || ''}`);
-                Throw(e);
-            }
-        });
+    for (const scopeName of keys(conf.scopes)) {
+        if (scopeName.match(genPattern.scope) === null) continue;
+
+        try { generateScope(scopeName, state, genPattern); }
+        catch (e) {
+            console.error(/*\x1b[31m*/ `while generating ${state.curScope}${state.curFunc && '.' + state.curFunc}${state.curSubf && '.' + state.curSubf} ${state.curDoc}`);
+            Throw(e);
+        }
+    }
 
     if (hadError) console.warn("Warning: Copy docs-base failed for " + ver + ". Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again if the preview renders incorrectly.");
 }
@@ -268,6 +268,7 @@ function parseInput(state) {
 function generateDocs(inpt, state) {
     if (!nogen) {
         const lst = keys(inpt.scope).filter(n => nothidden(n) && regGen.test(n));
+
         for (let i = 0; i < lst.length; i++) {
             state.progress = Math.floor(100 * i / lst.length);
             app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
@@ -337,13 +338,17 @@ OPTIONS:
     -u  --update           	update the docs version number
     -f  --force             force generation of otherwise skipped
     -C  --clean            	delete temp files (out/ files/json/*/)
+    -n  --nogen             don't generate
+    -N  --navs              generate navs
+    -t  --tips              generate tips
+    -m  --md  --markdown    generate markdown
+    -d  --tsx               generate typescript definitions
     -al --addlang=<LANG-CODE>=<LANG-NAME>
                             adds a language to conf.json
     -as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
                             adds a scope to conf.json
     -av --addversion=<VERSION>
                             adds a version number to conf.json
-    -n  --nogen             don't generate
     -s  --server            start webserver after generating
     -V  --verbose           print more debug logs
     -h  --help              this help

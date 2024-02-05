@@ -23,7 +23,7 @@ module.exports = {
     getAddClass, getAbbrev,
     // utils
     Throw, Warn, getl, hidden, nothidden, mergeObject,
-    isnum, has, keys, sortAsc, split1, replW, hex, tos,
+    isnum, has, keys, sortAsc, split1, hex, tos,
     // paths
     outDir, baseDir, ReadFile, getSrcDir, getDstDir,
     D_BASE, D_LANG, D_SCOPE, D_VER,
@@ -132,17 +132,6 @@ function getAddClass(m, state) {
     if (has(desc, "<xfeature")) return ' class="xfeatHint"';
     if (has(desc, "<premium")) return ' class="premHint"';
     return '';
-}
-
-/** replace whitespace with html syntax whitespace
- * @param {string} s
- */
-function replW(s, n = true) {
-    return s
-        .replace(/\\\/\\\//g, '#')
-        .replace(/\n|\\n/g, n ? "<br>" : "\n")
-        .replace(/\t/g, "    ")
-        .replace(/ {2}/g, "&#160;&#160;");
 }
 
 /** convert int to 3-digit hex

@@ -1,13 +1,15 @@
 const Prism = require('prismjs');
 const fs = require("fs");
-const { getDstDir, D_SCOPE, unwrapDesc, Throw, fillMissingFuncProps, regConPrefix, D_VER, keys, isnum, has, replW, getAbbrev, sortAsc, unwrapBaseFunc, hidden, getAddClass, getSrcDir, ReadFile, Warn, split1, special, hex } = require('./util');
+const { getDstDir, D_SCOPE, unwrapDesc, Throw, fillMissingFuncProps, regConPrefix, D_VER, keys, isnum, has, getAbbrev, sortAsc, unwrapBaseFunc, hidden, getAddClass, getSrcDir, ReadFile, Warn, split1, special, hex } = require('./util');
 const { app } = require('./app');
 const conf = require("../conf.json");
 
 module.exports = {
     generateDoc,
     newNaviItem,
-    htmlNavi
+    htmlNavi,
+    translatePython,
+    getSamples
 };
 
 // prism default languages:
@@ -487,7 +489,7 @@ function typeDesc(inpt, state, stypes) {
                 default:
                     if (!type[0].endsWith("o"))
                         Throw(Error("unknown typex " + type[1]));
-                    if (state.curDoc.endsWith(type[2] + ".htm"))
+                    if (state.curFunc.endsWith(type[2]))
                         return s[i] + type[2];
                     if (!type[2].startsWith("@") && !inpt.scope[type[2]])
                         Throw(Error("link required for " + type[2]));
@@ -571,7 +573,7 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
             default:
                 if (!type[0].endsWith("o"))
                     Throw(Error("unknown typex " + type[1]));
-                if (state.curDoc.endsWith(type[2] + ".htm"))
+                if (state.curFunc.endsWith(type[2]))
                     return s2[i] + type[2];
                 if (!type[2].startsWith("@") && !inpt.scope[type[2]])
                     Throw(Error("link required for " + type[2]));
@@ -605,19 +607,14 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
  * @param {string} stypes
  */
 function toArgAppPop(name, stypes) {
+    const desc = stypes.split("||")
+        .map(type => [type.slice(0, 3)].concat(split1(type, '-')))
+        .map(type => tName[type[0]].replace(/<[^>]*>/g, '') +
+            (tDesc[type[1]] ? ": " + tDesc[type[1]] : "") +
+            (type.length === 3 ? ": " + rplop(type[2], type[0] === "str") : "")
+        ).join("\\n");
 
-    const types = stypes.split("||")
-        .map((/** @type {string} */ type) => [type.slice(0, 3)]
-            .concat(split1(type, '-'))
-        );
-
-    return newAppPopup(
-        name, types.map(
-            (/** @type {string | any[]} */ type) => tName[type[0]].replace(/<[^>]*>/g, '') +
-                (tDesc[type[1]] ? ": " + tDesc[type[1]] : "") +
-                (type.length === 3 ? ": " + rplop(type[2], type[0] === "str") : "")
-        ).join("\\n")
-    );
+    return newAppPopup(name, desc);
 }
 
 /** accept formats: "name":"desc" name:type name:"types" name:"type-values"
@@ -761,6 +758,17 @@ function newPopup(state, type, name, desc, addClass) {
     }
 
     return newTxtPopup(popId, name, addClass);
+}
+
+/** replace whitespace with html syntax whitespace
+ * @param {string} s
+ */
+function replW(s, n = true) {
+    return s
+        .replace(/\\\/\\\//g, '#')
+        .replace(/\n|\\n/g, n ? "<br>" : "\n")
+        .replace(/\t/g, "    ")
+        .replace(/ {2}/g, "&#160;&#160;");
 }
 
 

@@ -2,7 +2,7 @@
 
 const conf = require("../conf.json");
 const { app } = require("./app");
-const { keys, regConPrefix, split1, special, replW, Throw, unwrapDesc, fillMissingFuncProps, unwrapBaseFunc, getDstDir, D_LANG } = require("./util");
+const { keys, regConPrefix, split1, special, Throw, unwrapDesc, fillMissingFuncProps, unwrapBaseFunc, getDstDir, D_LANG } = require("./util");
 
 module.exports = { generateTsx };
 
@@ -421,7 +421,7 @@ function makeType(inpt, state, stypes, tsx = false) {
                     if (type.desc.includes("{")) type.sub = "lst_obj";
                 // eslint-disable-next-line no-fallthrough
                 case "obj": {
-                    const types = replaceTsxTypes(inpt, state, replW(type.desc), type.sub);
+                    const types = replaceTsxTypes(inpt, state, type.desc, type.sub);
                     if (type.desc && (type.desc.match(/^[{[]/) || !type.desc.includes(" "))) {
                         type.sub = types.string;
                         type.desc = types.descs || types.nameString;
