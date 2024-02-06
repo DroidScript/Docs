@@ -1,7 +1,7 @@
 {
 	"scopes": {
 		"intro": "Introduction",
-		"app": "Reference",
+		"app": "Native",
 		"gfx": "Game Engine",
 		"MUI": "Material UI",
 		"ui": "Hybrid UI",

@@ -26,6 +26,8 @@ let dbg = false;
  * @param {GenState} state
  */
 function generateMarkdown(inpt, state) {
+    if (state.curScope === "MUI") return;
+
     state.curDoc = getDstDir(D_VER, state) + "Docs.md";
     app.AppendFile(state.curDoc, `## ${conf.scopes[state.curScope] || state.curScope}\n\n`);
     console.log(`generating ${state.lang}.${state.curScope} Docs.md`);
@@ -127,7 +129,7 @@ function adjustDoc(state, html, name) {
             const options = soptions.split(" ");
 
             if (has(code, "\n") || has(options, "noinl"))
-                return `\n\`\`\`${langId}\n${code}\`\`\`\n`;
+                return `\n\`\`\`${langId}\n${code.trim()}\n\`\`\`\n`;
             return `${w1 || ''}\`${code}\`${w2 || ''}`;
         });
 
