@@ -150,8 +150,10 @@ function generateVersion(ver, state, genPattern) {
     // reset index.txt
     if (!nogen) app.WriteFile(curDir + "index.txt", "");
     // reset Docs.md
-    if (makeMd && "md".match(regGen))
-        app.WriteFile(curDir + "Docs.md", "# DroidScript Documentation\n\n");
+    if (makeMd && "md".match(regGen)) {
+        const mdDir = getDstDir(D_LANG, state, "Docs.md");
+        app.WriteFile(mdDir, "# DroidScript Documentation\n\n");
+    }
 
     // generate all scopes
     for (const scopeName of keys(conf.scopes)) {

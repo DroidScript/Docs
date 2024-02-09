@@ -1,4 +1,4 @@
-const { unwrapDesc, Throw, fillMissingFuncProps, regConPrefix, keys, has, getAbbrev, sortAsc, unwrapBaseFunc, hidden, split1, special, getDstDir, D_VER } = require('./util');
+const { unwrapDesc, Throw, fillMissingFuncProps, regConPrefix, keys, has, getAbbrev, sortAsc, unwrapBaseFunc, hidden, split1, special, getDstDir, D_VER, D_LANG } = require('./util');
 const { translatePython, getSamples } = require("./generate-htm");
 const { app } = require('./app');
 const conf = require("../conf.json");
@@ -28,7 +28,7 @@ let dbg = false;
 function generateMarkdown(inpt, state) {
     if (state.curScope === "MUI") return;
 
-    state.curDoc = getDstDir(D_VER, state) + "Docs.md";
+    state.curDoc = getDstDir(D_LANG, state) + "Docs.md";
     app.AppendFile(state.curDoc, `## ${conf.scopes[state.curScope] || state.curScope}\n\n`);
     console.log(`generating ${state.lang}.${state.curScope} Docs.md`);
 
