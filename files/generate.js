@@ -51,17 +51,6 @@ function Generate(genPattern) {
     // 404 page
     app.CopyFolder('404.html', dstDir + '404.html');
 
-    // update forward.js version map
-    /** @type {Obj<string>} */
-    const latest = {};
-    const forwardjs = app.ReadFile('docs-base/js/forward.js');
-    keys(conf.langs).map(l => {
-        state.lang = l;
-        const versions = app.ListFolder(getSrcDir(D_LANG, state)).sort();
-        latest[state.lang] = versions[versions.length - 1];
-    });
-    app.WriteFile('docs-base/js/forward.js', forwardjs.replace(/(versions = ).*;/, `$1${JSON.stringify(latest)};`));
-
     // generate all languages
     keys(conf.langs).filter(l => l.match(genPattern.lang) !== null).forEach(l => generateLang(l, state, genPattern));
 
@@ -112,7 +101,12 @@ function generateLang(l, state, genPattern) {
     }
 
     // version index page
-    const nav = conf.vers.sort().map(v => newNaviItem(v + '/Docs.htm', "Version " + v.replace(/v(\d)(\d\d)(\.\d+)?/, "$1.$2$3")));
+    const nav = conf.vers.map(v => {
+        if (v === "latest") return newNaviItem(v + '/Docs.htm', 'Latest Release');
+        if (v === "beta") return newNaviItem('https://SymDSTools.github.io/Docs/docs/docs/latest/Docs.htm', 'Latest Beta');
+        return newNaviItem(v + '/Docs.htm', "Version " + v.replace(/v(\d)(\d\d)(\.\d+)?/, "$1.$2$3"));
+    });
+
     const index = htmlNavi("Available versions:", "", nav.join(''))
         .replace(/(href|src)="(?!http|\/)(\.\.\/)?/g, '$1="../docs/')
         .replace(/<script .*forward.js"><\/script>\s+/g, '');
