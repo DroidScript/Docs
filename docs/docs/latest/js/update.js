@@ -18,15 +18,11 @@ function HttpRequest(method, host, path, header, cb) {
 let localVer = "", remoteVer = "", installedVer = "", vinstalled = "";
 const tmpPath = "/sdcard/.DroidScript/Temp";
 const docsPath = "/sdcard/DroidScript/.edit/";
-const repo = true ? "DroidScript" : "SymDSTools";
+const repoName = { release: "DroidScript", beta: "SymDSTools" }
 
 $(window).load(function () {
     if (!isMobileIDE) return;
     try {
-        HttpRequest("get", "https://raw.githubusercontent.com/",
-            repo + "/Docs/master/docs/version.txt",
-            null, OnRemoteVersion);
-
         const localBuild = app.GetDSBuild();
         localVer = (app.GetDSVersion() + "000").replace(/\D/g, '').slice(0, 3);
         if (localBuild) localVer += '.' + localBuild;
@@ -35,22 +31,33 @@ $(window).load(function () {
         const docsVer = docsHtm.slice(docsHtm.indexOf("Docs version: ") + 14);
         installedVer = docsVer.slice(0, docsVer.indexOf("<"));
         [_, vinstalled] = docsHtm.match(/version.txt: ([\d.]+)/) || [];
-        OnRemoteVersion(); // for safety
+
+        HttpRequest("get", "https://raw.githubusercontent.com/",
+            repoName.release + "/Docs/master/docs/version.txt",
+            null, OnRemoteVersion.bind(null, "release"));
+
+        HttpRequest("get", "https://raw.githubusercontent.com/",
+            repoName.beta + "/Docs/master/docs/version.txt",
+            null, OnRemoteVersion.bind(null, "beta"));
     } catch (e) {
         alert(e);
     }
 });
 
-function OnRemoteVersion(vremote) {
+const repoVers = {}
+var testVer = "";
+function OnRemoteVersion(repo, version) {
+    const testVer = version.replace(/^.*(\d\d\d(\.\d+)?$)/, "$1");
+
     try {
-        if (vremote) remoteVer = vremote.replace(/^.*(\d\d\d(\.\d+)?$)/, "$1");
-        if (!remoteVer || !installedVer) return;
-        console.log(`got installed ${installedVer} - local ${localVer} - remote ${remoteVer} (${vinstalled} - ${vremote})`);
-        if ((remoteVer === installedVer && vremote <= vinstalled) || remoteVer !== localVer) return;
+        if (Object.keys(repoVers).length !== Object.keys(repoName).length) return;
+        console.log(`got installed ${installedVer} - local ${localVer} - remote ${testVer} (${vinstalled} - ${version})`);
+        if (testVer !== localVer || (testVer === installedVer && version <= vinstalled)) return;
+        remoteVer = testVer;
 
         $('#popupDialog').popup("open");
         $('#popupDialog a').on("click", function (e) {
-            if (this.innerText === "Yes") InstallUpdate();
+            if (this.innerText === "Yes") InstallUpdate(repo);
             $('#popupDialog').popup("close");
         });
     } catch (e) {
@@ -58,14 +65,14 @@ function OnRemoteVersion(vremote) {
     }
 }
 
-function InstallUpdate() {
+function InstallUpdate(repo) {
     try {
         console.log(`installing ${remoteVer} over ${installedVer}`);
 
         const dl = app.CreateDownloader();
         dl.SetOnCancel(P(function (f) { app.ShowPopup("Download aborted"); }));
 
-        const url = `https://github.com/${repo}/Docs/archive/master.zip`;
+        const url = `https://github.com/${repoName[repo]}/Docs/archive/master.zip`;
         dl.Download(url, tmpPath, "docs-master.zip");
         dl.SetOnDownload(P(ExtractDocs));
     } catch (e) {
@@ -90,24 +97,15 @@ var cntDocs = 0;
 function ExtractLang(file) {
     cntDocs++;
     const name = file.slice(file.lastIndexOf("/") + 1);
-    const verDir = file + "/v" + localVer;
-    if (!app.FolderExists(verDir)) {
-        const latest = app.ListFolder(file, "v", null, "Folders,AlphaSort");
-        const ynd = app.CreateYesNoDialog(`v${localVer} ${name} not found. Latest docs is ${latest[latest.length - 1]}. Install?`);
-        ynd.SetOnTouch(P(function (res) {
-            if (res !== "Yes") return Updated();
-            localVer = latest.pop().slice(1);
-            cntDocs--;
-            ExtractLang(file);
-        }));
-        return ynd.Show();
-    }
+    const sourceDir = file + "/latest";
+    if (!app.FolderExists(sourceDir))
+        return app.ShowPopup("Latest not found.");
 
     app.ShowProgress("Removing old " + name);
-    app.ListFolder(verDir).forEach(function (d) { app.DeleteFolder(docsPath + name + "/" + d) });
+    app.ListFolder(sourceDir).forEach(function (d) { app.DeleteFolder(docsPath + name + "/" + d) });
 
     app.ShowProgress("Copying new " + name);
-    app.ListFolder(verDir).forEach(function (d) { app.RenameFolder(verDir + "/" + d, docsPath + name + "/" + d) });
+    app.ListFolder(sourceDir).forEach(function (d) { app.RenameFolder(sourceDir + "/" + d, docsPath + name + "/" + d) });
     Updated();
 }
 
