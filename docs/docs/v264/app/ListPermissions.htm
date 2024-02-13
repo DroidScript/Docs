@@ -1,3 +1,73 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1ab25b8f1d2481afc92ce2594a4c4e1dc5c8197730c8568f5f4d9dc7a8767c83
-size 4152
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ListPermissions</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>ListPermissions</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Returns a list of granted permissions<br>
+		<br>
+		See Also: <a href="GetPermission.htm" data-ajax="false">GetPermission</a> <a href="CheckPermission.htm" data-ajax="false">CheckPermission</a> <a href="RemovePermission.htm" data-ajax="false">RemovePermission</a>.</p>
+
+		<div class="samp">
+		app.ListPermissions(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a> )
+			→ <b>List:</b> [
+			<a href="#pop_str_uri" data-transition="pop" data-rel="popup">perm</a>]
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - List Permissions</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token parameter">perms</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> perms <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">ListPermissions</span><span class="token punctuation">(</span><span class="token string">"storage"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span>perms<span class="token punctuation">,</span> <span class="token string">"Permissions:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div data-role="popup" id="pop_str_uri" class="ui-content"><b>String:</b> <i>URI encoded</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Camera”</docstr> or <docstr>“Storage”</docstr> or <docstr>“ExtSDcard”</docstr> or <docstr>“Network”</docstr> or <docstr>“Notify”</docstr> or <docstr>“Location”</docstr> or <docstr>“SMS”</docstr> or <docstr>“Calendar”</docstr> or <docstr>“Body”</docstr> or <docstr>“Contacts”</docstr> or <docstr>“Record”</docstr> or <docstr>“Biometric”</docstr> or <docstr>“Phone”</docstr> or <docstr>“Accounts”</docstr> or <docstr>“License”</docstr></div>
+</div>
+</body>
+
+</html>

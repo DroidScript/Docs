@@ -1,3 +1,649 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:21b249fe48d579a66f1e5a6ab4572c8f38d1a2310163707f78652658c26560be
-size 58627
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>addLayout</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>addLayout</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Adds a layout into your app.</p>
+
+		<div class="samp">
+		lay = ui.addLayout(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">height</a> )
+			→ <b>Object:</b> Layout Component
+		</div>
+
+		<p>A layout is the basic ui component of an app. It is where you add other ui components such as buttons, textfields, checkboxes, list, images and many more.<br>
+		<br>
+		To add a layout, simply call the <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">addLayout</span> method of the <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">ui</span> object.<br>
+		<br>
+		There are 4 types of layouts: <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Linear</span>, <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Absolute</span>, <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Frame</span>, and <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Slide</span>.<br>
+		<br>
+		Layouts are transparent by default but you can set a background color or a background image.<br>
+		<br>
+		You can add child objects to the Layout by passing the layout as parent when initializing a control.<br>
+		<br>
+		By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">FillXY</span>, <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">FillX</span>, and <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">FillY</span>.<br>
+		<br>
+		### Linear Layouts<br>
+		Linear layouts are probably the most common type and are used to organize controls in the <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Vertical</span> or <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Horizontal</span> orientation on the screen.<br>
+		<br>
+		You can also pass alignment options. For vertical alignment you can pass <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Top</span>, <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">VCenter</span>, and <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Bottom</span>. For horizontal alignment you can pass <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Left</span>, <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Center</span>, and <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Right</span>. These will align your children accordingly.<br>
+		<br>
+		For children spacing, see <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">childSpacing</span> property below.<br>
+		<br>
+		### Absolute Layouts<br>
+		Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">setPosition</span> method of each child control. However, you are encouraged to use linear layouts for most of your programs, unless it is absolutely necessary.<br>
+		<br>
+		### Frame Layouts<br>
+		Frame layouts are used to display objects in front or behind each other. Everytime a child control is added, the new control is placed in a new layer in front of the previously added control at the top left of the frame. You can then use <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">setPosition</span> method of the child control to position it relative to the frame.<br>
+		<br>
+		### Slide Layouts<br>
+		Slide layouts are used to display carousels or swipeable contents. The same as the Frame layout, this will add a new layer when a new control is added with a swipeable behaviour. You can pass alignment options to align your children within the Slide layout layer. Please note that <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Vertical</span> and <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Horizontal</span> options will be the direction of the swipe.<br>
+		<br>
+		If your parent layout is of type <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Slide</span>, do not add <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">setOnTouch</span> callback handler in order for the slide layout to work perfectly.</p>
+		<h3>Properties</h3>
+		<p>These are the setter and getter properties for the addLayout Component.</p>
+
+		<div class="samp">
+		<a href="#pop_num_01d" data-transition="pop" data-rel="popup">absHeight</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01e" data-transition="pop" data-rel="popup">absLeft</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01f" data-transition="pop" data-rel="popup">absTop</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_020" data-transition="pop" data-rel="popup">absWidth</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00c" data-transition="pop" data-rel="popup">alignment</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00d" data-transition="pop" data-rel="popup">backColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00e" data-transition="pop" data-rel="popup">backImage</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_021" data-transition="pop" data-rel="popup">border</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00f" data-transition="pop" data-rel="popup">borderColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_010" data-transition="pop" data-rel="popup">borderStyle</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_lst_001" data-transition="pop" data-rel="popup">childMargins</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_011" data-transition="pop" data-rel="popup">childSpacing</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_022" data-transition="pop" data-rel="popup">cornerRadius</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_023" data-transition="pop" data-rel="popup">currentSlide</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_bin_001" data-transition="pop" data-rel="popup">disabled</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_012" data-transition="pop" data-rel="popup">fontFile</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_024" data-transition="pop" data-rel="popup">height</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_bin_002" data-transition="pop" data-rel="popup">isVisible</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_025" data-transition="pop" data-rel="popup">left</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_lst_002" data-transition="pop" data-rel="popup">margins</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_026" data-transition="pop" data-rel="popup">opacity</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_013" data-transition="pop" data-rel="popup">options</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_014" data-transition="pop" data-rel="popup">orientation</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_lst_003" data-transition="pop" data-rel="popup">padding</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_obj_009" data-transition="pop" data-rel="popup">parent</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_obj_00a" data-transition="pop" data-rel="popup">position</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_027" data-transition="pop" data-rel="popup">rotation</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_015" data-transition="pop" data-rel="popup">textColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_028" data-transition="pop" data-rel="popup">textSize</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_029" data-transition="pop" data-rel="popup">top</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_016" data-transition="pop" data-rel="popup">type</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_017" data-transition="pop" data-rel="popup">verticalAlignment</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_018" data-transition="pop" data-rel="popup">visibility</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_02a" data-transition="pop" data-rel="popup">width</a>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Main layout</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Create a fullscreen linear layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback hanlder when the layout is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onTouch <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a button control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Button"</span><span class="token punctuation">,</span> <span class="token string">"primary"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback handler when the button is touched</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>btnTouch <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"You click the layout!"</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">btnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>backColor <span class="token operator">==</span> <span class="token string">"yellow"</span><span class="token punctuation">)</span><br>
+				        <span class="token punctuation">{</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"white"</span><br>
+				        <span class="token punctuation">}</span>  <br>
+				        <span class="token keyword">else</span><br>
+				        <span class="token punctuation">{</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"yellow"</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Bottom aligned with margins</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen main layout with objects aligned at the bottom</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Bottom,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Set margins for children controls</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add buttons to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Button 1"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Button 2"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn3 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Button 3"</span><span class="token punctuation">,</span> <span class="token string">"Primary,Outlined"</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Orientation and spacing</h3>
+			<div id="examp3" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Create a fullscreen main layout with objects centered horizontally</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,Horizontal"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Set the children spacing</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"even"</span><br>
+				        <br>
+				        <span class="token comment">// Add buttons to the main layout.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Button 1"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Button 2"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn3 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Button 3"</span><span class="token punctuation">,</span> <span class="token string">"Primary,Outlined"</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Slide Layout</h3>
+			<div id="examp4" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Create a fullscreen slide layout with objects vertically centered</span><br>
+				        <span class="token comment">// You can pass `Vertical` option to make a vertical slide</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Slide"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds an onSlide event handler to the layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setOnSlide</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSlide <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a yellow-colored Linear first layout to the slide</span><br>
+				        <span class="token keyword">var</span> lay1 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        lay1<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"yellow"</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span>lay1<span class="token punctuation">,</span> <span class="token string">"First Page"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a green-colored Linear second layout to the slide</span><br>
+				        <span class="token keyword">var</span> lay2 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        lay2<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"green"</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span>lay2<span class="token punctuation">,</span> <span class="token string">"Second Page"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a red-colored Linear third layout to the slide</span><br>
+				        <span class="token keyword">var</span> lay3 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        lay3<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"red"</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span>lay3<span class="token punctuation">,</span> <span class="token string">"Third Page"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Adds a blue-colored Linear fourth layout to the slide</span><br>
+				        <span class="token keyword">var</span> lay4 <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><br>
+				        lay4<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"blue"</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span>lay4<span class="token punctuation">,</span> <span class="token string">"Fourth Page"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span><span class="token string">"Swipe horizontally"</span><span class="token punctuation">,</span> <span class="token string">"Long"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onSlide</span><span class="token punctuation">(</span> <span class="token parameter">ctrl<span class="token punctuation">,</span> index</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> index<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">350</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Layout</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">animate</a>(
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">anim</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">duration</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">bringForward</a>(
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">zIndex</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">childToFront</a>(
+			<a href="#pop_obj_003" data-transition="pop" data-rel="popup">child</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">destroy</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">getChildOrder</a>(
+			<a href="#pop_obj_004" data-transition="pop" data-rel="popup">child</a> )
+			→ <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">getCurrentSlide</a>() → <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">getPosition</a>(
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Object</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">gone</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">goto</a>(
+			<a href="#pop_num_004" data-transition="pop" data-rel="popup">index</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">hasChild</a>(
+			<a href="#pop_obj_005" data-transition="pop" data-rel="popup">child</a> )
+			→ <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">hide</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">next</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">previous</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">removeChild</a>(
+			<a href="#pop_obj_006" data-transition="pop" data-rel="popup">child</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">sendBackward</a>(
+			<a href="#pop_num_005" data-transition="pop" data-rel="popup">zIndex</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">setBorder</a>(
+			<a href="#pop_num_006" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">clr</a>,
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">style</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">setChildMargins</a>(
+			<a href="#pop_num_007" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_008" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_009" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">setCornerRadius</a>(
+			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">tl</a>,
+			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">tr</a>,
+			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">bl</a>,
+			<a href="#pop_num_00e" data-transition="pop" data-rel="popup">br</a>,
+			<a href="#pop_str_008" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">setMargins</a>(
+			<a href="#pop_num_00f" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_010" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_00f" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_010" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">setOnContextMenu</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">setOnTouch</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">setPadding</a>(
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_014" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_015" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_014" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">setPosition</a>(
+			<a href="#pop_num_017" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_018" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_str_00b" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">setScale</a>(
+			<a href="#pop_num_019" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_01a" data-transition="pop" data-rel="popup">y</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">setSize</a>(
+			<a href="#pop_num_017" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_01c" data-transition="pop" data-rel="popup">height</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">show</a>()
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the control.</i></div>
+	<div data-role="popup" id="pop_bin_002" class="ui-content"><b>Boolean:</b> <i>Returns whether the control is visible or not.</i></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width. [0-1]</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> The time in milliseconds.</div>
+	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The z-index. A negative value behaves like `sendBackward` method.</div>
+	<div data-role="popup" id="pop_num_004" class="ui-content"><b>Number:</b> Index of a given layout.</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> The z-index. A positve value behaves like `bringForward` method.</div>
+	<div data-role="popup" id="pop_num_006" class="ui-content"><b>Number:</b> Border-left thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_007" class="ui-content"><b>Number:</b> Left margin.</div>
+	<div data-role="popup" id="pop_num_008" class="ui-content"><b>Number:</b> Top margin.</div>
+	<div data-role="popup" id="pop_num_009" class="ui-content"><b>Number:</b> Right margin.</div>
+	<div data-role="popup" id="pop_num_00a" class="ui-content"><b>Number:</b> Bottom margin.</div>
+	<div data-role="popup" id="pop_num_00b" class="ui-content"><b>Number:</b> Top-Left border radius in pixels.</div>
+	<div data-role="popup" id="pop_num_00c" class="ui-content"><b>Number:</b> Top-Right border radius in pixels.</div>
+	<div data-role="popup" id="pop_num_00d" class="ui-content"><b>Number:</b> Bottom-Left border radius in pixels.</div>
+	<div data-role="popup" id="pop_num_00e" class="ui-content"><b>Number:</b> Bottom-Right border radius in pixels.</div>
+	<div data-role="popup" id="pop_num_00f" class="ui-content"><b>Number:</b> Fraction of the parent width.</div>
+	<div data-role="popup" id="pop_num_010" class="ui-content"><b>Number:</b> Fraction of the parent height.</div>
+	<div data-role="popup" id="pop_num_013" class="ui-content"><b>Number:</b> Fraction of the component width.</div>
+	<div data-role="popup" id="pop_num_014" class="ui-content"><b>Number:</b> Fraction of the component height. [0-1]</div>
+	<div data-role="popup" id="pop_num_015" class="ui-content"><b>Number:</b> Fraction of the component width. [0-1]</div>
+	<div data-role="popup" id="pop_num_017" class="ui-content"><b>Number:</b> Fraction of the parent width. [0-1]</div>
+	<div data-role="popup" id="pop_num_018" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
+	<div data-role="popup" id="pop_num_019" class="ui-content"><b>Number:</b> The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_01a" class="ui-content"><b>Number:</b> The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_01c" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
+	<div data-role="popup" id="pop_num_01d" class="ui-content"><b>Number:</b> <i>Returns the absolute height of the control in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01e" class="ui-content"><b>Number:</b> <i>Returns the absolute distance of the control from the left in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01f" class="ui-content"><b>Number:</b> <i>Returns the absolute distance of the control from the top in pixels.</i></div>
+	<div data-role="popup" id="pop_num_020" class="ui-content"><b>Number:</b> <i>Returns the absolute width of the control in pixels.</i></div>
+	<div data-role="popup" id="pop_num_021" class="ui-content"><b>Number:</b> <i>Sets or returns the border thickness in pixels.</i></div>
+	<div data-role="popup" id="pop_num_022" class="ui-content"><b>Number:</b> <i>Sets or returns the corner radius in pixels.</i></div>
+	<div data-role="popup" id="pop_num_023" class="ui-content"><b>Number:</b> <i>Sets or returns the index of the current slide.</i></div>
+	<div data-role="popup" id="pop_num_024" class="ui-content"><b>Number:</b> <i>Sets or returns the height of the control as a fraction of the parent control.</i></div>
+	<div data-role="popup" id="pop_num_025" class="ui-content"><b>Number:</b> <i>Returns the distance of the control from the left.</i></div>
+	<div data-role="popup" id="pop_num_026" class="ui-content"><b>Number:</b> <i>Sets or returns the opacity of the control.</i></div>
+	<div data-role="popup" id="pop_num_027" class="ui-content"><b>Number:</b> <i>Sets or returns the angle of rotation in degrees.</i></div>
+	<div data-role="popup" id="pop_num_028" class="ui-content"><b>Number:</b> <i>Sets or returns the size of the text within the control.</i></div>
+	<div data-role="popup" id="pop_num_029" class="ui-content"><b>Number:</b> <i>Returns the distance of the control from the top.</i></div>
+	<div data-role="popup" id="pop_num_02a" class="ui-content"><b>Number:</b> <i>Sets or returns the width of the control as a fraction of the parent control.</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The layout type. Values can be `Linear` `Absolute` `Frame` `Slide`”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“Layout options. Values can be <br> Orientation:  `Horizontal` `Vertical` <br> `Horizontal Alignment: `Left` `Center` `Right` <br> `Vertical Alignment: `Top` `VCenter` `Bottom` <br> `Dimensions: `FillX` `FillY` <br> `Scroll: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` <br> `Utils: `BackColor` to apply light or dark background rather than transparent.”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`”</docstr></div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“Can be `px`. Default is a fraction of viewport.”</docstr></div>
+	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Can be `px` or `%` or any css unit of measurement.”</docstr></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>String:</b> <i>Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Left</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Center</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Right</span></i></div>
+	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>String:</b> <i>A hexadecimal color of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></i></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <i>The path to your image file.</i></div>
+	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>String:</b> <i>Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></i></div>
+	<div data-role="popup" id="pop_str_010" class="ui-content"><b>String:</b> <i>Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dotted</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dashed</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">double</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">groove</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">ridge</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>.</i></div>
+	<div data-role="popup" id="pop_str_011" class="ui-content"><b>String:</b> <i>Sets or returns the spacing of the child control in a Linear Layout. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Around</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Between</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Even</span></i></div>
+	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">relative</span> path to the font-family use.</i></div>
+	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">options</span> of the control.</i></div>
+	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <i>Sets or returns the orientation of the controls in a Linear Layout. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Horizontal</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Vertical</span></i></div>
+	<div data-role="popup" id="pop_str_015" class="ui-content"><b>String:</b> <i>Sets or returns the color of the text.</i></div>
+	<div data-role="popup" id="pop_str_016" class="ui-content"><b>String:</b> <i>Returns the type of the control.</i></div>
+	<div data-role="popup" id="pop_str_017" class="ui-content"><b>String:</b> <i>Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Top</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">VCenter</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Bottom</span></i></div>
+	<div data-role="popup" id="pop_str_018" class="ui-content"><b>String:</b> <i>Sets or returns the visibility of the control.</i></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The parent layout where to add this component. Pass a string `main` for the main layout of your app.</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> Fraction of the screen height. [0-1]</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> The child object of the layout.</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> The child component of the layout.</div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> The child component to check.</div>
+	<div data-role="popup" id="pop_obj_006" class="ui-content"><b>Object:</b> The child component to be remove.</div>
+	<div data-role="popup" id="pop_obj_007" class="ui-content"><b>Object:</b> The pointer event object.</div>
+	<div data-role="popup" id="pop_obj_008" class="ui-content"><b>Object:</b> The click event object.</div>
+	<div data-role="popup" id="pop_obj_009" class="ui-content"><b>Object:</b> <i>Returns the parent layout control.</i></div>
+	<div data-role="popup" id="pop_obj_00a" class="ui-content"><b>Object:</b> <i>Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bottom</span> props.</i></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> <i>Sets or returns the margins of child components. The array is of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">[left, top, right, bottom]</span>.</i></div>
+	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>List:</b> <i>Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</i></div>
+	<div data-role="popup" id="pop_lst_003" class="ui-content"><b>List:</b> <i>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</i></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_obj_007')" data-transition="pop" data-rel="popup">event </a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_obj_008')" data-transition="pop" data-rel="popup">event </a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>lay.animate</b><br>Animate the component</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>lay.bringForward</b><br>Bring this component forward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>lay.childToFront</b><br>Move the child to the front</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>lay.destroy</b><br>Destroy the component</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>lay.getChildOrder</b><br>Returns the index of the child from the layout children stack in order</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>lay.getCurrentSlide</b><br>Returns the index of the current Slide Layout</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>lay.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>lay.gone</b><br>Destroy the component</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>lay.goto</b><br>Transition to the given index</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>lay.hasChild</b><br>Check whether a component is a child of this layout</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>lay.hide</b><br>Hide the component</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>lay.next</b><br>Transition to the next slide</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>lay.previous</b><br>Transition to the previous slide</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>lay.removeChild</b><br>Removes a child from this layout</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>lay.sendBackward</b><br>Bring this component backward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>lay.setBorder</b><br>Sets the border line for the component container</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>lay.setChildMargins</b><br>Sets a default margins for the children of the layout component</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>lay.setCornerRadius</b><br>Sets the corner radius of the component</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>lay.setMargins</b><br>Sets the margin of the component</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>lay.setOnContextMenu</b><br>Adds a callback function on right click</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>lay.setOnTouch</b><br>Adds a callback handler when the component is touch</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>lay.setPadding</b><br>Sets the padding component container</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>lay.setPosition</b><br>Sets the position of the component relative to its parent dimensions</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>lay.setScale</b><br>Sets the x and y scaling of the component</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>lay.setSize</b><br>Sets the size of the component</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>lay.show</b><br>Makes the layout visible</div>
+</div>
+</body>
+
+</html>

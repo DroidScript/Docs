@@ -1,3 +1,183 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba59b42e9309e38bb579095770ecac1d43133ea8b2065339a59a2f0cfaec8942
-size 11737
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateCloudStore</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>CreateCloudStore</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('Building APK')">Building APK</a><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</span><br>
+		</div>
+
+		<p>The CloudStore component allows you to easily store and retrieve app data (as a simple or complex JSON object) from a cloud.</p>
+
+		<div class="samp">
+		cld = app.CreateCloudStore(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">apiKey</a> )
+			→ <b>app object:</b> CloudStore
+		</div>
+
+		<p>This is useful for game high scores, IOT sensor data storage etc. which should be shared across all user devices even if they're not in the same local network.<br>
+		Also have look at the <a href="https://droidscript.github.io/CloudStore/#dashboard" onclick="return OpenUrl(this.href);">CloudStore Dashboard and API documentation</a><br>
+		<br>
+		<div class='premHint'><strong>Note: This function is a premium feature. Please consider subscribing to Premium to use this feature and support DroidScript in its further development.</strong></div><br>
+		<br>
+		CloudStore has the following limitations:-<br>
+		<br>
+		<span style="display:inline-block;padding-left:1em;">
+			- once every 3 seconds max read/write<br>
+			- 300 read/writes per day per file<br>
+			- 3 files per user<br>
+			- 3k max file size.<br>
+		</span><br>
+		<br>
+		To sign up for your free CloudStore key, please contact <a href="mailto:support@droidscript.org" data-ajax="false">support@droidscript.org</a><br>
+		More files/space can be provided for a small fee<br>
+		<br>
+		<strong>Note:</strong> CloudStore is still in beta, so don't rely on it to store any important data.</p>
+		<h2>Building APK</h2>
+		<p>If you decide to share your CloudStore app with someone else it is perfectly possible to build an APK of the app.<br>
+		<br>
+		However, please be aware that the apiKey is included in plain text unless you <b>obfuscate<br>
+		your app</b>.<br>
+		For extra security, you can split your key string into 2 or 3 parts (use obscurely<br>
+		named global variables or functions) and put them in separate parts of your code, then<br>
+		combine the parts only when making CloudStore API calls.</p>
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>CloudStore</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">Batch</a>(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">properties</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">Delete</a>(
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">GetType</a>() → <b>String:</b> <docstr>“CloudStore”</docstr>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">List</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">filter</a>,
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">Load</a>(
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Merge</a>(
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">data</a>,
+			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Save</a>(
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_std_all" data-transition="pop" data-rel="popup">data</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">SetDescription</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">desc</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">Upload</a>(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">data</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">name</a>,
+			<a href="#pop_str_mim" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_fnc_005" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">password</a> )
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_std_all" class="ui-content"><b>all types</b></div>
+	<div data-role="popup" id="pop_std_obj" class="ui-content"><b>Object</b></div>
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_str_mim" class="ui-content"><b>String:</b> <i>mimetype</i></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b>String:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> { <a href="" onclick="app.ShowPopup('List: args')">COMMAND</a> }</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: comma “,” separated')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('all types')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String: “Entry Saved”')">data</a>,<a href="" onclick="app.ShowPopup('String')">error</a>}</div>
+	<div data-role="popup" id="pop_obj_007" class="ui-content"><b>Object:</b> {<a href="" onclick="app.ShowPopup('String')">error</a>,<a href="" onclick="app.ShowPopup('String')">name</a>,<a href="" onclick="app.ShowPopup('String')">folder</a>,<a href="" onclick="app.ShowPopup('String')">id</a>,<a href="" onclick="app.ShowPopup('String: mimetype')">mimetype</a>,<a href="" onclick="app.ShowPopup('Number')">size</a>}</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Boolean')">success</a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">result</a>,
+		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Boolean')">error</a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">result</a>,
+		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Boolean')">error</a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_004')" data-transition="pop" data-rel="popup">result</a>,
+		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Boolean')">success</a>,
+		<a href="" onclick="switchPopup(this, '#pop_obj_005')" data-transition="pop" data-rel="popup">result</a>,
+		<a href="" onclick="app.ShowPopup('Number: integer')">status</a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_005" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_obj_007')" data-transition="pop" data-rel="popup">response</a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>cld.Batch</b><br>Batch method calls to be able to set all object's properties at once.<br>Note that you need to specify each parameter (use <docstr>“”</docstr> or <span class="token keyword">null</span> to leave some out)<br>Inherited methods can be called by appending an underscore to the function name (ie. txt<span class="token punctuation">.</span><span class="token function">Batch</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">SetBackColor_</span><span class="token operator">:</span> <span class="token punctuation">[</span><docstr>“red”</docstr><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>cld.Delete</b><br>Deletes a file in the cloud.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>cld.GetType</b><br>Returns the control class name.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>cld.List</b><br>Lists files of the cloud.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>cld.Load</b><br>Loads data from the cloud.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>cld.Merge</b><br>Merges an object with an already existing in the cloud.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>cld.Save</b><br>Saves data in the cloud.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>cld.SetDescription</b><br>Set a control description for accessibility</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>cld.Upload</b><br>Upload a file to the cloud.</div>
+</div>
+</body>
+
+</html>

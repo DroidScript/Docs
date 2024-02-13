@@ -1,3 +1,143 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c959afc53a7af48fb3d0e1468cd22405fd21c623fda6459e911c01782636e599
-size 12330
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateGame</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>CreateGame</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>CreateGame automatically turns your app in game mode and adds a <a href="CreateGameView.htm" data-ajax="false">GameView</a> control to it which loads the referenced script.</p>
+
+		<div class="samp">
+		gam = app.CreateGame(
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">file</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">orient</a> )
+		</div>
+
+		<p>It also applies various settings to your app such like <strong>orientation</strong>, <kbd>ScreenMode(<docstr>“Game”</docstr>)</kbd> and <kbd>PreventScreenLock(true)</kbd>.<br>
+		You can still access the GameView and the layout where it was added to via
+			<a href="#pop_dso_001" data-transition="pop" data-rel="popup">gam.game</a> and
+			<a href="#pop_dso_002" data-transition="pop" data-rel="popup">gam.lay</a><br>
+		<br>
+		<strong>Note:</strong> If you want to have more control over the GameView control use <a href="CreateGameView.htm" data-ajax="false">CreateGameView</a> directly.<br>
+		<br>
+		You can also put the cfg.Game flag at the top level of your script to write the game code immediately in your main script.</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Game_Bounce.js</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token comment">//Configure app for landscape game mode.</span><br>
+				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">,</span> cfg<span class="token punctuation">.</span>Portrait<br>
+				<br>
+				<span class="token comment">//Called when game starts, so we can load our assets.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token comment">//Enable physics with gravity of 20.</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddPhysics</span><span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> <br>
+				    <br>
+				    <span class="token comment">//Enclose screen with invisible walls.</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">Enclose</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"left,right"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">//Create our sprite images.</span><br>
+				    sky <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateBackground</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Sky.jpg"</span><span class="token punctuation">,</span> <span class="token string">"stretch"</span> <span class="token punctuation">)</span><br>
+				    bunny <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Bunny.png"</span><span class="token punctuation">,</span> <span class="token string">"bunnies"</span> <span class="token punctuation">)</span><br>
+				    floor <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateRectangle</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">,</span> <span class="token number">0x338833</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"floor"</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token comment">//Called when game assets have loaded.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token comment">//Add background.</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddBackground</span><span class="token punctuation">(</span> sky <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">//Add floor.</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddGraphic</span><span class="token punctuation">(</span> floor<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.95</span> <span class="token punctuation">)</span><br>
+				    floor<span class="token punctuation">.</span><span class="token function">SetPhysics</span><span class="token punctuation">(</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"fixed"</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">//Add character and set physics properties.</span><br>
+				    <span class="token comment">//(groupId, type, density, bounce, friction)</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddSprite</span><span class="token punctuation">(</span> bunny<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.05</span> <span class="token punctuation">)</span><br>
+				    bunny<span class="token punctuation">.</span><span class="token function">SetPhysics</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><br>
+				    bunny<span class="token punctuation">.</span><span class="token function">SetVelocity</span><span class="token punctuation">(</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment">//Start game.</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Demo</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">CopyFile</span><span class="token punctuation">(</span><span class="token string">"/assets/samples/Game_Bounce.js"</span><span class="token punctuation">,</span> <span class="token string">"script.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">CreateGame</span><span class="token punctuation">(</span><span class="token string">"script.js"</span><span class="token punctuation">,</span> <span class="token string">"landscape"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Game</strong> object:</p>
+
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">game</a> → <b>app object:</b> Game</div>
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">lay</a> → <b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
+
+	</div>
+
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b>String:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Portrait”</docstr> or <docstr>“Landscape”</docstr></div>
+	<div data-role="popup" id="pop_dso_001" class="ui-content"><b>app object:</b> <a href="CreateGameView.htm" data-ajax="false">GameView</a></div>
+	<div data-role="popup" id="pop_dso_002" class="ui-content"><b>app object:</b> <a href="CreateLayout.htm" data-ajax="false">Layout</a></div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content">game</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content">lay</div>
+</div>
+</body>
+
+</html>

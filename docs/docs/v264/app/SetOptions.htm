@@ -1,3 +1,53 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e3e50a66a8f6aa95011344264aeb3f02db30298b82bc2334f7f1e4f25bbcae9b
-size 2393
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SetOptions</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>SetOptions</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Define some global options for the app.</p>
+
+		<div class="samp">
+		app.SetOptions(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+
+		<p>See Also: <a href="GetOptions.htm" data-ajax="false">GetOptions</a></p>
+
+	</div>
+
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“UseBrowser”</docstr>, <docstr>“NoKeys”</docstr> or <docstr>“ShowKeys”</docstr>, <docstr>“<a href="" onclick="app.ShowPopup('dont pause when not in foreground')">NoPause</a>”</docstr>, <docstr>“NoThemeAlerts”</docstr>, <docstr>“IgnoreSslErrors”</docstr>, <docstr>“TouchModal”</docstr>, <docstr>“NoCors”</docstr>, <docstr>“NoTouch”</docstr>, <docstr>“NoFocus”</docstr>, <docstr>“Secure”</docstr>, <docstr>“ShowLocked”</docstr>, <docstr>“WakeScreen”</docstr>, <docstr>“ScreenOn”</docstr></div>
+</div>
+</body>
+
+</html>

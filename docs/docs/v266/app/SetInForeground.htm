@@ -1,3 +1,104 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ea300db3cbda89207bc758cbadfaa007b2ec2047dd3d5960fbc525261994c28
-size 7641
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SetInForeground</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>SetInForeground</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Set the current service to run in the foreground.</p>
+
+		<div class="samp">
+		app.SetInForeground(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">text</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">largeIcon</a>,
+			<a href="#pop_str_ptf" data-transition="pop" data-rel="popup">smallIcon</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">importance</a> )
+		</div>
+
+		<p>See Also: <a href="StartService.htm" data-ajax="false">StartService</a>, <a href="SetInBackground.htm" data-ajax="false">SetInBackground</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">var</span> serviceJS <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"><br>
+				function OnStart()<br>
+				{<br>
+				    var i = 0;<br>
+				    setInterval( function() { app.ShowPopup(i++); }, 2000 );<br>
+				}<br>
+				<br>
+				function OnMessage( msg)<br>
+				{<br>
+				    <b id="snip1" style="font-size:100%">if( msg == "fg" ) app.SetInForeground( "My Service", "Service is running", "/Sys/Img/Hello.png", "/Sys/Img/Icon.png", "low");<br>
+				    else if( msg == "bg" ) app.SetInBackground();</b><br>
+				}</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span> <span class="token string">"Service.js"</span><span class="token punctuation">,</span> serviceJS <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    tgl <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateToggle</span><span class="token punctuation">(</span> <span class="token string">"Foreground"</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    tgl<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> tgl_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> tgl <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    svc <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateService</span><span class="token punctuation">(</span> <span class="token string">"this"</span><span class="token punctuation">,</span> <span class="token string">"this"</span><span class="token punctuation">,</span> OnSvcStart <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">tgl_OnTouch</span><span class="token punctuation">(</span> <span class="token parameter">fg</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> fg <span class="token punctuation">)</span> svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> <span class="token string">"fg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">else</span> svc<span class="token punctuation">.</span><span class="token function">SendMessage</span><span class="token punctuation">(</span> <span class="token string">"bg"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_str_ptf" class="ui-content"><b>String:</b> <i>path to file ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“min”</docstr> or <docstr>“low”</docstr> or <docstr>“default”</docstr> or <docstr>“high”</docstr> or <docstr>“none”</docstr></div>
+</div>
+</body>
+
+</html>

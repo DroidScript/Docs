@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de8946c75e0e774c7bbd5610cf3bbe09b34a4146624e325c15a30ad15adbd88b
-size 621
+@import "docs.min.css";.samp{background-color:#F8F8F8;padding:4px 8px;border:1px solid #CCC}docstr,.docstring{font-style:italic;color:#080}green,.green,.premHint,a.ui-link.premHint,a.ui-link-inherit.premHint,c.ui-link.premHint,c.ui-link-inherit.premHint{color:#1d4}blue,.blue{color:#02f}grey,.grey,.deprHint,a.ui-link.deprHint,a.ui-link-inherit.deprHint,c.ui-link.deprHint,c.ui-link-inherit.deprHint{color:#666}red,.red,.xfeatHint,a.ui-link.xfeatHint,a.ui-link-inherit.xfeatHint,c.ui-link.xfeatHint,c.ui-link-inherit.xfeatHint{color:red}a.ui-link.baseFunc,c.ui-link.baseFunc{color:#67b}.no-ui-link{color:#000!important}

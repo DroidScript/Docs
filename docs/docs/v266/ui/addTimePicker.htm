@@ -1,3 +1,124 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61af73c26580ebd3b35f6c4f63916d05896b41b64ad831415018fa652e093d88
-size 9973
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>addTimePicker</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>addTimePicker</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Adds a time picker component to the app.</p>
+
+		<div class="samp">
+		tpk = ui.addTimePicker(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">time</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Object:</b> TimePicker Component
+		</div>
+
+		<h3>Properties</h3>
+		<p>These are the setter and getter properties for the addTimePicker Component.</p>
+
+		<div class="samp">
+		<a href="#pop_str_004" data-transition="pop" data-rel="popup">format</a>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Basic</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a layout with objects verticaly centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,ScrollY"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// button to show time picker</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Time Picker"</span><span class="token punctuation">,</span> <span class="token string">"Outlined,Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.2</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>showTimePicker <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Initialize time picker</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>tpk <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addTimePicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>tpk<span class="token punctuation">.</span><span class="token function">setOnSelect</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSelect <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">showTimePicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// show time picker dialog</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>tpk<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onSelect</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>TimePicker</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">show</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">format</a> )
+			→ <b>Boolean</b>
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A default time value to which the timepicker begins. Value is of the form `<a href="" onclick="app.ShowPopup('mm`')">HH</a>”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“`Portrait` `24H` `12H`”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“A time format. Can be of the form <br> Hour formats <br> `H` : 0 1 ... 22 23 <br> `HH` :     00 01 ... 22 23 <br> `h` : 1 2 ... 11 12 <br> `hh` :     01 02 ... 11 12 <br> Minute formats <br> `m` :     0 1 ... 58 59 <br> `mm` : 00 01 ... 58 59 <br> AM/PM <br> `A` : AM or PM <br> `a` : am pm”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <i>Sets or returns the time format. Can be of the form <br> Hour formats <br> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">H</span> : 0 1 ... 22 23 <br> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">HH</span> :     00 01 ... 22 23 <br> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h</span> : 1 2 ... 11 12 <br> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">hh</span> :     01 02 ... 11 12 <br> Minute formats <br> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">m</span> :     0 1 ... 58 59 <br> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">mm</span> : 00 01 ... 58 59 <br> AM/PM <br> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">A</span> : AM or PM <br> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">a</span> : am pm</i></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: “The selected time of the form `HH:MM:SS`. Change the format by setting the `format` property.”')">value </a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>tpk.show</b><br>Show the date picker the dialog<br><br>Hide the date picker dialog<br><br>Sets a callback function to execute when date picker dialog is submitted<br><br>Sets the format of the date to be passed into the onSelect callback<br><br>Get the current visibility of the date picker</div>
+</div>
+</body>
+
+</html>

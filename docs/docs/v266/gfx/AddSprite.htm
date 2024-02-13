@@ -1,3 +1,82 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65f4db280e3898b5dfd9bc4393c5b66ecdacca40f66a2788bcf65e7e1e5eec8f
-size 4455
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>AddSprite</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>AddSprite</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Adds a <a href="CreateSprite.htm" data-ajax="false">sprite</a> object to the game.</p>
+
+		<div class="samp">
+		gfx.AddSprite(
+			<a href="#pop_gvo_001" data-transition="pop" data-rel="popup">sprite</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">w</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">h</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">angle</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">alpha</a> )
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    droid <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddSprite</span><span class="token punctuation">(</span> droid<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div data-role="popup" id="pop_gvo_001" class="ui-content"><b>game object:</b> <a href="CreateSprite.htm" data-ajax="false">Sprite</a></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>Number:</b> <i>fraction (0..1)</i></div>
+</div>
+</body>
+
+</html>

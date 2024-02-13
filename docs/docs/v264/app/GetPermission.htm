@@ -1,3 +1,78 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:154d7487fc8c1eadb78177e053db462b71238eb2e522fc510a9477de0e60e3c4
-size 5124
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>GetPermission</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>GetPermission</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>GetPermission accepts a list of 'dangerus' classified permissions and returns a list of ungranted permissions in the <strong>callback</strong> function, or in case of only <docstr>“ExtSDCard”</docstr> the path URI of the user-selected folder.</p>
+
+		<div class="samp">
+		app.GetPermission(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+
+		<p>See Also: <a href="CheckPermission.htm" data-ajax="false">CheckPermission</a> <a href="RemovePermission.htm" data-ajax="false">RemovePermission</a> <a href="ListPermissions.htm" data-ajax="false">ListPermissions</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Get ExtSDCard Permission and User-Selected Path</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip1" style="font-size:100%"><span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPermission</span><span class="token punctuation">(</span> <span class="token string">"extsdcard"</span><span class="token punctuation">,</span> OnPermission <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnPermission</span><span class="token punctuation">(</span> <span class="token parameter">pathURI</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">Alert</span><span class="token punctuation">(</span> pathURI <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Camera”</docstr> or <docstr>“ExtSDcard”</docstr> or <docstr>“External”</docstr> or <docstr>“Internal”</docstr> or <docstr>“Network”</docstr> or <docstr>“Notify”</docstr> or <docstr>“Storage”</docstr> or <docstr>“Overlay”</docstr> or <docstr>“SMS”</docstr> or <docstr>“Location”</docstr> or <docstr>“Calendar”</docstr> or <docstr>“Body”</docstr> or <docstr>“Contacts”</docstr> or <docstr>“Record”</docstr> or <docstr>“Phone”</docstr> or <docstr>“Biometric”</docstr> or <docstr>“Accounts”</docstr> or <docstr>“License”</docstr> or <docstr>“usb:<<a href="" onclick="app.ShowPopup('Number')">pid</a>>”</docstr></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: comma “,” separated\nString: URI encoded')">ungranted</a>
+	)</div>
+</div>
+</body>
+
+</html>

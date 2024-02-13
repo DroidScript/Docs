@@ -1,3 +1,132 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c57579ad32693dafa66934edd6c75a376551dc704c26155bb31af3144b5ae35e
-size 5573
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Documentation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-dark.min.css" />
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css" />
+	<link rel="stylesheet" id="themePrism" href="css/themes/prism/dark.min.css" />
+	<link rel="stylesheet" id="themeDocs" href="css/docs-dark.min.css" />
+	<script src="js/forward.js"></script>
+	<script src="js/energize-min.js"></script>
+	<script src="js/jquery-1.8.1.min.js"></script>
+	<script src="js/jquery.mark.es6.min.js"></script>
+	<script>_docs = true;</script>
+	<script src="../app.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/example.js"></script>
+	<script src="js/update.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" />
+</head>
+
+<body style="height:96%;">
+
+	<div id="main" data-role="page" data-theme="a" data-ajax="false">
+
+		<div data-role="header">
+			<h1>Documentation</h1>
+			<a href="#" class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
+
+		<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+			<div id="appPopup" class="androidPopup">Hello World</div>
+		</div>
+
+		<div data-role="content">
+			<div align="center" style="font-size:.9em;">
+				<div style="display:inline-block; text-align:center">
+					<a target="_blank" onclick="return OpenUrl(this.href)" href="https://youtu.be/JANgL1dbCpk">
+						<i class="fa fa-youtube-play" style="font-size:2.5em; color:#888888"></i></a>
+					<div>Video Tutorial</div>
+				</div>
+				&emsp;
+				<div style="display:inline-block; text-align:center">
+					<a target="_blank" onclick="return OpenUrl(this.href)"
+						href="https://groups.google.com/forum/#!forum/androidscript">
+						<i class="fa fa-group" style="font-size:2.5em; color:#888888"></i></a>
+					<div>Forum</div>
+				</div>
+				&emsp;
+				<div style="display:inline-block; text-align:center">
+					<a target="_blank" onclick="return OpenUrl(this.href)" href="https://discord.gg/MUhvxxbXeK">
+						<image src="discord.svg" style="height:2.5em"></image>
+					</a>
+					<div>Discord</div>
+				</div>
+				&emsp;
+				<div style="display:inline-block; text-align:center">
+					<a href="intro/00ReleaseNotes.htm" data-ajax="false">
+						<i class="fa fa-list" style="font-size:2.5em; color:#888888"></i></a>
+					<div>Release Notes</div>
+				</div>
+				&emsp;
+				<div style="display:inline-block; text-align:center">
+					<a target="_blank" onclick="return OpenUrl(this.href)" href="http://droidscript.org">
+						<i class="fa fa-android" style="font-size:2.5em; color:#888888"></i></a>
+					<div>Website</div>
+				</div>
+				&emsp;
+				<div style="display:inline-block; text-align:center">
+					<a target="_blank" onclick="return OpenUrl(this.href)"
+						href="http://androidscript.org/droidscript/tutorials">
+						<i class="fa fa-graduation-cap" style="font-size:2.5em; color:#888888"></i></a>
+					<div>Tutorials</div>
+				</div>
+
+			</div>
+			<br>
+			<ul data-role="listview" data-inset="true" data-theme="a">
+				<li><a href="Search.htm">Search</a></li>
+				<li><a href="Introduction.htm">Introduction</a></li>
+				<li><a href="Reference.htm">Reference</a></li>
+				<li><a href="Resources.htm">Resources</a></li>
+				<li><a href="MaterialUI.htm" class="premHint">Material UI</a></li>
+				<li><a href="ui/UI.html" class="premHint">Hybrid UI</a></li>
+				<li><a href="GameEngine.htm">Game Engine</a></li>
+				<li><a href="Music/Music.html">Music</a></li>
+				<li><a id="docsLink" href="Plugins.htm">Plugins</a></li>
+				<li><a id="extsLink" href="Extensions.htm">Extensions</a></li>
+			</ul>
+
+			<p>Reminder: Check out the new <a href="intro/10AppTypes.htm">App Type Overview</a> in the Introduction
+				section!</p>
+
+			<p style="width:100%;text-align:right">
+				<small>
+					<!-- version.txt: 19673265 -->
+					<i class="fa fa-warning"></i>
+					<a class="ui-link normal-link" target="_blank" onclick="return OpenUrl(this.href)"
+						href="https://github.com/DroidScript/Docs/issues">Report Issue</a><br>
+					<span onclick="location.reload()">Docs version: 265</span>&ensp;<i>(12/11/2023)</i><br>
+					by <a class="no-ui-link normal-link" target="_blank" onclick="return OpenUrl(this.href)"
+						href="https://github.com/alex-Symbroson">Symbroson</a>, <a class="no-ui-link normal-link"
+						target="_blank" onclick="return OpenUrl(this.href)"
+						href="https://github.com/DroidScript">DroidScript</a> and <a class="no-ui-link normal-link"
+						target="_blank" onclick="return OpenUrl(this.href)" href="https://github.com/hamacjumar">Hamac
+						Jumar</a>,
+					<br><br>
+				</small>
+			</p>
+
+		</div><!-- /content -->
+
+		<div data-role="popup" id="popupDialog" data-transition="pop" style="max-width:800px" class="ui-corner-all">
+			<div data-role="header" class="ui-corner-top">
+				<h1>Update</h1>
+			</div>
+			<div data-role="content" class="ui-corner-bottom ui-content">
+				<h3 class="ui-title">Docs update available.<br>Update now?</p>
+					<a href="#" data-role="button" data-inline="true" data-rel="back" class="grey">Cancel</a>
+					<a href="#" data-role="button" data-inline="true" data-rel="back" class="green">Yes</a>
+			</div>
+		</div>
+
+	</div><!-- /page -->
+
+</body>
+
+</html>

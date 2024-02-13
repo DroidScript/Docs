@@ -1,3 +1,103 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:33fa40ffbcc523d74f7ff52985fed9e9e7e1b6025e3c5f5798a59729819ffb28
-size 8102
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ChooseFile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>ChooseFile</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>ChooseFile opens a file picker for user to select a local file or a file from GoogleDrive, OneDrive or DropBox.</p>
+
+		<div class="samp">
+		app.ChooseFile(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">message</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a>,
+			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">fldr</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+
+		<p>See Also: <a href="ReadFile.htm" data-ajax="false">ReadFile</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Choose File by Mimetype</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span> <span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token string">"*/*,application/text,application/apk,application/zip,"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css,"</span> <span class="token operator">+</span><br>
+				        <span class="token string">"text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg"</span><span class="token punctuation">;</span><br>
+				    <br>
+				    spnMime <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateSpinner</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>spnMime<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    btnChoose <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span> <span class="token string">"Choose File"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btnChoose<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span> btnChoose_OnTouch <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span> btnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span> lay <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">btnChoose_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">ChooseFile</span><span class="token punctuation">(</span> <span class="token string">"Choose a File"</span><span class="token punctuation">,</span> spnMime<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> OnChoose <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnChoose</span><span class="token punctuation">(</span> <span class="token parameter">file</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">alert</span><span class="token punctuation">(</span> <span class="token string">"file path: "</span> <span class="token operator">+</span> file <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“mimetype”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>persist:</i> <docstr>“keep file permission after reboot”</docstr>, <docstr>“nodownload-prevents file downloads”</docstr></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: path to file or folder ( “/absolute/...” or “relative/...” )\nString: URI encoded')">path</a>,
+		<a href="" onclick="app.ShowPopup('String')">name</a>
+	)</div>
+</div>
+</body>
+
+</html>

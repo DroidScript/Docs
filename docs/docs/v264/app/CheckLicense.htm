@@ -1,3 +1,54 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a5c04e37370aaf36a7f0ccfbafcb835222d27c5af7990c8cfdb2809598078b98
-size 2108
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CheckLicense</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>CheckLicense</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Will trigger a standard Google Play license check for the running application (if it is a paid App).</p>
+
+		<div class="samp">
+		app.CheckLicense(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">key</a> )
+		</div>
+
+		<p>The key can be found under <docstr>“Development Tools > Services and API's”</docstr> in the GooglePlay developer console.<br>
+		If the App is not licensed it will show a dialog asking them to purchase the App from Google Play and then close the App.</p>
+
+	</div>
+
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <i>base64 encoded:</i> <docstr>“GPlay license key”</docstr></div>
+</div>
+</body>
+
+</html>

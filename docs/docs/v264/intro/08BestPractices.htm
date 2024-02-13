@@ -1,3 +1,273 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16976046b8d8467719e7ad32bea08784fc8c9c971beda1bde7e3cc1e03170d55
-size 41026
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Best Practices</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>Best Practices</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('General')">General</a><br>
+			• <a href="" onclick="jumpTo('Performance')">Performance</a><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('UI')">UI</a><br>
+				- <a href="" onclick="jumpTo('Graphics / Animations')">Graphics / Animations</a><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('Getting Help')">Getting Help</a><br>
+		</span><br>
+		</div>
+
+		<h2>General</h2>
+		<p>- Use the cfg object to enter specific app modes immediately (See <a href="04CodingFeatures.htm" data-ajax="false">04CodingFeatures</a> for more details)<br>
+		- Use app.<a href="../app/Script.htm" data-ajax="false">Script</a> to load extra source files<br>
+		- Use app.Add* eqivalents to app.Create* to make your code shorter and cleaner<br>
+		- Use features that DS provides you instead of doing them yourself (ie. filtering ListFolder items)<br>
+		- Frequently check the debug log for any warnings or errors - especially before releasing your app (see <a href="../app/CreateDebug.htm" data-ajax="false">CreateDebug</a>)<br>
+		- Use the web IDE for coding if you have a laptop because it is much easier than typing and debugging on a phone</p>
+		<h2>Performance</h2>
+		<h3>UI</h3>
+		<p>- Wrap your UI creation in app.Hide and app.Show<br>
+		- Use cfg.<a href="04CodingFeatures.htm#Dark" data-ajax="false">Dark</a> and cfg.<a href="04CodingFeatures.htm#Light" data-ajax="false">Light</a> for an easy Light/Dark theme setting<br>
+		- <grey>Use obj.<a href="../app/CreateLayout.htm#Batch" data-ajax="false">Batch</a> to do a whole bunch of configuration calls at one shot</grey><br>
+		- Add a (optionally animated) splash screen while your app loads UI<br>
+		- Use app<span class="token punctuation">.</span><span class="token function"><a href="../app/SetDebug.htm" data-ajax="false">SetDebug</span></a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> in your release version<br>
+		- Reduce the use of app.* calls (especially in loops) as it calls the backend bridge in most cases<br>
+		<span style="display:inline-block;padding-left:1em;">
+			- Use lay.<a href="../app/CreateLayout.htm#SetChildMargins" data-ajax="false">SetChildMargins</a> and lay.<a href="../app/CreateLayout.htm#SetChildTextSize" data-ajax="false">SetChildTextSize</a> to apply these properties to all children<br>
+			- When initializing list controls use a <a href="../app/CreateList.htm" data-ajax="false">precompiled item list</a> instead of calling AddItem multiple times<br>
+			- Apply styling to buttons and text boxes using the <docstr>“Html”</docstr> option<br>
+			- Use the premium app.<a href="../app/CreateTheme.htm" data-ajax="false">CreateTheme</a> method for styling controls<br>
+		</span></p>
+		<h3>Graphics / Animations</h3>
+		<p>- Use app.<a href="../app/Animate.htm" data-ajax="false">Animate</a> instead of setInterval<br>
+		- Use img<span class="token punctuation">.</span><span class="token function"><a href="../app/CreateImage.htm#SetAutoUpdate" data-ajax="false">SetAutoUpdate</span></a><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> and use manual img.<a href="../app/CreateImage.htm#Update" data-ajax="false">Update</a> calls<br>
+		- Switch to the <a href="../app/CreateGameView.htm" data-ajax="false">CreateGameView</a> control (using cfg.<a href="04CodingFeatures.htm#Game" data-ajax="false">Game</a>) as its generally faster and works in web browsers too<br>
+		- use the <docstr>“async”</docstr> option to load images</p>
+		<h2>Getting Help</h2>
+		<p>- Check out this documentation and the <a href="https://droidscript.org/wiki/doku.php" onclick="return OpenUrl(this.href);">DS Wiki</a> for any hints<br>
+		- Check if your issue has been resolved before by searching keywords on Google and on the <a href="../Resources.htm#Official" data-ajax="false">Official</a><i>Forums<br>
+		- For short questions check out the Chat extension in the mobile or WiFi IDE<br>
+		- For more complex questions formalize your issue in the <a href="../Resources.htm#Official" data-ajax="false">Official</a></i>Forums<br>
+		  - Always be polite, respectful and never offend any person or group of people<br>
+		  - Describe your issue in a way people can understand it without knowing anything about your individual project<br>
+		  - Attach screenshots and demo SPKs to your question<br>
+		  - Consider putting together a minimal demo showcasing your issue</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - GetDeviceSpecs</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token comment">// https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels</span><br>
+				<span class="token keyword">var</span> allBuilds <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">'{'</span> <span class="token operator">+</span><br>
+				    <span class="token string">'"1":{"level":1,"codename":"(no code name)","version":"1.0"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">'"2":{"level":2,"codename":"(no code name)","version":"1.1"} , '</span> <span class="token operator">+</span><br>
+				    <span class="token string">'"3":{"level":3,"codename":"Cupcake","version":"1.5"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">'"4":{"level":4,"codename":"Donut","version":"1.6"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">'"5":{"level":5,"codename":"Eclair","version":"2.0"},  '</span> <span class="token operator">+</span><br>
+				    <span class="token string">'"6":{"level":6,"codename":"Eclair","version":"2.0.1"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">'"7":{"level":7,"codename":"Eclair","version":"2.1"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "8":{"level":8,"codename":"Froyo","version":"2.2.x"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "9":{"level":9,"codename":"Gingerbread","version":"2.3 - 2.3.2"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "10":{"level":10,"codename":"Gingerbread","version":"2.3.3 - 2.3.7"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "11":{"level":11,"codename":"Honeycomb","version":"3.0"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "12":{"level":12,"codename":"Honeycomb","version":"3.1"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "13":{"level":13,"codename":"Honeycomb","version":"3.2.x"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "14":{"level":14,"codename":"Ice Cream Sandwich","version":"4.0.1 - 4.0.2"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "15":{"level":15,"codename":"Ice Cream Sandwich","version":"4.0.3 - 4.0.4"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "16":{"level":16,"codename":"Jelly Bean","version":"4.1.x"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "17":{"level":17,"codename":"Jelly Bean","version":"4.2.x"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "18":{"level":18,"codename":"Jelly Bean","version":"4.3.x"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "19":{"level":19,"codename":"KitKat","version":"4.4 - 4.4.4"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "20":{"level":20,"codename":"K or L","version":"4 or 5"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "21":{"level":21,"codename":"Lollipop","version":"5.0"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "22":{"level":22,"codename":"Lollipop","version":"5.1"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "23":{"level":23,"codename":"MarshMallow","version":"6.0"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "24":{"level":24,"codename":"Nougat","version":"7.0"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "25":{"level":25,"codename":"Nougat","version":"7.1"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "26":{"level":26,"codename":"Oreo","version":"8.0"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "27":{"level":27,"codename":"Oreo","version":"8.1"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "28":{"level":28,"codename":"Pie","version":"9"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "29":{"level":29,"codename":"Q","version":"10"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "30":{"level":30,"codename":"R","version":"11"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "31":{"level":31,"codename":"S","version":"12"}, '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' "32":{"level":32,"codename":"S_V2","version":"12"} '</span> <span class="token operator">+</span><br>
+				    <span class="token string">' }'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">var</span> osObj <span class="token operator">=</span> allBuilds<span class="token punctuation">[</span>app<span class="token punctuation">.</span><span class="token function">GetOSVersion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><br>
+				<span class="token keyword">try</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> osInfo <span class="token operator">=</span> <span class="token string">"Android "</span> <span class="token operator">+</span> osObj<span class="token punctuation">.</span>version <span class="token operator">+</span> <span class="token string">" ("</span> <span class="token operator">+</span><br>
+				    osObj<span class="token punctuation">.</span>codename <span class="token operator">+</span> <span class="token string">")  API level "</span> <span class="token operator">+</span><br>
+				    osObj<span class="token punctuation">.</span>level<br>
+				<span class="token punctuation">}</span><br>
+				<span class="token keyword">catch</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">var</span> osInfo <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetOSVersion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">var</span> lay<span class="token punctuation">,</span> txt<span class="token punctuation">,</span> scroller<br>
+				<span class="token comment">//Called when application is started.</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token comment">//Create a layout with objects vertically centered.</span><br>
+				    lay <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <span class="token comment">// create viewr for specs</span><br>
+				    scroller <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateScroller</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> specs <span class="token operator">=</span> <span class="token function">getDeviceSpecs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateText</span><span class="token punctuation">(</span>specs<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token string">"left,multiLine"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetPadding</span><span class="token punctuation">(</span><span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token comment">//txt.SetTextColor("#ff446666");</span><br>
+				    scroller<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>txt<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>scroller<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <span class="token comment">//Create a button and add it to layout.</span><br>
+				    <span class="token keyword">var</span> btn <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">CreateButton</span><span class="token punctuation">(</span><span class="token string">"[fa-copy]"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"fontAwesome"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetTextSize</span><span class="token punctuation">(</span> <span class="token number">32</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>btn_OnTouch<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <span class="token comment">//Add layout to app.    </span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">OnConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">btn_OnTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">SetClipboardText</span><span class="token punctuation">(</span>txt<span class="token punctuation">.</span><span class="token function">GetText</span><span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Copied to clipboard"</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">getBuilderVersion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> msg <span class="token operator">=</span> <span class="token string">"Apk Builder plugin not installed"</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> path <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetPrivateFolder</span><span class="token punctuation">(</span><span class="token string">"Plugins"</span><span class="token punctuation">)</span> <span class="token operator">+</span><br>
+				        <span class="token string">"/apkbuilder/Version.txt"</span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">FileExists</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        msg <span class="token operator">=</span> <span class="token string">"Apk Builder version "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span> path <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">IsAPK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        msg <span class="token operator">=</span> <span class="token string">"APK built with "</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetDSVersion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <span class="token keyword">return</span> msg<br>
+				<span class="token punctuation">}</span><br>
+				<span class="token keyword">function</span> <span class="token function">getDeviceSpecs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> os <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetOSVersion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> model <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> tablet <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsTablet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> fromapk <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsAPK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> isChrome <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsChrome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> isPrem <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsPremium</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> isTV <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">IsTV</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> dsversion <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetDSVersion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token comment">//Get screen dimensions. </span><br>
+				    <span class="token keyword">var</span> sw <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetScreenWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> sh <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetScreenHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> dens <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetScreenDensity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token comment">//Get display dimensions. </span><br>
+				    <span class="token keyword">var</span> dw <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetDisplayWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> dh <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetDisplayHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token comment">//Get drive details</span><br>
+				    <span class="token keyword">var</span> intfld <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetInternalFolder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> extfld <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetExternalFolder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> intspace <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetFreeSpace</span><span class="token punctuation">(</span><span class="token string">"internal"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> extspace <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetFreeSpace</span><span class="token punctuation">(</span><span class="token string">"external"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> mem <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">GetMemoryInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>total<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">"en-US"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <span class="token comment">//specs are formatted as a comment so we can paste</span><br>
+				    <span class="token comment">//them somewhere convenient</span><br>
+				    <span class="token keyword">try</span> <span class="token punctuation">{</span> os <span class="token operator">=</span> osInfo<span class="token punctuation">;</span> <span class="token punctuation">}</span><br>
+				    <span class="token keyword">catch</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><br>
+				    <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token string">"/*\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"os="</span> <span class="token operator">+</span> os <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token function">getBuilderVersion</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"tablet="</span> <span class="token operator">+</span> tablet <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"model="</span> <span class="token operator">+</span> model <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"isChrome="</span> <span class="token operator">+</span> isChrome <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"isTV="</span> <span class="token operator">+</span> isTV <span class="token operator">+</span><span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"DroidScript="</span> <span class="token operator">+</span> dsversion <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"Storage access="</span> <span class="token operator">+</span> <span class="token function">storageScoped</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"screen width="</span> <span class="token operator">+</span> sw <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"screen height="</span> <span class="token operator">+</span> sh <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"screen density="</span> <span class="token operator">+</span> dens <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"display width="</span> <span class="token operator">+</span> dw <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"display height="</span> <span class="token operator">+</span> dh <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"internal folder="</span> <span class="token operator">+</span> intfld <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"external folder="</span> <span class="token operator">+</span> extfld <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"int free space="</span> <span class="token operator">+</span> intspace <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"ext free space="</span> <span class="token operator">+</span> extspace <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"memory="</span> <span class="token operator">+</span> mem <span class="token operator">+</span><span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"premium="</span> <span class="token operator">+</span> isPrem <span class="token operator">+</span><span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"country code="</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetCountryCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"country="</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetCountry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"language code="</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetLanguageCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"language="</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetLanguage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"wifi="</span> <span class="token operator">+</span> app<span class="token punctuation">.</span><span class="token function">GetIPAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"userAgent='"</span> <span class="token operator">+</span> navigator<span class="token punctuation">.</span>userAgent <span class="token operator">+</span> <span class="token string">"'\n"</span> <span class="token operator">+</span><br>
+				    <span class="token string">"*/"</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">return</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">storageScoped</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				    <span class="token keyword">return</span> app<span class="token punctuation">.</span><span class="token function">IsScoped</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">?</span><span class="token string">"Scoped"</span><span class="token operator">:</span><span class="token string">"Traditional"</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token comment">//called when screen rotates</span><br>
+				<span class="token comment">//also called at startup to fix Chromebook display size anomaly</span><br>
+				<span class="token keyword">function</span> <span class="token function">OnConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> fixwid <span class="token operator">=</span> lay<span class="token punctuation">.</span><span class="token function">GetAbsWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">/</span>app<span class="token punctuation">.</span><span class="token function">GetDisplayWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> fixhigh <span class="token operator">=</span> lay<span class="token punctuation">.</span><span class="token function">GetAbsHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">/</span>app<span class="token punctuation">.</span><span class="token function">GetDisplayHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">var</span> wid <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> high <span class="token operator">=</span> <span class="token number">0.8</span><span class="token punctuation">;</span><br>
+				    <span class="token keyword">if</span> <span class="token punctuation">(</span>fixwid<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">)</span> wid <span class="token operator">*=</span> fixwid<span class="token punctuation">;</span> <span class="token comment">// chromebook not using full width</span><br>
+				    <span class="token keyword">if</span> <span class="token punctuation">(</span>fixhigh<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">)</span> high <span class="token operator">*=</span> fixhigh<span class="token punctuation">;</span> <span class="token comment">// or height</span><br>
+				    scroller<span class="token punctuation">.</span><span class="token function">SetSize</span><span class="token punctuation">(</span> wid<span class="token punctuation">,</span>high <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    txt<span class="token punctuation">.</span><span class="token function">SetSize</span><span class="token punctuation">(</span> wid<span class="token punctuation">,</span> high  <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+	</div>
+
+
+</div>
+</body>
+
+</html>

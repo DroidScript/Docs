@@ -1,3 +1,95 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d328fb4616a62476a1792fb20deeccd5f53668f1ae01876ba9e49931d6e49880
-size 7282
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SendMail</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>SendMail</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Using Gmail')">Using Gmail</a><br>
+			</span><br>
+		</div>
+
+		<p>Send an EMail to someone using the default mail application. The passed argumets will be auto-filled.</p>
+
+		<div class="samp">
+		app.SendMail(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">address</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">subject</a>,
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">body</a>,
+			<a href="#pop_str_pth" data-transition="pop" data-rel="popup">attach</a>,
+			<a href="#pop_str_mim" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a> )
+		</div>
+
+		<p>GMail will not work due to privacy restrictions. Read more about this in <a href="https://groups.google.com/d/msg/androidscript/o0863h9A-pE/9RfbaZ9uBQAJ" onclick="return OpenUrl(this.href);">this post by DaveSmart</a>:</p>
+		<h3>Using Gmail</h3>
+		<p><i>”Even though Gmail is the fastest way to get started with sending emails, it is by no means a preferable solution unless you are using OAuth2 authentication. Gmail expects the user to be an actual user not a robot so it runs a lot of heuristics for every login attempt and blocks anything that looks suspicious to defend the user from account hijacking attempts. For example you might run into trouble if your server is in another geographical location – everything works in your dev machine but messages are blocked in production.<br>
+		<br>
+		Additionally Gmail has came up with the concept of 'less secure' apps which is basically anyone who uses plain password to login to Gmail, so you might end up in a situation where one username can send (support for 'less secure' apps is enabled) but other is blocked (support for '<a href="https://support.google.com/accounts/answer/6010255?hl=en" onclick="return OpenUrl(this.href);">less secure</a>' apps is disabled). When using this method make sure to enable the required functionality by completing the <docstr>“<a href="https://accounts.google.com/b/0/displayunlockcaptcha" onclick="return OpenUrl(this.href);">captcha enable</a>”</docstr>. Without this, less secure connections won't work.<br>
+		<red><b>Note: These changes are not recommended to make to your main email account!</b></red><br>
+		<br>
+		To prevent having login issues you should either use XOAUTH2 (see details <a href="https://nodemailer.com/smtp/#authentication" onclick="return OpenUrl(this.href);">here</a>) or use another provider and preferably a dedicated one like <a href="https://www.mailgun.com/" onclick="return OpenUrl(this.href);">Mailgun</a> or <a href="https://sendgrid.com" onclick="return OpenUrl(this.href);">SendGrid</a> or any other. Usually these providers have free plans available that are comparable to the daily sending limits of Gmail. Gmail has a limit of 500 recipients a day (a message with one To and one Cc address counts as two messages since it has two recipients) for <a href="gmail.htm" data-ajax="false">gmail</a>.com addresses and 2000 for Google Apps customers, larger SMTP providers usually offer about 200-300 recipients a day for free.“</i><br>
+		<br>
+		See Also: <a href="SendSMS.htm" data-ajax="false">SendSMS</a>, <a href="SendFile.htm" data-ajax="false">SendFile</a></p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Example</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">CopyFile</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Hello.png"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/Hello.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <b id="snip1" style="font-size:100%">app<span class="token punctuation">.</span><span class="token function">SendMail</span><span class="token punctuation">(</span> <span class="token string">"myfriend@gmail.com"</span><span class="token punctuation">,</span> <span class="token string">"MySubject"</span><span class="token punctuation">,</span> <span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"/sdcard/Hello.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_str_mim" class="ui-content"><b>String:</b> <i>mimetype</i></div>
+	<div data-role="popup" id="pop_str_pth" class="ui-content"><b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“SendTo”</docstr></div>
+</div>
+</body>
+
+</html>

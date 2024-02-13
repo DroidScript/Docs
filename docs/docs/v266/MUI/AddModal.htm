@@ -1,3 +1,62 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:88807482b7558300a9517a9e258b58839a191fe4d2d29645823c66342391ce2e
-size 2635
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>AddModal</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>AddModal</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Adds a modal.</p>
+
+		<div class="samp">
+		mdl = MUI.AddModal(
+			<a href="#pop_std_str" data-transition="pop" data-rel="popup">title</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">body</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">okTxt</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">cancelTxt</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Object</b>
+		</div>
+
+		<p>See <a href="CreateModal.htm" data-ajax="false">CreateModal</a> for a full documentation.</p>
+
+	</div>
+
+	<div data-role="popup" id="pop_std_str" class="ui-content"><b>String</b></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Body text. If you want to customize the modal layout pass an empty string.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“Truthy button text”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“Falsy button text”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Dialog options with additional Full option”</docstr></div>
+</div>
+</body>
+
+</html>

@@ -1,3 +1,1802 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fbbee475f936440a20219909d60b8764cb898ccdc93819093e8234ab03cb5b9c
-size 117076
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Release Notes</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>Release Notes</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('DS 2.64b1(05-Oct 2023)')">DS 2.64b1</a><sup>(05-Oct 2023)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.63b1(21-Sep 2023)')">DS 2.63b1</a><sup>(21-Sep 2023)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.62b3')">DS 2.62b3</a><br>
+				- <a href="" onclick="jumpTo('DS 2.62b2(23-Jul 2023)')">DS 2.62b2</a><sup>(23-Jul 2023)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.62b1(15-Jun 2023)')">DS 2.62b1</a><sup>(15-Jun 2023)</sup><br>
+			</span><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('DS 2.61(23-Mar-2023)')">DS 2.61</a><sup>(23-Mar-2023)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 2.60b1(28-Feb-2023)')">DS 2.60b1</a><sup>(28-Feb-2023)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.58b1(08-Jan-2023)')">DS 2.58b1</a><sup>(08-Jan-2023)</sup><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('DS 2.57(24-Nov-2022)')">DS 2.57</a><sup>(24-Nov-2022)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 2.56b1(15-Nov-2022)')">DS 2.56b1</a><sup>(15-Nov-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.55b1(23-Oct-2022)')">DS 2.55b1</a><sup>(23-Oct-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.54b1(11-Sep-2022)')">DS 2.54b1</a><sup>(11-Sep-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.53b1(24-Aug-2022)')">DS 2.53b1</a><sup>(24-Aug-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.52b1(07-Jun-2022)')">DS 2.52b1</a><sup>(07-Jun-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.51b1(02-Mar-2022)')">DS 2.51b1</a><sup>(02-Mar-2022)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.51a1(15-Feb-2022)')">DS 2.51a1</a><sup>(15-Feb-2022)</sup><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('DS 2.50(31-Dec-2021)')">DS 2.50</a><sup>(31-Dec-2021)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 2.17b1(23-Dec-2021)')">DS 2.17b1</a><sup>(23-Dec-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.14b1(07-Dec-2021)')">DS 2.14b1</a><sup>(07-Dec-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.13b1(18-Nov-2021)')">DS 2.13b1</a><sup>(18-Nov-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.12b1(23-Jul-2021)')">DS 2.12b1</a><sup>(23-Jul-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.11b2(23-Jul-2021)')">DS 2.11b2</a><sup>(23-Jul-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 2.11b1(16-Jul-2021)')">DS 2.11b1</a><sup>(16-Jul-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 210b1(20-May-2021)')">DS 210b1</a><sup>(20-May-2021)</sup><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('DS 209(06-May-2021)')">DS 209</a><sup>(06-May-2021)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 208b2(04-May-2021)')">DS 208b2</a><sup>(04-May-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 208b1(20-Apr-2021)')">DS 208b1</a><sup>(20-Apr-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 207b1(18-Mar-2021)')">DS 207b1</a><sup>(18-Mar-2021)</sup><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('DS 206(04-Mar-2021)')">DS 206</a><sup>(04-Mar-2021)</sup><br>
+			• <a href="" onclick="jumpTo('DS 205(03-Mar-2021)')">DS 205</a><sup>(03-Mar-2021)</sup><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('DS 204b1(18-Feb-2021)')">DS 204b1</a><sup>(18-Feb-2021)</sup><br>
+				- <a href="" onclick="jumpTo('DS 203b1(08-Feb-2021)')">DS 203b1</a><sup>(08-Feb-2021)</sup><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('DS 202(08-Feb-2021)')">DS 202</a><sup>(08-Feb-2021)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.80(20-Jan-2020)')">DS 1.80</a><sup>(20-Jan-2020)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.78(27-Oct-2019)')">DS 1.78</a><sup>(27-Oct-2019)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.76(27-Aug-2019)')">DS 1.76</a><sup>(27-Aug-2019)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.74(19-Jun-2019)')">DS 1.74</a><sup>(19-Jun-2019)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.71(13-Jan-2019)')">DS 1.71</a><sup>(13-Jan-2019)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.70(09-Jan-2019)')">DS 1.70</a><sup>(09-Jan-2019)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.68(30-Aug-2018)')">DS 1.68</a><sup>(30-Aug-2018)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.65(23-Aug-2018)')">DS 1.65</a><sup>(23-Aug-2018)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.61(22-12-2017)')">DS 1.61</a><sup>(22-12-2017)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.59(23-Dec-2017)')">DS 1.59</a><sup>(23-Dec-2017)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.57(09-Nov-2017)')">DS 1.57</a><sup>(09-Nov-2017)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.56(18-Aug-2017)')">DS 1.56</a><sup>(18-Aug-2017)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.54(16-Jun-2017)')">DS 1.54</a><sup>(16-Jun-2017)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.50(30-Apr-2017)')">DS 1.50</a><sup>(30-Apr-2017)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.45')">DS 1.45</a><br>
+			• <a href="" onclick="jumpTo('DS 1.42(02-Dec-2016)')">DS 1.42</a><sup>(02-Dec-2016)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.41')">DS 1.41</a><br>
+			• <a href="" onclick="jumpTo('DS 1.38')">DS 1.38</a><br>
+			• <a href="" onclick="jumpTo('DS 1.36(26-Sep-2016)')">DS 1.36</a><sup>(26-Sep-2016)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.34(29-Apr-2016)')">DS 1.34</a><sup>(29-Apr-2016)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.32(15-Dec-2015)')">DS 1.32</a><sup>(15-Dec-2015)</sup><br>
+			• <a href="" onclick="jumpTo('DS 1.15')">DS 1.15</a><br>
+			• <a href="" onclick="jumpTo('DS 1.11')">DS 1.11</a><br>
+			• <a href="" onclick="jumpTo('DS 1.09')">DS 1.09</a><br>
+			• <a href="" onclick="jumpTo('DS 1.08')">DS 1.08</a><br>
+			• <a href="" onclick="jumpTo('DS 1.06')">DS 1.06</a><br>
+			• <a href="" onclick="jumpTo('DS 1.05(24-May-2014)')">DS 1.05</a><sup>(24-May-2014)</sup><br>
+		</span><br>
+		</div>
+
+		<p><!-- /([^\\])([_<i>])/$1\\$2/ /:/:/ --></p>
+		<h3>DS 2.64b1<sup>(05-Oct 2023)</sup></h3>
+		<p>- Added usb.GetDTR(), usb.GetRTS(), usb.GetCD() methods.<br>
+		- Changed to usb.IsConnected() method to actively check for device presence.<br>
+		- Fixed AAB builds ignoring build.json on scoped storage.<br>
+		- Added webview 'Persist' option, keeps file cache, history and form data between re-loads/startups.<br>
+		- Added webview 'ClearCookies' option, clears cookies at startup.<br>
+		- Added webview.ClearCookies() method.<br>
+		- Added webview.SetInject( file ) injects a script immediately after page load.<br>
+		- Added warning about non-latin chars on package name.<br>
+		- Fixed AAB building with non-latin chars in app title.<br>
+		- Fixed Saving/Loading of SPKs with non-latin names.<br>
+		- Added 'spk' option to app.ZipFolder() method, creates an SPK from a DS project folder.<br>
+		- Added support for showing Img/app-icon.png in device IDE apps list.<br>
+		- Removed image file case sensitivity check in APKs (for speed).<br>
+		- Added warning about non-latin file names during apk/aab builds.<br>
+		- Fixed issue with "No Permissions" on Android 13 APK installs.</p>
+		<h3>DS 2.63b1<sup>(21-Sep 2023)</sup></h3>
+		<p>- Default AAB/APK target API is now 33.<br>
+		- Upgraded app.CreatePlayStore() to use Android Billing library 6.0.1<br>
+		- Added 'version' field to getinfo end-point response (for wifi ide).<br>
+		- Added 'ScratchPad' extension to device IDE.<br>
+		- Updated UI libs/Layout editor to v0.26 (for experiments mode)<br>
+		- Added 'local' option to webview, loads urls starting with / from /Storage/[AppName]/ instead.<br>
+		- Added READ_SMS permission to X version of DS.<br>
+		- Added Python support under 'experiments' mode.</p>
+		<h3>DS 2.62b3</h3>
+		<p>- Added app.IsDebugVisible() method.<br>
+		- Added 'dialog' and 'clear' options to app.ShowDebug() method.<br>
+		- Added ext.Post( extName, msg ) method for posting between IDE extensions.<br>
+		- Added 'add' option to web/app.SetUserAgent() appends to default user agent.<br>
+		- Added support for Img/app-icon.png as alternative source of app icon.<br>
+		- Small bugfix in XMLHttpRequest polyfill for V8/cgf.Fast mode.<br>
+		- Added new cfg.Serv option, serves html/hybrid apps from a built-in http server.<br>
+		- Prevented _Init function being called from app.js when not in DS webview.<br>
+		- Fixed docs/samps animation flicker after disconnecting wifi editor.<br>
+		- Stopped the 'Blocked a frame' error on Hybrid i-frames with CORS.<br>
+		- Changed app.Alert to use standard alert() function if no title specified.<br>
+		- Prevented screen lock while app is running inside IDE.<br>
+		- Debug overlay now shown before OnStart() is called.<br>
+		- Added new ext.isConnected() method + ext_OnConnect/ext_OnDisconnect callbacks for extensions.<br>
+		- Added new ext_OnProject callback, called when new project is loaded by IDE.<br>
+		- Fixed CodeEdit control calling OnChange when the SetText method is called.<br>
+		- Fixed app.CreateNode() missing error logging issue.<br>
+		- Added new cfg.Console option, shows console instead of GUI (drawers still work).<br>
+		- Added new app.GetDebug() method to return the current debug switches.<br>
+		- Added web.LoadFailed() method to detect WebView page load errors.<br>
+		- Added web.GetHomeUrl() to get starting url.<br>
+		- Updated DroidStore to use Justin's latest minimal dark version.</p>
+		<h3>DS 2.62b2<sup>(23-Jul 2023)</sup></h3>
+		<p>- Added 'NoCors' option to app.SetOptions() for Hybrid apps.<br>
+		- Enabled 'NoCors' option by default for Hybrid apps.<br>
+		- Update UI components to version 0.24.<br>
+		- Fixed DS 'Light' Theme not working when phone in dark-mode.<br>
+		- Allowed users to build APK even if builder is out of date.<br>
+		- Fixed Job scheduler not working in APKs.<br>
+		- Updated the extension.js to support ext_OnOpen.<br>
+		- Added 'NoAccel' option to WebView (allow use on OrangePi 3).</p>
+		<h3>DS 2.62b1<sup>(15-Jun 2023)</sup></h3>
+		<p>- Added support for full screen mode in WebView.<br>
+		- Added 'NoScrollbar' option to ScrollView.<br>
+		- Added webView.SetContextMenus( "Copy URL,Open URL", "Download Image" )<br>
+		- Added webView.SetOnContextMenu callback (=> item, url, img, type )<br>
+		- Removed 'annoying' dot from debug output of NodeJs.<br>
+		- Added optional 'newPaths' parameter to node.Run method (sets new module search folders).<br>
+		- Changed Node component not to use named pipes for messaging (use 'legacy' option to revert).<br>
+		- Enabled DS extensions to run server side node scripts (/Extensions/Test/Server/node_Test.js)<br>
+		- Added 'DS_DIR' environment variable for DS extensions to get full path to DS folder.<br>
+		- Added 'NoCors' option to webview (attempts to disable CORS and i-frame restrictions)<br>
+		- Fixed issue with css and json files with the same name as app being renamed to _main_</i>.<br>
+		- Added 'ShowWhenLocked', 'TurnScreenOn' and 'KeepScreenOn' options to app.CreateOverlay method.</p>
+		<h2>DS 2.61<sup>(23-Mar-2023)</sup></h2>
+		<p>- Updated UI plugin to v0.22</p>
+		<h4>DS 2.60b_p4<sup>(21-Mar-2023)</sup></h4>
+		<p>- FileManager extension now supports remote install of APKs/SPKs/PPKs.<br>
+		- FileManager extension now allows diff comparison of two text files.<br>
+		- Device now displays multiple remote (wifi ide) connections.<br>
+		- Fixed crash when switching to terminal.<br>
+		- Fixed crash after subscribing to monthly premium.<br>
+		- Added yearly premium subscription option (cheaper).</p>
+		<h4>DS 2.60b_p3<sup>(28-Feb-2023)</sup></h4>
+		<p>- Extension API func ext.Open() now switches to coding tabs when loading/displaying a file.<br>
+		- Added new 'options' param to ide.Obfuscate(), use 'noswap' to prevent app* swapify.<br>
+		- Fixed missing 'Billing' permission in AABs when using app.CreatePlayStore.<br>
+		- Fixed missing 'Accounts' permission in AABs when using app.GetUser/Accounts.<br>
+		- Fixed the double-tap wifi "EADDRINUSE" error in wifi ide.<br>
+		- Added DS build number to About box + new app.GetDSBuild() method.<br>
+		- Tidied up app.CreateBluetoothList() layout.<br>
+		- Prevented ide.AddModule from firing more than once per run.</p>
+		<h4>DS 2.60b_p2<sup>(21-Feb-2023)</sup></h4>
+		<p>- Fixed issue with using ctrl.Batch() method with obfuscation.<br>
+		- Removed troublesome bytecode file.</p>
+		<h3>DS 2.60b1<sup>(28-Feb-2023)</sup></h3>
+		<p>- Added FLA_MUTABLE to app.SetInForeground() and others to stop API 31 error.<br>
+		- Added app.GetIsBatteryOptimized() detects if app is being optimized.<br>
+		- Added app.ShowBatterySettings() show user battery optimization settings.<br>
+		- Added foreground location service support for Android 10+.<br>
+		- Project dir is now added to module search paths for cfg.Node apps.<br>
+		- Added new obfuscate option to build.json (array of extra files to obfuscate).<br>
+		- Added ide.Obfuscate( src,dest ) method (useful for building extensions/plugins).<br>
+		- Added new !clean IDE command (cleans internal cache/temp dirs and re-extracts internal assets)<br>
+		- Added new !reset IDE command (resets to fresh install state, keeps projects & prefs)<br>
+		- Fixed bug with app.HttpRequest() and docs sample.<br>
+		- Upgraded Node from version 12 to version 16.<br>
+		- Fixed issue with ide.AddModule() randomly missing out modules.<br>
+		- Fixed problem with multiple @ symbols in ide.AddModule() method.<br>
+		- Added new cfg.NodeESM option to support use of ES modules.<br>
+		- Added new 'esm' option to app.CreateNode() to support ES modules.<br>
+		- Added new 'debug' option to app.CreateNode() enables generic debug trace for express and others.<br>
+		- Added new 'id' parameter to node.Run/Execute calls (for isolating script contexts in extended mode).<br>
+		- Fixed issue with BLE onUartReceive returning atob wrapped values.<br>
+		- Fixed issue building APKs with non-english characters in app title.<br>
+		- Fixed bug with quotes in debug run box causing DS crash.<br>
+		- Update internal docs to v237.<br>
+		- Fixed mail.Send for Android 11.<br>
+		- GameView: Added default loading splash screen.<br>
+		- GameView: Added gfx.SetSplash() (allows use of animated gif during load).<br>
+		- GameView: Fixed bug where OnReady called too early when loading text.<br>
+		- GameView: Added gfx.useCanvas property (use outside of OnLoad).<br>
+		- GameView: Added new gfx.debug=true option to visualise physics objects (use outside OnLoad)<br>
+		- GameView: Added new AddShape( 'polygon', [[x,y],[x,y],..] ) option to physics.<br>
+		- GameView: Fixed keyboard bug where keydown not being called in OnControl function.<br>
+		- GameView: Fixed bug where natural size of sprites was not available after load.<br>
+		- GameView: Added new ide.Export("GameView",src,dest) command to export game as HTML.</p>
+		<h3>DS 2.58b1<sup>(08-Jan-2023)</sup></h3>
+		<p>- UI plugin now automatically added to APKs when building Hybrid apps.<br>
+		- Fixed atob2 errors in Hybrid apps.<br>
+		- Fixed plugin sub-folders unwanted .js extension swaps in APK builds.<br>
+		- Fixed building APK with Hybrid apps.<br>
+		- Fixed missing options parameter on app.UpdateProgressBar.<br>
+		- Added 'shallow' option to app.ExtractAssets() method (only extracts top level).<br>
+		- Added 'extended' option to app.CreateNode() method (allows use of app* methods).<br>
+		- Added 'documents' to app.GetSpecialFolder() method.<br>
+		- Added new Bluetooth permissions for Android 12.<br>
+		- Improved notification listener robustness.<br>
+		- Added app.GetPublicFolder()<br>
+		- Added app.GetTempFolder() method (Android automatically deletes old files if needed)<br>
+		- Added '/Public' file path support (maps to scoped/sandbox public folder for app).<br>
+		- Added '/Private' file path support (maps to app's private folder).<br>
+		- Added '/Temp' file path support (maps to app's cache/temp folder).<br>
+		- Added 'uri' type to app.SendIntent() extras.<br>
+		- Added 'Camera Photo' sample (uses built-in camera app)<br>
+		- Changed app.SaveJson() to take any object type.<br>
+		- Added node.SetEnv( name, val ) method to nodejs component.<br>
+		- Fixed list control not auto-expanding when calling SetTextSize or SetDivider.<br>
+		- Added 'Expand' method to list control.<br>
+		- Fixed app.Uri2Path for folder names containing blanks.<br>
+		- Fixed issue with drawer not displaying in cfg.Fast mode.<br>
+		- Fixed edit.setCursorColor() for Android 10+.<br>
+		- Added new edit.SetSelectColor() method.</p>
+		<h2>DS 2.57<sup>(24-Nov-2022)</sup></h2>
+		<p>- Chat extension now deleted on install (using Discord now).<br>
+		- UpdateProgressBar now has 'doevents' option to force ui update in v8 mode.<br>
+		- Fixed issue with slow APK builds.<br>
+		- Fixed issue with APK install just showing folder after build.<br>
+		- Hybrid apps are now auto-detected (don't need cfg.Hybrid)<br>
+		- Hybrid apps now removed from samples list, use UI plugin docs instead.<br>
+		- Main DS App class changed to DsApp, so won't clash with Hybrid/Enjine apps.<br>
+		- Added include() function for compatibility with Hybrid/Enjine apps.<br>
+		- Updated Hybrid templates.<br>
+		- Fixed crash with Notification listener during WhatsApp messages.</p>
+		<h3>DS 2.56b1<sup>(15-Nov-2022)</sup></h3>
+		<p>- Hybrid components docs now visible after UI plugin install.<br>
+		- Layout extension now automatically installed from UI plugin.<br>
+		- Progress bar now shown when extracting assets at startup.</p>
+		<h3>DS 2.55b1<sup>(23-Oct-2022)</sup></h3>
+		<p>- Added new 'CloudStore' tab to device IDE.<br>
+		- Added new SSH/Device Terminal tab to device IDE.<br>
+		- Switched device IDE 'Chat' tab to use Discord.<br>
+		- Added new 'RemoteTerminal' SSH extension to wifi IDE.<br>
+		- Move UI controls into an updatable internal DS plugin.<br>
+		- Support for ds:/* style paths in HTML elements (eg. ds:/Sys/app.js).<br>
+		- The 'FontAwesome' option can now be used with app.CreateTabs.<br>
+		- Changed wifi IDE right side tabs to show icons only.<br>
+		- Changed node.Run() method to use separate VM contexts on each call.<br>
+		- Changed FileDiff extension to full browser width.<br>
+		- Fixed problem of ide.AddModule() only working once after DS restart.<br>
+		- Added link to Playstore unsubscribe page.</p>
+		<h3>DS 2.54b1<sup>(11-Sep-2022)</sup></h3>
+		<p>- Added 'YouTube Player' and 'Google Maps' samples.<br>
+		- Added 'Card Flip' and 'Card Animation' samples.<br>
+		- Added 'Shopping Cart' sample.<br>
+		- Fixed bugs with device IDE image chooser.<br>
+		- Added ext.displayWidth + ext.displayHeight to extensions API.<br>
+		- Added ext.Play, ext.Stop, ext.Save to extensions API.<br>
+		- Fixed bug causing notification listener to fail.<br>
+		- Fixed bug with fine/coarse location in AABs.<br>
+		- Made AAB builder more reliable (was often getting stuck at 99%)<br>
+		- Added new WYSIWYG Layout extension to WiFi IDE (in experiments mode)<br>
+		- Added version number to APK/AAB build output files.<br>
+		- Added SPK auto-save feature when building APKs/AABs.<br>
+		- Fixed problem with Turkish characters in control callbacks.</p>
+		<h3>DS 2.53b1<sup>(24-Aug-2022)</sup></h3>
+		<p>- Added new app.eventSource property.<br>
+		- Fixed extraction issues with APK asset files containing 'dots'.<br>
+		- Fixed mui.js not found bug when building Node APKs.<br>
+		- Fixed build.json being ignored for AAB files.<br>
+		- Fixed debug messages from NodeJS apps not readable.<br>
+		- Improved !addmodule command to support versions (eg. mi...@1.6.0)<br>
+		- Added new GitHub feature for premium users.</p>
+		<h3>DS 2.52b1<sup>(07-Jun-2022)</sup></h3>
+		<p>- Added SetSpeed and SetPitch methods to MediaPlayer.<br>
+		- Plugins can now contain sub-folders ('docs' sub-folder is removed in APK build).<br>
+		- Added support for Cancel(id) or Cancel('*') in notification listener.<br>
+		- JS errors from remote pages are now ignored for HTML and Hybrid apps.<br>
+		- Multiple cfg.Hybrid app samples added when in 'experiments' mode.<br>
+		- Re-organized app templates.</p>
+		<h4>DS 2.51b_p3<sup>(21-Mar-2022)</sup></h4>
+		<p>- Fixed app.SaveText() causing 'Storage' permission request.<br>
+		- Added 'fillscreen' and 'fullscreen' options for Custom Dialogs.</p>
+		<h4>DS 2.51b_p2<sup>(16-Mar-2022)</sup></h4>
+		<p>- Updated app.ChooseFile() to support GoogleDrive,OneDrive and DropBox.<br>
+		- Added 'nodownload' option to app.ChooseFile (just returns uri, no downloading of files).<br>
+		- Added 'persist' option to app.ChooseFile (persists file permission after reboot).<br>
+		- Added 'pretty' option to app.Uri2Path (returns DS style paths).<br>
+		- AddPermission 'alert' bug fixed (introduced in 2.51b1).</p>
+		<h4>DS 2.51b_p1<sup>(10-Mar-2022)</sup></h4>
+		<p>- AddPermission 'alert' bug fixed.<br>
+		- Added 'pretty path' parameter to app.GetPermission() callback.</p>
+		<h3>DS 2.51b1<sup>(02-Mar-2022)</sup></h3>
+		<p>- Fixed playback of transparent animated gifs in Image control.<br>
+		- APKBuilder is no longer sensitive to spaces around brackets of LoadPlugin call.<br>
+		- List.OnTouch() event now returns unicode chars with correct upper case hex codes.<br>
+		- Transparent apps now startup with zero size (to prevent black flash).<br>
+		- Added cfg.Legacy option to enable various legacy transparent app behaviour.<br>
+		- Added app.UpdateUI() method for forcing UI drawing during heavy processing.<br>
+		- Enabled 3rd party cookies by default for webviews, fetch and xmlHttpRequest.<br>
+		- Fixed broken app.SetAlarm() method.<br>
+		- app.ListFolder() now supports SAF (can list outside scoped storage).</p>
+		<h3>DS 2.51a1<sup>(15-Feb-2022)</sup></h3>
+		<p>- Added support for /Internal/* and /External/* SAF paths.<br>
+		- app.GetPermission() now supports 'external' and 'internal' keywords.<br>
+		- Replaced 'Sdcard Access' sample with 'Storage Access' sample.<br>
+		- Improved permissions detection for file:///android_asset paths.<br>
+		- Fixed 'Share SPK' for scoped storage devices.<br>
+		- Fixed app.SendFile, app.SendImage, app.SendMail for scoped storage devices.<br>
+		- Added QUERY_ALL_PACKAGES permission to X version.<br>
+		- Removed default params from edit/mui.js (older webviews don't not like it)<br>
+		- Added web.Func(name,args...) for easy calling of functions defined in a WebView.<br>
+		- Added app.Func(name,args...) for easy calling of main script functions from a WebView.<br>
+		- app.SimulateTouch() now copes with lower case keywords.<br>
+		- Fixed 'atob' issue with console logging in NodeJS apps.<br>
+		- Added new GetDocumentFile() method to Plugin parent object.<br>
+		- Added new app.GetRouterAddress() method.<br>
+		- Added tabs.SetTextSize(size,mode) method.<br>
+		- Added cfg.Fast mode for premium users (3x faster apps!)<br>
+		- Added XMLHttpRequest polyfill for Fast mode.</p>
+		<h4>DS 2.5_p1<sup>(06-Jan-2022)</sup></h4>
+		<p>- Added 'Query Images' and 'Query Videos' samples.<br>
+		- Fixed crash when building APKs/AABs for Html apps.</p>
+		<h2>DS 2.50<sup>(31-Dec-2021)</sup></h2>
+		<p>- Fixed ctrl.Batch call for base methods (use underscore)<br>
+		- Added app.PreventWifiSleep() to IDE server code (not sure it will help).<br>
+		- Fixed crash issues on ListView related to blurry icon fix.<br>
+		- Sped up app icon list even more and fixed its light mode text color.<br>
+		- Hidden 'SDK' menu for Android 10 or newer (scoped storage issues).</p>
+		<h3>DS 2.17b1<sup>(23-Dec-2021)</sup></h3>
+		<p>- Added new 'Node' app type - cfg.Node.<br>
+		- Sped up app icon list display and app startup.<br>
+		- Added typeId field to every DS object.<br>
+		- Added app.Show/Hide methods.<br>
+		- Added obj.Batch() for faster batched method calls (set ctrl props all at once).<br>
+		- Added ReadFile and WriteFile to extension.js.<br>
+		- Introduced new 'glob' object for storing global variables (shorter alternative to app.data)<br>
+		- Improved MUI code completion/help in wifi-ide.<br>
+		- Increased size of wifi-ide tooltip docs jump link, changed from '?' to '...'.<br>
+		- Improved ide.AddModule() method (now shows yes/no dialog)<br>
+		- Fixed zip path traversal vulnerability (causes Google Play warning)<br>
+		- Added app.WalkFolder for recursive listing (use same options as listFolder).<br>
+		- Added 'NoEmpty' option to app.ListFolder and app.WalkFolder (hides empty folders)<br>
+		- Added 'Project' option to app.ListFolder (shows DS project folders only)<br>
+		- Added new extension function - openEditorFile( filename, lineOrPattern )</p>
+		<h3>DS 2.14b1<sup>(07-Dec-2021)</sup></h3>
+		<p>- Added 'Music Sequencer' sample.<br>
+		- Added 'Synth Song Player' sample.<br>
+		- Fixed Music docs dark theme issue in wifi ide.<br>
+		- Fixed blurry icons in list control (when > 64dip).<br>
+		- Improved app -> node messaging reliability.<br>
+		- Added ide.AddModule() method (adds a node module from code)<br>
+		- app.Script() now 'defers' execution by default.<br>
+		- app.Script() now has noDefer parameter (causes inline load of script)<br>
+		- Errors in app.Script() includes are now highlighted.<br>
+		- Fixed language extension bug that caused loss of code changes.<br>
+		- Added new CloudStore extension to the WiFi IDE (for premium users).<br>
+		- Modified app.GetAppPath() to return full path to resources when in APK.<br>
+		- Added app.ReadFileData(file,mode) method ('base64','hex','int','ascii').<br>
+		- Fixed music component so it works inside APKs.<br>
+		- DS and all exported APKs are both 64bit and 32bit compatible by default.<br>
+		- mui: Added Add*** methods to MUI.<br>
+		- mui: Added SetColor method to Buttons<br>
+		- mui: Added SetColor method to FABs<br>
+		- mui: Button padding is added to button with null width.<br>
+		- mui: Add SetText method to FAB<br>
+		- mui: Added Add*** method to each control.<br>
+		- mui: Pass TextEdit control as param to pickers.<br>
+		- mui: Added SetTextEdit method to pickers.<br>
+		- mui: Added touch discovery to TextEdits<br>
+		- mui: Added SetOnTouch method to TextEdits<br>
+		- mui: Added 1 Outlined Button. A true material outline button.<br>
+		- mui: Added SetOnClose to AddBanner.<br>
+		- mui: Added SetOnClose to AddDialog.<br>
+		- mui: Redesign Modal dialog control.<br>
+		- mui: Added SetOnClose to AddModal.<br>
+		- mui: Added 'Full' options to AddModal.<br>
+		- mui: Fixed minor glitches on CreateDialog.<br>
+		- mui: Added SetTextEdit method to ListDialogs.<br>
+		- mui: Added SetOnReady and SetOnProgress method on DataTable</p>
+		<h3>DS 2.13b1<sup>(18-Nov-2021)</sup></h3>
+		<p>- Fixed !addmodule command on slower devices.<br>
+		- Icon buttons sample fixed.<br>
+		- Plugin exceptions are now shown in debug log.<br>
+		- SysProc component now sets HOME and TMPDIR environment vars if none provided.<br>
+		- Fixed bug in 'packages' param of app.SetKioskMode() method.<br>
+		- Added 'Background Job' template to device IDE.<br>
+		- Fixed bug where version part of plugin names were not stripped off.<br>
+		- Blocked the use of 'Service' and 'Job' as app names.<br>
+		- MUI assets are now excluded from APKs if not used.<br>
+		- Changed camera profile for front camera recording.<br>
+		- Updated to newer APK/AAB v3 signature method.<br>
+		- Added RealPath() conversion to app.OpenDatabase() method.<br>
+		- Fixed app.GetIPAddress() for Android 11.<br>
+		- Fixed CustomTabs on Android 11.<br>
+		- Added 'Custom Browser Tabs' sample.<br>
+		- Fixed Speech Recognition on Android 11.<br>
+		- Fixed TextToSpeech on Android 11.<br>
+		- Fixed Background services for Android 11.<br>
+		- AAB files are now automatically signed with user.keystore file.<br>
+		- Added OnDone() callback to Node object.</p>
+		<h3>DS 2.12b1<sup>(23-Jul-2021)</sup></h3>
+		<p>- Updated to Google Play Billing libraries v4.<br>
+		- Fixed case sensitivity issue with Desyrel font.<br>
+		- Allowed use of lib sub folder in plugins (for .so files)<br>
+		- Old Plugin folders are deleted when re-installing plugins<br>
+		- app.CreateNode() now supports 'paths' parameter (same as nodejs NOD_PATH env variable)<br>
+		- mui: Added ShowMenu() method to show menu on a given control<br>
+		- mui: Added SetList() method to all list control<br>
+		- mui: Added animation to spinner<br>
+		- mui: Added SetHint to Spinner<br>
+		- mui: Added SetList to Spinner<br>
+		- mui: Added SetList to Menu<br>
+		- mui: Added SetOnIconTouch to TextEdits with icons</p>
+		<h3>DS 2.11b2<sup>(23-Jul-2021)</sup></h3>
+		<p>- Fixed issues with Node on 64bit devices and scoped devices.<br>
+		- Added app.RealPath method. Converts short file paths to full paths.<br>
+		- Improved 'plugin not licensed' error handling.</p>
+		<h3>DS 2.11b1<sup>(16-Jul-2021)</sup></h3>
+		<p>- Added support for NodeJS scripts and modules!<br>
+		- Added new !addmodule command to wifi ide command box.<br>
+		- Improved wifi ide file browser drag-drop handling.<br>
+		- Removed 'UseBasicInput' option from chat webview.<br>
+		- Removed 'ongoing notification' (not effective at keeping DS alive).</p>
+		<h3>DS 210b1<sup>(20-May-2021)</sup></h3>
+		<p>- Added new Chat tab to right slide panel of mobile IDE.<br>
+		- Fixed chat (red dot on tab) message indicator on wifi editor.<br>
+		- Added app.CreateCustomTabs (thanks to Candlelight)<br>
+		- Added more fine grain control over COSU Kiosk mode (for >= Android 9).<br>
+		- Added GetCurrentTabName() method to tab control.<br>
+		- Added 'NoMargins' option to tab control.<br>
+		- Improved app startup time slightly.<br>
+		- BuildAPK dialog now saves version and package name for each project.<br>
+		- autoPermissions value in build.json now also checked when running app in ide.<br>
+		- App now shows warning before exiting if required dangerous permissions are missing.<br>
+		- Added new noPermsAction field in build.json (set to 'exit', 'continue', 'default').<br>
+		- Added new !getperms command to wifi ide (gets dangerous permissions of current app).<br>
+		- Added app.SaveJson and app.LoadJson methods (thanks to HJCD Studios)<br>
+		- Fixed broken wiki link in docs/resources.<br>
+		- External storage access (SAF) is now available to non-premium users.<br>
+		- Added 'NoVibrate' and 'Low' (priority) options to app.CreateNotification() method.<br>
+		- Added ongoing notification to keep DS alive in background.</p>
+		<h2>DS 209<sup>(06-May-2021)</sup></h2>
+		<p>- Version number update only.</p>
+		<h3>DS 208b2<sup>(04-May-2021)</sup></h3>
+		<p>- Created separate plugins page for premium (more plugins available).<br>
+		- app.AddCameraView() is now detected in permissions scan.</p>
+		<h3>DS 208b1<sup>(20-Apr-2021)</sup></h3>
+		<p>- Added extra support for deep linking with 'urlScheme' tag in build.json.<br>
+		- Added default deep link scheme 'ds://*' and 'http://ds/*' for testing apps in IDE.<br>
+		- Fixed img.Play() method (should start animated gifs).<br>
+		- mui: Added new Spinner control.<br>
+		- mui: Added SetOnTouch method to DataTable.<br>
+		- mui: Added 'color' property on ListModern data for avatar color.<br>
+		- mui: To change badge color, set MUI.theme.badgeColor=color after initializing MUI.<br>
+		- Removed support for Admob (Google requirement).<br>
+		- Updated Chat component (now shows count of logged on users).</p>
+		<h3>DS 207b1<sup>(18-Mar-2021)</sup></h3>
+		<p>- Added new 'cleartask' option to app.SendIntent().<br>
+		- Fixed issue with i-frames opening separate window in html apps.<br>
+		- Fixed issue with IDE hiding after running app on Android10+.</p>
+		<h2>DS 206<sup>(04-Mar-2021)</sup></h2>
+		<p>- Fix for new projects created in Wifi IDE having old 'holo' look.<br>
+		- mui: Fix for DataTable column sorting with duplicate vals.<br>
+		- Chat extension moved to 'experiments' mode.</p>
+		<h2>DS 205<sup>(03-Mar-2021)</sup></h2>
+		<p>- Default theme for wifi ide is now dark.<br>
+		- mui: SetOnSelectionStatus bug in CreateDataTable docs fixed.<br>
+		- mui: Icons in CreateDataTable headers now showing properly.<br>
+		- Fixed banner add clicks always going to Premium dialog.<br>
+		- Improved reliability of language extension.</p>
+		<h3>DS 204b1<sup>(18-Feb-2021)</sup></h3>
+		<p>- Added new "/Plugins" keyword to get path to plugins.<br>
+		- Added gfx.GetJoystick() gets object containing joystick states.<br>
+		- Added new gfx.multiTouch=true option to GameView (x/y vals will be arrays).<br>
+		- Wifi IDE app icons is now refreshed after spk installs.<br>
+		- GameView: Fixed gfx.Reload() not working on some devices.<br>
+		- Enabled the download and install of .ppk files from the DroidStore.<br>
+		- Fixed bug preventing multiple plugin installs at once.<br>
+		- app.AutoWifi and app.AutoStart now deprecated in favour of ide.AutoWifi, ide.AutoStart.<br>
+		- app.AutoBoot() can now contain both 'app' and 'service' keywords at same time.<br>
+		- Fixed app.IsStarted() to work for multi-page html apps.<br>
+		- Added app.ScheduleJob() method to schedule background jobs (using Job.js file).<br>
+		- Added 'Background Job' app template for premium users.<br>
+		- Added app.PinScreen() method (screen pinning must be enabled in settings).</p>
+		<h3>DS 203b1<sup>(08-Feb-2021)</sup></h3>
+		<p>- Fixed bug with SendDataGrams showing EADDRINUSE error.<br>
+		- Added datagram buffer size options to Send/ReceiveDatagram (1k,2k,4k,8k,16k,32k,64k)<br>
+		- Added new app.GetJoystickStates() method, returns single object with all states.<br>
+		- Removed semi-colons from device code completion.<br>
+		- Download component and WebView/Html Apps now support 'content-disposition' header.<br>
+		- Added US_FUL_SCREE_INTENT permission if required.<br>
+		- Removed deprecated funcs SetLanguage, Language2Code.<br>
+		- Fixed obfuscation issues related to SetAppLanguage and GetAppLangCode.<br>
+		- Added app.CreateCanvas() method, creates blank image with auto-update turned off.<br>
+		- Fixed SE_ALARM permission having wrong path.<br>
+		- Added new ide.MakePlugin method (turns current project into a plugin and installs it).<br>
+		- Updated Wifi IDE toolbar and button styles.<br>
+		- Scoped storage state remembered from first run (safe to install your APKs on Android 10)<br>
+		- Added app.IsScoped() method to indicate 'scoped storage' on Android 10+.<br>
+		- Added SetOnRequest() to detect all WebView requests (params: url,method,isMain,isRedirect).<br>
+		- Added Stop() method to WebView, cancels current page load.<br>
+		- Added SetBlockedUrls() to WebView, comma seperated list of urls to block.</p>
+		<h2>DS 202<sup>(08-Feb-2021)</sup></h2>
+		<p>- Fixed bad link in documentation to CloudStore component.<br>
+		- Update CloudStore documentation.</p>
+		<h4>DS 201b1</h4>
+		<p>- Fixed imagegrid showing black squares after 200b1 scoped storage changes.<br>
+		- Added new app.Path2Uri method (gets a 'content:/*' path for images and videos).<br>
+		- MUI: Fixed MenuWithIcon error.<br>
+		- MUI: Fixed DataTable selectable icons.</p>
+		<h4>DS 200b1</h4>
+		<p>- Fixed many file access issues on Android 10/11 with fresh DS installs.<br>
+		- Added '/Storage' keyword as new alternative to '/sdcard'.<br>
+		- Added '/External' keyword as new alternative to '/extsdcard'.<br>
+		- Added support for 'content:' paths on app.ReadFile() and for Image Controls.<br>
+		- APKBuilder now uses private storage for its temp files.<br>
+		- Fixed bug in plugin docs extraction (non-doc file deletion code failed).<br>
+		- app.ChooseFile() method now returns a second 'name' parameter in callback.</p>
+		<h4>DS 195b1</h4>
+		<p>- Fixed bug with APK builder corrupting user assets.<br>
+		- Fixed issue with scoped storage re-directs.<br>
+		- Updated new improved search extension (thanks to Cemal)<br>
+		- Added new premium file differencing extension (thanks to Cemal)<br>
+		- Fixed assets not being added from phone Downloads folder.<br>
+		- Fixed issue with app.Execute obfuscation.<br>
+		- MUI: app.InitializeUIKit(color) to change color.<br>
+		- MUI: app.InitializeUIKit(color, theme) to force change the theme to dark or light.<br>
+		- MUI: Added new DataTable control.<br>
+		- MUI: Dialogs and pickers displayed on the center will now close when back key is click.<br>
+		- MUI: Added SetText,SetHtml,SetTextColor, SetTextSize method to banner.<br>
+		- MUI: Added SetTitle, SetTitleColor, SetText, SetHtml, SetTextColor, SetTextSize method to dialogs.<br>
+		- MUI: Added SetTitle, SetText, SetTextColor, SetHeaderColor to modal.<br>
+		- MUI: Added SetText, SetHtml, SetTextColor to AlertSimple.<br>
+		- MUI: Added SetHeight method to ListDialog and CheckList dialogs for long list.</p>
+		<h4>DS 194b1</h4>
+		<p>- Allowed 'app' query parameter on wifi IDE urls.<br>
+		- Added 'Launch in new tab' option to wifi IDE app icons.<br>
+		- Obfuscated MUI APKs now work.<br>
+		- Added new built-in Music Engine (thanks to Cemal)<br>
+		- Updated CloudStore component to use enjine.io<br>
+		- Fixed bug with installing spks over existing ones.<br>
+		- Added SetDescription method to all controls (for accessibility)</p>
+		<h4>DS 193b1</h4>
+		<p>- Switched to use scoped storage for user scripts in Android 10/11.<br>
+		- The 'Store' tab now shows a stripped down version of the DroidStore.<br>
+		- Added new 'Search' extension to wifi ide (thanks to Cemal)<br>
+		- Plugins can be uninstalled in the docs.<br>
+		- Extensions now show up in the docs too.<br>
+		- Added 'List Colors' sample.<br>
+		- List control can now cope with missing values between semi-colons in list.<br>
+		- Added basic intellisense for MUI controls.<br>
+		- Added intellisense for plugins to Wifi IDE.<br>
+		- Callbacks from BT,USB and Plugins now return source webview.<br>
+		- Wifi IDE now starts with code window expanded.<br>
+		- Added Alt-Enter key combo for forward search on highlighted word.<br>
+		- Wifi IDE code window now defaults to wide.<br>
+		- Added SetItemColor() and SetItemColorByIndex() methods to List control.<br>
+		- Added hidden option cfg.NoSwapify (prevents func name swapping during obfuscation)<br>
+		- app.Execute() is no longer obfuscated (now works from webviews inside APKs)<br>
+		- Added new ide command !addpackage<br>
+		- Plugins with version number after _underscore now installed correctly.<br>
+		- Refactored code suggestions (thanks to Symbroson).<br>
+		- Clicking the method preview in mobile ide now opens the corresponding docs page.<br>
+		- !addplugin behaves better when given bad plugin names.<br>
+		- Added Disconnect() method to WebServer (disconnects websock clients)<br>
+		- Added websocket buffer size options to WebServer (ws_64k,ws_128k,ws_512k,ws_1M,ws_5M,ws_10M)</p>
+		<h4>DS 1.92b1<sup>(28-Sep-2020)</sup></h4>
+		<p>- Added latest docs with MUI and GameView updates.<br>
+		- Add new 'Store' tab along side standard samples (soon to show DroidStore).<br>
+		- Speeded up/improved app launcher page.<br>
+		- Added new 'ScratchPad' extension.<br>
+		- Added auto-translation to Language extension.<br>
+		- Added extension.js to DS internal assets.<br>
+		- Added ext.Log() function to extension.js<br>
+		- Added missing app.AddTabs() method.<br>
+		- Tabs: increased layTop height to 0.06.<br>
+		- Tabs: setting tab text widths based on dynamic width if unspecified.<br>
+		- Tabs: added "fade" option to Tabs.<br>
+		- Tabs: showing new tab first before hiding others to prevent flicker.<br>
+		- added _SetTmpDebug() and _RestoreDebug() for use in pure JS plugins/Libs.</p>
+		<h4>DS 1.91b2<sup>(23-Jul-2020)</sup></h4>
+		<p>- DS now offers to install and run your APK after build<br>
+		- Added app.LaunchApp() method, launches apps if installed else tries GPlay.<br>
+		- Fixed app.ShowProgress can now take null as first parameter.<br>
+		- Fixed app background not defaulting to dark mode (grey).<br>
+		- Fixed APK installs from DS launching second instance of DS.<br>
+		- Fixed scanfile bug in 'Create Shortcut' option.<br>
+		- Fixed issue with custom button colors in APKs for holo theme.</p>
+		<h4>DS 1.91b1<sup>(16-Jul-2020)</sup></h4>
+		<p>- Added new MUI* material controls for premium users!<br>
+		- Added MUI controls demo app to docs.<br>
+		- Added new 'Class' file/template.<br>
+		- Upgraded obfuscator to support ES6 classes properly.<br>
+		- Added M(ctx,func) macro for using class methods as callbacks (maintains 'this' context)<br>
+		- Fixed issue with Text control autoshrink mode on first draw.<br>
+		- Added Work-a-round for recent Android Speech recognition double results bug.<br>
+		- Fixed spelling of app.GetSpeechEngines().<br>
+		- Added SetProgressOptions method to theme component.<br>
+		- Added 'Solid' option to app.ShowProgress (shows solid background behind spinner).<br>
+		- DS now uses app.InstallApp() to install APKs (needed for Android 10).<br>
+		- Fixed "Install" permission automatically added when using app.InstallApp().<br>
+		- Enabled DS method auto debugging/tracing in APKs (disabled by default).<br>
+		- Added 'VCenter' and 'Bottom' options to text controls.<br>
+		- Improved extension support in Wifi IDE.<br>
+		- Created demo Wifi IDE extension.<br>
+		- You can hide your projects and files from DS by putting a ~ at front of folder/file name.<br>
+		- SPKs now contain a new hidden file '~package.json' with the DS version used.<br>
+		- Older SPKs and DS projects now default to Holo theme.<br>
+		- Added "Biometric" permission option.<br>
+		- Fixed problem with the word Add being incorrectly replaced when using Ad* methods.<br>
+		- NoIcons now defaults to true if a screen reader is detected.<br>
+		- Fixed app.GetThemeInfo() unset colours. Now returns null.<br>
+		- app.Install() now returns (packageName,status) params in callback.<br>
+		- Added new !plugindocs IDE command to fix docs for a plugin after deleting .edit folder.</p>
+		<h4>DS 1.90b1<sup>(26-May-2020)</sup></h4>
+		<p>- Added new cfg.Dark, cfg.Light, cfg.Holo theming options.<br>
+		- New dark theme is used by default (use cfg.holo to go back to old look).<br>
+		- Added app.GetThemeInfo() method (gets main settings of current theme).<br>
+		- Added 'Controls Light' and 'Controls Dark' samples.<br>
+		- Added new switch control (slider switch).<br>
+		- Intermitent obfuscation errors fixed.<br>
+		- Added app.InstallApp(apk,callback) method (callback returns error/success status).<br>
+		- Added 'AllProgress' option to WebView (shows progress for all loads).<br>
+		- Fixed some issues with 'AutoSize/Scale' mode for text and buttons.<br>
+		- Disabled BaselineAligned mode for Linear Layouts (use 'BaseAlign' if needed)<br>
+		- Added app.GetTextBounds() to calc size of text for given font size (most params optional)<br>
+		- Added TW(txt,size) function to as shorthand way of getting text width (size param optional).<br>
+		- Added DW() and DH() convenience funcs (same as app.GetDisplayWidth/Height).<br>
+		- Dialog.AdjustColor is now applied before Dialog.SetDividerColor.<br>
+		- Added 'dialog' option to button control (picks up dialog button theme).<br>
+		- Added web.SetOnUrl() method to intercept url clicks (passes url to callback).<br>
+		- Error descriptions in the WebView no longer include "net::" on the front.<br>
+		- Spinner bug fixed when using spn.SetList and spn.SelectItem right after creation.<br>
+		- Added 'vertical' option to toggle button (makes LED go to bottom).<br>
+		- All controls are now automatically dimmed when disabled.<br>
+		- app.GetObjects() now removes destroyed child controls before returning.<br>
+		- Added 'external' option to app.GetPrivateFolder() method.<br>
+		- Added app.GetAccessibility() to check for screen readers etc (thanks to Jason Custer for Java)<br>
+		- Added app.GetSpeachEngines() to list installed TTS engines (thanks to Jason Custer for Java)<br>
+		- Fixed issues with auto-complete on device when using app.Add* methods.</p>
+		<h4>DS 1.82b2<sup>(24-Apr-2020)</sup></h4>
+		<p>- Added Merge(), List() and Delete() methods to CloudStore component.<br>
+		- Added "Network" permission when using app.CreateCloudStore().<br>
+		- Updated Obfuscator to ES6.<br>
+		- Added app.SetMargins() to set default margins for controls.<br>
+		- Added app.SetTextSize() to set default text size for controls.<br>
+		- Enabled GameView to work in IOS and Android browsers.<br>
+		- Enabled GameView touch events to work in mobile browsers.<br>
+		- Improved GameView asset loading checks.<br>
+		- Fixed app.ShowCheckList button size issues.<br>
+		- Added 'AutoSize' option to button control (Auto-sizes text to fit).<br>
+		- Added 'AutoShrink' option to button and text control (Auto-shrinks text to fit).<br>
+		- Fixed GLview (added missing libs).<br>
+		- Added app.SetAppLanguage(), app.GetAppLanguages(), app.GetAppLangCode().<br>
+		- Deprecated app.Language2Code(), app.SetLanguage().<br>
+		- Added language translation premium sample.<br>
+		- Added initial version of GameView docs (thanks to Symbroson).</p>
+		<h4>DS 1.82b1<sup>(11-Apr-2020)</sup></h4>
+		<p>- Moved manifest minSdkVersion to 21 (Android 5.0)<br>
+		- Added new app.Add* funcs for all controls.<br>
+		- Added new CloudStore component + sample (premium only).<br>
+		- Added Listen() and SetOnNotify() methods to Notification component .<br>
+		- Added 'Notification Listener' sample.<br>
+		- Added 'action' param to SetOnBroadcast (for catching generic Android broadcasts).<br>
+		- Prevented OnConfig firing after screen unlock.<br>
+		- Fixed DS repeated re-draw after screen unlock.<br>
+		- Fixed use of gfx.Script() calls in GameView.<br>
+		- Fixed GameView issue with batched sprites not showing.<br>
+		- Fixed GameView to wait till all assets are loaded before calling OnReady().<br>
+		- Added app.data object for storing user data globally.<br>
+		- Added SetOnStatus method to AdView.<br>
+		- Enabled the use of #rrggbb colors with gfx.SetBackColor.<br>
+		- Fixed "Cannot read property SetAlpha of null error" when using keyboards.<br>
+		- Added 'NoIcons' option to settings for screen reader support.<br>
+		- Updated Terminal extension to use dark theme.<br>
+		- Fixed wrong heading on copy app menu.</p>
+		<h5>DS 1.81a1<sup>(24-Jan-2020)</sup></h5>
+		<p>- Fixed GLView failure.</p>
+		<h2>DS 1.80<sup>(20-Jan-2020)</sup></h2>
+		<h4>DS 1.80b2<sup>(12-Jan-2020)</sup></h4>
+		<p>- Fixed problem with screen height measurement on phones with hardware buttons.</p>
+		<h4>DS 1.80b1<sup>(10-Jan-2020)</sup></h4>
+		<p>- Added Admob support + sample for premium users.<br>
+		- Added net.ReceiveVideoStream() for premium users.<br>
+		- Added new 'Card' Layout type + sample.<br>
+		- Added app.SetNavBarColor/SetStatusBarColor for premium users + sample.<br>
+		- Added 'btn-1' to 'btn-12' to app.GetJoystickState() method.<br>
+		- Added __BUILD_TIME__ macro.<br>
+		- Added SetCorderRadius(radius) method to Linear layout control.<br>
+		- Fixed issue with miscalculated display height for devices with soft nav bars.<br>
+		- Added app.IsPortrait() convenience function.<br>
+		- Added 'Location' permission automatically for app.CreateBluetoothSerial() method.<br>
+		- Fixed missing leading zero in hexmode response for BtSerial,File,NetClient,UsbSerial objects.<br>
+		- Added option to BTSerial for packet length headers, eg. bt.SetSplitMode( "Head", 2, "LE" ).<br>
+		- Added raw 'Direct Commands' Nxt serial BT sample (same techique should work for EV3).</p>
+		<h5>DS 1.79a4<sup>(12-Dec-2019)</sup></h5>
+		<p>- Fixed problem with loading DS plugins on Android7 and lower.</p>
+		<h5>DS 1.79a3<sup>(06-Dec-2019)</sup></h5>
+		<p>- Added .startsWith polyfill older Androids.<br>
+		- Fixed crash on OrangePi Zero.<br>
+		- _AddPermissions() now works in IDE.<br>
+		- PuckJS Plugin now requests Location permission in IDE.<br>
+		- 3dp accuracy now supported on seekbars.<br>
+		- Default seekbar max-rate changed from 20ms to 100ms.<br>
+		- Added app.RedirectAssets. (Reads Img,Snd,Html,Misc assets from given folder not APK).<br>
+		- Added 'NoRedirect' to web.LoadUrl() and web.LoadHtml() methods (blocks asset redirect).<br>
+		- Added 'Move' touch events to GameView (and blocked null events)</p>
+		<h5>DS 1.79a2</h5>
+		<p>- Fixed app.ShowTip error on touching tooltip.<br>
+		- app.WifiScan() now supports 'detail' option (returns array with details).</p>
+		<h5>DS 1.79a1<sup>(05-Nov-2019)</sup></h5>
+		<p>- Added obj.Animate + animation sample.<br>
+		- Changed ListView to use normal font by default (can use 'bold' option)<br>
+		- Dialog titles are now thinner by default (use 'old' option to revert).<br>
+		- Dialog corners are now rounded by default (use 'old' option to revert).<br>
+		- Dialog title text size is smaller by default (use 'old' option to revert).<br>
+		- Added optional radius param to Dialog.SetBackColor() method.<br>
+		- Added Theme.SetDialogCornerRadius(), Theme.SetTitleDividerHeight(), Theme.SetTitleTextSize().<br>
+		- Added Dialog.SetTitleDividerColor(), Dialog.SetTitleDividerHeight(), Dialog.SetTitleTextSize().<br>
+		- Smartened up the Custom Dialog sample.<br>
+		- Fixed UDP send method (was broken in v178).<br>
+		- Fixed UDP ReceiveDatagrams() method.<br>
+		- Improved Wifi Broadcast sample.</p>
+		<h2>DS 1.78<sup>(27-Oct-2019)</sup></h2>
+		<p>- Fixed 127.0.0.1 IDE error for Chromebooks.<br>
+		- Removed method tips question mark link for non app.* methods.</p>
+		<h4>DS 1.77b1<sup>(16-Oct-2019)</sup></h4>
+		<p>- Improved dark mode support on device editor.<br>
+		- Added 'BlackGrad' option to list control.<br>
+		- Added gfx.GetTime() method, returns time since last gfx.Pause() or gfx.Play().<br>
+		- Fixed sound.Pause() method in GameView.<br>
+		- Enabled OnControl() callbacks in GameView even when game is paused.<br>
+		- Added gfx.IsPaused() to GameView.<br>
+		- Added gfx.Reload() to GameView (reloads game from scratch).<br>
+		- Added app.SetMockLocation() for premium users.<br>
+		- Prevented background touch during app.ShowProgress (use 'NonModal' to revert).<br>
+		- Changed 'device' parameter of app.CreateUSBSerial() to select by PID not index.<br>
+		- Allowed app.GetPermission( "usb:"+pid ) for USB devices.<br>
+		- Added app.Translate(cancel,ok) method to translate buttons globally.<br>
+		- NetClient now supports SetSplitMode and SetDataMode (for use with AutoReceive).<br>
+		- Added SetTitleHeight() and SetTitleColor() methods to custom dialog.</p>
+		<h5>DS 1.77a1<sup>(19-Sep-2019)</sup></h5>
+		<p>- Added lots of new docs (thanks to Symbroson).<br>
+		- Docs now support dark/light mode (thanks to Symbroson).<br>
+		- Remote terminal now available by default for premium users.<br>
+		- Fixed 'Game' template for non-premium Wifi IDE users.<br>
+		- Fixed Service SetInForeground permission issue.<br>
+		- Added btn.SetOnLongTouch method.<br>
+		- APK 'Debug Build' option now defaults to off and obfuscate to on.<br>
+		- Added app.ShowCheckList() method + sample.<br>
+		- Fixed problem with building APKs on Android 9.<br>
+		- Added optional angle parameter to glview.DrawSprite method.<br>
+		- Added new optional 'folder' parameter to app.ChooseFile method.</p>
+		<h2>DS 1.76<sup>(27-Aug-2019)</sup></h2>
+		<p>- Added support for ublox-7 USB GPS module + Sample.<br>
+		- Added android:directBootAware to enable USB serial devices at boot.<br>
+		- Changed Hello World sample so it's not re-created every time.<br>
+		- Fixed problem with NV21toRGB32 function during camera image processing.</p>
+		<h4>DS 1.76b1<sup>(19-Aug-2019)</sup></h4>
+		<p>- Fixed problem with NV21toRGB32 function during camera image processing.<br>
+		- Added support for ublox-7 USB GPS module + Sample.<br>
+		- Added android:directBootAware to enable USB serial devices at boot.<br>
+		- Changed Hello World sample so it's not re-created every time.</p>
+		<h4>DS 1.75b2<sup>(02-Aug-2019)</sup></h4>
+		<p>- Added missing 64 bit libs for FastCanvas.</p>
+		<h4>DS 1.75b1<sup>(01-Aug-2019)</sup></h4>
+		<p>- Fixed logic of app.SetOptions( "usebrowser") was inverted for HTML apps.<br>
+		- Fixed anchor tags with local relative file paths in HTML apps and WebViews.<br>
+		- Removed admin filter from manifest (please use 'X' version of DS for kiosk apps)</p>
+		<h5>DS 1.75a3<sup>(01-Aug-2019)</sup></h5>
+		<p>- Fixed Webview data dir prefix issue for Android 9.<br>
+		- lst.SetEllipsize now sets both title and body.<br>
+		- GameView physics enabled for Text objects.<br>
+		- GameView Tween method fixed for Text objects.<br>
+		- obj.IsOverlap() fixed for Linear Layouts.<br>
+		- Temporarily removed support for NoDom option.<br>
+		- Removed support for GameView 'gles' mode.</p>
+		<h5>DS 1.75a2<sup>(23-Jul-2019)</sup></h5>
+		<p>- Added support for 64bit and API28 (required by Google Play)<br>
+		- app.SetKioskMode( "LockTask", true ) enables proper Android COSU kiosk apps.<br>
+		- app.SetKioskMode( "Pin", true ) enables proper pinning/unpinning of tasks.<br>
+		- app.ReplaceInFile() options param can now be left blank.<br>
+		- app.ReplaceInFile() now accepts regex strings.<br>
+		- Updated GameView intellisense to include Text object.<br>
+		- Improved gfx.CreateText() to allow numerics (previously had to use .toString()).<br>
+		- Added gfx.RemoveText(), gfx.RemoveGraphic(), gfx.RemoveBackground() methods.<br>
+		- Added sprite.Contains(x,y) method.<br>
+		- Added sprite.Flip( sprite, horiz, vert ) method.</p>
+		<h5>DS 1.75a1</h5>
+		<p>- Updated some samples to use 'this' instead of app.GetLast*<br>
+		- Removed app.CreateListView(), use app.CreateListDialog instead.<br>
+		- Sped up SQLite callbacks again.<br>
+		- Added 'modal' and 'kiosk' option to app.CreateDialog().<br>
+		- Fixed custom dialog sizing issue when using app.SetDensity().</p>
+		<h2>DS 1.74<sup>(19-Jun-2019)</sup></h2>
+		<p>- Changed to darker look and feel for Wifi IDE.<br>
+		- Added dark mode in Wifi IDE for Premium users.<br>
+		- Added app.SendImage() method.<br>
+		- Modified internal _Cbm function slightly to allow use of local scope callback funcs.<br>
+		- More docs added (thanks to Symbroson)<br>
+		- Added _AddPlugins() function to allow manual inclusion of plugins.<br>
+		- Added web.SetTextZoom( zoom ).<br>
+		- app.CreateBluetoothList now requests permission "Location" for > Android 8.<br>
+		- Changed app.WifiScan now returns list with pipe | instead of comma delimeters.<br>
+		- Fixed app.ChooseWifi now removes duplicate ssids.<br>
+		- Added gfx.CreateText() method to GameView (allows use of bitmap fonts)<br>
+		- Fixed GameView bounce sample.</p>
+		<h4>DS 1.74b2<sup>(14-Jun-2019)</sup></h4>
+		<p>- Changed to darker look and feel for Wifi IDE.<br>
+		- Added dark mode in Wifi IDE for Premium users.<br>
+		- Added app.SendImage() method.<br>
+		- Modified internal_Cbm function slightly to allow use of local scope callback funcs.<br>
+		- More docs added (thanks to Symbroson)<br>
+		- Added_AddPlugins() function to allow manual inclusion of plugins.<br>
+		- Added web.SetTextZoom( zoom ).<br>
+		- app.CreateBluetoothList now requests permission "Location" for > Android 8.<br>
+		- Changed app.WifiScan now returns list with pipe | instead of comma delimeters.<br>
+		- Fixed app.ChooseWifi now removes duplicate ssids.<br>
+		- Added gfx.CreateText() method to GameView (allows use of bitmap fonts)<br>
+		- Fixed GameView bounce sample.</p>
+		<h4>DS 1.73b1<sup>(03-May-2019)</sup></h4>
+		<p>- Added 'boolean' type for obj.Method().<br>
+		- WebViews/HTML apps now pause when not in foreground (can use 'NoPause' option).<br>
+		- Added CHANGE_NETWORK_STATE permission for app.SetWifiApEnabled method (for Orange-Pi).<br>
+		- Fixed AdjustColor() exception when dialog has not title.<br>
+		- Added public Object GetObject( String id ) to plugin parent object (gets a DS object).<br>
+		- Added "Wifi Access Point" and "IOT Device" samples.<br>
+		- Added "GPIO Banana-Pi" and "UART Banana-Pi" samples.<br>
+		- Added app.Quit( msg,[title],[options] ) method (shows message and force quits app).<br>
+		- Added premium nag popup every month (for non-premium users).</p>
+		<h5>DS 1.73a8<sup>(17-Apr-2019)</sup></h5>
+		<p>- Added intellisense to device editor for GameView methods and objects.<br>
+		- Allowed on device function info/tips to scale up as well as shrink to fit.<br>
+		- Added new 'AutoSize' option to TextView (scales up and down towards target size).<br>
+		- Added new config keywords - cfg.NoDom, cfg.Game, cfg.Transparent, cfg.Landscape, cfg.Portrait.<br>
+		- Deprecated _AddOptions() method in favour of cfg.* keywords.<br>
+		- Added 'Bunny Storm' GameView demo.<br>
+		- Removed HScroll, VScroll and GLView game demos.</p>
+		<h5>DS 1.73a7<sup>(16-Apr-2019)</sup></h5>
+		<p>- Added new app.CreateGame() method (create GameView apps with one line of code).<br>
+		- Disabled app.* exception logging in release builds.<br>
+		- Invalid id's in V8 engine clearTimeout/clearInterval calls now ignored.<br>
+		- Changed "Game Bounce" demo to use GameView.</p>
+		<h5>DS 1.73a6<sup>(11-Apr-2019)</sup></h5>
+		<p>- Fixed IsDebugging results for release builds when not calling app.SetDebug.<br>
+		- Fixed services throwing ADB exception in APK builds.<br>
+		- Fixed exception when pressing back button in NoDom mode.<br>
+		- Fixed launcher sample for package names that contained the sequence ".gif".</p>
+		<h5>DS 1.73a5<sup>(07-Apr-2019)</sup></h5>
+		<p>- obj.GetWidth/GetHeight/GetAbsWidth/GetAbsHeight/GetLeft/Right now all return numeric vals.<br>
+		- Disabled internal ADB debugging for release APKs.<br>
+		- Added app.SetDebug() for finer logging control (use optional switches 'console,ds,adb' or true/false).<br>
+		- Added app.IsDebugging() in favour of IsDebugEnabled()<br>
+		- Deprecated app.SetDebugEnabled() and app.IsDebugEnabled().<br>
+		- Fixed gles libs included in APKs when 'gles' option not used.</p>
+		<h5>DS 1.73a4<sup>(28-Mar-2019)</sup></h5>
+		<p>- Added 'Alarms' permission option.<br>
+		- Fixed AutoBoot mode for services on Oreo+ (must call app.SetInForeground).<br>
+		- Updated the services template for Oreo+.</p>
+		<h5>DS 1.73a3</h5>
+		<p>- Added 'long' and 'bool' types to SendIntent extras.<br>
+		- Added 'ExactIdle' option to app.SetAlarm().<br>
+		- Added 'NavRight' mode option to app.SetKioskMode().</p>
+		<h5>DS 1.73a2<sup>(27-Mar-2019)</sup></h5>
+		<p>- Added app.IsNavBarOnRight() method.<br>
+		- Fixed issue with web.SetOnConsole 'bad token'.<br>
+		- Added public void CallScript(Bundle b,String webViewId) to plugin API.<br>
+		- Added new I() function to force unique instance of callbacks.</p>
+		<h5>DS 1.73a1<sup>(07-Mar-2019)</sup></h5>
+		<p>- Added 'UseBrowser' option for HTML apps.<br>
+		- Enabled file downloading in HTML apps.<br>
+		- Added 'Screen' option to obj.GetPosition()- returns screen relative posn.<br>
+		- Added app.GetParent() method to get parent layout object (if set).<br>
+		- GameView methods now added to intellisense in wifi ide.<br>
+		- Added exception handling to onActivityResult (protect against plugin crashes).<br>
+		- Removed wallpaper service from APK manifests.<br>
+		- Internal super.onDestroy() now called when permissions not given by user.<br>
+		- Enabled all FTDI usb device types for serial comms.<br>
+		- Added tooltip/help sample.<br>
+		- Added app.ChooseWifi() method (popup to choose wifi ssid).<br>
+		- Added app template selector to on-device editor.<br>
+		- Plugin extraction now shows progress spinner for APK builds.</p>
+		<h4>DS 1.72<sup>(06-Feb-2019)</sup></h4>
+		<h4>DS 1.72b2<sup>(02-Feb-2019)</sup></h4>
+		<p>- GameView now defaults to using WebView/WebGL rather than GLES.<br>
+		- Fixed slow GameView performance on Chromebooks (switched to WebGL mode).<br>
+		- GameView sprites without width and height now looks same size all devices.<br>
+		- GameView now has an Execute method to run JavaScript inside game.<br>
+		- Added 'NoActionBar' option to webview (prevents copy/paste popup).<br>
+		- Got rid of annoying popup copy/paste/action bar on Chromebooks.<br>
+		- Enabled APK builder is out of date warning.<br>
+		- Added SetOnTouch event to webviews.<br>
+		- Fixed 'JavaScript' section of Wifi Editor docs.</p>
+		<h4>DS 1.72b1<sup>(27-Jan-2019)</sup></h4>
+		<p>- Re-instated the app.js file (so plugin docs/intellisense work again).<br>
+		- Added (experimental)_DoEvents method NoDom mode.<br>
+		- Fixed app.SetOnError() for NoDom mode.</p>
+		<h2>DS 1.71<sup>(13-Jan-2019)</sup></h2>
+		<p>- Chromebook blocks game template now working.<br>
+		- Fixed black background on 'SDK' menu on Chromebook.<br>
+		- Delayed homepage load by 2 seconds (else sometimes fails).<br>
+		- Chromebook Terminal tab now fixed (for premium users)<br>
+		- Terminal extension now works after second wifi button press.<br>
+		- Fixed app.Execute() double quotes bug.<br>
+		- SQLite now works with NODOM option.<br>
+		- Switched from Locale.ENGLISH to Locale.ROOT to prevent missing lang issues.<br>
+		- Using NoDom now works with Transparent apps and DS shortcuts.</p>
+		<h2>DS 1.70<sup>(09-Jan-2019)</sup></h2>
+		<p>- Added italian language.<br>
+		- Add 'Experiments' option (terminal,blockly)<br>
+		- SDK menu now enabled by default.<br>
+		- Add new auto-wifi option.<br>
+		- Removed SMS permissions for GPlay version of DS.</p>
+		<h5>DS 1.69a4</h5>
+		<p>- Added !delplugin command to wifi ide (eg. !delplugin bluetoothle)<br>
+		- WifiConnect now works for Android 4.4 with WPA_PSK routers.<br>
+		- Added app.WifiScan(callback) method (returns list of ssids).<br>
+		- Added 3rd 'status' param to app.HttpRequest() callback function.<br>
+		- Added option to use '~' character instead of '=' between params.<br>
+		- Fixed app.CreateNxt() method.<br>
+		- Improved debug overlay auto scrolling + made monospace for IOT devices.<br>
+		- app.Execute() now supported in NoDOM mode.<br>
+		- Enabled replacement of 'Basic' app template using "/sdcard/DroidScript/Template.js".</p>
+		<h5>DS 1.69a3<sup>(06-Dec-2018)</sup></h5>
+		<p>- Upgraded internally to Font-Awesome 4.47<br>
+		- Added void OnNewIntent event to plugin API.<br>
+		- app.GetAppPath() now returns correct path for services running in IDE.<br>
+		- Fixed SQLlite query callbacks not working in services.<br>
+		- Fixed plugin callbacks inside services not working.<br>
+		- Service Stop() method now disables action of 'Persist' option.<br>
+		- Fixed calling cam.Stop() twice in row crash.<br>
+		- Fixed IDE bug causing repeated load of extension html file.<br>
+		- Added new 'combine' option app.CreateSysProc() to combine output and error stream.<br>
+		- Added new 'builder' option app.CreateSysProc() to force use of proc builder<br>
+		- app.CreateSysProc() can now accept '|' separated command list.</p>
+		<h5>DS 1.69a2<sup>(26-Oct-2018)</sup></h5>
+		<p>- Fixed app.SysExec() timeout param had no effect.<br>
+		- Added 'su' and 'sh' options to app.SysExec(), runs commands in a shell.<br>
+		- Added UART and GPIO banana-pi samples for DS-IO.<br>
+		- Changed Wifi IDE debug tab $ commands to run via 'sh' shell.<br>
+		- Added !getplugin command to DS-IO (eg. !getplugin bluetoothle)<br>
+		- Added !getspk command (eg. !getspk http://www.me.org/spks/hello.spk).<br>
+		- Added !buildapk command (eg. !buildapk com.test.puck 1.0 false).<br>
+		- Changed Wifi IDE home page for DS-IO.<br>
+		- Changed USB Serial devices only vendor id match now required (not device id).<br>
+		- Added 'ShowUI' option to app.SetVolume(), also level of -1 keeps current volume.<br>
+		- Added SetOnInput and SetOnError methods to SysProc object.<br>
+		- Changed Terminal sample to use callbacks.<br>
+		- Added .data JavaScript property to all DS object for safely storing user data.<br>
+		- Fixed small memory leak related to anonymous functions as callbacks.<br>
+		- Added 'id' property to websockets and websocket callbacks.<br>
+		- Remote Android shell Terminal added to Wifi IDE (premium only).<br>
+		- Added 'Persist' option to app.CreateService() (attempts to force restart if service killed).<br>
+		- Added app/svc.SetInForeground( title,text,largeIcon,smallIcon,importance ) for services.<br>
+		- Added app/svc.SetInBackground() for services.<br>
+		- Added app.ToFront() method (moves app to foreground).<br>
+		- Added 'Tasks' option to app.SetKioskMode (prevents recent tasks button working)<br>
+		- Removed sony smartwatch and pebble entries from manifest<br>
+		- Added OnPause, OnResume, OnConfig, OnMenu events to plugin API.<br>
+		- Added app.GetDrawerState() method ('Open', 'Closed', 'Sliding').<br>
+		- Added SetOnFocus method to TextEdit control (callback returns state true/false).<br>
+		- Made FlappyDinos demo for GameView + fixed some bugs.</p>
+		<h2>DS 1.68<sup>(30-Aug-2018)</sup></h2>
+		<p>- "Install" permission now auto added only when necessary.<br>
+		- "SysWin" permission now auto added when using app.CreateOverlay().<br>
+		- Fixed permissions problem with Overlays on Oreo.<br>
+		- app.StartApp() can now be used without any params to launch the current app.</p>
+		<h4>DS 1.68b1<sup>(29-Aug-2018)</sup></h4>
+		<h5>DS 1.68a1<sup>(18-Sep-2018)</sup></h5>
+		<h4>DS 1.67b1<sup>(27-Aug-2018)</sup></h4>
+		<p>- app.SetKioskMode() now asks for appropriate permissions when required.<br>
+		- app.GetPermission() now suppports the 'overlay' keyword.<br>
+		- Added app.CreateOverlay() method (Premium only).<br>
+		- Added "Chat Heads" sample (Premium only).<br>
+		- Added 'rawX','rawY',screenX,screenY params to Image and Layout OnTouch callbacks.<br>
+		- Fixed Launcher sample for >= Oreo.<br>
+		- Added app.ChooseAccount() to request user's device email address.<br>
+		- Fixed dodgy chars in docs for CreateSeekBar, CreateSensor, CreateWebServer and CreateWebView.</p>
+		<h4>DS 1.66b3<sup>(24-Aug-2018)</sup></h4>
+		<p>- Fix plugin onActivityResult issue.<br>
+		- Added 'nokeys' option to app.CreateDialog() method.<br>
+		- Added 'nokeys' and 'showkeys' options to app.SetOptions().<br>
+		- Removed dodgy html characters from some of the docs examples.</p>
+		<h4>DS 1.66b2</h4>
+		<p>- List control onclick event params now cope with double quotes.<br>
+		- Fixed recently introduced bug with spinner calling onChange when first shown.<br>
+		- Added code to handle OnActivityResult in DS plugins.</p>
+		<h4>DS 1.66b1<sup>(21-Aug-2018)</sup></h4>
+		<p>- Fixed Notification SetSmallImage method crashing on API < 23 (now does nothing)<br>
+		- app.GetIPAddress() now works when phone is running as an Access Point.<br>
+		- Wifi IDE can now easily be used when phone is running as Access Point.<br>
+		- File browsing now always enabled for Embedded systems.<br>
+		- Added new !exit command to wifi IDE (useful to kill DS on embedded systems)<br>
+		- Fix bug on GPIO sys.Out() for banana-pi (eg.echo 1 > /sys/class/gpio_sw/PA11/data)<br>
+		- Fixed bugs where some premium features were not being checked.<br>
+		- Added app.SetWifiApEnabled( true, ssid, key ) for Android 6 or older device only.<br>
+		- Added app.IsWifiApEnabled() for Android 6 or older device only.<br>
+		- Fixed bug with app.CreateWizard() not allowing text editing (focus was blocked)<br>
+		- Fixed problem with dark text in Spinner lists on Oreo.<br>
+		- Spinner now copes better with large fonts.<br>
+		- Fixed problem with lists chopping of bottom of text on Oreo.<br>
+		- img.Save() now works after multiple calls to img.Update() are made.<br>
+		- The ReadData() method on the file object is now escaped when using text mode.<br>
+		- List control onclick event params are now JavaScript escaped instead of ^*^ escaped.<br>
+		- app.GetAccounts() and app.GetUser() now request appropriate permissions on Oreo.<br>
+		- Save SPK option now added to menus on Chromebooks.</p>
+		<h2>DS 1.65<sup>(23-Aug-2018)</sup></h2>
+		<h4>DS 1.65b1<sup>(12-Aug-2018)</sup></h4>
+		<p>- Fixed Phone States sample permissions issue for Oreo.<br>
+		- Added SetSmallImage() to Notify component (image should be a single color with alpha).<br>
+		- Updated Notifications sample.</p>
+		<h5>DS 1.65a4<sup>(10-Aug-2018)</sup></h5>
+		<p>- Added support for BananaPi-M2-Zero (runs in headless mode).<br>
+		- Creating app shortcuts now working on oreo.<br>
+		- Notifications now working on Oreo.<br>
+		- Coarse location permission now requested on oreo when using PhoneState object.<br>
+		- Fixed menu button on Chromebooks.<br>
+		- Tool-tip short descriptions for app.* methods added for WiFi-IDE/Chromebooks.<br>
+		- Added lay.SetTouchThrough() method.</p>
+		<h5>DS 1.65a3<sup>(07-Aug-2018)</sup></h5>
+		<p>- Fixed the crash on Marshmallow after accepting permissions.<br>
+		- HTML apps are now scanned for permissions before launch in IDE.<br>
+		- When using auto-permissions, apps will not start unless ALL perms are accepted.<br>
+		- Added autoPermissions:true/false option to build.json file.<br>
+		- Added app.IsDebugEnabled().</p>
+		<h5>DS 1.65a2<sup>(01-Aug-2018)</sup></h5>
+		<p>- API level 26 now default target (Google Play requirement)<br>
+		- UDP sockets now closed when net.Close() or net.Destroy() is called.<br>
+		- app.CheckPermission( "extsdcard" ) now returns storage uri on success else empty string.<br>
+		- app.CheckPermission() can now take a 'dangerous' perms list ("Storage,Camera,SMS,...").<br>
+		- app.GetPermission() callback returns a list of un-granted perms when using 'dangerous' perms.</p>
+		<h5>DS 1.65a1<sup>(17-Jul-2018)</sup></h5>
+		<p>- Added app.ExtExec() command (can now execute commands in Termux!).<br>
+		- Added French, German and Russian language options.<br>
+		- Added extensions facility to WiFi editor (for both left and right tabs)<br>
+		- Fixed Chromebooks menu button.<br>
+		- You can now drop *.obj files onto the Wifi editor file browser.<br>
+		- Fixed SetOnLongTouch() callback failure on Text controls.<br>
+		- Fixed docs failing to copy or run samples.<br>
+		- Added support for PixelBook (untested).<br>
+		- Added 'exact' option to app.SetAlarm (only works for single shot alarms).<br>
+		- Various typos etc fixed in samples (thanks to BareK)<br>
+		- Added Wifi IDE F3 and Shift+F3 for searching for selected word (same as Ctrl+K).<br>
+		- Added Ctrl+L for deleting current line (same as Ctrl+D)<br>
+		- Added Ctrl+G for goto line.</p>
+		<h5>DS 1.64a4<sup>(26-Apr-2018)</sup></h5>
+		<p>- Fixed scaling bug with re-loading images after calling app.SetDensity.<br>
+		- Enabled Cam/audio + location in WebView and HTML apps ('NoCapture','NoLocate' to disable).<br>
+		- Added app.script() method (async load of local scripts)<br>
+		- Added Angry Birds style game demo for game engine.<br>
+		- Game engine libs now exluded from non-game APK builds.</p>
+		<h5>DS 1.64a3</h5>
+		<p>- Various Game engine updates.<br>
+		- Added app.ExtractPlugins method.<br>
+		- Added obj.Method( name,types,p1,p2,p3,p4 ) access Java via reflection (premium).</p>
+		<h5>DS 1.63a1<sup>(20-Jan-2018)</sup></h5>
+		<p><!--its pst has 6 pages--><br>
+		- Added Block based editing for DSJ files (still in alpha)!<br>
+		- Added screenshot button to Wifi IDE (screen shots now captured to .edit folder).<br>
+		- Added 'nofocus' option to app.Alert() method (useful for kiosk mode)<br>
+		- Added dlg.IsVisible() method.<br>
+		- Added new app.CreateWizard + new 'Wizard' sample for premium users.<br>
+		- Fixed recent bug with img.SetImage() not allowing image as first param.<br>
+		- Added 'base64' mode to app.WriteFile method (writes a base64 string to raw binary data)<br>
+		- Added app.SimulateScroll( obj,x,y,dx,dy,count,fling ) method, simulates mouse wheel scrolls.<br>
+		- Added app.SimulateDrag( obj,x1,y1,x2,y2,step,pause ) method, simulates mouse drag.<br>
+		- Shortened startup time on Chromebooks.</p>
+		<h5>DS 1.62a2</h5>
+		<p>- Removed jqplot from internal assets, moved jquery to /Sys/Libs.<br>
+		- Removed 'WebView Gauges' and 'WebView Graphs' samples moved to downloadable demos.<br>
+		- Fixed drawer lock/unlock bug.<br>
+		- Enabled mixing of width/height vals with 'FillX', 'FillY' option.<br>
+		- Fixed app.SetScreenMode to remove menus when null/empty string used.<br>
+		- Changed app.SetScreenMode to fire OnConfig.</p>
+		<h5>DS 1.62a1</h5>
+		<p>- Added game engine (alpha)!<br>
+		- Fixed Launcher sample to use android.intent.action.MAIN instead of .VIEW.</p>
+		<h2>DS 1.61<sup>(22-12-2017)</sup></h2>
+		<h4>DS 1.61b1<sup>(15-Dec-2017)</sup></h4>
+		<p>- Fixed byte swap bug on 'Audio Sample' sample.<br>
+		- Enabled file rename and file copy to external sdcards.<br>
+		- Added external sdcard write sample.<br>
+		- Fixed "Send Intent" sample for newer Gmail version.<br>
+		- Improved app.SendMail() to show fewer app choices (when no attachment used).<br>
+		- Added options param to app.SendMail(), use 'SendTo' if have attachment and you know it's gmail.<br>
+		- Fixed app.GetExternalFolder("external") now returns space on primary external sdcard.<br>
+		- Fixed img.MeasureText(txt) now responds to img.SetPixelMode().</p>
+		<h4>DS 1.60b1<sup>(08-Dec-2017)</sup></h4>
+		<p>- Added app.GetRSSI() to get wifi strength.<br>
+		- Added support for external sdcard MakeFolder.<br>
+		- Fixed bugs with GlView and V8 not working in last release.</p>
+		<h2>DS 1.59<sup>(23-Dec-2017)</sup></h2>
+		<h4>DS 1.59b1<sup>(07-Dec-2017)</sup></h4>
+		<p>- Added new 'Button' option to image controls (causes image to depress like a button when touched)<br>
+		- Added new app.DisableTouch() to disable/enable all touch events on controls in main activity.<br>
+		- Added new net.WakeOnLan(ip,mac) for premium users.<br>
+		- Added support for controlling media players with app.BroadcastIntent() method (see forum).<br>
+		- Added 'TouchModal' option to YesNoDialog.<br>
+		- Changed ShowProgress and YesNoDialog to 'TouchModal' by default (use 'NoTouchModal' to revert)<br>
+		- Added options param to Custom dialog SetTitle() method, use 'Left', 'Center' or 'Right' for text alignment.<br>
+		- Added new 'Auto-Help' settings option to prevent/enable slide out help panel.<br>
+		- Added new img.MeasureText(txt) method to get width and height of text when drawn.<br>
+		- Changed device editor to show IP address of connected user when using WiFi IDE.<br>
+		- Added SAF support for text files: write,read,delete, app.CheckPermission, app.GetPermission.<br>
+		- Fixed app.GetExternalFolder() now returns primary external sdcard path.<br>
+		- File paths starting with '/extsdcard' now map to the primary external sdcard.<br>
+		- Your IP address is now visible in the about dialog.</p>
+		<h5>DS 1.59a2</h5>
+		<p>- Added support for Khadas Vim device (including gpio access).<br>
+		- WebServer object supports new SetOnUpload(callback) method (filename + ip address passed to cb)<br>
+		- Fixed WebServer bug which required use of at least one Servlet to get file uploads working.</p>
+		<h5>DS 1.59a1</h5>
+		<p>- Added 'json' mode to app.HttpRequest method.</p>
+		<h5>DS 1.58a1</h5>
+		<p>- Enabled creation of live wallpapers for premium users!<br>
+		- Changed .js files inside SPK files to .js.txt to side step Google security issues.<br>
+		- Added 'SaveSPK' option to device editor (saves to /DroidScript/SPKs folder).<br>
+		- Added app.SetDensity to scale density of all controls in app (call before creating controls).<br>
+		- Added basic animated GIF support to Image controls.<br>
+		- Added URL intent interception via build.json (use 'urlHost' and 'urlPathPrefix' fields).<br>
+		- Added 'UseBrowser' option to Webview to cause links to launch in the default browser.<br>
+		- Fixed issue with fontawesome text in app.CreateList() and sumultainious use of fontawesome icons.<br>
+		- Fixed canvas.Save() not getting Storage permissions for APK build.</p>
+		<h2>DS 1.57<sup>(09-Nov-2017)</sup></h2>
+		<h4>DS 1.57b1<sup>(12-Oct-2017)</sup></h4>
+		<p>- Added built-in support for programming Espruino devices over USB/OTG cable.<br>
+		- Added new !screenshot command to Wifi editor debug tab -> /sdcard/screenshot.jpg<br>
+		- Re-instated the app.GoToSleep() method.<br>
+		- Internally mapped '/sdcard' path to users external/internal public directory.<br>
+		- Added new 'Power' mode keyword to app.SetKioskMode (blocks use of power key).<br>
+		- Added 'response' parameter to app.UploadFile() callback=>(status,file,response).<br>
+		- Added new app.ClearValue(name,file) method to remove prefs values.</p>
+		<h2>DS 1.56<sup>(18-Aug-2017)</sup></h2>
+		<h4>DS 1.56b<sup>(15-Aug-2017)</sup></h4>
+		<p>- Added app.IsLocationEnabled("GPS,Network") method.<br>
+		- Added GetData() method to AudioRecorder component.<br>
+		- Added DrawSamples() method to ImageView (draws a sample graph).<br>
+		- Added 'Audio Sample' sample.<br>
+		- Added app.GetBluetoothName() method.<br>
+		- Added app.GetBluetoothAddress() method.<br>
+		- Fixed problem with device to device bluetooth dropping last character.<br>
+		- Removed BIND_DEVICE_ADMIN permission.</p>
+		<h4>DS 1.55b1<sup>(15-Aug-2017)</sup></h4>
+		<p>- Enabled device -> device bluetooth connections!<br>
+		- Added Portuguese language (thanks to Maico aka 'Big Eyes Games').<br>
+		- Added bluetooth listen sample.<br>
+		- Added updated and re-organised docs (thanks to AlexF).<br>
+		- Fixed Immediate window execute bug.<br>
+		- Added 'NoScrollBar' and 'ScrollFade' options to Scroller control.<br>
+		- Added 'NoApp' option to WebView to prevent app.* calls.<br>
+		- Obfuscation errors are now trapped and displayed.<br>
+		- Added 'Bluetooth Select' sample.<br>
+		- Added OnConsole method to webview, calls back with (message, lineNum, sourceFile, isError).<br>
+		- Added 'noGUI' option to config.json (replaces 'headless' option)<br>
+		- Added SetSubtitles and SetOnSubtitle methods to VideoView control (call after OnReady).<br>
+		- Prevented use of .. in webserver file uploads (for security reasons).<br>
+		- Added new webview option "AllowCapture" to enable use of camera and microphone (and WebRTC).<br>
+		- Added new grabWidth parameter to app.AddDrawer method.</p>
+		<h2>DS 1.54<sup>(16-Jun-2017)</sup></h2>
+		<h4>DS 1.54<sup>(15-Jun-2017)</sup></h4>
+		<p>- Fixed error handling override on webview (SetOnError method).<br>
+		- Fixed files list not being hidden when showing docs/samples.<br>
+		- Fixed launcher text size on low-res phones.<br>
+		- Fixed language download problems on Kitkat devices.<br>
+		- Fixed language download problems on JellyBean devices.<br>
+		- Added USB serial support for Pimoroni Flotilla Dock and AdaFruit Circuit Playground.<br>
+		- Added support for spanish language, docs and samples.<br>
+		- Fixed problem with editing HTML files with multi-file version of DS.<br>
+		- Added multi-file handling to device editor.<br>
+		- Keyboard navigation added to device editor (Ctrl-I,Ctrl-SPACE,Ctrl-O).<br>
+		- Added Ctrl-C,Ctrl-V,Ctrl-X,Ctrl-Z,Ctrl-Y,Ctrl-A,Ctrl-D handling to device editor.<br>
+		- Added Ctrl-F,Ctrl-H,Ctrl-K,Ctrl-S handling to device editor.<br>
+		- Added Tab/Shift-Tab indent/outdent to device editor for physical keyboards.<br>
+		- Added SetEllipsize() method and 'SingleLine' option to button control.<br>
+		- Empty jar file no longer required in JavaScript based plugins.<br>
+		- app.SysExec() now shows error stream (use NoErrors option to disable).<br>
+		- app.SysExec() now has extra maxLines and a timeout parameter.<br>
+		- $ shell commands from WiFi editor now shows error stream.<br>
+		- $ shell commands from WiFi editor now work even if app is not running.<br>
+		- Added app.GetBtProfileState() method (use 'a2dp','headset', 'gatt', 'health' ).<br>
+		- Docs now loaded from sdcard (makes user editing/translation easier)<br>
+		- Fixed bug in app.GetMemoryInfo() method.<br>
+		- Added SetProgressBarOptions() method to theme object.<br>
+		- Added 'light' option to Downloader object (controls progress bar theme)<br>
+		- Fixed excessive 'ScreenSize changed' logging on Remix.<br>
+		- Starting activities via app.SendIntent() in services now works without needing 'newtask' option.<br>
+		- Added img.SetPixelData method (takes base64 data string).<br>
+		- Added img.Flatten() translate,scale,skew,alpha are applied to image data (can be saved).<br>
+		- Enabled use of Wifi editor over wired network.</p>
+		<h2>DS 1.50<sup>(30-Apr-2017)</sup></h2>
+		<p>- Added dt (time diff) parameter to app.Animate callback.<br>
+		- Fixed missing OnCancel callback in Custom dialogs.<br>
+		- Added obj.ClearFocus method.<br>
+		- Fixed SetOnEnter method for edit boxes ('SingleLine' mode only)<br>
+		- Fixed lay.SetTouchable bug for overlapping layouts.<br>
+		- Added Copy option to DS app menu.<br>
+		- Added 'install now' option after APK builds.<br>
+		- Changed to 'Share via Email' option to 'Share SPK' (now works with gdrive)<br>
+		- Added warning about .wav and .mpg files not working in APKs<br>
+		- Added app.SendText() method (useful for sharing text with other apps)<br>
+		- Added extra 'choose' parameter to app.SendFile method.<br>
+		- Image control in 'TouchThrough' mode now fires touch callbacks.<br>
+		- Orientation sensor now works for devices with no magnetometer (azimuth is always zero).<br>
+		- Added 'TouchSpy' option to layouts (spies on touch events to all children)<br>
+		- Added app.IsCharging and app.GetChargeType() methods.<br>
+		- Added app.SetSpeakerPhone() and app.GetSpeakerPhone() methods.<br>
+		- Added app.Animate() method (use instead of setInterval for smoother animation).<br>
+		- Added app.SetPriority() method to change GUI thread priority ('Low','Medium','High').<br>
+		- Change game samples to use app.Animate() (gives smoother framerate).<br>
+		- Using _AddOption( "NoDom" ) now forces app into high performance mode.<br>
+		- APK 'Network' permissions issue fixed for app.WifiConnect, app.SetOnWifiChange.<br>
+		- Added 'TouchThrough' option to Image control.<br>
+		- Added SetOnDownload method to Downloader object.<br>
+		- Added optional 'name' parameter to Downloader.Download method.<br>
+		- Added file download sample and fixed download error reporting.<br>
+		- Added app.WifiConnect( ssid,key ) method.<br>
+		- Added app.IsConnected() method (detects any network connection).<br>
+		- Added app.SetOnWifiChange(), fires event with params 'state' and 'ssid'.<br>
+		- Fix for AndroidThings preview3 or Raspberry Pi.<br>
+		- Web Server WebSocket sending now works inside services.<br>
+		- Unplugging and plugging OTG/USB keyboards will not stop DS now.<br>
+		- Building HTML apps with obfuscation now works.<br>
+		- Back/arrow keys not responding in dialogs with Gboard fixed.<br>
+		- Flags data now added to activity intent json results.<br>
+		- Link to video tutorial now in docs.<br>
+		- Added Google Analytics support + premium sample.<br>
+		- Fixed SMS non-number (carrier) text messages causing error<br>
+		- When an SMS is received the 'number' param no longer drops the leading "+" sign.<br>
+		- JS alert boxes now are now themed (disable with app.SetOptions("NoThemeAlerts")).<br>
+		- Fixed flip animation x2 speed and callback issues.<br>
+		- Fixed Sony SmartWatch2 issues.</p>
+		<h4>1.47b<sup>(13-Mar-2017)</sup></h4>
+		<p><!--its post has 7 pages!--><br>
+		- Added support for Android Things.<br>
+		- Add shop to DS menus.<br>
+		- Updated to FontAwesome 4.7<br>
+		- Added tweening support + 'Image Tween' sample.<br>
+		- Wifi editor remote file browser now shows hidden files.<br>
+		- Fixed DS crashing on JellyBean 4.1.1<br>
+		- Fixed 'Sensors' sample (SetOrientation callback was firing too early).<br>
+		- Added SetButtonText() method to YesNoDialog.<br>
+		- Added 'FillXY','FillX','FillY','Wrap' options to obj.SetSize() method.<br>
+		- app.ListFolder now supports the 'Regex', 'FilesOnly', 'FoldersOnly' options.<br>
+		- Added SetLanguage() method to CodeEdit (.js,.java,.php,.c,.cpp,.cs,.rb,.m,.py,.txt)<br>
+		- Added app.DiscoverBtDevices(), app.PairBtDevice(), app.UnpairBtDevice(), app.IsBtDevicePaired().<br>
+		- Added app.WakeUp() and app.Unlock() methods.<br>
+		- Added dlg.EnableBackKey() and dlg.SetOnBack() methods.<br>
+		- Added "progress" option to WebView (shows progress spinner).<br>
+		- Added SetRedirect( urlFrom, urlTo ) method to WebView.</p>
+		<h2>DS 1.45</h2>
+		<h4>DS 1.45b<sup>(26-Jan-2017)</sup></h4>
+		<p>- Added Chromebook support.<br>
+		- Added Booty5 plugin and game editor support.<br>
+		- Improved continuous speech recognition (updated sample).<br>
+		- Fixed services crashing when killed with task managers.<br>
+		- List expand mode, adding removing items now triggers expand/contract.<br>
+		- Plugin docs with gifs now work in wifi ide.<br>
+		- Permissions scanning now only done at top level of project.<br>
+		- Obfuscation of strings now more reliable.<br>
+		- Added x1,x2,x3,x4 options to scale up textview html images.<br>
+		- Added new 'useChrome' option to config.json (useful for Android TV boxes).<br>
+		- Added USB CDC serial support for Waterrower exercise machine.</p>
+		<h2>DS 1.42<sup>(02-Dec-2016)</sup></h2>
+		<p>- Added usb.SetMaxWrite() method and increased r/w buffers to 16k default.<br>
+		- Made premium samples visible.<br>
+		- Added support for NexBox/LeelBox mini Android TV boxes.<br>
+		- Added support for DS extensions in Wifi editor (add your own tabs).</p>
+		<h2>DS 1.41</h2>
+		<p>- Fixed bug with TextToSpeech failing to swap languages (eg. en_GB, en_IN).<br>
+		- Added touch callbacks to Absolute and Frame layouts.<br>
+		- Fixed freeze when trying to use SetPosition in Linear/Frame (now logs warning).<br>
+		- Added 'Web Server' template for premium users.<br>
+		- Fixed Kiosk sample callbacks for latest Android Webview update.</p>
+		<h4>DS 1.40b<sup>(20-Nov-2016)</sup></h4>
+		<p>- Added docs for CustomDialogs, WebServer and Services.<br>
+		- Added 'Expand' option to list control (forces expansion to full height inside scrollers).<br>
+		- Wifi IDE now lists prototype and object member functions.<br>
+		- Added template apps to WiFi IDE for premium users.<br>
+		- Added 'Real' option to app.GetScreenWidth() and app.GetScreenHeight().<br>
+		- Added app.HasSoftNav() method (detects devices with soft navigation bar).<br>
+		- Files containing .min.js are not obfuscated in APK builds.<br>
+		- Added 'UseBasicInput' option to webview (makes softkeyboard useful for html code editors).<br>
+		- Added web.SimulateKeys() method to webview (can send keys to html textarea)<br>
+		- Changed app.CreateListDialog() now requires call to dlg.Show() (or use 'ShowNow' option)<br>
+		- Changed app.CreateYesNoDialog() now requires call to dlg.Show() (or use 'ShowNow' option)<br>
+		- Changed app.CreateListView() now requires call to lvw.Show() (or use 'ShowNow' option)<br>
+		- Added SetOnCancel method to Downloader component.<br>
+		- Fixed recently introduced bug in VideoView streaming.<br>
+		- Fixed bug with List control showing images from /sdcard/Pictures folder.</p>
+		<h2>DS 1.38</h2>
+		<h4>DS 1.38b<sup>(20-Okt-2016)</sup></h4>
+		<p>- Added AdjustColor() method to image controls.<br>
+		- Changed img.SetImage() with no params on old image maintains dimensions.<br>
+		- Added 'rescale' option on SetImage,LoadImage (forces resize of layout).<br>
+		- Added app.SetKioskMode() for premium users eg. SetKioskMode("Status,Nav",true,"Black")<br>
+		- Added 'obfuscate' option to APK builder.<br>
+		- Added 'Dark Theme' option to DS settings.</p>
+		<h2>DS 1.36<sup>(26-Sep-2016)</sup></h2>
+		<p>- Added new asset chooser to on-device code editor.<br>
+		- Added new downloadable demos page to DS menu.<br>
+		- Added app.GetThumbnail() method (gets a small image from a photo).<br>
+		- Added app.ScanFile() method (adds media files to phone gallery).<br>
+		- Release mode APKs now obfuscated more aggressively.<br>
+		- Added theme.SetTextEditOptions( "underline" ) option.<br>
+		- Added lay.SetOnChildChange() method to layouts (useful for auto-save).<br>
+		- Enabled anonymous functions in callbacks (use sparingly!)<br>
+		- Custom buttons now gray out when disabled.<br>
+		- Added ctl.IsEnabled() method to all controls.<br>
+		- Added usb.SetDataMode() and usb.SetSplitMode() methods.<br>
+		- Enabled calendar access through content app.QueryContent() method.<br>
+		- Added calendar query sample for premium users.<br>
+		- Added web.SetOnError() method, callback returns params:- errNum, errMsg, url.<br>
+		- Fixed tabs bug introduced in 1.35b.<br>
+		- Fixed short menu when starting in landscape mode.<br>
+		- Added 'engine' parameter to app.TextToSpeech method (allows swapping voices).<br>
+		- Added 'time' parameter to Locator (GPS) callback.<br>
+		- Added serv.Stop() method to web server.<br>
+		- Added Sys.In() and Sys.Err() method (reads console input and error streams).<br>
+		- Added cam.SetOrientation() and cam.SetPostRotation() methods.<br>
+		- Fixed issue causing Playstore dev console warnings.<br>
+		- Added 'stay awake' option to DS settings.<br>
+		- Plugins can now contain native .so files.<br>
+		- Added SetGravity() method to linear layouts (left,top,right,bottom,center,vcenter).<br>
+		- Added "ReverseLandscape" and "ReversePortrait" options to app.SetOrientation() method.<br>
+		- Added Linux "Terminal" sample for premium users.<br>
+		- Added app.PlayRingtone() method ("Alarm", "Notification", "Ringtone" ).<br>
+		- Added multiple pathPatterns support to build.json (eg. ".*\\.jpg,.*\\.txt")</p>
+		<h4>DS 1.35b<sup>(23-Jun-2016)</sup></h4>
+		<p>- Added support for Android's sliding drawers.<br>
+		- Added 'Drawer Menu' sample.<br>
+		- Added app.DownloadFile() method (uses Android download manager).<br>
+		- Added .SetEnabled() method for all controls.<br>
+		- Added app.ChooseFile("Choose a file", "*/*", OnFileChoose) method.<br>
+		- Added app.ChooseContact() method.<br>
+		- Added new "Choose" sample (get user to choose files or contacts).<br>
+		- Added support for Remix Mini (runs in desktop mode).<br>
+		- Added 'Launcher' sample (advanced sample for premium users only).<br>
+		- Added img.SetPixelMode method (allows use of pixel coords in drawing funcs).<br>
+		- Changed manifest to show running apps separately in task manager (can alt-tab on remix).<br>
+		- Added SetPosition() method and 'TouchModal', 'NoTouch', 'NoFocus' options to custom dialogs.<br>
+		- Added cam.SetVideoSize( width, height ) method.<br>
+		- Added new "Query Content" sample (advanced sample for premium users only).<br>
+		- Added result callback parameter to web.Execute() method.<br>
+		- Added 'Horiz' option to list control (makes title and body text flow horizontally)<br>
+		- Added lst.SetColumnWidths(icon,title,body) method to list control.<br>
+		-?Added lst.SetIconSize() and 'inner' and 'outer' option to lst.SetTextMargins().<br>
+		- Add lst.SetIconMargins() method and 'Menu' mode to list control.<br>
+		- Added "px,sp,dip,dp,mm,pt" options to obj.SetSize() method.<br>
+		- Added 'mode' param to obj.SetMargins() and obj.SetPadding() (use: 'px','sp','dip','mm','pt').<br>
+		- Changed alarms in a service now call back to service unless 'App' used in SetAlarm() options.<br>
+		- Fixed rounding errors in image control (canvas) drawing methods.<br>
+		- Fixed bug which causes callbacks to get out of sequence.<br>
+		- Fixed full screen mode showing blank bar over softkeys on older devices.</p>
+		<h2>DS 1.34<sup>(29-Apr-2016)</sup></h2>
+		<h4>DS 1.34b1<sup>(14-Apr-2016)</sup></h4>
+		<p>- Enabled homeScreen/launcher creation using build.json (e.g. "homeScreen":true ).<br>
+		- Enabled new config.json file and headless mode.<br>
+		- Added new 'SDK' menu item (Plugin generator) for premium users.<br>
+		- Added _sdk_ file detection to enable SDK menu for non premium users.<br>
+		- Added new app.UploadFile( url, file, name, callback ) method.<br>
+		- Added file sharing/opening filter option to build.json (e.g. "pathPattern":".*\\.txt" ).<br>
+		- Layouts now support touch methods (only OnTouchDown works when in 'touchthrough' mode).<br>
+		- Added app.CreateWebSocket method for handling reliable connected web sockets.<br>
+		- Enabled use of FontAwsome icons in the list control.<br>
+		- Added 'NoWrap' and 'Log' options to Text object (Log=='multiline,left,nowrap').<br>
+		- Added txtEdit.SetOnEnter() method (disables enter key and fires callback).<br>
+		- Added .Hide .Show .Gone .Isvisible methods to all objects.<br>
+		- Added support for html file input boxes on Lollipop and higher.<br>
+		- Added 'IgnoreSslErrors' option to webview and app.SetOptions.<br>
+		- Device app list no longer refreshes on WiFi file edits.<br>
+		- Added 'address' param to udp OnReceive callback.<br>
+		- Added app.IsAppInstalled() and app.GetActivities() methods (useful for making launchers).<br>
+		- Added "Icon" option to img.CreateImage (allows loading of app icons).<br>
+		- Added callback option to app.SendIntent() when using 'result' option.<br>
+		- Added 'orientation' option to config.json file (forces a particular orientation).<br>
+		- Fixed app.GetVersion was not working in german.<br>
+		- Fixed App.Get/SetClipboardText() fails in service.<br>
+		- Added option for file '/sdcard/DroidScript/_nopremium_' to disable premium.<br>
+		- Changed http server upload limit increased to 1 Gig.</p>
+		<h4>DS 1.33<sup>(27-Feb-2016)</sup></h4>
+		<h4>DS 1.33b<sup>(21-Feb-2016)</sup></h4>
+		<p>- Improved device code editor (large file support, yoyo, search+replace, volume moves cursor).<br>
+		- Code completion/suggestions + method info added to both editors.<br>
+		- Added transparent App support using _AddOptions( "Transparent" ) [premium only].<br>
+		- Added App theming with app.CreateTheme() method [premium only].<br>
+		- Added App theming sample [premium only].<br>
+		- Added new app.CreateCodeEdit() method [premium only].<br>
+		- Enabled MediaPlayer object to stream music over http.<br>
+		- Added app.SetPosition() to allow tiny popop transparent Apps.<br>
+		- Passwords now available in TextEdit (use 'password' option).<br>
+		- Added app.SetOnShowKeyboard() method (passes true/false to callback).<br>
+		- Added dlg.SetBackColor() method (can be transparent).<br>
+		- Added dlg.SetSize() method (with optional 'px' mode)<br>
+		- Added app.SimulateKey() method (eg. app.SimulateKey(edit,"C","SHIFT_LEFT_ON") )<br>
+		- Added 'NoDialog' option to the downloader object.<br>
+		- Added usb.SetMaxRead(bytes) and usb.SetTimeout(ms) methods.<br>
+		- Added new 'pl', 'ps' modes to *.SetTextSize() (scales text in proportion with device resolution)<br>
+		- Added 'touchmodal','notouch','nofocus','secure','showlocked','wakescreen','screenon' to App.SetOptions().<br>
+		- Added edit.SetCursorColor() method.<br>
+		- Added icon buttons sample.<br>
+		- Fixed commas in APK version causing bad build.<br>
+		- Http server sample now fixed.<br>
+		- Apostrophi and special chars in app names now prevented (in device IDE).<br>
+		- ListDialog and YesNoDialog now support SetSize, SetBackColor and SetTitleHeight.<br>
+		- Fixed problems with upper case 'i' characters in the options params in non-english langs.<br>
+		- Progress now supports 'NoDim' option.<br>
+		- Moved minimum platform support up to API 11 (Honeycomb).<br>
+		- Custom dialog now supports 'NoDim' option.<br>
+		- Added app.IsPremium() method (only meaningful when running inside IDE)<br>
+		- Custom buttons now padded by default (use 'NoPad' option to remove).<br>
+		- Websockets now firing callbacks inside a service.<br>
+		- Added 'FadeIn', 'FadeOut', 'CrossFade' to lay.Animate() + extra 'time' parameter.<br>
+		- Added obj.SetColorFilter( color, mode ) method to most objects (supports Porter-Duff modes).<br>
+		- Added obj.AdjustColor( hue, sat, bright, cont ) method to most objects.<br>
+		- Added web.SetUserAgent( agent ) method.<br>
+		- Added 'Network' permissions when using WebSockets.<br>
+		- Fixed SetTextColor and SetTextSize on spinner.</p>
+		<h2>DS 1.32<sup>(15-Dec-2015)</sup></h2>
+		<h4>DS 1.32b<sup>(12-Dec-2015)</sup></h4>
+		<p>- Fixed problem with multiple notifications returning wrong ids.<br>
+		- Added app.IsAPK() method.<br>
+		- Fixed bugs with txt.Log() method.<br>
+		- Fixed .json files breaking release builds.<br>
+		- Fixed bug in GetPosition() returning incorrect top value.<br>
+		- Added 'px' option SetPosition, GetPosition and SetSize methods.<br>
+		- Added 'px' option to GetLeft,GetTop,GetWidth,GetHeight methods.<br>
+		- Fixed bug in cam.GetPixelData (red/blue pixel swap).<br>
+		- Fixed problem of app.DisableKeys() blocking unwanted keystrokes.<br>
+		- Fixed lst.GetTextSize() returning wrong size.<br>
+		- Fixed lst.SetTextSize() not updating list.<br>
+		- Added 'px','dip','sp','mm', 'pt' options to *.SetTextSize().<br>
+		- All top level plugin files included in APK build (including .so files).</p>
+		<h4>DS 1.31b<sup>(01-Dec-2015)</sup></h4>
+		<p>- Added new 'DroidScript Premuim' option.<br>
+		- Added new device browser to WiFi editor [premium]<br>
+		- Add Playstore IAP sample [premium].<br>
+		- Add Playstore subscriptions template [premium].<br>
+		- Added support for a new build.json file (enabled more advanced build options).<br>
+		- Added serv.AddRedirect(pattern,location) method to web server object.<br>
+		- Added _RemovePermissions() function.<br>
+		- Scroller control ScrollBy method now accepts fractional values.<br>
+		- Added support for web cookies.<br>
+		- Added app.ClearCookies() and app.SaveCookies() methods.<br>
+		- Added Release() method to plugins (called to clear up resources).<br>
+		- net.SendDatagram() now has extra options param (supports "Text", "Hex" or "Bytes").<br>
+		- Added "SUBS" (subscriptions) option to all PlayStore methods.<br>
+		- Playstore OnPurchase callback now returns prodId,orderId,purchToken,devToken,packageName.<br>
+		- Fixed APK version number rounding bug.<br>
+		- Fixed AutoBoot not working for APKs.<br>
+		- Fixed crypt.Hash() function adding line feeds (can use 'wrap' option for old behavior).<br>
+		- Fixed intermittend bug with spinner GetText() method.<br>
+		- Sqlite now works in services.<br>
+		- app.IsScreenOn(), app.PreventScreenLock(), app.PreventWifiSleep() now work in services.<br>
+		- app.TextToSpeech() method now defaults to the 'system' audio stream.<br>
+		- app.TextToSpeech() has extra 'stream' parameter ['alarm','music','system'..etc].<br>
+		- Added 'base64' mode to app.ReadFile() method (reads binary data to base64 string).<br>
+		- Added support for custom controls inside user plugins.</p>
+		<h4>DS 1.30b<sup>(03-Nov-2015)</sup></h4>
+		<p>- Added webserv.SetUploadFolder() method.<br>
+		- app.SendIntent() can now be used with null package and class names.<br>
+		- Added lst.SetTextSize2() and 'normal' option (turns of bold title text).<br>
+		- Added app.GetKeyboardHeight() method.<br>
+		- Updated fontawesome to version 4.4.<br>
+		- Added app.CreatePhoneState() listens for phone state changes (including cell location).<br>
+		- Added 'Phone States' sample.<br>
+		- Added app.GetSSID() method.<br>
+		- Added txt.Log( msg,options ) method to text control (useful for logging).<br>
+		- Added more docs for basic components and controls (authored by Steve Garman).<br>
+		- Added app.HttpRequest() method (useful to get around CORS issues).<br>
+		- Added app.SysExec( cmd ) method (returns result as text).<br>
+		- Added new $sys command to WiFi debugger (eg. "$logcat" shows internal app logs).<br>
+		- Enabled multi-part SMS messaging with new 'MultiPart' option on sms.Send() method.<br>
+		- Added GetPeak() method to AudioRecorder component.<br>
+		- Added cam.HasFlash() method;<br>
+		- Added new option 'overview' option to webview control.<br>
+		- Added Arduino VID 0x2A03 (the other manufacturer).</p>
+		<h4>DS 1.29b<sup>(09-Okt-2015)</sup></h4>
+		<p>- Fixed docs bug when using basic JavaScript reference.<br>
+		- svc.SendMessage() now copes with quotes and json objects.</p>
+		<h4>DS 1.28b<sup>(01-Okt-2015)</sup></h4>
+		<p>- Added offline JavaScript reference.<br>
+		- Added 'include system assets' check box.<br>
+		- Enabled app.Vibrate(), app.TextToSpeech(), app.SendIntent(), app.SetAlarm() in services.<br>
+		- Added app.GetRunningServices() and app.GetRunningApps() methods.<br>
+		- Enabled drag/drop of resources in WiFi IDE.<br>
+		- WiFi IDE now stops both service and App when pressing stop button.<br>
+		- Added support for multiple simultaneous USB serial devices (OTG hubs).<br>
+		- Added app.SendMessage() and svc.SetOnMessage() methods.<br>
+		- Added app.GetNotifyId() method (gets id of in-comming notification).<br>
+		- Added app.ShowKeyboard( ctrl ) method (control must have focus).<br>
+		- Added ctrl.Focus() method.<br>
+		- Added app.IsKeyboardShown() method.<br>
+		- Added 'Extract' option in EditText (enables full screen keyboard in landscape).<br>
+		- Fixed app.ReadFile was adding extra newline at end of files.<br>
+		- Added new 'FullPath' option to app.ListFolder() method (returns full names).<br>
+		- Added 'NoScrollBars' option to WebView control.<br>
+		- Added app.GetSpecialFolder() method ('DCIM','Pictures','Movies','Downloads'..etc).<br>
+		- Added app.GetBatteryLevel() method.<br>
+		- Added cam.SetZoom( level ), cam.GetZoom(), cam.GetMaxZoom() methods.<br>
+		- Fixed Alarms bug introduced in 1.27b.<br>
+		- Fixed bug with usb serial connections introduced in 1.27b.<br>
+		- Added app.ClearData() method (clears app.SaveText/SaveNumber..etc values).</p>
+		<h4>DS 1.27b<sup>(26-Aug-2015)</sup></h4>
+		<h4>DS 1.26b<sup>(25-Aug-2015)</sup></h4>
+		<p><!--Never happened--><br>
+		- Added support for background services (sample on forum)!<br>
+		- Added support for custom buttons and added 'Button Styles' sample.<br>
+		- Addded 'IngoreErrors' option to WebView control.<br>
+		- Added 'Voice Command' continuous speech recognition sample.<br>
+		- Added app.SendFile() method (sends files to other Apps, user chooses).<br>
+		- Added web.Print() method to webview (prints docs on Kitkat or greater).<br>
+		- Added web.Capture(filename) method to webview control (captures jpeg of visible page).<br>
+		- Added optional id parameter to notification Notify() and Cancel() methods.<br>
+		- Added 'ScrollFade' option to webview.<br>
+		- Added "file" type to SendIntent extras + 'Send Files' sample.<br>
+		- Added support for 'MakeBlock Orion' OTG/USB comms.<br>
+		- Added support for chinese Arduino clones (CH340 USB/Serial chips).<br>
+		- Added 'USB Arduino' sample.<br>
+		- Added quality parameter to img.Save() method + support for png files.<br>
+		-?Added 'GrayScale' and 'JSON' options to GetPixelData() + 'QVGA','VGA',etc prescaling option.<br>
+		- Added app.SetOnKey(callback) method (reports key changes, including volume key).<br>
+		- Added app.DisableKeys(keyList) method (disables normal function of given keys).<br>
+		- Fixed issue with app.TextToSpeech() params being ignored on second call.<br>
+		- Added 'Partial' option to app.CreateSpeechRec() method<br>
+		- Added IsListening(), Stop() and Cancel() methods to SpeechRec object.</p>
+		<h4>DS 1.25b<sup>(07-Jul-2015)</sup></h4>
+		<p>- Added app.SetVolume(stream,level) [streams: alarm,dtmf,music,notification,ring,system,voicecall]<br>
+		- Added app.GetVolume(stream) method.<br>
+		- Added app.GetAccounts() method.<br>
+		- Added 'NoBeep' option to speech recognition (only works on phones at moment).</p>
+		<h4>DS 1.24b<sup>(21-Jun-2015)</sup></h4>
+		<p>- Added lst.InsertItem() and lst.GetLength().<br>
+		- Fixed draw speed and mask issues introduced in 1.23b<br>
+		- Fixed Bluetooth serial 'End' delimeter use in hex mode.<br>
+		- Added fil.Skip() and fil.GetPointer().</p>
+		<h4>DS 1.23b<sup>(14-Jun-2015)</sup></h4>
+		<p>- Added support for user created plugins (SDK available).<br>
+		- Enabled camera recording and "Camera Record" sample.<br>
+		- Added support for two-way WebSocket comms (sample on forum).<br>
+		- Added support for google cardboard augmented reality.<br>
+		- Added app.SendIntent method (with sample).<br>
+		- Added rest of sensor types (HeartRate,Pressure,StepCounter etc).<br>
+		- Script errors are now trapped in WebViews.<br>
+		- Added more documentation.<br>
+		- Added auto-discovery for chrome App version of WiFi IDE.<br>
+		- Intellisense now works for controls in WiFi IDE.<br>
+		- Device name and connected state shown in WiFi IDE.<br>
+		- Connection password added to WiFi IDE (optional).<br>
+		- Added new 'Game' mode to app.SetScreenMode().<br>
+		- app.SetScreenMode("Full") now works on devices with virtual buttons.<br>
+		- app.SetScreenMode("Full") now works in html apps.<br>
+		- Added new "Reflect" option to app.CreateWebServer.<br>
+		- Added new "Alias" option to app.CreateImage (makes drawing jagged).<br>
+		- Added new low level file access object app.CreateFile().<br>
+		- Fixed spritesheet example for lollipop.<br>
+		- Fixed web.LoadHtml path bug + allowed short paths.<br>
+		- Added NXT Joypad example.<br>
+		- Added broadcast permssions for moto-g.<br>
+		- Fixed app.GetUser permissions bug.<br>
+		- Enabled alert, prompt calls in lollipop updated webview.<br>
+		- Fixed JavaScript Confirm dialog bug.<br>
+		- Added app.GetPackageName().<br>
+		- Added lst.RemoveAll().<br>
+		- Fixed SWS- SmartWatch service apps not starting.<br>
+		- Added new app.IsChrome method (detects running in arc welded chrome).<br>
+		- Added app.GetMediaFile("MyApp",".png") method.<br>
+		- Fixed sharing files with VIEW intent (used to only work with 'share').<br>
+		- GetIntent now returns empty string vals rather than "null".<br>
+		- Fixed issue where manual drawing upate was only working for a single image.<br>
+		- Fixed duplicate app icons issue during app rename.<br>
+		- Stopped "Maximum call stack" error.</p>
+		<h4>DS 1.22b<sup>(7-Apr-2015)</sup></h4>
+		<p>- Added editing via ADB option.<br>
+		- Added Demos to WiFi editor.<br>
+		- Added sns.SetMaxRate() method (defaults to 20ms).<br>
+		- Added cam.GetParameters and cam.SetParameter methods (use to set ISO vals).<br>
+		- Added List GetItem,SetItem,RemoveItem,ScrollToItem,SelectItem *ByIndex methods.<br>
+		- lst.GetList() with no params now returns object list.<br>
+		- Added 'Ongoing' option to Notifications.<br>
+		- Fixed 'append' mode for app.WriteFile.<br>
+		- Added 'encoding' parameter for app.WriteFile.<br>
+		- Added app.SetAutoStart(appName) method.<br>
+		- Added web.ClearHistory() and web.GetUrl().<br>
+		- Added app.SetWifiEnabled(enable) and app.IsWifiEnabled() methods.<br>
+		- Added app.SetBluetoothEnabled(enable) and app.IsBluetoothEnabled() methods.<br>
+		- Added app.SetRingerMode(mode) and app.GetRingerMode() methods.<br>
+		- Added nxt.GetRotationCount() method.</p>
+		<h4>DS 1.20b<sup>(16-Mar-2015)</sup></h4>
+		<p>- Added generic Intent receiver support + sample.<br>
+		- Added app.SetAutoBoot() and app.SetAutoWifi() methods.<br>
+		- Added char encoding 'mode' parameter to app.ReadFile().<br>
+		- Enabled file/text sharing in user APK's.<br>
+		- Added app.GetDSVersion().<br>
+		- Added app.DeleteDatabase( name )<br>
+		- app.DeleteDatabase now deletes journal file.<br>
+		- Allowed use of optional full path in app.CreateDatabase().<br>
+		- Added app.GetDatabaseFolder() method.<br>
+		- Added GetType() method to Database object + GLView object.<br>
+		- db.Delete() no longer requires the name of the database.<br>
+		- Prevented spaces and symbols in apk package names.<br>
+		- Fixed spinner bugs.</p>
+		<h4>DS 1.19b<sup>(07-Mar-2015)</sup></h4>
+		<p>- Added online Tutorials to WiFi IDE!<br>
+		- Added SQLite support!<br>
+		- Added 'Database' sample.<br>
+		- Added GoPro camera plugin.<br>
+		- Added Barcode + QR code plugin.<br>
+		- Added support of ODROID-C1<br>
+		- Added Latest News to WiFi IDE.<br>
+		- Added samples filtering on Wifi IDE.<br>
+		- Plugin docs now visible in Wifi IDE.<br>
+		- Enabled use of console.log method.<br>
+		- Folder/FileExists funcs now differentiate between folders and files.<br>
+		- Added app.GetUserName() method.<br>
+		- Added app.GetDeviceId() method.<br>
+		- Plugin docs now show in Wifi IDE.<br>
+		- Added app.CheckLicense() for Google Play licensing.<br>
+		- Added mask option to img.DrawImage function.<br>
+		- Added app.GetEnv() method to get environment vars.<br>
+		- Minimum OS version moved from Eclair -> Froyo.<br>
+		- "/Sys/" and "/sys/" paths are now distinct (allows embedded use).<br>
+		- Reboot after APKPlugin install now not required.</p>
+		<h4>DS 1.18b<sup>(08-Feb-2015)</sup></h4>
+		<p>- Added html project type.</p>
+		<h2>DS 1.15</h2>
+		<p>- Added app.SimulateTouch( obj,x,y,dir ) method.<br>
+		- Fixed img.SetTextSize bug.<br>
+		- GetObjects now correctly returns a map of all user created objects.<br>
+		- Rename /sdcard/AndroidScript folder to /sdcard/DroidScript.<br>
+		- Wifi IDE now support HTML, CSS and TXT files.<br>
+		- Added 3 GLView examples.<br>
+		- Added MediaStore sample.<br>
+		- Added cam.GetPixelData() method (useful for Augmented Reality).<br>
+		- Added img.GetPixelData() method.<br>
+		- The 'id' parameter is now sent to alarm callbacks.<br>
+		- Downloader object supports SetOnError callback.<br>
+		- Downloader object now shows no complete or error messages (user must supply them).<br>
+		- app.OpenFile(<docstr>“/sdcard/my.htm”</docstr>) now opens with a browser.<br>
+		- Added optional <docstr>“px”</docstr> mode param to *.SetTextSize and *.GetTextSize methods.<br>
+		- Added txt.GetTextSize method (works with autoscale).<br>
+		- Added app.GetFreeSpace, app.GetFileDate, app.GetFileSize methods.<br>
+		- ApkBuilder now works for latest CyanogenMod.<br>
+		- GLView DrawImage and DrawSprite now supports use of -1 in dest width/height.<br>
+		- GLView now uses fractional draw parameters for DrawImage and DrawSprite.<br>
+		- GLView now properly disposed when calling app.DestroyLayout().<br>
+		- GLView now allows img.Destroy().<br>
+		- APK debug signing now uses proper android debug key.<br>
+		- app.OpenURL is allowed in remote webviews.<br>
+		- app.CreateEmail now gets Internet permissions in APK.<br>
+		- Added 'Speech Recognition' sample.<br>
+		- Added 'Audio Record' sample.<br>
+		- Added 'NoSound' option to buttons etc.<br>
+		- Added 'AllowZoom', 'AutoZoom', 'Wide' options to app.CreateWebView.<br>
+		- Added extra 'zoom' parameter to app.CreateWebView method.<br>
+		- Added <docstr>“AllowRemote”</docstr> option to WebView.<br>
+		- Added app.Call method (makes phone calls given a phone number).<br>
+		- app.OpenFile params 2 and 3 are now optional.<br>
+		- Wifi IDE now saves all modified scripts<br>
+		- Added app.ToBack method (Sends app into background).<br>
+		- Added 'SetLooping(true/false)' method on MediaPlayer.<br>
+		- Custom icons now supported on List controls!<br>
+		- Added lst.SetItem, lst.AddItem, lst.RemoveItem methods.<br>
+		- Added scroll.GetScrollX, scroll.GetScrollY functions.<br>
+		- Added app.GetOSVersion method + docs.<br>
+		- Added app.GetClipboardText method.<br>
+		- Fixed web server demo.<br>
+		- Appended app name to SPK share via email subject field.</p>
+		<h2>DS 1.11</h2>
+		<p>- app.StartApp method is now working again.<br>
+		- Custom dialogs can now use the 'NoTitle' option.<br>
+		- Added latest news splash check at startup.<br>
+		- Stopped Huawei phone USB popups.<br>
+		- Now targetting API >= 14 (prevents HTC legacy menu bar).<br>
+		- ListFolder can now cope with quotes in file names.<br>
+		- Put in newer Wifi IDE (with debug filtering).<br>
+		- Added Dlg.SetTitle method.<br>
+		- app.Execute calls inside WebView now denied when page is remote.<br>
+		- Added custom dialog sample.<br>
+		- Add new icon (Thanks go to Jorge for the new icon).<br>
+		- App list now supports scrolling.<br>
+		- Camera preview now correct rotation in portrait mode.<br>
+		- Fix spinner ontouch trigger when using SetList().<br>
+		- Can now List IP addresses on websockets.<br>
+		- Send to msg to specific IP in websockets.<br>
+		- 'SetHint' method added to TextEdit control.<br>
+		- 'Number' option added to TextEdit control.<br>
+		- On device editor now only saves when code changed.<br>
+		- List item selection always full width.<br>
+		- Add html formatting options to text, list and buttons.<br>
+		- Added 'Text Formatting' sample.<br>
+		- Added 'MonoSpace' font option to lists.<br>
+		- Fixed Wifi Demo + Camera Stream.<br>
+		- Auto-scaling text box (use the 'AutoScale' option).<br>
+		- Enabled normal use of the javascript prompt function.<br>
+		- SetDivider losing color after Setlist.<br>
+		- Added app.GetCountryCode, app.GetLanguageCode, app.GetLanguage, app.GetCountry.<br>
+		- Fixed issue when calling img.SetTextColor before img.Clear().</p>
+		<h2>DS 1.09</h2>
+		<p>- WebView permissions bug fixed.<br>
+		- App icons are now sorted alphabetically.<br>
+		- Added TTF font loading + FontAwesome in Txt, Lst and Img.<br>
+		- Do alarm service repeat + cancel method.<br>
+		- Added app.CreateNotification method + sample.<br>
+		- Added <docstr>“NoCancel”</docstr> option to app.CreateDialog method.<br>
+		- Updated Wifi Editor.<br>
+		- Added lay.AddChild( child, order ) .<br>
+		- Added lay.ChildToFront( child ).<br>
+		- Added lay.GetChildOrder( child ).<br>
+		- Prevent package name parts starting with numbers.<br>
+		- Wifi editor folder is now in a hidden folder.<br>
+		- Don't need the /edit on Wifi Editor URL.<br>
+		- Added app.GetMacAddress().<br>
+		- Added app.GetVersion() + app.IsNewVersion() methods.<br>
+		- Added app.GetObjects method.<br>
+		- Add GetType() method to objects.<br>
+		- Text input panning enabled in APK's<br>
+		- Fixed animate callback bug.<br>
+		- Email attachments now supported by Email object.<br>
+		- Visible controls now support 'this' keyword.<br>
+		- Breaking Change: 'TouchThrough' option needed to touch through layouts.<br>
+		- Breaking Change: app.ListFolder now returns array (use toString() to get comma sep list).<br>
+		- Added index param to List OnTouch/OnLongTouch callbacks.<br>
+		- Camera color detection sample.<br>
+		- Fixed orientation startup bug.<br>
+		- Ellipsis option added for Text and List controls.</p>
+		<h2>DS 1.08</h2>
+		<p>- APK builder plugin.<br>
+		- Wifi IDE multi script support.<br>
+		- Wifi IDE quick function finder.<br>
+		- Encryption sample added.<br>
+		- Html web server now free.<br>
+		- Progress bar sample.<br>
+		- Video streamer sample.<br>
+		- Video player sample.</p>
+		<h2>DS 1.06</h2>
+		<p>- Add CopyFile function.<br>
+		- Fixed black flashes on busy games.<br>
+		- Encryption + hashing added.<br>
+		- Arduio via OTG supported.<br>
+		- IDE run samples.<br>
+		- IDE supports multiple files.</p>
+		<h2>DS 1.05<sup>(24-May-2014)</sup></h2>
+		<p>- More documentation.<br>
+		- Fixed performance issues on Kitkat.<br>
+		- Added Plugin support.<br>
+		- Added font size option for Editor.<br>
+		- Fixed Hudl docs + WebView issues.<br>
+		- Added JavaScript Beginners guide.<br>
+		- Various other bug fixes.<br>
+		- More samples added.</p>
+
+	</div>
+
+
+</div>
+</body>
+
+</html>

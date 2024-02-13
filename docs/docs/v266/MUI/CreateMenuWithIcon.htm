@@ -1,3 +1,261 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d2052ccb2cffdf00567f280710dc63970dea2e213a3b68ea94c7e9f356cfd55e
-size 21704
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>CreateMenuWithIcon</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>CreateMenuWithIcon</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Advance MUI implementation of material design menu with additional icon using material icon font.</p>
+
+		<div class="samp">
+		mwi = MUI.CreateMenuWithIcon(
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">list</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">position</a> )
+			→ <b>Object</b>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Basic</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonRaised</span><span class="token punctuation">(</span><span class="token string">"SHOW MENU"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				        btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>ShowMenu<span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Settings:settings"</span><span class="token punctuation">,</span> <span class="token string">"Location:location_on"</span><span class="token punctuation">,</span> <span class="token string">"Camera:camera"</span><span class="token punctuation">,</span> <span class="token string">"Account:person"</span><span class="token punctuation">]</span><br>
+				    lst <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateMenuWithIcon</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Top, Right"</span><span class="token punctuation">)</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">SetOnSelect</span><span class="token punctuation">(</span>OnSelect<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">ShowMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnSelect</span><span class="token punctuation">(</span><span class="token parameter">choice</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>choice<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Dark & Bottom,Right</h3>
+			<div id="examp2" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    color <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span>colors<span class="token punctuation">.</span>teal<br>
+				    app<span class="token punctuation">.</span><span class="token function">InitializeUIKit</span><span class="token punctuation">(</span>color<span class="token punctuation">.</span>teal<span class="token punctuation">)</span><br>
+				    <br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"FillXY,VCenter"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        btn <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateButtonRaised</span><span class="token punctuation">(</span><span class="token string">"SHOW MENU"</span><span class="token punctuation">,</span> <span class="token number">0.35</span><span class="token punctuation">)</span><br>
+				        btn<span class="token punctuation">.</span><span class="token function">SetOnTouch</span><span class="token punctuation">(</span>ShowMenu<span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span><span class="token function">AddChild</span><span class="token punctuation">(</span>btn<span class="token punctuation">)</span><br>
+				    <br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Settings:settings"</span><span class="token punctuation">,</span> <span class="token string">"Location:location_on"</span><span class="token punctuation">,</span> <span class="token string">"Camera:camera"</span><span class="token punctuation">,</span> <span class="token string">"Account:person"</span><span class="token punctuation">]</span><br>
+				    lst <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateMenuWithIcon</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Bottom, Right"</span><span class="token punctuation">)</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">SetOnSelect</span><span class="token punctuation">(</span>OnSelect<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">ShowMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lst<span class="token punctuation">.</span><span class="token function">Show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnSelect</span><span class="token punctuation">(</span><span class="token parameter">choice<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span>choice<span class="token operator">+</span><span class="token string">" : "</span><span class="token operator">+</span>index<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>MenuWithIcon</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup" class="baseFunc">ClearFocus</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">Focus</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsHeight</a>() → <b>Number:</b> <i>integer</i>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup" class="baseFunc">GetAbsWidth</a>() → <b>Number:</b> <i>integer</i>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="baseFunc">GetHeight</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup" class="baseFunc">GetLeft</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="baseFunc">GetParent</a>() → <b>app object</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">GetPosition</a>(
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Object:</b> {
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup" class="baseFunc">GetTop</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup" class="baseFunc">GetVisibility</a>() → <b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">GetWidth</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup" class="baseFunc">Gone</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup" class="baseFunc">Hide</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">IsEnabled</a>() → <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup" class="baseFunc">IsOverlap</a>(
+			<a href="#pop_std_dso" data-transition="pop" data-rel="popup">obj</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">depth</a> )
+			→ <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup" class="baseFunc">IsVisible</a>() → <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup" class="baseFunc">SetEnabled</a>(
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">SetOnSelect</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">SetVisibility</a>(
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">Show</a>()
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>Boolean</b></div>
+	<div data-role="popup" id="pop_std_dso" class="ui-content"><b>app object</b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>Number:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Top”</docstr>, <docstr>“Left”</docstr> or <docstr>“Top”</docstr>, <docstr>“Right”</docstr> or <docstr>“Bottom”</docstr>, <docstr>“Left”</docstr> or <docstr>“Bottom”</docstr>, <docstr>“Right”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“screen”</docstr>, <docstr>“px”</docstr></div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“Show”</docstr> or <docstr>“Hide”</docstr> or <docstr>“Gone”</docstr></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> str</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String')">text</a>,
+		<a href="" onclick="app.ShowPopup('Number: integer')">index</a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>mwi.ClearFocus</b><br>Removes the focus of the control so that the user no longer has immediate access to it.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>mwi.Focus</b><br>Set the focus to the control so that the user can interact with it immediately.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>mwi.GetAbsHeight</b><br>Get the absolute height of the control in pixels.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>mwi.GetAbsWidth</b><br>Get the absolute width of the control in pixels.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>mwi.GetHeight</b><br>Get the height of the control as screen height relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>mwi.GetLeft</b><br>Get the distance from the control to the left parent border as width relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>mwi.GetParent</b><br>Returns the parent control object where the object was added to - commonly a layout.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>mwi.GetPosition</b><br>Returns data about the position and size of the control.<br>If the <strong>screen</strong> option is given the position on the screen will be returned. Otherwise relative to the parent control.<br>The <b>px</b> options turns the relative values into pixels.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>mwi.GetTop</b><br>Get the distance from the control to the upper parent border as height relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>mwi.GetVisibility</b><br>Returns the current visibility state of the control. The Values are:<br><strong>Show</strong>: visible<br><strong>Hide</strong>: invisible but still consuming space<br><strong>Gone</strong>: invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>mwi.GetWidth</b><br>Get the width of the control as screen width relative float or in pixels with the <b>px</b> option.</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>mwi.Gone</b><br>Hides the control without consuming any more layout space as if it were never there.</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>mwi.Hide</b><br>Hide the control but keep the layout space free.</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>mwi.IsEnabled</b><br>Returns whether the control is currently useable by the user.</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>mwi.IsOverlap</b><br>Returns whether the control overlaps with another by a given distance.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>mwi.IsVisible</b><br>Returns whether the control is currently visible to the user, ignoring overlaying controls.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>mwi.SetEnabled</b><br>En/Disable the control physically and visually so that the user can/can not access the control. Events like OnTouch will still be fired.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>mwi.SetOnSelect</b><br>Calls a function when item is click</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>mwi.SetVisibility</b><br>Change the visibility of the control to one of the available modes:<br><strong>Show:</strong> visible<br><strong>Hide:</strong> invisible but still consuming space<br><strong>Gone:</strong> invisible and not consuming space</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>mwi.Show</b><br>Set the visibility of the control to <docstr>“Show”</docstr>.</div>
+</div>
+</body>
+
+</html>

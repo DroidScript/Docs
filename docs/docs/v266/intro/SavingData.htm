@@ -1,3 +1,133 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3a1c5c3bc1e18df7da082a9f8a68ef897bd54dc43a80d1287400b34ff2bf6b1
-size 10796
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Saving Data</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>Saving Data</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('Save data during one session')">Save data during one session</a><br>
+			• <a href="" onclick="jumpTo('Save data across multiple app starts')">Save data across multiple app starts</a><br>
+			• <a href="" onclick="jumpTo('Using Databases')">Using Databases</a><br>
+		</span><br>
+		</div>
+
+		<p>In many cases you need to store user specific data like app settings on the users device.<br>
+		DroidScript provides some functions which makes it easier to handle this.<br>
+		<grey>Note: All explained methods are listed in the <a href="../app_Database.htm" data-ajax="false">Database</a> section.</grey></p>
+		<h2>Save data during one session</h2>
+		<p>Some settings are just meaningful in a current running program.<br>
+		For example if you keep track of the current app state (opened tabs, documents, pages).<br>
+		For this purpose you can use the <b>app.<a href="../app/SetData.htm" data-ajax="false">SetData</a></b> and the <b>app.<a href="../app/GetData.htm" data-ajax="false">GetData</a></b> method.<br>
+		To clear stored data use <b>app.<a href="../app/ClearData.htm" data-ajax="false">ClearData</a></b>.</p>
+		<h2>Save data across multiple app starts</h2>
+		<p>Many apps support in-app settings which will be loaded after each app start. The app object has several methods to save and load different types of data.<br>
+		To clear a saved value use the <b>app.<a href="../app/ClearValue.htm" data-ajax="false">ClearValue</a></b> method.</p>
+        <table>
+            <tr>
+                <th width="10%">Save</th>
+                <td width="15%"><a href="../app/SaveBoolean.htm" data-ajax="false">SaveBoolean</a></td>
+                <td width="15%"><a href="../app/SaveNumber.htm" data-ajax="false">SaveNumber</a></td>
+                <td width="15%"><a href="../app/SaveText.htm" data-ajax="false">SaveText</a></td>
+            </tr>
+            <tr>
+                <th>Load</th>
+                <td><a href="../app/LoadBoolean.htm" data-ajax="false">LoadBoolean</a></td>
+                <td><a href="../app/LoadNumber.htm" data-ajax="false">LoadNumber</a></td>
+                <td><a href="../app/LoadText.htm" data-ajax="false">LoadText</a></td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>Boolean</td>
+                <td>Number</td>
+                <td>String</td>
+            </tr>
+        </table>
+		<p>If you have many properties to save you can use an object structure instead of saving each value on their own.<br>
+		Load settings: <span class="samp samp-inline"><span class="token keyword">var</span> conf <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span> app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>
+		Save settings: <span class="samp samp-inline">app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span> conf <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - App Settings</h3>
+			<div id="examp1" style="font-size:70%">
+				<b id="snip1" style="font-size:100%"><span class="token comment">// default settings</span><br>
+				<span class="token keyword">var</span> settings <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">version</span><span class="token operator">:</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span> <span class="token literal-property property">startNo</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">LoadText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token string">"{}"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    <span class="token comment">// update settings object</span><br>
+				    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> tmp<span class="token punctuation">)</span> settings<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">SaveSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">SaveText</span><span class="token punctuation">(</span> <span class="token string">"settings"</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>settings<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span></b><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">LoadSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    settings<span class="token punctuation">.</span>startNo<span class="token operator">++</span><span class="token punctuation">;</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">ShowPopup</span><span class="token punctuation">(</span><span class="token string">"Started "</span> <span class="token operator">+</span> settings<span class="token punctuation">.</span>startNo <span class="token operator">+</span> <span class="token string">". time"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token function">SaveSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( snip1 )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+		<h2>Using Databases</h2>
+		<p>Using Databases is the most elaborate variant of the three.<br>
+		<br>
+		<red>You should only consider using one if you have to perform complex queries on a large amount of datasets.</red><br>
+		Using JSON objects is more practicable and performant in most cases.<br>
+		<br>
+		DroidScript provides an extra <a href="../app/OpenDatabase.htm" data-ajax="false">OpenDatabase</a> component for databases which uses the SQLitePlugin <a href="https://github.com/xpbrew/cordova-sqlite-storage" onclick="return OpenUrl(this.href);">cordova-sqlite-storage</a>.<br>
+		<br>
+		For a demo Have a look at the <a href="" onclick="OpenSample(&quot;Database&quot;)">Database</a> example.</p>
+
+	</div>
+
+
+</div>
+</body>
+
+</html>

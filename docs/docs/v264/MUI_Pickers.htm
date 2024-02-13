@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0abb1afd1afb3249622f4daedc58d21c5f0a0b7cb241463547a027879f74d324
-size 1953
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pickers</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="css/docs-dark.min.css"/>
+
+	<script src="js/forward.js"></script>
+	<script src="js/energize-min.js"></script>
+	<script src="js/jquery-1.8.1.min.js"></script>
+	<script src="js/jquery.mark.es6.min.js"></script>
+	<script src="../app.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/example.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+
+	<div data-role="header" data-position="fixed">
+		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+		<h1>Pickers</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div><!-- /header -->
+
+	
+
+	<div data-role="content">
+		<ul data-role="listview" data-inset="true" data-filter="false">
+		
+			<li><a href="MUI/AddPicker.htm">AddPicker</a></li><li></li>
+			<li><a href="MUI/CreateColorPicker.htm">CreateColorPicker</a></li>
+			<li><a href="MUI/CreateDatePicker.htm">CreateDatePicker</a></li>
+			<li><a href="MUI/CreateTimePicker.htm">CreateTimePicker</a></li>
+			<li><a href="MUI/CreateSpinner.htm">CreateSpinner</a></li><li></li>
+			<li><a href="MUI/AddColorPicker.htm">AddColorPicker</a></li>
+			<li><a href="MUI/AddDatePicker.htm">AddDatePicker</a></li>
+			<li><a href="MUI/AddTimePicker.htm">AddTimePicker</a></li>
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>

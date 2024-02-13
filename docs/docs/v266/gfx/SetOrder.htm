@@ -1,3 +1,54 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:896147a5bf84e05b30b1a2b37a48259b40b1f6b081b5fd4510a13dc637edc082
-size 1811
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SetOrder</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>SetOrder</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Change the drawing order of an object.</p>
+
+		<div class="samp">
+		gfx.SetOrder(
+			<a href="#pop_std_obj" data-transition="pop" data-rel="popup">object</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">order</a> )
+		</div>
+
+
+	</div>
+
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
+	<div data-role="popup" id="pop_std_obj" class="ui-content"><b>Object</b></div>
+</div>
+</body>
+
+</html>

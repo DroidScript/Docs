@@ -1,3 +1,668 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d6c9ca6e62a5db5b4982166d26386059381a727d36c237c58fb94463ca22c706
-size 65008
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>addStepper</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>addStepper</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Adds a Stepper to a given layout.</p>
+
+		<div class="samp">
+		stp = ui.addStepper(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">steps</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height</a> )
+			→ <b>Object:</b> Stepper Component
+		</div>
+
+		<p>A stepper can display a series of steps or information that a user can navigate forward or backward.<br>
+		<br>
+		For <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Mobile</span> option, an additional position options can be added <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Top</span>, <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Static</span> or <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Bottom</span> and <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">AutoSwipe</span> to enable auto swiping.<br>
+		<br>
+		To style step count text, pass <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Fraction</span>, <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Dots</span> or <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Progress</span> options.<br>
+		<br>
+		For <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">vertical</span> and <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">mobile</span>, you can add Layout type <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Linear</span> or <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">Absolute</span></p>
+		<h3>Properties</h3>
+		<p>These are the setter and getter properties for the addStepper Component.</p>
+
+		<div class="samp">
+		<a href="#pop_num_01c" data-transition="pop" data-rel="popup">absHeight</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01d" data-transition="pop" data-rel="popup">absLeft</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01e" data-transition="pop" data-rel="popup">absTop</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_01f" data-transition="pop" data-rel="popup">absWidth</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_020" data-transition="pop" data-rel="popup">activeStep</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00b" data-transition="pop" data-rel="popup">backColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00c" data-transition="pop" data-rel="popup">backImage</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_021" data-transition="pop" data-rel="popup">border</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00d" data-transition="pop" data-rel="popup">borderColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00e" data-transition="pop" data-rel="popup">borderStyle</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_022" data-transition="pop" data-rel="popup">cornerRadius</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_bin_001" data-transition="pop" data-rel="popup">disabled</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_023" data-transition="pop" data-rel="popup">elevation</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_00f" data-transition="pop" data-rel="popup">fontFile</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_024" data-transition="pop" data-rel="popup">height</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_bin_002" data-transition="pop" data-rel="popup">isVisible</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_025" data-transition="pop" data-rel="popup">left</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_lst_002" data-transition="pop" data-rel="popup">margins</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_026" data-transition="pop" data-rel="popup">opacity</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_010" data-transition="pop" data-rel="popup">options</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_011" data-transition="pop" data-rel="popup">orientation</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_lst_003" data-transition="pop" data-rel="popup">padding</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_obj_005" data-transition="pop" data-rel="popup">parent</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_obj_006" data-transition="pop" data-rel="popup">position</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_027" data-transition="pop" data-rel="popup">rotation</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_012" data-transition="pop" data-rel="popup">textColor</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_028" data-transition="pop" data-rel="popup">textSize</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_029" data-transition="pop" data-rel="popup">top</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_013" data-transition="pop" data-rel="popup">type</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_str_014" data-transition="pop" data-rel="popup">visibility</a>
+		</div>
+
+
+		<div class="samp">
+		<a href="#pop_num_02a" data-transition="pop" data-rel="popup">width</a>
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Basic stepper</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with object vertically centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Initialize the steps array</span><br>
+				        <span class="token keyword">var</span> steps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Step 1"</span><span class="token punctuation">,</span> <span class="token string">"Step 2"</span><span class="token punctuation">,</span> <span class="token string">"Step 3"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Add a stepper component to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addStepper</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> steps<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add back button control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btnBack <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Back"</span><span class="token punctuation">,</span> <span class="token string">"Raised,Primary"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btnBack<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>back <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add next button control to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btnNext <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Next"</span><span class="token punctuation">,</span> <span class="token string">"Raised,Primary"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btnNext<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">nextStep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">previousStep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Vertical stepper</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fulscreen layout with objects vertically centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Stepper titles</span><br>
+				        <span class="token keyword">var</span> steps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Step 1"</span><span class="token punctuation">,</span> <span class="token string">"Step 2"</span><span class="token punctuation">,</span> <span class="token string">"Step 3"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">// Add a stepper control into the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addStepper</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> steps<span class="token punctuation">,</span> <span class="token string">"Vertical"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Get the layout of the first step</span><br>
+				        <span class="token keyword">var</span> step1Lay <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
+				        step1Lay<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// Add controls to the first step layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span>step1Lay<span class="token punctuation">,</span> <span class="token string">"This is a text content on step 1"</span><span class="token punctuation">)</span><br>
+				            <span class="token keyword">var</span> btnStep1Next <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span>step1Lay<span class="token punctuation">,</span> <span class="token string">"Next"</span><span class="token punctuation">,</span> <span class="token string">"Raised,Primary"</span><span class="token punctuation">)</span><br>
+				            btnStep1Next<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Get the layout of the second step</span><br>
+				        <span class="token keyword">var</span> step2Lay <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        step2Lay<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// Add controls to the second step layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span>step2Lay<span class="token punctuation">,</span> <span class="token string">"This is a text content on step 2"</span><span class="token punctuation">)</span><br>
+				            <span class="token keyword">var</span> btnStep2Next <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span>step2Lay<span class="token punctuation">,</span> <span class="token string">"Next"</span><span class="token punctuation">,</span> <span class="token string">"Raised,Primary"</span><span class="token punctuation">)</span><br>
+				            btnStep2Next<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Get the layout of the third step</span><br>
+				        <span class="token keyword">var</span> step3Lay <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
+				        step3Lay<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.005</span><span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// Add controls to the third step layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span>step3Lay<span class="token punctuation">,</span> <span class="token string">"This is a text content on step 3"</span><span class="token punctuation">)</span><br>
+				            <span class="token keyword">var</span> btnStep3Next <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span>step3Lay<span class="token punctuation">,</span> <span class="token string">"Next"</span><span class="token punctuation">,</span> <span class="token string">"Raised,Primary"</span><span class="token punctuation">)</span><br>
+				            btnStep3Next<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">nextStep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">previousStep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Mobile Stepper</h3>
+			<div id="examp3" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a layout with objects verticaly centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token keyword">var</span> steps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Step 1"</span><span class="token punctuation">,</span> <span class="token string">"Step 2"</span><span class="token punctuation">,</span> <span class="token string">"Step 3"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token keyword">var</span> img1 <span class="token operator">=</span> <span class="token string">"https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&amp;fit=crop&amp;w=400&amp;h=250&amp;q=60"</span><br>
+				        <span class="token keyword">var</span> img2 <span class="token operator">=</span> <span class="token string">"https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&amp;fit=crop&amp;w=400&amp;h=250&amp;q=60"</span><br>
+				        <span class="token keyword">var</span> img3 <span class="token operator">=</span> <span class="token string">"https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&amp;fit=crop&amp;w=400&amp;h=250&amp;q=80"</span><br>
+				        <br>
+				        <span class="token comment">// Add stepper control with `mobile` option</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addStepper</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> steps<span class="token punctuation">,</span> <span class="token string">"mobile"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// get the first layout on the stepper</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lay1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// add an image control to the first layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay1<span class="token punctuation">,</span> img1<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// get the second layout on the stepper</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lay2 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// add an image control to the second layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay2<span class="token punctuation">,</span> img2<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// get the third layout on the stepper</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lay3 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// add an image control to the third layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay3<span class="token punctuation">,</span> img3<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback handler when stepper layout changes</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">setOnChange</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onChange</span><span class="token punctuation">(</span> <span class="token parameter">index</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Layout index "</span> <span class="token operator">+</span> index <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Autoswipe and Fraction Mobile Stepper</h3>
+			<div id="examp4" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">setTheme</span><span class="token punctuation">(</span><span class="token string">"dark"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Creates a layout with objects verticaly centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token keyword">var</span> steps <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Step 1"</span><span class="token punctuation">,</span> <span class="token string">"Step 2"</span><span class="token punctuation">,</span> <span class="token string">"Step 3"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token keyword">var</span> img1 <span class="token operator">=</span> <span class="token string">"https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&amp;fit=crop&amp;w=400&amp;h=250&amp;q=60"</span><br>
+				        <span class="token keyword">var</span> img2 <span class="token operator">=</span> <span class="token string">"https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&amp;fit=crop&amp;w=400&amp;h=250&amp;q=60"</span><br>
+				        <span class="token keyword">var</span> img3 <span class="token operator">=</span> <span class="token string">"https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&amp;fit=crop&amp;w=400&amp;h=250&amp;q=80"</span><br>
+				        <br>
+				        <span class="token comment">// Add stepper control with `mobile` option</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addStepper</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> steps<span class="token punctuation">,</span> <span class="token string">"mobile,autoswipe,fraction"</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Get the first layout on the stepper</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lay1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// Add an image control to the first layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay1<span class="token punctuation">,</span> img1<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Get the second layout on the stepper</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lay2 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// Add an image control to the second layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay2<span class="token punctuation">,</span> img2<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Get the third layout on the stepper</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lay3 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">getLayout</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">)</span><br>
+				            <br>
+				            <span class="token comment">// Add an image control to the third layout</span><br>
+				            ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay3<span class="token punctuation">,</span> img3<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a callback handler when stepper layout changes</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>stp<span class="token punctuation">.</span><span class="token function">setOnChange</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onChange <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onChange</span><span class="token punctuation">(</span> <span class="token parameter">index</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Layout index "</span> <span class="token operator">+</span> index <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp4 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp4 )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Stepper</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">animate</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">anim</a>,
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">duration</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">bringForward</a>(
+			<a href="#pop_num_004" data-transition="pop" data-rel="popup">zIndex</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">destroy</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">getLayout</a>(
+			<a href="#pop_num_005" data-transition="pop" data-rel="popup">index</a> )
+			→ <b>Object:</b> Layout
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">getLayoutIndex</a>(
+			<a href="#pop_obj_002" data-transition="pop" data-rel="popup">layout</a> )
+			→ <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">getPosition</a>(
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Object</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">gone</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">hide</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">nextStep</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">previousStep</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">removeStep</a>(
+			<a href="#pop_num_006" data-transition="pop" data-rel="popup">index</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">sendBackward</a>(
+			<a href="#pop_num_007" data-transition="pop" data-rel="popup">zIndex</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">setBorder</a>(
+			<a href="#pop_num_008" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">clr</a>,
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">style</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">setCornerRadius</a>(
+			<a href="#pop_num_009" data-transition="pop" data-rel="popup">tl</a>,
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">tr</a>,
+			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">bl</a>,
+			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">br</a>,
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">setMargins</a>(
+			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_00e" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_00e" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">setOnChange</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">setOnComplete</a>(
+			<a href="#pop_std_" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">setOnContextMenu</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">setOnTouch</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">setPadding</a>(
+			<a href="#pop_num_011" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_012" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_012" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_008" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">setPosition</a>(
+			<a href="#pop_num_015" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">setScale</a>(
+			<a href="#pop_num_017" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_018" data-transition="pop" data-rel="popup">y</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">setSize</a>(
+			<a href="#pop_num_015" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_01a" data-transition="pop" data-rel="popup">height</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">setTitleText</a>(
+			<a href="#pop_num_01b" data-transition="pop" data-rel="popup">index</a>,
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">title</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">show</a>()
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the control.</i></div>
+	<div data-role="popup" id="pop_bin_002" class="ui-content"><b>Boolean:</b> <i>Returns whether the control is visible or not.</i></div>
+	<div data-role="popup" id="pop_std_" class="ui-content"><b>undefined</b></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width. [0-1]</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
+	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The time in milliseconds.</div>
+	<div data-role="popup" id="pop_num_004" class="ui-content"><b>Number:</b> The z-index. A negative value behaves like `sendBackward` method.</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> The index of the corresponing stepper layout</div>
+	<div data-role="popup" id="pop_num_006" class="ui-content"><b>Number:</b> The index of the step to remove.</div>
+	<div data-role="popup" id="pop_num_007" class="ui-content"><b>Number:</b> The z-index. A positve value behaves like `bringForward` method.</div>
+	<div data-role="popup" id="pop_num_008" class="ui-content"><b>Number:</b> Border-left thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_009" class="ui-content"><b>Number:</b> Top-Left border radius in pixels.</div>
+	<div data-role="popup" id="pop_num_00a" class="ui-content"><b>Number:</b> Top-Right border radius in pixels.</div>
+	<div data-role="popup" id="pop_num_00b" class="ui-content"><b>Number:</b> Bottom-Left border radius in pixels.</div>
+	<div data-role="popup" id="pop_num_00c" class="ui-content"><b>Number:</b> Bottom-Right border radius in pixels.</div>
+	<div data-role="popup" id="pop_num_00d" class="ui-content"><b>Number:</b> Fraction of the parent width.</div>
+	<div data-role="popup" id="pop_num_00e" class="ui-content"><b>Number:</b> Fraction of the parent height.</div>
+	<div data-role="popup" id="pop_num_011" class="ui-content"><b>Number:</b> Fraction of the component width.</div>
+	<div data-role="popup" id="pop_num_012" class="ui-content"><b>Number:</b> Fraction of the component height. [0-1]</div>
+	<div data-role="popup" id="pop_num_013" class="ui-content"><b>Number:</b> Fraction of the component width. [0-1]</div>
+	<div data-role="popup" id="pop_num_015" class="ui-content"><b>Number:</b> Fraction of the parent width. [0-1]</div>
+	<div data-role="popup" id="pop_num_017" class="ui-content"><b>Number:</b> The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_018" class="ui-content"><b>Number:</b> The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_01a" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
+	<div data-role="popup" id="pop_num_01b" class="ui-content"><b>Number:</b> The index of the Stepper.</div>
+	<div data-role="popup" id="pop_num_01c" class="ui-content"><b>Number:</b> <i>Returns the absolute height of the control in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01d" class="ui-content"><b>Number:</b> <i>Returns the absolute distance of the control from the left in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01e" class="ui-content"><b>Number:</b> <i>Returns the absolute distance of the control from the top in pixels.</i></div>
+	<div data-role="popup" id="pop_num_01f" class="ui-content"><b>Number:</b> <i>Returns the absolute width of the control in pixels.</i></div>
+	<div data-role="popup" id="pop_num_020" class="ui-content"><b>Number:</b> <i>Sets or returns the active step.</i></div>
+	<div data-role="popup" id="pop_num_021" class="ui-content"><b>Number:</b> <i>Sets or returns the border thickness in pixels.</i></div>
+	<div data-role="popup" id="pop_num_022" class="ui-content"><b>Number:</b> <i>Sets or returns the corner radius in pixels.</i></div>
+	<div data-role="popup" id="pop_num_023" class="ui-content"><b>Number:</b> <i>Sets or returns the elevation of the mobile stepper. Value ranges from <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">0</span> to <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">24</span>.</i></div>
+	<div data-role="popup" id="pop_num_024" class="ui-content"><b>Number:</b> <i>Sets or returns the height of the control as a fraction of the parent control.</i></div>
+	<div data-role="popup" id="pop_num_025" class="ui-content"><b>Number:</b> <i>Returns the distance of the control from the left.</i></div>
+	<div data-role="popup" id="pop_num_026" class="ui-content"><b>Number:</b> <i>Sets or returns the opacity of the control.</i></div>
+	<div data-role="popup" id="pop_num_027" class="ui-content"><b>Number:</b> <i>Sets or returns the angle of rotation in degrees.</i></div>
+	<div data-role="popup" id="pop_num_028" class="ui-content"><b>Number:</b> <i>Sets or returns the size of the text within the control.</i></div>
+	<div data-role="popup" id="pop_num_029" class="ui-content"><b>Number:</b> <i>Returns the distance of the control from the top.</i></div>
+	<div data-role="popup" id="pop_num_02a" class="ui-content"><b>Number:</b> <i>Sets or returns the width of the control as a fraction of the parent control.</i></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Can be `px` or `%` or any css unit of measurement.”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“The new title text.”</docstr></div>
+	<div data-role="popup" id="pop_str_00b" class="ui-content"><b>String:</b> <i>A hexadecimal color of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></i></div>
+	<div data-role="popup" id="pop_str_00c" class="ui-content"><b>String:</b> <i>The path to your image file.</i></div>
+	<div data-role="popup" id="pop_str_00d" class="ui-content"><b>String:</b> <i>Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></i></div>
+	<div data-role="popup" id="pop_str_00e" class="ui-content"><b>String:</b> <i>Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dotted</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dashed</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">double</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">groove</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">ridge</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>.</i></div>
+	<div data-role="popup" id="pop_str_00f" class="ui-content"><b>String:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">relative</span> path to the font-family use.</i></div>
+	<div data-role="popup" id="pop_str_010" class="ui-content"><b>String:</b> <i>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">options</span> of the control.</i></div>
+	<div data-role="popup" id="pop_str_011" class="ui-content"><b>String:</b> <i>Sets or returns the orientation of the Stepper. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Horizontal</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Vertical</span>.</i></div>
+	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <i>Sets or returns the color of the text.</i></div>
+	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <i>Returns the type of the control.</i></div>
+	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <i>Sets or returns the visibility of the control.</i></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The parent layout of the Stepper</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> The layout to check.</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> The pointer event object.</div>
+	<div data-role="popup" id="pop_obj_004" class="ui-content"><b>Object:</b> The click event object.</div>
+	<div data-role="popup" id="pop_obj_005" class="ui-content"><b>Object:</b> <i>Returns the parent layout control.</i></div>
+	<div data-role="popup" id="pop_obj_006" class="ui-content"><b>Object:</b> <i>Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bottom</span> props.</i></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> An array of titles.</div>
+	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>List:</b> <i>Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</i></div>
+	<div data-role="popup" id="pop_lst_003" class="ui-content"><b>List:</b> <i>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</i></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Number: The index of the active step.')">index </a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">event </a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_obj_004')" data-transition="pop" data-rel="popup">event </a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>stp.animate</b><br>Animate the component</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>stp.bringForward</b><br>Bring this component forward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>stp.destroy</b><br>Destroy the component</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>stp.getLayout</b><br>Returns the layout of the corresponding step layout where you can add controls</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>stp.getLayoutIndex</b><br>Get the index of the corresponding layout</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>stp.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>stp.gone</b><br>Destroy the component</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>stp.hide</b><br>Hide the component</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>stp.nextStep</b><br>Go to the next step</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>stp.previousStep</b><br>Go to the previous step</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>stp.removeStep</b><br>Removes a corresponding step by its index</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>stp.sendBackward</b><br>Bring this component backward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>stp.setBorder</b><br>Sets the border line for the component container</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>stp.setCornerRadius</b><br>Sets the corner radius of the component</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>stp.setMargins</b><br>Sets the margin of the component</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>stp.setOnChange</b><br>Adds a callback function to be called when the stepper has changed step</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>stp.setOnComplete</b><br>Adds a callback function to be called when the stepper is complete</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>stp.setOnContextMenu</b><br>Adds a callback function on right click</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>stp.setOnTouch</b><br>Adds a callback handler when the component is touch</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>stp.setPadding</b><br>Sets the padding component container</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>stp.setPosition</b><br>Sets the position of the component relative to its parent dimensions</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>stp.setScale</b><br>Sets the x and y scaling of the component</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>stp.setSize</b><br>Sets the size of the component</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>stp.setTitleText</b><br>Sets a new title for the corresponding step by its index</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>stp.show</b><br>Show the component</div>
+</div>
+</body>
+
+</html>

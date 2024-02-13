@@ -1,3 +1,85 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe7804c792216856130a5a35b9ad82ad6b9bbd4ce0784a9971dc18fb9c746a8e
-size 7391
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>AddAppBar</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>AddAppBar</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+		<p>Adds an appbar on a given layout.</p>
+
+		<div class="samp">
+		apb = MUI.AddAppBar(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">p1</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">p2</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">p3</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>Object</b>
+		</div>
+
+		<p>See <a href="CreateAppBar.htm" data-ajax="false">CreateAppBar</a>, <a href="CreateAppBarElegant.htm" data-ajax="false">CreateAppBarElegant</a> and <a href="CreateAppBarModern.htm" data-ajax="false">CreateAppBarModern</a> for a full documentation. The parameters p1, p2 and p3 depends on the type of appbar. Refer to each type for more info. Example for <a href="CreateAppBar.htm" data-ajax="false">CreateAppBar</a> and <a href="CreateAppBarElegant.htm" data-ajax="false">CreateAppBarElegant</a> 'ps' is 'title', 'p2' is 'logoIcon' and 'p3' is 'controls'. For <a href="CreateAppBarModern.htm" data-ajax="false">CreateAppBarModern</a> 'p1' is 'hint','p2' is 'controlIcon' and 'p3' is 'color'.</p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - AddAppBar</h3>
+			<div id="examp1" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Light<br>
+				cfg<span class="token punctuation">.</span><span class="token constant">MUI</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    lay <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">CreateLayout</span><span class="token punctuation">(</span><span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        apb1 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddAppBar</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"My Appbar"</span><span class="token punctuation">,</span> <span class="token string">"menu"</span><span class="token punctuation">,</span> <span class="token string">"search,more_vert"</span><span class="token punctuation">,</span> <span class="token string">"Default"</span><span class="token punctuation">)</span><br>
+				        apb2 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddAppBar</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"My Appbar"</span><span class="token punctuation">,</span> <span class="token string">"menu"</span><span class="token punctuation">,</span> <span class="token string">"search,more_vert"</span><span class="token punctuation">,</span> <span class="token string">"Elegant"</span><span class="token punctuation">)</span><br>
+				        apb3 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddAppBar</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Search product"</span><span class="token punctuation">,</span> <span class="token string">"search"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Modern,Round"</span><span class="token punctuation">)</span><br>
+				        apb3 <span class="token operator">=</span> <span class="token constant">MUI</span><span class="token punctuation">.</span><span class="token function">AddAppBar</span><span class="token punctuation">(</span>lay<span class="token punctuation">,</span> <span class="token string">"Search product"</span><span class="token punctuation">,</span> <span class="token string">"search"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"Modern,Rectangle"</span><span class="token punctuation">)</span><br>
+				    app<span class="token punctuation">.</span><span class="token function">AddLayout</span><span class="token punctuation">(</span>lay<span class="token punctuation">)</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Title text”</docstr> or <docstr>“Hint”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“Material Icon”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“controls”</docstr> or <docstr>“color”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Elegant”</docstr> or <docstr>“Modern”</docstr> or <docstr>“Default and Round”</docstr> or <docstr>“Rectangle for Modern Appbar”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> MUI Layout or DS Layout control</div>
+</div>
+</body>
+
+</html>

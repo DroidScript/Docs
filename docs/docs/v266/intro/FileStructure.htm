@@ -1,3 +1,324 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86348de5a7f627e6b1bc6549156eff443189008c2e0479ef97bee7cd3c88c109
-size 19190
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>File Structure</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>File Structure</h1>
+		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:1em;">
+			• <a href="" onclick="jumpTo('DroidScript Folder')">DroidScript Folder</a><br>
+			<span style="display:inline-block;padding-left:1em;">
+				- <a href="" onclick="jumpTo('lang.json')">lang.json</a><br>
+				- <a href="" onclick="jumpTo('user.keystore')">user.keystore</a><br>
+				- <a href="" onclick="jumpTo('build.json')">build.json</a><br>
+			</span><br>
+			• <a href="" onclick="jumpTo('Internal Files')">Internal Files</a><br>
+		</span><br>
+		</div>
+
+		<h2>DroidScript Folder</h2>
+		<p><code>
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">/sdcard/DroidScript</a>/<br>
+		├──
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">_nopremium_</a><br>
+		├──
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">APKs</a>/<br>
+		│   └──
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">user.keystore</a>/<br>
+		├──
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">SPKs</a>/<br>
+		├──
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">Plugins</a>/<br>
+		├──
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">Extensions</a>/<br>
+		└──
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;</a>/<br>
+		    ├──
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;.html</a><br>
+		    ├──
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;.js</a><br>
+		    ├──
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">build.json</a><br>
+		    ├──
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">lang.json</a><br>
+		    ├──
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">~&lt;HIDDEN_FILE&gt;</a><br>
+		    ├──
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">Html</a>/<br>
+		    ├──
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">Snd</a>/<br>
+		    ├──
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">Misc</a>/<br>
+		    └──
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">Img</a>/<br>
+		        ├──
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">app-icon.png</a><br>
+		        └── <gray>
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">&lt;PROJECT_NAME&gt;.png</a> (deprecated)</gray><br>
+		</code></p>
+		<h3>lang.json</h3>
+		<p>If you want to allow users to switch languages, you can use the<br>
+		app.<a href="../app/SetAppLanguage.htm#Example" data-ajax="false">SetAppLanguage</a> method and the T() function combined with a special JSON<br>
+		file called 'lang.json' in your app that looks like this:-</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - lang.json</h3>
+			<div id="examp1" style="font-size:70%">
+				<span class="token punctuation">{</span><br>
+				    <span class="token string-property property">"langs"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"English"</span><span class="token punctuation">,</span> <span class="token string">"Deutsch"</span><span class="token punctuation">,</span> <span class="token string">"Español"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				    <br>
+				    <span class="token string-property property">"codes"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"english"</span><span class="token operator">:</span><span class="token string">"en"</span><span class="token punctuation">,</span> <span class="token string-property property">"deutsch"</span><span class="token operator">:</span><span class="token string">"de"</span><span class="token punctuation">,</span> <span class="token string-property property">"español"</span><span class="token operator">:</span><span class="token string">"es"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				    <br>
+				    <span class="token string-property property">"trans"</span> <span class="token operator">:</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token string-property property">"SelectLang"</span> <span class="token operator">:</span> <span class="token punctuation">{</span><br>
+				            <span class="token string-property property">"en"</span><span class="token operator">:</span><span class="token string">"Please select your prefered language from the 'Settings' menu"</span><span class="token punctuation">,</span><br>
+				            <span class="token string-property property">"de"</span><span class="token operator">:</span><span class="token string">"Bitte wähle deine Sprache in den 'Einstellungen' aus"</span><span class="token punctuation">,</span><br>
+				            <span class="token string-property property">"es"</span><span class="token operator">:</span><span class="token string">"Selecciona tu idioma preferido en el menú 'Settings'"</span><br>
+				        <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				        <br>
+				        <span class="token string-property property">"PrivacyPolicy"</span> <span class="token operator">:</span> <span class="token punctuation">{</span><br>
+				            <span class="token string-property property">"en"</span><span class="token operator">:</span><span class="token string">"Privacy Policy"</span><span class="token punctuation">,</span><br>
+				            <span class="token string-property property">"de"</span><span class="token operator">:</span><span class="token string">"Datenschutzerklärung"</span><span class="token punctuation">,</span><br>
+				            <span class="token string-property property">"es"</span><span class="token operator">:</span><span class="token string">"Política de Privacidad"</span><br>
+				        <span class="token punctuation">}</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
+			</div>
+		</div>
+
+		<p>Also make sure you use the <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" onclick="return OpenUrl(this.href);">standard 2 letter language codes</a><br>
+		<br>
+		See also: <a href="04CodingFeatures.htm#Translations" data-ajax="false">T()</a>, <a href="../app/GetLanguage.htm" data-ajax="false">GetLanguage</a>, <a href="../app/GetLanguageCode.htm" data-ajax="false">GetLanguageCode</a>, <a href="../app/GetAppLanguages.htm" data-ajax="false">GetAppLanguages</a>, <a href="../app/GetAppLangCode.htm" data-ajax="false">GetAppLangCode</a>, <a href="../app/SetAppLanguage.htm" data-ajax="false">SetAppLanguage</a></p>
+		<h3>user.keystore</h3>
+		<p>This file is used for signing apks. It is <strong>STRONGLY</strong> recomended that you backup this file. You cannot update your app released using this key on Google Play or on any other device, unless you have the original file (and can also remember the password!)</p>
+		<h3>build.json</h3>
+		<p>If you create a file called 'build.json' at the top level of your project, then you will be able to control certain aspects of the APK build process, such as the 'minSdkVersion' setting in the manifest, which sets the minimum version of Android that your app will run on.</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - build.json</h3>
+			<div id="examp2" style="font-size:70%">
+				<span class="token punctuation">{</span><br>
+				    <span class="token string-property property">"manifest"</span><span class="token operator">:</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token string-property property">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"debuggable"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"removePermissions"</span><span class="token operator">:</span> <span class="token string">"WRITE\_EXTERNAL\_STORAGE"</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"homeScreen"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"noPermsAction"</span><span class="token operator">:</span> <span class="token string">"default"</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"pathPattern"</span><span class="token operator">:</span> <span class="token string">".*\.png,.*\.jpg"</span><br>
+				    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>
+				    <span class="token string-property property">"autoPermissions"</span><span class="token operator">:</span> <span class="token boolean">true</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp2 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp2 )">      Run      </a>
+			</div>
+		</div>
+
+		<p><i>Note: This file is optional and not required for building APKs</i><br>
+		<br>
+		If you release your app on Google Play, the '<strong>minSdkVersion</strong>' setting will control whether people with older phones can see your app in the store. If your app does not perform well on older versions of Android, then it is usually a good idea to make it unavailable for older phones or you will get lots of negative ratings and people will avoid your app. There may also be features such as Bluetooth 4.0 which are unavailable on older versions of Android.<br>
+		<br>
+		DroidScript uses a simplified permissions model and scans your code looking for the required Android permissions, but you may want more fine-grain control of these permissions, so the '<strong>removePermissions</strong>' setting allows you to explicitly remove Android permissions from your APK.<br>
+		<br>
+		See the <a href="https://developer.android.com/reference/android/Manifest.permission.html" onclick="return OpenUrl(this.href);">Android SDK</a> docs for for a full list of permissions.<br>
+		<br>
+		The '<strong>homeScreen</strong>' setting is only used for creating home screen launchers apps, public kiosks and machine control type apps which totally take over the Android device, so don't use this option unless you know what you are doing!<br>
+		<br>
+		If you want your app to handle certain types of file when the user tries to open them or use the '<b>Share via</b>' option, then the '<strong>pathPattern</strong>' setting allows you to specify which file types your app accepts. For example, if you were writing a text editor, then you would use the <b>*\\.txt</b> pattern.<br>
+		<br>
+		See the '<b>Shared Data</b>' and '<b>Receive Intent</b>' samples in DroidScript for demos of how to handle file and text in your app.<br>
+		<br>
+		The '<strong>debuggable</strong>' setting is intended for advanced users and allows your installed app to be debugged via the Android Debug Bridge. This setting defaults to false and should never be set to true in public releases of your app.</p>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - minimal build.json</h3>
+			<div id="examp3" style="font-size:70%">
+				<span class="token punctuation">{</span><br>
+				    <span class="token string-property property">"manifest"</span><span class="token operator">:</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token string-property property">"minSdkVersion"</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span><br>
+				        <span class="token string-property property">"targetSdkVersion"</span><span class="token operator">:</span> <span class="token number">28</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp3 )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp3 )">      Run      </a>
+			</div>
+		</div>
+
+		<h2>Internal Files</h2>
+		<p>Here is a selection of the most common used internal DroidScript assets, that are available in DroidScript and when enabling 'Include Assets' in the APK Builder.<br>
+		<details><br>
+		<summary>/Sys/Img/</summary></p>
+
+		<div class="samp">
+		AScript.png<br>
+		Add.png<br>
+		Banner.png<br>
+		BarA.png<br>
+		Bird_960x687x3x3.png<br>
+		BlackBack.jpg<br>
+		BlueBack.jpg<br>
+		Bulb.png<br>
+		Bunny.png<br>
+		Color.png<br>
+		Connect.png<br>
+		Droid1.png<br>
+		Droid2.png<br>
+		Eagle1.png<br>
+		Eagle2.png<br>
+		Exit.png<br>
+		Explode1.png<br>
+		Explode2.png<br>
+		Explode3.png<br>
+		Explode4.png<br>
+		Explode5.png<br>
+		Files.png<br>
+		Forward.png<br>
+		GreenBack.jpg<br>
+		Hello.png<br>
+		Icon.png<br>
+		JoyPad.png<br>
+		Layout.png<br>
+		Left.png<br>
+		Light.png<br>
+		Mic.png<br>
+		Notify.png<br>
+		NxtConn.png<br>
+		Offline.png<br>
+		Pillar.png<br>
+		PillarTop.png<br>
+		Play.png<br>
+		Question.png<br>
+		Refresh.png<br>
+		Reverse.png<br>
+		Right.png<br>
+		Settings.png<br>
+		Sky.jpg<br>
+		Sound.png<br>
+		Splash.gif<br>
+		Splat.png<br>
+		Spring.png<br>
+		Sprint.png<br>
+		StarField.jpg<br>
+		Tab.png<br>
+		TabHi.png<br>
+		TabHi_.png<br>
+		Tab_.png<br>
+		Tile.png<br>
+		Touch.png<br>
+		Ultra.png<br>
+		VBarA.png<br>
+		VBarB.png<br>
+		VBarC.png<br>
+		Xylophone.png<br>
+		bar_dark.png<br>
+		desyrel.png<br>
+		desyrel.xml<br>
+		ioio.png
+		</div>
+
+		<p></details><br>
+		<details><br>
+		<summary>/Sys/Snd/</summary></p>
+
+		<div class="samp">
+		Bullet.mp3<br>
+		Explode.mp3<br>
+		Poing.ogg<br>
+		Squeak.mp3<br>
+		Trill.ogg
+		</div>
+
+		<p></details><br>
+		<details><br>
+		<summary>Other:</summary></p>
+
+		<div class="samp">
+		/Sys/fonts/fontawesome-webfont.ttf<br>
+		<br>
+		/Sys/Html/Page.htm<br>
+		/Sys/Html/Template.htm<br>
+		<br>
+		/Sys/images/android-logo-mask.png<br>
+		/Sys/images/android-logo-shine.png<br>
+		/Sys/images/clock_font.png
+		</div>
+
+		<p></details><br>
+		<details><br>
+		<summary>Drawable Resources:</summary>
+		These are not regular files but xml-based "<a href="https://developer.android.com/guide/topics/resources/drawable-resource" onclick="return OpenUrl(this.href);">drawable resources</a>" provided by Android in the resources.arsc file. These two are used in some examples, but there are more:</p>
+
+		<div class="samp">
+		/res/drawable/pattern_carbon<br>
+		/res/drawable/picture_frame
+		</div>
+
+		<p></details></p>
+
+	</div>
+
+	<div data-role="popup" id="pop_dsc_001" class="ui-content">DroidScript root folder</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content">Temporarily disable premium</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content">Generated project apks</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content">keystore used for signing apks</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content">Saved project spks</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content">Plugin installation folder</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content">Extension installation folder for web IDE</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content">Project root folder</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content">Main entry for html projects (dominant)</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content">Main entry for javascript projects (recessive)</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content">Controls certain aspects of the build process</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content">For easy translating texts</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content">Hidden file</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content">external html files (static, no app.* functions here please)</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content">sound files</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content">miscellaneous files</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content">image files</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content">Project icon</div>
+</div>
+</body>
+
+</html>
