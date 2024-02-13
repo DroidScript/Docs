@@ -1,3 +1,7 @@
+/// <reference path="common.js"/>
+/// <reference path="../../../out/docs/definitions/ts/app.d.ts"/>
+/// <reference path="../../doctypes.d.ts"/>
+
 /*
 $(document).ready(function () { alert("event: document ready depr"); });
 $(function () { alert("event: document ready"); });
@@ -15,46 +19,47 @@ function HttpRequest(method, host, path, header, cb) {
     xmlHttp.send();
 }
 
-let localVer = "", remoteVer = "", installedVer = "", vinstalled = "";
 const tmpPath = "/sdcard/.DroidScript/Temp";
 const docsPath = "/sdcard/DroidScript/.edit/";
-const repoName = { release: "DroidScript", beta: "SymDSTools" }
+const repos = { release: "DroidScript", beta: "SymDSTools" }
+const docver = { installed: 0, local: 0 };
+let vinstalled = "";
 
 $(window).load(function () {
     if (!isMobileIDE) return;
     try {
-        const localBuild = app.GetDSBuild();
-        localVer = (app.GetDSVersion() + "000").replace(/\D/g, '').slice(0, 3);
-        if (localBuild) localVer += '.' + localBuild;
+        const localVerStr = (app.GetDSVersion() + "000").replace(/\D/g, '').slice(0, 3);
+        docver.local = Number(localVerStr + '.' + app.GetDSBuild());
 
         const docsHtm = app.ReadFile(docsPath + "docs/Docs.htm") + "";
-        const docsVer = docsHtm.slice(docsHtm.indexOf("Docs version: ") + 14);
-        installedVer = docsVer.slice(0, docsVer.indexOf("<"));
-        [_, vinstalled] = docsHtm.match(/version.txt: ([\d.]+)/) || [];
+        vinstalled = (docsHtm.match(/version.txt: ([\d.]+)/) || [])[1];
+        // legacy version
+        var docsVer = docsHtm.slice(docsHtm.indexOf("Docs version: ") + 14);
+        docsVer = docsVer.slice(0, docsVer.indexOf("<"));
+        docver.installed = parseDsVer(vinstalled) || Number(docsVer);
 
         HttpRequest("get", "https://raw.githubusercontent.com/",
-            repoName.release + "/Docs/master/docs/version.txt",
+            repos.release + "/Docs/master/docs/version.txt",
             null, OnRemoteVersion.bind(null, "release"));
 
         HttpRequest("get", "https://raw.githubusercontent.com/",
-            repoName.beta + "/Docs/master/docs/version.txt",
+            repos.beta + "/Docs/master/docs/version.txt",
             null, OnRemoteVersion.bind(null, "beta"));
     } catch (e) {
         alert(e);
     }
 });
 
-const repoVers = {}
 var testVer = "";
 function OnRemoteVersion(repo, version) {
-    const testVer = version.replace(/^.*(\d\d\d(\.\d+)?$)/, "$1");
+    const testVer = parseDsVer(version);
+    docver[repo] = testVer;
 
     try {
-        if (Object.keys(repoVers).length !== Object.keys(repoName).length) return;
-        console.log(`got installed ${installedVer} - local ${localVer} - remote ${testVer} (${vinstalled} - ${version})`);
-        if (testVer !== localVer || (testVer === installedVer && version <= vinstalled)) return;
-        remoteVer = testVer;
+        console.log(`got local ${docver.local} - installed ${docver.installed}\n${repo} ${testVer} (${vinstalled} - ${version})`);
+        if (testVer !== docver.local || (testVer === docver.local && version <= vinstalled)) return;
 
+        $('#popupDialog h3').append(`Install ${testVer} over ${docver.installed}?`);
         $('#popupDialog').popup("open");
         $('#popupDialog a').on("click", function (e) {
             if (this.innerText === "Yes") InstallUpdate(repo);
@@ -65,14 +70,19 @@ function OnRemoteVersion(repo, version) {
     }
 }
 
+// input: string [date][3x ver].[build] => Number ver.build
+// "19670264.6" => 264.6
+function parseDsVer(ver) {
+    ver = Number(ver) % 1000;
+    return (ver * 1000 | 0) / 1000;
+}
+
 function InstallUpdate(repo) {
     try {
-        console.log(`installing ${remoteVer} over ${installedVer}`);
-
         const dl = app.CreateDownloader();
         dl.SetOnCancel(P(function (f) { app.ShowPopup("Download aborted"); }));
 
-        const url = `https://github.com/${repoName[repo]}/Docs/archive/master.zip`;
+        const url = `https://github.com/${repos[repo]}/Docs/archive/master.zip`;
         dl.Download(url, tmpPath, "docs-master.zip");
         dl.SetOnDownload(P(ExtractDocs));
     } catch (e) {
@@ -116,6 +126,7 @@ function Updated(force = false) {
     location.reload();
 }
 
+// DS callback workaround in iframes
 function P(func) {
     var name = _Cbm(func).replace(/_cbMap\['(.*)'\]/g, '_cb$1');
     if (!useWebIDE || window == window.parent) return func;
