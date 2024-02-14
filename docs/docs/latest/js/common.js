@@ -123,6 +123,8 @@ $(document).live('pageshow', function (event, ui) {
 		//Show plugins list if 'plugins' page is loading.
 		if (curPage == "plugins") ShowPluginsPage()
 		else if (curPage == "extensions") ShowExtensionsPage()
+		else if (curPage == "search") searchDocs(localStorage.getItem("searchName"), localStorage.getItem("searchContent"));
+
 
 		//Append popup div in plugin docs if not exists
 		if (!$(".androidPopup").parent().is(":visible"))
@@ -367,8 +369,14 @@ function fetchIndex(cb) {
 	xmlHttp.send();
 }
 
+var searchPage = 0;
 //Get list from device.
 function searchDocs(filterName, filterContent, fetched) {
+	if (typeof filterName === "number") {
+		searchPage += filterName;
+		filterName = undefined;
+	}
+
 	if (fetched && !indexContent) return;
 	if (!indexContent.length) {
 		fetchIndex(function () {
@@ -379,9 +387,14 @@ function searchDocs(filterName, filterContent, fetched) {
 
 	var nameFilter = $("#nameFilter").css("border-color", "");
 	var contentFilter = $("#contentFilter").css("border-color", "");
-	if (!filterName) filterName = nameFilter.val();
-	if (!filterContent) filterContent = contentFilter.val();
+	if (filterName) nameFilter.val(filterName);
+	else filterName = nameFilter.val();
+	if (filterContent) contentFilter.val(filterContent);
+	else filterContent = contentFilter.val();
 	if (!filterName && !filterContent) return;
+
+	localStorage.setItem("searchName", filterName);
+	localStorage.setItem("searchContent", filterContent);
 
 	var useReg = $("#regex-toggle").prop("checked");
 	var useCase = $("#case-toggle").prop("checked");
@@ -395,7 +408,7 @@ function searchDocs(filterName, filterContent, fetched) {
 
 	function match(s, m) {
 		if (!m) return true;
-		if (useReg) return s.match(RegExp(m, useCase ? "i" : ""))
+		if (useReg) return s.match(RegExp(m, useCase ? "" : "i"))
 		if (useCase) return s.includes(m);
 		return s.toLowerCase().includes(m.toLowerCase());
 	}
@@ -408,11 +421,24 @@ function searchDocs(filterName, filterContent, fetched) {
 		.map(url => [url, `?search=${encodeURIComponent(filterContent || filterName)}&flags=${2 * useReg + useCase}`])
 		.map(([url, flags]) => `<li><a href='${url}${flags}'>${url.replace('.htm', '')}</a></li>`);
 
-	var resultText = `Results: ${Math.min(items.length, max)}`;
-	if (items.length > max) resultText += ` of ${items.length}`;
-	$("#results").text(resultText);
+	if (searchPage * max >= items.length) searchPage = (items.length - 1) / max | 0;
+	if (searchPage < 0) searchPage = 0;
 
-	if (items.length) $("#listview").empty().append(items.slice(0, max).join('\n')).listview("refresh");
+	const offset = searchPage * max;
+	var resultText = `Results: `;
+
+	if (items.length > max) resultText += `${offset + 1} - ${Math.min(items.length, offset + max)} of ${items.length}`;
+	else resultText += Math.min(items.length, max);
+
+	$(".search-results").show().text(resultText);
+	if (items.length > max) $(".search-page").show();
+	else $(".search-page").hide();
+
+	if (items.length) {
+		$("#listview").empty()
+			.append(items.slice(offset, offset + max).join('\n'))
+			.listview("refresh");
+	}
 }
 
 //Shortcut for string.contains

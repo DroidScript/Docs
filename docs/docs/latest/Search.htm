@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<div data-role="page" data-theme="a" data-ajax="false" data-add-back-btn="true">
+	<div data-role="page" id="search" data-theme="a" data-ajax="false" data-add-back-btn="true">
 
 		<div data-role="header" data-position="fixed">
 			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
@@ -34,18 +34,36 @@
 		<div data-role="content">
 			<div style="display: flex;">
 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="margin-left: auto;">
-					<input type="checkbox" name="regex-toggle" id="regex-toggle" title="Use Regular Expressions">
+					<input type="checkbox" id="regex-toggle" title="Regular Expression" onclick="searchDocs()">
 					<label for="regex-toggle">RegEx</label>
-					<input type="checkbox" name="case-toggle" id="case-toggle" title="Match Case">
+					<input type="checkbox" id="case-toggle" title="Match Case" onclick="searchDocs()">
 					<label for="case-toggle">Aa</label>
 				</fieldset>
 			</div>
-			<input type="text" id="nameFilter" placeholder="Title" onfocus="searchDocs()" oninput="searchDocs()">
-			<input type="text" id="contentFilter" placeholder="Content" onfocus="searchDocs()" oninput="searchDocs()">
-			<h3 style="margin-bottom: 1em;" id="results">Results:</h3>
+			<input type="text" id="nameFilter" placeholder="Title" oninput="searchDocs()">
+			<input type="text" id="contentFilter" placeholder="Content" oninput="searchDocs()">
+
+			<div style="display: flex">
+				<h3 class="search-results" style="margin:0">Results:</h3>
+				<fieldset class="search-page" data-role="controlgroup" data-type="horizontal" data-mini="true"
+					style="display:none;margin-left: auto;">
+					<input type="button" title="Previous Page" onclick="searchDocs(-1)" value="<">
+					<input type="button" title="Next Page" onclick="searchDocs(1)" value=">">
+				</fieldset>
+			</div>
+
 			<ul data-role="listview" data-inset="true" id="listview">
 
 			</ul>
+
+			<div style="display: flex;">
+				<h3 class="search-results search-page" style="margin:0;display:none">Results:</h3>
+				<fieldset class="search-page" data-role="controlgroup" data-type="horizontal" data-mini="true"
+					style="display:none;margin-left: auto;">
+					<input type="button" title="Previous Page" onclick="searchDocs(-1)" value="<">
+					<input type="button" title="Next Page" onclick="searchDocs(1)" value=">">
+				</fieldset>
+			</div>
 		</div><!-- /content -->
 	</div><!-- /page -->
 </body>
