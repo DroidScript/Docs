@@ -23,4 +23,5 @@ samples*.txt
 ~*
 *.key
 *-test*
-
+*.ppk
+*.zip
