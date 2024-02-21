@@ -1,48 +1,68 @@
-// ------------- HEADER SECTION -------------
+// Documentation: https://github.com/ripjar/material-datetime-picker
 
-
-/** # showDateTimePicker #
+/** # DateTimePicker
  * @abbrev dtp
- * @brief showDateTimePicker
- * Show a DateTimePicker where the user can select a date and time.
- *
- *  If you want a date picker only see <col nobox #4c4>DatePicker</col> or if you want time picker only see <col nobox #4c4>TimePicker</col>
- * $$ dtp = ui.showDateTimePicker(callback, date?, time?, format?) $$
- * @param {fnc_json} callback {}
- * @param {str} [date] Default value for date of the form "MM/DD/YYYY"
- * @param {str} [time] Default value for time of the form "HH/MM/SS"
- * @param {str} [format] The format value that will be pass to callback. Formats can be of the form \n `MM/DD/YYYY HH:MM:SS` `MM:DD:YYYY HH:MM:SS`
+ * A DateTimePicker in mobile UI design combines date and time selection in one interface.
+ * @img(img1.png)
+ * @jdocs Following Material Design, it provides a unified, user-friendly experience for choosing both date and time, ensuring consistency and ease in applications and forms with date and time-sensitive inputs. Show a date-time picker using the `showDateTimePicker` method like this:
+ * $$ ui.showDateTimePicker(date, time, format, onSelect) $$
+ * $$ ui.showDateTimePicker(date, time, onSelect) $$
+ * $$ ui.showDateTimePicker(date, onSelect) $$
+ * $$ ui.showDateTimePicker( onSelect ) $$
+ * @param {String} date Default value for date of the form "YYYY-MM-DD"
+ * @param {String} time Default value for time of the form "HH:MM:SS"
+ * @param {String} format The format of the value that will be pass to the `onSelect` callback. Default is `"YYYY-MM-DD HH:MM:SS"`. You can refer to <a href="https://momentjs.com/" target="_blank">https://momentjs.com/</a> for more date time formats. Sample formats: `"MMMM Do YYYY, h:mm:ss a"`, `"dddd"`, `"MMM Do YY"`, `"LLL"`
+ * @param {Function} onSelect The callback function to be called on submit.
  * @returns uio-DateTimePicker
-*/
-
-
-
-
-// ------------- VISIBLE METHODS & PROPERTIES -------------
-
-
-/** ### setOnSelect ###
- * @brief setOnSelect
- * Sets a callback function on select date and time
- * $$ dtp.setOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["value"],"pTypes":["str-The selected date and time in the following format `MM/DD/YYYY HH:MM:SS`."]}
+ * If you want a date picker only see `DatePicker` or if you want time picker only see `TimePicker`
  */
 
+ui.showDateTimePicker = function(date, time, format, callback)
+{
+    var cb = callback;
+    if(typeof date == "function") cb = date, date = "", time = "", format = "";
+    else if(typeof time == "function") cb = time, time = "", format = "";
+    else if(typeof format == "function") cb = format, format = "";
+    return new ui.DateTimePicker(date, time, format, cb);
+}
 
+ui.DateTimePicker = class 
+{
+    constructor(date="", time="00:00:00", format="YYYY-MM-DD", callback)
+    {
+        this._submit = callback;
+        var defValue = date+"T"+time;
+        this._format = format;
+        this._value = null;
+        this._picker = new MaterialDatetimePicker({
+            format: this._format,
+            default: date ? moment( defValue ) : moment()
+        })
+        .on("submit", this._handleSubmit.bind(this))
+        .on("close", this._handleClose.bind(this))
+        .open()
+    }
 
-// ------------- SAMPLES -------------
+    _handleSubmit( val ) { this._value = val; }
 
+    _handleClose() {
+        if(this._submit && this._value) this._submit( this._value.format(this._format) );
+    }
+}
 
+/* --- parent_methods here ----- */
+
+/* ## Examples */
 
 /**
-@sample DateTimePicker
-class Main extends App 
+@sample Default
+class Main extends App
 {
     onStart()
     {
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        this.btn = ui.addButton( this.main, "Show Date Time Picker", "Primary" )
+        this.btn = ui.addButton(this.main, "Show Date Time Picker", "Primary")
         this.btn.setOnTouch( this.btn_onTouch )
     }
 
@@ -58,21 +78,61 @@ class Main extends App
 }
  */
 
+/**
+@sample With initial values, format and custom theme
+class Main extends App
+{
+    onStart()
+    {
+        // Set the primary theme color
+        ui.setThemeColor( "#673ab7" );
 
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show the datetime picker when click
+        this.btn = ui.addButton(this.main, "Show Date Time Picker", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+    }
+
+    btn_onTouch()
+    {
+        // Show the datetime picker dialog and passing initial date and time
+        // date format : "YYYY-MM-DD"
+        // time format : "HH:MM:SS"
+        // value format: LLL
+        ui.showDateTimePicker("2023-10-10", "17:00:00", "LLL", this.onDateTime )
+    }
+
+    onDateTime( val )
+    {
+        ui.showPopup( val )
+    }
+}
+ */
 
 /**
-@sample Python DateTimePicker
-from hybrid import ui
+@sample Dark mode
+class Main extends App 
+{
+    onStart()
+    {
+        ui.setTheme( "dark" );
 
-def OnStart():
-    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-    btn = ui.addButton(main, "Show Date Time Picker", "Primary")
-    btn.setOnTouch(btn_onTouch)
+        this.btn = ui.addButton( this.main, "Show Date Time Picker", "Primary" )
+        this.btn.setOnTouch( this.btn_onTouch )
+    }
 
-def btn_onTouch(event):
-    ui.showDateTimePicker(onDateTime)
+    btn_onTouch()
+    {
+        ui.showDateTimePicker( this.onDateTime )
+    }
 
-def onDateTime(val):
-    ui.showPopup(val)
+    onDateTime( val )
+    {
+        ui.showPopup( val )
+    }
+}
  */
