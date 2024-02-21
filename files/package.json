@@ -1,7 +1,7 @@
 {
     "name": "droidscript-docs",
     "repository": {},
-    "homepage": "https://github.com/SymDSTools/Docs",
+    "homepage": "https://github.com/DroidScript/Docs",
     "license": "Apache-2.0",
     "engines": {
         "node": ">=8.10.0"

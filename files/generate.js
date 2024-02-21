@@ -8,9 +8,10 @@ const conf = require("./conf.json");
 const { app } = require("./generators/app");
 const { generateDoc, htmlNavi, newNaviItem } = require("./generators/generate-htm");
 const { generateNavigators } = require("./generators/generate-navs");
+const { generateMarkdown } = require("./generators/generate-md");
 const { generateTips } = require("./generators/generate-tips");
 const { generateTsx } = require("./generators/generate-tsx");
-const { keys, getl, Throw, ReadFile, mergeObject, nothidden, tos, force, getDstDir, D_BASE, D_LANG, getSrcDir, outDir, D_VER, D_SCOPE, baseDir } = require("./generators/util");
+const { keys, getl, Throw, ReadFile, mergeObject, nothidden, tos, force, getDstDir, D_BASE, D_LANG, getSrcDir, outDir, D_VER, D_SCOPE, baseDir, sortAsc } = require("./generators/util");
 
 //TODO:WebServer,WebSocket,WebSocket conn.Ex.,gfx
 /** @type {GenState} */
@@ -19,7 +20,7 @@ const dfltState = {
     curScope: "app", curFunc: "", curSubf: "",
     progress: 0, popDefs: {}, spop: {}
 };
-let nogen = false, clear = false, updateVer = false, makeTsx = false, makeTips = false;
+let nogen = false, clear = false, updateVer = false, makeTsx = false, makeTips = false, makeNavs = false, makeMd = false;
 let regGen = RegExp("");
 
 const rootPath = __dirname + "/";
@@ -146,18 +147,24 @@ function generateVersion(ver, state, genPattern) {
         hadError = true;
     }
 
-    app.WriteFile(curDir + "index.txt", "");
+    // reset index.txt
+    if (!nogen) app.WriteFile(curDir + "index.txt", "");
+    // reset Docs.md
+    if (makeMd && "md".match(regGen)) {
+        const mdDir = getDstDir(D_LANG, state, "Docs.md");
+        app.WriteFile(mdDir, "# DroidScript Documentation\n\n");
+    }
 
     // generate all scopes
-    keys(conf.scopes)
-        .filter(s => s.match(genPattern.scope) !== null)
-        .forEach(scopeName => {
-            try { generateScope(scopeName, state, genPattern); }
-            catch (e) {
-                console.error(/*\x1b[31m*/ `while generating ${state.curScope} ${state.curDoc || ''}: ${state.curSubf || ''}`);
-                Throw(e);
-            }
-        });
+    for (const scopeName of keys(conf.scopes)) {
+        if (scopeName.match(genPattern.scope) === null) continue;
+
+        try { generateScope(scopeName, state, genPattern); }
+        catch (e) {
+            console.error(/*\x1b[31m*/ `while generating ${state.curScope}${state.curFunc && '.' + state.curFunc}${state.curSubf && '.' + state.curSubf} ${state.curDoc}`);
+            Throw(e);
+        }
+    }
 
     if (hadError) console.warn("Warning: Copy docs-base failed for " + ver + ". Reload VSCode via 'Ctrl+Shift+P > Reload Window' and try again if the preview renders incorrectly.");
 }
@@ -187,13 +194,6 @@ function generateScope(name, state, genPattern) {
 
     if (!app.FolderExists(dstDir)) app.MakeFolder(dstDir);
 
-    // generate nav pages
-    if ("navs".match(regGen)) {
-        generateNavigators(inpt.scope, inpt.navs, conf.scopes[state.curScope] || state.curScope, state);
-        const missNavs = Object.entries(inpt.scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
-        if (inpt.base && missNavs.length > 0) console.log(`missing navigators in ${state.curScope}: ${missNavs.join(", ")}\n`);
-    }
-
     // generate doc pages
     generateDocs(inpt, state);
     return app.HideProgressBar();
@@ -219,9 +219,9 @@ function parseInput(state) {
     if (app.FileExists(state.curDoc)) {
         newScope = JSON.parse(ReadFile(state.curDoc, "false"));
         scope = mergeObject(scope, newScope);
-        if (!keys(navs).length) navs = keys(scope);
+        if (!keys(navs).length) navs = keys(scope).sort((a, b) => sortAsc(scope[a].name || a, scope[b].name || b, true));
         // @ts-ignore
-        else navs.All = keys(scope);
+        else navs.All = keys(scope).sort((a, b) => sortAsc(scope[a].name || a, scope[b].name || b, true));
 
         // read base functions used in scope
         state.curDoc = scopeDir + "base.json";
@@ -247,7 +247,7 @@ function parseInput(state) {
     }
     else // no json file available
     {
-        regGen = RegExp("(?=^(tips|tsx)$)[]|(?!^(tips|tsx)$)^.*" + regGen.source);
+        regGen = RegExp("(?=^(tips|tsx|md)$)[]|(?!^(tips|tsx|md)$)^.*" + regGen.source);
         // add files from scope folder to be generated
         newScope = {}; base = null; navs = [];
 
@@ -263,14 +263,14 @@ function parseInput(state) {
     return { navs, scope, base, baseKeys };
 }
 
-let madeTsxGlobals = false;
 /**
  * @param {DSInput} inpt
  * @param {GenState} state
  */
 function generateDocs(inpt, state) {
     if (!nogen) {
-        const lst = keys(inpt.scope).filter(nothidden).filter(n => Boolean(n.match(regGen)));
+        const lst = keys(inpt.scope).filter(n => nothidden(n) && regGen.test(n));
+
         for (let i = 0; i < lst.length; i++) {
             state.progress = Math.floor(100 * i / lst.length);
             app.UpdateProgressBar(state.progress, state.curScope + '.' + lst[i]);
@@ -280,26 +280,24 @@ function generateDocs(inpt, state) {
         }
     }
 
-    if (makeTips && "tips".match(regGen)) {
+    if (makeNavs && "navs".match(regGen)) {
+        resetGlobals(state);
+        generateNavigators(inpt.scope, inpt.navs, conf.scopes[state.curScope] || state.curScope, state);
+        const missNavs = Object.entries(inpt.scope).filter(m => !m[1].hasNav).map(m => m[1].name || m[0]).filter(nothidden);
+        if (inpt.base && missNavs.length > 0) console.log(`missing navigators in ${state.curScope}: ${missNavs.join(", ")}\n`);
+    }
+
+    if (makeTips && "tips".match(regGen) && state.curScope !== "global") {
         resetGlobals(state);
         generateTips(inpt, state);
     }
 
+    if (makeMd && "md".match(regGen)) {
+        resetGlobals(state);
+        generateMarkdown(inpt, state);
+    }
+
     if (makeTsx && "tsx".match(regGen)) {
-        if (!madeTsxGlobals) {
-            const tmpInpt = { base: null, navs: [], baseKeys: [], scope: {} };
-            const tmpState = Object.assign({}, state);
-            // @ts-ignore
-            tmpState.curScope = "global";
-
-            resetGlobals(tmpState);
-            generateTsx(tmpInpt, tmpState, "ts");
-
-            resetGlobals(tmpState);
-            generateTsx(tmpInpt, tmpState, "js");
-            madeTsxGlobals = true;
-        }
-
         resetGlobals(state);
         generateTsx(inpt, state, "ts");
 
@@ -342,13 +340,17 @@ OPTIONS:
     -u  --update           	update the docs version number
     -f  --force             force generation of otherwise skipped
     -C  --clean            	delete temp files (out/ files/json/*/)
+    -n  --nogen             don't generate
+    -N  --navs              generate navs
+    -t  --tips              generate tips
+    -m  --md  --markdown    generate markdown
+    -d  --tsx               generate typescript definitions
     -al --addlang=<LANG-CODE>=<LANG-NAME>
                             adds a language to conf.json
     -as --addscope=<SCOPE-ABBREV>=<SCOPE-NAME>
                             adds a scope to conf.json
     -av --addversion=<VERSION>
                             adds a version number to conf.json
-    -n  --nogen             don't generate
     -s  --server            start webserver after generating
     -V  --verbose           print more debug logs
     -h  --help              this help
@@ -391,7 +393,9 @@ function main() {
             case "-V": case "--verbose": app.SetDebug(true); break;
             case "-c": case "--clear": clear = true; break;
             case "-C": case "--clean": clean = true; break;
+            case "-N": case "--navs": makeNavs = true; break;
             case "-t": case "--tips": makeTips = true; break;
+            case "-m": case "--md": case "--markdown": makeMd = true; break;
             case "-d": case "--tsx": makeTsx = true; break;
             case "-u": case "--update": updateVer = true; break;
             case "-h": case "--help": app.Alert(help); process.exit(0);
@@ -445,7 +449,7 @@ function main() {
     }
 
     if (addcfg) app.WriteFile("conf.json", tos(conf));
-    if (!nogen) makeTips = makeTsx = true;
+    if (!nogen) makeTips = makeTsx = makeNavs = makeMd = true;
 
     Generate(genPattern);
     if (startServer) {

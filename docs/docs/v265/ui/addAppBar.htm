@@ -392,14 +392,14 @@
 		<h3>Properties</h3>
 		<p>The following properties are available on the <strong>AppBar</strong> object:</p>
 
-		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backColor</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">backImage</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number:</b> <i>pixel</i></div>
+		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">backImage</a> → <b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
 		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">border</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">borderColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">borderColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
 		<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">borderStyle</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">color</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">cornerRadius</a> → <b>Number</b></div>
@@ -410,14 +410,18 @@
 		<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">isVisible</a> → <b>Boolean</b></div>
 		<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">layout</a> → <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a></div>
 		<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">left</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">margins</a> → <b>List</b></div>
+		<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">margins</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
 		<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">menu</a> → <b>Boolean</b></div>
 		<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">opacity</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">options</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">padding</a> → <b>List</b></div>
-		<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">parent</a> → <b>Object</b></div>
-		<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">position</a> → <b>Object</b></div>
-		<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">rotation</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">padding</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
+		<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">parent</a> → <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a></div>
+		<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">position</a> → <b>Object:</b> {
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }</div>
+		<div class="samp"><a href="#pop_dsc_021" data-transition="pop" data-rel="popup">rotation</a> → <b>Number:</b> <i>angle in degrees (0..360)</i></div>
 		<div class="samp"><a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">text</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">textColor</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_030" data-transition="pop" data-rel="popup">textSize</a> → <b>Number</b></div>
@@ -465,7 +469,7 @@
 			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
 			<a href="#pop_num_006" data-transition="pop" data-rel="popup">width?</a>,
 			<a href="#pop_str_005" data-transition="pop" data-rel="popup">clr?</a>,
-			<a href="#pop_str_006" data-transition="pop" data-rel="popup">style?</a> )
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">style='solid'</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
@@ -525,6 +529,7 @@
 
 	</div>
 
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
 	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width. [0-1]</div>
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The time in milliseconds.</div>
@@ -549,7 +554,7 @@
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
 	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
-	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”</docstr></div>
 	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
 	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
 	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
@@ -565,39 +570,39 @@
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
 		<a href="" onclick="switchPopup(this, '#pop_obj_004')" data-transition="pop" data-rel="popup">event</a>
 	)</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content">Returns the absolute height of the control in pixels.</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content">Returns the absolute distance of the control from the left in pixels.</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content">Returns the absolute distance of the control from the top in pixels.</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content">Returns the absolute width of the control in pixels.</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>apb.absHeight</b><br>Returns the absolute height of the control in pixels.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>apb.absLeft</b><br>Returns the absolute distance of the control from the left in pixels.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>apb.absTop</b><br>Returns the absolute distance of the control from the top in pixels.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>apb.absWidth</b><br>Returns the absolute width of the control in pixels.</div>
 	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>apb.addLayout</b><br>Adds a layout for additional controls at the right of the appbar</div>
 	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>apb.animate</b><br>Animate the component</div>
-	<div data-role="popup" id="pop_dsc_007" class="ui-content">A hexadecimal color of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></div>
-	<div data-role="popup" id="pop_dsc_008" class="ui-content">The path to your image file.</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content">Sets or returns the border thickness in pixels.</div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content">Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content">Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dotted</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dashed</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">double</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">groove</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">ridge</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>apb.backColor</b><br>A hexadecimal color of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>apb.backImage</b><br>The path to your image file.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>apb.border</b><br>Sets or returns the border thickness in pixels.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>apb.borderColor</b><br>Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>apb.borderStyle</b><br>Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dotted</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dashed</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">double</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">groove</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">ridge</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>.</div>
 	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>apb.bringForward</b><br>Bring this component forward by a given z-index</div>
-	<div data-role="popup" id="pop_dsc_00d" class="ui-content">Sets or returns the theme color of the AppBar. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Default</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Primary</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Secondary</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Transparent</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Inherit</span></div>
-	<div data-role="popup" id="pop_dsc_00e" class="ui-content">Sets or returns the corner radius of the accordion panel. You can also pass an array of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">[tl, tr, bl, br]</span>. See <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">setCornerRadius</span> for customization.</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>apb.color</b><br>Sets or returns the theme color of the AppBar. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Default</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Primary</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Secondary</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Transparent</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Inherit</span></div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>apb.cornerRadius</b><br>Sets or returns the corner radius of the accordion panel. You can also pass an array of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">[tl, tr, bl, br]</span>. See <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">setCornerRadius</span> for customization.</div>
 	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>apb.destroy</b><br>Destroy the component</div>
-	<div data-role="popup" id="pop_dsc_010" class="ui-content">Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the control.</div>
-	<div data-role="popup" id="pop_dsc_011" class="ui-content">Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">relative</span> path to the font-family use.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>apb.disabled</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the control.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>apb.fontFile</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">relative</span> path to the font-family use.</div>
 	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>apb.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom</div>
 	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>apb.gone</b><br>Destroy the component</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content">Sets or returns the height of the control as a fraction of the parent control.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>apb.height</b><br>Sets or returns the height of the control as a fraction of the parent control.</div>
 	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>apb.hide</b><br>Hide the component</div>
-	<div data-role="popup" id="pop_dsc_016" class="ui-content">Sets or returns the icon of the menu button.</div>
-	<div data-role="popup" id="pop_dsc_017" class="ui-content">Returns whether the control is visible or not.</div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content">Returns the right layout of the appbar where you can add controls.</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content">Returns the distance of the control from the left.</div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content">Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</div>
-	<div data-role="popup" id="pop_dsc_01b" class="ui-content">Sets or returns whether the appbar has menu button.</div>
-	<div data-role="popup" id="pop_dsc_01c" class="ui-content">Sets or returns the opacity of the control.</div>
-	<div data-role="popup" id="pop_dsc_01d" class="ui-content">Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">options</span> of the control.</div>
-	<div data-role="popup" id="pop_dsc_01e" class="ui-content">Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</div>
-	<div data-role="popup" id="pop_dsc_01f" class="ui-content">Returns the parent layout control.</div>
-	<div data-role="popup" id="pop_dsc_020" class="ui-content">Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bottom</span> props.</div>
-	<div data-role="popup" id="pop_dsc_021" class="ui-content">Sets or returns the angle of rotation in degrees.</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>apb.icon</b><br>Sets or returns the icon of the menu button.</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>apb.isVisible</b><br>Returns whether the control is visible or not.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>apb.layout</b><br>Returns the right layout of the appbar where you can add controls.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>apb.left</b><br>Returns the distance of the control from the left.</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>apb.margins</b><br>Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>apb.menu</b><br>Sets or returns whether the appbar has menu button.</div>
+	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>apb.opacity</b><br>Sets or returns the opacity of the control.</div>
+	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>apb.options</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">options</span> of the control.</div>
+	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>apb.padding</b><br>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</div>
+	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>apb.parent</b><br>Returns the parent layout control.</div>
+	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>apb.position</b><br>Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bottom</span> props.</div>
+	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>apb.rotation</b><br>Sets or returns the angle of rotation in degrees.</div>
 	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>apb.sendBackward</b><br>Bring this component backward by a given z-index</div>
 	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>apb.setBorder</b><br>Sets the border line for the component container</div>
 	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>apb.setCornerRadius</b><br>Sets the corner radius of the appbar</div>
@@ -610,14 +615,14 @@
 	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>apb.setScale</b><br>Sets the x and y scaling of the component</div>
 	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>apb.setSize</b><br>Sets the size of the component</div>
 	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>apb.show</b><br>Show the component</div>
-	<div data-role="popup" id="pop_dsc_02e" class="ui-content">Sets or return the AppBar title text</div>
-	<div data-role="popup" id="pop_dsc_02f" class="ui-content">Sets or returns the hexadecimal color of the appbar title.</div>
-	<div data-role="popup" id="pop_dsc_030" class="ui-content">Sets or returns the font size of the title text.</div>
-	<div data-role="popup" id="pop_dsc_031" class="ui-content">Sets or returns the variant of the title text. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h1</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h2</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h3</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h4</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h5</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h6</span></div>
-	<div data-role="popup" id="pop_dsc_032" class="ui-content">Returns the distance of the control from the top.</div>
-	<div data-role="popup" id="pop_dsc_033" class="ui-content">Returns the type of the control.</div>
-	<div data-role="popup" id="pop_dsc_034" class="ui-content">Sets or returns the visibility of the control.</div>
-	<div data-role="popup" id="pop_dsc_035" class="ui-content">Sets or returns the width of the control as a fraction of the parent control.</div>
+	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>apb.text</b><br>Sets or return the AppBar title text</div>
+	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>apb.textColor</b><br>Sets or returns the hexadecimal color of the appbar title.</div>
+	<div data-role="popup" id="pop_dsc_030" class="ui-content"><b>apb.textSize</b><br>Sets or returns the font size of the title text.</div>
+	<div data-role="popup" id="pop_dsc_031" class="ui-content"><b>apb.textVariant</b><br>Sets or returns the variant of the title text. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h1</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h2</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h3</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h4</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h5</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">h6</span></div>
+	<div data-role="popup" id="pop_dsc_032" class="ui-content"><b>apb.top</b><br>Returns the distance of the control from the top.</div>
+	<div data-role="popup" id="pop_dsc_033" class="ui-content"><b>apb.type</b><br>Returns the type of the control.</div>
+	<div data-role="popup" id="pop_dsc_034" class="ui-content"><b>apb.visibility</b><br>Sets or returns the visibility of the control.</div>
+	<div data-role="popup" id="pop_dsc_035" class="ui-content"><b>apb.width</b><br>Sets or returns the width of the control as a fraction of the parent control.</div>
 </div>
 </body>
 

@@ -19,6 +19,7 @@ function getApp() {
     const _app = {
         ReadFile: (p) => fs.readFileSync(absPth(p), "utf8"),
         WriteFile: (p, s) => fs.writeFileSync(absPth(p), s),
+        AppendFile: (p, s) => fs.appendFileSync(absPth(p), s),
         DeleteFile: (p) => fs.unlinkSync(absPth(p)),
         ListFolder: (p) => fs.readdirSync(absPth(p)),
         WalkFolder,

@@ -7,7 +7,7 @@
  * Adds a dropdown component into your layout.
  * $$ dpd = ui.addDropdown(parent, list?, options?, width?, height?) $$
  * @param {obj} parent The layout where to add the dropdown.
- * @param {lst} [list] The list items to show.
+ * @param {str_com} [list] The list items to show.
  * @param {str} [options] A comma separated Dropdown options. Can be \n Colors: `Primary` `Secondary` `Default` \n `Variants`: `Contained` `Outlined` `Text` \n `Sizes`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `NoElevation`
  * @param {num} [width] Fraction of the screen width. [0-1]
  * @param {num} [height] Fraction of the screen height. [0-1]

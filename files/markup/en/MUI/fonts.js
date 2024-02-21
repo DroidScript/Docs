@@ -4,7 +4,7 @@
 /** # fonts #
  * @prop
  *
- * $$ MUI.fonts() $$
+ * $$ MUI.fonts $$
  * @returns obj
 */
 

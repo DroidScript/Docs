@@ -9,7 +9,7 @@
  *  Default Tab variant for mobile screens is <col nobox #4c4>fullWidth</col> unless provided.
  * $$ tab = ui.addTabs(parent, list?, options?, width?, height?) $$
  * @param {obj} parent The parent layout where to add the Tabs Component.
- * @param {lst} [list] An array of tab names.
+ * @param {str_com} [list] An array of tab names.
  * @param {str_com} [options] Enable swipe: `Swipeable` \n `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` \n `Variant`: `Standard` `Scrollable` `FullWidth` \n `Layout`: `Linear`, `Absolute` \nUtils: `Icon` `Center` `Paper`
  * @param {num} [width] Fraction of the screen width. [0-1]
  * @param {num} [height] Fraction of the screen height. [0-1]
@@ -360,7 +360,7 @@
  * @param {num} [top] The tab-item top padding.
  * @param {num} [right] The tab-item right padding.
  * @param {num} [bottom] The tab-item bottom padding.
- * @param {str} [mode='px'] Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
+ * @param {str} [mode='px'] Unit of measurement. You can pass `%` `rem` `vw`.
  */
 
 

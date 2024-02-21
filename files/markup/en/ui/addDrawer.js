@@ -5,9 +5,10 @@
  * @abbrev drw
  * @brief addDrawer
  * Adds a drawer into your app.
- * $$ drw = ui.addDrawer(lay, options?) $$
+ * $$ drw = ui.addDrawer(lay, options?, width?) $$
  * @param {obj} lay The drawer layout.
  * @param {str_com} [options]
+ * @param {num} [width] width of the drawer
  * @returns uio-Drawer
 */
 
@@ -96,8 +97,8 @@
 /** ### show ###
  * @brief show
  * Open the drawer dynamically
- * $$ drw.show(anchor) $$
- * @param {str} anchor Open position. Can be `left` or `right`. Default is `left`
+ * $$ drw.show(anchor='left') $$
+ * @param {str} [anchor='left'] Open position. Can be `left` or `right`.
  */
 
 

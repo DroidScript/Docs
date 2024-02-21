@@ -56,6 +56,13 @@
  */
 
 
+/** ### loadUrl ###
+ * Load the current url.
+ * $$ web.loadUrl(url) $$
+ * @param {str_url} url
+ */
+
+
 /** ### errorPage
  * @prop
  * Sets or returns the redirect url when an error occur.

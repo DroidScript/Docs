@@ -18,15 +18,16 @@ function generateNavigators(scope, navs, name, state, pfx) {
 
     // function list
     if (navs instanceof Array) {
-        for (const func of navs = navs.filter(nothidden)) {
+        for (const func of navs.filter(nothidden)) {
+            const m = scope[func];
             if (!func) { nav += "<li></li>"; }
             else if (name !== 'All' && scope['_' + func]) { scope['_' + func].hasNav = true; }
-            else if (!scope[func]) { Throw(`nav to deleted method ${state.curScope}.${func}`); }
+            else if (!m) { Throw(`nav to deleted method ${state.curScope}.${func}`); }
             else {
-                scope[func].hasNav ||= (name !== 'All');
+                m.hasNav ||= (name !== 'All');
                 nav += newNaviItem(
                     state.curScope + `/${func.replace(/^\d+|\s+/g, '')}.htm`,
-                    func.replace(/^\d+\s*/, ''), getAddClass(scope[func], state));
+                    (m.name || func).replace(/^\d+\s*/, ''), getAddClass(m, state));
             }
         }
     }

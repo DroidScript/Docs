@@ -4,7 +4,7 @@ const path = require("path");
 const { app } = require("./app");
 
 // constructor name prefixes
-const regConPrefix = /^(Create|Open|Add|show)(?=\w+)/i;
+const regConPrefix = /^_?(Create|Open|Add|show)(?=\w+)/i;
 /** @type {Obj<string>} */
 const special = { n: '\n', r: '\r', t: '\t', b: '\b', f: '\f' };
 const warnEnbl = false;
@@ -23,7 +23,7 @@ module.exports = {
     getAddClass, getAbbrev,
     // utils
     Throw, Warn, getl, hidden, nothidden, mergeObject,
-    isnum, has, keys, sortAsc, split1, replW, hex, tos,
+    isnum, has, keys, sortAsc, split1, hex, tos,
     // paths
     outDir, baseDir, ReadFile, getSrcDir, getDstDir,
     D_BASE, D_LANG, D_SCOPE, D_VER,
@@ -134,17 +134,6 @@ function getAddClass(m, state) {
     return '';
 }
 
-/** replace whitespace with html syntax whitespace
- * @param {string} s
- */
-function replW(s, n = true) {
-    return s
-        .replace(/\\\/\\\//g, '#')
-        .replace(/\n|\\n/g, n ? "<br>" : "\n")
-        .replace(/\t/g, "    ")
-        .replace(/ {2}/g, "&#160;&#160;");
-}
-
 /** convert int to 3-digit hex
  * @param {number} v */
 function hex(v) { return ("00" + v.toString(16)).replace(/^0+(...)/, "$1"); }
@@ -169,15 +158,22 @@ function has(l, v) { return Boolean(l) && l.indexOf(v) > -1; }
 // function values(o) { return Object.values(o); }
 /** @ts-ignore @type {<T>(O: T) => (Extract<keyof T, string>)[]} */
 function keys(o) { return Object.keys(o); }
+/** @param {string} s */
+function invertCase(s) { return s.replace(/([a-z]*)([A-Z]*)/g, (_, a, b) => a.toUpperCase() + b.toLowerCase()); }
+
 /**
  * @param {any} a
  * @param {any} b
+ * @param {boolean} lowerFirst
  */
-function sortAsc(a, b) {
-    const sa = String(a).replace(/[^a-z0-9]/gi, "") || String(a);
-    const sb = String(b).replace(/[^a-z0-9]/gi, "") || String(b);
+function sortAsc(a, b, lowerFirst = false) {
+    const sa = String(a).replace(/[^a-z0-9_]/gi, "") || String(a);
+    const sb = String(b).replace(/[^a-z0-9_]/gi, "") || String(b);
     const la = sa.toLowerCase(), lb = sb.toLowerCase();
-    return la === lb ? sa < sb ? 1 : -1 : la > lb ? 1 : -1;
+    if (la === lb) return sa < sb ? 1 : -1;
+    if (lowerFirst === true && (sa === la || sa === lb))
+        return invertCase(sa) > invertCase(sb) ? 1 : -1;
+    return la > lb ? 1 : -1;
 }
 
 /** @param {string} s */

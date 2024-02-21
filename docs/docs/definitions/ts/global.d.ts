@@ -122,3 +122,162 @@ declare type str_sty = string;
 declare type str_uri = string;
 /** url path */
 declare type str_url = string;
+
+
+/** Add extra options to the app */
+declare function _AddOptions(options: str_com): void;
+
+/** Add extra permissions to the app when exporting APKs */
+declare function _AddPermissions(perms: str_com): void;
+
+/** Manually include extra plugins in the app */
+declare function _AddPlugins(plugins: str_com): void;
+
+/**
+ * Helper class that automaticall binds the 'this' context for all methods to the current object instance
+ * @return class
+ */
+declare class Bound {
+
+	/** Binds the 'this' context for all methods */
+	bindMethods(ctx: all): void;
+}
+
+/** Global App configuration modes */
+declare const cfg: Dscfg;
+
+/**
+ * Creates a new plugin object to interact with a dynamically loaded java plugin
+ * @param name `Package Name`
+ * @return Plugin
+ */
+declare function _CreatePlugin(name: str, options: str): DsPlugin;
+
+/** Shortcut for ../app/GetDisplayHeight */
+declare function DH(): num_int;
+
+/** Shortcut for ../app/GetDisplayWidth */
+declare function DW(): num_int;
+
+/** Disables callback optimization */
+declare function I(callback: (...args: lst) => void): (...args: lst) => void;
+
+/** Functions to interact with the DroidScript IDE */
+declare const ide: Dside;
+
+/** Node.js style LoadScript helper */
+declare function include(file: str_pth, noDefer?: bin): void;
+
+/** Disables callback optimization and sets a custom this context */
+declare function M(ctx: all, callback: (...args: lst) => void): (this: all, ...args: lst) => void;
+
+/** Remove extra permissions from the app when exporting APKs */
+declare function _RemovePermissions(perms: str_com): void;
+
+/** Translate a string id into its respective language from the lang.json file */
+declare function T(id: str, lang?: str): str;
+
+/** Shortcut for ../app/GetTextBounds.width */
+declare function TW(txt: str, size: num): num;
+
+
+declare class Dscfg {
+
+	/** Start the app in 'Game' mode */
+	Game: nil;
+
+	/** Start the app in 'Landscape' mode */
+	Landscape: nil;
+
+	/** Start the app in 'Portrait' mode */
+	Portrait: nil;
+
+	/** Make the app transparent */
+	Transparent: nil;
+
+	/** Share */
+	Share: nil;
+
+	/** U sb */
+	USB: nil;
+
+	/** Start the app in 'Light' mode */
+	Light: nil;
+
+	/** Start the app in 'Dark' mode */
+	Dark: nil;
+
+	/** Start the app in legacy 'Holo' mode */
+	Holo: nil;
+
+	/** Allow the use of MaterialUI contruls in your app */
+	MUI: nil;
+
+	/** Start the app as 'Node.js' process */
+	Node: nil;
+
+	/** Start the app as 'Node.js' Ecma Script Module process */
+	NodeESM: nil;
+
+	/** Disable DOM library to significantly increase performance */
+	Fast: nil;
+
+	/** Automatically start a local server for your app */
+	Serv: nil;
+
+	/** Shows a Console instead of a GUI app */
+	Console: nil;
+}
+
+
+declare class DsPlugin {
+
+	/** Returns the type of the control */
+	GetType(): "Plugin";
+
+	/** Call a function in the java plugin with up to 8 parameters */
+	Send(cmd: str, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
+
+	/** Calls a command on an internal java object with up to 8 parameters */
+	SendObj(cmd: str, obj: all, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
+
+	/** Requests to create a new object in the java plugin with up to 8 parameters, and expects a unique identifier as return value in return */
+	CreateObj(type: str, p1?: all, p2?: all, p3?: all, p4?: all, p5?: all, p6?: all, p7?: all, p8?: all): str;
+
+	/** Sends an image to the java plugin */
+	SendImg(cmd: str, img?: DsImage, width?: num_int, height?: num_int): str;
+
+	/** Sends a camera view to the java plugin */
+	SendCam(cmd: str, cam: DsCameraView): str;
+
+	/** Calls the destroy methon on the java plugin */
+	Destroy(): void;
+}
+
+
+declare class Dside {
+
+	/** Create a new plugin as DroidScript project */
+	MakePlugin(name: str): void;
+
+	/** Enable AutoWifi in the IDE */
+	SetAutoWifi(auto: bin): void;
+
+	/** Set a default start application */
+	SetAutoStart(appName: str): void;
+
+	/**
+	 * Obfuscate a javascript source file
+	 * @param options <br>
+ 	 * &emsp; `NoSwap` - Dont swap function names
+	 */
+	Obfuscate(src: str_pth, desc: str_pth, options: string | ("NoSwap")[]): void;
+
+	/** Export your Game as pure HTML project */
+	Export(type: "GameView"|"Html"|"Hybrid", src: str_pth, desc: str_pth): void;
+
+	/** Add a NodeJS module to your app from code */
+	AddModule(name: str, overwrite?: bin): void;
+}
+
+

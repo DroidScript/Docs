@@ -60,3 +60,276 @@
 /** @typedef {string} str_sty style */
 /** @typedef {string} str_uri URI encoded */
 /** @typedef {string} str_url url path */
+
+
+/**
+ * Add extra options to the app
+ * @param {str_com} options 
+ */
+function _AddOptions(options) {return}
+
+/**
+ * Add extra permissions to the app when exporting APKs
+ * @param {str_com} perms 
+ */
+function _AddPermissions(perms) {return}
+
+/**
+ * Manually include extra plugins in the app
+ * @param {str_com} plugins 
+ */
+function _AddPlugins(plugins) {return}
+
+/** Helper class that automaticall binds the 'this' context for all methods to the current object instance */
+class Bound {
+
+	/**
+	 * Binds the 'this' context for all methods
+	 * @param {all} ctx 
+	 */
+	bindMethods(ctx) {return}
+}
+
+/** @type {Dscfg} Global App configuration modes */
+const cfg = null;
+
+/**
+ * Creates a new plugin object to interact with a dynamically loaded java plugin
+ * @param {str} name `Package Name`
+ * @param {str} options 
+ * @return {DsPlugin} Plugin
+ */
+function _CreatePlugin(name, options) {return}
+
+/**
+ * Shortcut for ../app/GetDisplayHeight
+ * @return {num_int} 
+ */
+function DH() {return}
+
+/**
+ * Shortcut for ../app/GetDisplayWidth
+ * @return {num_int} 
+ */
+function DW() {return}
+
+/**
+ * Disables callback optimization
+ * @param {(...args: lst) => void} callback 
+ * @return {(...args: lst) => void} 
+ */
+function I(callback) {return}
+
+/** @type {Dside} Functions to interact with the DroidScript IDE */
+const ide = null;
+
+/**
+ * Node.js style LoadScript helper
+ * @param {str_pth} file 
+ * @param {bin} [noDefer=false] 
+ */
+function include(file, noDefer) {return}
+
+/**
+ * Disables callback optimization and sets a custom this context
+ * @param {all} ctx 
+ * @param {(...args: lst) => void} callback 
+ * @return {(this: all, ...args: lst) => void} 
+ */
+function M(ctx, callback) {return}
+
+/**
+ * Remove extra permissions from the app when exporting APKs
+ * @param {str_com} perms 
+ */
+function _RemovePermissions(perms) {return}
+
+/**
+ * Translate a string id into its respective language from the lang.json file
+ * @param {str} id 
+ * @param {str} [lang='en'] 
+ * @return {str} 
+ */
+function T(id, lang) {return}
+
+/**
+ * Shortcut for ../app/GetTextBounds.width
+ * @param {str} txt 
+ * @param {num} size 
+ * @return {num} 
+ */
+function TW(txt, size) {return}
+
+
+class Dscfg {
+
+	/** @type {nil} Start the app in 'Game' mode */
+	Game;
+
+	/** @type {nil} Start the app in 'Landscape' mode */
+	Landscape;
+
+	/** @type {nil} Start the app in 'Portrait' mode */
+	Portrait;
+
+	/** @type {nil} Make the app transparent */
+	Transparent;
+
+	/** @type {nil} Share */
+	Share;
+
+	/** @type {nil} U sb */
+	USB;
+
+	/** @type {nil} Start the app in 'Light' mode */
+	Light;
+
+	/** @type {nil} Start the app in 'Dark' mode */
+	Dark;
+
+	/** @type {nil} Start the app in legacy 'Holo' mode */
+	Holo;
+
+	/** @type {nil} Allow the use of MaterialUI contruls in your app */
+	MUI;
+
+	/** @type {nil} Start the app as 'Node.js' process */
+	Node;
+
+	/** @type {nil} Start the app as 'Node.js' Ecma Script Module process */
+	NodeESM;
+
+	/** @type {nil} Disable DOM library to significantly increase performance */
+	Fast;
+
+	/** @type {nil} Automatically start a local server for your app */
+	Serv;
+
+	/** @type {nil} Shows a Console instead of a GUI app */
+	Console;
+}
+
+
+class DsPlugin {
+
+	/**
+	 * Returns the type of the control
+	 * @return {"Plugin"} 
+	 */
+	GetType() {return}
+
+	/**
+	 * Call a function in the java plugin with up to 8 parameters
+	 * @param {str} cmd 
+	 * @param {all} [p1] 
+	 * @param {all} [p2] 
+	 * @param {all} [p3] 
+	 * @param {all} [p4] 
+	 * @param {all} [p5] 
+	 * @param {all} [p6] 
+	 * @param {all} [p7] 
+	 * @param {all} [p8] 
+	 * @return {str} 
+	 */
+	Send(cmd, p1, p2, p3, p4, p5, p6, p7, p8) {return}
+
+	/**
+	 * Calls a command on an internal java object with up to 8 parameters
+	 * @param {str} cmd 
+	 * @param {all} obj 
+	 * @param {all} [p1] 
+	 * @param {all} [p2] 
+	 * @param {all} [p3] 
+	 * @param {all} [p4] 
+	 * @param {all} [p5] 
+	 * @param {all} [p6] 
+	 * @param {all} [p7] 
+	 * @param {all} [p8] 
+	 * @return {str} 
+	 */
+	SendObj(cmd, obj, p1, p2, p3, p4, p5, p6, p7, p8) {return}
+
+	/**
+	 * Requests to create a new object in the java plugin with up to 8 parameters, and expects a unique identifier as return value in return
+	 * @param {str} type 
+	 * @param {all} [p1] 
+	 * @param {all} [p2] 
+	 * @param {all} [p3] 
+	 * @param {all} [p4] 
+	 * @param {all} [p5] 
+	 * @param {all} [p6] 
+	 * @param {all} [p7] 
+	 * @param {all} [p8] 
+	 * @return {str} 
+	 */
+	CreateObj(type, p1, p2, p3, p4, p5, p6, p7, p8) {return}
+
+	/**
+	 * Sends an image to the java plugin
+	 * @param {str} cmd 
+	 * @param {DsImage} [img] 
+	 * @param {num_int} [width] 
+	 * @param {num_int} [height] 
+	 * @return {str} 
+	 */
+	SendImg(cmd, img, width, height) {return}
+
+	/**
+	 * Sends a camera view to the java plugin
+	 * @param {str} cmd 
+	 * @param {DsCameraView} cam 
+	 * @return {str} 
+	 */
+	SendCam(cmd, cam) {return}
+
+	/** Calls the destroy methon on the java plugin */
+	Destroy() {return}
+}
+
+
+class Dside {
+
+	/**
+	 * Create a new plugin as DroidScript project
+	 * @param {str} name 
+	 */
+	MakePlugin(name) {return}
+
+	/**
+	 * Enable AutoWifi in the IDE
+	 * @param {bin} auto 
+	 */
+	SetAutoWifi(auto) {return}
+
+	/**
+	 * Set a default start application
+	 * @param {str} appName 
+	 */
+	SetAutoStart(appName) {return}
+
+	/**
+	 * Obfuscate a javascript source file
+	 * @param {str_pth} src 
+	 * @param {str_pth} desc 
+	 * @param {string | ("NoSwap")[]} options <br>
+ 	 * &emsp; `NoSwap` - Dont swap function names
+	 */
+	Obfuscate(src, desc, options) {return}
+
+	/**
+	 * Export your Game as pure HTML project
+	 * @param {"GameView"|"Html"|"Hybrid"} type 
+	 * @param {str_pth} src 
+	 * @param {str_pth} desc 
+	 */
+	Export(type, src, desc) {return}
+
+	/**
+	 * Add a NodeJS module to your app from code
+	 * @param {str} name 
+	 * @param {bin} [overwrite] 
+	 */
+	AddModule(name, overwrite) {return}
+}
+
+

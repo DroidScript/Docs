@@ -4,9 +4,9 @@
 /** # CreateAlertSimple #
  * @abbrev als
  * Create a simple alert with a single button.
- * $$ als = MUI.CreateAlertSimple(text, btnText?, color?) $$
+ * $$ als = MUI.CreateAlertSimple(text, btnText='OKAY', color?) $$
  * @param {str} text Text of the alert
- * @param {str} [btnText] Button text. Default is OKAY
+ * @param {str} [btnText='OKAY'] Button text.
  * @param {str_col} [color]
  * @returns obj
 */

@@ -1,5 +1,11 @@
 declare var ui: UI;
-declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopover | UIPopup | UIProgressDialog;
+declare const platform: { mobile: bin, ios: bin, android: bin, type: "mobile" | "tablet" | "desktop" };
+declare class App {
+	onStart(): void;
+	onLoad(): void;
+	onExit(): void;
+}
+declare type UIObject = UIAccordion | UIAppBar | UIBottomNavbar | UIButton | UIButtonGroup | UICheckbox | UICheckboxGroup | UIChip | UIDatePicker | UIDialog | UIDivider | UIDrawer | UIDropdown | UIFAB | UIImage | UILayout | UIList | UIMenu | UIProgress | UIRadioGroup | UISelect | UISlider | UIStepper | UISwitch | UISwitchGroup | UITabs | UIText | UITextField | UITimePicker | UITreeView | UIWebView | UIColorPicker | UIDateTimePicker | UIPopover | UIPopup | UIProgressDialog | UItheme;
 /** ui object */
 declare type uio = UIObject;
 
@@ -128,7 +134,7 @@ declare class UI {
 	/**
 	 * AddDivider
 	 * @param parent The layour where to add the divider.
-	 * @param width `Fraction of the screen width. Default is 1.`
+	 * @param width `Fraction of the screen width.`
 	 * @param options A comma separated Divider options. Values can be `Inset`
 	 */
 	addDivider(parent: obj, width?: num, options?: str): UIDivider;
@@ -136,13 +142,14 @@ declare class UI {
 	/**
 	 * AddDrawer
 	 * @param lay The drawer layout.
+	 * @param width `width of the drawer`
 	 */
-	addDrawer(lay: obj, options?: str_com): UIDrawer;
+	addDrawer(lay: obj, options?: str_com, width?: num): UIDrawer;
 
 	/**
 	 * AddDropdown
 	 * @param parent The layout where to add the dropdown.
-	 * @param list The list items to show.
+	 * @param list `The list items to show.`
 	 * @param options A comma separated Dropdown options. Can be 
  Colors: `Primary` `Secondary` `Default` 
  `Variants`: `Contained` `Outlined` `Text` 
@@ -152,7 +159,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addDropdown(parent: obj, list?: lst, options?: str, width?: num, height?: num): UIDropdown;
+	addDropdown(parent: obj, list?: str_com, options?: str, width?: num, height?: num): UIDropdown;
 
 	/**
 	 * AddFAB
@@ -228,7 +235,7 @@ declare class UI {
 	/**
 	 * AddRadioGroup
 	 * @param parent The parent where to add the RadioGroup component.
-	 * @param list The list items array.
+	 * @param list `The list items array.`
 	 * @param options Radio Sizes: `Small` `Medium` 
  `Colors`: `Primary` `Secondary` 
  `Icon Position: `Left` or `Right` 
@@ -238,12 +245,12 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addRadioGroup(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UIRadioGroup;
+	addRadioGroup(parent: obj, list?: str_com, options?: str_com, width?: num, height?: num): UIRadioGroup;
 
 	/**
 	 * AddSelect
 	 * @param parent The parent layout where to add the control
-	 * @param list The list of items for the Select options
+	 * @param list `The list of items for the Select options`
 	 * @param options Sizes: `Small` `Medium` 
  `Variant`: `Filled` `Outlined` `Standard` 
  `Margin`: `Dense` `Normal` 
@@ -251,7 +258,7 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addSelect(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UISelect;
+	addSelect(parent: obj, list?: str_com, options?: str_com, width?: num, height?: num): UISelect;
 
 	/**
 	 * AddSlider
@@ -291,7 +298,7 @@ declare class UI {
 	/**
 	 * AddSwitchGroup
 	 * @param parent The parent layout where to add the SwitchGroup Component.
-	 * @param list The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
+	 * @param list The list items array whose elements can be `String` if items is text only,  or `Array` of the form `[ "icon",  "label" ]` if items is icon and text.
 	 * @param options Icon: `Icon` 
  `Color`: `Primary` or `Secondary` 
  `Container`: `Elevated` or `Outlined` 
@@ -300,12 +307,12 @@ declare class UI {
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addSwitchGroup(parent: obj, list?: obj, options?: str_com, width?: num, height?: num): UISwitchGroup;
+	addSwitchGroup(parent: obj, list?: str_com, options?: str_com, width?: num, height?: num): UISwitchGroup;
 
 	/**
 	 * AddTabs
 	 * @param parent The parent layout where to add the Tabs Component.
-	 * @param list An array of tab names.
+	 * @param list `An array of tab names.`
 	 * @param options Enable swipe: `Swipeable` 
  `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default` 
  `Variant`: `Standard` `Scrollable` `FullWidth` 
@@ -314,7 +321,7 @@ Utils: `Icon` `Center` `Paper`
 	 * @param width `Fraction of the screen width. [0-1]`
 	 * @param height `Fraction of the screen height. [0-1]`
 	 */
-	addTabs(parent: obj, list?: lst, options?: str_com, width?: num, height?: num): UITabs;
+	addTabs(parent: obj, list?: str_com, options?: str_com, width?: num, height?: num): UITabs;
 
 	/**
 	 * AddText
@@ -372,6 +379,9 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
 	 */
 	addWebView(parent: obj, url?: str, options?: str_com, width?: num, height?: num): UIWebView;
 
+	/** Set the current theme */
+	setTheme(theme: "dark"|"light"): void;
+
 	/**
 	 * ShowColorPicker
 	 * @param value `A hexadecimal default value for the color picker.`
@@ -424,6 +434,12 @@ Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
  `AutoCancel` to close the dialog when backdrop is click.
 	 */
 	showProgressDialog(text?: str, options?: str_com): UIProgressDialog;
+
+	/** UI theme information */
+	theme: UItheme;
+
+	/** UI library version */
+	version: num;
 
 }
 
@@ -743,7 +759,7 @@ declare class UIAccordion {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -980,7 +996,7 @@ declare class UIAppBar {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -1292,7 +1308,7 @@ declare class UIBottomNavbar {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -1562,7 +1578,7 @@ declare class UIButton {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -1860,7 +1876,7 @@ declare class UIButtonGroup {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2113,7 +2129,7 @@ declare class UICheckbox {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2488,7 +2504,7 @@ declare class UICheckboxGroup {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -2737,7 +2753,7 @@ declare class UIChip {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3000,7 +3016,7 @@ declare class UIDivider {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3074,9 +3090,9 @@ declare class UIDrawer {
 
 	/**
 	 * Show
-	 * @param anchor Open position. Can be `left` or `right`. Default is `left`
+	 * @param anchor Open position. Can be `left` or `right`.
 	 */
-	show(anchor: str): void;
+	show(anchor?: str): void;
 
 	/** Hide */
 	hide(): void;
@@ -3375,7 +3391,7 @@ declare class UIDropdown {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3606,7 +3622,7 @@ declare class UIFAB {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -3963,7 +3979,7 @@ declare class UIImage {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4240,7 +4256,7 @@ declare class UILayout {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4615,7 +4631,7 @@ declare class UIList {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -4886,7 +4902,7 @@ declare class UIMenu {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -5111,7 +5127,7 @@ declare class UIProgress {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -5236,6 +5252,9 @@ declare class UIRadioGroup {
 
 	/** Sets or returns the angle of rotation in degrees */
 	rotation: num_deg;
+
+	/** Sets the label of the RadioGroup */
+	setLabel(label: str): void;
 
 	/** Sets or returns the space between the radio button and the text */
 	spaceBetween: num;
@@ -5441,7 +5460,7 @@ declare class UIRadioGroup {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -5746,7 +5765,7 @@ declare class UISelect {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -6005,7 +6024,7 @@ declare class UISlider {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -6261,7 +6280,7 @@ declare class UIStepper {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -6501,7 +6520,7 @@ declare class UISwitch {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -6650,6 +6669,9 @@ declare class UISwitchGroup {
 
 	/** Sets or returns the width of the control as a fraction of the parent control */
 	width: num;
+
+	/** SetLabel */
+	setLabel(label: str): void;
 
 	/** SetOnTouch */
 	setOnTouch(callback: (this: UISwitchGroup, value: bin, text: str, index: num, event: obj) => void): void;
@@ -6816,7 +6838,7 @@ declare class UISwitchGroup {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -7096,7 +7118,7 @@ declare class UITabs {
 	 * @param top `The tab-item top padding.`
 	 * @param right `The tab-item right padding.`
 	 * @param bottom `The tab-item bottom padding.`
-	 * @param mode Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
+	 * @param mode Unit of measurement. You can pass `%` `rem` `vw`.
 	 */
 	setTabPadding(left?: num, top?: num, right?: num, bottom?: num, mode?: str): void;
 
@@ -7187,7 +7209,7 @@ declare class UITabs {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -7435,7 +7457,7 @@ declare class UIText {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -7748,7 +7770,7 @@ declare class UITextField {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -8007,7 +8029,7 @@ declare class UITreeView {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -8075,6 +8097,9 @@ declare class UIWebView {
 
 	/** A reference to the webview`s window document object */
 	document: obj;
+
+	/** Load the current url */
+	loadUrl(url: str_url): void;
 
 	/** Sets or returns the redirect url when an error occur */
 	errorPage: str;
@@ -8241,7 +8266,7 @@ declare class UIWebView {
 	 * SetBorder
 	 * @param width `Border-left thickness in pixels.`
 	 * @param clr Border color in hexadecimal form `#rrggbb`
-	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+	 * @param style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
 	 */
 	setBorder(width?: num, clr?: str, style?: str): void;
 
@@ -8341,6 +8366,19 @@ declare class UIProgressDialog {
 
 	/** SetOnClose */
 	setOnClose(callback: (this: UIProgressDialog) => void): void;
+}
+
+
+declare class UItheme {
+
+	/** True if dark theme is selected, otherwise false (light theme) */
+	dark: bin;
+
+	/** Primary theme color */
+	primary: str_col;
+
+	/** Secondary theme color */
+	secondary: str_col;
 }
 
 

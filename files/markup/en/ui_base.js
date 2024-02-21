@@ -58,7 +58,7 @@
  * Sets the border line for the component container
  * @param {num} [width] Border-left thickness in pixels.
  * @param {str} [clr] Border color in hexadecimal form `#rrggbb`
- * @param {str} [style] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
+ * @param {str} [style='solid'] Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.
  */
 
 

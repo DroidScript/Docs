@@ -324,7 +324,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                 const [_m, _n, _, _k = ''] = c.value.match(/@\s*extern\s+(\S+)(\s+(#\S+|r\/[^/]+\/|\{.*\}))?/i) || [];
                 if (!baseJson[_k || _n] && name !== "_tsxdefs")
                     Throw(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`);
-                else json[_n] = _k || '#' + _n;
+                else json[_n] = _k ? _k.replace(/\\n/g, "\n").replace(/\\t/g, "\t") : '#' + _n;
             }
 
             // Category
@@ -481,15 +481,18 @@ function HandleComment(c, name, func, json, objJson) {
 
         else if (line.match(/^[ */]+#/) && !func.desc) {
             isCA = true;
+            const nameMatch = line.match(/(?=#)\s+(\S+)/);
+            name = nameMatch ? nameMatch[1] : name;
             func = objJson[name] = newDSFunc();
             // if( parent && isChild ) {
             //     met.subf = JSON.parse(JSON.stringify(parent));
             // }
         }
 
-        else if (line.match(/^[ */]+@return/)) {
+        else if (line.match(/^[ */]+@returns?\b/)) {
             const f = line.split(/returns?/)[1].trim(), g = f.split(/[_\s:-]/)[0];
-            if (types[g]) obj.retval = types[g];
+            if (f.startsWith("fnc_json")) obj.retval = JSON.parse(f.slice(f.indexOf('-') + 1));
+            else if (types[g]) obj.retval = types[g];
             else if (!g.split("||").find(t => !typx.includes(t))) obj.retval = f;
             else console.log(`unknown ret type ${g} in ${name}`), obj.retval = "obj-" + f;
         }
