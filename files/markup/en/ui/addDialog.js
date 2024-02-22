@@ -1,4 +1,3 @@
-
 /** # Dialog
  * @abbrev dlg
  * A Dialog in mobile UI design is a pop-up window that appears on top of the current screen to prompt the user for input or to convey information.
@@ -16,209 +15,47 @@
  * @returns Object Dialog
  */
 
-ui.addDialog = function(title, body, actions, options, width)
-{
-	return new ui.Dialog(title, body, actions, options, width)
-}
 
-ui.Dialog = class
-{
-	constructor(title, body="", actions=[], options="", width)
-	{
-		this._props = {}
-		this._title = title
-		this._body = body
-		this._actions = actions
-		if(typeof actions == "string") this._actions = actions.split(",")
-		this._options = options.toLowerCase()
-        this._id = _ids++
-		this._layout = ui.addLayout(null, 'Linear', "nodom")
-		this._actClr = this._getClr()
-		this._ref = null
-        this._dlgRef = null
-        // font-file
-        this._fontFile = "";
-        this._fontName = "";
-        if( ui._fontFile ) {
-            this._fontFile = ui._fontFile;
-            this._fontName = ui._fontName;
-        }
-		this._styles = {
-            titleColor: "#000000",
-            contentWidth: isFinite(width) ? `${(width*100)}vw` : width
-        }
-		
-		this._initProps()
+/** ## Properties
+ * Here are the available setters and/or getter of the Dialog Component.
+ * @prop {String} text Sets or returns the dialog text.
+ * @prop {String} titleText Sets or returns the dialog title text.
+ * @prop {String} titleColor Sets or returns the title text color in hexadecimal format.
+ * @prop {Object} layout Returns the layout of the dialog where you can add custom controls.
+ */
 
-        this._div = document.createElement("div")
-		_popups().appendChild( this._div )
-		this._render()
-	}
 
-	// Invisible methods
-	_initProps()
-	{
-		this._props.open = false
-		this._props['aria-labelledby'] = `ui-dialog-${this._id}-title`
-		this._props['aria-describedby'] = `ui-dialog-${this._id}-description`
-		this._props.fullScreen = this._options.includes('fullscreen')
-	}
-    
-    _initStyle() {}
+/** ## Methods
+ * Here are the available methods of the Dialog Component.
+ */
 
-	_getClr() {
-		if(this._options.includes('secondary')) return 'secondary'
-		return 'primary'
-	}
-	_getRef(ref) {
-		this._ref = ref
-		if(this._ref) this._ref.appendChild(this._layout._div)
-	}
-	_onAction(action, index) {
-		if(this._action) this._action(action, index);
-		this._onClose();
-	}
-	_onClose(e) {
-        if( this._options.includes("nocancel") ) return;
-		this._props.open = false;
-		this._render();
-		if(this._close) this._close();
-	}
-    _getDlgRef( ref ) {
-        if( ref ) {
-            this._dlgRef = ref;
-            if( this._fontName ) this._setFontName();
-        }
-    }
-    _setFontName() {
-        let els = this._dlgRef.querySelectorAll('*:not(:empty):not(.material-icons)');
-        els.forEach( m => m.style.fontFamily = this._fontName );
-    }
-	_render()
-	{
-		let e = React.createElement
-		let {DialogTitle, DialogContent, DialogActions, Button, DialogContentText, Dialog} = window['MaterialUI']
-		this._ctl = e( Dialog, {
-				...this._props,
-				onClose: this._onClose.bind(this),
-                ref: this._getDlgRef.bind(this)
-			},
-			[
-				e( DialogTitle, {
-						key: 0,
-						style: { color: this._styles.titleColor }
-					}, this._title ),
-				e( DialogContent, {
-						key:1,
-                        style: { width: this._styles.contentWidth }
-					},
-					[
-						this._body ? e(
-							DialogContentText, {
-								key: 0
-							},
-							this._body
-						) : null,
-						e( "div", {
-								ref: this._getRef.bind(this),
-								id: 'my-custom-id',
-								key: 1,
-							}, "" )
-					]
-				),
-				e( DialogActions, {
-						key: 2
-					},
-					[
-						this._actions.map( (t, i)=> {
-							return e( Button, {
-									key: i,
-									color: this._actClr,
-									variant: "text",
-									onClick: platform.ios ? null : this._onAction.bind(this, t, i),
-                                    onTouchEnd: platform.ios ? this._onAction.bind(this, t, i) : null
-								}, t )
-						})
-					]
-				)
-			]
-		)
-		ReactDOM.render(this._ctl, this._div)
-	}
 
-	// Visible methods
+/** ### setOnAction
+ * Adds a callback function when the action buttons are click.
+ * $$ dlg.setOnAction( callback ) $$
+ * @param {Function} callback The callback function. ---> @arg {String} text The dialog action text. @arg {Number} index The index of the corresponding dialog action.
+ */
 
-	/** ## Properties
-	 * Here are the available setters and/or getter of the Dialog Component.
-	 * @prop {String} text Sets or returns the dialog text.
-	 * @prop {String} titleText Sets or returns the dialog title text.
-	 * @prop {String} titleColor Sets or returns the title text color in hexadecimal format.
-     * @prop {Object} layout Returns the layout of the dialog where you can add custom controls.
-	 */
 
-	// Visible methods
+/** ### setOnClose
+ * Adds a callback function when the dialog is close.
+ * $$ dlg.setOnClose(callback) $$
+ * @param {Function} callback The callback function
+ */
 
-	/** ## Methods
-	 * Here are the available methods of the Dialog Component.
-	 */
 
-	getLayout() { return this._layout }
-    get layout() { return this._layout }
+/** ### show
+ * Show the dialog.
+ * $$ dlg.show() $$
+ */
 
-	/** ### setOnAction
-	 * Adds a callback function when the action buttons are click.
-	 * $$ dlg.setOnAction( callback ) $$
-	 * @param {Function} callback The callback function. ---> @arg {String} text The dialog action text. @arg {Number} index The index of the corresponding dialog action.
-	 */
-	setOnAction( callback ) { this._action = callback; }
 
-	/** ### setOnClose
-	 * Adds a callback function when the dialog is close.
-	 * $$ dlg.setOnClose(callback) $$
-	 * @param {Function} callback The callback function
-	 */
-	setOnClose( callback ) { this._close = callback; }
+/** ### hide
+ * Hide the dialog.
+ * $$ dlg.hide() $$
+ * @@ When you add an `onClose` callback, it will be fired after this event.
+ */
 
-	setText( text ) { this._body = text; this._render(); }
-	set text( text ) { this._body = text; this._render(); }
-	get text() { return this._body; }
-
-	setTitleText( text ) { this._title = text; this._render(); }
-	set titleText( text ) { this._title = text; this._render(); }
-	get titleText() { return this._title; }
-
-	setTitleColor( clr ) { this._styles.titleColor = clr; this._render(); }
-	set titleColor( clr ) { this._styles.titleColor = clr; this._render(); }
-	get titleColor() { return this._styles.titleColor; }
-
-	/** ### show
-	 * Show the dialog.
-	 * $$ dlg.show() $$
-	 */
- 	show() { this._props.open = true; this._render() }
-
-	/** ### hide
-	 * Hide the dialog.
-	 * $$ dlg.hide() $$
-	 * @@ When you add an `onClose` callback, it will be fired after this event.
-	 */
-	hide() { this._props.open = false; this._render(); }
-
-    set fontFile( file ) {
-        if( typeof(file) != "string" || !file.includes(".") ) return;
-        this._fontFile = file;
-        this._fontName = file.split('/').pop().split('.')[0] + this._id;
-        const style = document.createElement('style');
-        style.innerText = '@font-face {' +
-            'font-family: \''+ this._fontName +'\'; ' +
-            'src: url(\''+file+'\'); '+
-        '}';
-        document.head.appendChild(style);
-        this._setFontName();
-    }
-    get fontFile() { return this._fontFile ? this._fontFile : null }
-    setFontFile( file ) { this.fontFile = file; }
-}
 
 /* --- parent_methods here ----- */
 
@@ -251,6 +88,7 @@ class Main extends App
     }
 }
  */
+
 
 /**
 @sample NoCancel
@@ -297,6 +135,7 @@ class Main extends App
     }
 }
  */
+
 
 /**
 @sample Adding controls to the dialog

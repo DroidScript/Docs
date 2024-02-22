@@ -311,7 +311,8 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
 
             // Description.md
             else if (/@\s*description/i.test(c.value)) {
-                func.desc += c.value.substring(c.value.indexOf("\n"));
+                // func.desc += c.value.substring(c.value.indexOf("\n"));
+                func.desc += c.value.split("@description")[1].trim();
             }
 
             else if (/@\s*ds/i.test(c.value)) {

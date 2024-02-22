@@ -1,4 +1,3 @@
-
 /** # Card
  * @abbrev crd
  * They are surfaces in material design that display content and actions on a single topic.
@@ -16,6 +15,7 @@
  * <h4>Content properties</h4>
  * @jdocs `headerTitle` [string] : Card header title.<br>`headerSubtitle` [string] : Card header subtitle or subheader.<br>`headerAvatar` [string] : Card header avatar. Can be a single character or a path to an image.<br>`headerAction` [string] : Card header action. A material icon font.<br>`media` [string] : A path to an image.<br>`bodyTitle` [string] : The title of the card content.<br>`bodyText` [string] : The long description of the card.<br>`actions` [array] : List of icon buttons. These can be a list of material-icon fonts if `actionType` is an `"icon"`.<br>`actionType` [array] : The type of action. Can be a `"button"` or `"icon"`.<br>`onAction` [function] : Callback handler when card actions are clicked. Refer to `setOnAction` method for arguments.<br>`onHeaderAction` [function] : Callback handler when header action is clicked. Refer to `setOnHeaderAction` method for arguments.
  */
+
 
 /**
 @ds
@@ -36,70 +36,6 @@
 </js>
  */
 
-ui.addCard = function(parent, content, options, width, height) {
-    return new ui.Card(parent, content, options, width, height);
-}
-
-ui.Card = class extends ui.Control
-{
-    constructor(parent, content={}, options, width, height) {
-        super(parent, width, height, options, "Card");
-        this._headerTitle = content.headerTitle || "";
-        this._headerSubtitle = content.headerSubtitle || "";
-        this._headerAvatar = content.headerAvatar || "";
-        this._headerAction = content.headerAction || "";
-        this._media = content.media || "";
-        this._bodyTitle = content.bodyTitle || "";
-        this._bodyText = content.bodyText || "";
-        this._actions = content.actions || [];
-        this._actionType = content.actionType || "button";
-        this._contentEL = null;
-        this._cardOnAction = content.onAction || null;
-        this._headerOnAction = content.onHeaderAction || null;
-        this._cardOpt = {};
-        this._render();
-    }
-
-    _onAction( i ) {
-        const action = this._actions[ i ];
-        if( this._cardOnAction ) this._cardOnAction(action, i);
-    }
-
-    _onHeaderAction() {
-        if( this._headerOnAction ) this._headerOnAction();
-    }
-
-    _getRef( ref ) {
-        if( ref ) this._contentEL = ref;
-    }
-
-    _render() {
-        let e = React.createElement;
-        let {Card, CardContent, CardMedia, CardActionArea, CardHeader, CardActions, IconButton, Avatar, Button, Typography} = window["MaterialUI"];
-        let cardContent = [
-            (this._media && e(CardMedia, {key: 1, image: this._media, title: this._media, component:"img"})),
-            e(CardContent, {key: 2, ref: this._getRef.bind(this)}, [
-                (this._bodyTitle && e(Typography, {key: 0, gutterBottom:true, variant: "h5", component: "h2"}, this._bodyTitle)),
-                (this._bodyText && e(Typography, {key: 1, variant: "body2", color: "textSecondary", component: "p"}, this._bodyText))
-            ])
-        ];
-        this._ctl = e(Card, {...this._cardOpt, style: {width:"100%", height:"100%"}}, [
-            ( (this._headerAction||this._headerTitle||this._headerSubtitle||this._headerAvatar) && e(CardHeader, {
-                key: 0,
-                action: this._headerAction ? e(IconButton, {onClick: this._onHeaderAction.bind(this), className: "material-icons"}, this._headerAction) : null,
-                title: this._headerTitle ? this._headerTitle : null,
-                subheader: this._headerSubtitle ? this._headerSubtitle : null,
-                avatar: this._headerAvatar ? e(Avatar, {}, this._headerAvatar) : null
-            }) ),
-            (this._options.includes( "touchable" ) ?
-            e(CardActionArea, {key: 1}, cardContent) :
-            cardContent ),
-            (this._actions.length > 0 && e(CardActions, {key: 2},
-                this._actions.map((m, key) => e(this._actionType == "icon" ? IconButton : Button, {key, onClick: this._onAction.bind(this, key), size: this._actionType == "icon" ? "medium" : "small", color: this._actionType == "icon" ? "default" : _color(this._options), className: this._actionType == "icon" ? "material-icons":""}, m))
-            ))
-        ]);
-        ReactDOM.render(this._ctl, this._div);
-    }
 
     /** ## Properties
      * These are the available setter and getter properties for the Card component.
@@ -118,7 +54,7 @@ ui.Card = class extends ui.Control
      * @prop {Number} elevation Sets or returns the elevation of the card.
      */
 
-    // Inherited props
+
     /** @extern width */
     /** @extern height */
     /** @extern opacity */
@@ -228,7 +164,7 @@ ui.Card = class extends ui.Control
      * These are the methods for `Card` component.
      */
 
-    // Inherited methods
+
     /** @extern setOnContextMenu */
     /** @extern animate */
     /** @extern setSize */
@@ -254,13 +190,7 @@ ui.Card = class extends ui.Control
      * @param {String} avatar Can be a char or a path to an image.
      * @param {String} action Material icon font.
      */
-    addHeaderItems(title, subtitle, avatar, action) {
-        this._headerTitle = title;
-        this._headerSubtitle = subtitle;
-        this._headerAvatar = avatar;
-        this._headerAction = action;
-        this._render();
-    }
+
 
     /** ### addBodyItems
      * Add card body items. Using this method is faster than setting the individual.
@@ -268,35 +198,20 @@ ui.Card = class extends ui.Control
      * @param {String} title The title of the content of the card.
      * @param {String} text The description of the card.
      */
-    addBodyItems(title, text) {
-        this._bodyTitle = title;
-        this._bodyText = text;
-        this._render();
-    }
+
 
     /** ### setOnAction
      * Add a callback function to be called when a card action is click.
      * $$ crd.setOnAction( cb ) $$
      * @param {Function} cb The callback function. ---> @arg {String} icon Material icon. @arg {Number} index The index of the action.
      */
-    setOnAction( cb ) { this._cardOnAction = cb; }
+
 
     /** ### setOnHeaderAction
      * Add a callback function to be called when the header action icon is click.
      * $$ crd.setOnHeaderAction( cb ) $$
      * @param {Function} cb The callback function.
      */
-    setOnHeaderAction( cb ) { this._headerOnAction = cb; }
-
-    setCornerRadius(tl, tr, br, bl, mode="px") {
-        this._cornerRad = {tl: tl, tr: tr, bl: bl, br: br, mode: mode};
-        let el = this._div.querySelector(".MuiPaper-root.MuiCard-root");
-        el.style.borderTopLeftRadius = isFinite(tl) ? tl+mode : tl;
-        el.style.borderTopRightRadius = isFinite(tr) ? tr+mode : tr;
-        el.style.borderBottomRightRadius = isFinite(br) ? br+mode : br;
-        el.style.borderBottomLeftRadius = isFinite(bl) ? bl+mode : bl;
-    }
-}
 
 
 /* --- parent_methods here ----- */
@@ -334,6 +249,7 @@ class Main extends App
 }
  */
 
+
 /**
 @sample Card with media
 class Main extends App
@@ -365,6 +281,7 @@ class Main extends App
     }
 }
  */
+
 
 /**
 @sample Card with header
@@ -410,6 +327,7 @@ class Main extends App
    }
 }
  */
+
 
 /**
 @sample Card with additional controls
@@ -466,3 +384,5 @@ class Main extends App
    }
 }
  */
+
+

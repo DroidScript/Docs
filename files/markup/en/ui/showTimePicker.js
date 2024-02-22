@@ -1,78 +1,3 @@
-// soon to be deprecated
-ui.addTimePicker = function(time, options)
-{
-    return new ui.TimePicker(time, options);
-}
-
-ui.TimePicker = class
-{
-    constructor(time, options="", callback, show)
-    {
-        this.options = options.toLowerCase();
-        this._callback = callback;
-        this._shown = show;
-        this._format = "HH:mm";
-        this._timeDlg = null;
-
-        this._el = document.createElement( "input" )
-        this._el.setAttribute("type", "text")
-
-        this._config = {
-            type: "time",
-            trigger: this._el,
-            init: time ? moment(time, "HH:mm") : moment()
-        }
-
-        // init
-        if( this.options.includes("portrait") ) this._config.orientation = "PORTRAIT";
-        if( this.options.includes("24h") ) this._config.mode = true;
-
-        // render
-        this._timeDlg = new mdDateTimePicker.default( this._config );
-        
-        this._el.addEventListener("onOk", this._onOk.bind(this));
-        this._el.addEventListener("onCancel", this._onCancel.bind(this));
-
-        if( this._shown ) this._timeDlg.toggle();
-    }
-
-    _onOk()
-    {
-        var value = this._timeDlg.time.format( this._format );
-        if( this._callback ) {
-            setTimeout(() => {
-                this._callback( value );
-            }, 0);
-        }
-        this._shown = false;
-    }
-
-    _onCancel() { this._shown = false; }
-
-    show() {
-        if( !this._shown ) {
-            this._timeDlg.toggle();
-            this._shown = true;
-        }
-    }
-
-    hide() {
-        if( this._shown ) {
-            this._timeDlg.toggle();
-            this._shown = false;
-        }
-    }
-
-    setOnSelect( callback ) { this._callback = callback; }
-
-    setFormat( format ) { this._format = format; }
-    set format( format ) { this._format = format; }
-    get format() { return this._format; }
-
-    isVisible() { return this._shown; }
-    get visible() { return this._shown; }
-}
-
 /** # TimePicker
  * @abbrev tpk
  * A Time Picker in mobile UI design allows users to select a specific time.
@@ -89,53 +14,6 @@ ui.TimePicker = class
  * @param {Function} onSelect The callback function to be called when time is selected.
  * @returns Object TimePicker
  */
-
-ui.showTimePicker = function(time, options, callback) {
-    var cb = callback;
-    if(typeof time === "function") cb = time, time = null;
-    else if(typeof options == "function") cb = options, options = "";
-    return new ui.TimePickerDialog(time, options, cb);
-}
-
-ui.TimePickerDialog = class
-{
-    constructor(time, options="", callback)
-    {
-        this.options = options.toLowerCase();
-        this._callback = callback;
-        this._format = "HH:mm";
-
-        this._el = document.createElement( "input" )
-        this._el.setAttribute("type", "text")
-
-        this._config = {
-            type: "time",
-            trigger: this._el,
-            init: time ? moment(time, "HH:mm") : moment()
-        }
-
-        // init
-        if( this.options.includes("portrait") ) this._config.orientation = "PORTRAIT";
-        if( this.options.includes("24h") ) this._config.mode = true;
-
-        // render
-        this._timeDlg = new mdDateTimePicker.default( this._config );
-        
-        this._el.addEventListener("onOk", this._onOk.bind(this));
-        this._el.addEventListener("onCancel", this._onCancel.bind(this));
-
-        this._timeDlg.toggle();
-    }
-
-    _onOk()
-    {
-        var value = this._timeDlg.time.format( this._format );
-        if( this._callback ) setTimeout(() => { this._callback( value ); }, 0);
-    }
-
-    _onCancel() {}
-}
-
 
 
 /* ## Examples */
@@ -167,6 +45,7 @@ class Main extends App
 }
  */
 
+
 /**
 @sample With initial value, options and theme color
 class Main extends App
@@ -196,6 +75,7 @@ class Main extends App
 }
  */
 
+
 /**
 @sample Dark mode
 class Main extends App
@@ -224,3 +104,5 @@ class Main extends App
     }
 }
  */
+
+

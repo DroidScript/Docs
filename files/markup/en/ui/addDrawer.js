@@ -1,4 +1,3 @@
-
 /** # Drawer
  * @abbrev drw
  * A drawer is a navigation panel that slides in from the edge of the screen, typically from the left, to reveal additional options or content.
@@ -12,228 +11,74 @@
  * @returns Object Drawer
  */
 
-ui.addDrawer = function( lay, options, width ) {
-	return new ui.Drawer( lay, options, width )
-}
 
-ui.Drawer = class
-{
-	constructor( lay, options="", width )
-	{
-		this._options = options.toLowerCase();
-        this._width = width;
-		this._props = {
-            id: this._id,
-            open: false,
-            disableSwipeToOpen: platform.ios,
-		    swipeAreaWidth: 20,
-		    disableBackdropTransition: !platform.ios,
-		    disableDiscovery: platform.ios
-        }
-        this._parent = document.getElementById( "drawer" )
-		this._ctl = null
-        this._div = document.createElement( "div" )
-        this._parent.appendChild( this._div )
-		this.data = {}
-		this._lay = lay
-		this._initProps()
-        let w, h;
-        if(this._props.anchor == "left" || this._props.anchor == "right") {
-            w = width ? width : platform.type=="desktop" ? 0.2 : 0.7;
-            w = (w * 100) + "vw";
-            h = "100vh";
-        } else {
-            w= "100vw";
-            h = width ? width : platform.type=="desktop" ? 0.3 : 0.7;
-            h = (h * 100) + "vh";
-        }
-        this._style = {width: w, height: h, boxSizing: "border-box"}
-		this._render()
-	}
+/** ## Properties ##
+ * Here are the available setter and getter properties of the Drawer Component.
+ * @prop {Boolean} disabled Sets or returns the `disabled` state of the drawer.
+ * @prop {Number} width Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position `[0-1]`.
+ * @prop {String} anchor Sets or returns the anchor position of the drawer. Values can be `left`, `top`, `right`, `bottom`.
+ * @prop {Number} swipeAreaWidth Sets or returns the width of the swipeable area of the Drawer.
+ */
 
-	_initProps()
-	{
-		this._props.anchor = this._getAnchor()
-		//variant: this._getVrnt(),
-	}
-	// get drawer variant
-	_getVrnt() {
-		if(this._options.includes('permanent')) return 'permanent'
-		if(this._options.includes('persistent')) return 'persistent'
-		else return 'temporary'
-	}
-	// get anchor
-	_getAnchor() {
-		if(this._options.includes('right')) return 'right'
-		if(this._options.includes('top')) return 'top'
-		if(this._options.includes('bottom')) return 'bottom'
-		else return 'left'
-	}
-	_config() {
-		if(this._props.variant != 'permanent') return
 
-		var root = document.getElementById('root')
-    	if(this._props.anchor == 'left') {
-    		root.style.position = 'absolute'
-    		root.style.left = (this._lay.width * 100) + 'vw'
-    		root.style.width = (1 - this._lay.width) * 100 + 'vw'
-    	}
-	}
+/** ## Methods ##
+ * Here are the available methods of the Drawer Component.
+ */
 
-	_render()
-	{
- 		let e = React.createElement
- 		let { SwipeableDrawer } = window['MaterialUI']   
-        this._ctl = e( SwipeableDrawer, {
-           		...this._props,
-           		onOpen: event => {
-					if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) return
-					if( this._disabled ) return
-                    this._props.open = true
-					this._render()
-					if( this._onOpen ) this._onOpen()
-				},
-            	onClose: ( event, reason ) => {
-					this._props.open = false
-					this._render()
-					if( this._onClose ) this._onClose()
-				},
-                style: { boxSizing: "border-box" },
-                PaperProps: {
-                    style: { boxSizing: "border-box", overflow: "hidden" }
-                }
-        	},
-        	e( "div", {
-				ref: ref => {
-					if( ref && this._lay ) ref.appendChild( this._lay._div )
-				},
-				style: { ...this._style, overflow: "hidden" }
-			}, "" )
-    	)
-        ReactDOM.render( this._ctl, this._div )
-	}
 
-    // VISIBLE PROPERTIES
+/** ### addLayout
+ * Adds a layout into the drawer.
+ * @param {Object} lay Layout component.
+ */
 
-	/** ## Properties ##
-	 * Here are the available setter and getter properties of the Drawer Component.
-     * @prop {Boolean} disabled Sets or returns the `disabled` state of the drawer.
-     * @prop {Number} width Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position `[0-1]`.
-     * @prop {String} anchor Sets or returns the anchor position of the drawer. Values can be `left`, `top`, `right`, `bottom`.
-     * @prop {Number} swipeAreaWidth Sets or returns the width of the swipeable area of the Drawer.
-	 */
-	
-	// VISIBLE METHODS
 
-	/** ## Methods ##
-	 * Here are the available methods of the Drawer Component.
-	 */
-    
-    /** ### addLayout
-	 * Adds a layout into the drawer.
-	 * @param {Object} lay Layout component.
-	 */
-	addLayout( lay ) { this._lay = lay }
-	
-	/** ### disableSwipeToOpen ###
-	 * Disable swipe to open feature of the drawer. You can use this especially for ios devices which has swipe to go back feature.
-	 * $$ drw.disableSwipeToOpen( value ) $$
-	 * @param {Boolean} value Values can be `true` or `false`.
-	 */
-    disableSwipeToOpen( value ) {
-		this._props.disableSwipeToOpen = value
-		this._render()
-	}
-	
-	/** ### disableBackdropTransition ###
-	 * Disable the backdrop transition. This can improve the FPS on low-end devices.
-	 * $$ drw.disableBackdropTransition( value ) $$
-	 * @param {Boolean} value Values can be `true` or `false`.
-	 */
-    disableBackdropTransition( value ) {
-		this._props.disableBackdropTransition = value
-		this._render()
-	}
-	
-	/** ### disableDiscovery ###
-	 * If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture.
-	 * $$ drw.disableDiscovery( value ) $$
-	 * @param {Boolean} value Values can be `true` or `false`.
-	 */
-    disableDiscovery( value ) {
-		this._props.disableDiscovery = value;
-		this._render();
-	}
-	
-	/** ### setOnOpen ###
-	 * Adds a callback function when the drawer is opened via swiping from the anchor position.
-	 * $$ drw.setOnOpen(callback) $$
-	 * @param {Function} callback The callback function.
-	 */
-	setOnOpen( callback ) { this._onOpen = callback }
-	
-	/** ### setOnClose ###
-	 * Adds a callback function when the drawer is closed.
-	 * $$ drw.setOnClose(callback) $$
-	 * @param {Function} callback The callback function.
-	 */
-	setOnClose(callback) { this._onClose = callback }
+/** ### disableSwipeToOpen ###
+ * Disable swipe to open feature of the drawer. You can use this especially for ios devices which has swipe to go back feature.
+ * $$ drw.disableSwipeToOpen( value ) $$
+ * @param {Boolean} value Values can be `true` or `false`.
+ */
 
-	/** ### show ###
-	 * Open the drawer dynamically.
-	 * $$ drw.show( anchor ) $$
-	 * @param {String} anchor Optional. The anchor position. Can be `left`, `top`, `right`, `bottom`. Default is `left`.
-	 */
-	show( anchor )
-	{
-        if( this._disabled ) return
-		this._props.open = true
-		if( anchor ) this._props.anchor = anchor.toLowerCase()
-		this._render()
-	}
 
-	/** ### hide ###
-	 * Close the drawer dynamically.
-	 * $$ drw.hide() $$
-	 */
-	hide() {
-		this._props.open = false
-		this._render()
-		if( this._onClose ) this._onClose()
-	}
+/** ### disableBackdropTransition ###
+ * Disable the backdrop transition. This can improve the FPS on low-end devices.
+ * $$ drw.disableBackdropTransition( value ) $$
+ * @param {Boolean} value Values can be `true` or `false`.
+ */
 
-    set disabled( value ) {
-        this._disabled = value
-        this._render()
-    }
-    get disabled() { return this._disabled }
 
-    set width( w ) {
-        this._width = w
-        let h = "100vh";
-        if(this._props.anchor=="left" || this._props.anchor=="right") {
-            if( typeof(w) == "number" ) w = (w * 100)+"vw"
-        } else {
-            if( typeof(w) == "number" ) h = (w * 100)+"vh"
-            w = "100vw"
-        }
-        this._style.width = w;
-        this._style.height = h;
-        this._render()
-    }
-    get width() { return this._width }
+/** ### disableDiscovery ###
+ * If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture.
+ * $$ drw.disableDiscovery( value ) $$
+ * @param {Boolean} value Values can be `true` or `false`.
+ */
 
-    set anchor( anchor="" ) {
-        this._props.anchor = anchor.toLowerCase();
-    }
-    get anchor() { return this._props.anchor }
 
-    set swipeAreaWidth( val ) {
-        this._props.swipeAreaWidth = val;
-        this._render();
-    }
-    get swipeAreaWidth() { return this._props.swipeAreaWidth; }
-}
+/** ### setOnOpen ###
+ * Adds a callback function when the drawer is opened via swiping from the anchor position.
+ * $$ drw.setOnOpen(callback) $$
+ * @param {Function} callback The callback function.
+ */
+
+
+/** ### setOnClose ###
+ * Adds a callback function when the drawer is closed.
+ * $$ drw.setOnClose(callback) $$
+ * @param {Function} callback The callback function.
+ */
+
+
+/** ### show ###
+ * Open the drawer dynamically.
+ * $$ drw.show( anchor ) $$
+ * @param {String} anchor Optional. The anchor position. Can be `left`, `top`, `right`, `bottom`. Default is `left`.
+ */
+
+
+/** ### hide ###
+ * Close the drawer dynamically.
+ * $$ drw.hide() $$
+ */
+
 
 /* --- parent_methods here ----- */
 
@@ -314,6 +159,7 @@ class Main extends App
 }
  */
 
+
 /**
 @sample Drawer Anchor Positions
 class Main extends App
@@ -391,4 +237,4 @@ class Main extends App
     }
 }
  */
-    
+

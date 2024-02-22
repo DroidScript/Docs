@@ -1,4 +1,3 @@
-
 /** # CameraView
  * Adds a camera view into your app to take pictures and record videos.
  * $$ cam = ui.addCameraView(parent, options, width, height)
@@ -8,6 +7,7 @@
  * @param {number} height Fraction of the parent height [0-1].
  * @returns object
  */
+
 
 /**
 @description
@@ -34,64 +34,12 @@ onRecord( bytes ) {
 </js>
  */
 
-ui.addCameraView = function(parent, options, width, height) {
-    return new ui.CameraView(parent, options, width, height)
-}
 
-ui.CameraView = class extends ui.Control
-{
-    constructor(parent, options, width, height) {
-        super(parent, width, height, options, "CameraView")
-        //invisible stuffs
-        this._supported = true
-        this._activePreview = false
-        this._props.video = {
-            facingMode: this._options.includes("front") ? "user" : "environment",
-            width: {min: 320, ideal: 1080},
-            height: {min: 240, ideal: 720},
-            torch: this._options.includes("flash")
-        }
-        // if( this._options.includes("video") ) this._props.audio = true
-        // Check if the browser supports getUserMedia
-        this._supported = (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)
-        this._constraints = {}
-        this._MR = null, this._vidChunks = [], this._recording = false
-        this._create()
-    }
-
-    _create() {
-        this._div.style.position = "relative";
-        this._ctl = document.createElement( "video" )
-        this._ctl.autoplay = true;
-        this._ctl.poster = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABHNCSVQICAgIfAhkiAAAAD5JREFUeJztwTEBAAAAwqD1T20LL6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICnAZykAAGmdZWOAAAAAElFTkSuQmCC";
-        this._ctl.classList.add( "ui-camera-view" )
-        if( this._options.includes("fill") ) this._ctl.style.objectFit = "cover"
-        else if( this._options.includes("stretch") ) this._ctl.style.objectFit = "fill"
-        this._div.appendChild( this._ctl )
-        navigator.mediaDevices.enumerateDevices()
-        	.then(devices => {
-            	this._camCount = devices.filter(device => device.kind === 'videoinput').length;
-            	if(this._camCount > 0) if( this._onReady ) this._onReady()
-          	})
-          	.catch(err => {
-            	if( this._onError ) this._onError( err )
-          	})
-    }
-    
-    _getTrack( type ) {
-        const tracks =  this._ctl.srcObject.getTracks()
-        if(tracks && tracks.length) return tracks.find(track => track.kind == type)
-        return null
-    }
-    
-    //Visible properties
-    
     /** ## Properties
      * These are the setter and getter properties for CameraView component.
      */
-     
-    get cameraCount() { return this._camCount }
-    
+
+
     /** @prop {number} imageHeight Sets or returns the image height in pixels. */
     set imageHeight( val ) { return this._props.video.height.ideal = val }
     get imageHeight() { return this._ctl.videoHeight }
@@ -168,156 +116,70 @@ ui.CameraView = class extends ui.Control
      * @param {number} width The width of the image portion in pixels.
      * @param {number} height The height of the image portion in pixels. 
      */
-    getPixelData(format="rgba", left=0, top=0, width, height) {
-        format = format.toLowerCase()
-        const c = document.createElement("canvas"), ctx = c.getContext("2d")
-        c.width = this._ctl.videoWidth, c.height = this._ctl.videoHeight
-        ctx.drawImage(this._ctl, 0, 0, c.width, c.height)
-        const img = ctx.getImageData(left, top, width||c.width, height||c.height)
-        if(format == "rgba") return img
-        const c2 = document.createElement("canvas"), ctx2 = c2.getContext("2d")
-        c2.width = width || c.width, c2.height = height || c.height
-        ctx2.putImageData(img, 0, 0) 
-        if( format.includes("png") ) return c2.toDataURL("image/png")
-        if( format.includes("jpg") ) return c2.toDataURL("image/jpg")
-    }
-    
+
+
     /** ### capture
      * Capture an image. This will return an image data which you can save or manipulate.
      * $$ cam.capture(type, format)
-     * @param {string} type The image type. Values are "jpg", "png", "webp", "gif". Default is "jpg".
-     * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer".
+     * @param {string} type The image type. Values are "jpg" or "jpeg"", "png", "webp", "gif". Default is "jpg".
+     * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer". Default is "base64"
      * @return object
      */
-    capture(type = "jpg", format="base64") {
-        type = type.toLowerCase(), format = format.toLowerCase()
-        const c = document.createElement("canvas"), ctx = c.getContext("2d")
-        c.width = this._ctl.videoWidth, c.height = this._ctl.videoHeight
-        ctx.drawImage(this._ctl, 0, 0, c.width, c.height)
-        const img = c.toDataURL("image/" + type)
-        if( this._previewImg ) this._previewImg.image = img
-        if(format == "base64") return img
-        // Remove the data URL prefix to get the base64-encoded image data
-        const base64 = img.split(",")[1]
-        const binaryData = atob( base64 )
-        const uint8Array = new Uint8Array( binaryData.length )
-        for (let i = 0; i < binaryData.length; i++) uint8Array[i] = binaryData.charCodeAt(i)
-        if(format == "uint8array") return uint8Array
-        if( format.includes("bytes") ) return [...uint8Array]
-        if(format == "arraybuffer") return uint8Array.buffer
-    }
-    
-    // type: mp4, ogg, webm
-    // format: blob, base64, bytes, objecturl, arraybuffer, uint8array
+
+
     /** ### record
      * Record a video.
      * $$ cam.record(type, format, cb)
      * @param {string} type Video output encoding format. Values can be "mp4", "ogg" and "webm".Default is "mp4"
-     * @param {string} format Return video data format. Values can be "blob", "base64", "bytes" (regular array), "objecturl", "arraybuffer", "uint8array" (typed array). Default is "blob"
+     * @param {string} format Return video data format. Values can be "blob", "base64", "bytes" (regular array), "objecturl", "arraybuffer", "uint8array" (typed array). Default is "base64"
      * @param {function} cb The callback function to be called passing the video data.
      */
-    record(type="mp4", format="blob", cb) {
-        if(typeof cb != "function") return // callback is required
-        type = type.toLowerCase(), format = format.toLowerCase()
-        this._recording = true, this._onRecord = cb
-        this._MR = new MediaRecorder( this._ctl.srcObject ), this._vidChunks = []
-        this._MR.ondataavailable = event => { 
-          	if(event.data.size > 0) this._vidChunks.push( event.data )
-        };
-        this._MR.onstop = () => {
-            this._MR = null
-          	const blob = new Blob(this._vidChunks, {type: "video/" + format}); // mp4, ogg, webm
-          	if(format == "blob") return this._onRecord( blob )
-          	if(format == "objecturl") return this._onRecord( URL.createObjectURL(blob) )
-          	// if not blob and not objecturl
-          	const reader = new FileReader()
-            reader.onload = () => {
-                // arraybuffer / dataUri:base64
-                const arrayBuffer = reader.result
-                // base64 dataUri
-                if(format == "base64") return this._onRecord( arrayBuffer )
-                // arraybuffer
-                if(format == "arraybuffer") return this._onRecord( arrayBuffer )
-                // uint8array
-                const uint8Array = new Uint8Array( arrayBuffer )
-                if(format == "uint8array") return this._onRecord( uint8Array )
-                // bytes
-                const bytes = [...uint8Array]
-                if( format.includes("byte") ) return this._onRecord( bytes )
-            }
-            if(format == "base64") reader.readAsDataURL( blob )
-            else reader.readAsArrayBuffer( blob )
-        };
-        this._MR.start()
-    }
-    
+
+
     /** ### setPictureSize
      * Sets the size of the image.
      * $$ cam.setPictureSize(width, height)
      * @param {number} width The image width in pixels. See `capabilities` for minimum and maximum values.
      * @param {number} height The image height in pixels. See `capabilities` for minimum and maximum values.
      */
-    setImageSize(width, height) {
-        this._props.video.width.ideal = width, this._props.video.height.ideal = height;
-    }
-    
+
+
     /** ### startPreview
      * Start streaming the camera.
      * $$ cam.startPreview()
      */
-    startPreview() { this.updatePreview() }
+
 
 	/** ### updatePreview
 	 * Update the camera preview. Call it when you have updated the constraints of the camera such as setting the source from back to front, or setting zoom level etc.
 	 * $$ cam.updatePreview()
 	 */
-    updatePreview() {
-        if(!this._supported || this._props == this._constraints) return
-        if( this._activePreview ) this._ctl.pause(), this.stopPreview()
-        navigator.mediaDevices.getUserMedia( this._props )
-        .then(stream => {
-            this._ctl.srcObject = stream
-            this._activePreview = true
-            this._constraints = JSON.parse( JSON.stringify(this._props) )
-        })
-        .catch(error => { if( this._onError ) this._onError() });
-    }
-    
+
+
     /** ### stop 
      * Stops the camera from streaming.
      * $$ cam.stop()
      */
-    stopPreview() {
-        const tracks = this._ctl.srcObject.getTracks()
-        if(tracks && tracks.length) tracks.forEach(track => track.stop())
-        this._activePreview = false
-    }
-    
+
+
     /** ### stop
      * Stop recording a video.
      * $$ cam.stop()
      */
-    stop() {
-        if( !this._recording ) return
-        this._recording = false
-        this._MR.stop()
-    }
-    
+
+
     /** ### setOnReady
      * Add a callback handler when the camera is ready.
      * $$ cam.setOnReady( cb )
      * @param {function} cb The callback function to be called.
      */
-    setOnReady( cb ) { this._onReady = cb }
-    
+
+
     /** ### setOnError
      * Add a callback handler when an error occured.
      * @param {function} cb The callback function to be called. ---> @arg {string} error The error message.
      */
-    setOnError( cb ) { this._onError = cb }
 
-    setOnFocus( cb ) { this._onFocus = cb }
-}
 
 /**
 @sample Camera app in DroidScript
@@ -341,10 +203,10 @@ class Main extends App
         this.cam = ui.addCameraView(this.main, "Fill", 1, 1)
 
 		//Create a horizontal layout that will be displayed in the bottom of the screen
-        this.layBtm = ui.addLayout(this.main, "Linear", "Horizontal,Bottom", 1, 0.1)
+        this.layBtm = ui.addLayout(this.main, "Linear", "Horizontal,Vcenter", 1, 0.1)
         this.layBtm.childSpacing = "Between"
         this.layBtm.setPosition(0, 0.9)
-        this.layBtm.padding = [null, null, null, "1rem"]
+        this.layBtm.padding = [1, null, 1, null, "rem"]
 
 		//Create a camera switch toggle icon at the left
         this.toggleCam = ui.addButton(this.layBtm, "flip_camera_android", "icon")
@@ -360,6 +222,9 @@ class Main extends App
         //Create a preview image and pass it to the previewImage prop of the camera view
         this.prevImg = ui.addImage(this.layBtm, "", "avatar,initial", null)
         this.cam.previewImage = this.prevImg
+        this.prevImg.setSize(2.5, 2.5, "rem")
+        this.prevImg.cornerRadius = "50%"
+        this.prevImg.backColor = "black"
 
 		//Start the camera preview
         this.cam.startPreview()
@@ -374,22 +239,20 @@ class Main extends App
     
     //Handle capture and save the image
     captureImg() {
-        
-        const img = this.cam.capture("jpg", "bytes")
+        const img = this.cam.capture("jpg", "base64")
         
         //Create unique filename
         const name = "img-" + new Date().getTime() + ".jpg"
         const path = "/Internal/DCIM/" + name
         
         //Save the image data
-        const file = app.CreateFile(path, "rw")
-        file.WriteData(img, "bytes")
-        file.Close()
+        app.WriteFile(path, img, "base64")
         
         ui.showPopup( "Image has been saved!" )
     }
 }
  */
+
 
 /**
 @sample Video recorder in DroidScript
@@ -468,8 +331,5 @@ class Main extends App
     }
 }
  */
-
-
-
 
 

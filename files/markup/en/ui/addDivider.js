@@ -10,39 +10,13 @@
  * @returns Object Divider
  */
 
-ui.addDivider = function( parent, width, options )
-{
-	return new ui.Divider( parent, width, options )
-}
-
-ui.Divider = class extends ui.Control
-{
-	constructor( parent, width, options )
-	{
-		super( parent, width||1, "1px", options, "Divider" )
-		this._div.style.margin = "16px 0px"
-		if( this._options.includes("inset") ) {
-			this._style.width = "80%"
-			this._style.marginLeft = "10%"
-		}
-		this._render()
-	}
-
-	_render()
-	{
-		let e = React.createElement
-		this._ctl = e( window['MaterialUI'].Divider, { style: { ...this._style } }, null )
-		ReactDOM.render( this._ctl, this._div )
-	}
-
-	// Visible Properties
 
 	/** ## Properties
 	 * Here are the available setters and/or getters of the Divider Component.
 	 * @prop {String} color Sets or returns the color in hexadecimal format.
 	 */
 
-    // Inherited props
+
     /** @extern width */
     /** @extern height */
     /** @extern opacity */
@@ -78,7 +52,7 @@ ui.Divider = class extends ui.Control
      * Here are the methods for Divider component.
      */
 
-    // Inherited methods
+
     /** @extern setOnContextMenu */
     /** @extern animate */
     /** @extern setSize */
@@ -96,7 +70,7 @@ ui.Divider = class extends ui.Control
     /** @extern bringForward */
     /** @extern sendBackward */
 
-	set color( color ) { this._div.style.backgroundColor = color }
+	set color(color) { this._div.style.backgroundColor = color }
 	get color() { return this._div.style.backgroundColor }
 }
 

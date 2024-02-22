@@ -1,4 +1,3 @@
-
 /** # Progress
  * @abbrev prg
  * A progress refers to the visual indication of a task's completion status.
@@ -15,221 +14,172 @@
  * Otherwise if there's no variant option and the value is not null, it will automatically be a `determinate` variant.
  */
 
-ui.addProgress = function(parent, value, options, width, height)
-{
-	return new ui.Progress(parent, value, options, width, height)
+
+/** ## Properties
+ * Here are the available setters and getters for the Progress Component.
+ * @prop {Number} value Sets or returns the value of the progress control.
+ * @prop {String} type Sets or returns the type of the Progress Component. Values can be `Linear` or `Circular`
+ * @prop {String} variant Sets or returns the variant of the progress component. Values can be `Determinate` or `Indeterminate`.
+ * @prop {String} color Sets or returns the theme color. Values can be `Default` `Primary` or `Secondary`
+ * @prop {Number} circleSize Sets or returns the size of the circular progress control. This will assume a pixel unit.
+ * @prop {Number} thickness Sets or returns the thickness of the circular stroke.
+ */
+
+
+/** @extern width */
+/** @extern height */
+/** @extern opacity */
+/** @extern textSize */
+/** @extern textColor */
+/** @extern rotation */
+/** @extern fontFile */
+/** @extern visibility */
+/** @extern type */
+/** @extern absWidth */
+/** @extern absHeight */
+/** @extern backColor */
+/** @extern backImage */
+/** @extern isVisible */
+/** @extern top */
+/** @extern left */
+/** @extern absTop */
+/** @extern absLeft */
+/** @extern parent */
+/** @extern position */
+/** @extern margins */
+/** @extern padding */
+/** @extern options */
+/** @extern disabled */
+/** @extern border */
+/** @extern borderColor */
+/** @extern borderStyle */
+/** @extern cornerRadius */
+/** @extern el */
+/** @extern elStyle */
+
+/** ## Methods
+ * Here are the available methods for the Progress Component.
+ */
+
+
+/** @extern setOnContextMenu */
+/** @extern animate */
+/** @extern setSize */
+/** @extern show */
+/** @extern hide */
+/** @extern gone */
+/** @extern destroy */
+/** @extern setScale */
+/** @extern getPosition */
+/** @extern setMargins */
+/** @extern setPadding */
+/** @extern setPosition */
+/** @extern setBorder */
+/** @extern setCornerRadius */
+/** @extern bringForward */
+/** @extern sendBackward */
+
+setValue(val) {
+    if (this._props.variant == 'determinate') {
+        this._props.value = val
+        this._render()
+    }
 }
-
-ui.Progress = class extends ui.Control
-{
-	constructor(parent, value, options, width, height)
-	{
-		super(parent, width, height, options, "Progress")
-		this._value = value
-        this._div.style.display = "inline-flex"
-        this._div.style.alignItems = "center"
-        this._div.style.justifyContent = "center"
-		this._initProps()
-		this._render()
-	}
-
-	//Invisible methods
-	_initProps()
-	{
-        this._type = this._options.includes("circular") ? "circular" : "linear"
-		this._props.variant = (this._value || !this._options.includes('indeterminate')) ? "determinate" : "indeterminate"
-		this._props.color = this._options.includes('secondary') ? "secondary" : "primary"
-		if( this._props.variant=='determinate' ) this._props.value = this._value
-	}
-
-	_render()
-	{
-        if(this._type=="linear") this._style.width = "100%"
-		let e = React.createElement
-		let {CircularProgress, LinearProgress} = window['MaterialUI']
-		this._ctl = e( "circular"===this._type ? CircularProgress : LinearProgress, {
-				...this._props,
-				style: { ...this._style },
-				onContextMenu: this._onContextMenu.bind(this)
-			}, "" )
-		ReactDOM.render( this._ctl, this._div, () => {
-            if( this._fontFile ) this._setFontName();
-        })
-	}
-
-	// Visible Properties
-
-	/** ## Properties
-	 * Here are the available setters and getters for the Progress Component.
-	 * @prop {Number} value Sets or returns the value of the progress control.
-	 * @prop {String} type Sets or returns the type of the Progress Component. Values can be `Linear` or `Circular`
-	 * @prop {String} variant Sets or returns the variant of the progress component. Values can be `Determinate` or `Indeterminate`.
-	 * @prop {String} color Sets or returns the theme color. Values can be `Default` `Primary` or `Secondary`
-	 * @prop {Number} circleSize Sets or returns the size of the circular progress control. This will assume a pixel unit.
-	 * @prop {Number} thickness Sets or returns the thickness of the circular stroke.
-	 */
-
-    // Inherited props
-    /** @extern width */
-    /** @extern height */
-    /** @extern opacity */
-    /** @extern textSize */
-    /** @extern textColor */
-    /** @extern rotation */
-    /** @extern fontFile */
-    /** @extern visibility */
-    /** @extern type */
-    /** @extern absWidth */
-    /** @extern absHeight */
-    /** @extern backColor */
-    /** @extern backImage */
-    /** @extern isVisible */
-    /** @extern top */
-    /** @extern left */
-    /** @extern absTop */
-    /** @extern absLeft */
-    /** @extern parent */
-    /** @extern position */
-    /** @extern margins */
-    /** @extern padding */
-    /** @extern options */
-    /** @extern disabled */
-    /** @extern border */
-    /** @extern borderColor */
-    /** @extern borderStyle */
-    /** @extern cornerRadius */
-    /** @extern el */
-    /** @extern elStyle */
-	
-	/** ## Methods
-	 * Here are the available methods for the Progress Component.
-	 */
-
-    // Inherited methods
-    /** @extern setOnContextMenu */
-    /** @extern animate */
-    /** @extern setSize */
-    /** @extern show */
-    /** @extern hide */
-    /** @extern gone */
-    /** @extern destroy */
-    /** @extern setScale */
-    /** @extern getPosition */
-    /** @extern setMargins */
-    /** @extern setPadding */
-    /** @extern setPosition */
-    /** @extern setBorder */
-    /** @extern setCornerRadius */
-    /** @extern bringForward */
-    /** @extern sendBackward */
-
-	setValue( val ) {
-		if(this._props.variant == 'determinate')
-		{
-			this._props.value = val
-			this._render()
-		}
-	}
-    getValue() { return this._props.value }
-	set value( val ) {
-		if(this._props.variant == 'determinate')
-		{
-			this._props.value = val
-			this._render()
-		}
-	}
+getValue() { return this._props.value }
+	set value(val) {
+    if (this._props.variant == 'determinate') {
+        this._props.value = val
+        this._render()
+    }
+}
 	get value() { return this._props.value }
 
-	setType( type )
-	{
-		this._type = type ? type.toLowerCase() : "linear"
-		this._render()
-	}
-    getType() { return this._type }
-	set type( type )
-	{
-		this._type = type ? type.toLowerCase() : "linear"
-		this._render()
-	}
+setType(type)
+{
+    this._type = type ? type.toLowerCase() : "linear"
+    this._render()
+}
+getType() { return this._type }
+	set type(type)
+{
+    this._type = type ? type.toLowerCase() : "linear"
+    this._render()
+}
 	get type() { return this._type }
 
-	setVariant( variant )
-	{
-		this._props.variant = variant ? variant.toLowerCase() : "determinate"
-		this._render()
-	}
-    getVariant() { return this._props.variant }
-	set variant( variant )
-	{
-		this._props.variant = variant ? variant.toLowerCase() : "determinate"
-		this._render()
-	}
+setVariant(variant)
+{
+    this._props.variant = variant ? variant.toLowerCase() : "determinate"
+    this._render()
+}
+getVariant() { return this._props.variant }
+	set variant(variant)
+{
+    this._props.variant = variant ? variant.toLowerCase() : "determinate"
+    this._render()
+}
 	get variant() { return this._props.variant }
 
-	setColor( color )
-	{
-		this._props.color = color ? color.toLowerCase() : "primary"
-		this._render()
-	}
-    getColor() { return this._props.color }
-	set color( color )
-	{
-		this._props.color = color ? color.toLowerCase() : "primary"
-		this._render()
-	}
+setColor(color)
+{
+    this._props.color = color ? color.toLowerCase() : "primary"
+    this._render()
+}
+getColor() { return this._props.color }
+	set color(color)
+{
+    this._props.color = color ? color.toLowerCase() : "primary"
+    this._render()
+}
 	get color() { return this._props.color }
 
-	// TODO: setCircle size to be relative to the parent width size.
+// TODO: setCircle size to be relative to the parent width size.
 
-	setCircleSize( size )
-	{
-		if( this._type == "circular" )
-		{
-			this._props.size = size
-			this._render()
-		}
-	}
-    getCircleSize() { return this._props.size }
-	set circleSize( size )
-	{
-		if( this._type == "circular" )
-		{
-			this._props.size = size
-			this._render()
-		}
-	}
+setCircleSize(size)
+{
+    if (this._type == "circular") {
+        this._props.size = size
+        this._render()
+    }
+}
+getCircleSize() { return this._props.size }
+	set circleSize(size)
+{
+    if (this._type == "circular") {
+        this._props.size = size
+        this._render()
+    }
+}
 	get circleSize() { return this._props.size }
 
-	setThickness( thick )
-	{
-		if( this._type == "circular" )
-		{
-			this._props.thickness = thick
-			this._render()
-		}
-	}
-	set thickness( thick )
-	{
-		if( this._type == "circular" )
-		{
-			this._props.thickness = thick
-			this._render()
-		}
-	}
-	getThickness() { return this._props.thickness }
+setThickness(thick)
+{
+    if (this._type == "circular") {
+        this._props.thickness = thick
+        this._render()
+    }
+}
+	set thickness(thick)
+{
+    if (this._type == "circular") {
+        this._props.thickness = thick
+        this._render()
+    }
+}
+getThickness() { return this._props.thickness }
 	get thickness() { return this._props.thickness }
 
-    show() { this._div.style.display = "inline-flex"; }
+show() { this._div.style.display = "inline-flex"; }
 
-    set backImage( img ) {
-        this._backImageUrl = img;
-        this._style.backgroundColor = "";
-        this._style.backgroundImage = `url('`+img+`')`;
-        this._style.backgroundSize = "cover";
-        this._style.backgroundPosition = "center";
-        this._style.backgroundRepeat = "no-repeat";
-        this._render();
-    }
+    set backImage(img) {
+    this._backImageUrl = img;
+    this._style.backgroundColor = "";
+    this._style.backgroundImage = `url('` + img + `')`;
+    this._style.backgroundSize = "cover";
+    this._style.backgroundPosition = "center";
+    this._style.backgroundRepeat = "no-repeat";
+    this._render();
+}
 }
 
 /* --- parent_methods here ----- */
@@ -261,6 +211,7 @@ class Main extends App
     }
 }
  */
+
 
 /**
 @sample Setting progress value

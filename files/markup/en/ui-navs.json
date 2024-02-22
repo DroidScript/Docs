@@ -4,6 +4,7 @@
 	"Controls": [
 		"addButton",
 		"addCameraView",
+		"addCard",
 		"addCheckbox",
 		"addChip",
 		"addDropdown",

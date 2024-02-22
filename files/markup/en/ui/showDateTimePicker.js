@@ -1,5 +1,3 @@
-// Documentation: https://github.com/ripjar/material-datetime-picker
-
 /** # DateTimePicker
  * @abbrev dtp
  * A DateTimePicker in mobile UI design combines date and time selection in one interface.
@@ -17,38 +15,6 @@
  * If you want a date picker only see `DatePicker` or if you want time picker only see `TimePicker`
  */
 
-ui.showDateTimePicker = function(date, time, format, callback)
-{
-    var cb = callback;
-    if(typeof date == "function") cb = date, date = "", time = "", format = "";
-    else if(typeof time == "function") cb = time, time = "", format = "";
-    else if(typeof format == "function") cb = format, format = "";
-    return new ui.DateTimePicker(date, time, format, cb);
-}
-
-ui.DateTimePicker = class 
-{
-    constructor(date="", time="00:00:00", format="YYYY-MM-DD", callback)
-    {
-        this._submit = callback;
-        var defValue = date+"T"+time;
-        this._format = format;
-        this._value = null;
-        this._picker = new MaterialDatetimePicker({
-            format: this._format,
-            default: date ? moment( defValue ) : moment()
-        })
-        .on("submit", this._handleSubmit.bind(this))
-        .on("close", this._handleClose.bind(this))
-        .open()
-    }
-
-    _handleSubmit( val ) { this._value = val; }
-
-    _handleClose() {
-        if(this._submit && this._value) this._submit( this._value.format(this._format) );
-    }
-}
 
 /* --- parent_methods here ----- */
 
@@ -77,6 +43,7 @@ class Main extends App
     }
 }
  */
+
 
 /**
 @sample With initial values, format and custom theme
@@ -110,6 +77,7 @@ class Main extends App
     }
 }
  */
+
 
 /**
 @sample Dark mode

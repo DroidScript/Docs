@@ -1,4 +1,3 @@
-
 /** # Popover
  * @abbrev
  * Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.
@@ -14,164 +13,30 @@
  * @returns Object Popover
  */
 
-ui.showPopover = function(parent, text, position, width, height ) {
-    return new ui.Popover(parent, text, position, width, height )
-}
 
-ui.Popover = class
-{
-    constructor(parent, text="", pos="", width, height) {
-        this._ctl = null
-        this._div = document.createElement("div")	//Create DIV wrapper and add to parent layout.
-        _popups().appendChild( this._div )
-		this._id = "d"+_popups().children.length
-        pos = pos.toLowerCase().split(",")
-        this._child = text
-        this._ref = null
-        this._popRef = null
-        this._pos = pos[0] ? pos[0].toLowerCase() : "bc"
-        this._orig = pos[1] ? pos[1].toLowerCase() : "tc"
-        this._props = {
-            open: true,
-            anchorEl: parent._div
-        }
-        this._style = {
-            width: isFinite(width) ? (width*100)+"vw" : width,
-            height: isFinite(height) ? (height*100)+"vh" : height,
-            boxSizing: "border-box"
-        }
-        // font-file
-        this._fontFile = "";
-        this._fontName = "";
-        if( ui._fontFile ) {
-            this._fontFile = ui._fontFile;
-            this._fontName = ui._fontName;
-        }
-        this._initProps()
-        this._render()
-    }
+/** ## Properties
+ * These are the setter/getter properties available for the Popover Component.
+ * @prop {String} fontFile Sets or returns the font file use for the Popover.
+ * @prop {String} backImage Sets or returns the path to the background image.
+ */
 
-    _initProps() {
-        switch( this._pos ) {
-            case "tl": this._props.anchorOrigin = { vertical: "top", horizontal: "left" }; break;
-            case "tc": this._props.anchorOrigin = { vertical: "top", horizontal: "center" }; break;
-            case "tr": this._props.anchorOrigin = { vertical: "top", horizontal: "right" }; break;
-            case "cl": this._props.anchorOrigin = { vertical: "center", horizontal: "left" }; break;
-            case "cc": this._props.anchorOrigin = { vertical: "center", horizontal: "center" }; break;
-            case "cr": this._props.anchorOrigin = { vertical: "center", horizontal: "right" }; break;
-            case "bl": this._props.anchorOrigin = { vertical: "bottom", horizontal: "left" }; break;
-            case "br": this._props.anchorOrigin = { vertical: "bottom", horizontal: "right" }; break;
-            default: this._props.anchorOrigin = { vertical: "bottom", horizontal: "center" }
-        }
-        switch( this._orig ) {
-            case "tl": this._props.transformOrigin = { vertical: "top", horizontal: "left" }; break;
-            case "tc": this._props.transformOrigin = { vertical: "top", horizontal: "center" }; break;
-            case "tr": this._props.transformOrigin = { vertical: "top", horizontal: "right" }; break;
-            case "cl": this._props.transformOrigin = { vertical: "center", horizontal: "left" }; break;
-            case "cc": this._props.transformOrigin = { vertical: "center", horizontal: "center" }; break;
-            case "cr": this._props.transformOrigin = { vertical: "center", horizontal: "right" }; break;
-            case "bl": this._props.transformOrigin = { vertical: "bottom", horizontal: "left" }; break;
-            case "br": this._props.transformOrigin = { vertical: "bottom", horizontal: "right" }; break;
-            default: this._props.transformOrigin = { vertical: "bottom", horizontal: "center" }
-        }
-    }
-    _getRef (ref) {
-        this._ref = ref
-		if( this._ref ) {
-            if( typeof this._child == "object" ) this._ref.appendChild(this._child._div);
-        }
-    }
-    _handleClose() {
-        this._props.open = false
-        this._render()
-    }
-    _getPopver( ref ) {
-        if( ref ) {
-            this._popRef = ref;
-            if( this._fontName ) this._setFontName();
-        }
-    }
-    _setFontName() {
-        let els = this._popRef.querySelectorAll('*:not(:empty):not(.material-icons)');
-        els.forEach( m => m.style.fontFamily = this._fontName );
-    }
-    _render() {
-        var e = React.createElement, mui = window['MaterialUI']
-        this._ctl = e( mui.Popover,
-		{
-			...this._props,
-            onClose: this._handleClose.bind(this),
-            ref: this._getPopver.bind(this)
-		}, e( "div", {
-            ref: this._getRef.bind(this),
-            style: {
-                ...this._style,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
-            }
-        }, (this._child && typeof this._child == "string") ? e( mui.Typography, {
-            style: {
-                padding: "12px 16px"
-            }
-        }, this._child ) : null ) )
-        
-        ReactDOM.render( this._ctl, this._div )
-    }
 
-    /** ## Properties
-     * These are the setter/getter properties available for the Popover Component.
-     * @prop {String} fontFile Sets or returns the font file use for the Popover.
-     * @prop {String} backImage Sets or returns the path to the background image.
-     */
+/** ## Methods
+ * These are the methods available for the Popover Component.
+ */
 
-    /** ## Methods
-     * These are the methods available for the Popover Component.
-     */
 
-    set fontFile( file ) {
-        if( typeof(file) != "string" || !file.includes(".") ) return;
-        this._fontFile = file;
-        this._fontName = file.split('/').pop().split('.')[0] + this._id;
-        const style = document.createElement('style');
-        style.innerText = '@font-face {' +
-            'font-family: \''+ this._fontName +'\'; ' +
-            'src: url(\''+file+'\'); '+
-        '}';
-        document.head.appendChild(style);
-    }
-    get fontFile() { return this._fontFile ? this._fontFile : null }
-    setFontFile( file ) { this.fontFile = file; }
+/** ### show
+ * Show the popup dialog.
+ * $$ pop.show() $$
+ */
 
-    /** ### show
-     * Show the popup dialog.
-     * $$ pop.show() $$
-     */
-    show() {
-        this._props.open = true;
-        this._render();
-    }
 
-    /** ### hide
-     * Hide the popup dialog.
-     * $$ pop.hide() $$
-     */
-    hide() {
-        this._props.open = false;
-        this._render();
-    }
+/** ### hide
+ * Hide the popup dialog.
+ * $$ pop.hide() $$
+ */
 
-    set backImage( img ) {
-        this._backImageUrl = img;
-        this._style.backgroundColor = "";
-        this._style.backgroundImage = `url('`+img+`')`;
-        this._style.backgroundSize = "cover";
-        this._style.backgroundPosition = "center";
-        this._style.backgroundRepeat = "no-repeat";
-        this._render();
-    }
-    get backImage() { return this._backImageUrl; }
-}
 
 /* ## Examples */
 
@@ -197,6 +62,7 @@ class Main extends App
     }
 }
  */
+
 
 /**
 @sample Positioning
@@ -273,6 +139,7 @@ class Main extends App
     }
 }
  */
+
 
 /**
 @sample Advanced
