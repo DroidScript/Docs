@@ -506,3 +506,17 @@ class Main extends App
     }
 }
  */
+
+
+
+/**
+@sample Python Basic list
+from hybrid import ui
+
+def OnStart():
+            main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+            list = ["Javascript", "Java", "Python"]
+
+            lst = ui.addList(main, list,
+ */

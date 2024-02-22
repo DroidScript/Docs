@@ -632,3 +632,206 @@ class Main extends App
     }
 }
  */
+
+
+
+/**
+@sample Python Basic Image
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+
+    img = ui.addImage(main, image, "", 0.5)
+
+    img.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("You touched the mango!")
+ */
+
+/**
+@sample Python Avatar
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+
+    img = ui.addImage(main, image, "Avatar")
+
+    img.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("You touched the mango!")
+ */
+
+/**
+@sample Python Button
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    image = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+
+    img = ui.addImage(main, image, "Button", 0.5)
+
+    img.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("You touched the mango!")
+ */
+
+/**
+@sample Python Drawings
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    img = ui.addImage(main, "", "canvas", 1, 1)
+    img.lineCap = "round"
+    img.lineJoin = "round"
+
+    img.drawLine(130, 40, 300, 500, "#009688", 10)
+
+    img.drawSquare(320, 200, 200, "#683ab7")
+
+    img.drawCircle(400, 300, 250, "#00000000", "", 20)
+
+    img.drawArc(800, 200, 100, 40, 270, "#44009688", "#009688", 10)
+
+    points = [
+        [0, 0],
+        [400, 40],
+        [20, 40],
+        [300, 340],
+        [140, 500]
+    ]
+    img.lineCap = "square"
+    img.lineJoin = "miter"
+    img.drawPolyline(points, "blue", 10)
+ */
+
+/**
+@sample Python Text and Shapes
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    img = ui.addImage(main, "", "canvas", "300px", "500px")
+
+    img.drawRectangle(0, 0, 300, 500, "#fff", "", 4)
+
+    img.drawPolygon([
+        {"x": 300, "y": 0},
+        {"x": 300, "y": 500},
+        {"x": 0, "y": 500}
+    ])
+
+    img.textSize = 100
+    img.textWeight = "bold"
+    img.fillColor = "white"
+    img.drawText("Hello", 30, 225, "", "", 3)
+    img.drawText("World", 10, 325, "", "", 3)
+ */
+
+/**
+@sample Python Analog Clock
+from hybrid import ui
+import math
+
+def OnStart():
+    global img, time
+    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+
+    ui.addAppBar(main, "Analog Clock")
+
+    img = ui.addImage(main, "", "canvas", "300px", "300px")
+
+    img.lineCap = "round"
+    img.lineWidth = 4
+    img.strokeColor = "#009688"
+    img.lineJoin = "round"
+
+    time = ui.addText(main, "00:00:00", "h6,bold")
+    time.setMargins(0, 0.05, 0, 0)
+
+    draw()
+    app.SetInterval(draw.bind(), 1000)
+
+def draw():
+    img.clear()
+
+    x, y, n = 0, 0, 0
+
+    for n in range(1, 13):
+        x = 130 * math.cos(n * (math.pi / 6))
+        y = 130 * math.sin(n * (math.pi / 6))
+
+        x += 150
+        y += 150
+
+        img.drawCircle(x, y, 4, "#311b92")
+
+    date = datetime.datetime.now()
+
+    hour = date.hour if date.hour <= 12 else date.hour - 12
+    minutes = date.minute
+    seconds = date.second
+
+    hourAngle = hour * (math.pi / 6) - (math.pi / 2)
+    minAngle = minutes * (math.pi / 30) - (math.pi / 2)
+    secAngle = seconds * (math.pi / 30) - (math.pi / 2)
+
+    drawHand(hourAngle, 80, 7, "#311b92")
+    drawHand(minAngle, 100, 4, "#1e88e5")
+    drawHand(secAngle, 110, 2, "#d81b60")
+
+    img.drawCircle(150, 150, 8, "#000")
+
+    time.text = (
+        str(hour).zfill(2) + ":" +
+        str(minutes).zfill(2) + ":" +
+        str(seconds).zfill(2) +
+        " " +
+        ("PM" if date.hour > 12 else "AM")
+    )
+
+def drawHand(angle, length, width, color):
+    x = length * math.cos(angle)
+    y = length * math.sin(angle)
+
+    x += 150
+    y += 150
+
+    img.drawLine(150, 150, x, y, color, width)
+ */
+
+/**
+@sample Python Scratch Pad
+from hybrid import ui
+
+def OnStart():
+    color = "#000000"
+    main = ui.addLayout("main", "Linear", "Top", 1, 1)
+    main.setChildMargins(0, 0.01, 0, 0.01)
+
+    lay = ui.addLayout(main, "Linear", "Horizontal,Center,VCenter", 1)
+    lay.setChildMargins(0.01, 0, 0.01, 0)
+
+    colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]
+
+    ui.addText(lay, "Color", "H5")
+    for color in colors:
+        btn = ui.addButton(lay, "", color)
+        btn.onClick = changeColor
+
+def changeColor():
+    color = sender.backgroundColor
+ */

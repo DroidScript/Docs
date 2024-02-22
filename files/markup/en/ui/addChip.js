@@ -220,3 +220,100 @@ class Main extends App
     }
 }
  */
+
+
+
+
+/**
+@sample Python Chips
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.setChildMargins(0, 0.025, 0, 0.025)
+
+    # Add a default chip to the main layout
+    chip1 = ui.addChip(main, "Basic Chip")
+
+    # Add a callback handler for `onTouch` event.
+    chip1.setOnTouch(onTouch)
+
+    # Add a small primary chip
+    chip2 = ui.addChip(main, "Small Primary Chip", "Primary,Small")
+    chip2.setOnTouch(onTouch)
+
+    # Add a touchable secondary chip
+    chip3 = ui.addChip(main, "Secondary Chip", "Secondary,Touchable")
+    chip3.setOnTouch(onTouch)
+
+def onTouch(event):
+    ui.showPopup("You touched the chip!")
+
+sample = Main()
+sample.start()
+ */
+
+/**
+@sample Python Deletable chip
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a touchable and deletable chip
+    chip = ui.addChip(main, 'Deletable', 'Secondary,Touchable')
+
+    # Add callback hanlder for `onDelete` event.
+    # This will also add a delete icon to the chip.
+    chip.setOnDelete(onDelete)
+
+def onDelete():
+    ui.showPopup("Chip is deleted!")
+
+sample = Main()
+sample.start()
+ */
+
+/**
+@sample Python Custom styles
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a chip control to the main layout
+    chip = ui.addChip(main, "Shopping Cart")
+
+    # Add a leading icon to the chip control
+    chip.icon = "shopping_cart"
+
+    # Sets the icon color of the chip control
+    chip.iconColor = "#673ab7"
+
+    # Sets the text size of the chip control
+    chip.textSize = 14
+
+sample = Main()
+sample.start()
+ */
+
+/**
+@sample Python Avatar
+from hybrid import ui
+
+def OnStart():
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a chip control to the main layout
+    chip = ui.addChip(main, "Character Avatar")
+
+    # Set the avatar property of the main layout
+    chip.avatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
+
+sample = Main()
+sample.start()
+ */

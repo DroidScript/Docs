@@ -295,3 +295,112 @@ class Main extends App
     }
 }
  */
+
+
+
+/**
+@sample Python EnjineIO homepage
+from hybrid import ui
+
+def OnStart():
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    web = ui.addWebView(main, "https://enjine.io/", "", 0.9, 0.9)
+    web.setOnLoad(onLoad)
+
+def onLoad():
+    ui.showPopup("Website is loaded!")
+ */
+
+/**
+@sample Python Call a function inside the webview
+from hybrid import ui
+from native import app
+
+def OnStart():
+    global web
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    web = ui.addWebView(main, "", "", 0.9, 0.7)
+    web.setOnLoad(onLoad)
+    web.html = '''
+        <html>
+        <head>
+
+                function callFunc(name) {
+                    app.Alert("Hi " + name + " webview!")
+                }
+
+        </head>
+        <body>
+            <h2>This is an html.</h2>
+        </body>
+        </html>
+    '''
+
+def onLoad():
+    x = web.window.callFunc("John Doe")
+ */
+
+/**
+@sample Python Getting returned values from a function in a webview
+from hybrid import ui
+
+def OnStart():
+    global web
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    web = ui.addWebView(main, "", "", 0.9, 0.7)
+    web.setOnLoad(onLoad)
+    web.html = '''
+        <html>
+        <head>
+
+                function getProduct(num1, num2) {
+                    return num1 * num2
+                }
+
+        </head>
+        <body>
+            <h2>Get some product here!</h2>
+        </body>
+        </html>
+    '''
+
+def onLoad():
+    prod = web.window.getProduct(2, 3)
+    ui.showPopup("The product is " + str(prod))
+ */
+
+/**
+@sample Python Manipulate dom inside the webview
+from hybrid import ui
+
+def OnStart():
+    global loaded, web
+    loaded = False
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    web = ui.addWebView(main, "", "", 0.7, 0.5)
+    web.setOnLoad(onLoad)
+    web.html = '''
+        <html>
+        <head></head>
+        <body>
+            <h2 id="my-text">Hi from webview!</h2>
+        </body>
+        </html>
+    '''
+    btn = ui.addButton(main, "Change background color")
+    btn.setOnTouch(onTouch)
+
+def onLoad():
+    global loaded
+    loaded = True
+
+def onTouch(event):
+    if loaded:
+        dom = web.document
+        dom.body.style.backgroundColor = "green"
+        h2 = dom.getElementById("my-text")
+        h2.innerText = "New text from parent!"
+        h2.style.color = "white"
+    else:
+        ui.showPopup("Webview is not yet loaded!")
+ */

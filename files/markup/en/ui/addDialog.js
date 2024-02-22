@@ -186,3 +186,107 @@ class Main extends App
     }
 }
  */
+
+
+
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    global dlg
+    # Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add button to the main layout to show the dialog when clicked.
+    btn = ui.addButton(main, "Show Dialog", "Contained,Primary")
+    btn.setOnTouch(showDialog)
+
+    # Message to be displayed in the Dialog component
+    bodyText = "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
+
+    # Initialize the Dialog component with `Agree` and `Disagree` action buttons
+    dlg = ui.addDialog("Use Google's location service?", bodyText, "Disagree,Agree")
+
+def showDialog(event):
+    # Show the Dialog component when the button is clicked.
+    dlg.show()
+ */
+
+/**
+@sample Python NoCancel
+from hybrid import ui
+
+def OnStart():
+    global dlg
+    # Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    # Add a button to the main layout.
+    btn = ui.addButton(main, "Show Dialog", "Contained,Primary")
+
+    # Add a callback handler for `onTouch` event on the button.
+    btn.setOnTouch(showDialog)
+
+    # Message to display
+    bodyText = "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
+
+    # Initialize the Dialog component and pass a `NoCancel` option.
+    dlg = ui.addDialog("Use Google's location service?", bodyText, "Close,Agree", "NoCancel")
+
+    # Add a callback handler for `onAction` event on the Dialog component
+    dlg.setOnAction(onAction)
+
+def showDialog(event):
+    # Show the Dialog component when button is clicked
+    dlg.show()
+
+def onAction(action, index):
+    if action == "Close":
+        ui.showPopup("There you go.")
+        dlg.hide()
+    else:
+        ui.showPopup("Oops! You can't close me here.")
+ */
+
+/**
+@sample Python Adding controls to the dialog
+from hybrid import ui
+
+def OnStart():
+    global dlg, txt, tfd
+    # Creates a fullscreen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.setChildMargins(0.01, 0.01, 0.01, 0.01)
+
+    # Adds a text control to the main layout.
+    txt = ui.addText(main, "Email: ", "", 0.7)
+
+    # Adds a button to show the dialog.
+    btn = ui.addButton(main, "Show Dialog", "Contained,Primary")
+
+    # Add a callback handler for `ontouch` event on the button control
+    # to show the Dialog component
+    btn.setOnTouch(showDialog)
+
+    bodyText = "To subscribe to this website, please enter your email address here. We will send updates occasionally."
+
+    # Initialize the dialog.
+    dlg = ui.addDialog("Subscribe", bodyText, "Cancel,Subscribe")
+
+    # Add a callback handler for `onaction` event on the Dialog componenti
+    dlg.setOnAction(onAction)
+
+    # Adding textfield to the main layout
+    tfd = ui.addTextField(dlg.layout, "", "Filled")
+    tfd.label = "Email Address"
+
+def showDialog(event):
+    dlg.show()
+
+def onAction(action, index):
+    # Check the button that is clicked.
+    if action == "Subscribe":
+        # Change the text of the text control.
+        txt.text = "Email: " + tfd.text
+ */
