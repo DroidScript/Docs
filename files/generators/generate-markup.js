@@ -1,11 +1,23 @@
 
 const fs = require('fs');
 const fsp = require('fs/promises');
+const { keys } = require('./util');
 
 const baseIDAlways = false;
+let isUI = false;
 
 module.exports = {
     GenerateJSFile
+};
+
+/** @type {Obj<string>} */
+const jsTypes = {
+    str: "String",
+    num: "Number",
+    lst: "Array",
+    obj: "Object",
+    bin: "Boolean",
+    fnc: "Function",
 };
 
 /**
@@ -24,6 +36,7 @@ async function GenerateJSFile(dir, outDir, scope, path, obj, base = {}, _navs = 
 
     /** @type {Obj<string>} */
     const usedIDs = {};
+    isUI = scope === 'ui'
 
     let baseStr = "";
     for (const key in base) {
@@ -50,7 +63,7 @@ ${info} * ${_desc}
         if (methodData.retval) {
             const retData = parseParamType("", methodData.retval);
             if (retData.desc) retData.type += '-' + retData.desc;
-            baseStr += ` * @returns ${retData.type}\n`;
+            baseStr += ` * @returns ${makeType(retData.type)}\n`;
         }
 
         baseStr += ` */\n\n`;
@@ -64,7 +77,8 @@ ${info} * ${_desc}
     }
 
     for (const key in obj) {
-        let str = "// ------------- HEADER SECTION ------------- \n\n";
+        let str = ""
+        if (!isUI) str += "// ------------- HEADER SECTION ------------- \n\n";
         const fileName = key + ".js";
         const outputFile = folder + fileName;
         const data = obj[key];
@@ -77,7 +91,7 @@ ${info} * ${_desc}
         if (data.retval) {
             const retData = parseParamType("", data.retval);
             if (retData.desc) retData.type += '-' + retData.desc;
-            str += ` * @returns ${retData.type}\n`;
+            str += ` * @returns ${makeType(retData.type)}\n`;
         }
 
 
@@ -86,15 +100,20 @@ ${info} * ${_desc}
         // advanced description
         const mdFile = path + "/desc/" + key + ".md";
         if (data.desc && data.desc.includes(".md") && fs.existsSync(mdFile)) {
-            str += "// ------------- LONG DESCRIPTION ------------- \n\n";
+            if (!isUI) str += "// ------------- LONG DESCRIPTION ------------- \n\n";
             const cmpDesc = fs.readFileSync(mdFile, 'utf8');
             str += `/** @Description\n${cmpDesc.trim()}\n */\n\n`;
         }
 
         // methods
         if (data.subf) {
-            str += `\n\n// ------------- VISIBLE METHODS & PROPERTIES ------------- \n\n`;
-            str += renderSubf(data, usedIDs);
+            if (!data.abbrev && key != "_tsxdefs")
+                console.error(`missing abbrev for ${scope}.${data.name}`)
+            if (isUI) str += renderSubfNew(data, usedIDs);
+            else {
+                str += `\n\n// ------------- VISIBLE METHODS & PROPERTIES ------------- \n\n`;
+                str += renderSubf(data, usedIDs);
+            }
         }
 
         // samples
@@ -106,7 +125,8 @@ ${info} * ${_desc}
         if (fs.existsSync(pysampFile)) samples += renderSamples(pysampFile, "Python");
 
         if (samples) {
-            str += "\n\n// ------------- SAMPLES ------------- \n\n";
+            if (isUI) str += "/* ## Examples */"
+            else str += "\n\n// ------------- SAMPLES ------------- \n\n";
             str += samples;
         }
 
@@ -132,12 +152,15 @@ function renderInfo(scope, name, data) {
     if (data.abbrev && data.abbrev !== data.name) jdocLine += data.abbrev + " = ";
     if (scope !== "global" ? scope + '.' : '') jdocLine += scope + '.';
     jdocLine += data.name || name;
-    if (!data.isval) jdocLine += `(${data.pNames?.join(", ") || ''})`;
+    if (!data.isval) {
+        const args = data.pNames?.join(", ") || ''
+        jdocLine += isUI && args ? `( ${args} )` : `(${args})`
+    }
 
     return `
 /** # ${name} #
 ${info} * ${_desc}
- * $$ ${jdocLine} $$ 
+ * $$ ${jdocLine} $$
 `;
 }
 
@@ -155,27 +178,34 @@ function renderSubf(data, usedIDs) {
             if (/^#[a-z]/i.test(methodData)) methodData = methodData.slice(1);
             if (isDef) methodData = methodData.replace(/\n/g, "\\n").replace(/\t/g, "\\t");
             const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || isDef || '';
-            str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
+            if (isUI) str += `\n/** @extern ${method}${addId && ' ' + methodData} */`;
+            else str += `\n/** @extern ${method}${addId && ' ' + methodData} */\n`;
             usedIDs[method] ||= methodData;
         }
 
         else if (methodData.isval) {
             const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc}`;
-            str += `
+            const desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : "";
+            if (isUI) str += `/** @prop {${makeType(methodData.retval)}} ${method} ${desc} */\n`
+            else
+                str += `
 /** ### ${method}
  * @prop${brief || ''}
- * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : ""}
- * @returns ${methodData.retval}
+ * ${desc}
+ * @returns ${makeType(methodData.retval)}
  */
-\n                    `;
+\n`;
         }
 
         else {
-            const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc || ''}`;
+            let brief = methodData.shortDesc ? `\n * @brief ${methodData.shortDesc || ''}` : '';
+            if (!isUI) brief = '###' + brief;
+            let args = methodData.pNames ? methodData.pNames.join(", ") : "";
+            if (isUI && args) args = ` ${args} `;
             str += `
-/** ### ${method} ###${brief || ''}
+/** ### ${method} ${brief || ''}
  * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : ""}
- * $$ ${data.abbrev}.${method}(${methodData.pNames ? methodData.pNames.join(", ") : ""}) $$
+ * $$ ${data.abbrev}.${method}(${args}) $$
 `;
 
             str += extractParams(methodData, usedIDs);
@@ -183,13 +213,72 @@ function renderSubf(data, usedIDs) {
             if (methodData.retval) {
                 const retData = parseParamType("", methodData.retval);
                 retData.type += retData.desc ? '-' + retData.desc : '';
-                str += ` * @returns ${retData.type}\n`;
+                str += ` * @returns ${makeType(retData.type)}\n`;
             }
 
             str += ` */\n\n`;
         }
     }
     return str;
+}
+
+/** @type {(data: UndefinedPartial<DSMethod>, usedIDs: Obj<string>) => string} */
+function renderSubfNew(data, usedIDs) {
+    let propStr = "";
+    let inheritStr = "";
+    let metStr = "";
+    for (const method in data.subf) {
+        let methodData = data.subf[method];
+
+        if (typeof methodData === "string") {
+            const isDef = data.name === "_tsxdefs";
+            if (!isDef && !methodData.startsWith('#'))
+                throw Error("Unexpected subf string " + methodData);
+
+            if (/^#[a-z]/i.test(methodData)) methodData = methodData.slice(1);
+            if (isDef) methodData = methodData.replace(/\n/g, "\\n").replace(/\t/g, "\\t");
+            const addId = baseIDAlways || usedIDs[method] && usedIDs[method] !== methodData || isDef || '';
+            inheritStr += `/** @extern ${method}${addId && ' ' + methodData} */\n`;
+            usedIDs[method] ||= methodData;
+        }
+
+        else if (methodData.isval) {
+            const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc}`;
+            const desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : "";
+            propStr += ` * @prop {${makeType(methodData.retval)}} ${method} ${desc}\n`
+        }
+
+        else {
+            let brief = methodData.shortDesc ? `\n * @brief ${methodData.shortDesc || ''}` : '';
+            let args = methodData.pNames ? methodData.pNames.join(", ") : "";
+            if (isUI && args) args = ` ${args} `;
+            metStr += `
+/** ### ${method} ${brief || ''}
+ * ${methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : ""}
+ * $$ ${data.abbrev}.${method}(${args}) $$
+`;
+
+            metStr += extractParams(methodData, usedIDs);
+
+            if (methodData.retval) {
+                const retData = parseParamType("", methodData.retval);
+                retData.type += retData.desc ? '-' + retData.desc : '';
+                metStr += ` * @returns ${makeType(retData.type)}\n`;
+            }
+
+            metStr += ` */\n`;
+        }
+    }
+
+    if (propStr) propStr = `/** ## Properties
+Here are the available setters and getters.
+${propStr} */\n`;
+
+    if (metStr) metStr = `/** ## Methods
+* Here are the methods available.\n*/\n`+ metStr;
+
+    if (inheritStr) metStr = `\n// Inherited props\n${inheritStr}\n` + metStr;
+    return propStr + metStr;
 }
 
 const split0 = (s = '', t = '') => s.substring(0, s.indexOf(t)) || s;
@@ -199,8 +288,13 @@ const split1 = (s = '', t = '') => s.slice(s.indexOf(t)).substring(1);
 function parseParamType(pName, pDef) {
     let pDesc = "", pType = "";
     if (typeof pDef === "object" || pName === "callback" && !pDef) {
-        pType = "fnc_json";
-        pDesc = pDef && JSON.stringify(pDef);
+        if (isUI) {
+            pType = "Function";
+            pDesc = parseCallbackNew(typeof pDef === "object" ? pDef : {});
+        } else {
+            pType = "fnc_json";
+            pDesc = pDef && JSON.stringify(pDef);
+        }
     } else if (typeof pDef === "string") {
         pType = split0(pDef, "-");
         pDesc = split1(pDef, "-");
@@ -211,6 +305,26 @@ function parseParamType(pName, pDef) {
     return { name, type: pType, desc: pDesc.replace(/\n/g, "\\n") };
 }
 
+/** @param {DSFunction} type  */
+function parseCallbackNew(type) {
+    const args = []
+    if (!type.pNames || !type.pTypes) return ' --->'
+
+    for (const i in type.pNames) {
+        const argTypeStr = type.pTypes[i];
+        if (typeof argTypeStr !== "string") {
+            console.warn("warning: untested fnc_json in callback");
+            args.push(`@arg {fnc_json} ${JSON.stringify(argTypeStr)}`);
+            continue;
+        }
+
+        const argType = split0(argTypeStr, "-");
+        const argDesc = split1(argTypeStr, "-");
+        args.push(`@arg {${makeType(argType)}} ${type.pNames[i].trim()} ${argDesc}`);
+    }
+    return `The callback to be called. ---> ` + args.join(" ");
+}
+
 /** @type {(methodData:DSFunction, usedIDs:Obj<string>) => string} */
 function extractParams(methodData, usedIDs) {
     if (methodData.params) return ` * @param ${usedIDs[methodData.params] || methodData.params}\n`;
@@ -219,7 +333,7 @@ function extractParams(methodData, usedIDs) {
     if (methodData.pNames && methodData.pTypes) {
         for (let i = 0; i < methodData.pNames.length; i++) {
             const pData = parseParamType(methodData.pNames[i], methodData.pTypes[i]);
-            str += ` * @param {${pData.type}} ${pData.name} ${pData.desc}\n`;
+            str += ` * @param {${makeType(pData.type)}} ${pData.name} ${pData.desc}\n`;
         }
     }
     return str;
@@ -238,14 +352,22 @@ function renderSamples(file, ext = "") {
             let cod = samp.substring(samp.indexOf(">") + 1).trim();
             cod = cod.replace(/\*\//g, "*_");
             str += `
-    
-/**
+\n/**
 @sample ${ext && ext + " "}${name}
 ${cod}
- */
-    
-            `;
+ */\n\n`;
+            if (isUI) str = str.slice(0, -2)
         }
     });
     return str;
+}
+
+/** @param {string|DSFunction} [type] */
+function makeType(type) {
+    if (!isUI) return type;
+    if (typeof type != "string") throw Error("Unsupported makeType for callbacks");
+
+    const ta = type.split("-");
+    ta[0] = jsTypes[ta[0]] || ta[0];
+    return ta.join("-");
 }
