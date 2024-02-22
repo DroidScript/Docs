@@ -11,158 +11,134 @@
  */
 
 
-    /** ## Properties
-     * Here are the setter and getter properties for the VideoView component.
-     */
+/** ## Properties
+ * Here are the setter and getter properties for the VideoView component.
+ */
 
 
-    /** @prop {string} url Sets or returns the video source url. */
-    set url( val ) { this._ctl.src = val }
-    get url() { return this._ctl.src }
+/** @prop {string} url Sets or returns the video source url. */
+/** @prop {number} volume Sets or returns the video volume. Values can be [0-1]. */
+/** @prop {number} duration Returns the time duration of the video in seconds. */
+/** @prop {boolean} played Returns a boolean whether the video is currently playing. */
+/** @prop {boolean} paused Returns a boolean whether the video is paused. */
+/** @prop {boolean} completed Returns a boolean whether the video playback is completed. */
+/** @prop {boolean} muted Returns a boolean whether the video audio is muted. */
+/** @prop {boolean} seeking Returns a boolean whether the user is currently seeking in the video playback seekbar. */
+/** @prop {number} speed Sets or returns the playback speed. */
+/** @prop {boolean} loop Sets or returns a boolean whether the video should start over again when completed. */
 
-    /** @prop {number} volume Sets or returns the video volume. Values can be [0-1]. */
-    set volume( val ) { this._ctl.volume = val }
-    get volume() { return this._ctl.volume }
-
-    /** @prop {number} duration Returns the time duration of the video in seconds. */
-    get duration() { return this._ctl.duration }
-
-    /** @prop {boolean} played Returns a boolean whether the video is currently playing. */
-    get played() { return this._ctl.played }
-
-    /** @prop {boolean} paused Returns a boolean whether the video is paused. */
-    get paused() { return this._ctl.paused }
-
-    /** @prop {boolean} completed Returns a boolean whether the video playback is completed. */
-    get completed() { return this._ctl.ended }
-
-    /** @prop {boolean} muted Returns a boolean whether the video audio is muted. */
-    set muted( val ) { this._ctl.muted = val }
-    get muted() { return this._ctl.muted }
-
-    /** @prop {boolean} seeking Returns a boolean whether the user is currently seeking in the video playback seekbar. */
-    get seeking() { return this._ctl.seeking }
-
-    /** @prop {number} speed Sets or returns the playback speed. */
-    set speed( val ) { this._ctl.playbackRate = val }
-    get speed() { return this._ctl.playbackRate }
-
-    /** @prop {boolean} loop Sets or returns a boolean whether the video should start over again when completed. */
-    set loop( val ) { this._ctl.loop = val }
-    get loop() { return this._ctl.loop }
-
-    /** ## Methods
-     * Here are the methods for the VideoView component.
-     */
+/** ## Methods
+ * Here are the methods for the VideoView component.
+ */
 
 
-    /** ### enterFullscreen
-     * Play video in fullscreen if supported.
-     * $$ vid.enterFullscreen()
-     */
+/** ### enterFullscreen
+ * Play video in fullscreen if supported.
+ * $$ vid.enterFullscreen()
+ */
 
 
-    /** ### exitFullscreen
-     * Exit fullscreen if video is playing fullscreen.
-     * $$ vid.exitFullscreen()
-     */
+/** ### exitFullscreen
+ * Exit fullscreen if video is playing fullscreen.
+ * $$ vid.exitFullscreen()
+ */
 
 
-    /** ### play
-     * Play the video.
-     * $$ vid.play()
-     */
+/** ### play
+ * Play the video.
+ * $$ vid.play()
+ */
 
 
-    /** ### stop
-     * Stop the playing video.
-     * $$ vid.stop()
-     */
+/** ### stop
+ * Stop the playing video.
+ * $$ vid.stop()
+ */
 
 
-    /** ### setOnReady
-     * Sets a callback handler when the video has buffered enough to begin playing. Video might not completely loaded for this event to be fired.
-     * $$ vid.setOnReady( cb )
-     * @param {function} cb The callback function to be called. ---> @arg {object} info Basic information of the video such as duration and dimensions.
-     */
+/** ### setOnReady
+ * Sets a callback handler when the video has buffered enough to begin playing. Video might not completely loaded for this event to be fired.
+ * $$ vid.setOnReady( cb )
+ * @param {function} cb The callback function to be called. ---> @arg {object} info Basic information of the video such as duration and dimensions.
+ */
 
 
-    /** ### setOnPlay
-     * Sets a callback handler when the video is played by the user or programmatically.
-     * $$ vid.setOnPlay( cb )
-     * @param {function} cb The callback function to be called.
-     */
+/** ### setOnPlay
+ * Sets a callback handler when the video is played by the user or programmatically.
+ * $$ vid.setOnPlay( cb )
+ * @param {function} cb The callback function to be called.
+ */
 
 
-    /** ### setOnPause
-     * Sets a callback handler when the video is pause by the user or programmatically.
-     * $$ vid.setOnPause( cb )
-     * @param {function} cb The callback function to be called.
-     */
+/** ### setOnPause
+ * Sets a callback handler when the video is pause by the user or programmatically.
+ * $$ vid.setOnPause( cb )
+ * @param {function} cb The callback function to be called.
+ */
 
 
-    /** ### setOnComplete
-     * Sets a callback handler when the video playback is completed.
-     * $$ vid.setOnComplete( cb )
-     * @param {function} cb The callback function to be called.
-     */
+/** ### setOnComplete
+ * Sets a callback handler when the video playback is completed.
+ * $$ vid.setOnComplete( cb )
+ * @param {function} cb The callback function to be called.
+ */
 
 
-    /** ### setOnError
-     * Sets a callback function when an error occurs while the video source is being loaded.
-     * $$ vid.setOnError( cb )
-     * @param {function} cb The callback function to be called.
-     */
+/** ### setOnError
+ * Sets a callback function when an error occurs while the video source is being loaded.
+ * $$ vid.setOnError( cb )
+ * @param {function} cb The callback function to be called.
+ */
 
 
-    /** ### setOnSeek
-     * Sets a callback handler when seeking event is completed.
-     * $$ vid.setOnSeek( cb )
-     * @param {function} cb The callback function to be called. ---> @arg {number} pos The playback position in seconds.
-     */
+/** ### setOnSeek
+ * Sets a callback handler when seeking event is completed.
+ * $$ vid.setOnSeek( cb )
+ * @param {function} cb The callback function to be called. ---> @arg {number} pos The playback position in seconds.
+ */
 
 
-    /** ### setOnSeeking
-     * Sets a callback handler when seeking event is active. Called when the user touches or slides the seekbar track.
-     * $$ vid.setOnSeeking( cb )
-     * @param {function} cb The callback function to be called. ---> @arg {number} pos The playback position in seconds.
-     */
+/** ### setOnSeeking
+ * Sets a callback handler when seeking event is active. Called when the user touches or slides the seekbar track.
+ * $$ vid.setOnSeeking( cb )
+ * @param {function} cb The callback function to be called. ---> @arg {number} pos The playback position in seconds.
+ */
 
 
-    /** ### setOnVolume
-     * Sets a callback function when the volume of the video changes.
-     * $$ vid.setOnVolume( cb )
-     * @param {function} cb The callback function. ---> @arg {number} volume The audio volume of the video.
-     */
+/** ### setOnVolume
+ * Sets a callback function when the volume of the video changes.
+ * $$ vid.setOnVolume( cb )
+ * @param {function} cb The callback function. ---> @arg {number} volume The audio volume of the video.
+ */
 
 
-    /** ### setOnProgress
-     * Sets a callback handler to be be called while the video is playing. This is usefull when you have a custom progress bar where to constantly update the playback time.
-     * $$ vid.setOnProgress( cb )
-     * @param {function} cb The callback function. ---> @arg {number} time The elapsed playback time in seconds.
-     */
+/** ### setOnProgress
+ * Sets a callback handler to be be called while the video is playing. This is usefull when you have a custom progress bar where to constantly update the playback time.
+ * $$ vid.setOnProgress( cb )
+ * @param {function} cb The callback function. ---> @arg {number} time The elapsed playback time in seconds.
+ */
 
 
-    /** ### load
-     * Reloads the video source.
-     * $$ vid.load()
-     */
+/** ### load
+ * Reloads the video source.
+ * $$ vid.load()
+ */
 
 
-    /** ### seekTo
-     * Sets the playback position.
-     * $$ vid.seekTo( time )
-     * @param {number} time The playback position in seconds.
-     */
+/** ### seekTo
+ * Sets the playback position.
+ * $$ vid.seekTo( time )
+ * @param {number} time The playback position in seconds.
+ */
 
 
-    /** ### capture
-     * Capture an image in the playback. This will return an image data which you can save or manipulate.
-     * $$ vid.capture(type, format)
-     * @param {string} type The image type. Values are "jpg", "png", "webp", "gif". Default is "jpg".
-     * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer".
-     * @return object
-     */
+/** ### capture
+ * Capture an image in the playback. This will return an image data which you can save or manipulate.
+ * $$ vid.capture(type, format)
+ * @param {string} type The image type. Values are "jpg", "png", "webp", "gif". Default is "jpg".
+ * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer".
+ * @return object
+ */
 
 
 /**

@@ -37,181 +37,119 @@
  */
 
 
-    /** ## Properties
-     * These are the available setter and getter properties for the Card component.
-     * @prop {String} headerTitle Sets or returns the card header title.
-     * @prop {String} headerSubtitle Sets or returns the card header subheader or subtitle.
-     * @prop {String} headerAvatar Sets or returns the card header avatar. Can be a character or a path to an image.
-     * @prop {String} headerAction Sets or returns the card header action.
-     * @prop {String} headerAvatarColor Sets or returns the card header avatar color in css supported color format.
-     * @prop {String} media Sets or returns the card media.
-     * @prop {String} bodyTitle Sets or returns the title of the card content.
-     * @prop {String} bodyText Sets or returns the text of the card content.
-     * @prop {Array} actions Sets or returns the list of card actions. If `actionType` is an `"icon"`, provide a list of material icon fonts.
-     * @prop {Object} layout Returns the div element of the card content. It is useful when you want to add ui components into the content of the card.
-     * @prop {Object} actionType Sets or returns the type of actions in the card. Values can be `"button"` or `"icon"`. If `"icon"` please provide a material icon actions.
-     * @prop {Number} cornerRadius Sets or returns the corner radius.
-     * @prop {Number} elevation Sets or returns the elevation of the card.
-     */
+/** ## Properties
+ * These are the available setter and getter properties for the Card component.
+ * @prop {String} headerTitle Sets or returns the card header title.
+ * @prop {String} headerSubtitle Sets or returns the card header subheader or subtitle.
+ * @prop {String} headerAvatar Sets or returns the card header avatar. Can be a character or a path to an image.
+ * @prop {String} headerAction Sets or returns the card header action.
+ * @prop {String} headerAvatarColor Sets or returns the card header avatar color in css supported color format.
+ * @prop {String} media Sets or returns the card media.
+ * @prop {String} bodyTitle Sets or returns the title of the card content.
+ * @prop {String} bodyText Sets or returns the text of the card content.
+ * @prop {Array} actions Sets or returns the list of card actions. If `actionType` is an `"icon"`, provide a list of material icon fonts.
+ * @prop {Object} layout Returns the div element of the card content. It is useful when you want to add ui components into the content of the card.
+ * @prop {Object} actionType Sets or returns the type of actions in the card. Values can be `"button"` or `"icon"`. If `"icon"` please provide a material icon actions.
+ * @prop {Number} cornerRadius Sets or returns the corner radius.
+ * @prop {Number} elevation Sets or returns the elevation of the card.
+ */
 
 
-    /** @extern width */
-    /** @extern height */
-    /** @extern opacity */
-    /** @extern textSize */
-    /** @extern textColor */
-    /** @extern rotation */
-    /** @extern fontFile */
-    /** @extern visibility */
-    /** @extern type */
-    /** @extern absWidth */
-    /** @extern absHeight */
-    /** @extern backColor */
-    /** @extern backImage */
-    /** @extern isVisible */
-    /** @extern top */
-    /** @extern left */
-    /** @extern absTop */
-    /** @extern absLeft */
-    /** @extern parent */
-    /** @extern position */
-    /** @extern margins */
-    /** @extern padding */
-    /** @extern options */
-    /** @extern disabled */
-    /** @extern border */
-    /** @extern borderColor */
-    /** @extern borderStyle */
-    /** @extern cornerRadius */
-    /** @extern el */
-    /** @extern elStyle */
-    
-    set media( img ) {
-        this._media = img;
-        this._render();
-    }
-    get media() { return this._media; }
-
-    set actions( icons ) {
-        this._actions = icons;
-        if(typeof icons == "string") this._actions = icons.split( "," );
-        this._render();
-    }
-    get actions() { return this._actions; }
-
-    set headerAvatar( avatar ) {
-        this._headerAvatar = avatar;
-        this._render();
-    }
-    get headerAvatar() { return this._headerAvatar; }
-
-    set headerTitle( title ) {
-        this._headerTitle = title;
-        this._render();
-    }
-    get headerTitle() { return this._headerTitle; }
-    
-    set headerSubtitle( subtitle ) {
-        this._headerSubtitle = subtitle;
-        this._render();
-    }
-    get headerSubtitle() { return this._headerSubtitle; }
-
-    set headerAction( action ) {
-        this._headerAction = action;
-        this._render();
-    }
-    get headerAction() { return this._headerAction; }
-
-    set headerAvatarColor( clr ) {
-        let el = this._div.querySelector(".MuiCardHeader-avatar .MuiAvatar-root");
-        if( el ) el.style.backgroundColor = clr;
-    }
-    get headerAvatarColor() {
-        let el = this._div.querySelector(".MuiCardHeader-avatar .MuiAvatar-root");
-        if( el ) return  el.style.backgroundColor;
-        return null;
-    }
-
-    set bodyTitle( title ) {
-        this._bodyTitle = title;
-        this._render();
-    }
-    get bodyTitle() { return this._bodyTitle; }
-
-    set bodyText( txt ) {
-        this._bodyText = txt;
-        this._render();
-    }
-    get bodyText() { return this._bodyText; }
-
-    get layout() { return this._contentEL; }
-
-    set actionType(type = "button") {
-        type = type.toLowerCase();
-        this._actionType = type;
-        this._render();
-    }
-    get actionType() { return this._actionType; }
-
-    set elevation( val ) {
-        this._cardOpt.elevation = val;
-        this._render();
-    }
-    get elevation() { return this._cardOpt.elevation; }
-
-    /** ## Methods
-     * These are the methods for `Card` component.
-     */
+/** @extern width */
+/** @extern height */
+/** @extern opacity */
+/** @extern textSize */
+/** @extern textColor */
+/** @extern rotation */
+/** @extern fontFile */
+/** @extern visibility */
+/** @extern type */
+/** @extern absWidth */
+/** @extern absHeight */
+/** @extern backColor */
+/** @extern backImage */
+/** @extern isVisible */
+/** @extern top */
+/** @extern left */
+/** @extern absTop */
+/** @extern absLeft */
+/** @extern parent */
+/** @extern position */
+/** @extern margins */
+/** @extern padding */
+/** @extern options */
+/** @extern disabled */
+/** @extern border */
+/** @extern borderColor */
+/** @extern borderStyle */
+/** @extern cornerRadius */
+/** @extern el */
+/** @extern elStyle */
 
 
-    /** @extern setOnContextMenu */
-    /** @extern animate */
-    /** @extern setSize */
-    /** @extern show */
-    /** @extern hide */
-    /** @extern gone */
-    /** @extern destroy */
-    /** @extern setScale */
-    /** @extern getPosition */
-    /** @extern setMargins */
-    /** @extern setPadding */
-    /** @extern setPosition */
-    /** @extern setBorder */
-    /** @extern setCornerRadius */
-    /** @extern bringForward */
-    /** @extern sendBackward */
-
-    /** ### addHeaderItems
-     * Add header items to the card. Using this method is faster than setting the individual header property.
-     * $$ crd.addHeaderItems(title, subtitle, avatar, action) $$
-     * @param {String} title The title of the card.
-     * @param {String} subtitle The subheader of the card.
-     * @param {String} avatar Can be a char or a path to an image.
-     * @param {String} action Material icon font.
-     */
 
 
-    /** ### addBodyItems
-     * Add card body items. Using this method is faster than setting the individual.
-     * $$ crd.addBodyItems(title, text) $$
-     * @param {String} title The title of the content of the card.
-     * @param {String} text The description of the card.
-     */
 
 
-    /** ### setOnAction
-     * Add a callback function to be called when a card action is click.
-     * $$ crd.setOnAction( cb ) $$
-     * @param {Function} cb The callback function. ---> @arg {String} icon Material icon. @arg {Number} index The index of the action.
-     */
 
 
-    /** ### setOnHeaderAction
-     * Add a callback function to be called when the header action icon is click.
-     * $$ crd.setOnHeaderAction( cb ) $$
-     * @param {Function} cb The callback function.
-     */
+
+
+
+
+
+/** ## Methods
+ * These are the methods for `Card` component.
+ */
+
+
+/** @extern setOnContextMenu */
+/** @extern animate */
+/** @extern setSize */
+/** @extern show */
+/** @extern hide */
+/** @extern gone */
+/** @extern destroy */
+/** @extern setScale */
+/** @extern getPosition */
+/** @extern setMargins */
+/** @extern setPadding */
+/** @extern setPosition */
+/** @extern setBorder */
+/** @extern setCornerRadius */
+/** @extern bringForward */
+/** @extern sendBackward */
+
+/** ### addHeaderItems
+ * Add header items to the card. Using this method is faster than setting the individual header property.
+ * $$ crd.addHeaderItems(title, subtitle, avatar, action) $$
+ * @param {String} title The title of the card.
+ * @param {String} subtitle The subheader of the card.
+ * @param {String} avatar Can be a char or a path to an image.
+ * @param {String} action Material icon font.
+ */
+
+
+/** ### addBodyItems
+ * Add card body items. Using this method is faster than setting the individual.
+ * $$ crd.addBodyItems(title, text) $$
+ * @param {String} title The title of the content of the card.
+ * @param {String} text The description of the card.
+ */
+
+
+/** ### setOnAction
+ * Add a callback function to be called when a card action is click.
+ * $$ crd.setOnAction( cb ) $$
+ * @param {Function} cb The callback function. ---> @arg {String} icon Material icon. @arg {Number} index The index of the action.
+ */
+
+
+/** ### setOnHeaderAction
+ * Add a callback function to be called when the header action icon is click.
+ * $$ crd.setOnHeaderAction( cb ) $$
+ * @param {Function} cb The callback function.
+ */
 
 
 /* --- parent_methods here ----- */

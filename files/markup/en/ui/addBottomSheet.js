@@ -12,52 +12,52 @@
  */
 
 
-    /** ## Properties
-     * These are the setter and getter properties available for the BottomSheet component.
-     * @prop {Object} layout Returns the layout of the bottomsheet. This is where you add your ui components.
-     * @prop {String} leftActionIcon Sets or returns the left action icon.
-     * @prop {String} rightActionIcon Sets or returns the right action icon.
-     * @prop {String} title Sets or returns the bottomsheet title.
-     * @prop {String} description Sets or returns the bottomsheet description.
-     */
+/** ## Properties
+ * These are the setter and getter properties available for the BottomSheet component.
+ * @prop {Object} layout Returns the layout of the bottomsheet. This is where you add your ui components.
+ * @prop {String} leftActionIcon Sets or returns the left action icon.
+ * @prop {String} rightActionIcon Sets or returns the right action icon.
+ * @prop {String} title Sets or returns the bottomsheet title.
+ * @prop {String} description Sets or returns the bottomsheet description.
+ */
 
 
-    /** ## Methods
-     * These are the methods available for the BottomSheet component.
-     */
+/** ## Methods
+ * These are the methods available for the BottomSheet component.
+ */
 
 
-    /** ### show
-     * $$ bts.show() $$
-     * Show the bottom sheet.
-     */
+/** ### show
+ * $$ bts.show() $$
+ * Show the bottom sheet.
+ */
 
 
-    /** ### hide
-     * $$ bts.hide() $$
-     * Hide the bottom sheet.
-     */
+/** ### hide
+ * $$ bts.hide() $$
+ * Hide the bottom sheet.
+ */
 
 
-    /** ### setOnAction
-     * Add a callback handler when the left and right action is click when they are provided.
-     * $$ bts.setOnAction(name, pos) $$
-     * @param {Function} cb A callback handler when the right or left action is click. The action `name` and `action icon` will be passed to the callback respectively. ---> @arg {String} name The action name. Can be `"leftAction"` or `"rightAction"`. @arg {String} icon Material icon font for the action. 
-     */
+/** ### setOnAction
+ * Add a callback handler when the left and right action is click when they are provided.
+ * $$ bts.setOnAction(name, pos) $$
+ * @param {Function} cb A callback handler when the right or left action is click. The action `name` and `action icon` will be passed to the callback respectively. ---> @arg {String} name The action name. Can be `"leftAction"` or `"rightAction"`. @arg {String} icon Material icon font for the action. 
+ */
 
 
-    /** ### setOnOpen
-     * Add a callback handler on `open` event.
-     * $$ bts.setOnOpen( cb ) $$
-     * @param {Function} cb The callback function to be called.
-     */
+/** ### setOnOpen
+ * Add a callback handler on `open` event.
+ * $$ bts.setOnOpen( cb ) $$
+ * @param {Function} cb The callback function to be called.
+ */
 
 
-    /** ### setOnClose
-     * Add a callback handler on `close` event.
-     * $$ bts.setOnClose( cb ) $$
-     * @param {Function} cb The callback function to be called.
-     */
+/** ### setOnClose
+ * Add a callback handler on `close` event.
+ * $$ bts.setOnClose( cb ) $$
+ * @param {Function} cb The callback function to be called.
+ */
 
 
 /** ## Examples */

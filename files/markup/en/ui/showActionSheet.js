@@ -13,32 +13,32 @@
  */
 
 
-    /** ## Properties
-     * These are the available setter and getter properties for the ActionSheet component.
-     * @prop {String} title Sets or returns the title text of the action sheet.
-     * @prop {String} description Sets or returns the description text for the action sheet.
-     */
+/** ## Properties
+ * These are the available setter and getter properties for the ActionSheet component.
+ * @prop {String} title Sets or returns the title text of the action sheet.
+ * @prop {String} description Sets or returns the description text for the action sheet.
+ */
 
 
-    /** ## Methods
-     * These are the available methods for the ActionSheet component.
-     */
+/** ## Methods
+ * These are the available methods for the ActionSheet component.
+ */
 
 
-    /** ### setColor
-     * Sets the color of the list item by its name.
-     * $$ acs.setColor(name, color) $$
-     * @param {String} name The list item text.
-     * @param {String} color A css supported color. Available format are: `hexadecimal`, `color-names`, `rgb`, `rgba` ...
-     */
+/** ### setColor
+ * Sets the color of the list item by its name.
+ * $$ acs.setColor(name, color) $$
+ * @param {String} name The list item text.
+ * @param {String} color A css supported color. Available format are: `hexadecimal`, `color-names`, `rgb`, `rgba` ...
+ */
 
 
-    /** ### setColorByIndex
-     * Sets the color of the list item by its corresponding index. If you want to set the color of the list using its name, see `setColor` method.
-     * $$ acs.setColorByIndex(index, color) $$
-     * @param {Number} index The index of list item.
-     * @param {String} color A css supported color. Available format are: `hexadecimal`, `color-names`, `rgb`, `rgba` ...
-     */
+/** ### setColorByIndex
+ * Sets the color of the list item by its corresponding index. If you want to set the color of the list using its name, see `setColor` method.
+ * $$ acs.setColorByIndex(index, color) $$
+ * @param {Number} index The index of list item.
+ * @param {String} color A css supported color. Available format are: `hexadecimal`, `color-names`, `rgb`, `rgba` ...
+ */
 
 
 /** ## Examples */

@@ -87,52 +87,6 @@
 /** @extern bringForward */
 /** @extern sendBackward */
 
-setTitles(titles) {
-    this._titles = titles || [];
-    if (typeof (titles) == "string") this._titles = titles.split(",");
-    else if (typeof (titles) == "object") this._titles = JSON.parse(JSON.stringify(titles));
-    for (var i = 0; i < this._titles.length; i++) {
-        // add layout if not yet defined
-        if (!this._titles[i]) this._titles = this._titles.splice(i, 1)
-        else {
-            if (!this._layouts[i]) {
-                this._layouts[i] = ui.addLayout(null, this._layType, "nodom,Left", 1, 1)
-                if (this._layType == "Absolute") this._layouts[i]._div2.style.height = "100%"
-            }
-            // check if this._titles[i] is array
-            if (typeof (this._titles[i]) == "object") {
-                this._secondaryText[i] = this._titles[i][1]
-                this._titles[i] = this._titles[i][0]
-            }
-        }
-    }
-    this._disabled = [];
-    this._render()
-}
-	set titles(titles) {
-    this._titles = titles || [];
-    if (typeof (titles) == "string") this._titles = titles.split(",");
-    else if (typeof (titles) == "object") this._titles = JSON.parse(JSON.stringify(titles));
-    for (var i = 0; i < this._titles.length; i++) {
-        // add layout if not yet defined
-        if (!this._titles[i]) this._titles = this._titles.splice(i, 1)
-        else {
-            if (!this._layouts[i]) {
-                this._layouts[i] = ui.addLayout(null, this._layType, "nodom,Left", 1, 1)
-                if (this._layType == "Absolute") this._layouts[i]._div2.style.height = "100%"
-            }
-            // check if this._titles[i] is array
-            if (typeof (this._titles[i]) == "object") {
-                this._secondaryText[i] = this._titles[i][1]
-                this._titles[i] = this._titles[i][0]
-            }
-        }
-    }
-    this._disabled = [];
-    this._render()
-}
-	get titles() { return this._titles; }
-
 /** ### getLayout
  * Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse.
  * $$ acc.getLayout( index ) $$

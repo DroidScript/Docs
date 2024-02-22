@@ -35,150 +35,95 @@ onRecord( bytes ) {
  */
 
 
-    /** ## Properties
-     * These are the setter and getter properties for CameraView component.
-     */
+/** ## Properties
+ * These are the setter and getter properties for CameraView component.
+ */
 
 
-    /** @prop {number} imageHeight Sets or returns the image height in pixels. */
-    set imageHeight( val ) { return this._props.video.height.ideal = val }
-    get imageHeight() { return this._ctl.videoHeight }
-    
-    /** @prop {number} width Sets or returns the image width in pixels. */
-    set imageWidth( val ) { this._props.video.width.ideal = val }
-    get imageWidth() { return this._ctl.videoWidth }
-    
-    // not yet supported
-    get maxZoom() { return }
-    set zoom( val ) {}
-    get zoom() { return }
-    set colorEffect( color ) {}
-    set orientation( val ) {}
-    set flash( val ) {
-        const vid = this._getTrack("video")
-        if(val === this._props.video.torch) return
-        if( vid ) {
-            const sett = this.capabilities
-            if("torch" in sett) this._props.video.torch = val
-        }
-    }
-    get flash() { return this._props.video.torch }
+/** @prop {number} imageHeight Sets or returns the image height in pixels. */
 
-    get recording() { return this._recording }
-    
-    /** @prop {object} capabilities Returns the capabilities of the camera. You can inspect this object to set camera constraints. */
-    get capabilities() {
-        const vid = this._getTrack("video")
-        return vid ? vid.getCapabilities() : {}
-    }
-    
-    /** @prop {number} frameRate Sets or returns the video frame rate. See `capabilites` for min and max values. */
-    set frameRate( val ) { this._props.video.frameRate = val }
-    get frameRate() { return this._props.video.frameRate }
-    
-    /** @prop {string} focusMode Sets or returns the camera focus mode. Available values are `"manual"`, `"single-shot"`, `"continuous"` */
-    set focusMode(val = "continuous") {
-        val = val.toLowerCase()
-        this._props.video.focusMode = val
-    }
-    get focusMode() { return this._props.video.focusMode }
-    
-    /** @prop {number} focusDistance Sets or returns the focus distance. See `capabilities` for min and max values. */
-    set focusDistance( val ) { this._props.video.focusDistance = val }
-    get focusDistance() { return this._props.video.focusDistance }
-    
-    /** @prop {object} img Sets the preview image taken on capture. Must be a UI image component. */
-    set previewImage( img ) { if(img.type == "Image") this._previewImg = img }
-    
-    /** @prop {boolean} sound Sets or returns a boolean value whether the sound is enabled or disabled */
-    set sound( val ) { this._props.audio = val }
-    get sound() { return this._props.audio }
-    
-    /** @prop {string} source The camera source to be use. Values can be `"front"` or `"back"`. */
-    set source(val = "back") {
-        val = val.toLowerCase().trim()
-        val = val == "back" ? "environment" : "user"
-        if(val === this._props.video.facingMode) return
-        this._props.video.facingMode = val
-    }
-    get source() { return this._props.video.facingMode == "user" ? "front" : "back" }
-    
-    /** @prop {number} iso Sets or returns the camera iso. See `capabilities` for max and min values. */
-    set iso( val ) { this._props.video.iso = val }
-    get iso() { return this._props.video.iso }
-    
-    /** ### getPixelData
-     * Returns the pixel data of the image preview or a given portion of it.
-     * $$ cam.getPixelData(format, left, top, width, height)
-     * @param {string} format Values are "rgba" array, or "pngbase64" or "jpgbase64".
-     * @param {number} left Starting pixel from the left.
-     * @param {number} top Starting pixel from the top.
-     * @param {number} width The width of the image portion in pixels.
-     * @param {number} height The height of the image portion in pixels. 
-     */
+/** @prop {number} width Sets or returns the image width in pixels. */
+/** @prop {object} capabilities Returns the capabilities of the camera. You can inspect this object to set camera constraints. */
+/** @prop {number} frameRate Sets or returns the video frame rate. See `capabilites` for min and max values. */
+/** @prop {string} focusMode Sets or returns the camera focus mode. Available values are `"manual"`, `"single-shot"`, `"continuous"` */
+/** @prop {number} focusDistance Sets or returns the focus distance. See `capabilities` for min and max values. */
+/** @prop {object} img Sets the preview image taken on capture. Must be a UI image component. */
+/** @prop {boolean} sound Sets or returns a boolean value whether the sound is enabled or disabled */
+/** @prop {string} source The camera source to be use. Values can be `"front"` or `"back"`. */
+/** @prop {number} iso Sets or returns the camera iso. See `capabilities` for max and min values. */
+
+/** ### getPixelData
+ * Returns the pixel data of the image preview or a given portion of it.
+ * $$ cam.getPixelData(format, left, top, width, height)
+ * @param {string} format Values are "rgba" array, or "pngbase64" or "jpgbase64".
+ * @param {number} left Starting pixel from the left.
+ * @param {number} top Starting pixel from the top.
+ * @param {number} width The width of the image portion in pixels.
+ * @param {number} height The height of the image portion in pixels. 
+ */
 
 
-    /** ### capture
-     * Capture an image. This will return an image data which you can save or manipulate.
-     * $$ cam.capture(type, format)
-     * @param {string} type The image type. Values are "jpg" or "jpeg"", "png", "webp", "gif". Default is "jpg".
-     * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer". Default is "base64"
-     * @return object
-     */
+/** ### capture
+ * Capture an image. This will return an image data which you can save or manipulate.
+ * $$ cam.capture(type, format)
+ * @param {string} type The image type. Values are "jpg" or "jpeg"", "png", "webp", "gif". Default is "jpg".
+ * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer". Default is "base64"
+ * @return object
+ */
 
 
-    /** ### record
-     * Record a video.
-     * $$ cam.record(type, format, cb)
-     * @param {string} type Video output encoding format. Values can be "mp4", "ogg" and "webm".Default is "mp4"
-     * @param {string} format Return video data format. Values can be "blob", "base64", "bytes" (regular array), "objecturl", "arraybuffer", "uint8array" (typed array). Default is "base64"
-     * @param {function} cb The callback function to be called passing the video data.
-     */
+/** ### record
+ * Record a video.
+ * $$ cam.record(type, format, cb)
+ * @param {string} type Video output encoding format. Values can be "mp4", "ogg" and "webm".Default is "mp4"
+ * @param {string} format Return video data format. Values can be "blob", "base64", "bytes" (regular array), "objecturl", "arraybuffer", "uint8array" (typed array). Default is "base64"
+ * @param {function} cb The callback function to be called passing the video data.
+ */
 
 
-    /** ### setPictureSize
-     * Sets the size of the image.
-     * $$ cam.setPictureSize(width, height)
-     * @param {number} width The image width in pixels. See `capabilities` for minimum and maximum values.
-     * @param {number} height The image height in pixels. See `capabilities` for minimum and maximum values.
-     */
+/** ### setPictureSize
+ * Sets the size of the image.
+ * $$ cam.setPictureSize(width, height)
+ * @param {number} width The image width in pixels. See `capabilities` for minimum and maximum values.
+ * @param {number} height The image height in pixels. See `capabilities` for minimum and maximum values.
+ */
 
 
-    /** ### startPreview
-     * Start streaming the camera.
-     * $$ cam.startPreview()
-     */
+/** ### startPreview
+ * Start streaming the camera.
+ * $$ cam.startPreview()
+ */
 
 
-	/** ### updatePreview
-	 * Update the camera preview. Call it when you have updated the constraints of the camera such as setting the source from back to front, or setting zoom level etc.
-	 * $$ cam.updatePreview()
-	 */
+/** ### updatePreview
+ * Update the camera preview. Call it when you have updated the constraints of the camera such as setting the source from back to front, or setting zoom level etc.
+ * $$ cam.updatePreview()
+ */
 
 
-    /** ### stop 
-     * Stops the camera from streaming.
-     * $$ cam.stop()
-     */
+/** ### stop
+ * Stops the camera from streaming.
+ * $$ cam.stop()
+ */
 
 
-    /** ### stop
-     * Stop recording a video.
-     * $$ cam.stop()
-     */
+/** ### stop
+ * Stop recording a video.
+ * $$ cam.stop()
+ */
 
 
-    /** ### setOnReady
-     * Add a callback handler when the camera is ready.
-     * $$ cam.setOnReady( cb )
-     * @param {function} cb The callback function to be called.
-     */
+/** ### setOnReady
+ * Add a callback handler when the camera is ready.
+ * $$ cam.setOnReady( cb )
+ * @param {function} cb The callback function to be called.
+ */
 
 
-    /** ### setOnError
-     * Add a callback handler when an error occured.
-     * @param {function} cb The callback function to be called. ---> @arg {string} error The error message.
-     */
+/** ### setOnError
+ * Add a callback handler when an error occured.
+ * @param {function} cb The callback function to be called. ---> @arg {String} error The error message.
+ */
 
 
 /**
@@ -198,17 +143,17 @@ class Main extends App
         //Create a main layout of type Frame
         this.main = ui.addLayout("main", "Frame", "FillXY")
 
-		//Add a camera view that fills the parent width and height
-		//The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.
+        //Add a camera view that fills the parent width and height
+        //The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.
         this.cam = ui.addCameraView(this.main, "Fill", 1, 1)
 
-		//Create a horizontal layout that will be displayed in the bottom of the screen
+        //Create a horizontal layout that will be displayed in the bottom of the screen
         this.layBtm = ui.addLayout(this.main, "Linear", "Horizontal,Vcenter", 1, 0.1)
         this.layBtm.childSpacing = "Between"
         this.layBtm.setPosition(0, 0.9)
         this.layBtm.padding = [1, null, 1, null, "rem"]
 
-		//Create a camera switch toggle icon at the left
+        //Create a camera switch toggle icon at the left
         this.toggleCam = ui.addButton(this.layBtm, "flip_camera_android", "icon")
         this.toggleCam.textColor = "#fff"
         this.toggleCam.setOnTouch( this.onSwitchCam )
@@ -226,7 +171,7 @@ class Main extends App
         this.prevImg.cornerRadius = "50%"
         this.prevImg.backColor = "black"
 
-		//Start the camera preview
+        //Start the camera preview
         this.cam.startPreview()
     }
     
@@ -273,15 +218,15 @@ class Main extends App
         //Create a main layout of type Frame
         this.main = ui.addLayout("main", "Absolute", "FillXY")
 
-		//Add a camera view that fills the parent width and height
-		//The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.
+        //Add a camera view that fills the parent width and height
+        //The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.
         this.cam = ui.addCameraView(this.main, "Fill,Video", 1, 1)
         
         this.timer = ui.addText(this.main, "", "Center,Caption", 1)
         this.timer.textColor = "#fff"
         this.timer.setPosition(0, 0.025)
 
-		//Create a horizontal layout that will be displayed in the bottom of the screen
+        //Create a horizontal layout that will be displayed in the bottom of the screen
         this.layBtm = ui.addLayout(this.main, "Linear", "Horizontal", 1, 0.1)
         this.layBtm.setPosition(0, 0.9)
         
@@ -291,7 +236,7 @@ class Main extends App
         this.vidBtn.iconSize = "2.5rem"
         this.vidBtn.setOnTouch( this.handleRecord )
 
-		//Start the camera preview
+        //Start the camera preview
         this.cam.startPreview()
     }
     

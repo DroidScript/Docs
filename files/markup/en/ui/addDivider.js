@@ -11,68 +11,64 @@
  */
 
 
-	/** ## Properties
-	 * Here are the available setters and/or getters of the Divider Component.
-	 * @prop {String} color Sets or returns the color in hexadecimal format.
-	 */
+/** ## Properties
+ * Here are the available setters and/or getters of the Divider Component.
+ * @prop {String} color Sets or returns the color in hexadecimal format.
+ */
 
 
-    /** @extern width */
-    /** @extern height */
-    /** @extern opacity */
-    /** @extern textSize */
-    /** @extern textColor */
-    /** @extern rotation */
-    /** @extern fontFile */
-    /** @extern visibility */
-    /** @extern type */
-    /** @extern absWidth */
-    /** @extern absHeight */
-    /** @extern backColor */
-    /** @extern backImage */
-    /** @extern isVisible */
-    /** @extern top */
-    /** @extern left */
-    /** @extern absTop */
-    /** @extern absLeft */
-    /** @extern parent */
-    /** @extern position */
-    /** @extern margins */
-    /** @extern padding */
-    /** @extern options */
-    /** @extern disabled */
-    /** @extern border */
-    /** @extern borderColor */
-    /** @extern borderStyle */
-    /** @extern cornerRadius */
-    /** @extern el */
-    /** @extern elStyle */
+/** @extern width */
+/** @extern height */
+/** @extern opacity */
+/** @extern textSize */
+/** @extern textColor */
+/** @extern rotation */
+/** @extern fontFile */
+/** @extern visibility */
+/** @extern type */
+/** @extern absWidth */
+/** @extern absHeight */
+/** @extern backColor */
+/** @extern backImage */
+/** @extern isVisible */
+/** @extern top */
+/** @extern left */
+/** @extern absTop */
+/** @extern absLeft */
+/** @extern parent */
+/** @extern position */
+/** @extern margins */
+/** @extern padding */
+/** @extern options */
+/** @extern disabled */
+/** @extern border */
+/** @extern borderColor */
+/** @extern borderStyle */
+/** @extern cornerRadius */
+/** @extern el */
+/** @extern elStyle */
 
-    /** ## Methods
-     * Here are the methods for Divider component.
-     */
+/** ## Methods
+ * Here are the methods for Divider component.
+ */
 
 
-    /** @extern setOnContextMenu */
-    /** @extern animate */
-    /** @extern setSize */
-    /** @extern show */
-    /** @extern hide */
-    /** @extern gone */
-    /** @extern destroy */
-    /** @extern setScale */
-    /** @extern getPosition */
-    /** @extern setMargins */
-    /** @extern setPadding */
-    /** @extern setPosition */
-    /** @extern setBorder */
-    /** @extern setCornerRadius */
-    /** @extern bringForward */
-    /** @extern sendBackward */
-
-	set color(color) { this._div.style.backgroundColor = color }
-	get color() { return this._div.style.backgroundColor }
-}
+/** @extern setOnContextMenu */
+/** @extern animate */
+/** @extern setSize */
+/** @extern show */
+/** @extern hide */
+/** @extern gone */
+/** @extern destroy */
+/** @extern setScale */
+/** @extern getPosition */
+/** @extern setMargins */
+/** @extern setPadding */
+/** @extern setPosition */
+/** @extern setBorder */
+/** @extern setCornerRadius */
+/** @extern bringForward */
+/** @extern sendBackward */
 
 /* --- parent_methods here ----- */
 

@@ -78,18 +78,6 @@
 /** @extern bringForward */
 /** @extern sendBackward */
 
-loadUrl(url) {
-    //electron: this._ctl.loadURL( url ) 
-    this._url = url
-    this._ctl.src = url
-    if (this._url) this.E = this._ctl.contentWindow
-}
-    set url(url) {
-    this._url = url
-    this._ctl.src = this._url
-}
-	get url() { return this._url }
-
 /** ### setOnLoad
  * Adds a callback handler for onload event.
  * $$ web.setOnLoad( callback ) $$
