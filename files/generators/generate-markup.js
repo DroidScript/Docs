@@ -36,7 +36,8 @@ async function GenerateJSFile(dir, outDir, scope, path, obj, base = {}, _navs = 
 
     /** @type {Obj<string>} */
     const usedIDs = {};
-    isUI = scope === 'ui'
+    isUI = scope === 'ui';
+    if (isUI !== process.argv.includes("--ui")) return;
 
     let baseStr = "";
     for (const key in base) {
@@ -77,7 +78,7 @@ ${info} * ${_desc}
     }
 
     for (const key in obj) {
-        let str = ""
+        let str = "";
         if (!isUI) str += "// ------------- HEADER SECTION ------------- \n\n";
         const fileName = key + ".js";
         const outputFile = folder + fileName;
@@ -108,8 +109,8 @@ ${info} * ${_desc}
         // methods
         if (data.subf) {
             if (!data.abbrev && key != "_tsxdefs")
-                console.error(`missing abbrev for ${scope}.${data.name}`)
-            if (isUI) str += renderSubfNew(data, usedIDs);
+                console.error(`missing abbrev for ${scope}.${data.name}`);
+            if (isUI) { str += renderSubfNew(data, usedIDs); }
             else {
                 str += `\n\n// ------------- VISIBLE METHODS & PROPERTIES ------------- \n\n`;
                 str += renderSubf(data, usedIDs);
@@ -125,7 +126,7 @@ ${info} * ${_desc}
         if (fs.existsSync(pysampFile)) samples += renderSamples(pysampFile, "Python");
 
         if (samples) {
-            if (isUI) str += "/* ## Examples */"
+            if (isUI) str += "/* ## Examples */";
             else str += "\n\n// ------------- SAMPLES ------------- \n\n";
             str += samples;
         }
@@ -153,8 +154,8 @@ function renderInfo(scope, name, data) {
     if (scope !== "global" ? scope + '.' : '') jdocLine += scope + '.';
     jdocLine += data.name || name;
     if (!data.isval) {
-        const args = data.pNames?.join(", ") || ''
-        jdocLine += isUI && args ? `( ${args} )` : `(${args})`
+        const args = data.pNames?.join(", ") || '';
+        jdocLine += isUI && args ? `( ${args} )` : `(${args})`;
     }
 
     return `
@@ -186,8 +187,8 @@ function renderSubf(data, usedIDs) {
         else if (methodData.isval) {
             const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc}`;
             const desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : "";
-            if (isUI) str += `/** @prop {${makeType(methodData.retval)}} ${method} ${desc} */\n`
-            else
+            if (isUI) { str += `/** @prop {${makeType(methodData.retval)}} ${method} ${desc} */\n`; }
+            else {
                 str += `
 /** ### ${method}
  * @prop${brief || ''}
@@ -195,6 +196,7 @@ function renderSubf(data, usedIDs) {
  * @returns ${makeType(methodData.retval)}
  */
 \n`;
+            }
         }
 
         else {
@@ -208,6 +210,7 @@ function renderSubf(data, usedIDs) {
  * $$ ${data.abbrev}.${method}(${args}) $$
 `;
 
+
             str += extractParams(methodData, usedIDs);
 
             if (methodData.retval) {
@@ -217,6 +220,7 @@ function renderSubf(data, usedIDs) {
             }
 
             str += ` */\n\n`;
+            if (isUI) str += '\n';
         }
     }
     return str;
@@ -245,11 +249,11 @@ function renderSubfNew(data, usedIDs) {
         else if (methodData.isval) {
             const brief = methodData.shortDesc && `\n * @brief ${methodData.shortDesc}`;
             const desc = methodData.desc ? methodData.desc.replace(/ \* /g, " \\* ").replace(/\n/g, "\n * ") : "";
-            propStr += ` * @prop {${makeType(methodData.retval)}} ${method} ${desc}\n`
+            propStr += ` * @prop {${makeType(methodData.retval)}} ${method} ${desc}\n`;
         }
 
         else {
-            let brief = methodData.shortDesc ? `\n * @brief ${methodData.shortDesc || ''}` : '';
+            const brief = methodData.shortDesc ? `\n * @brief ${methodData.shortDesc || ''}` : '';
             let args = methodData.pNames ? methodData.pNames.join(", ") : "";
             if (isUI && args) args = ` ${args} `;
             metStr += `
@@ -267,15 +271,21 @@ function renderSubfNew(data, usedIDs) {
             }
 
             metStr += ` */\n`;
+            if (isUI) metStr += '\n';
         }
     }
 
-    if (propStr) propStr = `/** ## Properties
-Here are the available setters and getters.
+    const objName = data.name?.replace(/^(show|add)/, '');
+    if (propStr) {
+        propStr = `/** ## Properties
+ * Here are the available setters and getters of the ${objName} component.
 ${propStr} */\n`;
+    }
 
-    if (metStr) metStr = `/** ## Methods
-* Here are the methods available.\n*/\n`+ metStr;
+    if (metStr) {
+        metStr = `/** ## Methods
+ * Here are the methods available on the ${objName} component.\n */\n` + metStr;
+    }
 
     if (inheritStr) metStr = `\n// Inherited props\n${inheritStr}\n` + metStr;
     return propStr + metStr;
@@ -307,8 +317,8 @@ function parseParamType(pName, pDef) {
 
 /** @param {DSFunction} type  */
 function parseCallbackNew(type) {
-    const args = []
-    if (!type.pNames || !type.pTypes) return ' --->'
+    const args = [];
+    if (!type.pNames || !type.pTypes) return 'The callback to be called.';
 
     for (const i in type.pNames) {
         const argTypeStr = type.pTypes[i];
@@ -356,7 +366,7 @@ function renderSamples(file, ext = "") {
 @sample ${ext && ext + " "}${name}
 ${cod}
  */\n\n`;
-            if (isUI) str = str.slice(0, -2)
+            if (isUI) str = str.slice(0, -2);
         }
     });
     return str;
