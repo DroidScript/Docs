@@ -60,6 +60,7 @@ onRecord( bytes ) {
  * @param {number} top Starting pixel from the top.
  * @param {number} width The width of the image portion in pixels.
  * @param {number} height The height of the image portion in pixels. 
+ * @returns Object
  */
 
 

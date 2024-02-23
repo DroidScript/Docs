@@ -7,9 +7,9 @@
  * $$ txt = ui.addText(parent, text, options, width, height) $$
  * @param {Object} parent The layout control where to add the text control
  * @param {String} text The text to be displayed on the text control
- * @param {String} options A comma separated options.\nVariants: `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `body1`, `body2`, `overline`, `subtitle1`, `subtitle2`, `button`, `caption`\nLines: `Singleline`, `Multiline`\nAlignment: `Left`, `Center`, `Right`, `Justify`\nTheme Color: `Primary`, `Secondary`, `TextPrimary`, `TextSecondary`, `Error`\nFormat: `Html`, `Icon`, `Italize`, `Monospace`, `Bold`, `Underline`\nUtils: `Touchable`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nVariants: `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `body1`, `body2`, `overline`, `subtitle1`, `subtitle2`, `button`, `caption`\nLines: `Singleline`, `Multiline`\nAlignment: `Left`, `Center`, `Right`, `Justify`\nTheme Color: `Primary`, `Secondary`, `TextPrimary`, `TextSecondary`, `Error`\nFormat: `Html`, `Icon`, `Italize`, `Monospace`, `Bold`, `Underline`\nUtils: `Touchable`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Text
  */
 

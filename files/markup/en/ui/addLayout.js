@@ -5,9 +5,9 @@
  * $$ lay = ui.addLayout(parent, type, options, width, height) $$
  * @param {Object} parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
  * @param {String} type The layout type. Values can be `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"`, `"Card"`
- * @param {String} options A comma separated options.\nOrientation: `Horizontal`, `Vertical`\nHorizontal Alignment: `Left`, `Center`, `Right`\nVertical Alignment: `Top`, `VCenter`, `Bottom`\nDimensions: `FillXY`, `FillX`, `FillY`, `FillAxis`\nScroll: `ScrollX`, `ScrollY`, `ScrollXY`, `NoScrollBar`\nUtils:\n`BackColor` to apply theme background color rather than transparent.\n`NoScrollBar` to remove scrollbar when scroll options is passed.\n`TouchThrough` to enable touch events to propagate behind the layers in frame layouts.\n`"Touchable"` enable touch in card layout.\n`"Outlined"` card variant is outlined.\n`"Square"` card rounded corners is remove.
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nOrientation: `Horizontal`, `Vertical`\nHorizontal Alignment: `Left`, `Center`, `Right`\nVertical Alignment: `Top`, `VCenter`, `Bottom`\nDimensions: `FillXY`, `FillX`, `FillY`, `FillAxis`\nScroll: `ScrollX`, `ScrollY`, `ScrollXY`, `NoScrollBar`\nUtils:\n`BackColor` to apply theme background color rather than transparent.\n`NoScrollBar` to remove scrollbar when scroll options is passed.\n`TouchThrough` to enable touch events to propagate behind the layers in frame layouts.\n`"Touchable"` enable touch in card layout.\n`"Outlined"` card variant is outlined.\n`"Square"` card rounded corners is remove.
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Layout
  * 
  * There are 5 types of layouts: `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"` and `"Card"`. Layouts are transparent by default but you can set a background color or a background image. You can add child objects to the Layout by passing the layout as parent when initializing a control. By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: `FillXY`, `FillX`, and `FillY`.
@@ -98,11 +98,11 @@
 /** ### setChildMargins ###
  * Sets a default margins for the children of the layout component.
  * $$ lay.setChildMargins( left, top, right, bottom, mode ) $$
- * @param {Number} left Left margin. You can also pass string e.g. `12rem`
- * @param {Number} top Top margin. You can also pass string e.g. `12rem`
- * @param {Number} right Right margin. You can also pass string e.g. `12rem`
- * @param {Number} bottom Bottom margin. You can also pass string e.g. `12rem`
- * @param {String} mode Unit of measurement.\n`px` for pixels\n`%` relative to its parent dimension.\n`v` relative to viewport dimension,\n`rem`
+ * @param {Number} [left] Left margin. You can also pass string e.g. `12rem`
+ * @param {Number} [top] Top margin. You can also pass string e.g. `12rem`
+ * @param {Number} [right] Right margin. You can also pass string e.g. `12rem`
+ * @param {Number} [bottom] Bottom margin. You can also pass string e.g. `12rem`
+ * @param {String} [mode='px'] Unit of measurement.\n`px` for pixels\n`%` relative to its parent dimension.\n`v` relative to viewport dimension,\n`rem`
  */
 
 

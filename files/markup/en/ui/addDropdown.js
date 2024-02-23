@@ -6,10 +6,10 @@
  * @jdocs Users can select one option from the list. In Material Design, Dropdowns typically provide a clear visual representation, ensuring a consistent and intuitive way for users to make selections within mobile applications. Add a dropdown into your app using the `addDropdown` method like this:
  * $$ dpd = ui.addDropdown(parent, list, options, width, height) $$
  * @param {Object} parent The layout where to add the dropdown.
- * @param {Array} list The list items to show.
- * @param {String} options A comma separated options.\nTheme Colors: `Primary`, `Secondary`, `Default`\nVariants: `Contained`, `Outlined`, `Text`\nSizes: `Small`, `Medium`, `Large`\nOrientation: `Horizontal`, `Vertical`\nUtil: `NoElevation`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] The list items to show.
+ * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`, `Default`\nVariants: `Contained`, `Outlined`, `Text`\nSizes: `Small`, `Medium`, `Large`\nOrientation: `Horizontal`, `Vertical`\nUtil: `NoElevation`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Dropdown
  */
 
@@ -213,11 +213,11 @@
 /** ### setCornerRadius
  * Sets the corner radius of the dropdown.
  * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

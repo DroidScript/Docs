@@ -7,9 +7,9 @@
  * $$ sld = ui.addSlider(parent, value, options, width, height) $$
  * @param {Object} parent The layout where to add the Slider Component.
  * @param {Number} value The initial value of the Slider. Value must be between `0-100`, the default min and max values.
- * @param {String} options A comma separated options.\nTheme Color: `Primary`, `Secondary`\nOrientation: `Horizontal`, `Vertical`\nTrack: `Normal`, `Inverted`, `False`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`\nOrientation: `Horizontal`, `Vertical`\nTrack: `Normal`, `Inverted`, `False`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Slider
  */
 
@@ -105,8 +105,8 @@
 /** ### setRange
  * Sets a range value for the Slider Component.
  * $$ sld.setRange( min, max ) $$
- * @param {Number} min Minimum value of the slider.
- * @param {Number} max Maximum value of the slider.
+ * @param {Number} [min] Minimum value of the slider.
+ * @param {Number} [max] Maximum value of the slider.
  */
 
 

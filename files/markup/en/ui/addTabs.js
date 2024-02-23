@@ -6,10 +6,10 @@
  * @jdocs Positioned in the AppBar, they offer labeled or icon-based selection, enabling users to switch content effortlessly. Consistent styling and clear hierarchy enhances the overall user experience, ensuring intuitive navigation within the application. Add a tabs into your app using the `addTabs` method like this:
  * $$ tab = ui.addTabs(parent, list, options, width, height) $$
  * @param {Object} parent The parent layout where to add the Tabs Component.
- * @param {Array} list An array of tab names.
- * @param {String} options A comma separated options.\nSwipe: `Swipeable`\nTheme Colors: `Primary`, `Secondary`, `Inherit`, `Transparent`, `Default`\nVariant: `Standard`, `Scrollable`, `FullWidth`\nLayout: `Linear`, `Absolute`\nUtils: `Icon`, `Center`, `Paper`
- * @param {Number} width Fraction of the parent width `[0-1]`
- * @param {Number} height Fraction of the parent height `[0-1]`
+ * @param {Array} [list] An array of tab names.
+ * @param {String} [options] A comma separated options.\nSwipe: `Swipeable`\nTheme Colors: `Primary`, `Secondary`, `Inherit`, `Transparent`, `Default`\nVariant: `Standard`, `Scrollable`, `FullWidth`\nLayout: `Linear`, `Absolute`\nUtils: `Icon`, `Center`, `Paper`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`
+ * @param {Number} [height] Fraction of the parent height `[0-1]`
  * @returns uio-Tabs
  * Default Tab variant for mobile screens is `fullWidth` unless provided.
  */
@@ -239,11 +239,11 @@
 /** ### setCornerRadius
  * Sets the corner radius of the tab.
  * $$ tab.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 
@@ -267,11 +267,11 @@
 /** ### setTabPadding
  * Sets the padding of the tab items.
  * $$ tab.setTabPadding(left, top, right, bottom, mode) $$
- * @param {Number} left The tab-item left padding.
- * @param {Number} top The tab-item top padding.
- * @param {Number} right The tab-item right padding.
- * @param {Number} bottom The tab-item bottom padding.
- * @param {String} mode Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
+ * @param {Number} [left] The tab-item left padding.
+ * @param {Number} [top] The tab-item top padding.
+ * @param {Number} [right] The tab-item right padding.
+ * @param {Number} [bottom] The tab-item bottom padding.
+ * @param {String} [mode='px'] Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
  */
 
 

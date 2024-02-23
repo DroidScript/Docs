@@ -7,9 +7,9 @@
  * $$ btn = ui.addButton(parent, text, options, width, height) $$
  * @param {Object} parent The layout where to add the button.
  * @param {String} text The button text or the material icon text.
- * @param {String} options A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nToggleable: `Toggle`, `Active`\nUtils: `Icon`, `NoRipple`, `Upload`, `Multiple`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nToggleable: `Toggle`, `Active`\nUtils: `Icon`, `NoRipple`, `Upload`, `Multiple`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Button
  * In case of `Upload`, you can specify `Multiple` to accept multiple files.
  */
@@ -114,7 +114,7 @@
  * Sets a tooltip when the button is hovered.
  * $$ btn.setToolTip( title, pos ) $$
  * @param {String} title The text of the tooltip
- * @param {String} pos Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
+ * @param {String} [pos='top'] Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
  */
 
 
@@ -131,22 +131,22 @@
 /** ### setPadding
  * Sets the padding of the button.
  * $$ btn.setPadding( left, top, right, bottom, mode ) $$
- * @param {Number} left The left padding in pixel.
- * @param {Number} top The top padding in pixels,
- * @param {Number} right The right padding in pixels.
- * @param {Number} bottom The bottom padding in pixels.
- * @param {String} mode Can be `px` `%`
+ * @param {Number} [left] The left padding in pixel.
+ * @param {Number} [top] The top padding in pixels,
+ * @param {Number} [right] The right padding in pixels.
+ * @param {Number} [bottom] The bottom padding in pixels.
+ * @param {String} [mode='px'] Can be `px` `%`
  */
 
 
 /** ### setCornerRadius
  * Sets the corner radius of the button.
  * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

@@ -5,9 +5,9 @@
  * @img(img2.png)
  * @jdocs Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette. Show a color picker using the `showColorPicker` method like this:
  * $$ ui.showColorPicker(value, options, onSelect) $$
- * @param {String} value A hexadecimal default value for the color picker.
- * @param {String} options A comma separated options.\nIncludes alpha: `Alpha`
- * @param {Function} onSelect The callback function to be called when onselect event is fired. ---> @arg {String} value Color in hexadecimal format `#rrggbb` or `#aarrggbb` if `Alpha` option is passed.
+ * @param {String} [value] A hexadecimal default value for the color picker.
+ * @param {String} [options] A comma separated options.\nIncludes alpha: `Alpha`
+ * @param {Function} [onSelect] The callback function to be called when onselect event is fired. ---> @arg {String} value Color in hexadecimal format `#rrggbb` or `#aarrggbb` if `Alpha` option is passed.
  * @returns uio-ColorPicker
  */
 

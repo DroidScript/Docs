@@ -7,9 +7,9 @@
  * $$ swt = ui.addSwitch(parent, text, options, width, height) $$
  * @param {Object} parent The parent layout where to add the Switch Component.
  * @param {String} text The label text.
- * @param {String} options A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Default`\nIcon Position: `Left`, `Top`, `Right`, `Bottom`\nSizes: `Small`, `Medium`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Default`\nIcon Position: `Left`, `Top`, `Right`, `Bottom`\nSizes: `Small`, `Medium`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Switch
  */
 

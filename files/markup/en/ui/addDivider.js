@@ -5,8 +5,8 @@
  * @jdocs In Material Design, dividers are often lines or subtle indicators that enhance visual clarity and organization. They help create a structured and clean interface by distinguishing different sections or items within a mobile application's layout. Add a divider into your app using the `addDivider` method like this:
  * $$ ui.addDivider(parent, options, width, height) $$
  * @param {Object} parent The layout where to add the divider.
- * @param {Number} width Fraction of the parent width. Default is 1.
- * @param {String} options A comma separated options.\n`Inset` to add some padding.
+ * @param {Number} [width=1] Fraction of the parent width. Default is 1.
+ * @param {String} [options] A comma separated options.\n`Inset` to add some padding.
  * @returns uio-Divider
  */
 

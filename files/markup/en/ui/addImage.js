@@ -5,9 +5,9 @@
  * $$ img = ui.addImage(parent, file, options, width, height)  $$
  * @param {Object} parent The parent layout where to add the image.
  * @param {String} file The path to the image.
- * @param {String} options A comma seprated options.\n`Image`, `Canvas`, `Button` and `Avatar`. Default is image. \nFor `Avatar` you can pass `Small` or `Large`.
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [options='Image'] A comma seprated options.\n`Image`, `Canvas`, `Button` and `Avatar`. Default is image. \nFor `Avatar` you can pass `Small` or `Large`.
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Image
  * Please note that a `canvas` image cannot switch to Button or Avatar in `setOptions` method.
  */
@@ -147,8 +147,8 @@
  * @param {Number} y1 The y-coordinate of the starting point in pixels
  * @param {Number} x2 The x-coordinate of the second point in pixels.
  * @param {Number} y2 The y-coordinate of the second point in pixels.
- * @param {String} strokeColor A hexadecimal color.
- * @param {Number} strokeWidth The stroke thickness.
+ * @param {String} [strokeColor] A hexadecimal color.
+ * @param {Number} [strokeWidth] The stroke thickness.
  * @@ This works only when a `canvas` option is pass.
  */
 
@@ -159,9 +159,9 @@
  * @param {Number} x The x-coordinate of the center of the circle in pixels.
  * @param {Number} y The y-coordinate of the center of the circle in pixels.
  * @param {Number} radius The radius of the circle in pixels.
- * @param {String} fillColor A hexadecimal color.
- * @param {String} strokeColor A hexadecimal color.
- * @param {Number} strokeWidth The stoke thickness.
+ * @param {String} [fillColor] A hexadecimal color.
+ * @param {String} [strokeColor] A hexadecimal color.
+ * @param {Number} [strokeWidth] The stoke thickness.
  * @@ This works only when a `canvas` option is pass. @@
  */
 
@@ -172,9 +172,9 @@
  * @param {Number} x The position from the left of the top-left corner of the square in pixels.
  * @param {Number} y The distance from the top of the top-left corner of the square in pixels.
  * @param {Number} width The width of the square in pixels.
- * @param {String} fillColor A hexadecimal color.
- * @param {String} strokeColor A hexadecimal color.
- * @param {Number} strokeWidth The stroke thickness in pixels.
+ * @param {String} [fillColor] A hexadecimal color.
+ * @param {String} [strokeColor] A hexadecimal color.
+ * @param {Number} [strokeWidth] The stroke thickness in pixels.
  * @@ This works only when a `canvas` option is pass. @@
  */
 
@@ -186,9 +186,9 @@
  * @param {Number} y1 The distance from the top of the top-left corner of the rectangle in pixels.
  * @param {Number} width The width of the rectangle in pixels.
  * @param {Number} height The height of the rectangle in pixels.
- * @param {String} fillColor A hexadecimal color.
- * @param {String} strokeColor A hexadecimal color.
- * @param {Number} strokeWidth The stroke thickness.
+ * @param {String} [fillColor] A hexadecimal color.
+ * @param {String} [strokeColor] A hexadecimal color.
+ * @param {Number} [strokeWidth] The stroke thickness.
  * @@ This works only when a `canvas` option is pass. @@
  */
 
@@ -201,10 +201,10 @@
  * @param {Number} radius The radius of the arc in pixels.
  * @param {Number} start The starting angle in degress
  * @param {Number} end The angle in degress in which the arc will stop.
- * @param {String} fillColor A hexadecimal color.
- * @param {String} strokeColor A hexadecimal color.
- * @param {Number} strokeWidth The stroke thickness.
- * @param {String} type The type of arc. Can be `filled` or `segment`.
+ * @param {String} [fillColor] A hexadecimal color.
+ * @param {String} [strokeColor] A hexadecimal color.
+ * @param {Number} [strokeWidth] The stroke thickness.
+ * @param {String} [type] The type of arc. Can be `filled` or `segment`.
  * @@ This works only when a `canvas` option is pass.
  */
 
@@ -212,17 +212,17 @@
 /** ### drawPolyline
  * Draws a polyline on the canvas by passing an array of points.
  * @param {Array} points An array of coordinates. Each element on this array is an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point, or an object of the form `{x, y}`.
- * @param {String} strokeColor A hexadecimal color.
- * @param {Number} strokeWidth The stroke thickness.
+ * @param {String} [strokeColor] A hexadecimal color.
+ * @param {Number} [strokeWidth] The stroke thickness.
  */
 
 
 /** ### drawPolygon
  * Draws a polygon on the canvas by passing an array of points.
  * @param {Array} points An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point, or an object of the form `{x, y}`.
- * @param {String} fillColor A hexadecimal color.
- * @param {String} strokeColor A hexadecimal color.
- * @param {Number} strokeWidth The stroke thickness.
+ * @param {String} [fillColor] A hexadecimal color.
+ * @param {String} [strokeColor] A hexadecimal color.
+ * @param {Number} [strokeWidth] The stroke thickness.
  */
 
 
@@ -232,7 +232,7 @@
  * @param {Number} x The x-coordinate in pixels.
  * @param {Number} y The y-coordinate in pixels.
  * @paramm {Number} size The width of point in pixels.
- * @param {String} color A hexadecimal color.
+ * @param {String} [color] A hexadecimal color.
  */
 
 
@@ -252,10 +252,10 @@
  * Draws an image to the canvas.
  * $$ drawImage( img, x, y, width, height) $$
  * @param {String} img Path to image file.
- * @param {Number} x The distance from the left of the top-left corner of the image in pixels.
- * @param {Number} y The distance from the top of the top-left corner of the image in pixels.
- * @param {Number} width If provided, the image will be shrink or stretch to fill this width in pixels.
- * @param {Number} height If provided, the height of the image will be shrink or stretch to fill this height in pixels.
+ * @param {Number} [x] The distance from the left of the top-left corner of the image in pixels.
+ * @param {Number} [y] The distance from the top of the top-left corner of the image in pixels.
+ * @param {Number} [width] If provided, the image will be shrink or stretch to fill this width in pixels.
+ * @param {Number} [height] If provided, the height of the image will be shrink or stretch to fill this height in pixels.
  * @@ This works only when a `canvas` option is pass. @@
  */
 

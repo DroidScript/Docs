@@ -6,10 +6,10 @@
  * @jdocs Such a grouping is used to represent related settings or options that can be toggle on or off. Add a switchgroup into your app using the `addSwitchGroup` method like this:
  * $$ swg = ui.addSwitchGroup(parent, list, options, width, height) $$
  * @param {Object} parent The parent layout where to add the SwitchGroup Component.
- * @param {Array} list The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
- * @param {String} options A comma separated options.\nIcon: `Icon`\nColor: `Primary`, `Secondary`\nContainer: `Elevated`, `Outlined`\nCorner: `Square`\nList divider: `Divider`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
+ * @param {String} [options] A comma separated options.\nIcon: `Icon`\nColor: `Primary`, `Secondary`\nContainer: `Elevated`, `Outlined`\nCorner: `Square`\nList divider: `Divider`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-SwitchGroup
  */
 
@@ -183,11 +183,11 @@
 /** ### setCornerRadius
  * Sets the corner radius of the switchgroup container.
  * $$ swt.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

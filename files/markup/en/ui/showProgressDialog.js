@@ -4,8 +4,8 @@
  * @img(img1.png)
  * @jdocs It provides visual feedback to users during time-consuming operations, enhancing the overall user experience by conveying that the application is actively working on a task. Show a progress dialog in your app using the `showProgressDialog` method like this:
  * $$ prd = ui.showProgressDialog(text, options) $$
- * @param {String} text The text message of the progress dialog.
- * @param {String} options A comma separated options.\n`AutoCancel` to close the dialog when backdrop is click.
+ * @param {String} [text] The text message of the progress dialog.
+ * @param {String} [options] A comma separated options.\n`AutoCancel` to close the dialog when backdrop is click.
  * @returns uio-ProgressDialog
  */
 

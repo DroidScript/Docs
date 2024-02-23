@@ -5,10 +5,10 @@
  * @jdocs It enables the display of web pages or web-based features, providing seamless integration of online content into mobile apps. Add a webview into your app using the `addWebView` method like this:
  * $$ web = ui.addWebView(parent, url, options, width, height) $$
  * @param {Object} parent The parent layout where to add the WebView component.
- * @param {String} url The url of the website.
- * @param {String} options A comma separated options for WebView. Values can be `NoScrollBar`, 
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [url] The url of the website.
+ * @param {String} [options] A comma separated options for WebView. Values can be `NoScrollBar`, 
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-WebView
  */
 

@@ -7,9 +7,9 @@
  * $$ acc = ui.addAccordion(parent, titles, options, width, height) $$
  * @param {Object} parent The parent layout where to add the text.
  * @param {Array} titles An array of accordion titles.
- * @param {String} options A comma separated options.\nStyle: `Square`\nLayout type: `Linear`, `Absolute`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nStyle: `Square`\nLayout type: `Linear`, `Absolute`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Accordion
  */
 
@@ -209,18 +209,18 @@
  * Sets the color of the title and the secondary text respectively.
  * $$ acc.setTextColor(color1, color2) $$
  * @param {String} color1 Color of the title text in hexadecimal format `#rrggbb`
- * @param {String} color2 Color of the secondary text in hexadecimal format `#rrggbb`
+ * @param {String} [color2] Color of the secondary text in hexadecimal format `#rrggbb`
  */
 
 
 /** ### setCornerRadius
  * Sets the corner radius of the top and bottom accordion panels.
  * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit of measurement. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit of measurement. Values are `px` `rem` or `%`.
  */
 
 

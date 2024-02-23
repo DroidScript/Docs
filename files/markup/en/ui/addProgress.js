@@ -5,10 +5,10 @@
  * @jdocs It includes progress bars, spinners, or other elements that show the user the advancement of an operation. Add a progress into your app using the `addProgress` method like this:
  * $$ prg = ui.addProgress(parent, value, options, width, height) $$
  * @param {Object} parent The parent layout where to add the prgress component.
- * @param {Number} value the initial value of the progress component.
- * @param {String} options A comma separated options.\nTheme Color: `Primary`, `Secondary`\nType: `Circular`, `Linear`\nVariant: `Determinate`, `Indeterminate`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction fo the parent height `[0-1]`.
+ * @param {Number} [value] the initial value of the progress component.
+ * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`\nType: `Circular`, `Linear`\nVariant: `Determinate`, `Indeterminate`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction fo the parent height `[0-1]`.
  * @returns uio-Progress
  * If you pass a null value on initialization and you won't passed a variant option, the default variant will be `indeterminate`.
  * Otherwise if there's no variant option and the value is not null, it will automatically be a `determinate` variant.

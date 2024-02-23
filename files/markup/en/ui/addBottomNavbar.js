@@ -7,9 +7,9 @@
  * $$ bmn = ui.addBottomNavbar(parent, navs, options, width, height) $$
  * @param {Object} parent The parent layout where to add the BottomNavbar
  * @param {Array} navs An array whose elements are of the form `[ "Title", "Icon" ]`
- * @param {String} options A comma separated options.\nLabel: `Hidelabels`
- * @param {Number} width Fraction of the screen width `[0-1]`
- * @param {Number} height Fraction of the screen height `[0-1]`
+ * @param {String} [options] A comma separated options.\nLabel: `Hidelabels`
+ * @param {Number} [width] Fraction of the screen width `[0-1]`
+ * @param {Number} [height] Fraction of the screen height `[0-1]`
  * @returns uio-BottomNavbar
  */
 

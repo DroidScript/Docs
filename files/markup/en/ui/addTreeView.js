@@ -6,10 +6,10 @@
  * @jdocs A tree view is best use in file system navigation. Add a treeview into your app using the `addTreeView` method like this:
  * $$ trv = ui.addTreeView(parent, list, options, width, height) $$
  * @param {Object} parent The parent layout where to add the TreeView component.
- * @param {Object} list An object of the treeview items. See example below.
- * @param {String} options A comma separated options. Values can be `MultiSelect`.
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {Object} [list] An object of the treeview items. See example below.
+ * @param {String} [options] A comma separated options. Values can be `MultiSelect`.
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-TreeView
  */
 

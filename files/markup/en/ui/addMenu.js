@@ -6,10 +6,10 @@
  * @jdocs In Material Design, menus can be contextual, appearing in response to user interactions. They provide a consistent way to access additional functionality or navigate within an application. Show a menu by calling the `addMenu` method like this:
  * $$ men = ui.addMenu(parent, list, options, width, height) $$
  * @param {Object} parent The component where to anchor the Menu.
- * @param {Array} list A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon:title` \n Add a `colon` before an item to display it as the label text.
- * @param {String} options A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Error`\nUtils: `Dense`, `Icon`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon:title` \n Add a `colon` before an item to display it as the label text.
+ * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Error`\nUtils: `Dense`, `Icon`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Menu
  * These are examples on how you can format your list.
  * Basic list

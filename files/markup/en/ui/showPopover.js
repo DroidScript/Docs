@@ -6,10 +6,10 @@
  * @jdocs It is like a small, temporary window that appears above other content, showing additional options or details. It's a brief and focused way to present information or choices to the user.
  * $$ ui.showPopover(parent, text, position, height, height) $$
  * @param {Object} parent UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
- * @param {String} text The text to de displayed. For displaying more data, pass a `Layout`
- * @param {String} position A comma separated values representing the\n`"anchorOrigin,transformOrigin"`\n`anchorOrigin` Position of the popover on its parent.\n`transformOrigin` Origin on the popover itselt.\nAvailable values for both `anchorOrigin` and `transformOrigin`  are\n`tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.
- * @param {Number} width Fraction of the screen width `[0-1]`.
- * @param {Number} height Fraction of the screen height `[0-1]`.
+ * @param {String} [text] The text to de displayed. For displaying more data, pass a `Layout`
+ * @param {String} [position] A comma separated values representing the\n`"anchorOrigin,transformOrigin"`\n`anchorOrigin` Position of the popover on its parent.\n`transformOrigin` Origin on the popover itselt.\nAvailable values for both `anchorOrigin` and `transformOrigin`  are\n`tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.
+ * @param {Number} [width] Fraction of the screen width `[0-1]`.
+ * @param {Number} [height] Fraction of the screen height `[0-1]`.
  * @returns uio-Popover
  */
 

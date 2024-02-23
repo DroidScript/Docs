@@ -7,10 +7,10 @@
  * $$ ckb = ui.addCheckboxGroup(parent, list, options, width, height) $$
  * @jdocs Add a checkbox group using the `addCheckboxGroup` method like this:
  * @param {Object} parent The parent layout where to add the CheckboxGroup.
- * @param {Array} list The items to be displayed.
- * @param {String} options A comma separated options.\nTheme Color: `Default`, `Primary`, `Secondary`\nSizes: `Small`, `Medium`\nIcon Position: `Left`, `Right`\nContainer: `Elevated`, `Outlined`\nCorners : `Square`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] The items to be displayed.
+ * @param {String} [options] A comma separated options.\nTheme Color: `Default`, `Primary`, `Secondary`\nSizes: `Small`, `Medium`\nIcon Position: `Left`, `Right`\nContainer: `Elevated`, `Outlined`\nCorners : `Square`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-CheckboxGroup
  */
 
@@ -265,11 +265,11 @@
 /** ### setCornerRadius
  * Sets the corner radius of the checkbox group.
  * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

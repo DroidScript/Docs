@@ -7,10 +7,10 @@
  * $$ btg = ui.addButtonGroup(parent, list, options, width, height) $$
  * @jdocs Add a button group into your app using the `addButtonGroup` method like this:
  * @param {Object} parent The parent layout where to add the ButtonGroup
- * @param {Array} list The item to be displayed on the buttn group.
- * @param {String} options A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nOrientation: `Horizontal`, `Vertical`\nToggleable: `Toggle`, `Radio`\nUtils: `Icon`, `NoElevation`
- * @param {Number} width Fraction of the parent width `[0-1]`
- * @param {Number} height Fraction of the parent height `[0-1]`
+ * @param {Array} [list] The item to be displayed on the buttn group.
+ * @param {String} [options] A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nOrientation: `Horizontal`, `Vertical`\nToggleable: `Toggle`, `Radio`\nUtils: `Icon`, `NoElevation`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`
+ * @param {Number} [height] Fraction of the parent height `[0-1]`
  * @returns uio-ButtonGroup
  * A toggleable buttongroup can accept additional `Radio` option to have atmost one toggled button item. If buttongroup is toggleable, please refer to the `setOnTouch` callback for the correct order of arguments.
  */
@@ -145,7 +145,7 @@
  * Adds a tooltips to the ButtonGroup items.
  * $$ btg.setToolTips(titles, pos) $$
  * @param {Array} titles The titles for each item in the ButtonGroup.
- * @param {String} pos The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
+ * @param {String} [pos='top'] The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
  */
 
 

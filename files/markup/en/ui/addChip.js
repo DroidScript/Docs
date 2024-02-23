@@ -6,9 +6,9 @@
  * $$ chp = ui.addChip(parent, text, options, width, height) $$
  * @param {Object} parent The parent layout where to add the Chip.
  * @param {String} text The text on the chip.
- * @param {String} options A comma separated option.\nTheme Color: `Primary`, `Secondary`, `Default`\nSize: `Small`, `Medium`\nVariant: `Outlined`, `Default`\nUtil: `Touchable`
- * @param {Number} width Fraction of the parent width `[0-1]`
- * @param {Number} height Fraction of the parent height `[0-1]`
+ * @param {String} [options] A comma separated option.\nTheme Color: `Primary`, `Secondary`, `Default`\nSize: `Small`, `Medium`\nVariant: `Outlined`, `Default`\nUtil: `Touchable`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`
+ * @param {Number} [height] Fraction of the parent height `[0-1]`
  * @returns uio-Chip
  * If you want to change the height of the Chip later on after initializing, pass the `height` argument.
  */
@@ -108,11 +108,11 @@
 /** ### setCornerRadius
  * Sets the corner radius of the chip.
  * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

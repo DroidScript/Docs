@@ -9,9 +9,9 @@
  * $$ dlg = ui.addDialog( title, body, actions, options ) $$
  * @param {String} title The dialog title text.
  * @param {String} body The dialog message to be shown.
- * @param {Array} actions A string of action button text.
- * @param {String} options A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nUtil: `NoCancel` prevents the dialog from closing on action.
- * @param {Number} width Fraction of the screen width `[0-1]`.
+ * @param {Array} [actions] A string of action button text.
+ * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nUtil: `NoCancel` prevents the dialog from closing on action.
+ * @param {Number} [width] Fraction of the screen width `[0-1]`.
  * @returns uio-Dialog
  */
 

@@ -5,9 +5,9 @@
  * @jdocs It's similar to a toast notification. Show a popup like this:
  * $$ pop = ui.showPopup( msg, options, duration ) $$
  * @param {String} msg The message to display on the pop-up.
- * @param {String} options A comma separated options.\nDuration: `Short`, `Long`\nVertical Alignment: `Top`, `Bottom`\nHorizontal Alignment: `Left`, `Center`, `Right`\nAction options: `Icon`, `HideOnAction`\nTransition: `Grow`, `Fade`, `Slide`, `Collapse`, `Zoom`
- * @param {Number} duration Time in milliseconds. Pass this if you don't want the default auto hide duration.
- * @param {String} action Action button text
+ * @param {String} [options] A comma separated options.\nDuration: `Short`, `Long`\nVertical Alignment: `Top`, `Bottom`\nHorizontal Alignment: `Left`, `Center`, `Right`\nAction options: `Icon`, `HideOnAction`\nTransition: `Grow`, `Fade`, `Slide`, `Collapse`, `Zoom`
+ * @param {Number} [duration] Time in milliseconds. Pass this if you don't want the default auto hide duration.
+ * @param {String} [action] Action button text
  * @returns uio-Popup
  */
 
@@ -54,8 +54,8 @@
 /** ### setPosition
  * Updates the position of the popup.
  * $$ popup.setPosition( vertical, horizontal ) $$
- * @param {String} vertical Vertical alignment. Values can be `Top` `Bottom`
- * @param {String} horizontal Horizontal alignment. Values can be `Left` `Center` and `Right`
+ * @param {String} [vertical] Vertical alignment. Values can be `Top` `Bottom`
+ * @param {String} [horizontal] Horizontal alignment. Values can be `Left` `Center` and `Right`
  */
 
 

@@ -6,10 +6,10 @@
  * @jdocs This component often refers to a dropdown or picker element that allows users to choose from a list of options. Add a select into your app using the `addSelect` method like this:
  * $$ sel =  ui.addSelect(parent, list, options, width, height) $$
  * @param {Object} parent The parent layout where to add the control
- * @param {Array} list The list of items for the Select options
- * @param {String} options A comma separated options.\nSizes: `Small`, `Medium`\nVariant: `Filled`, `Outlined`, `Standard`\nMargin: `Dense`, `Normal`\nUtils: `Required`, `Multiple`, `Radio`, `Disabled`, `AutoFocus`, `FullWidth`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] The list of items for the Select options
+ * @param {String} [options] A comma separated options.\nSizes: `Small`, `Medium`\nVariant: `Filled`, `Outlined`, `Standard`\nMargin: `Dense`, `Normal`\nUtils: `Required`, `Multiple`, `Radio`, `Disabled`, `AutoFocus`, `FullWidth`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Select
  * A simple list
  * $$ [ "Option 1", "Option 2", "Option 3"] $$
@@ -153,6 +153,7 @@
  * Returns the item at a given index.
  * $$ sel.getItem( index ) $$
  * @param {Number} index The index of the item.
+ * @returns Object
  */
 
 

@@ -6,10 +6,10 @@
  * @jdocs They are used to group together related pieces of data or informations to highlight association with each other and easy to read. They are frequently used for navigation as well as displaying general content. Add a list to your app by calling the `addList` method of the `ui` object.
  * $$ list = ui.addList(parent, list, options, width, height) $$
  * @param {Object} parent The parent layout
- * @param {Array} list An array of arrays. Each element is of the form `[icon, title, body, secondary]`
- * @param {String} options A comma separated options.\nMedia: `Icon`, `Avatar`\nStyling: `Dense`, `Inset`\nUtils: `Selectable`, `Divider`, `SecondaryText`, `NoRipple`, `NoScrollBar`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] An array of arrays. Each element is of the form `[icon, title, body, secondary]`
+ * @param {String} [options] A comma separated options.\nMedia: `Icon`, `Avatar`\nStyling: `Dense`, `Inset`\nUtils: `Selectable`, `Divider`, `SecondaryText`, `NoRipple`, `NoScrollBar`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-List
  * If `Icon` option is passed, the list must be of the form `[icon, title, body, secondary]`. To display an image avatar, passed and additional `Avatar` option and the list must be of the form `[image, title, body, secondary]`
  * If no `Icon` option is passed, the list is treated as `[title, body, secondary]` by default.
@@ -97,10 +97,10 @@
  * Adds an item in the list.
  * $$ lst.addItem( title, body, image, index ) $$
  * @param {String} title The title of the item.
- * @param {String} body The text description of the item.
- * @param {String} image A material icon or image file path.
- * @param {String} action A text for the action or material icon.
- * @param {Number} index The index in which to add or insert the item.
+ * @param {String} [body] The text description of the item.
+ * @param {String} [image] A material icon or image file path.
+ * @param {String} [action] A text for the action or material icon.
+ * @param {Number} [index] The index in which to add or insert the item.
  */
 
 
@@ -142,12 +142,14 @@
 /** ### getSelectedItems
  * $$ lst.getSelectedItems() $$
  * Returns an array of indexes of the selected items.
+ * @returns Array
  */
 
 
 /** ### getSelectedTitles
  * $$ lst.getSelectedTitles() $$
  * Returns an array of titles of selected items
+ * @returns Array
  */
 
 
@@ -170,9 +172,9 @@
  * $$ lst.setItemByIndex(index, newTitle, newBody, newIcon, newAction) $$
  * @param {Number} index The index of the item to update
  * @param {String} newTitle The new title of the item
- * @param {String} newBody The new body text
- * @param {String} newIcon The new icon or image
- * @param {String} newAction The new action icon or action text
+ * @param {String} [newBody] The new body text
+ * @param {String} [newIcon] The new icon or image
+ * @param {String} [newAction] The new action icon or action text
  */
 
 
@@ -181,6 +183,7 @@
  * $$ lst.getItemByIndex(index, json) $$
  * @param {Number} index Returns the corresponding list item.
  * @param {Boolean} json Pass `true` to return the corresponding list item as an object of the form `{title,body,image,action}`
+ * @returns Object
  */
 
 
@@ -189,9 +192,9 @@
  * $$ lst.setItem( title, newTitle, newBody, newIcon ) $$
  * @param {String} title The title of the list item to update.
  * @param {String} newTitle The new title of the list item.
- * @param {String} newBody The new description of the list item.
- * @param {String} newIcon A material icon font or image file path.
- * @param {String} newAction A material icon font for the action icon button.
+ * @param {String} [newBody] The new description of the list item.
+ * @param {String} [newIcon] A material icon font or image file path.
+ * @param {String} [newAction] A material icon font for the action icon button.
  */
 
 
@@ -200,6 +203,7 @@
  * $$ lst.getItem(title, json) $$
  * @param {String} title Title of the list item.
  * @param {Boolean} json Pass `true` to return the corresponding list item as an object of the form `{title,body,image,action}`
+ * @returns Object
  */
 
 
@@ -269,11 +273,11 @@
 /** ### setCornerRadius
  * Sets the corner radius of the list container.
  * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

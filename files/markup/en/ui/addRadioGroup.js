@@ -6,10 +6,10 @@
  * @jdocs A RadioGroup in mobile UI design is a grouping of radio buttons that allows users to select a single option from a set. In Material Design, RadioGroups help organize and present related choices with a consistent appearance, providing an intuitive and visually cohesive way for users to make selections within a mobile application. Add a radigroup into your app using the `addRadioGroup` method like this:
  * $$ rdg = ui.addRadioGroup(parent, list, options, width, height) $$
  * @param {Object} parent The parent where to add the RadioGroup component.
- * @param {Array} list The list items array.
- * @param {String} options A comma separated options.\nRadio Sizes: `Small`, `Medium`\nTheme Colors: `Primary`, `Secondary`, Default\nOrientation: `Horizontal`, `Vertical`\nIcon Position: `Left`, `Right`\nContainer: `Elevated`, `Outlined`\nCorner: `Square`\nUtils: `Required`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] The list items array.
+ * @param {String} [options] A comma separated options.\nRadio Sizes: `Small`, `Medium`\nTheme Colors: `Primary`, `Secondary`, Default\nOrientation: `Horizontal`, `Vertical`\nIcon Position: `Left`, `Right`\nContainer: `Elevated`, `Outlined`\nCorner: `Square`\nUtils: `Required`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-RadioGroup
  * Pass `required` as option to have atleast one value selected.
  */
@@ -201,11 +201,11 @@
 /** ### setCornerRadius
  * Sets the corner radius of the radiogroup container.
  * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} tl Top-left corner radius.
- * @param {Number} tr Top-right corner radius.
- * @param {Number} bl Bottom-left corner radius.
- * @param {Number} br Bottom-right corner radius.
- * @param {String} mode Unit. Values are `px` `rem` or `%`.
+ * @param {Number} [tl] Top-left corner radius.
+ * @param {Number} [tr] Top-right corner radius.
+ * @param {Number} [bl] Bottom-left corner radius.
+ * @param {Number} [br] Bottom-right corner radius.
+ * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
  */
 
 

@@ -6,8 +6,8 @@
  * @jdocs In Material Design, Drawers offer a consistent and organized way to access app navigation, settings, or other features, contributing to a seamless and intuitive user experience. Add a drawer into your app using the `addDrawer` method like this:
  * $$ drw = ui.addDrawer(lay, options) $$
  * @param {Object} layout The drawer layout where to add controls.
- * @param {String} options A comma separated options.nVariant: `Permanent`, `Persistent`, `Temporary`\nAnchor: `Left`, `Right`, `Top`, `Bottom`
- * @param {Number} width Fraction of the screen width starting from the anchor position `[0-1]`.
+ * @param {String} [options] A comma separated options.nVariant: `Permanent`, `Persistent`, `Temporary`\nAnchor: `Left`, `Right`, `Top`, `Bottom`
+ * @param {Number} [width] Fraction of the screen width starting from the anchor position `[0-1]`.
  * @returns uio-Drawer
  */
 
@@ -70,7 +70,7 @@
 /** ### show ###
  * Open the drawer dynamically.
  * $$ drw.show( anchor ) $$
- * @param {String} anchor Optional. The anchor position. Can be `left`, `top`, `right`, `bottom`. Default is `left`.
+ * @param {String} [anchor='left'] Optional. The anchor position. Can be `left`, `top`, `right`, `bottom`. Default is `left`.
  */
 
 

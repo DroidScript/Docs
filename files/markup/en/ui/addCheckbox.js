@@ -7,9 +7,9 @@
  * $$ ckb = ui.addCheckbox(parent, text, options, width, height) $$
  * @param {Object} parent The layout where to add the checkbox
  * @param {String} text The label for the checkbox
- * @param {String} options A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nSizes: `Medium`, `Small`\nIcon position: `Left`, `Top`, `Right`, `Bottom`\nVariant: `Indeterminate`, `Determinate`
- * @param {Number} width Fraction of the parent width `[0-1]`.
- * @param {Number} height Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nSizes: `Medium`, `Small`\nIcon position: `Left`, `Top`, `Right`, `Bottom`\nVariant: `Indeterminate`, `Determinate`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Checkbox
  */
 
