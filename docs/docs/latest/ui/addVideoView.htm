@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>addVideoView</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>addVideoView</h1>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Adds a video view into your app layout.</p>
+
+		<div class="samp">
+		vw = ui.addVideoView(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">url</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height</a> )
+			→ <b>ui object:</b> VideoView
+		</div>
+
+		<p>By default, the video will be resize relative to its dimensions. If you want the video to cover the entire width and height, pass <kbd>"fill"</kbd> in the options argument.</p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Simple video view</h3>
+			<div id="examp1" class="code-js" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				   <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				   <span class="token punctuation">{</span><br>
+				        <span class="token comment">//Create a fullscreen layout with objects vertically centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create a video view and pass the video url</span><br>
+				        <span class="token keyword">let</span> src <span class="token operator">=</span> <span class="token string">"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addVideoView</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> src<span class="token punctuation">,</span> <span class="token string">"AutoPlay"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create a horizontal layout where to add video controls</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lay <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,VCenter"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.15</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>lay<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create the play button</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>playBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Play"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>playBtn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>play <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create the pause/stop button</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>pauseBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Pause"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>pauseBtn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>pause <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create the mute toggle button</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>muteBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Mute"</span><span class="token punctuation">,</span> <span class="token string">"Toggle"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>muteBtn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>toggleMute <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle play button</span><br>
+				    <span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle pause/stop button</span><br>
+				    <span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle mute toggle button</span><br>
+				    <span class="token function">toggleMute</span><span class="token punctuation">(</span> <span class="token parameter">val</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span>muted <span class="token operator">=</span> val <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				   onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment"># Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create a video view and pass the video url</span><br>
+				        src <span class="token operator">=</span> <span class="token string">"http:# commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"</span><br>
+				        this<span class="token punctuation">.</span>vid <span class="token operator">=</span> ui<span class="token punctuation">.</span>addVideoView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> src<span class="token punctuation">,</span> <span class="token string">"AutoPlay"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create a horizontal layout where to add video controls</span><br>
+				        this<span class="token punctuation">.</span>lay <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,VCenter"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.15</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>lay<span class="token punctuation">.</span>setChildMargins<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create the play button</span><br>
+				        this<span class="token punctuation">.</span>playBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Play"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>playBtn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>play <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create the pause/stop button</span><br>
+				        this<span class="token punctuation">.</span>pauseBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Pause"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>pauseBtn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>pause <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create the mute toggle button</span><br>
+				        this<span class="token punctuation">.</span>muteBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>lay<span class="token punctuation">,</span> <span class="token string">"Mute"</span><span class="token punctuation">,</span> <span class="token string">"Toggle"</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>muteBtn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>toggleMute <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle play button</span><br>
+				    play<span class="token punctuation">(</span><span class="token punctuation">)</span>this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>play<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle pause/stop button</span><br>
+				    pause<span class="token punctuation">(</span><span class="token punctuation">)</span>this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle mute toggle button</span><br>
+				    toggleMute<span class="token punctuation">(</span> val <span class="token punctuation">)</span>this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>muted <span class="token operator">=</span> val
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Video view callbacks</h3>
+			<div id="examp2" class="code-js" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				   <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				   <span class="token punctuation">{</span><br>
+				        <span class="token comment">//Create a fullscreen layout with objects vertically centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create a video view with default Controls and Fill options</span><br>
+				        <span class="token keyword">let</span> src <span class="token operator">=</span> <span class="token string">"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addVideoView</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> src<span class="token punctuation">,</span> <span class="token string">"Controls,Fill"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Add video event listeners</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">setOnComplete</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onComplete <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">setOnPlay</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onPlay <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">setOnPause</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onPause <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">setOnSeek</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSeek <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">setOnSeeking</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSeeking <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">setOnVolume</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onVolume <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vid<span class="token punctuation">.</span><span class="token function">setOnProgress</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onProgress <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle on complete event</span><br>
+				    <span class="token function">onComplete</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Video completed"</span> <span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle on play event</span><br>
+				    <span class="token function">onPlay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Video is playing"</span> <span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle on pause/stop event</span><br>
+				    <span class="token function">onPause</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Video has been paused"</span> <span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle seek event completed</span><br>
+				    <span class="token function">onSeek</span><span class="token punctuation">(</span> <span class="token parameter">val</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"On seek : "</span> <span class="token operator">+</span> val<span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle on active seeking event</span><br>
+				    <span class="token function">onSeeking</span><span class="token punctuation">(</span> <span class="token parameter">val</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Seeking : "</span> <span class="token operator">+</span> val<span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle volume change event</span><br>
+				    <span class="token function">onVolume</span><span class="token punctuation">(</span> <span class="token parameter">val</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> val <span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle playing progress event</span><br>
+				    <span class="token function">onProgress</span><span class="token punctuation">(</span> <span class="token parameter">time</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Playback time : "</span> <span class="token operator">+</span> time<span class="token punctuation">)</span> <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				   onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment"># Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create a video view with default Controls and Fill options</span><br>
+				        src <span class="token operator">=</span> <span class="token string">"http:# commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"</span><br>
+				        this<span class="token punctuation">.</span>vid <span class="token operator">=</span> ui<span class="token punctuation">.</span>addVideoView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> src<span class="token punctuation">,</span> <span class="token string">"Controls,Fill"</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Add video event listeners</span><br>
+				        this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>setOnComplete<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onComplete <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>setOnPlay<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onPlay <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>setOnPause<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onPause <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>setOnSeek<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onSeek <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>setOnSeeking<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onSeeking <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>setOnVolume<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onVolume <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>vid<span class="token punctuation">.</span>setOnProgress<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onProgress <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle on complete event</span><br>
+				    onComplete<span class="token punctuation">(</span><span class="token punctuation">)</span>ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Video completed"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle on play event</span><br>
+				    onPlay<span class="token punctuation">(</span><span class="token punctuation">)</span>ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Video is playing"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle on pause/stop event</span><br>
+				    onPause<span class="token punctuation">(</span><span class="token punctuation">)</span>ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Video has been paused"</span> <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle seek event completed</span><br>
+				    onSeek<span class="token punctuation">(</span> val <span class="token punctuation">)</span>console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"On seek : "</span> <span class="token operator">+</span> val<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle on active seeking event</span><br>
+				    onSeeking<span class="token punctuation">(</span> val <span class="token punctuation">)</span>console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"Seeking : "</span> <span class="token operator">+</span> val<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle volume change event</span><br>
+				    onVolume<span class="token punctuation">(</span> val <span class="token punctuation">)</span>ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> val <span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle playing progress event</span><br>
+				    onProgress<span class="token punctuation">(</span> time <span class="token punctuation">)</span>console<span class="token punctuation">.</span>log<span class="token punctuation">(</span><span class="token string">"Playback time : "</span> <span class="token operator">+</span> time<span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Properties</h3>
+		<p>The following properties are available on the <strong>VideoView</strong> object:</p>
+
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">completed</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">duration</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">loop</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">muted</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">paused</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">played</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">seeking</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">speed</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">url</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">volume</a> → <b>Number</b></div>
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>VideoView</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">capture</a>(
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">format</a> )
+			→ <b>Object</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">enterFullscreen</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">exitFullscreen</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">load</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">play</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">seekTo</a>(
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">time</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">setOnComplete</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">setOnError</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">setOnPause</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">setOnPlay</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">setOnProgress</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup">setOnReady</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">setOnSeek</a>(
+			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_015" data-transition="pop" data-rel="popup">setOnSeeking</a>(
+			<a href="#pop_fnc_004" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">setOnVolume</a>(
+			<a href="#pop_fnc_005" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">stop</a>()
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the parent width. Values can be [0-1].</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the parent height. Values can be [0-1].</div>
+	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The playback position in seconds.</div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The video source url. Supported video formats are `"mp4"”</docstr>, <docstr>“ "ogg"”</docstr>, <docstr>“ "webm"`”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“Comma separated options. Values can be one or a combination of the following: `autoplay`”</docstr>, <docstr>“ `loop`”</docstr>, <docstr>“ `controls`”</docstr>, <docstr>“ `muted`”</docstr>, <docstr>“ `fill` or `stretch`. If you pass "controls"”</docstr>, <docstr>“ you can optionally remove some controls such as "nodownload"”</docstr>, <docstr>“ "nofullscreen" and "noremoteplayback".”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The image type. Values are "jpg"”</docstr>, <docstr>“ "png"”</docstr>, <docstr>“ "webp"”</docstr>, <docstr>“ "gif". Default is "jpg".”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“The returned data format. Can be "base64"”</docstr>, <docstr>“ "bytes"(regular array)”</docstr>, <docstr>“ "uint8array"(typed array) or "arraybuffer".”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The layout where to add the video view.</div>
+	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> Basic information of the video such as duration and dimensions.</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Number: The elapsed playback time in seconds.')">time </a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
+		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">info </a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_004" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Number: The playback position in seconds.')">pos </a>
+	)</div>
+	<div data-role="popup" id="pop_fnc_005" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('Number: The audio volume of the video.')">volume </a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>vw.capture</b><br>Capture an image in the playback. This will return an image data which you can save or manipulate.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>vw.completed</b><br>Returns a boolean whether the video playback is completed.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>vw.duration</b><br>Returns the time duration of the video in seconds.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>vw.enterFullscreen</b><br>Play video in fullscreen if supported.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>vw.exitFullscreen</b><br>Exit fullscreen if video is playing fullscreen.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>vw.load</b><br>Reloads the video source.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>vw.loop</b><br>Sets or returns a boolean whether the video should start over again when completed.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>vw.muted</b><br>Returns a boolean whether the video audio is muted.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>vw.paused</b><br>Returns a boolean whether the video is paused.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>vw.play</b><br>Play the video.</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>vw.played</b><br>Returns a boolean whether the video is currently playing.</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>vw.seeking</b><br>Returns a boolean whether the user is currently seeking in the video playback seekbar.</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>vw.seekTo</b><br>Sets the playback position.</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>vw.setOnComplete</b><br>Sets a callback handler when the video playback is completed.</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>vw.setOnError</b><br>Sets a callback function when an error occurs while the video source is being loaded.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>vw.setOnPause</b><br>Sets a callback handler when the video is pause by the user or programmatically.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>vw.setOnPlay</b><br>Sets a callback handler when the video is played by the user or programmatically.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>vw.setOnProgress</b><br>Sets a callback handler to be be called while the video is playing. This is usefull when you have a custom progress bar where to constantly update the playback time.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>vw.setOnReady</b><br>Sets a callback handler when the video has buffered enough to begin playing. Video might not completely loaded for this event to be fired.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>vw.setOnSeek</b><br>Sets a callback handler when seeking event is completed.</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>vw.setOnSeeking</b><br>Sets a callback handler when seeking event is active. Called when the user touches or slides the seekbar track.</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>vw.setOnVolume</b><br>Sets a callback function when the volume of the video changes.</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>vw.speed</b><br>Sets or returns the playback speed.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>vw.stop</b><br>Stop the playing video.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>vw.url</b><br>Sets or returns the video source url.</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>vw.volume</b><br>Sets or returns the video volume. Values can be [0-1].</div>
+</div>
+</body>
+
+</html>

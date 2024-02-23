@@ -44,10 +44,11 @@
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
 				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
 			</span><br>
 		</div>
 
-		<p>Show a popover on any <kbd>UI Components</kbd> except Dialogs and Popups.</p>
+		<p>Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.</p>
 
 		<div class="samp">
 		pvr = ui.showPopover(
@@ -59,7 +60,6 @@
 			→ <b>ui object:</b> Popover
 		</div>
 
-		<p>Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic</h3>
 			<div id="examp1" class="code-js" style="font-size:70%">
@@ -342,15 +342,27 @@
 		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">backImage</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">fontFile</a> → <b>String</b></div>
 
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Popover</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">hide</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
+		</div>
+
 	</div>
 
-	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width.</div>
-	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height.</div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width `[0-1]`.</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height `[0-1]`.</div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The text to de displayed. For displaying more data”</docstr>, <docstr>“ pass a `Layout`”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“A comma separated values representing the `anchorOrigin”</docstr>, <docstr>“transformOrigin` <br> `anchorOrigin` Position of the popover on its parent. Available values are `tl` for top-left”</docstr>, <docstr>“ `tc` for top-center”</docstr>, <docstr>“ `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right. <br> `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“A comma separated values representing the<br>`"anchorOrigin”</docstr>, <docstr>“transformOrigin"`<br>`anchorOrigin` Position of the popover on its parent.<br>`transformOrigin` Origin on the popover itselt.<br>Available values for both `anchorOrigin` and `transformOrigin`  are<br>`tl` for top-left”</docstr>, <docstr>“ `tc` for top-center”</docstr>, <docstr>“ `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.”</docstr></div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>pvr.backImage</b><br>Sets or returns the path to the background image.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>pvr.fontFile</b><br>Sets or returns the font file use for the Popover.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>pvr.hide</b><br>Hide the popup dialog.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>pvr.show</b><br>Show the popup dialog.</div>
 </div>
 </body>
 

@@ -40530,16 +40530,18 @@ acc = ui.addAccordion(parent, titles, options?, width?, height?)
 Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the text.
-titles | **Object:** An array of accordion titles.
-options? | **String:** *comma “,” separated:* “one or a combination of the following: `Square`
+titles | **List:** An array of accordion titles.
+options? | **String:** “A comma separated options.
 
- `Layout type `Linear` or `Absolute`”
-width? | **Number:** Fraction of the screen width: [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Style: `Square`
+
+Layout type: `Linear`”, “ `Absolute`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Accordion
 
 
-This is very useful to display controls that are grouped together.
+
 
 <details>
 <summary>Example: Complete accordion implementation</summary>
@@ -40818,7 +40820,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### acc.absLeft
 
@@ -40826,7 +40828,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### acc.absTop
 
@@ -40834,7 +40836,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### acc.absWidth
 
@@ -40842,7 +40844,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### acc.backColor
 
@@ -40850,7 +40852,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### acc.backImage
 
@@ -40858,7 +40860,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### acc.border
 
@@ -40874,7 +40876,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### acc.borderStyle
 
@@ -40886,7 +40888,7 @@ Return Value: | **String**
 
 ##### acc.cornerRadius
 
-Sets or returns the corner radius of the accordion panel. You can also pass an array of the form `[tl, tr, bl, br]`. See also `setCornerRadius` method.
+Sets or returns the corner radius in pixels.
 
 Parameter | Type
 --- | ---
@@ -40894,11 +40896,27 @@ Return Value: | **Number**
 
 ##### acc.disabled
 
-Sets or returns whether the accordion is disabled or not. `True` only if all accordion is disable, otherwise `false`.
+Sets or returns the `disabled` state of the control.
 
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### acc.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### acc.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### acc.expandIcon
 
@@ -40954,7 +40972,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### acc.opacity
 
@@ -40978,7 +40996,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### acc.parent
 
@@ -40986,7 +41004,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### acc.position
 
@@ -40994,7 +41012,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### acc.rotation
 
@@ -41002,7 +41020,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### acc.rounded
 
@@ -41132,7 +41150,7 @@ The following methods are available on the **Accordion** object:
 
 ##### acc.addItem( title, secondaryText, index )
 
-Adds an item to the accordion
+Adds an item to the accordion.
 
 Parameter | Type
 --- | ---
@@ -41140,50 +41158,52 @@ title | **String:** “Accordion title”
 secondaryText | **String:** “Accordion secondary text”
 index | **Number:** The index at which the accordion item will be added. If `null`,  the item will be added at the bottom of the accordion.
 
-##### acc.animate( anim, duration? )
+##### acc.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### acc.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -41191,11 +41211,11 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### acc.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### acc.getEnabled( index )
 
-Get the enabled state of an accordion item by its index
+Get the enabled state of an accordion item by its index.
 
 Parameter | Type
 --- | ---
@@ -41204,7 +41224,7 @@ Return Value: | **Boolean**
 
 ##### acc.getEnabledByName( name )
 
-Get the enabled state of an accordion item by its name
+Get the enabled state of an accordion item by its name.
 
 Parameter | Type
 --- | ---
@@ -41213,46 +41233,46 @@ Return Value: | **Boolean**
 
 ##### acc.getLayout( index )
 
-Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse
+Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the accordion. You can also pass accordion title.
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### acc.getLayoutIndex( layout )
 
-Get the index of the corresponding layout
+Get the index of the corresponding layout.
 
 Parameter | Type
 --- | ---
 layout | **Object:** The layout to check.
 Return Value: | **Number**
 
-##### acc.getPosition( options? )
+##### acc.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### acc.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### acc.hide()
 
-Hide the component
+Hide the component.
 
 ##### acc.popItem()
 
-Removes the last accordion item
+Removes the last accordion item. This will return the item being removed.
 
 ##### acc.removeItemByIndex( index )
 
-Removes accordion item by its index
+Removes accordion item by its index.
 
 Parameter | Type
 --- | ---
@@ -41260,7 +41280,7 @@ index | **Number:** The index of the corresponding accordion to remove.
 
 ##### acc.removeItemByName( title )
 
-Removes accordion item by its title name
+Removes accordion item by its title name.
 
 Parameter | Type
 --- | ---
@@ -41268,25 +41288,28 @@ title | **String:** “The title of the corresponding accordion to remove.”
 
 ##### acc.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### acc.setBorder( width?, clr?, style='solid' )
+##### acc.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### acc.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the top and bottom accordion panels
+Sets the corner radius of the top and bottom accordion panels.
 
 Parameter | Type
 --- | ---
@@ -41294,11 +41317,11 @@ tl? | **Number:** Top-left corner radius.
 tr? | **Number:** Top-right corner radius.
 bl? | **Number:** Bottom-left corner radius.
 br? | **Number:** Bottom-right corner radius.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+mode='px' | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
 
 ##### acc.setEnabled( index, value )
 
-Enable or disable the accordion component or an item in the accordion component
+Enable or disable the accordion component or an item in the accordion component.
 
 Parameter | Type
 --- | ---
@@ -41307,7 +41330,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### acc.setEnabledByName( name, value )
 
-Enable or disable an accordion item by its name
+Enable or disable an accordion item by its name.
 
 Parameter | Type
 --- | ---
@@ -41316,65 +41339,101 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### acc.setExpandIcon( icon )
 
-Sets the expand icon at the right of the accordion
+Sets the expand icon at the right of the accordion.
 
 Parameter | Type
 --- | ---
 icon | **String:** “A material icon”
 
-##### acc.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### acc.setItemPadding( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the padding of the accordion item. See `itemPadding` property for equivalent setter/getter property.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left padding of the accordion item.
+top | **Number:** Top padding of the accordion item.
+right | **Number:** Right padding of the accordion item.
+bottom | **Number:** Bottom padding of the accordion item.
+mode | **String:** “Unit of measurement. Can be `rem`”, “ `px`”, “ `%`”, “ or `v` for viewport.”
+
+##### acc.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### acc.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(title,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title</td><td>**String:** “The accordion title text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding accordion item.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(title ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title </td><td>**String:** “The accordion title text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding accordion item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### acc.setOnTouch( callback )
 
-Sets a callback function when the accordion is touch
+Sets a callback function when the accordion is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(index,expand)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>index</td><td>**Number:** The index of the corresponding accordion item.</td></tr>,<tr><td>expand</td><td>**Boolean:** The expanded state of the accordion.</td></tr></table>
+callback | **function(index ,expand )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>index </td><td>**Number:** The index of the corresponding accordion item.</td></tr>,<tr><td>expand </td><td>**Boolean:** The expanded state of the accordion.</td></tr></table>
 
-##### acc.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### acc.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### acc.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### acc.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### acc.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
@@ -41383,29 +41442,26 @@ y | **Number:** The y-scale of the component. Values less than `1` is smaller th
 
 ##### acc.setSecondaryText( text, index )
 
-Adds a secondary text on the accordion
+Adds a secondary text on the accordion.
 
 Parameter | Type
 --- | ---
-text | **Object:** The secondary text to display. You can pass arguments as string or array by following the format below.
-
- String: `"Secodary text 1,Secondary text 2,Secondary text 3"`
-
- `Array`: `[ "Secondary text 1", "Secondary text 2", "Secondary text 3" ]`
+text | **List:** The secondary text to display. You can also pass arguments as a comma separated string.
 index | **Number:** If `index` is provided,  the corresponding index will be updated with the new text.
 
-##### acc.setSize( width, height )
+##### acc.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### acc.setTextColor( color1, color2? )
 
-Sets the color of the title and the secondary text respectively
+Sets the color of the title and the secondary text respectively.
 
 Parameter | Type
 --- | ---
@@ -41414,7 +41470,7 @@ color2? | **String:** “Color of the secondary text in hexadecimal format `#rrg
 
 ##### acc.setTitleText( index, title )
 
-Update the accordion title by passing its corresponding index
+Update the accordion title by passing its corresponding index.
 
 Parameter | Type
 --- | ---
@@ -41423,15 +41479,15 @@ title | **String:** “The new title text.”
 
 ##### acc.shiftItem()
 
-Removes the first accordion item
+Removes the first accordion item. This will return the item being removed.
 
 ##### acc.show()
 
-Show the component
+Show the component.
 
 ### addAppBar
 
-Adds an AppBar on your app.
+Adds an appbar to your app.
 ```
 apb = ui.addAppBar(parent, title, options?, width?, height?)
 ```
@@ -41440,15 +41496,15 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the AppBar
 title | **String:** “The title text of the appbar”
-options? | **String:** *comma “,” separated:* “one or a combination of the following:
+options? | **String:** “A comma separated options.
 
- `Menu` : Adds a menu icon on the left
+Menu icon: `Menu`
 
- `Primary` `Secondary` `Transparent` `Inherit` `Default` : Adds a color
+Theme Color: `Primary`”, “ `Secondary`”, “ `Transparent`”, “ `Inherit`”, “ `Default`
 
- `Absolute` `Static` `Fixed` `Relative` : Adds a positioning”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Position: `Absolute`”, “ `Static`”, “ `Fixed`”, “ `Relative`”
+width? | **Number:** Fraction of the parent width `[0-1]`
+height? | **Number:** Fraction of the parent height `[0-1]`
 Return Value: | **ui object:** AppBar
 
 
@@ -41512,7 +41568,7 @@ class Main extends App
         this.drawLay = ui.addLayout(null, "Linear", "Top")
 
         // Add a drawer to the app and pass the drawer layout
-        this.drawer = ui.addDrawer(this.drawLay, "left")
+        this.drawer = ui.addDrawer(this.drawLay, "left", 0.7)
 
         // Add a list to the drawer layout. See `List` component for customization.
         let lst = [
@@ -41615,7 +41671,7 @@ class Main extends App
         this.drawLay = ui.addLayout(null, "Linear", "Top")
 
         // Adds a drawer to the app and pass the drawer layout
-        this.drawer = ui.addDrawer(this.drawLay, "left")
+        this.drawer = ui.addDrawer(this.drawLay, "left", 0.7)
 
         // Adds a list to the drawer layout. See `List` component for customization.
         let lst = [
@@ -41706,35 +41762,57 @@ class Main extends App
     onStart()
     {
         // Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 )
+        this.main = ui.addLayout("main", "Linear", "Top,FillXY")
 
-        // Add an appbar to the main layout
-        this.apb = ui.addAppBar( this.main, "My app", "Default" )
+        // Add an appbar to the main layout with menu icon
+        this.apb = ui.addAppBar(this.main, "My app", "Default,Menu")
+
+        // Add a callback handler when the menu icon is click
+        this.apb.setOnMenu( this.onMenu )
 
         // Adds a textfield to the appbar
-        this.tfd = ui.addTextField(this.apb.layout, "", "Search,Outlined,Small")
+        this.tfd = ui.addTextField(this.apb.layout, "", "Search,Small", 0.9)
         this.tfd.placeholder = "Search"
         this.tfd.hide()
 
         // Add a search icon button to the appbar
         this.searchBtn = ui.addButton(this.apb.layout, "search", "icon")
 
-        // Add a callback handler when the button is click
+        // Add a callback handler when the search button is click
         this.searchBtn.setOnTouch( this.showSearchField )
+    }
+
+    onMenu()
+    {
+        // Close the textfield if it is shown
+        if( this.show )
+        {
+            this.closeSearchField()
+        }
     }
 
     showSearchField()
     {
-        if(this.searchBtn.text == "search")
+        // Display textfield if not shown
+        if( !this.show )
         {
             this.tfd.show()
-            this.searchBtn.text = "close"
+            this.apb.text = ""
+            this.apb.icon = "arrow_back"
+            this.show = true;
         }
         else
         {
-            this.tfd.hide()
-            this.searchBtn.text = "search"
+            ui.showPopup("Search for "+this.tfd.text)
         }
+    }
+
+    closeSearchField()
+    {
+        this.tfd.hide()
+        this.apb.text = "My app"
+        this.apb.icon = "menu"
+        this.show = false
     }
 }
 ```
@@ -41782,7 +41860,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### apb.absLeft
 
@@ -41790,7 +41868,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### apb.absTop
 
@@ -41798,7 +41876,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### apb.absWidth
 
@@ -41806,7 +41884,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### apb.backColor
 
@@ -41814,7 +41892,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### apb.backImage
 
@@ -41822,7 +41900,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### apb.border
 
@@ -41838,7 +41916,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### apb.borderStyle
 
@@ -41858,7 +41936,7 @@ Return Value: | **String**
 
 ##### apb.cornerRadius
 
-Sets or returns the corner radius of the accordion panel. You can also pass an array of the form `[tl, tr, bl, br]`. See `setCornerRadius` for customization.
+Sets or returns the corner radius in pixels.
 
 Parameter | Type
 --- | ---
@@ -41871,6 +41949,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### apb.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### apb.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### apb.fontFile
 
@@ -41910,7 +42004,7 @@ Returns the right layout of the appbar where you can add controls.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### apb.left
 
@@ -41926,7 +42020,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### apb.menu
 
@@ -41958,7 +42052,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### apb.parent
 
@@ -41966,7 +42060,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### apb.position
 
@@ -41974,7 +42068,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### apb.rotation
 
@@ -41982,7 +42076,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### apb.text
 
@@ -41994,7 +42088,7 @@ Return Value: | **String**
 
 ##### apb.textColor
 
-Sets or returns the hexadecimal color of the appbar title.
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
@@ -42002,7 +42096,7 @@ Return Value: | **String**
 
 ##### apb.textSize
 
-Sets or returns the font size of the title text.
+Sets or returns the size of the text within the control.
 
 Parameter | Type
 --- | ---
@@ -42056,56 +42150,58 @@ The following methods are available on the **AppBar** object:
 
 ##### apb.addLayout( lay )
 
-Adds a layout for additional controls at the right of the appbar
+Adds a layout for additional controls at the right of the appbar.
 
 Parameter | Type
 --- | ---
 lay | **Object:** The layout where to add controls
 
-##### apb.animate( anim, duration? )
+##### apb.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### apb.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -42113,46 +42209,49 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### apb.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### apb.getPosition( options? )
+##### apb.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### apb.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### apb.hide()
 
-Hide the component
+Hide the component.
 
 ##### apb.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### apb.setBorder( width?, clr?, style='solid' )
+##### apb.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### apb.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the appbar
+Sets the corner radius of the appbar.
 
 Parameter | Type
 --- | ---
@@ -42162,89 +42261,114 @@ bl? | **Number:** Bottom-left corner radius.
 br? | **Number:** Bottom-right corner radius.
 mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
-##### apb.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### apb.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### apb.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### apb.setOnMenu( callback )
 
-Sets a function to be called when the user clicks the menu
+Sets a function to be called when the user clicks the menu.
 
 Parameter | Type
 --- | ---
-callback | **function()**
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### apb.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds a callback handler when the component is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### apb.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### apb.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### apb.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### apb.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### apb.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### apb.setSize( width, height )
+##### apb.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### apb.show()
 
-Show the component
+Show the component.
 
 ### addBottomNavbar
 
-Adds a bottom navigation bar to your app.
+The Bottom Navigation Bar (BottomNavBar) is a key element in mobile user interface design, typically placed at the bottom of the screen.
 ```
 bmn = ui.addBottomNavbar(parent, navs, options?, width?, height?)
 ```
@@ -42253,9 +42377,11 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the BottomNavbar
 navs | **List:** An array whose elements are of the form `[ "Title", "Icon" ]`
-options? | **String:** *comma “,” separated:* “one or a combination of the following: `Hidelabels`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+options? | **String:** “A comma separated options.
+
+Label: `Hidelabels`”
+width? | **Number:** Fraction of the screen width `[0-1]`
+height? | **Number:** Fraction of the screen height `[0-1]`
 Return Value: | **ui object:** BottomNavbar
 
 
@@ -42271,42 +42397,6 @@ var navs = [
 
 ]
 ```
-##### Properties
-
-These are the setter and getter properties for the addBottomNavbar Component.
-
-/** ### absHeight ###
-
- * [prop](#prop)
-
- * Returns the absolute height of the control in pixels.
-
- * [returns](#returns) num
-
-
-
-<details>
-<summary>Example: Sample navs array.</summary>
-
-```js
-var navs = [
-        [ "Favorites", "favorites" ],
-        [ "Groups", "person" ],
-        [ "Folder", "folder" ]
-    ]
-```
-
-```py
-from native import cfg
-
-navs = [
-    ["Favorites", "favorites"],
-    ["Groups", "person"],
-    ["Folder", "folder"]
-]
-```
-</details>
-
 <details>
 <summary>Example: Basic</summary>
 
@@ -42520,13 +42610,21 @@ def OnStart():
 The following properties are available on the **BottomNavbar** object:
 
 
+##### bmn.absHeight
+
+Returns the absolute height of the control in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
 ##### bmn.absLeft
 
 Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### bmn.absTop
 
@@ -42534,7 +42632,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### bmn.absWidth
 
@@ -42542,7 +42640,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### bmn.backColor
 
@@ -42550,7 +42648,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### bmn.backImage
 
@@ -42558,7 +42656,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### bmn.border
 
@@ -42574,7 +42672,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### bmn.borderStyle
 
@@ -42594,11 +42692,27 @@ Return Value: | **Number**
 
 ##### bmn.disabled
 
-Sets or returns whether the bottom navigation is disabled or enabled. All navigation actions must be disabled to return `true`. Otherwise, it will return `false`.
+Sets or returns the `disabled` state of the control.
 
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### bmn.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### bmn.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### bmn.fontFile
 
@@ -42670,7 +42784,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### bmn.opacity
 
@@ -42694,7 +42808,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### bmn.parent
 
@@ -42702,7 +42816,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### bmn.position
 
@@ -42710,7 +42824,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### bmn.rotation
 
@@ -42718,7 +42832,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### bmn.textColor
 
@@ -42792,50 +42906,52 @@ name | **String:** “The name of the navigation action”
 icon | **String:** “Material icon”
 index | **Number:** The index in which to add the action.
 
-##### bmn.animate( anim, duration? )
+##### bmn.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### bmn.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -42843,15 +42959,15 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### bmn.clearSelection()
 
-Clears the selected navigation action
+Clears the selected navigation action.
 
 ##### bmn.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### bmn.getEnabled( index )
 
-Get the enabled state of a navigation action
+Get the enabled state of a navigation action.
 
 Parameter | Type
 --- | ---
@@ -42860,7 +42976,7 @@ Return Value: | **Boolean**
 
 ##### bmn.getEnabledByName( name )
 
-Get the enabled state of the bottom navigation action by its name
+Get the enabled state of the bottom navigation action by its name.
 
 Parameter | Type
 --- | ---
@@ -42869,40 +42985,40 @@ Return Value: | **Boolean**
 
 ##### bmn.getList()
 
-Returns the navigation actions list
+Returns the navigation actions list.
 
 Parameter | Type
 --- | ---
 Return Value: | **List**
 
-##### bmn.getPosition( options? )
+##### bmn.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### bmn.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### bmn.hide()
 
-Hide the component
+Hide the component.
 
 ##### bmn.hideLabels()
 
-Hides the text label of the bottom navigation action
+Hides the text label of the bottom navigation action.
 
 ##### bmn.popItem()
 
-Removes the last navigation action
+Removes the last navigation action. This will return the item being removed.
 
 ##### bmn.removeItemByIndex( index )
 
-Removes a navigation action by its given index
+Removes a navigation action by its given index.
 
 Parameter | Type
 --- | ---
@@ -42910,7 +43026,7 @@ index | **Number:** The index of the navigation action to be remove
 
 ##### bmn.removeItemByName( name )
 
-Removes a navigation action by its given name
+Removes a navigation action by its given name.
 
 Parameter | Type
 --- | ---
@@ -42918,7 +43034,7 @@ name | **String:** “The name of the navigation action to be remove.”
 
 ##### bmn.selectItem( name )
 
-Sets navigation action to active by its name. If you are providing a wrong name, no action will be active
+Sets navigation action to active by its name. If you are providing a wrong name, no action will be active.
 
 Parameter | Type
 --- | ---
@@ -42934,37 +43050,40 @@ index | **Number:** The index of the bottom navigation action to be selected
 
 ##### bmn.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### bmn.setBorder( width?, clr?, style='solid' )
+##### bmn.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### bmn.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
+
+##### bmn.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
+
+Parameter | Type
+--- | ---
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
 
 ##### bmn.setEnabled( index, value )
 
-Enable or disable a bottom navigation action. If you want to disable the component, use the `disable` property instead
+Enable or disable a bottom navigation action. If you want to disable the component, use the `disable` property instead.
 
 Parameter | Type
 --- | ---
@@ -42973,7 +43092,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### bmn.setEnabledByName( name, value )
 
-Enabled or disable a bottom navigation action by its name
+Enabled or disable a bottom navigation action by its name.
 
 Parameter | Type
 --- | ---
@@ -42982,7 +43101,7 @@ value | **Boolean:** Values can be `true` or `false`
 
 ##### bmn.setIcon( index, newIcon )
 
-Updates the icon of the given index
+Updates the icon of the given index.
 
 Parameter | Type
 --- | ---
@@ -42991,7 +43110,7 @@ newIcon | **String:** “Material icon”
 
 ##### bmn.setItemByIndex( index, newName, newIcon )
 
-Updates a navigation action by its index
+Updates a navigation action by its index.
 
 Parameter | Type
 --- | ---
@@ -43001,103 +43120,414 @@ newIcon | **String:** “Material icon”
 
 ##### bmn.setList( navs )
 
-Sets the navigation actions list
+Sets the navigation actions list.
 
 Parameter | Type
 --- | ---
 navs | **List:** The navigation actions array. See `navs` param above for format.
 
-##### bmn.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### bmn.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### bmn.setOnChange( callback )
 
-Sets a callback function to execute when bottom navbar value changes
+Sets a callback function to execute when bottom navbar value changes.
 
 Parameter | Type
 --- | ---
-callback | **function(text,index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “Bottom navigation action text.”</td></tr>,<tr><td>index</td><td>**Number:** Bottom navigation action index.</td></tr></table>
+callback | **function(text ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “Bottom navigation action text.”</td></tr>,<tr><td>index </td><td>**Number:** Bottom navigation action index.</td></tr></table>
 
 ##### bmn.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(text,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “Bottom navigation action text.”</td></tr>,<tr><td>index</td><td>**Number:** Bottom navigation action index.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(text ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “Bottom navigation action text.”</td></tr>,<tr><td>index </td><td>**Number:** Bottom navigation action index.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### bmn.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds a callback handler when the BottomNavbar item is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(name ,value ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>name </td><td>**String:** “The name of the item.”</td></tr>,<tr><td>value </td><td>**Number:** The value or index of the item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### bmn.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### bmn.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### bmn.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### bmn.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### bmn.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### bmn.setSize( width, height )
+##### bmn.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### bmn.shiftItem()
 
-Removes the first navigation action
+Removes the first navigation action. This will return the item being removed.
 
 ##### bmn.show()
 
-Show the component
+Show the component.
 
 ##### bmn.showLabels()
 
-Shows the text label of the bottom navigation action
+Shows the text label of the bottom navigation action.
+
+### addBottomSheet
+
+The BottomSheet in Material Design is a UI component anchored at the screen bottom.
+```
+bts = ui.addBottomSheet(title, options)
+```
+
+Parameter | Type
+--- | ---
+title | **String:** “An optional bottomsheet title.”
+options | **String:** “A comma separated options. Values are:
+
+`"Notch"` to add a small notch at the top of the bottomsheet.
+
+`"HideOnAction"` to hide the bottomsheet when actions are click.
+
+`"CloseAction"` add a close action at the left.
+
+`"MoreAction"` add a more action at the right.
+
+`"NoCancel"` to disable the default closing event when the backdrop is click.”
+Return Value: | **ui object:** BottomSheet
+
+
+It's a good practice to avoid adding a notch when your bottomsheet has a `title`, or `leftAction` or `rightAction`
+
+<details>
+<summary>Example: Basic</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show the actionsheet when click
+        this.btn = ui.addButton(this.main, "Show Bottom Sheet", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+        this.bts = ui.addBottomSheet( "My title" );
+
+        // Create a button and add it to the bottomsheet layout.
+        var btn = ui.addButton(this.bts.layout, "Button", "Secondary");
+        btn.margins = [0, "1rem", 0, "1rem"];
+    }
+
+    btn_onTouch()
+    {
+        // show the bottomsheet
+        this.bts.show();
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show the actionsheet when click
+        this.btn = ui.addButton(this.main, "Show Bottom Sheet", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+        this.bts = ui.addBottomSheet( "My title" )
+
+        #  Create a button and add it to the bottomsheet layout.
+        btn = ui.addButton(this.bts.layout, "Button", "Secondary")
+        btn.margins = [0, "1rem", 0, "1rem"]
+
+    btn_onTouch()
+        #  show the bottomsheet
+        this.bts.show()
+```
+</details>
+
+<details>
+<summary>Example: Bottomsheet with notch</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show the actionsheet when click
+        this.btn = ui.addButton(this.main, "Show Bottom Sheet", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+        this.bts = ui.addBottomSheet("", "Notch");
+
+        // Create a button and add it to the bottomsheet layout.
+        var btn = ui.addButton(this.bts.layout, "Button", "Primary");
+        btn.margins = [0, "1rem", 0, "1rem"];
+    }
+
+    btn_onTouch()
+    {
+        // show the bottomsheet
+        this.bts.show();
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show the actionsheet when click
+        this.btn = ui.addButton(this.main, "Show Bottom Sheet", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+        this.bts = ui.addBottomSheet("", "Notch")
+
+        #  Create a button and add it to the bottomsheet layout.
+        btn = ui.addButton(this.bts.layout, "Button", "Primary")
+        btn.margins = [0, "1rem", 0, "1rem"]
+
+    btn_onTouch()
+        #  show the bottomsheet
+        this.bts.show()
+```
+</details>
+
+<details>
+<summary>Example: Complete example</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show the actionsheet when click
+        this.btn = ui.addButton(this.main, "Show Bottom Sheet", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+        // Create a bottom sheet with the given options.
+        // HideOnAction: Hide the bottomsheet on action click.
+        // CloseAction and MoreAction: Add a left close action and right more action.
+        // NoCancel: Prevent the bottomsheet from closing when the more action is click.
+        this.bts = ui.addBottomSheet("", "HideOnAction,CloseAction,MoreAction,NoCancel");
+        this.bts.title = "My details"
+        this.bts.description = "This is a long description."
+        this.bts.setOnAction( this.onAction );
+
+        // Create a button and add it to the bottomsheet layout.
+        var btn = ui.addButton(this.bts.layout, "Button", "Primary");
+        btn.margins = [0, "1rem", 0, "1rem"];
+    }
+
+    btn_onTouch()
+    {
+        // show the bottomsheet
+        this.bts.show();
+    }
+
+    onAction(name, icon) {
+        ui.showPopup( name );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show the actionsheet when click
+        this.btn = ui.addButton(this.main, "Show Bottom Sheet", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+        #  Create a bottom sheet with the given options.
+        #  HideOnAction: Hide the bottomsheet on action click.
+        #  CloseAction and MoreAction: Add a left close action and right more action.
+        #  NoCancel: Prevent the bottomsheet from closing when the more action is click.
+        this.bts = ui.addBottomSheet("", "HideOnAction,CloseAction,MoreAction,NoCancel")
+        this.bts.title = "My details"
+        this.bts.description = "This is a long description."
+        this.bts.setOnAction( this.onAction )
+
+        #  Create a button and add it to the bottomsheet layout.
+        btn = ui.addButton(this.bts.layout, "Button", "Primary")
+        btn.margins = [0, "1rem", 0, "1rem"]
+
+    btn_onTouch()
+        #  show the bottomsheet
+        this.bts.show()
+
+    onAction(name, icon)
+        ui.showPopup( name )
+```
+</details>
+
+#### Properties
+
+The following properties are available on the **BottomSheet** object:
+
+
+##### bts.description
+
+Sets or returns the bottomsheet description.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### bts.layout
+
+Returns the layout of the bottomsheet. This is where you add your ui components.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### bts.leftActionIcon
+
+Sets or returns the left action icon.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### bts.rightActionIcon
+
+Sets or returns the right action icon.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### bts.title
+
+Sets or returns the bottomsheet title.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+
+#### Methods
+
+The following methods are available on the **BottomSheet** object:
+
+
+##### bts.hide()
+
+Hide the bottom sheet.
+
+##### bts.setOnAction( cb )
+
+Add a callback handler when the left and right action is click when they are provided.
+
+Parameter | Type
+--- | ---
+cb | **function(name ,icon )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>name </td><td>**String:** “The action name. Can be `"leftAction"` or `"rightAction"`.”</td></tr>,<tr><td>icon </td><td>**String:** “Material icon font for the action.”</td></tr></table>
+
+##### bts.setOnClose( cb )
+
+Add a callback handler on `close` event.
+
+Parameter | Type
+--- | ---
+cb | **function()**
+
+##### bts.setOnOpen( cb )
+
+Add a callback handler on `open` event.
+
+Parameter | Type
+--- | ---
+cb | **function()**
+
+##### bts.show()
+
+Show the bottom sheet.
 
 ### addButton
 
-Adds a button control into your app.
+A button component in mobile UI development is an element that triggers an action when pressed.
 ```
 btn = ui.addButton(parent, text, options?, width?, height?)
 ```
@@ -43106,19 +43536,19 @@ Parameter | Type
 --- | ---
 parent | **Object:** The layout where to add the button.
 text | **String:** “The button text or the material icon text.”
-options? | **String:** *comma “,” separated:* “one or a combination of the following:
+options? | **String:** “A comma separated options.
 
- Variant: `Contained` `Outlined` `Text` `Default`
+Variant: `Contained`”, “ `Outlined`”, “ `Text`”, “ `Default`
 
- `Color`: `Primary` `Secondary` `Default`
+Theme Color: `Primary`”, “ `Secondary`”, “ `Default`
 
- `Size`: `Small` `Medium` `Large`
+Sizes: `Small`”, “ `Medium`”, “ `Large`
 
- `Util`: `Icon` `NoRipple` `Upload`
+Toggleable: `Toggle`”, “ `Active`
 
- `In case of upload”, “ you can specify `Multiple` to accept multiple files.”
-width? | **Number:** Fraction of the parent width. [0-1]
-height? | **Number:** Fraction of the parent height. [0-1]
+Utils: `Icon`”, “ `NoRipple`”, “ `Upload`”, “ `Multiple`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Button
 
 
@@ -43479,6 +43909,75 @@ def onFileSelect(files):
 ```
 </details>
 
+<details>
+<summary>Example: Toggleable Buttons</summary>
+
+```js
+class Main extends App {
+    onStart() {
+        // Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY");
+
+        // Add margins to children
+        this.main.childMargins = "0.5rem";
+
+        // Add contained buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Primary,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Secondary,Toggle,Active");
+
+        // Add outlined buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Primary,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Secondary,Toggle,Active");
+
+        // Add text buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Text,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Text,Primary,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Text,Secondary,Toggle,Active");
+
+        // Add a callback handler when all the buttons are click
+        this.main.children.map(m => m.setOnTouch( this.onTouch ));
+    }
+
+    onTouch( value ) {
+        ui.showPopup( ""+value );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add margins to children
+        this.main.childMargins = "0.5rem"
+
+        #  Add contained buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Toggle,Active")
+        this.btn = ui.addButton(this.main, "Button", "Primary,Toggle,Active")
+        this.btn = ui.addButton(this.main, "Button", "Secondary,Toggle,Active")
+
+        #  Add outlined buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Toggle,Active")
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Primary,Toggle,Active")
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Secondary,Toggle,Active")
+
+        #  Add text buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Text,Toggle,Active")
+        this.btn = ui.addButton(this.main, "Button", "Text,Primary,Toggle,Active")
+        this.btn = ui.addButton(this.main, "Button", "Text,Secondary,Toggle,Active")
+
+        #  Add a callback handler when all the buttons are click
+        this.main.children.map(m => m.setOnTouch( this.onTouch ))
+
+    onTouch( value )
+        ui.showPopup( ""+value )
+```
+</details>
+
 #### Properties
 
 The following properties are available on the **Button** object:
@@ -43490,7 +43989,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### btn.absLeft
 
@@ -43498,7 +43997,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### btn.absTop
 
@@ -43506,7 +44005,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### btn.absWidth
 
@@ -43514,7 +44013,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### btn.acceptedFiles
 
@@ -43524,13 +44023,21 @@ Parameter | Type
 --- | ---
 Return Value: | **String**
 
+##### btn.active
+
+Sets or returns the active state if button is `toggleable`.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
 ##### btn.backColor
 
 A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### btn.backImage
 
@@ -43538,7 +44045,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### btn.badge
 
@@ -43570,7 +44077,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### btn.borderStyle
 
@@ -43590,7 +44097,7 @@ Return Value: | **String**
 
 ##### btn.cornerRadius
 
-Sets or returns the corner radius of the button.
+Sets or returns the corner radius in pixels.
 
 Parameter | Type
 --- | ---
@@ -43603,6 +44110,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### btn.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### btn.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### btn.fontFile
 
@@ -43650,7 +44173,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### btn.opacity
 
@@ -43674,7 +44197,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### btn.parent
 
@@ -43682,7 +44205,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### btn.position
 
@@ -43690,7 +44213,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### btn.rotation
 
@@ -43698,7 +44221,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### btn.sizeVariant
 
@@ -43718,11 +44241,11 @@ Return Value: | **String**
 
 ##### btn.textColor
 
-Sets or returns the text color in hexadecimal format.
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### btn.textSize
 
@@ -43794,50 +44317,52 @@ Return Value: | **Number**
 The following methods are available on the **Button** object:
 
 
-##### btn.animate( anim, duration? )
+##### btn.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### btn.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -43845,46 +44370,49 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### btn.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### btn.getPosition( options? )
+##### btn.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### btn.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### btn.hide()
 
-Hide the component
+Hide the component.
 
 ##### btn.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### btn.setBorder( width?, clr?, style='solid' )
+##### btn.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### btn.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the button
+Sets the corner radius of the button.
 
 Parameter | Type
 --- | ---
@@ -43894,45 +44422,61 @@ bl? | **Number:** Bottom-left corner radius.
 br? | **Number:** Bottom-right corner radius.
 mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
-##### btn.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### btn.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### btn.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### btn.setOnFileSelect( callback )
 
-Sets a callback on file select
+Sets a callback on file select.
 
 Parameter | Type
 --- | ---
-callback | **function(files)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>files</td><td>**List:** An array of file objects selected.</td></tr></table>
+callback | **function(files )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>files </td><td>**List:** An array of file objects selected.</td></tr></table>
+
+##### btn.setOnLongTouch( callback )
+
+Adds a callback handler when the button is long touch. The touch timer is about 500 milliseconds.
+
+Parameter | Type
+--- | ---
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### btn.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds a callback handler when the button is touch. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.</td></tr></table>
 
 ##### btn.setPadding( left?, top?, right?, bottom?, mode='px' )
 
-Sets the padding of the button
+Sets the padding of the button.
 
 Parameter | Type
 --- | ---
@@ -43940,39 +44484,48 @@ left? | **Number:** The left padding in pixel.
 top? | **Number:** The top padding in pixels,
 right? | **Number:** The right padding in pixels.
 bottom? | **Number:** The bottom padding in pixels.
-mode='px' | **String:** “`px` `%`”
+mode='px' | **String:** “Can be `px` `%`”
 
-##### btn.setPosition( left?, top?, mode='px' )
+##### btn.setPosition( left, top, mode )
 
-Sets the position of the component relative to its parent dimensions
+Sets the position of the component relative to its parent dimensions.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### btn.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### btn.setSize( width, height )
+##### btn.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### btn.setTextShadow( radius, dx, dy, color )
 
-Sets a text-shadow to the button text
+Sets a text-shadow to the button text.
 
 Parameter | Type
 --- | ---
@@ -43983,7 +44536,7 @@ color | **String:** “The color in hexadecimal `#rrggbb`”
 
 ##### btn.setToolTip( title, pos='top' )
 
-Sets a tooltip when the button is hovered
+Sets a tooltip when the button is hovered.
 
 Parameter | Type
 --- | ---
@@ -43994,11 +44547,11 @@ pos='top' | **String:** “Position of the tooltip.
 
 ##### btn.show()
 
-Show the component
+Show the component.
 
 ### addButtonGroup
 
-Adds a button group into your app.
+In mobile UI development, a button group refers to a collection of buttons presented together, often used for related actions.
 ```
 btg = ui.addButtonGroup(parent, list?, options?, width?, height?)
 ```
@@ -44007,21 +44560,25 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the ButtonGroup
 list? | **List:** The item to be displayed on the buttn group.
-options? | **String:** *comma “,” separated:* “one or a combination of the following:
+options? | **String:** “A comma separated options.
 
- Variant: `Contained` `Outlined` `Text` `Default`
+Variant: `Contained`”, “ `Outlined`”, “ `Text`”, “ `Default`
 
- `Color`: `Primary` `Secondary` `Default`
+Theme Color: `Primary`”, “ `Secondary`”, “ `Default`
 
- `Size`: `Small` `Medium` `Large`
+Sizes: `Small`”, “ `Medium`”, “ `Large`
 
- `Orientation`: `Horizontal` `Vertical`
+Orientation: `Horizontal`”, “ `Vertical`
 
- `Util`: `Icon` `NoElevation`”
-width? | **Number:** Fraction of the parent width. [0-1]
-height? | **Number:** Fraction of the parent height. [0-1]
+Toggleable: `Toggle`”, “ `Radio`
+
+Utils: `Icon`”, “ `NoElevation`”
+width? | **Number:** Fraction of the parent width `[0-1]`
+height? | **Number:** Fraction of the parent height `[0-1]`
 Return Value: | **ui object:** ButtonGroup
 
+
+A toggleable buttongroup can accept additional `Radio` option to have atmost one toggled button item. If buttongroup is toggleable, please refer to the `setOnTouch` callback for the correct order of arguments.
 
 
 
@@ -44345,7 +44902,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### btg.absLeft
 
@@ -44353,7 +44910,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### btg.absTop
 
@@ -44361,7 +44918,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### btg.absWidth
 
@@ -44369,7 +44926,15 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
+
+##### btg.activeItems
+
+Sets or returns the indexes of the active button items.
+
+Parameter | Type
+--- | ---
+Return Value: | **List**
 
 ##### btg.backColor
 
@@ -44377,7 +44942,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### btg.backImage
 
@@ -44385,7 +44950,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### btg.border
 
@@ -44401,7 +44966,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### btg.borderStyle
 
@@ -44434,6 +44999,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### btg.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### btg.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### btg.fontFile
 
@@ -44481,7 +45062,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### btg.opacity
 
@@ -44513,7 +45094,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### btg.parent
 
@@ -44521,7 +45102,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### btg.position
 
@@ -44529,7 +45110,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### btg.rotation
 
@@ -44537,7 +45118,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### btg.sizeVariant
 
@@ -44549,7 +45130,7 @@ Return Value: | **String**
 
 ##### btg.textColor
 
-Sets or returns the color of the button text.
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
@@ -44557,7 +45138,7 @@ Return Value: | **String**
 
 ##### btg.textSize
 
-Sets or returns the font size of the button text.
+Sets or returns the size of the text within the control.
 
 Parameter | Type
 --- | ---
@@ -44627,56 +45208,58 @@ The following methods are available on the **ButtonGroup** object:
 
 ##### btg.addItem( item )
 
-Adds an additional item in the button group
+Adds an additional item in the button group.
 
 Parameter | Type
 --- | ---
 item | **String:** “The additional item.”
 
-##### btg.animate( anim, duration? )
+##### btg.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### btg.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -44684,19 +45267,19 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### btg.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### btg.enableElevation( enable )
 
-Enable of disable the elevation of the button group
+Enable of disable the elevation of the button group.
 
 Parameter | Type
 --- | ---
-enable | **Boolean:** `true` or `false`
+enable | **Boolean:** Can be `true` or `false`
 
 ##### btg.getEnabled( index )
 
-Get the enabled state of the button item in the button group
+Get the enabled state of the button item in the button group.
 
 Parameter | Type
 --- | ---
@@ -44705,83 +45288,86 @@ Return Value: | **Boolean**
 
 ##### btg.getEnabledByName( name )
 
-Get the enabled state of button item in the button group
+Get the enabled state of button item in the button group.
 
 Parameter | Type
 --- | ---
 name | **String:** “The button text.”
 Return Value: | **Boolean**
 
-##### btg.getPosition( options? )
+##### btg.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### btg.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### btg.hide()
 
-Hide the component
+Hide the component.
 
 ##### btg.popItem()
 
-Removes the last item of the button group
+Removes the last item of the button group. This will return the item being removed.
 
-##### btg.removeItemByName( name )
+##### btg.removeItemByIndex( index )
 
-Removes an item in the button group by its name
-
-Parameter | Type
---- | ---
-name | **String:** “The name of the item to be remove.”
-
-##### btg.removeItemIndex( index )
-
-Removes an item in the button group by its index
+Removes an item in the button group by its index.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the item to be remove.
 
+##### btg.removeItemByName( name )
+
+Removes an item in the button group by its name.
+
+Parameter | Type
+--- | ---
+name | **String:** “The name of the item to be remove.”
+
 ##### btg.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### btg.setBorder( width?, clr?, style='solid' )
+##### btg.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### btg.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
+
+##### btg.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
+
+Parameter | Type
+--- | ---
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
 
 ##### btg.setEnabled( index, value )
 
-Enable or disable a button item in the button group
+Enable or disable a button item in the button group.
 
 Parameter | Type
 --- | ---
@@ -44790,7 +45376,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### btg.setEnabledByName( name, value )
 
-Enable or disable a button item by its name
+Enable or disable a button item by its name.
 
 Parameter | Type
 --- | ---
@@ -44799,92 +45385,109 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### btg.setItemByIndex( item, index )
 
-Sets a new text for the item in the button group
+Sets a new text for the item in the button group.
 
 Parameter | Type
 --- | ---
 item | **String:** “The new text”
 index | **Number:** The index of the item.
 
-##### btg.setList( items )
+##### btg.setMargins( left, top, right, bottom, mode )
 
-Sets the new list of the button group
-
-Parameter | Type
---- | ---
-items | **String:** “A comma separated list or an array”
-
-##### btg.setMargins( left?, top?, right?, bottom?, mode='px' )
-
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### btg.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(text,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “Button text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding button.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(text ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “Button text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding button.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### btg.setOnTouch( callback )
 
-Adds a callback handler when the button is touch
+Adds a callback handler when a button item is touch. If the button is `toggleable` the arguments pass into the callback function is `text, index, active, pos` respectively, where `active` is the active state of the button item.
 
 Parameter | Type
 --- | ---
-callback | **function(text,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “The button text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the correspoding button.</td></tr>,<tr><td>event</td><td>**Object:** The pointer click event object.</td></tr></table>
+callback | **function(text ,index ,active ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The button text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding button item.</td></tr>,<tr><td>active </td><td>**Boolean:** The active state of the button item if button is `toggleable`.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### btg.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### btg.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### btg.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### btg.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### btg.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### btg.setSize( width, height )
+##### btg.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
-##### btg.setToolTip( titles, pos='top' )
+##### btg.setToolTips( titles, pos='top' )
 
-Adds a tooltip to the ButtonGroup items
+Adds a tooltips to the ButtonGroup items.
 
 Parameter | Type
 --- | ---
@@ -44895,15 +45498,1440 @@ pos='top' | **String:** “The positio of the tooltip.
 
 ##### btg.shiftItem()
 
-Removes the first item in the button group
+Removes the first item in the button group. This will return the item being removed.
 
 ##### btg.show()
 
-Show the component
+Show the component.
+
+### addCameraView
+
+Adds a camera view into your app to take pictures and record videos.
+```
+rvw = ui.addCameraView(parent, options, width, height)
+```
+
+Parameter | Type
+--- | ---
+parent | **Object:** The parent layout where to add the camera view.
+options | **String:** “Comma separated options for the camera view. Available values are "Front"”, “ "Back"”, “ "Video"”, “ "Fill" and "Stretch". "Video" option includes audio.”
+width | **Number:** Fraction of the parent width [0-1].
+height | **Number:** Fraction of the parent height [0-1].
+Return Value: | **ui object:** CameraView
+
+
+The `capture` method returns the image data. To save the image in DroidScript, you can use the `CreateFile` method like this:
+```js
+// capture an image
+
+img = cam.capture("jpg", "bytes")
+
+
+
+const file = app.CreateFile("myimage.jpg", "rw")
+
+file.WriteDate(bytes, "bytes")
+
+file.Close()
+```
+Likewise, the `record` method requires a callback to be called when the video data is ready. To save videos in DroidScript, you can use the `CreateFile` method like this:
+```js
+// record a video
+
+cam.record("mp4", "bytes", onRecord)
+
+
+
+// in your callback function
+
+onRecord( bytes ) {
+
+    const file = app.CreateFile("myvideo.mp4", "rw")
+
+    file.WriteDate(bytes, "bytes")
+
+    file.Close()
+
+}
+```
+<details>
+<summary>Example: Camera app in DroidScript</summary>
+
+```js
+//Force this app to portrait mode
+cfg.Portrait
+
+//Make sure to add Camera permission
+_AddPermissions("Camera")
+
+//Main class for the app
+class Main extends App
+{
+    //Called when app starts
+    onStart()
+    {
+        //Create a main layout of type Frame
+        this.main = ui.addLayout("main", "Frame", "FillXY")
+
+        //Add a camera view that fills the parent width and height
+        //The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.
+        this.cam = ui.addCameraView(this.main, "Fill", 1, 1)
+
+        //Create a horizontal layout that will be displayed in the bottom of the screen
+        this.layBtm = ui.addLayout(this.main, "Linear", "Horizontal,Vcenter", 1, 0.1)
+        this.layBtm.childSpacing = "Between"
+        this.layBtm.setPosition(0, 0.9)
+        this.layBtm.padding = [1, null, 1, null, "rem"]
+
+        //Create a camera switch toggle icon at the left
+        this.toggleCam = ui.addButton(this.layBtm, "flip_camera_android", "icon")
+        this.toggleCam.textColor = "#fff"
+        this.toggleCam.setOnTouch( this.onSwitchCam )
+
+        //Create a snap button which is a bit larger
+        this.snapBtn = ui.addButton(this.layBtm, "camera", "icon")
+        this.snapBtn.textColor = "#fff"
+        this.snapBtn.iconSize = "2.5rem"
+        this.snapBtn.setOnTouch( this.captureImg )
+
+        //Create a preview image and pass it to the previewImage prop of the camera view
+        this.prevImg = ui.addImage(this.layBtm, "", "avatar,initial", null)
+        this.cam.previewImage = this.prevImg
+        this.prevImg.setSize(2.5, 2.5, "rem")
+        this.prevImg.cornerRadius = "50%"
+        this.prevImg.backColor = "black"
+
+        //Start the camera preview
+        this.cam.startPreview()
+    }
+
+    //Handle switching of camera source
+    onSwitchCam() {
+        let src = this.cam.source == "front" ? "back" : "front"
+        this.cam.source = src
+        this.cam.updatePreview()
+    }
+
+    //Handle capture and save the image
+    captureImg() {
+        const img = this.cam.capture("jpg", "base64")
+
+        //Create unique filename
+        const name = "img-" + new Date().getTime() + ".jpg"
+        const path = "/Internal/DCIM/" + name
+
+        //Save the image data
+        app.WriteFile(path, img, "base64")
+
+        ui.showPopup( "Image has been saved!" )
+    }
+}
+```
+
+```py
+### Force this app to portrait mode
+cfg.Portrait
+
+### Make sure to add Camera permission
+_AddPermissions("Camera")
+
+### Main class for the app
+class Main extends App
+    # Called when app starts
+    onStart()
+        # Create a main layout of type Frame
+        this.main = ui.addLayout("main", "Frame", "FillXY")
+
+        # Add a camera view that fills the parent width and height
+        # The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.
+        this.cam = ui.addCameraView(this.main, "Fill", 1, 1)
+
+        # Create a horizontal layout that will be displayed in the bottom of the screen
+        this.layBtm = ui.addLayout(this.main, "Linear", "Horizontal,Vcenter", 1, 0.1)
+        this.layBtm.childSpacing = "Between"
+        this.layBtm.setPosition(0, 0.9)
+        this.layBtm.padding = [1, null, 1, null, "rem"]
+
+        # Create a camera switch toggle icon at the left
+        this.toggleCam = ui.addButton(this.layBtm, "flip_camera_android", "icon")
+        this.toggleCam.textColor = "#fff"
+        this.toggleCam.setOnTouch( this.onSwitchCam )
+
+        # Create a snap button which is a bit larger
+        this.snapBtn = ui.addButton(this.layBtm, "camera", "icon")
+        this.snapBtn.textColor = "#fff"
+        this.snapBtn.iconSize = "2.5rem"
+        this.snapBtn.setOnTouch( this.captureImg )
+
+        # Create a preview image and pass it to the previewImage prop of the camera view
+        this.prevImg = ui.addImage(this.layBtm, "", "avatar,initial", null)
+        this.cam.previewImage = this.prevImg
+        this.prevImg.setSize(2.5, 2.5, "rem")
+        this.prevImg.cornerRadius = "50%"
+        this.prevImg.backColor = "black"
+
+        # Start the camera preview
+        this.cam.startPreview()
+
+    # Handle switching of camera source
+    onSwitchCam()
+        src = this.cam.source == "front" ? "back" : "front"
+        this.cam.source = src
+        this.cam.updatePreview()
+
+    # Handle capture and save the image
+    captureImg()
+        img = this.cam.capture("jpg", "base64")
+
+        # Create unique filename
+        name = "img-" + new Date().getTime() + ".jpg"
+        path = "/Internal/DCIM/" + name
+
+        # Save the image data
+        app.WriteFile(path, img, "base64")
+
+        ui.showPopup( "Image has been saved!" )
+```
+</details>
+
+<details>
+<summary>Example: Video recorder in DroidScript</summary>
+
+```js
+//Force this app to portrait mode.
+cfg.Portrait
+
+//Make sure to add Camera permission
+_AddPermissions("Camera")
+
+//Main class for the app
+class Main extends App
+{
+    //Called when app starts
+    onStart()
+    {
+        this.time = 0
+
+        //Create a main layout of type Frame
+        this.main = ui.addLayout("main", "Absolute", "FillXY")
+
+        //Add a camera view that fills the parent width and height
+        //The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.
+        this.cam = ui.addCameraView(this.main, "Fill,Video", 1, 1)
+
+        this.timer = ui.addText(this.main, "", "Center,Caption", 1)
+        this.timer.textColor = "#fff"
+        this.timer.setPosition(0, 0.025)
+
+        //Create a horizontal layout that will be displayed in the bottom of the screen
+        this.layBtm = ui.addLayout(this.main, "Linear", "Horizontal", 1, 0.1)
+        this.layBtm.setPosition(0, 0.9)
+
+        //Create a snap button which is a bit larger
+        this.vidBtn = ui.addButton(this.layBtm, "videocam", "icon")
+        this.vidBtn.textColor = "#fff"
+        this.vidBtn.iconSize = "2.5rem"
+        this.vidBtn.setOnTouch( this.handleRecord )
+
+        //Start the camera preview
+        this.cam.startPreview()
+    }
+
+    //Handle switching of camera source
+    handleRecord() {
+        //Start recording if icon is videocam
+        if(this.vidBtn.icon == "videocam") {
+            this.cam.record("mp4", "base64", this.onRecord)
+            this.interval = setInterval(() => {
+                this.timer.text = (++ this.time) + " sec"
+            }, 1000)
+        }
+        // otherwise stop the recording
+        else this.cam.stop()
+
+        //Switch button icon
+        this.vidBtn.icon = this.cam.recording ? "stop" : "videocam"
+    }
+
+    //Handle on record and save the video data
+    onRecord( data ) {
+
+        // Clear interval
+        clearInterval( this.interval )
+        this.interval = null
+        this.timer.text = ""
+        this.time = 0
+
+        //Create unique filename
+        const name = "vid-" + new Date().getTime() + ".mp4"
+        const path = "/Internal/DCIM/" + name
+
+        //Save the video data
+        app.WriteFile(path, data, "base64")
+
+        ui.showPopup( "Video has been saved!" )
+    }
+}
+```
+
+```py
+### Force this app to portrait mode.
+cfg.Portrait
+
+### Make sure to add Camera permission
+_AddPermissions("Camera")
+
+### Main class for the app
+class Main extends App
+    # Called when app starts
+    onStart()
+        this.time = 0
+
+        # Create a main layout of type Frame
+        this.main = ui.addLayout("main", "Absolute", "FillXY")
+
+        # Add a camera view that fills the parent width and height
+        # The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.
+        this.cam = ui.addCameraView(this.main, "Fill,Video", 1, 1)
+
+        this.timer = ui.addText(this.main, "", "Center,Caption", 1)
+        this.timer.textColor = "#fff"
+        this.timer.setPosition(0, 0.025)
+
+        # Create a horizontal layout that will be displayed in the bottom of the screen
+        this.layBtm = ui.addLayout(this.main, "Linear", "Horizontal", 1, 0.1)
+        this.layBtm.setPosition(0, 0.9)
+
+        # Create a snap button which is a bit larger
+        this.vidBtn = ui.addButton(this.layBtm, "videocam", "icon")
+        this.vidBtn.textColor = "#fff"
+        this.vidBtn.iconSize = "2.5rem"
+        this.vidBtn.setOnTouch( this.handleRecord )
+
+        # Start the camera preview
+        this.cam.startPreview()
+
+    # Handle switching of camera source
+    handleRecord()
+        # Start recording if icon is videocam
+        if this.vidBtn.icon == "videocam":
+            this.cam.record("mp4", "base64", this.onRecord)
+            this.interval = setInterval(() =>
+                this.timer.text = (++ this.time) + " sec", 1000)
+        #  otherwise stop the recording
+        else: this.cam.stop()
+
+        # Switch button icon
+        this.vidBtn.icon = this.cam.recording ? "stop" : "videocam"
+
+    # Handle on record and save the video data
+    onRecord( data )
+
+        #  Clear interval
+        clearInterval( this.interval )
+        this.interval = null
+        this.timer.text = ""
+        this.time = 0
+
+        # Create unique filename
+        name = "vid-" + new Date().getTime() + ".mp4"
+        path = "/Internal/DCIM/" + name
+
+        # Save the video data
+        app.WriteFile(path, data, "base64")
+
+        ui.showPopup( "Video has been saved!" )
+```
+</details>
+
+#### Properties
+
+The following properties are available on the **CameraView** object:
+
+
+##### rvw.capabilities
+
+Returns the capabilities of the camera. You can inspect this object to set camera constraints.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### rvw.focusDistance
+
+Sets or returns the focus distance. See `capabilities` for min and max values.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### rvw.focusMode
+
+Sets or returns the camera focus mode. Available values are `"manual"`, `"single-shot"`, `"continuous"`
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### rvw.frameRate
+
+Sets or returns the video frame rate. See `capabilites` for min and max values.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### rvw.imageHeight
+
+Sets or returns the image height in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### rvw.img
+
+Sets the preview image taken on capture. Must be a UI image component.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### rvw.iso
+
+Sets or returns the camera iso. See `capabilities` for max and min values.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### rvw.sound
+
+Sets or returns a boolean value whether the sound is enabled or disabled
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### rvw.source
+
+The camera source to be use. Values can be `"front"` or `"back"`.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### rvw.width
+
+Sets or returns the image width in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+
+#### Methods
+
+The following methods are available on the **CameraView** object:
+
+
+##### rvw.capture( type, format )
+
+Capture an image. This will return an image data which you can save or manipulate.
+
+Parameter | Type
+--- | ---
+type | **String:** “The image type. Values are "jpg" or "jpeg""”, “ "png"”, “ "webp"”, “ "gif". Default is "jpg".”
+format | **String:** “The returned data format. Can be "base64"”, “ "bytes"(regular array)”, “ "uint8array"(typed array) or "arraybuffer". Default is "base64"”
+Return Value: | **Object**
+
+##### rvw.getPixelData( format, left, top, width, height )
+
+Returns the pixel data of the image preview or a given portion of it.
+
+Parameter | Type
+--- | ---
+format | **String:** “Values are "rgba" array”, “ or "pngbase64" or "jpgbase64".”
+left | **Number:** Starting pixel from the left.
+top | **Number:** Starting pixel from the top.
+width | **Number:** The width of the image portion in pixels.
+height | **Number:** The height of the image portion in pixels.
+Return Value: | **Object**
+
+##### rvw.record( type, format, cb )
+
+Record a video.
+
+Parameter | Type
+--- | ---
+type | **String:** “Video output encoding format. Values can be "mp4"”, “ "ogg" and "webm".Default is "mp4"”
+format | **String:** “Return video data format. Values can be "blob"”, “ "base64"”, “ "bytes" (regular array)”, “ "objecturl"”, “ "arraybuffer"”, “ "uint8array" (typed array). Default is "base64"”
+cb | **function()**
+
+##### rvw.setOnError( cb )
+
+Add a callback handler when an error occured.
+
+Parameter | Type
+--- | ---
+cb | **function(error )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>error </td><td>**String:** “The error message.”</td></tr></table>
+
+##### rvw.setOnReady( cb )
+
+Add a callback handler when the camera is ready.
+
+Parameter | Type
+--- | ---
+cb | **function()**
+
+##### rvw.setPictureSize( width, height )
+
+Sets the size of the image.
+
+Parameter | Type
+--- | ---
+width | **Number:** The image width in pixels. See `capabilities` for minimum and maximum values.
+height | **Number:** The image height in pixels. See `capabilities` for minimum and maximum values.
+
+##### rvw.startPreview()
+
+Start streaming the camera.
+
+##### rvw.stop()
+
+Stop recording a video.
+
+##### rvw.updatePreview()
+
+Update the camera preview. Call it when you have updated the constraints of the camera such as setting the source from back to front, or setting zoom level etc.
+
+### addCard
+
+They are surfaces in material design that display content and actions on a single topic.
+```
+crd = ui.addCard(parent, content, options, width, height)
+```
+
+Parameter | Type
+--- | ---
+parent | **Object:** The layout where to add the card.
+content | **Object:** A JSON object representing the contents of the card. Passing the card contents on initialization makes your app layout loads faster than setting each property individually.
+options | **String:** “A comma separated option for the card.”
+width | **Number:** Fraction of the parent width.
+height | **Number:** Fraction of the parent height.
+Return Value: | **ui object:** Card
+
+
+<h4>Content properties</h4>
+```js
+{
+
+    headerTitle: string, // card header title
+
+    headerSubtitle: string, // card header subtitle or subheader
+
+    headerAvatar: string, // card header avatar. can be a single character or a path to an image
+
+    headerAction: string, // card header action. A material icon font
+
+    media: string, // path to an image
+
+    bodyTitle: string, // title of the card content
+
+    bodyText: string, // long description of the card
+
+    actions: array, // list of icon buttons. can be a list of material-icon fonts if actionType is an "icon"
+
+    actionType: string, // type of action. can be a "button" or "icon"
+
+    onAction: function, // callback when card actions are clicked. refer to setOnAction method for arguments
+
+    onHeaderAction: function // callback when header action is clicked. refer to setOnHeaderAction method for arguments
+
+}
+```
+<details>
+<summary>Example: Basic Card</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY");
+
+        // initialize the content of the card
+        var content = {
+            bodyTitle: "Lizard",
+            bodyText: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+            actions: ["Read more"]
+        };
+
+        // Create a card by passing the content object
+        this.crd = ui.addCard(this.main, content, "primary", 0.8);
+
+        // Add a callback handler when the action is click
+        this.crd.setOnAction( this.onAction )
+    }
+
+    onAction(text, i)
+    {
+        ui.showPopup( text );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  initialize the content of the card
+        content =
+            bodyTitle: "Lizard",
+            bodyText: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+            actions: ["Read more"]
+
+        #  Create a card by passing the content object
+        this.crd = ui.addCard(this.main, content, "primary", 0.8)
+
+        #  Add a callback handler when the action is click
+        this.crd.setOnAction( this.onAction )
+
+    onAction(text, i)
+        ui.showPopup( text )
+```
+</details>
+
+<details>
+<summary>Example: Card with media</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // initialize the content of the card
+        var content = {
+            media: "https://picsum.photos/300/180",
+            bodyTitle: "Card",
+            bodyText: "They are surfaces in material design that display content and actions on a single topic. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.",
+            actions: ["favorite", "share"],
+            actionType: "icon"
+        }
+
+        // Create a card by passing the content object
+        this.crd = ui.addCard(this.main, content, "primary", 0.8)
+
+        // Add a callback handler when the action is click
+        this.crd.setOnAction( this.onAction )
+    }
+
+    onAction(text, i)
+    {
+        ui.showPopup( text );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  initialize the content of the card
+        content =
+            media: "https:# picsum.photos/300/180",
+            bodyTitle: "Card",
+            bodyText: "They are surfaces in material design that display content and actions on a single topic. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.",
+            actions: ["favorite", "share"],
+            actionType: "icon"
+
+        #  Create a card by passing the content object
+        this.crd = ui.addCard(this.main, content, "primary", 0.8)
+
+        #  Add a callback handler when the action is click
+        this.crd.setOnAction( this.onAction )
+
+    onAction(text, i)
+        ui.showPopup( text )
+```
+</details>
+
+<details>
+<summary>Example: Card with header</summary>
+
+```js
+class Main extends App
+{
+   onStart()
+   {
+       // Create a fullscreen layout with objects vertically centered
+       this.main = ui.addLayout("main", "Linear", "VCenter,FillXY,ScrollY")
+
+       // initialize the content of the card with header information
+       var content = {
+           headerTitle: "DroidScript.org",
+           headerSubtitle: "Posted on November 16, 2023",
+           headerAvatar: "D",
+           headerAction: "more_vert",
+           media: "https://picsum.photos/300/180",
+           bodyTitle: "Card",
+           bodyText: "They are surfaces in material design that display content and actions on a single topic. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.",
+           actions: ["favorite", "share"],
+           actionType: "icon"
+       }
+
+       // Create a card by passing the content object
+       this.crd = ui.addCard(this.main, content, "primary", 0.94)
+       this.crd.headerAvatarColor = "green"
+
+       // Add a callback handler when the action is click
+       this.crd.setOnAction( this.onAction )
+
+       // Add a callback handler when header action is click
+       this.crd.setOnHeaderAction( this.onHeaderAction )
+   }
+
+   onAction(text, i)
+   {
+       ui.showPopup( text );
+   }
+
+   onHeaderAction()
+   {
+       ui.showPopup( "Header action is click" );
+   }
+}
+```
+
+```py
+class Main extends App
+   onStart()
+       #  Create a fullscreen layout with objects vertically centered
+       this.main = ui.addLayout("main", "Linear", "VCenter,FillXY,ScrollY")
+
+       #  initialize the content of the card with header information
+       content =
+           headerTitle: "DroidScript.org",
+           headerSubtitle: "Posted on November 16, 2023",
+           headerAvatar: "D",
+           headerAction: "more_vert",
+           media: "https:# picsum.photos/300/180",
+           bodyTitle: "Card",
+           bodyText: "They are surfaces in material design that display content and actions on a single topic. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.",
+           actions: ["favorite", "share"],
+           actionType: "icon"
+
+       #  Create a card by passing the content object
+       this.crd = ui.addCard(this.main, content, "primary", 0.94)
+       this.crd.headerAvatarColor = "green"
+
+       #  Add a callback handler when the action is click
+       this.crd.setOnAction( this.onAction )
+
+       #  Add a callback handler when header action is click
+       this.crd.setOnHeaderAction( this.onHeaderAction )
+
+   onAction(text, i)
+       ui.showPopup( text )
+
+   onHeaderAction()
+       ui.showPopup( "Header action is click" )
+```
+</details>
+
+<details>
+<summary>Example: Card with additional controls</summary>
+
+```js
+class Main extends App
+{
+   onStart()
+   {
+       // Create a fullscreen layout with objects vertically centered
+       this.main = ui.addLayout("main", "Linear", "VCenter,FillXY,ScrollY")
+
+       // initialize the content of the card with header information
+       var content = {
+           headerTitle: "DroidScript.org",
+           headerSubtitle: "Posted on November 16, 2023",
+           headerAvatar: "D",
+           headerAction: "more_vert",
+           media: "https://picsum.photos/300/180",
+           bodyTitle: "UI Components",
+           bodyText: "This is a card with additional UI Components as content.",
+           actions: ["favorite", "share"],
+           actionType: "icon"
+       }
+
+       // Create a card by passing the content object
+       this.crd = ui.addCard(this.main, content, "primary", 0.96)
+       this.crd.headerAvatarColor = "green"
+
+       // Add a callback handler when the action is click
+       this.crd.setOnAction( this.onAction )
+
+       // Add a callback handler when header action is click
+       this.crd.setOnHeaderAction( this.onHeaderAction )
+
+       // Add a UI Button
+       this.btn = ui.addButton(this.crd.layout, "Button", "Primary");
+       this.btn.margins = [0, "1rem", 0, "1rem"];
+
+       // Add a text component
+       this.txt = ui.addText(this.crd.layout, "This is a UI component text added to a card layout. Below is a checkbox component.");
+
+       // Add a checkboxgroup component
+       this.ckb = ui.addCheckboxGroup(this.crd.layout, "Mango,Apple,Orange", "Left,Secondary", 1)
+       this.ckb.label = "Select fruits"
+   }
+
+   onAction(text, i)
+   {
+       ui.showPopup( text );
+   }
+
+   onHeaderAction()
+   {
+       ui.showPopup( "Header action is click" );
+   }
+}
+```
+
+```py
+class Main extends App
+   onStart()
+       #  Create a fullscreen layout with objects vertically centered
+       this.main = ui.addLayout("main", "Linear", "VCenter,FillXY,ScrollY")
+
+       #  initialize the content of the card with header information
+       content =
+           headerTitle: "DroidScript.org",
+           headerSubtitle: "Posted on November 16, 2023",
+           headerAvatar: "D",
+           headerAction: "more_vert",
+           media: "https:# picsum.photos/300/180",
+           bodyTitle: "UI Components",
+           bodyText: "This is a card with additional UI Components as content.",
+           actions: ["favorite", "share"],
+           actionType: "icon"
+
+       #  Create a card by passing the content object
+       this.crd = ui.addCard(this.main, content, "primary", 0.96)
+       this.crd.headerAvatarColor = "green"
+
+       #  Add a callback handler when the action is click
+       this.crd.setOnAction( this.onAction )
+
+       #  Add a callback handler when header action is click
+       this.crd.setOnHeaderAction( this.onHeaderAction )
+
+       #  Add a UI Button
+       this.btn = ui.addButton(this.crd.layout, "Button", "Primary")
+       this.btn.margins = [0, "1rem", 0, "1rem"]
+
+       #  Add a text component
+       this.txt = ui.addText(this.crd.layout, "This is a UI component text added to a card layout. Below is a checkbox component.")
+
+       #  Add a checkboxgroup component
+       this.ckb = ui.addCheckboxGroup(this.crd.layout, "Mango,Apple,Orange", "Left,Secondary", 1)
+       this.ckb.label = "Select fruits"
+
+   onAction(text, i)
+       ui.showPopup( text )
+
+   onHeaderAction()
+       ui.showPopup( "Header action is click" )
+```
+</details>
+
+#### Properties
+
+The following properties are available on the **Card** object:
+
+
+##### crd.absHeight
+
+Returns the absolute height of the control in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.absLeft
+
+Returns the absolute distance of the control from the left in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.absTop
+
+Returns the absolute distance of the control from the top in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.absWidth
+
+Returns the absolute width of the control in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.actions
+
+Sets or returns the list of card actions. If `actionType` is an `"icon"`, provide a list of material icon fonts.
+
+Parameter | Type
+--- | ---
+Return Value: | **List**
+
+##### crd.actionType
+
+Sets or returns the type of actions in the card. Values can be `"button"` or `"icon"`. If `"icon"` please provide a material icon actions.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### crd.backColor
+
+A hexadecimal color of the form `#rrggbb`
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.backImage
+
+The path to your image file.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.bodyText
+
+Sets or returns the text of the card content.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.bodyTitle
+
+Sets or returns the title of the card content.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.border
+
+Sets or returns the border thickness in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.borderColor
+
+Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.borderStyle
+
+Sets or returns the border style. Values can be `dotted`, `dashed`, `solid`, `double`, `groove`, `ridge`, `inset` and `outset`. Default is `solid`.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.cornerRadius
+
+Sets or returns the corner radius in pixels.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.disabled
+
+Sets or returns the `disabled` state of the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### crd.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### crd.elevation
+
+Sets or returns the elevation of the card.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.fontFile
+
+Sets or returns the `relative` path to the font-family use.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.headerAction
+
+Sets or returns the card header action.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.headerAvatar
+
+Sets or returns the card header avatar. Can be a character or a path to an image.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.headerAvatarColor
+
+Sets or returns the card header avatar color in css supported color format.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.headerSubtitle
+
+Sets or returns the card header subheader or subtitle.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.headerTitle
+
+Sets or returns the card header title.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.height
+
+Sets or returns the height of the control as a fraction of the parent control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.isVisible
+
+Returns whether the control is visible or not.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### crd.layout
+
+Returns the div element of the card content. It is useful when you want to add ui components into the content of the card.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### crd.left
+
+Returns the distance of the control from the left.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.margins
+
+Sets or returns the margin of the control. Works on controls with `Linear` parent only. You can also pass a number to set equal margins for all sides.
+
+Parameter | Type
+--- | ---
+Return Value: | **List**
+
+##### crd.media
+
+Sets or returns the card media.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.opacity
+
+Sets or returns the opacity of the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.options
+
+Sets or returns the `options` of the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.padding
+
+Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
+
+Parameter | Type
+--- | ---
+Return Value: | **List**
+
+##### crd.parent
+
+Returns the parent layout control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### crd.position
+
+Returns the position of the control. The returned object has `left` `top` `right` and `bottom` props.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### crd.rotation
+
+Sets or returns the angle of rotation in degrees.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.textColor
+
+Sets or returns the color of the text.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.textSize
+
+Sets or returns the size of the text within the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.top
+
+Returns the distance of the control from the top.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### crd.type
+
+Returns the type of the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.visibility
+
+Sets or returns the visibility of the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### crd.width
+
+Sets or returns the width of the control as a fraction of the parent control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+
+#### Methods
+
+The following methods are available on the **Card** object:
+
+
+##### crd.addBodyItems( title, text )
+
+Add card body items. Using this method is faster than setting the individual.
+
+Parameter | Type
+--- | ---
+title | **String:** “The title of the content of the card.”
+text | **String:** “The description of the card.”
+
+##### crd.addHeaderItems( title, subtitle, avatar, action )
+
+Add header items to the card. Using this method is faster than setting the individual header property.
+
+Parameter | Type
+--- | ---
+title | **String:** “The title of the card.”
+subtitle | **String:** “The subheader of the card.”
+avatar | **String:** “Can be a char or a path to an image.”
+action | **String:** “Material icon font.”
+
+##### crd.animate( anim, duration )
+
+Animate the component.
+
+Parameter | Type
+--- | ---
+anim | **String:** “The type of animation. Here are the available values
+
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
+
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
+
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
+
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
+
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
+
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
+
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
+
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
+
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
+
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
+
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
+
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
+
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
+
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
+
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
+
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
+
+##### crd.bringForward( zIndex )
+
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
+
+Parameter | Type
+--- | ---
+zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` method.
+
+##### crd.destroy()
+
+Destroy the component.
+
+##### crd.getPosition( options )
+
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
+
+Parameter | Type
+--- | ---
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
+
+##### crd.gone()
+
+Destroy the component.
+
+##### crd.hide()
+
+Hide the component.
+
+##### crd.sendBackward( zIndex )
+
+Bring this component backward by a given z-index.
+
+Parameter | Type
+--- | ---
+zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
+
+##### crd.setBorder( left, top, right, bottom, clr, style )
+
+Sets the border line for the component container.
+
+Parameter | Type
+--- | ---
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
+
+##### crd.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
+
+Parameter | Type
+--- | ---
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### crd.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
+
+##### crd.setOnAction( cb )
+
+Add a callback function to be called when a card action is click.
+
+Parameter | Type
+--- | ---
+cb | **function(icon ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>icon </td><td>**String:** “Material icon.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the action.</td></tr></table>
+
+##### crd.setOnContextMenu( callback )
+
+Adds a callback function on right click.
+
+Parameter | Type
+--- | ---
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
+
+##### crd.setOnHeaderAction( cb )
+
+Add a callback function to be called when the header action icon is click.
+
+Parameter | Type
+--- | ---
+cb | **function()**
+
+##### crd.setPadding( left, top, right, bottom, mode )
+
+Sets the padding of the component's container.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### crd.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### crd.setScale( x, y )
+
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
+
+Parameter | Type
+--- | ---
+x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
+y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
+
+##### crd.setSize( width, height, mode )
+
+Sets the size of the component.
+
+Parameter | Type
+--- | ---
+width | **Number:** Fraction of the parent width. [0-1]
+height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
+
+##### crd.show()
+
+Show the component.
 
 ### addCheckbox
 
-Adds a checkbox control to the given layout.
+A checkbox in UI development is a graphical control element that allows users to toggle between two states, typically checked or unchecked, to indicate a choice or selection.
 ```
 ckb = ui.addCheckbox(parent, text, options?, width?, height?)
 ```
@@ -44912,13 +46940,17 @@ Parameter | Type
 --- | ---
 parent | **Object:** The layout where to add the checkbox
 text | **String:** “The label for the checkbox”
-options? | **String:** *comma “,” separated:* “Colors: `Primary` `Secondary` `Medium` `Small`
+options? | **String:** “A comma separated options.
 
- `Position`: `Left` `Top` `Right` `Bottom`
+Theme Colors: `Primary`”, “ `Secondary`
 
- `Variant`: `Indeterminate` `Determinate`”
-width? | **Number:** Fraction of the parent width. [0-1]
-height? | **Number:** Fraction of the parent height. [0-1]
+Sizes: `Medium`”, “ `Small`
+
+Icon position: `Left`”, “ `Top`”, “ `Right`”, “ `Bottom`
+
+Variant: `Indeterminate`”, “ `Determinate`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Checkbox
 
 
@@ -45156,7 +47188,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### ckb.absLeft
 
@@ -45164,7 +47196,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### ckb.absTop
 
@@ -45172,7 +47204,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### ckb.absWidth
 
@@ -45180,7 +47212,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### ckb.backColor
 
@@ -45188,7 +47220,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### ckb.backImage
 
@@ -45196,7 +47228,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### ckb.border
 
@@ -45212,7 +47244,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### ckb.borderStyle
 
@@ -45261,6 +47293,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### ckb.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### ckb.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### ckb.enabled
 
@@ -45324,7 +47372,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### ckb.opacity
 
@@ -45348,7 +47396,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### ckb.parent
 
@@ -45356,7 +47404,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### ckb.position
 
@@ -45364,7 +47412,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### ckb.rotation
 
@@ -45372,7 +47420,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### ckb.spaceBetween
 
@@ -45468,50 +47516,52 @@ Return Value: | **Number**
 The following methods are available on the **Checkbox** object:
 
 
-##### ckb.animate( anim, duration? )
+##### ckb.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### ckb.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -45519,147 +47569,175 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### ckb.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### ckb.getIcon()
 
-Returns the icons of the form { checkIcon, uncheckedIcon
+Returns the icons of the form { checkIcon, uncheckedIcon }.
 
 Parameter | Type
 --- | ---
 Return Value: | **Object**
 
-##### ckb.getPosition( options? )
+##### ckb.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### ckb.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### ckb.hide()
 
-Hide the component
+Hide the component.
 
 ##### ckb.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### ckb.setBorder( width?, clr?, style='solid' )
+##### ckb.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### ckb.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
+
+##### ckb.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
+
+Parameter | Type
+--- | ---
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
 
 ##### ckb.setIcon( checked, unchecked )
 
-Sets a custom icon for the checkbox
+Sets a custom icon for the checkbox.
 
 Parameter | Type
 --- | ---
 checked | **String:** “Material icon for checked state”
 unchecked | **String:** “Material icon for unchecked state”
 
-##### ckb.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### ckb.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### ckb.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### ckb.setOnTouch( callback )
 
-Adds an event handler when the checkbox is touch
+Adds an event handler when the checkbox is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(check)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>check</td><td>**Boolean:** The checked state of the checkbox.</td></tr></table>
+callback | **function(check ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>check </td><td>**Boolean:** The checked state of the checkbox.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### ckb.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### ckb.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### ckb.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### ckb.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### ckb.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### ckb.setSize( width, height )
+##### ckb.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### ckb.show()
 
-Show the component
+Show the component.
 
 ### addCheckboxGroup
 
-Adds a CheckboxGroup to a given layout.
+A checkbox group in UI development is a collection of checkboxes grouped together for related selections or options.
 ```
 ckb = ui.addCheckboxGroup(parent, list?, options?, width?, height?)
 ```
@@ -45668,17 +47746,19 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the CheckboxGroup.
 list? | **List:** The items to be displayed.
-options? | **String:** *comma “,” separated:* “Colors: `Default` `Primary` `Secondary`
+options? | **String:** “A comma separated options.
 
- `Sizes`: `Small` `Medium`
+Theme Color: `Default`”, “ `Primary`”, “ `Secondary`
 
- `Icon Position: `Left` or `Right`
+Sizes: `Small`”, “ `Medium`
 
- `Container`: `Elevated` or `Outlined`
+Icon Position: `Left`”, “ `Right`
 
- `Corners : `Square`”
-width? | **Number:** Fraction of the screen width.
-height? | **Number:** Fraction of the screen height.
+Container: `Elevated`”, “ `Outlined`
+
+Corners : `Square`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** CheckboxGroup
 
 
@@ -45957,7 +48037,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### ckb.absLeft
 
@@ -45965,7 +48045,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### ckb.absTop
 
@@ -45973,7 +48053,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### ckb.absWidth
 
@@ -45981,7 +48061,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### ckb.backColor
 
@@ -45989,7 +48069,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### ckb.backImage
 
@@ -45997,7 +48077,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### ckb.border
 
@@ -46013,7 +48093,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### ckb.borderStyle
 
@@ -46055,9 +48135,25 @@ Parameter | Type
 --- | ---
 Return Value: | **Boolean**
 
+##### ckb.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
 ##### ckb.elevation
 
 Sets or returns the depth of the container.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### ckb.elStyle
+
+Sets the style of the html container element.
 
 Parameter | Type
 --- | ---
@@ -46141,7 +48237,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### ckb.opacity
 
@@ -46154,6 +48250,14 @@ Return Value: | **Number**
 ##### ckb.options
 
 Sets or returns the `options` of the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### ckb.orientation
+
+Sets or returns the orientation of the list. Can be "Vertical" or "Horizontal".
 
 Parameter | Type
 --- | ---
@@ -46173,7 +48277,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### ckb.parent
 
@@ -46181,7 +48285,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### ckb.position
 
@@ -46189,7 +48293,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### ckb.rotation
 
@@ -46197,7 +48301,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### ckb.sizeVariant
 
@@ -46217,15 +48321,15 @@ Return Value: | **Number**
 
 ##### ckb.textColor
 
-Sets or returns the text color in hexadecimal format.
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### ckb.textSize
 
-Sets or returns the size of the checkbox icon. This will also affect the checkbox icon.
+Sets or returns the size of the text within the control.
 
 Parameter | Type
 --- | ---
@@ -46279,57 +48383,59 @@ The following methods are available on the **CheckboxGroup** object:
 
 ##### ckb.addItem( text, index )
 
-Add or insert an item in the checkbox group
+Add or insert an item in the checkbox group.
 
 Parameter | Type
 --- | ---
 text | **String:** “The text label for the checkbox.”
 index | **Number:** The index in which to insert the item.
 
-##### ckb.animate( anim, duration? )
+##### ckb.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### ckb.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -46337,11 +48443,11 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### ckb.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### ckb.getCheckedByIndex( index )
 
-Get the current value of the item in the list
+Get the current value of the item in the list.
 
 Parameter | Type
 --- | ---
@@ -46350,7 +48456,7 @@ Return Value: | **Boolean**
 
 ##### ckb.getCheckedByName( name )
 
-Get the current value of the item in the list
+Get the current value of the item in the list.
 
 Parameter | Type
 --- | ---
@@ -46359,7 +48465,7 @@ Return Value: | **Boolean**
 
 ##### ckb.getCheckedItems()
 
-Get the list of all checked items
+Get the list of all checked items.
 
 Parameter | Type
 --- | ---
@@ -46367,7 +48473,7 @@ Return Value: | **String**
 
 ##### ckb.getEnabled( index )
 
-Get the enabled state of a checkbox item
+Get the enabled state of a checkbox item.
 
 Parameter | Type
 --- | ---
@@ -46376,7 +48482,7 @@ Return Value: | **Boolean**
 
 ##### ckb.getEnabledByName( name )
 
-Get the enabled state of a checkbox item by its name
+Get the enabled state of a checkbox item by its name.
 
 Parameter | Type
 --- | ---
@@ -46385,24 +48491,24 @@ Return Value: | **Boolean**
 
 ##### ckb.getIcon()
 
-Get the checked and unchecked icon of the checkbox group
+Get the checked and unchecked icon of the checkbox group.
 
 Parameter | Type
 --- | ---
 Return Value: | **Object**
 
-##### ckb.getPosition( options? )
+##### ckb.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### ckb.getText( index )
 
-Get the text of the item in a given index
+Get the text of the item in a given index.
 
 Parameter | Type
 --- | ---
@@ -46411,19 +48517,19 @@ Return Value: | **String**
 
 ##### ckb.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### ckb.hide()
 
-Hide the component
+Hide the component.
 
 ##### ckb.popItem()
 
-Removes the last item in the checkbox group
+Removes the last item in the checkbox group. This will return the item being removed.
 
 ##### ckb.removeItemByIndex( index )
 
-Removes an item in the checkbox group by its corresponding index
+Removes an item in the checkbox group by its corresponding index.
 
 Parameter | Type
 --- | ---
@@ -46431,7 +48537,7 @@ index | **Number:** The index of the corresponding item to remove.
 
 ##### ckb.removeItemByName( title )
 
-Removes an item in the checkbox group by its title name
+Removes an item in the checkbox group by its title name.
 
 Parameter | Type
 --- | ---
@@ -46439,25 +48545,28 @@ title | **String:** “The title text of the corresponding checkbox item.”
 
 ##### ckb.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### ckb.setBorder( width?, clr?, style='solid' )
+##### ckb.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### ckb.setCheckedByIndex( item, bool )
 
-Checked or unchecked a given item by its index
+Checked or unchecked a given item by its index.
 
 Parameter | Type
 --- | ---
@@ -46466,7 +48575,7 @@ bool | **Boolean:** The item value. Can be `true` or `false`.
 
 ##### ckb.setCheckedByName( name, bool )
 
-Checked or unchecked a given item by its name
+Checked or unchecked a given item by its name.
 
 Parameter | Type
 --- | ---
@@ -46475,7 +48584,7 @@ bool | **Boolean:** The item value. Can be `true` or `false`.
 
 ##### ckb.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the checkbox group
+Sets the corner radius of the checkbox group.
 
 Parameter | Type
 --- | ---
@@ -46487,7 +48596,7 @@ mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
 ##### ckb.setEnabled( index, value )
 
-Enable or disable an item in the checkbox group
+Enable or disable an item in the checkbox group.
 
 Parameter | Type
 --- | ---
@@ -46496,7 +48605,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### ckb.setEnabledByName( name, value )
 
-Enable or disable a checkbox item by its name
+Enable or disable a checkbox item by its name.
 
 Parameter | Type
 --- | ---
@@ -46512,93 +48621,130 @@ Parameter | Type
 checked | **String:** “Material icon font”
 unchecked | **String:** “Material icon font”
 
+##### ckb.setItemPadding( left, top, right, bottom, mode )
+
+Sets the padding of the checkbox item. See `itemPadding` property for equivalent setter/getter property.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left padding of the checkbox item.
+top | **Number:** Top padding of the checkbox item.
+right | **Number:** Right padding of the checkbox item.
+bottom | **Number:** Bottom padding of the checkbox item.
+mode | **String:** “Unit of measurement. Can be `rem`”, “ `px`”, “ `%`”, “ or `v` for viewport.”
+
 ##### ckb.setList( list )
 
-Sets a new list of item in the checkbox group
+Sets a new list of item in the checkbox group.
 
 Parameter | Type
 --- | ---
-list | **Object:** The new list items for the checkbox group.
+list | **List:** The new list items for the checkbox group.
 
-##### ckb.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### ckb.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### ckb.setOnChange( callback )
 
-Adds a callback function to be called whent there is a change of value
+Adds a callback function to be called whent there is a change of value.
 
 Parameter | Type
 --- | ---
-callback | **function(values)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>values</td><td>**List:** An array of indexes corresponding to the checked checkbox items.</td></tr></table>
+callback | **function(values )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>values </td><td>**List:** An array of indexes corresponding to the checked checkbox items.</td></tr></table>
 
 ##### ckb.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(label,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>label</td><td>**String:** “The checkbox item label text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding item.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(label ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>label </td><td>**String:** “The checkbox item label text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### ckb.setOnTouch( callback )
 
-Sets a callback function when the checkbox item is touch
+Sets a callback function when the checkbox item is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(value,text,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**Boolean:** The checked state of the checkbox item.</td></tr>,<tr><td>text</td><td>**String:** “The checkbox label text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding checkbox.</td></tr>,<tr><td>event</td><td>**Object:** The click event.</td></tr></table>
+callback | **function(value ,text ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value </td><td>**Boolean:** The checked state of the checkbox item.</td></tr>,<tr><td>text </td><td>**String:** “The checkbox label text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding checkbox.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### ckb.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### ckb.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### ckb.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### ckb.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### ckb.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### ckb.setSize( width, height )
+##### ckb.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### ckb.setTextByIndex( index, val )
 
-Sets a new text to a given item by its index
+Sets a new text to a given item by its index.
 
 Parameter | Type
 --- | ---
@@ -46607,7 +48753,7 @@ val | **String:** “The new text to replace.”
 
 ##### ckb.setTextByName( name, val )
 
-Sets a new text to a given item by its name
+Sets a new text to a given item by its name.
 
 Parameter | Type
 --- | ---
@@ -46616,15 +48762,15 @@ val | **String:** “The new text to replace”
 
 ##### ckb.shiftItem()
 
-Removes the first item in the checkbox group
+Removes the first item in the checkbox group. This will return the item being removed.
 
 ##### ckb.show()
 
-Show the component
+Show the component.
 
 ### addChip
 
-Adds a chip into your app.
+In mobile UI design, a Chip is a compact element displaying attributes, input, or actions.
 ```
 chp = ui.addChip(parent, text, options?, width?, height?)
 ```
@@ -46633,15 +48779,17 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the Chip.
 text | **String:** “The text on the chip.”
-options? | **String:** *comma “,” separated:* “Color: `Primary` `Secondary` `Default`
+options? | **String:** “A comma separated option.
 
- `Size`: `Small` `Medium`
+Theme Color: `Primary`”, “ `Secondary`”, “ `Default`
 
- `Variant`: `Outlined` `Default`
+Size: `Small`”, “ `Medium`
 
- `Util`: `Touchable`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Variant: `Outlined`”, “ `Default`
+
+Util: `Touchable`”
+width? | **Number:** Fraction of the parent width `[0-1]`
+height? | **Number:** Fraction of the parent height `[0-1]`
 Return Value: | **ui object:** Chip
 
 
@@ -46858,7 +49006,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### chp.absLeft
 
@@ -46866,7 +49014,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### chp.absTop
 
@@ -46874,7 +49022,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### chp.absWidth
 
@@ -46882,7 +49030,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### chp.avatar
 
@@ -46898,7 +49046,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### chp.backImage
 
@@ -46906,7 +49054,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### chp.border
 
@@ -46922,7 +49070,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### chp.borderStyle
 
@@ -46963,6 +49111,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### chp.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### chp.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### chp.enabled
 
@@ -47034,7 +49198,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### chp.opacity
 
@@ -47058,7 +49222,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### chp.parent
 
@@ -47066,7 +49230,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### chp.position
 
@@ -47074,7 +49238,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### chp.rotation
 
@@ -47082,7 +49246,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### chp.sizeVariant
 
@@ -47162,50 +49326,52 @@ Return Value: | **Number**
 The following methods are available on the **Chip** object:
 
 
-##### chp.animate( anim, duration? )
+##### chp.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### chp.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -47213,46 +49379,49 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### chp.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### chp.getPosition( options? )
+##### chp.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### chp.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### chp.hide()
 
-Hide the component
+Hide the component.
 
 ##### chp.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### chp.setBorder( width?, clr?, style='solid' )
+##### chp.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### chp.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the chip
+Sets the corner radius of the chip.
 
 Parameter | Type
 --- | ---
@@ -47262,29 +49431,37 @@ bl? | **Number:** Bottom-left corner radius.
 br? | **Number:** Bottom-right corner radius.
 mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
-##### chp.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### chp.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### chp.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### chp.setOnDelete( callback )
 
-Sets a callback function when the chip is deleted. This will automatically add a delete icon to the chip
+Sets a callback function when the chip is deleted. This will automatically add a delete icon to the chip.
 
 Parameter | Type
 --- | ---
@@ -47292,316 +49469,99 @@ callback | **function()**
 
 ##### chp.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds a callback handler when the chip is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### chp.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### chp.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### chp.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### chp.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### chp.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### chp.setSize( width, height )
+##### chp.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### chp.setTouchable( touchable )
 
-Sets the chip to clickable. This will add a pointer cursor into the chip when hovered
+Sets the chip to clickable. This will add a pointer cursor into the chip when hovered.
 
 Parameter | Type
 --- | ---
-touchable | **Boolean:** `true` or `false`
+touchable | **Boolean:** Can be `true` or `false`
 
 ##### chp.show()
 
-Show the component
-
-### addDatePicker
-
-Adds a date picker component to the app.
-```
-dtp = ui.addDatePicker(date, options?)
-```
-
-Parameter | Type
---- | ---
-date | **String:** “A default date value to which the datepicker begins. Format `YYYY-MM-DD`”
-options? | **String:** *comma “,” separated:* “`Portrait` `Landscape`”
-Return Value: | **ui object:** DatePicker
-
-
-
-
-<details>
-<summary>Example: Default</summary>
-
-```js
-class Main extends App
-{
-    onStart()
-    {
-        // Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "Top,VCenter", 1, 1 )
-        this.main.setMargins( 0.01, 0.01, 0.01, 0.01 )
-
-        // Add a button to the main layout
-        this.btn = ui.addButton( this.main, "Show Date Picker", "Secondary" )
-        this.btn.setOnTouch( this.showDatePicker )
-
-        // Initialize date picker
-        this.dtp = ui.addDatePicker()
-    }
-
-    showDatePicker()
-    {
-        // Display the date picker dialog
-        this.dtp.show()
-    }
-}
-```
-
-```py
-from hybrid import ui
-
-def OnStart():
-    global dtp
-    # Creates a fullscreen layout with objects vertically centered.
-    main = ui.addLayout("main", "Linear", "Top,Vcenter", 1, 1)
-    main.setMargins(0.01, 0.01, 0.01, 0.01)
-
-    # Add a button to the main layout
-    btn = ui.addButton(main, "Show Date Picker", "Secondary")
-    btn.setOnTouch(showDatePicker)
-
-    # Initialize date picker
-    dtp = ui.addDatePicker()
-
-def showDatePicker(event):
-    # Display the date picker dialog
-    dtp.show()
-```
-</details>
-
-<details>
-<summary>Example: With initial value & portrait</summary>
-
-```js
-class Main extends App
-{
-    onStart()
-    {
-        // Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "Top,VCenter", 1, 1 )
-        this.main.setMargins( 0.01, 0.01, 0.01, 0.01 )
-
-        // Add a button to the main layout
-        this.btn = ui.addButton( this.main, "Show Date Picker", "Secondary" )
-        this.btn.setOnTouch( this.showDatePicker )
-
-        // With initial value. Date must be of the form "YYYY-MM-DD"
-        this.dtp = ui.addDatePicker( "2022-12-25", "Portrait" )
-    }
-
-    showDatePicker()
-    {
-        // Display the date picker dialog
-        this.dtp.show()
-    }
-}
-```
-
-```py
-from hybrid import ui
-
-def OnStart():
-    global dtp
-    # Creates a fullscreen layout with objects vertically centered.
-    main = ui.addLayout("main", "Linear", "Top,Vcenter", 1, 1)
-    main.setMargins(0.01, 0.01, 0.01, 0.01)
-
-    # Add a button to the main layout
-    btn = ui.addButton(main, "Show Date Picker", "Secondary")
-    btn.setOnTouch(showDatePicker)
-
-    # With initial value. Date must be of the form "YYYY-MM-DD"
-    dtp = ui.addDatePicker("2022-12-25", "Portrait")
-
-def showDatePicker(event):
-    # Display the date picker dialog
-    dtp.show()
-```
-</details>
-
-<details>
-<summary>Example: With limits & callback</summary>
-
-```js
-class Main extends App
-{
-    onStart()
-    {
-        // Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "Top,VCenter", 1, 1 )
-        this.main.setMargins( 0.01, 0.01, 0.01, 0.01 )
-
-        // Add a button to the main layout
-        this.btn = ui.addButton( this.main, "Show Date Picker", "Secondary" )
-        this.btn.setOnTouch( this.showDatePicker )
-
-        // With initial value. Date must be of the form "YYYY-MM-DD"
-        this.dtp = ui.addDatePicker( "2022-12-25", "Portrait" )
-        this.dtp.setOnSelect( this.onSelect )
-    }
-
-    showDatePicker()
-    {
-        // Display the date picker dialog
-        this.dtp.show()
-    }
-
-    onSelect( value )
-    {
-        console.log( value )
-    }
-}
-```
-
-```py
-from hybrid import ui
-from native import app
-
-def OnStart():
-    global dtp
-    # Creates a fullscreen layout with objects vertically centered.
-    main = ui.addLayout("main", "Linear", "Top,Vcenter", 1, 1)
-    main.setMargins(0.01, 0.01, 0.01, 0.01)
-
-    # Add a button to the main layout
-    btn = ui.addButton(main, "Show Date Picker", "Secondary")
-    btn.setOnTouch(showDatePicker)
-
-    # With initial value. Date must be of the form "YYYY-MM-DD"
-    dtp = ui.addDatePicker("2022-12-25", "Portrait")
-    dtp.setOnSelect(onSelect)
-
-def showDatePicker(event):
-    # Display the date picker dialog
-    dtp.show()
-
-def onSelect(value):
-    app.ShowPopup(value)
-```
-</details>
-
-#### Properties
-
-The following properties are available on the **DatePicker** object:
-
-
-##### dtp.format
-
-Sets or returns the format of the selected date. Values are `YYYY-MM-DD` `MM-DD-YYYY` or `DD-MM-YYYY`
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-
-#### Methods
-
-The following methods are available on the **DatePicker** object:
-
-
-##### dtp.hide()
-
-Hide the date picker dialog
-
-##### dtp.isVisible()
-
-Get the current visibility of the date picker
-
-Parameter | Type
---- | ---
-Return Value: | **Boolean**
-
-##### dtp.setFormat( format )
-
-Sets the format of the date to be passed into the onSelect callback
-
-Parameter | Type
---- | ---
-format | **String:** “A date format. Can be `YYYY-MM-DD` `MM-DD-YYYY` `DD-MM-YYYY`”
-
-##### dtp.setLimits( past?, future? )
-
-Set a limit to which the date picker dialog can render a date
-
-Parameter | Type
---- | ---
-past? | **String:** “Date in the past of the form `YYYY-MM-DD`”
-future? | **String:** “Date in the future of the form `YYYY-MM-DD`”
-
-##### dtp.setOnSelect( callback )
-
-Sets a callback function to execute when date picker dialog is submitted
-
-Parameter | Type
---- | ---
-callback | **function(date)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>date</td><td>**String:** “The selected date in the following format `YYYY-MM-DD`. You change format by setting `format` property.”</td></tr></table>
-
-##### dtp.show()
-
-Show the date picker the dialog
+Show the component.
 
 ### addDialog
 
-Adds a dialog into your app.
+A Dialog in mobile UI design is a pop-up window that appears on top of the current screen to prompt the user for input or to convey information.
 ```
-dlg = ui.addDialog(title, body, actions?, options?)
+dlg = ui.addDialog(title, body, actions?, options?, width?)
 ```
 
 Parameter | Type
 --- | ---
 title | **String:** “The dialog title text.”
 body | **String:** “The dialog message to be shown.”
-actions? | **String:** “A comma separated text for action buttons.”
-options? | **String:** *comma “,” separated:* “Colors: `Primary` `Secondary`
+actions? | **List:** A string of action button text.
+options? | **String:** “A comma separated options.
 
- `Util`: `NoCancel` prevents the dialog from closing on action.”
+Theme Colors: `Primary`”, “ `Secondary`
+
+Util: `NoCancel` prevents the dialog from closing on action.”
+width? | **Number:** Fraction of the screen width `[0-1]`.
 Return Value: | **ui object:** Dialog
 
 
@@ -47850,7 +49810,7 @@ Returns the layout of the dialog where you can add custom controls.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### dlg.text
 
@@ -47884,19 +49844,19 @@ The following methods are available on the **Dialog** object:
 
 ##### dlg.hide()
 
-Hide the dialog
+Hide the dialog.
 
 ##### dlg.setOnAction( callback )
 
-Adds a callback function when the action buttons are click
+Adds a callback function when the action buttons are click.
 
 Parameter | Type
 --- | ---
-callback | **function(text,index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “The dialog action text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding dialog action.</td></tr></table>
+callback | **function(text ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The dialog action text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding dialog action.</td></tr></table>
 
 ##### dlg.setOnClose( callback )
 
-Adds a callback function when the dialog is close
+Adds a callback function when the dialog is close.
 
 Parameter | Type
 --- | ---
@@ -47904,20 +49864,22 @@ callback | **function()**
 
 ##### dlg.show()
 
-Show the dialog
+Show the dialog.
 
 ### addDivider
 
-Adds a hairline divider into your layout.
+A divider is a visual element used to separate content or components within a layout.
 ```
 div = ui.addDivider(parent, width=1, options?)
 ```
 
 Parameter | Type
 --- | ---
-parent | **Object:** The layour where to add the divider.
-width=1 | **Number:** Fraction of the screen width.
-options? | **String:** “A comma separated Divider options. Values can be `Inset`”
+parent | **Object:** The layout where to add the divider.
+width=1 | **Number:** Fraction of the parent width. Default is 1.
+options? | **String:** “A comma separated options.
+
+`Inset` to add some padding.”
 Return Value: | **ui object:** Divider
 
 
@@ -47987,7 +49949,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### div.absLeft
 
@@ -47995,7 +49957,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### div.absTop
 
@@ -48003,7 +49965,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### div.absWidth
 
@@ -48011,7 +49973,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### div.backColor
 
@@ -48019,7 +49981,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### div.backImage
 
@@ -48027,7 +49989,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### div.border
 
@@ -48043,7 +50005,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### div.borderStyle
 
@@ -48059,7 +50021,7 @@ Sets or returns the color in hexadecimal format.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### div.cornerRadius
 
@@ -48076,6 +50038,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### div.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### div.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### div.fontFile
 
@@ -48115,7 +50093,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### div.opacity
 
@@ -48139,7 +50117,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### div.parent
 
@@ -48147,7 +50125,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### div.position
 
@@ -48155,7 +50133,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### div.rotation
 
@@ -48163,7 +50141,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### div.textColor
 
@@ -48219,50 +50197,52 @@ Return Value: | **Number**
 The following methods are available on the **Divider** object:
 
 
-##### div.animate( anim, duration? )
+##### div.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### div.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -48270,139 +50250,161 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### div.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### div.getPosition( options? )
+##### div.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### div.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### div.hide()
 
-Hide the component
+Hide the component.
 
 ##### div.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### div.setBorder( width?, clr?, style='solid' )
+##### div.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### div.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
-##### div.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### div.setCornerRadius( tl, tr, br, bl, mode )
 
-Sets the margin of the component
+Sets the corner radius of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### div.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### div.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
-##### div.setOnTouch( callback )
+##### div.setPadding( left, top, right, bottom, mode )
 
-Adds a callback handler when the component is touch
-
-Parameter | Type
---- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
-
-##### div.setPadding( left?, top?, right?, bottom?, mode='px' )
-
-Sets the padding component container
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
 
-##### div.setPosition( left?, top?, mode='px' )
+`rem` for root em.
 
-Sets the position of the component relative to its parent dimensions
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### div.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### div.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### div.setSize( width, height )
+##### div.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### div.show()
 
-Show the component
+Show the component.
 
 ### addDrawer
 
-Adds a drawer into your app.
+A drawer is a navigation panel that slides in from the edge of the screen, typically from the left, to reveal additional options or content.
 ```
-drw = ui.addDrawer(lay, options?, width?)
+drw = ui.addDrawer(layout, options?, width?)
 ```
 
 Parameter | Type
 --- | ---
-lay | **Object:** The drawer layout.
-options? | **String:** *comma “,” separated*
-width? | **Number:** width of the drawer
+layout | **Object:** The drawer layout where to add controls.
+options? | **String:** “A comma separated options.nVariant: `Permanent`”, “ `Persistent`”, “ `Temporary`
+
+Anchor: `Left`”, “ `Right`”, “ `Top`”, “ `Bottom`”
+width? | **Number:** Fraction of the screen width starting from the anchor position `[0-1]`.
 Return Value: | **ui object:** Drawer
 
 
@@ -48719,7 +50721,7 @@ The following methods are available on the **Drawer** object:
 
 ##### drw.addLayout( lay )
 
-Adds a layout into the drawer
+Adds a layout into the drawer.
 
 Parameter | Type
 --- | ---
@@ -48727,7 +50729,7 @@ lay | **Object:** Layout component.
 
 ##### drw.disableBackdropTransition( value )
 
-Disable the backdrop transition. This can improve the FPS on low-end devices
+Disable the backdrop transition. This can improve the FPS on low-end devices.
 
 Parameter | Type
 --- | ---
@@ -48735,7 +50737,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### drw.disableDiscovery( value )
 
-If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture
+If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture.
 
 Parameter | Type
 --- | ---
@@ -48743,7 +50745,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### drw.disableSwipeToOpen( value )
 
-Disable swipe to open feature of the drawer. You can use this especially for ios devices which has swipe to go back feature
+Disable swipe to open feature of the drawer. You can use this especially for ios devices which has swipe to go back feature.
 
 Parameter | Type
 --- | ---
@@ -48751,11 +50753,11 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### drw.hide()
 
-Close the drawer dynamically
+Close the drawer dynamically.
 
 ##### drw.setOnClose( callback )
 
-Adds a callback function when the drawer is closed
+Adds a callback function when the drawer is closed.
 
 Parameter | Type
 --- | ---
@@ -48763,7 +50765,7 @@ callback | **function()**
 
 ##### drw.setOnOpen( callback )
 
-Adds a callback function when the drawer is opened
+Adds a callback function when the drawer is opened via swiping from the anchor position.
 
 Parameter | Type
 --- | ---
@@ -48771,15 +50773,15 @@ callback | **function()**
 
 ##### drw.show( anchor='left' )
 
-Open the drawer dynamically
+Open the drawer dynamically.
 
 Parameter | Type
 --- | ---
-anchor='left' | **String:** “Open position. Can be `left` or `right`.”
+anchor='left' | **String:** “Optional. The anchor position. Can be `left`”, “ `top`”, “ `right`”, “ `bottom`. Default is `left`.”
 
 ### addDropdown
 
-Adds a dropdown component into your layout.
+A dropdown, also known as a spinner or picker, is a user interface element that presents a list of options in a drop-down menu.
 ```
 dpd = ui.addDropdown(parent, list?, options?, width?, height?)
 ```
@@ -48787,20 +50789,20 @@ dpd = ui.addDropdown(parent, list?, options?, width?, height?)
 Parameter | Type
 --- | ---
 parent | **Object:** The layout where to add the dropdown.
-list? | **String:** *comma “,” separated:* “The list items to show.”
-options? | **String:** “A comma separated Dropdown options. Can be
+list? | **List:** The list items to show.
+options? | **String:** “A comma separated options.
 
- Colors: `Primary` `Secondary` `Default`
+Theme Colors: `Primary`”, “ `Secondary`”, “ `Default`
 
- `Variants`: `Contained` `Outlined` `Text`
+Variants: `Contained`”, “ `Outlined`”, “ `Text`
 
- `Sizes`: `Small` `Medium` `Large`
+Sizes: `Small`”, “ `Medium`”, “ `Large`
 
- `Orientation`: `Horizontal` `Vertical`
+Orientation: `Horizontal`”, “ `Vertical`
 
- `Util`: `NoElevation`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Util: `NoElevation`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Dropdown
 
 
@@ -48935,7 +50937,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### dpd.absLeft
 
@@ -48943,7 +50945,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### dpd.absTop
 
@@ -48951,7 +50953,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### dpd.absWidth
 
@@ -48959,7 +50961,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### dpd.backColor
 
@@ -48967,7 +50969,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### dpd.backImage
 
@@ -48975,7 +50977,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### dpd.border
 
@@ -48991,7 +50993,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### dpd.borderStyle
 
@@ -49024,6 +51026,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### dpd.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### dpd.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### dpd.fontFile
 
@@ -49087,7 +51105,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### dpd.opacity
 
@@ -49119,7 +51137,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### dpd.parent
 
@@ -49127,7 +51145,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### dpd.position
 
@@ -49135,7 +51153,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### dpd.rotation
 
@@ -49143,7 +51161,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### dpd.sizeVariant
 
@@ -49225,57 +51243,59 @@ The following methods are available on the **Dropdown** object:
 
 ##### dpd.addItem( name, index )
 
-Add or insert a menu item in the dropdown list
+Add or insert a menu item in the dropdown list.
 
 Parameter | Type
 --- | ---
 name | **String:** “The name of the menu.”
 index | **Number:** The index in which to insert the menu item.
 
-##### dpd.animate( anim, duration? )
+##### dpd.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### dpd.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -49283,11 +51303,11 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### dpd.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### dpd.getEnabled( index )
 
-Get the enabled state of an item in the dropdown menu
+Get the enabled state of an item in the dropdown menu.
 
 Parameter | Type
 --- | ---
@@ -49296,7 +51316,7 @@ Return Value: | **Boolean**
 
 ##### dpd.getEnabledByName( name )
 
-Get the enabled state of a menu item by its name
+Get the enabled state of a menu item by its name.
 
 Parameter | Type
 --- | ---
@@ -49305,37 +51325,37 @@ Return Value: | **Boolean**
 
 ##### dpd.getItemByIndex( index )
 
-Returns a dropdown item by its corresponding index
+Returns a dropdown item by its corresponding index.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of corresponding item.
 Return Value: | **String**
 
-##### dpd.getPosition( options? )
+##### dpd.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### dpd.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### dpd.hide()
 
-Hide the component
+Hide the component.
 
 ##### dpd.popItem()
 
-Removes the last item in the dropdown menu
+Removes the last item in the dropdown menu. This will return the item being removed.
 
 ##### dpd.removeItemByIndex( index )
 
-Removes a menu item in the dropdown by its index
+Removes a menu item in the dropdown by its index.
 
 Parameter | Type
 --- | ---
@@ -49343,7 +51363,7 @@ index | **Number:** The index of the menu item to remove.
 
 ##### dpd.removeItemByName( name )
 
-Removes a menu item in the dropdown by its name
+Removes a menu item in the dropdown by its name.
 
 Parameter | Type
 --- | ---
@@ -49351,25 +51371,28 @@ name | **String:** “The name of the menu item.”
 
 ##### dpd.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### dpd.setBorder( width?, clr?, style='solid' )
+##### dpd.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### dpd.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the dropdown
+Sets the corner radius of the dropdown.
 
 Parameter | Type
 --- | ---
@@ -49381,7 +51404,7 @@ mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
 ##### dpd.setEnabled( index, value )
 
-Enable or disable an item in the dropdown
+Enable or disable an item in the dropdown.
 
 Parameter | Type
 --- | ---
@@ -49390,7 +51413,7 @@ value | **Boolean:** Values can be `true` `false`.
 
 ##### dpd.setEnabledByName( name, value )
 
-Enable or disable an item in the dropdown
+Enable or disable an item in the dropdown.
 
 Parameter | Type
 --- | ---
@@ -49399,7 +51422,7 @@ value | **Boolean:** Values can be `true` `false`.
 
 ##### dpd.setItemByIndex( item, index )
 
-Updates the text of the corresponding item in the dropdown
+Updates the text of the corresponding item in the dropdown.
 
 Parameter | Type
 --- | ---
@@ -49408,35 +51431,43 @@ index | **Number:** The index of the item to update.
 
 ##### dpd.setList( val )
 
-Sets the list items on the dropdown
+Sets the list items on the dropdown.
 
 Parameter | Type
 --- | ---
-val | **List:** The list of new items t display.
+val | **List:** The list of new items.
 
-##### dpd.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### dpd.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### dpd.setOnChange( callback )
 
-Adds a callback function on change event
+Adds a callback function on change event.
 
 Parameter | Type
 --- | ---
-callback | **function(value,index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**Object:** item text.</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding item.</td></tr></table>
+callback | **function(text ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The selected item text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding item.</td></tr></table>
 
 ##### dpd.setOnClose( callback )
 
-Adds a callback function on close event
+Adds a callback function on close event.
 
 Parameter | Type
 --- | ---
@@ -49444,140 +51475,118 @@ callback | **function()**
 
 ##### dpd.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
+
+##### dpd.setOnOpen( callback )
+
+Adds a callback function on close event.
+
+Parameter | Type
+--- | ---
+callback | **function()**
 
 ##### dpd.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds a callback handler when the component is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(text ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The text of the touched item.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the touched item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### dpd.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### dpd.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### dpd.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### dpd.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### dpd.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### dpd.setSize( width, height )
+##### dpd.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### dpd.shiftItem()
 
-Removes the first item in the dropdown menu
+Removes the first item in the dropdown menu. This will return the item being removed.
 
 ##### dpd.show()
 
-Show the component
+Show the component.
 
-### addFAB
+### addFloatingActionButton
 
-Adds a floating action button on your layout.
+A Floating Action Button (FAB) is a prominent, circular button that hovers above the content, typically used for a primary action in an application.
 ```
-fab = ui.addFAB(parent, icon, options?, text?)
+fab = ui.addFloatingActionButton(parent, icon, options, text)
 ```
 
 Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the fab
 icon | **String:** “The string icon of the FAB”
-options? | **String:** *comma “,” separated:* “`Fixed` `Static` `Rounded` `Extended` `Left` `Right`”
-text? | **String:** “Text to show for extended FABs.”
-Return Value: | **ui object:** FAB
+options | **String:** “A comma separated option.
+
+Position: `Fixed`”, “ `Static`
+
+Style: `Rounded`”, “ `Extended`
+
+Anchor: `Left`”, “ `Right`”
+text | **String:** “Text to show for extended FABs”
+Return Value: | **ui object:** FloatingActionButton
 
 
-FAB usually float at the bottom right of your screen by default.
+If you want the fab to position relative to the layout and not on the bottom right corner, pass a `Static` option. If fab is `Extended` pass a text argument.
 
 
-
- If you want the fab to position relative to the layout and not on the bottom right corner, pass a `Static` option.
-
-
-
- If fab is `Extended` pass a text argument.
-
-
-
-<details>
-<summary>Example: Basic FAB</summary>
-
-```js
-class Main extends App
-{
-    onStart()
-    {
-        // Create a fullscreen linear layout with objects vertically centered
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-
-        // Add a floating action button to the main layout.
-        // By default, FAB is positioned fix at the bottom right corner
-        this.fab = ui.addFAB(this.main, "add")
-
-        // Add a callback handler for `onTouch` event on the FAB
-        this.fab.setOnTouch( this.onTouch )
-    }
-
-    onTouch()
-    {
-        ui.showPopup( "You click me!" )
-    }
-}
-```
-
-```py
-from hybrid import ui
-
-def OnStart():
-    # Create a fullscreen linear layout with objects vertically centered
-    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-
-    # Add a floating action button to the main layout.
-    # By default, FAB is positioned fix at the bottom right corner
-    fab = ui.addFAB(main, "add")
-
-    # Add a callback handler for `onTouch` event on the FAB
-    fab.setOnTouch(onTouch)
-
-def onTouch(event):
-    ui.showPopup("You clicked me!")
-```
-</details>
 
 <details>
 <summary>Example: Primary static FAB</summary>
@@ -49607,22 +51616,21 @@ class Main extends App
 ```
 
 ```py
-from hybrid import ui
+class Main extends App
+    onStart()
+        #  Create a fullscreen linear layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-def OnStart():
-    # Create a fullscreen linear layout with objects vertically centered
-    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        #  Add a primary floating action button to the main layout.
+        #  Passing `Static` will ignore fixed positioning
+        #  and will follow the flow of the parent layout
+        this.fab = ui.addFAB( this.main, "add", "Primary,Static" )
 
-    # Add a primary floating action button to the main layout.
-    # Passing `Static` will ignore fixed positioning
-    # and will follow the flow of the parent layout
-    fab = ui.addFAB(main, "add", "Primary,Static")
+        #  Add a callback handler for `onTouch` event on the FAB
+        this.fab.setOnTouch( this.onTouch )
 
-    # Add a callback handler for `onTouch` event on the FAB
-    fab.setOnTouch(onTouch)
-
-def onTouch(event):
-    ui.showPopup("You clicked me!")
+    onTouch()
+        ui.showPopup( "You click me!" )
 ```
 </details>
 
@@ -49653,21 +51661,20 @@ class Main extends App
 ```
 
 ```py
-from hybrid import ui
+class Main extends App
+    onStart()
+        #  Create a fullscreen linear layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-def OnStart():
-    # Create a fullscreen linear layout with objects vertically centered
-    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        #  Add a secondary floating action button to the main layout.
+        #  Passing `Extended` enables to add more text on the FAB
+        this.fab = ui.addFAB(this.main, "add", "Secondary,Extended", "New message")
 
-    # Add a secondary floating action button to the main layout.
-    # Passing `Extended` enables to add more text on the FAB
-    fab = ui.addFAB(main, "add", "Secondary,Extended", "New message")
+        #  Add a callback handler for `onTouch` event on the FAB
+        this.fab.setOnTouch( this.onTouch )
 
-    # Add a callback handler for `onTouch` event on the FAB
-    fab.setOnTouch(onTouch)
-
-def onTouch(event):
-    ui.showPopup("You clicked me!")
+    onTouch()
+        ui.showPopup( "You click me!" )
 ```
 </details>
 
@@ -49698,27 +51705,26 @@ class Main extends App
 ```
 
 ```py
-from hybrid import ui
+class Main extends App
+    onStart()
+        #  Create a fullscreen linear layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-def OnStart():
-    # Create a fullscreen linear layout with objects vertically centered
-    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        #  Add a secondary floating action button to the main layout.
+        #  Passing `Left` option will position the FAB on the bottom left corner
+        this.fab = ui.addFAB(this.main, "add", "Secondary,Extended,Left", "New message")
 
-    # Add a secondary floating action button to the main layout.
-    # Passing `Left` option will position the FAB on the bottom left corner
-    fab = ui.addFAB(main, "add", "Secondary,Extended,Left", "New message")
+        #  Add a callback handler for `onTouch` event on the FAB
+        this.fab.setOnTouch( this.onTouch )
 
-    # Add a callback handler for `onTouch` event on the FAB
-    fab.setOnTouch(onTouch)
-
-def onTouch(event):
-    ui.showPopup("You clicked me!")
+    onTouch()
+        ui.showPopup( "You click me!" )
 ```
 </details>
 
 #### Properties
 
-The following properties are available on the **FAB** object:
+The following properties are available on the **FloatingActionButton** object:
 
 
 ##### fab.absHeight
@@ -49727,7 +51733,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### fab.absLeft
 
@@ -49735,7 +51741,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### fab.absTop
 
@@ -49743,7 +51749,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### fab.absWidth
 
@@ -49751,7 +51757,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### fab.backColor
 
@@ -49759,7 +51765,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### fab.backImage
 
@@ -49767,7 +51773,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### fab.border
 
@@ -49783,7 +51789,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### fab.borderStyle
 
@@ -49824,6 +51830,22 @@ Sets or returns the disabled state of the ripple effect.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### fab.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### fab.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### fab.fontFile
 
@@ -49879,7 +51901,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### fab.opacity
 
@@ -49903,7 +51925,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### fab.parent
 
@@ -49911,7 +51933,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### fab.position
 
@@ -49919,7 +51941,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### fab.rotation
 
@@ -49927,7 +51949,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### fab.sizeVariant
 
@@ -50004,53 +52026,55 @@ Return Value: | **Number**
 
 #### Methods
 
-The following methods are available on the **FAB** object:
+The following methods are available on the **FloatingActionButton** object:
 
 
-##### fab.animate( anim, duration? )
+##### fab.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### fab.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -50058,126 +52082,154 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### fab.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### fab.getPosition( options? )
+##### fab.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### fab.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### fab.hide()
 
-Hide the component
+Hide the component.
 
 ##### fab.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### fab.setBorder( width?, clr?, style='solid' )
+##### fab.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### fab.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the button
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-left corner radius.
-tr? | **Number:** Top-right corner radius.
-bl? | **Number:** Bottom-left corner radius.
-br? | **Number:** Bottom-right corner radius.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
-##### fab.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### fab.setCornerRadius( tl, tr, bl, br, mode )
 
-Sets the margin of the component
+Sets the corner radius of the button.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-left corner radius.
+tr | **Number:** Top-right corner radius.
+bl | **Number:** Bottom-left corner radius.
+br | **Number:** Bottom-right corner radius.
+mode | **String:** “Unit. Values are `px` `rem` or `%`.”
+
+##### fab.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### fab.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### fab.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds a callback handler when the FAB is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### fab.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### fab.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### fab.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### fab.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### fab.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### fab.setSize( width, height )
+##### fab.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### fab.show()
 
-Show the component
+Show the component.
 
 ### addImage
 
@@ -50190,9 +52242,13 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the image.
 file | **String:** “The path to the image.”
-options='Image' | **String:** “A comma seprated options for the image. Can be `Image` `Canvas` `Button` or `Avatar`”
-width? | **Number:** Fraction of the screen width.
-height? | **Number:** Fraction of the screen height.
+options='Image' | **String:** “A comma seprated options.
+
+`Image`”, “ `Canvas`”, “ `Button` and `Avatar`. Default is image.
+
+For `Avatar` you can pass `Small` or `Large`.”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Image
 
 
@@ -50475,12 +52531,13 @@ class Main extends App
     onStart()
     {
         // Create a linear layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        this.main = ui.addLayout( "main", "Linear", "", 1, 1 )
 
         ui.addAppBar( this.main, "Analog Clock" )
 
         // Create a canvas image
-        this.img = ui.addImage( this.main, "", "canvas", "300px", "300px" )
+        this.img = ui.addImage( this.main, "", "canvas", "300px", "300px")
+        this.img.margins = [null, 0.1]
 
         // Set the initial line styles
         this.img.lineCap = "round"
@@ -50633,44 +52690,49 @@ def drawHand(angle, length, width, color):
 
 ```js
 class Main extends App
+{
+    onStart()
     {
-        onStart()
-        {
-            this.color = "#000000"
-            this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 );
-            this.main.setChildMargins(0, 0.01, 0, 0.01);
+        this.color = "#000000"
+        this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 );
+        this.main.setChildMargins(0, 0.01, 0, 0.01);
 
-            var lay = ui.addLayout( this.main, "Linear", "Horizontal,Center,VCenter", 1)
-            lay.setChildMargins(0.01, 0, 0.01, 0);
+        ui.addText(this.main, "Color", "H5");
 
-            var colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]
+        ui.addDivider(this.main);
 
-            ui.addText( lay, "Color", "H5");
-            for( var i=0; i<colors.length; i++ ) {
-                var btn = ui.addLayout( lay, "Linear", "", "48px", "48px" )
-                btn.backColor = colors[i];
-                btn.setCornerRadius(8,8,8,8);
-                btn.setOnTouch( this.changeColor.bind(this, colors[i]) );
-            }
+        var lay = ui.addLayout( this.main, "Linear", "Horizontal,Center,VCenter", 1)
+        lay.childSpacing = "even"
 
-            ui.addText( this.main, "Thickness", "H5")
-            this.sld = ui.addSlider( this.main, 5, "", 0.9)
-            this.sld.setRange(5, 25);
-            this.sld.value = 15;
+        var colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]
 
-            this.img = ui.addImage( this.main, "", "canvas", 0.96, 0.7);
-            this.img.fill = "#e0e0e0";
-            this.img.setOnTouchMove( this.draw );
-            this.img.setOnTouchDown( this.draw );
-            this.img.setOnTouch( this.draw );
+        for( var i=0; i<colors.length; i++ ) {
+            var btn = ui.addLayout( lay, "Linear", "", "48px", "48px" )
+            btn.backColor = colors[i];
+            btn.setCornerRadius(8,8,8,8);
+            btn.setOnTouch( this.changeColor.bind(this, colors[i]) );
         }
 
-        changeColor( color ) { this.color = color; }
+        ui.addDivider(this.main);
 
-        draw( e ) {
-            this.img.drawCircle( e.x, e.y, this.sld.value, this.color, "", 0 )
-        }
+        ui.addText( this.main, "Thickness", "H5")
+        this.sld = ui.addSlider( this.main, 5, "", 0.9)
+        this.sld.setRange(5, 25);
+        this.sld.value = 15;
+
+        this.img = ui.addImage( this.main, "", "canvas", 0.96, 0.7);
+        this.img.fill = "#e0e0e0";
+        this.img.setOnTouchMove( this.draw );
+        this.img.setOnTouchDown( this.draw );
+        this.img.setOnTouch( this.draw );
     }
+
+    changeColor( color ) { this.color = color; }
+
+    draw( e ) {
+        this.img.drawCircle( e.x, e.y, this.sld.value, this.color, "", 0 )
+    }
+}
 ```
 
 ```py
@@ -50707,7 +52769,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### img.absLeft
 
@@ -50715,7 +52777,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### img.absTop
 
@@ -50723,7 +52785,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### img.absWidth
 
@@ -50731,7 +52793,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### img.backColor
 
@@ -50739,7 +52801,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### img.backImage
 
@@ -50747,7 +52809,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### img.border
 
@@ -50763,7 +52825,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### img.borderStyle
 
@@ -50789,17 +52851,25 @@ Parameter | Type
 --- | ---
 Return Value: | **Boolean**
 
-##### img.errorIcon
+##### img.el
 
-Sets or returns the material icon for error placeholder image.
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### img.elStyle
+
+Sets the style of the html container element.
 
 Parameter | Type
 --- | ---
 Return Value: | **String**
 
-##### img.file
+##### img.errorIcon
 
-Sets or returns the path or url of the image file.
+Sets or returns the material icon for error placeholder image.
 
 Parameter | Type
 --- | ---
@@ -50836,6 +52906,14 @@ Sets or returns the height of the control as a fraction of the parent control.
 Parameter | Type
 --- | ---
 Return Value: | **Number**
+
+##### img.image
+
+Sets or returns the path or url of the image file.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### img.isVisible
 
@@ -50883,7 +52961,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### img.miterLimit
 
@@ -50915,7 +52993,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### img.parent
 
@@ -50923,7 +53001,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### img.pixelData
 
@@ -50939,7 +53017,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### img.rotation
 
@@ -50947,7 +53025,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### img.strokeColor
 
@@ -50967,7 +53045,7 @@ Return Value: | **String**
 
 ##### img.textSize
 
-Sets or returns the text-size for drawing in the canvas.
+Sets or returns the size of the text within the control.
 
 Parameter | Type
 --- | ---
@@ -51019,50 +53097,52 @@ Return Value: | **Number**
 The following methods are available on the **Image** object:
 
 
-##### img.animate( anim, duration? )
+##### img.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### img.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -51070,15 +53150,15 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### img.clear()
 
-Clears the drawings by filling the whole canvas with white background color
+Clears the drawings by filling the whole canvas with white background color.
 
 ##### img.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### img.drawArc( x, y, radius, start, end, fillColor?, strokeColor?, strokeWidth? )
+##### img.drawArc( x, y, radius, start, end, fillColor?, strokeColor?, strokeWidth?, type? )
 
-Draws an arc in the canvas
+Draws an arc in the canvas.
 
 Parameter | Type
 --- | ---
@@ -51090,10 +53170,11 @@ end | **Number:** The angle in degress in which the arc will stop.
 fillColor? | **String:** “A hexadecimal color.”
 strokeColor? | **String:** “A hexadecimal color.”
 strokeWidth? | **Number:** The stroke thickness.
+type? | **String:** “The type of arc. Can be `filled` or `segment`.”
 
 ##### img.drawCircle( x, y, radius, fillColor?, strokeColor?, strokeWidth? )
 
-Draws a circle in the canvas
+Draws a circle in the canvas.
 
 Parameter | Type
 --- | ---
@@ -51106,7 +53187,7 @@ strokeWidth? | **Number:** The stoke thickness.
 
 ##### img.drawImage( img, x?, y?, width?, height? )
 
-Draws an image to the canvas
+Draws an image to the canvas.
 
 Parameter | Type
 --- | ---
@@ -51118,7 +53199,7 @@ height? | **Number:** If provided,  the height of the image will be shrink or st
 
 ##### img.drawLine( x1, y1, x2, y2, strokeColor?, strokeWidth? )
 
-Draws a line between two points in the canvas
+Draws a line between two points in the canvas.
 
 Parameter | Type
 --- | ---
@@ -51129,40 +53210,41 @@ y2 | **Number:** The y-coordinate of the second point in pixels.
 strokeColor? | **String:** “A hexadecimal color.”
 strokeWidth? | **Number:** The stroke thickness.
 
-##### img.drawPoint( x, y, color? )
+##### img.drawPoint( x, y, size, color? )
 
-Draws a single pixel point in a specified coordinate
+Draws a single pixel point in a specified coordinate.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-coordinate in pixels.
 y | **Number:** The y-coordinate in pixels.
+size | **Number:** The width of point in pixels.
 color? | **String:** “A hexadecimal color.”
 
 ##### img.drawPolygon( points, fillColor?, strokeColor?, strokeWidth? )
 
-Draws a polygon on the canvas by passing an array of points
+Draws a polygon on the canvas by passing an array of points.
 
 Parameter | Type
 --- | ---
-points | **List:** An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point.
+points | **List:** An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point, or an object of the form `{x, y}`.
 fillColor? | **String:** “A hexadecimal color.”
 strokeColor? | **String:** “A hexadecimal color.”
 strokeWidth? | **Number:** The stroke thickness.
 
 ##### img.drawPolyline( points, strokeColor?, strokeWidth? )
 
-Draws a polyline on the canvas by passing an array of points
+Draws a polyline on the canvas by passing an array of points.
 
 Parameter | Type
 --- | ---
-points | **List:** An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point.
+points | **List:** An array of coordinates. Each element on this array is an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point, or an object of the form `{x, y}`.
 strokeColor? | **String:** “A hexadecimal color.”
 strokeWidth? | **Number:** The stroke thickness.
 
 ##### img.drawRectangle( x1, y1, width, height, fillColor?, strokeColor?, strokeWidth? )
 
-Draws a rectangle into the canvas
+Draws a rectangle into the canvas.
 
 Parameter | Type
 --- | ---
@@ -51176,7 +53258,7 @@ strokeWidth? | **Number:** The stroke thickness.
 
 ##### img.drawSquare( x, y, width, fillColor?, strokeColor?, strokeWidth? )
 
-Draws a square into the canvas
+Draws a square into the canvas.
 
 Parameter | Type
 --- | ---
@@ -51187,174 +53269,298 @@ fillColor? | **String:** “A hexadecimal color.”
 strokeColor? | **String:** “A hexadecimal color.”
 strokeWidth? | **Number:** The stroke thickness in pixels.
 
+##### img.drawText( text, x, y, fillColor, strokeColor, strokeWidth )
+
+Add a text in the canvas image.
+
+Parameter | Type
+--- | ---
+text | **String:** “The text to be drawn.”
+x | **Number:** Distance from the left in pixels.
+y | **Number:** Distance from the top in pixels.
+fillColor | **String:** “Text color in hexadecimal format `#rrggbb`.”
+strokeColor | **String:** “Text border color in hexadecimal format `#rrggbb`.”
+strokeWidth | **Number:** The border width in pixels.
+
 ##### img.enableContextMenu( value )
 
-Enable or disbale the context menu or the right click menus
+Enable or disbale the context menu or the right click menus.
 
 Parameter | Type
 --- | ---
 value | **Boolean:** Value. Can be `true` `false`
 
-##### img.getPixelColor( x, y )
+##### img.getPixelColor( x, y, format )
 
-Get the pixel color of a single pixel in the image
+Get the color of a single pixel in the image. The returned array is of the form `[red, green, blue, alpha]`.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-coordinate of the pixel from the left.
 y | **Number:** The y-coordinate of the pixel from the top.
+format | **String:** “Pass `"hex"` to return color as hexadecimal formart `"#rrggbb"` or `"hexa"` to include include alpha `"#aarrggbb"` . Pass `"rgb"` to return color as `rgb` format `"rgb(r”, “ g”, “ b)"` or pass `"rgba"` for `"rgba(r”, “ g”, “ b”, “ a)"`.”
 Return Value: | **List**
 
-##### img.getPixelData()
+##### img.getPixelData( x, y, width, height )
 
-Returns the pixel data of the image
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-##### img.getPosition( options? )
-
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the pixel data of the image.
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
+x | **Number:** The x-coordinate where to start getting image data.
+y | **Number:** The y-coordinate where to start getting image data.
+width | **Number:** The width of the image data.
+height | **Number:** The height of the image data.
 Return Value: | **Object**
+
+##### img.getPosition( options )
+
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
+
+Parameter | Type
+--- | ---
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### img.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### img.hide()
 
-Hide the component
+Hide the component.
+
+##### img.measureText( text )
+
+Measure the text metrics with the current settings of the canvas context.
+
+Parameter | Type
+--- | ---
+text | **String:** “The text to measure.”
+Return Value: | **Object**
+
+##### img.rotate( angle, x, y )
+
+Rotate the canvas at a given angle and pivot point.
+
+Parameter | Type
+--- | ---
+angle | **Number:** The angle of rotation in degrees.
+x | **Number:** An optional x-coordinate of the pivot.
+y | **Number:** An optional y-coordinate of the pivot.
 
 ##### img.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### img.setBorder( width?, clr?, style='solid' )
+##### img.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### img.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
-##### img.setImage( file )
+##### img.setCornerRadius( tl, tr, br, bl, mode )
 
-Update the image file
-
-Parameter | Type
---- | ---
-file | **String:** “The path to the image file.”
-
-##### img.setMargins( left?, top?, right?, bottom?, mode='px' )
-
-Sets the margin of the component
+Sets the corner radius of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### img.setFont( family, size, style, weight )
+
+Sets a single line font styling for rendering text on canvas.
+
+Parameter | Type
+--- | ---
+family | **String:** “The font-family for the text.”
+size | **Number:** The text-size for the text.
+style | **String:** “Value can be `normal` or `italic`”, “”
+weight | **String:** “Values can be `normal` or `bold`.”
+
+##### img.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### img.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### img.setOnLoad( callback )
 
-Sets a callback function on load event
+Sets a callback function on load event.
 
 Parameter | Type
 --- | ---
 callback | **function()**
+
+##### img.setOnLongTouch( callback )
+
+Adds a callback handler for a long touch event. The touch timer is about 500 milliseconds.
+
+Parameter | Type
+--- | ---
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### img.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Sets a callback function when the image component is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
+
+##### img.setOnTouchDown( callback )
+
+Add a callback function on touch down event.
+
+Parameter | Type
+--- | ---
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### img.setOnTouchMove( callback )
 
-Sets a callback function when the a mouse move event is triggered
+Sets a callback function when the a mouse move event is triggered.
 
 Parameter | Type
 --- | ---
-callback | **function()**
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### img.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### img.setOnTouchUp( callback )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### img.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Add a callback function on touch up event.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
+
+##### img.setPadding( left, top, right, bottom, mode )
+
+Sets the padding of the component's container.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### img.setPixelColor( x, y, color )
+
+Sets the color of a specific pixel in the canvas.
+
+Parameter | Type
+--- | ---
+x | **Number:** The x-coordinate of the pixel.
+y | **Number:** The y-coordinate of the pixel.
+color | **String:** “A hexadecimal color format of the form `"#rrggbb"` or a comma separated rgb color of the form `"r”, “g”, “b"`.”
+
+##### img.setPixelData( base64, x, y, width, height )
+
+Set the pixel data of the canvas.
+
+Parameter | Type
+--- | ---
+base64 | **String:** “Base64 encoded string of the image or the `ImageData` object of the canvas.”
+x | **Number:** The x-coordinate of the top-left corner.
+y | **Number:** The y-coordinate of the top-left corner.
+width | **Number:** The width of the new image data.
+height | **Number:** The height of the new image data.
+
+##### img.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### img.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### img.setSize( width, height )
+##### img.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### img.show()
 
-Show the component
+Show the component.
+
+##### img.translateOrigin( x, y, angle )
+
+Translate the origin of the canvas at a new coordinate with the given angle of rotation.
+
+Parameter | Type
+--- | ---
+x | **Number:** The new x-coordinate of the origin.
+y | **Number:** The new y-coordinate of the origin.
+angle | **Number:** The angle of rotation in degrees.
 
 ### addLayout
 
@@ -51365,83 +53571,67 @@ lay = ui.addLayout(parent, type, options?, width?, height?)
 
 Parameter | Type
 --- | ---
-parent | **String:** “main” **or** **Object:** The parent layout where to add this component. Pass a string `main` for the main layout of your app.
-type | **String:** “The layout type. Values can be `Linear` `Absolute` `Frame` `Slide`”
-options? | **String:** “Layout options. Values can be
+parent | **Object:** The parent layout where to add this component. Pass a string `main` for the main layout of your app.
+type | **String:** “The layout type. Values can be `"Linear"`”, “ `"Absolute"`”, “ `"Frame"`”, “ `"Slide"`”, “ `"Card"`”
+options? | **String:** “A comma separated options.
 
- Orientation:  `Horizontal` `Vertical`
+Orientation: `Horizontal`”, “ `Vertical`
 
- `Horizontal Alignment: `Left` `Center` `Right`
+Horizontal Alignment: `Left`”, “ `Center`”, “ `Right`
 
- `Vertical Alignment: `Top` `VCenter` `Bottom`
+Vertical Alignment: `Top`”, “ `VCenter`”, “ `Bottom`
 
- `Dimensions`: `FillX` `FillY`
+Dimensions: `FillXY`”, “ `FillX`”, “ `FillY`”, “ `FillAxis`
 
- `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar`
+Scroll: `ScrollX`”, “ `ScrollY`”, “ `ScrollXY`”, “ `NoScrollBar`
 
- `Utils`: `BackColor` to apply light or dark background rather than transparent.”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Utils:
+
+`BackColor` to apply theme background color rather than transparent.
+
+`NoScrollBar` to remove scrollbar when scroll options is passed.
+
+`TouchThrough` to enable touch events to propagate behind the layers in frame layouts.
+
+`"Touchable"` enable touch in card layout.
+
+`"Outlined"` card variant is outlined.
+
+`"Square"` card rounded corners is remove.”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Layout
 
 
-A layout is the basic ui component of an app. It is where you add other ui components such as buttons, textfields, checkboxes, list, images and many more.
+There are 5 types of layouts: `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"` and `"Card"`. Layouts are transparent by default but you can set a background color or a background image. You can add child objects to the Layout by passing the layout as parent when initializing a control. By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: `FillXY`, `FillX`, and `FillY`.
 
 
 
- To add a layout, simply call the `addLayout` method of the `ui` object.
+##### Linear Layouts
 
+Linear layouts are probably the most common type and are used to organize controls in the `Vertical` or `Horizontal` orientation on the screen. You can also pass alignment options. For vertical alignment you can pass `Top`, `VCenter`, and `Bottom`. For horizontal alignment you can pass `Left`, `Center`, and `Right`. These will align your children accordingly. For children spacing, see `childSpacing` property below.
 
+##### Absolute Layouts
 
- There are 4 types of layouts: `Linear`, `Absolute`, `Frame`, and `Slide`.
+Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the `setPosition` method of each child control. However, you are encouraged to use linear layouts for most of your programs, unless it is absolutely necessary.
 
+##### Frame Layouts
 
+Frame layouts are used to display objects in front or behind each other. Everytime a child control is added, the new control is placed in a new layer in front of the previously added control at the top left of the frame. You can then use `setPosition` method of the child control to position it relative to the frame.
 
- Layouts are transparent by default but you can set a background color or a background image.
+##### Slide Layouts
 
+Slide layouts are used to display carousels or swipeable contents. The same as the Frame layout, this will add a new layer when a new control is added with a swipeable behaviour. You can pass alignment options to align your children within the Slide layout layer. Please note that `Vertical` and `Horizontal` options will be the direction of the swipe. If your parent layout is of type `Slide`, do not add `setOnTouch` callback handler in order for the slide layout to work perfectly.
 
+##### Card Layouts
 
- You can add child objects to the Layout by passing the layout as parent when initializing a control.
+Card layouts are used to display surfaces with elevation and a rounder corners to emphasize its contents. This type of layout has default values for padding. You can clear the padding by setting the `padding` property to `0`. If you want to use the material design card implementation, refer to the `Card` component.
 
+##### Dimensions
 
+To set the width and height of a layout, pass a `width` and `height` argument as a `decimal fraction` of its parent's width and height.
 
- By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: `FillXY`, `FillX`, and `FillY`.
-
-
-
- ### Linear Layouts
-
- Linear layouts are probably the most common type and are used to organize controls in the `Vertical` or `Horizontal` orientation on the screen.
-
-
-
- You can also pass alignment options. For vertical alignment you can pass `Top`, `VCenter`, and `Bottom`. For horizontal alignment you can pass `Left`, `Center`, and `Right`. These will align your children accordingly.
-
-
-
- For children spacing, see `childSpacing` property below.
-
-
-
- ### Absolute Layouts
-
- Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the `setPosition` method of each child control. However, you are encouraged to use linear layouts for most of your programs, unless it is absolutely necessary.
-
-
-
- ### Frame Layouts
-
- Frame layouts are used to display objects in front or behind each other. Everytime a child control is added, the new control is placed in a new layer in front of the previously added control at the top left of the frame. You can then use `setPosition` method of the child control to position it relative to the frame.
-
-
-
- ### Slide Layouts
-
- Slide layouts are used to display carousels or swipeable contents. The same as the Frame layout, this will add a new layer when a new control is added with a swipeable behaviour. You can pass alignment options to align your children within the Slide layout layer. Please note that `Vertical` and `Horizontal` options will be the direction of the swipe.
-
-
-
- If your parent layout is of type `Slide`, do not add `setOnTouch` callback handler in order for the slide layout to work perfectly.
+In some scenarios where you want the layout to occupy the available space, you can add `"FillXY"` in the `options` argument to fill the available width and height of its parent. Similarly, when you want to fill the available horizontal space, you can pass `"FillX"` and `"FillY"` for filling the available vertical space.
 
 
 
@@ -51673,6 +53863,102 @@ def onSlide(ctrl, index):
 ```
 </details>
 
+<details>
+<summary>Example: Player control using Card layout</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Create a layout of type card
+        this.crd = ui.addLayout(this.main, "Card", "Horiz", 0.9, 0.2);
+        this.crd.cornerRadius = 12;
+        this.crd.elevation = 8;
+
+        // Clear the default padding of the card
+        this.crd.padding = 0;
+
+        // Add a layout at the left of the card
+        var lay1 = ui.addLayout(this.crd, "Linear", "Left", 0.6, 1);
+        lay1.padding = ["1rem", "1rem", "1rem"];
+
+        // Add a text which is slightly bigger to serve as a song title
+        var title = ui.addText(lay1, "100 Years", "H5");
+
+        // Add a subheader text for artist
+        var subheader = ui.addText(lay1, "Five For Fighting", "textSecondary")
+
+        // Create a layout for the the player actions
+        var actionsLay = ui.addLayout(lay1, "Linear", "Horiz,VCenter,Left,FillAxis", 1);
+
+        // Add a previous icon button to the actions layout
+        var prevBtn = ui.addButton(actionsLay, "fast_rewind", "Small,Icon");
+
+        // Add a play icon button to the actions layout
+        var playBtn = ui.addButton(actionsLay, "play_arrow", "Icon,Large");
+        playBtn.margins = ["1rem", 0, "1rem", 0];
+
+        // Add a next icon button to the actions layout
+        var nextBtn = ui.addButton(actionsLay, "fast_forward", "Small,Icon");
+
+        // Create another layout and add it to the card
+        var lay2 = ui.addLayout(this.crd, "Linear", "", 0.4, 1);
+
+        // Add a cover image to the right layout of the card
+        var img = ui.addImage(lay2, "https://picsum.photos/200/200", "", 1, 1);
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Create a layout of type card
+        this.crd = ui.addLayout(this.main, "Card", "Horiz", 0.9, 0.2)
+        this.crd.cornerRadius = 12
+        this.crd.elevation = 8
+
+        #  Clear the default padding of the card
+        this.crd.padding = 0
+
+        #  Add a layout at the left of the card
+        lay1 = ui.addLayout(this.crd, "Linear", "Left", 0.6, 1)
+        lay1.padding = ["1rem", "1rem", "1rem"]
+
+        #  Add a text which is slightly bigger to serve as a song title
+        title = ui.addText(lay1, "100 Years", "H5")
+
+        #  Add a subheader text for artist
+        subheader = ui.addText(lay1, "Five For Fighting", "textSecondary")
+
+        #  Create a layout for the the player actions
+        actionsLay = ui.addLayout(lay1, "Linear", "Horiz,VCenter,Left,FillAxis", 1)
+
+        #  Add a previous icon button to the actions layout
+        prevBtn = ui.addButton(actionsLay, "fast_rewind", "Small,Icon")
+
+        #  Add a play icon button to the actions layout
+        playBtn = ui.addButton(actionsLay, "play_arrow", "Icon,Large")
+        playBtn.margins = ["1rem", 0, "1rem", 0]
+
+        #  Add a next icon button to the actions layout
+        nextBtn = ui.addButton(actionsLay, "fast_forward", "Small,Icon")
+
+        #  Create another layout and add it to the card
+        lay2 = ui.addLayout(this.crd, "Linear", "", 0.4, 1)
+
+        #  Add a cover image to the right layout of the card
+        img = ui.addImage(lay2, "https:# picsum.photos/200/200", "", 1, 1)
+```
+</details>
+
 #### Properties
 
 The following properties are available on the **Layout** object:
@@ -51684,7 +53970,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### lay.absLeft
 
@@ -51692,7 +53978,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### lay.absTop
 
@@ -51700,7 +53986,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### lay.absWidth
 
@@ -51708,11 +53994,11 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### lay.alignment
 
-Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be `Left` `Center` and `Right`
+Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be `"Left"` `"Center"` and `"Right"`
 
 Parameter | Type
 --- | ---
@@ -51724,7 +54010,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### lay.backImage
 
@@ -51732,7 +54018,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### lay.border
 
@@ -51748,7 +54034,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### lay.borderStyle
 
@@ -51766,9 +54052,17 @@ Parameter | Type
 --- | ---
 Return Value: | **List**
 
+##### lay.children
+
+Returns all the children added to this layout.
+
+Parameter | Type
+--- | ---
+Return Value: | **List**
+
 ##### lay.childSpacing
 
-Sets or returns the spacing of the child control in a Linear Layout. Values can be `Around` `Between` `Even`
+Sets or returns the spacing of the child control in a Linear Layout. Values can be `"Around"` `"Between"` `"Even"`
 
 Parameter | Type
 --- | ---
@@ -51797,6 +54091,30 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### lay.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### lay.elevation
+
+Sets or returns the elevation of a card layout.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### lay.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### lay.fontFile
 
@@ -51836,7 +54154,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### lay.opacity
 
@@ -51856,7 +54174,7 @@ Return Value: | **String**
 
 ##### lay.orientation
 
-Sets or returns the orientation of the controls in a Linear Layout. Values can be `Horizontal` or `Vertical`
+Sets or returns the orientation of the controls in a Linear Layout. Values can be `'Horizontal'` or `"Vertical"`
 
 Parameter | Type
 --- | ---
@@ -51868,7 +54186,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### lay.parent
 
@@ -51876,7 +54194,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** addLayout
+Return Value: | **Object**
 
 ##### lay.position
 
@@ -51884,7 +54202,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### lay.rotation
 
@@ -51892,7 +54210,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### lay.textColor
 
@@ -51926,9 +54244,17 @@ Parameter | Type
 --- | ---
 Return Value: | **String**
 
+##### lay.variant
+
+Sets or returns the card variant. Can be `"elevation"` or `"outlined"`
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
 ##### lay.verticalAlignment
 
-Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be `Top` `VCenter` or `Bottom`
+Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be `"Top"` `"VCenter"` or `"Bottom"`
 
 Parameter | Type
 --- | ---
@@ -51956,50 +54282,52 @@ Return Value: | **Number**
 The following methods are available on the **Layout** object:
 
 
-##### lay.animate( anim, duration? )
+##### lay.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### lay.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -52007,49 +54335,45 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### lay.childToFront( child )
 
-Move the child to the front
+Move the child to the front.
 
 Parameter | Type
 --- | ---
 child | **Object:** The child object of the layout.
 
+##### lay.clear()
+
+Clear the content of the layout.
+
 ##### lay.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### lay.getChildOrder( child )
 
-Returns the index of the child from the layout children stack in order
+Returns the index of the child from the layout children stack in order.
 
 Parameter | Type
 --- | ---
 child | **Object:** The child component of the layout.
 Return Value: | **Number**
 
-##### lay.getCurrentSlide()
+##### lay.getPosition( options )
 
-Returns the index of the current Slide Layout
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
-
-##### lay.getPosition( options? )
-
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### lay.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### lay.goto( index )
 
-Transition to the given index
+Transition to the given index.
 
 Parameter | Type
 --- | ---
@@ -52057,7 +54381,7 @@ index | **Number:** Index of a given layout.
 
 ##### lay.hasChild( child )
 
-Check whether a component is a child of this layout
+Check whether a component is a child of this layout.
 
 Parameter | Type
 --- | ---
@@ -52066,137 +54390,189 @@ Return Value: | **Boolean**
 
 ##### lay.hide()
 
-Hide the component
+Hide the component.
 
 ##### lay.next()
 
-Transition to the next slide
+Transition to the next slide.
 
 ##### lay.previous()
 
-Transition to the previous slide
+Transition to the previous slide.
 
 ##### lay.removeChild( child )
 
-Removes a child from this layout
+Removes a given child from this layout.
 
 Parameter | Type
 --- | ---
-child | **Object:** The child component to be remove.
+child | **Object:** The child control to be remove.
 
 ##### lay.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### lay.setBorder( width?, clr?, style='solid' )
+##### lay.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### lay.setChildMargins( left?, top?, right?, bottom?, mode='px' )
 
-Sets a default margins for the children of the layout component
+Sets a default margins for the children of the layout component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Left margin.
-top? | **Number:** Top margin.
-right? | **Number:** Right margin.
-bottom? | **Number:** Bottom margin.
-mode='px' | **String:** “`px`. Default is a fraction of viewport.”
+left? | **Number:** Left margin. You can also pass string e.g. `12rem`
+top? | **Number:** Top margin. You can also pass string e.g. `12rem`
+right? | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom? | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode='px' | **String:** “Unit of measurement.
 
-##### lay.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
+`px` for pixels
 
-Sets the corner radius of the component
+`%` relative to its parent dimension.
 
-Parameter | Type
---- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+`v` relative to viewport dimension”, “
 
-##### lay.setMargins( left?, top?, right?, bottom?, mode='px' )
+`rem`”
 
-Sets the margin of the component
+##### lay.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### lay.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### lay.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
+
+##### lay.setOnLongTouch( callback )
+
+Adds a callback handler when the layout is long touch. The touch timer is about 500 milliseconds.
+
+Parameter | Type
+--- | ---
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
+
+##### lay.setOnSlide( callback )
+
+Adds a callback function to be called when slide event is triggered.
+
+Parameter | Type
+--- | ---
+callback | **function(component ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>component </td><td>**Object:** The control component.</td></tr>,<tr><td>index </td><td>**Number:** The index of the slide.</td></tr></table>
 
 ##### lay.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds a callback handler when the layout is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### lay.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### lay.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### lay.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### lay.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### lay.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### lay.setSize( width, height )
+##### lay.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### lay.show()
 
-Makes the layout visible
+Show the component.
 
 ### addList
 
@@ -52209,37 +54585,25 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout
 list? | **List:** An array of arrays. Each element is of the form `[icon, title, body, secondary]`
-options? | **String:** *comma “,” separated:* “Media: `Icon` `Avatar`
+options? | **String:** “A comma separated options.
 
- `Styling`: `Dense` `Inset`
+Media: `Icon`”, “ `Avatar`
 
- `Util`: `Selectable` `Divider` `SecondaryText`”, “ `NoRipple` to disable ripple effect”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Styling: `Dense`”, “ `Inset`
+
+Utils: `Selectable`”, “ `Divider`”, “ `SecondaryText`”, “ `NoRipple`”, “ `NoScrollBar`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** List
 
 
-They are used to group together related pieces of data or informations to highlight association with each other and easy to read. They are frequently used for navigation as well as displaying general content.
+If `Icon` option is passed, the list must be of the form `[icon, title, body, secondary]`. To display an image avatar, passed and additional `Avatar` option and the list must be of the form `[image, title, body, secondary]`
 
+If no `Icon` option is passed, the list is treated as `[title, body, secondary]` by default.
 
+The secondary action is an icon button by default, to display as a text passed `secondarytext` option.
 
- Add a list to your app by calling the `addList` method of the `ui` object.
-
-
-
- If `Icon` option is passed, the list must be of the form `[icon, title, body, secondary]`. To display an image avatar, passed and additional `Avatar` option and the list must be of the form `[image, title, body, secondary]`
-
-
-
- If no `Icon` option is passed, the list is treated as `[title, body, secondary]` by default.
-
-
-
- The secondary action is an icon button by default, to display as a text passed `secondarytext` option.
-
-
-
- Adding a `selectable` list will disregard the `icon` option.
+Adding a `selectable` list will disregard the `icon` option.
 
 
 
@@ -52373,7 +54737,7 @@ class Main extends App
         this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
         // Avatar url
-        var avatar = "https://static.wikia.nocookie.net/heroes-and-villain/images/7/7e/Bilbo_BOFA_12.png/revision/latest/scale-to-width-down/350?cb=20190320192007"
+        var avatar = "https://sample-ds-tutorials.firebaseapp.com/img/ds-logo.png"
 
         // Initialize the contact items to show
         var list = [
@@ -52403,7 +54767,7 @@ class Main extends App
         this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
         #  Avatar url
-        avatar = "https:# static.wikia.nocookie.net/heroes-and-villain/images/7/7e/Bilbo_BOFA_12.png/revision/latest/scale-to-width-down/350?cb=20190320192007"
+        avatar = "https:# sample-ds-tutorials.firebaseapp.com/img/ds-logo.png"
 
         #  Initialize the contact items to show
         list = [
@@ -52638,7 +55002,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### lst.absLeft
 
@@ -52646,7 +55010,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### lst.absTop
 
@@ -52654,7 +55018,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### lst.absWidth
 
@@ -52662,7 +55026,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### lst.avatarSize
 
@@ -52682,7 +55046,7 @@ Return Value: | **String**
 
 ##### lst.backColor
 
-Sets or returns the background color in a hexadecimal format.
+A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
@@ -52694,7 +55058,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### lst.border
 
@@ -52710,7 +55074,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### lst.borderStyle
 
@@ -52722,7 +55086,7 @@ Return Value: | **String**
 
 ##### lst.checkboxColor
 
-Sets or returns the theme color of the checkbox when `Selectable` option is enabled. Vaues can be `Default` `Primary` or `Secondary`
+Sets or returns the theme color of the checkbox when `Selectable` option is enabled. Values can be `Default` `Primary` or `Secondary` or hexadecimal color.
 
 Parameter | Type
 --- | ---
@@ -52744,6 +55108,14 @@ Parameter | Type
 --- | ---
 Return Value: | **Boolean**
 
+##### lst.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
 ##### lst.elevation
 
 Sets or returns the depth of the list container. Values range from 0 to 24.
@@ -52751,6 +55123,14 @@ Sets or returns the depth of the list container. Values range from 0 to 24.
 Parameter | Type
 --- | ---
 Return Value: | **Number**
+
+##### lst.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### lst.fontFile
 
@@ -52822,7 +55202,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### lst.opacity
 
@@ -52854,7 +55234,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### lst.parent
 
@@ -52862,7 +55242,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### lst.position
 
@@ -52870,7 +55250,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### lst.rotation
 
@@ -52878,7 +55258,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### lst.selectable
 
@@ -52974,61 +55354,64 @@ Return Value: | **Number**
 The following methods are available on the **List** object:
 
 
-##### lst.addItem( title, body?, image?, index? )
+##### lst.addItem( title, body?, image?, action?, index? )
 
-Adds an item in the list
+Adds an item in the list.
 
 Parameter | Type
 --- | ---
 title | **String:** “The title of the item.”
 body? | **String:** “The text description of the item.”
 image? | **String:** “A material icon or image file path.”
+action? | **String:** “A text for the action or material icon.”
 index? | **Number:** The index in which to add or insert the item.
 
-##### lst.animate( anim, duration? )
+##### lst.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### lst.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -53036,46 +55419,48 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### lst.deselectAll()
 
-Clears all selection in the list if the list is selectable
+Clears all selection in the list if the list is selectable.
 
 ##### lst.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### lst.getItem( title )
+##### lst.getItem( title, json )
 
-Get the item in the list by its correspding title
-
-Parameter | Type
---- | ---
-title | **String:** “Returns the item in a list as an object of the following format { title”, “ body”, “ image }”
-Return Value: | **Object:** { title *(**String**)*, body *(**String**)*, image *(**String**)* }
-
-##### lst.getItemByIndex( index )
-
-Get the item in a list by its corresponding index
+Get the item in the list by its corresponding title.
 
 Parameter | Type
 --- | ---
-index | **Number:** Returns the item in a list as an object of the following format { title,  body,  image }
-Return Value: | **Object:** { title *(**String**)*, body *(**String**)*, image *(**String**)* }
-
-##### lst.getPosition( options? )
-
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
-
-Parameter | Type
---- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
+title | **String:** “Title of the list item.”
+json | **Boolean:** Pass `true` to return the corresponding list item as an object of the form `{title, body, image, action}`
 Return Value: | **Object**
+
+##### lst.getItemByIndex( index, json )
+
+Get the item in a list by its corresponding index.
+
+Parameter | Type
+--- | ---
+index | **Number:** Returns the corresponding list item.
+json | **Boolean:** Pass `true` to return the corresponding list item as an object of the form `{title, body, image, action}`
+Return Value: | **Object**
+
+##### lst.getPosition( options )
+
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
+
+Parameter | Type
+--- | ---
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### lst.getSelectedItems()
 
-Returns an array of indexes of the selected items
+Returns an array of indexes of the selected items.
 
 Parameter | Type
 --- | ---
-Return Value: | **List:** *of numbers*
+Return Value: | **List**
 
 ##### lst.getSelectedTitles()
 
@@ -53083,23 +55468,23 @@ Returns an array of titles of selected items
 
 Parameter | Type
 --- | ---
-Return Value: | **List:** [ titles *(**String**)* ]
+Return Value: | **List**
 
 ##### lst.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### lst.hide()
 
-Hide the component
+Hide the component.
 
 ##### lst.popItem()
 
-Removes the last item in the list
+Removes the last item in the list. This will return the item being removed.
 
 ##### lst.removeItemByIndex( index )
 
-Removes an element from the list
+Removes an element from the list.
 
 Parameter | Type
 --- | ---
@@ -53107,7 +55492,7 @@ index | **Number:** The index of the item to remove
 
 ##### lst.removeItemByName( name )
 
-Removes an item in the list by its title
+Removes an item in the list by its title.
 
 Parameter | Type
 --- | ---
@@ -53115,7 +55500,7 @@ name | **String:** “The title of the list to remove.”
 
 ##### lst.selectItemByIndex( index )
 
-Selects an item in the list by its index and marked the checkbox. List must be selectable
+Selects an item in the list by its index and marked the checkbox. List must be selectable.
 
 Parameter | Type
 --- | ---
@@ -53123,7 +55508,7 @@ index | **Number:** The index to be selected.
 
 ##### lst.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -53131,26 +55516,29 @@ zIndex | **Number:** The z-index. A positve value behaves like `bringForward` me
 
 ##### lst.setBodyText( index, newText )
 
-Sets a new secondary text to a corresponding item in a list
+Sets a new secondary text to a corresponding item in a list.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the list whose secondary text to be changed.
 newText | **String:** “The new secondary text.”
 
-##### lst.setBorder( width?, clr?, style='solid' )
+##### lst.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### lst.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the list container
+Sets the corner radius of the list container.
 
 Parameter | Type
 --- | ---
@@ -53162,112 +55550,158 @@ mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
 ##### lst.setIcon( index, icon )
 
-Updates an icon in a list by its corresponding index
+Updates an icon in a list by its corresponding index.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the corresponding list item.
 icon | **String:** “Material icon font.”
 
-##### lst.setItem( title, newTitle, newBody?, newImage? )
+##### lst.setItem( title, newTitle, newBody?, newIcon?, newAction? )
 
-Updates an item in the list
+Updates an item in the list.
 
 Parameter | Type
 --- | ---
 title | **String:** “The title of the list item to update.”
 newTitle | **String:** “The new title of the list item.”
 newBody? | **String:** “The new description of the list item.”
-newImage? | **String:** “A material icon font or image file path.”
+newIcon? | **String:** “A material icon font or image file path.”
+newAction? | **String:** “A material icon font for the action icon button.”
 
-##### lst.setItemByIndex( index, newTitle, newBody?, newImage? )
+##### lst.setItemByIndex( index, newTitle, newBody?, newIcon?, newAction? )
 
-Change the content of an item in a list
+Change the content of an item in a list.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the item to update
 newTitle | **String:** “The new title of the item”
 newBody? | **String:** “The new body text”
-newImage? | **String:** “The new icon or image”
+newIcon? | **String:** “The new icon or image”
+newAction? | **String:** “The new action icon or action text”
+
+##### lst.setItemPadding( left, top, right, bottom, mode )
+
+Sets the padding of the list item. See `itemPadding` property for equivalent setter/getter property.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left padding of the list item.
+top | **Number:** Top padding of the list item.
+right | **Number:** Right padding of the list item.
+bottom | **Number:** Bottom padding of the list item.
+mode | **String:** “Unit of measurement. Can be `rem`”, “ `px`”, “ `%`”, “ or `v` for viewport.”
 
 ##### lst.setList( list )
 
-Updtes the list
+Updtes the list.
 
 Parameter | Type
 --- | ---
 list | **List:** A comma separated list of items or an array. See the list format above.
 
-##### lst.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### lst.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### lst.setOnAction( callback )
 
-Sets a callback handler when an action icon is click
+Sets a callback handler when an action icon is click.
 
 Parameter | Type
 --- | ---
-callback | **function(icon,index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>icon</td><td>**String:** “The icon text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding secondary action.</td></tr></table>
+callback | **function(icon ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>icon </td><td>**String:** “The icon text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding secondary action.</td></tr></table>
 
 ##### lst.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(title,body,icon,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title</td><td>**String:** “The list item title text.”</td></tr>,<tr><td>body</td><td>**String:** “The list item body text.”</td></tr>,<tr><td>icon</td><td>**String:** “The list item icon.”</td></tr>,<tr><td>index</td><td>**Number:** The list item index.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(title ,body ,icon ,action ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title </td><td>**String:** “The list item title text.”</td></tr>,<tr><td>body </td><td>**String:** “The list item body text.”</td></tr>,<tr><td>icon </td><td>**String:** “The list item icon.”</td></tr>,<tr><td>action </td><td>**String:** “The action text.”</td></tr>,<tr><td>index </td><td>**Number:** The list item index.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
+
+##### lst.setOnLongTouch( callback )
+
+Adds a callback handler for a long touch event. The touch timer is about 500 milliseconds.
+
+Parameter | Type
+--- | ---
+callback | **function(title ,body ,icon ,action ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title </td><td>**String:** “The list item title.”</td></tr>,<tr><td>body </td><td>**String:** “The list item description text.”</td></tr>,<tr><td>icon </td><td>**String:** “The list item icon.”</td></tr>,<tr><td>action </td><td>**String:** “ The action text.”</td></tr>,<tr><td>index </td><td>**Number:** The list item index.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### lst.setOnSelect( callback )
 
-Sets a callback handler when an item in the list is selected
+Sets a callback handler when an item in the list is selected.
 
 Parameter | Type
 --- | ---
-callback | **function(title,index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title</td><td>**String:** “The list item title text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the selected list item.</td></tr></table>
+callback | **function(title ,index ,checked )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title </td><td>**String:** “The list item title text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the selected list item.</td></tr>,<tr><td>checked </td><td>**Boolean:** The checked state of the list item.</td></tr></table>
 
 ##### lst.setOnTouch( callback )
 
-Adds a callback function when the list item is click
+Adds a callback function when the list item is click.
 
 Parameter | Type
 --- | ---
-callback | **function(title,body,icon,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title</td><td>**String:** “The list item title text.”</td></tr>,<tr><td>body</td><td>**String:** “The list item body text.”</td></tr>,<tr><td>icon</td><td>**String:** “The list item icon.”</td></tr>,<tr><td>index</td><td>**Number:** The list item index.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(title ,body ,icon ,action ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>title </td><td>**String:** “The list item title text.”</td></tr>,<tr><td>body </td><td>**String:** “The list item body text.”</td></tr>,<tr><td>icon </td><td>**String:** “The list item icon.”</td></tr>,<tr><td>action </td><td>**String:** “The action text.”</td></tr>,<tr><td>index </td><td>**Number:** The list item index.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### lst.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### lst.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### lst.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### lst.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### lst.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
@@ -53276,24 +55710,25 @@ y | **Number:** The y-scale of the component. Values less than `1` is smaller th
 
 ##### lst.setSelectable( selectable )
 
-Make the list selectable or not
+Make the list selectable or not.
 
 Parameter | Type
 --- | ---
 selectable | **Boolean:** If true,  make the list selectable. Otherwise,  list is not selectable
 
-##### lst.setSize( width, height )
+##### lst.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### lst.setTitleText( index, title )
 
-Sets a new title text to a corresponding item in a list
+Sets a new title text to a corresponding item in a list.
 
 Parameter | Type
 --- | ---
@@ -53302,15 +55737,15 @@ title | **String:** “The new title text.”
 
 ##### lst.shiftItem()
 
-Removes the first item the list
+Removes the first item the list. This will return the item being removed.
 
 ##### lst.show()
 
-Show the component
+Show the component.
 
 ### addMenu
 
-Adds a pop-up menu into your components.
+A menu is a list of options or actions presented to the user as a popup.
 ```
 men = ui.addMenu(parent, list?, options?, width?, height?)
 ```
@@ -53318,40 +55753,32 @@ men = ui.addMenu(parent, list?, options?, width?, height?)
 Parameter | Type
 --- | ---
 parent | **Object:** The component where to anchor the Menu.
-list? | **List:** A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon:title`
+list? | **List:** A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon *(title` $n$n$ Add a `colon` before an item to display it as the label text)*.
+options? | **String:** “A comma separated options.
 
- `Add a `colon` before an item to display it as the label text.
-options? | **String:** *comma “,” separated:* “Color: `Primary` `Secondary` `Error`
+Theme Color: `Primary`”, “ `Secondary`”, “ `Error`
 
- List: `Dense`
-
- Icons: `Icon`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Utils: `Dense`”, “ `Icon`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Menu
 
 
 These are examples on how you can format your list.
 
+Basic list
 
-
- Basic list
-
-`var lst = [ 'Item 1', 'Item 2', 'Item 3' ];`
-
+`var lst = ['Item 1', 'Item 2', 'Item 3'];`
 
 
 
-
- List with icons
+List with icons
 
 `var lst = ['favorite : Favorites', 'person : Account', 'delete : Trash Bin'];`
 
 
 
-
-
- List with group title
+List with group title
 
 `var lst = [' : This is a label', 'Item 1', 'Item 2', 'Item 3'];`
 
@@ -53435,7 +55862,7 @@ class Main extends App
     {
         // Creates a fullscreen layout with objects vertically centered
         this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.setChildSpacing( "Evenly" )
+        this.main.childSpacing = "Even";
 
         // Add a first button control to the layout
         this.btn1 = ui.addButton(this.main, "Button 1", "Primary")
@@ -53664,118 +56091,6 @@ def menuTouch(item, icon, index):
 The following properties are available on the **Menu** object:
 
 
-##### men.absHeight
-
-Returns the absolute height of the control in pixels.
-
-Parameter | Type
---- | ---
-Return Value: | **Number:** *pixel*
-
-##### men.absLeft
-
-Returns the absolute distance of the control from the left in pixels.
-
-Parameter | Type
---- | ---
-Return Value: | **Number:** *pixel*
-
-##### men.absTop
-
-Returns the absolute distance of the control from the top in pixels.
-
-Parameter | Type
---- | ---
-Return Value: | **Number:** *pixel*
-
-##### men.absWidth
-
-Returns the absolute width of the control in pixels.
-
-Parameter | Type
---- | ---
-Return Value: | **Number:** *pixel*
-
-##### men.backColor
-
-A hexadecimal color of the form `#rrggbb`
-
-Parameter | Type
---- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
-
-##### men.backImage
-
-The path to your image file.
-
-Parameter | Type
---- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
-
-##### men.border
-
-Sets or returns the border thickness in pixels.
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
-
-##### men.borderColor
-
-Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
-
-Parameter | Type
---- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
-
-##### men.borderStyle
-
-Sets or returns the border style. Values can be `dotted`, `dashed`, `solid`, `double`, `groove`, `ridge`, `inset` and `outset`. Default is `solid`.
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-##### men.cornerRadius
-
-Sets or returns the corner radius in pixels.
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
-
-##### men.disabled
-
-Sets or returns the `disabled` state of the control.
-
-Parameter | Type
---- | ---
-Return Value: | **Boolean**
-
-##### men.fontFile
-
-Sets or returns the `relative` path to the font-family use.
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-##### men.height
-
-Sets or returns the height of the control as a fraction of the parent control.
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
-
-##### men.isVisible
-
-Returns whether the control is visible or not.
-
-Parameter | Type
---- | ---
-Return Value: | **Boolean**
-
 ##### men.itemPadding
 
 Sets or returns the padding of each menu item. See also `setItemPadding` method.
@@ -53783,14 +56098,6 @@ Sets or returns the padding of each menu item. See also `setItemPadding` method.
 Parameter | Type
 --- | ---
 Return Value: | **List**
-
-##### men.left
-
-Returns the distance of the control from the left.
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
 
 ##### men.list
 
@@ -53800,110 +56107,6 @@ Parameter | Type
 --- | ---
 Return Value: | **List**
 
-##### men.margins
-
-Sets or returns the margin of the control. Works on controls with `Linear` parent only. You can also pass a number to set equal margins for all sides.
-
-Parameter | Type
---- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
-
-##### men.opacity
-
-Sets or returns the opacity of the control.
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
-
-##### men.options
-
-Sets or returns the `options` of the control.
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-##### men.padding
-
-Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.
-
-Parameter | Type
---- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
-
-##### men.parent
-
-Returns the parent layout control.
-
-Parameter | Type
---- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
-
-##### men.position
-
-Returns the position of the control. The returned object has `left` `top` `right` and `bottom` props.
-
-Parameter | Type
---- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
-
-##### men.rotation
-
-Sets or returns the angle of rotation in degrees.
-
-Parameter | Type
---- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
-
-##### men.textColor
-
-Sets or returns the color of the text.
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-##### men.textSize
-
-Sets or returns the size of the text within the control.
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
-
-##### men.top
-
-Returns the distance of the control from the top.
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
-
-##### men.type
-
-Returns the type of the control.
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-##### men.visibility
-
-Sets or returns the visibility of the control.
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-##### men.width
-
-Sets or returns the width of the control as a fraction of the parent control.
-
-Parameter | Type
---- | ---
-Return Value: | **Number**
-
 
 #### Methods
 
@@ -53912,69 +56115,16 @@ The following methods are available on the **Menu** object:
 
 ##### men.addItem( name, index )
 
-Adds an item in the menu list
+Adds an item in the menu list.
 
 Parameter | Type
 --- | ---
 name | **String:** “The new item to be added.”
 index | **Number:** The index at which to add the item.
 
-##### men.animate( anim, duration? )
-
-Animate the component
-
-Parameter | Type
---- | ---
-anim | **String:** “The type of animation. Here are the available values
-
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
-
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
-
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
-
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
-
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
-
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
-
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
-
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
-
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
-
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
-
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
-
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
-
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
-
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
-
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
-
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
-
-##### men.bringForward( zIndex )
-
-Bring this component forward by a given z-index
-
-Parameter | Type
---- | ---
-zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` method.
-
-##### men.destroy()
-
-Destroy the component
-
 ##### men.getEnabled( index )
 
-Get the enabled state of an item the menu popup
+Get the enabled state of an item the menu popup.
 
 Parameter | Type
 --- | ---
@@ -53983,37 +56133,24 @@ Return Value: | **Boolean**
 
 ##### men.getEnabledByName( name )
 
-Get the enabled state of an item in the menu popup
+Get the enabled state of an item in the menu popup.
 
 Parameter | Type
 --- | ---
 name | **String:** “The name of the item.”
 Return Value: | **Boolean**
 
-##### men.getPosition( options? )
-
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
-
-Parameter | Type
---- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
-
-##### men.gone()
-
-Destroy the component
-
 ##### men.hide()
 
-Hide the pop-up menu
+Hide the pop-up menu.
 
 ##### men.popItem()
 
-Removes the last item
+Removes the last item. This will return the item being removed.
 
 ##### men.removeItemByIndex( index )
 
-Removes an item in the menu items list by its index
+Removes an item in the menu items list by its index.
 
 Parameter | Type
 --- | ---
@@ -54021,53 +56158,23 @@ index | **Number:** The index of the item to remove.
 
 ##### men.removeItemByName( name )
 
-Removes an item in the menu items list by its name
+Removes an item in the menu items list by its name.
 
 Parameter | Type
 --- | ---
 name | **String:** “The name of the item to remove.”
 
-##### men.sendBackward( zIndex )
-
-Bring this component backward by a given z-index
-
-Parameter | Type
---- | ---
-zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
-
 ##### men.setAutoFocus( bool )
 
-Sets the autofocus value of the menu items
+Sets the autofocus value of the menu items.
 
 Parameter | Type
 --- | ---
 bool | **Boolean:** Value can be `true` or `false`
 
-##### men.setBorder( width?, clr?, style='solid' )
-
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### men.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
-
-Parameter | Type
---- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
-
 ##### men.setEnabled( index, value )
 
-Enable or disable an item in the menu popup
+Enable or disable an item in the menu popup.
 
 Parameter | Type
 --- | ---
@@ -54076,97 +56183,59 @@ value | **Boolean:** Values can be `true` or `false`. `false` to disable.
 
 ##### men.setEnabledByName( name, value )
 
-Enable or disable an item in the menu popup by its name
+Enable or disable an item in the menu popup by its name.
 
 Parameter | Type
 --- | ---
 name | **String:** “The name of the corresping item the menu.”
 value | **Boolean:** Values can be `true` or `false`. `false` to disable an item.
 
+##### men.setItemPadding( left, top, right, bottom, mode )
+
+Sets the padding of the menu item. See `itemPadding` property for equivalent setter/getter property.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left padding of the menu item.
+top | **Number:** Top padding of the menu item.
+right | **Number:** Right padding of the menu item.
+bottom | **Number:** Bottom padding of the menu item.
+mode | **String:** “Unit of measurement. Can be `rem`”, “ `px`”, “ `%`”, “ or `v` for viewport.”
+
 ##### men.setList( list )
 
-Updates the list items on the menu
+Updates the list items on the menu.
 
 Parameter | Type
 --- | ---
 list | **List:** The list items to show.
 
-##### men.setMargins( left?, top?, right?, bottom?, mode='px' )
-
-Sets the margin of the component
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
-
-##### men.setOnContextMenu( callback )
-
-Adds a callback function on right click
-
-Parameter | Type
---- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
-
 ##### men.setOnTouch( callback )
 
-Adds a callback handler when the menu is touch
+Adds a callback handler when the menu is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(item,icon,index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>item</td><td>**String:** “The menu item text.”</td></tr>,<tr><td>icon</td><td>**String:** “The menu item icon.”</td></tr>,<tr><td>index</td><td>**Number:** The menu item index.</td></tr></table>
-
-##### men.setPadding( left?, top?, right?, bottom?, mode='px' )
-
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
+callback | **function(item ,icon ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>item </td><td>**String:** “The menu item text.”</td></tr>,<tr><td>icon </td><td>**String:** “The menu item icon.”</td></tr>,<tr><td>index </td><td>**Number:** The menu item index.</td></tr></table>
 
 ##### men.setPosition( left, top )
 
-Set the position of the menu from the left and top of the anchor component
+Set the position of the menu from the left and top of the anchor component.
 
 Parameter | Type
 --- | ---
 left | **Number:** The position of the menu from the left of the parent or anchor component. The unit is in pixels.
 top | **Number:** The position of the menu from the top of the parent or anchor component. The unit is in pixels.
 
-##### men.setScale( x, y )
-
-Sets the x and y scaling of the component
-
-Parameter | Type
---- | ---
-x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
-y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
-
-##### men.setSize( width, height )
-
-Sets the size of the component
-
-Parameter | Type
---- | ---
-width | **Number:** Fraction of the parent width. [0-1]
-height | **Number:** Fraction of the parent height. [0-1]
-
 ##### men.shiftItem()
 
-Removes the first item
+Removes the first item. This will return the item being removed.
 
 ##### men.show( parent )
 
-Show the menu pop-up
+Show the menu pop-up.
 
-If you passed a parent on initialization, then the menu si anchored on that component
+If you passed a parent on initialization, then the menu si anchored on that component.
 
 Parameter | Type
 --- | ---
@@ -54174,7 +56243,7 @@ parent | **Object:** The component where to anchor the menu. It can be a `Button
 
 ### addProgress
 
-Adds a progress component into your app.
+A progress refers to the visual indication of a task's completion status.
 ```
 prg = ui.addProgress(parent, value?, options?, width?, height?)
 ```
@@ -54183,21 +56252,21 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the prgress component.
 value? | **Number:** the initial value of the progress component.
-options? | **String:** *comma “,” separated:* “Color: `Primary` `Secondary`
+options? | **String:** “A comma separated options.
 
- `Type`: `Circular` `Linear`
+Theme Color: `Primary`”, “ `Secondary`
 
- `Variant`: `Determinate` `Indeterminate`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction fo the screen height. [0-1]
+Type: `Circular`”, “ `Linear`
+
+Variant: `Determinate`”, “ `Indeterminate`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction fo the parent height `[0-1]`.
 Return Value: | **ui object:** Progress
 
 
 If you pass a null value on initialization and you won't passed a variant option, the default variant will be `indeterminate`.
 
-
-
- Otherwise if there's no variant option and the value is not null, it will automatically be a `determinate` variant.
+Otherwise if there's no variant option and the value is not null, it will automatically be a `determinate` variant.
 
 
 
@@ -54324,7 +56393,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### prg.absLeft
 
@@ -54332,7 +56401,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### prg.absTop
 
@@ -54340,7 +56409,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### prg.absWidth
 
@@ -54348,7 +56417,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### prg.backColor
 
@@ -54356,7 +56425,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### prg.backImage
 
@@ -54364,7 +56433,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### prg.border
 
@@ -54380,7 +56449,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### prg.borderStyle
 
@@ -54422,6 +56491,22 @@ Parameter | Type
 --- | ---
 Return Value: | **Boolean**
 
+##### prg.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### prg.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
 ##### prg.fontFile
 
 Sets or returns the `relative` path to the font-family use.
@@ -54460,7 +56545,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### prg.opacity
 
@@ -54484,7 +56569,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### prg.parent
 
@@ -54492,7 +56577,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### prg.position
 
@@ -54500,7 +56585,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### prg.rotation
 
@@ -54508,7 +56593,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### prg.textColor
 
@@ -54544,7 +56629,7 @@ Return Value: | **Number**
 
 ##### prg.type
 
-Sets or returns the type of the Progress Component. Values can be `Linear` or `Circular`
+Returns the type of the control.
 
 Parameter | Type
 --- | ---
@@ -54588,50 +56673,52 @@ Return Value: | **Number**
 The following methods are available on the **Progress** object:
 
 
-##### prg.animate( anim, duration? )
+##### prg.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### prg.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -54639,126 +56726,146 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### prg.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### prg.getPosition( options? )
+##### prg.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### prg.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### prg.hide()
 
-Hide the component
+Hide the component.
 
 ##### prg.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### prg.setBorder( width?, clr?, style='solid' )
+##### prg.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### prg.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
-##### prg.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### prg.setCornerRadius( tl, tr, br, bl, mode )
 
-Sets the margin of the component
+Sets the corner radius of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### prg.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### prg.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
-##### prg.setOnTouch( callback )
+##### prg.setPadding( left, top, right, bottom, mode )
 
-Adds a callback handler when the component is touch
-
-Parameter | Type
---- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
-
-##### prg.setPadding( left?, top?, right?, bottom?, mode='px' )
-
-Sets the padding component container
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
 
-##### prg.setPosition( left?, top?, mode='px' )
+`rem` for root em.
 
-Sets the position of the component relative to its parent dimensions
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### prg.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### prg.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### prg.setSize( width, height )
+##### prg.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### prg.show()
 
-Show the component
+Show the component.
 
 ### addRadioGroup
 
@@ -54770,28 +56877,28 @@ rdg = ui.addRadioGroup(parent, list?, options?, width?, height?)
 Parameter | Type
 --- | ---
 parent | **Object:** The parent where to add the RadioGroup component.
-list? | **String:** *comma “,” separated:* “The list items array.”
-options? | **String:** *comma “,” separated:* “Radio Sizes: `Small` `Medium`
+list? | **List:** The list items array.
+options? | **String:** “A comma separated options.
 
- `Colors`: `Primary` `Secondary`
+Radio Sizes: `Small`”, “ `Medium`
 
- `Icon Position: `Left` or `Right`
+Theme Colors: `Primary`”, “ `Secondary`”, “ Default
 
- `Container`: `Elevated` or `Outlined`
+Orientation: `Horizontal`”, “ `Vertical`
 
- `Corner`: `Square`
+Icon Position: `Left`”, “ `Right`
 
- `Required`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Container: `Elevated`”, “ `Outlined`
+
+Corner: `Square`
+
+Utils: `Required`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** RadioGroup
 
 
-A radiogroup is a type of select list that can only have a single value being checked at a time.
-
-
-
- Pass `required` as option to have atleast one value selected.
+Pass `required` as option to have atleast one value selected.
 
 <details>
 <summary>Example: Basic radiogroup</summary>
@@ -54977,7 +57084,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### rdg.absLeft
 
@@ -54985,7 +57092,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### rdg.absTop
 
@@ -54993,7 +57100,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### rdg.absWidth
 
@@ -55001,7 +57108,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### rdg.backColor
 
@@ -55009,7 +57116,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### rdg.backImage
 
@@ -55017,7 +57124,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### rdg.border
 
@@ -55033,7 +57140,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### rdg.borderStyle
 
@@ -55061,11 +57168,19 @@ Return Value: | **Number**
 
 ##### rdg.disabled
 
-Sets or returns the disabled state of the radio button group.
+Sets or returns the `disabled` state of the control.
 
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### rdg.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
 
 ##### rdg.elevation
 
@@ -55074,6 +57189,14 @@ Sets or returns the depth of the RadioGroup container. Value ranges from 0 to 24
 Parameter | Type
 --- | ---
 Return Value: | **Number**
+
+##### rdg.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### rdg.fontFile
 
@@ -55153,7 +57276,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### rdg.opacity
 
@@ -55166,6 +57289,14 @@ Return Value: | **Number**
 ##### rdg.options
 
 Sets or returns the `options` of the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### rdg.orientation
+
+Sets or returns the orientation of the list. Can be "Vertical" or "Horizontal".
 
 Parameter | Type
 --- | ---
@@ -55185,7 +57316,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### rdg.parent
 
@@ -55193,7 +57324,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### rdg.position
 
@@ -55201,7 +57332,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### rdg.radioSize
 
@@ -55217,7 +57348,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### rdg.spaceBetween
 
@@ -55229,7 +57360,7 @@ Return Value: | **Number**
 
 ##### rdg.textColor
 
-Stest or returns the color of the text in hexadecimal format. You can also pass color names e.g. `red`, `green` or `blue`.
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
@@ -55269,11 +57400,11 @@ Return Value: | **String**
 
 ##### rdg.value
 
-Sets or returns the value of the RadioGroup Component. This must be equal to one of the item in the list.
+Sets or returns the value of the RadioGroup Component as an index of the selected item.
 
 Parameter | Type
 --- | ---
-Return Value: | **String**
+Return Value: | **Number**
 
 ##### rdg.visibility
 
@@ -55299,57 +57430,59 @@ The following methods are available on the **RadioGroup** object:
 
 ##### rdg.addItem( name, index )
 
-Adds an item in the radio group list
+Adds an item in the radio group list.
 
 Parameter | Type
 --- | ---
 name | **String:** “The new item to be added.”
 index | **Number:** The index in which to add the item.
 
-##### rdg.animate( anim, duration? )
+##### rdg.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### rdg.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -55357,11 +57490,11 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### rdg.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### rdg.getEnabled( index )
 
-Get the enabled state of an item in the radio group
+Get the enabled state of an item in the radio group.
 
 Parameter | Type
 --- | ---
@@ -55370,37 +57503,37 @@ Return Value: | **Boolean**
 
 ##### rdg.getEnabledByName( name )
 
-Get the enabled state of a radiogroup item by its name
+Get the enabled state of a radiogroup item by its name.
 
 Parameter | Type
 --- | ---
 name | **String:** “The radiogroup text.”
 Return Value: | **Boolean**
 
-##### rdg.getPosition( options? )
+##### rdg.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### rdg.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### rdg.hide()
 
-Hide the component
+Hide the component.
 
 ##### rdg.popItem()
 
-Removes the last item in the radiogroup
+Removes the last item in the radiogroup. This will return the item being removed.
 
 ##### rdg.removeItemByIndex( index )
 
-Removes an item in the radiogroup items list by its index
+Removes an item in the radiogroup items list by its index.
 
 Parameter | Type
 --- | ---
@@ -55408,7 +57541,7 @@ index | **Number:** The index of the item to remove.
 
 ##### rdg.removeItemByName( name )
 
-Removes an item in the radiogroup items list by its name
+Removes an item in the radiogroup items list by its name.
 
 Parameter | Type
 --- | ---
@@ -55416,25 +57549,28 @@ name | **String:** “The name of the item to remove.”
 
 ##### rdg.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### rdg.setBorder( width?, clr?, style='solid' )
+##### rdg.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### rdg.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the radiogroup container
+Sets the corner radius of the radiogroup container.
 
 Parameter | Type
 --- | ---
@@ -55446,7 +57582,7 @@ mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
 ##### rdg.setEnabled( index, value )
 
-Enable or disable the radiogroup or an item in the radiogroup
+Enable or disable the radiogroup or an item in the radiogroup.
 
 Parameter | Type
 --- | ---
@@ -55455,7 +57591,7 @@ value | **Boolean:** Values can be `true` or `false`. If `false`,  the item will
 
 ##### rdg.setEnabledByName( name, value )
 
-Enable or disable a radiogroup item by its name
+Enable or disable a radiogroup item by its name.
 
 Parameter | Type
 --- | ---
@@ -55464,7 +57600,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### rdg.setItemByIndex( item, index )
 
-Sets an item in the radiogroup component
+Sets an item in the radiogroup component.
 
 Parameter | Type
 --- | ---
@@ -55473,112 +57609,141 @@ index | **Number:** The index to of the item to be updated
 
 ##### rdg.setItemByName( name, text )
 
-Updates an item in the list by its corresponding name
+Updates an item in the list by its corresponding name.
 
 Parameter | Type
 --- | ---
 name | **String:** “The name of the item.”
 text | **String:** “The new text to replaced the name of the item.”
 
-##### rdg.setLabel( label )
+##### rdg.setItemPadding( left, top, right, bottom, mode )
 
-Sets the label of the RadioGroup.
+Sets the padding of the radio item. See `itemPadding` property for equivalent setter/getter property.
 
 Parameter | Type
 --- | ---
-label | **String**
+left | **Number:** Left padding of the radio item.
+top | **Number:** Top padding of the radio item.
+right | **Number:** Right padding of the radio item.
+bottom | **Number:** Bottom padding of the radio item.
+mode | **String:** “Unit of measurement. Can be `rem`”, “ `px`”, “ `%`”, “ or `v` for viewport.”
 
 ##### rdg.setList( val )
 
-Sets the the radiogroup list items
+Sets the the radiogroup list items.
 
 Parameter | Type
 --- | ---
 val | **String:** “A comma separated items”
 
-##### rdg.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### rdg.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### rdg.setOnChange( callback )
 
-Call a function when the value of the radio group has changed
+Call a function when the value of the radio group has changed.
 
 Parameter | Type
 --- | ---
-callback | **function(index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>index</td><td>**Number:** The index of the selected item.</td></tr></table>
+callback | **function(text ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The radio item label text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the selected item.</td></tr></table>
 
 ##### rdg.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(label,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>label</td><td>**String:** “The list item label text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding radio item.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(label ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>label </td><td>**String:** “The list item label text.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding radio item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### rdg.setOnTouch( callback )
 
-Adds a callback function when an item is click
+Adds a callback function when an item is click.
 
 Parameter | Type
 --- | ---
-callback | **function(checked,label,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>checked</td><td>**Boolean:** The checked state of the radio item.</td></tr>,<tr><td>label</td><td>**String:** “The radio item label text.”</td></tr>,<tr><td>index</td><td>**Number:**  The index of the radio item.</td></tr>,<tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(checked ,label ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>checked </td><td>**Boolean:** The checked state of the radio item.</td></tr>,<tr><td>label </td><td>**String:** “The radio item label text.”</td></tr>,<tr><td>index </td><td>**Number:**  The index of the radio item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### rdg.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### rdg.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### rdg.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### rdg.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### rdg.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### rdg.setSize( width, height )
+##### rdg.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### rdg.shiftItem()
 
-Removes the first item in the radiogroup
+Removes the first item in the radiogroup. This will return the item being removed.
 
 ##### rdg.show()
 
-Show the component
+Show the component.
 
 ### addSelect
 
@@ -55590,32 +57755,28 @@ sel = ui.addSelect(parent, list?, options?, width?, height?)
 Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the control
-list? | **String:** *comma “,” separated:* “The list of items for the Select options”
-options? | **String:** *comma “,” separated:* “Sizes: `Small` `Medium`
+list? | **List:** The list of items for the Select options
+options? | **String:** “A comma separated options.
 
- `Variant`: `Filled` `Outlined` `Standard`
+Sizes: `Small`”, “ `Medium`
 
- `Margin`: `Dense` `Normal`
+Variant: `Filled`”, “ `Outlined`”, “ `Standard`
 
- `Utils`: `Required` `Multiple` `Radio` `Disabled` `AutoFocus` `FullWidth`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Margin: `Dense`”, “ `Normal`
+
+Utils: `Required`”, “ `Multiple`”, “ `Radio`”, “ `Disabled`”, “ `AutoFocus`”, “ `FullWidth`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Select
 
 
-This component is used to create a drop-down list and is most often used in a form to collect user choices.
-
-
-
- A simple list
+A simple list
 
 `[ "Option 1", "Option 2", "Option 3"]`
 
 
 
-
-
- If you want a list with groupings, you can add a colon `:` before each item text to display as group name. Below is an example
+If you want a list with groupings, you can add a colon `:` before each item text to display as group name. Below is an example
 
 `[" : Group 1", "Option 1", "Option 2", " : Group 2", "Item 1", "Item 2"]`
 
@@ -56027,7 +58188,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### sel.absLeft
 
@@ -56035,7 +58196,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### sel.absTop
 
@@ -56043,7 +58204,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### sel.absWidth
 
@@ -56051,7 +58212,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### sel.backColor
 
@@ -56059,7 +58220,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### sel.backImage
 
@@ -56067,7 +58228,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### sel.border
 
@@ -56083,7 +58244,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### sel.borderStyle
 
@@ -56108,6 +58269,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### sel.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### sel.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### sel.enabled
 
@@ -56195,7 +58372,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### sel.maxHeight
 
@@ -56227,7 +58404,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### sel.parent
 
@@ -56235,7 +58412,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### sel.popupColor
 
@@ -56251,7 +58428,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### sel.rotation
 
@@ -56259,7 +58436,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### sel.sizeVariant
 
@@ -56341,57 +58518,59 @@ The following methods are available on the **Select** object:
 
 ##### sel.addItem( item, index )
 
-Adds an item on the select component options list
+Adds an item on the select component options list.
 
 Parameter | Type
 --- | ---
 item | **String:** “A new item to be added.”
 index | **Number:** The index in which to add the item.
 
-##### sel.animate( anim, duration? )
+##### sel.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### sel.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -56399,11 +58578,11 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### sel.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### sel.getEnabled( index )
 
-Get the enabled state of an item in the select menu
+Get the enabled state of an item in the select menu.
 
 Parameter | Type
 --- | ---
@@ -56412,7 +58591,7 @@ Return Value: | **Boolean**
 
 ##### sel.getEnabledByName( name )
 
-Get the enabled state of an item in the menu popup
+Get the enabled state of an item in the menu popup.
 
 Parameter | Type
 --- | ---
@@ -56421,37 +58600,37 @@ Return Value: | **Boolean**
 
 ##### sel.getItem( index )
 
-Returns the item at a given index
+Returns the item at a given index.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the item.
-Return Value: | **Number**
+Return Value: | **Object**
 
-##### sel.getPosition( options? )
+##### sel.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### sel.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### sel.hide()
 
-Hide the component
+Hide the component.
 
 ##### sel.popItem()
 
-Removes an item at the end of the list items
+Removes an item at the end of the list items. This will return the item being removed.
 
 ##### sel.removeItemByIndex( index )
 
-Removes an item in the select component item list by its index
+Removes an item in the select component item list by its index.
 
 Parameter | Type
 --- | ---
@@ -56459,7 +58638,7 @@ index | **Number:** The index of the corresponding item to remove.
 
 ##### sel.removeItemByName( name )
 
-Removes an item in the select component item list by its name
+Removes an item in the select component item list by its name.
 
 Parameter | Type
 --- | ---
@@ -56467,46 +58646,49 @@ name | **String:** “The name of the item to remove.”
 
 ##### sel.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### sel.setBorder( width?, clr?, style='solid' )
+##### sel.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### sel.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
+
+##### sel.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
+
+Parameter | Type
+--- | ---
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
 
 ##### sel.setEnabled( index, value )
 
-Enable or disable the select component
+Enable or disable the select component.
 
 Parameter | Type
 --- | ---
-index | **Number:** `true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.
+index | **Number:** Can be `true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.
 value | **Boolean:** Values can be `true` or `false`.
 
 ##### sel.setEnabledByName( name, value )
 
-Enable or disable an item in the menu popup
+Enable or disable an item in the menu popup.
 
 Parameter | Type
 --- | ---
@@ -56515,51 +58697,59 @@ value | **Boolean:** Value can be `true` or `false`
 
 ##### sel.setList( items )
 
-Sets the list items in the menu popup
+Sets the list items in the menu popup.
 
 Parameter | Type
 --- | ---
-items | **Object:** A comma separated string or array of options
+items | **List:** A comma separated string or array of options
 
-##### sel.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### sel.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### sel.setOnChange( callback )
 
-Sets a callback function when the value changes
+Sets a callback function when the value changes.
 
 Parameter | Type
 --- | ---
-callback | **function(value)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**String:** “The value of the select input.”</td></tr></table>
+callback | **function(value ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value </td><td>**String:** “The value of the select input.”</td></tr>,<tr><td>index </td><td>**Number:** Index or indexes of the selected items.</td></tr></table>
 
 ##### sel.setOnClose( callback )
 
-Sets a callback function when the menu dialog is close
+Sets a callback function when the menu dialog is close.
 
 Parameter | Type
 --- | ---
-callback | **function(value)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**String:** “The value of the select input.”</td></tr></table>
+callback | **function(value )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value </td><td>**String:** “The value of the select input.”</td></tr></table>
 
 ##### sel.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### sel.setOnOpen( callback )
 
-Sets a callback function when the menu is open
+Sets a callback function when the menu is open.
 
 Parameter | Type
 --- | ---
@@ -56567,63 +58757,80 @@ callback | **function()**
 
 ##### sel.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds a callback handler when the select component is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(text ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The text of the touched item.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the touched item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### sel.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### sel.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### sel.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### sel.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### sel.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### sel.setSize( width, height )
+##### sel.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### sel.shifItem()
 
-Removes an item at the beginning of the list items
+Removes an item at the beginning of the list items. This will return the item being removed.
 
 ##### sel.show()
 
-Show the component
+Show the component.
 
 ### addSlider
 
-Adds a Slider Component into your App.
+A Slider in mobile UI design is a user interface element that allows users to select a value from a range by dragging a thumb along a track.
 ```
 sld = ui.addSlider(parent, value, options?, width?, height?)
 ```
@@ -56631,41 +58838,20 @@ sld = ui.addSlider(parent, value, options?, width?, height?)
 Parameter | Type
 --- | ---
 parent | **Object:** The layout where to add the Slider Component.
-value | **Number:** The initial value of the Slider. Value must be between 0-100,  the default min and max values.
-options? | **String:** *comma “,” separated:* “Color: `Primary` `Secondary`
+value | **Number:** The initial value of the Slider. Value must be between `0-100`,  the default min and max values.
+options? | **String:** “A comma separated options.
 
- `Orienation`: `Horizontal` `Vertical`
+Theme Color: `Primary`”, “ `Secondary`
 
- `Track`: `Normal` `Inverted` `False`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height.
+Orientation: `Horizontal`”, “ `Vertical`
+
+Track: `Normal`”, “ `Inverted`”, “ `False`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Slider
 
 
-A Slider Component defines a control for selecting a number whose exact value must be within the range.
 
-
-
- Default range is 0 to 100. However, you can set restrictions on what numbers are accepted with the min, max, steps and even marks.
-
-
-
-<details>
-<summary>Example: Marks array</summary>
-
-```js
-var marks = [
-        { label: "First stop", value: 10 },
-        { label: "Second stop", value: 30 },
-        { label: "Third stop", value: 70 }
-    ]
-```
-
-```py
-marks = [label: "First stop", value: 10,label: "Second stop", value: 30,label: "Third stop", value: 70
-    ]
-```
-</details>
 
 <details>
 <summary>Example: Basic slider</summary>
@@ -56905,7 +59091,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### sld.absLeft
 
@@ -56913,7 +59099,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### sld.absTop
 
@@ -56921,7 +59107,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### sld.absWidth
 
@@ -56929,7 +59115,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### sld.backColor
 
@@ -56937,7 +59123,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### sld.backImage
 
@@ -56945,7 +59131,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### sld.border
 
@@ -56961,7 +59147,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### sld.borderStyle
 
@@ -56994,6 +59180,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### sld.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### sld.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### sld.fontFile
 
@@ -57033,11 +59235,11 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### sld.marks
 
-Sets or returns the marks on the Slider Component. The marks will be base on the `step` property. To add a custom labels in each mark, pass an array with an object element with properties `label` and `value`. See marks array example below.
+Sets or returns the marks on the Slider Component. The marks will be base on the `step` property. To add a custom labels in each mark, pass an array with an object element with properties `label<String>` and `value<Number>`. See marks array example below.
 
 Parameter | Type
 --- | ---
@@ -57089,7 +59291,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### sld.parent
 
@@ -57097,7 +59299,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### sld.position
 
@@ -57105,7 +59307,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### sld.rotation
 
@@ -57113,7 +59315,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### sld.step
 
@@ -57201,50 +59403,52 @@ Return Value: | **Number**
 The following methods are available on the **Slider** object:
 
 
-##### sld.animate( anim, duration? )
+##### sld.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### sld.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -57252,144 +59456,171 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### sld.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### sld.getMarks()
 
-Returns the step marks of the Slider Component. See `setMarks` methods for possible values
+Returns the step marks of the Slider Component. See `setMarks` methods for possible values.
 
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
 
-##### sld.getPosition( options? )
+##### sld.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### sld.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### sld.hide()
 
-Hide the component
+Hide the component.
 
 ##### sld.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### sld.setBorder( width?, clr?, style='solid' )
+##### sld.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### sld.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
-##### sld.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### sld.setCornerRadius( tl, tr, br, bl, mode )
 
-Sets the margin of the component
+Sets the corner radius of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### sld.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### sld.setMarks( val )
 
-Sets the marks of the Slider Component
+Sets the marks of the Slider Component.
 
-If value is `Boolean` the marks is base on the step
+If value is `Boolean` the marks is base on the step.
 
-If the value is `Array`, the elements must be an object of the form `{ label, value }` where `label` is a string and `value` is a number within the range
+If the value is `Array`, the elements must be an object of the form `{ label, value }` where `label` is a string and `value` is a number within the range.
 
 Parameter | Type
 --- | ---
-val | **Object:** The marks on the Slider Component.
+val | **Boolean:** The marks on the Slider Component.
 
 ##### sld.setOnChange( callback )
 
-Sets a callback function when the value of the Slider Component changes
+Sets a callback function when the value of the Slider Component changes.
 
 Parameter | Type
 --- | ---
-callback | **function(value)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**Number:** The value of the Slider component.</td></tr></table>
+callback | **function(value )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value </td><td>**Number:** The value of the Slider component.</td></tr></table>
 
 ##### sld.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### sld.setOnSelect( callback )
 
-Sets a callback function when a final value is selected. This is equal to submit value event
+Sets a callback function when a final value is selected. This is equal to submit value event.
 
 Parameter | Type
 --- | ---
-callback | **function(value)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**Number:** The value of the Slider component.</td></tr></table>
+callback | **function(value )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value </td><td>**Number:** The value of the Slider component.</td></tr></table>
 
 ##### sld.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds an event handler when the Slider component is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### sld.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### sld.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### sld.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### sld.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### sld.setRange( min?, max? )
 
-Sets a range value for the Slider Component
+Sets a range value for the Slider Component.
 
 Parameter | Type
 --- | ---
@@ -57398,56 +59629,51 @@ max? | **Number:** Maximum value of the slider.
 
 ##### sld.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### sld.setSize( width, height )
+##### sld.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### sld.show()
 
-Show the component
+Show the component.
 
 ### addStepper
 
-Adds a Stepper to a given layout.
+A Stepper in mobile UI design is a navigation element that guides users through a multi-step process, typically used for forms or sequential tasks.
 ```
 stp = ui.addStepper(parent, steps?, options?, width?, height?)
 ```
 
 Parameter | Type
 --- | ---
-parent | **Object:** The parent layout of the Stepper
+parent | **Object:** The parent layout of the Stepper.
 steps? | **List:** An array of titles.
-options? | **String:** “A comma separated Stepper options. Values can be `Vertical` `Horizontal` `Loop` `Mobile` or `AlternativeLabel`.”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+options? | **String:** “A comma separated options.
+
+`Vertical`”, “ `Horizontal`”, “ `Loop`”, “ `Mobile`”, “ `AlternativeLabel`.”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Stepper
 
 
-A stepper can display a series of steps or information that a user can navigate forward or backward.
+For `Mobile` option, an additional position options can be added `Top`, `Static` or `Bottom` and `AutoSwipe` to enable auto swiping.
 
+To style step count text, pass `Fraction`, `Dots` or `Progress` options.
 
-
- For `Mobile` option, an additional position options can be added `Top`, `Static` or `Bottom` and `AutoSwipe` to enable auto swiping.
-
-
-
- To style step count text, pass `Fraction`, `Dots` or `Progress` options.
-
-
-
- For `vertical` and `mobile`, you can add Layout type `Linear` or `Absolute`
+For `vertical` and `mobile`, you can add Layout type `Linear` or `Absolute`
 
 
 
@@ -57815,7 +60041,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### stp.absLeft
 
@@ -57823,7 +60049,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### stp.absTop
 
@@ -57831,7 +60057,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### stp.absWidth
 
@@ -57839,7 +60065,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### stp.activeStep
 
@@ -57855,7 +60081,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### stp.backImage
 
@@ -57863,7 +60089,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### stp.border
 
@@ -57879,7 +60105,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### stp.borderStyle
 
@@ -57905,6 +60131,14 @@ Parameter | Type
 --- | ---
 Return Value: | **Boolean**
 
+##### stp.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
 ##### stp.elevation
 
 Sets or returns the elevation of the mobile stepper. Value ranges from `0` to `24`.
@@ -57912,6 +60146,14 @@ Sets or returns the elevation of the mobile stepper. Value ranges from `0` to `2
 Parameter | Type
 --- | ---
 Return Value: | **Number**
+
+##### stp.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### stp.fontFile
 
@@ -57951,7 +60193,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### stp.opacity
 
@@ -57983,7 +60225,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### stp.parent
 
@@ -57991,7 +60233,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### stp.position
 
@@ -57999,7 +60241,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### stp.rotation
 
@@ -58007,7 +60249,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### stp.textColor
 
@@ -58063,50 +60305,52 @@ Return Value: | **Number**
 The following methods are available on the **Stepper** object:
 
 
-##### stp.animate( anim, duration? )
+##### stp.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### stp.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -58114,54 +60358,54 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### stp.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### stp.getLayout( index )
 
-Returns the layout of the corresponding step layout where you can add controls
+Returns the layout of the corresponding step layout where you can add controls.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the corresponing stepper layout
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### stp.getLayoutIndex( layout )
 
-Get the index of the corresponding layout
+Get the index of the corresponding layout.
 
 Parameter | Type
 --- | ---
 layout | **Object:** The layout to check.
 Return Value: | **Number**
 
-##### stp.getPosition( options? )
+##### stp.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### stp.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### stp.hide()
 
-Hide the component
+Hide the component.
 
 ##### stp.nextStep()
 
-Go to the next step
+Go to the next step.
 
 ##### stp.previousStep()
 
-Go to the previous step
+Go to the previous step.
 
 ##### stp.removeStep( index )
 
-Removes a corresponding step by its index
+Removes a corresponding step by its index.
 
 Parameter | Type
 --- | ---
@@ -58169,57 +60413,68 @@ index | **Number:** The index of the step to remove.
 
 ##### stp.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### stp.setBorder( width?, clr?, style='solid' )
+##### stp.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### stp.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
-##### stp.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### stp.setCornerRadius( tl, tr, br, bl, mode )
 
-Sets the margin of the component
+Sets the corner radius of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### stp.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### stp.setOnChange( callback )
 
-Adds a callback function to be called when the stepper has changed step
+Adds a callback function to be called when the stepper has changed step.
 
 Parameter | Type
 --- | ---
-callback | **function(index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>index</td><td>**Number:** The index of the active step.</td></tr></table>
+callback | **function(index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>index </td><td>**Number:** The index of the active step.</td></tr></table>
 
 ##### stp.setOnComplete( callback )
 
-Adds a callback function to be called when the stepper is complete
+Adds a callback function to be called when the stepper is complete. For mobile stepper, callback will be called upon showing the last step.
 
 Parameter | Type
 --- | ---
@@ -58227,63 +60482,72 @@ callback | **function()**
 
 ##### stp.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
-##### stp.setOnTouch( callback )
+##### stp.setPadding( left, top, right, bottom, mode )
 
-Adds a callback handler when the component is touch
-
-Parameter | Type
---- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
-
-##### stp.setPadding( left?, top?, right?, bottom?, mode='px' )
-
-Sets the padding component container
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
 
-##### stp.setPosition( left?, top?, mode='px' )
+`rem` for root em.
 
-Sets the position of the component relative to its parent dimensions
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### stp.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### stp.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### stp.setSize( width, height )
+##### stp.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### stp.setTitleText( index, title )
 
-Sets a new title for the corresponding step by its index
+Sets a new title for the corresponding step by its index.
 
 Parameter | Type
 --- | ---
@@ -58292,11 +60556,11 @@ title | **String:** “The new title text.”
 
 ##### stp.show()
 
-Show the component
+Show the component.
 
 ### addSwitch
 
-Adds a Switch Component into your layout.
+A Switch in mobile UI design is a toggle control that allows users to turn a setting on or off.
 ```
 swt = ui.addSwitch(parent, text, options?, width?, height?)
 ```
@@ -58305,19 +60569,19 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the Switch Component.
 text | **String:** “The label text.”
-options? | **String:** “A comma separated switch options. Options can be one or a combination of the following
+options? | **String:** “A comma separated options.
 
- Color: `Primary` `Secondary` `Default`
+Theme Color: `Primary`”, “ `Secondary`”, “ `Default`
 
- `Icon Position: `Left` `Top` `Right` `Bottom`
+Icon Position: `Left`”, “ `Top`”, “ `Right`”, “ `Bottom`
 
- `Sizes`: `Small` `Medium`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Sizes: `Small`”, “ `Medium`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Switch
 
 
-A switch is a control whose values can be toggled between `on` and `off`.
+
 
 <details>
 <summary>Example: Basic</summary>
@@ -58437,7 +60701,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### swt.absLeft
 
@@ -58445,7 +60709,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### swt.absTop
 
@@ -58453,7 +60717,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### swt.absWidth
 
@@ -58461,7 +60725,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### swt.backColor
 
@@ -58469,7 +60733,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### swt.backImage
 
@@ -58477,7 +60741,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### swt.border
 
@@ -58493,7 +60757,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### swt.borderStyle
 
@@ -58538,6 +60802,22 @@ Return Value: | **Boolean**
 ##### swt.edge
 
 Sets or returns the edge position of the toggle. Values can be `Start` `End` or `False`
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### swt.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### swt.elStyle
+
+Sets the style of the html container element.
 
 Parameter | Type
 --- | ---
@@ -58597,7 +60877,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### swt.opacity
 
@@ -58621,7 +60901,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### swt.parent
 
@@ -58629,7 +60909,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### swt.position
 
@@ -58637,7 +60917,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### swt.required
 
@@ -58653,7 +60933,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### swt.sizeVariant
 
@@ -58681,11 +60961,11 @@ Return Value: | **String**
 
 ##### swt.textColor
 
-Sets or returns the text color in hexadecimal format.
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### swt.textSize
 
@@ -58741,50 +61021,52 @@ Return Value: | **Number**
 The following methods are available on the **Switch** object:
 
 
-##### swt.animate( anim, duration? )
+##### swt.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### swt.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -58792,130 +61074,158 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### swt.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### swt.getPosition( options? )
+##### swt.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### swt.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### swt.hide()
 
-Hide the component
+Hide the component.
 
 ##### swt.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### swt.setBorder( width?, clr?, style='solid' )
+##### swt.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### swt.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
-##### swt.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### swt.setCornerRadius( tl, tr, br, bl, mode )
 
-Sets the margin of the component
+Sets the corner radius of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### swt.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### swt.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### swt.setOnTouch( callback )
 
-Adds an event handler when the switch is touch
+Adds an event handler when the switch is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(check)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>check</td><td>**Boolean:** The checked state of the switch control.</td></tr></table>
+callback | **function(check ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>check </td><td>**Boolean:** The checked state of the switch control.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the event.</td></tr></table>
 
-##### swt.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### swt.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### swt.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### swt.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### swt.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### swt.setSize( width, height )
+##### swt.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### swt.show()
 
-Show the component
+Show the component.
 
 ### addSwitchGroup
 
-Adds a SwitchGroup Component into your layout.
+In UI development, a SwitchGroup refers to a collection or grouping of individual switches.
 ```
 swg = ui.addSwitchGroup(parent, list?, options?, width?, height?)
 ```
@@ -58923,22 +61233,24 @@ swg = ui.addSwitchGroup(parent, list?, options?, width?, height?)
 Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the SwitchGroup Component.
-list? | **String:** *comma “,” separated:* “The list items array whose elements can be `String` if items is text only”, “ or `Array` of the form `[ "icon"”, “ "label" ]` if items is icon and text.”
-options? | **String:** *comma “,” separated:* “Icon: `Icon`
+list? | **List:** The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
+options? | **String:** “A comma separated options.
 
- `Color`: `Primary` or `Secondary`
+Icon: `Icon`
 
- `Container`: `Elevated` or `Outlined`
+Color: `Primary`”, “ `Secondary`
 
- `Corner`: `Square`
+Container: `Elevated`”, “ `Outlined`
 
-`Divider`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Corner: `Square`
+
+List divider: `Divider`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** SwitchGroup
 
 
-A switchgroup is a list whose items can be toggled between `on` and `off`.
+
 
 <details>
 <summary>Example: Basic</summary>
@@ -59217,7 +61529,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### swg.absLeft
 
@@ -59225,7 +61537,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### swg.absTop
 
@@ -59233,7 +61545,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### swg.absWidth
 
@@ -59241,7 +61553,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### swg.backColor
 
@@ -59249,7 +61561,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### swg.backImage
 
@@ -59257,7 +61569,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### swg.border
 
@@ -59273,7 +61585,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### swg.borderStyle
 
@@ -59315,6 +61627,14 @@ Parameter | Type
 --- | ---
 Return Value: | **String**
 
+##### swg.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
 ##### swg.elevation
 
 Sets or returns the depth of the control container. Value ranges from 0 to 24.
@@ -59322,6 +61642,14 @@ Sets or returns the depth of the control container. Value ranges from 0 to 24.
 Parameter | Type
 --- | ---
 Return Value: | **Number**
+
+##### swg.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### swg.fontFile
 
@@ -59417,7 +61745,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### swg.opacity
 
@@ -59449,7 +61777,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### swg.parent
 
@@ -59457,7 +61785,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### swg.position
 
@@ -59465,7 +61793,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### swg.rotation
 
@@ -59473,11 +61801,11 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### swg.textColor
 
-Sets or returns the theme color `primary` or `secondary`. You can also pass a hexadecimal color of the form `#rrggbb`
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
@@ -59531,7 +61859,7 @@ The following methods are available on the **SwitchGroup** object:
 
 ##### swg.addItem( title, icon, value, index )
 
-Adds or insert an item in the SwitchGroup list
+Adds or insert an item in the SwitchGroup list.
 
 Parameter | Type
 --- | ---
@@ -59540,50 +61868,52 @@ icon | **String:** “Material icon font.”
 value | **Boolean:** The value of the item.
 index | **Number:** The index in which to insert the item. Default is at the bottom of the list.
 
-##### swg.animate( anim, duration? )
+##### swg.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### swg.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -59591,29 +61921,29 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### swg.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### swg.getEnabled( index )
 
-Get the enabled state of an item in the switch group
+Get the enabled state of an item in the switch group.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the corresponding item in the switch group.
 Return Value: | **Boolean**
 
-##### swg.getPosition( options? )
+##### swg.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### swg.getValueByIndex( index )
 
-Returns whether an item is check or unchecked
+Returns whether an item is check or unchecked.
 
 Parameter | Type
 --- | ---
@@ -59622,19 +61952,19 @@ Return Value: | **Boolean**
 
 ##### swg.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### swg.hide()
 
-Hide the component
+Hide the component.
 
 ##### swg.popItem()
 
-Removes the last item in the SwitchGroup list
+Removes the last item in the SwitchGroup list. This will return the item being removed.
 
 ##### swg.removeItemByIndex( index )
 
-Removes an item in the SwitchGroup by its index
+Removes an item in the SwitchGroup by its index.
 
 Parameter | Type
 --- | ---
@@ -59642,7 +61972,7 @@ index | **Number:** The index of the corresponding item to remove.
 
 ##### swg.removeItemByName( title )
 
-Removes an item in the SwitchGroup component by its title name
+Removes an item in the SwitchGroup component by its title name.
 
 Parameter | Type
 --- | ---
@@ -59650,25 +61980,28 @@ title | **String:** “The title text of the SwitchGroup item.”
 
 ##### swg.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### swg.setBorder( width?, clr?, style='solid' )
+##### swg.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### swg.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the switchgroup container
+Sets the corner radius of the switchgroup container.
 
 Parameter | Type
 --- | ---
@@ -59680,108 +62013,137 @@ mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
 ##### swg.setEnabled( index, value )
 
-Enable or disable an item in the switchgroup component
+Enable or disable an item in the switchgroup component.
 
 Parameter | Type
 --- | ---
 index | **Number:** The index of the corresponding item in the list. You can also pass `Boolean` to enable or disable the switchgroup component.
 value | **Boolean:** Values can be `true` or `false`.
 
-##### swg.setLabel( label )
+##### swg.setItemPadding( left, top, right, bottom, mode )
 
-Sets the label text of the SwitchGroup
+Sets the padding of the switch item. See `itemPadding` property for equivalent setter/getter property.
 
 Parameter | Type
 --- | ---
-label | **String**
+left | **Number:** Left padding of the radio item.
+top | **Number:** Top padding of the radio item.
+right | **Number:** Right padding of the radio item.
+bottom | **Number:** Bottom padding of the radio item.
+mode | **String:** “Unit of measurement. Can be `rem`”, “ `px`”, “ `%`”, “ or `v` for viewport.”
 
 ##### swg.setList( lst )
 
-Updates the list on the switchgroup component
+Updates the list on the switchgroup component.
 
 Parameter | Type
 --- | ---
-lst | **Object:** The list array or a comma separated list.
+lst | **List:** The list array or a comma separated list.
 
-##### swg.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### swg.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### swg.setOnChange( callback )
 
-Adds a callback function to be called whent there is a change of value
+Adds a callback function to be called whent there is a change of value.
 
 Parameter | Type
 --- | ---
-callback | **function(values)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>values</td><td>**List:** An array of indexes corresponding to the checked switch items.</td></tr></table>
+callback | **function(indexes ,items )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>indexes </td><td>**List:** An array of indexes corresponding to the checked switch items.</td></tr>,<tr><td>items </td><td>**List:** An array of switchgroup items corresponding to the checked switch items.</td></tr></table>
 
 ##### swg.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(text,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “The label text of the switchgroup item.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding switchgroup item.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(text ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The label text of the switchgroup item.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding switchgroup item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### swg.setOnTouch( callback )
 
-Sets a callback function when the switch item is touch
+Sets a callback function when the switch item is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(value,text,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**Boolean:** The checked state of the switch item.</td></tr>,<tr><td>text</td><td>**String:** “The switch item label text.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding switch item.</td></tr>,<tr><td>event</td><td>**Object:** The click event.</td></tr></table>
+callback | **function(text ,value ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The switch item label text.”</td></tr>,<tr><td>value </td><td>**Boolean:** The checked state of the switch item.</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding switch item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### swg.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### swg.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### swg.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### swg.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### swg.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### swg.setSize( width, height )
+##### swg.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### swg.setValueByIndex( index, val )
 
-Sets the value of the corresponding item in the list
+Sets the value of the corresponding item in the list.
 
 Parameter | Type
 --- | ---
@@ -59790,15 +62152,15 @@ val | **Boolean:** A Values can be `true` or `false`
 
 ##### swg.shiftItem()
 
-Removes the first item in SwitchGroup list
+Removes the first item in SwitchGroup list. This will return the item being removed.
 
 ##### swg.show()
 
-Show the component
+Show the component.
 
 ### addTabs
 
-Adds a Tabs Component into your layout.
+Tabs in user interfaces facilitate seamless navigation between app sections.
 ```
 tab = ui.addTabs(parent, list?, options?, width?, height?)
 ```
@@ -59806,18 +62168,20 @@ tab = ui.addTabs(parent, list?, options?, width?, height?)
 Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the Tabs Component.
-list? | **String:** *comma “,” separated:* “An array of tab names.”
-options? | **String:** *comma “,” separated:* “Enable swipe: `Swipeable`
+list? | **List:** An array of tab names.
+options? | **String:** “A comma separated options.
 
- `Colors`: `Primary` `Secondary` `Inherit` `Transparent` `Default`
+Swipe: `Swipeable`
 
- `Variant`: `Standard` `Scrollable` `FullWidth`
+Theme Colors: `Primary`”, “ `Secondary`”, “ `Inherit`”, “ `Transparent`”, “ `Default`
 
- `Layout`: `Linear`”, “ `Absolute`
+Variant: `Standard`”, “ `Scrollable`”, “ `FullWidth`
 
-Utils: `Icon` `Center` `Paper`”
-width? | **Number:** Fraction of the screen width. [0-1]
-height? | **Number:** Fraction of the screen height. [0-1]
+Layout: `Linear`”, “ `Absolute`
+
+Utils: `Icon`”, “ `Center`”, “ `Paper`”
+width? | **Number:** Fraction of the parent width `[0-1]`
+height? | **Number:** Fraction of the parent height `[0-1]`
 Return Value: | **ui object:** Tabs
 
 
@@ -60248,13 +62612,13 @@ class Main extends App
         ]
 
         // Adds a tab component to the main layout
-        // add some styling to the backColor, textColor, iconColor, iconSize and indicatorColor
+        // add some styling to the backColor, textColor, iconColor, iconSize and indicator
         this.tabs = ui.addTabs(this.main, tabs, "Icon", 0.8, 0.8)
         this.tabs.backColor = "#ffccbc"
         this.tabs.textColor = "#f4511e"
         this.tabs.iconColor = "#f4511e"
         this.tabs.iconSize = "1.5rem"
-        this.tabs.indicatorColor = "#f4511e"
+        this.tabs.setIndicatorStyle(0.25, 4, "#f4511e", 4)
     }
 }
 ```
@@ -60273,13 +62637,13 @@ class Main extends App
         ]
 
         #  Adds a tab component to the main layout
-        #  add some styling to the backColor, textColor, iconColor, iconSize and indicatorColor
+        #  add some styling to the backColor, textColor, iconColor, iconSize and indicator
         this.tabs = ui.addTabs(this.main, tabs, "Icon", 0.8, 0.8)
         this.tabs.backColor = "#ffccbc"
         this.tabs.textColor = "#f4511e"
         this.tabs.iconColor = "#f4511e"
         this.tabs.iconSize = "1.5rem"
-        this.tabs.indicatorColor = "#f4511e"
+        this.tabs.setIndicatorStyle(0.25, 4, "#f4511e", 4)
 ```
 </details>
 
@@ -60294,7 +62658,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### tab.absLeft
 
@@ -60302,7 +62666,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### tab.absTop
 
@@ -60310,7 +62674,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### tab.absWidth
 
@@ -60318,7 +62682,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### tab.backColor
 
@@ -60326,7 +62690,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### tab.backImage
 
@@ -60334,7 +62698,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### tab.border
 
@@ -60350,7 +62714,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### tab.borderStyle
 
@@ -60392,6 +62756,14 @@ Parameter | Type
 --- | ---
 Return Value: | **Boolean**
 
+##### tab.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
 ##### tab.elevation
 
 Sets or returns the elevation of the tab bar. Make sure to pass a `Paper` option for this to work.
@@ -60399,6 +62771,14 @@ Sets or returns the elevation of the tab bar. Make sure to pass a `Paper` option
 Parameter | Type
 --- | ---
 Return Value: | **Number**
+
+##### tab.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### tab.fontFile
 
@@ -60486,7 +62866,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### tab.opacity
 
@@ -60510,7 +62890,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### tab.parent
 
@@ -60518,7 +62898,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### tab.position
 
@@ -60526,7 +62906,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### tab.rotation
 
@@ -60534,7 +62914,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### tab.scrollButtonMode
 
@@ -60562,7 +62942,7 @@ Return Value: | **Number**
 
 ##### tab.textColor
 
-Sets or returns the theme color for the tab bar titles `Primary` or `Secondary`. You can also pass a hexadecimal color of the form `#rrggbb`
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
@@ -60624,7 +63004,7 @@ The following methods are available on the **Tabs** object:
 
 ##### tab.addTab( name, icon, index )
 
-Add or insert a tab to the Tabs Component
+Add or insert a tab to the Tabs Component.
 
 Parameter | Type
 --- | ---
@@ -60632,50 +63012,52 @@ name | **String:** “The name of the tab.”
 icon | **String:** “Material icon font.”
 index | **Number:** The index in which to insert the tab.
 
-##### tab.animate( anim, duration? )
+##### tab.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### tab.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -60683,11 +63065,11 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### tab.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### tab.getEnabled( index )
 
-Get the enabled state of a tab
+Get the enabled state of a tab.
 
 Parameter | Type
 --- | ---
@@ -60696,51 +63078,67 @@ Return Value: | **Boolean**
 
 ##### tab.getEnabledByName( name )
 
-Get the enabled state of a tab by its name
+Get the enabled state of a tab by its name.
 
 Parameter | Type
 --- | ---
 name | **String:** “The name of the tab.”
 Return Value: | **Boolean**
 
+##### tab.getIndicatorStyle()
+
+Returns the indicator style as an object. Props are `width`, `thickness`, `color`, `radius` and `fw` which is the actual width or height.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
 ##### tab.getLayout( name )
 
-Returns the layout of the corresponding tab. You can then add components into the returned layout
+Returns the layout of the corresponding tab. You can then add components into the returned layout.
 
 Parameter | Type
 --- | ---
 name | **String:** “The name of the tab. You can also pass the index of the tab.”
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### tab.getLayoutIndex( layout )
 
-Get the index of the corresponding layout
+Get the index of the corresponding layout.
 
 Parameter | Type
 --- | ---
 layout | **Object:** The layout to check.
 Return Value: | **Number**
 
-##### tab.getPosition( options? )
+##### tab.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### tab.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### tab.hide()
 
-Hide the component
+Hide the component.
+
+##### tab.popItem()
+
+Removes the last item in the tabs list. This will return the item being removed.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
 
 ##### tab.removeTabByIndex( index )
 
-Removes a tab item by its corresponding index
+Removes a tab item by its corresponding index.
 
 Parameter | Type
 --- | ---
@@ -60748,7 +63146,7 @@ index | **Number:** The index of the corresponding tab to remove.
 
 ##### tab.removeTabByName( name )
 
-Removes a tab item by its corresponding name
+Removes a tab item by its corresponding name.
 
 Parameter | Type
 --- | ---
@@ -60756,25 +63154,28 @@ name | **String:** “The name of the corresponding tab to remove.”
 
 ##### tab.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### tab.setBorder( width?, clr?, style='solid' )
+##### tab.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
 ##### tab.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
 
-Sets the corner radius of the tab
+Sets the corner radius of the tab.
 
 Parameter | Type
 --- | ---
@@ -60786,9 +63187,9 @@ mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
 
 ##### tab.setEnabled( index, value )
 
-Enable or disable a tab item. Pass `index` as number if you want the corresponding tab index to be enabled or disabled
+Enable or disable a tab item. Pass `index` as number if you want the corresponding tab index to be enabled or disabled.
 
-Pass `index` as Boolean, if you want to disable the entire Tabs component
+Pass `index` as Boolean, if you want to disable the entire Tabs component.
 
 Parameter | Type
 --- | ---
@@ -60797,7 +63198,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### tab.setEnabledByName( name, value )
 
-Enable or disable a tab by its name
+Enable or disable a tab by its name.
 
 Parameter | Type
 --- | ---
@@ -60806,7 +63207,7 @@ value | **Boolean:** Values can be `true` or `false`.
 
 ##### tab.setIcon( index, icon )
 
-Sets an icon to a corresponding tab title
+Sets an icon to a corresponding tab title.
 
 Parameter | Type
 --- | ---
@@ -60815,94 +63216,119 @@ icon | **String:** “Material icon font.”
 
 ##### tab.setIndicatorStyle( width, thickness, color, radius )
 
-Add a custom styling to the indicator color
+Add a custom styling to the indicator color.
 
 Parameter | Type
 --- | ---
-width | **Number:** Fraction of the tab item width. This works only on `fullWidth` tab.
-thickness | **Number:** Thickness in pixels.
-color | **String:** “Hexadecimal color of the form `#rrggbb`.”
-radius | **Number:** The corner radius in pixels.
+width | **Number:** Fraction of the tab item width (horizontal tabs) or height (vertical tabs)
+thickness | **Number:** Thickness in pixels
+color | **String:** “Hexadecimal color of the form `#rrggbb`”
+radius | **Number:** The corner radius in pixels
 
-##### tab.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### tab.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### tab.setOnChange( callback )
 
-Sets a callback function when the value of the tab changes
+Sets a callback function when the value of the tab changes.
 
 Parameter | Type
 --- | ---
-callback | **function(name,index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>name</td><td>**String:** “The tab name.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding tab.</td></tr></table>
+callback | **function(name ,index )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>name </td><td>**String:** “The tab name.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding tab.</td></tr></table>
 
 ##### tab.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(text,index,event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “The text of the tab item.”</td></tr>,<tr><td>index</td><td>**Number:** The index of the corresponding tab item.</td></tr>,<tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(text ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The text of the tab item.”</td></tr>,<tr><td>index </td><td>**Number:** The index of the corresponding tab item.</td></tr>,<tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### tab.setOnTouch( callback )
 
-Add a callback function when a tab item i click
+Add a callback function when a tab item i click.
 
 Parameter | Type
 --- | ---
-callback | **function(name,index)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>name</td><td>**String:** “The tab name text.”</td></tr>,<tr><td>index</td><td>**Number:** tab item index.</td></tr></table>
+callback | **function(name ,index ,pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>name </td><td>**String:** “The tab name text.”</td></tr>,<tr><td>index </td><td>**Number:** The tab item index.</td></tr>,<tr><td>pos </td><td>**Object:** The event position object.</td></tr></table>
 
-##### tab.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### tab.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### tab.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### tab.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### tab.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### tab.setSize( width, height )
+##### tab.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### tab.setTabPadding( left?, top?, right?, bottom?, mode='px' )
 
-Sets the padding of the tab items
+Sets the padding of the tab items.
 
 Parameter | Type
 --- | ---
@@ -60910,11 +63336,11 @@ left? | **Number:** The tab-item left padding.
 top? | **Number:** The tab-item top padding.
 right? | **Number:** The tab-item right padding.
 bottom? | **Number:** The tab-item bottom padding.
-mode='px' | **String:** “Unit of measurement. You can pass `%` `rem` `vw`.”
+mode='px' | **String:** “Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.”
 
 ##### tab.setTabs( tabs )
 
-Sets the tab titles array
+Sets the tab titles array.
 
 Parameter | Type
 --- | ---
@@ -60922,20 +63348,28 @@ tabs | **List:** The tab titles array. See examples for format.
 
 ##### tab.setTitleText( index, title )
 
-Sets a new title for the corresponding tab
+Sets a new title for the corresponding tab.
 
 Parameter | Type
 --- | ---
 index | **Number:** Index of the tab.
 title | **String:** “The new title.”
 
+##### tab.shiftItem()
+
+Removes the first item in the tabs list. This will return the item being removed.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
 ##### tab.show()
 
-Show the component
+Show the component.
 
 ##### tab.showScrollButton( mode )
 
-Determines the behavior of scroll buttons when tabs are set to `scrollable
+Determines the behavior of scroll buttons when tabs are set to `scrollable`.
 
 Parameter | Type
 --- | ---
@@ -60951,7 +63385,7 @@ mode | **String:** “Values can be
 
 ##### tab.showTab( name )
 
-Show a tab panel by its corresponding name. This will make the tab in active state
+Show a tab panel by its corresponding name. This will make the tab in active state.
 
 Parameter | Type
 --- | ---
@@ -60959,7 +63393,7 @@ name | **String:** “The name of the tab to be shown.”
 
 ##### tab.showTabByIndex( index )
 
-Show a tab panel by its corresponding name. This will make the tab in active state
+Show a tab panel by its corresponding name. This will make the tab in active state.
 
 Parameter | Type
 --- | ---
@@ -60967,7 +63401,7 @@ index | **Number:** The index of the tab to be shown.
 
 ### addText
 
-Adds a text to your app.
+In mobile UI design, it refers to the style, arrangement, and appearance of text.
 ```
 txt = ui.addText(parent, text, options?, width?, height?)
 ```
@@ -60976,21 +63410,21 @@ Parameter | Type
 --- | ---
 parent | **Object:** The layout control where to add the text control
 text | **String:** “The text to be displayed on the text control”
-options? | **String:** “A comma separated string. Options can be one or a combination of the following:
+options? | **String:** “A comma separated options.
 
- Variants: `H1` `H2` `H3` `H4` `H5` `H6` `body1` `body2` `overline` `subtitle1` `subtitle2` `button` `caption`.
+Variants: `H1`”, “ `H2`”, “ `H3`”, “ `H4`”, “ `H5`”, “ `H6`”, “ `body1`”, “ `body2`”, “ `overline`”, “ `subtitle1`”, “ `subtitle2`”, “ `button`”, “ `caption`
 
-Lines: `Singleline` `Multiline`.
+Lines: `Singleline`”, “ `Multiline`
 
-Alignment: `Left` `Center` `Right` `Justify`.
+Alignment: `Left`”, “ `Center`”, “ `Right`”, “ `Justify`
 
-Color: `Primary` `Secondary` `Error`.
+Theme Color: `Primary`”, “ `Secondary`”, “ `TextPrimary`”, “ `TextSecondary`”, “ `Error`
 
-Format `Html` `Icon` `Italize` `Monospace` `Bold` `Underline`
+Format: `Html`”, “ `Icon`”, “ `Italize`”, “ `Monospace`”, “ `Bold`”, “ `Underline`
 
- `Utils`: `Touchable`”
-width? | **Number:** Fraction of the screen width
-height? | **Number:** Fraction of the screen height
+Utils: `Touchable`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** Text
 
 
@@ -61315,7 +63749,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### txt.absLeft
 
@@ -61323,7 +63757,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### txt.absTop
 
@@ -61331,7 +63765,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### txt.absWidth
 
@@ -61339,7 +63773,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### txt.alignment
 
@@ -61355,7 +63789,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### txt.backImage
 
@@ -61363,7 +63797,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### txt.bold
 
@@ -61387,7 +63821,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### txt.borderStyle
 
@@ -61421,9 +63855,25 @@ Parameter | Type
 --- | ---
 Return Value: | **Boolean**
 
+##### txt.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
 ##### txt.ellipsize
 
 Sets or returns the ellipsis use when the text is truncated. Values can be `Ellipsis` `End` or `Start`
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### txt.elStyle
+
+Sets the style of the html container element.
 
 Parameter | Type
 --- | ---
@@ -61475,7 +63925,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### txt.opacity
 
@@ -61499,7 +63949,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### txt.parent
 
@@ -61507,7 +63957,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### txt.position
 
@@ -61515,7 +63965,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### txt.rotation
 
@@ -61523,7 +63973,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### txt.text
 
@@ -61535,15 +63985,15 @@ Return Value: | **String**
 
 ##### txt.textColor
 
-Sets or returns the text color in hexadecimal format.
+Sets or returns the color of the text.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### txt.textSize
 
-Sets or returns the fontsize for the text. You can also pass values such as `1.2em`.
+Sets or returns the size of the text within the control.
 
 Parameter | Type
 --- | ---
@@ -61619,50 +64069,52 @@ Return Value: | **Number**
 The following methods are available on the **Text** object:
 
 
-##### txt.animate( anim, duration? )
+##### txt.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### txt.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -61670,157 +64122,193 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### txt.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### txt.getHtml()
 
-Returns the html text
+Returns the html text.
 
 Parameter | Type
 --- | ---
 Return Value: | **String**
 
-##### txt.getPosition( options? )
+##### txt.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### txt.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### txt.hide()
 
-Hide the component
+Hide the component.
 
 ##### txt.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### txt.setBorder( width?, clr?, style='solid' )
+##### txt.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### txt.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
+
+##### txt.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
+
+Parameter | Type
+--- | ---
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
 
 ##### txt.setHtml( html )
 
-Sets an html on the text control
+Sets an html on the text control.
 
 Parameter | Type
 --- | ---
 html | **String:** “An html string”
 
-##### txt.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### txt.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### txt.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
+
+##### txt.setOnLongTouch( callback )
+
+Adds a callback handler for a long touch event. The touch timer is about 500 milliseconds.
+
+Parameter | Type
+--- | ---
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
 ##### txt.setOnTouch( callback )
 
-Adds a callback handler when the component is touch
+Adds an event handler when the text component is touch.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
+callback | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Object:** The position of the touch event.</td></tr></table>
 
-##### txt.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### txt.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### txt.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### txt.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### txt.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### txt.setSize( width, height )
+##### txt.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### txt.setTextShadow( radius, dx, dy, color )
 
-Sets a shadow on the text in a text control
+Sets a shadow on the text in a text control.
 
 Parameter | Type
 --- | ---
 radius | **Number:** The radius in pixels
 dx | **Number:** X-offset of the shadow
 dy | **Number:** Y-offset of the shadow
-color | **Object:** A hexadecimal color e.g. `#aarrggbb`
+color | **String:** “A hexadecimal color of the form `#rrggbb`”
 
 ##### txt.show()
 
-Show the component
+Show the component.
 
 ### addTextField
 
-Add a textfield component into your app.
+A TextField in mobile UI design is an input field where users can enter text or numeric data.
 ```
 tfd = ui.addTextField(parent, text, options?, width?, height?)
 ```
@@ -61829,31 +64317,25 @@ Parameter | Type
 --- | ---
 parent | **Object:** The layout where to add the TextField Component.
 text | **String:** “The initial value of the TextField”
-options? | **String:** *comma “,” separated:* “Color: `Primary` or `Secondary`
+options? | **String:** “A comma separated options.
 
- `Sizes`: `Small` or `Medium`
+Theme Color: `Primary`”, “ `Secondary`
 
- `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime`
+Sizes: `Small`”, “ `Medium`
 
- `Variant`: `Standard` `Filled` or `Outlined`
+Type: `Text`”, “ `Password`”, “ `Email`”, “ `Search`”, “ `Number`”, “ `Date`”, “ `Time`”, “ `DateTime`
 
- `Utils`: `Autofocus`”
-width? | **Number:** Fraction of the screen width.
-height? | **Number:** Fraction of the screen height.
+Variant: `Standard`”, “ `Filled`”, “ `Outlined`
+
+TextArea: `Multiline`
+
+Utils: `Autofocus`”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** TextField
 
 
-Collect inputs from users. Inputs can be a number, text, emails, passwords and more. Just pass the corresponding type into
-
-
-
- the options arguments to get your desired type of TextField.
-
-
-
- If you want a materialize date and time pickers, see `DatePicker`, `TimePicker` or `DateTimePicker` components.
-
-
+If you want a materialize date and time pickers, see `DatePicker`, `TimePicker` or `DateTimePicker` components.
 
 <details>
 <summary>Example: Textfield variants</summary>
@@ -62172,7 +64654,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### tfd.absLeft
 
@@ -62180,7 +64662,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### tfd.absTop
 
@@ -62188,7 +64670,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### tfd.absWidth
 
@@ -62196,7 +64678,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### tfd.autoFocus
 
@@ -62212,7 +64694,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### tfd.backImage
 
@@ -62220,7 +64702,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### tfd.border
 
@@ -62236,7 +64718,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### tfd.borderStyle
 
@@ -62269,6 +64751,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### tfd.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### tfd.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### tfd.endAdornment
 
@@ -62312,7 +64810,7 @@ Return Value: | **String**
 
 ##### tfd.hint
 
-Sets or returns the hint text. It`s the same as the `placeholder` property.
+Sets or returns the hint text. It's the same as the `placeholder` property.
 
 Parameter | Type
 --- | ---
@@ -62364,7 +64862,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### tfd.maxRows
 
@@ -62412,7 +64910,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### tfd.parent
 
@@ -62420,7 +64918,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### tfd.placeholder
 
@@ -62436,7 +64934,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### tfd.required
 
@@ -62452,7 +64950,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### tfd.sizeVariant
 
@@ -62548,50 +65046,52 @@ Return Value: | **Number**
 The following methods are available on the **TextField** object:
 
 
-##### tfd.animate( anim, duration? )
+##### tfd.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### tfd.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -62599,28 +65099,32 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### tfd.destroy()
 
-Destroy the component
+Destroy the component.
+
+##### tfd.focus()
+
+Sets focus on the textField component.
 
 ##### tfd.getEndAdornment()
 
-Returns the end adornment text
+Returns the end adornment text.
 
 Parameter | Type
 --- | ---
 Return Value: | **String**
 
-##### tfd.getPosition( options? )
+##### tfd.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### tfd.getStartAdornment()
 
-Returns the start adornment text
+Returns the start adornment text.
 
 Parameter | Type
 --- | ---
@@ -62628,45 +65132,48 @@ Return Value: | **String**
 
 ##### tfd.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### tfd.hide()
 
-Hide the component
+Hide the component.
 
 ##### tfd.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### tfd.setBorder( width?, clr?, style='solid' )
+##### tfd.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### tfd.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
+
+##### tfd.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
+
+Parameter | Type
+--- | ---
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
 
 ##### tfd.setEndAdornment( text, type? )
 
-Add an end adornment control into the TextField Component
+Add an end adornment control into the TextField Component.
 
 Parameter | Type
 --- | ---
@@ -62679,89 +65186,105 @@ type? | **String:** “A comma separated options for end adornment control. Opti
 
 ##### tfd.setEndAdornmentOnTouch( callback )
 
-Add a callback handler when the end adornment control is touch
+Add a callback handler when the end adornment control is touch.
 
 Parameter | Type
 --- | ---
 callback | **function()**
 
-##### tfd.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### tfd.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### tfd.setOnChange( callback )
 
-Sets a callback function on `values changes` event
+Sets a callback function on `values changes` event.
 
 Parameter | Type
 --- | ---
-callback | **function(text)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “The text value of the input.”</td></tr></table>
+callback | **function(text )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The text value of the input.”</td></tr></table>
 
 ##### tfd.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### tfd.setOnEnter( callback )
 
-Sets a callback function on `enter` or `submit` event
+Sets a callback function on `enter` or `submit` event.
 
 Parameter | Type
 --- | ---
-callback | **function(text)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text</td><td>**String:** “The text value of the input.”</td></tr></table>
+callback | **function(text )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>text </td><td>**String:** “The text value of the input.”</td></tr></table>
 
 ##### tfd.setOnFocus( callback )
 
-Adds a callback function when the textfield is focus or blur
+Adds a callback function when the textfield is focus or blur.
 
 Parameter | Type
 --- | ---
-callback | **function(focus)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>focus</td><td>**Boolean:** The focus state of the input component.</td></tr></table>
+callback | **function(focus )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>focus </td><td>**Boolean:** The focus state of the input component.</td></tr></table>
 
-##### tfd.setOnTouch( callback )
+##### tfd.setPadding( left, top, right, bottom, mode )
 
-Adds a callback handler when the component is touch
-
-Parameter | Type
---- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
-
-##### tfd.setPadding( left?, top?, right?, bottom?, mode='px' )
-
-Sets the padding component container
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
 
-##### tfd.setPosition( left?, top?, mode='px' )
+`rem` for root em.
 
-Sets the position of the component relative to its parent dimensions
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### tfd.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### tfd.setRows( min?, max? )
 
-Sets the minimum and maximum number of rows on a multiline type TextField
+Sets the minimum and maximum number of rows on a multiline type TextField.
 
 Parameter | Type
 --- | ---
@@ -62770,25 +65293,26 @@ max? | **Number:** The maximum number of rows.
 
 ##### tfd.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### tfd.setSize( width, height )
+##### tfd.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### tfd.setStartAdornment( text, type? )
 
-Set a start adornment control into the TextField Component
+Set a start adornment control into the TextField Component.
 
 Parameter | Type
 --- | ---
@@ -62801,7 +65325,7 @@ type? | **String:** “A comma separated options for start adornment control. Op
 
 ##### tfd.setStartAdornmentOnTouch( callback )
 
-Add a callback handler when the start adornment control is touch
+Add a callback handler when the start adornment control is touch.
 
 Parameter | Type
 --- | ---
@@ -62809,168 +65333,11 @@ callback | **function()**
 
 ##### tfd.show()
 
-Show the component
-
-### addTimePicker
-
-Adds a time picker component to the app.
-```
-tpk = ui.addTimePicker(time, options?)
-```
-
-Parameter | Type
---- | ---
-time | **String:** “A default time value to which the timepicker begins. Value is of the form `HH:mm`”
-options? | **String:** *comma “,” separated:* “`Portrait` `24H` `12H`”
-Return Value: | **ui object:** TimePicker
-
-
-
-
-<details>
-<summary>Example: Basic</summary>
-
-```js
-class Main extends App
-{
-    onStart()
-    {
-        // Creates a layout with objects verticaly centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,ScrollY", 1, 1 )
-
-        // button to show time picker
-        this.btn = ui.addButton( this.main, "Show Time Picker", "Outlined,Secondary", 0.2 )
-        this.btn.setOnTouch( this.showTimePicker )
-
-        // Initialize time picker
-        this.tpk = ui.addTimePicker()
-        this.tpk.setOnSelect( this.onSelect )
-    }
-
-    showTimePicker()
-    {
-        // show time picker dialog
-        this.tpk.show()
-    }
-
-    onSelect( value )
-    {
-        console.log( value )
-    }
-}
-```
-
-```py
-from hybrid import ui
-
-def OnStart():
-    global tpk
-    main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
-    btn = ui.addButton(main, "Show Time Picker", "Outlined,Secondary", 0.2)
-    btn.setOnTouch(showTimePicker)
-    tpk = ui.addTimePicker()
-    tpk.setOnSelect(onSelect)
-
-def showTimePicker(event):
-    tpk.show()
-
-def onSelect(value):
-    print(value)
-```
-</details>
-
-#### Properties
-
-The following properties are available on the **TimePicker** object:
-
-
-##### tpk.format
-
-Sets or returns the time format. Can be of the form
-
- Hour formats
-
- `H` : 0 1 ... 22 23
-
- `HH` :     00 01 ... 22 23
-
- `h` : 1 2 ... 11 12
-
- `hh` :     01 02 ... 11 12
-
- Minute formats
-
- `m` :     0 1 ... 58 59
-
- `mm` : 00 01 ... 58 59
-
- AM/PM
-
- `A` : AM or PM
-
- `a` : am pm
-
-Parameter | Type
---- | ---
-Return Value: | **String**
-
-
-#### Methods
-
-The following methods are available on the **TimePicker** object:
-
-
-##### tpk.show( callback, format )
-
-Show the date picker the dialog
-
-
-
-Hide the date picker dialog
-
-
-
-Sets a callback function to execute when date picker dialog is submitted
-
-
-
-Sets the format of the date to be passed into the onSelect callback
-
-
-
-Get the current visibility of the date picker
-
-Parameter | Type
---- | ---
-callback | **function(value)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**String:** “The selected time of the form `HH *(MM)*:SS`. Change the format by setting the `format` property.”</td></tr></table>
-format | **String:** “A time format. Can be of the form
-
- Hour formats
-
- `H` : 0 1 ... 22 23
-
- `HH` :     00 01 ... 22 23
-
- `h` : 1 2 ... 11 12
-
- `hh` :     01 02 ... 11 12
-
- Minute formats
-
- `m` :     0 1 ... 58 59
-
- `mm` : 00 01 ... 58 59
-
- AM/PM
-
- `A` : AM or PM
-
- `a` : am pm”
-Return Value: | **Boolean**
+Show the component.
 
 ### addTreeView
 
-Adds a TreeView component into your app.
+A TreeView is a hierarchical representation of data, often used to display nested categories or organized information.
 ```
 trv = ui.addTreeView(parent, list?, options?, width?, height?)
 ```
@@ -62979,99 +65346,13 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the TreeView component.
 list? | **Object:** An object of the treeview items. See example below.
-options? | **String:** “A comma separated TreeView options.”
-width? | **Number:** Fraction of the screen width.
-height? | **Number:** Fraction of the screen height.
+options? | **String:** “A comma separated options. Values can be `MultiSelect`.”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** TreeView
 
 
-A tree view is best use in file system navigation.
 
-<details>
-<summary>Example: Items</summary>
-
-```js
-var items = {
-    "Group 1": {
-        "Item 1": "",
-        "Item 2": "",
-        "Item 3": ""
-    },
-    "Group 2": {
-        "Item 1": "",
-        "Item 2": "",
-        "Item 3": ""
-    },
-    "Applications": {
-        "Editor": "",
-        "Productivity": "",
-        "Social Media": {
-            "TikTok": "",
-            "YouTube": "",
-            "Meta": {
-                "Facebook": "",
-                "Instagram": "",
-                "Whatsapp": "",
-                "Messenger": ""
-            }
-        }
-    }
-}
-```
-
-```py
-items = {
-    "Group 1": {
-        "Item 1": "",
-        "Item 2": "",
-        "Item 3": ""
-    },
-    "Group 2": {
-        "Item 1": "",
-        "Item 2": "",
-        "Item 3": ""
-    },
-    "Applications": {
-        "Editor": "",
-        "Productivity": "",
-        "Social Media": {
-            "TikTok": "",
-            "YouTube": "",
-            "Meta": {
-                "Facebook": "",
-                "Instagram": "",
-                "Whatsapp": "",
-                "Messenger": ""
-            }
-        }
-    }
-}
-```
-</details>
-
-<details>
-<summary>Example: Items with icons</summary>
-
-```js
-var items = {
-    "Folders": {
-        "Music": "music_note",
-        "Photos": "photo",
-        "Favorites": "favorite"
-    }
-}
-```
-
-```py
-items = {
-    "Folders": {
-        "Music": "music_note",
-        "Photos": "photo",
-        "Favorites": "favorite"
-    }
-}
-```
-</details>
 
 <details>
 <summary>Example: Basic TreeView</summary>
@@ -63180,7 +65461,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### trv.absLeft
 
@@ -63188,7 +65469,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### trv.absTop
 
@@ -63196,7 +65477,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### trv.absWidth
 
@@ -63204,7 +65485,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### trv.backColor
 
@@ -63212,7 +65493,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### trv.backImage
 
@@ -63220,7 +65501,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### trv.border
 
@@ -63236,7 +65517,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### trv.borderStyle
 
@@ -63261,6 +65542,22 @@ Sets or returns the `disabled` state of the control.
 Parameter | Type
 --- | ---
 Return Value: | **Boolean**
+
+##### trv.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### trv.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### trv.fontFile
 
@@ -63308,7 +65605,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### trv.opacity
 
@@ -63332,7 +65629,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### trv.parent
 
@@ -63340,7 +65637,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### trv.position
 
@@ -63348,7 +65645,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### trv.rotation
 
@@ -63356,7 +65653,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### trv.textColor
 
@@ -63422,57 +65719,59 @@ The following methods are available on the **TreeView** object:
 
 ##### trv.addItem( name, obj )
 
-Add a tree items to the tree view
+Add a tree items to the tree view.
 
 Parameter | Type
 --- | ---
 name | **String:** “The label text for the new item.”
 obj | **Object:** See list object for more info.
 
-##### trv.animate( anim, duration? )
+##### trv.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### trv.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -63480,147 +65779,565 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### trv.destroy()
 
-Destroy the component
+Destroy the component.
 
 ##### trv.getItem( name )
 
-Returns the list items object of a given parent tree item name
+Returns the list items object of a given parent tree item name.
 
 Parameter | Type
 --- | ---
 name | **String:** “The parent name of the tree items.”
 Return Value: | **Object**
 
-##### trv.getPosition( options? )
+##### trv.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### trv.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### trv.hide()
 
-Hide the component
+Hide the component.
 
 ##### trv.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### trv.setBorder( width?, clr?, style='solid' )
+##### trv.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### trv.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
+
+##### trv.setCornerRadius( tl, tr, br, bl, mode )
+
+Sets the corner radius of the component.
+
+Parameter | Type
+--- | ---
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
 
 ##### trv.setList( obj )
 
-Updates the list items of the TreeView component
+Updates the list items of the TreeView component.
 
 Parameter | Type
 --- | ---
 obj | **Object:** The list object of the treeview items. See example above.
 
-##### trv.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### trv.setMargins( left, top, right, bottom, mode )
 
-Sets the margin of the component
+Sets the margin of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### trv.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### trv.setOnTouch( callback )
 
-Add a on touch handler to the TreeView item when click
+Add a on touch handler to the TreeView item when click.
 
 Parameter | Type
 --- | ---
-callback | **function(value,path)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**String:** “The selected tree item.”</td></tr>,<tr><td>path</td><td>**String:** “The complete path of the tree item.”</td></tr></table>
+callback | **function(value ,path )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value </td><td>**String:** “The selected tree item.”</td></tr>,<tr><td>path </td><td>**String:** “The complete path of the tree item.”</td></tr></table>
 
-##### trv.setPadding( left?, top?, right?, bottom?, mode='px' )
+##### trv.setPadding( left, top, right, bottom, mode )
 
-Sets the padding component container
-
-Parameter | Type
---- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
-
-##### trv.setPosition( left?, top?, mode='px' )
-
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### trv.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### trv.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### trv.setSize( width, height )
+##### trv.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### trv.show()
 
-Show the component
+Show the component.
+
+### addVideoView
+
+Adds a video view into your app layout.
+```
+vw = ui.addVideoView(parent, url, options, width, height)
+```
+
+Parameter | Type
+--- | ---
+parent | **Object:** The layout where to add the video view.
+url | **String:** “The video source url. Supported video formats are `"mp4"”, “ "ogg"”, “ "webm"`”
+options | **String:** “Comma separated options. Values can be one or a combination of the following: `autoplay`”, “ `loop`”, “ `controls`”, “ `muted`”, “ `fill` or `stretch`. If you pass "controls"”, “ you can optionally remove some controls such as "nodownload"”, “ "nofullscreen" and "noremoteplayback".”
+width | **Number:** Fraction of the parent width. Values can be [0-1].
+height | **Number:** Fraction of the parent height. Values can be [0-1].
+Return Value: | **ui object:** VideoView
+
+
+By default, the video will be resize relative to its dimensions. If you want the video to cover the entire width and height, pass `"fill"` in the options argument.
+
+<details>
+<summary>Example: Simple video view</summary>
+
+```js
+class Main extends App
+{
+   onStart()
+   {
+        //Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        //Create a video view and pass the video url
+        let src = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        this.vid = ui.addVideoView(this.main, src, "AutoPlay", 0.8, 0.8)
+
+        //Create a horizontal layout where to add video controls
+        this.lay = ui.addLayout(this.main, "Linear", "Horizontal,VCenter", 0.8, 0.15)
+        this.lay.setChildMargins(0.01, 0, 0.01, 0)
+
+        //Create the play button
+        this.playBtn = ui.addButton(this.lay, "Play", "", 0.2)
+        this.playBtn.setOnTouch( this.play )
+
+        //Create the pause/stop button
+        this.pauseBtn = ui.addButton(this.lay, "Pause", "", 0.2)
+        this.pauseBtn.setOnTouch( this.pause )
+
+        //Create the mute toggle button
+        this.muteBtn = ui.addButton(this.lay, "Mute", "Toggle", 0.2)
+        this.muteBtn.setOnTouch( this.toggleMute )
+    }
+
+    //Handle play button
+    play() { this.vid.play() }
+
+    //Handle pause/stop button
+    pause() { this.vid.stop() }
+
+    //Handle mute toggle button
+    toggleMute( val ) { this.vid.muted = val }
+}
+```
+
+```py
+class Main extends App
+   onStart()
+        # Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        # Create a video view and pass the video url
+        src = "http:# commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        this.vid = ui.addVideoView(this.main, src, "AutoPlay", 0.8, 0.8)
+
+        # Create a horizontal layout where to add video controls
+        this.lay = ui.addLayout(this.main, "Linear", "Horizontal,VCenter", 0.8, 0.15)
+        this.lay.setChildMargins(0.01, 0, 0.01, 0)
+
+        # Create the play button
+        this.playBtn = ui.addButton(this.lay, "Play", "", 0.2)
+        this.playBtn.setOnTouch( this.play )
+
+        # Create the pause/stop button
+        this.pauseBtn = ui.addButton(this.lay, "Pause", "", 0.2)
+        this.pauseBtn.setOnTouch( this.pause )
+
+        # Create the mute toggle button
+        this.muteBtn = ui.addButton(this.lay, "Mute", "Toggle", 0.2)
+        this.muteBtn.setOnTouch( this.toggleMute )
+
+    # Handle play button
+    play()this.vid.play()
+
+    # Handle pause/stop button
+    pause()this.vid.stop()
+
+    # Handle mute toggle button
+    toggleMute( val )this.vid.muted = val
+```
+</details>
+
+<details>
+<summary>Example: Video view callbacks</summary>
+
+```js
+class Main extends App
+{
+   onStart()
+   {
+        //Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        //Create a video view with default Controls and Fill options
+        let src = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        this.vid = ui.addVideoView(this.main, src, "Controls,Fill", 0.8, 0.8)
+
+        //Add video event listeners
+        this.vid.setOnComplete( this.onComplete )
+        this.vid.setOnPlay( this.onPlay )
+        this.vid.setOnPause( this.onPause )
+        this.vid.setOnSeek( this.onSeek )
+        this.vid.setOnSeeking( this.onSeeking )
+        this.vid.setOnVolume( this.onVolume )
+        this.vid.setOnProgress( this.onProgress )
+    }
+
+    //Handle on complete event
+    onComplete() { ui.showPopup( "Video completed" ) }
+
+    //Handle on play event
+    onPlay() { ui.showPopup( "Video is playing" ) }
+
+    //Handle on pause/stop event
+    onPause() { ui.showPopup( "Video has been paused" ) }
+
+    //Handle seek event completed
+    onSeek( val ) { console.log("On seek : " + val) }
+
+    //Handle on active seeking event
+    onSeeking( val ) { console.log("Seeking : " + val) }
+
+    //Handle volume change event
+    onVolume( val ) { ui.showPopup( val ) }
+
+    //Handle playing progress event
+    onProgress( time ) { console.log("Playback time : " + time) }
+}
+```
+
+```py
+class Main extends App
+   onStart()
+        # Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        # Create a video view with default Controls and Fill options
+        src = "http:# commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        this.vid = ui.addVideoView(this.main, src, "Controls,Fill", 0.8, 0.8)
+
+        # Add video event listeners
+        this.vid.setOnComplete( this.onComplete )
+        this.vid.setOnPlay( this.onPlay )
+        this.vid.setOnPause( this.onPause )
+        this.vid.setOnSeek( this.onSeek )
+        this.vid.setOnSeeking( this.onSeeking )
+        this.vid.setOnVolume( this.onVolume )
+        this.vid.setOnProgress( this.onProgress )
+
+    # Handle on complete event
+    onComplete()ui.showPopup( "Video completed" )
+
+    # Handle on play event
+    onPlay()ui.showPopup( "Video is playing" )
+
+    # Handle on pause/stop event
+    onPause()ui.showPopup( "Video has been paused" )
+
+    # Handle seek event completed
+    onSeek( val )console.log("On seek : " + val)
+
+    # Handle on active seeking event
+    onSeeking( val )console.log("Seeking : " + val)
+
+    # Handle volume change event
+    onVolume( val )ui.showPopup( val )
+
+    # Handle playing progress event
+    onProgress( time )console.log("Playback time : " + time)
+```
+</details>
+
+#### Properties
+
+The following properties are available on the **VideoView** object:
+
+
+##### vw.completed
+
+Returns a boolean whether the video playback is completed.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### vw.duration
+
+Returns the time duration of the video in seconds.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### vw.loop
+
+Sets or returns a boolean whether the video should start over again when completed.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### vw.muted
+
+Returns a boolean whether the video audio is muted.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### vw.paused
+
+Returns a boolean whether the video is paused.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### vw.played
+
+Returns a boolean whether the video is currently playing.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### vw.seeking
+
+Returns a boolean whether the user is currently seeking in the video playback seekbar.
+
+Parameter | Type
+--- | ---
+Return Value: | **Boolean**
+
+##### vw.speed
+
+Sets or returns the playback speed.
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+##### vw.url
+
+Sets or returns the video source url.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### vw.volume
+
+Sets or returns the video volume. Values can be [0-1].
+
+Parameter | Type
+--- | ---
+Return Value: | **Number**
+
+
+#### Methods
+
+The following methods are available on the **VideoView** object:
+
+
+##### vw.capture( type, format )
+
+Capture an image in the playback. This will return an image data which you can save or manipulate.
+
+Parameter | Type
+--- | ---
+type | **String:** “The image type. Values are "jpg"”, “ "png"”, “ "webp"”, “ "gif". Default is "jpg".”
+format | **String:** “The returned data format. Can be "base64"”, “ "bytes"(regular array)”, “ "uint8array"(typed array) or "arraybuffer".”
+Return Value: | **Object**
+
+##### vw.enterFullscreen()
+
+Play video in fullscreen if supported.
+
+##### vw.exitFullscreen()
+
+Exit fullscreen if video is playing fullscreen.
+
+##### vw.load()
+
+Reloads the video source.
+
+##### vw.play()
+
+Play the video.
+
+##### vw.seekTo( time )
+
+Sets the playback position.
+
+Parameter | Type
+--- | ---
+time | **Number:** The playback position in seconds.
+
+##### vw.setOnComplete( cb )
+
+Sets a callback handler when the video playback is completed.
+
+Parameter | Type
+--- | ---
+cb | **function()**
+
+##### vw.setOnError( cb )
+
+Sets a callback function when an error occurs while the video source is being loaded.
+
+Parameter | Type
+--- | ---
+cb | **function()**
+
+##### vw.setOnPause( cb )
+
+Sets a callback handler when the video is pause by the user or programmatically.
+
+Parameter | Type
+--- | ---
+cb | **function()**
+
+##### vw.setOnPlay( cb )
+
+Sets a callback handler when the video is played by the user or programmatically.
+
+Parameter | Type
+--- | ---
+cb | **function()**
+
+##### vw.setOnProgress( cb )
+
+Sets a callback handler to be be called while the video is playing. This is usefull when you have a custom progress bar where to constantly update the playback time.
+
+Parameter | Type
+--- | ---
+cb | **function(time )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>time </td><td>**Number:** The elapsed playback time in seconds.</td></tr></table>
+
+##### vw.setOnReady( cb )
+
+Sets a callback handler when the video has buffered enough to begin playing. Video might not completely loaded for this event to be fired.
+
+Parameter | Type
+--- | ---
+cb | **function(info )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>info </td><td>**Object:** Basic information of the video such as duration and dimensions.</td></tr></table>
+
+##### vw.setOnSeek( cb )
+
+Sets a callback handler when seeking event is completed.
+
+Parameter | Type
+--- | ---
+cb | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Number:** The playback position in seconds.</td></tr></table>
+
+##### vw.setOnSeeking( cb )
+
+Sets a callback handler when seeking event is active. Called when the user touches or slides the seekbar track.
+
+Parameter | Type
+--- | ---
+cb | **function(pos )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>pos </td><td>**Number:** The playback position in seconds.</td></tr></table>
+
+##### vw.setOnVolume( cb )
+
+Sets a callback function when the volume of the video changes.
+
+Parameter | Type
+--- | ---
+cb | **function(volume )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>volume </td><td>**Number:** The audio volume of the video.</td></tr></table>
+
+##### vw.stop()
+
+Stop the playing video.
 
 ### addWebView
 
-Adds a webview into your app.
+A WebView in mobile development is a component that allows embedding web content within an application.
 ```
 web = ui.addWebView(parent, url?, options?, width?, height?)
 ```
@@ -63629,13 +66346,13 @@ Parameter | Type
 --- | ---
 parent | **Object:** The parent layout where to add the WebView component.
 url? | **String:** “The url of the website.”
-options? | **String:** *comma “,” separated*
-width? | **Number:** Fraction of the parent width.
-height? | **Number:** Fraction of the parent height.
+options? | **String:** “A comma separated options for WebView. Values can be `NoScrollBar`”, “”
+width? | **Number:** Fraction of the parent width `[0-1]`.
+height? | **Number:** Fraction of the parent height `[0-1]`.
 Return Value: | **ui object:** WebView
 
 
-A webview is a component where you can display a website into your app layout.
+
 
 <details>
 <summary>Example: EnjineIO homepage</summary>
@@ -63930,7 +66647,7 @@ Returns the absolute height of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### web.absLeft
 
@@ -63938,7 +66655,7 @@ Returns the absolute distance of the control from the left in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### web.absTop
 
@@ -63946,7 +66663,7 @@ Returns the absolute distance of the control from the top in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### web.absWidth
 
@@ -63954,7 +66671,7 @@ Returns the absolute width of the control in pixels.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *pixel*
+Return Value: | **Number**
 
 ##### web.backColor
 
@@ -63962,7 +66679,7 @@ A hexadecimal color of the form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### web.backImage
 
@@ -63970,7 +66687,7 @@ The path to your image file.
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )*
+Return Value: | **String**
 
 ##### web.blockUrls
 
@@ -63994,7 +66711,7 @@ Sets or returns the border color. Color is in hexadecimal form `#rrggbb`
 
 Parameter | Type
 --- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
+Return Value: | **String**
 
 ##### web.borderStyle
 
@@ -64022,11 +66739,27 @@ Return Value: | **Boolean**
 
 ##### web.document
 
-A reference to the webview`s window document object.
+A reference to the webview's window document object.
 
 Parameter | Type
 --- | ---
 Return Value: | **Object**
+
+##### web.el
+
+Returns the html container element for the control.
+
+Parameter | Type
+--- | ---
+Return Value: | **Object**
+
+##### web.elStyle
+
+Sets the style of the html container element.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
 
 ##### web.errorPage
 
@@ -64082,7 +66815,7 @@ Sets or returns the margin of the control. Works on controls with `Linear` paren
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### web.opacity
 
@@ -64106,7 +66839,7 @@ Sets or returns the padding of the control. You can also pass a number to set eq
 
 Parameter | Type
 --- | ---
-Return Value: | <span style="display:inline-block;vertical-align: middle;">**Number**,**List:** *of numbers*</span>
+Return Value: | **List**
 
 ##### web.parent
 
@@ -64114,7 +66847,7 @@ Returns the parent layout control.
 
 Parameter | Type
 --- | ---
-Return Value: | **ui object:** [Layout](#addLayout)
+Return Value: | **Object**
 
 ##### web.position
 
@@ -64122,7 +66855,7 @@ Returns the position of the control. The returned object has `left` `top` `right
 
 Parameter | Type
 --- | ---
-Return Value: | **Object:** { left *(**Number**)*, top *(**Number**)*, right *(**Number**)*, bottom *(**Number**)* }
+Return Value: | **Object**
 
 ##### web.rotation
 
@@ -64130,7 +66863,7 @@ Sets or returns the angle of rotation in degrees.
 
 Parameter | Type
 --- | ---
-Return Value: | **Number:** *angle in degrees (0..360)*
+Return Value: | **Number**
 
 ##### web.textColor
 
@@ -64198,7 +66931,7 @@ Return Value: | **Number**
 
 ##### web.window
 
-A reference to the webview`s window object.
+A reference to the webview's window object.
 
 Parameter | Type
 --- | ---
@@ -64210,50 +66943,52 @@ Return Value: | **Object**
 The following methods are available on the **WebView** object:
 
 
-##### web.animate( anim, duration? )
+##### web.animate( anim, duration )
 
-Animate the component
+Animate the component.
 
 Parameter | Type
 --- | ---
 anim | **String:** “The type of animation. Here are the available values
 
- `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat`
+`bounce`”, “ `flash`”, “ `pulse`”, “ `rubberBand`”, “ `shakeX`”, “ `shakeY`”, “ `headShake`”, “ `swing`”, “ `tada`”, “ `wobble`”, “ `jello`”, “ `heartBeat`”, “
 
- `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp`
+Back Entrances: `backInDown`”, “ `backInLeft`”, “ `backInRight`”, “ `backInUp`
 
- `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp`
+Back Exits: `backOutDown`”, “ `backOutLeft`”, “ `backOutRight`”, “ `backOutUp`
 
- `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp`
+Bouncing Entrances: `bounceIn`”, “ `bounceInDown`”, “ `bounceInLeft`”, “ `bounceInRight`”, “ `bounceInUp`
 
- `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp`
+Bouncing exits: `bounceOut`”, “ `bounceOutDown`”, “ `bounceOutLeft`”, “ `bounceOutRight`”, “ `bounceOutUp`
 
- `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight`
+Fading entrances: `fadeIn`”, “ `fadeInDown`”, “ `fadeInDownBig`”, “ `fadeInLeft`”, “ `fadeInLeftBig`”, “ `fadeInRight`”, “ `fadeInRightBig`”, “ `fadeInUp`”, “ `fadeInUpBig`”, “ `fadeInTopLeft`”, “ `fadeInTopRight`”, “ `fadeInBottomLeft`”, “ `fadeInBottomRight`
 
- `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft`
+Fading exits: `fadeOut`”, “ `fadeOutDown`”, “ `fadeOutDownBig`”, “ `fadeOutLeft`”, “ `fadeOutLeftBig`”, “ `fadeOutRight`”, “ `fadeOutRightBig`”, “ `fadeOutUp`”, “ `fadeOutUpBig`”, “ `fadeOutTopLeft`”, “ `fadeOutTopRight`”, “ `fadeOutBottomRight`”, “ `fadeOutBottomLeft`
 
- `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY`
+Flippers: `flip`”, “ `flipInX`”, “ `flipInY`”, “ `flipOutX`”, “ `flipOutY`
 
- `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft`
+Lightspeed: `lightSpeedInRight`”, “ `lightSpeedInLeft`”, “ `lightSpeedOutRight`”, “ `lightSpeedOutLeft`
 
- `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight`
+Rotating Entrances: `rotateIn`”, “ `rotateInDownLeft`”, “ `rotateInDownRight`”, “ `rotateInUpLeft`”, “ `rotateInUpRight`
 
- `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight`
+Rotating Exits: `rotateOut`”, “ `rotateOutDownLeft`”, “ `rotateOutDownRight`”, “ `rotateOutUpLeft`”, “ `rotateOutUpRight`
 
- `Specials `hinge` `jackInTheBox` `rollIn` `rollOut`
+Specials: `hinge`”, “ `jackInTheBox`”, “ `rollIn`”, “ `rollOut`
 
- `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp`
+Zooming Entrances: `zoomIn`”, “ `zoomInDown`”, “ `zoomInLeft`”, “ `zoomInRight`”, “ `zoomInUp`
 
- `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp`
+Zooming Exits: `zoomOut`”, “ `zoomOutDown`”, “ `zoomOutLeft`”, “ `zoomOutRight`”, “ `zoomOutUp`
 
- `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp`
+Sliding Entrances: `slideInDown`”, “ `slideInLeft`”, “ `slideInRight`”, “ `slideInUp`
 
- `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”
-duration? | **Number:** The time in milliseconds.
+Sliding Exits: `slideOutDown`”, “ `slideOutLeft`”, “ `slideOutRight`”, “ `slideOutUp`”
+duration | **Number:** The time in milliseconds.
 
 ##### web.bringForward( zIndex )
 
-Bring this component forward by a given z-index
+[aname](#aname) bringForward
+
+Bring this component forward by a given z-index.
 
 Parameter | Type
 --- | ---
@@ -64261,181 +66996,319 @@ zIndex | **Number:** The z-index. A negative value behaves like `sendBackward` m
 
 ##### web.destroy()
 
-Destroy the component
+Destroy the component.
 
-##### web.getPosition( options? )
+##### web.getPosition( options )
 
-Returns the position of the component. The return object is of the form `{ left, top, right, bottom
+Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
 
 Parameter | Type
 --- | ---
-options? | **String:** “The mode of the measurements. Values can be `px` or `%`”
-Return Value: | **Object**
+options | **String:** “The mode of the measurements. Values can be `px` or `%`”
+Return Value: | **ui object**
 
 ##### web.gone()
 
-Destroy the component
+Destroy the component.
 
 ##### web.hide()
 
-Hide the component
+Hide the component.
 
-##### web.loadUrl( url )
+##### web.print()
 
-Load the current url.
+Print current page via the builtin android printer dialog.
 
-Parameter | Type
---- | ---
-url | **String:** *url path*
+##### web.reload()
+
+Reloads the current page.
 
 ##### web.sendBackward( zIndex )
 
-Bring this component backward by a given z-index
+Bring this component backward by a given z-index.
 
 Parameter | Type
 --- | ---
 zIndex | **Number:** The z-index. A positve value behaves like `bringForward` method.
 
-##### web.setBorder( width?, clr?, style='solid' )
+##### web.setBorder( left, top, right, bottom, clr, style )
 
-Sets the border line for the component container
-
-Parameter | Type
---- | ---
-width? | **Number:** Border-left thickness in pixels.
-clr? | **String:** “Border color in hexadecimal form `#rrggbb`”
-style='solid' | **String:** “Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”
-
-##### web.setCornerRadius( tl?, tr?, bl?, br?, mode='px' )
-
-Sets the corner radius of the component
+Sets the border line for the component container.
 
 Parameter | Type
 --- | ---
-tl? | **Number:** Top-Left border radius in pixels.
-tr? | **Number:** Top-Right border radius in pixels.
-bl? | **Number:** Bottom-Left border radius in pixels.
-br? | **Number:** Bottom-Right border radius in pixels.
-mode='px' | **String:** “Unit. Values are `px` `rem` or `%`.”
+left | **Number:** Border-left thickness in pixels.
+top | **Number:** Border-top thickness in pixels.
+right | **Number:** Border-right thickness in pixels.
+bottom | **Number:** Border-bottom thickness in pixels.
+clr | **String:** “Border color in hexadecimal format `#rrggbb`.”
+style | **String:** “Border-styles. Values can be `dotted`”, “ `dashed`”, “ `solid`”, “ `double`”, “ `groove`”, “ `ridge`”, “ `inset` and `outset`. Default is `solid`”
 
-##### web.setMargins( left?, top?, right?, bottom?, mode='px' )
+##### web.setCornerRadius( tl, tr, br, bl, mode )
 
-Sets the margin of the component
+Sets the corner radius of the component.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width.
-top? | **Number:** Fraction of the parent height.
-right? | **Number:** Fraction of the parent width.
-bottom? | **Number:** Fraction of the parent height.
-mode='px' | **String:** “`px` or `%`”
+tl | **Number:** Top-Left border radius.
+tr | **Number:** Top-Right border radius.
+br | **Number:** Bottom-Right border radius.
+bl | **Number:** Bottom-Left border radius.
+mode | **String:** “Unit of measurement. Values are `px` `rem` or `%`.”
+
+##### web.setMargins( left, top, right, bottom, mode )
+
+Sets the margin of the component.
+
+Parameter | Type
+--- | ---
+left | **Number:** Left margin. You can also pass string e.g. `12rem`
+top | **Number:** Top margin. You can also pass string e.g. `12rem`
+right | **Number:** Right margin. You can also pass string e.g. `12rem`
+bottom | **Number:** Bottom margin. You can also pass string e.g. `12rem`
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimension.
+
+`v` relative to viewport dimension.”
 
 ##### web.setOnContextMenu( callback )
 
-Adds a callback function on right click
+Adds a callback function on right click.
 
 Parameter | Type
 --- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The pointer event object.</td></tr></table>
+callback | **function(event )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event </td><td>**Object:** The pointer event object.</td></tr></table>
 
 ##### web.setOnLoad( callback )
 
-Adds a event handler for onload event
-
-
-
-The example above will call the function `Hello` defined in the WebView passing
-
-the three arguments which is a text, number and a boolean
+Adds a callback handler for onload event.
 
 Parameter | Type
 --- | ---
 callback | **function()**
 
-##### web.setOnTouch( callback )
+##### web.setOnUrl( callback )
 
-Adds a callback handler when the component is touch
-
-Parameter | Type
---- | ---
-callback | **function(event)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>event</td><td>**Object:** The click event object.</td></tr></table>
-
-##### web.setPadding( left?, top?, right?, bottom?, mode='px' )
-
-Sets the padding component container
+Define a callback function which is called when the user clicked a link.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the component width.
-top? | **Number:** Fraction of the component height. [0-1]
-right? | **Number:** Fraction of the component width. [0-1]
-bottom? | **Number:** Fraction of the component height. [0-1]
-mode='px' | **String:** “The size thickness mode. Can be `px`”
+callback | **function(url )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>url </td><td>**String:** “The new url to navigate.”</td></tr></table>
 
-##### web.setPosition( left?, top?, mode='px' )
+##### web.setPadding( left, top, right, bottom, mode )
 
-Sets the position of the component relative to its parent dimensions
+Sets the padding of the component's container.
 
 Parameter | Type
 --- | ---
-left? | **Number:** Fraction of the parent width. [0-1]
-top? | **Number:** Fraction of the screen height. [0-1]
-mode='px' | **String:** “Unit of measurement. Can be `px` or `%` or any css unit of measurement.”
+left | **Number:** Fraction of the component width.
+top | **Number:** Fraction of the component height. [0-1]
+right | **Number:** Fraction of the component width. [0-1]
+bottom | **Number:** Fraction of the component height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
+
+##### web.setPosition( left, top, mode )
+
+Sets the position of the component relative to its parent dimensions.
+
+Parameter | Type
+--- | ---
+left | **Number:** Fraction of the parent width. [0-1]
+top | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurement.
+
+`rem` for root em.
+
+`px` for pixels
+
+`%` relative to its parent dimensions
+
+`v` relative to viewport dimensions.”
 
 ##### web.setScale( x, y )
 
-Sets the x and y scaling of the component
+Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.
 
 Parameter | Type
 --- | ---
 x | **Number:** The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
 y | **Number:** The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
 
-##### web.setSize( width, height )
+##### web.setSize( width, height, mode )
 
-Sets the size of the component
+Sets the size of the component.
 
 Parameter | Type
 --- | ---
 width | **Number:** Fraction of the parent width. [0-1]
 height | **Number:** Fraction of the parent height. [0-1]
+mode | **String:** “Unit of measurment. Can be "px"”, “ "rem"”, “ "%"”, “ "v" for viewport width/height or any css supported unit.”
 
 ##### web.show()
 
-Show the component
+Show the component.
 
-### setTheme
+##### web.stop()
 
-Set the current theme.
+Stops any web loading.
+
+### showActionSheet
+
+An Action Sheet is a list dialog implementation of bottom sheet displaying contextual actions or options, used to streamline user interactions in mobile apps.
 ```
-ui.setTheme(theme)
+acs = ui.showActionSheet(title, list, options, onSelect)
 ```
 
 Parameter | Type
 --- | ---
-theme | **String:** “dark” or “light”
+title | **String:** “The custom actionsheet title.”
+list | **List:** The list items to show. If `"icon"` option is passed, each element in this list array is of the form `[icon, name]`.
+options | **String:** “A comma separated actionsheet options. Values are
+
+`"Icon"` render a leading icon.
+
+`"NoCancel"` remove the default `"Cancel"` option.”
+onSelect | **function()**
+Return Value: | **ui object:** ActionSheet
 
 
 
 
+<details>
+<summary>Example: Complete example of actionsheet</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show the actionsheet when click
+        this.btn = ui.addButton(this.main, "Show actionsheet", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+    }
+
+    btn_onTouch()
+    {
+        var choices = [
+            ["person", "Account"],
+            ["share", "Send to email"],
+            ["delete", "Remove"],
+        ];
+        this.act = ui.showActionSheet("", choices, "Icon", this.onSelect);
+        this.act.description = "This is the text";
+        this.act.setColor("Remove", "orange");
+    }
+
+    onSelect( name, icon ) {
+        ui.showPopup( icon );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show the actionsheet when click
+        this.btn = ui.addButton(this.main, "Show actionsheet", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+    btn_onTouch()
+        choices = [
+            ["person", "Account"],
+            ["share", "Send to email"],
+            ["delete", "Remove"],
+        ]
+        this.act = ui.showActionSheet("", choices, "Icon", this.onSelect)
+        this.act.description = "This is the text"
+        this.act.setColor("Remove", "orange")
+
+    onSelect( name, icon )
+        ui.showPopup( icon )
+```
+</details>
+
+#### Properties
+
+The following properties are available on the **ActionSheet** object:
+
+
+##### acs.description
+
+Sets or returns the description text for the action sheet.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+##### acs.title
+
+Sets or returns the title text of the action sheet.
+
+Parameter | Type
+--- | ---
+Return Value: | **String**
+
+
+#### Methods
+
+The following methods are available on the **ActionSheet** object:
+
+
+##### acs.setColor( name, color )
+
+Sets the color of the list item by its name.
+
+Parameter | Type
+--- | ---
+name | **String:** “The list item text.”
+color | **String:** “A css supported color. Available format are: `hexadecimal`”, “ `color-names`”, “ `rgb`”, “ `rgba` ...”
+
+##### acs.setColorByIndex( index, color )
+
+Sets the color of the list item by its corresponding index. If you want to set the color of the list using its name, see `setColor` method.
+
+Parameter | Type
+--- | ---
+index | **Number:** The index of list item.
+color | **String:** “A css supported color. Available format are: `hexadecimal`”, “ `color-names`”, “ `rgb`”, “ `rgba` ...”
 
 ### showColorPicker
 
 Shows a color picker.
 ```
-col = ui.showColorPicker(value?, options?)
+cpk = ui.showColorPicker(value?, options?, onSelect?)
 ```
 
 Parameter | Type
 --- | ---
 value? | **String:** “A hexadecimal default value for the color picker.”
-options? | **String:** “A comma separated color picker options. Values can be
+options? | **String:** “A comma separated options.
 
- `Alpha` Includes an alpha”
+Includes alpha: `Alpha`”
+onSelect? | **function(value )**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value </td><td>**String:** “Color in hexadecimal format `#rrggbb` or `#aarrggbb` if `Alpha` option is passed.”</td></tr></table>
 Return Value: | **ui object:** ColorPicker
 
 
-Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette.
+
 
 <details>
 <summary>Example: Basic</summary>
@@ -64497,7 +67370,7 @@ def onSelect(clr):
 The following properties are available on the **ColorPicker** object:
 
 
-##### col.value
+##### cpk.value
 
 Returns the value of the chosen color.
 
@@ -64511,43 +67384,349 @@ Return Value: | **String**
 The following methods are available on the **ColorPicker** object:
 
 
-##### col.getValue()
+##### cpk.getValue()
 
-Returns the hexadecimal string color value of the color picker
+Returns the hexadecimal string color value of the color picker.
 
 Parameter | Type
 --- | ---
 Return Value: | **String**
 
-### showDateTimePicker
+### showDatePicker
 
-Show a DateTimePicker where the user can select a date and time.
+A DatePicker in mobile UIs enables users to select dates using a visual calendar interface.
 ```
-dtp = ui.showDateTimePicker(callback, date?, time?, format?)
+dtp = ui.showDatePicker(date, options, onSelect)
 ```
 
 Parameter | Type
 --- | ---
-callback | **function()**
-date? | **String:** “Default value for date of the form "MM/DD/YYYY"”
-time? | **String:** “Default value for time of the form "HH/MM/SS"”
-format? | **String:** “The format value that will be pass to callback. Formats can be of the form
-
- `MM/DD/YYYY HH *(MM)*:SS` `MM *(DD)*:YYYY HH *(MM)*:SS`”
-Return Value: | **ui object:** DateTimePicker
+date | **String:** “A default date value. Format is `YYYY-MM-DD`”
+options | **Object:** Date picker options object.See `options` properties below for customization. Note: `options` param is an object to support for more customization than the usual comma separated string.
+onSelect | **function()**
+Return Value: | **ui object:** DatePicker
 
 
-If you want a date picker only see `DatePicker` or if you want time picker only see `TimePicker`
+##### options Props
+
+`format`: String. Moment date format. Default is `"YYYY-MM-DD"`
+
+`portrait`: Boolean. Display the date picker in portrait view. Default is detective in the size of the screen.
+
+`future`: String. The future value until which the dialog will render dates in the following format `"YYYY-MM-DD"`
+
+`past`: String. The past until which the dialog will render dates in the following format `"YYYY-MM-DD"`.
+
+
+
+##### Date formatting
+
+DatePicker dialog uses moment js library, see <a href="https://momentjs.com/docs/" target="_blank">https://momentjs.com/docs/</a> for more date formatting values.
+
+Sample values are:
+
+`"MMMM Do YYYY"` :  December 13th 2023
+
+`"dddd"` : Wednesday
+
+`"MMM Do YY"`: Dec 13th 23
+
+
 
 <details>
-<summary>Example: DateTimePicker</summary>
+<summary>Example: Default</summary>
 
 ```js
 class Main extends App
 {
     onStart()
     {
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show date picker when click
+        this.btn = ui.addButton(this.main, "Show Date Picker")
+        this.btn.setOnTouch( this.showDatePicker )
+    }
+
+    showDatePicker()
+    {
+        // Display the date picker dialog
+        ui.showDatePicker( this.onSelect )
+    }
+
+    onSelect( value )
+    {
+        ui.showPopup( value )
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show date picker when click
+        this.btn = ui.addButton(this.main, "Show Date Picker")
+        this.btn.setOnTouch( this.showDatePicker )
+
+    showDatePicker()
+        #  Display the date picker dialog
+        ui.showDatePicker( this.onSelect )
+
+    onSelect( value )
+        ui.showPopup( value )
+```
+</details>
+
+<details>
+<summary>Example: With initial value and options object</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show date picker when click
+        this.btn = ui.addButton(this.main, "Show Date Picker")
+        this.btn.setOnTouch( this.showDatePicker )
+    }
+
+    showDatePicker()
+    {
+        // Display the date picker dialog
+        var opt = {
+            portrait: true,
+            format: "YYYY Do MMM"
+        }
+        ui.showDatePicker("2022-12-25", opt, this.onSelect);
+    }
+
+    onSelect( value )
+    {
+        ui.showPopup( value );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show date picker when click
+        this.btn = ui.addButton(this.main, "Show Date Picker")
+        this.btn.setOnTouch( this.showDatePicker )
+
+    showDatePicker()
+        #  Display the date picker dialog
+        opt =
+            portrait: true,
+            format: "YYYY Do MMM"
+        ui.showDatePicker("2022-12-25", opt, this.onSelect)
+
+    onSelect( value )
+        ui.showPopup( value )
+```
+</details>
+
+<details>
+<summary>Example: Dark mode with date limits</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        ui.setTheme( "dark" )
+
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show date picker when click
+        this.btn = ui.addButton(this.main, "Show Date Picker")
+        this.btn.setOnTouch( this.showDatePicker )
+    }
+
+    showDatePicker()
+    {
+        // Display the date picker dialog
+        var opt = {
+            past: "2023-12-05",
+            future: "2023-12-25"
+        }
+        ui.showDatePicker("2023-12-15", opt, this.onSelect)
+    }
+
+    onSelect( value )
+    {
+        ui.showPopup( value )
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        ui.setTheme( "dark" )
+
+        #  Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show date picker when click
+        this.btn = ui.addButton(this.main, "Show Date Picker")
+        this.btn.setOnTouch( this.showDatePicker )
+
+    showDatePicker()
+        #  Display the date picker dialog
+        opt =
+            past: "2023-12-05",
+            future: "2023-12-25"
+        ui.showDatePicker("2023-12-15", opt, this.onSelect)
+
+    onSelect( value )
+        ui.showPopup( value )
+```
+</details>
+
+
+### showDateTimePicker
+
+A DateTimePicker in mobile UI design combines date and time selection in one interface.
+```
+dtp = ui.showDateTimePicker(date?, time?, format?, onSelect?)
+```
+
+Parameter | Type
+--- | ---
+date? | **String:** “Default value for date of the form "YYYY-MM-DD"”
+time? | **String:** “Default value for time of the form "HH *(MM)*:SS"”
+format? | **String:** “The format of the value that will be pass to the `onSelect` callback. Default is `"YYYY-MM-DD HH *(MM)*:SS"`. You can refer to  for more date time formats. Sample formats: `"MMMM Do YYYY”, “ h *(mm)*:ss a"`”, “ `"dddd"`”, “ `"MMM Do YY"`”, “ `"LLL"`”
+onSelect? | **function()**
+Return Value: | **ui object:** DateTimePicker
+
+
+If you want a date picker only see `DatePicker` or if you want time picker only see `TimePicker`
+
+<details>
+<summary>Example: Default</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        this.btn = ui.addButton(this.main, "Show Date Time Picker", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+    }
+
+    btn_onTouch()
+    {
+        ui.showDateTimePicker( this.onDateTime )
+    }
+
+    onDateTime( val )
+    {
+        ui.showPopup( val )
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        this.btn = ui.addButton(this.main, "Show Date Time Picker", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+    btn_onTouch()
+        ui.showDateTimePicker( this.onDateTime )
+
+    onDateTime( val )
+        ui.showPopup( val )
+```
+</details>
+
+<details>
+<summary>Example: With initial values, format and custom theme</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Set the primary theme color
+        ui.setThemeColor( "#673ab7" );
+
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show the datetime picker when click
+        this.btn = ui.addButton(this.main, "Show Date Time Picker", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+    }
+
+    btn_onTouch()
+    {
+        // Show the datetime picker dialog and passing initial date and time
+        // date format : "YYYY-MM-DD"
+        // time format : "HH:MM:SS"
+        // value format: LLL
+        ui.showDateTimePicker("2023-10-10", "17:00:00", "LLL", this.onDateTime )
+    }
+
+    onDateTime( val )
+    {
+        ui.showPopup( val )
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Set the primary theme color
+        ui.setThemeColor( "#673ab7" )
+
+        #  Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show the datetime picker when click
+        this.btn = ui.addButton(this.main, "Show Date Time Picker", "Primary")
+        this.btn.setOnTouch( this.btn_onTouch )
+
+    btn_onTouch()
+        #  Show the datetime picker dialog and passing initial date and time
+        #  date format : "YYYY-MM-DD"
+        #  time format : "HH:MM:SS"
+        #  value format: LLL
+        ui.showDateTimePicker("2023-10-10", "17:00:00", "LLL", this.onDateTime )
+
+    onDateTime( val )
+        ui.showPopup( val )
+```
+</details>
+
+<details>
+<summary>Example: Dark mode</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        ui.setTheme( "dark" );
+
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
         this.btn = ui.addButton( this.main, "Show Date Time Picker", "Primary" )
         this.btn.setOnTouch( this.btn_onTouch )
@@ -64566,38 +67745,27 @@ class Main extends App
 ```
 
 ```py
-from hybrid import ui
+class Main extends App
+    onStart()
+        ui.setTheme( "dark" )
 
-def OnStart():
-    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-    btn = ui.addButton(main, "Show Date Time Picker", "Primary")
-    btn.setOnTouch(btn_onTouch)
+        this.btn = ui.addButton( this.main, "Show Date Time Picker", "Primary" )
+        this.btn.setOnTouch( this.btn_onTouch )
 
-def btn_onTouch(event):
-    ui.showDateTimePicker(onDateTime)
+    btn_onTouch()
+        ui.showDateTimePicker( this.onDateTime )
 
-def onDateTime(val):
-    ui.showPopup(val)
+    onDateTime( val )
+        ui.showPopup( val )
 ```
 </details>
 
-#### Methods
-
-The following methods are available on the **DateTimePicker** object:
-
-
-##### dtp.setOnSelect( callback )
-
-Sets a callback function on select date and time
-
-Parameter | Type
---- | ---
-callback | **function(value)**<table><tr><th>Parameter</th><th>Type</th></tr><tr><td>value</td><td>**String:** “The selected date and time in the following format `MM/DD/YYYY HH *(MM)*:SS`.”</td></tr></table>
 
 ### showPopover
 
-Show a popover on any `UI Components` except Dialogs and Popups.
+Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.
 ```
 pvr = ui.showPopover(parent, text?, position?, width?, height?)
 ```
@@ -64606,17 +67774,23 @@ Parameter | Type
 --- | ---
 parent | **Object:** UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
 text? | **String:** “The text to de displayed. For displaying more data”, “ pass a `Layout`”
-position? | **String:** “A comma separated values representing the `anchorOrigin”, “transformOrigin`
+position? | **String:** “A comma separated values representing the
 
- `anchorOrigin` Position of the popover on its parent. Available values are `tl` for top-left”, “ `tc` for top-center”, “ `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.
+`"anchorOrigin”, “transformOrigin"`
 
- `transformOrigin` Origin on the popover itselt. Values are the same as the `anchorOrigin`”
-width? | **Number:** Fraction of the screen width.
-height? | **Number:** Fraction of the screen height.
+`anchorOrigin` Position of the popover on its parent.
+
+`transformOrigin` Origin on the popover itselt.
+
+Available values for both `anchorOrigin` and `transformOrigin`  are
+
+`tl` for top-left”, “ `tc` for top-center”, “ `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.”
+width? | **Number:** Fraction of the screen width `[0-1]`.
+height? | **Number:** Fraction of the screen height `[0-1]`.
 Return Value: | **ui object:** Popover
 
 
-Popover is very useful on showing additional info or displaying instructions especially when the control is click or hovered.
+
 
 <details>
 <summary>Example: Basic</summary>
@@ -64906,9 +68080,23 @@ Parameter | Type
 --- | ---
 Return Value: | **String**
 
+
+#### Methods
+
+The following methods are available on the **Popover** object:
+
+
+##### pvr.hide()
+
+Hide the popup dialog.
+
+##### pvr.show()
+
+Show the popup dialog.
+
 ### showPopup
 
-Shows a popup into your app.
+"Popup" is like a short notification that quickly appears on the screen, providing extra options or information in a concise and unobtrusive manner.
 ```
 pop = ui.showPopup(msg, options?, duration?, action?)
 ```
@@ -64916,19 +68104,19 @@ pop = ui.showPopup(msg, options?, duration?, action?)
 Parameter | Type
 --- | ---
 msg | **String:** “The message to display on the pop-up.”
-options? | **String:** “A comma separated Menu options. Values can be
+options? | **String:** “A comma separated options.
 
- Duration: `Short` `Long`
+Duration: `Short`”, “ `Long`
 
- `Vertical Alignment: `Top` `Bottom`
+Vertical Alignment: `Top`”, “ `Bottom`
 
- `Horizontal Alignment: `Left` `Center` `Right`
+Horizontal Alignment: `Left`”, “ `Center`”, “ `Right`
 
- `Action options: `Icon` or `HideOnAction`
+Action options: `Icon`”, “ `HideOnAction`
 
- `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`”
-duration? | **Number:** Time in milliseconds. Pass this,  if you don't want the default auto hide duration.
-action? | **String:** “Action button text.”
+Transition: `Grow`”, “ `Fade`”, “ `Slide`”, “ `Collapse`”, “ `Zoom`”
+duration? | **Number:** Time in milliseconds. Pass this if you don't want the default auto hide duration.
+action? | **String:** “Action button text”
 Return Value: | **ui object:** Popup
 
 
@@ -65111,7 +68299,7 @@ The following methods are available on the **Popup** object:
 
 ##### pop.getPosition()
 
-Returns the position of the popup. The returned object is of the form `{ vertical, horizontal
+Returns the position of the popup. The returned object is of the form `{ vertical, horizontal }`
 
 Parameter | Type
 --- | ---
@@ -65119,11 +68307,13 @@ Return Value: | **Object**
 
 ##### pop.hide()
 
-Hide the popup
+Hide the popup.
 
 ##### pop.setOnAction( callback )
 
-Adds an action callback when the user touches the action button. The `btnText` param must be provided in order to create an action button
+Adds an action callback when the user touches the action button. The `btnText` param must
+
+be provided in order to create an action button.
 
 Parameter | Type
 --- | ---
@@ -65131,7 +68321,7 @@ callback | **function()**
 
 ##### pop.setOnClose( callback )
 
-Adds an onClose callback to your popup
+Adds an onClose callback to your popup.
 
 Parameter | Type
 --- | ---
@@ -65139,7 +68329,7 @@ callback | **function()**
 
 ##### pop.setPosition( vertical?, horizontal? )
 
-Updates the position of the popup
+Updates the position of the popup.
 
 Parameter | Type
 --- | ---
@@ -65148,21 +68338,21 @@ horizontal? | **String:** “Horizontal alignment. Values can be `Left` `Center`
 
 ##### pop.show()
 
-Show the popup
+Show the popup.
 
 ### showProgressDialog
 
-Shows a progress dialog component into your app.
+A ProgressDialog is a pop-up dialog that indicates the progress of a task, often accompanied by a loading spinner or bar.
 ```
 prd = ui.showProgressDialog(text?, options?)
 ```
 
 Parameter | Type
 --- | ---
-text? | **String:** “The text message of the progress dialog. Options can be
+text? | **String:** “The text message of the progress dialog.”
+options? | **String:** “A comma separated options.
 
- `AutoCancel` to close the dialog when backdrop is click.”
-options? | **String:** *comma “,” separated*
+`AutoCancel` to close the dialog when backdrop is click.”
 Return Value: | **ui object:** ProgressDialog
 
 
@@ -65258,28 +68448,12 @@ def onTouch(event):
 ```
 </details>
 
-#### Methods
+#### Properties
 
-The following methods are available on the **ProgressDialog** object:
+The following properties are available on the **ProgressDialog** object:
 
 
-##### prd.hide()
-
-Hides the dialog component
-
-##### prd.setOnClose( callback )
-
-Adds a callback handler method on close event
-
-Parameter | Type
---- | ---
-callback | **function()**
-
-##### prd.show()
-
-Show the progress dialog component
-
-##### prd.text()
+##### prd.text
 
 Sets or returns the ProgressDialog text.
 
@@ -65287,62 +68461,200 @@ Parameter | Type
 --- | ---
 Return Value: | **String**
 
-### theme
 
-UI theme information.
+#### Methods
+
+The following methods are available on the **ProgressDialog** object:
+
+
+##### prd.hide()
+
+Hides the dialog component.
+
+##### prd.setOnClose( callback )
+
+Adds a callback handler method on close event.
+
+Parameter | Type
+--- | ---
+callback | **function()**
+
+##### prd.show()
+
+Show the progress dialog component.
+
+### showTimePicker
+
+A Time Picker in mobile UI design allows users to select a specific time.
 ```
-ui.theme
-```
-
-Parameter | Type
---- | ---
-Return Value: | **ui object:** theme
-
-
-
-
-#### Properties
-
-The following properties are available on the **theme** object:
-
-
-
-
-true if dark theme is selected, otherwise false (light theme)
-
-Parameter | Type
---- | ---
-Return Value: | **Boolean**
-
-
-
-primary theme color
-
-Parameter | Type
---- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
-
-
-
-secondary theme color
-
-Parameter | Type
---- | ---
-Return Value: | **String:** *<br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...*
-
-### version
-
-UI library version.
-```
-ui.version
+tpk = ui.showTimePicker(time, options, onSelect)
 ```
 
 Parameter | Type
 --- | ---
-Return Value: | **Number**
+time | **String:** “A default time value to which the timepicker begins. Value is of the form `HH *(mm`)*”
+options | **String:** “A comma separated options.
+
+Orientation: `Portrait`”, “ `Landscape`
+
+Format: `24H`”, “ `12H`”
+onSelect | **function()**
+Return Value: | **ui object:** TimePicker
 
 
 
+
+<details>
+<summary>Example: Default</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        // Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+
+        // button to show time picker
+        this.btn = ui.addButton( this.main, "Show Time Picker")
+        this.btn.setOnTouch( this.showTimePicker )
+    }
+
+    showTimePicker()
+    {
+        // show time picker
+        ui.showTimePicker( this.onSelect )
+    }
+
+    onSelect( value )
+    {
+        ui.showPopup( value );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        #  Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
+
+        #  button to show time picker
+        this.btn = ui.addButton( this.main, "Show Time Picker")
+        this.btn.setOnTouch( this.showTimePicker )
+
+    showTimePicker()
+        #  show time picker
+        ui.showTimePicker( this.onSelect )
+
+    onSelect( value )
+        ui.showPopup( value )
+```
+</details>
+
+<details>
+<summary>Example: With initial value, options and theme color</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        ui.setThemeColor( "#673ab7" )
+
+        // Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show time picker when click
+        this.btn = ui.addButton(this.main, "Show Time Picker")
+        this.btn.setOnTouch( this.showTimePicker )
+    }
+
+    showTimePicker()
+    {
+        // show time picker dialog with initial value
+        ui.showTimePicker("08:24", "Portrait", this.onSelect)
+    }
+
+    onSelect( value )
+    {
+        ui.showPopup( value );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        ui.setThemeColor( "#673ab7" )
+
+        #  Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show time picker when click
+        this.btn = ui.addButton(this.main, "Show Time Picker")
+        this.btn.setOnTouch( this.showTimePicker )
+
+    showTimePicker()
+        #  show time picker dialog with initial value
+        ui.showTimePicker("08:24", "Portrait", this.onSelect)
+
+    onSelect( value )
+        ui.showPopup( value )
+```
+</details>
+
+<details>
+<summary>Example: Dark mode</summary>
+
+```js
+class Main extends App
+{
+    onStart()
+    {
+        ui.setTheme( "dark" )
+
+        // Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        // Add a button to the main layout to show time picker when click
+        this.btn = ui.addButton(this.main, "Show Time Picker")
+        this.btn.setOnTouch( this.showTimePicker )
+    }
+
+    showTimePicker()
+    {
+        // show time picker dialog with initial value
+        ui.showTimePicker("08:24", "Portrait", this.onSelect)
+    }
+
+    onSelect( value )
+    {
+        ui.showPopup( value );
+    }
+}
+```
+
+```py
+class Main extends App
+    onStart()
+        ui.setTheme( "dark" )
+
+        #  Creates a layout with objects verticaly centered.
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+        #  Add a button to the main layout to show time picker when click
+        this.btn = ui.addButton(this.main, "Show Time Picker")
+        this.btn.setOnTouch( this.showTimePicker )
+
+    showTimePicker()
+        #  show time picker dialog with initial value
+        ui.showTimePicker("08:24", "Portrait", this.onSelect)
+
+    onSelect( value )
+        ui.showPopup( value )
+```
+</details>
 
 
 ## Global Helpers

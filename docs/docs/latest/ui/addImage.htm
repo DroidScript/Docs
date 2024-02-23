@@ -60,7 +60,7 @@
 			→ <b>ui object:</b> Image
 		</div>
 
-		<p>Please note that a <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">canvas</span> image cannot switch to Button or Avatar in <span style="color:#4c4; font-family:Courier,monospace; padding:0px 2px;">setOptions</span> method.</p>
+		<p>Please note that a <kbd>canvas</kbd> image cannot switch to Button or Avatar in <kbd>setOptions</kbd> method.</p>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic Image</h3>
 			<div id="examp1" class="code-js" style="font-size:70%">
@@ -352,12 +352,13 @@
 				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
 				        <span class="token comment">// Create a linear layout with objects vertically centered.</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
 				        <br>
 				        ui<span class="token punctuation">.</span><span class="token function">addAppBar</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Analog Clock"</span> <span class="token punctuation">)</span><br>
 				        <br>
 				        <span class="token comment">// Create a canvas image</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"canvas"</span><span class="token punctuation">,</span> <span class="token string">"300px"</span><span class="token punctuation">,</span> <span class="token string">"300px"</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"canvas"</span><span class="token punctuation">,</span> <span class="token string">"300px"</span><span class="token punctuation">,</span> <span class="token string">"300px"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span>margins <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">]</span><br>
 				        <br>
 				        <span class="token comment">// Set the initial line styles</span><br>
 				        <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span>lineCap <span class="token operator">=</span> <span class="token string">"round"</span><br>
@@ -513,44 +514,49 @@
 			<h3>Example - Scratch Pad</h3>
 			<div id="examp7" class="code-js" style="font-size:70%">
 				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
 				    <span class="token punctuation">{</span><br>
-				        <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				        <span class="token punctuation">{</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"#000000"</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <br>
-				            <span class="token keyword">var</span> lay <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,Center,VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
-				            lay<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <br>
-				            <span class="token keyword">var</span> colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"#009688"</span><span class="token punctuation">,</span> <span class="token string">"#673ab7"</span><span class="token punctuation">,</span> <span class="token string">"#e53935"</span><span class="token punctuation">,</span> <span class="token string">"#1e88e5"</span><span class="token punctuation">]</span><br>
-				            <br>
-				            ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">,</span> <span class="token string">"H5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>colors<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				                <span class="token keyword">var</span> btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"48px"</span><span class="token punctuation">,</span> <span class="token string">"48px"</span> <span class="token punctuation">)</span><br>
-				                btn<span class="token punctuation">.</span>backColor <span class="token operator">=</span> colors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>
-				                btn<span class="token punctuation">.</span><span class="token function">setCornerRadius</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				                btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">changeColor</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> colors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <span class="token punctuation">}</span><br>
-				            <br>
-				            ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Thickness"</span><span class="token punctuation">,</span> <span class="token string">"H5"</span><span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>sld <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addSlider</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>sld<span class="token punctuation">.</span><span class="token function">setRange</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>sld<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">;</span><br>
-				            <br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"canvas"</span><span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span>fill <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><span class="token punctuation">;</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span><span class="token function">setOnTouchMove</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>draw <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span><span class="token function">setOnTouchDown</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>draw <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>draw <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token string">"#000000"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Color"</span><span class="token punctuation">,</span> <span class="token string">"H5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span><span class="token function">addDivider</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <br>
+				        <span class="token keyword">var</span> lay <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,Center,VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        lay<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"even"</span><br>
+				        <br>
+				        <span class="token keyword">var</span> colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"#009688"</span><span class="token punctuation">,</span> <span class="token string">"#673ab7"</span><span class="token punctuation">,</span> <span class="token string">"#e53935"</span><span class="token punctuation">,</span> <span class="token string">"#1e88e5"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>colors<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				            <span class="token keyword">var</span> btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> lay<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"48px"</span><span class="token punctuation">,</span> <span class="token string">"48px"</span> <span class="token punctuation">)</span><br>
+				            btn<span class="token punctuation">.</span>backColor <span class="token operator">=</span> colors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>
+				            btn<span class="token punctuation">.</span><span class="token function">setCornerRadius</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				            btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">changeColor</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> colors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				        <span class="token punctuation">}</span><br>
 				        <br>
-				        <span class="token function">changeColor</span><span class="token punctuation">(</span> <span class="token parameter">color</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span> <span class="token punctuation">}</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">addDivider</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
 				        <br>
-				        <span class="token function">draw</span><span class="token punctuation">(</span> <span class="token parameter">e</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				            <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span><span class="token function">drawCircle</span><span class="token punctuation">(</span> e<span class="token punctuation">.</span>x<span class="token punctuation">,</span> e<span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sld<span class="token punctuation">.</span>value<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>color<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><br>
-				    <span class="token punctuation">}</span>
+				        ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Thickness"</span><span class="token punctuation">,</span> <span class="token string">"H5"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>sld <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addSlider</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>sld<span class="token punctuation">.</span><span class="token function">setRange</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>sld<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">;</span><br>
+				        <br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>img <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"canvas"</span><span class="token punctuation">,</span> <span class="token number">0.96</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span>fill <span class="token operator">=</span> <span class="token string">"#e0e0e0"</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span><span class="token function">setOnTouchMove</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>draw <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span><span class="token function">setOnTouchDown</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>draw <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>draw <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">changeColor</span><span class="token punctuation">(</span> <span class="token parameter">color</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span> <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">draw</span><span class="token punctuation">(</span> <span class="token parameter">e</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>img<span class="token punctuation">.</span><span class="token function">drawCircle</span><span class="token punctuation">(</span> e<span class="token punctuation">.</span>x<span class="token punctuation">,</span> e<span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sld<span class="token punctuation">.</span>value<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>color<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
 			</div>
 			<div id="examp7" class="code-py" style="font-size:70%">
 				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
@@ -583,49 +589,47 @@
 		<h3>Properties</h3>
 		<p>The following properties are available on the <strong>Image</strong> object:</p>
 
-		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number:</b> <i>pixel</i></div>
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number:</b> <i>pixel</i></div>
-		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number:</b> <i>pixel</i></div>
-		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number:</b> <i>pixel</i></div>
-		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">backColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
-		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backImage</a> → <b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">backColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backImage</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">border</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">borderColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">borderColor</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">borderStyle</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">cornerRadius</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">disabled</a> → <b>Boolean</b></div>
-		<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">errorIcon</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">file</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">fill</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">fillColor</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">fontFile</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_023" data-transition="pop" data-rel="popup">height</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">isVisible</a> → <b>Boolean</b></div>
-		<div class="samp"><a href="#pop_dsc_026" data-transition="pop" data-rel="popup">left</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_027" data-transition="pop" data-rel="popup">lineCap</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_028" data-transition="pop" data-rel="popup">lineJoin</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_029" data-transition="pop" data-rel="popup">lineWidth</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_02a" data-transition="pop" data-rel="popup">margins</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
-		<div class="samp"><a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">miterLimit</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">opacity</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">options</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">padding</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
-		<div class="samp"><a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">parent</a> → <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a></div>
-		<div class="samp"><a href="#pop_dsc_030" data-transition="pop" data-rel="popup">pixelData</a> → <b>List</b></div>
-		<div class="samp"><a href="#pop_dsc_031" data-transition="pop" data-rel="popup">position</a> → <b>Object:</b> {
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }</div>
-		<div class="samp"><a href="#pop_dsc_032" data-transition="pop" data-rel="popup">rotation</a> → <b>Number:</b> <i>angle in degrees (0..360)</i></div>
-		<div class="samp"><a href="#pop_dsc_041" data-transition="pop" data-rel="popup">strokeColor</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_042" data-transition="pop" data-rel="popup">textColor</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_043" data-transition="pop" data-rel="popup">textSize</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_044" data-transition="pop" data-rel="popup">textStyle</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_045" data-transition="pop" data-rel="popup">top</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_046" data-transition="pop" data-rel="popup">type</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_047" data-transition="pop" data-rel="popup">visibility</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_048" data-transition="pop" data-rel="popup">width</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">el</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">elStyle</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">errorIcon</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">fill</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">fillColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_020" data-transition="pop" data-rel="popup">fontFile</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_025" data-transition="pop" data-rel="popup">height</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_027" data-transition="pop" data-rel="popup">image</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_028" data-transition="pop" data-rel="popup">isVisible</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_029" data-transition="pop" data-rel="popup">left</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_02a" data-transition="pop" data-rel="popup">lineCap</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">lineJoin</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">lineWidth</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">margins</a> → <b>List</b></div>
+		<div class="samp"><a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">miterLimit</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_030" data-transition="pop" data-rel="popup">opacity</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_031" data-transition="pop" data-rel="popup">options</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_032" data-transition="pop" data-rel="popup">padding</a> → <b>List</b></div>
+		<div class="samp"><a href="#pop_dsc_033" data-transition="pop" data-rel="popup">parent</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_034" data-transition="pop" data-rel="popup">pixelData</a> → <b>List</b></div>
+		<div class="samp"><a href="#pop_dsc_035" data-transition="pop" data-rel="popup">position</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_037" data-transition="pop" data-rel="popup">rotation</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_04b" data-transition="pop" data-rel="popup">strokeColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_04c" data-transition="pop" data-rel="popup">textColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_04d" data-transition="pop" data-rel="popup">textSize</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_04e" data-transition="pop" data-rel="popup">textStyle</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_04f" data-transition="pop" data-rel="popup">top</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_051" data-transition="pop" data-rel="popup">type</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_052" data-transition="pop" data-rel="popup">visibility</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_053" data-transition="pop" data-rel="popup">width</a> → <b>Number</b></div>
 
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>Image</strong> object:</p>
@@ -633,7 +637,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="baseFunc">animate</a>(
 			<a href="#pop_str_003" data-transition="pop" data-rel="popup">anim</a>,
-			<a href="#pop_num_003" data-transition="pop" data-rel="popup">duration?</a> )
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">duration</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">bringForward</a>(
@@ -654,7 +658,8 @@
 			<a href="#pop_num_009" data-transition="pop" data-rel="popup">end</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">fillColor?</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">strokeColor?</a>,
-			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">strokeWidth?</a> )
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">strokeWidth?</a>,
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">type?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">drawCircle</a>(
@@ -667,7 +672,7 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">drawImage</a>(
-			<a href="#pop_str_008" data-transition="pop" data-rel="popup">img</a>,
+			<a href="#pop_str_009" data-transition="pop" data-rel="popup">img</a>,
 			<a href="#pop_num_00f" data-transition="pop" data-rel="popup">x?</a>,
 			<a href="#pop_num_010" data-transition="pop" data-rel="popup">y?</a>,
 			<a href="#pop_num_011" data-transition="pop" data-rel="popup">width?</a>,
@@ -686,6 +691,7 @@
 			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup">drawPoint</a>(
 			<a href="#pop_num_018" data-transition="pop" data-rel="popup">x</a>,
 			<a href="#pop_num_019" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_num_01a" data-transition="pop" data-rel="popup">size</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">color?</a> )
 		</div>
 		<div class="samp">
@@ -697,133 +703,197 @@
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup">drawPolyline</a>(
-			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">points</a>,
+			<a href="#pop_lst_002" data-transition="pop" data-rel="popup">points</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">strokeColor?</a>,
 			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">strokeWidth?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_017" data-transition="pop" data-rel="popup">drawRectangle</a>(
-			<a href="#pop_num_01c" data-transition="pop" data-rel="popup">x1</a>,
-			<a href="#pop_num_01d" data-transition="pop" data-rel="popup">y1</a>,
-			<a href="#pop_num_01e" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_num_01f" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_num_01d" data-transition="pop" data-rel="popup">x1</a>,
+			<a href="#pop_num_01e" data-transition="pop" data-rel="popup">y1</a>,
+			<a href="#pop_num_01f" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_020" data-transition="pop" data-rel="popup">height</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">fillColor?</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">strokeColor?</a>,
 			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">strokeWidth?</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_018" data-transition="pop" data-rel="popup">drawSquare</a>(
-			<a href="#pop_num_021" data-transition="pop" data-rel="popup">x</a>,
-			<a href="#pop_num_022" data-transition="pop" data-rel="popup">y</a>,
-			<a href="#pop_num_023" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_022" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_023" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_num_024" data-transition="pop" data-rel="popup">width</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">fillColor?</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">strokeColor?</a>,
-			<a href="#pop_num_024" data-transition="pop" data-rel="popup">strokeWidth?</a> )
+			<a href="#pop_num_025" data-transition="pop" data-rel="popup">strokeWidth?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">enableContextMenu</a>(
+			<a href="#pop_dsc_019" data-transition="pop" data-rel="popup">drawText</a>(
+			<a href="#pop_str_013" data-transition="pop" data-rel="popup">text</a>,
+			<a href="#pop_num_026" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_027" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_str_014" data-transition="pop" data-rel="popup">fillColor</a>,
+			<a href="#pop_str_015" data-transition="pop" data-rel="popup">strokeColor</a>,
+			<a href="#pop_num_028" data-transition="pop" data-rel="popup">strokeWidth</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">enableContextMenu</a>(
 			<a href="#pop_bin_001" data-transition="pop" data-rel="popup">value</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">getPixelColor</a>(
-			<a href="#pop_num_025" data-transition="pop" data-rel="popup">x</a>,
-			<a href="#pop_num_026" data-transition="pop" data-rel="popup">y</a> )
+			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup">getPixelColor</a>(
+			<a href="#pop_num_029" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_02a" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_str_016" data-transition="pop" data-rel="popup">format</a> )
 			→ <b>List</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup">getPixelData</a>() → <b>String</b>
-		</div>
-		<div class="samp">
-			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup" class="baseFunc">getPosition</a>(
-			<a href="#pop_str_012" data-transition="pop" data-rel="popup">options?</a> )
+			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup">getPixelData</a>(
+			<a href="#pop_num_02b" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_02c" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_num_02d" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_02e" data-transition="pop" data-rel="popup">height</a> )
 			→ <b>Object</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">gone</a>()
+			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">getPosition</a>(
+			<a href="#pop_str_017" data-transition="pop" data-rel="popup">options</a> )
+			→ <b>ui object</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">hide</a>()
+			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">gone</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_033" data-transition="pop" data-rel="popup" class="baseFunc">sendBackward</a>(
-			<a href="#pop_num_027" data-transition="pop" data-rel="popup">zIndex</a> )
+			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup" class="baseFunc">hide</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_034" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
-			<a href="#pop_num_028" data-transition="pop" data-rel="popup">width?</a>,
-			<a href="#pop_str_013" data-transition="pop" data-rel="popup">clr?</a>,
-			<a href="#pop_str_014" data-transition="pop" data-rel="popup">style='solid'</a> )
+			<a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">measureText</a>(
+			<a href="#pop_str_018" data-transition="pop" data-rel="popup">text</a> )
+			→ <b>Object</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_035" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
-			<a href="#pop_num_029" data-transition="pop" data-rel="popup">tl?</a>,
-			<a href="#pop_num_02a" data-transition="pop" data-rel="popup">tr?</a>,
-			<a href="#pop_num_02b" data-transition="pop" data-rel="popup">bl?</a>,
-			<a href="#pop_num_02c" data-transition="pop" data-rel="popup">br?</a>,
-			<a href="#pop_str_015" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_dsc_036" data-transition="pop" data-rel="popup">rotate</a>(
+			<a href="#pop_num_02f" data-transition="pop" data-rel="popup">angle</a>,
+			<a href="#pop_num_030" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_031" data-transition="pop" data-rel="popup">y</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_036" data-transition="pop" data-rel="popup">setImage</a>(
-			<a href="#pop_str_016" data-transition="pop" data-rel="popup">file</a> )
+			<a href="#pop_dsc_038" data-transition="pop" data-rel="popup" class="baseFunc">sendBackward</a>(
+			<a href="#pop_num_032" data-transition="pop" data-rel="popup">zIndex</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_037" data-transition="pop" data-rel="popup" class="baseFunc">setMargins</a>(
-			<a href="#pop_num_02d" data-transition="pop" data-rel="popup">left?</a>,
-			<a href="#pop_num_02e" data-transition="pop" data-rel="popup">top?</a>,
-			<a href="#pop_num_02d" data-transition="pop" data-rel="popup">right?</a>,
-			<a href="#pop_num_02e" data-transition="pop" data-rel="popup">bottom?</a>,
-			<a href="#pop_str_017" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_dsc_039" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
+			<a href="#pop_num_033" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_034" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_035" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_036" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_019" data-transition="pop" data-rel="popup">clr</a>,
+			<a href="#pop_str_01a" data-transition="pop" data-rel="popup">style</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_038" data-transition="pop" data-rel="popup" class="baseFunc">setOnContextMenu</a>(
+			<a href="#pop_dsc_03a" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
+			<a href="#pop_num_037" data-transition="pop" data-rel="popup">tl</a>,
+			<a href="#pop_num_038" data-transition="pop" data-rel="popup">tr</a>,
+			<a href="#pop_num_039" data-transition="pop" data-rel="popup">br</a>,
+			<a href="#pop_num_03a" data-transition="pop" data-rel="popup">bl</a>,
+			<a href="#pop_str_01b" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_03b" data-transition="pop" data-rel="popup">setFont</a>(
+			<a href="#pop_str_01c" data-transition="pop" data-rel="popup">family</a>,
+			<a href="#pop_num_03b" data-transition="pop" data-rel="popup">size</a>,
+			<a href="#pop_str_01d" data-transition="pop" data-rel="popup">style</a>,
+			<a href="#pop_str_01e" data-transition="pop" data-rel="popup">weight</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_03c" data-transition="pop" data-rel="popup" class="baseFunc">setMargins</a>(
+			<a href="#pop_num_03c" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_03d" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_03e" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_03f" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_01f" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_03d" data-transition="pop" data-rel="popup" class="baseFunc">setOnContextMenu</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_039" data-transition="pop" data-rel="popup">setOnLoad</a>(
+			<a href="#pop_dsc_03e" data-transition="pop" data-rel="popup">setOnLoad</a>(
 			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_03a" data-transition="pop" data-rel="popup" class="baseFunc">setOnTouch</a>(
+			<a href="#pop_dsc_03f" data-transition="pop" data-rel="popup">setOnLongTouch</a>(
 			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_03b" data-transition="pop" data-rel="popup">setOnTouchMove</a>(
-			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+			<a href="#pop_dsc_040" data-transition="pop" data-rel="popup">setOnTouch</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_03c" data-transition="pop" data-rel="popup" class="baseFunc">setPadding</a>(
-			<a href="#pop_num_031" data-transition="pop" data-rel="popup">left?</a>,
-			<a href="#pop_num_032" data-transition="pop" data-rel="popup">top?</a>,
-			<a href="#pop_num_033" data-transition="pop" data-rel="popup">right?</a>,
-			<a href="#pop_num_032" data-transition="pop" data-rel="popup">bottom?</a>,
-			<a href="#pop_str_018" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_dsc_041" data-transition="pop" data-rel="popup">setOnTouchDown</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_03d" data-transition="pop" data-rel="popup" class="baseFunc">setPosition</a>(
-			<a href="#pop_num_035" data-transition="pop" data-rel="popup">left?</a>,
-			<a href="#pop_num_036" data-transition="pop" data-rel="popup">top?</a>,
-			<a href="#pop_str_019" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_dsc_042" data-transition="pop" data-rel="popup">setOnTouchMove</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_03e" data-transition="pop" data-rel="popup" class="baseFunc">setScale</a>(
-			<a href="#pop_num_037" data-transition="pop" data-rel="popup">x</a>,
-			<a href="#pop_num_038" data-transition="pop" data-rel="popup">y</a> )
+			<a href="#pop_dsc_043" data-transition="pop" data-rel="popup">setOnTouchUp</a>(
+			<a href="#pop_fnc_003" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_03f" data-transition="pop" data-rel="popup" class="baseFunc">setSize</a>(
-			<a href="#pop_num_035" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_num_03a" data-transition="pop" data-rel="popup">height</a> )
+			<a href="#pop_dsc_044" data-transition="pop" data-rel="popup" class="baseFunc">setPadding</a>(
+			<a href="#pop_num_040" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_041" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_042" data-transition="pop" data-rel="popup">right</a>,
+			<a href="#pop_num_041" data-transition="pop" data-rel="popup">bottom</a>,
+			<a href="#pop_str_020" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_040" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
+			<a href="#pop_dsc_045" data-transition="pop" data-rel="popup">setPixelColor</a>(
+			<a href="#pop_num_044" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_045" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_str_021" data-transition="pop" data-rel="popup">color</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_046" data-transition="pop" data-rel="popup">setPixelData</a>(
+			<a href="#pop_str_022" data-transition="pop" data-rel="popup">base64</a>,
+			<a href="#pop_num_046" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_047" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_num_048" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_049" data-transition="pop" data-rel="popup">height</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_047" data-transition="pop" data-rel="popup" class="baseFunc">setPosition</a>(
+			<a href="#pop_num_04a" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_04b" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_str_020" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_048" data-transition="pop" data-rel="popup" class="baseFunc">setScale</a>(
+			<a href="#pop_num_04c" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_04d" data-transition="pop" data-rel="popup">y</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_049" data-transition="pop" data-rel="popup" class="baseFunc">setSize</a>(
+			<a href="#pop_num_04a" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_04b" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_str_024" data-transition="pop" data-rel="popup">mode</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_04a" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_050" data-transition="pop" data-rel="popup">translateOrigin</a>(
+			<a href="#pop_num_050" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_051" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_num_02f" data-transition="pop" data-rel="popup">angle</a> )
 		</div>
 
 	</div>
 
 	<div data-role="popup" id="pop_bin_001" class="ui-content"><b>Boolean:</b> Value. Can be `true` `false`</div>
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
-	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width.</div>
-	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the screen height.</div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the parent width `[0-1]`.</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the parent height `[0-1]`.</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The time in milliseconds.</div>
 	<div data-role="popup" id="pop_num_004" class="ui-content"><b>Number:</b> The z-index. A negative value behaves like `sendBackward` method.</div>
 	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> The x-coordinate of the center of the arc in pixels.</div>
@@ -846,128 +916,174 @@
 	<div data-role="popup" id="pop_num_016" class="ui-content"><b>Number:</b> The y-coordinate of the second point in pixels.</div>
 	<div data-role="popup" id="pop_num_018" class="ui-content"><b>Number:</b> The x-coordinate in pixels.</div>
 	<div data-role="popup" id="pop_num_019" class="ui-content"><b>Number:</b> The y-coordinate in pixels.</div>
-	<div data-role="popup" id="pop_num_01c" class="ui-content"><b>Number:</b> The distance from the left of the top-left corner of the rectangle in pixels.</div>
-	<div data-role="popup" id="pop_num_01d" class="ui-content"><b>Number:</b> The distance from the top of the top-left corner of the rectangle in pixels.</div>
-	<div data-role="popup" id="pop_num_01e" class="ui-content"><b>Number:</b> The width of the rectangle in pixels.</div>
-	<div data-role="popup" id="pop_num_01f" class="ui-content"><b>Number:</b> The height of the rectangle in pixels.</div>
-	<div data-role="popup" id="pop_num_021" class="ui-content"><b>Number:</b> The position from the left of the top-left corner of the square in pixels.</div>
-	<div data-role="popup" id="pop_num_022" class="ui-content"><b>Number:</b> The distance from the top of the top-left corner of the square in pixels.</div>
-	<div data-role="popup" id="pop_num_023" class="ui-content"><b>Number:</b> The width of the square in pixels.</div>
-	<div data-role="popup" id="pop_num_024" class="ui-content"><b>Number:</b> The stroke thickness in pixels.</div>
-	<div data-role="popup" id="pop_num_025" class="ui-content"><b>Number:</b> The x-coordinate of the pixel from the left.</div>
-	<div data-role="popup" id="pop_num_026" class="ui-content"><b>Number:</b> The y-coordinate of the pixel from the top.</div>
-	<div data-role="popup" id="pop_num_027" class="ui-content"><b>Number:</b> The z-index. A positve value behaves like `bringForward` method.</div>
-	<div data-role="popup" id="pop_num_028" class="ui-content"><b>Number:</b> Border-left thickness in pixels.</div>
-	<div data-role="popup" id="pop_num_029" class="ui-content"><b>Number:</b> Top-Left border radius in pixels.</div>
-	<div data-role="popup" id="pop_num_02a" class="ui-content"><b>Number:</b> Top-Right border radius in pixels.</div>
-	<div data-role="popup" id="pop_num_02b" class="ui-content"><b>Number:</b> Bottom-Left border radius in pixels.</div>
-	<div data-role="popup" id="pop_num_02c" class="ui-content"><b>Number:</b> Bottom-Right border radius in pixels.</div>
-	<div data-role="popup" id="pop_num_02d" class="ui-content"><b>Number:</b> Fraction of the parent width.</div>
-	<div data-role="popup" id="pop_num_02e" class="ui-content"><b>Number:</b> Fraction of the parent height.</div>
-	<div data-role="popup" id="pop_num_031" class="ui-content"><b>Number:</b> Fraction of the component width.</div>
-	<div data-role="popup" id="pop_num_032" class="ui-content"><b>Number:</b> Fraction of the component height. [0-1]</div>
-	<div data-role="popup" id="pop_num_033" class="ui-content"><b>Number:</b> Fraction of the component width. [0-1]</div>
-	<div data-role="popup" id="pop_num_035" class="ui-content"><b>Number:</b> Fraction of the parent width. [0-1]</div>
-	<div data-role="popup" id="pop_num_036" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
-	<div data-role="popup" id="pop_num_037" class="ui-content"><b>Number:</b> The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.</div>
-	<div data-role="popup" id="pop_num_038" class="ui-content"><b>Number:</b> The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.</div>
-	<div data-role="popup" id="pop_num_03a" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
+	<div data-role="popup" id="pop_num_01a" class="ui-content"><b>Number:</b> The width of point in pixels.</div>
+	<div data-role="popup" id="pop_num_01d" class="ui-content"><b>Number:</b> The distance from the left of the top-left corner of the rectangle in pixels.</div>
+	<div data-role="popup" id="pop_num_01e" class="ui-content"><b>Number:</b> The distance from the top of the top-left corner of the rectangle in pixels.</div>
+	<div data-role="popup" id="pop_num_01f" class="ui-content"><b>Number:</b> The width of the rectangle in pixels.</div>
+	<div data-role="popup" id="pop_num_020" class="ui-content"><b>Number:</b> The height of the rectangle in pixels.</div>
+	<div data-role="popup" id="pop_num_022" class="ui-content"><b>Number:</b> The position from the left of the top-left corner of the square in pixels.</div>
+	<div data-role="popup" id="pop_num_023" class="ui-content"><b>Number:</b> The distance from the top of the top-left corner of the square in pixels.</div>
+	<div data-role="popup" id="pop_num_024" class="ui-content"><b>Number:</b> The width of the square in pixels.</div>
+	<div data-role="popup" id="pop_num_025" class="ui-content"><b>Number:</b> The stroke thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_026" class="ui-content"><b>Number:</b> Distance from the left in pixels.</div>
+	<div data-role="popup" id="pop_num_027" class="ui-content"><b>Number:</b> Distance from the top in pixels.</div>
+	<div data-role="popup" id="pop_num_028" class="ui-content"><b>Number:</b> The border width in pixels.</div>
+	<div data-role="popup" id="pop_num_029" class="ui-content"><b>Number:</b> The x-coordinate of the pixel from the left.</div>
+	<div data-role="popup" id="pop_num_02a" class="ui-content"><b>Number:</b> The y-coordinate of the pixel from the top.</div>
+	<div data-role="popup" id="pop_num_02b" class="ui-content"><b>Number:</b> The x-coordinate where to start getting image data.</div>
+	<div data-role="popup" id="pop_num_02c" class="ui-content"><b>Number:</b> The y-coordinate where to start getting image data.</div>
+	<div data-role="popup" id="pop_num_02d" class="ui-content"><b>Number:</b> The width of the image data.</div>
+	<div data-role="popup" id="pop_num_02e" class="ui-content"><b>Number:</b> The height of the image data.</div>
+	<div data-role="popup" id="pop_num_02f" class="ui-content"><b>Number:</b> The angle of rotation in degrees.</div>
+	<div data-role="popup" id="pop_num_030" class="ui-content"><b>Number:</b> An optional x-coordinate of the pivot.</div>
+	<div data-role="popup" id="pop_num_031" class="ui-content"><b>Number:</b> An optional y-coordinate of the pivot.</div>
+	<div data-role="popup" id="pop_num_032" class="ui-content"><b>Number:</b> The z-index. A positve value behaves like `bringForward` method.</div>
+	<div data-role="popup" id="pop_num_033" class="ui-content"><b>Number:</b> Border-left thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_034" class="ui-content"><b>Number:</b> Border-top thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_035" class="ui-content"><b>Number:</b> Border-right thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_036" class="ui-content"><b>Number:</b> Border-bottom thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_037" class="ui-content"><b>Number:</b> Top-Left border radius.</div>
+	<div data-role="popup" id="pop_num_038" class="ui-content"><b>Number:</b> Top-Right border radius.</div>
+	<div data-role="popup" id="pop_num_039" class="ui-content"><b>Number:</b> Bottom-Right border radius.</div>
+	<div data-role="popup" id="pop_num_03a" class="ui-content"><b>Number:</b> Bottom-Left border radius.</div>
+	<div data-role="popup" id="pop_num_03b" class="ui-content"><b>Number:</b> The text-size for the text.</div>
+	<div data-role="popup" id="pop_num_03c" class="ui-content"><b>Number:</b> Left margin. You can also pass string e.g. `12rem`</div>
+	<div data-role="popup" id="pop_num_03d" class="ui-content"><b>Number:</b> Top margin. You can also pass string e.g. `12rem`</div>
+	<div data-role="popup" id="pop_num_03e" class="ui-content"><b>Number:</b> Right margin. You can also pass string e.g. `12rem`</div>
+	<div data-role="popup" id="pop_num_03f" class="ui-content"><b>Number:</b> Bottom margin. You can also pass string e.g. `12rem`</div>
+	<div data-role="popup" id="pop_num_040" class="ui-content"><b>Number:</b> Fraction of the component width.</div>
+	<div data-role="popup" id="pop_num_041" class="ui-content"><b>Number:</b> Fraction of the component height. [0-1]</div>
+	<div data-role="popup" id="pop_num_042" class="ui-content"><b>Number:</b> Fraction of the component width. [0-1]</div>
+	<div data-role="popup" id="pop_num_044" class="ui-content"><b>Number:</b> The x-coordinate of the pixel.</div>
+	<div data-role="popup" id="pop_num_045" class="ui-content"><b>Number:</b> The y-coordinate of the pixel.</div>
+	<div data-role="popup" id="pop_num_046" class="ui-content"><b>Number:</b> The x-coordinate of the top-left corner.</div>
+	<div data-role="popup" id="pop_num_047" class="ui-content"><b>Number:</b> The y-coordinate of the top-left corner.</div>
+	<div data-role="popup" id="pop_num_048" class="ui-content"><b>Number:</b> The width of the new image data.</div>
+	<div data-role="popup" id="pop_num_049" class="ui-content"><b>Number:</b> The height of the new image data.</div>
+	<div data-role="popup" id="pop_num_04a" class="ui-content"><b>Number:</b> Fraction of the parent width. [0-1]</div>
+	<div data-role="popup" id="pop_num_04b" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
+	<div data-role="popup" id="pop_num_04c" class="ui-content"><b>Number:</b> The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_04d" class="ui-content"><b>Number:</b> The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_050" class="ui-content"><b>Number:</b> The new x-coordinate of the origin.</div>
+	<div data-role="popup" id="pop_num_051" class="ui-content"><b>Number:</b> The new y-coordinate of the origin.</div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The path to the image.”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“A comma seprated options for the image. Can be `Image` `Canvas` `Button` or `Avatar`”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“A comma seprated options.<br>`Image`”</docstr>, <docstr>“ `Canvas`”</docstr>, <docstr>“ `Button` and `Avatar`. Default is image. <br>For `Avatar` you can pass `Small` or `Large`.”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values<br>`bounce`”</docstr>, <docstr>“ `flash`”</docstr>, <docstr>“ `pulse`”</docstr>, <docstr>“ `rubberBand`”</docstr>, <docstr>“ `shakeX`”</docstr>, <docstr>“ `shakeY`”</docstr>, <docstr>“ `headShake`”</docstr>, <docstr>“ `swing`”</docstr>, <docstr>“ `tada`”</docstr>, <docstr>“ `wobble`”</docstr>, <docstr>“ `jello`”</docstr>, <docstr>“ `heartBeat`”</docstr>, <docstr>“<br>Back Entrances: `backInDown`”</docstr>, <docstr>“ `backInLeft`”</docstr>, <docstr>“ `backInRight`”</docstr>, <docstr>“ `backInUp`<br>Back Exits: `backOutDown`”</docstr>, <docstr>“ `backOutLeft`”</docstr>, <docstr>“ `backOutRight`”</docstr>, <docstr>“ `backOutUp`<br>Bouncing Entrances: `bounceIn`”</docstr>, <docstr>“ `bounceInDown`”</docstr>, <docstr>“ `bounceInLeft`”</docstr>, <docstr>“ `bounceInRight`”</docstr>, <docstr>“ `bounceInUp`<br>Bouncing exits: `bounceOut`”</docstr>, <docstr>“ `bounceOutDown`”</docstr>, <docstr>“ `bounceOutLeft`”</docstr>, <docstr>“ `bounceOutRight`”</docstr>, <docstr>“ `bounceOutUp`<br>Fading entrances: `fadeIn`”</docstr>, <docstr>“ `fadeInDown`”</docstr>, <docstr>“ `fadeInDownBig`”</docstr>, <docstr>“ `fadeInLeft`”</docstr>, <docstr>“ `fadeInLeftBig`”</docstr>, <docstr>“ `fadeInRight`”</docstr>, <docstr>“ `fadeInRightBig`”</docstr>, <docstr>“ `fadeInUp`”</docstr>, <docstr>“ `fadeInUpBig`”</docstr>, <docstr>“ `fadeInTopLeft`”</docstr>, <docstr>“ `fadeInTopRight`”</docstr>, <docstr>“ `fadeInBottomLeft`”</docstr>, <docstr>“ `fadeInBottomRight`<br>Fading exits: `fadeOut`”</docstr>, <docstr>“ `fadeOutDown`”</docstr>, <docstr>“ `fadeOutDownBig`”</docstr>, <docstr>“ `fadeOutLeft`”</docstr>, <docstr>“ `fadeOutLeftBig`”</docstr>, <docstr>“ `fadeOutRight`”</docstr>, <docstr>“ `fadeOutRightBig`”</docstr>, <docstr>“ `fadeOutUp`”</docstr>, <docstr>“ `fadeOutUpBig`”</docstr>, <docstr>“ `fadeOutTopLeft`”</docstr>, <docstr>“ `fadeOutTopRight`”</docstr>, <docstr>“ `fadeOutBottomRight`”</docstr>, <docstr>“ `fadeOutBottomLeft`<br>Flippers: `flip`”</docstr>, <docstr>“ `flipInX`”</docstr>, <docstr>“ `flipInY`”</docstr>, <docstr>“ `flipOutX`”</docstr>, <docstr>“ `flipOutY`<br>Lightspeed: `lightSpeedInRight`”</docstr>, <docstr>“ `lightSpeedInLeft`”</docstr>, <docstr>“ `lightSpeedOutRight`”</docstr>, <docstr>“ `lightSpeedOutLeft`<br>Rotating Entrances: `rotateIn`”</docstr>, <docstr>“ `rotateInDownLeft`”</docstr>, <docstr>“ `rotateInDownRight`”</docstr>, <docstr>“ `rotateInUpLeft`”</docstr>, <docstr>“ `rotateInUpRight`<br>Rotating Exits: `rotateOut`”</docstr>, <docstr>“ `rotateOutDownLeft`”</docstr>, <docstr>“ `rotateOutDownRight`”</docstr>, <docstr>“ `rotateOutUpLeft`”</docstr>, <docstr>“ `rotateOutUpRight`<br>Specials: `hinge`”</docstr>, <docstr>“ `jackInTheBox`”</docstr>, <docstr>“ `rollIn`”</docstr>, <docstr>“ `rollOut`<br>Zooming Entrances: `zoomIn`”</docstr>, <docstr>“ `zoomInDown`”</docstr>, <docstr>“ `zoomInLeft`”</docstr>, <docstr>“ `zoomInRight`”</docstr>, <docstr>“ `zoomInUp`<br>Zooming Exits: `zoomOut`”</docstr>, <docstr>“ `zoomOutDown`”</docstr>, <docstr>“ `zoomOutLeft`”</docstr>, <docstr>“ `zoomOutRight`”</docstr>, <docstr>“ `zoomOutUp`<br>Sliding Entrances: `slideInDown`”</docstr>, <docstr>“ `slideInLeft`”</docstr>, <docstr>“ `slideInRight`”</docstr>, <docstr>“ `slideInUp`<br>Sliding Exits: `slideOutDown`”</docstr>, <docstr>“ `slideOutLeft`”</docstr>, <docstr>“ `slideOutRight`”</docstr>, <docstr>“ `slideOutUp`”</docstr></div>
 	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“A hexadecimal color.”</docstr></div>
-	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“Path to image file.”</docstr></div>
-	<div data-role="popup" id="pop_str_012" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
-	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
-	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”</docstr></div>
-	<div data-role="popup" id="pop_str_015" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
-	<div data-role="popup" id="pop_str_016" class="ui-content"><b>String:</b> <docstr>“The path to the image file.”</docstr></div>
-	<div data-role="popup" id="pop_str_017" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
-	<div data-role="popup" id="pop_str_018" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
-	<div data-role="popup" id="pop_str_019" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Can be `px` or `%` or any css unit of measurement.”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“The type of arc. Can be `filled` or `segment`.”</docstr></div>
+	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“Path to image file.”</docstr></div>
+	<div data-role="popup" id="pop_str_013" class="ui-content"><b>String:</b> <docstr>“The text to be drawn.”</docstr></div>
+	<div data-role="popup" id="pop_str_014" class="ui-content"><b>String:</b> <docstr>“Text color in hexadecimal format `#rrggbb`.”</docstr></div>
+	<div data-role="popup" id="pop_str_015" class="ui-content"><b>String:</b> <docstr>“Text border color in hexadecimal format `#rrggbb`.”</docstr></div>
+	<div data-role="popup" id="pop_str_016" class="ui-content"><b>String:</b> <docstr>“Pass `"hex"` to return color as hexadecimal formart `"#rrggbb"` or `"hexa"` to include include alpha `"#aarrggbb"` . Pass `"rgb"` to return color as `rgb` format `"rgb(r”</docstr>, <docstr>“ g”</docstr>, <docstr>“ b)"` or pass `"rgba"` for `"rgba(r”</docstr>, <docstr>“ g”</docstr>, <docstr>“ b”</docstr>, <docstr>“ a)"`.”</docstr></div>
+	<div data-role="popup" id="pop_str_017" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
+	<div data-role="popup" id="pop_str_018" class="ui-content"><b>String:</b> <docstr>“The text to measure.”</docstr></div>
+	<div data-role="popup" id="pop_str_019" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal format `#rrggbb`.”</docstr></div>
+	<div data-role="popup" id="pop_str_01a" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted`”</docstr>, <docstr>“ `dashed`”</docstr>, <docstr>“ `solid`”</docstr>, <docstr>“ `double`”</docstr>, <docstr>“ `groove`”</docstr>, <docstr>“ `ridge`”</docstr>, <docstr>“ `inset` and `outset`. Default is `solid`”</docstr></div>
+	<div data-role="popup" id="pop_str_01b" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Values are `px` `rem` or `%`.”</docstr></div>
+	<div data-role="popup" id="pop_str_01c" class="ui-content"><b>String:</b> <docstr>“The font-family for the text.”</docstr></div>
+	<div data-role="popup" id="pop_str_01d" class="ui-content"><b>String:</b> <docstr>“Value can be `normal` or `italic`”</docstr>, <docstr>“”</docstr></div>
+	<div data-role="popup" id="pop_str_01e" class="ui-content"><b>String:</b> <docstr>“Values can be `normal` or `bold`.”</docstr></div>
+	<div data-role="popup" id="pop_str_01f" class="ui-content"><b>String:</b> <docstr>“Unit of measurement.<br>`rem` for root em.<br>`px` for pixels<br>`%` relative to its parent dimension.<br>`v` relative to viewport dimension.”</docstr></div>
+	<div data-role="popup" id="pop_str_020" class="ui-content"><b>String:</b> <docstr>“Unit of measurement.<br>`rem` for root em.<br>`px` for pixels<br>`%` relative to its parent dimensions<br>`v` relative to viewport dimensions.”</docstr></div>
+	<div data-role="popup" id="pop_str_021" class="ui-content"><b>String:</b> <docstr>“A hexadecimal color format of the form `"#rrggbb"` or a comma separated rgb color of the form `"r”</docstr>, <docstr>“g”</docstr>, <docstr>“b"`.”</docstr></div>
+	<div data-role="popup" id="pop_str_022" class="ui-content"><b>String:</b> <docstr>“Base64 encoded string of the image or the `ImageData` object of the canvas.”</docstr></div>
+	<div data-role="popup" id="pop_str_024" class="ui-content"><b>String:</b> <docstr>“Unit of measurment. Can be "px"”</docstr>, <docstr>“ "rem"”</docstr>, <docstr>“ "%"”</docstr>, <docstr>“ "v" for viewport width/height or any css supported unit.”</docstr></div>
 	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The parent layout where to add the image.</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> The pointer event object.</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> The click event object.</div>
-	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point.</div>
+	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> The position of the touch event.</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point, or an object of the form `{x, y}`.</div>
+	<div data-role="popup" id="pop_lst_002" class="ui-content"><b>List:</b> An array of coordinates. Each element on this array is an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point, or an object of the form `{x, y}`.</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">event</a>
+		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">event </a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
 	<div data-role="popup" id="pop_fnc_003" class="ui-content"><b>function</b>(
-		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">event</a>
+		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">pos </a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>img.absHeight</b><br>Returns the absolute height of the control in pixels.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>img.absLeft</b><br>Returns the absolute distance of the control from the left in pixels.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>img.absTop</b><br>Returns the absolute distance of the control from the top in pixels.</div>
 	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>img.absWidth</b><br>Returns the absolute width of the control in pixels.</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>img.animate</b><br>Animate the component</div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>img.backColor</b><br>A hexadecimal color of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>img.animate</b><br>Animate the component.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>img.backColor</b><br>A hexadecimal color of the form <kbd>#rrggbb</kbd></div>
 	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>img.backImage</b><br>The path to your image file.</div>
 	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>img.border</b><br>Sets or returns the border thickness in pixels.</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>img.borderColor</b><br>Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>img.borderStyle</b><br>Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dotted</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dashed</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">double</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">groove</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">ridge</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>.</div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>img.bringForward</b><br>Bring this component forward by a given z-index</div>
-	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>img.clear</b><br>Clears the drawings by filling the whole canvas with white background color</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>img.borderColor</b><br>Sets or returns the border color. Color is in hexadecimal form <kbd>#rrggbb</kbd></div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>img.borderStyle</b><br>Sets or returns the border style. Values can be <kbd>dotted</kbd>, <kbd>dashed</kbd>, <kbd>solid</kbd>, <kbd>double</kbd>, <kbd>groove</kbd>, <kbd>ridge</kbd>, <kbd>inset</kbd> and <kbd>outset</kbd>. Default is <kbd>solid</kbd>.</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>img.bringForward</b><br><a href="aname.htm" data-ajax="false">aname</a> bringForward<br>Bring this component forward by a given z-index.</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>img.clear</b><br>Clears the drawings by filling the whole canvas with white background color.</div>
 	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>img.cornerRadius</b><br>Sets or returns the corner radius in pixels.</div>
-	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>img.destroy</b><br>Destroy the component</div>
-	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>img.disabled</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the control.</div>
-	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>img.drawArc</b><br>Draws an arc in the canvas</div>
-	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>img.drawCircle</b><br>Draws a circle in the canvas</div>
-	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>img.drawImage</b><br>Draws an image to the canvas</div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>img.drawLine</b><br>Draws a line between two points in the canvas</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>img.drawPoint</b><br>Draws a single pixel point in a specified coordinate</div>
-	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>img.drawPolygon</b><br>Draws a polygon on the canvas by passing an array of points</div>
-	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>img.drawPolyline</b><br>Draws a polyline on the canvas by passing an array of points</div>
-	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>img.drawRectangle</b><br>Draws a rectangle into the canvas</div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>img.drawSquare</b><br>Draws a square into the canvas</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>img.enableContextMenu</b><br>Enable or disbale the context menu or the right click menus</div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>img.errorIcon</b><br>Sets or returns the material icon for error placeholder image.</div>
-	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>img.file</b><br>Sets or returns the path or url of the image file.</div>
-	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>img.fill</b><br>Sets or returns the background color of the canvas.</div>
-	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>img.fillColor</b><br>Sets or returns the fill color used on close paths such as square, circle, rectangle or arcs.</div>
-	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>img.fontFile</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">relative</span> path to the font-family use.</div>
-	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>img.getPixelColor</b><br>Get the pixel color of a single pixel in the image</div>
-	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>img.getPixelData</b><br>Returns the pixel data of the image</div>
-	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>img.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom</div>
-	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>img.gone</b><br>Destroy the component</div>
-	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>img.height</b><br>Sets or returns the height of the control as a fraction of the parent control.</div>
-	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>img.hide</b><br>Hide the component</div>
-	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>img.isVisible</b><br>Returns whether the control is visible or not.</div>
-	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>img.left</b><br>Returns the distance of the control from the left.</div>
-	<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>img.lineCap</b><br>Sets or returns the style of the end caps for a line. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">square</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">round</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">butt</span></div>
-	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>img.lineJoin</b><br>Sets or returns the type of corner created when two lines meet. Values <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bevel</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">round</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">miter</span></div>
-	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>img.lineWidth</b><br>Sets or returns the current line thickness.</div>
-	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>img.margins</b><br>Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</div>
-	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>img.miterLimit</b><br>Sets or returns the maximum miter length.</div>
-	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>img.opacity</b><br>Sets or returns the opacity of the control.</div>
-	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>img.options</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">options</span> of the control.</div>
-	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>img.padding</b><br>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</div>
-	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>img.parent</b><br>Returns the parent layout control.</div>
-	<div data-role="popup" id="pop_dsc_030" class="ui-content"><b>img.pixelData</b><br>Returns the pixel data of the image.</div>
-	<div data-role="popup" id="pop_dsc_031" class="ui-content"><b>img.position</b><br>Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bottom</span> props.</div>
-	<div data-role="popup" id="pop_dsc_032" class="ui-content"><b>img.rotation</b><br>Sets or returns the angle of rotation in degrees.</div>
-	<div data-role="popup" id="pop_dsc_033" class="ui-content"><b>img.sendBackward</b><br>Bring this component backward by a given z-index</div>
-	<div data-role="popup" id="pop_dsc_034" class="ui-content"><b>img.setBorder</b><br>Sets the border line for the component container</div>
-	<div data-role="popup" id="pop_dsc_035" class="ui-content"><b>img.setCornerRadius</b><br>Sets the corner radius of the component</div>
-	<div data-role="popup" id="pop_dsc_036" class="ui-content"><b>img.setImage</b><br>Update the image file</div>
-	<div data-role="popup" id="pop_dsc_037" class="ui-content"><b>img.setMargins</b><br>Sets the margin of the component</div>
-	<div data-role="popup" id="pop_dsc_038" class="ui-content"><b>img.setOnContextMenu</b><br>Adds a callback function on right click</div>
-	<div data-role="popup" id="pop_dsc_039" class="ui-content"><b>img.setOnLoad</b><br>Sets a callback function on load event</div>
-	<div data-role="popup" id="pop_dsc_03a" class="ui-content"><b>img.setOnTouch</b><br>Adds a callback handler when the component is touch</div>
-	<div data-role="popup" id="pop_dsc_03b" class="ui-content"><b>img.setOnTouchMove</b><br>Sets a callback function when the a mouse move event is triggered</div>
-	<div data-role="popup" id="pop_dsc_03c" class="ui-content"><b>img.setPadding</b><br>Sets the padding component container</div>
-	<div data-role="popup" id="pop_dsc_03d" class="ui-content"><b>img.setPosition</b><br>Sets the position of the component relative to its parent dimensions</div>
-	<div data-role="popup" id="pop_dsc_03e" class="ui-content"><b>img.setScale</b><br>Sets the x and y scaling of the component</div>
-	<div data-role="popup" id="pop_dsc_03f" class="ui-content"><b>img.setSize</b><br>Sets the size of the component</div>
-	<div data-role="popup" id="pop_dsc_040" class="ui-content"><b>img.show</b><br>Show the component</div>
-	<div data-role="popup" id="pop_dsc_041" class="ui-content"><b>img.strokeColor</b><br>Sets or returns the current color of the line or stroke.</div>
-	<div data-role="popup" id="pop_dsc_042" class="ui-content"><b>img.textColor</b><br>Sets or returns the color of the text.</div>
-	<div data-role="popup" id="pop_dsc_043" class="ui-content"><b>img.textSize</b><br>Sets or returns the text-size for drawing in the canvas.</div>
-	<div data-role="popup" id="pop_dsc_044" class="ui-content"><b>img.textStyle</b><br>Sets or returns the text-style for drawing in the canvas. Values are <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">normal</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">italic</span>.</div>
-	<div data-role="popup" id="pop_dsc_045" class="ui-content"><b>img.top</b><br>Returns the distance of the control from the top.</div>
-	<div data-role="popup" id="pop_dsc_046" class="ui-content"><b>img.type</b><br>Returns the type of the control.</div>
-	<div data-role="popup" id="pop_dsc_047" class="ui-content"><b>img.visibility</b><br>Sets or returns the visibility of the control.</div>
-	<div data-role="popup" id="pop_dsc_048" class="ui-content"><b>img.width</b><br>Sets or returns the width of the control as a fraction of the parent control.</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>img.destroy</b><br>Destroy the component.</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>img.disabled</b><br>Sets or returns the <kbd>disabled</kbd> state of the control.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>img.drawArc</b><br>Draws an arc in the canvas.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>img.drawCircle</b><br>Draws a circle in the canvas.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>img.drawImage</b><br>Draws an image to the canvas.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>img.drawLine</b><br>Draws a line between two points in the canvas.</div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>img.drawPoint</b><br>Draws a single pixel point in a specified coordinate.</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>img.drawPolygon</b><br>Draws a polygon on the canvas by passing an array of points.</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>img.drawPolyline</b><br>Draws a polyline on the canvas by passing an array of points.</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>img.drawRectangle</b><br>Draws a rectangle into the canvas.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>img.drawSquare</b><br>Draws a square into the canvas.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>img.drawText</b><br>Add a text in the canvas image.</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>img.el</b><br>Returns the html container element for the control.</div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>img.elStyle</b><br>Sets the style of the html container element.</div>
+	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>img.enableContextMenu</b><br>Enable or disbale the context menu or the right click menus.</div>
+	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>img.errorIcon</b><br>Sets or returns the material icon for error placeholder image.</div>
+	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>img.fill</b><br>Sets or returns the background color of the canvas.</div>
+	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>img.fillColor</b><br>Sets or returns the fill color used on close paths such as square, circle, rectangle or arcs.</div>
+	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>img.fontFile</b><br>Sets or returns the <kbd>relative</kbd> path to the font-family use.</div>
+	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>img.getPixelColor</b><br>Get the color of a single pixel in the image. The returned array is of the form <kbd>[red, green, blue, alpha]</kbd>.</div>
+	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>img.getPixelData</b><br>Returns the pixel data of the image.</div>
+	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>img.getPosition</b><br>Returns the position of the component. The return object is of the form <kbd>{left, top, right, bottom}</kbd></div>
+	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>img.gone</b><br>Destroy the component.</div>
+	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>img.height</b><br>Sets or returns the height of the control as a fraction of the parent control.</div>
+	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>img.hide</b><br>Hide the component.</div>
+	<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>img.image</b><br>Sets or returns the path or url of the image file.</div>
+	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>img.isVisible</b><br>Returns whether the control is visible or not.</div>
+	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>img.left</b><br>Returns the distance of the control from the left.</div>
+	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>img.lineCap</b><br>Sets or returns the style of the end caps for a line. Values can be <kbd>square</kbd> <kbd>round</kbd> <kbd>butt</kbd></div>
+	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>img.lineJoin</b><br>Sets or returns the type of corner created when two lines meet. Values <kbd>bevel</kbd> <kbd>round</kbd> <kbd>miter</kbd></div>
+	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>img.lineWidth</b><br>Sets or returns the current line thickness.</div>
+	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>img.margins</b><br>Sets or returns the margin of the control. Works on controls with <kbd>Linear</kbd> parent only. You can also pass a number to set equal margins for all sides.</div>
+	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>img.measureText</b><br>Measure the text metrics with the current settings of the canvas context.</div>
+	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>img.miterLimit</b><br>Sets or returns the maximum miter length.</div>
+	<div data-role="popup" id="pop_dsc_030" class="ui-content"><b>img.opacity</b><br>Sets or returns the opacity of the control.</div>
+	<div data-role="popup" id="pop_dsc_031" class="ui-content"><b>img.options</b><br>Sets or returns the <kbd>options</kbd> of the control.</div>
+	<div data-role="popup" id="pop_dsc_032" class="ui-content"><b>img.padding</b><br>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</div>
+	<div data-role="popup" id="pop_dsc_033" class="ui-content"><b>img.parent</b><br>Returns the parent layout control.</div>
+	<div data-role="popup" id="pop_dsc_034" class="ui-content"><b>img.pixelData</b><br>Returns the pixel data of the image.</div>
+	<div data-role="popup" id="pop_dsc_035" class="ui-content"><b>img.position</b><br>Returns the position of the control. The returned object has <kbd>left</kbd> <kbd>top</kbd> <kbd>right</kbd> and <kbd>bottom</kbd> props.</div>
+	<div data-role="popup" id="pop_dsc_036" class="ui-content"><b>img.rotate</b><br>Rotate the canvas at a given angle and pivot point.</div>
+	<div data-role="popup" id="pop_dsc_037" class="ui-content"><b>img.rotation</b><br>Sets or returns the angle of rotation in degrees.</div>
+	<div data-role="popup" id="pop_dsc_038" class="ui-content"><b>img.sendBackward</b><br>Bring this component backward by a given z-index.</div>
+	<div data-role="popup" id="pop_dsc_039" class="ui-content"><b>img.setBorder</b><br>Sets the border line for the component container.</div>
+	<div data-role="popup" id="pop_dsc_03a" class="ui-content"><b>img.setCornerRadius</b><br>Sets the corner radius of the component.</div>
+	<div data-role="popup" id="pop_dsc_03b" class="ui-content"><b>img.setFont</b><br>Sets a single line font styling for rendering text on canvas.</div>
+	<div data-role="popup" id="pop_dsc_03c" class="ui-content"><b>img.setMargins</b><br>Sets the margin of the component.</div>
+	<div data-role="popup" id="pop_dsc_03d" class="ui-content"><b>img.setOnContextMenu</b><br>Adds a callback function on right click.</div>
+	<div data-role="popup" id="pop_dsc_03e" class="ui-content"><b>img.setOnLoad</b><br>Sets a callback function on load event.</div>
+	<div data-role="popup" id="pop_dsc_03f" class="ui-content"><b>img.setOnLongTouch</b><br>Adds a callback handler for a long touch event. The touch timer is about 500 milliseconds.</div>
+	<div data-role="popup" id="pop_dsc_040" class="ui-content"><b>img.setOnTouch</b><br>Sets a callback function when the image component is touch.</div>
+	<div data-role="popup" id="pop_dsc_041" class="ui-content"><b>img.setOnTouchDown</b><br>Add a callback function on touch down event.</div>
+	<div data-role="popup" id="pop_dsc_042" class="ui-content"><b>img.setOnTouchMove</b><br>Sets a callback function when the a mouse move event is triggered.</div>
+	<div data-role="popup" id="pop_dsc_043" class="ui-content"><b>img.setOnTouchUp</b><br>Add a callback function on touch up event.</div>
+	<div data-role="popup" id="pop_dsc_044" class="ui-content"><b>img.setPadding</b><br>Sets the padding of the component's container.</div>
+	<div data-role="popup" id="pop_dsc_045" class="ui-content"><b>img.setPixelColor</b><br>Sets the color of a specific pixel in the canvas.</div>
+	<div data-role="popup" id="pop_dsc_046" class="ui-content"><b>img.setPixelData</b><br>Set the pixel data of the canvas.</div>
+	<div data-role="popup" id="pop_dsc_047" class="ui-content"><b>img.setPosition</b><br>Sets the position of the component relative to its parent dimensions.</div>
+	<div data-role="popup" id="pop_dsc_048" class="ui-content"><b>img.setScale</b><br>Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.</div>
+	<div data-role="popup" id="pop_dsc_049" class="ui-content"><b>img.setSize</b><br>Sets the size of the component.</div>
+	<div data-role="popup" id="pop_dsc_04a" class="ui-content"><b>img.show</b><br>Show the component.</div>
+	<div data-role="popup" id="pop_dsc_04b" class="ui-content"><b>img.strokeColor</b><br>Sets or returns the current color of the line or stroke.</div>
+	<div data-role="popup" id="pop_dsc_04c" class="ui-content"><b>img.textColor</b><br>Sets or returns the color of the text.</div>
+	<div data-role="popup" id="pop_dsc_04d" class="ui-content"><b>img.textSize</b><br>Sets or returns the size of the text within the control.</div>
+	<div data-role="popup" id="pop_dsc_04e" class="ui-content"><b>img.textStyle</b><br>Sets or returns the text-style for drawing in the canvas. Values are <kbd>normal</kbd> and <kbd>italic</kbd>.</div>
+	<div data-role="popup" id="pop_dsc_04f" class="ui-content"><b>img.top</b><br>Returns the distance of the control from the top.</div>
+	<div data-role="popup" id="pop_dsc_050" class="ui-content"><b>img.translateOrigin</b><br>Translate the origin of the canvas at a new coordinate with the given angle of rotation.</div>
+	<div data-role="popup" id="pop_dsc_051" class="ui-content"><b>img.type</b><br>Returns the type of the control.</div>
+	<div data-role="popup" id="pop_dsc_052" class="ui-content"><b>img.visibility</b><br>Sets or returns the visibility of the control.</div>
+	<div data-role="popup" id="pop_dsc_053" class="ui-content"><b>img.width</b><br>Sets or returns the width of the control as a fraction of the parent control.</div>
 </div>
 </body>
 

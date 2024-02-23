@@ -48,14 +48,15 @@
 			</span><br>
 		</div>
 
-		<p>Adds a dialog into your app.</p>
+		<p>A Dialog in mobile UI design is a pop-up window that appears on top of the current screen to prompt the user for input or to convey information.</p>
 
 		<div class="samp">
 		dlg = ui.addDialog(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">title</a>,
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">body</a>,
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">actions?</a>,
-			<a href="#pop_str_004" data-transition="pop" data-rel="popup">options?</a> )
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">actions?</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options?</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width?</a> )
 			→ <b>ui object:</b> Dialog
 		</div>
 
@@ -303,7 +304,7 @@
 		<h3>Properties</h3>
 		<p>The following properties are available on the <strong>Dialog</strong> object:</p>
 
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">layout</a> → <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a></div>
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">layout</a> → <b>Object</b></div>
 		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">text</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">titleColor</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">titleText</a> → <b>String</b></div>
@@ -328,20 +329,21 @@
 
 	</div>
 
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width `[0-1]`.</div>
 	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The dialog title text.”</docstr></div>
 	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The dialog message to be shown.”</docstr></div>
-	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“A comma separated text for action buttons.”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“Colors: `Primary` `Secondary` <br> `Util`: `NoCancel` prevents the dialog from closing on action.”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“A comma separated options.<br>Theme Colors: `Primary`”</docstr>, <docstr>“ `Secondary`<br>Util: `NoCancel` prevents the dialog from closing on action.”</docstr></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> A string of action button text.</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="app.ShowPopup('String: “The dialog action text.”')">text</a>,
-		<a href="" onclick="app.ShowPopup('Number: The index of the corresponding dialog action.')">index</a>
+		<a href="" onclick="app.ShowPopup('String: “The dialog action text.”')">text </a>,
+		<a href="" onclick="app.ShowPopup('Number: The index of the corresponding dialog action.')">index </a>
 	)</div>
 	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>()</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dlg.hide</b><br>Hide the dialog</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dlg.hide</b><br>Hide the dialog.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>dlg.layout</b><br>Returns the layout of the dialog where you can add custom controls.</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>dlg.setOnAction</b><br>Adds a callback function when the action buttons are click</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>dlg.setOnClose</b><br>Adds a callback function when the dialog is close</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>dlg.show</b><br>Show the dialog</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>dlg.setOnAction</b><br>Adds a callback function when the action buttons are click.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>dlg.setOnClose</b><br>Adds a callback function when the dialog is close.</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>dlg.show</b><br>Show the dialog.</div>
 	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>dlg.text</b><br>Sets or returns the dialog text.</div>
 	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>dlg.titleColor</b><br>Sets or returns the title text color in hexadecimal format.</div>
 	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>dlg.titleText</b><br>Sets or returns the dialog title text.</div>

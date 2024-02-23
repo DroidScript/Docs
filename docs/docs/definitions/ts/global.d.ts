@@ -18,6 +18,10 @@ declare type nil = void;
 declare type lst_obj = any[];
 /** of numbers */
 declare type lst_num = number[];
+/** of strings */
+declare type lst_str = string[];
+/** of booleans */
+declare type lst_bin = boolean[];
 /** bytes */
 declare type num_byt = number;
 /** hexadecimal 0xrrggbb */
