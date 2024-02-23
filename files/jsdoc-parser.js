@@ -311,6 +311,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
 
             // Description.md
             else if (/@\s*description/i.test(c.value)) {
+                if (func.desc) func.desc += "\n\n";
                 func.desc += c.value.split(/@\s*description/i)[1].trim();
             }
 
@@ -385,6 +386,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
 function HandleComment(c, name, func, json, objJson) {
     let isCA = false, afterCmpParam = false;
     let met = newDSFunc();
+    let subfName = '';
 
     for (let line of c.value.split(/\r?\n/)) {
         line = line.trim();
@@ -393,6 +395,7 @@ function HandleComment(c, name, func, json, objJson) {
         if (line.match(/^[ */]+###/) && !isCA) {
             const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
             const ref = /\d/.test(method[0]) ? '#' : '';
+            subfName = method;
             json[ref + method] = met = newDSFunc();
             if (c.value.includes("@prop")) met.isval = true;
         }
@@ -462,11 +465,19 @@ function HandleComment(c, name, func, json, objJson) {
             //p.desc = p.desc.replace(/\\n/g, '\n') //.replace(pattern, replacement);
             if (p.desc.includes("--->") || p.type.includes("unction")) {
                 d = formatDef(p.desc.split("--->")[1] || "");
+                if (!d) {
+                    // console.error(`Warning: no callback args in function ${name}${subfName && '.' + subfName}(${p.name})`);
+                    d = {};
+                }
                 p.desc = p.desc.split("--->")[0];
                 p.desc = extractBacktickStrings(p.desc);
             }
             else if (p.type === "fnc_json") {
                 d = p.desc && JSON.parse(p.desc);
+                if (!d) {
+                    console.error(`Warning: no callback args in fnc_json ${name}${subfName && '.' + subfName}(${p.name})`);
+                    d = {};
+                }
             }
             else {
                 const ts = p.type.split('||').map(t => types[p.type] || t);
@@ -501,6 +512,7 @@ function HandleComment(c, name, func, json, objJson) {
             else if (types[g]) obj.retval = types[g];
             else if (!g.split("||").find(t => !typx.includes(t))) obj.retval = f;
             else console.log(`unknown ret type ${g} in ${name}`), obj.retval = "obj-" + f;
+            if (isCA && name.startsWith("show") && typeof obj.retval == "string" && obj.retval[2] === 'o') obj.subf ||= {};
         }
 
         else if (line.match(/^[ */]+@img/)) { /* empty */ }
@@ -508,10 +520,15 @@ function HandleComment(c, name, func, json, objJson) {
         else if (line.startsWith("* $ ")) { /* empty */ }
 
         else if (line.match(/^[ */]+\$\$/)) {
-            if (!line.includes('(')) obj.isval = true;
-            if (isCA && afterCmpParam) {
+            if (!afterCmpParam) {
+                if (!line.includes('(')) obj.isval = true;
+            }
+            else if (isCA) {
                 const match = line.match(/\$\$(.*?)\$\$/) || [];
                 func.desc += ('\n<js>' + match[1].replace(/:/g, ' : ') + '</js>\n');
+            }
+            else {
+                console.warn(`ignored code ${line} in ${name}`);
             }
         }
 

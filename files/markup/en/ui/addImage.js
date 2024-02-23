@@ -8,7 +8,7 @@
  * @param {String} options A comma seprated options.\n`Image`, `Canvas`, `Button` and `Avatar`. Default is image. \nFor `Avatar` you can pass `Small` or `Large`.
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object Image.
+ * @returns uio-Image
  * Please note that a `canvas` image cannot switch to Button or Avatar in `setOptions` method.
  */
 

@@ -8,7 +8,7 @@
  * @param {String} options A comma separated options.\nDuration: `Short`, `Long`\nVertical Alignment: `Top`, `Bottom`\nHorizontal Alignment: `Left`, `Center`, `Right`\nAction options: `Icon`, `HideOnAction`\nTransition: `Grow`, `Fade`, `Slide`, `Collapse`, `Zoom`
  * @param {Number} duration Time in milliseconds. Pass this if you don't want the default auto hide duration.
  * @param {String} action Action button text
- * @returns Object Popup
+ * @returns uio-Popup
  */
 
 

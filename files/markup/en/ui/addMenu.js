@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Error`\nUtils: `Dense`, `Icon`
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object Menu
+ * @returns uio-Menu
  * These are examples on how you can format your list.
  * Basic list
  * $$ var lst = ['Item 1', 'Item 2', 'Item 3']; $$

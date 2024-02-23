@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nTheme Color: `Primary`, `Secondary`\nOrientation: `Horizontal`, `Vertical`\nTrack: `Normal`, `Inverted`, `False`
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object Slider
+ * @returns uio-Slider
  */
 
 

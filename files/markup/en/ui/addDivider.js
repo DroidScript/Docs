@@ -7,7 +7,7 @@
  * @param {Object} parent The layout where to add the divider.
  * @param {Number} width Fraction of the parent width. Default is 1.
  * @param {String} options A comma separated options.\n`Inset` to add some padding.
- * @returns Object Divider
+ * @returns uio-Divider
  */
 
 

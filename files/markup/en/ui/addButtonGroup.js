@@ -11,7 +11,7 @@
  * @param {String} options A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nOrientation: `Horizontal`, `Vertical`\nToggleable: `Toggle`, `Radio`\nUtils: `Icon`, `NoElevation`
  * @param {Number} width Fraction of the parent width `[0-1]`
  * @param {Number} height Fraction of the parent height `[0-1]`
- * @returns Object ButtonGroup
+ * @returns uio-ButtonGroup
  * A toggleable buttongroup can accept additional `Radio` option to have atmost one toggled button item. If buttongroup is toggleable, please refer to the `setOnTouch` callback for the correct order of arguments.
  */
 

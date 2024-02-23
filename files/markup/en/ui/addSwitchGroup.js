@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nIcon: `Icon`\nColor: `Primary`, `Secondary`\nContainer: `Elevated`, `Outlined`\nCorner: `Square`\nList divider: `Divider`
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object SwitchGroup
+ * @returns uio-SwitchGroup
  */
 
 

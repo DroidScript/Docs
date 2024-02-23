@@ -6,7 +6,7 @@
  * $$ prd = ui.showProgressDialog(text, options) $$
  * @param {String} text The text message of the progress dialog.
  * @param {String} options A comma separated options.\n`AutoCancel` to close the dialog when backdrop is click.
- * @returns Object ProgressDialog
+ * @returns uio-ProgressDialog
  */
 
 

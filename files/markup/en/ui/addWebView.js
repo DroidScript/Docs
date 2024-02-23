@@ -9,7 +9,7 @@
  * @param {String} options A comma separated options for WebView. Values can be `NoScrollBar`, 
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object WebView
+ * @returns uio-WebView
  */
 
 

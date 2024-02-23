@@ -12,7 +12,7 @@
  * @param {Array} actions A string of action button text.
  * @param {String} options A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nUtil: `NoCancel` prevents the dialog from closing on action.
  * @param {Number} width Fraction of the screen width `[0-1]`.
- * @returns Object Dialog
+ * @returns uio-Dialog
  */
 
 

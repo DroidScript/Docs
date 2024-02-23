@@ -1,6 +1,6 @@
 /** # AppBar
  * @abbrev apb
- * @ds Adds an appbar to your app.
+ * Adds an appbar to your app.
  * @img(img1.png)
  * @img(img2.png)
  * @jdocs In UI development, an AppBar is a common user interface element found at the top of the screen in mobile applications. It typically contains the app's title, navigation icons, and other actions. In Material Design, an AppBar follows guidelines such as elevation, color, and typography for consistency. Add an AppBar into your app using the `addAppBar` method like this:
@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nMenu icon: `Menu` \nTheme Color: `Primary`, `Secondary`, `Transparent`, `Inherit`, `Default`\nPosition: `Absolute`, `Static`, `Fixed`, `Relative`
  * @param {Number} width Fraction of the parent width `[0-1]`
  * @param {Number} height Fraction of the parent height `[0-1]`
- * @returns {Object} AppBar
+ * @returns uio-AppBar
  */
 
 
@@ -252,28 +252,28 @@ class Main extends App
 @sample Appbar with search field
 class Main extends App
 {
-   onStart()
-   {
-       // Creates a fullscreen layout with objects vertically centered.
-       this.main = ui.addLayout("main", "Linear", "Top,FillXY")
+    onStart()
+    {
+        // Creates a fullscreen layout with objects vertically centered.
+        this.main = ui.addLayout("main", "Linear", "Top,FillXY")
 
-       // Add an appbar to the main layout with menu icon
-       this.apb = ui.addAppBar(this.main, "My app", "Default,Menu")
+        // Add an appbar to the main layout with menu icon
+        this.apb = ui.addAppBar(this.main, "My app", "Default,Menu")
 
-       // Add a callback handler when the menu icon is click
-             this.apb.setOnMenu( this.onMenu )
-       
-       // Adds a textfield to the appbar
-       this.tfd = ui.addTextField(this.apb.layout, "", "Search,Small", 0.9)
-       this.tfd.placeholder = "Search"
-       this.tfd.hide()
+        // Add a callback handler when the menu icon is click
+        this.apb.setOnMenu( this.onMenu )
+        
+        // Adds a textfield to the appbar
+        this.tfd = ui.addTextField(this.apb.layout, "", "Search,Small", 0.9)
+        this.tfd.placeholder = "Search"
+        this.tfd.hide()
 
-       // Add a search icon button to the appbar
-       this.searchBtn = ui.addButton(this.apb.layout, "search", "icon")
+        // Add a search icon button to the appbar
+        this.searchBtn = ui.addButton(this.apb.layout, "search", "icon")
 
-       // Add a callback handler when the search button is click
-       this.searchBtn.setOnTouch( this.showSearchField )
-   }
+        // Add a callback handler when the search button is click
+        this.searchBtn.setOnTouch( this.showSearchField )
+    }
     
     onMenu()
     {

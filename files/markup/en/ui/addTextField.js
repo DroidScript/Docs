@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nTheme Color: `Primary`, `Secondary`\nSizes: `Small`, `Medium`\nType: `Text`, `Password`, `Email`, `Search`, `Number`, `Date`, `Time`, `DateTime`\nVariant: `Standard`, `Filled`, `Outlined`\nTextArea: `Multiline`\nUtils: `Autofocus`
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object TextField
+ * @returns uio-TextField
  * If you want a materialize date and time pickers, see `DatePicker`, `TimePicker` or `DateTimePicker` components.
  */
 

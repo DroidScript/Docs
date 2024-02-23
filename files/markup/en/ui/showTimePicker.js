@@ -12,7 +12,7 @@
  * @param {String} time A default time value to which the timepicker begins. Value is of the form `HH:mm`
  * @param {String} options A comma separated options.\nOrientation: `Portrait`, `Landscape`\nFormat: `24H`, `12H`
  * @param {Function} onSelect The callback function to be called when time is selected.
- * @returns Object TimePicker
+ * @returns uio-TimePicker
  */
 
 

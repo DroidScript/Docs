@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nMedia: `Icon`, `Avatar`\nStyling: `Dense`, `Inset`\nUtils: `Selectable`, `Divider`, `SecondaryText`, `NoRipple`, `NoScrollBar`
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object List
+ * @returns uio-List
  * If `Icon` option is passed, the list must be of the form `[icon, title, body, secondary]`. To display an image avatar, passed and additional `Avatar` option and the list must be of the form `[image, title, body, secondary]`
  * If no `Icon` option is passed, the list is treated as `[title, body, secondary]` by default.
  * The secondary action is an icon button by default, to display as a text passed `secondarytext` option.

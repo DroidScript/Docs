@@ -8,7 +8,7 @@
  * @param {Object} layout The drawer layout where to add controls.
  * @param {String} options A comma separated options.nVariant: `Permanent`, `Persistent`, `Temporary`\nAnchor: `Left`, `Right`, `Top`, `Bottom`
  * @param {Number} width Fraction of the screen width starting from the anchor position `[0-1]`.
- * @returns Object Drawer
+ * @returns uio-Drawer
  */
 
 

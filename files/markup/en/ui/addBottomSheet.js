@@ -7,7 +7,7 @@
  * $$ var bts = ui.addBottomSheet(title, options) $$
  * @param {String} title An optional bottomsheet title.
  * @param {String} options A comma separated options. Values are:\n`"Notch"` to add a small notch at the top of the bottomsheet.\n`"HideOnAction"` to hide the bottomsheet when actions are click.\n`"CloseAction"` add a close action at the left.\n`"MoreAction"` add a more action at the right.\n`"NoCancel"` to disable the default closing event when the backdrop is click.
- * @returns Object-BottomSheet
+ * @returns uio-BottomSheet
  * It's a good practice to avoid adding a notch when your bottomsheet has a `title`, or `leftAction` or `rightAction`
  */
 

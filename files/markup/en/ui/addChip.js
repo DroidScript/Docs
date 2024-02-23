@@ -9,7 +9,7 @@
  * @param {String} options A comma separated option.\nTheme Color: `Primary`, `Secondary`, `Default`\nSize: `Small`, `Medium`\nVariant: `Outlined`, `Default`\nUtil: `Touchable`
  * @param {Number} width Fraction of the parent width `[0-1]`
  * @param {Number} height Fraction of the parent height `[0-1]`
- * @returns Object Chip
+ * @returns uio-Chip
  * If you want to change the height of the Chip later on after initializing, pass the `height` argument.
  */
 

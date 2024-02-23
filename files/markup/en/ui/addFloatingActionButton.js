@@ -9,7 +9,7 @@
  * @param {String} icon The string icon of the FAB
  * @param {String} options A comma separated option.\nPosition: `Fixed`, `Static`\nStyle: `Rounded`, `Extended`\nAnchor: `Left`, `Right`
  * @param {String} text Text to show for extended FABs
- * @returns Object FAB
+ * @returns uio-FloatingActionButton
  * If you want the fab to position relative to the layout and not on the bottom right corner, pass a `Static` option. If fab is `Extended` pass a text argument.
  */
 

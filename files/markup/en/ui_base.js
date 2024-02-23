@@ -101,7 +101,7 @@
      * Returns the position of the component. The return object is of the form `{left, top, right, bottom}`
      * $$ cname.getPosition( options ) $$
      * @param {String} options The mode of the measurements. Values can be `px` or `%`
-     * @returns Object
+     * @returns uio
      */
 
 

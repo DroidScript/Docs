@@ -10,7 +10,7 @@
  * @param {String} position A comma separated values representing the\n`"anchorOrigin,transformOrigin"`\n`anchorOrigin` Position of the popover on its parent.\n`transformOrigin` Origin on the popover itselt.\nAvailable values for both `anchorOrigin` and `transformOrigin`  are\n`tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.
  * @param {Number} width Fraction of the screen width `[0-1]`.
  * @param {Number} height Fraction of the screen height `[0-1]`.
- * @returns Object Popover
+ * @returns uio-Popover
  */
 
 

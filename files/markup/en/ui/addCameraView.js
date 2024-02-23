@@ -5,7 +5,7 @@
  * @param {string} options Comma separated options for the camera view. Available values are "Front", "Back", "Video", "Fill" and "Stretch". "Video" option includes audio.
  * @param {number} width Fraction of the parent width [0-1].
  * @param {number} height Fraction of the parent height [0-1].
- * @returns object
+ * @returns uio-CameraView
  */
 
 

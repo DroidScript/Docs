@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nLabel: `Hidelabels`
  * @param {Number} width Fraction of the screen width `[0-1]`
  * @param {Number} height Fraction of the screen height `[0-1]`
- * @returns Object-BottomNavbar
+ * @returns uio-BottomNavbar
  */
 
 

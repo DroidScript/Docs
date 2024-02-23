@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nTheme Colors: `Primary`, `Secondary`, `Default`\nVariants: `Contained`, `Outlined`, `Text`\nSizes: `Small`, `Medium`, `Large`\nOrientation: `Horizontal`, `Vertical`\nUtil: `NoElevation`
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object Dropdown
+ * @returns uio-Dropdown
  */
 
 
@@ -104,9 +104,8 @@
 /** ### setOnChange
  * Adds a callback function on change event.
  * $$ dpd.setOnChange(callback) $$
- * @param {Function} callback The callback function. ---> @arg {text} The selected item text. @arg {Number} index The index of the corresponding item.
+ * @param {Function} callback The callback function. ---> @arg {String} text The selected item text. @arg {Number} index The index of the corresponding item.
  */
-setOnChange(callback) { this._change = callback; }
 
 /** ### setOnOpen
  * Adds a callback function on close event.

@@ -10,7 +10,7 @@
  * @param {String} options A comma separated options.\nRadio Sizes: `Small`, `Medium`\nTheme Colors: `Primary`, `Secondary`, Default\nOrientation: `Horizontal`, `Vertical`\nIcon Position: `Left`, `Right`\nContainer: `Elevated`, `Outlined`\nCorner: `Square`\nUtils: `Required`
  * @param {Number} width Fraction of the parent width `[0-1]`.
  * @param {Number} height Fraction of the parent height `[0-1]`.
- * @returns Object RadioGroup
+ * @returns uio-RadioGroup
  * Pass `required` as option to have atleast one value selected.
  */
 

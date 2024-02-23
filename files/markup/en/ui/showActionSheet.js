@@ -9,7 +9,7 @@
  * @param {Array} list The list items to show. If `"icon"` option is passed, each element in this list array is of the form `[icon, name]`.
  * @param {String} options A comma separated actionsheet options. Values are \n`"Icon"` render a leading icon.\n`"NoCancel"` remove the default `"Cancel"` option.
  * @param {Function} onSelect The callback handler for `"select"` event.
- * @returns Object-ActionSheet
+ * @returns uio-ActionSheet
  */
 
 
