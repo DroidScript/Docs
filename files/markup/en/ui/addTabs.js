@@ -11,6 +11,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`
  * @param {Number} [height] Fraction of the parent height `[0-1]`
  * @returns uio-Tabs
+ */
+
+
+/**
  * Default Tab variant for mobile screens is `fullWidth` unless provided.
  */
 
@@ -248,7 +252,7 @@
 
 
 /** ### setIndicatorStyle
- * Add a custom styling to the indicator color.
+ * Add a custom styling to the indicator. Note: This behaves differently when the viewport is resize.
  * $$ tab.setIndicatorStyle(width, thickness, color, radius)
  * @param {Number} width Fraction of the tab item width (horizontal tabs) or height (vertical tabs)
  * @param {Number} thickness Thickness in pixels

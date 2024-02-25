@@ -96,7 +96,7 @@ class Main extends App
 
 
 /**
-@sample Popups with transitions
+@sample Popup with transition
 class Main extends App
 {
     onStart()
@@ -130,7 +130,7 @@ class Main extends App
 
 
 /**
-@sample With Transition
+@sample With action
 class Main extends App
 {
     onStart()

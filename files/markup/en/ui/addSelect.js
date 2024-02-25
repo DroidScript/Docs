@@ -11,6 +11,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
  * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Select
+ */
+
+
+/**
  * A simple list
  * $$ [ "Option 1", "Option 2", "Option 3"] $$
  * If you want a list with groupings, you can add a colon `:` before each item text to display as group name. Below is an example
@@ -88,7 +92,7 @@
 /** @extern sendBackward */
 
 /** ### setOnTouch
- * Adds a callback handler when the select component is touch.
+ * Adds a callback handler when an item is touch. This will be fired even if the value does not change.
  * $$ sel.setOnTouch( callback ) $$
  * @param {Function} callback The callback function to be called. ---> @arg {String} text The text of the touched item. @arg {Number} index The index of the touched item. @arg {Object} pos The position of the touch event.
  */

@@ -11,6 +11,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
  * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-List
+ */
+
+
+/**
  * If `Icon` option is passed, the list must be of the form `[icon, title, body, secondary]`. To display an image avatar, passed and additional `Avatar` option and the list must be of the form `[image, title, body, secondary]`
  * If no `Icon` option is passed, the list is treated as `[title, body, secondary]` by default.
  * The secondary action is an icon button by default, to display as a text passed `secondarytext` option.
@@ -284,11 +288,11 @@
 /** ### setItemPadding
  * Sets the padding of the list item. See `itemPadding` property for equivalent setter/getter property.
  * $$ lst.setItemPadding(left, top, right, bottom, mode) $$
- * @param {Number} left Left padding of the list item.
- * @param {Number} top Top padding of the list item.
- * @param {Number} right Right padding of the list item.
- * @param {Number} bottom Bottom padding of the list item.
- * @param {String} mode Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
+ * @param {Number} [left] Left padding of the list item.
+ * @param {Number} [top] Top padding of the list item.
+ * @param {Number} [right] Right padding of the list item.
+ * @param {Number} [bottom] Bottom padding of the list item.
+ * @param {String} [mode] Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
  */
 
 

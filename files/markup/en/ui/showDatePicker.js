@@ -11,8 +11,10 @@
  * @param {Object} options Date picker options object.See `options` properties below for customization. Note: `options` param is an object to support for more customization than the usual comma separated string. 
  * @param {Function} onSelect The callback function to be called when date is selected. The selected date will be passed into the callback.
  * @returns uio-DatePicker
- * 
- * ### options Props
+ */
+
+
+/** ### options Props
  * `format`: String. Moment date format. Default is `"YYYY-MM-DD"`<br>`portrait`: Boolean. Display the date picker in portrait view. Default is detective in the size of the screen.<br>`future`: String. The future value until which the dialog will render dates in the following format `"YYYY-MM-DD"`<br>`past`: String. The past until which the dialog will render dates in the following format `"YYYY-MM-DD"`.
  * 
  * ### Date formatting

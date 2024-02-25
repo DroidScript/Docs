@@ -10,6 +10,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
  * @param {Number} [height] Fraction fo the parent height `[0-1]`.
  * @returns uio-Progress
+ */
+
+
+/**
  * If you pass a null value on initialization and you won't passed a variant option, the default variant will be `indeterminate`.
  * Otherwise if there's no variant option and the value is not null, it will automatically be a `determinate` variant.
  */

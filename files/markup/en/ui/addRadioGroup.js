@@ -11,6 +11,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
  * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-RadioGroup
+ */
+
+
+/**
  * Pass `required` as option to have atleast one value selected.
  */
 

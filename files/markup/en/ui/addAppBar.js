@@ -16,7 +16,7 @@
 
 /** ## Properties
  * Here are the available setters and getters of the AppBar Component.
- * @prop {String} text Sets or return the AppBar title text
+ * @prop {String} text Sets or return the AppBar title `text`
  * @prop {String} color Sets or returns the theme color of the AppBar. Values can be `Default` `Primary` `Secondary` `Transparent` `Inherit`
  * @prop {String} textColor Sets or returns the hexadecimal color of the appbar title.
  * @prop {String} textVariant Sets or returns the variant of the title text. Values can be `h1` `h2` `h3` `h4` `h5` or `h6`
@@ -252,28 +252,28 @@ class Main extends App
 @sample Appbar with search field
 class Main extends App
 {
-    onStart()
-    {
-        // Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "Top,FillXY")
+   onStart()
+   {
+       // Creates a fullscreen layout with objects vertically centered.
+       this.main = ui.addLayout("main", "Linear", "Top,FillXY")
 
-        // Add an appbar to the main layout with menu icon
-        this.apb = ui.addAppBar(this.main, "My app", "Default,Menu")
+       // Add an appbar to the main layout with menu icon
+       this.apb = ui.addAppBar(this.main, "My app", "Default,Menu")
 
-        // Add a callback handler when the menu icon is click
-        this.apb.setOnMenu( this.onMenu )
-        
-        // Adds a textfield to the appbar
-        this.tfd = ui.addTextField(this.apb.layout, "", "Search,Small", 0.9)
-        this.tfd.placeholder = "Search"
-        this.tfd.hide()
+       // Add a callback handler when the menu icon is click
+       this.apb.setOnMenu( this.onMenu )
+       
+       // Adds a textfield to the appbar
+       this.tfd = ui.addTextField(this.apb.layout, "", "Search,Small", 0.9)
+       this.tfd.placeholder = "Search"
+       this.tfd.hide()
 
-        // Add a search icon button to the appbar
-        this.searchBtn = ui.addButton(this.apb.layout, "search", "icon")
+       // Add a search icon button to the appbar
+       this.searchBtn = ui.addButton(this.apb.layout, "search", "icon")
 
-        // Add a callback handler when the search button is click
-        this.searchBtn.setOnTouch( this.showSearchField )
-    }
+       // Add a callback handler when the search button is click
+       this.searchBtn.setOnTouch( this.showSearchField )
+   }
     
     onMenu()
     {

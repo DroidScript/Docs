@@ -297,6 +297,16 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
 
     tokens.forEach(c => {
         if (c.type === "BlockComment") {
+            // convert inline and block code first
+            if (c.value.includes('```')) {
+                let t = c.value
+                // For inline code blocks
+                t = t.replace(/```(.*?)```/gs, (_, match) => `<js>${match.trim()}</js>`)
+                // // For block code blocks
+                t = t.replace(/```([\s\S]*?)```/gs, (_, match) => `\n<js>\n${match.trim()}\n</js>`)
+                func.desc += t
+            }
+
             const mt = c.value.match(/@\s*(ex|s)ample *-? *(.*)/i);
             if (mt) {
                 const t = mt[2].trim() || '';
@@ -307,7 +317,6 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                 const sample = `\n\n<sample${title && ' ' + title}>\n${cod.replace(/\*_/g, '*/')}\n</sample>`;
                 samples[ext] += sample;
             }
-            else if (c.value.includes('```')) { /* empty */ }
 
             // Description.md
             else if (/@\s*description/i.test(c.value)) {
@@ -316,14 +325,14 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
             }
 
             else if (/@\s*ds/i.test(c.value)) {
-                func.desc += c.value.split("@ds")[1].trim();
+                func.desc += c.value.split("@ds")[1].trim()
             }
 
             // Sample.txt
             else if (/@\s*sample/i.test(c.value)) {
-                const _samp = c.value.slice(c.value.indexOf("\n") + 1);
-                samples.js += `\n\n${_samp}\n\n`;
-                console.log("reached @sample despite /(ex|s)ample/");
+                const _samp = c.value.slice(c.value.indexOf("\n") + 1)
+                samples.js += `\n\n${_samp}\n\n`
+                console.log("reached @sample despite /(ex|s)ample/")
             }
 
             // Base method

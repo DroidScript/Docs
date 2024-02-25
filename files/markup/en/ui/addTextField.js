@@ -11,6 +11,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
  * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-TextField
+ */
+
+
+/**
  * If you want a materialize date and time pickers, see `DatePicker`, `TimePicker` or `DateTimePicker` components.
  */
 

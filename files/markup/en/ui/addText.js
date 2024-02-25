@@ -14,117 +14,117 @@
  */
 
 
-    /** ## Properties
-     * Here are the available setter and getter properties for the Text Component.
-     * @prop {String} text Sets or returns the text.
-     * @prop {String} variant Sets or returns the text variants. See `options` param above for available values.
-     * @prop {String} color Sets or returns the theme color of the text `Primary` or `Secondary`. You can also pass hexadecimal color of the form `#rrggbb`
-     * @prop {String} textColor Sets or returns the text color in hexadecimal format.
-     * @prop {String} ellipsize Sets or returns the ellipsis use when the text is truncated. Values can be `Ellipsis` `End` or `Start`
-     * @prop {Number} textSize Sets or returns the fontsize for the text. You can also pass values such as `1.2em`.
-     * @prop {String} textStyle Sets or returns the style of the text. Values can be `italic` or `normal`.
-     * @prop {String} alignment Sets or returns the horizontal alignment of the text. Values can be `Left` `Center` `Right` or `Justify`.
-     * @prop {String} verticalAlignment Sets or returns the vertical alignment of the text. Values can be `Top` `Center` or `Bottom`.
-     * @prop {Boolean} italic Sets or returns whether the text is `italized` or not.
-     * @prop {Boolean} bold Sets or returns whether the text is `bold` or not.
-     * @prop {Boolean} underline Sets or returns whether the text is `underlined` or not.
-     */
+/** ## Properties
+ * Here are the available setter and getter properties for the Text Component.
+ * @prop {String} text Sets or returns the text.
+ * @prop {String} variant Sets or returns the text variants. See `options` param above for available values.
+ * @prop {String} color Sets or returns the theme color of the text `Primary` or `Secondary`. You can also pass hexadecimal color of the form `#rrggbb`
+ * @prop {String} textColor Sets or returns the text color in hexadecimal format.
+ * @prop {String} ellipsize Sets or returns the ellipsis use when the text is truncated. Values can be `Ellipsis` `End` or `Start`
+ * @prop {Number} textSize Sets or returns the fontsize for the text. You can also pass values such as `1.2em`.
+ * @prop {String} textStyle Sets or returns the style of the text. Values can be `italic` or `normal`.
+ * @prop {String} alignment Sets or returns the horizontal alignment of the text. Values can be `Left` `Center` `Right` or `Justify`.
+ * @prop {String} verticalAlignment Sets or returns the vertical alignment of the text. Values can be `Top` `Center` or `Bottom`.
+ * @prop {Boolean} italic Sets or returns whether the text is `italized` or not.
+ * @prop {Boolean} bold Sets or returns whether the text is `bold` or not.
+ * @prop {Boolean} underline Sets or returns whether the text is `underlined` or not.
+ */
 
 
-    /** @extern width */
-    /** @extern height */
-    /** @extern opacity */
-    /** @extern textSize */
-    /** @extern textColor */
-    /** @extern rotation */
-    /** @extern fontFile */
-    /** @extern visibility */
-    /** @extern type */
-    /** @extern absWidth */
-    /** @extern absHeight */
-    /** @extern backColor */
-    /** @extern backImage */
-    /** @extern isVisible */
-    /** @extern top */
-    /** @extern left */
-    /** @extern absTop */
-    /** @extern absLeft */
-    /** @extern parent */
-    /** @extern position */
-    /** @extern margins */
-    /** @extern padding */
-    /** @extern options */
-    /** @extern disabled */
-    /** @extern border */
-    /** @extern borderColor */
-    /** @extern borderStyle */
-    /** @extern cornerRadius */
-    /** @extern el */
-    /** @extern elStyle */
+/** @extern width */
+/** @extern height */
+/** @extern opacity */
+/** @extern textSize */
+/** @extern textColor */
+/** @extern rotation */
+/** @extern fontFile */
+/** @extern visibility */
+/** @extern type */
+/** @extern absWidth */
+/** @extern absHeight */
+/** @extern backColor */
+/** @extern backImage */
+/** @extern isVisible */
+/** @extern top */
+/** @extern left */
+/** @extern absTop */
+/** @extern absLeft */
+/** @extern parent */
+/** @extern position */
+/** @extern margins */
+/** @extern padding */
+/** @extern options */
+/** @extern disabled */
+/** @extern border */
+/** @extern borderColor */
+/** @extern borderStyle */
+/** @extern cornerRadius */
+/** @extern el */
+/** @extern elStyle */
 
-    // @prop {Number} fontWeight Sets or returns the font-weight. Values are `100, 200, 300, ..., 900`. You can also pass a `string` values such as `bold` `bolder` `lighter`
-	
-    // VISIBLE METHODS
+// @prop {Number} fontWeight Sets or returns the font-weight. Values are `100, 200, 300, ..., 900`. You can also pass a `string` values such as `bold` `bolder` `lighter`
 
-    /** ## Methods
-     * Here are the methods available for Text Component
-     */
+// VISIBLE METHODS
 
-
-    /** @extern setOnContextMenu */
-    /** @extern animate */
-    /** @extern setSize */
-    /** @extern show */
-    /** @extern hide */
-    /** @extern gone */
-    /** @extern destroy */
-    /** @extern setScale */
-    /** @extern getPosition */
-    /** @extern setMargins */
-    /** @extern setPadding */
-    /** @extern setPosition */
-    /** @extern setBorder */
-    /** @extern setCornerRadius */
-    /** @extern bringForward */
-    /** @extern sendBackward */
-
-    /** ### setOnTouch
-     * Adds an event handler when the text component is touch.
-     * $$ txt.setOnTouch( callback ) $$
-     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
-     */
+/** ## Methods
+ * Here are the methods available for Text Component
+ */
 
 
-    /** ### setOnLongTouch
-     * Adds a callback handler for a long touch event. The touch timer is about 500 milliseconds.
-     * $$ txt.setOnLongTouch( callback ) $$
-     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
-     */
+/** @extern setOnContextMenu */
+/** @extern animate */
+/** @extern setSize */
+/** @extern show */
+/** @extern hide */
+/** @extern gone */
+/** @extern destroy */
+/** @extern setScale */
+/** @extern getPosition */
+/** @extern setMargins */
+/** @extern setPadding */
+/** @extern setPosition */
+/** @extern setBorder */
+/** @extern setCornerRadius */
+/** @extern bringForward */
+/** @extern sendBackward */
+
+/** ### setOnTouch
+ * Adds an event handler when the text component is touch.
+ * $$ txt.setOnTouch( callback ) $$
+ * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+ */
 
 
-    /** ### setHtml
-     * Sets an html on the text control.
-     * $$ txt.setHtml( html ) $$
-     * @param {String} html An html string
-     * @@ Options should include an `html` option.
-     */
+/** ### setOnLongTouch
+ * Adds a callback handler for a long touch event. The touch timer is about 500 milliseconds.
+ * $$ txt.setOnLongTouch( callback ) $$
+ * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+ */
 
 
-    /** ### getHtml
-     * Returns the html text.
-     * $$ txt.getHtml() $$
-     * @returns String
-     */
+/** ### setHtml
+ * Sets an html on the text control.
+ * $$ txt.setHtml( html ) $$
+ * @param {String} html An html string
+ * @@ Options should include an `html` option.
+ */
 
 
-    /** ### setTextShadow
-     * Sets a shadow on the text in a text control.
-     * $$ txt.setTextShadow( radius, dx, dy, color )
-     * @param {Number} radius The radius in pixels
-     * @param {Number} dx X-offset of the shadow
-     * @param {Number} dy Y-offset of the shadow
-     * @param {String} color A hexadecimal color of the form `#rrggbb`
-     */
+/** ### getHtml
+ * Returns the html text.
+ * $$ txt.getHtml() $$
+ * @returns String
+ */
+
+
+/** ### setTextShadow
+ * Sets a shadow on the text in a text control.
+ * $$ txt.setTextShadow( radius, dx, dy, color )
+ * @param {Number} radius The radius in pixels
+ * @param {Number} dx X-offset of the shadow
+ * @param {Number} dy Y-offset of the shadow
+ * @param {String} color A hexadecimal color of the form `#rrggbb`
+ */
 
 
 /* --- parent_methods here ----- */

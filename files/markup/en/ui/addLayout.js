@@ -9,7 +9,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
  * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Layout
- * 
+ */
+
+
+/**
  * There are 5 types of layouts: `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"` and `"Card"`. Layouts are transparent by default but you can set a background color or a background image. You can add child objects to the Layout by passing the layout as parent when initializing a control. By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: `FillXY`, `FillX`, and `FillY`.
  * 
  * ### Linear Layouts
@@ -39,6 +42,7 @@
  * @prop {Array} children Returns all the children added to this layout.
  * @prop {Number} elevation Sets or returns the elevation of a card layout.
  * @prop {String} variant Sets or returns the card variant. Can be `"elevation"` or `"outlined"`
+ * @prop {String} layoutType Sets or returns the layout type. Note: You cannot change the layout type of "Card" and "Slide" to another type.
  */
 
 

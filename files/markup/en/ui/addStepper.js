@@ -11,6 +11,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
  * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Stepper
+ */
+
+
+/**
  * For `Mobile` option, an additional position options can be added `Top`, `Static` or `Bottom` and `AutoSwipe` to enable auto swiping.
  * To style step count text, pass `Fraction`, `Dots` or `Progress` options.
  * For `vertical` and `mobile`, you can add Layout type `Linear` or `Absolute`

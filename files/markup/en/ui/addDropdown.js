@@ -92,19 +92,7 @@
 /** ### setOnChange
  * Adds a callback function on change event.
  * $$ dpd.setOnChange(callback) $$
- * @param {Function} callback The callback function. ---> @arg {String} The selected item text. @arg {Number} index The index of the corresponding item.
- */
-
-/** ### setOnTouch
- * Adds a callback handler when the component is touch.
- * $$ cname.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {String} text The text of the touched item. @arg {Number} index The index of the touched item. @arg {Object} pos The position of the touch event.
- */
-
-/** ### setOnChange
- * Adds a callback function on change event.
- * $$ dpd.setOnChange(callback) $$
- * @param {Function} callback The callback function. ---> @arg {String} text The selected item text. @arg {Number} index The index of the corresponding item.
+ * @param {Function} callback The callback function. ---> @arg {text} The selected item text. @arg {Number} index The index of the corresponding item.
  */
 
 /** ### setOnOpen

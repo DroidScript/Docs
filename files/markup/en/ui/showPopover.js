@@ -7,7 +7,7 @@
  * $$ ui.showPopover(parent, text, position, height, height) $$
  * @param {Object} parent UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
  * @param {String} [text] The text to de displayed. For displaying more data, pass a `Layout`
- * @param {String} [position] A comma separated values representing the\n`"anchorOrigin,transformOrigin"`\n`anchorOrigin` Position of the popover on its parent.\n`transformOrigin` Origin on the popover itselt.\nAvailable values for both `anchorOrigin` and `transformOrigin`  are\n`tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.
+ * @param {String} [position] A comma separated values representing the\n`"anchorOrigin,transformOrigin"`\n`anchorOrigin` Position of the popover on its parent.\n`transformOrigin` Origin on the popover itself.\nAvailable values for both `anchorOrigin` and `transformOrigin`  are\n`tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.
  * @param {Number} [width] Fraction of the screen width `[0-1]`.
  * @param {Number} [height] Fraction of the screen height `[0-1]`.
  * @returns uio-Popover
@@ -70,72 +70,54 @@ class Main extends App
 {
     onStart()
     {
+        this.aorigin = "tl"
+        this.torigin = "tl"
+
         // Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,Horizontal", 1, 1 )
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        this.main.setChildMargins(null, 2, null, 2, "rem")
 
-        var lay1 = ui.addLayout( this.main, "Linear", "VCenter", 0.5, 1 )
-        lay1.setChildMargins(0, 0.05)
+        var lay = ui.addLayout(this.main, "Linear", "Horizontal", 1)
+        lay.childSpacing = "around"
 
-        ui.addText(lay1, "Position on parent", "h5")
+        var sels = "Top-Left,Top-Center,Top-Right,Center-Left,Center-Center,Center-Right,Bottom-Left,Bottom-Center,Bottom-Right"
+        
+        // Selection of anchor origin or position on parent control
+        this.selAOrigin = ui.addSelect(lay, sels.split(","), "Filled", 0.4)
+        this.selAOrigin.label = "anchorOrigin"
+        this.selAOrigin.setOnTouch(m => {
+            m = m.toLowerCase()
+            var c = m.split("-")
+            this.aorigin = c[0][0]+c[1][0] // get the initials only
+            this.update()
+        })
 
-        var btn = ui.addButton(lay1, "Top-Left")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,tl") } )
+        // Selection of transform origin or position on popover itself
+        this.selTOrigin = ui.addSelect(lay, sels.split(","), "Filled", 0.4)
+        this.selTOrigin.label = "transformOrigin"
+        this.selTOrigin.setOnTouch(m => {
+            m = m.toLowerCase()
+            var c = m.split("-")
+            this.torigin = c[0][0]+c[1][0] // get the initials only
+            this.update()
+        })
 
-        btn = ui.addButton(lay1, "Top-Center")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tc,tl") } )
+        this.posTxt = ui.addText(this.main, "Position: tl,tl")
 
-        btn = ui.addButton(lay1, "Top-Right")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tr,tl") } )
+        this.btn = ui.addButton(this.main, "Show here")
+    }
 
-        btn = ui.addButton(lay1, "Center-Left")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "cl,tl") } )
+    update() {
+        var pos = this.aorigin+","+this.torigin
+        this.posTxt.text = "Position: "+pos
 
-        btn = ui.addButton(lay1, "Center-Center")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "cc,tl") } )
+        // Show the popover message with the current position setting
+        this.pop = ui.showPopover(this.btn, "This is a popover message", pos)
 
-        btn = ui.addButton(lay1, "Center-Right")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "cr,tl") } )
-
-        btn = ui.addButton(lay1, "Bottom-Left")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "bl,tl") } )
-
-        btn = ui.addButton(lay1, "Bottom-Center")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "bc,tl") } )
-
-        btn = ui.addButton(lay1, "Bottom-Right")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "br,tl") } )
-
-        var lay2 = ui.addLayout( this.main, "Linear", "VCenter", 0.5, 1 )
-        lay2.setChildMargins(0, 0.05)
-
-        ui.addText(lay2, "Origin on popover", "h5")
-
-        btn = ui.addButton(lay2, "Top-Left")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,tl") } )
-
-        btn = ui.addButton(lay2, "Top-Center")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,tc") } )
-
-        btn = ui.addButton(lay2, "Top-Right")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,tr") } )
-
-        btn = ui.addButton(lay2, "Center-Left")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl", "cl") } )
-
-        btn = ui.addButton(lay2, "Center-Center")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,cc") } )
-
-        btn = ui.addButton(lay2, "Center-Right")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,cr") } )
-
-        btn = ui.addButton(lay2, "Bottom-Left")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,bl") } )
-
-        btn = ui.addButton(lay2, "Bottom-Center")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,bc") } )
-
-        btn = ui.addButton(lay2, "Bottom-Right")
-        btn.setOnTouch( function() { ui.showPopover(this, "This is a popover message", "tl,br") } )
+        // Hide the popover after a second
+        setTimeout(() => {
+            this.pop.hide()
+        }, 1000)
     }
 }
  */
@@ -169,10 +151,15 @@ class Main extends App
         ui.addText(lay, "This is a very long text to display in this popover", "Left")
 
         // you can also add button
-        ui.addButton(lay, "Outlined Button", "Outlined", "Secondary")
+        this.popBtn = ui.addButton(lay, "Close", "Outlined", "Secondary")
+        this.popBtn.setOnTouch( this.closePopover )
 
         // pass the layout into the `ui.showPopover` method
-        ui.showPopover( this.btn, lay, "bl,tr")
+        this.pop = ui.showPopover( this.btn, lay, "bl,tr")
+    }
+
+    closePopover() {
+        this.pop.hide()
     }
 }
  */

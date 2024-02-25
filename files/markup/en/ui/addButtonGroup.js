@@ -12,6 +12,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`
  * @param {Number} [height] Fraction of the parent height `[0-1]`
  * @returns uio-ButtonGroup
+ */
+
+
+/**
  * A toggleable buttongroup can accept additional `Radio` option to have atmost one toggled button item. If buttongroup is toggleable, please refer to the `setOnTouch` callback for the correct order of arguments.
  */
 

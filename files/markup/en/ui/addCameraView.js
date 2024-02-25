@@ -1,37 +1,36 @@
 /** # CameraView
  * Adds a camera view into your app to take pictures and record videos.
  * $$ cam = ui.addCameraView(parent, options, width, height)
- * @param {object} parent The parent layout where to add the camera view.
- * @param {string} options Comma separated options for the camera view. Available values are "Front", "Back", "Video", "Fill" and "Stretch". "Video" option includes audio.
- * @param {number} width Fraction of the parent width [0-1].
- * @param {number} height Fraction of the parent height [0-1].
+ * @param {Object} parent The parent layout where to add the camera view.
+ * @param {String} options Comma separated options for the camera view. Available values are "Front", "Back", "Video", "Fill" and "Stretch". "Video" option includes audio.
+ * @param {Number} width Fraction of the parent width [0-1].
+ * @param {Number} height Fraction of the parent height [0-1].
  * @returns uio-CameraView
  */
 
 
 /**
 @description
-The `capture` method returns the image data. To save the image in DroidScript, you can use the `CreateFile` method like this:
+The `capture` method returns the image data. To save the image in DroidScript, you can use the `WriteFile` method like this:
 <js>
 // capture an image
-img = cam.capture("jpg", "bytes")
-
-const file = app.CreateFile("myimage.jpg", "rw")
-file.WriteDate(bytes, "bytes")
-file.Close()
+img = cam.capture("jpeg", "base64")
+filePath = "image.jpeg"
+app.WriteFile(filePath, img, "base64")
 </js>
-Likewise, the `record` method requires a callback to be called when the video data is ready. To save videos in DroidScript, you can use the `CreateFile` method like this:
+Likewise, the `record` method requires a callback to be called when the video data is ready. To save videos in DroidScript, you can use the `WriteFile` method like this:
 <js>
 // record a video
-cam.record("mp4", "bytes", onRecord)
+cam.record("mp4", "base64", onRecord)
 
 // in your callback function
-onRecord( bytes ) {
-    const file = app.CreateFile("myvideo.mp4", "rw")
-    file.WriteDate(bytes, "bytes")
-    file.Close()
+onRecord( data ) {
+    filePath = "video.mp4"
+    app.WriteFile(filePath, data, "base64")
 }
 </js>
+
+Note: Don't forget to add permission to "Camera" and/or "Microphone" when you are taking videos.
  */
 
 
@@ -41,7 +40,6 @@ onRecord( bytes ) {
 
 
 /** @prop {number} imageHeight Sets or returns the image height in pixels. */
-
 /** @prop {number} width Sets or returns the image width in pixels. */
 /** @prop {object} capabilities Returns the capabilities of the camera. You can inspect this object to set camera constraints. */
 /** @prop {number} frameRate Sets or returns the video frame rate. See `capabilites` for min and max values. */

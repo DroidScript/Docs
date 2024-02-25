@@ -11,6 +11,10 @@
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
  * @param {Number} [height] Fraction of the parent height `[0-1]`.
  * @returns uio-Menu
+ */
+
+
+/**
  * These are examples on how you can format your list.
  * Basic list
  * $$ var lst = ['Item 1', 'Item 2', 'Item 3']; $$
@@ -284,7 +288,7 @@ class Main extends App
 
 
 /**
-@sample Anchor position on mouse
+@sample Anchor position on mouse / touch
 class Main extends App
 {
     onStart()
@@ -294,7 +298,7 @@ class Main extends App
         this.main.setOnContextMenu( this.onMenu )
 
         // Add a text control to the layout
-        this.txt = ui.addText(this.main, "Right click anywhere on the screen.")
+        this.txt = ui.addText(this.main, "Right click anywhere on the screen.\n(Long press if your on mobile phone)", "Multiline")
 
         // List items with icons
         var items = ["person:Item 1", "delete:Item 2", "favorite:Item 3"]

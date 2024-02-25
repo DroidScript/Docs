@@ -11,8 +11,11 @@
  * @param {Number} width Fraction of the parent width.
  * @param {Number} height Fraction of the parent height.
  * @returns uio-Card
- * 
- * <h4>Content properties</h4>
+ */
+
+
+/**
+ * @jdocs <h4>Content properties</h4>
  * @jdocs `headerTitle` [string] : Card header title.<br>`headerSubtitle` [string] : Card header subtitle or subheader.<br>`headerAvatar` [string] : Card header avatar. Can be a single character or a path to an image.<br>`headerAction` [string] : Card header action. A material icon font.<br>`media` [string] : A path to an image.<br>`bodyTitle` [string] : The title of the card content.<br>`bodyText` [string] : The long description of the card.<br>`actions` [array] : List of icon buttons. These can be a list of material-icon fonts if `actionType` is an `"icon"`.<br>`actionType` [array] : The type of action. Can be a `"button"` or `"icon"`.<br>`onAction` [function] : Callback handler when card actions are clicked. Refer to `setOnAction` method for arguments.<br>`onHeaderAction` [function] : Callback handler when header action is clicked. Refer to `setOnHeaderAction` method for arguments.
  */
 

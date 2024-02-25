@@ -12,6 +12,10 @@
  * @param {String} [format] The format of the value that will be pass to the `onSelect` callback. Default is `"YYYY-MM-DD HH:MM:SS"`. You can refer to <a href="https://momentjs.com/" target="_blank">https://momentjs.com/</a> for more date time formats. Sample formats: `"MMMM Do YYYY, h:mm:ss a"`, `"dddd"`, `"MMM Do YY"`, `"LLL"`
  * @param {Function} [onSelect] The callback function to be called on submit.
  * @returns uio-DateTimePicker
+ */
+
+
+/**
  * If you want a date picker only see `DatePicker` or if you want time picker only see `TimePicker`
  */
 
