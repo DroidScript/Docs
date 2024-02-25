@@ -14,7 +14,9 @@
  */
 
 
-/** ### options Props
+/** 
+ * @description
+ * ### options Props
  * `format`: String. Moment date format. Default is `"YYYY-MM-DD"`<br>`portrait`: Boolean. Display the date picker in portrait view. Default is detective in the size of the screen.<br>`future`: String. The future value until which the dialog will render dates in the following format `"YYYY-MM-DD"`<br>`past`: String. The past until which the dialog will render dates in the following format `"YYYY-MM-DD"`.
  * 
  * ### Date formatting

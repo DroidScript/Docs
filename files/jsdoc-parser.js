@@ -307,7 +307,7 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                 func.desc += t
             }
 
-            const mt = c.value.match(/@\s*(ex|s)ample *-? *(.*)/i);
+            const mt = c.value.match(/@(ex|s)ample *-? *(.*)/i);
             if (mt) {
                 const t = mt[2].trim() || '';
                 const ext = t.startsWith("Python") ? "py" : "js";
@@ -319,33 +319,33 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
             }
 
             // Description.md
-            else if (/@\s*description/i.test(c.value)) {
+            else if (/@description\b/i.test(c.value)) {
                 if (func.desc) func.desc += "\n\n";
-                func.desc += c.value.split(/@\s*description/i)[1].trim();
+                func.desc += c.value.split(/@description\b/i)[1].trim();
             }
 
-            else if (/@\s*ds/i.test(c.value)) {
+            else if (/@ds\b/i.test(c.value)) {
                 func.desc += c.value.split("@ds")[1].trim()
             }
 
             // Sample.txt
-            else if (/@\s*sample/i.test(c.value)) {
+            else if (/@sample\b/i.test(c.value)) {
                 const _samp = c.value.slice(c.value.indexOf("\n") + 1)
                 samples.js += `\n\n${_samp}\n\n`
                 console.log("reached @sample despite /(ex|s)ample/")
             }
 
             // Base method
-            else if (/@\s*extern/i.test(c.value)) {
-                const [_m, _n, _, _k = ''] = c.value.match(/@\s*extern\s+(\S+)(\s+(#\S+|r\/[^/]+\/|\{.*\}))?/i) || [];
+            else if (/@extern\b/i.test(c.value)) {
+                const [_m, _n, _, _k = ''] = c.value.match(/@extern\s+(\S+)(\s+(#\S+|r\/[^/]+\/|\{.*\}))?/i) || [];
                 if (!baseJson[_k || _n] && name !== "_tsxdefs")
                     Throw(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`);
                 else json[_n] = _k ? _k.replace(/\\n/g, "\n").replace(/\\t/g, "\t") : '#' + _n;
             }
 
             // Category
-            else if (/@\s*category/i.test(c.value)) {
-                const _n = c.value.split(/@\s*category/i)[1].trim();
+            else if (/@category\b/i.test(c.value)) {
+                const _n = c.value.split(/@category\b/i)[1].trim();
                 if (_n) categories.push(_n);
             }
 
@@ -393,15 +393,17 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
  * @param {Obj<string|UndefinedPartial<DSMethod>>} objJson
  */
 function HandleComment(c, name, func, json, objJson) {
-    let isCA = false, afterCmpParam = false;
+    let isCA = false, afterCmpParam = false, isComment = false;
     let met = newDSFunc();
+    met.isval = false;
     let subfName = '';
+    const lines = c.value.split(/\r?\n/);
 
-    for (let line of c.value.split(/\r?\n/)) {
-        line = line.trim();
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
         const obj = isCA ? func : met;
 
-        if (line.match(/^[ */]+###/) && !isCA) {
+        if (line.match(/^[ */]+###/) && !isCA && !isComment) {
             const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
             const ref = /\d/.test(method[0]) ? '#' : '';
             subfName = method;
@@ -412,7 +414,7 @@ function HandleComment(c, name, func, json, objJson) {
         // exclude these lines
         else if (line.match(/^[ */]+@jdocs/)) { /* empty */ }
 
-        else if (line.match(/^[ */]+##/) && !isCA) {
+        else if (line.match(/^[ */]+##/) && !isCA && !isComment) {
             // met += line;
         }
 
@@ -505,7 +507,7 @@ function HandleComment(c, name, func, json, objJson) {
             afterCmpParam = true;
         }
 
-        else if (line.match(/^[ */]+#/) && !func.desc) {
+        else if (line.match(/^[ */]+#/) && !func.desc && !isComment) {
             isCA = true;
             const nameMatch = line.match(/(?=#)\s+(\S+)/);
             name = nameMatch ? nameMatch[1] : name;
@@ -544,8 +546,15 @@ function HandleComment(c, name, func, json, objJson) {
         else if (line.match(/^[ */]+@abbrev/)) { func.abbrev = line.split("abbrev")[1].trim(); }
         else if (line.trim() === "*") { obj.desc += "\n"; }
         else if (line.trim() === "*/" || !line.trim()) { /* empty */ }
-        else { obj.desc += line.trim().replace(/^\* | \* /g, '\n'); }
+        else if (!line.match(/^\s*---/)) {
+            obj.desc += line.trim().replace(/^\* | \* /g, '\n');
+            isComment = true;
+        }
     }
+
+    // trailing descriptions
+    if (met.isval === false && met.desc) func.desc += "\n" + met.desc;
+
     return func;
 }
 
@@ -571,7 +580,7 @@ function formatDef(sline) {
         if (!l.trim()) return;
         const r = extractParamDef(l);
         pNames.push(r[1]);
-        if (!types[r[0]]) console.log(`unknown def type ${r[0]}`);
+        if (!types[r[0]]) console.log(`unknown def type ${r[0]} in \`${sline}\``);
         pTypes.push(types[r[0]] ? types[r[0]] + "-" + r[2] : "obj-" + r[2]);
     });
     return { pNames, pTypes };
