@@ -256,6 +256,8 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief Inject scripts on page load
  * Define a javscript file that is immediately executed after a page was loaded inside the webview.
  * This is useful for modifying elements on a webpage.
+ * 
+ * <premium>
  * $$ web.SetInject(file) $$
  * @param {str_pth} file
  */

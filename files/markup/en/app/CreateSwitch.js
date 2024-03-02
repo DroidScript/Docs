@@ -134,14 +134,6 @@ You can get the state of the switch at any time using the **GetChecked** method.
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * @brief Customize the button looks
- * Customize the look of the toggle.
- * $$ swi.SetStyle() $$
- * @param #SetStyle
- */
-
-
 /** @extern SetText */
 
 /** @extern SetTextColor */
