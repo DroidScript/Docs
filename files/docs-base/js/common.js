@@ -20,7 +20,7 @@ var isChromeOS = (!!agent.match(/Chrome OS|Chromebook|PixelBook/));
 var useWebIDE = (has(agent, "Remix") || isChromeOS);
 var isAndroid = (has(agent, "Android"));
 
-var isDS = (location.href.match(/\bds=true\b/) != null);
+var isDS = location.href.match(/\bds=true\b/) != null || location.port == '8088';
 isDS = isDS || getCookie("isDS") == 'true';
 setCookie("isDS", isDS);
 
@@ -109,19 +109,9 @@ $(document).live('pageshow', function (event, ui) {
 		curPage = $.mobile.activePage.attr('id');
 
 		// change link to ui/UI.html inside DS
-		if (curPage == "main") {
-			if (isMobileIDE && !app.FileExists(baseFolder + "UIDocs.htm"))
-				$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
-			else if (isWebIDE) {
-				getIdeList("list&dir=.edit/docs/", function _onIdeList(data) {
-					if (!data.list.includes("UIDocs.htm"))
-						$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
-				})
-			}
-		}
-
+		if (curPage == "main") ReloadIndex()
 		//Show plugins list if 'plugins' page is loading.
-		if (curPage == "plugins") ShowPluginsPage()
+		else if (curPage == "plugins") ShowPluginsPage()
 		else if (curPage == "extensions") ShowExtensionsPage()
 		else if (curPage == "search") searchDocs(localStorage.getItem("searchName"), localStorage.getItem("searchContent"));
 
@@ -230,11 +220,75 @@ function getIdeList(cmd, cb) {
 	xmlHttp.send();
 }
 
+// display internal plugins on main page
+const ignoredDirs = 'app,css,gfx,global,intro,js,node,plugins'.split(',');
+function ReloadIndex() {
+	if (isMobileIDE) {
+		const plugins = {};
+		const docsList = app.ListFolder(baseFolder);
+		for (const folder of docsList) {
+			if (folder.includes('.') || ignoredDirs.includes(folder)) continue;
+
+			const files = app.ListFolder(baseFolder + folder,
+				"(?i)" + folder + "\\.html", null, "RegExp");
+			if (files.length == 0) continue;
+
+			const name = files[0].slice(0, -5);
+			plugins[name] = folder + '/' + files[0];
+		}
+		addInternalPlugins(plugins, docsList);
+	}
+	else if (isWebIDE) {
+		getIdeList("list&dir=.edit/docs/", data => onDocsList(data.list));
+	}
+}
+
+//Web IDE .edit/docs/ list callback
+function onDocsList(docsList) {
+	const plugins = {};
+
+	for (const folder of docsList) {
+		// skip files
+		if (folder.includes('.') || ignoredDirs.includes(folder)) continue;
+		const indexName = folder.toLowerCase() + '.html';
+
+		getIdeList("list&dir=.edit/docs/" + folder, function _onIntDocList(data) {
+			const indexFile = data.list?.find(f => f.toLowerCase() == indexName);
+			if (!indexFile) return console.log("skipped intPlugDir", folder, data);
+
+			const name = indexFile.slice(0, -5);
+			plugins[name] = folder + '/' + indexFile;
+			addInternalPlugins(plugins, docsList);
+		});
+	}
+}
+
+//Set internal plugin list by plugins {name:url} object
+function addInternalPlugins(plugins, docsList = []) {
+	const order = ["Music", "UI"], rename = { UI: "Hybrid UI" };
+	const items = Object.keys(plugins).sort()
+		.sort((a, b) => order.indexOf(b) - order.indexOf(a))
+		.map(n => `<li><a href=${JSON.stringify(plugins[n])}>${rename[n] || n}</a></li>`);
+
+	$('ul#internal').empty().append(items).listview("refresh");
+
+	// decide UI index page
+	const uiDocs = ["ui", "UIDocs.htm", "HybridUI.htm"];
+	const uiIndexes = uiDocs.filter(f => docsList.includes(f));
+	const uiItem = $("ul#native > li:contains(Hybrid UI)").show();
+
+	if (uiIndexes[0] != "ui") uiItem.attr('href', uiIndexes[0]);
+	else if (plugins.UI) uiItem.hide();
+	else uiItem.attr('href', uiIndexes[1]);
+
+	if (plugins.Music) $("ul#native > li:contains(Music)").hide();
+	else $("ul#native > li:contains(Music)").show();
+}
+
 //Dynamically create plugins page.
 function ShowPluginsPage() {
 	const getPath = name => "plugins/" + name.toLowerCase() + "/" + name + ".html";
 	try {
-		//If on device.
 		if (isMobileIDE) {
 			const list = app.ListFolder(pluginFolder, null, null, "folders");
 
@@ -246,8 +300,7 @@ function ShowPluginsPage() {
 			}
 			addList('#divPlugs', list, getPath);
 		}
-		//If on PC.
-		else {
+		else if (isWebIDE) {
 			getIdeList("getplugins", data =>
 				addList('#divPlugs', data.plugins.split(","), getPath)
 			);
@@ -259,15 +312,13 @@ function ShowPluginsPage() {
 //Dynamically create extensions page.
 function ShowExtensionsPage() {
 	try {
-		//If on device.
 		if (isMobileIDE) {
 			const fldr = "/sdcard/DroidScript/Extensions";
 			const list = app.ListFolder(fldr, null, null, "folders");
 			const getPath = name => fldr + "/" + name + "/Docs.html";
 			addList('#divExts', list, getPath);
 		}
-		//If on PC.
-		else {
+		else if (isWebIDE) {
 			const getPath = name => "/Extensions/" + name + "/Docs.html";
 			getIdeList("getextensions", data =>
 				addList('#divExts', data.extensions.split(","), getPath)
@@ -470,7 +521,7 @@ function IsApp() {
 
 function OpenSamples() {
 	if (isMobileIDE) app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
-	else {
+	else if (isWebIDE) {
 		var e = parent.$(".nav-tabs > li > a:contains(Samples)");
 		if (e.length) e.click()
 		else IsApp();
@@ -493,8 +544,9 @@ function RemovePlugin(plugName) {
 		app.Execute("if(typeof AskRemovePlugin == 'function') AskRemovePlugin('" + plugName + "');" +
 			"else if(typeof RemovePlugin == 'function') RemovePlugin('" + plugName + "');");
 	}
-	else if (isWebIDE)
+	else if (isWebIDE) {
 		RemoteExec('ide', "RemovePlugin('" + plugName + "')")
+	}
 
 	setTimeout(ShowPluginsPage, 1000)
 }
