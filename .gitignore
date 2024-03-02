@@ -13,6 +13,7 @@ node_modules/
 /files/generate_dsuikit.js
 files/test/
 files/samples?*/
+files/*.zip
 
 /out/
 /app/
@@ -24,4 +25,3 @@ samples*.txt
 *.key
 *-test*
 *.ppk
-*.zip

@@ -12,8 +12,8 @@ try {
     const cwd = process.cwd();
     process.chdir(directoryToZip);
     if (process.platform === "win32") {
-        const command = `Compress-Archive -Path "*" -DestinationPath "${cwd}/file.zip"`;
-        execSync(`powershell -Command "${command}"`);
+        const command = `"C:\\Program Files\\7-Zip\\7z.exe" a "${cwd}\\file.zip" .`;
+        execSync(command);
     } else {
         execSync(`zip -r ${cwd}/file.zip .`);
     }
