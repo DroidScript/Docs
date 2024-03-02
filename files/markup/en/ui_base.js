@@ -165,7 +165,7 @@
 
 
 /** ### bringForward
- * @aname bringForward
+ * @name bringForward
  * Bring this component forward by a given z-index.
  * $$ cname.bringForward( zIndex )
  * @param {Number} zIndex The z-index. A negative value behaves like `sendBackward` method.

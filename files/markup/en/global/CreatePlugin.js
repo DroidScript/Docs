@@ -3,7 +3,7 @@
 
 /** # CreatePlugin #
  * @name _CreatePlugin
- * Creates a new plugin object to interact with a dynamically loaded java plugin. See @../intro/CreatePlugins for more plugin information
+ * Creates a new plugin object to interact with a dynamically loaded java plugin. See @../intro/WritingDSPlugins for more plugin information
  * $$ _CreatePlugin(name, options) $$
  * @param {str} name Package Name
  * @param {str} options
