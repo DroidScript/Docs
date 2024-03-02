@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>addCameraView</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>addCameraView</h1>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Adds a camera view into your app to take pictures and record videos.</p>
+
+		<div class="samp">
+		rvw = ui.addCameraView(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">parent</a>,
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">height</a> )
+			→ <b>ui object:</b> CameraView
+		</div>
+
+		<p>The <kbd>capture</kbd> method returns the image data. To save the image in DroidScript, you can use the <kbd>WriteFile</kbd> method like this:</p>
+
+		<div class="samp">
+		<span class="token comment">// capture an image</span><br>
+		img <span class="token operator">=</span> cam<span class="token punctuation">.</span><span class="token function">capture</span><span class="token punctuation">(</span><span class="token string">"jpeg"</span><span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span><br>
+		filePath <span class="token operator">=</span> <span class="token string">"image.jpeg"</span><br>
+		app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span>filePath<span class="token punctuation">,</span> img<span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span>
+		</div>
+
+		<p>Likewise, the <kbd>record</kbd> method requires a callback to be called when the video data is ready. To save videos in DroidScript, you can use the <kbd>WriteFile</kbd> method like this:</p>
+
+		<div class="samp">
+		<span class="token comment">// record a video</span><br>
+		cam<span class="token punctuation">.</span><span class="token function">record</span><span class="token punctuation">(</span><span class="token string">"mp4"</span><span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">,</span> onRecord<span class="token punctuation">)</span><br>
+		<br>
+		<span class="token comment">// in your callback function</span><br>
+		<span class="token function">onRecord</span><span class="token punctuation">(</span> <span class="token parameter">data</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<br><span style="display:inline-block;padding-left:1em;">
+			filePath <span class="token operator">=</span> <span class="token string">"video.mp4"</span><br>
+			app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span>filePath<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span>
+		</span><br>
+		<span class="token punctuation">}</span>
+		</div>
+
+		<p>Note: Don't forget to add permission to "Camera" and/or "Microphone" when you are taking videos.<br>
+		<br>
+		These are the setter and getter properties for CameraView component.</p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Camera app in DroidScript</h3>
+			<div id="examp1" class="code-js" style="font-size:70%">
+				<span class="token comment">//Force this app to portrait mode</span><br>
+				cfg<span class="token punctuation">.</span>Portrait<br>
+				<br>
+				<span class="token comment">//Make sure to add Camera permission</span><br>
+				<span class="token function">_AddPermissions</span><span class="token punctuation">(</span><span class="token string">"Camera"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token comment">//Main class for the app</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token comment">//Called when app starts</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">//Create a main layout of type Frame</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Frame"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Add a camera view that fills the parent width and height</span><br>
+				        <span class="token comment">//The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>cam <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addCameraView</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Fill"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create a horizontal layout that will be displayed in the bottom of the screen</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>layBtm <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,Vcenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>layBtm<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"Between"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>layBtm<span class="token punctuation">.</span><span class="token function">setPosition</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>layBtm<span class="token punctuation">.</span>padding <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">"rem"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment">//Create a camera switch toggle icon at the left</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>toggleCam <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>layBtm<span class="token punctuation">,</span> <span class="token string">"flip_camera_android"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>toggleCam<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#fff"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>toggleCam<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSwitchCam <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create a snap button which is a bit larger</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>snapBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>layBtm<span class="token punctuation">,</span> <span class="token string">"camera"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>snapBtn<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#fff"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>snapBtn<span class="token punctuation">.</span>iconSize <span class="token operator">=</span> <span class="token string">"2.5rem"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>snapBtn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>captureImg <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create a preview image and pass it to the previewImage prop of the camera view</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prevImg <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>layBtm<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"avatar,initial"</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span>previewImage <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>prevImg<br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prevImg<span class="token punctuation">.</span><span class="token function">setSize</span><span class="token punctuation">(</span><span class="token number">2.5</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">,</span> <span class="token string">"rem"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prevImg<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> <span class="token string">"50%"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>prevImg<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"black"</span><br>
+				        <br>
+				        <span class="token comment">//Start the camera preview</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span><span class="token function">startPreview</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle switching of camera source</span><br>
+				    <span class="token function">onSwitchCam</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        <span class="token keyword">let</span> src <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span>source <span class="token operator">==</span> <span class="token string">"front"</span> <span class="token operator">?</span> <span class="token string">"back"</span> <span class="token operator">:</span> <span class="token string">"front"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span>source <span class="token operator">=</span> src<br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span><span class="token function">updatePreview</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle capture and save the image</span><br>
+				    <span class="token function">captureImg</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        <span class="token keyword">const</span> img <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span><span class="token function">capture</span><span class="token punctuation">(</span><span class="token string">"jpg"</span><span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create unique filename</span><br>
+				        <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"img-"</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".jpg"</span><br>
+				        <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token string">"/Internal/DCIM/"</span> <span class="token operator">+</span> name<br>
+				        <br>
+				        <span class="token comment">//Save the image data</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> img<span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Image has been saved!"</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token comment"># Force this app to portrait mode</span><br>
+				cfg<span class="token punctuation">.</span>Portrait<br>
+				<br>
+				<span class="token comment"># Make sure to add Camera permission</span><br>
+				_AddPermissions<span class="token punctuation">(</span><span class="token string">"Camera"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token comment"># Main class for the app</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    <span class="token comment"># Called when app starts</span><br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment"># Create a main layout of type Frame</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Frame"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Add a camera view that fills the parent width and height</span><br>
+				        <span class="token comment"># The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.</span><br>
+				        this<span class="token punctuation">.</span>cam <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCameraView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Fill"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create a horizontal layout that will be displayed in the bottom of the screen</span><br>
+				        this<span class="token punctuation">.</span>layBtm <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal,Vcenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>layBtm<span class="token punctuation">.</span>childSpacing <span class="token operator">=</span> <span class="token string">"Between"</span><br>
+				        this<span class="token punctuation">.</span>layBtm<span class="token punctuation">.</span>setPosition<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>layBtm<span class="token punctuation">.</span>padding <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> null<span class="token punctuation">,</span> <span class="token string">"rem"</span><span class="token punctuation">]</span><br>
+				        <br>
+				        <span class="token comment"># Create a camera switch toggle icon at the left</span><br>
+				        this<span class="token punctuation">.</span>toggleCam <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>layBtm<span class="token punctuation">,</span> <span class="token string">"flip_camera_android"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>toggleCam<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#fff"</span><br>
+				        this<span class="token punctuation">.</span>toggleCam<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>onSwitchCam <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create a snap button which is a bit larger</span><br>
+				        this<span class="token punctuation">.</span>snapBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>layBtm<span class="token punctuation">,</span> <span class="token string">"camera"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>snapBtn<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#fff"</span><br>
+				        this<span class="token punctuation">.</span>snapBtn<span class="token punctuation">.</span>iconSize <span class="token operator">=</span> <span class="token string">"2.5rem"</span><br>
+				        this<span class="token punctuation">.</span>snapBtn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>captureImg <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create a preview image and pass it to the previewImage prop of the camera view</span><br>
+				        this<span class="token punctuation">.</span>prevImg <span class="token operator">=</span> ui<span class="token punctuation">.</span>addImage<span class="token punctuation">(</span>this<span class="token punctuation">.</span>layBtm<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"avatar,initial"</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>previewImage <span class="token operator">=</span> this<span class="token punctuation">.</span>prevImg<br>
+				        this<span class="token punctuation">.</span>prevImg<span class="token punctuation">.</span>setSize<span class="token punctuation">(</span><span class="token number">2.5</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">,</span> <span class="token string">"rem"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>prevImg<span class="token punctuation">.</span>cornerRadius <span class="token operator">=</span> <span class="token string">"50%"</span><br>
+				        this<span class="token punctuation">.</span>prevImg<span class="token punctuation">.</span>backColor <span class="token operator">=</span> <span class="token string">"black"</span><br>
+				        <br>
+				        <span class="token comment"># Start the camera preview</span><br>
+				        this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>startPreview<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle switching of camera source</span><br>
+				    onSwitchCam<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        src <span class="token operator">=</span> this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>source <span class="token operator">==</span> <span class="token string">"front"</span> ? <span class="token string">"back"</span> <span class="token punctuation">:</span> <span class="token string">"front"</span><br>
+				        this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>source <span class="token operator">=</span> src<br>
+				        this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>updatePreview<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle capture and save the image</span><br>
+				    captureImg<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        img <span class="token operator">=</span> this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>capture<span class="token punctuation">(</span><span class="token string">"jpg"</span><span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create unique filename</span><br>
+				        name <span class="token operator">=</span> <span class="token string">"img-"</span> <span class="token operator">+</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".jpg"</span><br>
+				        path <span class="token operator">=</span> <span class="token string">"/Internal/DCIM/"</span> <span class="token operator">+</span> name<br>
+				        <br>
+				        <span class="token comment"># Save the image data</span><br>
+				        app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span>path<span class="token punctuation">,</span> img<span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Image has been saved!"</span> <span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Video recorder in DroidScript</h3>
+			<div id="examp2" class="code-js" style="font-size:70%">
+				<span class="token comment">//Force this app to portrait mode.</span><br>
+				cfg<span class="token punctuation">.</span>Portrait<br>
+				<br>
+				<span class="token comment">//Make sure to add Camera permission</span><br>
+				<span class="token function">_AddPermissions</span><span class="token punctuation">(</span><span class="token string">"Camera"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token comment">//Main class for the app</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token comment">//Called when app starts</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>time <span class="token operator">=</span> <span class="token number">0</span><br>
+				        <br>
+				        <span class="token comment">//Create a main layout of type Frame</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Absolute"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Add a camera view that fills the parent width and height</span><br>
+				        <span class="token comment">//The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>cam <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addCameraView</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Fill,Video"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>timer <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Center,Caption"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>timer<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#fff"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>timer<span class="token punctuation">.</span><span class="token function">setPosition</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.025</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create a horizontal layout that will be displayed in the bottom of the screen</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>layBtm <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>layBtm<span class="token punctuation">.</span><span class="token function">setPosition</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Create a snap button which is a bit larger</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vidBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>layBtm<span class="token punctuation">,</span> <span class="token string">"videocam"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#fff"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>iconSize <span class="token operator">=</span> <span class="token string">"2.5rem"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleRecord <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Start the camera preview</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span><span class="token function">startPreview</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle switching of camera source</span><br>
+				    <span class="token function">handleRecord</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        <span class="token comment">//Start recording if icon is videocam</span><br>
+				        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>icon <span class="token operator">==</span> <span class="token string">"videocam"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span><span class="token function">record</span><span class="token punctuation">(</span><span class="token string">"mp4"</span><span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onRecord<span class="token punctuation">)</span><br>
+				            <span class="token keyword">this</span><span class="token punctuation">.</span>interval <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>
+				                <span class="token keyword">this</span><span class="token punctuation">.</span>timer<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">++</span> <span class="token keyword">this</span><span class="token punctuation">.</span>time<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" sec"</span><br>
+				            <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><br>
+				        <span class="token punctuation">}</span><br>
+				        <span class="token comment">// otherwise stop the recording</span><br>
+				        <span class="token keyword">else</span> <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">//Switch button icon</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>icon <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>cam<span class="token punctuation">.</span>recording <span class="token operator">?</span> <span class="token string">"stop"</span> <span class="token operator">:</span> <span class="token string">"videocam"</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token comment">//Handle on record and save the video data</span><br>
+				    <span class="token function">onRecord</span><span class="token punctuation">(</span> <span class="token parameter">data</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        <br>
+				        <span class="token comment">// Clear interval</span><br>
+				        <span class="token function">clearInterval</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>interval <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>interval <span class="token operator">=</span> <span class="token keyword">null</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>timer<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">""</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>time <span class="token operator">=</span> <span class="token number">0</span><br>
+				        <br>
+				        <span class="token comment">//Create unique filename</span><br>
+				        <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">"vid-"</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".mp4"</span><br>
+				        <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token string">"/Internal/DCIM/"</span> <span class="token operator">+</span> name<br>
+				        <br>
+				        <span class="token comment">//Save the video data</span><br>
+				        app<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> <span class="token string">"Video has been saved!"</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token comment"># Force this app to portrait mode.</span><br>
+				cfg<span class="token punctuation">.</span>Portrait<br>
+				<br>
+				<span class="token comment"># Make sure to add Camera permission</span><br>
+				_AddPermissions<span class="token punctuation">(</span><span class="token string">"Camera"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token comment"># Main class for the app</span><br>
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    <span class="token comment"># Called when app starts</span><br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>time <span class="token operator">=</span> <span class="token number">0</span><br>
+				        <br>
+				        <span class="token comment"># Create a main layout of type Frame</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Absolute"</span><span class="token punctuation">,</span> <span class="token string">"FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Add a camera view that fills the parent width and height</span><br>
+				        <span class="token comment"># The Fill option makes the image preview fills the entire camera view, otherwise the actual resolution will be viewed.</span><br>
+				        this<span class="token punctuation">.</span>cam <span class="token operator">=</span> ui<span class="token punctuation">.</span>addCameraView<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Fill,Video"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        <br>
+				        this<span class="token punctuation">.</span>timer <span class="token operator">=</span> ui<span class="token punctuation">.</span>addText<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token string">"Center,Caption"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>timer<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#fff"</span><br>
+				        this<span class="token punctuation">.</span>timer<span class="token punctuation">.</span>setPosition<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.025</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create a horizontal layout that will be displayed in the bottom of the screen</span><br>
+				        this<span class="token punctuation">.</span>layBtm <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Horizontal"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>layBtm<span class="token punctuation">.</span>setPosition<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Create a snap button which is a bit larger</span><br>
+				        this<span class="token punctuation">.</span>vidBtn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>layBtm<span class="token punctuation">,</span> <span class="token string">"videocam"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token string">"#fff"</span><br>
+				        this<span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>iconSize <span class="token operator">=</span> <span class="token string">"2.5rem"</span><br>
+				        this<span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>handleRecord <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Start the camera preview</span><br>
+				        this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>startPreview<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Handle switching of camera source</span><br>
+				    handleRecord<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment"># Start recording if icon is videocam</span><br>
+				        <span class="token keyword">if</span> this<span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>icon <span class="token operator">==</span> <span class="token string">"videocam"</span><span class="token punctuation">:</span><br>
+				            this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>record<span class="token punctuation">(</span><span class="token string">"mp4"</span><span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">,</span> this<span class="token punctuation">.</span>onRecord<span class="token punctuation">)</span><br>
+				            this<span class="token punctuation">.</span>interval <span class="token operator">=</span> setInterval<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span><br>
+				                this<span class="token punctuation">.</span>timer<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">+</span><span class="token operator">+</span> this<span class="token punctuation">.</span>time<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" sec"</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  otherwise stop the recording</span><br>
+				        <span class="token keyword">else</span><span class="token punctuation">:</span> this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>stop<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment"># Switch button icon</span><br>
+				        this<span class="token punctuation">.</span>vidBtn<span class="token punctuation">.</span>icon <span class="token operator">=</span> this<span class="token punctuation">.</span>cam<span class="token punctuation">.</span>recording ? <span class="token string">"stop"</span> <span class="token punctuation">:</span> <span class="token string">"videocam"</span><br>
+				    <br>
+				    <span class="token comment"># Handle on record and save the video data</span><br>
+				    onRecord<span class="token punctuation">(</span> data <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Clear interval</span><br>
+				        clearInterval<span class="token punctuation">(</span> this<span class="token punctuation">.</span>interval <span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>interval <span class="token operator">=</span> null<br>
+				        this<span class="token punctuation">.</span>timer<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">""</span><br>
+				        this<span class="token punctuation">.</span>time <span class="token operator">=</span> <span class="token number">0</span><br>
+				        <br>
+				        <span class="token comment"># Create unique filename</span><br>
+				        name <span class="token operator">=</span> <span class="token string">"vid-"</span> <span class="token operator">+</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getTime<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".mp4"</span><br>
+				        path <span class="token operator">=</span> <span class="token string">"/Internal/DCIM/"</span> <span class="token operator">+</span> name<br>
+				        <br>
+				        <span class="token comment"># Save the video data</span><br>
+				        app<span class="token punctuation">.</span>WriteFile<span class="token punctuation">(</span>path<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> <span class="token string">"Video has been saved!"</span> <span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Properties</h3>
+		<p>The following properties are available on the <strong>CameraView</strong> object:</p>
+
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">capabilities</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">focusDistance</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">focusMode</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_005" data-transition="pop" data-rel="popup">frameRate</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">imageHeight</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">img</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">iso</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_00e" data-transition="pop" data-rel="popup">sound</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">source</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">width</a> → <b>Number</b></div>
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>CameraView</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">capture</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">format</a> )
+			→ <b>Object</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">getPixelData</a>(
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">format</a>,
+			<a href="#pop_num_003" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_004" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_num_005" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_006" data-transition="pop" data-rel="popup">height</a> )
+			→ <b>Object</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">record</a>(
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">format</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">setOnError</a>(
+			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">setOnReady</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">cb</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">setPictureSize</a>(
+			<a href="#pop_num_007" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_008" data-transition="pop" data-rel="popup">height</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_010" data-transition="pop" data-rel="popup">startPreview</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup">stop</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup">updatePreview</a>()
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the parent width [0-1].</div>
+	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> Fraction of the parent height [0-1].</div>
+	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> Starting pixel from the left.</div>
+	<div data-role="popup" id="pop_num_004" class="ui-content"><b>Number:</b> Starting pixel from the top.</div>
+	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> The width of the image portion in pixels.</div>
+	<div data-role="popup" id="pop_num_006" class="ui-content"><b>Number:</b> The height of the image portion in pixels.</div>
+	<div data-role="popup" id="pop_num_007" class="ui-content"><b>Number:</b> The image width in pixels. See `capabilities` for minimum and maximum values.</div>
+	<div data-role="popup" id="pop_num_008" class="ui-content"><b>Number:</b> The image height in pixels. See `capabilities` for minimum and maximum values.</div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Comma separated options for the camera view. Available values are "Front"”</docstr>, <docstr>“ "Back"”</docstr>, <docstr>“ "Video"”</docstr>, <docstr>“ "Fill" and "Stretch". "Video" option includes audio.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The image type. Values are "jpg" or "jpeg""”</docstr>, <docstr>“ "png"”</docstr>, <docstr>“ "webp"”</docstr>, <docstr>“ "gif". Default is "jpg".”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The returned data format. Can be "base64"”</docstr>, <docstr>“ "bytes"(regular array)”</docstr>, <docstr>“ "uint8array"(typed array) or "arraybuffer". Default is "base64"”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Values are "rgba" array”</docstr>, <docstr>“ or "pngbase64" or "jpgbase64".”</docstr></div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Video output encoding format. Values can be "mp4"”</docstr>, <docstr>“ "ogg" and "webm".Default is "mp4"”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Return video data format. Values can be "blob"”</docstr>, <docstr>“ "base64"”</docstr>, <docstr>“ "bytes" (regular array)”</docstr>, <docstr>“ "objecturl"”</docstr>, <docstr>“ "arraybuffer"”</docstr>, <docstr>“ "uint8array" (typed array). Default is "base64"”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The parent layout where to add the camera view.</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: “The error message.”')">error </a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>rvw.capabilities</b><br>Returns the capabilities of the camera. You can inspect this object to set camera constraints.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>rvw.capture</b><br>Capture an image. This will return an image data which you can save or manipulate.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>rvw.focusDistance</b><br>Sets or returns the focus distance. See <kbd>capabilities</kbd> for min and max values.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>rvw.focusMode</b><br>Sets or returns the camera focus mode. Available values are <kbd>"manual"</kbd>, <kbd>"single-shot"</kbd>, <kbd>"continuous"</kbd></div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>rvw.frameRate</b><br>Sets or returns the video frame rate. See <kbd>capabilites</kbd> for min and max values.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>rvw.getPixelData</b><br>Returns the pixel data of the image preview or a given portion of it.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>rvw.imageHeight</b><br>Sets or returns the image height in pixels.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>rvw.img</b><br>Sets the preview image taken on capture. Must be a UI image component.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>rvw.iso</b><br>Sets or returns the camera iso. See <kbd>capabilities</kbd> for max and min values.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>rvw.record</b><br>Record a video.</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>rvw.setOnError</b><br>Add a callback handler when an error occured.</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>rvw.setOnReady</b><br>Add a callback handler when the camera is ready.</div>
+	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>rvw.setPictureSize</b><br>Sets the size of the image.</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>rvw.sound</b><br>Sets or returns a boolean value whether the sound is enabled or disabled</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>rvw.source</b><br>The camera source to be use. Values can be <kbd>"front"</kbd> or <kbd>"back"</kbd>.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>rvw.startPreview</b><br>Start streaming the camera.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>rvw.stop</b><br>Stop recording a video.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>rvw.updatePreview</b><br>Update the camera preview. Call it when you have updated the constraints of the camera such as setting the source from back to front, or setting zoom level etc.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>rvw.width</b><br>Sets or returns the image width in pixels.</div>
+</div>
+</body>
+
+</html>

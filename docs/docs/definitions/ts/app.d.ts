@@ -5944,9 +5944,6 @@ declare class DsSwitch {
 	/** Change the size of the control */
 	SetSize(width?: num, height?: num, options?: "px"|"sp"|"dip"|"dp"|"mm"|"pt"): void;
 
-	/** Customize the button looks */
-	SetStyle(color1?: str_col, color2?: str_col, radius?: num_pxl, strokeClr?: str_col, strokeWidth?: num_pxl, shadow?: num_frc): void;
-
 	/** Change displayed text */
 	SetText(text: str): void;
 
@@ -7697,7 +7694,10 @@ declare class DsWebView {
 	/** Define error page */
 	SetErrorPage(url: str_url): void;
 
-	/** Inject scripts on page load */
+	/**
+	 * Inject scripts on page load
+	 * @premium
+	 */
 	SetInject(file: str_pth): void;
 
 	/** Define distances to other controls */

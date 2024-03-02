@@ -10260,17 +10260,6 @@ class DsSwitch {
 	SetSize(width, height, options) {return}
 
 	/**
-	 * Customize the button looks
-	 * @param {str_col} [color1='sky'] 
-	 * @param {str_col} [color2='sky'] 
-	 * @param {num_pxl} [radius=0] 
-	 * @param {str_col} [strokeClr='sky'] 
-	 * @param {num_pxl} [strokeWidth=0] 
-	 * @param {num_frc} [shadow=0] 
-	 */
-	SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) {return}
-
-	/**
 	 * Change displayed text
 	 * @param {str} text 
 	 */
@@ -13263,6 +13252,7 @@ class DsWebView {
 
 	/**
 	 * Inject scripts on page load
+	 * @premium
 	 * @param {str_pth} file 
 	 */
 	SetInject(file) {return}

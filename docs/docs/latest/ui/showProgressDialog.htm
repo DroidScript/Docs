@@ -43,19 +43,23 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Examples')">Examples</a><br>
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
 				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
 			</span><br>
 		</div>
 
-		<p>Shows a progress dialog component into your app.</p>
+		<p>A ProgressDialog is a pop-up dialog that indicates the progress of a task, often accompanied by a loading spinner or bar.</p>
 
 		<div class="samp">
 		prd = ui.showProgressDialog(
 			<a href="#pop_str_001" data-transition="pop" data-rel="popup">text?</a>,
-			<a href="#pop_str_com" data-transition="pop" data-rel="popup">options?</a> )
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options?</a> )
 			→ <b>ui object:</b> ProgressDialog
 		</div>
 
+		<p>Here are the available methods for the ProgressDialog Component.</p>
+		<h3>Examples</h3>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Progress Dialog</h3>
 			<div id="examp1" class="code-js" style="font-size:70%">
@@ -152,6 +156,11 @@
 		</div>
 
 
+		<h3>Properties</h3>
+		<p>The following properties are available on the <strong>ProgressDialog</strong> object:</p>
+
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">text</a> → <b>String</b></div>
+
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>ProgressDialog</strong> object:</p>
 
@@ -165,18 +174,15 @@
 		<div class="samp">
 			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
 		</div>
-		<div class="samp">
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">text</a>() → <b>String</b>
-		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_str_com" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The text message of the progress dialog. Options can be <br> `AutoCancel` to close the dialog when backdrop is click.”</docstr></div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The text message of the progress dialog.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“A comma separated options.<br>`AutoCancel` to close the dialog when backdrop is click.”</docstr></div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>prd.hide</b><br>Hides the dialog component</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>prd.setOnClose</b><br>Adds a callback handler method on close event</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>prd.show</b><br>Show the progress dialog component</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>prd.hide</b><br>Hides the dialog component.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>prd.setOnClose</b><br>Adds a callback handler method on close event.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>prd.show</b><br>Show the progress dialog component.</div>
 	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>prd.text</b><br>Sets or returns the ProgressDialog text.</div>
 </div>
 </body>

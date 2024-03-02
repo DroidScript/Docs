@@ -43,12 +43,13 @@
 		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
 		<b>Content:</b><br>
 		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Examples')">Examples</a><br>
 				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
 				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
 			</span><br>
 		</div>
 
-		<p>Adds a hairline divider into your layout.</p>
+		<p>A divider is a visual element used to separate content or components within a layout.</p>
 
 		<div class="samp">
 		div = ui.addDivider(
@@ -58,6 +59,8 @@
 			→ <b>ui object:</b> Divider
 		</div>
 
+		<p>Here are the methods for Divider component.</p>
+		<h3>Examples</h3>
 		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
 			<h3>Example - Basic</h3>
 			<div id="examp1" class="code-js" style="font-size:70%">
@@ -117,39 +120,37 @@
 		<h3>Properties</h3>
 		<p>The following properties are available on the <strong>Divider</strong> object:</p>
 
-		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number:</b> <i>pixel</i></div>
-		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number:</b> <i>pixel</i></div>
-		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number:</b> <i>pixel</i></div>
-		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number:</b> <i>pixel</i></div>
-		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">backColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
-		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backImage</a> → <b>String:</b> <i>path to file or folder ( <docstr>“/absolute/...”</docstr> or <docstr>“relative/...”</docstr> )</i></div>
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">absHeight</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_002" data-transition="pop" data-rel="popup">absLeft</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_003" data-transition="pop" data-rel="popup">absTop</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">absWidth</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_006" data-transition="pop" data-rel="popup">backColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_007" data-transition="pop" data-rel="popup">backImage</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_008" data-transition="pop" data-rel="popup">border</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">borderColor</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+		<div class="samp"><a href="#pop_dsc_009" data-transition="pop" data-rel="popup">borderColor</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">borderStyle</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">color</a> → <b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
+		<div class="samp"><a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">color</a> → <b>String</b></div>
 		<div class="samp"><a href="#pop_dsc_00d" data-transition="pop" data-rel="popup">cornerRadius</a> → <b>Number</b></div>
 		<div class="samp"><a href="#pop_dsc_00f" data-transition="pop" data-rel="popup">disabled</a> → <b>Boolean</b></div>
-		<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">fontFile</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_013" data-transition="pop" data-rel="popup">height</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">isVisible</a> → <b>Boolean</b></div>
-		<div class="samp"><a href="#pop_dsc_016" data-transition="pop" data-rel="popup">left</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">margins</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
-		<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">opacity</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">options</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">padding</a> → <span style="display:inline-block;vertical-align: middle;"><b>Number</b>,<b>List:</b> <i>of numbers</i></span></div>
-		<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">parent</a> → <b>ui object:</b> <a href="addLayout.htm" data-ajax="false">Layout</a></div>
-		<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">position</a> → <b>Object:</b> {
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">left</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">top</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">right</a>,
-			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bottom</a> }</div>
-		<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">rotation</a> → <b>Number:</b> <i>angle in degrees (0..360)</i></div>
-		<div class="samp"><a href="#pop_dsc_029" data-transition="pop" data-rel="popup">textColor</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_02a" data-transition="pop" data-rel="popup">textSize</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">top</a> → <b>Number</b></div>
-		<div class="samp"><a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">type</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">visibility</a> → <b>String</b></div>
-		<div class="samp"><a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">width</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_010" data-transition="pop" data-rel="popup">el</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_011" data-transition="pop" data-rel="popup">elStyle</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_012" data-transition="pop" data-rel="popup">fontFile</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_015" data-transition="pop" data-rel="popup">height</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_017" data-transition="pop" data-rel="popup">isVisible</a> → <b>Boolean</b></div>
+		<div class="samp"><a href="#pop_dsc_018" data-transition="pop" data-rel="popup">left</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_019" data-transition="pop" data-rel="popup">margins</a> → <b>List</b></div>
+		<div class="samp"><a href="#pop_dsc_01a" data-transition="pop" data-rel="popup">opacity</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_01b" data-transition="pop" data-rel="popup">options</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_01c" data-transition="pop" data-rel="popup">padding</a> → <b>List</b></div>
+		<div class="samp"><a href="#pop_dsc_01d" data-transition="pop" data-rel="popup">parent</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_01e" data-transition="pop" data-rel="popup">position</a> → <b>Object</b></div>
+		<div class="samp"><a href="#pop_dsc_01f" data-transition="pop" data-rel="popup">rotation</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_02a" data-transition="pop" data-rel="popup">textColor</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_02b" data-transition="pop" data-rel="popup">textSize</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_02c" data-transition="pop" data-rel="popup">top</a> → <b>Number</b></div>
+		<div class="samp"><a href="#pop_dsc_02d" data-transition="pop" data-rel="popup">type</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_02e" data-transition="pop" data-rel="popup">visibility</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_02f" data-transition="pop" data-rel="popup">width</a> → <b>Number</b></div>
 
 		<h3>Methods</h3>
 		<p>The following methods are available on the <strong>Divider</strong> object:</p>
@@ -157,7 +158,7 @@
 		<div class="samp">
 			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup" class="baseFunc">animate</a>(
 			<a href="#pop_str_002" data-transition="pop" data-rel="popup">anim</a>,
-			<a href="#pop_num_002" data-transition="pop" data-rel="popup">duration?</a> )
+			<a href="#pop_num_002" data-transition="pop" data-rel="popup">duration</a> )
 		</div>
 		<div class="samp">
 			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup" class="baseFunc">bringForward</a>(
@@ -167,164 +168,164 @@
 			<a href="#pop_dsc_00e" data-transition="pop" data-rel="popup" class="baseFunc">destroy</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_011" data-transition="pop" data-rel="popup" class="baseFunc">getPosition</a>(
-			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options?</a> )
+			<a href="#pop_dsc_013" data-transition="pop" data-rel="popup" class="baseFunc">getPosition</a>(
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">options</a> )
 			→ <b>Object</b>
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_012" data-transition="pop" data-rel="popup" class="baseFunc">gone</a>()
+			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">gone</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_014" data-transition="pop" data-rel="popup" class="baseFunc">hide</a>()
+			<a href="#pop_dsc_016" data-transition="pop" data-rel="popup" class="baseFunc">hide</a>()
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01e" data-transition="pop" data-rel="popup" class="baseFunc">sendBackward</a>(
+			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">sendBackward</a>(
 			<a href="#pop_num_004" data-transition="pop" data-rel="popup">zIndex</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_01f" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
-			<a href="#pop_num_005" data-transition="pop" data-rel="popup">width?</a>,
+			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup" class="baseFunc">setBorder</a>(
+			<a href="#pop_num_005" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_006" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_007" data-transition="pop" data-rel="popup">right?</a>,
+			<a href="#pop_num_008" data-transition="pop" data-rel="popup">bottom?</a>,
 			<a href="#pop_str_004" data-transition="pop" data-rel="popup">clr?</a>,
-			<a href="#pop_str_005" data-transition="pop" data-rel="popup">style='solid'</a> )
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">style?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_020" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
-			<a href="#pop_num_006" data-transition="pop" data-rel="popup">tl?</a>,
-			<a href="#pop_num_007" data-transition="pop" data-rel="popup">tr?</a>,
-			<a href="#pop_num_008" data-transition="pop" data-rel="popup">bl?</a>,
-			<a href="#pop_num_009" data-transition="pop" data-rel="popup">br?</a>,
-			<a href="#pop_str_006" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">setCornerRadius</a>(
+			<a href="#pop_num_009" data-transition="pop" data-rel="popup">tl?</a>,
+			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">tr?</a>,
+			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">br?</a>,
+			<a href="#pop_num_00c" data-transition="pop" data-rel="popup">bl?</a>,
+			<a href="#pop_str_006" data-transition="pop" data-rel="popup">mode?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_021" data-transition="pop" data-rel="popup" class="baseFunc">setMargins</a>(
-			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">left?</a>,
-			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">top?</a>,
-			<a href="#pop_num_00a" data-transition="pop" data-rel="popup">right?</a>,
-			<a href="#pop_num_00b" data-transition="pop" data-rel="popup">bottom?</a>,
-			<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">setMargins</a>(
+			<a href="#pop_num_00d" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_00e" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_00f" data-transition="pop" data-rel="popup">right?</a>,
+			<a href="#pop_num_010" data-transition="pop" data-rel="popup">bottom?</a>,
+			<a href="#pop_str_007" data-transition="pop" data-rel="popup">mode?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_022" data-transition="pop" data-rel="popup" class="baseFunc">setOnContextMenu</a>(
+			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">setOnContextMenu</a>(
 			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_023" data-transition="pop" data-rel="popup" class="baseFunc">setOnTouch</a>(
-			<a href="#pop_fnc_002" data-transition="pop" data-rel="popup">callback</a> )
+			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup" class="baseFunc">setPadding</a>(
+			<a href="#pop_num_011" data-transition="pop" data-rel="popup">left?</a>,
+			<a href="#pop_num_012" data-transition="pop" data-rel="popup">top?</a>,
+			<a href="#pop_num_013" data-transition="pop" data-rel="popup">right?</a>,
+			<a href="#pop_num_012" data-transition="pop" data-rel="popup">bottom?</a>,
+			<a href="#pop_str_008" data-transition="pop" data-rel="popup">mode?</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_024" data-transition="pop" data-rel="popup" class="baseFunc">setPadding</a>(
-			<a href="#pop_num_00e" data-transition="pop" data-rel="popup">left?</a>,
-			<a href="#pop_num_00f" data-transition="pop" data-rel="popup">top?</a>,
-			<a href="#pop_num_010" data-transition="pop" data-rel="popup">right?</a>,
-			<a href="#pop_num_00f" data-transition="pop" data-rel="popup">bottom?</a>,
-			<a href="#pop_str_008" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup" class="baseFunc">setPosition</a>(
+			<a href="#pop_num_015" data-transition="pop" data-rel="popup">left</a>,
+			<a href="#pop_num_016" data-transition="pop" data-rel="popup">top</a>,
+			<a href="#pop_str_008" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_025" data-transition="pop" data-rel="popup" class="baseFunc">setPosition</a>(
-			<a href="#pop_num_012" data-transition="pop" data-rel="popup">left?</a>,
-			<a href="#pop_num_013" data-transition="pop" data-rel="popup">top?</a>,
-			<a href="#pop_str_009" data-transition="pop" data-rel="popup">mode='px'</a> )
+			<a href="#pop_dsc_027" data-transition="pop" data-rel="popup" class="baseFunc">setScale</a>(
+			<a href="#pop_num_017" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_018" data-transition="pop" data-rel="popup">y</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_026" data-transition="pop" data-rel="popup" class="baseFunc">setScale</a>(
-			<a href="#pop_num_014" data-transition="pop" data-rel="popup">x</a>,
-			<a href="#pop_num_015" data-transition="pop" data-rel="popup">y</a> )
+			<a href="#pop_dsc_028" data-transition="pop" data-rel="popup" class="baseFunc">setSize</a>(
+			<a href="#pop_num_015" data-transition="pop" data-rel="popup">width</a>,
+			<a href="#pop_num_016" data-transition="pop" data-rel="popup">height</a>,
+			<a href="#pop_str_00a" data-transition="pop" data-rel="popup">mode</a> )
 		</div>
 		<div class="samp">
-			<a href="#pop_dsc_027" data-transition="pop" data-rel="popup" class="baseFunc">setSize</a>(
-			<a href="#pop_num_012" data-transition="pop" data-rel="popup">width</a>,
-			<a href="#pop_num_017" data-transition="pop" data-rel="popup">height</a> )
-		</div>
-		<div class="samp">
-			<a href="#pop_dsc_028" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
+			<a href="#pop_dsc_029" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
 		</div>
 
 	</div>
 
-	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
-	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the screen width.</div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> Fraction of the parent width. Default is 1.</div>
 	<div data-role="popup" id="pop_num_002" class="ui-content"><b>Number:</b> The time in milliseconds.</div>
 	<div data-role="popup" id="pop_num_003" class="ui-content"><b>Number:</b> The z-index. A negative value behaves like `sendBackward` method.</div>
 	<div data-role="popup" id="pop_num_004" class="ui-content"><b>Number:</b> The z-index. A positve value behaves like `bringForward` method.</div>
 	<div data-role="popup" id="pop_num_005" class="ui-content"><b>Number:</b> Border-left thickness in pixels.</div>
-	<div data-role="popup" id="pop_num_006" class="ui-content"><b>Number:</b> Top-Left border radius in pixels.</div>
-	<div data-role="popup" id="pop_num_007" class="ui-content"><b>Number:</b> Top-Right border radius in pixels.</div>
-	<div data-role="popup" id="pop_num_008" class="ui-content"><b>Number:</b> Bottom-Left border radius in pixels.</div>
-	<div data-role="popup" id="pop_num_009" class="ui-content"><b>Number:</b> Bottom-Right border radius in pixels.</div>
-	<div data-role="popup" id="pop_num_00a" class="ui-content"><b>Number:</b> Fraction of the parent width.</div>
-	<div data-role="popup" id="pop_num_00b" class="ui-content"><b>Number:</b> Fraction of the parent height.</div>
-	<div data-role="popup" id="pop_num_00e" class="ui-content"><b>Number:</b> Fraction of the component width.</div>
-	<div data-role="popup" id="pop_num_00f" class="ui-content"><b>Number:</b> Fraction of the component height. [0-1]</div>
-	<div data-role="popup" id="pop_num_010" class="ui-content"><b>Number:</b> Fraction of the component width. [0-1]</div>
-	<div data-role="popup" id="pop_num_012" class="ui-content"><b>Number:</b> Fraction of the parent width. [0-1]</div>
-	<div data-role="popup" id="pop_num_013" class="ui-content"><b>Number:</b> Fraction of the screen height. [0-1]</div>
-	<div data-role="popup" id="pop_num_014" class="ui-content"><b>Number:</b> The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.</div>
-	<div data-role="popup" id="pop_num_015" class="ui-content"><b>Number:</b> The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.</div>
-	<div data-role="popup" id="pop_num_017" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A comma separated Divider options. Values can be `Inset`”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values <br> `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` <br> `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` <br> `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` <br> `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` <br> `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` <br> `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` <br> `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` <br> `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` <br> `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` <br> `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` <br> `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` <br> `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` <br> `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` <br> `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` <br> `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` <br> `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.”</docstr></div>
+	<div data-role="popup" id="pop_num_006" class="ui-content"><b>Number:</b> Border-top thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_007" class="ui-content"><b>Number:</b> Border-right thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_008" class="ui-content"><b>Number:</b> Border-bottom thickness in pixels.</div>
+	<div data-role="popup" id="pop_num_009" class="ui-content"><b>Number:</b> Top-Left border radius.</div>
+	<div data-role="popup" id="pop_num_00a" class="ui-content"><b>Number:</b> Top-Right border radius.</div>
+	<div data-role="popup" id="pop_num_00b" class="ui-content"><b>Number:</b> Bottom-Right border radius.</div>
+	<div data-role="popup" id="pop_num_00c" class="ui-content"><b>Number:</b> Bottom-Left border radius.</div>
+	<div data-role="popup" id="pop_num_00d" class="ui-content"><b>Number:</b> Left margin. You can also pass string e.g. `12rem`</div>
+	<div data-role="popup" id="pop_num_00e" class="ui-content"><b>Number:</b> Top margin. You can also pass string e.g. `12rem`</div>
+	<div data-role="popup" id="pop_num_00f" class="ui-content"><b>Number:</b> Right margin. You can also pass string e.g. `12rem`</div>
+	<div data-role="popup" id="pop_num_010" class="ui-content"><b>Number:</b> Bottom margin. You can also pass string e.g. `12rem`</div>
+	<div data-role="popup" id="pop_num_011" class="ui-content"><b>Number:</b> Fraction of the component width.</div>
+	<div data-role="popup" id="pop_num_012" class="ui-content"><b>Number:</b> Fraction of the component height. [0-1]</div>
+	<div data-role="popup" id="pop_num_013" class="ui-content"><b>Number:</b> Fraction of the component width. [0-1]</div>
+	<div data-role="popup" id="pop_num_015" class="ui-content"><b>Number:</b> Fraction of the parent width. [0-1]</div>
+	<div data-role="popup" id="pop_num_016" class="ui-content"><b>Number:</b> Fraction of the parent height. [0-1]</div>
+	<div data-role="popup" id="pop_num_017" class="ui-content"><b>Number:</b> The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_num_018" class="ui-content"><b>Number:</b> The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.</div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A comma separated options.<br>`Inset` to add some padding.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“The type of animation. Here are the available values<br>`bounce`”</docstr>, <docstr>“ `flash`”</docstr>, <docstr>“ `pulse`”</docstr>, <docstr>“ `rubberBand`”</docstr>, <docstr>“ `shakeX`”</docstr>, <docstr>“ `shakeY`”</docstr>, <docstr>“ `headShake`”</docstr>, <docstr>“ `swing`”</docstr>, <docstr>“ `tada`”</docstr>, <docstr>“ `wobble`”</docstr>, <docstr>“ `jello`”</docstr>, <docstr>“ `heartBeat`”</docstr>, <docstr>“<br>Back Entrances: `backInDown`”</docstr>, <docstr>“ `backInLeft`”</docstr>, <docstr>“ `backInRight`”</docstr>, <docstr>“ `backInUp`<br>Back Exits: `backOutDown`”</docstr>, <docstr>“ `backOutLeft`”</docstr>, <docstr>“ `backOutRight`”</docstr>, <docstr>“ `backOutUp`<br>Bouncing Entrances: `bounceIn`”</docstr>, <docstr>“ `bounceInDown`”</docstr>, <docstr>“ `bounceInLeft`”</docstr>, <docstr>“ `bounceInRight`”</docstr>, <docstr>“ `bounceInUp`<br>Bouncing exits: `bounceOut`”</docstr>, <docstr>“ `bounceOutDown`”</docstr>, <docstr>“ `bounceOutLeft`”</docstr>, <docstr>“ `bounceOutRight`”</docstr>, <docstr>“ `bounceOutUp`<br>Fading entrances: `fadeIn`”</docstr>, <docstr>“ `fadeInDown`”</docstr>, <docstr>“ `fadeInDownBig`”</docstr>, <docstr>“ `fadeInLeft`”</docstr>, <docstr>“ `fadeInLeftBig`”</docstr>, <docstr>“ `fadeInRight`”</docstr>, <docstr>“ `fadeInRightBig`”</docstr>, <docstr>“ `fadeInUp`”</docstr>, <docstr>“ `fadeInUpBig`”</docstr>, <docstr>“ `fadeInTopLeft`”</docstr>, <docstr>“ `fadeInTopRight`”</docstr>, <docstr>“ `fadeInBottomLeft`”</docstr>, <docstr>“ `fadeInBottomRight`<br>Fading exits: `fadeOut`”</docstr>, <docstr>“ `fadeOutDown`”</docstr>, <docstr>“ `fadeOutDownBig`”</docstr>, <docstr>“ `fadeOutLeft`”</docstr>, <docstr>“ `fadeOutLeftBig`”</docstr>, <docstr>“ `fadeOutRight`”</docstr>, <docstr>“ `fadeOutRightBig`”</docstr>, <docstr>“ `fadeOutUp`”</docstr>, <docstr>“ `fadeOutUpBig`”</docstr>, <docstr>“ `fadeOutTopLeft`”</docstr>, <docstr>“ `fadeOutTopRight`”</docstr>, <docstr>“ `fadeOutBottomRight`”</docstr>, <docstr>“ `fadeOutBottomLeft`<br>Flippers: `flip`”</docstr>, <docstr>“ `flipInX`”</docstr>, <docstr>“ `flipInY`”</docstr>, <docstr>“ `flipOutX`”</docstr>, <docstr>“ `flipOutY`<br>Lightspeed: `lightSpeedInRight`”</docstr>, <docstr>“ `lightSpeedInLeft`”</docstr>, <docstr>“ `lightSpeedOutRight`”</docstr>, <docstr>“ `lightSpeedOutLeft`<br>Rotating Entrances: `rotateIn`”</docstr>, <docstr>“ `rotateInDownLeft`”</docstr>, <docstr>“ `rotateInDownRight`”</docstr>, <docstr>“ `rotateInUpLeft`”</docstr>, <docstr>“ `rotateInUpRight`<br>Rotating Exits: `rotateOut`”</docstr>, <docstr>“ `rotateOutDownLeft`”</docstr>, <docstr>“ `rotateOutDownRight`”</docstr>, <docstr>“ `rotateOutUpLeft`”</docstr>, <docstr>“ `rotateOutUpRight`<br>Specials: `hinge`”</docstr>, <docstr>“ `jackInTheBox`”</docstr>, <docstr>“ `rollIn`”</docstr>, <docstr>“ `rollOut`<br>Zooming Entrances: `zoomIn`”</docstr>, <docstr>“ `zoomInDown`”</docstr>, <docstr>“ `zoomInLeft`”</docstr>, <docstr>“ `zoomInRight`”</docstr>, <docstr>“ `zoomInUp`<br>Zooming Exits: `zoomOut`”</docstr>, <docstr>“ `zoomOutDown`”</docstr>, <docstr>“ `zoomOutLeft`”</docstr>, <docstr>“ `zoomOutRight`”</docstr>, <docstr>“ `zoomOutUp`<br>Sliding Entrances: `slideInDown`”</docstr>, <docstr>“ `slideInLeft`”</docstr>, <docstr>“ `slideInRight`”</docstr>, <docstr>“ `slideInUp`<br>Sliding Exits: `slideOutDown`”</docstr>, <docstr>“ `slideOutLeft`”</docstr>, <docstr>“ `slideOutRight`”</docstr>, <docstr>“ `slideOutUp`”</docstr></div>
 	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The mode of the measurements. Values can be `px` or `%`”</docstr></div>
-	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal form `#rrggbb`”</docstr></div>
-	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`.”</docstr></div>
-	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Unit. Values are `px` `rem` or `%`.”</docstr></div>
-	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“`px` or `%`”</docstr></div>
-	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“The size thickness mode. Can be `px`”</docstr></div>
-	<div data-role="popup" id="pop_str_009" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Can be `px` or `%` or any css unit of measurement.”</docstr></div>
-	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The layour where to add the divider.</div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Border color in hexadecimal format `#rrggbb`.”</docstr></div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Border-styles. Values can be `dotted`”</docstr>, <docstr>“ `dashed`”</docstr>, <docstr>“ `solid`”</docstr>, <docstr>“ `double`”</docstr>, <docstr>“ `groove`”</docstr>, <docstr>“ `ridge`”</docstr>, <docstr>“ `inset` and `outset`. Default is `solid`”</docstr></div>
+	<div data-role="popup" id="pop_str_006" class="ui-content"><b>String:</b> <docstr>“Unit of measurement. Values are `px` `rem` or `%`.”</docstr></div>
+	<div data-role="popup" id="pop_str_007" class="ui-content"><b>String:</b> <docstr>“Unit of measurement.<br>`rem` for root em.<br>`px` for pixels<br>`%` relative to its parent dimension.<br>`v` relative to viewport dimension.”</docstr></div>
+	<div data-role="popup" id="pop_str_008" class="ui-content"><b>String:</b> <docstr>“Unit of measurement.<br>`rem` for root em.<br>`px` for pixels<br>`%` relative to its parent dimensions<br>`v` relative to viewport dimensions.”</docstr></div>
+	<div data-role="popup" id="pop_str_00a" class="ui-content"><b>String:</b> <docstr>“Unit of measurment. Can be "px"”</docstr>, <docstr>“ "rem"”</docstr>, <docstr>“ "%"”</docstr>, <docstr>“ "v" for viewport width/height or any css supported unit.”</docstr></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> The layout where to add the divider.</div>
 	<div data-role="popup" id="pop_obj_002" class="ui-content"><b>Object:</b> The pointer event object.</div>
-	<div data-role="popup" id="pop_obj_003" class="ui-content"><b>Object:</b> The click event object.</div>
 	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
-		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">event</a>
-	)</div>
-	<div data-role="popup" id="pop_fnc_002" class="ui-content"><b>function</b>(
-		<a href="" onclick="switchPopup(this, '#pop_obj_003')" data-transition="pop" data-rel="popup">event</a>
+		<a href="" onclick="switchPopup(this, '#pop_obj_002')" data-transition="pop" data-rel="popup">event </a>
 	)</div>
 	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>div.absHeight</b><br>Returns the absolute height of the control in pixels.</div>
 	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>div.absLeft</b><br>Returns the absolute distance of the control from the left in pixels.</div>
 	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>div.absTop</b><br>Returns the absolute distance of the control from the top in pixels.</div>
 	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>div.absWidth</b><br>Returns the absolute width of the control in pixels.</div>
-	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>div.animate</b><br>Animate the component</div>
-	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>div.backColor</b><br>A hexadecimal color of the form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>div.animate</b><br>Animate the component.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>div.backColor</b><br>A hexadecimal color of the form <kbd>#rrggbb</kbd></div>
 	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>div.backImage</b><br>The path to your image file.</div>
 	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>div.border</b><br>Sets or returns the border thickness in pixels.</div>
-	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>div.borderColor</b><br>Sets or returns the border color. Color is in hexadecimal form <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">#rrggbb</span></div>
-	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>div.borderStyle</b><br>Sets or returns the border style. Values can be <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dotted</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">dashed</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">double</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">groove</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">ridge</span>, <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">inset</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">outset</span>. Default is <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">solid</span>.</div>
-	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>div.bringForward</b><br>Bring this component forward by a given z-index</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>div.borderColor</b><br>Sets or returns the border color. Color is in hexadecimal form <kbd>#rrggbb</kbd></div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>div.borderStyle</b><br>Sets or returns the border style. Values can be <kbd>dotted</kbd>, <kbd>dashed</kbd>, <kbd>solid</kbd>, <kbd>double</kbd>, <kbd>groove</kbd>, <kbd>ridge</kbd>, <kbd>inset</kbd> and <kbd>outset</kbd>. Default is <kbd>solid</kbd>.</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>div.bringForward</b><br>Bring this component forward by a given z-index.</div>
 	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>div.color</b><br>Sets or returns the color in hexadecimal format.</div>
 	<div data-role="popup" id="pop_dsc_00d" class="ui-content"><b>div.cornerRadius</b><br>Sets or returns the corner radius in pixels.</div>
-	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>div.destroy</b><br>Destroy the component</div>
-	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>div.disabled</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">disabled</span> state of the control.</div>
-	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>div.fontFile</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">relative</span> path to the font-family use.</div>
-	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>div.getPosition</b><br>Returns the position of the component. The return object is of the form `{ left, top, right, bottom</div>
-	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>div.gone</b><br>Destroy the component</div>
-	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>div.height</b><br>Sets or returns the height of the control as a fraction of the parent control.</div>
-	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>div.hide</b><br>Hide the component</div>
-	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>div.isVisible</b><br>Returns whether the control is visible or not.</div>
-	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>div.left</b><br>Returns the distance of the control from the left.</div>
-	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>div.margins</b><br>Sets or returns the margin of the control. Works on controls with <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">Linear</span> parent only. You can also pass a number to set equal margins for all sides.</div>
-	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>div.opacity</b><br>Sets or returns the opacity of the control.</div>
-	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>div.options</b><br>Sets or returns the <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">options</span> of the control.</div>
-	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>div.padding</b><br>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</div>
-	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>div.parent</b><br>Returns the parent layout control.</div>
-	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>div.position</b><br>Returns the position of the control. The returned object has <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">left</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">top</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">right</span> and <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">bottom</span> props.</div>
-	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>div.rotation</b><br>Sets or returns the angle of rotation in degrees.</div>
-	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>div.sendBackward</b><br>Bring this component backward by a given z-index</div>
-	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>div.setBorder</b><br>Sets the border line for the component container</div>
-	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>div.setCornerRadius</b><br>Sets the corner radius of the component</div>
-	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>div.setMargins</b><br>Sets the margin of the component</div>
-	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>div.setOnContextMenu</b><br>Adds a callback function on right click</div>
-	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>div.setOnTouch</b><br>Adds a callback handler when the component is touch</div>
-	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>div.setPadding</b><br>Sets the padding component container</div>
-	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>div.setPosition</b><br>Sets the position of the component relative to its parent dimensions</div>
-	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>div.setScale</b><br>Sets the x and y scaling of the component</div>
-	<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>div.setSize</b><br>Sets the size of the component</div>
-	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>div.show</b><br>Show the component</div>
-	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>div.textColor</b><br>Sets or returns the color of the text.</div>
-	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>div.textSize</b><br>Sets or returns the size of the text within the control.</div>
-	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>div.top</b><br>Returns the distance of the control from the top.</div>
-	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>div.type</b><br>Returns the type of the control.</div>
-	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>div.visibility</b><br>Sets or returns the visibility of the control.</div>
-	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>div.width</b><br>Sets or returns the width of the control as a fraction of the parent control.</div>
+	<div data-role="popup" id="pop_dsc_00e" class="ui-content"><b>div.destroy</b><br>Destroy the component.</div>
+	<div data-role="popup" id="pop_dsc_00f" class="ui-content"><b>div.disabled</b><br>Sets or returns the <kbd>disabled</kbd> state of the control.</div>
+	<div data-role="popup" id="pop_dsc_010" class="ui-content"><b>div.el</b><br>Returns the html container element for the control.</div>
+	<div data-role="popup" id="pop_dsc_011" class="ui-content"><b>div.elStyle</b><br>Sets the style of the html container element.</div>
+	<div data-role="popup" id="pop_dsc_012" class="ui-content"><b>div.fontFile</b><br>Sets or returns the <kbd>relative</kbd> path to the font-family use.</div>
+	<div data-role="popup" id="pop_dsc_013" class="ui-content"><b>div.getPosition</b><br>Returns the position of the component. The return object is of the form <kbd>{left, top, right, bottom}</kbd></div>
+	<div data-role="popup" id="pop_dsc_014" class="ui-content"><b>div.gone</b><br>Destroy the component.</div>
+	<div data-role="popup" id="pop_dsc_015" class="ui-content"><b>div.height</b><br>Sets or returns the height of the control as a fraction of the parent control.</div>
+	<div data-role="popup" id="pop_dsc_016" class="ui-content"><b>div.hide</b><br>Hide the component.</div>
+	<div data-role="popup" id="pop_dsc_017" class="ui-content"><b>div.isVisible</b><br>Returns whether the control is visible or not.</div>
+	<div data-role="popup" id="pop_dsc_018" class="ui-content"><b>div.left</b><br>Returns the distance of the control from the left.</div>
+	<div data-role="popup" id="pop_dsc_019" class="ui-content"><b>div.margins</b><br>Sets or returns the margin of the control. Works on controls with <kbd>Linear</kbd> parent only. You can also pass a number to set equal margins for all sides.</div>
+	<div data-role="popup" id="pop_dsc_01a" class="ui-content"><b>div.opacity</b><br>Sets or returns the opacity of the control.</div>
+	<div data-role="popup" id="pop_dsc_01b" class="ui-content"><b>div.options</b><br>Sets or returns the <kbd>options</kbd> of the control.</div>
+	<div data-role="popup" id="pop_dsc_01c" class="ui-content"><b>div.padding</b><br>Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.</div>
+	<div data-role="popup" id="pop_dsc_01d" class="ui-content"><b>div.parent</b><br>Returns the parent layout control.</div>
+	<div data-role="popup" id="pop_dsc_01e" class="ui-content"><b>div.position</b><br>Returns the position of the control. The returned object has <kbd>left</kbd> <kbd>top</kbd> <kbd>right</kbd> and <kbd>bottom</kbd> props.</div>
+	<div data-role="popup" id="pop_dsc_01f" class="ui-content"><b>div.rotation</b><br>Sets or returns the angle of rotation in degrees.</div>
+	<div data-role="popup" id="pop_dsc_020" class="ui-content"><b>div.sendBackward</b><br>Bring this component backward by a given z-index.</div>
+	<div data-role="popup" id="pop_dsc_021" class="ui-content"><b>div.setBorder</b><br>Sets the border line for the component container.</div>
+	<div data-role="popup" id="pop_dsc_022" class="ui-content"><b>div.setCornerRadius</b><br>Sets the corner radius of the component.</div>
+	<div data-role="popup" id="pop_dsc_023" class="ui-content"><b>div.setMargins</b><br>Sets the margin of the component.</div>
+	<div data-role="popup" id="pop_dsc_024" class="ui-content"><b>div.setOnContextMenu</b><br>Adds a callback function on right click.</div>
+	<div data-role="popup" id="pop_dsc_025" class="ui-content"><b>div.setPadding</b><br>Sets the padding of the component's container.</div>
+	<div data-role="popup" id="pop_dsc_026" class="ui-content"><b>div.setPosition</b><br>Sets the position of the component relative to its parent dimensions.</div>
+	<div data-role="popup" id="pop_dsc_027" class="ui-content"><b>div.setScale</b><br>Sets the x and y scaling of the component. This will ignore the positioning and flow of controls in the layout.</div>
+	<div data-role="popup" id="pop_dsc_028" class="ui-content"><b>div.setSize</b><br>Sets the size of the component.</div>
+	<div data-role="popup" id="pop_dsc_029" class="ui-content"><b>div.show</b><br>Show the component.</div>
+	<div data-role="popup" id="pop_dsc_02a" class="ui-content"><b>div.textColor</b><br>Sets or returns the color of the text.</div>
+	<div data-role="popup" id="pop_dsc_02b" class="ui-content"><b>div.textSize</b><br>Sets or returns the size of the text within the control.</div>
+	<div data-role="popup" id="pop_dsc_02c" class="ui-content"><b>div.top</b><br>Returns the distance of the control from the top.</div>
+	<div data-role="popup" id="pop_dsc_02d" class="ui-content"><b>div.type</b><br>Returns the type of the control.</div>
+	<div data-role="popup" id="pop_dsc_02e" class="ui-content"><b>div.visibility</b><br>Sets or returns the visibility of the control.</div>
+	<div data-role="popup" id="pop_dsc_02f" class="ui-content"><b>div.width</b><br>Sets or returns the width of the control as a fraction of the parent control.</div>
 </div>
 </body>
 

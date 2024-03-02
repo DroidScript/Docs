@@ -1231,7 +1231,6 @@
 		"SetPosition": "Defines position and size on absolute layouts",
 		"SetScale": "Scale the control by the given factors",
 		"SetSize": "Change the size of the control",
-		"SetStyle": "Customize the button looks",
 		"SetText": "Change displayed text",
 		"SetTextColor": "Change the text color",
 		"SetTextSize": "Change the text size",

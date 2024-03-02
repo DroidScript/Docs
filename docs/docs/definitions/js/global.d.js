@@ -8,6 +8,8 @@
 /** @typedef {void} nil void */
 /** @typedef {any[]} lst_obj of objects */
 /** @typedef {number[]} lst_num of numbers */
+/** @typedef {string[]} lst_str of strings */
+/** @typedef {boolean[]} lst_bin of booleans */
 /** @typedef {number} num_byt bytes */
 /** @typedef {number} num_col hexadecimal 0xrrggbb */
 /** @typedef {number} num_dat datetime in milliseconds (from JS Date object) */
