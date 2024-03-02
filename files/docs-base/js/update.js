@@ -111,8 +111,8 @@ function ExtractLang(file) {
     if (!app.FolderExists(sourceDir))
         return app.ShowPopup("Latest not found.");
 
-    app.ShowProgress("Removing old " + name);
-    app.ListFolder(sourceDir).forEach(function (d) { app.DeleteFolder(docsPath + name + "/" + d) });
+    // app.ShowProgress("Removing old " + name);
+    // app.ListFolder(sourceDir).forEach(function (d) { app.DeleteFolder(docsPath + name + "/" + d) });
 
     app.ShowProgress("Copying new " + name);
     app.ListFolder(sourceDir).forEach(function (d) { app.RenameFolder(sourceDir + "/" + d, docsPath + name + "/" + d) });

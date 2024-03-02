@@ -280,9 +280,6 @@ function addInternalPlugins(plugins, docsList = []) {
 	if (uiIndexes[0] != "ui") uiItem.attr('href', uiIndexes[0]);
 	else if (plugins.UI) uiItem.hide();
 	else uiItem.attr('href', uiIndexes[1]);
-
-	if (plugins.Music) $("ul#native > li:contains(Music)").hide();
-	else $("ul#native > li:contains(Music)").show();
 }
 
 //Dynamically create plugins page.
