@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs It is like a small, temporary window that appears above other content, showing additional options or details. It's a brief and focused way to present information or choices to the user.
  * $$ ui.showPopover(parent, text, position, height, height) $$
- * @param {Object} parent UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
+ * @param {uio} parent UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
  * @param {String} [text] The text to de displayed. For displaying more data, pass a `Layout`
  * @param {String} [position] A comma separated values representing the\n`"anchorOrigin,transformOrigin"`\n`anchorOrigin` Position of the popover on its parent.\n`transformOrigin` Origin on the popover itself.\nAvailable values for both `anchorOrigin` and `transformOrigin`  are\n`tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.
  * @param {Number} [width] Fraction of the screen width `[0-1]`.
@@ -14,31 +14,32 @@
  */
 
 
-/** ## Properties
- * These are the setter/getter properties available for the Popover Component.
- * @prop {String} fontFile Sets or returns the font file use for the Popover.
- * @prop {String} backImage Sets or returns the path to the background image.
- */
+    /** ## Properties
+     * These are the setter/getter properties available for the Popover Component.
+     * @prop {String} fontFile Sets or returns the font file use for the Popover.
+     * @prop {String} backImage Sets or returns the path to the background image.
+     */
 
 
-/** ## Methods
- * These are the methods available for the Popover Component.
- */
+    /** ## Methods
+     * These are the methods available for the Popover Component.
+     */
 
 
-/** ### show
- * Show the popup dialog.
- * $$ pop.show() $$
- */
+    /** ### show
+     * Show the popup dialog.
+     * $$ pop.show() $$
+     */
 
 
-/** ### hide
- * Hide the popup dialog.
- * $$ pop.hide() $$
- */
+    /** ### hide
+     * Hide the popup dialog.
+     * $$ pop.hide() $$
+     */
 
 
 /* ## Examples */
+
 
 /**
 @sample Basic
@@ -165,7 +166,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Basic
 from hybrid import ui
@@ -185,6 +185,7 @@ def onTouch(event):
     # Display a popover when the button is clicked
     ui.showPopover(btn, "This is a text to be displayed.")
  */
+
 
 /**
 @sample Python Positioning
@@ -259,6 +260,7 @@ def OnStart():
     btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,br"))
  */
 
+
 /**
 @sample Python Advanced
 from hybrid import ui
@@ -291,3 +293,5 @@ def onTouch(event):
     # pass the layout into the `ui.showPopover` method
     ui.showPopover(btn, lay, "bl,tr")
  */
+
+

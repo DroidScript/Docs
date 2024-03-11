@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs In UI development, an AppBar is a common user interface element found at the top of the screen in mobile applications. It typically contains the app's title, navigation icons, and other actions. In Material Design, an AppBar follows guidelines such as elevation, color, and typography for consistency. Add an AppBar into your app using the `addAppBar` method like this:
  * $$ apb = ui.addAppBar(parent, title, options, width, height) $$
- * @param {Object} parent The parent layout where to add the AppBar
+ * @param {uio-Layout} parent The parent layout where to add the AppBar
  * @param {String} title The title text of the appbar
  * @param {String} [options] A comma separated options.\nMenu icon: `Menu` \nTheme Color: `Primary`, `Secondary`, `Transparent`, `Inherit`, `Default`\nPosition: `Absolute`, `Static`, `Fixed`, `Relative`
  * @param {Number} [width] Fraction of the parent width `[0-1]`
@@ -14,110 +14,200 @@
  */
 
 
-/** ## Properties
- * Here are the available setters and getters of the AppBar Component.
- * @prop {String} text Sets or return the AppBar title `text`
- * @prop {String} color Sets or returns the theme color of the AppBar. Values can be `Default` `Primary` `Secondary` `Transparent` `Inherit`
- * @prop {String} textColor Sets or returns the hexadecimal color of the appbar title.
- * @prop {String} textVariant Sets or returns the variant of the title text. Values can be `h1` `h2` `h3` `h4` `h5` or `h6`
- * @prop {Number} textSize Sets or returns the font size of the title text.
- * @prop {String} icon Sets or returns the icon of the menu button.
- * @prop {Object} layout Returns the right layout of the appbar where you can add controls.
- * @prop {Boolean} menu Sets or returns whether the appbar has menu button.
- * @prop {Number} cornerRadius Sets or returns the corner radius of the accordion panel. You can also pass an array of the form `[tl, tr, bl, br]`. See `setCornerRadius` for customization.
- */
+	/** ## Properties
+	 * Here are the available setters and getters of the AppBar Component.
+	 * @prop {String} text Sets or return the AppBar title “text”
+	 * @prop {String} color Sets or returns the theme color of the AppBar. Values can be `Default` `Primary` `Secondary` `Transparent` `Inherit`
+	 * @prop {String} textColor Sets or returns the hexadecimal color of the appbar title.
+	 * @prop {String} textVariant Sets or returns the variant of the title text. Values can be `h1` `h2` `h3` `h4` `h5` or `h6`
+	 * @prop {Number} textSize Sets or returns the font size of the title text. 
+	 * @prop {String} icon Sets or returns the icon of the menu button.
+	 * @prop {Object} layout Returns the right layout of the appbar where you can add controls.
+     * @prop {Boolean} menu Sets or returns whether the appbar has menu button. 
+     * @prop {Number} cornerRadius Sets or returns the corner radius of the accordion panel. You can also pass an array of the form `[tl, tr, bl, br]`. See `setCornerRadius` for customization.
+	 */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-// VISIBLE METHODS
-
-/** ## Methods
- * Here are the methods available for AppBar Component.
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnTouch
- * Adds a callback handler when the component is touch.
- * $$ apb.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
- */
+    /** @extern height */
 
 
-/** ### setOnMenu
- * Sets a function to be called when the user clicks the menu.
- * $$ apb.setOnMenu( callback ) $$
- * @param {Function} callback The function to be called. ---> @arg {Object} pos The position of the touch event.
- */
+    /** @extern opacity */
 
 
-/** ### addLayout
- * Adds a layout for additional controls at the right of the appbar.
- * $$ apb.addLayout( lay ) $$
- * @param {Object} lay The layout where to add controls
- */
+    /** @extern textSize */
 
 
-/** ### setCornerRadius
- * Sets the corner radius of the appbar.
- * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} [tl] Top-left corner radius.
- * @param {Number} [tr] Top-right corner radius.
- * @param {Number} [bl] Bottom-left corner radius.
- * @param {Number} [br] Bottom-right corner radius.
- * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern textColor */
+
+
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+	/** ## Methods
+	 * Here are the methods available for AppBar Component.
+	 */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the component is touch.
+     * $$ apb.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setOnMenu
+     * Sets a function to be called when the user clicks the menu.
+	 * $$ apb.setOnMenu( callback ) $$
+     * @param {Function} callback The function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### addLayout
+     * Adds a layout for additional controls at the right of the appbar.
+	 * $$ apb.addLayout( lay ) $$
+     * @param {Object} lay The layout where to add controls
+     */
+
+
+    /** ### setCornerRadius
+     * Sets the corner radius of the appbar.
+     * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
+     * @param {Number} [tl] Top-left corner radius.
+     * @param {Number} [tr] Top-right corner radius.
+     * @param {Number} [bl] Bottom-left corner radius.
+     * @param {Number} [br] Bottom-right corner radius.
+     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic AppBar
@@ -254,6 +344,7 @@ class Main extends App
 {
    onStart()
    {
+        this.show = false
        // Creates a fullscreen layout with objects vertically centered.
        this.main = ui.addLayout("main", "Linear", "Top,FillXY")
 
@@ -261,7 +352,7 @@ class Main extends App
        this.apb = ui.addAppBar(this.main, "My app", "Default,Menu")
 
        // Add a callback handler when the menu icon is click
-       this.apb.setOnMenu( this.onMenu )
+   	   this.apb.setOnMenu( this.onMenu )
        
        // Adds a textfield to the appbar
        this.tfd = ui.addTextField(this.apb.layout, "", "Search,Small", 0.9)
@@ -280,7 +371,7 @@ class Main extends App
         // Close the textfield if it is shown
         if( this.show )
         {
-            this.closeSearchField()
+			this.closeSearchField()
         }
     }
 
@@ -311,7 +402,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Basic AppBar
 from hybrid import ui
@@ -327,6 +417,7 @@ def OnStart():
     btn = ui.addButton(main, "Button")
     btn.margins = 0.1
  */
+
 
 /**
 @sample Python Fixed appbar with drawer
@@ -371,6 +462,7 @@ def onTouch(title, body, icon, index, event):
     # Close the drawer
     drawer.hide()
  */
+
 
 /**
 @sample Python Appbar with actions
@@ -423,6 +515,7 @@ def onTouch(title, body, icon, index, event):
     drawer.hide()
  */
 
+
 /**
 @sample Python Appbar with search field
 from hybrid import ui
@@ -454,3 +547,5 @@ def showSearchField(event):
         tfd.hide()
         searchBtn.text = "search"
  */
+
+

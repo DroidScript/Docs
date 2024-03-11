@@ -4,75 +4,167 @@
  * @img(img1.png)
  * @jdocs In Material Design, dividers are often lines or subtle indicators that enhance visual clarity and organization. They help create a structured and clean interface by distinguishing different sections or items within a mobile application's layout. Add a divider into your app using the `addDivider` method like this:
  * $$ ui.addDivider(parent, options, width, height) $$
- * @param {Object} parent The layout where to add the divider.
+ * @param {uio-Layout} parent The layout where to add the divider.
  * @param {Number} [width=1] Fraction of the parent width. Default is 1.
  * @param {String} [options] A comma separated options.\n`Inset` to add some padding.
  * @returns uio-Divider
  */
 
 
-/** ## Properties
- * Here are the available setters and/or getters of the Divider Component.
- * @prop {String} color Sets or returns the color in hexadecimal format.
- */
+	/** ## Properties
+	 * Here are the available setters and/or getters of the Divider Component.
+	 * @prop {String} color Sets or returns the color in hexadecimal format.
+	 */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-/** ## Methods
- * Here are the methods for Divider component.
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
+    /** @extern height */
+
+
+    /** @extern opacity */
+
+
+    /** @extern textSize */
+
+
+    /** @extern textColor */
+
+
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+    /** ## Methods
+     * Here are the methods for Divider component.
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic
@@ -102,7 +194,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Basic
 from hybrid import ui
@@ -126,3 +217,5 @@ def OnStart():
 
     ui.addText(main, text, "Justify", 0.8)
  */
+
+

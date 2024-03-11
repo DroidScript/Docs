@@ -10,7 +10,7 @@
  * @param {String} [date] Default value for date of the form "YYYY-MM-DD"
  * @param {String} [time] Default value for time of the form "HH:MM:SS"
  * @param {String} [format] The format of the value that will be pass to the `onSelect` callback. Default is `"YYYY-MM-DD HH:MM:SS"`. You can refer to <a href="https://momentjs.com/" target="_blank">https://momentjs.com/</a> for more date time formats. Sample formats: `"MMMM Do YYYY, h:mm:ss a"`, `"dddd"`, `"MMM Do YY"`, `"LLL"`
- * @param {Function} [onSelect] The callback function to be called on submit.
+ * @param {Function} onSelect The callback function to be called on submit.
  * @returns uio-DateTimePicker
  */
 
@@ -22,7 +22,9 @@
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Default
@@ -110,20 +112,3 @@ class Main extends App
  */
 
 
-
-/**
-@sample Python DateTimePicker
-from hybrid import ui
-
-def OnStart():
-    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-
-    btn = ui.addButton(main, "Show Date Time Picker", "Primary")
-    btn.setOnTouch(btn_onTouch)
-
-def btn_onTouch(event):
-    ui.showDateTimePicker(onDateTime)
-
-def onDateTime(val):
-    ui.showPopup(val)
- */

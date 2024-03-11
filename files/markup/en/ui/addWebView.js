@@ -4,7 +4,7 @@
  * @img(img1.png)
  * @jdocs It enables the display of web pages or web-based features, providing seamless integration of online content into mobile apps. Add a webview into your app using the `addWebView` method like this:
  * $$ web = ui.addWebView(parent, url, options, width, height) $$
- * @param {Object} parent The parent layout where to add the WebView component.
+ * @param {uio-Layout} parent The parent layout where to add the WebView component.
  * @param {String} [url] The url of the website.
  * @param {String} [options] A comma separated options for WebView. Values can be `NoScrollBar`, 
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -13,106 +13,198 @@
  */
 
 
-/** ## Properties
- * Here are the setter and getter properties of the WebView Component.
- * @prop {String} url Sets or returns the url of the webview.
- * @prop {String} html Setst or returns the html loaded in the iframe.
- * @prop {String} errorPage Sets or returns the redirect url when an error occur.
- * @prop {Number} textZoom Sets or returns the text zoom of the page loaded in the web view.
- * @prop {Object} window A reference to the webview's window object.
- * @prop {Object} document A reference to the webview's window document object.
- * @prop {Array} blockUrls Sets or returns the list of blocked urls.
- */
+    /** ## Properties
+     * Here are the setter and getter properties of the WebView Component.
+     * @prop {String} url Sets or returns the url of the webview.
+     * @prop {String} html Setst or returns the html loaded in the iframe.
+     * @prop {String} errorPage Sets or returns the redirect url when an error occur.
+     * @prop {Number} textZoom Sets or returns the text zoom of the page loaded in the web view.
+     * @prop {Object} window A reference to the webview's window object.
+     * @prop {Object} document A reference to the webview's window document object.
+     * @prop {Array} blockUrls Sets or returns the list of blocked urls.
+     */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-/** ## Methods
- * Here are the available methods for the WebView Component.
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnLoad
- * Adds a callback handler for onload event.
- * $$ web.setOnLoad( callback ) $$
- * @param {Function} callback The callback function.
- */
+    /** @extern height */
 
 
-/** ### setOnUrl
- * Define a callback function which is called when the user clicked a link.
- * $$ web.setOnUrl( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {String} url The new url to navigate.
- */
+    /** @extern opacity */
 
 
-/** ### stop
- * Stops any web loading.
- * $$ web.stop() $$
- */
+    /** @extern textSize */
 
 
-/** ### reload
- * Reloads the current page.
- * $$ web.reload() $$
- */
+    /** @extern textColor */
 
 
-/** ### print
- * Print current page via the builtin android printer dialog.
- * $$ web.print() $$
- */
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+    /** ## Methods
+     * Here are the available methods for the WebView Component.
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnLoad
+     * Adds a callback handler for onload event.
+     * $$ web.setOnLoad( callback ) $$
+     * @param {Function} callback The callback function.
+     */
+
+
+    /** ### setOnUrl
+     * Define a callback function which is called when the user clicked a link.
+     * $$ web.setOnUrl( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {String} url The new url to navigate.
+     */
+
+
+    /** ### stop
+     * Stops any web loading.
+     * $$ web.stop() $$
+     */
+
+
+    /** ### reload
+     * Reloads the current page.
+     * $$ web.reload() $$
+     */
+
+
+    /** ### print
+     * Print current page via the builtin android printer dialog.
+     * $$ web.print() $$
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample EnjineIO homepage
@@ -285,7 +377,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python EnjineIO homepage
 from hybrid import ui
@@ -298,6 +389,7 @@ def OnStart():
 def onLoad():
     ui.showPopup("Website is loaded!")
  */
+
 
 /**
 @sample Python Call a function inside the webview
@@ -328,6 +420,7 @@ def onLoad():
     x = web.window.callFunc("John Doe")
  */
 
+
 /**
 @sample Python Getting returned values from a function in a webview
 from hybrid import ui
@@ -356,6 +449,7 @@ def onLoad():
     prod = web.window.getProduct(2, 3)
     ui.showPopup("The product is " + str(prod))
  */
+
 
 /**
 @sample Python Manipulate dom inside the webview
@@ -392,3 +486,5 @@ def onTouch(event):
     else:
         ui.showPopup("Webview is not yet loaded!")
  */
+
+
