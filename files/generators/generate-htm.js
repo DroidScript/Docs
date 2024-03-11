@@ -486,6 +486,7 @@ function typeDesc(inpt, state, stypes) {
                 case "lst":
                 case "obj":
                 case "jso": return s[i] + replaceTypes(inpt, state, type[2], false);
+                case "uio": return s[i] + replaceTypes(inpt, state, type[2], false);
                 default:
                     if (!type[0].endsWith("o"))
                         Throw(Error("unknown typex " + type[1]));
@@ -570,6 +571,7 @@ function toArgPop(inpt, state, name, stypes, doSwitch) {
                 return s2[i] + rplop(type[2], type[0] === "str");
             case "lst":
             case "obj": return s2[i] + replaceTypes(inpt, state, replW(type[2]), true);
+            case "uio": return s2[i] + replaceTypes(inpt, state, replW(type[2]), true);
             default:
                 if (!type[0].endsWith("o"))
                     Throw(Error("unknown typex " + type[1]));
