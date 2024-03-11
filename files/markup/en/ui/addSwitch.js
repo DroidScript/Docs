@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs In Material Design, it's presented with a sliding motion and adheres to consistent styling for clarity. Switches provide an intuitive way to enable or disable options in applications, contributing to a seamless user experience. Add a switch into your app using the `addSwitch` method like this:
  * $$ swt = ui.addSwitch(parent, text, options, width, height) $$
- * @param {Object} parent The parent layout where to add the Switch Component.
+ * @param {uio-Layout} parent The parent layout where to add the Switch Component.
  * @param {String} text The label text.
  * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Default`\nIcon Position: `Left`, `Top`, `Right`, `Bottom`\nSizes: `Small`, `Medium`
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -14,85 +14,177 @@
  */
 
 
-/** ## Properties
- * Here are the available setters and getters for the Switch Component.
- * @prop {Boolean} value Sets or returns the value of the switch toggle.
- * @prop {String} text Sets or returns the label text.
- * @prop {String} iconPosition Sets or returns the icon position. Values can be `left` `top` `right` or `bottom`
- * @prop {Boolean} required Sets or returns a boolean value whether this component is required or not.
- * @prop {String} color Sets or returns the theme color. Values can be `Default` `Primary` or `Secondary`
- * @prop {String} textColor Sets or returns the text color in hexadecimal format.
- * @prop {String} sizeVariant Sets or returns the size variant of the toggle switch. Values can be `Small` or `Medium`
- * @prop {String} edge Sets or returns the edge position of the toggle. Values can be `Start` `End` or `False`
- * @prop {Boolean} enable Sets or returns a Boolean whether the component is enabled or disabled.
- * @prop {Number} spaceBetween Sets or returns the space between the switch icon and the label text.
- * @prop {Boolean} disableRipple Sets or returns the disabled state of the ripple effect.
- */
+    /** ## Properties
+     * Here are the available setters and getters for the Switch Component.
+     * @prop {Boolean} value Sets or returns the value of the switch toggle.
+     * @prop {String} text Sets or returns the label text.
+     * @prop {String} iconPosition Sets or returns the icon position. Values can be `left` `top` `right` or `bottom`
+     * @prop {Boolean} required Sets or returns a boolean value whether this component is required or not.
+     * @prop {String} color Sets or returns the theme color. Values can be `Default` `Primary` or `Secondary`
+     * @prop {String} textColor Sets or returns the text color in hexadecimal format.
+     * @prop {String} sizeVariant Sets or returns the size variant of the toggle switch. Values can be `Small` or `Medium`
+     * @prop {String} edge Sets or returns the edge position of the toggle. Values can be `Start` `End` or `False`
+     * @prop {Boolean} enable Sets or returns a Boolean whether the component is enabled or disabled.
+     * @prop {Number} spaceBetween Sets or returns the space between the switch icon and the label text.
+     * @prop {Boolean} disableRipple Sets or returns the disabled state of the ripple effect.
+     */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-/** ## Methods
- * Here are the available methods of the Switch Component.
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
+    /** @extern height */
 
-/** ### setOnTouch
- * Adds an event handler when the switch is touch.
- * $$ swt.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Boolean} check The checked state of the switch control. @arg {Object} pos The position of the event.
- */
+
+    /** @extern opacity */
+
+
+    /** @extern textSize */
+
+
+    /** @extern textColor */
+
+
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+    /** ## Methods
+     * Here are the available methods of the Switch Component.
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnTouch
+     * Adds an event handler when the switch is touch.
+     * $$ swt.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Boolean} check The checked state of the switch control. @arg {Object} pos The position of the event.
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic
@@ -152,7 +244,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Basic
 from hybrid import ui
@@ -174,6 +265,7 @@ def onTouch(value):
     # Setting the switch label text
     swt.text = f"Check me (Value is {value})"
  */
+
 
 /**
 @sample Python Right switch with custom styles
@@ -199,3 +291,5 @@ def OnStart():
 def onTouch(value):
     ui.showPopup("Value is : " + value)
  */
+
+

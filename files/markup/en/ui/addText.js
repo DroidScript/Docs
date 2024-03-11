@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs It emphasizes clear and legible fonts, consistent hierarchy, and appropriate spacing. Following these guidelines enhances readability and visual appeal. Add a text control into your app using the `addText` method like this:
  * $$ txt = ui.addText(parent, text, options, width, height) $$
- * @param {Object} parent The layout control where to add the text control
+ * @param {uio-Layout} parent The layout control where to add the text control
  * @param {String} text The text to be displayed on the text control
  * @param {String} [options] A comma separated options.\nVariants: `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `body1`, `body2`, `overline`, `subtitle1`, `subtitle2`, `button`, `caption`\nLines: `Singleline`, `Multiline`\nAlignment: `Left`, `Center`, `Right`, `Justify`\nTheme Color: `Primary`, `Secondary`, `TextPrimary`, `TextSecondary`, `Error`\nFormat: `Html`, `Icon`, `Italize`, `Monospace`, `Bold`, `Underline`\nUtils: `Touchable`
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -14,122 +14,210 @@
  */
 
 
-/** ## Properties
- * Here are the available setter and getter properties for the Text Component.
- * @prop {String} text Sets or returns the text.
- * @prop {String} variant Sets or returns the text variants. See `options` param above for available values.
- * @prop {String} color Sets or returns the theme color of the text `Primary` or `Secondary`. You can also pass hexadecimal color of the form `#rrggbb`
- * @prop {String} textColor Sets or returns the text color in hexadecimal format.
- * @prop {String} ellipsize Sets or returns the ellipsis use when the text is truncated. Values can be `Ellipsis` `End` or `Start`
- * @prop {Number} textSize Sets or returns the fontsize for the text. You can also pass values such as `1.2em`.
- * @prop {String} textStyle Sets or returns the style of the text. Values can be `italic` or `normal`.
- * @prop {String} alignment Sets or returns the horizontal alignment of the text. Values can be `Left` `Center` `Right` or `Justify`.
- * @prop {String} verticalAlignment Sets or returns the vertical alignment of the text. Values can be `Top` `Center` or `Bottom`.
- * @prop {Boolean} italic Sets or returns whether the text is `italized` or not.
- * @prop {Boolean} bold Sets or returns whether the text is `bold` or not.
- * @prop {Boolean} underline Sets or returns whether the text is `underlined` or not.
- */
+    /** ## Properties
+     * Here are the available setter and getter properties for the Text Component.
+     * @prop {String} text Sets or returns the text.
+     * @prop {String} variant Sets or returns the text variants. See `options` param above for available values.
+     * @prop {String} color Sets or returns the theme color of the text `Primary` or `Secondary`. You can also pass hexadecimal color of the form `#rrggbb`
+     * @prop {String} textColor Sets or returns the text color in hexadecimal format.
+     * @prop {String} ellipsize Sets or returns the ellipsis use when the text is truncated. Values can be `Ellipsis` `End` or `Start`
+     * @prop {Number} textSize Sets or returns the fontsize for the text. You can also pass values such as `1.2em`.
+     * @prop {String} textStyle Sets or returns the style of the text. Values can be `italic` or `normal`.
+     * @prop {String} alignment Sets or returns the horizontal alignment of the text. Values can be `Left` `Center` `Right` or `Justify`.
+     * @prop {String} verticalAlignment Sets or returns the vertical alignment of the text. Values can be `Top` `Center` or `Bottom`.
+     * @prop {Boolean} italic Sets or returns whether the text is `italized` or not.
+     * @prop {Boolean} bold Sets or returns whether the text is `bold` or not.
+     * @prop {Boolean} underline Sets or returns whether the text is `underlined` or not.
+     */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-// @prop {Number} fontWeight Sets or returns the font-weight. Values are `100, 200, 300, ..., 900`. You can also pass a `string` values such as `bold` `bolder` `lighter`
-
-// VISIBLE METHODS
-
-/** ## Methods
- * Here are the methods available for Text Component
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnTouch
- * Adds an event handler when the text component is touch.
- * $$ txt.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
- */
+    /** @extern height */
 
 
-/** ### setOnLongTouch
- * Adds a callback handler for a long touch event. The touch timer is about 500 milliseconds.
- * $$ txt.setOnLongTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
- */
+    /** @extern opacity */
 
 
-/** ### setHtml
- * Sets an html on the text control.
- * $$ txt.setHtml( html ) $$
- * @param {String} html An html string
- * @@ Options should include an `html` option.
- */
+    /** @extern textSize */
 
 
-/** ### getHtml
- * Returns the html text.
- * $$ txt.getHtml() $$
- * @returns String
- */
+    /** @extern textColor */
 
 
-/** ### setTextShadow
- * Sets a shadow on the text in a text control.
- * $$ txt.setTextShadow( radius, dx, dy, color )
- * @param {Number} radius The radius in pixels
- * @param {Number} dx X-offset of the shadow
- * @param {Number} dy Y-offset of the shadow
- * @param {String} color A hexadecimal color of the form `#rrggbb`
- */
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+    /** ## Methods
+     * Here are the methods available for Text Component
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnTouch
+     * Adds an event handler when the text component is touch.
+     * $$ txt.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setOnLongTouch
+     * Adds a callback handler for a long touch event. The touch timer is about 500 milliseconds.
+     * $$ txt.setOnLongTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setHtml
+     * Sets an html on the text control.
+     * $$ txt.setHtml( html ) $$
+     * @param {String} html An html string
+     * @@ Options should include an `html` option.
+     */
+
+
+    /** ### getHtml
+     * Returns the html text.
+     * $$ txt.getHtml() $$
+     * @returns String
+     */
+
+
+    /** ### setTextShadow
+     * Sets a shadow on the text in a text control.
+     * $$ txt.setTextShadow( radius, dx, dy, color )
+     * @param {Number} radius The radius in pixels
+     * @param {Number} dx X-offset of the shadow
+     * @param {Number} dy Y-offset of the shadow
+     * @param {String} color A hexadecimal color of the form `#rrggbb`
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic text control
@@ -299,7 +387,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Basic text control
 class Main extends App
@@ -318,6 +405,7 @@ class Main extends App
     onTouch()
         ui.showPopup( "You touched the text!" )
  */
+
 
 /**
 @sample Python Heading variants
@@ -343,6 +431,7 @@ class Main extends App
         this.h6 = ui.addText( this.main, "Heading 6", "H6" )
  */
 
+
 /**
 @sample Python Other variants
 class Main extends App
@@ -366,6 +455,7 @@ class Main extends App
 
         this.text = ui.addText( this.main, t, "caption" )
  */
+
 
 /**
 @sample Python Alignments and colors
@@ -394,6 +484,7 @@ class Main extends App
         this.txt4.backColor = "#e0e0e0"
  */
 
+
 /**
 @sample Python Icons
 class Main extends App
@@ -419,6 +510,7 @@ class Main extends App
         ui.showPopup( "You touch the icon!" )
  */
 
+
 /**
 @sample Python Html formatted text
 class Main extends App
@@ -433,3 +525,5 @@ class Main extends App
         #  Add text control to the main layout by passing `Html` option
         this.txt = ui.addText(this.main, t, "html")
  */
+
+

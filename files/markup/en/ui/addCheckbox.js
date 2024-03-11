@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs In Material Design, checkboxes maintain a consistent appearance with rounded corners and adhere to elevation principles. Add a checkbox component using the `addCheckbox` method like this:
  * $$ ckb = ui.addCheckbox(parent, text, options, width, height) $$
- * @param {Object} parent The layout where to add the checkbox
+ * @param {uio-Layout} parent The layout where to add the checkbox
  * @param {String} text The label for the checkbox
  * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nSizes: `Medium`, `Small`\nIcon position: `Left`, `Top`, `Right`, `Bottom`\nVariant: `Indeterminate`, `Determinate`
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -14,102 +14,192 @@
  */
 
 
-/** ## Properties
- * Here are the available setters and/or getters of the Checkbox Component.
- * @prop {String} textPosition Sets or returns the text position. Values can be `left` `top` `right` `bottom`
- * @prop {String} checkIcon Sets or returns the material icon font for check stated.
- * @prop {String} uncheckIcon Sets or returns the material icon font for uncheck state.
- * @prop {Boolean} value Sets or returns the checked state of the checkbox.
- * @prop {Boolean} enabled Returns whether the Checkbox is enabled or disabled.
- * @prop {String} color Sets or returns the theme color of the checkbox when checked. Values can be `Default` `Primary` or `Secondary`
- * @prop {String} text Sets or returns the checkbox text.
- * @prop {Boolean} disable Enabled or disable the checkbox component.
- * @prop {Number} iconSize Sets or returns the size of the icon.
- * @prop {String} iconColor Sets or returns the color of the checkbox icon.
- * @prop {Number} spaceBetween Sets or returns the space between the checkbox icon and the label text.
- */
+    /** ## Properties
+     * Here are the available setters and/or getters of the Checkbox Component.
+     * @prop {String} textPosition Sets or returns the text position. Values can be `left` `top` `right` `bottom`
+     * @prop {String} checkIcon Sets or returns the material icon font for check stated.
+     * @prop {String} uncheckIcon Sets or returns the material icon font for uncheck state.
+     * @prop {Boolean} value Sets or returns the checked state of the checkbox.
+     * @prop {Boolean} enabled Returns whether the Checkbox is enabled or disabled.
+     * @prop {String} color Sets or returns the theme color of the checkbox when checked. Values can be `Default` `Primary` or `Secondary`
+     * @prop {String} text Sets or returns the checkbox text.
+     * @prop {Boolean} disable Enabled or disable the checkbox component.
+     * @prop {Number} iconSize Sets or returns the size of the icon.
+     * @prop {String} iconColor Sets or returns the color of the checkbox icon.
+     * @prop {Number} spaceBetween Sets or returns the space between the checkbox icon and the label text.
+     */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-// VISIBLE METHODS
-
-/** ## Methods
- * Here are the methods available for Checkbox Component
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnTouch
- * Adds an event handler when the checkbox is touch.
- * $$ ckb.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Boolean} check The checked state of the checkbox. @arg {Object} pos The position of the touch event.
- */
+    /** @extern height */
 
 
-/** ### setIcon
- * Sets a custom icon for the checkbox.
- * $$ ckb.setIcon( checked, unchecked ) $$
- * @param {String} checked Material icon for checked state
- * @param {String} unchecked Material icon for unchecked state
- */
+    /** @extern opacity */
 
 
-/** ### getIcon
- * Returns the icons of the form { checkIcon, uncheckedIcon }.
- * $$ ckb.getIcon() $$
- * @returns Object { checkIcon, uncheckedIcon }
- */
+    /** @extern textSize */
+
+
+    /** @extern textColor */
+
+
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+	/** ## Methods
+	 * Here are the methods available for Checkbox Component
+	 */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnTouch
+     * Adds an event handler when the checkbox is touch.
+     * $$ ckb.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Boolean} check The checked state of the checkbox. @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setIcon
+     * Sets a custom icon for the checkbox.
+     * $$ ckb.setIcon( checked, unchecked ) $$
+     * @param {String} checked Material icon for checked state
+     * @param {String} unchecked Material icon for unchecked state
+     */
+
+
+    /** ### getIcon
+     * Returns the icons of the form { checkIcon, uncheckedIcon }.
+     * $$ ckb.getIcon() $$
+     * @returns Object { checkIcon, uncheckedIcon }
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic
@@ -231,7 +321,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Basic
 from hybrid import ui
@@ -249,6 +338,7 @@ def OnStart():
 def onTouch(value):
     ui.showPopup(f"Value is {value}")
  */
+
 
 /**
 @sample Python Colors
@@ -277,6 +367,7 @@ def OnStart():
 def onTouch(value):
     ui.showPopup(f"Value is {value}")
  */
+
 
 /**
 @sample Python Text positions
@@ -307,6 +398,7 @@ def onTouch(value):
     ui.showPopup(f"Value is {value}")
  */
 
+
 /**
 @sample Python Adding custom checkbox icon
 from hybrid import ui
@@ -328,3 +420,5 @@ def OnStart():
 def onTouch(value):
     ui.showPopup(f"Value is {value}")
  */
+
+

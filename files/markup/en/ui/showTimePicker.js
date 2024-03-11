@@ -10,13 +10,14 @@
  * $$ ui.showTimePicker(time, onSelect) $$
  * $$ ui.showTimePicker( onSelect ) $$
  * @param {String} time A default time value to which the timepicker begins. Value is of the form `HH:mm`
- * @param {String} options A comma separated options.\nOrientation: `Portrait`, `Landscape`\nFormat: `24H`, `12H`
+ * @param {String} [options] A comma separated options.\nOrientation: `Portrait`, `Landscape`\nFormat: `24H`, `12H`
  * @param {Function} onSelect The callback function to be called when time is selected.
  * @returns uio-TimePicker
  */
 
 
 /* ## Examples */
+
 
 /**
 @sample Default
@@ -103,6 +104,26 @@ class Main extends App
         ui.showPopup( value );
     }
 }
+ */
+
+
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    global tpk
+    main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
+    btn = ui.addButton(main, "Show Time Picker", "Outlined,Secondary", 0.2)
+    btn.setOnTouch(showTimePicker)
+    tpk = ui.addTimePicker()
+    tpk.setOnSelect(onSelect)
+
+def showTimePicker(event):
+    tpk.show()
+
+def onSelect(value):
+    print(value)
  */
 
 

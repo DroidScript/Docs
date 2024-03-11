@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs In Material Design, it provides clear indicators of progress and allows users to navigate forward and backward through steps, ensuring a structured and user-friendly experience in mobile applications. Add a stepper into your app using the `addStepper` method like this:
  * $$ stp = ui.addStepper(parent, steps, options, width, height) $$
- * @param {Object} parent The parent layout of the Stepper.
+ * @param {uio-Layout} parent The parent layout of the Stepper.
  * @param {Array} [steps] An array of titles.
  * @param {String} [options] A comma separated options.\n`Vertical`, `Horizontal`, `Loop`, `Mobile`, `AlternativeLabel`.
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -21,127 +21,219 @@
  */
 
 
-/** ## Properties ##
- * Here are the available setters and getters of the Stepper Component.
- * @prop {Number} activeStep Sets or returns the active step.
- * @prop {String} orientation Sets or returns the orientation of the Stepper. Values can be `Horizontal` or `Vertical`.
- * @prop {Number} elevation Sets or returns the elevation of the mobile stepper. Value ranges from `0` to `24`.
- */
+	/** ## Properties ##
+	 * Here are the available setters and getters of the Stepper Component.
+	 * @prop {Number} activeStep Sets or returns the active step.
+	 * @prop {String} orientation Sets or returns the orientation of the Stepper. Values can be `Horizontal` or `Vertical`.
+     * @prop {Number} elevation Sets or returns the elevation of the mobile stepper. Value ranges from `0` to `24`.
+	 */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-/** ## Methods
- * Here are the methods available for Stepper Component.
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnComplete
- * Adds a callback function to be called when the stepper is complete. For mobile stepper, callback will be called upon showing the last step.
- * $$ stp.setOnComplete( callback ) $$
- * @param {Function} callback The function to be called
- */
+    /** @extern height */
 
 
-/** ### setOnChange
- * Adds a callback function to be called when the stepper has changed step.
- * $$ stp.setOnChange( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Number} index The index of the active step.
- */
+    /** @extern opacity */
 
 
-/** ### nextStep
- * Go to the next step.
- * $$ stp.nextStep() $$
- */
+    /** @extern textSize */
 
 
-/** ### previousStep
- * Go to the previous step.
- * $$ stp.previousStep() $$
- */
+    /** @extern textColor */
 
 
-/** ### getLayout
- * Returns the layout of the corresponding step layout where you can add controls.
- * $$ stp.getLayout( index ) $$
- * @param {Number} index The index of the corresponing stepper layout
- * @returns Object Layout
- */
+    /** @extern rotation */
 
 
-/** ### getLayoutIndex
- * Get the index of the corresponding layout.
- * $$ stp.getLayoutIndex(layout) $$
- * @param {Object} layout The layout to check.
- * @returns Number
- */
+    /** @extern fontFile */
 
 
-/** ### removeStep
- * Removes a corresponding step by its index.
- * $$ stp.removeStep( index ) $$
- * @param {Number} index The index of the step to remove.
- */
+    /** @extern visibility */
 
 
-/** ### setTitleText
- * Sets a new title for the corresponding step by its index.
- * $$ stp.setTitleText(index, title) $$
- * @param {Number} index The index of the Stepper.
- * @param {String} title The new title text.
- */
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+	/** ## Methods
+	 * Here are the methods available for Stepper Component.
+	 */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnComplete
+	 * Adds a callback function to be called when the stepper is complete. For mobile stepper, callback will be called upon showing the last step.
+	 * $$ stp.setOnComplete( callback ) $$
+	 * @param {Function} callback The function to be called
+	 */
+
+
+	/** ### setOnChange
+	 * Adds a callback function to be called when the stepper has changed step.
+	 * $$ stp.setOnChange( callback ) $$
+	 * @param {Function} callback The callback function to be called. ---> @arg {Number} index The index of the active step.
+	 */
+
+
+	/** ### nextStep
+	 * Go to the next step.
+	 * $$ stp.nextStep() $$
+	 */
+
+
+	/** ### previousStep
+	 * Go to the previous step.
+	 * $$ stp.previousStep() $$
+	 */
+
+
+	/** ### getLayout
+	 * Returns the layout of the corresponding step layout where you can add controls.
+	 * $$ stp.getLayout( index ) $$
+	 * @param {Number} index The index of the corresponing stepper layout
+	 * @returns Object Layout
+	 */
+
+
+	/** ### getLayoutIndex
+	 * Get the index of the corresponding layout.
+	 * $$ stp.getLayoutIndex(layout) $$
+	 * @param {Object} layout The layout to check.
+	 * @returns Number
+	 */
+
+
+	/** ### removeStep
+	 * Removes a corresponding step by its index.
+	 * $$ stp.removeStep( index ) $$
+	 * @param {Number} index The index of the step to remove.
+	 */
+
+
+    /** ### setTitleText
+     * Sets a new title for the corresponding step by its index.
+     * $$ stp.setTitleText(index, title) $$
+     * @param {Number} index The index of the Stepper.
+     * @param {String} title The new title text.
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic stepper
@@ -335,7 +427,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Progress control implementation
 from hybrid import ui
@@ -358,6 +449,7 @@ def OnStart():
     prog4 = ui.addProgress(main, None, "Circular,Secondary,indeterminate")
     prog4.circleSize = 100
  */
+
 
 /**
 @sample Python Setting progress value
@@ -385,6 +477,7 @@ def onTouch(event):
     else:
         ui.showPopup("Progress is complete!")
  */
+
 
 /**
 @sample Python Basic stepper
@@ -416,6 +509,7 @@ def next(event):
 def back(event):
     stp.previousStep()
  */
+
 
 /**
 @sample Python Vertical stepper
@@ -466,6 +560,7 @@ def back():
     stp.previousStep()
  */
 
+
 /**
 @sample Python Mobile Stepper
 from hybrid import ui
@@ -508,6 +603,7 @@ def onChange(index):
     ui.showPopup("Layout index " + str(index))
  */
 
+
 /**
 @sample Python Autoswipe and Fraction Mobile Stepper
 from hybrid import ui
@@ -542,3 +638,5 @@ def OnStart():
     # Get the third layout on the stepper
     lay3
  */
+
+

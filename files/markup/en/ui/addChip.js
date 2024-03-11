@@ -4,7 +4,7 @@
  * @img(img1.png)
  * @jdocs Material Design defines it with rounded corners and a contained style. Chips offer a visual representation for categories, selections, or interactions, contributing to a clear and concise user interface in mobile applications. Add a chip into your app using the `addChip` method like this:
  * $$ chp = ui.addChip(parent, text, options, width, height) $$
- * @param {Object} parent The parent layout where to add the Chip.
+ * @param {uio-Layout} parent The parent layout where to add the Chip.
  * @param {String} text The text on the chip.
  * @param {String} [options] A comma separated option.\nTheme Color: `Primary`, `Secondary`, `Default`\nSize: `Small`, `Medium`\nVariant: `Outlined`, `Default`\nUtil: `Touchable`
  * @param {Number} [width] Fraction of the parent width `[0-1]`
@@ -14,111 +14,201 @@
  */
 
 
-/** ## Properties ##
- * Here are the available setters and/or getters of the Chip Component.
- * @prop {String} text Sets or returns the text of the chip.
- * @prop {String} icon Sets or returns the material icon font if icon is provided.
- * @prop {String} avatar Sets or returns the avatar. Can be image or a single character.
- * @prop {String} deleteIcon Sets or returns the delete icon.
- * @prop {String} sizeVariant Sets or returns the size variant. Values can be `small` or `medium`
- * @prop {Boolean} enabled Returns whether the chip is enabled or disabled.
- * @prop {String} variant Sets or returns the variant of the chip. Vaues can be `Default` or `Outlined`
- * @prop {String} color Sets or returns the theme color of the chip. Values can be `Default` `Primary` `Secondary`
- * @prop {String} iconColor Sets or returns the icon color in hexadecimal format.
- * @prop {Number} iconSize Sets or returns the font-size of the icon in css font-size format. You can pass string values to be more specific such as `12px` `1.5rem`.
- */
+	/** ## Properties ##
+     * Here are the available setters and/or getters of the Chip Component.
+	 * @prop {String} text Sets or returns the text of the chip.
+	 * @prop {String} icon Sets or returns the material icon font if icon is provided.
+	 * @prop {String} avatar Sets or returns the avatar. Can be image or a single character.
+	 * @prop {String} deleteIcon Sets or returns the delete icon.
+	 * @prop {String} sizeVariant Sets or returns the size variant. Values can be `small` or `medium`
+	 * @prop {Boolean} enabled Returns whether the chip is enabled or disabled.
+	 * @prop {String} variant Sets or returns the variant of the chip. Vaues can be `Default` or `Outlined`
+	 * @prop {String} color Sets or returns the theme color of the chip. Values can be `Default` `Primary` `Secondary`
+     * @prop {String} iconColor Sets or returns the icon color in hexadecimal format.
+     * @prop {Number} iconSize Sets or returns the font-size of the icon in css font-size format. You can pass string values to be more specific such as `12px` `1.5rem`.
+	 */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-// VISIBLE METHODS
-
-/** ## Methods
- * Here are the methods available for Chips Component
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnTouch
- * Adds a callback handler when the chip is touch.
- * $$ chp.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
- */
+    /** @extern height */
 
 
-/** ### setTouchable
- * Sets the chip to clickable. This will add a pointer cursor into the chip when hovered.
- * $$ chp.setTouchable( touchable ) $$
- * @param {Boolean} touchable Can be `true` or `false`
- */
+    /** @extern opacity */
 
 
-/** ### setOnDelete
- * Sets a callback function when the chip is deleted. This will automatically add a delete icon to the chip.
- * $$ chp.setOnDelete( callback ) $$
- * @param {Function} callback On delete callback function.
- */
+    /** @extern textSize */
 
 
-/** ### setCornerRadius
- * Sets the corner radius of the chip.
- * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} [tl] Top-left corner radius.
- * @param {Number} [tr] Top-right corner radius.
- * @param {Number} [bl] Bottom-left corner radius.
- * @param {Number} [br] Bottom-right corner radius.
- * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern textColor */
+
+
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+	/** ## Methods
+	 * Here are the methods available for Chips Component
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the chip is touch.
+     * $$ chp.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+	/** ### setTouchable
+	 * Sets the chip to clickable. This will add a pointer cursor into the chip when hovered.
+	 * $$ chp.setTouchable( touchable ) $$
+	 * @param {Boolean} touchable Can be `true` or `false`
+	 */
+
+
+	/** ### setOnDelete
+	 * Sets a callback function when the chip is deleted. This will automatically add a delete icon to the chip.
+	 * $$ chp.setOnDelete( callback ) $$
+	 * @param {Function} callback On delete callback function.
+	 */
+
+
+    /** ### setCornerRadius
+     * Sets the corner radius of the chip.
+     * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
+     * @param {Number} [tl] Top-left corner radius.
+     * @param {Number} [tr] Top-right corner radius.
+     * @param {Number} [bl] Bottom-left corner radius.
+     * @param {Number} [br] Bottom-right corner radius.
+     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Chips
@@ -222,8 +312,6 @@ class Main extends App
  */
 
 
-
-
 /**
 @sample Python Chips
 from hybrid import ui
@@ -254,6 +342,7 @@ sample = Main()
 sample.start()
  */
 
+
 /**
 @sample Python Deletable chip
 from hybrid import ui
@@ -275,6 +364,7 @@ def onDelete():
 sample = Main()
 sample.start()
  */
+
 
 /**
 @sample Python Custom styles
@@ -300,6 +390,7 @@ sample = Main()
 sample.start()
  */
 
+
 /**
 @sample Python Avatar
 from hybrid import ui
@@ -317,3 +408,5 @@ def OnStart():
 sample = Main()
 sample.start()
  */
+
+

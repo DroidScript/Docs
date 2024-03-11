@@ -3,7 +3,7 @@
  * Adds a layout into your app.
  * @jdocs A layout is the basic ui component of an app. It is where you add other ui components such as buttons, textfields, checkboxes, list, images and many more. To add a layout, simply call the `addLayout` method of the `ui` object.
  * $$ lay = ui.addLayout(parent, type, options, width, height) $$
- * @param {Object} parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
+ * @param {uio-Layout} parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
  * @param {String} type The layout type. Values can be `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"`, `"Card"`
  * @param {String} [options] A comma separated options.\nOrientation: `Horizontal`, `Vertical`\nHorizontal Alignment: `Left`, `Center`, `Right`\nVertical Alignment: `Top`, `VCenter`, `Bottom`\nDimensions: `FillXY`, `FillX`, `FillY`, `FillAxis`\nScroll: `ScrollX`, `ScrollY`, `ScrollXY`, `NoScrollBar`\nUtils:\n`BackColor` to apply theme background color rather than transparent.\n`NoScrollBar` to remove scrollbar when scroll options is passed.\n`TouchThrough` to enable touch events to propagate behind the layers in frame layouts.\n`"Touchable"` enable touch in card layout.\n`"Outlined"` card variant is outlined.\n`"Square"` card rounded corners is remove.
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -31,166 +31,258 @@
  */
 
 
-/** ## Properties
- * Here are the available setters and getters for the Layout Component.
- * @prop {String} orientation Sets or returns the orientation of the controls in a Linear Layout. Values can be `'Horizontal'` or `"Vertical"`
- * @prop {String} alignment Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be `"Left"` `"Center"` and `"Right"`
- * @prop {String} verticalAlignment Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be `"Top"` `"VCenter"` or `"Bottom"`
- * @prop {String} childSpacing Sets or returns the spacing of the child control in a Linear Layout. Values can be `"Around"` `"Between"` `"Even"`
- * @prop {Number} currentSlide Sets or returns the index of the current slide.
- * @prop {Array} childMargins Sets or returns the margins of child components. The array is of the form `[left, top, right, bottom]`.
- * @prop {Array} children Returns all the children added to this layout.
- * @prop {Number} elevation Sets or returns the elevation of a card layout.
- * @prop {String} variant Sets or returns the card variant. Can be `"elevation"` or `"outlined"`
- * @prop {String} layoutType Sets or returns the layout type. Note: You cannot change the layout type of "Card" and "Slide" to another type.
- */
+    /** ## Properties
+     * Here are the available setters and getters for the Layout Component.
+     * @prop {String} orientation Sets or returns the orientation of the controls in a Linear Layout. Values can be `'Horizontal'` or `"Vertical"`
+     * @prop {String} alignment Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be `"Left"` `"Center"` and `"Right"`
+     * @prop {String} verticalAlignment Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be `"Top"` `"VCenter"` or `"Bottom"`
+     * @prop {String} childSpacing Sets or returns the spacing of the child control in a Linear Layout. Values can be `"Around"` `"Between"` `"Even"`
+     * @prop {Number} currentSlide Sets or returns the index of the current slide.
+     * @prop {Array} childMargins Sets or returns the margins of child components. The array is of the form `[left, top, right, bottom]`.
+     * @prop {Array} children Returns all the children added to this layout.
+     * @prop {Number} elevation Sets or returns the elevation of a card layout.
+     * @prop {String} variant Sets or returns the card variant. Can be `"elevation"` or `"outlined"`
+     * @prop {String} layoutType Sets or returns the layout type. Note: You cannot change the layout type of "Card" and "Slide" to another type.
+     */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-/** ## Methods ##
- * Here are the available methods for the Layout Component.
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setChildMargins ###
- * Sets a default margins for the children of the layout component.
- * $$ lay.setChildMargins( left, top, right, bottom, mode ) $$
- * @param {Number} [left] Left margin. You can also pass string e.g. `12rem`
- * @param {Number} [top] Top margin. You can also pass string e.g. `12rem`
- * @param {Number} [right] Right margin. You can also pass string e.g. `12rem`
- * @param {Number} [bottom] Bottom margin. You can also pass string e.g. `12rem`
- * @param {String} [mode='px'] Unit of measurement.\n`px` for pixels\n`%` relative to its parent dimension.\n`v` relative to viewport dimension,\n`rem`
- */
+    /** @extern height */
 
 
-/** ### goto
- * Transition to the given index.
- * $$ lay.goto( index )
- * @param {Number} index Index of a given layout.
- * @@ Works only for Slide Layouts.
- */
+    /** @extern opacity */
 
 
-/** ### next
- * Transition to the next slide.
- * $$ lay.next()
- */
+    /** @extern textSize */
 
 
-/** ### previous
- * Transition to the previous slide.
- * $$ lay.previous()
- */
+    /** @extern textColor */
 
 
-/** ### setOnSlide
- * Adds a callback function to be called when slide event is triggered.
- * $$ lay.setOnSlide( callback )
- * @param {Function} callback The function to be called on slide event. ---> @arg {Object} component The control component. @arg {Number} index The index of the slide.
- */
+    /** @extern rotation */
 
 
-/** ### getChildOrder
- * Returns the index of the child from the layout children stack in order.
- * $$ lay.getChildOrder( child )
- * @param {Object} child The child component of the layout.
- * @returns Number
- */
+    /** @extern fontFile */
 
 
-/** ### childToFront
- * Move the child to the front.
- * $$ lay.childToFront( child )
- * @param {Object} child The child object of the layout.
- * @@ Works only for absolute layout.
- */
+    /** @extern visibility */
 
 
-/** ### hasChild
- * Check whether a component is a child of this layout.
- * $$ lay.hasChild( child )
- * @param {Object} child The child component to check.
- * @returns Boolean
- */
+    /** @extern type */
 
 
-/** ### removeChild
- * Removes a given child from this layout.
- * $$ lay.removeChild( child )
- * @param {Object} child The child control to be remove.
- */
+    /** @extern absWidth */
 
 
-/** ### setOnTouch
- * Adds a callback handler when the layout is touch.
- * $$ lay.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
- */
+    /** @extern absHeight */
 
 
-/** ### setOnLongTouch
- * Adds a callback handler when the layout is long touch. The touch timer is about 500 milliseconds.
- * $$ lay.setOnLongTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
- */
+    /** @extern backColor */
 
 
-/** ### clear
- * Clear the content of the layout.
- * $$ lay.clear() $$
- */
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+	/** ## Methods ##
+     * Here are the available methods for the Layout Component.
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setChildMargins ###
+     * Sets a default margins for the children of the layout component.
+     * $$ lay.setChildMargins( left, top, right, bottom, mode ) $$
+     * @param {Number} [left] Left margin. You can also pass string e.g. `12rem`
+     * @param {Number} [top] Top margin. You can also pass string e.g. `12rem`
+     * @param {Number} [right] Right margin. You can also pass string e.g. `12rem`
+     * @param {Number} [bottom] Bottom margin. You can also pass string e.g. `12rem`
+     * @param {String} [mode='px'] Unit of measurement.\n`px` for pixels\n`%` relative to its parent dimension.\n`v` relative to viewport dimension,\n`rem`
+     */
+
+
+    /** ### goto
+     * Transition to the given index.
+     * $$ lay.goto( index )
+     * @param {Number} index Index of a given layout.
+     * @@ Works only for Slide Layouts.
+     */
+
+
+    /** ### next
+     * Transition to the next slide.
+     * $$ lay.next()
+     */
+
+
+    /** ### previous
+     * Transition to the previous slide.
+     * $$ lay.previous()
+     */
+
+
+    /** ### setOnSlide
+     * Adds a callback function to be called when slide event is triggered.
+     * $$ lay.setOnSlide( callback )
+     * @param {Function} callback The function to be called on slide event. ---> @arg {Object} component The control component. @arg {Number} index The index of the slide.
+     */
+
+
+    /** ### getChildOrder
+     * Returns the index of the child from the layout children stack in order.
+     * $$ lay.getChildOrder( child )
+     * @param {Object} child The child component of the layout.
+     * @returns Number
+     */
+
+
+    /** ### childToFront
+     * Move the child to the front.
+     * $$ lay.childToFront( child )
+     * @param {Object} child The child object of the layout.
+     * @@ Works only for absolute layout.
+     */
+
+
+    /** ### hasChild
+     * Check whether a component is a child of this layout.
+     * $$ lay.hasChild( child )
+     * @param {Object} child The child component to check.
+     * @returns Boolean
+     */
+
+
+    /** ### removeChild
+     * Removes a given child from this layout.
+     * $$ lay.removeChild( child )
+     * @param {Object} child The child control to be remove.
+     */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the layout is touch.
+     * $$ lay.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setOnLongTouch
+     * Adds a callback handler when the layout is long touch. The touch timer is about 500 milliseconds.
+     * $$ lay.setOnLongTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### clear
+     * Clear the content of the layout.
+     * $$ lay.clear() $$
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Main layout
@@ -366,7 +458,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Main layout
 from hybrid import ui
@@ -395,6 +486,7 @@ def btnTouch(event):
         main.backColor = "yellow"
  */
 
+
 /**
 @sample Python Bottom aligned with margins
 from hybrid import ui
@@ -412,6 +504,7 @@ def OnStart():
     btn3 = ui.addButton(main, "Button 3", "Primary,Outlined")
  */
 
+
 /**
 @sample Python Orientation and spacing
 from hybrid import ui
@@ -428,6 +521,7 @@ def OnStart():
     btn2 = ui.addButton(main, "Button 2", "Secondary")
     btn3 = ui.addButton(main, "Button 3", "Primary,Outlined")
  */
+
 
 /**
 @sample Python Slide Layout
@@ -466,3 +560,5 @@ def OnStart():
 def onSlide(ctrl, index):
     ui.showPopup(index, "", 350)
  */
+
+

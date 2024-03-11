@@ -10,39 +10,41 @@
  */
 
 
-/** ## Properties
- * Here are the available setters and getters for the ProgressDialog Component.
- * @prop {String} text Sets or returns the ProgressDialog text.
- */
+	/** ## Properties
+	 * Here are the available setters and getters for the ProgressDialog Component.
+	 * @prop {String} text Sets or returns the ProgressDialog text.
+	 */
 
 
-/** ## Methods
- * Here are the available methods for the ProgressDialog Component.
- */
+	/** ## Methods
+	 * Here are the available methods for the ProgressDialog Component.
+	 */
 
 
-/** ### show
- * Show the progress dialog component.
- * $$ prd.show() $$
- */
+    /** ### show
+	 * Show the progress dialog component.
+	 * $$ prd.show() $$
+	 */
 
 
-/** ### hide
- * Hides the dialog component.
- * $$ prd.hide() $$
- */
+	/** ### hide
+	 * Hides the dialog component.
+	 * $$ prd.hide() $$
+	 */
 
 
-/** ### setOnClose
- * Adds a callback handler method on close event.
- * $$ prd.setOnClose(callback) $$
- * @param {Function} callback The callback function.
- */
+	/** ### setOnClose
+	 * Adds a callback handler method on close event.
+	 * $$ prd.setOnClose(callback) $$
+	 * @param {Function} callback The callback function.
+	 */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Progress Dialog
@@ -100,7 +102,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Progress Dialog
 from hybrid import ui
@@ -113,6 +114,7 @@ def OnStart():
 def onTouch(event):
     ui.showProgressDialog("Loading...", "AutoCancel")
  */
+
 
 /**
 @sample Python Nocancel progress dialog
@@ -132,3 +134,5 @@ def onTouch(event):
 
     app.SetTimeout(hideProgressDialog, 2000)
  */
+
+

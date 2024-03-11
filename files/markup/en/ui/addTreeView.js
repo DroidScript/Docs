@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs A tree view is best use in file system navigation. Add a treeview into your app using the `addTreeView` method like this:
  * $$ trv = ui.addTreeView(parent, list, options, width, height) $$
- * @param {Object} parent The parent layout where to add the TreeView component.
+ * @param {uio-Layout} parent The parent layout where to add the TreeView component.
  * @param {Object} [list] An object of the treeview items. See example below.
  * @param {String} [options] A comma separated options. Values can be `MultiSelect`.
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -64,99 +64,191 @@ var items = {
  */
 
 
-/** ## Properties
- * Here are the available setter and getter properties of the TreeView Component.
- * @prop {Object} list Sets or returns the list object.
- * @prop {String} value Returns the selected item of the TreeView.
- */
+    /** ## Properties
+     * Here are the available setter and getter properties of the TreeView Component.
+     * @prop {Object} list Sets or returns the list object.
+     * @prop {String} value Returns the selected item of the TreeView.
+     */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
-
-/** ## Methods
- * Here are the available methods of the TreeView Component.
- */
+    /** @extern width */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnTouch
- * Add a on touch handler to the TreeView item when click.
- * $$ trv.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {String} value The selected tree item. @arg {String} path The complete path of the tree item.
- */
+    /** @extern height */
 
 
-/** ### setList
- * Updates the list items of the TreeView component.
- * $$ trv.setList( obj ) $$
- * @param {Object} obj The list object of the treeview items. See example above.
- */
+    /** @extern opacity */
 
 
-/** ### addItem
- * Add a tree items to the tree view.
- * $$ trv.addItem( name, obj ) $$
- * @param {String} name The label text for the new item.
- * @param {Object} obj See list object for more info.
- */
+    /** @extern textSize */
 
 
-/** ### getItem
- * Returns the list items object of a given parent tree item name.
- * $$ trv.getItem( name ) $$
- * @param {String} name The parent name of the tree items.
- * @returns Object
- */
+    /** @extern textColor */
+
+
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+    /** ## Methods
+     * Here are the available methods of the TreeView Component.
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnTouch
+     * Add a on touch handler to the TreeView item when click.
+     * $$ trv.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {String} value The selected tree item. @arg {String} path The complete path of the tree item.
+     */
+
+
+    /** ### setList
+     * Updates the list items of the TreeView component.
+     * $$ trv.setList( obj ) $$
+     * @param {Object} obj The list object of the treeview items. See example above.
+     */
+
+
+    /** ### addItem
+     * Add a tree items to the tree view.
+     * $$ trv.addItem( name, obj ) $$
+     * @param {String} name The label text for the new item.
+     * @param {Object} obj See list object for more info.
+     */
+
+
+    /** ### getItem
+     * Returns the list items object of a given parent tree item name.
+     * $$ trv.getItem( name ) $$
+     * @param {String} name The parent name of the tree items.
+     * @returns Object
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic TreeView
@@ -211,7 +303,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Items
 items = {
@@ -242,6 +333,7 @@ items = {
 }
  */
 
+
 /**
 @sample Python Items with icons
 items = {
@@ -252,6 +344,7 @@ items = {
     }
 }
  */
+
 
 /**
 @sample Python Basic TreeView
@@ -294,3 +387,5 @@ def OnStart():
 def onTouch(value, path):
     ui.showPopup("Value: " + value + " Path: " + path)
  */
+
+
