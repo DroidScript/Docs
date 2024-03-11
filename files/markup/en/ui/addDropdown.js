@@ -180,7 +180,7 @@
     /** ### setOnChange
 	 * Adds a callback function on change event.
 	 * $$ dpd.setOnChange(callback) $$
-	 * @param {Function} callback The callback function. ---> @arg {text} The selected item text. @arg {Number} index The index of the corresponding item.
+	 * @param {Function} callback The callback function. ---> @arg {String} The selected item text. @arg {Number} index The index of the corresponding item.
 	 */
 
 
