@@ -46,6 +46,96 @@
     /** @prop {boolean} loop Sets or returns a boolean whether the video should start over again when completed. */
 
 
+    /** @extern width */
+
+
+    /** @extern height */
+
+
+    /** @extern opacity */
+
+
+    /** @extern textSize */
+
+
+    /** @extern textColor */
+
+
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
     /** ## Methods
      * Here are the methods for the VideoView component.
      */
@@ -158,6 +248,54 @@
      * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer".
      * @return object
      */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
 
 
 /** ## Examples

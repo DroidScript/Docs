@@ -69,6 +69,96 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** @prop {number} iso Sets or returns the camera iso. See `capabilities` for max and min values. */
 
 
+    /** @extern width */
+
+
+    /** @extern height */
+
+
+    /** @extern opacity */
+
+
+    /** @extern textSize */
+
+
+    /** @extern textColor */
+
+
+    /** @extern rotation */
+
+
+    /** @extern fontFile */
+
+
+    /** @extern visibility */
+
+
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
     /** ### getPixelData
      * Returns the pixel data of the image preview or a given portion of it.
      * $$ cam.getPixelData(format, left, top, width, height)
@@ -141,6 +231,54 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
      * Add a callback handler when an error occured.
      * @param {function} cb The callback function to be called. ---> @arg {string} error The error message.
      */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
 
 
 /** ## Examples

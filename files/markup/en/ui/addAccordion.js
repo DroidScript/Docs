@@ -6,7 +6,7 @@
  * @img(img2.png)
  * @jdocs This is very useful to display controls that are grouped together. Add an accordion using the `addAccordion` method like this:
  * $$ acc = ui.addAccordion(parent, titles, options, width, height)
- * @param {uio-Layout} parent The parent layout where to add the accordion.
+ * @param {uio-Layout} parent The parent layout where to add the text.
  * @param {Array} titles An array of accordion titles.
  * @param {String} [options] A comma separated options. Style: Square Layout type: Linear|Absolute
  * @param {Number} [width] Fraction of the parent width `[0-1]`
