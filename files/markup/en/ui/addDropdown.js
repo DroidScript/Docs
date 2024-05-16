@@ -15,7 +15,7 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and/or getters of Dropdown Component.
+	 * @jdocs Here are the available setters and/or getters of Dropdown Component.
 	 * @prop {Array} list Sets or returns the dropdown list. You can also passed a comma separated string.
 	 * @prop {String} value Sets or returns the value of the Dropdown. If you pass a number it will be treated as the index of the corresponding item in the choices.
 	 * @prop {String} variant Sets or returns the variant of the dropdown button. Values can be `Contained` or `Outlined` or `Text`
@@ -115,7 +115,7 @@
 
 
 	/** ## Methods
-	 * Here are the available methods for Dropdown Component.
+	 * @jdocs Here are the available methods for Dropdown Component.
 	 */
 
 
@@ -165,6 +165,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

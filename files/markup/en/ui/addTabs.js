@@ -23,7 +23,7 @@
 
 
 	/** ## Properties
-	 * Here are the available setter and getter properties of the Tabs Component.
+	 * @jdocs Here are the available setter and getter properties of the Tabs Component.
 	 * @prop {String} color Sets or returns the theme color of the tab bar. Values can be `Default` `Primary` or `Secondary`
 	 * @prop {String} textColor Sets or returns the theme color for the tab bar titles `Primary` or `Secondary`. You can also pass a hexadecimal color of the form `#rrggbb`
 	 * @prop {String} variant Sets or returns the variant of the Tabs Component. Values can be `Standard` `Scrollable` or `FullWidth`
@@ -129,7 +129,7 @@
 
 
 	/** ## Methods
-	 * Here are the available methods of the Tabs Component.
+	 * @jdocs Here are the available methods of the Tabs Component.
 	 */
 
 
@@ -179,6 +179,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnChange

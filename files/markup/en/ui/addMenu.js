@@ -26,14 +26,14 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and/or getters for the Menu Component.
+	 * @jdocs Here are the available setters and/or getters for the Menu Component.
 	 * @prop {Array} list Sets or returns the items in the menu. You can also pass a comma separated string.
      * @prop {Array} itemPadding Sets or returns the padding of each menu item. See also `setItemPadding` method.
 	 */
 
 
 	/** ## Methods
-	 * Here are the available methods for Menu Component.
+	 * @jdocs Here are the available methods for Menu Component.
 	 */ 
 
 

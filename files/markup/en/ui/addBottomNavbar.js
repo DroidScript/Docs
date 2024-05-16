@@ -28,7 +28,7 @@ var navs = [
 
 
     /** ## Properties
-     * Here are the available setter and/or getter properties of the BottomNavbar Component.
+     * @jdocs Here are the available setter and/or getter properties of the BottomNavbar Component.
      * @prop {Boolean} labels Sets or returns a boolean whether the labels are shown or hidden on active state.
      * @prop {Array} list Sets or returns the navigation actions array. See `navs` params above for format.
      * @prop {Boolean} disabled Sets or returns whether the bottom navigation is disabled or enabled. All navigation actions must be disabled to return `true`. Otherwise, it will return `false`.
@@ -126,7 +126,7 @@ var navs = [
 
 
     /** ## Methods
-	 * Here are the methods available for BottomNavbar Component
+	 * @jdocs Here are the methods available for BottomNavbar Component
 	 */
 
 
@@ -176,6 +176,9 @@ var navs = [
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

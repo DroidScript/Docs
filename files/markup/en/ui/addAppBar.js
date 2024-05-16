@@ -15,7 +15,7 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and getters of the AppBar Component.
+	 * @jdocs Here are the available setters and getters of the AppBar Component.
 	 * @prop {String} text Sets or return the AppBar title “text”
 	 * @prop {String} color Sets or returns the theme color of the AppBar. Values can be `Default` `Primary` `Secondary` `Transparent` `Inherit`
 	 * @prop {String} textColor Sets or returns the hexadecimal color of the appbar title.
@@ -116,7 +116,7 @@
 
 
 	/** ## Methods
-	 * Here are the methods available for AppBar Component.
+	 * @jdocs Here are the methods available for AppBar Component.
 	 */
 
 
@@ -166,6 +166,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

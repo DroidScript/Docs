@@ -17,7 +17,7 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and/or getter of the Dialog Component.
+	 * @jdocs Here are the available setters and/or getter of the Dialog Component.
 	 * @prop {String} text Sets or returns the dialog text.
 	 * @prop {String} titleText Sets or returns the dialog title text.
 	 * @prop {String} titleColor Sets or returns the title text color in hexadecimal format.
@@ -26,7 +26,7 @@
 
 
 	/** ## Methods
-	 * Here are the available methods of the Dialog Component.
+	 * @jdocs Here are the available methods of the Dialog Component.
 	 */
 
 

@@ -23,7 +23,7 @@
 
 
     /** ## Properties
-     * Here are the available setters and/or getters for the List Component.
+     * @jdocs Here are the available setters and/or getters for the List Component.
      * @prop {String} avatarSize Sets or returns the size of the avatar. Values can be `Small` `Medium` `Large`
      * @prop {String} avatarVariant Sets or returns the variant of the avatar. Values can be `Square` `Round` or `Circle`
      * @prop {String} checkboxColor Sets or returns the theme color of the checkbox when `Selectable` option is enabled. Values can be `Default` `Primary` or `Secondary` or hexadecimal color.
@@ -130,7 +130,7 @@
 
 
     /** ## Methods
-     * Here are the following methods available on the List Component.
+     * @jdocs Here are the following methods available on the List Component.
      */
 
 
@@ -180,6 +180,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### addItem

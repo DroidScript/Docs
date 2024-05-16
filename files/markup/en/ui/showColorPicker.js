@@ -13,12 +13,12 @@
 
 
     /** ## Properties
-     * Here are the setter and getter properties available for ColorPicker Component.
+     * @jdocs Here are the setter and getter properties available for ColorPicker Component.
      */
 
 
     /**  ## Methods
-     * Here are the available methods of the ColorPicker dialog.
+     * @jdocs Here are the available methods of the ColorPicker dialog.
      */
 
 

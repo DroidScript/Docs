@@ -22,7 +22,7 @@
 
 
 	/** ## Properties ##
-	 * Here are the available setters and getters of the Stepper Component.
+	 * @jdocs Here are the available setters and getters of the Stepper Component.
 	 * @prop {Number} activeStep Sets or returns the active step.
 	 * @prop {String} orientation Sets or returns the orientation of the Stepper. Values can be `Horizontal` or `Vertical`.
      * @prop {Number} elevation Sets or returns the elevation of the mobile stepper. Value ranges from `0` to `24`.
@@ -117,7 +117,7 @@
 
 
 	/** ## Methods
-	 * Here are the methods available for Stepper Component.
+	 * @jdocs Here are the methods available for Stepper Component.
 	 */
 
 
@@ -167,6 +167,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnComplete

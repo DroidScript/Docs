@@ -15,7 +15,7 @@
 
 
     /** ## Properties
-     * Here are the available setters and/or getters of the Checkbox Component.
+     * @jdocs Here are the available setters and/or getters of the Checkbox Component.
      * @prop {String} textPosition Sets or returns the text position. Values can be `left` `top` `right` `bottom`
      * @prop {String} checkIcon Sets or returns the material icon font for check stated.
      * @prop {String} uncheckIcon Sets or returns the material icon font for uncheck state.
@@ -118,7 +118,7 @@
 
 
 	/** ## Methods
-	 * Here are the methods available for Checkbox Component
+	 * @jdocs Here are the methods available for Checkbox Component
 	 */
 
 
@@ -168,6 +168,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

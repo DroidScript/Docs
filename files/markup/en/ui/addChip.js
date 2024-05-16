@@ -15,7 +15,7 @@
 
 
 	/** ## Properties ##
-     * Here are the available setters and/or getters of the Chip Component.
+     * @jdocs Here are the available setters and/or getters of the Chip Component.
 	 * @prop {String} text Sets or returns the text of the chip.
 	 * @prop {String} icon Sets or returns the material icon font if icon is provided.
 	 * @prop {String} avatar Sets or returns the avatar. Can be image or a single character.
@@ -117,7 +117,7 @@
 
 
 	/** ## Methods
-	 * Here are the methods available for Chips Component
+	 * @jdocs Here are the methods available for Chips Component
      */
 
 
@@ -167,6 +167,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

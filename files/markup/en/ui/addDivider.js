@@ -12,7 +12,7 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and/or getters of the Divider Component.
+	 * @jdocs Here are the available setters and/or getters of the Divider Component.
 	 * @prop {String} color Sets or returns the color in hexadecimal format.
 	 */
 
@@ -105,7 +105,7 @@
 
 
     /** ## Methods
-     * Here are the methods for Divider component.
+     * @jdocs Here are the methods for Divider component.
      */
 
 
@@ -155,6 +155,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
 /* --- parent_methods here ----- */

@@ -20,7 +20,7 @@
 
 
     /** ## Properties
-     * Here are the available getter and setter properties for TextField Component.
+     * @jdocs Here are the available getter and setter properties for TextField Component.
      * @prop {String} text Sets or returns the text value of the TextField Component.
      * @prop {String} label Sets or returns the label text.
      * @prop {String} labelColor Sets return the label color in hexadecimal format `#rrggbb`
@@ -131,7 +131,7 @@
 
 
     /** ## Methods
-     * Here are the methods available for the TextField Component.
+     * @jdocs Here are the methods available for the TextField Component.
      */
 
 
@@ -181,6 +181,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnEnter

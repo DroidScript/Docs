@@ -21,7 +21,7 @@
 
 
 	/** ## Properties
-	 * Here are the setter and/or getter properties of the ButtonGroup Component.
+	 * @jdocs Here are the setter and/or getter properties of the ButtonGroup Component.
 	 * @prop {Array} list Sets or returns the list items of the button group.
 	 * @prop {String} variant Sets or returns the variant. Values can be `Contained` `Outlined` or `Text`
 	 * @prop {String} color Sets or returns the theme color of the button. Values can be `Default` `Primary` or `Secondary`
@@ -123,7 +123,7 @@
 
 
 	/** ## Methods
-	 * Here are the methods available for ButtonGroup Component
+	 * @jdocs Here are the methods available for ButtonGroup Component
 	 */
 
 
@@ -173,6 +173,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

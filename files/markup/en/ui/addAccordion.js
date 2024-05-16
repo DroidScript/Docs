@@ -16,7 +16,7 @@
 
 
 	/** ## Properties
-	 * Here are the properties you can set or get from the Accordion Component.
+	 * @jdocs Here are the properties you can set or get from the Accordion Component.
 	 * @prop {Number} titleWidth Sets and returns the width of the title as fraction. Useful when you have a long title.
 	 * @prop {String} expandIcon Sets or returns the material icon font for the expand icon.
 	 * @prop {Array} titles Sets or returns the list of titles for the accordion panel. Each element of the titles array is a string.
@@ -121,7 +121,7 @@
 
 
 	/** ## Methods
-	 * Here are the methods available for Accordion Component.
+	 * @jdocs Here are the methods available for Accordion Component.
 	 */
 
 
@@ -171,6 +171,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
 	/** ### getLayout

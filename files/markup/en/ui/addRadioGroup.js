@@ -20,7 +20,7 @@
 
 
     /** ## Properties ##
-     * Here are the available setters and getter of the RadioGroup Component.
+     * @jdocs Here are the available setters and getter of the RadioGroup Component.
      * @prop {Number} value Sets or returns the value of the RadioGroup Component as an index of the selected item.
      * @prop {String} label Sets or returns the label text of the RadioGroup Component.
      * @prop {Array} list Sets or returns the list array. You can also pass a comma separated string of items.
@@ -127,7 +127,7 @@
 
 
     /** ## Methods
-     * Here are the available methods available to RadioGroup Component.
+     * @jdocs Here are the available methods available to RadioGroup Component.
      */
 
 
@@ -177,6 +177,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnChange

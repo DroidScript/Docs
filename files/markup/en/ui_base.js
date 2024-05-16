@@ -183,7 +183,7 @@
      * @name addClass
      * Add new class to the control's parent element.
      * $$ cname.addClass( "my-button my-button-large" )
-     * @param {String} cls classname
+     * @param {String} cls Class name. For multiple classes just separate them with a space.
      */
 
 

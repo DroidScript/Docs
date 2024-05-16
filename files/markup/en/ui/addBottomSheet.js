@@ -17,7 +17,7 @@
 
 
     /** ## Properties
-     * These are the setter and getter properties available for the BottomSheet component.
+     * @jdocs These are the setter and getter properties available for the BottomSheet component.
      * @prop {Object} layout Returns the layout of the bottomsheet. This is where you add your ui components.
      * @prop {String} leftActionIcon Sets or returns the left action icon.
      * @prop {String} rightActionIcon Sets or returns the right action icon.
@@ -27,7 +27,7 @@
 
 
     /** ## Methods
-     * These are the methods available for the BottomSheet component.
+     * @jdocs These are the methods available for the BottomSheet component.
      */
 
 

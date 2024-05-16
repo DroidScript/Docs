@@ -13,7 +13,7 @@
 
 
 	/** ## Properties ##
-	 * Here are the available setter and getter properties of the Drawer Component.
+	 * @jdocs Here are the available setter and getter properties of the Drawer Component.
      * @prop {Boolean} disabled Sets or returns the `disabled` state of the drawer.
      * @prop {Number} width Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position `[0-1]`.
      * @prop {String} anchor Sets or returns the anchor position of the drawer. Values can be `left`, `top`, `right`, `bottom`.
@@ -22,7 +22,7 @@
 
 
 	/** ## Methods ##
-	 * Here are the available methods of the Drawer Component.
+	 * @jdocs Here are the available methods of the Drawer Component.
 	 */
 
 

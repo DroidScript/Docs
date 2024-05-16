@@ -14,14 +14,14 @@
 
 
     /** ## Properties
-     * These are the available setter and getter properties for the ActionSheet component.
+     * @jdocs These are the available setter and getter properties for the ActionSheet component.
      * @prop {String} title Sets or returns the title text of the action sheet.
      * @prop {String} description Sets or returns the description text for the action sheet.
      */
 
 
     /** ## Methods
-     * These are the available methods for the ActionSheet component.
+     * @jdocs These are the available methods for the ActionSheet component.
      */
 
 

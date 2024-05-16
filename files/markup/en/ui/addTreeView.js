@@ -65,7 +65,7 @@ var items = {
 
 
     /** ## Properties
-     * Here are the available setter and getter properties of the TreeView Component.
+     * @jdocs Here are the available setter and getter properties of the TreeView Component.
      * @prop {Object} list Sets or returns the list object.
      * @prop {String} value Returns the selected item of the TreeView.
      */
@@ -159,7 +159,7 @@ var items = {
 
 
     /** ## Methods
-     * Here are the available methods of the TreeView Component.
+     * @jdocs Here are the available methods of the TreeView Component.
      */
 
 
@@ -209,6 +209,9 @@ var items = {
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch
