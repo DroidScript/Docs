@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs In Material Design, it features a clear outline, label, and optional helper text, ensuring a consistent and user-friendly interface for data input. TextFields are fundamental components used for various forms and interactive elements in mobile applications. Inputs can be a number, text, emails, passwords and more. Add a textfield into your app using the `addTextField` method like this:
  * $$ tfd = ui.addTextField(parent, text, options, width, height) $$
- * @param {Object} parent The layout where to add the TextField Component.
+ * @param {uio-Layout} parent The layout where to add the TextField Component.
  * @param {String} text The initial value of the TextField
  * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`\nSizes: `Small`, `Medium`\nType: `Text`, `Password`, `Email`, `Search`, `Number`, `Date`, `Time`, `DateTime`\nVariant: `Standard`, `Filled`, `Outlined`\nTextArea: `Multiline`\nUtils: `Autofocus`
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -19,166 +19,257 @@
  */
 
 
-/** ## Properties
- * Here are the available getter and setter properties for TextField Component.
- * @prop {String} text Sets or returns the text value of the TextField Component.
- * @prop {String} label Sets or returns the label text.
- * @prop {String} labelColor Sets return the label color in hexadecimal format `#rrggbb`
- * @prop {String} placeholder Sets or returns the placeholder text.
- * @prop {Boolean} required Sets or returns a boolean value whether the text field in required or not.
- * @prop {Boolean} autoFocus Sets or returns a boolean value whethe the input is focus when rendered into the DOM.
- * @prop {String} hint Sets or returns the hint text. It's the same as the `placeholder` property.
- * @prop {Number} minRows Sets or returns the minimum rows for a `multiline` textfield.
- * @prop {Number} maxRows Sets or returns the maximum rows for a `multiline` textfield.
- * @prop {String} variant Sets or returns the variant of the TextField. Values can be `Standard` `Filled` or `Outlined`
- * @prop {String} sizeVariant Sets or returns the size variant of the textfield. Values can be `Small` or `Medium`
- * @prop {String} color Sets or returns the theme color of the textfield component.
- * @prop {String} inputType Sets or returns the input type. See `type` params for available values.
- * @prop {String} outlineColor Sets or returns the outline color in hexadecimal form `#rrggbb` when the textfield is focus. 
- * @prop {String} endAdornment Returns the end adornment text or icon.
- * @prop {String} startAdornment Returns the start adornment text or icon.
- * @prop {String} helperText Sets or returns the helper text or the hint below the input.
- * @prop {Boolean} error Sets or returns the error state of the TextField component.
- * @prop {Number} stepIncrement Sets or returns the step increment if the input is of type number;
- */
+    /** ## Properties
+     * Here are the available getter and setter properties for TextField Component.
+     * @prop {String} text Sets or returns the text value of the TextField Component.
+     * @prop {String} label Sets or returns the label text.
+     * @prop {String} labelColor Sets return the label color in hexadecimal format `#rrggbb`
+     * @prop {String} placeholder Sets or returns the placeholder text.
+     * @prop {Boolean} required Sets or returns a boolean value whether the text field in required or not.
+     * @prop {Boolean} autoFocus Sets or returns a boolean value whethe the input is focus when rendered into the DOM.
+     * @prop {String} hint Sets or returns the hint text. It's the same as the `placeholder` property.
+     * @prop {Number} minRows Sets or returns the minimum rows for a `multiline` textfield.
+     * @prop {Number} maxRows Sets or returns the maximum rows for a `multiline` textfield.
+     * @prop {String} variant Sets or returns the variant of the TextField. Values can be `Standard` `Filled` or `Outlined`
+     * @prop {String} sizeVariant Sets or returns the size variant of the textfield. Values can be `Small` or `Medium`
+     * @prop {String} color Sets or returns the theme color of the textfield component.
+     * @prop {String} inputType Sets or returns the input type. See `type` params for available values.
+     * @prop {String} outlineColor Sets or returns the outline color in hexadecimal form `#rrggbb` when the textfield is focus. 
+     * @prop {String} endAdornment Returns the end adornment text or icon.
+     * @prop {String} startAdornment Returns the start adornment text or icon.
+     * @prop {String} helperText Sets or returns the helper text or the hint below the input.
+     * @prop {Boolean} error Sets or returns the error state of the TextField component.
+     * @prop {Number} stepIncrement Sets or returns the step increment if the input is of type number;
+     */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
+    /** @extern width */
 
 
-/** ## Methods
- * Here are the methods available for the TextField Component.
- */
+    /** @extern height */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnEnter
- * Sets a callback function on `enter` or `submit` event.
- * $$ tfd.setOnEnter(callback) $$
- * @param {Function} callback The callback function. ---> @arg {String} text The text value of the input.
- */
+    /** @extern opacity */
 
 
-/** ### setOnChange
- * Sets a callback function on `values changes` event.
- * $$ tfd.setOnChange( callback ) $$
- * @param {Function} callback The callback function. ---> @arg {String} text The text value of the input.
- */
+    /** @extern textSize */
 
 
-/** ### focus
- * Sets focus on the textField component.
- * $$ tfd.focus() $$
- */
+    /** @extern textColor */
 
 
-/** ### setOnFocus
- * Adds a callback function when the textfield is focus or blur.
- * @param {Function} callback The function to be called. ---> @arg {Boolean} focus The focus state of the input component.
- */
+    /** @extern rotation */
 
 
-/** ### setRows
- * Sets the minimum and maximum number of rows on a multiline type TextField.
- * $$ tfd.setRows( min, max ) $$
- * @param {Number} [min] The minimum number of rows.
- * @param {Number} [max] The maximum number of rows.
- * @@ TextField Component must be `Multiline`
- */
+    /** @extern fontFile */
 
 
-/** ### setStartAdornment
- * Set a start adornment control into the TextField Component.
- * $$ tfd.setStartAdornment( text, type ) $$
- * @param {String} text Text or material icon font.
- * @param {String} [type] A comma separated options for start adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
- */
+    /** @extern visibility */
 
 
-/** ### setStartAdornmentOnTouch
- * Add a callback handler when the start adornment control is touch.
- * $$ tfd.setStartAdornmentOnTouch(callback) $$
- * @param {Function} callback The callback function.
- */
+    /** @extern type */
 
 
-/** ### getStartAdornment
- * Returns the start adornment text.
- * $$ tfd.getStartAdornment() $$
- * @returns String
- */
+    /** @extern absWidth */
 
 
-/** ### setEndAdornment
- * Add an end adornment control into the TextField Component.
- * $$ tfd.setEndAdornment( text, type ) $$
- * @param {String} text Text or material icon font.
- * @param {String} [type] A comma separated options for end adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
- */
+    /** @extern absHeight */
 
 
-/** ### setEndAdornmentOnTouch
- * Add a callback handler when the end adornment control is touch.
- * $$ tfd.setEndAdornmentOnTouch(callback) $$
- * @param {Function} callback The callback function.
- */
+    /** @extern backColor */
 
 
-/** ### getEndAdornment
- * Returns the end adornment text.
- * $$ tfd.getEndAdornment() $$
- * @returns String
- */
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+    /** ## Methods
+     * Here are the methods available for the TextField Component.
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnEnter
+     * Sets a callback function on `enter` or `submit` event.
+     * $$ tfd.setOnEnter(callback) $$
+     * @param {Function} callback The callback function. ---> @arg {String} text The text value of the input.
+     */
+
+
+    /** ### setOnChange
+     * Sets a callback function on `values changes` event.
+     * $$ tfd.setOnChange( callback ) $$
+     * @param {Function} callback The callback function. ---> @arg {String} text The text value of the input.
+     */
+
+
+    /** ### focus
+     * Sets focus on the textField component.
+     * $$ tfd.focus() $$
+     */
+
+
+    /** ### setOnFocus
+     * Adds a callback function when the textfield is focus or blur.
+     * @param {Function} callback The function to be called. ---> @arg {Boolean} focus The focus state of the input component.
+     */
+
+
+    /** ### setRows
+     * Sets the minimum and maximum number of rows on a multiline type TextField.
+     * $$ tfd.setRows( min, max ) $$
+     * @param {Number} [min] The minimum number of rows.
+     * @param {Number} [max] The maximum number of rows.
+     * @@ TextField Component must be `Multiline`
+     */
+
+
+    /** ### setStartAdornment
+     * Set a start adornment control into the TextField Component.
+     * $$ tfd.setStartAdornment( text, type ) $$
+     * @param {String} text Text or material icon font.
+     * @param {String} [type] A comma separated options for start adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
+     */
+
+
+    /** ### setStartAdornmentOnTouch
+     * Add a callback handler when the start adornment control is touch.
+     * $$ tfd.setStartAdornmentOnTouch(callback) $$
+     * @param {Function} callback The callback function.
+     */
+
+
+    /** ### getStartAdornment
+     * Returns the start adornment text.
+     * $$ tfd.getStartAdornment() $$
+     * @returns String
+     */
+
+
+    /** ### setEndAdornment
+     * Add an end adornment control into the TextField Component.
+     * $$ tfd.setEndAdornment( text, type ) $$
+     * @param {String} text Text or material icon font.
+     * @param {String} [type] A comma separated options for end adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
+     */
+
+
+    /** ### setEndAdornmentOnTouch
+     * Add a callback handler when the end adornment control is touch.
+     * $$ tfd.setEndAdornmentOnTouch(callback) $$
+     * @param {Function} callback The callback function.
+     */
+
+
+    /** ### getEndAdornment
+     * Returns the end adornment text.
+     * $$ tfd.getEndAdornment() $$
+     * @returns String
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Textfield variants
@@ -353,7 +444,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Textfield variants
 from hybrid import ui
@@ -388,6 +478,7 @@ def onChange(value):
     popup.text = value
     popup.show()
  */
+
 
 /**
 @sample Python Callbacks
@@ -431,6 +522,7 @@ def btn_onTouch(event):
     popup.show()
  */
 
+
 /**
 @sample Python Multiline textfield
 from hybrid import ui
@@ -448,6 +540,7 @@ def OnStart():
     tfd.label = "Enter description"
     tfd.setRows(3, 6)
  */
+
 
 /**
 @sample Python Advance textfield
@@ -482,3 +575,5 @@ def OnStart():
     ui.addText(main,  "End text adornment", "Left,Overline", 0.7)
     tfd3 = ui.addTextField(main, "", "Outlined,Secondary,
  */
+
+

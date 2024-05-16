@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs In Material Design, menus can be contextual, appearing in response to user interactions. They provide a consistent way to access additional functionality or navigate within an application. Show a menu by calling the `addMenu` method like this:
  * $$ men = ui.addMenu(parent, list, options, width, height) $$
- * @param {Object} parent The component where to anchor the Menu.
+ * @param {uio} parent The component where to anchor the Menu.
  * @param {Array} [list] A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon:title` \n Add a `colon` before an item to display it as the label text.
  * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Error`\nUtils: `Dense`, `Icon`
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -25,141 +25,143 @@
  */
 
 
-/** ## Properties
- * Here are the available setters and/or getters for the Menu Component.
- * @prop {Array} list Sets or returns the items in the menu. You can also pass a comma separated string.
- * @prop {Array} itemPadding Sets or returns the padding of each menu item. See also `setItemPadding` method.
- */
+	/** ## Properties
+	 * Here are the available setters and/or getters for the Menu Component.
+	 * @prop {Array} list Sets or returns the items in the menu. You can also pass a comma separated string.
+     * @prop {Array} itemPadding Sets or returns the padding of each menu item. See also `setItemPadding` method.
+	 */
 
 
-/** ## Methods
- * Here are the available methods for Menu Component.
- */
+	/** ## Methods
+	 * Here are the available methods for Menu Component.
+	 */ 
 
 
-/** ### setOnTouch
- * Adds a callback handler when the menu is touch.
- * $$ men.setOnTouch(callback) $$
- * @param {Function} callback The callback function to be called. ---> @arg {String} item The menu item text. @arg {String} icon The menu item icon. @arg {Number} index The menu item index.
- */
+    /** ### setOnTouch
+     * Adds a callback handler when the menu is touch.
+     * $$ men.setOnTouch(callback) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {String} item The menu item text. @arg {String} icon The menu item icon. @arg {Number} index The menu item index.
+     */
 
 
-/** ### show
- * Show the menu pop-up.
- * $$ men.show( parent ) $$
- * @param {Object} parent The component where to anchor the menu. It can be a `Button` or an `Image`.
- * If you passed a parent on initialization, then the menu si anchored on that component.
- */
+	/** ### show
+	 * Show the menu pop-up.
+	 * $$ men.show( parent ) $$
+	 * @param {uio} parent The component where to anchor the menu. It can be a `Button` or an `Image`.
+	 * If you passed a parent on initialization, then the menu si anchored on that component.
+	 */
 
 
-/** ### hide
- * Hide the pop-up menu.
- * $$ men.hide() $$
- */
+	/** ### hide
+	 * Hide the pop-up menu.
+	 * $$ men.hide() $$
+	 */
 
 
-/** ### setList
- * Updates the list items on the menu.
- * $$ men.setList( list ) $$
- * @param {Array} list The list items to show.
- */
+	/** ### setList
+	 * Updates the list items on the menu.
+	 * $$ men.setList( list ) $$
+	 * @param {Array} list The list items to show.
+	 */
 
 
-/** ### addItem
- * Adds an item in the menu list.
- * $$ men.addItem( name, index ) $$
- * @param {String} name The new item to be added.
- * @param {Number} index The index at which to add the item.
- */
+	/** ### addItem
+	 * Adds an item in the menu list.
+	 * $$ men.addItem( name, index ) $$
+	 * @param {String} name The new item to be added.
+	 * @param {Number} index The index at which to add the item.
+	 */
 
 
-/** ### removeItemByIndex
- * Removes an item in the menu items list by its index.
- * $$ men.removeItemByIndex( index ) $$
- * @param {Number} index The index of the item to remove.
- */
+	/** ### removeItemByIndex
+	 * Removes an item in the menu items list by its index.
+	 * $$ men.removeItemByIndex( index ) $$
+	 * @param {Number} index The index of the item to remove.
+	 */
 
 
-/** ### removeItemByName
- * Removes an item in the menu items list by its name.
- * $$ men.removeItemByName( name ) $$
- * @param {String} name The name of the item to remove.
- */
+	/** ### removeItemByName
+	 * Removes an item in the menu items list by its name.
+	 * $$ men.removeItemByName( name ) $$
+	 * @param {String} name The name of the item to remove.
+	 */
 
 
-/** ### popItem
- * Removes the last item. This will return the item being removed.
- * $$ men.popItem() $$
- */
+	/** ### popItem
+	 * Removes the last item. This will return the item being removed.
+	 * $$ men.popItem() $$
+	 */
 
 
-/** ### shiftItem
- * Removes the first item. This will return the item being removed.
- * $$ men.shiftItem() $$
- */
+	/** ### shiftItem
+	 * Removes the first item. This will return the item being removed.
+	 * $$ men.shiftItem() $$
+	 */
 
 
-/** ### setPosition
- * Set the position of the menu from the left and top of the anchor component.
- * $$ men.setPosition( left, top ) $$
- * @param {Number} left The position of the menu from the left of the parent or anchor component. The unit is in pixels.
- * @param {Number} top The position of the menu from the top of the parent or anchor component. The unit is in pixels.
- */
+	/** ### setPosition
+	 * Set the position of the menu from the left and top of the anchor component.
+	 * $$ men.setPosition( left, top ) $$
+	 * @param {Number} left The position of the menu from the left of the parent or anchor component. The unit is in pixels.
+	 * @param {Number} top The position of the menu from the top of the parent or anchor component. The unit is in pixels.
+	 */
 
 
-/** ### setAutoFocus
- * Sets the autofocus value of the menu items.
- * $$ men.setAutoFocus( bool ) $$
- * @param {Boolean} bool Value can be `true` or `false`
- */
+	/** ### setAutoFocus
+	 * Sets the autofocus value of the menu items.
+	 * $$ men.setAutoFocus( bool ) $$
+	 * @param {Boolean} bool Value can be `true` or `false`
+	 */
 
 
-/** ### setEnabled
- * Enable or disable an item in the menu popup.
- * $$ men.setEnabled( index, value ) $$
- * @param {Number} index The index of the item.
- * @param {Boolean} value Values can be `true` or `false`. `false` to disable.
- */
+    /** ### setEnabled
+     * Enable or disable an item in the menu popup.
+     * $$ men.setEnabled( index, value ) $$
+     * @param {Number} index The index of the item.
+     * @param {Boolean} value Values can be `true` or `false`. `false` to disable.
+     */
 
 
-/** ### getEnabled
- * Get the enabled state of an item the menu popup.
- * $$ men.getEnabled(index) $$
- * @param {Number} index The index of the item.
- * @returns Boolean
- */
+    /** ### getEnabled
+     * Get the enabled state of an item the menu popup.
+     * $$ men.getEnabled(index) $$
+     * @param {Number} index The index of the item.
+     * @returns Boolean
+     */
 
 
-/** ### setEnabledByName
- * Enable or disable an item in the menu popup by its name.
- * $$ men.setEnabledByName(name, value) $$
- * @param {String} name The name of the corresping item the menu.
- * @param {Boolean} value Values can be `true` or `false`. `false` to disable an item.
- */
+    /** ### setEnabledByName
+     * Enable or disable an item in the menu popup by its name.
+     * $$ men.setEnabledByName(name, value) $$
+     * @param {String} name The name of the corresping item the menu.
+     * @param {Boolean} value Values can be `true` or `false`. `false` to disable an item.
+     */
 
 
-/** ### getEnabledByName
- * Get the enabled state of an item in the menu popup.
- * $$ men.getEnabledByName( name ) $$
- * @param {String} name The name of the item.
- * @returns Boolean
- */
+    /** ### getEnabledByName
+     * Get the enabled state of an item in the menu popup.
+     * $$ men.getEnabledByName( name ) $$
+     * @param {String} name The name of the item.
+     * @returns Boolean
+     */
 
 
-/** ### setItemPadding
- * Sets the padding of the menu item. See `itemPadding` property for equivalent setter/getter property.
- * $$ men.setItemPadding(left, top, right, bottom, mode) $$
- * @param {Number} left Left padding of the menu item.
- * @param {Number} top Top padding of the menu item.
- * @param {Number} right Right padding of the menu item.
- * @param {Number} bottom Bottom padding of the menu item.
- * @param {String} mode Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
- */
+    /** ### setItemPadding
+     * Sets the padding of the menu item. See `itemPadding` property for equivalent setter/getter property.
+     * $$ men.setItemPadding(left, top, right, bottom, mode) $$
+     * @param {Number} left Left padding of the menu item.
+     * @param {Number} top Top padding of the menu item.
+     * @param {Number} right Right padding of the menu item.
+     * @param {Number} bottom Bottom padding of the menu item.
+     * @param {String} mode Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic menu
@@ -325,7 +327,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Basic menu
 from hybrid import ui
@@ -355,6 +356,7 @@ def onTouch(event):
 def menuTouch(item, icon, index):
     ui.showPopup(item)
  */
+
 
 /**
 @sample Python Changing anchor component
@@ -395,6 +397,7 @@ def menuTouch(item, icon, index):
     ui.showPopup(item)
  */
 
+
 /**
 @sample Python With icons and disabled items
 from hybrid import ui
@@ -429,6 +432,7 @@ def menuTouch(item, icon, index):
     ui.showPopup(item)
  */
 
+
 /**
 @sample Python Anchor position on mouse
 from hybrid import ui
@@ -459,3 +463,5 @@ def menuTouch(item, icon, index):
     # display the selected item
     ui.showPopup(item)
  */
+
+

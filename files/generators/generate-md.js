@@ -402,6 +402,7 @@ function toArgPop(inpt, state, stypes) {
                 return s2[i] + rplop(type[2], type[0] === "str");
             case "lst":
             case "obj": return s2[i] + replaceTypes(inpt, state, replW(type[2]), true);
+            case "uio": return s2[i] + replaceTypes(inpt, state, replW(type[2]), true);
             default:
                 if (!type[0].endsWith("o"))
                     Throw(Error("unknown typex " + type[1]));

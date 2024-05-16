@@ -11,55 +11,57 @@
  * @param {String} body The dialog message to be shown.
  * @param {Array} [actions] A string of action button text.
  * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nUtil: `NoCancel` prevents the dialog from closing on action.
- * @param {Number} [width] Fraction of the screen width `[0-1]`.
+ * @param {Number} width Fraction of the screen width `[0-1]`.
  * @returns uio-Dialog
  */
 
 
-/** ## Properties
- * Here are the available setters and/or getter of the Dialog Component.
- * @prop {String} text Sets or returns the dialog text.
- * @prop {String} titleText Sets or returns the dialog title text.
- * @prop {String} titleColor Sets or returns the title text color in hexadecimal format.
- * @prop {Object} layout Returns the layout of the dialog where you can add custom controls.
- */
+	/** ## Properties
+	 * Here are the available setters and/or getter of the Dialog Component.
+	 * @prop {String} text Sets or returns the dialog text.
+	 * @prop {String} titleText Sets or returns the dialog title text.
+	 * @prop {String} titleColor Sets or returns the title text color in hexadecimal format.
+     * @prop {Object} layout Returns the layout of the dialog where you can add custom controls.
+	 */
 
 
-/** ## Methods
- * Here are the available methods of the Dialog Component.
- */
+	/** ## Methods
+	 * Here are the available methods of the Dialog Component.
+	 */
 
 
-/** ### setOnAction
- * Adds a callback function when the action buttons are click.
- * $$ dlg.setOnAction( callback ) $$
- * @param {Function} callback The callback function. ---> @arg {String} text The dialog action text. @arg {Number} index The index of the corresponding dialog action.
- */
+	/** ### setOnAction
+	 * Adds a callback function when the action buttons are click.
+	 * $$ dlg.setOnAction( callback ) $$
+	 * @param {Function} callback The callback function. ---> @arg {String} text The dialog action text. @arg {Number} index The index of the corresponding dialog action.
+	 */
 
 
-/** ### setOnClose
- * Adds a callback function when the dialog is close.
- * $$ dlg.setOnClose(callback) $$
- * @param {Function} callback The callback function
- */
+	/** ### setOnClose
+	 * Adds a callback function when the dialog is close.
+	 * $$ dlg.setOnClose(callback) $$
+	 * @param {Function} callback The callback function
+	 */
 
 
-/** ### show
- * Show the dialog.
- * $$ dlg.show() $$
- */
+	/** ### show
+	 * Show the dialog.
+	 * $$ dlg.show() $$
+	 */
 
 
-/** ### hide
- * Hide the dialog.
- * $$ dlg.hide() $$
- * @@ When you add an `onClose` callback, it will be fired after this event.
- */
+	/** ### hide
+	 * Hide the dialog.
+	 * $$ dlg.hide() $$
+	 * @@ When you add an `onClose` callback, it will be fired after this event.
+	 */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Basic
@@ -188,7 +190,6 @@ class Main extends App
  */
 
 
-
 /**
 @sample Python Basic
 from hybrid import ui
@@ -212,6 +213,7 @@ def showDialog(event):
     # Show the Dialog component when the button is clicked.
     dlg.show()
  */
+
 
 /**
 @sample Python NoCancel
@@ -248,6 +250,7 @@ def onAction(action, index):
     else:
         ui.showPopup("Oops! You can't close me here.")
  */
+
 
 /**
 @sample Python Adding controls to the dialog
@@ -290,3 +293,5 @@ def onAction(action, index):
         # Change the text of the text control.
         txt.text = "Email: " + tfd.text
  */
+
+

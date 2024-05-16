@@ -5,7 +5,7 @@
  * @img(img2.png)
  * @jdocs A button typically adheres to guidelines such as elevation, shape, and color to convey interactivity. It serves as a touchable surface with discernible feedback, promoting a consistent and intuitive user experience across mobile applications. Add a button using the `addButton` method like this:
  * $$ btn = ui.addButton(parent, text, options, width, height) $$
- * @param {Object} parent The layout where to add the button.
+ * @param {uio-Layout} parent The layout where to add the button.
  * @param {String} text The button text or the material icon text.
  * @param {String} [options] A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nToggleable: `Toggle`, `Active`\nUtils: `Icon`, `NoRipple`, `Upload`, `Multiple`
  * @param {Number} [width] Fraction of the parent width `[0-1]`.
@@ -19,144 +19,233 @@
  */
 
 
-/** ## Properties ##
- * Here are the available setter and/or getter properties of the Button Component.
- * @prop {String} text Sets or returns the button text.
- * @prop {Number} badge Sets or returns the badge content. You can pass a `string`
- * @prop {String} badgeColor Sets or returns the color of the badge. Values can be `Primary` or `Secondary`
- * @prop {String} toolTip Sets or returns the tooltip text.
- * @prop {String} toolTipPosition Sets or returns the tooltip position. Values can be `left` `top` `right` or `bottom`
- * @prop {String} variant Sets or returns the variant of the button. Values can be `Contained` `Outlined` or `Text`
- * @prop {String} color Sets or returns the theme color of the button. Values can be `Default` `Primary` `Secondary` `Inherit`
- * @prop {String} textColor Sets or returns the text color in hexadecimal format.
- * @prop {String} sizeVariant Sets or returns the size variant of the button. Values can be `small` `medium` or `large`
- * @prop {Number} cornerRadius Sets or returns the corner radius of the button.
- * @prop {String} icon Sets or returns the material icon font use for the leading icon.
- * @prop {String} acceptedFiles Sets or returns the accepted files for an upload button.
- * @prop {Boolean} active Sets or returns the active state if button is `toggleable`.
- */
+	/** ## Properties ##
+	 * Here are the available setter and/or getter properties of the Button Component.
+	 * @prop {String} text Sets or returns the button text.
+	 * @prop {Number} badge Sets or returns the badge content. You can pass a `string`
+	 * @prop {String} badgeColor Sets or returns the color of the badge. Values can be `Primary` or `Secondary`
+	 * @prop {String} toolTip Sets or returns the tooltip text.
+	 * @prop {String} toolTipPosition Sets or returns the tooltip position. Values can be `left` `top` `right` or `bottom`
+	 * @prop {String} variant Sets or returns the variant of the button. Values can be `Contained` `Outlined` or `Text`
+	 * @prop {String} color Sets or returns the theme color of the button. Values can be `Default` `Primary` `Secondary` `Inherit`
+	 * @prop {String} textColor Sets or returns the text color in hexadecimal format. 
+	 * @prop {String} sizeVariant Sets or returns the size variant of the button. Values can be `small` `medium` or `large`
+	 * @prop {Number} cornerRadius Sets or returns the corner radius of the button.
+     * @prop {String} icon Sets or returns the material icon font use for the leading icon.
+     * @prop {String} acceptedFiles Sets or returns the accepted files for an upload button.
+     * @prop {Boolean} active Sets or returns the active state if button is `toggleable`.
+	 */
 
 
-/** @extern width */
-/** @extern height */
-/** @extern opacity */
-/** @extern textSize */
-/** @extern textColor */
-/** @extern rotation */
-/** @extern fontFile */
-/** @extern visibility */
-/** @extern type */
-/** @extern absWidth */
-/** @extern absHeight */
-/** @extern backColor */
-/** @extern backImage */
-/** @extern isVisible */
-/** @extern top */
-/** @extern left */
-/** @extern absTop */
-/** @extern absLeft */
-/** @extern parent */
-/** @extern position */
-/** @extern margins */
-/** @extern padding */
-/** @extern options */
-/** @extern disabled */
-/** @extern border */
-/** @extern borderColor */
-/** @extern borderStyle */
-/** @extern cornerRadius */
-/** @extern el */
-/** @extern elStyle */
+    /** @extern width */
 
 
-// VISIBLE METHODS
-
-/** ## Methods
- * Here are the methods available for Button Component
- */
+    /** @extern height */
 
 
-/** @extern setOnContextMenu */
-/** @extern animate */
-/** @extern setSize */
-/** @extern show */
-/** @extern hide */
-/** @extern gone */
-/** @extern destroy */
-/** @extern setScale */
-/** @extern getPosition */
-/** @extern setMargins */
-/** @extern setPadding */
-/** @extern setPosition */
-/** @extern setBorder */
-/** @extern setCornerRadius */
-/** @extern bringForward */
-/** @extern sendBackward */
-
-/** ### setOnTouch
- * Adds a callback handler when the button is touch. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
- * $$ btn.setOnTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
- */
+    /** @extern opacity */
 
 
-/** ### setOnLongTouch
- * Adds a callback handler when the button is long touch. The touch timer is about 500 milliseconds.
- * $$ btn.setOnLongTouch( callback ) $$
- * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
- */
+    /** @extern textSize */
 
 
-/** ### setOnFileSelect
- * Sets a callback on file select.
- * $$ btn.setOnFileSelect( callback ) $$
- * @param {Function} callback The callback function. ---> @arg {Array} files An array of file objects selected.
- */
+    /** @extern textColor */
 
 
-/** ### setToolTip
- * Sets a tooltip when the button is hovered.
- * $$ btn.setToolTip( title, pos ) $$
- * @param {String} title The text of the tooltip
- * @param {String} [pos='top'] Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
- */
+    /** @extern rotation */
 
 
-/** ### setTextShadow
- * Sets a text-shadow to the button text.
- * $$ btn.setTextShadow( radius, dx, dy, color ) $$
- * @param {Number} radius The radius in pixels
- * @param {Number} dx The x-offset in pixels
- * @param {Number} dy The y-offset in pixels
- * @param {String} color The color in hexadecimal `#rrggbb`
- */
+    /** @extern fontFile */
 
 
-/** ### setPadding
- * Sets the padding of the button.
- * $$ btn.setPadding( left, top, right, bottom, mode ) $$
- * @param {Number} [left] The left padding in pixel.
- * @param {Number} [top] The top padding in pixels,
- * @param {Number} [right] The right padding in pixels.
- * @param {Number} [bottom] The bottom padding in pixels.
- * @param {String} [mode='px'] Can be `px` `%`
- */
+    /** @extern visibility */
 
 
-/** ### setCornerRadius
- * Sets the corner radius of the button.
- * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {Number} [tl] Top-left corner radius.
- * @param {Number} [tr] Top-right corner radius.
- * @param {Number} [bl] Bottom-left corner radius.
- * @param {Number} [br] Bottom-right corner radius.
- * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern type */
+
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** @extern elStyle */
+
+
+	/** ## Methods
+	 * Here are the methods available for Button Component
+	 */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the button is touch. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
+     * $$ btn.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
+     */
+
+
+    /** ### setOnLongTouch
+     * Adds a callback handler when the button is long touch. The touch timer is about 500 milliseconds.
+     * $$ btn.setOnLongTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+	/** ### setOnFileSelect
+	 * Sets a callback on file select.
+	 * $$ btn.setOnFileSelect( callback ) $$
+	 * @param {Function} callback The callback function. ---> @arg {Array} files An array of file objects selected.
+	 */
+
+
+	/** ### setToolTip
+	 * Sets a tooltip when the button is hovered.
+	 * $$ btn.setToolTip( title, pos ) $$
+	 * @param {String} title The text of the tooltip
+	 * @param {String} [pos='top'] Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
+	 */
+
+
+	/** ### setTextShadow
+	 * Sets a text-shadow to the button text.
+	 * $$ btn.setTextShadow( radius, dx, dy, color ) $$
+	 * @param {Number} radius The radius in pixels
+	 * @param {Number} dx The x-offset in pixels
+	 * @param {Number} dy The y-offset in pixels
+	 * @param {String} color The color in hexadecimal `#rrggbb`
+	 */
+
+
+	/** ### setPadding
+	 * Sets the padding of the button.
+	 * $$ btn.setPadding( left, top, right, bottom, mode ) $$
+	 * @param {Number} [left] The left padding in pixel.
+	 * @param {Number} [top] The top padding in pixels,
+	 * @param {Number} [right] The right padding in pixels.
+	 * @param {Number} [bottom] The bottom padding in pixels.
+	 * @param {String} [mode='px'] Can be `px` `%`
+	 */
+
+
+    /** ### setCornerRadius
+     * Sets the corner radius of the button.
+     * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
+     * @param {Number} [tl] Top-left corner radius.
+     * @param {Number} [tr] Top-right corner radius.
+     * @param {Number} [bl] Bottom-left corner radius.
+     * @param {Number} [br] Bottom-right corner radius.
+     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     */
 
 
 /* --- parent_methods here ----- */
 
+
 /* ## Examples */
+
 
 /**
 @sample Button variants
@@ -409,7 +498,6 @@ class Main extends App {
  */
 
 
-
 /**
 @sample Python Button variants
 from hybrid import ui
@@ -430,6 +518,7 @@ def OnStart():
 def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
+
 
 /**
 @sample Python Button theme colors
@@ -452,6 +541,7 @@ def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
 
+
 /**
 @sample Python Button sizes
 from hybrid import ui
@@ -470,6 +560,7 @@ def OnStart():
 def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
+
 
 /**
 @sample Python Button tooltips
@@ -492,6 +583,7 @@ def OnStart():
     btn4.setToolTip("Tooltip on the bottom", "bottom")
  */
 
+
 /**
 @sample Python Button with icons
 from hybrid import ui
@@ -511,6 +603,7 @@ def OnStart():
     btn4 = ui.addButton(main, "settings", "Secondary,Icon")
  */
 
+
 /**
 @sample Python Buttons with badges
 from hybrid import ui
@@ -528,6 +621,7 @@ def OnStart():
     btn3.setBadge("New", "Primary")
  */
 
+
 /**
 @sample Python Upload button
 from hybrid import ui
@@ -542,3 +636,5 @@ def onFileSelect(files):
     file = files[0]
     ui.showPopup( f"{file.name} is selected." )
  */
+
+
