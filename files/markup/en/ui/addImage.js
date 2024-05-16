@@ -121,9 +121,6 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods
 	 * Here are the available methods of the Image Component.
 	 */

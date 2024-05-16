@@ -129,9 +129,6 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
      * Here are the following methods available on the List Component.
      */

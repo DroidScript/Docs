@@ -112,9 +112,6 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
      * Here are the available methods for the WebView Component.
      */
@@ -405,9 +402,9 @@ def OnStart():
         <html>
         <head>
 
-                function callFunc(name) {
-                    app.Alert("Hi " + name + " webview!")
-                }
+            function callFunc(name) {
+                app.Alert("Hi " + name + " webview!")
+            }
 
         </head>
         <body>

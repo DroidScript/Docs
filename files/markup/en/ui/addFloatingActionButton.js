@@ -117,9 +117,6 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods
 	 * Here are the available methods for the Floating Action Button.
 	 */

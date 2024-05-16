@@ -145,9 +145,6 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
      * These are the methods for `Card` component.
      */

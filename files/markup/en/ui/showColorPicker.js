@@ -14,19 +14,11 @@
 
     /** ## Properties
      * Here are the setter and getter properties available for ColorPicker Component.
-     * @prop {String} value Returns the value of the chosen color.
      */
 
 
     /**  ## Methods
-     * Here are the available methods of the ColorPicker Component.
-     */
-
-
-    /** ### getValue
-     * Returns the hexadecimal string color value of the color picker.
-     * $$ cpk.getValue() $$
-     * @returns String
+     * Here are the available methods of the ColorPicker dialog.
      */
 
 

@@ -156,9 +156,6 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ### getPixelData
      * Returns the pixel data of the image preview or a given portion of it.
      * $$ cam.getPixelData(format, left, top, width, height)

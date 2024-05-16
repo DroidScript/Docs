@@ -117,9 +117,6 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods
 	 * Here are the methods available for Checkbox Component
 	 */

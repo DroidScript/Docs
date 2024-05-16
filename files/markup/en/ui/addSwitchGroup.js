@@ -118,9 +118,6 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
      * Here the methods available for the SwitchGroup Component.
      */

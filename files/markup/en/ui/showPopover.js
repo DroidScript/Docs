@@ -38,6 +38,13 @@
      */
 
 
+    /** ### setOnClose
+	 * Adds an onClose callback to your popover.
+	 * $$ pop.setOnClose( callback ) $$
+	 * @param {Function} callback The onclose callback.
+	 */
+
+
 /* ## Examples */
 
 
