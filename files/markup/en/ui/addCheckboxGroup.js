@@ -16,7 +16,7 @@
 
 
 	/** ## Properties ##
-	 * Here are the available setters and/or getters of the CheckboxGroup Component.
+	 * @jdocs Here are the available setters and/or getters of the CheckboxGroup Component.
 	 * @prop {Array} list Sets or returns the list items.
 	 * @prop {String} label Sets or returns the label text.
 	 * @prop {String} checkIcon Sets or returns the material icon font for check stated.
@@ -122,11 +122,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods
-	 * Here are the methods available for CheckboxGroup Component
+	 * @jdocs Here are the methods available for CheckboxGroup Component
 	 */
 
 
@@ -176,6 +173,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
 	/** ### setOnTouch

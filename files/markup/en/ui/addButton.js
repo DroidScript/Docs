@@ -20,7 +20,7 @@
 
 
 	/** ## Properties ##
-	 * Here are the available setter and/or getter properties of the Button Component.
+	 * @jdocs Here are the available setter and/or getter properties of the Button Component.
 	 * @prop {String} text Sets or returns the button text.
 	 * @prop {Number} badge Sets or returns the badge content. You can pass a `string`
 	 * @prop {String} badgeColor Sets or returns the color of the badge. Values can be `Primary` or `Secondary`
@@ -124,11 +124,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods
-	 * Here are the methods available for Button Component
+	 * @jdocs Here are the methods available for Button Component
 	 */
 
 
@@ -178,6 +175,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

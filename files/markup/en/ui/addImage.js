@@ -18,7 +18,7 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and getters for the Image Component.
+	 * @jdocs Here are the available setters and getters for the Image Component.
 	 * @prop {Array} pixelData Returns the pixel data of the image.
 	 * @prop {String} fillColor Sets or returns the fill color used on close paths such as square, circle, rectangle or arcs.
 	 * @prop {String} image Sets or returns the path or url of the image file.
@@ -121,11 +121,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods
-	 * Here are the available methods of the Image Component.
+	 * @jdocs Here are the available methods of the Image Component.
 	 */
 
 
@@ -175,6 +172,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
 	/** ### enableContextMenu

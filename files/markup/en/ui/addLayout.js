@@ -32,7 +32,7 @@
 
 
     /** ## Properties
-     * Here are the available setters and getters for the Layout Component.
+     * @jdocs Here are the available setters and getters for the Layout Component.
      * @prop {String} orientation Sets or returns the orientation of the controls in a Linear Layout. Values can be `'Horizontal'` or `"Vertical"`
      * @prop {String} alignment Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be `"Left"` `"Center"` and `"Right"`
      * @prop {String} verticalAlignment Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be `"Top"` `"VCenter"` or `"Bottom"`
@@ -133,11 +133,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods ##
-     * Here are the available methods for the Layout Component.
+     * @jdocs Here are the available methods for the Layout Component.
      */
 
 
@@ -187,6 +184,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setChildMargins ###

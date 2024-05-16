@@ -13,14 +13,14 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and/or getters for the Popup Component.
+	 * @jdocs Here are the available setters and/or getters for the Popup Component.
 	 * @prop {String} text Sets or returns the text of the popup.
 	 * @prop {Number} duration Sets or returns the duration of the popup in milliseconds.
 	 */
 
 
 	/** ## Methods
-	 * Here are the available methods for the Popup Component.
+	 * @jdocs Here are the available methods for the Popup Component.
 	 */
 
 

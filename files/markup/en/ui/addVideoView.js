@@ -12,7 +12,7 @@
 
 
     /** ## Properties
-     * Here are the setter and getter properties for the VideoView component.
+     * @jdocs Here are the setter and getter properties for the VideoView component.
      */
 
 
@@ -133,11 +133,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
-     * Here are the methods for the VideoView component.
+     * @jdocs Here are the methods for the VideoView component.
      */
 
 
@@ -296,6 +293,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
 /** ## Examples

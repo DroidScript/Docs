@@ -35,7 +35,7 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
 
 
     /** ## Properties
-     * These are the setter and getter properties for CameraView component.
+     * @jdocs These are the setter and getter properties for CameraView component.
      */
 
 
@@ -156,7 +156,9 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** @extern el */
 
 
-    /** @extern elStyle */
+    /** ## Methods
+     * @jdocs These are the methods available for the CameraView component.
+     */
 
 
     /** ### getPixelData
@@ -279,6 +281,9 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
 /** ## Examples

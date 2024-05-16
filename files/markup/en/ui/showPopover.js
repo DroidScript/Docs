@@ -15,14 +15,14 @@
 
 
     /** ## Properties
-     * These are the setter/getter properties available for the Popover Component.
+     * @jdocs These are the setter/getter properties available for the Popover Component.
      * @prop {String} fontFile Sets or returns the font file use for the Popover.
      * @prop {String} backImage Sets or returns the path to the background image.
      */
 
 
     /** ## Methods
-     * These are the methods available for the Popover Component.
+     * @jdocs These are the methods available for the Popover Component.
      */
 
 
@@ -36,6 +36,13 @@
      * Hide the popup dialog.
      * $$ pop.hide() $$
      */
+
+
+    /** ### setOnClose
+	 * Adds an onClose callback to your popover.
+	 * $$ pop.setOnClose( callback ) $$
+	 * @param {Function} callback The onclose callback.
+	 */
 
 
 /* ## Examples */

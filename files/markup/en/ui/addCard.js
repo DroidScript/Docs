@@ -41,7 +41,7 @@
 
 
     /** ## Properties
-     * These are the available setter and getter properties for the Card component.
+     * @jdocs These are the available setter and getter properties for the Card component.
      * @prop {String} headerTitle Sets or returns the card header title.
      * @prop {String} headerSubtitle Sets or returns the card header subheader or subtitle.
      * @prop {String} headerAvatar Sets or returns the card header avatar. Can be a character or a path to an image.
@@ -145,11 +145,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
-     * These are the methods for `Card` component.
+     * @jdocs These are the methods for `Card` component.
      */
 
 
@@ -199,6 +196,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### addHeaderItems

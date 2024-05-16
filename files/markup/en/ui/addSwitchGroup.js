@@ -15,7 +15,7 @@
 
 
     /** ## Properties
-     * Here are the available setter and getter properties of the SwitchGroup Component.
+     * @jdocs Here are the available setter and getter properties of the SwitchGroup Component.
      * @prop {String} label Sets or returns the label text.
      * @prop {Array} list Sets or returns the list items. You can also pass a comma separated string of items.
      * @prop {String} edge Sets or returns the edge position of the toggle. Values can be `Start` `End` or `False`
@@ -118,11 +118,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
-     * Here the methods available for the SwitchGroup Component.
+     * @jdocs Here the methods available for the SwitchGroup Component.
      */
 
 
@@ -172,6 +169,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

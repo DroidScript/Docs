@@ -20,7 +20,7 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and getters for the Progress Component.
+	 * @jdocs Here are the available setters and getters for the Progress Component.
 	 * @prop {Number} value Sets or returns the value of the progress control.
 	 * @prop {String} type Sets or returns the type of the Progress Component. Values can be `Linear` or `Circular`
 	 * @prop {String} variant Sets or returns the variant of the progress component. Values can be `Determinate` or `Indeterminate`.
@@ -117,11 +117,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods
-	 * Here are the available methods for the Progress Component.
+	 * @jdocs Here are the available methods for the Progress Component.
 	 */
 
 
@@ -171,6 +168,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
 /* --- parent_methods here ----- */

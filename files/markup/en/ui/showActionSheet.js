@@ -14,14 +14,14 @@
 
 
     /** ## Properties
-     * These are the available setter and getter properties for the ActionSheet component.
+     * @jdocs These are the available setter and getter properties for the ActionSheet component.
      * @prop {String} title Sets or returns the title text of the action sheet.
      * @prop {String} description Sets or returns the description text for the action sheet.
      */
 
 
     /** ## Methods
-     * These are the available methods for the ActionSheet component.
+     * @jdocs These are the available methods for the ActionSheet component.
      */
 
 
@@ -38,6 +38,70 @@
      * $$ acs.setColorByIndex(index, color) $$
      * @param {Number} index The index of list item.
      * @param {String} color A css supported color. Available format are: `hexadecimal`, `color-names`, `rgb`, `rgba` ...
+     */
+
+
+    /** ### popItem
+     * Removes and returns the last item in the actionsheet list items.
+     * $$ acs.popItem() $$
+     * @returns String
+     */
+
+
+    /** ### shiftItem
+     * Removes and returns the first item in the actionsheet list items.
+     * $$ acs.shiftItem() $$
+     * @returns String
+     */
+
+
+    /** ### addItem
+     * Add an item into the actionsheet.
+     * $$ acs.addItem(name, icon, index) $$
+     * @param {String} name List item text.
+     * @param {String} icon List item material icon. "options" argument must include "icon".
+     * @param {Number} index The index at which the item will be inserted. Will push the item into the list when not given.
+     * @returns String
+     */
+
+
+    /** ### removeItem
+     * Removes an item in the list by its name.
+     * $$ acs.removeItem( name ) $$
+     * @param {String} name The list item text.
+     */
+
+
+    /** ### removeItemByIndex
+     * Removes an item in the list by its index.
+     * $$ acs.removeItemByIndex( index ) $$
+     * @param {Number} name The list item index.
+     */
+
+
+    /** ### setOnOpen
+     * Add a callback handler when the actionsheet is open.
+     * $$ acs.setOnOpen( callback ) $$
+     * @param {Function} callback The function to be called.
+     */
+
+
+    /** ### setOnClose
+     * Add a callback handler when the actionsheet is close.
+     * $$ acs.setOnClose( callback ) $$
+     * @param {Function} callback The function to be called.
+     */
+
+
+    /** ### show
+     * $$ acs.show() $$
+     * Show the actionsheet.
+     */
+
+
+    /** ### hide
+     * Hide the actionsheet.
+     * $$ acs.hide() $$
      */
 
 

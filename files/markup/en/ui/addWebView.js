@@ -14,7 +14,7 @@
 
 
     /** ## Properties
-     * Here are the setter and getter properties of the WebView Component.
+     * @jdocs Here are the setter and getter properties of the WebView Component.
      * @prop {String} url Sets or returns the url of the webview.
      * @prop {String} html Setst or returns the html loaded in the iframe.
      * @prop {String} errorPage Sets or returns the redirect url when an error occur.
@@ -112,11 +112,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
-     * Here are the available methods for the WebView Component.
+     * @jdocs Here are the available methods for the WebView Component.
      */
 
 
@@ -166,6 +163,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnLoad
@@ -405,9 +405,9 @@ def OnStart():
         <html>
         <head>
 
-                function callFunc(name) {
-                    app.Alert("Hi " + name + " webview!")
-                }
+            function callFunc(name) {
+                app.Alert("Hi " + name + " webview!")
+            }
 
         </head>
         <body>

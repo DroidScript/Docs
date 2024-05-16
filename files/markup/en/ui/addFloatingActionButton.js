@@ -19,7 +19,7 @@
 
 
 	/** ## Properties ##
-	 * Here are the available setters and/or getters of the FloatingActionButton Component.
+	 * @jdocs Here are the available setters and/or getters of the FloatingActionButton Component.
 	 * @prop {String} icon Sets or returns the material icon font.
 	 * @prop {String} text Sets or returns the text for extended FAB.
 	 * @prop {String} color Sets or returns the theme color for the FAB. Values can be `Default` `Primary` or `Secondary`
@@ -117,11 +117,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
 	/** ## Methods
-	 * Here are the available methods for the Floating Action Button.
+	 * @jdocs Here are the available methods for the Floating Action Button.
 	 */
 
 
@@ -171,6 +168,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

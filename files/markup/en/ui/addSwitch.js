@@ -15,7 +15,7 @@
 
 
     /** ## Properties
-     * Here are the available setters and getters for the Switch Component.
+     * @jdocs Here are the available setters and getters for the Switch Component.
      * @prop {Boolean} value Sets or returns the value of the switch toggle.
      * @prop {String} text Sets or returns the label text.
      * @prop {String} iconPosition Sets or returns the icon position. Values can be `left` `top` `right` or `bottom`
@@ -117,11 +117,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
-     * Here are the available methods of the Switch Component.
+     * @jdocs Here are the available methods of the Switch Component.
      */
 
 
@@ -171,6 +168,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

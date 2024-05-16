@@ -28,7 +28,6 @@
      * @prop {String} borderStyle Sets or returns the border style. Values can be `dotted`, `dashed`, `solid`, `double`, `groove`, `ridge`, `inset` and `outset`. Default is `solid`.
      * @prop {Number} cornerRadius Sets or returns the corner radius in pixels.
      * @prop {Object} el Returns the html container element for the control.
-     * @prop {String} elStyle Sets the style of the html container element.
      */
 
 
@@ -168,7 +167,7 @@
      * @name bringForward
      * Bring this component forward by a given z-index.
      * $$ cname.bringForward( zIndex )
-     * @param {Number} zIndex The z-index. A negative value behaves like `sendBackward` method.
+     * @param {Number} zIndex The z-index. A negative value behaves like "sendBackward" method.
      */
 
 
@@ -176,7 +175,15 @@
      * @name sendBackward
      * Bring this component backward by a given z-index.
      * $$ cname.bringForward( zIndex )
-     * @param {Number} zIndex The z-index. A positve value behaves like `bringForward` method.
+     * @param {Number} zIndex The z-index. A positve value behaves like "bringForward" method.
+     */
+
+
+    /** ### addClass
+     * @name addClass
+     * Add new class to the control's parent element.
+     * $$ cname.addClass( "my-button my-button-large" )
+     * @param {String} cls Class name. For multiple classes just separate them with a space.
      */
 
 

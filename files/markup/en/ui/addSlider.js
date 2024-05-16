@@ -15,7 +15,7 @@
 
 
     /** ## Properties
-     * Here are the available setters and getter of the Slider Component.
+     * @jdocs Here are the available setters and getter of the Slider Component.
      * @prop {Number} minValue Sets or returns the minimum value.
      * @prop {Number} maxValue Sets or returns the maximum value.
      * @prop {String} track Sets or returns the track properties of the Slider Component. Values can be `Normal` `False` or `Inverted`
@@ -115,11 +115,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
-     * Here are the methods available for Slider Component.
+     * @jdocs Here are the methods available for Slider Component.
      */
 
 
@@ -169,6 +166,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

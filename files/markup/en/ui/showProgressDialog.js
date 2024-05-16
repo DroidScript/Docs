@@ -11,13 +11,13 @@
 
 
 	/** ## Properties
-	 * Here are the available setters and getters for the ProgressDialog Component.
+	 * @jdocs Here are the available setters and getters for the ProgressDialog Component.
 	 * @prop {String} text Sets or returns the ProgressDialog text.
 	 */
 
 
 	/** ## Methods
-	 * Here are the available methods for the ProgressDialog Component.
+	 * @jdocs Here are the available methods for the ProgressDialog Component.
 	 */
 
 

@@ -15,7 +15,7 @@
 
 
     /** ## Properties
-     * Here are the available setter and getter properties for the Text Component.
+     * @jdocs Here are the available setter and getter properties for the Text Component.
      * @prop {String} text Sets or returns the text.
      * @prop {String} variant Sets or returns the text variants. See `options` param above for available values.
      * @prop {String} color Sets or returns the theme color of the text `Primary` or `Secondary`. You can also pass hexadecimal color of the form `#rrggbb`
@@ -118,11 +118,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
-     * Here are the methods available for Text Component
+     * @jdocs Here are the methods available for Text Component
      */
 
 
@@ -172,6 +169,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

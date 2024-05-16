@@ -23,7 +23,7 @@
 
 
     /** ## Properties
-     * Here are the availabel setters and getter of the Select Component.
+     * @jdocs Here are the availabel setters and getter of the Select Component.
      * @prop {String} label Sets or returns the label text.
      * @prop {Array} list Sets or returns the list items. You can also pass a comma separated string of items.
      * @prop {Boolean} enabled Sets or returns a boolean value whether the component is enabled or disabled.
@@ -125,11 +125,8 @@
     /** @extern el */
 
 
-    /** @extern elStyle */
-
-
     /** ## Methods
-     * Here are the methods available for the Select Component.
+     * @jdocs Here are the methods available for the Select Component.
      */
 
 
@@ -179,6 +176,9 @@
 
 
     /** @extern sendBackward */
+
+
+    /** @extern addClass */
 
 
     /** ### setOnTouch

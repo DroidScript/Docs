@@ -10,14 +10,14 @@
  * @param {String} title The dialog title text.
  * @param {String} body The dialog message to be shown.
  * @param {Array} [actions] A string of action button text.
- * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nUtil: `NoCancel` prevents the dialog from closing on action.
+ * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nUtil: `NoCancel` prevents the dialog from closing on action.\nSizes: "fullscreen"
  * @param {Number} width Fraction of the screen width `[0-1]`.
  * @returns uio-Dialog
  */
 
 
 	/** ## Properties
-	 * Here are the available setters and/or getter of the Dialog Component.
+	 * @jdocs Here are the available setters and/or getter of the Dialog Component.
 	 * @prop {String} text Sets or returns the dialog text.
 	 * @prop {String} titleText Sets or returns the dialog title text.
 	 * @prop {String} titleColor Sets or returns the title text color in hexadecimal format.
@@ -26,7 +26,7 @@
 
 
 	/** ## Methods
-	 * Here are the available methods of the Dialog Component.
+	 * @jdocs Here are the available methods of the Dialog Component.
 	 */
 
 
