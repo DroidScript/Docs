@@ -8,14 +8,14 @@
  * See Also: @SetData,
  *
  * See Also: @GetData
- * $$ app.ClearData(file?) $$
- * @param {str_ptf} [file]
+ * $$ app.ClearData(file) $$
+ * @param {str_ptf} file
 */
 
 
 
 
-// ------------- SAMPLES -------------
+// ------------- SAMPLES ------------- 
 
 
 
@@ -32,17 +32,17 @@ function OnStart()
     lay.AddChild( txtValues );
 
     btnClear = app.CreateButton( "Clear Data", 0.5, 0.1 );
-	btnClear.SetOnTouch( btnClear_OnTouch );
-	lay.AddChild( btnClear );
+    btnClear.SetOnTouch( btnClear_OnTouch );
+    lay.AddChild( btnClear );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function btnClear_OnTouch()
 {
-	<b>app.ClearData( file );</b>
+    <b>app.ClearData( file );</b>
     txtValues.SetText( getValues() );
-	app.ShowPopup( "Data Cleared." );
+    app.ShowPopup( "Data Cleared." );
 }
 
 function getValues()
@@ -61,6 +61,7 @@ function getValues()
 from native import app
 
 file = "demofile"
+txtValues = None
 
 def OnStart():
     global txtValues
@@ -71,19 +72,22 @@ def OnStart():
     lay.AddChild( txtValues )
 
     btnClear = app.CreateButton( "Clear Data", 0.5, 0.1 )
-	btnClear.SetOnTouch( btnClear_OnTouch )
-	lay.AddChild( btnClear )
+    btnClear.SetOnTouch( btnClear_OnTouch )
+    lay.AddChild( btnClear )
 
-	app.AddLayout( lay )
+    app.AddLayout( lay )
 
 def btnClear_OnTouch():
-	<b>app.ClearData( file )</b>
+    global file, txtValues
+    <b>app.ClearData( file )</b>
     txtValues.SetText( getValues() )
-	app.ShowPopup( "Data Cleared." )
+    app.ShowPopup( "Data Cleared." )
 
 def getValues():
+    global file
     return (
         "saved Text: " + app.LoadText( "value", "No Value stored.", file ) + "\n" +
         "click count: " + app.LoadNumber( "clicks", 0, file ) + "\n" +
         "first start: " + app.LoadBoolean( "first", True, file ) + "\n")
  */
+

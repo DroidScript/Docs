@@ -14,7 +14,7 @@
 
 
 
-// ------------- SAMPLES -------------
+// ------------- SAMPLES ------------- 
 
 
 
@@ -25,15 +25,15 @@ function OnStart()
     lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
     btnChoose = app.CreateButton( "Choose Image", 0.5, 0.1 );
-	btnChoose.SetOnTouch( btnChoose_OnTouch );
-	lay.AddChild( btnChoose );
+    btnChoose.SetOnTouch( btnChoose_OnTouch );
+    lay.AddChild( btnChoose );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function btnChoose_OnTouch()
 {
-	<b>app.ChooseImage( "internal", OnChoose );</b>
+    <b>app.ChooseImage( "internal", OnChoose );</b>
 }
 
 function OnChoose( path )
@@ -63,3 +63,4 @@ def btnChoose_OnTouch():
 def OnChoose(path):
     app.Alert("image path: " + path)
  */
+

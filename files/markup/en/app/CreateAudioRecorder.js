@@ -10,7 +10,7 @@
 */
 
 
-// ------------- LONG DESCRIPTION -------------
+// ------------- LONG DESCRIPTION ------------- 
 
 /** @Description
 The AudioRecorder object can be used to listen for sound and record it to a file.
@@ -26,12 +26,10 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES -------------
+// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
 
 /** @extern Batch */
-
-/** @extern data */
 
 /** ### GetData ###
  * @brief Returns a new list of frequency values
@@ -107,7 +105,7 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 
-// ------------- SAMPLES -------------
+// ------------- SAMPLES ------------- 
 
 
 
@@ -140,19 +138,24 @@ function StopRecording()
 /**
 @sample Python Example
 from native import app
+from browser import timer
 
 file = "/sdcard/demofile.wav"
+rec = None
 
 def OnStart():
-    global rec
+    global rec, file
+
     <b>rec = app.CreateAudioRecorder()
     rec.SetFile( file )
     rec.Start()</b>
 
     app.ShowPopup( "Please speak" )
-    setTimeout( StopRecording, 5000 )
+    timer.set_timeout( StopRecording, 5000)
 
 def StopRecording():
+    global file, rec
+
     rec.Stop()
     app.ShowPopup( "Finished recording. Now playing" )
 
@@ -160,3 +163,4 @@ def StopRecording():
     ply.SetFile( file )
     ply.SetOnReady( ply.Play )
  */
+
