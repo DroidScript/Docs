@@ -63,3 +63,5 @@ def btnChoose_OnTouch():
 def OnChoose(path):
     app.Alert("image path: " + path)
  */
+
+

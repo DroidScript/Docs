@@ -71,38 +71,42 @@ function btnClear_OnTouch()
 from native import app
 
 file = "demofile"
+edtValue = None
 
 def OnStart():
-    global edtValue
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+	global edtValue
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    text = app.LoadText( "value", "My Value", file )
-    edtValue = app.CreateTextEdit( text, .5 )
-    lay.AddChild( edtValue )
+	text = app.LoadText( "value", "My Value", file )
+	edtValue = app.CreateTextEdit( text, .5 )
+	lay.AddChild( edtValue )
 
-    btnSave = app.CreateButton( "Save Value", 0.5, 0.1 )
+	btnSave = app.CreateButton( "Save Value", 0.5, 0.1 )
 	btnSave.SetOnTouch( btnSave_OnTouch )
 	lay.AddChild( btnSave )
 
-    btnLoad = app.CreateButton( "Load Value", 0.5, 0.1 )
+	btnLoad = app.CreateButton( "Load Value", 0.5, 0.1 )
 	btnLoad.SetOnTouch( btnLoad_OnTouch )
 	lay.AddChild( btnLoad )
 
-    btnClear = app.CreateButton( "Clear Value", 0.5, 0.1 )
+	btnClear = app.CreateButton( "Clear Value", 0.5, 0.1 )
 	btnClear.SetOnTouch( btnClear_OnTouch )
 	lay.AddChild( btnClear )
 
 	app.AddLayout( lay )
 
 def btnSave_OnTouch():
+	global edtValue, file
 	app.SaveText( "value", edtValue.GetText(), file )
 	app.ShowPopup( "Value Saved." )
 
 def btnLoad_OnTouch():
-    value = app.LoadText( "value", "no value stored", file )
+	global file
+	value = app.LoadText( "value", "no value stored", file )
 	app.ShowPopup( value )
 
 def btnClear_OnTouch():
+	global file
 	<b>app.ClearData( file )</b>
 	app.ShowPopup( "Data Cleared." )
  */

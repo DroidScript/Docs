@@ -58,6 +58,8 @@ function OnChoose( file )
 @sample Python Choose File by Mimetype
 from native import app
 
+spnMime = None
+
 def OnStart():
     global spnMime
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
@@ -76,8 +78,10 @@ def OnStart():
     app.AddLayout( lay )
 
 def btnChoose_OnTouch():
+    global spnMime
     app.ChooseFile( "Choose a File", spnMime.GetText(), OnChoose )
 
 def OnChoose( file ):
     app.Alert( "file path: " + file )
  */
+
