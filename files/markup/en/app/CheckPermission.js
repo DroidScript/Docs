@@ -15,7 +15,7 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
 
@@ -38,6 +38,7 @@ function PermissionResult( ungranted )
  */
 
 
+
 /**
 @sample Python check and get permissions
 from native import app
@@ -52,4 +53,3 @@ def OnStart():
 def PermissionResult( ungranted ):
     app.Alert( "ungranted: " + ungranted )
  */
-

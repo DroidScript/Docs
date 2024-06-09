@@ -6,18 +6,18 @@
  * ChooseFile opens a file picker for user to select a local file or a file from GoogleDrive, OneDrive or DropBox.
  *
  * See Also: @ReadFile
- * $$ app.ChooseFile(message, type, callback, fldr, options) $$
+ * $$ app.ChooseFile(message, type, callback, fldr?, options?) $$
  * @param {str} message
- * @param {str} type mimetype
+ * @param {str} type file mimetype
  * @param {fnc_json} callback {"pNames":["path","name"],"pTypes":["str_pth||str_uri","str"]}
- * @param {str_pth} fldr
- * @param {str} options persist:keep file permission after reboot,nodownload:prevents file downloads
+ * @param {str_pth} [fldr]
+ * @param {str_com} [options] persist:keep file permission after reboot,nodownload:prevents file downloads
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
 
@@ -58,8 +58,6 @@ function OnChoose( file )
 @sample Python Choose File by Mimetype
 from native import app
 
-spnMime = None
-
 def OnStart():
     global spnMime
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
@@ -78,10 +76,8 @@ def OnStart():
     app.AddLayout( lay )
 
 def btnChoose_OnTouch():
-    global spnMime
     app.ChooseFile( "Choose a File", spnMime.GetText(), OnChoose )
 
 def OnChoose( file ):
     app.Alert( "file path: " + file )
  */
-
