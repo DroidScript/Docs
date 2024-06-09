@@ -44,6 +44,8 @@ function btnCall_OnTouch()
 @sample Python Check Voice Messages
 from native import app
 
+edtNumber = None
+
 def OnStart():
     global edtNumber
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )

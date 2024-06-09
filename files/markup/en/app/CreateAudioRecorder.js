@@ -140,19 +140,24 @@ function StopRecording()
 /**
 @sample Python Example
 from native import app
+from browser import timer
 
 file = "/sdcard/demofile.wav"
+rec = None
 
 def OnStart():
-    global rec
+    global rec, file
+
     <b>rec = app.CreateAudioRecorder()
     rec.SetFile( file )
     rec.Start()</b>
 
     app.ShowPopup( "Please speak" )
-    setTimeout( StopRecording, 5000 )
+    timer.set_timeout( StopRecording, 5000)
 
 def StopRecording():
+    global file, rec
+
     rec.Stop()
     app.ShowPopup( "Finished recording. Now playing" )
 
@@ -160,3 +165,4 @@ def StopRecording():
     ply.SetFile( file )
     ply.SetOnReady( ply.Play )
  */
+
