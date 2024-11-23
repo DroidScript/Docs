@@ -330,7 +330,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief Add url redirection rule
  * Add a url redirection rule.
  * $$ web.SetRedirect(urlFrom, urlTo) $$
- * @param {str_url} urlFrom
+ * @param {str_url} urlFrom Uses regex url matching
  * @param {str_url} urlTo
  */
 
