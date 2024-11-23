@@ -271,6 +271,13 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @param {num_frc} zoom
  */
 
+/** ### SetOnBlob ###
+ * @brief Handle objectUrls/blobs
+ * %cb% recieved an objectUrls/blobs
+ * $$ web.SetOnBlob(callback) $$
+ * @param {fnc_json} callback {"pNames":["objectUrls"],"pTypes":["str"]}
+ */
+
 
 /** ### SetOnConsole ###
  * @brief Called when message logged to console
