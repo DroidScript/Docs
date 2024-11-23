@@ -258,7 +258,7 @@ More samples can be found in the samples section of DroidScript.
 
 /** ### SetDuplicateImage ###
  * @brief Define two camera view duplicate targets
- * Define two @CreateImage controls where the camera view is duplicated to. This method may be used for cardboart AR. Have a look at [Daves forum post](https://groups.google.com/d/msg/androidscript/gJI6axNtkqk/Cc22nwVbr0QJ) about that method.
+ * Define two @CreateImage controls where the camera view is duplicated to. This method may be used for cardboart AR. Have a look at [Daves forum post](https://groups.google.com/d/msg/androidscript/gJI6axNtkqk/Cc22nwVbr0QJ) about that method. It can also be used for single image (allows flipping of preview).
  * $$ cam.SetDuplicateImage(image1, image2) $$
  * @param {dso} image1 CreateImage
  * @param {dso} image2 CreateImage
