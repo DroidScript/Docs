@@ -37,6 +37,12 @@ The callback data depends on the type:
 
 /** @extern data */
 
+/** ### GetNumber ###
+ * Returns the phone number.
+ * $$ pst.GetNumber() $$
+ * @returns str-Number
+ */
+
 /** ### GetType ###
  * Returns the control class name.
  * $$ pst.GetType() $$
