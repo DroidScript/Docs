@@ -572,6 +572,8 @@ function StartDetection()
 @sample Python Show Camera Preview
 from native import app
 
+cam = None
+
 def OnStart():
     global cam
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
@@ -583,6 +585,7 @@ def OnStart():
     app.AddLayout( lay )
 
 def cam_OnReady():
+    global cam
     cam.StartPreview()
  */
 
@@ -591,6 +594,8 @@ def cam_OnReady():
 /**
 @sample Python Take pictures
 from native import app
+
+cam = None
 
 def OnStart():
     global cam
@@ -607,10 +612,12 @@ def OnStart():
     app.AddLayout( lay )
 
 def cam_OnReady():
+    global cam
     cam.SetPictureSize( 1024, 768 )
     cam.StartPreview()
 
 def Snap():
+    global cam
     cam.TakePicture( "/sdcard/MyPic.jpg" )
     app.ShowPopup("Picture saved")
  */
@@ -620,6 +627,9 @@ def Snap():
 /**
 @sample Python Record Video
 from native import app
+
+recFolder = "/sdcard/Videos"
+cam = None
 
 def OnStart():
     global cam, recFolder
@@ -637,14 +647,15 @@ def OnStart():
 
     app.AddLayout( lay )
 
-    recFolder = "/sdcard/Videos"
     app.MakeFolder( recFolder )
 
 def cam_OnReady():
+    global cam
     cam.SetFocusMode( "Video" )
     cam.StartPreview()
 
 def Record( start ):
+    global cam, recFolder
     if start:
         cam.Record( recFolder + "/test.mp4" )
         app.ShowPopup("Recording")
@@ -658,6 +669,8 @@ def Record( start ):
 /**
 @sample Python Motion Detector
 from native import app
+
+layCam = cam = None
 
 def OnStart():
     global layCam, cam
@@ -675,6 +688,11 @@ def OnStart():
     app.AddLayout( lay )
 
 def StartDetection():
+    global layCam, cam
+
+    sensitivity = 10 # motion threshold
+    minPeriod = 500 # millisecs
+
     w = cam.GetImageWidth()
     h = cam.GetImageHeight()
 
