@@ -1,5 +1,8 @@
 // ------------- HEADER SECTION -------------
 
+// TODO:
+// DS V2.69b2p3 - Don't know where to put this method
+// Added speech.SetLanguage() method. eg. speech.SetLanguage("Fr").
 
 /** # TextToSpeech #
  * @brief Audiolize text

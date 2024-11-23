@@ -6,7 +6,7 @@
  * @brief Returns a new Notification object
  *
  * $$ ntf = app.CreateNotification(options?) $$
- * @param {str_com} [options] Ongoing,AutoCancel,FullScreen,NoVibrate,Low:priority
+ * @param {str_com} [options] Ongoing,AutoCancel,FullScreen,NoVibrate,Low:priority,BypassDnd
  * @returns dso-Notification
 */
 
