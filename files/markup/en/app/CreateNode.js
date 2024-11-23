@@ -35,6 +35,13 @@ For more details have a look at the Node docs in the @../Plugins page
 // ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
+/** ### Func ###
+ * Call a function in the node process
+ * $$ node.Func(func, arg1, arg2) $$
+ * @param {str} func Function name
+ * @param {lst} [args] ...arguments
+ */
+
 /** ### GetVersion ###
  * Returns the plugin version
  * $$ node.GetVersion() $$
