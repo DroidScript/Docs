@@ -6,7 +6,7 @@
  * @brief Returns a new Crypt object to encrypt or decrypt a string with a given key or create a hash of it
  * The Crypt component is used to en- or decrypt a string with a given key or to create a hash of it.
  * $$ crp = app.CreateCrypt(options?) $$
- * @param {str_com} [options]
+ * @param {str_com} [options] AES/ECB/PKCS5Padding
  * @returns dso-Crypt
 */
 
