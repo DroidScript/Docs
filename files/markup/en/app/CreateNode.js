@@ -36,7 +36,7 @@ For more details have a look at the Node docs in the @../Plugins page
 
 
 /** ### Func ###
- * Call a function in the node process
+ * Call a function in the node process. Otherwise, use parent.Func() to call a function on the main app process from node process.
  * $$ node.Func(func, arg1, arg2) $$
  * @param {str} func Function name
  * @param {lst} [args] ...arguments
