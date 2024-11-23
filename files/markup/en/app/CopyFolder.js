@@ -1,5 +1,8 @@
 // ------------- HEADER SECTION -------------
 
+// TODO:
+// DS v2.75b2
+// Added 'doevents' option to app.CopyFolder (keeps UI alive when copying large folders).
 
 /** # CopyFolder #
  * @brief Copies a folder to a given destination
