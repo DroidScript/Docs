@@ -51,6 +51,11 @@ function OnStart()
 	svc = app.CreateService( "this", "this", OnSvcStart );
 }
 
+function OnSvcStart()
+{
+    app.ShowPopup("Service started")
+}
+
 function tgl_OnTouch( fg )
 {
     if( fg ) svc.SendMessage( "fg" );
@@ -92,6 +97,9 @@ def OnStart():
     app.AddLayout(lay)
 
     svc = app.CreateService("this", "this", OnSvcStart)
+
+def OnSvcStart():
+    app.ShowPopup("Service started")
 
 def tgl_OnTouch(fg):
     if fg:
