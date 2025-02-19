@@ -198,6 +198,8 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** ### SetVolume ###
  * @brief Change the playback volume
  * Change the video player volume
