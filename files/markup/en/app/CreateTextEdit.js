@@ -285,6 +285,8 @@ You can also set a background image/pattern or background gradient for the List 
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
