@@ -464,6 +464,8 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
