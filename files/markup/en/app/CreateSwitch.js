@@ -153,6 +153,8 @@ You can get the state of the switch at any time using the **GetChecked** method.
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
