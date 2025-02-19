@@ -371,6 +371,8 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** ### SimulateKey ###
