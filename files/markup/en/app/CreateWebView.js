@@ -322,7 +322,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern SetOnTouch #2088093920 */
 
 /** ### SetOnUrl ###
- * @brief Called when link klicked
+ * @brief Called when link clicked
  * %cb% the user clicked a link.
  * $$ web.SetOnUrl(callback) $$
  * @param {fnc_json} callback {"pNames":["url"],"pTypes":["str_url"]}
