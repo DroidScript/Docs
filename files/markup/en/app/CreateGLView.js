@@ -337,6 +337,8 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
@@ -650,3 +652,4 @@ def touched(obj, ev):
 	return obj.X < ev.X and obj.X + obj.W > ev.X \
 		and obj.Y < ev.Y and obj.Y + obj.H > ev.Y
  */
+

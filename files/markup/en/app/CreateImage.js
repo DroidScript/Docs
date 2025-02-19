@@ -462,6 +462,8 @@ For animations you can then use the **Animate** function of the app object which
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** ### Skew ###
@@ -825,3 +827,4 @@ def btn_OnTouch(event):
 	app.ShowPopup( "Hello World!" )
 	app.Vibrate( "0,100,30,100,50,300" )
  */
+

@@ -163,6 +163,8 @@ To add other controls to your scroller you need to put them in a scroller [layou
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
@@ -211,3 +213,4 @@ def OnStart():
 
     app.AddLayout(lay)
  */
+

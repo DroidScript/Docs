@@ -333,6 +333,8 @@
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
@@ -382,3 +384,4 @@ def OnStart():
 
     app.AddLayout(lay)
  */
+

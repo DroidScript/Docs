@@ -162,6 +162,8 @@ Use the SetOnChange method to define a function you want to be called when the S
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
@@ -212,3 +214,4 @@ def OnStart():
 def skb_OnTouch(value):
     app.ShowPopup("Value = " + str(value))
  */
+

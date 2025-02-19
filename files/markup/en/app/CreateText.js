@@ -204,6 +204,8 @@ You can also set a background image/pattern or background gradient for the Text 
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
@@ -312,3 +314,4 @@ def OnStart():
 
     app.AddLayout( lay )
  */
+

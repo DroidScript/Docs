@@ -466,6 +466,8 @@ Or create lists with Gradient backgrounds like this:<sample Gradient Background>
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
@@ -755,3 +757,4 @@ def OnStart():
 def lst_OnTouch( title, body, type, index ):
 	app.ShowPopup( "Touched Item = " + title )
  */
+

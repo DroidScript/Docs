@@ -179,6 +179,8 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** ### ShowTab ###
@@ -241,3 +243,4 @@ def OnStart():
 
     app.AddLayout( lay )
  */
+
