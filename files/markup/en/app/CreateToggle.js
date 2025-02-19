@@ -155,6 +155,8 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
