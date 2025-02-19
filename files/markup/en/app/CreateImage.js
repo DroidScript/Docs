@@ -460,6 +460,8 @@ For animations you can then use the **Animate** function of the app object which
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** ### Skew ###
