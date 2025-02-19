@@ -140,6 +140,8 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
