@@ -164,6 +164,8 @@ You can customize the visual look in many ways by either using one of the existi
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
