@@ -4,19 +4,19 @@
 /** # CreateImage #
  * @abbrev img
  * @brief Returns a new Image object
- * 
- * $$ img = app.CreateImage(file, width, height, options, pxw, pxh) $$ 
- * @param {str_ptc} file 
- * @param {num} width 
- * @param {num} height 
- * @param {str_com} options fix:image with fixed resolution,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically
- * @param {num_pxl} pxw 
- * @param {num_pxl} pxh 
+ *
+ * $$ img = app.CreateImage(file?, width=-1, height=-1, options='', pxw=-1, pxh=-1) $$
+ * @param {str_ptc} [file]
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
+ * @param {str_com} [options=''] fix:image with fixed resolution,alias,px:use pixel values for size,Button:causes image to depress like a button when touched,ScaleCenter,async:loads the image asynchronously,FontAwesome,Resize,TouchThrough,Icon:allows loading of app icons,wallpaper,NoPlay:prevent gifs from playing automatically
+ * @param {num_pxl} [pxw=-1]
+ * @param {num_pxl} [pxh=-1]
  * @returns dso-Image
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Image controls can be used to display images such like png, jpg or gif.
@@ -63,7 +63,7 @@ For animations you can then use the **Animate** function of the app object which
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -71,6 +71,8 @@ For animations you can then use the **Animate** function of the app object which
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### Clear ###
  * @brief Clears the image content
@@ -84,21 +86,21 @@ For animations you can then use the **Animate** function of the app object which
 /** ### DrawArc ###
  * Draws an elliptical arc by specifying the corners of the surrounding rectangle and the angle range of the arc to be drawn.
  * $$ img.DrawArc(x1, y1, x2, y2, start, sweep) $$
- * @param {num:corner 1} x1 
- * @param {num:corner 1} y1 
- * @param {num:corner 2} x2 
- * @param {num:corner 2} y2 
- * @param {num_deg} start 
- * @param {num_deg} sweep 
+ * @param {num:corner 1} x1
+ * @param {num:corner 1} y1
+ * @param {num:corner 2} x2
+ * @param {num:corner 2} y2
+ * @param {num_deg} start
+ * @param {num_deg} sweep
  */
 
 
 /** ### DrawCircle ###
  * Draws a Circle.
  * $$ img.DrawCircle(x, y, radius) $$
- * @param {num} x 
- * @param {num} y 
- * @param {num:width relative} radius 
+ * @param {num} x
+ * @param {num} y
+ * @param {num:width relative} radius
  */
 
 
@@ -106,21 +108,21 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Draw gif frame on a specific time
  * Draws the frame on a given time of a loaded gif file.
  * $$ img.DrawFrame(ms) $$
- * @param {num_mls} ms 
+ * @param {num_mls} ms
  */
 
 
 /** ### DrawImage ###
  * Draws an Image:dso-CreateImage.
  * See [Android Developers](https://developer.android.com/reference/android/graphics/PorterDuff.Mode#enum-values_1) for 'mode' info
- * $$ img.DrawImage(image, x, y, w, h, angle, mode) $$
+ * $$ img.DrawImage(image, x, y, w?, h?, angle?, mode?) $$
  * @param {dso} image CreateImage
- * @param {num} x 
- * @param {num} y 
- * @param {num} w 
- * @param {num} h 
- * @param {num_deg} angle 
- * @param {str} mode ADD|CLEAR|DARKEN|DST|DST_ATOP|DST_IN|DST_OUT|DST_OVER|LIGHTEN|MULTIPLY|OVERLAY|SCREEN|SRC|SRC_ATOP|SRC_IN|SRC_OUT|SRC_OVER|XOR
+ * @param {num} x
+ * @param {num} y
+ * @param {num} [w]
+ * @param {num} [h]
+ * @param {num_deg} [angle]
+ * @param {str} [mode] ADD|CLEAR|DARKEN|DST|DST_ATOP|DST_IN|DST_OUT|DST_OVER|LIGHTEN|MULTIPLY|OVERLAY|SCREEN|SRC|SRC_ATOP|SRC_IN|SRC_OUT|SRC_OVER|XOR
  */
 
 
@@ -136,28 +138,28 @@ For animations you can then use the **Animate** function of the app object which
 /** ### DrawLine ###
  * Draws a line.
  * $$ img.DrawLine(x1, y1, x2, y2) $$
- * @param {num} x1 
- * @param {num} y1 
- * @param {num} x2 
- * @param {num} y2 
+ * @param {num} x1
+ * @param {num} y1
+ * @param {num} x2
+ * @param {num} y2
  */
 
 
 /** ### DrawPoint ###
  * Draws a single pixel.
  * $$ img.DrawPoint(x, y) $$
- * @param {num} x 
- * @param {num} y 
+ * @param {num} x
+ * @param {num} y
  */
 
 
 /** ### DrawRectangle ###
  * Draws a rectangle.
  * $$ img.DrawRectangle(x1, y1, x2, y2) $$
- * @param {num} x1 
- * @param {num} y1 
- * @param {num} x2 
- * @param {num} y2 
+ * @param {num} x1
+ * @param {num} y1
+ * @param {num} x2
+ * @param {num} y2
  */
 
 
@@ -168,16 +170,16 @@ For animations you can then use the **Animate** function of the app object which
  * The sample x positions are evenly distributed over the whole image width.
  * $$ img.DrawSamples(data, range) $$
  * @param {lst} data [ data:num_int ]
- * @param {num} range 
+ * @param {num} range
  */
 
 
 /** ### DrawText ###
  * Draws a text.
  * $$ img.DrawText(txt, x, y) $$
- * @param {str} txt 
- * @param {num} x 
- * @param {num} y 
+ * @param {str} txt
+ * @param {num} x
+ * @param {num} y
  */
 
 
@@ -211,8 +213,8 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Returns color values of a pixel
  * Returns the [r,g,b] values from a pixel on the image.
  * $$ img.GetPixelColor(x, y) $$
- * @param {num} x 
- * @param {num} y 
+ * @param {num} x
+ * @param {num} y
  * @returns lst-[ red:num_dhx, green:num_dhx, blue:num_dhx ]
  */
 
@@ -220,12 +222,12 @@ For animations you can then use the **Animate** function of the app object which
 /** ### GetPixelData ###
  * @brief Returns base64 encoded image data
  * Returns the raw, png or jpg image data encoded as base64.
- * $$ img.GetPixelData(format, left, top, width, height) $$
+ * $$ img.GetPixelData(format, left?, top?, width=-1, height=-1) $$
  * @param {str} format rawbase64|pngbase64|jpgbase64
- * @param {num_int} left 
- * @param {num_int} top 
- * @param {num_int} width 
- * @param {num_int} height 
+ * @param {num_int} [left]
+ * @param {num_int} [top]
+ * @param {num_int} [width=-1]
+ * @param {num_int} [height=-1]
  * @returns str_b64
  */
 
@@ -259,7 +261,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Measures the size of a given text
  * Measure width and height of a given text with the current image settings.
  * $$ img.MeasureText(txt) $$
- * @param {str} txt 
+ * @param {str} txt
  * @returns obj-{ width:num_frc&comma; height:num_frc }
  */
 
@@ -270,8 +272,8 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Moves the image content
  * Moves the content of the image to the specified position.
  * $$ img.Move(x, y) $$
- * @param {num} x 
- * @param {num} y 
+ * @param {num} x
+ * @param {num} y
  */
 
 
@@ -284,26 +286,26 @@ For animations you can then use the **Animate** function of the app object which
 
 /** ### Rotate ###
  * Rotates the content.
- * $$ img.Rotate(angle, pivotX, pivotY) $$
- * @param {num_deg} angle 
- * @param {num} pivotX 
- * @param {num} pivotY 
+ * $$ img.Rotate(angle, pivotX?, pivotY?) $$
+ * @param {num_deg} angle
+ * @param {num} [pivotX]
+ * @param {num} [pivotY]
  */
 
 
 /** ### Save ###
  * Saves the image to a file on the local filesystem.
- * $$ img.Save(fileName, quality) $$
- * @param {str_ptf} fileName 
- * @param {num_prc} quality for jpg files
+ * $$ img.Save(fileName, quality?) $$
+ * @param {str_ptf} fileName
+ * @param {num_prc} [quality] for jpg files
  */
 
 
 /** ### Scale ###
  * Scales the content by the given factors.
  * $$ img.Scale(x, y) $$
- * @param {num_fac} x 
- * @param {num_fac} y 
+ * @param {num_fac} x
+ * @param {num_fac} y
  */
 
 
@@ -311,7 +313,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Change the alpha value
  * Change the image alpha to a value between 0 and 255, where 0 is full transparent.
  * $$ img.SetAlpha(alpha) $$
- * @param {num_dhx} alpha 
+ * @param {num_dhx} alpha
  */
 
 
@@ -319,7 +321,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief En/Disables automatic view updates
  * En/disable updating the view after every drawing or transformation method.
  * $$ img.SetAutoUpdate(onoff) $$
- * @param {bin} onoff 
+ * @param {bin} onoff
  */
 
 
@@ -339,7 +341,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Fills the image with a color
  * Fills the image with a specific color.
  * $$ img.SetColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -354,11 +356,11 @@ For animations you can then use the **Animate** function of the app object which
 /** ### SetImage ###
  * @brief Change the content to an other image
  * Set the content to an image:dso-"CreateImage" control or specify a path to an image which will then be loaded.
- * $$ img.SetImage(image, width, height, options) $$
+ * $$ img.SetImage(image, width=-1, height=-1, options?) $$
  * @param {str_pth||dso} image Image
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} options rescale
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str} [options] rescale
  */
 
 
@@ -366,7 +368,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Change the stroke width
  * Set the stroke width to a number in pixels.
  * $$ img.SetLineWidth(width) $$
- * @param {num_pxl} width 
+ * @param {num_pxl} width
  */
 
 
@@ -376,14 +378,14 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Set a minimum OnTouchMove call timeout
  * Set a minimum timeout between two touch 'move' actions fired.
  * $$ img.SetMaxRate(milliseconds) $$
- * @param {num_mls} milliseconds 
+ * @param {num_mls} milliseconds
  */
 
 
 /** ### SetName ###
  * Change the name of the image.
  * $$ img.SetName(name) $$
- * @param {str} name 
+ * @param {str} name
  */
 
 
@@ -411,7 +413,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Change the paint color
  * Change the current paint color for drawing methods.
  * $$ img.SetPaintColor(color) $$
- * @param {str_col} color 
+ * @param {str_col} color
  */
 
 
@@ -426,11 +428,11 @@ For animations you can then use the **Animate** function of the app object which
 /** ### SetPixelData ###
  * @brief Set base64 encoded pixel data
  * Set the image to base64 encoded pixel data.
- * $$ img.SetPixelData(data, width, height, options) $$
+ * $$ img.SetPixelData(data, width=-1, height=-1, options?) $$
  * @param {str_b64} data &lt;rawbase64&gt;|data&colon;image/jpg;base64&comma;&lt;jpgbase64&gt;,data&colon;image/png;base64&comma;&lt;pngbase64&gt;
- * @param {num} width 
- * @param {num} height 
- * @param {str} options px,icon,resize|rescale|square,fix:set bitmap size
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
+ * @param {str_com} [options] px,icon,resize|rescale|square,fix:set bitmap size
  */
 
 
@@ -438,7 +440,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Change the pixel mode for drawing methods
  * En-/Disable pixel mode for the image so that all drawing methods use either control relative or pixel values.
  * $$ img.SetPixelMode(onoff) $$
- * @param {bin} onoff 
+ * @param {bin} onoff
  */
 
 
@@ -452,7 +454,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Change the drawn text size
  * Change the size of drawn text.
  * $$ img.SetTextSize(size) $$
- * @param {num} size 
+ * @param {num} size
  */
 
 
@@ -467,8 +469,8 @@ For animations you can then use the **Animate** function of the app object which
 /** ### Skew ###
  * Skews the content.
  * $$ img.Skew(x, y) $$
- * @param {num} x 
- * @param {num} y 
+ * @param {num} x
+ * @param {num} y
  */
 
 
@@ -476,7 +478,7 @@ For animations you can then use the **Animate** function of the app object which
  * @brief Applies a transformation matrix to the content
  * Transform the content with a 2d transformation matrix.
  * $$ img.Transform(matrix) $$
- * @param {lst} matrix 
+ * @param {lst} matrix
  */
 
 
@@ -489,10 +491,10 @@ For animations you can then use the **Animate** function of the app object which
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Original Size
 function OnStart()
@@ -512,9 +514,9 @@ function img_OnTouch( ev )
 		app.ShowPopup( "Ouch!" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Stretched
 function OnStart()
@@ -534,9 +536,9 @@ function img_OnTouch( ev )
 		app.ShowPopup( "Aaaargh!" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Maintain Aspect
 function OnStart()
@@ -556,9 +558,9 @@ function img_OnTouch( ev )
 		app.ShowPopup( ev.x[0] + ", " + ev.y[0], "Short" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Draw Shapes
 function OnStart()
@@ -576,9 +578,9 @@ function OnStart()
 	app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Advanced Clock Animating
 cfg.No_Dom, cfg.Portrait;
@@ -644,9 +646,9 @@ function OnAnimate( time, dtime )
 	img.Update();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Button
 function OnStart()
@@ -666,89 +668,89 @@ function btn_OnTouch()
 	app.Vibrate( "0,100,30,100,50,300" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Original Size
 from native import app
 
 def OnStart():
-    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    img = app.CreateImage( "/Sys/Img/Droid1.png" )
-    img.SetOnTouch( img_OnTouch )
-    lay.AddChild( img )
+	img = app.CreateImage( "/Sys/Img/Droid1.png" )
+	img.SetOnTouch( img_OnTouch )
+	lay.AddChild( img )
 
-    app.AddLayout( lay )
+	app.AddLayout( lay )
 
 def img_OnTouch( ev ):
-    if ev.action=="Down":
-        app.ShowPopup( "Ouch!" )
+	if ev.action=="Down":
+		app.ShowPopup( "Ouch!" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Stretched
 from native import app
 
 def OnStart():
-    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, 0.7 )
-    img.SetOnTouch( img_OnTouch )
-    lay.AddChild( img )
+	img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, 0.7 )
+	img.SetOnTouch( img_OnTouch )
+	lay.AddChild( img )
 
-    app.AddLayout( lay )
+	app.AddLayout( lay )
 
 def img_OnTouch( ev ):
-    if ev.action=="Down":
-        app.ShowPopup( "Aaaargh!" )
+	if ev.action=="Down":
+		app.ShowPopup( "Aaaargh!" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Maintain Aspect
 from native import app
 
 def OnStart():
-    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 )
-    img.SetOnTouch( img_OnTouch )
-    lay.AddChild( img )
+	img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 )
+	img.SetOnTouch( img_OnTouch )
+	lay.AddChild( img )
 
-    app.AddLayout( lay )
+	app.AddLayout( lay )
 
 def img_OnTouch( ev ):
-    if ev.action=="Down":
-        app.ShowPopup( ev.x[0] + ", " + ev.y[0], "Short" )
+	if ev.action=="Down":
+		app.ShowPopup( ev.x[0] + ", " + ev.y[0], "Short" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Draw Shapes
 from native import app
 
 def OnStart():
-    lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
+	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    img = app.CreateImage( None, 0.8, 0.8 )
-    lay.AddChild( img )
+	img = app.CreateImage( None, 0.8, 0.8 )
+	lay.AddChild( img )
 
-    img.SetColor( "#8888ff" )
-    img.SetPaintColor( "#ff0000" )
-    img.DrawCircle( 0.5, 0.5, 0.1 )
-    img.DrawRectangle( 0.7, 0.7, 0.1, 0.75 )
+	img.SetColor( "#8888ff" )
+	img.SetPaintColor( "#ff0000" )
+	img.DrawCircle( 0.5, 0.5, 0.1 )
+	img.DrawRectangle( 0.7, 0.7, 0.1, 0.75 )
 
-    app.AddLayout( lay )
+	app.AddLayout( lay )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Advanced Clock Animating
 # cfg.No_Dom, cfg.Portrait
@@ -758,72 +760,71 @@ import math
 import time as Date
 
 def OnStart():
-    global ptr, wh, img
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+	global ptr, wh, img
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    ptr = app.CreateImage( None, 0.1, 0.1, "fix,alias", 30, 30 )
-    ptr.SetTextSize( 4.3 )
+	ptr = app.CreateImage( None, 0.1, 0.1, "fix,alias", 30, 30 )
+	ptr.SetTextSize( 4.3 )
 
-    wh = ptr.GetAbsWidth() / ptr.GetAbsHeight()
+	wh = ptr.GetAbsWidth() / ptr.GetAbsHeight()
 
-    img = app.CreateImage( None, 1, 1, "alias" )
-    img.SetPaintStyle( "line" )
-    img.SetAutoUpdate( False )
-    img.SetLineWidth( 15 )
-    lay.AddChild( img )
+	img = app.CreateImage( None, 1, 1, "alias" )
+	img.SetPaintStyle( "line" )
+	img.SetAutoUpdate( False )
+	img.SetLineWidth( 15 )
+	lay.AddChild( img )
 
-    app.AddLayout( lay )
+	app.AddLayout( lay )
 
-    app.SetDebug( "console" )
-    app.Animate( OnAnimate, 40 )
+	app.SetDebug( "console" )
+	app.Animate( OnAnimate, 40 )
 
 def OnAnimate( time, dtime ):
-    time = Date.now()
+	time = Date.now()
 
-    secs = time / 1000
-    angle = math.pi * secs / 2 + abs( math.sin( math.pi * secs ))
-    px = 0.5 + 0.5 * math.cos( angle )
-    py = 0.5 + 0.5 * math.sin( angle )
+	secs = time / 1000
+	angle = math.pi * secs / 2 + abs( math.sin( math.pi * secs ))
+	px = 0.5 + 0.5 * math.cos( angle )
+	py = 0.5 + 0.5 * math.sin( angle )
 
-    hrs = math.floor( secs / 3600 ) % 60
-    min = math.floor( secs / 60 ) % 60
-    sec = math.floor( secs ) % 60
-    time = min + ":" + sec
+	hrs = math.floor( secs / 3600 ) % 60
+	min = math.floor( secs / 60 ) % 60
+	sec = math.floor( secs ) % 60
+	time = min + ":" + sec
 
-    tsize = ptr.MeasureText( time )
-    tx = (1 - tsize.width ) / 2
-    ty = (1 + tsize.height) / 2
+	tsize = ptr.MeasureText( time )
+	tx = (1 - tsize.width ) / 2
+	ty = (1 + tsize.height) / 2
 
-    ptr.Clear()
-    ptr.SetPaintColor( "red" )
-    ptr.DrawLine( .5, .5, px, py )
-    ptr.SetPaintColor( "white" )
-    ptr.DrawText( time, tx, ty )
+	ptr.Clear()
+	ptr.SetPaintColor( "red" )
+	ptr.DrawLine( .5, .5, px, py )
+	ptr.SetPaintColor( "white" )
+	ptr.DrawText( time, tx, ty )
 
-    img.Clear()
-    img.DrawCircle( .5, .5, .48 )
-    img.DrawImage( ptr, 0, (1 - wh) / 2, 1, wh )
-    img.Update()
+	img.Clear()
+	img.DrawCircle( .5, .5, .48 )
+	img.DrawImage( ptr, 0, (1 - wh) / 2, 1, wh )
+	img.Update()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Button
 from native import app
 
 def OnStart():
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
+	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    btn = app.CreateImage( "/Sys/Img/Hello.png", 0.2, -1, "button" )
-    btn.SetOnTouchUp( btn_OnTouch )
-    lay.AddChild( btn )
+	btn = app.CreateImage( "/Sys/Img/Hello.png", 0.2, -1, "button" )
+	btn.SetOnTouchUp( btn_OnTouch )
+	lay.AddChild( btn )
 
-    app.AddLayout( lay )
+	app.AddLayout( lay )
 
 def btn_OnTouch(event):
-    app.ShowPopup( "Hello World!" )
-    app.Vibrate( "0,100,30,100,50,300" )
+	app.ShowPopup( "Hello World!" )
+	app.Vibrate( "0,100,30,100,50,300" )
  */
-    
-            
+

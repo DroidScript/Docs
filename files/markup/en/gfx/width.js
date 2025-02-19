@@ -4,8 +4,6 @@
 /** # width #
  * @prop
  * display width
- * $$ gfx.width() $$ 
+ * $$ gfx.width $$
  * @returns num_pxl
 */
-
-

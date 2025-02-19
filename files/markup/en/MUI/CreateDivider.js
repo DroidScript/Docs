@@ -4,15 +4,15 @@
 /** # CreateDivider #
  * @abbrev dvd
  * Creates a divider which you can add to your layout
- * $$ dvd = MUI.CreateDivider(height) $$ 
- * @param {num_px} height Optional
+ * $$ dvd = MUI.CreateDivider(height?) $$
+ * @param {num_pxl} [height]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Show */
@@ -30,10 +30,10 @@
 /** @extern SetVisibility */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic & Light
 cfg.Light
@@ -55,9 +55,9 @@ function OnStart()
     dlg = MUI.CreateDialog("Remove message", text, "REMOVE")
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic & Light
 # cfg.Light, cfg.MUI
@@ -78,5 +78,3 @@ def OnStart():
     text = "You can undone this process."
     dlg = app.MUI.CreateDialog("Remove message", text, "REMOVE")
  */
-    
-            

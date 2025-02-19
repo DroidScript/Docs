@@ -3,19 +3,19 @@
 
 /** # RemoveLayout #
  * Removes a layout added to the app.
- * 
+ *
  * See also: @AddLayout
- * $$ app.RemoveLayout(layout) $$ 
+ * $$ app.RemoveLayout(layout) $$
  * @param {dso} layout CreateLayout
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Vertical
 function OnStart()
@@ -37,9 +37,9 @@ function RemoveDrawer() {
     <b>app.RemoveLayout( lay );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Vertical
 from native import app
@@ -61,5 +61,3 @@ def OnStart():
 def RemoveDrawer():
     <b>app.RemoveLayout( lay )</b>
  */
-    
-            

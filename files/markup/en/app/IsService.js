@@ -4,17 +4,17 @@
 /** # IsService #
  * @brief Check id app is a service
  * Checks if the currently running app instance is a service.
- * $$ app.IsService() $$ 
+ * $$ app.IsService() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check if App is Service
 function OnStart()
@@ -23,16 +23,14 @@ function OnStart()
     app.Alert( isSvc, "IsService" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     isSvc = app.IsService()
     app.Alert(isSvc, "IsService")
  */
-    
-            

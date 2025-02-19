@@ -4,17 +4,17 @@
 /** # IsNewVersion #
  * @brief Check if apk version increased
  * Checks if the apk version number increased compared to the last time started.
- * $$ app.IsNewVersion() $$ 
+ * $$ app.IsNewVersion() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Version Number increased
 function OnStart()
@@ -23,16 +23,14 @@ function OnStart()
     app.Alert( newVersion, "Is new version:" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     newVersion = app.IsNewVersion()
     app.Alert(newVersion, "Is new version:")
  */
-    
-            

@@ -3,13 +3,13 @@
 
 /** # GetDebug #
  * @brief Returns the current active debug switches
- * 
- * $$ app.GetDebug() $$ 
+ *
+ * $$ app.GetDebug() $$
  * @returns str_com-console,ds,adb,all
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 %c
@@ -25,12 +25,12 @@ See Also: @Debug, @SetDebug, @IsDebugging
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 function OnStart()
 {
 	app.SetDebug("adb");
@@ -38,11 +38,11 @@ function OnStart()
 	app.Alert(switches);
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -50,5 +50,3 @@ def OnStart():
     switches = app.GetDebug()
     app.Alert(switches)
  */
-    
-            

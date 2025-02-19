@@ -4,20 +4,20 @@
 /** # ScreenShot #
  * @brief Take a screen shot of your app
  * Takes a screen shot of your app and saves it to the specified path. Quality is an **option**al percentage value for jpg files defaulting to 95.
- * 
+ *
  * See also: @GetMediaFile
- * $$ app.ScreenShot(fileName, quality) $$ 
- * @param {str_ptf} fileName 
- * @param {num_prc} quality 
+ * $$ app.ScreenShot(fileName, quality?) $$
+ * @param {str_ptf} fileName
+ * @param {num_prc} [quality]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Take Screenshot
 function OnStart()
@@ -33,9 +33,9 @@ function OnStart()
     img.SetImage( "/sdcard/file.jpg" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Take Screenshot
 from native import app
@@ -51,5 +51,3 @@ def OnStart():
     app.ScreenShot("/sdcard/file.jpg")
     img.SetImage("/sdcard/file.jpg")
  */
-    
-            

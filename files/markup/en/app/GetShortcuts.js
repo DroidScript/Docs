@@ -4,19 +4,19 @@
 /** # GetShortcuts #
  * @brief Get associated app shortcuts
  * Returns list of shortcuts associated with current app. Might return null when the feature is not supported.
- * 
+ *
  * See also: @CreateShortcut
- * $$ app.GetShortcuts() $$ 
+ * $$ app.GetShortcuts() $$
  * @returns lst
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Shortcuts
 function OnStart()
@@ -26,9 +26,9 @@ function OnStart()
     else app.Alert( list, "" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Shortcuts
 from native import app
@@ -38,5 +38,3 @@ def OnStart():
     if list == null: app.Alert( "Unsupported" )
     else: app.Alert( list, "" )
  */
-    
-            

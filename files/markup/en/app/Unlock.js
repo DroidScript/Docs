@@ -3,20 +3,20 @@
 
 /** # Unlock #
  * Unlocks the device.
- * 
+ *
  * <red>**Requires Root**</red>
- * 
+ *
  * See Also: @Lock
- * $$ app.Unlock() $$ 
+ * $$ app.Unlock() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
@@ -38,9 +38,9 @@ function btn_OnTouch()
 	<b>setTimeout(app.Unlock, 5000);</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
@@ -60,5 +60,3 @@ def btn_OnTouch():
 
     app.SetTimeout(app.Unlock, 5000)
  */
-    
-            

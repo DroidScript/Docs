@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>showActionSheet</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>showActionSheet</h1>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>An Action Sheet is a list dialog implementation of bottom sheet displaying contextual actions or options, used to streamline user interactions in mobile apps.</p>
+
+		<div class="samp">
+		acs = ui.showActionSheet(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">title</a>,
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">list</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options</a>,
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">onSelect</a> )
+			→ <b>ui object:</b> ActionSheet
+		</div>
+
+		<p>These are the available methods for the ActionSheet component.</p>
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Complete example of actionsheet</h3>
+			<div id="examp1" class="code-js" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Create a fullscreen layout with objects vertically centered</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a button to the main layout to show the actionsheet when click</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show actionsheet"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>btn_onTouch <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">btn_onTouch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token keyword">var</span> choices <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Account"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"share"</span><span class="token punctuation">,</span> <span class="token string">"Send to email"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"delete"</span><span class="token punctuation">,</span> <span class="token string">"Remove"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">]</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>act <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">showActionSheet</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> choices<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSelect<span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>act<span class="token punctuation">.</span>description <span class="token operator">=</span> <span class="token string">"This is the text"</span><span class="token punctuation">;</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>act<span class="token punctuation">.</span><span class="token function">setColor</span><span class="token punctuation">(</span><span class="token string">"Remove"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onSelect</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> icon</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+				        ui<span class="token punctuation">.</span><span class="token function">showPopup</span><span class="token punctuation">(</span> icon <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> extends App<br>
+				    onStart<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        <span class="token comment">#  Create a fullscreen layout with objects vertically centered</span><br>
+				        this<span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span><span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">#  Add a button to the main layout to show the actionsheet when click</span><br>
+				        this<span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>this<span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show actionsheet"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span> this<span class="token punctuation">.</span>btn_onTouch <span class="token punctuation">)</span><br>
+				    <br>
+				    btn_onTouch<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				        choices <span class="token operator">=</span> <span class="token punctuation">[</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"person"</span><span class="token punctuation">,</span> <span class="token string">"Account"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"share"</span><span class="token punctuation">,</span> <span class="token string">"Send to email"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				            <span class="token punctuation">[</span><span class="token string">"delete"</span><span class="token punctuation">,</span> <span class="token string">"Remove"</span><span class="token punctuation">]</span><span class="token punctuation">,</span><br>
+				        <span class="token punctuation">]</span><br>
+				        this<span class="token punctuation">.</span>act <span class="token operator">=</span> ui<span class="token punctuation">.</span>showActionSheet<span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> choices<span class="token punctuation">,</span> <span class="token string">"Icon"</span><span class="token punctuation">,</span> this<span class="token punctuation">.</span>onSelect<span class="token punctuation">)</span><br>
+				        this<span class="token punctuation">.</span>act<span class="token punctuation">.</span>description <span class="token operator">=</span> <span class="token string">"This is the text"</span><br>
+				        this<span class="token punctuation">.</span>act<span class="token punctuation">.</span>setColor<span class="token punctuation">(</span><span class="token string">"Remove"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    onSelect<span class="token punctuation">(</span> name<span class="token punctuation">,</span> icon <span class="token punctuation">)</span><br>
+				        ui<span class="token punctuation">.</span>showPopup<span class="token punctuation">(</span> icon <span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Properties</h3>
+		<p>The following properties are available on the <strong>ActionSheet</strong> object:</p>
+
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">description</a> → <b>String</b></div>
+		<div class="samp"><a href="#pop_dsc_004" data-transition="pop" data-rel="popup">title</a> → <b>String</b></div>
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>ActionSheet</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">setColor</a>(
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">name</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">color</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">setColorByIndex</a>(
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">index</a>,
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">color</a> )
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> The index of list item.</div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“The custom actionsheet title.”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“A comma separated actionsheet options. Values are <br>`"Icon"` render a leading icon.<br>`"NoCancel"` remove the default `"Cancel"` option.”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“The list item text.”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“A css supported color. Available format are: `hexadecimal`”</docstr>, <docstr>“ `color-names`”</docstr>, <docstr>“ `rgb`”</docstr>, <docstr>“ `rgba` ...”</docstr></div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> The list items to show. If `"icon"` option is passed, each element in this list array is of the form `[icon, name]`.</div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>()</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>acs.description</b><br>Sets or returns the description text for the action sheet.</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>acs.setColor</b><br>Sets the color of the list item by its name.</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>acs.setColorByIndex</b><br>Sets the color of the list item by its corresponding index. If you want to set the color of the list using its name, see <kbd>setColor</kbd> method.</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>acs.title</b><br>Sets or returns the title text of the action sheet.</div>
+</div>
+</body>
+
+</html>

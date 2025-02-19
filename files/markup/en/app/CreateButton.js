@@ -4,17 +4,17 @@
 /** # CreateButton #
  * @abbrev btn
  * @brief Creates a button control
- * 
- * $$ btn = app.CreateButton(text, width, height, options) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,AutoShrink:Auto-shrinks text to fit,AutoSize:Auto-sizes text to fit,NoPad,FillX/Y,NoSound
+ *
+ * $$ btn = app.CreateButton(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options] FontAwesome,Html,Monospace,Normal|Aluminium|Gray|Lego,SingleLine,Custom,AutoShrink:Auto-shrinks text to fit,AutoSize:Auto-sizes text to fit,NoPad,FillX/Y,NoSound
  * @returns dso-Button
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Buttons created with the **CreateButton** method are used for interacting with the app. This is done by calling a callback function after clicking on the button. You can specify such a callback function with the **SetOnTouch** Method:
@@ -23,7 +23,7 @@ btn.SetOnTouch( btn\_OnTouch );
 
 function btn\_OnTouch()
 {
-	// your OnTouch code goes here
+    // your OnTouch code goes here
 }
 </js>
 
@@ -43,7 +43,7 @@ You can customize the visual look in many ways by either using one of the existi
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -51,6 +51,8 @@ You can customize the visual look in many ways by either using one of the existi
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -144,13 +146,8 @@ You can customize the visual look in many ways by either using one of the existi
 /** ### SetStyle ###
  * @brief Customize the button looks
  * Customize the look of the button.
- * $$ btn.SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} color1 
- * @param {str_col} color2 
- * @param {num_pxl} radius 
- * @param {str_col} strokeClr 
- * @param {num_pxl} strokeWidth 
- * @param {num_frc} shadow 
+ * $$ btn.SetStyle() $$
+ * @param #SetStyle
  */
 
 
@@ -171,96 +168,96 @@ You can customize the visual look in many ways by either using one of the existi
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Default Size
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
 <b>	btn = app.CreateButton( "Press Me" );
-	btn.SetOnTouch( SayHello );
-	lay.AddChild( btn );</b>
+    btn.SetOnTouch( SayHello );
+    lay.AddChild( btn );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function SayHello()
 {
-	app.ShowPopup("Hello World!");
+    app.ShowPopup("Hello World!");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Fixed Size
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
 <b>	btn = app.CreateButton( "Press Me", 0.5, 0.2 );
-	btn.SetOnTouch( SayHello );
-	lay.AddChild( btn );</b>
+    btn.SetOnTouch( SayHello );
+    lay.AddChild( btn );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function SayHello()
 {
-	app.ShowPopup("Hello World!");
+    app.ShowPopup("Hello World!");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Fill Layout Width
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
-	lay.SetPadding( 0.02, 0.02, 0.02, 0.02 );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay.SetPadding( 0.02, 0.02, 0.02, 0.02 );
 
 <b>	btn = app.CreateButton( "Press Me", -1, -1, "FillX" );
-	btn.SetOnTouch( SayHello );
-	lay.AddChild( btn );</b>
+    btn.SetOnTouch( SayHello );
+    lay.AddChild( btn );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function SayHello()
 {
-	app.ShowPopup("Hello World!");
+    app.ShowPopup("Hello World!");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Change Style
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "Vertical,FillXY" );
-	lay.SetPadding( 0.1, 0.1, 0.1, 0 );
+    lay = app.CreateLayout( "Linear", "Vertical,FillXY" );
+    lay.SetPadding( 0.1, 0.1, 0.1, 0 );
 
 <b>	b1 = app.CreateButton( "Normal", -1, -1, "FillX" );
-	lay.AddChild( b1 );
+    lay.AddChild( b1 );
 
-	b2 = app.CreateButton( "Gray", -1, -1, "FillX,Gray" );
-	lay.AddChild( b2 );
+    b2 = app.CreateButton( "Gray", -1, -1, "FillX,Gray" );
+    lay.AddChild( b2 );
 
-	b3 = app.CreateButton( "Alum", -1, -1, "FillX,Alum" );
-	lay.AddChild( b3 );</b>
+    b3 = app.CreateButton( "Alum", -1, -1, "FillX,Alum" );
+    lay.AddChild( b3 );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Default Size
 from native import app
@@ -277,9 +274,9 @@ def OnStart():
 def SayHello():
     app.ShowPopup("Hello World!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Fixed Size
 from native import app
@@ -296,9 +293,9 @@ def OnStart():
 def SayHello():
     app.ShowPopup("Hello World!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Fill Layout Width
 from native import app
@@ -316,9 +313,9 @@ def OnStart():
 def SayHello():
     app.ShowPopup("Hello World!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Change Style
 from native import app
@@ -338,5 +335,3 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            

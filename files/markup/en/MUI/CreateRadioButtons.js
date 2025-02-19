@@ -4,20 +4,20 @@
 /** # CreateRadioButtons #
  * @abbrev rdb
  * Creates a radio button control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.
- * $$ rdb = MUI.CreateRadioButtons(list, width, height, orientation, color, backColor) $$ 
+ * $$ rdb = MUI.CreateRadioButtons(list, width?, height?, orientation?, color?, backColor?) $$
  * @param {lst} list A comma separated strings
- * @param {num} width 
- * @param {num} height 
- * @param {str} orientation Vertical|Horizontal
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * @param {num} [width]
+ * @param {num} [height]
+ * @param {str} [orientation] Vertical|Horizontal
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSelect ###
@@ -31,7 +31,7 @@
 /** ### CheckItemByIndex ###
  * Checks a corresponding item
  * $$ rdb.CheckItemByIndex(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -73,7 +73,7 @@
 /** ### GetItem ###
  * Returns the corresponding item
  * $$ rdb.GetItem(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  * @returns str-title
  */
 
@@ -94,7 +94,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ rdb.GetType() $$
  * @returns str-Radio
  */
@@ -123,10 +123,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -146,9 +146,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With callback
 cfg.Light
@@ -174,9 +174,9 @@ function OnTouch(name, index)
     app.ShowPopup(name+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -196,9 +196,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With callback
 # cfg.Light, cfg.MUI
@@ -222,5 +222,3 @@ def OnStart():
 def OnTouch(name, index):
     app.ShowPopup(name + " : " + index)
  */
-    
-            

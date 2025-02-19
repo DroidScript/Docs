@@ -4,61 +4,36 @@
 /** # CreateTextAreaFilled #
  * @abbrev taf
  * Creates a material filled textarea
- * $$ taf = MUI.CreateTextAreaFilled(width, height, hint, label, color) $$ 
- * @param {num} width 
- * @param {num} height 
- * @param {str} hint Hint text
- * @param {bin} label Show or hide label
- * @param {str_col} color 
+ * $$ taf = MUI.CreateTextAreaFilled(width=-1, height=-1, hint?, label?, color?) $$
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
+ * @param {str} [hint] Hint text
+ * @param {bin} [label] Show or hide label
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
 
-/** ### ClearHistory ###
- * Clear input history
- * $$ taf.ClearHistory() $$
- */
-
+/** @extern ClearHistory */
 
 /** @extern Focus */
 
-/** ### GetCursorLine ###
- * Get cursor line
- * $$ taf.GetCursorLine() $$
- * @returns num
- */
+/** @extern GetCursorLine */
 
+/** @extern GetCursorPos */
 
-/** ### GetCursorPos ###
- * Get cursor position
- * $$ taf.GetCursorPos() $$
- */
+/** @extern GetSelectedText */
 
+/** @extern GetSelectionEnd */
 
-/** ### GetSelectedText ###
- * 
- * $$ taf.GetSelectedText() $$
- */
-
-
-/** ### GetSelectionEnd ###
- * 
- * $$ taf.GetSelectionEnd() $$
- */
-
-
-/** ### GetSelectionStart ###
- * 
- * $$ taf.GetSelectionStart() $$
- */
-
+/** @extern GetSelectionStart */
 
 /** @extern GetText */
 
@@ -68,13 +43,7 @@
 
 /** @extern Gone */
 
-/** ### InsertText ###
- * Inserts a string at a given position.
- * $$ taf.InsertText(text, start) $$
- * @param {str} text 
- * @param {num_int} start 
- */
-
+/** @extern InsertText */
 
 /** @extern IsEnabled */
 
@@ -82,55 +51,29 @@
 
 /** @extern IsVisible */
 
-/** ### Redo ###
- * Redo an undone action.
- * $$ taf.Redo() $$
- */
+/** @extern Redo */
 
+/** @extern ReplaceText */
 
-/** ### ReplaceText ###
- * Replaces a given range in the text with some string.
- * $$ taf.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
- */
-
-
-/** ### SetCursorPos ###
- * Change the curernt cursor position.
- * $$ taf.SetCursorPos(position) $$
- * @param {num_int} position 
- */
-
+/** @extern SetCursorPos */
 
 /** @extern SetMargins */
 
 /** @extern SetOnChange */
 
-/** ### SetOnEnter ###
- * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * $$ taf.SetOnEnter(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnEnter */
 
 /** @extern SetPosition */
 
 /** @extern SetText */
 
-/** ### Undo ###
- * Undo an action
- * $$ taf.Undo() $$
- */
+/** @extern Undo */
+
+
+// ------------- SAMPLES -------------
 
 
 
-// ------------- SAMPLES ------------- 
-
-
-    
 /**
 @sample No Label
 cfg.Light
@@ -149,9 +92,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Label
 cfg.Light
@@ -170,9 +113,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SetOnEnter Callback
 cfg.Light
@@ -197,9 +140,9 @@ function OnEnter()
     app.ShowPopup(this.GetText())
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No Label
 # cfg.Light, cfg.MUI
@@ -217,9 +160,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Label
 # cfg.Light, cfg.MUI
@@ -237,9 +180,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetOnEnter Callback
 # cfg.Light, cfg.MUI
@@ -261,5 +204,3 @@ def OnStart():
 def OnEnter():
     app.ShowPopup(this.GetText())
  */
-    
-            

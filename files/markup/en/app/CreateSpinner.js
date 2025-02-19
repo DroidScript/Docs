@@ -4,17 +4,17 @@
 /** # CreateSpinner #
  * @abbrev spn
  * @brief Returns a new Spinner object
- * 
- * $$ spn = app.CreateSpinner(list, width, height, options) $$ 
- * @param {str_com} list 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FillX/Y,NoSound
+ *
+ * $$ spn = app.CreateSpinner(list, width=-1, height=-1, options?) $$
+ * @param {str_com} list
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options] FillX/Y,NoSound
  * @returns dso-Spinner
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Create Spinners using the CreateSpinner method of the app object.
@@ -29,7 +29,7 @@ Use the **SelectItem** method to select a particular item in code.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -37,6 +37,8 @@ Use the **SelectItem** method to select a particular item in code.
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -88,7 +90,7 @@ Use the **SelectItem** method to select a particular item in code.
  * Change the current shown item
  * <deprecated Use SetText instead>
  * $$ spn.SelectItem(item) $$
- * @param {str} item 
+ * @param {str} item
  */
 
 
@@ -113,9 +115,9 @@ Use the **SelectItem** method to select a particular item in code.
 /** ### SetList ###
  * @brief Change spinner list
  * Change the item list of the spinner.
- * $$ spn.SetList(list, delim) $$
- * @param {str_com} list 
- * @param {str} delim 
+ * $$ spn.SetList(list, delim=',') $$
+ * @param {str_com} list
+ * @param {str} [delim=',']
  */
 
 
@@ -150,7 +152,7 @@ Use the **SelectItem** method to select a particular item in code.
  * @brief Change current shown item
  * Change the current shown item
  * $$ spn.SetText(item) $$
- * @param {str} item 
+ * @param {str} item
  */
 
 
@@ -167,32 +169,32 @@ Use the **SelectItem** method to select a particular item in code.
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
 <b>	spin = app.CreateSpinner( "Bilbo,Frodo,Gandalf", 0.4 );
-	spin.SetOnChange( ShowSelection );
-	spin.SelectItem( "Frodo" );
-	lay.AddChild( spin );
+    spin.SetOnChange( ShowSelection );
+    spin.SelectItem( "Frodo" );
+    lay.AddChild( spin );
 
 </b>	app.AddLayout( lay );
 }
 
 function ShowSelection( item )
 {
-	app.ShowPopup( "Selected = " + item );
+    app.ShowPopup( "Selected = " + item );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -210,5 +212,4 @@ def OnStart():
 def ShowSelection(item, index):
     app.ShowPopup("Selected = " + item)
  */
-    
-            
+

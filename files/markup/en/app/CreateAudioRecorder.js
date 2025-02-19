@@ -4,13 +4,13 @@
 /** # CreateAudioRecorder #
  * @abbrev rec
  * @brief Returns an AudioRecorder object
- * 
- * $$ rec = app.CreateAudioRecorder() $$ 
+ *
+ * $$ rec = app.CreateAudioRecorder() $$
  * @returns dso-AudioRecorder
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The AudioRecorder object can be used to listen for sound and record it to a file.
@@ -26,10 +26,12 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### GetData ###
  * @brief Returns a new list of frequency values
@@ -71,7 +73,7 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
  * @brief Define the recording file
  * Define the file where the recorder should record to.
  * $$ rec.SetFile(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
@@ -105,52 +107,57 @@ Finally you can also **Stop** the recording: <js>rec.Stop();</js>
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 var file = "/sdcard/demofile.wav";
 function OnStart()
 {
-	<b>rec = app.CreateAudioRecorder();
-	rec.SetFile( file );
-	rec.Start();</b>
+    <b>rec = app.CreateAudioRecorder();
+    rec.SetFile( file );
+    rec.Start();</b>
 
-	app.ShowPopup( "Please speak" );
-	setTimeout( StopRecording, 5000 );
+    app.ShowPopup( "Please speak" );
+    setTimeout( StopRecording, 5000 );
 }
 
 function StopRecording()
 {
     rec.Stop();
-	app.ShowPopup( "Finished recording. Now playing" );
+    app.ShowPopup( "Finished recording. Now playing" );
 
     ply = app.CreateMediaPlayer();
-	ply.SetFile( file );
-	ply.SetOnReady( ply.Play );
+    ply.SetFile( file );
+    ply.SetOnReady( ply.Play );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
+from browser import timer
 
 file = "/sdcard/demofile.wav"
+rec = None
 
 def OnStart():
-    global rec
+    global rec, file
+
     <b>rec = app.CreateAudioRecorder()
     rec.SetFile( file )
     rec.Start()</b>
 
     app.ShowPopup( "Please speak" )
-    setTimeout( StopRecording, 5000 )
+    timer.set_timeout( StopRecording, 5000)
 
 def StopRecording():
+    global file, rec
+
     rec.Stop()
     app.ShowPopup( "Finished recording. Now playing" )
 
@@ -158,5 +165,4 @@ def StopRecording():
     ply.SetFile( file )
     ply.SetOnReady( ply.Play )
  */
-    
-            
+

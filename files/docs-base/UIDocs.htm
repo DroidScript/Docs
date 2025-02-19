@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -9,184 +8,321 @@
 </head>
 
 <body>
-<div data-role="page" data-theme="a" data-ajax="true" data-add-back-btn="true">
+	<div data-role="page" data-theme="a" data-ajax="true" data-add-back-btn="true">
 
-	<div data-role="header" data-position="fixed">
-		<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
-		<h1>UI Components</h1>
-		<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
-	</div><!-- /header -->
+		<div data-role="header" data-position="fixed">
+			<a href="#" class="ui-btn-left" data-icon="arrow-l" onclick="history.back(); return false">Back</a>
+			<h1>UI Components</h1>
+			<a class="ui-btn-right" data-icon="gear" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div><!-- /header -->
 
-	<div data-role="content">
+		<div data-role="content">
 
-        <div style="text-align: center; font-size: 94%;">
-            Version 0.27
-        </div>
-        
-        <p>A Material UI components crafted from the most popular UI Framework of React. Make Hybrid apps that runs on DroidScript and EnjineIO using these controls.</p>        
-
-        <h3>Properties</h3>
-		<p>Here are the visible properties of the <b>ui</b> object.</p>
-
-		<p><style>.samp {margin-top: 2px;}</style>
-		<div class="samp"><a href="#theme-0" data-transition="pop" data-rel="popup" class="ui-link">theme</a></div><div class="samp"><a href="#libs-0" data-transition="pop" data-rel="popup" class="ui-link">libs</a></div><div class="samp"><a href="#version-0" data-transition="pop" data-rel="popup" class="ui-link">version</a></div>
-		
-		<h3>Methods</h3>
-		<p>The following methods are available on the <strong>UI</strong> object:</p>
-
-		<div class="samp">
-			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">script</a>(
-			<a href="#pop_str_pfr" data-transition="pop" data-rel="popup">path</a> )
-		</div>
-		<div class="samp">
-			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">setFontFile</a>(
-			<a href="#pop_str_001" data-transition="pop" data-rel="popup">path</a> )
-		</div>
-		<div class="samp">
-			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">setTheme</a>(
-			<a href="#pop_str_002" data-transition="pop" data-rel="popup">theme</a> )
-		</div>
-		<div class="samp">
-			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">setThemeColor</a>(
-			<a href="#pop_str_col" data-transition="pop" data-rel="popup">primary</a>,
-			<a href="#pop_str_col" data-transition="pop" data-rel="popup">secondary</a> )
-		</div>
-
-        <p>
-            Here is an example of a <strong>UI</strong> theming.
-        </p>
-
-        <div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
-			<h3>Example - UI Theme</h3>
-			<div id="examp1" style="font-size:70%">
-				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span><br>
-				<span class="token punctuation">{</span><br>
-				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">{</span><br>
-				        <span class="token comment">// Create a full screen layout.</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setChildMargins</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"20px"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"20px"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">// add an appbar</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>apb <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addAppBar</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"My App"</span><span class="token punctuation">,</span> <span class="token string">"menu"</span> <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">// some appbar icons</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>search <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"search"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>more <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>apb<span class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span class="token string">"more_vert"</span><span class="token punctuation">,</span> <span class="token string">"icon"</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">// some text control</span><br>
-				        ui<span class="token punctuation">.</span><span class="token function">addText</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"This is a text control."</span><span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">// toggle dark and light theme</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Toggle Theme"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changeTheme <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">// change primary color</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Set Primary"</span><span class="token punctuation">,</span> <span class="token string">"Primary"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changePrimary <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">// change secondary color</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Set Secondary"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">)</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changeSecondary <span class="token punctuation">)</span><br>
-				        <br>
-				        <span class="token comment">// some floating action button</span><br>
-				        <span class="token keyword">this</span><span class="token punctuation">.</span>fab <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addFAB</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"add"</span><span class="token punctuation">,</span> <span class="token string">"secondary"</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
-				    <br>
-				    <span class="token function">changeTheme</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				        ui<span class="token punctuation">.</span><span class="token function">setTheme</span><span class="token punctuation">(</span> ui<span class="token punctuation">.</span>theme<span class="token punctuation">.</span>dark <span class="token operator">?</span> <span class="token string">"light"</span> <span class="token operator">:</span> <span class="token string">"dark"</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
-				    <br>
-				    <span class="token function">changePrimary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				        ui<span class="token punctuation">.</span><span class="token function">showColorPicker</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				            ui<span class="token punctuation">.</span><span class="token function">setThemeColor</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
-				    <br>
-				    <span class="token function">changeSecondary</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				        ui<span class="token punctuation">.</span><span class="token function">showColorPicker</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>
-				            ui<span class="token punctuation">.</span><span class="token function">setThemeColor</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><br>
-				        <span class="token punctuation">}</span><span class="token punctuation">)</span><br>
-				    <span class="token punctuation">}</span><br>
-				<span class="token punctuation">}</span>
+			<div style="text-align: center; font-size: 94%;">
+				Version 0.28
 			</div>
-			<div name="divCopy" align="right">
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy All</a>
-			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )">      Run      </a>
+
+			<p>A Material UI components crafted from the most popular UI Framework of React. Make Hybrid apps that runs
+				on DroidScript and EnjineIO using these controls.</p>
+
+			<h3>Properties</h3>
+			<p>Here are the visible properties of the <b>ui</b> object.</p>
+
+			<p>
+				<style>
+					.samp {
+						margin-top: 2px;
+					}
+				</style>
+			<div class="samp"><a href="#theme-0" data-transition="pop" data-rel="popup" class="ui-link">theme</a></div>
+			<div class="samp"><a href="#libs-0" data-transition="pop" data-rel="popup" class="ui-link">libs</a></div>
+			<div class="samp"><a href="#version-0" data-transition="pop" data-rel="popup" class="ui-link">version</a>
 			</div>
+
+			<h3>Methods</h3>
+			<p>The following methods are available on the <strong>UI</strong> object:</p>
+
+			<div class="samp">
+				<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">css</a>(
+				<a href="#pop_str_003" data-transition="pop" data-rel="popup">path</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">script</a>(
+				<a href="#pop_str_pfr" data-transition="pop" data-rel="popup">path</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">setFontFile</a>(
+				<a href="#pop_str_001" data-transition="pop" data-rel="popup">path</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">setTheme</a>(
+				<a href="#pop_str_002" data-transition="pop" data-rel="popup">theme</a> )
+			</div>
+			<div class="samp">
+				<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">setThemeColor</a>(
+				<a href="#pop_str_col" data-transition="pop" data-rel="popup">primary</a>,
+				<a href="#pop_str_col" data-transition="pop" data-rel="popup">secondary</a> )
+			</div>
+
+			<p>
+				Here is an example of a <strong>UI</strong> theming.
+			</p>
+
+			<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+				<h3>Example - UI Theme</h3>
+				<div id="examp1" style="font-size:70%">
+					<span class="token keyword">class</span> <span class="token class-name">Main</span> <span
+						class="token keyword">extends</span> <span class="token class-name">App</span><br>
+					<span class="token punctuation">{</span><br>
+					<span class="token function">onStart</span><span class="token punctuation">(</span><span
+						class="token punctuation">)</span><br>
+					<span class="token punctuation">{</span><br>
+					<span class="token comment">// Create a full screen layout.</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>main <span
+						class="token operator">=</span> ui<span class="token punctuation">.</span><span
+						class="token function">addLayout</span><span class="token punctuation">(</span> <span
+						class="token string">"main"</span><span class="token punctuation">,</span> <span
+						class="token string">"Linear"</span><span class="token punctuation">,</span> <span
+						class="token string">"VCenter,FillXY"</span> <span class="token punctuation">)</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>main<span
+						class="token punctuation">.</span><span class="token function">setChildMargins</span><span
+						class="token punctuation">(</span><span class="token number">0</span><span
+						class="token punctuation">,</span> <span class="token string">"20px"</span><span
+						class="token punctuation">,</span> <span class="token number">0</span><span
+						class="token punctuation">,</span> <span class="token string">"20px"</span><span
+						class="token punctuation">)</span><br>
+					<br>
+					<span class="token comment">// add an appbar</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>apb <span
+						class="token operator">=</span> ui<span class="token punctuation">.</span><span
+						class="token function">addAppBar</span><span class="token punctuation">(</span> <span
+						class="token keyword">this</span><span class="token punctuation">.</span>main<span
+						class="token punctuation">,</span> <span class="token string">"My App"</span><span
+						class="token punctuation">,</span> <span class="token string">"menu"</span> <span
+						class="token punctuation">)</span><br>
+					<br>
+					<span class="token comment">// some appbar icons</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>search <span
+						class="token operator">=</span> ui<span class="token punctuation">.</span><span
+						class="token function">addButton</span><span class="token punctuation">(</span><span
+						class="token keyword">this</span><span class="token punctuation">.</span>apb<span
+						class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span
+						class="token string">"search"</span><span class="token punctuation">,</span> <span
+						class="token string">"icon"</span><span class="token punctuation">)</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>more <span
+						class="token operator">=</span> ui<span class="token punctuation">.</span><span
+						class="token function">addButton</span><span class="token punctuation">(</span><span
+						class="token keyword">this</span><span class="token punctuation">.</span>apb<span
+						class="token punctuation">.</span>layout<span class="token punctuation">,</span> <span
+						class="token string">"more_vert"</span><span class="token punctuation">,</span> <span
+						class="token string">"icon"</span><span class="token punctuation">)</span><br>
+					<br>
+					<span class="token comment">// some text control</span><br>
+					ui<span class="token punctuation">.</span><span class="token function">addText</span><span
+						class="token punctuation">(</span><span class="token keyword">this</span><span
+						class="token punctuation">.</span>main<span class="token punctuation">,</span> <span
+						class="token string">"This is a text control."</span><span
+						class="token punctuation">)</span><br>
+					<br>
+					<span class="token comment">// toggle dark and light theme</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>btn <span
+						class="token operator">=</span> ui<span class="token punctuation">.</span><span
+						class="token function">addButton</span><span class="token punctuation">(</span><span
+						class="token keyword">this</span><span class="token punctuation">.</span>main<span
+						class="token punctuation">,</span> <span class="token string">"Toggle Theme"</span><span
+						class="token punctuation">,</span> <span class="token string">""</span><span
+						class="token punctuation">,</span> <span class="token number">0.7</span><span
+						class="token punctuation">)</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>btn<span
+						class="token punctuation">.</span><span class="token function">setOnTouch</span><span
+						class="token punctuation">(</span> <span class="token keyword">this</span><span
+						class="token punctuation">.</span>changeTheme <span class="token punctuation">)</span><br>
+					<br>
+					<span class="token comment">// change primary color</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>btn <span
+						class="token operator">=</span> ui<span class="token punctuation">.</span><span
+						class="token function">addButton</span><span class="token punctuation">(</span><span
+						class="token keyword">this</span><span class="token punctuation">.</span>main<span
+						class="token punctuation">,</span> <span class="token string">"Set Primary"</span><span
+						class="token punctuation">,</span> <span class="token string">"Primary"</span><span
+						class="token punctuation">,</span> <span class="token number">0.7</span><span
+						class="token punctuation">)</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>btn<span
+						class="token punctuation">.</span><span class="token function">setOnTouch</span><span
+						class="token punctuation">(</span> <span class="token keyword">this</span><span
+						class="token punctuation">.</span>changePrimary <span class="token punctuation">)</span><br>
+					<br>
+					<span class="token comment">// change secondary color</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>btn <span
+						class="token operator">=</span> ui<span class="token punctuation">.</span><span
+						class="token function">addButton</span><span class="token punctuation">(</span><span
+						class="token keyword">this</span><span class="token punctuation">.</span>main<span
+						class="token punctuation">,</span> <span class="token string">"Set Secondary"</span><span
+						class="token punctuation">,</span> <span class="token string">"Secondary"</span><span
+						class="token punctuation">,</span> <span class="token number">0.7</span><span
+						class="token punctuation">)</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>btn<span
+						class="token punctuation">.</span><span class="token function">setOnTouch</span><span
+						class="token punctuation">(</span> <span class="token keyword">this</span><span
+						class="token punctuation">.</span>changeSecondary <span class="token punctuation">)</span><br>
+					<br>
+					<span class="token comment">// some floating action button</span><br>
+					<span class="token keyword">this</span><span class="token punctuation">.</span>fab <span
+						class="token operator">=</span> ui<span class="token punctuation">.</span><span
+						class="token function">addFAB</span><span class="token punctuation">(</span><span
+						class="token keyword">this</span><span class="token punctuation">.</span>main<span
+						class="token punctuation">,</span> <span class="token string">"add"</span><span
+						class="token punctuation">,</span> <span class="token string">"secondary"</span><span
+						class="token punctuation">)</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token function">changeTheme</span><span class="token punctuation">(</span><span
+						class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					ui<span class="token punctuation">.</span><span class="token function">setTheme</span><span
+						class="token punctuation">(</span> ui<span class="token punctuation">.</span>theme<span
+						class="token punctuation">.</span>dark <span class="token operator">?</span> <span
+						class="token string">"light"</span> <span class="token operator">:</span> <span
+						class="token string">"dark"</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token function">changePrimary</span><span class="token punctuation">(</span><span
+						class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					ui<span class="token punctuation">.</span><span class="token function">showColorPicker</span><span
+						class="token punctuation">(</span><span class="token keyword">null</span><span
+						class="token punctuation">,</span> <span class="token keyword">null</span><span
+						class="token punctuation">,</span> <span class="token keyword">function</span><span
+						class="token punctuation">(</span><span class="token parameter">value</span><span
+						class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					ui<span class="token punctuation">.</span><span class="token function">setThemeColor</span><span
+						class="token punctuation">(</span>value<span class="token punctuation">)</span><br>
+					<span class="token punctuation">}</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">}</span><br>
+					<br>
+					<span class="token function">changeSecondary</span><span class="token punctuation">(</span><span
+						class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					ui<span class="token punctuation">.</span><span class="token function">showColorPicker</span><span
+						class="token punctuation">(</span><span class="token keyword">null</span><span
+						class="token punctuation">,</span> <span class="token keyword">null</span><span
+						class="token punctuation">,</span> <span class="token keyword">function</span><span
+						class="token punctuation">(</span><span class="token parameter">value</span><span
+						class="token punctuation">)</span> <span class="token punctuation">{</span><br>
+					ui<span class="token punctuation">.</span><span class="token function">setThemeColor</span><span
+						class="token punctuation">(</span><span class="token keyword">null</span><span
+						class="token punctuation">,</span> value<span class="token punctuation">)</span><br>
+					<span class="token punctuation">}</span><span class="token punctuation">)</span><br>
+					<span class="token punctuation">}</span><br>
+					<span class="token punctuation">}</span>
+				</div>
+				<div name="divCopy" align="right">
+					<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( examp1 )">Copy
+						All</a>
+					<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( examp1 )"> Run
+					</a>
+				</div>
+			</div>
+
+			<h4>Alternative Home Pages</h4>
+
+			<ul data-role="listview" data-inset="true" data-filter="false">
+				<li><a href="UI.html">Plugin Home Page</a></li>
+				<li><a href="HybridUI.htm">Legacy Home Page</a></li>
+			</ul>
+
+
+			<h4>All Components</h4>
+
+			<ul data-role="listview" data-inset="true" data-filter="true">
+				<li><a href="ui/addAccordion.htm">Accordion</a></li>
+				<li><a href="ui/addAppBar.htm">AppBar</a></li>
+				<li><a href="ui/addBottomNavbar.htm">BottomNavbar</a></li>
+				<li><a href="ui/addButton.htm">Button</a></li>
+				<li><a href="ui/addButtonGroup.htm">ButtonGroup</a></li>
+				<li><a href="ui/addCameraView.htm">CameraView</a></li>
+				<li><a href="ui/addCard.htm">Card</a></li>
+				<li><a href="ui/addCheckbox.htm">Checkbox</a></li>
+				<li><a href="ui/addCheckboxGroup.htm">CheckboxGroup</a></li>
+				<li><a href="ui/addChip.htm">Chip</a></li>
+				<li><a href="ui/addDivider.htm">Divider</a></li>
+				<li><a href="ui/addDrawer.htm">Drawer</a></li>
+				<li><a href="ui/addDropdown.htm">Dropdown</a></li>
+				<li><a href="ui/addImage.htm">Image</a></li>
+				<li><a href="ui/addLayout.htm">Layout</a></li>
+				<li><a href="ui/addList.htm">List</a></li>
+				<li><a href="ui/addProgress.htm">Progress</a></li>
+				<li><a href="ui/addRadioGroup.htm">RadioGroup</a></li>
+				<li><a href="ui/addSelect.htm">Select</a></li>
+				<li><a href="ui/addSlider.htm">Slider</a></li>
+				<li><a href="ui/addStepper.htm">Stepper</a></li>
+				<li><a href="ui/addSwitch.htm">Switch</a></li>
+				<li><a href="ui/addSwitchGroup.htm">SwitchGroup</a></li>
+				<li><a href="ui/addTabs.htm">Tabs</a></li>
+				<li><a href="ui/addText.htm">Text</a></li>
+				<li><a href="ui/addTextField.htm">TextField</a></li>
+				<li><a href="ui/addTreeView.htm">TreeView</a></li>
+				<li><a href="ui/addVideoView.htm">VideoView</a></li>
+				<li><a href="ui/addWebView.htm">WebView</a></li>
+			</ul>
+
+			<h4>Dialogs</h4>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="ui/showActionSheet.htm">ActionSheet</a></li>
+				<li><a href="ui/addBottomSheet.htm">BottomSheet</a></li>
+				<li><a href="ui/addDialog.htm">Dialog</a></li>
+				<li><a href="ui/addMenu.htm">Menu</a></li>
+				<li><a href="ui/showPopover.htm">Popover</a></li>
+				<li><a href="ui/showPopup.htm">Popup</a></li>
+				<li><a href="ui/showProgressDialog.htm">ProgressDialog</a></li>
+			</ul>
+
+			<h4>Pickers</h4>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="ui/showColorPicker.htm">ColorPicker</a></li>
+				<li><a href="ui/showDatePicker.htm">DatePicker</a></li>
+				<li><a href="ui/showDateTimePicker.htm">DateTimePicker</a></li>
+				<li><a href="ui/showTimePicker.htm">TimePicker</a></li>
+			</ul>
 		</div>
-		
-        <h4>Alternative Home Pages</h4>
 
-		<ul data-role="listview" data-inset="true" data-filter="true">
-			<li><a href="UI.html">Plugin Home Page</a></li>
-			<li><a href="HybridUI.htm">Legacy Home Page</a></li>
-		</ul>
-		
-		
-		<h4>All Components</h4>
+		<div data-role="popup" id="pop_str_col" class="ui-content"><b>String:</b> <i><br> hexadecimal: <docstr>“#rrggbb”
+				</docstr>, <docstr>“#aarrggbb”</docstr><br> colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>
+				, ...</i></div>
+		<div data-role="popup" id="pop_str_pfr" class="ui-content"><b>String:</b> <i>
+				<docstr>“relative/...”</docstr> path to a file
+			</i></div>
+		<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b>
+			<docstr>“Relative path to your font file.”</docstr>
+		</div>
+		<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b>
+			<docstr>“Can be Light”</docstr> or <docstr>“Dark”</docstr>
+		</div>
+		<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <i>
+			<docstr>“relative/...”</docstr> path to a file
+		</i></div>
 
-		<ul data-role="listview" data-inset="true" data-filter="true">
-			<li><a href="ui/addAccordion.htm">Accordion</a></li>
-			<li><a href="ui/addAppBar.htm">AppBar</a></li>
-			<li><a href="ui/addBottomNavbar.htm">BottomNavbar</a></li>
-			<li><a href="ui/addButton.htm">Button</a></li>
-			<li><a href="ui/addButtonGroup.htm">ButtonGroup</a></li>
-			<li><a href="ui/addCheckbox.htm">Checkbox</a></li>
-			<li><a href="ui/addCheckboxGroup.htm">CheckboxGroup</a></li>
-			<li><a href="ui/addChip.htm">Chip</a></li>
-			<li><a href="ui/addDivider.htm">Divider</a></li>
-			<li><a href="ui/addDrawer.htm">Drawer</a></li>
-			<li><a href="ui/addDropdown.htm">Dropdown</a></li>
-			<li><a href="ui/addFAB.htm">FAB</a></li>
-			<li><a href="ui/addImage.htm">Image</a></li>
-			<li><a href="ui/addLayout.htm">Layout</a></li>
-			<li><a href="ui/addList.htm">List</a></li>
-			<li><a href="ui/addProgress.htm">Progress</a></li>
-			<li><a href="ui/addRadioGroup.htm">RadioGroup</a></li>
-			<li><a href="ui/addSelect.htm">Select</a></li>
-			<li><a href="ui/addSlider.htm">Slider</a></li>
-			<li><a href="ui/addStepper.htm">Stepper</a></li>
-			<li><a href="ui/addSwitch.htm">Switch</a></li>
-			<li><a href="ui/addSwitchGroup.htm">SwitchGroup</a></li>
-			<li><a href="ui/addTabs.htm">Tabs</a></li>
-			<li><a href="ui/addText.htm">Text</a></li>
-			<li><a href="ui/addTextField.htm">TextField</a></li>
-			<li><a href="ui/addTreeView.htm">TreeView</a></li>
-			<li><a href="ui/addWebView.htm">WebView</a></li>
-		</ul>
+		<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>.script</b><br>Loads a javascript file.</div>
+		<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>.setFontFile</b><br>Sets the font file for your
+			app.</div>
+		<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>.setTheme</b><br>Sets the ui theme of the app.
+		</div>
+		<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>.setThemeColor</b><br>Sets the primary and
+			secondary ui theme colors.</div>
+		<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>.css</b><br>Loads a css file.</div>
 
-        <h4>Dialogs</h4>
-        <ul data-role="listview" data-inset="true">
-			<li><a href="ui/addDialog.htm">Dialog</a></li>
-            <li><a href="ui/showPopover.htm">Popover</a></li>
-			<li><a href="ui/showPopup.htm">Popup</a></li>
-            <li><a href="ui/showProgressDialog.htm">ProgressDialog</a></li>
-		</ul>
+		<div data-role="popup" id="theme-0" class="ui-content">
+			<p><span style="color:#4c4;">String</span><br>
+				Returns the ui theme.</p>
+		</div><br>
+		<div data-role="popup" id="libs-0" class="ui-content">
+			<p><span style="color:#4c4;">String</span><br>
+				Returns the ui libs path.</p>
+		</div><br>
+		<div data-role="popup" id="version-0" class="ui-content">
+			<p><span style="color:#4c4;">Number</span><br>
+				Returns the ui version.</p>
+		</div>
+		</p>
 
-        <h4>Pickers</h4>
-        <ul data-role="listview" data-inset="true">
-            <li><a href="ui/showColorPicker.htm">ColorPicker</a></li>
-			<li><a href="ui/showDateTimePicker.htm">DateTimePicker</a></li>
-		</ul>
-	</div>
-
-	<div data-role="popup" id="pop_str_col" class="ui-content"><b>String:</b> <i><br>  hexadecimal: <docstr>“#rrggbb”</docstr>, <docstr>“#aarrggbb”</docstr><br>  colourName: <docstr>“red”</docstr>, <docstr>“green”</docstr>, ...</i></div>
-	<div data-role="popup" id="pop_str_pfr" class="ui-content"><b>String:</b> <i><docstr>“relative/...”</docstr> path to a file</i></div>
-	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Relative path to your font file.”</docstr></div>
-	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“Can be Light”</docstr> or <docstr>“Dark”</docstr></div>
-	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>.script</b><br>Loads a javascript file.</div>
-	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>.setFontFile</b><br>Sets the font file for your app.</div>
-	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>.setTheme</b><br>Sets the ui theme of the app.</div>
-	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>.setThemeColor</b><br>Sets the primary and secondary ui theme colors.</div>
-
-    <div data-role="popup" id="theme-0" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-    Returns the ui theme.</p></div><br>
-    <div data-role="popup" id="libs-0" class="ui-content"><p><span style="color:#4c4;">String</span><br>
-    Returns the ui libs path.</p></div><br>
-    <div data-role="popup" id="version-0" class="ui-content"><p><span style="color:#4c4;">Number</span><br>
-    Returns the ui version.</p></div></p>
-
-</div><!-- /page -->
+	</div><!-- /page -->
 </body>
+
 </html>

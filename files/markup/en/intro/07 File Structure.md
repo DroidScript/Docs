@@ -51,7 +51,7 @@ file called 'lang.json' in your app that looks like this:-
 
 Also make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code\_list.php)
 
-See also: [T()](04CodingFeatures.htm#Translations), @../app/GetLanguage, @../app/GetLanguageCode, @../app/GetAppLanguages, @../app/GetAppLangCode, @../app/SetAppLanguage
+See also: [T()](CodingFeatures.htm#Translations), @../app/GetLanguage, @../app/GetLanguageCode, @../app/GetAppLanguages, @../app/GetAppLangCode, @../app/SetAppLanguage
 
 ### user.keystore
 

@@ -1,329 +1,289 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addLayout #
+/** # Layout
  * @abbrev lay
- * @brief addLayout
+ * Adds a layout into your app.
+ * @jdocs A layout is the basic ui component of an app. It is where you add other ui components such as buttons, textfields, checkboxes, list, images and many more. To add a layout, simply call the `addLayout` method of the `ui` object.
+ * $$ lay = ui.addLayout(parent, type, options, width, height) $$
+ * @param {uio-Layout} parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
+ * @param {String} type The layout type. Values can be `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"`, `"Card"`
+ * @param {String} [options] A comma separated options.\nOrientation: `Horizontal`, `Vertical`\nHorizontal Alignment: `Left`, `Center`, `Right`\nVertical Alignment: `Top`, `VCenter`, `Bottom`\nDimensions: `FillXY`, `FillX`, `FillY`, `FillAxis`\nScroll: `ScrollX`, `ScrollY`, `ScrollXY`, `NoScrollBar`\nUtils:\n`BackColor` to apply theme background color rather than transparent.\n`NoScrollBar` to remove scrollbar when scroll options is passed.\n`TouchThrough` to enable touch events to propagate behind the layers in frame layouts.\n`"Touchable"` enable touch in card layout.\n`"Outlined"` card variant is outlined.\n`"Square"` card rounded corners is remove.
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @returns uio-Layout
+ */
+
+
+/**
+ * There are 5 types of layouts: `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"` and `"Card"`. Layouts are transparent by default but you can set a background color or a background image. You can add child objects to the Layout by passing the layout as parent when initializing a control. By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: `FillXY`, `FillX`, and `FillY`.
  * 
- * $$ lay = ui.addLayout(parent, type, options, width, height) $$ 
- * @param {obj} parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
- * @param {str} type The layout type. Values can be `Linear` `Absolute` `Frame` `Slide`
- * @param {str} options Layout options. Values can be \n Orientation:  `Horizontal` `Vertical` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Vertical Alignment: `Top` `VCenter` `Bottom` \n `Dimensions`: `FillX` `FillY` \n `Scroll`: `ScrollX` `ScrollY` `ScrollXY` `NoScrollBar` \n `Utils`: `BackColor` to apply light or dark background rather than transparent.
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {obj} height Fraction of the screen height. [0-1]
- * @returns obj-Layout Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a layout into your app. A layout is the basic ui component of an app. It is where you add other ui components such as buttons, textfields, checkboxes, list, images and many more.
-
- To add a layout, simply call the <col nobox #4c4>addLayout</col> method of the <col nobox #4c4>ui</col> object.
-
- There are 4 types of layouts: <col nobox #4c4>Linear</col>, <col nobox #4c4>Absolute</col>, <col nobox #4c4>Frame</col>, and <col nobox #4c4>Slide</col>.
-
- Layouts are transparent by default but you can set a background color or a background image.
-
- You can add child objects to the Layout by passing the layout as parent when initializing a control.
-
- By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: <col nobox #4c4>FillXY</col>, <col nobox #4c4>FillX</col>, and <col nobox #4c4>FillY</col>.
-
- ### Linear Layouts
- Linear layouts are probably the most common type and are used to organize controls in the <col nobox #4c4>Vertical</col> or <col nobox #4c4>Horizontal</col> orientation on the screen.
-
- You can also pass alignment options. For vertical alignment you can pass <col nobox #4c4>Top</col>, <col nobox #4c4>VCenter</col>, and <col nobox #4c4>Bottom</col>. For horizontal alignment you can pass <col nobox #4c4>Left</col>, <col nobox #4c4>Center</col>, and <col nobox #4c4>Right</col>. These will align your children accordingly.
-
- For children spacing, see <col nobox #4c4>childSpacing</col> property below.
-
- ### Absolute Layouts
- Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the <col nobox #4c4>setPosition</col> method of each child control. However, you are encouraged to use linear layouts for most of your programs, unless it is absolutely necessary.
-
- ### Frame Layouts
- Frame layouts are used to display objects in front or behind each other. Everytime a child control is added, the new control is placed in a new layer in front of the previously added control at the top left of the frame. You can then use <col nobox #4c4>setPosition</col> method of the child control to position it relative to the frame.
-
- ### Slide Layouts
- Slide layouts are used to display carousels or swipeable contents. The same as the Frame layout, this will add a new layer when a new control is added with a swipeable behaviour. You can pass alignment options to align your children within the Slide layout layer. Please note that <col nobox #4c4>Vertical</col> and <col nobox #4c4>Horizontal</col> options will be the direction of the swipe.
-
- If your parent layout is of type <col nobox #4c4>Slide</col>, do not add <col nobox #4c4>setOnTouch</col> callback handler in order for the slide layout to work perfectly.
-
-### Properties
-These are the setter and getter properties for the addLayout Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>alignment:"str:'Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be <col nobox #fb8c00>Left</col> <col nobox #fb8c00>Center</col> and <col nobox #fb8c00>Right</col>'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>childMargins:"lst:'Sets or returns the margins of child components. The array is of the form <col nobox #fb8c00>[left, top, right, bottom]</col>.'"</smp>
-<smp noinl>childSpacing:"str:'Sets or returns the spacing of the child control in a Linear Layout. Values can be <col nobox #fb8c00>Around</col> <col nobox #fb8c00>Between</col> <col nobox #fb8c00>Even</col>'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>currentSlide:"num:'Sets or returns the index of the current slide.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>orientation:"str:'Sets or returns the orientation of the controls in a Linear Layout. Values can be <col nobox #fb8c00>Horizontal</col> or <col nobox #fb8c00>Vertical</col>'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>verticalAlignment:"str:'Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be <col nobox #fb8c00>Top</col> <col nobox #fb8c00>VCenter</col> or <col nobox #fb8c00>Bottom</col>'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
+ * ### Linear Layouts
+ * Linear layouts are probably the most common type and are used to organize controls in the `Vertical` or `Horizontal` orientation on the screen. You can also pass alignment options. For vertical alignment you can pass `Top`, `VCenter`, and `Bottom`. For horizontal alignment you can pass `Left`, `Center`, and `Right`. These will align your children accordingly. For children spacing, see `childSpacing` property below.
+ * ### Absolute Layouts
+ * Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the `setPosition` method of each child control. However, you are encouraged to use linear layouts for most of your programs, unless it is absolutely necessary.
+ * ### Frame Layouts
+ * Frame layouts are used to display objects in front or behind each other. Everytime a child control is added, the new control is placed in a new layer in front of the previously added control at the top left of the frame. You can then use `setPosition` method of the child control to position it relative to the frame.
+ * ### Slide Layouts
+ * Slide layouts are used to display carousels or swipeable contents. The same as the Frame layout, this will add a new layer when a new control is added with a swipeable behaviour. You can pass alignment options to align your children within the Slide layout layer. Please note that `Vertical` and `Horizontal` options will be the direction of the swipe. If your parent layout is of type `Slide`, do not add `setOnTouch` callback handler in order for the slide layout to work perfectly.
+ * ### Card Layouts
+ * Card layouts are used to display surfaces with elevation and a rounder corners to emphasize its contents. This type of layout has default values for padding. You can clear the padding by setting the `padding` property to `0`. If you want to use the material design card implementation, refer to the `Card` component.
+ * ### Dimensions
+ * To set the width and height of a layout, pass a `width` and `height` argument as a `decimal fraction` of its parent's width and height.
+ * In some scenarios where you want the layout to occupy the available space, you can add `"FillXY"` in the `options` argument to fill the available width and height of its parent. Similarly, when you want to fill the available horizontal space, you can pass `"FillX"` and `"FillY"` for filling the available vertical space.
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setChildMargins ###
- * @brief setChildMargins
- * Sets a default margins for the children of the layout component
- * $$ lay.setChildMargins(left, top, right, bottom, mode) $$
- * @param {num} left Left margin.
- * @param {num} top Top margin.
- * @param {num} right Right margin.
- * @param {num} bottom Bottom margin.
- * @param {str} mode `px`. Default is a fraction of viewport.
- */
-
-
-/** ### show ###
- * @brief show
- * Makes the layout visible
- * $$ lay.show() $$
- */
+    /** ## Properties
+     * @jdocs Here are the available setters and getters for the Layout Component.
+     * @prop {String} orientation Sets or returns the orientation of the controls in a Linear Layout. Values can be `'Horizontal'` or `"Vertical"`
+     * @prop {String} alignment Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be `"Left"` `"Center"` and `"Right"`
+     * @prop {String} verticalAlignment Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be `"Top"` `"VCenter"` or `"Bottom"`
+     * @prop {String} childSpacing Sets or returns the spacing of the child control in a Linear Layout. Values can be `"Around"` `"Between"` `"Even"`
+     * @prop {Number} currentSlide Sets or returns the index of the current slide.
+     * @prop {Array} childMargins Sets or returns the margins of child components. The array is of the form `[left, top, right, bottom]`.
+     * @prop {Array} children Returns all the children added to this layout.
+     * @prop {Number} elevation Sets or returns the elevation of a card layout.
+     * @prop {String} variant Sets or returns the card variant. Can be `"elevation"` or `"outlined"`
+     * @prop {String} layoutType Sets or returns the layout type. Note: You cannot change the layout type of "Card" and "Slide" to another type.
+     */
 
 
-/** ### goto ###
- * @brief goto
- * Transition to the given index
- * $$ lay.goto(index) $$
- * @param {num} index Index of a given layout.
- */
+    /** @extern width */
 
 
-/** ### getCurrentSlide ###
- * @brief getCurrentSlide
- * Returns the index of the current Slide Layout
- * $$ lay.getCurrentSlide() $$
- * @returns num
- */
+    /** @extern height */
 
 
-/** ### next ###
- * @brief next
- * Transition to the next slide
- * $$ lay.next() $$
- */
+    /** @extern opacity */
 
 
-/** ### previous ###
- * @brief previous
- * Transition to the previous slide
- * $$ lay.previous() $$
- */
+    /** @extern textSize */
 
 
-/** ### getChildOrder ###
- * @brief getChildOrder
- * Returns the index of the child from the layout children stack in order
- * $$ lay.getChildOrder(child) $$
- * @param {obj} child The child component of the layout.
- * @returns num
- */
+    /** @extern textColor */
 
 
-/** ### childToFront ###
- * @brief childToFront
- * Move the child to the front
- * $$ lay.childToFront(child) $$
- * @param {obj} child The child object of the layout.
- */
+    /** @extern rotation */
 
 
-/** ### hasChild ###
- * @brief hasChild
- * Check whether a component is a child of this layout
- * $$ lay.hasChild(child) $$
- * @param {obj} child The child component to check.
- * @returns bin
- */
+    /** @extern fontFile */
 
 
-/** ### removeChild ###
- * @brief removeChild
- * Removes a child from this layout
- * $$ lay.removeChild(child) $$
- * @param {obj} child The child component to be remove.
- */
+    /** @extern visibility */
 
 
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the component is touch
- * $$ lay.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
- */
+    /** @extern type */
 
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ lay.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
- */
+    /** @extern absWidth */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ lay.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+    /** @extern absHeight */
 
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ lay.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+    /** @extern backColor */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ lay.hide() $$
- */
+    /** @extern backImage */
 
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ lay.gone() $$
- */
+    /** @extern isVisible */
 
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ lay.destroy() $$
- */
+    /** @extern top */
 
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ lay.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+    /** @extern left */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ lay.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
+    /** @extern absTop */
 
 
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ lay.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
+    /** @extern absLeft */
 
 
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ lay.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
+    /** @extern parent */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ lay.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
+    /** @extern position */
 
 
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ lay.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
+    /** @extern margins */
 
 
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the component
- * $$ lay.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-Left border radius in pixels.
- * @param {num} tr Top-Right border radius in pixels.
- * @param {num} bl Bottom-Left border radius in pixels.
- * @param {num} br Bottom-Right border radius in pixels.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern padding */
 
 
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ lay.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
+    /** @extern options */
 
 
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ lay.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
+    /** @extern disabled */
 
 
+    /** @extern border */
 
-// ------------- SAMPLES ------------- 
+
+    /** @extern borderColor */
 
 
-    
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+	/** ## Methods ##
+     * @jdocs Here are the available methods for the Layout Component.
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** ### setChildMargins ###
+     * Sets a default margins for the children of the layout component.
+     * $$ lay.setChildMargins( left, top, right, bottom, mode ) $$
+     * @param {Number} [left] Left margin. You can also pass string e.g. `12rem`
+     * @param {Number} [top] Top margin. You can also pass string e.g. `12rem`
+     * @param {Number} [right] Right margin. You can also pass string e.g. `12rem`
+     * @param {Number} [bottom] Bottom margin. You can also pass string e.g. `12rem`
+     * @param {String} [mode='px'] Unit of measurement.\n`px` for pixels\n`%` relative to its parent dimension.\n`v` relative to viewport dimension,\n`rem`
+     */
+
+
+    /** ### goto
+     * Transition to the given index.
+     * $$ lay.goto( index )
+     * @param {Number} index Index of a given layout.
+     * @@ Works only for Slide Layouts.
+     */
+
+
+    /** ### next
+     * Transition to the next slide.
+     * $$ lay.next()
+     */
+
+
+    /** ### previous
+     * Transition to the previous slide.
+     * $$ lay.previous()
+     */
+
+
+    /** ### setOnSlide
+     * Adds a callback function to be called when slide event is triggered.
+     * $$ lay.setOnSlide( callback )
+     * @param {Function} callback The function to be called on slide event. ---> @arg {Object} component The control component. @arg {Number} index The index of the slide.
+     */
+
+
+    /** ### getChildOrder
+     * Returns the index of the child from the layout children stack in order.
+     * $$ lay.getChildOrder( child )
+     * @param {Object} child The child component of the layout.
+     * @returns Number
+     */
+
+
+    /** ### childToFront
+     * Move the child to the front.
+     * $$ lay.childToFront( child )
+     * @param {Object} child The child object of the layout.
+     * @@ Works only for absolute layout.
+     */
+
+
+    /** ### hasChild
+     * Check whether a component is a child of this layout.
+     * $$ lay.hasChild( child )
+     * @param {Object} child The child component to check.
+     * @returns Boolean
+     */
+
+
+    /** ### removeChild
+     * Removes a given child from this layout.
+     * $$ lay.removeChild( child )
+     * @param {Object} child The child control to be remove.
+     */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the layout is touch.
+     * $$ lay.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setOnLongTouch
+     * Adds a callback handler when the layout is long touch. The touch timer is about 500 milliseconds.
+     * $$ lay.setOnLongTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### clear
+     * Clear the content of the layout.
+     * $$ lay.clear() $$
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Main layout
 class Main extends App
@@ -361,9 +321,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Bottom aligned with margins
 class Main extends App
@@ -383,9 +342,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Orientation and spacing
 class Main extends App
@@ -405,9 +363,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Slide Layout
 class Main extends App
@@ -449,9 +406,58 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+/**
+@sample Player control using Card layout
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        
+        // Create a layout of type card
+        this.crd = ui.addLayout(this.main, "Card", "Horiz", 0.9, 0.2);
+        this.crd.cornerRadius = 12;
+        this.crd.elevation = 8;
+
+        // Clear the default padding of the card
+        this.crd.padding = 0;
+
+        // Add a layout at the left of the card
+        var lay1 = ui.addLayout(this.crd, "Linear", "Left", 0.6, 1);
+        lay1.padding = ["1rem", "1rem", "1rem"];
+
+        // Add a text which is slightly bigger to serve as a song title
+        var title = ui.addText(lay1, "100 Years", "H5");
+
+        // Add a subheader text for artist
+        var subheader = ui.addText(lay1, "Five For Fighting", "textSecondary")
+
+        // Create a layout for the the player actions
+        var actionsLay = ui.addLayout(lay1, "Linear", "Horiz,VCenter,Left,FillAxis", 1);
+
+        // Add a previous icon button to the actions layout
+        var prevBtn = ui.addButton(actionsLay, "fast_rewind", "Small,Icon");
+
+        // Add a play icon button to the actions layout
+        var playBtn = ui.addButton(actionsLay, "play_arrow", "Icon,Large");
+        playBtn.margins = ["1rem", 0, "1rem", 0];
+        
+        // Add a next icon button to the actions layout
+        var nextBtn = ui.addButton(actionsLay, "fast_forward", "Small,Icon");
+
+        // Create another layout and add it to the card
+        var lay2 = ui.addLayout(this.crd, "Linear", "", 0.4, 1);
+
+        // Add a cover image to the right layout of the card
+        var img = ui.addImage(lay2, "https://picsum.photos/200/200", "", 1, 1);
+    }
+}
+ */
+
+
 /**
 @sample Python Main layout
 from hybrid import ui
@@ -479,9 +485,8 @@ def btnTouch(event):
     else:
         main.backColor = "yellow"
  */
-    
-            
-    
+
+
 /**
 @sample Python Bottom aligned with margins
 from hybrid import ui
@@ -498,9 +503,8 @@ def OnStart():
     btn2 = ui.addButton(main, "Button 2", "Secondary")
     btn3 = ui.addButton(main, "Button 3", "Primary,Outlined")
  */
-    
-            
-    
+
+
 /**
 @sample Python Orientation and spacing
 from hybrid import ui
@@ -517,9 +521,8 @@ def OnStart():
     btn2 = ui.addButton(main, "Button 2", "Secondary")
     btn3 = ui.addButton(main, "Button 3", "Primary,Outlined")
  */
-    
-            
-    
+
+
 /**
 @sample Python Slide Layout
 from hybrid import ui
@@ -557,5 +560,5 @@ def OnStart():
 def onSlide(ctrl, index):
     ui.showPopup(index, "", 350)
  */
-    
-            
+
+

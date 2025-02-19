@@ -4,17 +4,17 @@
 /** # IsAPK #
  * @brief Returns true if ran from apk
  * Returns whether current app is an APK or not (case not it's a DroidScript Project).
- * $$ app.IsAPK() $$ 
+ * $$ app.IsAPK() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check APK
 function OnStart()
@@ -23,9 +23,9 @@ function OnStart()
     app.Alert( isAPK, "is APK:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check APK
 from native import app
@@ -34,5 +34,3 @@ def OnStart():
     isAPK = app.IsAPK()
     app.Alert(isAPK, "is APK:")
  */
-    
-            

@@ -4,19 +4,19 @@
 /** # RemoveDrawer #
  * @brief Remove drawer layout from a given side
  * Removes a drawer layout from a given side.
- * 
+ *
  * See also: @AddDrawer
- * $$ app.RemoveDrawer(side) $$ 
+ * $$ app.RemoveDrawer(side) $$
  * @param {str} side left|right
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample left
 function OnStart()
@@ -43,9 +43,9 @@ function RemoveDrawer() {
     <b>app.RemoveDrawer( "left" );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python left
 from native import app
@@ -71,5 +71,3 @@ def OnStart():
 def RemoveDrawer():
     app.RemoveDrawer("left")
  */
-    
-            

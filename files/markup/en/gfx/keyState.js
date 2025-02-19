@@ -5,8 +5,6 @@
  * @prop
  * @brief Current key state
  * Current pressed key state
- * $$ gfx.keyState() $$ 
+ * $$ gfx.keyState $$
  * @returns str-Down|Up
 */
-
-

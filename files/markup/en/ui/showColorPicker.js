@@ -1,44 +1,30 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # showColorPicker #
- * @brief showColorPicker
- * 
- * $$ ui.showColorPicker(value, options) $$ 
- * @param {str} value A hexadecimal default value for the color picker.
- * @param {str} options A comma separated color picker options. Values can be \n `Alpha` Includes an alpha
- * @returns obj-ColorPicker Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Shows a color picker. Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette.
-
-### Properties
-These are the setter and getter properties for the showColorPicker Component.
-<smp noinl>value:"str:'Returns the value of the chosen color.'"</smp>
+/** # ColorPicker
+ * @abbrev cpk
+ * Shows a color picker.
+ * @img(img1.png)
+ * @img(img2.png)
+ * @jdocs Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette. Show a color picker using the `showColorPicker` method like this:
+ * $$ ui.showColorPicker(onSelect)
+ * $$ ui.showColorPicker(value, onSelect)
+ * @param {String} [value] A hexadecimal default value for the color picker.
+ * @param {Function} onSelect The callback function to be called when onselect event is fired. ---> @arg {String} value Color in hexadecimal format `#rrggbb` or `#aarrggbb` if `Alpha` option is passed.
+ * @returns uio-ColorPicker
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### getValue ###
- * @brief getValue
- * Returns the hexadecimal string color value of the color picker
- * $$ undefined.getValue() $$
- * @returns str
- */
+    /** ## Properties
+     * @jdocs Here are the setter and getter properties available for ColorPicker Component.
+     */
 
 
+    /**  ## Methods
+     * @jdocs Here are the available methods of the ColorPicker dialog.
+     */
 
-// ------------- SAMPLES ------------- 
+
+/* ## Examples */
 
 
-    
 /**
 @sample Basic
 class Main extends App
@@ -57,9 +43,8 @@ class Main extends App
 
     showColorPicker()
     {
-        // Show color picker dialog with `Alpha` option
-        // to include alpha in the output format `#aarrggbb`
-        ui.showColorPicker(null, "Alpha", this.onSelect)
+        // Show color picker dialog
+        ui.showColorPicker( this.onSelect )
     }
 
     onSelect( clr )
@@ -68,30 +53,35 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
-@sample Python Basic
-from hybrid import ui
+@sample Default value
+class Main extends App
+{
+    onStart()
+    {
+        // Create a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-def OnStart():
-    # Create a fullscreen layout with objects vertically centered
-    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+        // Add a button to the main layout
+        this.btn = ui.addButton(this.main, "Show Popup", "Primary")
 
-    # Add a button to the main layout
-    btn = ui.addButton(main, "Show Popup", "Primary")
+        // Add callback handler for `onTouch` event
+        this.btn.setOnTouch( this.showColorPicker )
+    }
 
-    # Add callback handler for `onTouch` event
-    btn.setOnTouch(showColorPicker)
+    showColorPicker()
+    {
+        // Show color picker dialog with default color
+        ui.showColorPicker("#009688", this.onSelect)
+    }
 
-def showColorPicker(event):
-    # Show color picker dialog with `Alpha` option
-    # to include alpha in the output format `#aarrggbb`
-    ui.showColorPicker(None, "Alpha", onSelect)
-
-def onSelect(clr):
-    ui.showPopup(clr)
+    onSelect( clr )
+    {
+        ui.showPopup( clr )
+    }
+}
  */
-    
-            
+
+

@@ -4,20 +4,20 @@
 /** # SetMenu #
  * @brief Set app menu
  * Set the app menu fields. When a menu entry is touched, the global _OnMenu_ event will be called.
- * 
+ *
  * See Also: @ShowMenu
- * $$ app.SetMenu(list, iconPath) $$ 
- * @param {str_com} list 
- * @param {str_ptf} iconPath 
+ * $$ app.SetMenu(list, iconPath?) $$
+ * @param {str_com} list
+ * @param {str_ptf} [iconPath]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -38,9 +38,9 @@ function OnMenu( item )
 	app.ShowPopup( item, "Short" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Menu Icons
 function OnStart()
@@ -55,9 +55,9 @@ function OnMenu( item )
     app.ShowPopup( item, "Short" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -76,9 +76,9 @@ def OnStart():
 def OnMenu(item):
     app.ShowPopup(item, "Short")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Menu Icons
 from native import app
@@ -91,5 +91,3 @@ def OnStart():
 def OnMenu(item):
     app.ShowPopup(item, "Short")
  */
-    
-            

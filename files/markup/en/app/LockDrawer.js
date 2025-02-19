@@ -4,19 +4,19 @@
 /** # LockDrawer #
  * @brief Hide and lock a drawer
  * Make drawer on a specific side unaccessible for the app and the user, hiding it if necessary. You can only unlock it using the @UnlockDrawer method.
- * 
+ *
  * See Also: @AddDrawer
- * $$ app.LockDrawer(side) $$ 
+ * $$ app.LockDrawer(side) $$
  * @param {str} side left|right
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -43,9 +43,9 @@ function OnLockChange( lock )
     else app.UnlockDrawer( "left" );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Open and Close Drawer via Button
 function OnStart()
@@ -85,9 +85,9 @@ function btn_OnTouch()
         app.CloseDrawer( "left" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -114,9 +114,9 @@ def OnLockChange(lock):
     else:
         app.UnlockDrawer("left")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Open and Close Drawer via Button
 from native import app
@@ -154,5 +154,3 @@ def btn_OnTouch():
     else:
         app.CloseDrawer("left")
  */
-    
-            

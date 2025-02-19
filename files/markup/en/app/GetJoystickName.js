@@ -3,20 +3,20 @@
 
 /** # GetJoystickName #
  * Returns the name of a conected joystick.
- * 
+ *
  * See Also: @GetJoystickState
- * $$ app.GetJoystickName(id) $$ 
- * @param {num_int} id 
+ * $$ app.GetJoystickName(id) $$
+ * @param {num_int} id
  * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Joystick name on id 0
 function OnStart()
@@ -25,9 +25,9 @@ function OnStart()
 	app.Alert( name );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demonstration
 from native import app
@@ -38,9 +38,9 @@ def OnStart():
 
     app.Debug("\n\t\tHello World!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Joystick name on id 0
 from native import app
@@ -49,9 +49,9 @@ def OnStart():
     name = app.GetJoystickName(0)
     app.Alert(name)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Generate Random Number
 from native import app
@@ -61,9 +61,9 @@ def OnStart():
     randomNumber = random.randint(1, 100)
     app.ShowPopup(randomNumber)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Calculate Square of a Number
 from native import app
@@ -73,9 +73,9 @@ def OnStart():
     square = number * number
     app.ShowPopup(square)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Perform Addition
 from native import app
@@ -86,9 +86,9 @@ def OnStart():
     sum = num1 + num2
     app.ShowPopup(sum)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Display Current Date and Time
 from native import app
@@ -99,9 +99,9 @@ def OnStart():
     dateTime = now.strftime("%Y-%m-%d %H:%M:%S")
     app.ShowPopup(dateTime)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Perform String Concatenation
 from native import app
@@ -112,9 +112,9 @@ def OnStart():
     result = str1 + " " + str2
     app.ShowPopup(result)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check if a Number is Even or Odd
 from native import app
@@ -126,5 +126,3 @@ def OnStart():
     else:
         app.ShowPopup(str(number) + " is odd")
  */
-    
-            

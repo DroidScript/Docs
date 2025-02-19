@@ -4,17 +4,17 @@
 /** # IsScreenOn #
  * @brief Check if device screen is on
  * Checks if the device screen is currently on.
- * $$ app.IsScreenOn() $$ 
+ * $$ app.IsScreenOn() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Screen On
 function OnStart()
@@ -29,9 +29,9 @@ function checkScreenOn()
     app.ShowPopup( screenOn, "Screen On:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Screen On
 from native import app
@@ -47,5 +47,3 @@ def checkScreenOn():
     screenOn = app.IsScreenOn()
     app.ShowPopup(screenOn, "Screen On:")
  */
-    
-            

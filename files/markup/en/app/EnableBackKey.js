@@ -2,13 +2,13 @@
 
 
 /** # EnableBackKey #
- * 
- * $$ app.EnableBackKey(enable) $$ 
- * @param {bin} enable 
+ *
+ * $$ app.EnableBackKey(enable) $$
+ * @param {bin} enable
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Allows to en- or disable the devices back key. When it is disabled the global _OnBack_ app event will called when the user presses the back button - otherwise the app exits.
@@ -18,10 +18,10 @@ You can use this method to create a custom _BACK_ command that allows you to nav
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -41,9 +41,9 @@ function yesNo_OnTouch( result )
 	if( result=="Yes" ) app.Exit();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a Button
 from native import app
@@ -57,9 +57,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a DatePicker
 from native import app
@@ -73,9 +73,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a ProgressBar
 from native import app
@@ -90,9 +90,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a ToggleButton
 from native import app
@@ -106,9 +106,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a Spinner
 from native import app
@@ -122,9 +122,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Showing a Popup
 from native import app
@@ -132,9 +132,9 @@ from native import app
 def OnStart():
     app.ShowPopup("Hello, world!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enabling Bluetooth
 from native import app
@@ -142,9 +142,9 @@ from native import app
 def OnStart():
     app.SetBluetoothEnabled(True)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Disabling Bluetooth
 from native import app
@@ -152,9 +152,9 @@ from native import app
 def OnStart():
     app.SetBluetoothEnabled(False)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Discover Bluetooth Devices
 from native import app
@@ -180,9 +180,9 @@ def OnFound(name, address):
 def OnComplete():
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Delete created file
 from native import app
@@ -197,9 +197,9 @@ def OnStart():
     else:
         app.ShowPopup("myFile was deleted!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Delete created folder
 from native import app
@@ -214,9 +214,9 @@ def OnStart():
     else:
         app.ShowPopup("myFolder was deleted!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Destroy layout and check if deleted
 from native import app
@@ -237,9 +237,9 @@ def btn_OnTouch():
     text = this.GetText() or "nothing in here!"
     app.ShowPopup(text)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Downloading the DroidScript logo
 from native import app
@@ -249,9 +249,9 @@ def OnStart():
     dst = "/sdcard/Downloads/logo.png"
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Download to external storage
 from native import app
@@ -261,9 +261,9 @@ def OnStart():
     dst = app.GetExternalFolder() + "/Downloads/logo.png"
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enable GPS
 from native import app
@@ -271,9 +271,9 @@ from native import app
 def OnStart():
     app.EnableGps()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Disable GPS
 from native import app
@@ -281,9 +281,9 @@ from native import app
 def OnStart():
     app.DisableGps()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Get current GPS location
 from native import app
@@ -291,5 +291,3 @@ from native import app
 def OnStart():
     app.EnableGps()
  */
-    
-            

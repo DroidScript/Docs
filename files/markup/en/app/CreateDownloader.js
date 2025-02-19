@@ -4,14 +4,14 @@
 /** # CreateDownloader #
  * @abbrev dwn
  * @brief Returns a new Downloader object
- * 
- * $$ dwn = app.CreateDownloader(options) $$ 
- * @param {str_com} options NoDialog|Light
+ *
+ * $$ dwn = app.CreateDownloader(options?) $$
+ * @param {str_com} [options] NoDialog|Light
  * @returns dso-Downloader
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The Downloader component can be used to download a file straight from the internet to your phone or tablet's local storage. You can download a file with the **Download** method which accepts a _source url_ and a _target directory_: <js>dwn.Download( srcFileUrl, targetDir );</js>
@@ -23,19 +23,21 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Download ###
  * @brief Download file(s)
  * Start downloading one or multiple files.
- * $$ dwn.Download(url, fldr, name, headers) $$
+ * $$ dwn.Download(url, fldr, name?, headers?) $$
  * @param {str_url||lst} url [urls:str_url]
  * @param {str_pth} fldr must not have a trailing slash
- * @param {str} name 
- * @param {str} headers 
+ * @param {str} [name]
+ * @param {str} [headers]
  */
 
 
@@ -105,30 +107,30 @@ If you want to know when the download process has finished (or failed) you can d
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
 {
-	var srcFileUrl = "http://sgarman.net/downloadable.txt";
-	var targetDir = "/sdcard";
+    var srcFileUrl = "http://sgarman.net/downloadable.txt";
+    var targetDir = "/sdcard";
 
-	<b>dload = app.CreateDownloader();
-	dload.SetOnComplete( dload_OnComplete );
-	dload.Download( srcFileUrl, targetDir );</b>
+    <b>dload = app.CreateDownloader();
+    dload.SetOnComplete( dload_OnComplete );
+    dload.Download( srcFileUrl, targetDir );</b>
 }
 
 function dload_OnComplete()
 {
-	app.ShowPopup("Download complete");
+    app.ShowPopup("Download complete");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -144,5 +146,3 @@ def OnStart():
 def dload_OnComplete():
     app.ShowPopup("Download complete")
  */
-    
-            

@@ -3,19 +3,19 @@
 
 /** # CreateTESearchElegant #
  * @abbrev tes
- * 
- * $$ tes = MUI.CreateTESearchElegant(width, hint, icon, iconPos, color, option) $$ 
- * @param {num} width 
- * @param {str} hint Hint text
- * @param {str} icon Material icon font
- * @param {str} iconPos Right|Left
- * @param {str_col} color 
- * @param {str} option Small|Normal|Border
+ *
+ * $$ tes = MUI.CreateTESearchElegant(width, hint?, icon?, iconPos?, color?, option?) $$
+ * @param {num} width
+ * @param {str} [hint] Hint text
+ * @param {str} [icon] Material icon font
+ * @param {str} [iconPos] Right|Left
+ * @param {str_col} [color]
+ * @param {str} [option] Small|Normal|Border
  * @returns obj
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Creates a customizable elegant text input.
@@ -35,49 +35,24 @@ To make a bordered input, you can pass **border** to the _option_ argument.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
 
-/** ### ClearHistory ###
- * Clear input history
- * $$ tes.ClearHistory() $$
- */
-
+/** @extern ClearHistory */
 
 /** @extern Focus */
 
-/** ### GetCursorLine ###
- * Get cursor line
- * $$ tes.GetCursorLine() $$
- * @returns num
- */
+/** @extern GetCursorLine */
 
+/** @extern GetCursorPos */
 
-/** ### GetCursorPos ###
- * Get cursor position
- * $$ tes.GetCursorPos() $$
- */
+/** @extern GetSelectedText */
 
+/** @extern GetSelectionEnd */
 
-/** ### GetSelectedText ###
- * 
- * $$ tes.GetSelectedText() $$
- */
-
-
-/** ### GetSelectionEnd ###
- * 
- * $$ tes.GetSelectionEnd() $$
- */
-
-
-/** ### GetSelectionStart ###
- * 
- * $$ tes.GetSelectionStart() $$
- */
-
+/** @extern GetSelectionStart */
 
 /** @extern GetText */
 
@@ -87,13 +62,7 @@ To make a bordered input, you can pass **border** to the _option_ argument.
 
 /** @extern Gone */
 
-/** ### InsertText ###
- * Inserts a string at a given position.
- * $$ tes.InsertText(text, start) $$
- * @param {str} text 
- * @param {num_int} start 
- */
-
+/** @extern InsertText */
 
 /** @extern IsEnabled */
 
@@ -110,16 +79,16 @@ To make a bordered input, you can pass **border** to the _option_ argument.
 /** ### ReplaceText ###
  * Replaces a given range in the text with some string.
  * $$ tes.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
+ * @param {str} text
+ * @param {num_int} start
+ * @param {num_int} end
  */
 
 
 /** ### SetCursorPos ###
  * Change the curernt cursor position.
  * $$ tes.SetCursorPos(position) $$
- * @param {num_int} position 
+ * @param {num_int} position
  */
 
 
@@ -153,21 +122,15 @@ To make a bordered input, you can pass **border** to the _option_ argument.
  */
 
 
-/** ### SetOnIconTouch ###
- * @brief Calls a function when icon is touch
- * Calls a function when icon is touch
- * $$ tes.SetOnIconTouch(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnIconTouch */
 
 /** @extern SetOnTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -186,9 +149,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample RightIcon
 cfg.Dark
@@ -207,9 +170,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Small
 cfg.Light
@@ -228,9 +191,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Border
 cfg.Dark
@@ -249,9 +212,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Border
 # cfg.Dark, cfg.MUI
@@ -269,5 +232,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

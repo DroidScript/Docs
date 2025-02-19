@@ -4,22 +4,22 @@
 /** # AddDrawer #
  * @brief Adds a slide-able layout on given side
  * AddDrawer adds layout as drawer on a given side. If the user swipes from this side to the other the layout will slide out.
- * 
+ *
  * See Also: @OpenDrawer, @CloseDrawer, @RemoveDrawer
- * $$ app.AddDrawer(layout, side, width, grabWidth) $$ 
+ * $$ app.AddDrawer(layout, side, width=-1, grabWidth?) $$
  * @param {dso} layout CreateLayout
- * @param {str} side left|right
- * @param {num_frc} width 
- * @param {num_frc} grabWidth 
+ * @param {str} side Left|Right
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [grabWidth]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample left
 function OnStart()
@@ -42,9 +42,9 @@ function OnStart()
 	<b>app.AddDrawer( layDrawer, "left", 0.8 );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python left
 from native import app
@@ -67,5 +67,3 @@ def OnStart():
 
     <b>app.AddDrawer( layDrawer, "left", 0.8 )</b>
  */
-    
-            

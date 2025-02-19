@@ -4,20 +4,20 @@
 /** # SetOrientation #
  * @brief Fix display orientation
  * Set the display orientation to a fixed value. You can unlock it again passing “Default” as **orientation**.
- * 
+ *
  * See Also: @GetOrientation
- * $$ app.SetOrientation(orient, callback) $$ 
+ * $$ app.SetOrientation(orient, callback?) $$
  * @param {str} orient Default|Landscape|ReverseLandscape|Portrait|ReversePortrait
- * @param {fnc_json} callback {}
+ * @param {fnc_json} [callback] {}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Change Orientation
 function OnStart()
@@ -36,9 +36,9 @@ function SetOrientation( orient )
     <b>app.SetOrientation( orient )</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Change Orientation
 from native import app
@@ -55,5 +55,3 @@ def OnStart():
 def SetOrientation( orient, index):
     app.SetOrientation( orient )
  */
-    
-            

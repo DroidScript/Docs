@@ -4,17 +4,17 @@
 /** # CreateText #
  * @abbrev txt
  * @brief Returns a new Text object
- * 
- * $$ txt = app.CreateText(text, width, height, options) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options AutoScale,AutoSize,Multiline,Left|Right|Bottom|VCenter,Html,Bold,Monospace,AutoShrink:Auto-shrinks text to fit,NoWrap,Log,FillX/Y
+ *
+ * $$ txt = app.CreateText(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options] AutoScale,AutoSize,Multiline,Left|Right|Bottom|VCenter,Html,Bold,Monospace,AutoShrink:Auto-shrinks text to fit,NoWrap,Log,FillX/Y
  * @returns dso-Text
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 If you want to display text in your app you can use the Text object. You can use the “Multiline” **option** to allow multi-line text and the “Left” or “Right” options to align the text. The default is single line centered text.
@@ -33,7 +33,7 @@ You can also set a background image/pattern or background gradient for the Text 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -41,6 +41,8 @@ You can also set a background image/pattern or background gradient for the Text 
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -74,7 +76,7 @@ You can also set a background image/pattern or background gradient for the Text 
  * @brief Get the start character index of a line
  * Returns at which character in the text a certain line begins.
  * $$ txt.GetLineStart(line) $$
- * @param {num_int} line 
+ * @param {num_int} line
  * @returns num_int
  */
 
@@ -83,7 +85,7 @@ You can also set a background image/pattern or background gradient for the Text 
  * @brief Get line top position on screen
  * Returns the top position of a given line on the screen.
  * $$ txt.GetLineTop(line) $$
- * @param {num_int} line 
+ * @param {num_int} line
  * @returns num_frc
  */
 
@@ -130,9 +132,9 @@ You can also set a background image/pattern or background gradient for the Text 
 /** ### Log ###
  * @brief Append line to the text
  * Append a string to the text separated with a line break
- * $$ txt.Log(message, options) $$
- * @param {str} message 
- * @param {str_com} options Clear:Clears the log before writing,Red|Green|Blue
+ * $$ txt.Log(message, options?) $$
+ * @param {str} message
+ * @param {str_com} [options] Clear:Clears the log before writing,Red|Green|Blue
  */
 
 
@@ -166,7 +168,7 @@ You can also set a background image/pattern or background gradient for the Text 
  * @brief Set maximum log length
  * Define a maximum amount of log lines
  * $$ txt.SetLog(maxLines) $$
- * @param {num_int} maxLines 
+ * @param {num_int} maxLines
  */
 
 
@@ -209,10 +211,10 @@ You can also set a background image/pattern or background gradient for the Text 
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Single line
 function OnStart()
@@ -226,9 +228,9 @@ function OnStart()
     app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Multi line
 function OnStart()
@@ -244,9 +246,9 @@ function OnStart()
     app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Ellipsize
 function OnStart()
@@ -261,9 +263,9 @@ function OnStart()
     app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Single line
 from native import app
@@ -277,9 +279,9 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Multi line
 from native import app
@@ -295,9 +297,9 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Ellipsize
 from native import app
@@ -312,5 +314,4 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            
+

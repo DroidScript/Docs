@@ -4,19 +4,19 @@
 /** # CreateButtonFlat #
  * @abbrev btf
  * Just a flat button.
- * $$ btf = MUI.CreateButtonFlat(text, width, height, color, backColor) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * $$ btf = MUI.CreateButtonFlat(text, width=-1, height=-1, color?, backColor?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -25,13 +25,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -53,7 +50,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ btf.GetType() $$
  * @returns str-Button
  */
@@ -111,17 +108,7 @@
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * 
- * $$ btf.SetStyle(clr1, clr2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} clr1 
- * @param {str_col} clr2 
- * @param {num} radius 
- * @param {str_col} strokeClr 
- * @param {num} strokeWidth 
- * @param {num} shadow 
- */
-
+/** @extern SetStyle */
 
 /** @extern SetText */
 
@@ -138,10 +125,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -154,21 +141,21 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonFlat("BUTTON", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("BUTTON", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+        lay.AddChild(btn)
 
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark
 cfg.Dark
@@ -181,21 +168,21 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonFlat("BUTTON", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("BUTTON", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("[fa-android] ANDROID", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonFlat("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+        lay.AddChild(btn)
 
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Add Method
 cfg.Light
@@ -204,7 +191,7 @@ cfg.MUI
 function OnStart()
 {
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    
+
         btn1 = MUI.AddButtonFlat(lay, "BUTTON 1", 0.35)
         btn2 = MUI.AddButtonFlat(lay, "[fa-heart] BUTTON 2", 0.35)
         btn3 = MUI.AddButtonFlat(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
@@ -212,9 +199,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Light
 # cfg.Light, cfg.MUI
@@ -238,9 +225,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark
 # cfg.Dark, cfg.MUI
@@ -264,9 +251,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Add Method
 # cfg.Light, cfg.MUI
@@ -282,5 +269,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

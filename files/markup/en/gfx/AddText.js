@@ -4,23 +4,23 @@
 /** # AddText #
  * @brief Adds a text object
  * Adds a [text](CreateText.htm) object to the game.
- * $$ gfx.AddText(obj, x, y, angle, alpha) $$ 
+ * $$ gfx.AddText(obj, x, y, angle, alpha) $$
  * @param {gvo} obj CreateText
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @param {num_frc} angle 
- * @param {num_frc} alpha 
+ * @param {num_frc} x
+ * @param {num_frc} y
+ * @param {num_frc} angle
+ * @param {num_frc} alpha
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 cfg.Game;
 
 function OnLoad()
@@ -34,11 +34,11 @@ function OnReady()
     gfx.Play();
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 # cfg.Game
 
 def OnLoad():
@@ -49,5 +49,3 @@ def OnReady():
     gfx.AddText(text, 0.2, 0.4, 0.2)
     gfx.Play()
  */
-    
-            

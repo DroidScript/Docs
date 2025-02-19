@@ -4,19 +4,19 @@
 /** # IsConnected #
  * @brief Check if device is connected to any network
  * Checks if the device is connected to any network.
- * 
+ *
  * See Also: @SetWifiEnabled, @WifiConnect, @SetOnWifiChange
- * $$ app.IsConnected() $$ 
+ * $$ app.IsConnected() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Connected
 function OnStart()
@@ -25,9 +25,9 @@ function OnStart()
     app.Alert( isConnected, "is Connected:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Connected
 from native import app
@@ -36,5 +36,3 @@ def OnStart():
     isConnected = app.IsConnected()
     app.Alert(isConnected, "is Connected:")
  */
-    
-            

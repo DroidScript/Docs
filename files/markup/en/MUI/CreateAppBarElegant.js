@@ -4,17 +4,17 @@
 /** # CreateAppBarElegant #
  * @abbrev abe
  * A more elegant appbar implementation
- * $$ abe = MUI.CreateAppBarElegant(title, leadingIcon, options) $$ 
+ * $$ abe = MUI.CreateAppBarElegant(title, leadingIcon?, options?) $$
  * @param {str} title Title text
- * @param {str} leadingIcon Material icon font
- * @param {str_com} options material icon font for the right controls
+ * @param {str} [leadingIcon] Material icon font
+ * @param {str_com} [options] material icon font for the right controls
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetMenuIcon ###
@@ -55,7 +55,7 @@
 /** ### SetTitleTextColor ###
  * Change the color of the title
  * $$ abe.SetTitleTextColor(newColor) $$
- * @param {str_col} newColor 
+ * @param {str_col} newColor
  */
 
 
@@ -102,10 +102,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Just a title
 cfg.Light
@@ -144,9 +144,9 @@ function OnStart()
     *_
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Sample page
 cfg.Light
@@ -184,9 +184,9 @@ function OnMenuTouch()
     lay.Animate("SlideToBottom")
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Complete controls
 cfg.Light
@@ -217,9 +217,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark mode
 cfg.Dark
@@ -263,9 +263,9 @@ function OnControlTouch(text, index)
     app.ShowPopup("You click " + text + ": Control index = "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Just a title
 # cfg.Light, cfg.MUI
@@ -295,9 +295,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sample page
 # cfg.Light, cfg.MUI
@@ -333,9 +333,9 @@ def OnStart():
 def OnMenuTouch():
     lay.Animate("SlideToBottom")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Complete controls
 # cfg.Light, cfg.MUI
@@ -365,9 +365,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark mode
 # cfg.Dark, cfg.MUI
@@ -406,5 +406,3 @@ def OnMenuTouch():
 def OnControlTouch(text, index):
     app.ShowPopup("You click " + text + ": Control index = "+index)
  */
-    
-            

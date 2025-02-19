@@ -4,17 +4,17 @@
 /** # CreateButtonContained #
  * @abbrev btc
  * An contained material button.
- * $$ btc = MUI.CreateButtonContained(text, width, height) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
+ * $$ btc = MUI.CreateButtonContained(text, width=-1, height=-1) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -23,13 +23,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -51,7 +48,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ btc.GetType() $$
  * @returns str-Button
  */
@@ -109,17 +106,7 @@
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * 
- * $$ btc.SetStyle(clr1, clr2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} clr1 
- * @param {str_col} clr2 
- * @param {num} radius 
- * @param {str_col} strokeClr 
- * @param {num} strokeWidth 
- * @param {num} shadow 
- */
-
+/** @extern SetStyle */
 
 /** @extern SetText */
 

@@ -4,16 +4,16 @@
 /** # CreateListDialog #
  * @abbrev ldg
  * @brief Returns a new ListDialog object
- * 
- * $$ ldg = app.CreateListDialog(title, list, options) $$ 
- * @param {str} title 
- * @param {str} list 
- * @param {str} options Multi
+ *
+ * $$ ldg = app.CreateListDialog(title, list, options?) $$
+ * @param {str} title
+ * @param {str} list
+ * @param {str} [options] Multi|AutoCancel
  * @returns dso-ListDialog
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 If you want a quick way to let the user select one or even multiple items of a given dataset you can use the ListDialog.
@@ -26,12 +26,14 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern Dismiss */
 
@@ -54,7 +56,7 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
  * @brief Define a callback function for touch events
  * Define a callback function that is called when the user touches a list item.
  * $$ ldg.SetOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["title","checked"],"pTypes":["str","bin"]}
+ * @param {fnc_json} callback {"pNames":["title","checked?"],"pTypes":["str","bin"]}
  */
 
 
@@ -65,51 +67,51 @@ ou can use the “Multi” **option** to create a ListDialog with check boxes ag
 /** ### SetTitle ###
  * Change the dialog title.
  * $$ ldg.SetTitle(title) $$
- * @param {str} title 
+ * @param {str} title
  */
 
 
 /** @extern Show */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
 {
-	<b>dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
-	dlg.SetOnTouch( dlg_OnTouch );
-	dlg.Show();</b>
+    <b>dlg = app.CreateListDialog( "Choices", "Add,Remove,Delete" );
+    dlg.SetOnTouch( dlg_OnTouch );
+    dlg.Show();</b>
 }
 
 function dlg_OnTouch( item )
 {
-	app.ShowPopup( item );
+    app.ShowPopup( item );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Multi
 function OnStart()
 {
-	<b>dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" );
-	dlg.SetOnTouch( dlg_OnTouch );
-	dlg.Show();</b>
+    <b>dlg = app.CreateListDialog( "Days", "Mon,Tues,Wed,Thurs,Fri,Sat,Sun", "Multi" );
+    dlg.SetOnTouch( dlg_OnTouch );
+    dlg.Show();</b>
 }
 
 function dlg_OnTouch( item, isChecked )
 {
-	app.ShowPopup( item + " isChecked = " + isChecked );
+    app.ShowPopup( item + " isChecked = " + isChecked );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -122,9 +124,9 @@ def OnStart():
 def dlg_OnTouch( item, checked):
     app.ShowPopup( item )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Multi
 from native import app
@@ -137,5 +139,3 @@ def OnStart():
 def dlg_OnTouch( item, isChecked ):
     app.ShowPopup( item + " isChecked = " + str(isChecked) )
  */
-    
-            

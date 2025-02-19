@@ -4,18 +4,18 @@
 /** # CreateDatePicker #
  * @abbrev dtp
  * Creates a materialize date picker dialog.
- * $$ dtp = MUI.CreateDatePicker(yyyy, mm, dd, color) $$ 
- * @param {num_int} yyyy Full year
- * @param {num_int} mm [0-11]
- * @param {num_int} dd [1-31]
- * @param {str_col} color 
+ * $$ dtp = MUI.CreateDatePicker(yyyy?, mm?, dd?, color?) $$
+ * @param {num_int} [yyyy] Full year
+ * @param {num_int} [mm] [0-11]
+ * @param {num_int} [dd] [1-31]
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSelect ###
@@ -56,10 +56,10 @@
 /** @extern SetTextEdit */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Default
 cfg.Light
@@ -92,9 +92,9 @@ function OnSelect(date, yyyy, mm, dd)
     app.ShowPopup(date)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Custom Date
 cfg.Dark
@@ -128,9 +128,9 @@ function OnSelect(date, yyyy, mm, dd)
     app.ShowPopup(date)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Default
 # cfg.Light, cfg.MUI
@@ -159,9 +159,9 @@ def ShowDatePicker():
 def OnSelect(date, yyyy, mm, dd):
     app.ShowPopup(date)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Custom Date
 # cfg.Dark, cfg.MUI
@@ -191,5 +191,3 @@ def ShowDatePicker():
 def OnSelect(date, yyyy, mm, dd):
     app.ShowPopup(date)
  */
-    
-            

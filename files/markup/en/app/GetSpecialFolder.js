@@ -4,9 +4,9 @@
 /** # GetSpecialFolder #
  * @brief Get full path to a special media folder
  * Returns the full path to a special folder commonly used for images, videos, music etc.
- * 
+ *
  * See Also: @GetPath, @GetAppPath, @WriteFile
- * $$ app.GetSpecialFolder(name) $$ 
+ * $$ app.GetSpecialFolder(name) $$
  * @param {str} name DCIM|Pictures|Movies|Downloads|Documents|Music
  * @returns str_pth
 */
@@ -14,10 +14,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Get Pictures folder
 function OnStart()
@@ -26,16 +26,14 @@ function OnStart()
     app.Alert( fld );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     fld = app.GetSpecialFolder("Pictures")
     app.Alert(fld)
  */
-    
-            

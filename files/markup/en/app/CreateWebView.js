@@ -4,17 +4,17 @@
 /** # CreateWebView #
  * @abbrev web
  * @brief Returns a new WebView object
- * 
- * $$ web = app.CreateWebView(width, height, options, zoom) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options AllowZoom:Allows the user to zoom the page,AutoZoom,ClearCookies:Clear all webview cookies at startup,FillX/Y,Local:loads URLs starting with / from /Storage/[AppName\]/ instead,NoAccel:for OrangePi support,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoCors:attempts to disable CORS and i-frame restrictions,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Persist:keeps file cache\, history and form data between re-loads/startups,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser,Wide:"force page using “wide” viewport"
- * @param {num_prc} zoom 
+ *
+ * $$ web = app.CreateWebView(width=-1, height=-1, options='', zoom?) $$
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options=''] AllowZoom:Allows the user to zoom the page,AutoZoom,ClearCookies:Clear all webview cookies at startup,FillX/Y,Local:loads URLs starting with / from /Storage/[AppName\]/ instead,NoAccel:for OrangePi support,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoCors:attempts to disable CORS and i-frame restrictions,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoScrollBars,Overview:Zoom to full width of page,Persist:keeps file cache\, history and form data between re-loads/startups,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser,Wide:"force page using “wide” viewport"
+ * @param {num_prc} [zoom]
  * @returns dso-WebView
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 You can create a control to display local or remote web pages in your App using the **CreateWebView** method.
@@ -30,7 +30,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -45,6 +45,8 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### CanGoBack ###
  * @brief Check if history contains a previous page
@@ -66,7 +68,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief Capture WebView as png
  * Captures the visible area of the web view to a file.
  * $$ web.Capture(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
@@ -88,9 +90,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### Execute ###
  * @brief Execute JS code inside the WebView
  * Executes JavaScript code inside the WebView and passes the result to the callback
- * $$ web.Execute(code, callback) $$
- * @param {str_jsc} code 
- * @param {fnc_json} callback {"pNames":["result"],"pTypes":["all"]}
+ * $$ web.Execute(code, callback?) $$
+ * @param {str_jsc} code
+ * @param {fnc_json} [callback] {"pNames":["result"],"pTypes":["all"]}
  */
 
 
@@ -105,9 +107,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 
 /** ### Func ###
  * Call functions defined inside a webview
- * $$ web.Func(name, args...) $$
- * @param {str} name 
- * @param {all} args... 
+ * $$ web.Func(name, ...args) $$
+ * @param {str} name
+ * @param {all} ...args
  */
 
 
@@ -173,19 +175,19 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### LoadHtml ###
  * @brief Load html to WebView
  * Loads html code to the WebView.
- * $$ web.LoadHtml(html, baseFolder, options) $$
- * @param {str_htm} html 
- * @param {str_ptd} baseFolder 
- * @param {str_com} options AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:"force page using “wide” viewport",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser
+ * $$ web.LoadHtml(html, baseFolder?, options?) $$
+ * @param {str_htm} html
+ * @param {str_ptd} [baseFolder]
+ * @param {str_com} [options] AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:"force page using “wide” viewport",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser
  */
 
 
 /** ### LoadUrl ###
  * @brief Load url to WebView
  * Loads an url to the WebView
- * $$ web.LoadUrl(url, options) $$
- * @param {str_url} url 
- * @param {str_com} options AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:"force page using “wide” viewport",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser
+ * $$ web.LoadUrl(url, options?) $$
+ * @param {str_url} url
+ * @param {str_com} [options] AllowZoom:Allows the user to zoom the page,AutoZoom,Wide:"force page using “wide” viewport",FillX/Y,NoActionBar:prevents copy/paste popup,IgnoreErrors,IgnoreSSLErrors,NoApp:prevent app&period;* calls,NoCapture:Disable camera,NoLocate:Disable location sensor,NoLongTouch,NoPause:Dont pause WebView when app in background,NoRedirect:blocks assert redirect,NoScrollBars,Overview:Zoom to full width of page,Progress:Shows a progress indicator when loading,ScrollFade,UseBasicInput:makes softkeyboard useful for html code editors,UseBrowser:Open links in external browser
  */
 
 
@@ -194,7 +196,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### Print ###
  * @brief Print webpage via anddroid printer dialog
  * Print current page via the builtin android printer dialog.
- * 
+ *
  * Note: Available since Android 4.4 KitKat
  * $$ web.Print() $$
  */
@@ -230,9 +232,9 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### SetContextMenus ###
  * @brief Define context menus to listen for
  * Define which context menus are available for SetOnContextMenu.
- * $$ web.SetContextMenus(links, images) $$
- * @param {str} links Copy URL\,Open URL
- * @param {str} images Download Image
+ * $$ web.SetContextMenus(links?, images?) $$
+ * @param {str} [links] Copy URL\,Open URL
+ * @param {str} [images] Download Image
  */
 
 
@@ -246,7 +248,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief Define error page
  * Define a url loaded when an error occured.
  * $$ web.SetErrorPage(url) $$
- * @param {str_url} url 
+ * @param {str_url} url
  */
 
 
@@ -254,8 +256,10 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief Inject scripts on page load
  * Define a javscript file that is immediately executed after a page was loaded inside the webview.
  * This is useful for modifying elements on a webpage.
+ * 
+ * <premium>
  * $$ web.SetInject(file) $$
- * @param {str_pth} file 
+ * @param {str_pth} file
  */
 
 
@@ -264,7 +268,14 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### SetTextZoom ###
  * Scales the html text by a given factor.
  * $$ web.SetTextZoom(zoom) $$
- * @param {num_frc} zoom 
+ * @param {num_frc} zoom
+ */
+
+/** ### SetOnBlob ###
+ * @brief Handle objectUrls/blobs
+ * %cb% recieved an objectUrls/blobs
+ * $$ web.SetOnBlob(callback) $$
+ * @param {fnc_json} callback {"pNames":["objectUrls"],"pTypes":["str"]}
  */
 
 
@@ -311,7 +322,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern SetOnTouch #2088093920 */
 
 /** ### SetOnUrl ###
- * @brief Called when link klicked
+ * @brief Called when link clicked
  * %cb% the user clicked a link.
  * $$ web.SetOnUrl(callback) $$
  * @param {fnc_json} callback {"pNames":["url"],"pTypes":["str_url"]}
@@ -326,8 +337,8 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief Add url redirection rule
  * Add a url redirection rule.
  * $$ web.SetRedirect(urlFrom, urlTo) $$
- * @param {str_url} urlFrom 
- * @param {str_url} urlTo 
+ * @param {str_url} urlFrom Uses regex url matching
+ * @param {str_url} urlTo
  */
 
 
@@ -339,7 +350,7 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief En/Disable touchmode on the control
  * Set the control in touch mode.
  * $$ web.SetTouchMode(mode) $$
- * @param {bin} mode 
+ * @param {bin} mode
  */
 
 
@@ -347,16 +358,16 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief Define which URLs open in browser
  * Gives control over which URLs open a browser when clicked by the user.
  * $$ web.SetUseBrowser(urlFilter) $$
- * @param {str} urlFilter 
+ * @param {str} urlFilter
  */
 
 
 /** ### SetUserAgent ###
  * @brief Set/Add custom user agent
  * Defines a custom user agent or add to the default one
- * $$ web.SetUserAgent(agent, options) $$
- * @param {str} agent 
- * @param {str} options Add-appends to default user agent
+ * $$ web.SetUserAgent(agent, options?) $$
+ * @param {str} agent
+ * @param {str} [options] Add-appends to default user agent
  */
 
 
@@ -364,8 +375,8 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @brief Set authentication/login data
  * Set login data for websites that require authentication.
  * $$ web.SetUserCreds(name, password) $$
- * @param {str} name 
- * @param {str} password 
+ * @param {str} name
+ * @param {str} password
  */
 
 
@@ -378,12 +389,12 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** ### SimulateKey ###
  * @brief Simulate key event
  * Simulates a key event on an app object.
- * 
+ *
  * You can find the complete list of key names on the [Android Developer Page](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0).
- * $$ web.SimulateKey(keyName, modifiers, pause) $$
- * @param {str} keyName 
- * @param {str} modifiers META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON
- * @param {num} pause 
+ * $$ web.SimulateKey(keyName, modifiers?, pause?) $$
+ * @param {str} keyName
+ * @param {str} [modifiers] META_META_ON,META_RIGHT_ON,NUM_LOCK_ON,SCROLL_LOCK_ON,SHIFT_LEFT_ON,SHIFT_MASK,SHIFT_ON,SHIFT_RIGHT_ON,SYM_ON
+ * @param {num} [pause]
  */
 
 
@@ -397,75 +408,75 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Remote
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	 <b>web = app.CreateWebView( 1, 1, "Progress" );
-	 web.SetOnProgress( web_OnProgess );
-	 lay.AddChild( web );</b>
+     <b>web = app.CreateWebView( 1, 1, "Progress" );
+     web.SetOnProgress( web_OnProgess );
+     lay.AddChild( web );</b>
 
-	 app.AddLayout( lay );
+     app.AddLayout( lay );
 
-	 web.LoadUrl( "http:///www.google.com" );
+     web.LoadUrl( "http:///www.google.com" );
 }
 
 function web_OnProgess( progress )
 {
-	 app.Debug( "progress = " + progress );
+     app.Debug( "progress = " + progress );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Local File
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	 <b>web = app.CreateWebView( 0.8, 0.8 );
-	 web.SetBackColor( "#00000000" );
-	 lay.AddChild( web );</b>
+     <b>web = app.CreateWebView( 0.8, 0.8 );
+     web.SetBackColor( "#00000000" );
+     lay.AddChild( web );</b>
 
-	 app.AddLayout( lay );
+     app.AddLayout( lay );
 
-	 web.LoadUrl( "file:///Sys/Html/Page.htm" );
+     web.LoadUrl( "file:///Sys/Html/Page.htm" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Direct Html
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	<b>web = app.CreateWebView( 0.8, 0.8 );
-	web.SetBackColor( "#00000000" );
-	lay.AddChild( web );</b>
+    <b>web = app.CreateWebView( 0.8, 0.8 );
+    web.SetBackColor( "#00000000" );
+    lay.AddChild( web );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
-	html = "<html><body><center>" +
-		"    <img src='Img/Droid2.png'>" +
-		"    <div style='color:white; font-size:30;'>" +
-		"    Hello World!</div><br>" +
-		"</center></body></html>";
+    html = "<html><body><center>" +
+        "    <img src='Img/Droid2.png'>" +
+        "    <div style='color:white; font-size:30;'>" +
+        "    Hello World!</div><br>" +
+        "</center></body></html>";
 
-	web.LoadHtml( html, "file:///Sys/" );
+    web.LoadHtml( html, "file:///Sys/" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Remote
 from native import app
@@ -484,9 +495,9 @@ def OnStart():
 def web_OnProgess( progress ):
     app.Debug( "progress = " + progress )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Local File
 from native import app
@@ -502,9 +513,9 @@ def OnStart():
 
     web.LoadUrl( "file:///Sys/Html/Page.htm" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Direct Html
 from native import app
@@ -526,5 +537,4 @@ def OnStart():
 
     web.LoadHtml( html, "file:///Sys/" )
  */
-    
-            
+

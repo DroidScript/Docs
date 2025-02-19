@@ -4,17 +4,17 @@
 /** # CreateTabs #
  * @abbrev tab
  * @brief Returns a new Tabs object
- * 
- * $$ tab = app.CreateTabs(list, width, height, options) $$ 
- * @param {str_com} list 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} options Fade,FontAwesome,NoMargins,VCenter
+ *
+ * $$ tab = app.CreateTabs(list, width=-1, height=-1, options?) $$
+ * @param {str_com} list
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options] Fade,FontAwesome,NoMargins,VCenter
  * @returns dso-Tabs
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Tabs are useful if you have multiple subsections in your app. The user can then press the title of a tab and the control will automatically switch to the corresponding layout.
@@ -26,7 +26,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -34,6 +34,8 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -57,7 +59,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  * @brief Get tab content layout
  * Returns the content layout of a given tab.
  * $$ tab.GetLayout(name) $$
- * @param {str} name 
+ * @param {str} name
  * @returns dso-CreateLayout
  */
 
@@ -97,7 +99,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  * @brief Add a new tab
  * Adds a new tab to the tabs control.
  * $$ tab.parent.AddTab(name) $$
- * @param {str} name 
+ * @param {str} name
  */
 
 
@@ -119,7 +121,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  * @brief Apply corner radius to card layouts's
  * Applies a corner radius to card layouts.
  * $$ tab.SetCornerRadius(radius) $$
- * @param {num_pxl} radius 
+ * @param {num_pxl} radius
  */
 
 
@@ -158,10 +160,10 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
 /** @extern SetSize */
 
 /** ### SetTextSize ###
- * 
- * $$ tab.SetTextSize(size, mode) $$
- * @param {num} size 
- * @param {str} mode px|sp|dip|mm|pt
+ *
+ * $$ tab.SetTextSize(size, mode='px') $$
+ * @param {num} size
+ * @param {str} [mode='px'] px|sp|dip|mm|pt
  */
 
 
@@ -171,7 +173,7 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  * @brief Enable touch event forwarding
  * Define whether the layout should forward OnTouch events to underlying controls.
  * $$ tab.SetTouchThrough(through) $$
- * @param {bin} through 
+ * @param {bin} through
  */
 
 
@@ -185,17 +187,17 @@ Then you canuse it as every normal layout:dso-"CreateLayout" control
  * @brief Switch current tab
  * Switch to a given tab name
  * $$ tab.ShowTab(name) $$
- * @param {str} name 
+ * @param {str} name
  */
 
 
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -217,11 +219,11 @@ function OnStart()
     app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -241,5 +243,4 @@ def OnStart():
 
     app.AddLayout( lay )
  */
-    
-            
+

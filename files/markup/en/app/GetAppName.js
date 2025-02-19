@@ -4,17 +4,17 @@
 /** # GetAppName #
  * @brief Get current app name
  * Returns the name of the current app.
- * $$ app.GetAppName() $$ 
+ * $$ app.GetAppName() $$
  * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show app name
 function OnStart()
@@ -23,9 +23,9 @@ function OnStart()
     app.Alert( name );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show app name
 from native import app
@@ -34,5 +34,3 @@ def OnStart():
     name = app.GetAppName()
     app.Alert( name )
  */
-    
-            

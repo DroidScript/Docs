@@ -4,14 +4,14 @@
 /** # CreatePhoneState #
  * @abbrev pst
  * @brief Returns a new PhoneState object
- * 
- * $$ pst = app.CreatePhoneState(types) $$ 
- * @param {str} types CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting
+ *
+ * $$ pst = app.CreatePhoneState(types) $$
+ * @param {str_lst} types CellLocation,DataConnection,DataActivity,CallState,ServiceState,SignalStrength,CallForwarding,MessageWaiting
  * @returns dso-PhoneState
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The PhoneState component is able to detect phone state changes.
@@ -30,10 +30,18 @@ The callback data depends on the type:
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
+
+/** @extern data */
+
+/** ### GetNumber ###
+ * Returns the phone number.
+ * $$ pst.GetNumber() $$
+ * @returns str-Number
+ */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -63,24 +71,24 @@ The callback data depends on the type:
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.95, 0.95, "multiline,left" );
-	txt.SetTextSize( 14 );
-	lay.AddChild( txt );
+    txt = app.CreateText( "", 0.95, 0.95, "multiline,left" );
+    txt.SetTextSize( 14 );
+    lay.AddChild( txt );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
-	var types = "CellLocation,DataConnection,DataActivity,CallState,"
-	    + "ServiceState,SignalStrength,CallForwarding,MessageWaiting";
+    var types = "CellLocation,DataConnection,DataActivity,CallState,"
+        + "ServiceState,SignalStrength,CallForwarding,MessageWaiting";
 
     state = app.CreatePhoneState( types );
     state.SetOnChange( state_OnChange );
@@ -94,9 +102,9 @@ function state_OnChange( type, data )
     txt.SetHtml( log.join("<br>") );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
@@ -123,5 +131,3 @@ def state_OnChange(type, data):
     log.append("<b>" + type + ":</b><br>\t" + str(data))
     txt.SetHtml("<br>".join(log))
  */
-    
-            

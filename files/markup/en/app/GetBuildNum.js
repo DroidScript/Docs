@@ -4,17 +4,17 @@
 /** # GetBuildNum #
  * @brief Get APK build number
  * GetBuildNum returns the build number of an APK.
- * $$ app.GetBuildNum() $$ 
+ * $$ app.GetBuildNum() $$
  * @returns num_int
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show build number
 function OnStart()
@@ -23,9 +23,9 @@ function OnStart()
     app.Alert( num );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show build number
 from native import app
@@ -34,5 +34,3 @@ def OnStart():
     num = app.GetBuildNum()
     app.Alert(num)
  */
-    
-            

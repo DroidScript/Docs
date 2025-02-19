@@ -1,325 +1,276 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addTextField #
+/** # TextField
  * @abbrev tfd
- * @brief addTextField
- * 
- * $$ tfd = ui.addTextField(parent, text, options, width, height) $$ 
- * @param {obj} parent The layout where to add the TextField Component.
- * @param {str} text The initial value of the TextField
- * @param {str_com} options Color: `Primary` or `Secondary` \n `Sizes`: `Small` or `Medium` \n `Type`: `Text` `Password` `Email` `Search` `Number` `Date` `Time` or `DateTime` \n `Variant`: `Standard` `Filled` or `Outlined` \n `Utils`: `Autofocus`
- * @param {num} width Fraction of the screen width.
- * @param {num} height Fraction of the screen height.
- * @returns obj-TextField Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Add a textfield component into your app. Collect inputs from users. Inputs can be a number, text, emails, passwords and more. Just pass the corresponding type into
-
- the options arguments to get your desired type of TextField.
-
- If you want a materialize date and time pickers, see <col nobox #4c4>DatePicker</col>, <col nobox #4c4>TimePicker</col> or <col nobox #4c4>DateTimePicker</col> components.
-
-### Properties
-These are the setter and getter properties for the addTextField Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>autoFocus:"bin:'Sets or returns a boolean value whethe the input is focus when rendered into the DOM.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>color:"str:'Sets or returns the theme color of the textfield component.'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>endAdornment:"str:'Returns the end adornment text or icon.'"</smp>
-<smp noinl>error:"bin:'Sets or returns the error state of the TextField component.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>helperText:"str:'Sets or returns the helper text or the hint below the input.'"</smp>
-<smp noinl>hint:"str:'Sets or returns the hint text. It`s the same as the <col nobox #fb8c00>placeholder</col> property.'"</smp>
-<smp noinl>inputType:"str:'Sets or returns the input type. See <col nobox #fb8c00>type</col> params for available values.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>label:"str:'Sets or returns the label text.'"</smp>
-<smp noinl>labelColor:"str:'Sets return the label color in hexadecimal format <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>maxRows:"num:'Sets or returns the maximum rows for a <col nobox #fb8c00>multiline</col> textfield.'"</smp>
-<smp noinl>minRows:"num:'Sets or returns the minimum rows for a <col nobox #fb8c00>multiline</col> textfield.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>outlineColor:"str:'Sets or returns the outline color in hexadecimal form <col nobox #fb8c00>#rrggbb</col> when the textfield is focus.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>placeholder:"str:'Sets or returns the placeholder text.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>required:"bin:'Sets or returns a boolean value whether the text field in required or not.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>sizeVariant:"str:'Sets or returns the size variant of the textfield. Values can be <col nobox #fb8c00>Small</col> or <col nobox #fb8c00>Medium</col>'"</smp>
-<smp noinl>startAdornment:"str:'Returns the start adornment text or icon.'"</smp>
-<smp noinl>stepIncrement:"num:'Sets or returns the step increment if the input is of type number;'"</smp>
-<smp noinl>text:"str:'Sets or returns the text value of the TextField Component.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>variant:"str:'Sets or returns the variant of the TextField. Values can be <col nobox #fb8c00>Standard</col> <col nobox #fb8c00>Filled</col> or <col nobox #fb8c00>Outlined</col>'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
+ * A TextField in mobile UI design is an input field where users can enter text or numeric data.
+ * @img(img1.png)
+ * @img(img2.png)
+ * @jdocs In Material Design, it features a clear outline, label, and optional helper text, ensuring a consistent and user-friendly interface for data input. TextFields are fundamental components used for various forms and interactive elements in mobile applications. Inputs can be a number, text, emails, passwords and more. Add a textfield into your app using the `addTextField` method like this:
+ * $$ tfd = ui.addTextField(parent, text, options, width, height) $$
+ * @param {uio-Layout} parent The layout where to add the TextField Component.
+ * @param {String} text The initial value of the TextField
+ * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`\nSizes: `Small`, `Medium`\nType: `Text`, `Password`, `Email`, `Search`, `Number`, `Date`, `Time`, `DateTime`\nVariant: `Standard`, `Filled`, `Outlined`\nTextArea: `Multiline`\nUtils: `Autofocus`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @returns uio-TextField
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setOnEnter ###
- * @brief setOnEnter
- * Sets a callback function on `enter` or `submit` event
- * $$ tfd.setOnEnter(callback) $$
- * @param {fnc_json} callback {"pNames":["text"],"pTypes":["str-The text value of the input."]}
+/**
+ * If you want a materialize date and time pickers, see `DatePicker`, `TimePicker` or `DateTimePicker` components.
  */
 
 
-/** ### setOnChange ###
- * @brief setOnChange
- * Sets a callback function on `values changes` event
- * $$ tfd.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["text"],"pTypes":["str-The text value of the input."]}
- */
+    /** ## Properties
+     * @jdocs Here are the available getter and setter properties for TextField Component.
+     * @prop {String} text Sets or returns the text value of the TextField Component.
+     * @prop {String} label Sets or returns the label text.
+     * @prop {String} labelColor Sets return the label color in hexadecimal format `#rrggbb`
+     * @prop {String} placeholder Sets or returns the placeholder text.
+     * @prop {Boolean} required Sets or returns a boolean value whether the text field in required or not.
+     * @prop {Boolean} autoFocus Sets or returns a boolean value whethe the input is focus when rendered into the DOM.
+     * @prop {String} hint Sets or returns the hint text. It's the same as the `placeholder` property.
+     * @prop {Number} minRows Sets or returns the minimum rows for a `multiline` textfield.
+     * @prop {Number} maxRows Sets or returns the maximum rows for a `multiline` textfield.
+     * @prop {String} variant Sets or returns the variant of the TextField. Values can be `Standard` `Filled` or `Outlined`
+     * @prop {String} sizeVariant Sets or returns the size variant of the textfield. Values can be `Small` or `Medium`
+     * @prop {String} color Sets or returns the theme color of the textfield component.
+     * @prop {String} inputType Sets or returns the input type. See `type` params for available values.
+     * @prop {String} outlineColor Sets or returns the outline color in hexadecimal form `#rrggbb` when the textfield is focus. 
+     * @prop {String} endAdornment Returns the end adornment text or icon.
+     * @prop {String} startAdornment Returns the start adornment text or icon.
+     * @prop {String} helperText Sets or returns the helper text or the hint below the input.
+     * @prop {Boolean} error Sets or returns the error state of the TextField component.
+     * @prop {Number} stepIncrement Sets or returns the step increment if the input is of type number;
+     */
 
 
-/** ### setOnFocus ###
- * @brief setOnFocus
- * Adds a callback function when the textfield is focus or blur
- * $$ tfd.setOnFocus(callback) $$
- * @param {fnc_json} callback {"pNames":["focus"],"pTypes":["bin-The focus state of the input component."]}
- */
+    /** @extern width */
 
 
-/** ### setRows ###
- * @brief setRows
- * Sets the minimum and maximum number of rows on a multiline type TextField
- * $$ tfd.setRows(min, max) $$
- * @param {num} min The minimum number of rows.
- * @param {num} max The maximum number of rows.
- */
+    /** @extern height */
 
 
-/** ### setStartAdornment ###
- * @brief setStartAdornment
- * Set a start adornment control into the TextField Component
- * $$ tfd.setStartAdornment(text, type) $$
- * @param {str} text Text or material icon font.
- * @param {str} type A comma separated options for start adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
- */
+    /** @extern opacity */
 
 
-/** ### setStartAdornmentOnTouch ###
- * @brief setStartAdornmentOnTouch
- * Add a callback handler when the start adornment control is touch
- * $$ tfd.setStartAdornmentOnTouch(callback) $$
- * @param {fnc_json} callback {}
- */
+    /** @extern textSize */
 
 
-/** ### getStartAdornment ###
- * @brief getStartAdornment
- * Returns the start adornment text
- * $$ tfd.getStartAdornment() $$
- * @returns str
- */
+    /** @extern textColor */
 
 
-/** ### setEndAdornment ###
- * @brief setEndAdornment
- * Add an end adornment control into the TextField Component
- * $$ tfd.setEndAdornment(text, type) $$
- * @param {str} text Text or material icon font.
- * @param {str} type A comma separated options for end adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
- */
+    /** @extern rotation */
 
 
-/** ### setEndAdornmentOnTouch ###
- * @brief setEndAdornmentOnTouch
- * Add a callback handler when the end adornment control is touch
- * $$ tfd.setEndAdornmentOnTouch(callback) $$
- * @param {fnc_json} callback {}
- */
+    /** @extern fontFile */
 
 
-/** ### getEndAdornment ###
- * @brief getEndAdornment
- * Returns the end adornment text
- * $$ tfd.getEndAdornment() $$
- * @returns str
- */
+    /** @extern visibility */
 
 
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the component is touch
- * $$ tfd.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
- */
+    /** @extern type */
 
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ tfd.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
- */
+    /** @extern absWidth */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ tfd.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+    /** @extern absHeight */
 
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ tfd.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+    /** @extern backColor */
 
 
-/** ### show ###
- * @brief show
- * Show the component
- * $$ tfd.show() $$
- */
+    /** @extern backImage */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ tfd.hide() $$
- */
+    /** @extern isVisible */
 
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ tfd.gone() $$
- */
+    /** @extern top */
 
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ tfd.destroy() $$
- */
+    /** @extern left */
 
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ tfd.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+    /** @extern absTop */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ tfd.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
+    /** @extern absLeft */
 
 
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ tfd.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
+    /** @extern parent */
 
 
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ tfd.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
+    /** @extern position */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ tfd.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
+    /** @extern margins */
 
 
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ tfd.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
+    /** @extern padding */
 
 
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the component
- * $$ tfd.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-Left border radius in pixels.
- * @param {num} tr Top-Right border radius in pixels.
- * @param {num} bl Bottom-Left border radius in pixels.
- * @param {num} br Bottom-Right border radius in pixels.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern options */
 
 
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ tfd.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
+    /** @extern disabled */
 
 
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ tfd.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
+    /** @extern border */
 
 
+    /** @extern borderColor */
 
-// ------------- SAMPLES ------------- 
+
+    /** @extern borderStyle */
 
 
-    
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** ## Methods
+     * @jdocs Here are the methods available for the TextField Component.
+     */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** ### setOnEnter
+     * Sets a callback function on `enter` or `submit` event.
+     * $$ tfd.setOnEnter(callback) $$
+     * @param {Function} callback The callback function. ---> @arg {String} text The text value of the input.
+     */
+
+
+    /** ### setOnChange
+     * Sets a callback function on `values changes` event.
+     * $$ tfd.setOnChange( callback ) $$
+     * @param {Function} callback The callback function. ---> @arg {String} text The text value of the input.
+     */
+
+
+    /** ### focus
+     * Sets focus on the textField component.
+     * $$ tfd.focus() $$
+     */
+
+
+    /** ### setOnFocus
+     * Adds a callback function when the textfield is focus or blur.
+     * @param {Function} callback The function to be called. ---> @arg {Boolean} focus The focus state of the input component.
+     */
+
+
+    /** ### setRows
+     * Sets the minimum and maximum number of rows on a multiline type TextField.
+     * $$ tfd.setRows( min, max ) $$
+     * @param {Number} [min] The minimum number of rows.
+     * @param {Number} [max] The maximum number of rows.
+     * @@ TextField Component must be `Multiline`
+     */
+
+
+    /** ### setStartAdornment
+     * Set a start adornment control into the TextField Component.
+     * $$ tfd.setStartAdornment( text, type ) $$
+     * @param {String} text Text or material icon font.
+     * @param {String} [type] A comma separated options for start adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
+     */
+
+
+    /** ### setStartAdornmentOnTouch
+     * Add a callback handler when the start adornment control is touch.
+     * $$ tfd.setStartAdornmentOnTouch(callback) $$
+     * @param {Function} callback The callback function.
+     */
+
+
+    /** ### getStartAdornment
+     * Returns the start adornment text.
+     * $$ tfd.getStartAdornment() $$
+     * @returns String
+     */
+
+
+    /** ### setEndAdornment
+     * Add an end adornment control into the TextField Component.
+     * $$ tfd.setEndAdornment( text, type ) $$
+     * @param {String} text Text or material icon font.
+     * @param {String} [type] A comma separated options for end adornment control. Options can be \n `Icon` : If the adornment is an icon. \n `Touchable` : If the adornment is touchable.
+     */
+
+
+    /** ### setEndAdornmentOnTouch
+     * Add a callback handler when the end adornment control is touch.
+     * $$ tfd.setEndAdornmentOnTouch(callback) $$
+     * @param {Function} callback The callback function.
+     */
+
+
+    /** ### getEndAdornment
+     * Returns the end adornment text.
+     * $$ tfd.getEndAdornment() $$
+     * @returns String
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Textfield variants
 class Main extends App
@@ -358,9 +309,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Callbacks
 class Main extends App
@@ -410,9 +360,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Multiline textfield
 class Main extends App
@@ -433,9 +382,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Advance textfield
 class Main extends App
@@ -494,9 +442,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Textfield variants
 from hybrid import ui
@@ -531,9 +478,8 @@ def onChange(value):
     popup.text = value
     popup.show()
  */
-    
-            
-    
+
+
 /**
 @sample Python Callbacks
 from hybrid import ui
@@ -575,9 +521,8 @@ def btn_onTouch(event):
     popup.text = "Value : " + tfd.text
     popup.show()
  */
-    
-            
-    
+
+
 /**
 @sample Python Multiline textfield
 from hybrid import ui
@@ -595,9 +540,8 @@ def OnStart():
     tfd.label = "Enter description"
     tfd.setRows(3, 6)
  */
-    
-            
-    
+
+
 /**
 @sample Python Advance textfield
 from hybrid import ui
@@ -631,5 +575,5 @@ def OnStart():
     ui.addText(main,  "End text adornment", "Left,Overline", 0.7)
     tfd3 = ui.addTextField(main, "", "Outlined,Secondary,
  */
-    
-            
+
+

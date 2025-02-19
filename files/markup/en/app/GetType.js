@@ -3,17 +3,17 @@
 
 /** # GetType #
  * Returns the object class name.
- * $$ app.GetType() $$ 
+ * $$ app.GetType() $$
  * @returns str-App
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample GetType
 function OnStart()
@@ -22,16 +22,14 @@ function OnStart()
     app.Alert( type, "Type" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     type = app.GetType()
     app.Alert(type, "Type")
  */
-    
-            

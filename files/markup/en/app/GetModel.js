@@ -4,17 +4,17 @@
 /** # GetModel #
  * @brief Get device model name
  * Returns the model name of the device.
- * $$ app.GetModel() $$ 
+ * $$ app.GetModel() $$
  * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Get Device Model
 function OnStart()
@@ -23,16 +23,14 @@ function OnStart()
 	app.ShowPopup( model );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     model = app.GetModel()
     app.ShowPopup( model )
  */
-    
-            

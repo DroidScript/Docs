@@ -4,19 +4,19 @@
 /** # GetKeyboardHeight #
  * @brief Get current keyboard height
  * Returns the height of the device keyboard in pixels. Returns _0_ if the keyboard is hidden.
- * 
+ *
  * See Also: @ShowKeyboard
- * $$ app.GetKeyboardHeight() $$ 
+ * $$ app.GetKeyboardHeight() $$
  * @returns num_pxl
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Keyboard Height
 function OnStart()
@@ -40,9 +40,9 @@ function OnKeyboardShow()
     txt.SetText( "Keyboard Height: " + height + "px" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Keyboard Height
 from native import app
@@ -65,5 +65,3 @@ def OnKeyboardShow(shown):
     height = app.GetKeyboardHeight()
     txt.SetText("Keyboard Height: " + str(height) + "px")
  */
-    
-            

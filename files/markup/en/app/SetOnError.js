@@ -4,19 +4,19 @@
 /** # SetOnError #
  * @brief Called on thrown JS errors
  * Define a callback function to catch thrown errors messages.
- * 
+ *
  * See also: @Error
- * $$ app.SetOnError(callback) $$ 
+ * $$ app.SetOnError(callback) $$
  * @param {fnc_json} callback {"pNames":["error"],"pTypes":["str"]}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Catch JS Errors
 function OnStart()
@@ -35,9 +35,9 @@ function OnStart()
     app.Alert( text, "Received error message:" );
 }</b>
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Catch JS Errors
 from native import app
@@ -53,5 +53,3 @@ def OnStart():
 
     app.Alert(text, "Received error message:")</b>
  */
-    
-            

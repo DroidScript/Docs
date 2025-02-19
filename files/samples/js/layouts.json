@@ -1,0 +1,6 @@
+[
+  { "title": "Card Layout", "desc": "Rounded corner layouts with shadows", "exclude": "iot", "type": "js" },
+  { "title": "Card Flip", "desc": "Flip a card layout", "exclude": "iot", "type": "js" },
+  { "title": "Card Animation", "desc": "Animated card layouts", "exclude": "iot", "type": "js" },
+  { "title": "Layout Slide", "desc": "Page slide effect", "exclude": "iot,tv", "type": "js" }
+]

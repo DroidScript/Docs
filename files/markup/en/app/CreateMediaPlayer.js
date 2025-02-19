@@ -4,13 +4,13 @@
 /** # CreateMediaPlayer #
  * @abbrev ply
  * @brief Returns a new MediaPlayer object
- * 
- * $$ ply = app.CreateMediaPlayer() $$ 
+ *
+ * $$ ply = app.CreateMediaPlayer() $$
  * @returns dso-MediaPlayer
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The MediaPlayer object can be used to play sound files from the phone or tablet.
@@ -25,10 +25,12 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### Close ###
  * @brief Close the media player.
@@ -64,6 +66,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Returns if the player is looping.
  * Checks if the media player will replay the song from the begining if it has finished.
  * $$ ply.IsLooping() $$
+ * @returns bin
  */
 
 
@@ -71,6 +74,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Get current playing state
  * Checks if the media player is currently playing.
  * $$ ply.IsPlaying() $$
+ * @returns bin
  */
 
 
@@ -78,6 +82,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Returns if player is useable yet
  * Checks if the media player is ready for use.
  * $$ ply.IsReady() $$
+ * @returns bin
  */
 
 
@@ -96,7 +101,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 /** ### SeekTo ###
  * Seek the player to a given time in seconds.
  * $$ ply.SeekTo(time) $$
- * @param {num_flt} time 
+ * @param {num_flt} time
  */
 
 
@@ -104,7 +109,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Load a sound file to the player
  * Load a sound file to the media player.
  * $$ ply.SetFile(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
@@ -112,7 +117,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Set looping mode
  * Define whether the media player should replay the song when completed.
  * $$ ply.SetLooping(loop) $$
- * @param {bin} loop 
+ * @param {bin} loop
  */
 
 
@@ -144,7 +149,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Set the playback speed
  * Change the speed of the playing song.
  * $$ ply.SetSpeed(speed) $$
- * @param {num_fac} speed 
+ * @param {num_fac} speed
  */
 
 
@@ -152,7 +157,7 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Set the playback pitch
  * Change the pitch of the playing song.
  * $$ ply.SetPitch(pitch) $$
- * @param {num_fac} pitch 
+ * @param {num_fac} pitch
  */
 
 
@@ -160,8 +165,8 @@ The SeekTo method can be used to adjust the playback position by passing in the 
  * @brief Set the playback volume
  * Change the volume of the playing song.
  * $$ ply.SetVolume(left, right) $$
- * @param {num_prc} left 
- * @param {num_prc} right 
+ * @param {num_prc} left
+ * @param {num_prc} right
  */
 
 
@@ -172,33 +177,33 @@ The SeekTo method can be used to adjust the playback position by passing in the 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Playing Audio
 function OnStart()
 {
-	<b>player = app.CreateMediaPlayer();
+    <b>player = app.CreateMediaPlayer();
     player.SetOnReady(Play);
-	player.SetOnComplete( player_OnComplete );
-	player.SetFile( "/Sys/Snd/Poing.ogg" );</b>
+    player.SetOnComplete( player_OnComplete );
+    player.SetFile( "/Sys/Snd/Poing.ogg" );</b>
 }
 
 function Play()
 {
-	player.Play();
+    player.Play();
 }
 
 function player_OnComplete()
 {
-	app.ShowPopup( "OnComplete" );
+    app.ShowPopup( "OnComplete" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Playing Audio
 from native import app
@@ -216,5 +221,3 @@ def Play():
 def player_OnComplete():
     app.ShowPopup("OnComplete")
  */
-    
-            

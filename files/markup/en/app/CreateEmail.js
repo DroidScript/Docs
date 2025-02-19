@@ -5,19 +5,21 @@
  * @abbrev mail
  * @brief Returns an Email object for user to send emails
  * The Email component allows us to send and receive emails without user interaction.
- * $$ mail = app.CreateEmail(account, password) $$ 
- * @param {str} account email
- * @param {str} password password
+ * $$ mail = app.CreateEmail(account, password) $$
+ * @param {str} account account email
+ * @param {str} password account password
  * @returns dso-Email
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### GetType ###
  * Returns the control class name.
@@ -28,30 +30,30 @@
 
 /** ### Receive ###
  * Start receiving emails from a given folder.
- * $$ mail.Receive(folder, maxCount, filter) $$
- * @param {str} folder 
- * @param {num_int} maxCount 
- * @param {str} filter 
+ * $$ mail.Receive(folder, maxCount, filter?) $$
+ * @param {str} folder
+ * @param {num_int} maxCount
+ * @param {str} [filter]
  */
 
 
 /** ### Send ###
  * Send an email to someone.
- * $$ mail.Send(subject, body, sender, recipients, attach) $$
- * @param {str} subject 
- * @param {str} body 
+ * $$ mail.Send(subject, body, sender, recipients, attach?) $$
+ * @param {str} subject
+ * @param {str} body
  * @param {str} sender email address
  * @param {str} recipients email address
- * @param {str_pth} attach 
+ * @param {str_pth} [attach]
  */
 
 
 /** ### SetIMAP ###
  * @brief Set IMAP settings for receiving messages
  * Set IMAP or POP3 settings for receiving messages.
- * $$ mail.SetIMAP(server, port) $$
+ * $$ mail.SetIMAP(server, port?) $$
  * @param {str} server imap/pop.gmail.com:google|imap/pop.mail.yahoo.com:yahoo|imap/pop.gmx.net:gmx
- * @param {num_int} port 993:imap|995:pop
+ * @param {num_int} [port] 993:imap|995:pop
  */
 
 
@@ -80,31 +82,31 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
 {
-	<b>email = app.CreateEmail( "mymail@gmail.com", "MyPass" );
-	email.SetSMTP( "smtp.gmail.com", 465 );
-	email.SetOnStatus( email_OnStatus );</b>
+    <b>email = app.CreateEmail( "mymail@gmail.com", "MyPass" );
+    email.SetSMTP( "smtp.gmail.com", 465 );
+    email.SetOnStatus( email_OnStatus );</b>
 
-	app.ShowProgress( "Sending..." );
-	email.Send( "My Subjewct", "My Content", "mymail@yahoo.com", "myothermail@gmail.com" );
+    app.ShowProgress( "Sending..." );
+    email.Send( "My Subjewct", "My Content", "mymail@yahoo.com", "myothermail@gmail.com" );
 }
 
 function email_OnStatus( status )
 {
-	app.HideProgress();
-	app.ShowPopup( status );
+    app.HideProgress();
+    app.ShowPopup( status );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -121,5 +123,3 @@ def email_OnStatus( status ):
     app.HideProgress()
     app.ShowPopup( status )
  */
-    
-            

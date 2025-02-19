@@ -4,19 +4,19 @@
 /** # GetDatabaseFolder #
  * @brief Get apps database folder
  * Returns the path to the database folder of the app. An example pattern is “/data/data/packageName/databases”.
- * 
+ *
  * See Also: @OpenDatabase
- * $$ app.GetDatabaseFolder() $$ 
+ * $$ app.GetDatabaseFolder() $$
  * @returns str_pth
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show
 function OnStart()
@@ -25,9 +25,9 @@ function OnStart()
     app.Alert( dir );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show
 from native import app
@@ -36,5 +36,3 @@ def OnStart():
     dir = app.GetDatabaseFolder()
     app.Alert(dir)
  */
-    
-            

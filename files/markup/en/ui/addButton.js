@@ -1,259 +1,252 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addButton #
+/** # Button
  * @abbrev btn
- * @brief addButton
- * 
- * $$ btn = ui.addButton(parent, text, options, width, height) $$ 
- * @param {obj} parent The layout where to add the button.
- * @param {str} text The button text or the material icon text.
- * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Util`: `Icon` `NoRipple` `Upload` \n `In case of upload, you can specify `Multiple` to accept multiple files.
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- * @returns obj-Button Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a button control into your app.
-
- In case of <col nobox #4c4>Upload</col>, you can specify <col nobox #4c4>Multiple</col> to accept multiple files.
-
-### Properties
-These are the setter and getter properties for the addButton Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>acceptedFiles:"str:'Sets or returns the accepted files for an upload button.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>badge:"num:'Sets or returns the badge content. You can pass a <col nobox #fb8c00>string</col>'"</smp>
-<smp noinl>badgeColor:"str:'Sets or returns the color of the badge. Values can be <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>color:"str:'Sets or returns the theme color of the button. Values can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> <col nobox #fb8c00>Secondary</col> <col nobox #fb8c00>Inherit</col>'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius of the button.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>icon:"str:'Sets or returns the material icon font use for the leading icon.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>sizeVariant:"str:'Sets or returns the size variant of the button. Values can be <col nobox #fb8c00>small</col> <col nobox #fb8c00>medium</col> or <col nobox #fb8c00>large</col>'"</smp>
-<smp noinl>text:"str:'Sets or returns the button text.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the text color in hexadecimal format.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>toolTip:"str:'Sets or returns the tooltip text.'"</smp>
-<smp noinl>toolTipPosition:"str:'Sets or returns the tooltip position. Values can be <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> or <col nobox #fb8c00>bottom</col>'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>variant:"str:'Sets or returns the variant of the button. Values can be <col nobox #fb8c00>Contained</col> <col nobox #fb8c00>Outlined</col> or <col nobox #fb8c00>Text</col>'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
+ * A button component in mobile UI development is an element that triggers an action when pressed.
+ * @img(img1.png)
+ * @img(img2.png)
+ * @jdocs A button typically adheres to guidelines such as elevation, shape, and color to convey interactivity. It serves as a touchable surface with discernible feedback, promoting a consistent and intuitive user experience across mobile applications. Add a button using the `addButton` method like this:
+ * $$ btn = ui.addButton(parent, text, options, width, height) $$
+ * @param {uio-Layout} parent The layout where to add the button.
+ * @param {String} text The button text or the material icon text.
+ * @param {String} [options] A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nToggleable: `Toggle`, `Active`\nUtils: `Icon`, `NoRipple`, `Upload`, `Multiple`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @returns uio-Button
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setOnFileSelect ###
- * @brief setOnFileSelect
- * Sets a callback on file select
- * $$ btn.setOnFileSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["files"],"pTypes":["lst-An array of file objects selected."]}
+/**
+ * In case of `Upload`, you can specify `Multiple` to accept multiple files.
  */
 
 
-/** ### setToolTip ###
- * @brief setToolTip
- * Sets a tooltip when the button is hovered
- * $$ btn.setToolTip(title, pos) $$
- * @param {str} title The text of the tooltip
- * @param {str} pos Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
- */
+	/** ## Properties ##
+	 * @jdocs Here are the available setter and/or getter properties of the Button Component.
+	 * @prop {String} text Sets or returns the button text.
+	 * @prop {Number} badge Sets or returns the badge content. You can pass a `string`
+	 * @prop {String} badgeColor Sets or returns the color of the badge. Values can be `Primary` or `Secondary`
+	 * @prop {String} toolTip Sets or returns the tooltip text.
+	 * @prop {String} toolTipPosition Sets or returns the tooltip position. Values can be `left` `top` `right` or `bottom`
+	 * @prop {String} variant Sets or returns the variant of the button. Values can be `Contained` `Outlined` or `Text`
+	 * @prop {String} color Sets or returns the theme color of the button. Values can be `Default` `Primary` `Secondary` `Inherit`
+	 * @prop {String} textColor Sets or returns the text color in hexadecimal format. 
+	 * @prop {String} sizeVariant Sets or returns the size variant of the button. Values can be `small` `medium` or `large`
+	 * @prop {Number} cornerRadius Sets or returns the corner radius of the button.
+     * @prop {String} icon Sets or returns the material icon font use for the leading icon.
+     * @prop {String} acceptedFiles Sets or returns the accepted files for an upload button.
+     * @prop {Boolean} active Sets or returns the active state if button is `toggleable`.
+	 */
 
 
-/** ### setTextShadow ###
- * @brief setTextShadow
- * Sets a text-shadow to the button text
- * $$ btn.setTextShadow(radius, dx, dy, color) $$
- * @param {num} radius The radius in pixels
- * @param {num} dx The x-offset in pixels
- * @param {num} dy The y-offset in pixels
- * @param {str} color The color in hexadecimal `#rrggbb`
- */
+    /** @extern width */
 
 
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding of the button
- * $$ btn.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left The left padding in pixel.
- * @param {num} top The top padding in pixels,
- * @param {num} right The right padding in pixels.
- * @param {num} bottom The bottom padding in pixels.
- * @param {str} mode `px` `%`
- */
+    /** @extern height */
 
 
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the button
- * $$ btn.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern opacity */
 
 
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the component is touch
- * $$ btn.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
- */
+    /** @extern textSize */
 
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ btn.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
- */
+    /** @extern textColor */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ btn.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+    /** @extern rotation */
 
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ btn.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+    /** @extern fontFile */
 
 
-/** ### show ###
- * @brief show
- * Show the component
- * $$ btn.show() $$
- */
+    /** @extern visibility */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ btn.hide() $$
- */
+    /** @extern type */
 
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ btn.gone() $$
- */
+    /** @extern absWidth */
 
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ btn.destroy() $$
- */
+    /** @extern absHeight */
 
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ btn.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+    /** @extern backColor */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ btn.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
+    /** @extern backImage */
 
 
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ btn.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
+    /** @extern isVisible */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ btn.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
+    /** @extern top */
 
 
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ btn.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
+    /** @extern left */
 
 
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ btn.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
+    /** @extern absTop */
 
 
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ btn.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
+    /** @extern absLeft */
 
 
+    /** @extern parent */
 
-// ------------- SAMPLES ------------- 
+
+    /** @extern position */
 
 
-    
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+	/** ## Methods
+	 * @jdocs Here are the methods available for Button Component
+	 */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the button is touch. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
+     * $$ btn.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
+     */
+
+
+    /** ### setOnLongTouch
+     * Adds a callback handler when the button is long touch. The touch timer is about 500 milliseconds.
+     * $$ btn.setOnLongTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+	/** ### setOnFileSelect
+	 * Sets a callback on file select.
+	 * $$ btn.setOnFileSelect( callback ) $$
+	 * @param {Function} callback The callback function. ---> @arg {Array} files An array of file objects selected.
+	 */
+
+
+	/** ### setToolTip
+	 * Sets a tooltip when the button is hovered.
+	 * $$ btn.setToolTip( title, pos ) $$
+	 * @param {String} title The text of the tooltip
+	 * @param {String} [pos='top'] Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
+	 */
+
+
+	/** ### setTextShadow
+	 * Sets a text-shadow to the button text.
+	 * $$ btn.setTextShadow( radius, dx, dy, color ) $$
+	 * @param {Number} radius The radius in pixels
+	 * @param {Number} dx The x-offset in pixels
+	 * @param {Number} dy The y-offset in pixels
+	 * @param {String} color The color in hexadecimal `#rrggbb`
+	 */
+
+
+	/** ### setPadding
+	 * Sets the padding of the button.
+	 * $$ btn.setPadding( left, top, right, bottom, mode ) $$
+	 * @param {Number} [left] The left padding in pixel.
+	 * @param {Number} [top] The top padding in pixels,
+	 * @param {Number} [right] The right padding in pixels.
+	 * @param {Number} [bottom] The bottom padding in pixels.
+	 * @param {String} [mode='px'] Can be `px` `%`
+	 */
+
+
+    /** ### setCornerRadius
+     * Sets the corner radius of the button.
+     * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
+     * @param {Number} [tl] Top-left corner radius.
+     * @param {Number} [tr] Top-right corner radius.
+     * @param {Number} [bl] Bottom-left corner radius.
+     * @param {Number} [br] Bottom-right corner radius.
+     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Button variants
 class Main extends App
@@ -285,9 +278,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Button theme colors
 class Main extends App
@@ -319,9 +311,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Button sizes
 class Main extends App
@@ -351,9 +342,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Button tooltips
 class Main extends App
@@ -386,9 +376,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Button with icons
 class Main extends App
@@ -417,9 +406,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Buttons with badges
 class Main extends App
@@ -445,9 +433,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Upload button
 class Main extends App
@@ -473,9 +460,44 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
+/**
+@sample Toggleable Buttons
+class Main extends App {
+    onStart() {
+        // Creates a fullscreen layout with objects vertically centered
+        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY");
+
+        // Add margins to children
+        this.main.childMargins = "0.5rem";
+
+        // Add contained buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Primary,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Secondary,Toggle,Active");
+
+        // Add outlined buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Primary,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Outlined,Secondary,Toggle,Active");
+
+        // Add text buttons with theme color and  "Toggle" option
+        this.btn = ui.addButton(this.main, "Button", "Text,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Text,Primary,Toggle,Active");
+        this.btn = ui.addButton(this.main, "Button", "Text,Secondary,Toggle,Active");
+        
+        // Add a callback handler when all the buttons are click
+        this.main.children.map(m => m.setOnTouch( this.onTouch ));
+    }
+
+    onTouch( value ) {
+        ui.showPopup( ""+value );
+    }
+}
+ */
+
+
 /**
 @sample Python Button variants
 from hybrid import ui
@@ -496,9 +518,8 @@ def OnStart():
 def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
-    
-            
-    
+
+
 /**
 @sample Python Button theme colors
 from hybrid import ui
@@ -519,9 +540,8 @@ def OnStart():
 def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
-    
-            
-    
+
+
 /**
 @sample Python Button sizes
 from hybrid import ui
@@ -540,9 +560,8 @@ def OnStart():
 def onTouch(event):
     ui.showPopup( "Button is touch!" )
  */
-    
-            
-    
+
+
 /**
 @sample Python Button tooltips
 from hybrid import ui
@@ -563,9 +582,8 @@ def OnStart():
     btn4 = ui.addButton(main, "Bottom", "Contained,Primary")
     btn4.setToolTip("Tooltip on the bottom", "bottom")
  */
-    
-            
-    
+
+
 /**
 @sample Python Button with icons
 from hybrid import ui
@@ -584,9 +602,8 @@ def OnStart():
 
     btn4 = ui.addButton(main, "settings", "Secondary,Icon")
  */
-    
-            
-    
+
+
 /**
 @sample Python Buttons with badges
 from hybrid import ui
@@ -603,9 +620,8 @@ def OnStart():
     btn3 = ui.addButton(main, "With Badge", "Secondary,Outlined")
     btn3.setBadge("New", "Primary")
  */
-    
-            
-    
+
+
 /**
 @sample Python Upload button
 from hybrid import ui
@@ -620,5 +636,5 @@ def onFileSelect(files):
     file = files[0]
     ui.showPopup( f"{file.name} is selected." )
  */
-    
-            
+
+

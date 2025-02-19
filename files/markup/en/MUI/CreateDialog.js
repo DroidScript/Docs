@@ -4,25 +4,25 @@
 /** # CreateDialog #
  * @abbrev dlg
  * Creates a customizable materialize dialog.
- * $$ dlg = MUI.CreateDialog(title, body, okText, cancelText, divider) $$ 
+ * $$ dlg = MUI.CreateDialog(title, body?, okText?, cancelText?, divider?) $$
  * @param {str} title Title
- * @param {str} body Body text
- * @param {str} okText Truthy button text
- * @param {str} cancelText Falsey button text
- * @param {bin} divider Show divider or hide
+ * @param {str} [body] Body text
+ * @param {str} [okText] Truthy button text
+ * @param {str} [cancelText] Falsey button text
+ * @param {bin} [divider] Show divider or hide
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnTouch ###
  * Calls a function when buttons are click (prev. SetOnTouchOK)
  * $$ dlg.SetOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["isOkBtnClick","btnText"],"pTypes":["bin","str"]}
+ * @param {fnc_json} callback {"pNames":["isOk","btnText"],"pTypes":["bin","str"]}
  */
 
 
@@ -79,10 +79,10 @@
 /** @extern SetOnClose */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic & Light
 cfg.Light
@@ -110,9 +110,9 @@ function ShowDialog()
     dlg.Show()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Customize & Dark
 cfg.Dark
@@ -149,9 +149,9 @@ function OnTouch(val, btnTxt)
         app.ShowPopup("You decline the confirmation.")
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic & Light
 # cfg.Light, cfg.MUI
@@ -177,9 +177,9 @@ def OnStart():
 def ShowDialog():
     dlg.Show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Customize & Dark
 # cfg.Dark, cfg.MUI
@@ -212,5 +212,3 @@ def OnTouch(val, btnTxt):
     else:
         app.ShowPopup("You decline the confirmation.")
  */
-    
-            

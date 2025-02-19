@@ -1,247 +1,206 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addCheckbox #
+/** # Checkbox
  * @abbrev ckb
- * @brief addCheckbox
- * 
- * $$ ckb = ui.addCheckbox(parent, text, options, width, height) $$ 
- * @param {obj} parent The layout where to add the checkbox
- * @param {str} text The label for the checkbox
- * @param {str_com} options Colors: `Primary` `Secondary` `Medium` `Small` \n `Position`: `Left` `Top` `Right` `Bottom` \n `Variant`: `Indeterminate` `Determinate`
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- * @returns obj-Checkbox Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a checkbox control to the given layout.
-
-### Properties
-These are the setter and getter properties for the addCheckbox Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>checkIcon:"str:'Sets or returns the material icon font for check stated.'"</smp>
-<smp noinl>color:"str:'Sets or returns the theme color of the checkbox when checked. Values can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disable:"bin:'Enabled or disable the checkbox component.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>enabled:"bin:'Returns whether the Checkbox is enabled or disabled.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>iconColor:"str:'Sets or returns the color of the checkbox icon.'"</smp>
-<smp noinl>iconSize:"num:'Sets or returns the size of the icon.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>spaceBetween:"num:'Sets or returns the space between the checkbox icon and the label text.'"</smp>
-<smp noinl>text:"str:'Sets or returns the checkbox text.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textPosition:"str:'Sets or returns the text position. Values can be <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> <col nobox #fb8c00>bottom</col>'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>uncheckIcon:"str:'Sets or returns the material icon font for uncheck state.'"</smp>
-<smp noinl>value:"bin:'Sets or returns the checked state of the checkbox.'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
+ * A checkbox in UI development is a graphical control element that allows users to toggle between two states, typically checked or unchecked, to indicate a choice or selection.
+ * @img(img1.png)
+ * @img(img2.png)
+ * @jdocs In Material Design, checkboxes maintain a consistent appearance with rounded corners and adhere to elevation principles. Add a checkbox component using the `addCheckbox` method like this:
+ * $$ ckb = ui.addCheckbox(parent, text, options, width, height) $$
+ * @param {uio-Layout} parent The layout where to add the checkbox
+ * @param {String} text The label for the checkbox
+ * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nSizes: `Medium`, `Small`\nIcon position: `Left`, `Top`, `Right`, `Bottom`\nVariant: `Indeterminate`, `Determinate`
+ * @param {Number} [width] Fraction of the parent width `[0-1]`.
+ * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @returns uio-Checkbox
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds an event handler when the checkbox is touch
- * $$ ckb.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["check"],"pTypes":["bin-The checked state of the checkbox."]}
- */
-
-
-/** ### setIcon ###
- * @brief setIcon
- * Sets a custom icon for the checkbox
- * $$ ckb.setIcon(checked, unchecked) $$
- * @param {str} checked Material icon for checked state
- * @param {str} unchecked Material icon for unchecked state
- */
+    /** ## Properties
+     * @jdocs Here are the available setters and/or getters of the Checkbox Component.
+     * @prop {String} textPosition Sets or returns the text position. Values can be `left` `top` `right` `bottom`
+     * @prop {String} checkIcon Sets or returns the material icon font for check stated.
+     * @prop {String} uncheckIcon Sets or returns the material icon font for uncheck state.
+     * @prop {Boolean} value Sets or returns the checked state of the checkbox.
+     * @prop {Boolean} enabled Returns whether the Checkbox is enabled or disabled.
+     * @prop {String} color Sets or returns the theme color of the checkbox when checked. Values can be `Default` `Primary` or `Secondary`
+     * @prop {String} text Sets or returns the checkbox text.
+     * @prop {Boolean} disable Enabled or disable the checkbox component.
+     * @prop {Number} iconSize Sets or returns the size of the icon.
+     * @prop {String} iconColor Sets or returns the color of the checkbox icon.
+     * @prop {Number} spaceBetween Sets or returns the space between the checkbox icon and the label text.
+     */
 
 
-/** ### getIcon ###
- * @brief getIcon
- * Returns the icons of the form { checkIcon, uncheckedIcon
- * $$ ckb.getIcon() $$
- * @returns obj
- */
+    /** @extern width */
 
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ ckb.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
- */
+    /** @extern height */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ ckb.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+    /** @extern opacity */
 
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ ckb.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+    /** @extern textSize */
 
 
-/** ### show ###
- * @brief show
- * Show the component
- * $$ ckb.show() $$
- */
+    /** @extern textColor */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ ckb.hide() $$
- */
+    /** @extern rotation */
 
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ ckb.gone() $$
- */
+    /** @extern fontFile */
 
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ ckb.destroy() $$
- */
+    /** @extern visibility */
 
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ ckb.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+    /** @extern type */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ ckb.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
+    /** @extern absWidth */
 
 
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ ckb.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
+    /** @extern absHeight */
 
 
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ ckb.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
+    /** @extern backColor */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ ckb.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
+    /** @extern backImage */
 
 
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ ckb.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
+    /** @extern isVisible */
 
 
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the component
- * $$ ckb.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-Left border radius in pixels.
- * @param {num} tr Top-Right border radius in pixels.
- * @param {num} bl Bottom-Left border radius in pixels.
- * @param {num} br Bottom-Right border radius in pixels.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern top */
 
 
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ ckb.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
+    /** @extern left */
 
 
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ ckb.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
+    /** @extern absTop */
 
 
+    /** @extern absLeft */
 
-// ------------- SAMPLES ------------- 
+
+    /** @extern parent */
 
 
-    
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+	/** ## Methods
+	 * @jdocs Here are the methods available for Checkbox Component
+	 */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** ### setOnTouch
+     * Adds an event handler when the checkbox is touch.
+     * $$ ckb.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Boolean} check The checked state of the checkbox. @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setIcon
+     * Sets a custom icon for the checkbox.
+     * $$ ckb.setIcon( checked, unchecked ) $$
+     * @param {String} checked Material icon for checked state
+     * @param {String} unchecked Material icon for unchecked state
+     */
+
+
+    /** ### getIcon
+     * Returns the icons of the form { checkIcon, uncheckedIcon }.
+     * $$ ckb.getIcon() $$
+     * @returns Object { checkIcon, uncheckedIcon }
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Basic
 class Main extends App
@@ -264,9 +223,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Colors
 class Main extends App
@@ -298,9 +256,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Text positions
 class Main extends App
@@ -334,9 +291,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Adding custom checkbox icon
 class Main extends App
@@ -363,9 +319,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -383,9 +338,8 @@ def OnStart():
 def onTouch(value):
     ui.showPopup(f"Value is {value}")
  */
-    
-            
-    
+
+
 /**
 @sample Python Colors
 from hybrid import ui
@@ -413,9 +367,8 @@ def OnStart():
 def onTouch(value):
     ui.showPopup(f"Value is {value}")
  */
-    
-            
-    
+
+
 /**
 @sample Python Text positions
 from hybrid import ui
@@ -444,9 +397,8 @@ def OnStart():
 def onTouch(value):
     ui.showPopup(f"Value is {value}")
  */
-    
-            
-    
+
+
 /**
 @sample Python Adding custom checkbox icon
 from hybrid import ui
@@ -468,5 +420,5 @@ def OnStart():
 def onTouch(value):
     ui.showPopup(f"Value is {value}")
  */
-    
-            
+
+

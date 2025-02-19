@@ -3,13 +3,13 @@
 
 /** # GetInstalledApps #
  * @brief Get data about installed apps
- * 
- * $$ app.GetInstalledApps() $$ 
+ *
+ * $$ app.GetInstalledApps() $$
  * @returns lst-[{ packageName:str&comma; className:str&comma; uid:num_int&comma; targetSdkVersion:num_int&comma; dataDir:str_pth&comma; sourceDir:str_pth&comma; publicSourceDir:str_pth&comma; nativeLibraryDir:str_pth }]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Returns a list of objects containing informations about installed apps.
@@ -22,10 +22,10 @@ See Also: @GetRunningApps, @GetRunningServices
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show installed apps
 function OnStart()
@@ -49,9 +49,9 @@ function OnStart()
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show installed apps
 from native import app
@@ -74,5 +74,3 @@ def OnStart():
 
     app.HideProgress()
  */
-    
-            

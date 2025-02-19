@@ -4,22 +4,22 @@
 /** # AddButton #
  * @abbrev btn
  * Adds a MUI button to a given layout. See @CreateButtonElegant, @CreateButtonFlat, @CreateButtonRaised, @CreateButtonRaisedO, @CreateButtonRound, and @CreateButtonRoundO for full documentation
- * $$ btn = MUI.AddButton(parent, text, width, height, options) $$ 
+ * $$ btn = MUI.AddButton(parent, text, width=-1, height=-1, options?) $$
  * @param {dso} parent @../app/CreateLayout
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} options raised|raisedo|roundo|round|elegant|outlined|contained|text|flat
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str} [options] raised|raisedo|roundo|round|elegant|outlined|contained|text|flat
  * @returns obj
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample AddButton
 cfg.Light
@@ -44,9 +44,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python AddButton
 # cfg.Light, cfg.MUI
@@ -70,5 +70,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

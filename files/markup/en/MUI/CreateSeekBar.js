@@ -4,18 +4,18 @@
 /** # CreateSeekBar #
  * @abbrev skb
  * An MUI implementation of a basic seekbar.
- * $$ skb = MUI.CreateSeekBar(value, range, width, color) $$ 
+ * $$ skb = MUI.CreateSeekBar(value, range=100, width?, color?) $$
  * @param {num} value Must be between 0 and range
- * @param {num} range The maximum value of your seekbar
- * @param {num} width 
- * @param {str_col} color 
+ * @param {num} [range=100] The maximum value of your seekbar
+ * @param {num} [width]
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### GetValue ###
@@ -68,7 +68,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ skb.GetType() $$
  * @returns str-Seekbar
  */
@@ -95,10 +95,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -123,9 +123,9 @@ function OnTouch(value)
     app.ShowPopup(value)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -147,5 +147,3 @@ def OnStart():
 def OnTouch(value):
     app.ShowPopup(value)
  */
-    
-            

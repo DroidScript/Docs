@@ -4,18 +4,18 @@
 /** # ToBack #
  * @brief Put the app in the background
  * Hides the app but continue running it in the background. If called, the global _OnPause_ event will be fired and if reshown, _OnResume_ is fired.
- * 
+ *
  * See Also: @ToFront
- * $$ app.ToBack() $$ 
+ * $$ app.ToBack() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample App to Background
 function OnStart()
@@ -34,9 +34,9 @@ function OnResume()
     app.ShowPopup( "OnResume" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python App to Background
 from native import app
@@ -51,5 +51,3 @@ def OnPause():
 def OnResume():
     app.ShowPopup("OnResume")
  */
-    
-            

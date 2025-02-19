@@ -4,17 +4,17 @@
 /** # CreateToggle #
  * @abbrev tgl
  * @brief Returns a new Toggle object
- * 
- * $$ tgl = app.CreateToggle(text, width, height, options) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options Monospace,Custom,NoPad,FillX/Y,NoSound
+ *
+ * $$ tgl = app.CreateToggle(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options] Monospace,Custom,NoPad,FillX/Y,NoSound
  * @returns dso-Toggle
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Toggle buttons are basically [Buttons](CreateButton.htm) with an additional light bar indicating if it is activated or not. The user can toggle this state by pressing on it.
@@ -28,7 +28,7 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -36,6 +36,8 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -106,7 +108,7 @@ You can get the state of the toggle button at any time using the **GetChecked** 
  * @brief Change the checked state
  * Change the current checked state of the toggle.
  * $$ tgl.SetChecked(checked) $$
- * @param {bin} checked 
+ * @param {bin} checked
  */
 
 
@@ -137,13 +139,14 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** ### SetStyle ###
  * @brief Customize the button looks
  * Costomize the look of the toggle.
- * $$ tgl.SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} color1 
- * @param {str_col} color2 
- * @param {num_pxl} radius 
- * @param {str_col} strokeClr 
- * @param {num_pxl} strokeWidth 
- * @param {num_frc} shadow 
+ * $$ tgl.SetStyle(color1='sky', color2='sky', radius=0, strokeClr='sky', strokeWidth=0, shadow=0, checkClr?) $$
+ * @param {str_col} [color1='sky']
+ * @param {str_col} [color2='sky']
+ * @param {num_pxl} [radius=0]
+ * @param {str_col} [strokeClr='sky']
+ * @param {num_pxl} [strokeWidth=0]
+ * @param {num_frc} [shadow=0]
+ * @param {str_col} [checkClr]
  */
 
 
@@ -162,10 +165,10 @@ You can get the state of the toggle button at any time using the **GetChecked** 
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -184,11 +187,11 @@ function ShowState( isChecked )
     app.ShowPopup( "Checked = " + isChecked, "Short" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -203,5 +206,4 @@ def OnStart():
 def ShowState( isChecked ):
     app.ShowPopup( "Checked = " + str(isChecked), "Short" )
  */
-    
-            
+

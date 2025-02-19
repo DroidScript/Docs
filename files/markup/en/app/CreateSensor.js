@@ -4,15 +4,15 @@
 /** # CreateSensor #
  * @abbrev sns
  * @brief Returns a new Sensor object
- * 
- * $$ sns = app.CreateSensor(type, options) $$ 
+ *
+ * $$ sns = app.CreateSensor(type, options?) $$
  * @param {str} type Accelerometer|MagneticField|Orientation|Light|Proximity|Temperature|GameRotation|GeomagneticRotation|Gravity|Gyroscope|HeartRate|Acceleration|Pressure|Humidity|RotationMotion|StepCounter|StepDetector
- * @param {str_com} options Slow|Medium|Fast|Fastest
+ * @param {str_com} [options] Slow|Medium|Fast|Fastest
  * @returns dso-Sensor
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The sensor object can be used to access numerous sensors of your device. You can use the **SetOnChange** function of the Sensor to set the name of a function you want to be called when a the changes occur.
@@ -22,10 +22,12 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### GetAzimuth ###
  * @brief Get first value of a sensor
@@ -79,7 +81,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
  * @brief Set maximum OnChange rate
  * Define a minimum timeout between two OnChage calls.
  * $$ sns.SetMaxRate(rate) $$
- * @param {num_mls} rate 
+ * @param {num_mls} rate
  */
 
 
@@ -87,7 +89,7 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
  * @brief Set minimum value difference which triggers OnChange
  * Define a minimum threshold value which triggers a OnChange call.
  * $$ sns.SetMinChange(min) $$
- * @param {num} min 
+ * @param {num} min
  */
 
 
@@ -114,10 +116,10 @@ Change the rate that a sensor checks for changes by adding one the options “Fa
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample GetNames
 function OnStart()
@@ -127,83 +129,83 @@ function OnStart()
     app.Alert(names.replace(/,/g, ",\n"), "Sensor Names");</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Accelerometer
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
-	lay.AddChild( txt );
-	app.AddLayout( lay );
+    txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
+    lay.AddChild( txt );
+    app.AddLayout( lay );
 
-	<b>sns = app.CreateSensor( "Accelerometer" );
-	sns.SetOnChange( sns_OnChange );
-	sns.Start();</b>
+    <b>sns = app.CreateSensor( "Accelerometer" );
+    sns.SetOnChange( sns_OnChange );
+    sns.Start();</b>
 
 }
 
 function sns_OnChange( x, y, z, time )
 {
-	txt.SetText( "x=" + x + "\n y=" + y + "\n z=" + z );
+    txt.SetText( "x=" + x + "\n y=" + y + "\n z=" + z );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Orientation
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
-	lay.AddChild( txt );
-	app.AddLayout( lay );
+    txt = app.CreateText( "", 0.8, 0.3, "Multiline" );
+    lay.AddChild( txt );
+    app.AddLayout( lay );
 
-	<b>sns = app.CreateSensor( "Orientation" );
-	sns.SetOnChange( sns_OnChange );
-	sns.Start();</b>
+    <b>sns = app.CreateSensor( "Orientation" );
+    sns.SetOnChange( sns_OnChange );
+    sns.Start();</b>
 
 }
 
 function sns_OnChange( azimuth, pitch, roll, time )
 {
-	var msg = " azimuth = " + azimuth.toFixed(1);
-	msg += "\n pitch = " + pitch.toFixed(1);
-	msg += "\n roll = " + roll.toFixed(1);
-	txt.SetText( msg );
+    var msg = " azimuth = " + azimuth.toFixed(1);
+    msg += "\n pitch = " + pitch.toFixed(1);
+    msg += "\n roll = " + roll.toFixed(1);
+    txt.SetText( msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Light
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "", 0.8, 0.3 );
-	lay.AddChild( txt );
-	app.AddLayout( lay );
+    txt = app.CreateText( "", 0.8, 0.3 );
+    lay.AddChild( txt );
+    app.AddLayout( lay );
 
-	<b>sns = app.CreateSensor( "Light" );
-	sns.SetOnChange( sns_OnChange );
-	sns.Start();</b>
+    <b>sns = app.CreateSensor( "Light" );
+    sns.SetOnChange( sns_OnChange );
+    sns.Start();</b>
 }
 
 function sns_OnChange( lux )
 {
-	txt.SetText( "level = " + lux + " lux" );
+    txt.SetText( "level = " + lux + " lux" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python GetNames
 from native import app
@@ -213,9 +215,9 @@ def OnStart():
     names = sns.GetNames()
     app.Alert(names.replace(",", ",\n"), "Sensor Names")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Accelerometer
 from native import app
@@ -235,9 +237,9 @@ def OnStart():
 def sns_OnChange(x, y, z, time):
     txt.SetText("x=" + str(x) + "\n y=" + str(y) + "\n z=" + str(z))
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Orientation
 from native import app
@@ -260,9 +262,9 @@ def sns_OnChange(azimuth, pitch, roll, time):
     msg += "\n roll = " + str(roll)
     txt.SetText(msg)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Light
 from native import app
@@ -282,5 +284,3 @@ def OnStart():
 def sns_OnChange(lux, second, third, time):
     txt.SetText("level = " + str(lux) + " lux")
  */
-    
-            

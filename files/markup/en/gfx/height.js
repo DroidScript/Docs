@@ -4,8 +4,6 @@
 /** # height #
  * @prop
  * Display height in pixels
- * $$ gfx.height() $$ 
+ * $$ gfx.height $$
  * @returns num_pxl
 */
-
-

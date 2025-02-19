@@ -4,39 +4,41 @@
 /** # CreateNetClient #
  * @abbrev net
  * @brief Returns a new NetClient object
- * 
- * $$ net = app.CreateNetClient(type) $$ 
- * @param {str} type UDP:fast but does not guarantee data correctness|TCP:slow but guarantees data correctness,Raw:drop 4 Byte header before every message
+ *
+ * $$ net = app.CreateNetClient(type) $$
+ * @param {str_lst} type UDP:fast but does not guarantee data correctness|TCP:slow but guarantees data correctness,Raw:drop 4 Byte header before every message
  * @returns dso-NetClient
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 NetClients can be used to communicate with servers on the web. You can choose between two different protocols:
-	The connection based _**T**ransmission**C**ontrol**P**rotocol_ which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.
-	The connectionless _**U**ser**D**atagram**P**rotocol_ which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.
+    The connection based _**T**ransmission**C**ontrol**P**rotocol_ which always checks if the data was received correctly and in right order. It is used in most cases because it is very reliable. The downside is that it is relatively slow becaus of the numerous checks.
+    The connectionless _**U**ser**D**atagram**P**rotocol_ which sends the data once without any checks so that packages may be corrupt or lost completely during the transmission. Because of that data can be sent as fast as possible and it suits perfectly for games which need a fast update rate between the devices.
 
 Note: A few routers block fast UDP messages by default
  */
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AutoReceive ###
  * @brief Calls the OnReceive callback for incoming TCP data
  * Receive TCP received data automatically by calling the OnReceive callback.
- * $$ net.AutoReceive(server, port, mode) $$
- * @param {str_url} server 
- * @param {num_int} port 
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * $$ net.AutoReceive(server, port=80, mode?) $$
+ * @param {str_url} server
+ * @param {num_int} [port=80]
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  */
 
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### Close ###
  * Closes the NetClient socket.
@@ -47,9 +49,9 @@ Note: A few routers block fast UDP messages by default
 /** ### Connect ###
  * @brief Connect to a server
  * Connect the NetClient to a server.
- * $$ net.Connect(address, port) $$
- * @param {str_url} address 
- * @param {num_int} port 
+ * $$ net.Connect(address, port=80) $$
+ * @param {str_url} address
+ * @param {num_int} [port=80]
  */
 
 
@@ -63,7 +65,7 @@ Note: A few routers block fast UDP messages by default
 /** ### DownloadFile ###
  * Downloads a file via TCP from the server.
  * $$ net.DownloadFile(file) $$
- * @param {str_url} file 
+ * @param {str_url} file
  */
 
 
@@ -85,6 +87,7 @@ Note: A few routers block fast UDP messages by default
  * @brief Get NetClient connected state
  * Checks if the NetClient is connected to a server.
  * $$ net.IsConnected() $$
+ * @returns bin
  */
 
 
@@ -100,11 +103,11 @@ Note: A few routers block fast UDP messages by default
 
 /** ### ReceiveDatagram ###
  * Receive an UDP Datagram.
- * $$ net.ReceiveDatagram(mode, port, timeout, options) $$
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {num_int} port 
- * @param {num} timeout 
- * @param {str} options &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
+ * $$ net.ReceiveDatagram(mode?, port=80, timeout?, options?) $$
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * @param {num_int} [port=80]
+ * @param {num} [timeout]
+ * @param {str_com} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
  * @returns str
  */
 
@@ -112,18 +115,18 @@ Note: A few routers block fast UDP messages by default
 /** ### ReceiveDatagrams ###
  * @brief Receive UDP datagrams
  * Receive datagrams over UDP and calls the OnReceive callback for each one.
- * $$ net.ReceiveDatagrams(port, mode, options) $$
- * @param {num_int} port 
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {str} options &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
+ * $$ net.ReceiveDatagrams(port=80, mode?, options?) $$
+ * @param {num_int} [port=80]
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * @param {str_com} [options] &lt;BUFSIZ:"“1k,2k,4k,8k,16k,32k,64k”"&gt;
  */
 
 
 /** ### ReceiveFile ###
  * Receive a file via TCP from the server.
- * $$ net.ReceiveFile(file, wait) $$
- * @param {str} file 
- * @param {num} wait 
+ * $$ net.ReceiveFile(file, wait?) $$
+ * @param {str} file
+ * @param {num} [wait]
  * @returns str
  */
 
@@ -131,8 +134,8 @@ Note: A few routers block fast UDP messages by default
 /** ### ReceiveText ###
  * @brief Receive text over TCP
  * Receive text from TCP connection.
- * $$ net.ReceiveText(mode) $$
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * $$ net.ReceiveText(mode?) $$
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  * @returns str
  */
 
@@ -140,10 +143,10 @@ Note: A few routers block fast UDP messages by default
 /** ### ReceiveVideoStream ###
  * @brief Receive video over UDP
  * Receive video from TCP connection.
- * 
+ *
  * <premium>
  * $$ net.ReceiveVideoStream(port, img) $$
- * @param {num} port 
+ * @param {num} port
  * @param {dso} img CreateImage
  * @returns str
  */
@@ -151,28 +154,28 @@ Note: A few routers block fast UDP messages by default
 
 /** ### SendBytes ###
  * Send bytes over TCP connection.
- * $$ net.SendBytes(data, mode) $$
+ * $$ net.SendBytes(data, mode?) $$
  * @param {lst} data [ bytes:num_byt ]||str_com-bytes:hexadecimal 00&period;&period;FF
- * @param {str} mode Int|Hex
+ * @param {str} [mode] Int|Hex
  */
 
 
 /** ### SendDatagram ###
  * Send an UDP Datagram.
- * $$ net.SendDatagram(data, mode, address, port, options) $$
- * @param {str} data 
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
- * @param {str_url} address 
- * @param {num_int} port 
- * @param {str} options Text|Hex|Bytes
+ * $$ net.SendDatagram(data, mode?, address?, port?, options?) $$
+ * @param {str} data
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * @param {str_url} [address]
+ * @param {num_int} [port]
+ * @param {str} [options] Text|Hex|Bytes
  */
 
 
 /** ### SetDataMode ###
  * @brief Define data format for outgoing data
  * Enable sending data in several modes.
- * $$ net.SetDataMode(mode) $$
- * @param {str} mode Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:"UTF-16L/BE"&gt;
+ * $$ net.SetDataMode(mode?) $$
+ * @param {str} [mode] Hex:comma separated text value|Int:comma separated byte numbers|Text:string of text characters|&lt;encoding:"UTF-16L/BE"&gt;
  */
 
 
@@ -181,18 +184,18 @@ Note: A few routers block fast UDP messages by default
  * Tells AutoReceive how to split received data. Splitted data will result in multiple OnReceive calls.
  * p2 and p3 have different purposes for different modes:
  * <table><tr><th>mode</th><th>p1</th><th>p2</th></tr><tr><td>Size</td><td>Size of one data package</td><td>-</td></tr><tr><td>End</td><td>Byte indicating end of data</td><td>-</td></tr><tr><td>Start-End</td><td>Byte indicating start of data</td><td>Byte indicating end of data</td></tr></table>
- * $$ net.SetSplitMode(mode, p2, p3) $$
+ * $$ net.SetSplitMode(mode, p2?, p3?) $$
  * @param {str} mode End|Start-End|Size
- * @param {str||num_int} p2 
- * @param {str||num_int} p3 
+ * @param {str||num_int} [p2]
+ * @param {str||num_int} [p3]
  */
 
 
 /** ### SendText ###
  * Sends text over TCP connection.
- * $$ net.SendText(text, mode) $$
- * @param {str} text 
- * @param {str} mode US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
+ * $$ net.SendText(text, mode?) $$
+ * @param {str} text
+ * @param {str} [mode] US-ASCII|UTF-8|UTF-16LE|UTF-16BE|UTF-16
  */
 
 
@@ -224,26 +227,26 @@ Note: A few routers block fast UDP messages by default
  * @brief Timeout between two receive checks
  * Define an interval in which the client should check for new messages.
  * $$ net.SetTimeout(seconds) $$
- * @param {num_sec} seconds 
+ * @param {num_sec} seconds
  */
 
 
 /** ### WakeOnLan ###
  * @brief Wake up devices if they are configured to
  * Wakes up PC's (and perhaps other devices) when the BIOS/device is configured for it.
- * 
+ *
  * <premium>
- * $$ net.WakeOnLan(ip, mac) $$
- * @param {str} ip 
- * @param {str} mac 
+ * $$ net.WakeOnLan(ip, mac?) $$
+ * @param {str} ip
+ * @param {str} [mac]
  */
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample TCP Basic
 function OnStart()
@@ -253,26 +256,26 @@ function OnStart()
     web = app.CreateWebView( 1, .5, "ignoreerrors" );
     lay.AddChild( web );
 
-	txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" );
-	txt.SetTextSize( 12 );
-	lay.AddChild( txt );
+    txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" );
+    txt.SetTextSize( 12 );
+    lay.AddChild( txt );
 
     app.AddLayout( lay );
 
-	<b>net = app.CreateNetClient( "TCP,Raw" );
-	net.SetOnConnect( net_OnConnect );
-	net.Connect( "www.randomfunfacts.com", 80 );</b>
+    <b>net = app.CreateNetClient( "TCP,Raw" );
+    net.SetOnConnect( net_OnConnect );
+    net.Connect( "www.randomfunfacts.com", 80 );</b>
 }
 
 function net_OnConnect( connected )
 {
-	if( !connected ) return app.ShowPopup( "Failed to connect!" );
+    if( !connected ) return app.ShowPopup( "Failed to connect!" );
 
-	net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
+    net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
 
-	var msg = "", s = "";
-	do msg += s = net.ReceiveText( "UTF-8" );
-	while( s.length > 0 );
+    var msg = "", s = "";
+    do msg += s = net.ReceiveText( "UTF-8" );
+    while( s.length > 0 );
 
     txt.SetText( msg );
     web.LoadHtml( msg );
@@ -280,9 +283,9 @@ function net_OnConnect( connected )
     net.Disconnect();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample TCP AutoReceive
 function OnStart()
@@ -292,27 +295,27 @@ function OnStart()
     web = app.CreateWebView( 1, .5, "ignoreerrors" );
     lay.AddChild( web );
 
-	txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" );
-	txt.SetTextSize( 12 );
-	lay.AddChild( txt );
+    txt = app.CreateTextEdit( "", 1, .5, "ReadOnly,NoKeyboard" );
+    txt.SetTextSize( 12 );
+    lay.AddChild( txt );
 
     app.AddLayout( lay );
 
-	<b>net = app.CreateNetClient( "TCP,Raw" );
-	net.SetOnConnect( net_OnConnect );
-	net.SetOnReceive( OnReceive );
-	net.AutoReceive( "www.randomfunfacts.com", 80, "UTF-8" );</b>
+    <b>net = app.CreateNetClient( "TCP,Raw" );
+    net.SetOnConnect( net_OnConnect );
+    net.SetOnReceive( OnReceive );
+    net.AutoReceive( "www.randomfunfacts.com", 80, "UTF-8" );</b>
 }
 
 var sent = false;
 function net_OnConnect( connected )
 {
-	if( !connected ) return app.ShowPopup( "Failed to connect!" );
+    if( !connected ) return app.ShowPopup( "Failed to connect!" );
 
     if( sent ) return sent = msg != "";
     else sent = true;
 
-	net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
+    net.SendText( "GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8" );
 }
 
 var msg = "";
@@ -328,9 +331,9 @@ function OnReceive( s )
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample UDP Messaging
 function OnStart()
@@ -371,9 +374,9 @@ function CheckForMsg()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python TCP Basic
 from native import app
@@ -414,9 +417,9 @@ def net_OnConnect(connected):
 
     net.Disconnect()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python TCP AutoReceive
 from native import app
@@ -462,9 +465,9 @@ def OnReceive(s):
         web.LoadHtml(msg)
         msg = ""
  */
-    
-            
-    
+
+
+
 /**
 @sample Python UDP Messaging
 from native import app
@@ -500,5 +503,3 @@ def CheckForMsg():
         if parts[0] != id:
             app.ShowPopup(parts[1])
  */
-    
-            

@@ -4,17 +4,17 @@
 /** # CreateAlertSimple #
  * @abbrev als
  * Create a simple alert with a single button.
- * $$ als = MUI.CreateAlertSimple(text, btnText, color) $$ 
+ * $$ als = MUI.CreateAlertSimple(text, btnText='OKAY', color?) $$
  * @param {str} text Text of the alert
- * @param {str} btnText Button text. Default is OKAY
- * @param {str_col} color 
+ * @param {str} [btnText='OKAY'] Button text.
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern GetVisibility */
@@ -69,10 +69,10 @@
 /** @extern SetVisibility */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Simple
 cfg.Light
@@ -88,9 +88,9 @@ function OnStart()
     als.Show()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Custom
 cfg.Light
@@ -113,9 +113,9 @@ function CloseAlert()
     als.Hide()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark
 cfg.Dark
@@ -149,9 +149,9 @@ function AlertOnTouch(val)
     app.ShowPopup(val)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Simple
 # cfg.Light, cfg.MUI
@@ -167,9 +167,9 @@ def OnStart():
     als = MUI.CreateAlertSimple(text)
     als.Show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Custom
 # cfg.Light, cfg.MUI
@@ -191,9 +191,9 @@ def OnStart():
 def CloseAlert():
     als.Hide()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark
 # cfg.Dark, cfg.MUI
@@ -224,5 +224,3 @@ def ShowAlert():
 def AlertOnTouch(val):
     app.ShowPopup(val)
  */
-    
-            

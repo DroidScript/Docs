@@ -4,19 +4,19 @@
 /** # DestroyLayout #
  * @brief Destroy a layout
  * DestroyLayout destroys a layout and all its contents so it can't be used any more. As a result, all memory occupied by these objects will be released.
- * 
+ *
  * See Also: @CreateLayout, @AddLayout
- * $$ app.DestroyLayout(layout) $$ 
+ * $$ app.DestroyLayout(layout) $$
  * @param {dso} layout CreateLayout
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Destroy layout and check if deleted
 //Called when application is started.
@@ -39,9 +39,9 @@ function btn_OnTouch()
 	app.ShowPopup(text);
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Destroy layout and check if deleted
 from native import app
@@ -62,5 +62,3 @@ def btn_OnTouch():
     text = this.GetText() or "nothing in here!"
     app.ShowPopup(text)
  */
-    
-            

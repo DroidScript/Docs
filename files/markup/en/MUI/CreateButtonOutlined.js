@@ -4,17 +4,18 @@
 /** # CreateButtonOutlined #
  * @abbrev bto
  * An outlined material button
- * $$ bto = MUI.CreateButtonOutlined(text, width, height) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
+ * $$ bto = MUI.CreateButtonOutlined(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str} [options]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -23,13 +24,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -51,7 +49,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ bto.GetType() $$
  * @returns str-Button
  */
@@ -109,17 +107,7 @@
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * 
- * $$ bto.SetStyle(clr1, clr2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} clr1 
- * @param {str_col} clr2 
- * @param {num} radius 
- * @param {str_col} strokeClr 
- * @param {num} strokeWidth 
- * @param {num} shadow 
- */
-
+/** @extern SetStyle */
 
 /** @extern SetText */
 

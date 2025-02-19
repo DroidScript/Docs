@@ -8,7 +8,7 @@ function hidecopy() {
 
 function copy(id) {
 	var codeClass = curMode === "py" ? '.code-py' : '.code-js';
-	var div = document.querySelector('#' + id + codeClass);
+	var div = typeof id == "object" ? id : document.querySelector('#' + id + codeClass);
 	var txt = (div.innerText || div.textContent).replace(/\xa0/g, " ");
 	if (isMobileIDE) {
 		app.SetClipboardText(txt);
@@ -19,7 +19,7 @@ function copy(id) {
 
 function demo(id) {
 	var codeClass = curMode === "py" ? '.code-py' : '.code-js';
-	var div = document.querySelector('#' + id + codeClass);
+	var div = typeof id == "object" ? id : document.querySelector('#' + id + codeClass);
 	var code = (div.innerText || div.textContent).replace(/\xa0/g, ' ');
 	if (isMobileIDE) {
 		const dir = "/sdcard/.DroidScript/Example/";

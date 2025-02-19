@@ -4,22 +4,22 @@
 /** # WriteFile #
  * @brief Write text to a local file
  * Writes text to a local file.
- * 
+ *
  * See Also: @ReadFile.
- * $$ app.WriteFile(file, text, mode, encoding) $$ 
- * @param {str_ptf} file 
- * @param {str} text 
- * @param {str} mode Append|ASCII
- * @param {str} encoding US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1
+ * $$ app.WriteFile(file, text, mode?, encoding?) $$
+ * @param {str_ptf} file
+ * @param {str} text
+ * @param {str} [mode] Append|ASCII|Base64
+ * @param {str} [encoding] US-ASCII|UTF-8|UTF-16|UTF-16BE|UTF-16LE|windows-1252|ISO-8859-1:Latin-1
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Append file and get line count
 function OnStart()
@@ -31,9 +31,9 @@ function OnStart()
     app.ShowPopup("myFile contains " + length + " lines");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Append file and get line count
 from native import app
@@ -45,5 +45,3 @@ def OnStart():
     length = len(txt.split("\n"))
     app.ShowPopup("myFile contains " + str(length) + " lines")
  */
-    
-            

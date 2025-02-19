@@ -4,20 +4,20 @@
 /** # ShowKeyboard #
  * @brief Show keyboard on a focussed control
  * Shows the keyboard on a focussed control.
- * 
+ *
  * See Also: @HideKeyboard
- * $$ app.ShowKeyboard(obj) $$ 
- * @param {dso} obj 
+ * $$ app.ShowKeyboard(obj) $$
+ * @param {dso} obj
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -33,9 +33,9 @@ function OnStart()
 	app.ShowKeyboard( edt );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Toggle Keyboard
 function OnStart()
@@ -59,9 +59,9 @@ function tgl_OnTouch( show )
 	else app.HideKeyboard();</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -77,9 +77,9 @@ def OnStart():
 
     app.ShowKeyboard(edt)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Toggle Keyboard
 from native import app
@@ -104,5 +104,3 @@ def tgl_OnTouch(show):
     else:
         app.HideKeyboard()
  */
-    
-            

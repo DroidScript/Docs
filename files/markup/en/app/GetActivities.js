@@ -2,13 +2,13 @@
 
 
 /** # GetActivities #
- * 
- * $$ app.GetActivities() $$ 
+ *
+ * $$ app.GetActivities() $$
  * @returns lst-[{ label:str&comma; packageName:str&comma; className:str }]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 GetActivities returns a list of object of currently running activities.
@@ -21,10 +21,10 @@ See Also: @GetRunningApps, @GetRunningServices
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Activities
 function OnStart()
@@ -48,9 +48,9 @@ function OnStart()
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Activities
 from native import app
@@ -73,5 +73,3 @@ def OnStart():
 
     app.HideProgress()
  */
-    
-            

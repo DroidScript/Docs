@@ -3,21 +3,21 @@
 
 /** # RemovePermission #
  * Removes a granted permission
- * 
+ *
  * See Also: @GetPermission @CheckPermission @ListPermissions
- * $$ app.RemovePermission(uri) $$ 
- * @param {str_uri} uri 
+ * $$ app.RemovePermission(uri) $$
+ * @param {str_uri} uri
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 function OnStart()
 {
 	var lay = app.CreateLayout( "linear", "VCenter,FillXY" )
@@ -38,11 +38,11 @@ function btn_OnTouch()
     }
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -61,5 +61,3 @@ def btn_OnTouch():
         app.RemovePermission(perm)
         app.ShowPopup("Removed " + perm)
  */
-    
-            

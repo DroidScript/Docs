@@ -1,0 +1,10 @@
+[
+  { "title": "Video Player", "desc": "Simple video player", "type": "js" },
+  { "title": "Video Stream", "desc": "Video streaming sample", "type": "js" },
+  { "title": "YouTube Player", "desc": "Play a list of YouTube videos", "type": "js" },
+  { "title": "Camera Record", "desc": "Record video to sdcard", "type": "js" },
+  { "title": "Camera Stream PC", "desc": "Stream video from camera to PC", "type": "js" },
+  { "title": "Query Videos", "desc": "Query the device for Videos", "isPremium": true, "exclude": "iot", "type": "js" },
+  { "title": "Camera Stream Transmit", "desc": "Transmit camera feed to another phone via Wifi", "isPremium": true, "exclude": "iot,tv", "type": "js" },
+  { "title": "Camera Stream Receive", "desc": "Recieve camera feed from another phone via Wifi", "isPremium": true, "exclude": "iot,tv", "type": "js" }
+]

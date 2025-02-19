@@ -6,24 +6,26 @@
  * @brief Returns a new Nxt object
  * The NXT object is used to manage the connection between your Android phone and the Lego Mindstorms NXT brick.
  * <deprecated Please install and visit the NXT-Docs from the Plugins page>
- * $$ nxt = app.CreateNxt() $$ 
+ * $$ nxt = app.CreateNxt() $$
  * @returns dso-Nxt
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Beep ###
  * @brief Play frequency tone
  * Play tone with given frequency for a given time in milliseconds.
- * $$ nxt.Beep(frequency, duration) $$
- * @param {num_hrz} frequency 
- * @param {num_mls} duration 
+ * $$ nxt.Beep(frequency, duration?) $$
+ * @param {num_hrz} frequency
+ * @param {num_mls} [duration]
  */
 
 
@@ -31,7 +33,7 @@
  * @brief Brakes motors smoothly
  * Brakes motors by lowering the input power.
  * $$ nxt.Brake(motors) $$
- * @param {str} motors A,B,C|ABC
+ * @param {str} motors A,B,C,AB,AC,BC,ABC
  */
 
 
@@ -47,7 +49,7 @@
  * @brief Connect to NXT
  * Connects to the NXT device via Bluetooth.
  * $$ nxt.Connect(name) $$
- * @param {str} name 
+ * @param {str} name
  */
 
 
@@ -60,11 +62,11 @@
 
 /** ### Drive ###
  * commands NXT to drive motors
- * $$ nxt.Drive(motors, power, rotations, options) $$
- * @param {str} motors A,B,C|ABC
- * @param {num_prc} power 
- * @param {num_prc} rotations -100..100
- * @param {num_flt} options 0|rotations
+ * $$ nxt.Drive(motors, power, rotations?, options?) $$
+ * @param {str} motors A,B,C,AB,AC,BC,ABC
+ * @param {num_prc} power
+ * @param {num_prc} [rotations] -100..100
+ * @param {str} [options]
  */
 
 
@@ -72,7 +74,7 @@
  * @brief Find first program file
  * Find the first program file of the NXT.
  * $$ nxt.FileFindFirst(pattern) $$
- * @param {str} pattern 
+ * @param {str} pattern
  * @returns str
  */
 
@@ -80,7 +82,7 @@
 /** ### FileFindNext ###
  * Find next program file on the NXT.
  * $$ nxt.FileFindNext(handle) $$
- * @param {str} handle 
+ * @param {str} handle
  * @returns str
  */
 
@@ -113,7 +115,7 @@
  * @brief Returns a new wheel encoder value.
  * Returns the wheel encoder value of a motor.
  * $$ nxt.GetRotationCount(motor) $$
- * @param {str} motor A,B,C|ABC
+ * @param {str} motor A,B,C,AB,AC,BC,ABC
  * @returns num_int
  */
 
@@ -153,7 +155,8 @@
  * @brief Check if a motor is powered
  * Checks if a motor is currently powered
  * $$ nxt.IsMotorIdle(motor) $$
- * @param {str} motor A,B,C|ABC
+ * @param {str} motor A,B,C,AB,AC,BC,ABC
+ * @returns bin
  */
 
 
@@ -161,28 +164,28 @@
  * @brief Checks if the device is paired with an other
  * Checks if a Bluetooth device with a given name is paired with our device.
  * $$ nxt.IsPaired(name) $$
- * @param {str} name 
+ * @param {str} name
  * @returns bin
  */
 
 
 /** ### PlaySoundFile ###
- * Play a sound file for a given amount of times.
- * $$ nxt.PlaySoundFile(file, repeat) $$
- * @param {str_ptf} file 
- * @param {num_int} repeat 
+ * Play a sound file a certain amount of times.
+ * $$ nxt.PlaySoundFile(file, repeat=0) $$
+ * @param {str_ptf} file
+ * @param {num_int} [repeat=0]
  */
 
 
 /** ### ReadColorSensor ###
  * Read a color sensor value on the input where the sensor is plugged into.
- * 
+ *
  * In “ColorDetect” mode this function returns a value between 1 and 6 which represent the colors “black”, “blue”, “green”, “yellow”, “red”, or “white”.
  * You can use the ToColorName function to convert from these six values to a color name.
  * All other modes return a value between 0 and 1023.
- * $$ nxt.ReadColorSensor(input, mode) $$
- * @param {num_int} input 1
- * @param {str} mode ColorDetect|LightSense|RedSense|GreenSense|BlueSense
+ * $$ nxt.ReadColorSensor(input, mode?) $$
+ * @param {num_int} input
+ * @param {str} [mode] ColorDetect|LightSense|RedSense|GreenSense|BlueSense
  * @returns num_int-1..6 or 0..1023
  */
 
@@ -199,19 +202,19 @@
 /** ### ReadLightSensor ###
  * @brief Measures the light intensity
  * Reads the intensity of the light currently being 'seen' by the NXT light sensor. If active is set true an additionall white LED will be turned on while sensing.
- * $$ nxt.ReadLightSensor(input, active) $$
+ * $$ nxt.ReadLightSensor(input, active?) $$
  * @param {num_int} input 1..4
- * @param {bin} active 
+ * @param {bin} [active]
  * @returns num_int-0..100
  */
 
 
 /** ### ReadMail ###
  * Reads a message from the NXT brick's mail box. This message can be written using a normal NXT-G program running on the brick. This allows you to read values from NXT-G programs with your phone or tablet.
- * $$ nxt.ReadMail(mailbox, type, remove) $$
+ * $$ nxt.ReadMail(mailbox, type?, remove?) $$
  * @param {num_int} mailbox 1..10
- * @param {str} type Text|Number|Logic
- * @param {bin} remove 
+ * @param {str} [type] Text|Number|Logic
+ * @param {bin} [remove]
  * @returns str
  */
 
@@ -219,9 +222,9 @@
 /** ### ReadSoundSensor ###
  * @brief Measure the sound pressure level
  * Reads the sound pressure level of the surrounding.
- * $$ nxt.ReadSoundSensor(input, mode) $$
+ * $$ nxt.ReadSoundSensor(input, mode?) $$
  * @param {num_int} input 1..4
- * @param {str} mode DB:Decibels|DbA:A-weighted Decibels
+ * @param {str} [mode] DB:Decibels|DbA:A-weighted Decibels
  * @returns num_flt
  */
 
@@ -245,16 +248,16 @@
 /** ### Reset ###
  * Reset wheel encoder offset to 0.
  * $$ nxt.Reset(motors) $$
- * @param {str} motors A,B,C|ABC
+ * @param {str} motors A,B,C,AB,AC,BC,ABC
  */
 
 
 /** ### SendMail ###
  * Sends a message to the NXT brick's mail box.
- * $$ nxt.SendMail(mailbox, type, message) $$
+ * $$ nxt.SendMail(mailbox, type?, message?) $$
  * @param {num_int} mailbox 1..10
- * @param {str} type Text|Number|Logic
- * @param {str||num_int} message 
+ * @param {str} [type] Text|Number|Logic
+ * @param {str||num_int} [message]
  */
 
 
@@ -262,7 +265,7 @@
  * @brief Inverts the direction of motor commands
  * Provides a convenient way to invert the direction of the motor commands.
  * $$ nxt.SetInvert(invert) $$
- * @param {bin} invert 
+ * @param {bin} invert
  */
 
 
@@ -301,14 +304,14 @@
 /** ### StartProgram ###
  * Starts an NXT-G program on the NXT brick if available.
  * $$ nxt.StartProgram(name) $$
- * @param {str_pth} name 
+ * @param {str_pth} name
  */
 
 
 /** ### Stop ###
  * Stop powering some motors.
  * $$ nxt.Stop(motors) $$
- * @param {str} motors A,B,C|ABC
+ * @param {str} motors A,B,C,AB,AC,BC,ABC
  */
 
 
@@ -329,10 +332,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -347,9 +350,9 @@ function OnConnected()
     nxt.Beep( 100, 500 );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Auto Connect
 function OnStart()
@@ -376,9 +379,9 @@ function nxt_OnConnect( success, nxt )
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Sensors
 function OnStart()
@@ -425,9 +428,9 @@ function ReadSensor()
     else app.ShowPopup( "No Value" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -441,9 +444,9 @@ def OnStart():
 def OnConnected():
     nxt.Beep(100, 500)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Auto Connect
 from native import app
@@ -467,9 +470,9 @@ def nxt_OnConnect(success, nxt):
         app.Alert("Failed to connect!")
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sensors
 from native import app
@@ -519,5 +522,3 @@ def ReadSensor():
     else:
         app.ShowPopup("No Value")
  */
-    
-            

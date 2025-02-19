@@ -3,14 +3,15 @@
 
 /** # CreateGame #
  * @abbrev gam
- * 
- * $$ gam = app.CreateGame(file, orient) $$ 
- * @param {str_ptf} file 
- * @param {str} orient Portrait|Landscape
+ *
+ * $$ gam = app.CreateGame(file, orient?) $$
+ * @param {str_ptf} file
+ * @param {str} [orient] Portrait|Landscape
+ * @returns obj-{ game:dso-CreateGameView, lay:dso-CreateLayout }
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 CreateGame automatically turns your app in game mode and adds a [GameView](CreateGameView.htm) control to it which loads the referenced script.
@@ -24,28 +25,10 @@ You can also put the cfg.Game flag at the top level of your script to write the 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- SAMPLES -------------
 
 
-/** ### game
- * @prop
- * 
- * @returns dso-Game
- */
 
-                    
-/** ### lay
- * @prop
- * 
- * @returns dso-CreateLayout
- */
-
-                    
-
-// ------------- SAMPLES ------------- 
-
-
-    
 /**
 @sample Game_Bounce.js
 //Configure app for landscape game mode.
@@ -86,9 +69,9 @@ function OnReady()
     gfx.Play()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Demo
 function OnStart()
@@ -97,9 +80,9 @@ function OnStart()
 	app.CreateGame("script.js", "landscape");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Game_Bounce.js
 # cfg.Game, cfg.Portrait
@@ -137,9 +120,9 @@ def OnReady():
     # Start game.
     gfx.Play()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
@@ -148,5 +131,3 @@ def OnStart():
     app.CopyFile("/assets/samples/Game_Bounce.js", "script.js")
     app.CreateGame("script.js", "landscape")
  */
-    
-            

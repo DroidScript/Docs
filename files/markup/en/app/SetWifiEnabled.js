@@ -3,19 +3,19 @@
 
 /** # SetWifiEnabled #
  * En/Disable Wifi on the device.
- * 
+ *
  * See Also: @SetWifiEnabled, @IsWifiApEnabled, @WifiScan
- * $$ app.SetWifiEnabled(enable) $$ 
- * @param {bin} enable 
+ * $$ app.SetWifiEnabled(enable) $$
+ * @param {bin} enable
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Toggle WiFi
 function OnStart()
@@ -34,9 +34,9 @@ function tgl_OnTouch( enable )
     <b>app.SetWifiEnabled( enable );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Toggle WiFi
 from native import app
@@ -53,5 +53,3 @@ def OnStart():
 def tgl_OnTouch( enable ):
     <b>app.SetWifiEnabled( enable )</b>
  */
-    
-            

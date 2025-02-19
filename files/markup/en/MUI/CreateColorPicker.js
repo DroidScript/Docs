@@ -4,21 +4,21 @@
 /** # CreateColorPicker #
  * @abbrev clp
  * Creates a color picker dialog where you can select a range of MUI predefined colors.
- * $$ clp = MUI.CreateColorPicker(title) $$ 
- * @param {str} title 
+ * $$ clp = MUI.CreateColorPicker(title) $$
+ * @param {str} title
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSelect ###
  * Calls a function when a user click the OK button
  * $$ clp.SetOnSelect(callback) $$
- * @param {fnc_json} callback {"pNames":["color"],"pTypes":["str_col-The selected color"]}
+ * @param {fnc_json} callback {"pNames":["color?"],"pTypes":["str_col-The selected color"]}
  */
 
 
@@ -53,10 +53,10 @@
 /** @extern SetTextEdit */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -89,9 +89,9 @@ function OnSelect(color)
     app.ShowPopup(color)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark
 cfg.Dark
@@ -124,9 +124,9 @@ function OnSelect(color)
     app.ShowPopup(color)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark
 # cfg.Dark, cfg.MUI
@@ -155,5 +155,3 @@ def ShowPicker():
 def OnSelect(color):
     app.ShowPopup(color)
  */
-    
-            

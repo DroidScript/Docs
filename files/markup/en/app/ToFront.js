@@ -4,18 +4,18 @@
 /** # ToFront #
  * @brief Bring your app to the foreground
  * Brings the app back to the foreground.
- * 
+ *
  * See Also: @ToBack.
- * $$ app.ToFront() $$ 
+ * $$ app.ToFront() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Hide and Peek
 function OnStart()
@@ -34,9 +34,9 @@ function OnResume()
     app.ShowPopup( "OnResume" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Hide and Peek
 from native import app
@@ -51,5 +51,3 @@ def OnPause():
 def OnResume():
     app.ShowPopup( "OnResume" )
  */
-    
-            

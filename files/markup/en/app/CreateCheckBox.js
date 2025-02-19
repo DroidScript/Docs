@@ -4,17 +4,17 @@
 /** # CreateCheckBox #
  * @abbrev chk
  * @brief Returns a new CheckBox object
- * 
- * $$ chk = app.CreateCheckBox(text, width, height, options) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FillX/Y,NoSound
+ *
+ * $$ chk = app.CreateCheckBox(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options] FillX/Y,NoSound
  * @returns dso-CheckBox
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 CheckBoxes can be used to let the user en- or disable specific options in your app. They consist of a ticker box on the left and a text label on the right side.
@@ -26,7 +26,7 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -34,6 +34,8 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -104,7 +106,7 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
  * @brief Changes the ckecked state
  * Changes the current checked state of the CheckBox.
  * $$ chk.SetChecked(checked) $$
- * @param {bin} checked 
+ * @param {bin} checked
  */
 
 
@@ -147,31 +149,31 @@ Use the SetOnTouch method of the CheckBox object to define a function you want t
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-	<b>chk = app.CreateCheckBox( "Enable Stuff" );
-	chk.SetOnTouch( ShowState );
-	lay.AddChild( chk );
+    <b>chk = app.CreateCheckBox( "Enable Stuff" );
+    chk.SetOnTouch( ShowState );
+    lay.AddChild( chk );
 
-	app.AddLayout( lay );</b>
+    app.AddLayout( lay );</b>
 }
 
 function ShowState( isChecked )
 {
-	app.ShowPopup( "Checked = " + isChecked, "Short" );
+    app.ShowPopup( "Checked = " + isChecked, "Short" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
@@ -188,5 +190,4 @@ def OnStart():
 def ShowState( isChecked ):
     app.ShowPopup( "Checked = " + str(isChecked), "Short" )
  */
-    
-            
+

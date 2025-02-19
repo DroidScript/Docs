@@ -4,19 +4,19 @@
 /** # GetClipboardText #
  * @brief Get latest clipboard text
  * GetClipboardText returns text that was last copied to the clipboard.
- * 
+ *
  * See Also: @SetClipboardText
- * $$ app.GetClipboardText() $$ 
+ * $$ app.GetClipboardText() $$
  * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample show latest clipboard text
 function OnStart()
@@ -25,9 +25,9 @@ function OnStart()
     app.Alert( text );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python show latest clipboard text
 from native import app
@@ -36,5 +36,3 @@ def OnStart():
     text = app.GetClipboardText()
     app.Alert(text)
  */
-    
-            

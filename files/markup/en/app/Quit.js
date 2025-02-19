@@ -4,19 +4,19 @@
 /** # Quit #
  * @brief Quit the app with showing a dialog and exit after closing
  * Quits the app with showing an @Alert dialog box before exiting. The function will pause the program and exit before any further commands can be executed.
- * $$ app.Quit(msg, title, options) $$ 
- * @param {str} msg 
- * @param {str} title 
- * @param {str_com} options NoDim,NoFocus
+ * $$ app.Quit(msg, title?, options?) $$
+ * @param {str} msg
+ * @param {str} [title]
+ * @param {str_com} [options] NoDim,NoFocus
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Quit
 function OnStart()
@@ -26,9 +26,9 @@ function OnStart()
     app.ShowPopup( "Exited" ); // not shown
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Quit
 from native import app
@@ -38,5 +38,3 @@ def OnStart():
     app.Quit("App will now exit anyway.", "No error detected.")
     app.ShowPopup("Exited") # not shown
  */
-    
-            

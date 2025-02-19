@@ -3,18 +3,25 @@
 node_modules/
 
 # stuff
-/files/json/*/
+/files/json/**/*.txt
+/files/json/**/*.md
+/files/json/**/*.js
+/files/json/**/navs.json
+/files/json/**/*.json
 
 /files/version.txt
 /files/generate_dsuikit.js
+files/test/
+files/samples?*/
+files/*.zip
+
 /out/
 /app/
 /version.txt
 samples*.txt
 
 # hidden files
-_*.htm
 ~*
 *.key
 *-test*
-
+*.ppk

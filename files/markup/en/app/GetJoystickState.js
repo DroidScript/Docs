@@ -2,15 +2,15 @@
 
 
 /** # GetJoystickState #
- * 
- * $$ app.GetJoystickState(id, key) $$ 
- * @param {num_int} id 
+ *
+ * $$ app.GetJoystickState(id, key) $$
+ * @param {num_int} id
  * @param {str} key A|B|C|X|Y|Z|R1|L1|Left|Right|Up|Down|Start|ThumbLeft|ThumbRight|axis-0..9|btn-1..12
  * @returns num
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Returns the state of a connected joystick. The key can have many values depending on the used controller. The axis-n keys are for different joystick x/y/z axes or the D-Pad - you will best try which key stands for which button with the attached example.
@@ -20,10 +20,10 @@ See Also: @GetJoystickName
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show States
 function OnStart()
@@ -56,9 +56,9 @@ function ShowStates()
     txt.SetText( lst.join( "\n" ) );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show States
 from native import app
@@ -88,5 +88,3 @@ def ShowStates(time, dtime):
 
     txt.SetText("\n".join(lst))
  */
-    
-            

@@ -4,16 +4,16 @@
 /** # CreateGLView #
  * @abbrev glv
  * @brief Returns a GLView object
- * 
- * $$ glv = app.CreateGLView(width, height, options) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str} options fast2d
+ *
+ * $$ glv = app.CreateGLView(width, height, options?) $$
+ * @param {num_frc} width
+ * @param {num_frc} height
+ * @param {str} [options] fast2d
  * @returns dso-GLView
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 GLView is a fast 2D canvas suitable for drawing and moving graphics around on the screen quickly, ideal for games. The options parameter should be always set to “Fast2d”.
@@ -46,7 +46,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### aspect
@@ -55,8 +55,10 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @returns num_flt
  */
 
-                    
+
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### canvas
  * @prop
@@ -64,14 +66,14 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @returns obj
  */
 
-                    
+
 /** @extern ClearFocus */
 
 /** ### CreateImage ###
  * Create a sprite object which can be drawn on the GLView
- * $$ glv.CreateImage(file, callback) $$
- * @param {str_ptf} file 
- * @param {fnc_json} callback {}
+ * $$ glv.CreateImage(file, callback?) $$
+ * @param {str_ptf} file
+ * @param {fnc_json} [callback] {}
  * @returns obj-img
  */
 
@@ -82,24 +84,24 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @returns num_int
  */
 
-                    
+
 /** ### CreateImage.img.height
  * @prop
  * Height of the image
  * @returns num_int
  */
 
-                    
+
 /** ### DrawImage ###
  * @brief Draw image to canvas
  * Draws an image to the canvas
- * $$ glv.DrawImage(image, x, y, w, h, angle) $$
+ * $$ glv.DrawImage(image, x, y, w?, h?, angle?) $$
  * @param {obj} image img
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @param {num_frc} w 
- * @param {num_frc} h 
- * @param {num_deg} angle 
+ * @param {num_frc} x
+ * @param {num_frc} y
+ * @param {num_frc} [w]
+ * @param {num_frc} [h]
+ * @param {num_deg} [angle]
  */
 
 
@@ -108,15 +110,15 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * Draws a part of an image to the canvas.
  * $$ glv.DrawSprite(sheet, sx, sy, sw, sh, dx, dy, dw, dh, angle) $$
  * @param {obj} sheet img
- * @param {num_pxl} sx 
- * @param {num_pxl} sy 
- * @param {num_pxl} sw 
- * @param {num_pxl} sh 
- * @param {num_frc} dx 
- * @param {num_frc} dy 
- * @param {num_frc} dw 
- * @param {num_frc} dh 
- * @param {num_deg} angle 
+ * @param {num_pxl} sx
+ * @param {num_pxl} sy
+ * @param {num_pxl} sw
+ * @param {num_pxl} sh
+ * @param {num_frc} dx
+ * @param {num_frc} dy
+ * @param {num_frc} dw
+ * @param {num_frc} dh
+ * @param {num_deg} angle
  */
 
 
@@ -138,24 +140,24 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief Captures the canvas to a png image
  * Captures the current cached context to a png image.
  * The path is relative to /sdcard but requires a leading '/', ie “/Pictures/mycapture.png”
- * $$ glv.GetContext.ctx.capture(x, y, w, h, fileName, successCallback, errorCallback) $$
- * @param {num_pxl} x 
- * @param {num_pxl} y 
- * @param {num_pxl} w 
- * @param {num_pxl} h 
- * @param {str:path relative to “/sdcard”} fileName 
- * @param {fnc} successCallback 
- * @param {fnc} errorCallback 
+ * $$ glv.GetContext.ctx.capture(x, y, w, h, fileName, successCallback?, errorCallback?) $$
+ * @param {num_pxl} x
+ * @param {num_pxl} y
+ * @param {num_pxl} w
+ * @param {num_pxl} h
+ * @param {str:path relative to “/sdcard”} fileName
+ * @param {fnc} [successCallback]
+ * @param {fnc} [errorCallback]
  */
 
 
 /** ### GetContext.ctx.clearRect ###
  * <deprecated does nothing. ctx is automatically cleared after render()>
- * $$ glv.GetContext.ctx.clearRect(x, y, width, height) $$
- * @param {num_pxl} x 
- * @param {num_pxl} y 
- * @param {num_pxl} width 
- * @param {num_pxl} height 
+ * $$ glv.GetContext.ctx.clearRect(x, y, width=-1, height=-1) $$
+ * @param {num_pxl} x
+ * @param {num_pxl} y
+ * @param {num_pxl} [width=-1]
+ * @param {num_pxl} [height=-1]
  */
 
 
@@ -164,14 +166,14 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * Draws a part of a glv image to the glv context, where s are source coordinates and d destination coordinates.
  * $$ glv.GetContext.ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) $$
  * @param {obj} image img
- * @param {num_pxl} sx 
- * @param {num_pxl} sy 
- * @param {num_pxl} sw 
- * @param {num_pxl} sh 
- * @param {num_pxl} dx 
- * @param {num_pxl} dy 
- * @param {num_pxl} dw 
- * @param {num_pxl} dh 
+ * @param {num_pxl} sx
+ * @param {num_pxl} sy
+ * @param {num_pxl} sw
+ * @param {num_pxl} sh
+ * @param {num_pxl} dx
+ * @param {num_pxl} dy
+ * @param {num_pxl} dw
+ * @param {num_pxl} dh
  */
 
 
@@ -199,7 +201,7 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief Rotates the transformation matrix
  * Rotates the current applied transformation
  * $$ glv.GetContext.ctx.rotate(angle) $$
- * @param {num_rad} angle 
+ * @param {num_rad} angle
  */
 
 
@@ -214,8 +216,8 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief Scale the transformation matrix
  * Scales the current applied transformation matrix
  * $$ glv.GetContext.ctx.scale(a, d) $$
- * @param {num_frc} a 
- * @param {num_frc} d 
+ * @param {num_frc} a
+ * @param {num_frc} d
  */
 
 
@@ -223,12 +225,12 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief Set current matrix
  * Set the current transformation matrix
  * $$ glv.GetContext.ctx.setTransform(a, b, c, d, tx, ty) $$
- * @param {num} a 
- * @param {num} b 
- * @param {num} c 
- * @param {num} d 
- * @param {num} tx 
- * @param {num} ty 
+ * @param {num} a
+ * @param {num} b
+ * @param {num} c
+ * @param {num} d
+ * @param {num} tx
+ * @param {num} ty
  */
 
 
@@ -236,12 +238,12 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief Transform the current matrix
  * Apply an other transformation matrix to the current one
  * $$ glv.GetContext.ctx.transform(a, b, c, d, tx, ty) $$
- * @param {num} a 
- * @param {num} b 
- * @param {num} c 
- * @param {num} d 
- * @param {num} tx 
- * @param {num} ty 
+ * @param {num} a
+ * @param {num} b
+ * @param {num} c
+ * @param {num} d
+ * @param {num} tx
+ * @param {num} ty
  */
 
 
@@ -249,8 +251,8 @@ The following example uses a sprite sheet containing 8 stages of a character run
  * @brief 'Move' the transformation matrix
  * 'Moves' the current applied transformation matrix
  * $$ glv.GetContext.ctx.translate(tx, ty) $$
- * @param {num_pxl} tx 
- * @param {num_pxl} ty 
+ * @param {num_pxl} tx
+ * @param {num_pxl} ty
  */
 
 
@@ -279,11 +281,11 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 /** ### height
  * @prop
- * 
+ *
  * @returns num_int
  */
 
-                    
+
 /** @extern Hide */
 
 /** @extern IsEnabled */
@@ -343,16 +345,16 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 /** ### width
  * @prop
- * 
+ *
  * @returns num_int
  */
 
-                    
-
-// ------------- SAMPLES ------------- 
 
 
-    
+// ------------- SAMPLES -------------
+
+
+
 /**
 @sample DrawImage
 function OnStart()
@@ -373,9 +375,9 @@ function DrawFrame()
 	glview.Render();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Render Loop
 var angle = 0;
@@ -407,9 +409,9 @@ function DrawFrame()
 	glview.Render();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Sprite Sheet Animation
 var spriteCount = 8;
@@ -448,9 +450,9 @@ function DrawFrame()
 	frameCount++;
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Sprite Touch
 objects = [];
@@ -509,31 +511,31 @@ function touched(img, ev) {
 		&& img.Y < ev.Y && img.Y + img.H > ev.Y;
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python DrawImage
 from native import app
 
 def OnStart():
-    global glview, img
-    lay = app.CreateLayout( "Linear", "FillXY" )
+	global glview, img
+	lay = app.CreateLayout( "Linear", "FillXY" )
 
-    glview = app.CreateGLView(1, 1, "Fast2d")
-    lay.AddChild(glview)
+	glview = app.CreateGLView(1, 1, "Fast2d")
+	lay.AddChild(glview)
 
-    img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame )
+	img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame )
 
-    app.AddLayout(lay)
+	app.AddLayout(lay)
 
 def DrawFrame():
-    glview.DrawImage( img, 0.25, 0.3, 0.5, -1, 45 )
-    glview.Render()
+	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, 45 )
+	glview.Render()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Render Loop
 from native import app
@@ -541,30 +543,30 @@ from native import app
 angle = 0
 
 def OnStart():
-    global glview, img
-    lay = app.CreateLayout( "Linear", "FillXY" )
+	global glview, img
+	lay = app.CreateLayout( "Linear", "FillXY" )
 
-    glview = app.CreateGLView(1, 1, "Fast2d")
-    lay.AddChild(glview)
+	glview = app.CreateGLView(1, 1, "Fast2d")
+	lay.AddChild(glview)
 
-    img = glview.CreateImage("/Sys/Img/Hello.png", StartRendering)
+	img = glview.CreateImage("/Sys/Img/Hello.png", StartRendering)
 
-    app.AddLayout(lay)
+	app.AddLayout(lay)
 
 def StartRendering():
-    app.SetInterval(DrawFrame, 1000/30 )
+	app.SetInterval(DrawFrame, 1000/30 )
 
 def DrawFrame():
-    glview.DrawImage( img, 0.25, 0.3, 0.5, -1, angle )
+	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, angle )
 
-    angle = angle + 10
-    if( angle == 360 ) angle = 0
+	angle = angle + 10
+	if( angle == 360 ) angle = 0
 
-    glview.Render()
+	glview.Render()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sprite Sheet Animation
 from native import app
@@ -575,34 +577,34 @@ srcHeight = 60
 frameCount = 0
 
 def OnStart():
-    global glview, img
-    lay = app.CreateLayout( "Linear", "FillXY" )
+	global glview, img
+	lay = app.CreateLayout( "Linear", "FillXY" )
 
-    glview = app.CreateGLView(1, 1, "Fast2d")
-    lay.AddChild(glview)
+	glview = app.CreateGLView(1, 1, "Fast2d")
+	lay.AddChild(glview)
 
-    img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering )
+	img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering )
 
-    app.AddLayout(lay)
+	app.AddLayout(lay)
 
 def StartRendering():
-    app.SetInterval( DrawFrame, 1000/30 )
+	app.SetInterval( DrawFrame, 1000/30 )
 
 def DrawFrame():
-    spriteIndex = app.MathFloor(frameCount / 2) % spriteCount
+	spriteIndex = app.MathFloor(frameCount / 2) % spriteCount
 
-    sx = spriteIndex * srcWidth
-    sy = 0
+	sx = spriteIndex * srcWidth
+	sy = 0
 
-    glview.DrawSprite( img, sx, sy, srcWidth, srcHeight,
-                0.3, 0.4, 0.3, -1 )
+	glview.DrawSprite( img, sx, sy, srcWidth, srcHeight,
+				0.3, 0.4, 0.3, -1 )
 
-    glview.Render()
-    frameCount += 1
+	glview.Render()
+	frameCount += 1
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sprite Touch
 from native import app
@@ -610,45 +612,44 @@ from native import app
 objects = []
 
 def OnStart():
-    global glv, name, X, Y, W, H
-    lay = app.CreateLayout( "linear" )
+	global glv, name, X, Y, W, H
+	lay = app.CreateLayout( "linear" )
 
-    glv = app.CreateGLView( 1, 1, "Fast2d" )
-    glv.SetOnTouchUp( touch )
+	glv = app.CreateGLView( 1, 1, "Fast2d" )
+	glv.SetOnTouchUp( touch )
 
-    img1 = glv.CreateImage( "/Sys/Img/Hello.png" )
-    img1.name = "img1"
-    img1.X = 0.1; img1.Y = 0.3
-    img1.W = 0.7; img1.H = 0.4
-    objects.append(img1)
+	img1 = glv.CreateImage( "/Sys/Img/Hello.png" )
+	img1.name = "img1"
+	img1.X = 0.1; img1.Y = 0.3
+	img1.W = 0.7; img1.H = 0.4
+	objects.append(img1)
 
-    img2 = glv.CreateImage( "/Sys/Img/Droid1.png", startRender )
-    img2.name = "img2"
-    img2.X = 0.5; img2.Y = 0.5
-    img2.W = 0.5; img2.H = 0.3
-    objects.append(img2)
+	img2 = glv.CreateImage( "/Sys/Img/Droid1.png", startRender )
+	img2.name = "img2"
+	img2.X = 0.5; img2.Y = 0.5
+	img2.W = 0.5; img2.H = 0.3
+	objects.append(img2)
 
-    lay.AddChild( glv )
+	lay.AddChild( glv )
 
-    app.AddLayout( lay )
+	app.AddLayout( lay )
 
 def startRender():
-    for obj in objects:
-        draw(obj)
-    glv.Render()
+	for obj in objects:
+		draw(obj)
+	glv.Render()
 
 def touch(ev):
-    for obj in objects:
-        if touched(obj, ev):
-            app.ShowPopup( "touched " + obj.name )
-            break
+	for obj in objects:
+		if touched(obj, ev):
+			app.ShowPopup( "touched " + obj.name )
+			break
 
 def draw(obj):
-    glv.DrawImage( obj, obj.X, obj.Y, obj.W, obj.H, 0 )
+	glv.DrawImage( obj, obj.X, obj.Y, obj.W, obj.H, 0 )
 
 def touched(obj, ev):
-    return obj.X < ev.X and obj.X + obj.W > ev.X \
-        and obj.Y < ev.Y and obj.Y + obj.H > ev.Y
+	return obj.X < ev.X and obj.X + obj.W > ev.X \
+		and obj.Y < ev.Y and obj.Y + obj.H > ev.Y
  */
-    
-            
+

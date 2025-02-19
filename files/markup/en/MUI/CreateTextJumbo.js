@@ -4,19 +4,19 @@
 /** # CreateTextJumbo #
  * @abbrev txj
  * Creates an extra large text
- * $$ txj = MUI.CreateTextJumbo(text, width, height, options, color) $$ 
- * @param {str} text 
- * @param {num} width 
- * @param {num} height 
- * @param {str} options DS text options
- * @param {str_col} color 
+ * $$ txj = MUI.CreateTextJumbo(text, width=-1, height=-1, options?, color?) $$
+ * @param {str} text
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
+ * @param {str} [options] DS text options
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -25,13 +25,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -40,44 +37,17 @@
 
 /** @extern GetHeight */
 
-/** ### GetHtml ###
- * 
- * $$ txj.GetHtml() $$
- * @returns obj
- */
-
+/** @extern GetHtml */
 
 /** @extern GetLeft */
 
-/** ### GetLineCount ###
- * 
- * $$ txj.GetLineCount() $$
- * @returns num_int
- */
+/** @extern GetLineCount */
 
+/** @extern GetLineStart */
 
-/** ### GetLineStart ###
- * 
- * $$ txj.GetLineStart(line) $$
- * @param {num_int} line 
- * @returns num_int
- */
+/** @extern GetLineTop */
 
-
-/** ### GetLineTop ###
- * 
- * $$ txj.GetLineTop(line) $$
- * @param {num_int} line 
- * @returns num
- */
-
-
-/** ### GetMaxLines ###
- * 
- * $$ txj.GetMaxLines() $$
- * @returns num_int
- */
-
+/** @extern GetMaxLines */
 
 /** @extern GetParent */
 
@@ -90,7 +60,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ txj.GetType() $$
  * @returns str-Text
  */
@@ -110,13 +80,7 @@
 
 /** @extern IsVisible */
 
-/** ### Log ###
- * 
- * $$ txj.Log(msg, options) $$
- * @param {str} msg 
- * @param {str_com} options 
- */
-
+/** @extern Log */
 
 /** @extern Method */
 
@@ -142,12 +106,7 @@
 
 /** @extern SetHtml */
 
-/** ### SetLog ###
- * 
- * $$ txj.SetLog(maxLines) $$
- * @param {num_int} maxLines 
- */
-
+/** @extern SetLog */
 
 /** @extern SetMargins */
 
@@ -186,10 +145,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Sample
 cfg.Light
@@ -209,9 +168,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sample
 # cfg.Light, cfg.MUI
@@ -230,5 +189,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

@@ -4,17 +4,17 @@
 /** # CreateSwitch #
  * @abbrev swi
  * @brief Creates a switch control
- * 
- * $$ swi = app.CreateSwitch(text, width, height, options) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options Monospace,Custom,NoPad,FillX/Y,NoSound
+ *
+ * $$ swi = app.CreateSwitch(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options] Monospace,Custom,NoPad,FillX/Y,NoSound
  * @returns dso-Switch
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Switches are a variant of [toggle buttons](CreateToggle.htm) with another look.
@@ -26,7 +26,7 @@ You can get the state of the switch at any time using the **GetChecked** method.
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -34,6 +34,8 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -104,7 +106,7 @@ You can get the state of the switch at any time using the **GetChecked** method.
  * @brief Change the checked state
  * Change the current checked state of the switch.
  * $$ swi.SetChecked(checked) $$
- * @param {bin} checked 
+ * @param {bin} checked
  */
 
 
@@ -131,19 +133,6 @@ You can get the state of the switch at any time using the **GetChecked** method.
 /** @extern SetScale */
 
 /** @extern SetSize */
-
-/** ### SetStyle ###
- * @brief Customize the button looks
- * Customize the look of the toggle.
- * $$ swi.SetStyle(color1, color2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} color1 
- * @param {str_col} color2 
- * @param {num_pxl} radius 
- * @param {str_col} strokeClr 
- * @param {num_pxl} strokeWidth 
- * @param {num_frc} shadow 
- */
-
 
 /** @extern SetText */
 

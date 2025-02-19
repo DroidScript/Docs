@@ -4,7 +4,7 @@
 /** # ChooseContact #
  * @brief Let the user choose an image
  * ChooseContact opens the Contacts app so that the user can select the name and either the phone number or email address of a user.
- * $$ app.ChooseContact(type, callback) $$ 
+ * $$ app.ChooseContact(type, callback) $$
  * @param {str} type Phone|Email
  * @param {fnc_json} callback {"pNames":["name","data"],"pTypes":["str","str"]}
 */
@@ -12,10 +12,10 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Choose Phone Number
 function OnStart()
@@ -39,9 +39,9 @@ function OnPhoneChoose( name, number )
      app.ShowPopup( name + " " + number );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Choose Email Address
 function OnStart()
@@ -65,9 +65,9 @@ function OnEmailChoose( name, email )
      app.ShowPopup( name + " " + email );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Choose Phone Number
 from native import app
@@ -87,9 +87,9 @@ def btnChoose_OnTouch():
 def OnPhoneChoose( name, number ):
     app.ShowPopup( name + " " + number )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Choose Email Address
 from native import app
@@ -109,5 +109,3 @@ def btnChoose_OnTouch():
 def OnEmailChoose( name, email ):
     app.ShowPopup( name + " " + email )
  */
-    
-            

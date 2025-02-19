@@ -4,20 +4,20 @@
 /** # UploadFile #
  * @brief Uploads a file to a server
  * Uploads a file to a server.
- * $$ app.UploadFile(url, file, name, callback) $$ 
- * @param {str_url} url 
- * @param {str_ptf} file 
- * @param {str} name 
- * @param {fnc_json} callback {}
+ * $$ app.UploadFile(url, file, name, callback?) $$
+ * @param {str_url} url
+ * @param {str_ptf} file
+ * @param {str} name
+ * @param {fnc_json} [callback] {}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Upload File
 function OnStart()
@@ -33,9 +33,9 @@ function OnUpload( error, file, result )
     else app.ShowPopup( "Response:\n" + result, "Upload Successful!" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Upload File
 from native import app
@@ -52,5 +52,3 @@ def OnUpload(error, file, result):
     else:
         app.ShowPopup("Response:\n" + result, "Upload Successful!")
  */
-    
-            

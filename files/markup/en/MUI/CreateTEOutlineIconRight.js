@@ -4,63 +4,38 @@
 /** # CreateTEOutlineIconRight #
  * @abbrev teo
  * Creates a material outlined text input with icon on the right.
- * $$ teo = MUI.CreateTEOutlineIconRight(width, options, icon, hint, label, color, backColor) $$ 
- * @param {num} width 
- * @param {str_com} options DS TextEdit options with additional 'Round' option.
- * @param {str} icon Material icon font
- * @param {str} hint Hint|Label text
- * @param {bin} label Show or hide label
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * $$ teo = MUI.CreateTEOutlineIconRight(width, options?, icon?, hint?, label?, color?, backColor?) $$
+ * @param {num} width
+ * @param {str_com} [options] DS TextEdit options|Round
+ * @param {str} [icon] Material icon font
+ * @param {str} [hint] Hint|Label text
+ * @param {bin} [label] Show or hide label
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern ClearFocus */
 
-/** ### ClearHistory ###
- * Clear input history
- * $$ teo.ClearHistory() $$
- */
-
+/** @extern ClearHistory */
 
 /** @extern Focus */
 
-/** ### GetCursorLine ###
- * Get cursor line
- * $$ teo.GetCursorLine() $$
- * @returns num
- */
+/** @extern GetCursorLine */
 
+/** @extern GetCursorPos */
 
-/** ### GetCursorPos ###
- * Get cursor position
- * $$ teo.GetCursorPos() $$
- */
+/** @extern GetSelectedText */
 
+/** @extern GetSelectionEnd */
 
-/** ### GetSelectedText ###
- * 
- * $$ teo.GetSelectedText() $$
- */
-
-
-/** ### GetSelectionEnd ###
- * 
- * $$ teo.GetSelectionEnd() $$
- */
-
-
-/** ### GetSelectionStart ###
- * 
- * $$ teo.GetSelectionStart() $$
- */
-
+/** @extern GetSelectionStart */
 
 /** @extern GetText */
 
@@ -70,13 +45,7 @@
 
 /** @extern Gone */
 
-/** ### InsertText ###
- * Inserts a string at a given position.
- * $$ teo.InsertText(text, start) $$
- * @param {str} text 
- * @param {num_int} start 
- */
-
+/** @extern InsertText */
 
 /** @extern IsEnabled */
 
@@ -84,65 +53,33 @@
 
 /** @extern IsVisible */
 
-/** ### Redo ###
- * Redo an undone action.
- * $$ teo.Redo() $$
- */
+/** @extern Redo */
 
+/** @extern ReplaceText */
 
-/** ### ReplaceText ###
- * Replaces a given range in the text with some string.
- * $$ teo.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
- */
-
-
-/** ### SetCursorPos ###
- * Change the curernt cursor position.
- * $$ teo.SetCursorPos(position) $$
- * @param {num_int} position 
- */
-
+/** @extern SetCursorPos */
 
 /** @extern SetMargins */
 
 /** @extern SetOnChange */
 
-/** ### SetOnEnter ###
- * @brief %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * %cb% the user pressed 'Done' or 'Enter' on the keyboard
- * $$ teo.SetOnEnter(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnEnter */
 
 /** @extern SetPosition */
 
 /** @extern SetText */
 
-/** ### Undo ###
- * Undo an action
- * $$ teo.Undo() $$
- */
+/** @extern Undo */
 
-
-/** ### SetOnIconTouch ###
- * @brief Calls a function when icon is touch
- * Calls a function when icon is touch
- * $$ teo.SetOnIconTouch(callback) $$
- * @param {fnc_json} callback {}
- */
-
+/** @extern SetOnIconTouch */
 
 /** @extern SetOnTouch */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample No Label
 cfg.Light
@@ -161,9 +98,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark With Label
 cfg.Dark
@@ -182,9 +119,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample SetOnEnter Callback
 cfg.Light
@@ -209,9 +146,9 @@ function OnEnter()
     app.ShowPopup(this.GetText())
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No Label
 # cfg.Light, cfg.MUI
@@ -229,9 +166,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark With Label
 # cfg.Dark, cfg.MUI
@@ -249,9 +186,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetOnEnter Callback
 # cfg.Light, cfg.MUI
@@ -273,5 +210,3 @@ def OnStart():
 def OnEnter():
     app.ShowPopup(this.GetText())
  */
-    
-            

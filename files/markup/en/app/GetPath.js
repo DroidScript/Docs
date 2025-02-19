@@ -4,19 +4,19 @@
 /** # GetPath #
  * @brief Get APK's local storage path
  * Returns the path to the local storage folder of the APK.
- * 
+ *
  * See Also: @GetAppPath, @GetPrivateFolder
- * $$ app.GetPath() $$ 
+ * $$ app.GetPath() $$
  * @returns str_pth
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show App Path
 function OnStart()
@@ -25,9 +25,9 @@ function OnStart()
     app.Alert( path );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show App Path
 from native import app
@@ -36,5 +36,3 @@ def OnStart():
     path = app.GetPath()
     app.Alert(path)
  */
-    
-            

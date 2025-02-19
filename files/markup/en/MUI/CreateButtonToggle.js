@@ -3,22 +3,22 @@
 
 /** # CreateButtonToggle #
  * @abbrev btt
- * 
- * $$ btt = MUI.CreateButtonToggle(text, width, height, value, callback, color, backColor) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {bin} value 
- * @param {fnc_json} callback {}
- * @param {str_col} color 
- * @param {str_col} backColor 
+ *
+ * $$ btt = MUI.CreateButtonToggle(text, width?, height?, value?, callback?, color?, backColor?) $$
+ * @param {str} text
+ * @param {num_frc} [width]
+ * @param {num_frc} [height]
+ * @param {bin} [value]
+ * @param {fnc_json} [callback] {}
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -27,13 +27,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -55,7 +52,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ btt.GetType() $$
  * @returns str-Button
  */
@@ -111,17 +108,7 @@
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * 
- * $$ btt.SetStyle(clr1, clr2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} clr1 
- * @param {str_col} clr2 
- * @param {num} radius 
- * @param {str_col} strokeClr 
- * @param {num} strokeWidth 
- * @param {num} shadow 
- */
-
+/** @extern SetStyle */
 
 /** @extern SetText */
 
@@ -140,10 +127,10 @@
 /** @extern SetColor */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -156,8 +143,8 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonToggle("BUTTON", 0.35, null, false, OnToggle)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonToggle("BUTTON", 0.35, null, false, OnToggle)
+        lay.AddChild(btn)
 
     app.AddLayout(lay)
 }
@@ -167,9 +154,9 @@ function OnToggle(v)
     app.ShowPopup(v)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Light
 # cfg.Light, cfg.MUI
@@ -190,5 +177,3 @@ def OnStart():
 def OnToggle(v):
     app.ShowPopup(v)
  */
-    
-            
