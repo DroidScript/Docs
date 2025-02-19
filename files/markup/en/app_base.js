@@ -496,6 +496,15 @@
  */
 
 
+/** ### SetWeight
+ * @name SetWeight
+ * @brief Assigns a weight value to a control within a Linear Layout
+ * Determines how much of the remaining space in the layout the control should occupy relative to other weighted controls.
+ * @param {num} weight
+ * @param {str} orient Vertical|Horizontal
+ */
+
+
 /** ### Show
  * @name Show
  * @brief Set the visibility to “Show”
