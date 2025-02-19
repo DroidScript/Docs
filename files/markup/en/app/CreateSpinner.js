@@ -160,6 +160,8 @@ Use the **SelectItem** method to select a particular item in code.
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
