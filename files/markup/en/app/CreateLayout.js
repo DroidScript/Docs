@@ -244,6 +244,15 @@ They may be used to display offers with an image and optional info text.
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
+/** ### SetWeightSum ###
+ * Defines the total weight of all child controls
+ * $$ lay.SetWeightSum(sum) $$
+ * @param {num} sum
+ */
+
+
 /** @extern Show */
 
 /** @extern Tween */
