@@ -335,6 +335,8 @@ The following example uses a sprite sheet containing 8 stages of a character run
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** @extern Show */
 
 /** @extern Tween */
