@@ -104,6 +104,8 @@ function LoopFiles(SOURCE_DIR, fn) {
             // write description.md file
             const descFile = path.join(outputDesc, data.name + ".md");
             if (!_errors) fs.writeFileSync(descFile, data.desc.replace(/<br>/g, '\n'));
+            const pysampleFile = path.join(outputSamples, data.name + "-py.txt");
+            if (!_errors && data.samples.py) fs.writeFileSync(pysampleFile, data.samples.py);
         }
     }
     Throw(null, SOURCE_DIR);
@@ -236,9 +238,23 @@ function renderMdFile(filePath, objJson) {
     const desc = fs.readFileSync(filePath, "utf8");
     objJson[name] = newDSFunc();
     objJson[name].desc = "#" + name + ".md";
+
+    const regex = /<sample Python.*?>(.*?)<\/sample>/gs;
+    const pySamples = [];
+    let match, modDesc = desc
+
+    while ((match = regex.exec(desc)) !== null) {
+        pySamples.push(match[0].trim());
+        modDesc = modDesc.replace(pySamples[pySamples.length-1], "")
+    }
+
     return {
         name,
-        desc
+        desc: modDesc,
+        samples: {
+            js: "",
+            py: pySamples.join("\n\n")
+        }
     };
 }
 
