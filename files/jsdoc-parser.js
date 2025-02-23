@@ -253,7 +253,7 @@ function renderMdFile(filePath, objJson) {
         desc: modDesc,
         samples: {
             js: "",
-            py: pySamples.join("\n\n")
+            py: pySamples.map(m => m.replace("<sample Python", "<sample")).join("\n\n")
         }
     };
 }
