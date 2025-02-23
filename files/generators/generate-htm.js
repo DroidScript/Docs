@@ -422,9 +422,9 @@ function translatePython(jsCode) {
         .replace(/:;\n/g, ': pass\n')
         .replace(/; *(<\/b>|\n)/g, '$1')
         .replace(/: +\n/g, ':\n')
-        .replace(/setTimeout/g, "app.SetTimeout")
-        .replace(/setInterval/g, "app.SetInterval");
-    if(!/from\s+native\s+import\s+app/.test(pyCode) && pyCode.includes("app.")) {
+        .replace(/\btrue\b/g, 'True')
+        .replace(/\bfalse\b/g, 'False');
+    if(!/from\s+native\s+import\s+app/.test(pyCode) && /(?<!['"\`])app\./.test(pyCode)) {
         pyCode = "from native import app" + pyCode;
     }
     return pyCode
