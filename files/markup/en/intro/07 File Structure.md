@@ -48,6 +48,28 @@ file called 'lang.json' in your app that looks like this:-
 	}
 }
 </sample lang.json>
+<sample Python lang.json norun>
+{
+	"langs": [ "English", "Deutsch", "Español" ],
+
+	"codes": { "english":"en", "deutsch":"de", "español":"es" },
+
+	"trans" :
+	{
+		"SelectLang" : {
+			"en":"Please select your prefered language from the 'Settings' menu",
+			"de":"Bitte wähle deine Sprache in den 'Einstellungen' aus",
+			"es":"Selecciona tu idioma preferido en el menú 'Settings'"
+		},
+
+		"PrivacyPolicy" : {
+			"en":"Privacy Policy",
+			"de":"Datenschutzerklärung",
+			"es":"Política de Privacidad"
+		}
+	}
+}
+</sample>
 
 Also make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code\_list.php)
 
@@ -75,6 +97,21 @@ If you create a file called 'build.json' at the top level of your project, then 
 	"autoPermissions": true
 }
 </sample build.json>
+<sample Python build.json>
+{
+	"manifest":
+	{
+		"minSdkVersion": 23,
+		"targetSdkVersion": 28,
+		"debuggable": false,
+		"removePermissions": "WRITE\_EXTERNAL\_STORAGE",
+		"homeScreen": false,
+		"noPermsAction": "default",
+		"pathPattern": ".*\.png,.*\.jpg"
+	},
+	"autoPermissions": true
+}
+</sample>
 _Note: This file is optional and not required for building APKs_
 
 If you release your app on Google Play, the '**minSdkVersion**' setting will control whether people with older phones can see your app in the store. If your app does not perform well on older versions of Android, then it is usually a good idea to make it unavailable for older phones or you will get lots of negative ratings and people will avoid your app. There may also be features such as Bluetooth 4.0 which are unavailable on older versions of Android.
@@ -100,6 +137,15 @@ The '**debuggable**' setting is intended for advanced users and allows your inst
 	}
 }
 </sample minimal build.json>
+<sample Python minimal build.json>
+{
+	"manifest":
+	{
+		"minSdkVersion": 23,
+		"targetSdkVersion": 28
+	}
+}
+</sample>
 
 ## Internal Files
 

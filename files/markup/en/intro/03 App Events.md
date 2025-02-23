@@ -20,6 +20,20 @@ function OnLoad()
 
 </sample OnStart>
 
+<sample Python OnStart>
+from native import app
+from browser import timer
+
+<b>def OnStart():
+    app.Alert("called OnStart\nApp Started: " + str(app.IsStarted()))
+</b>
+
+def OnLoad():
+    app.Alert("called OnLoad\nApp Started: " + str(app.IsStarted()))
+
+timer.set_timeout(OnLoad, 1)
+</sample>
+
 ### OnMenu(name)
 This event is called when the user selects an item from the in-app menu.
 See Also: @../app/SetMenu, @../app/ShowMenu
@@ -45,6 +59,25 @@ function OnMenu( item )
 }
 
 </sample OnMenu>
+
+<sample Python OnMenu>
+from native import app
+
+def OnStart():
+    <b>app.SetMenu( "Start,Stop,Pause" )</b>
+
+    lay = app.CreateLayout( "linear", "" )
+
+    btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" )
+    btn.SetOnTouch( app.ShowMenu )
+    lay.AddChild( btn )
+
+    app.AddLayout( lay )
+
+def OnMenu( item ):
+    app.ShowPopup( item, "Short" )
+
+</sample>
 
 ### OnBack()
 By default the app closes if the user presses the devices back-button. However, you can disable that behaviour by calling <js nobox>app.</js>@../app/EnableBackKey<js nobox>(false)</js>.
@@ -74,6 +107,28 @@ function yndExit_OnTouch(reply)
 
 </sample Confirm Exit>
 
+<sample Python Confirm Exit>
+from native import app
+
+def OnStart():
+    app.EnableBackKey(False)
+
+    global yndExit
+
+    yndExit = app.CreateYesNoDialog("Exit App?")
+    yndExit.SetOnTouch(yndExit_OnTouch)
+
+    app.ShowPopup("Press the back button")
+
+def yndExit_OnTouch(reply):
+    if reply == "Yes":
+        app.Exit()
+
+<b>def OnBack():
+    global yndExit
+    yndExit.Show()</b>
+</sample>
+
 ### OnPause()
 The OnPause event will be called when the user sends the app to the background, ie. when pressing the home button.
 
@@ -87,6 +142,15 @@ function OnPause()
 
 </sample Detect Pause>
 
+<sample Python Detect Pause>
+from native import app
+
+#Called when application is paused.
+def OnPause():
+    app.ShowPopup( "OnPause" )
+
+</sample>
+
 ### OnResume()
 The OnResume event will be called when the user returns to your app after sending it to the background.
 
@@ -99,6 +163,15 @@ function OnResume()
 }
 
 </sample Detect Resume>
+
+<sample Python Detect Resume>
+from native import app
+
+#Called when application is resumed.
+def OnResume():
+    app.ShowPopup( "OnResume" )
+
+</sample>
 
 ### OnConfig()
 OnConfig is called when a device configuration changes, especially the screen orientation. This can be used to rearrange your layouts on orientation change.
@@ -136,6 +209,43 @@ function OnConfig()
 
 </sample Layout Orientation>
 
+<sample Python Layout Orientation>
+from native import app
+
+def OnStart():
+    global lay, txt1, txt2
+
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    txt1 = app.CreateText("")
+    txt1.SetTextSize(64)
+    lay.AddChild(txt1)
+
+    txt2 = app.CreateText("")
+    txt2.SetTextSize(64)
+    lay.AddChild(txt2)
+
+    OnConfig()
+
+    app.AddLayout(lay)
+
+# Called when screen rotates
+<b>def OnConfig():
+    global lay, txt1, txt2
+
+    orient = app.GetOrientation()
+    txt1.SetText(orient)
+
+    if orient == "Portrait":
+        orient = "Vertical"
+    else:
+        orient = "Horizontal"
+
+    lay.SetOrientation(orient)
+    txt2.SetText(orient)
+</b>
+</sample>
+
 ### OnAlarm()
 If you have set up an app [Alarm](../app/SetAlarm.htm) and it is triggered it will call the OnAlarm event.
 
@@ -157,6 +267,23 @@ function OnStart()
 }</b>
 
 </sample OnAlarm>
+
+<sample Python OnAlarm>
+from native import app
+import time
+
+def OnStart():
+    now = int(time.time() * 1000)
+    app.SetAlarm("Set", 1234, OnAlarm, now + 3000)
+    # app.ToBack()
+    # app.Exit()
+
+# Called when alarm is triggered.
+# (Even if your app is closed)
+<b>def OnAlarm(id):
+    app.ShowPopup("Got Alarm: id = " + str(id))
+<b>
+</sample>
 
 ### OnData()
 When an other app has sent an intent to your app you will get notified by the OnData event. Then you can retrieve the intent object using the app.@../app/GetIntent() method.
@@ -186,6 +313,29 @@ function OnData( isStartUp )
 
 </sample Received Intent Data>
 
+
+<sample Python Received Intent Data>
+from native import app
+
+def OnData(isStartUp):
+    # Display intent data.
+    intent = app.GetIntent()
+    if intent:
+        # Extract main data.
+        s = "action: " + intent.action + "\n"
+        s += "type: " + intent.type + "\n"
+        s += "data: " + intent.data + "\n\n"
+
+        # Extract extras.
+        s += "extras:\n"
+        try:
+            for key, value in intent.extras.items():
+                s += key + ": " + str(value) + "\n"
+        except AttributeError: #intent.extras may be None
+            s += "No extras found.\n"
+
+        app.Alert(s, "OnData")
+</sample>
 
 
 ### OnDrawer(side, state)
