@@ -130,6 +130,94 @@ function EndGame(player)
 }
 </sample Tic Tac Toe>
 
+
+<sample Python Tic Tac Toe>
+from native import app
+import random
+
+btns = []
+wh = app.GetDisplayWidth() / app.GetDisplayHeight()
+round_num = 1
+
+# Called when app started.
+def OnStart():
+    global lay, txtPlayer, btns, round_num  # Declare globals
+
+    app.SetOrientation("Portrait")
+    app.SetDebug(False)
+
+    lay = app.CreateLayout("Linear", "VCenter,FillXY")
+    lay.SetBackColor("#3355cc")
+
+    txtPlayer = app.CreateText("Player 1")
+    txtPlayer.SetTextSize(60, "pl")
+    txtPlayer.SetMargins(0, 0, 0, 0.1)
+    lay.AddChild(txtPlayer)
+
+    # Create 3×3 Buttons
+    for i in range(3):
+        layH = app.CreateLayout("Linear", "Horizontal")
+        lay.AddChild(layH)
+
+        for j in range(3):
+            btn = app.CreateButton("", 0.3, 0.3 * wh, "gray")
+            btn.SetOnTouch(lambda b=btn: btn_OnTouch(b)) #lambda to pass button
+            btn.SetTextSize(60, "pl")
+            layH.AddChild(btn)
+
+            btn.index = 3 * i + j  # Simulate btn.data.index
+            btns.append(btn)
+
+    app.AddLayout(lay)
+
+# Occupy button
+def btn_OnTouch(btn):
+    global round_num
+    player = round_num % 2 + 1
+
+    if btn.GetText() != "":
+        return
+    else:
+        btn.SetText("XO"[player - 1])
+
+    btn.Tween({"sw": -1, "rot": 360}, 200)
+    lay.SetTouchable(False)
+
+    # Check winrows if someone won
+    win_rows = ["012", "345", "678", "036", "147", "258", "048", "642"]
+    for row_str in win_rows:
+        row = ""
+        for j in range(3):
+            row += btns[int(row_str[j])].GetText()
+
+        if row == "XXX" or row == "OOO":
+            return EndGame(player)
+
+    # End game if no more free buttons exists
+    round_num += 1
+    if round_num == 10:
+        return EndGame(0)
+    txtPlayer.SetText("Player " + str(player))
+    lay.SetTouchable(True)
+
+# Show results and reset
+def EndGame(player):
+    global round_num, btns
+    if player:
+        app.Alert("Player " + str(player) + " won!", "Congratulations")
+    else:
+        app.Alert("It's a draw.")
+
+    # reset game
+    def reset_game():
+        for btn in btns:
+            btn.SetText("")
+        lay.SetTouchable(True)
+        round_num = 1
+
+    app.SetTimeout(reset_game, 2000)
+</sample>
+
 ## Games with Images
 The most basic graphics container is the [Image](../app/CreateImage.htm) control. It also provides the most functionality for drawing like basic shapes, paint style and color, image drawing and even 2D matrix transformations.
 Despite the fact that the picture view is very powerful, it is not particularly fast.
@@ -228,6 +316,114 @@ function Score()
     }, 1000 );
 }
 </sample Pong>
+
+<sample Python Pong>
+from native import app
+import math
+import random
+
+# User variables
+x1 = 0.5
+x2 = 0.5
+p1 = 0
+p2 = 0
+
+# Called when app started.
+def OnStart():
+    global lay, img, x, y, dx, dy, v, p1, p2  # Declare globals
+
+    app.SetOrientation("Portrait")
+
+    lay = app.CreateLayout("Linear")
+
+    img = app.CreateImage(None, 1, 1)
+    img.SetOnTouch(img_OnTouch)
+    img.SetAutoUpdate(False)
+    img.SetTextSize(30)
+    lay.AddChild(img)
+
+    Score()
+    app.AddLayout(lay)
+    app.Animate(OnAnimate, 50, false)
+
+# Move user bar
+def img_OnTouch(ev):
+    global x2
+    x2 = ev.X
+
+def crop(v, a, b):
+    return max(a, min(v, b))
+
+# Calculate ball movement for a given deltatime
+x = 0.5
+y = 0.5
+v = 0.5
+dx = 0
+dy = 0
+
+def Calculate(dt):
+    global x, y, v, dx, dy, x1, p1, p2
+    x += v * dx * dt / 1000
+    y += v * dy * dt / 1000
+    v += dt / 5e4
+
+    if dy < 0 and y < 0.5:
+        x1 += crop(10 * (x - x1), -2, 2) * dt / 1000
+
+    if x < 0.02:
+        dx = abs(dx)
+    if x > 0.98:
+        dx = -abs(dx)
+    if 0.04 < y < 0.05 and x1 - 0.1 < x < x1 + 0.1:
+        dy = abs(dy)
+        dx += 5 * (x1 - x)
+    if 0.95 < y < 0.96 and x2 - 0.1 < x < x2 + 0.1:
+        dy = -abs(dy)
+        dx += 5 * (x - x2)
+    if y < 0:
+        Score(p2 + 1)
+        p2 += 1
+    if y > 1:
+        Score(p1 + 1)
+        p1 += 1
+
+# Core loop
+def OnAnimate(t, dt, nodraw):
+    global x, y, p1, p2
+    # Calculate positions in 4 milliseconds steps
+    while dt > 0:
+        Calculate(4)
+        dt -= 4
+
+    # Render state
+    img.Clear()
+    img.DrawCircle(x, y, 0.02)
+    img.DrawText(str(p1), 0.05, 0.4)
+    img.DrawText(str(p2), 0.05, 0.6)
+    img.DrawRectangle(x1 - 0.1, 0.03, x1 + 0.1, 0.04)
+    img.DrawRectangle(x2 - 0.1, 0.96, x2 + 0.1, 0.97)
+    img.Update()
+
+# Reset after score
+def Score(player = None):
+    global x, y, dx, dy, v
+    x = 0.5
+    dx = 0
+    y = 0.5
+    dy = 0
+    v = 0.5
+    PI = math.pi
+
+    def set_random_direction():
+        global dx, dy
+        a = random.random() * PI
+        if a > PI / 2:
+            a += PI / 2
+        dx = math.cos(a + PI / 4)
+        dy = math.sin(a + PI / 4)
+
+    app.SetTimeout(set_random_direction, 1000)
+</sample>
 
 ## Games with GLView
 The third option you have is the so called GLView which is based on the [FastCanvas Plugin](https://github.com/phonegap/phonegap-plugin-fast-canvas)
