@@ -409,7 +409,7 @@ function formatCode(code, langId = "js") {
 
 /** @param {string} jsCode */
 function translatePython(jsCode) {
-    return jsCode
+    let pyCode = jsCode
         .replace(/\s*[{}] *(\n)?/g, '$1')
         .replace(/\bfunction\b (\w+\([^\n]*\))/g, 'def $1: ')
         .replace(/\/\/([^\n]*)/g, '# $1')
@@ -421,7 +421,13 @@ function translatePython(jsCode) {
         .replace(/\b(var|let|const)\b (\w+)/g, '$2')
         .replace(/:;\n/g, ': pass\n')
         .replace(/; *(<\/b>|\n)/g, '$1')
-        .replace(/: +\n/g, ':\n');
+        .replace(/: +\n/g, ':\n')
+        .replace(/setTimeout/g, "app.SetTimeout")
+        .replace(/setInterval/g, "app.SetInterval");
+    if(!/from\s+native\s+import\s+app/.test(pyCode) && pyCode.includes("app.")) {
+        pyCode = "from native import app" + pyCode;
+    }
+    return pyCode
 }
 
 /** convert a sample to html code
