@@ -72,6 +72,32 @@ function OnStart()
 
 </sample App Settings>
 
+
+<sample Python App Settings>
+from native import app
+import json
+
+<b># default settings
+settings = {"version": "1.0", "startNo": 0}
+
+def LoadSettings():
+    global settings
+
+    tmp = json.loads(app.LoadText("settings", "{}"))
+
+    # update settings object
+    settings.update(tmp)
+
+def SaveSettings():
+    app.SaveText("settings", json.dumps(settings))
+</b>
+def OnStart():
+    LoadSettings()
+    settings["startNo"] += 1
+    app.ShowPopup("Started " + str(settings["startNo"]) + ". time")
+    SaveSettings()
+</sample>
+
 ## Using Databases
 Using Databases is the most elaborate variant of the three.
 
