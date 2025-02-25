@@ -301,6 +301,11 @@ app.SendIntent(None, None, "android.settings.WIFI_SETTINGS")
 ## Misc
 
 <sample Add Calendar Event>
+
+function OnStart() {
+    cal_si_insert();
+}
+
 function cal_si_insert()
 {
     var today = Date.now();
@@ -322,6 +327,9 @@ function cal_si_insert()
 from native import app
 import json
 import time
+
+def OnStart():
+    cal_si_insert()
 
 def cal_si_insert():
     today = int(time.time() * 1000)
@@ -399,7 +407,8 @@ function OnPause() { app.ToFront(); }
 </sample>
 <sample Python Receive Broadcasts>
 from native import app
-import json
+
+from browser import window
 
 def OnStart():
     app.EnableBackKey(False)
@@ -436,13 +445,12 @@ def OnStart():
     app.SetOnBroadcast(rb, "android.bluetooth.input.profile.action.CONNECTION_STATE_CHANGED")
     app.SetOnBroadcast(rb, "android.bluetooth.pan.profile.action.CONNECTION_STATE_CHANGED")
 
-def rb(type_, msg):
-    app.Alert(json.dumps(type_))
-    # app.Alert(json.dumps(msg))
+def rb(type):
+    app.Alert(window.JSON.stringify(type))
 
 def handleReply(error, reply):
-    app.Alert(json.dumps(error))
-    app.Alert(json.dumps(reply))
+    app.Alert(window.JSON.stringify(error))
+    app.Alert(window.JSON.stringify(reply))
 
 def OnBack():
     app.ToFront()

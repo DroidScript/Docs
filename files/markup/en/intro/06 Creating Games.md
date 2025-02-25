@@ -180,7 +180,7 @@ def btn_OnTouch(btn):
     else:
         btn.SetText("XO"[player - 1])
 
-    btn.Tween({"sw": -1, "rot": 360}, 200)
+    # btn.Tween({"sw": -1, "rot": 360}, 200)
     lay.SetTouchable(False)
 
     # Check winrows if someone won
@@ -231,90 +231,111 @@ It also demonstrates how you can handle multiple touches, and how a game can be 
 An [advanced version](https://ds.justplayer.de/uploads/pong) is available on the dspk store.
 
 <sample Pong>
-// User variables
-var x1 = 0.5, x2 = 0.5, p1 = 0, p2 = 0;
+from native import app
+import math
+import random
 
-// Called when app started.
-function OnStart()
-{
-    app.SetOrientation( "Portrait" );
+# User variables
+x1 = 0.5
+x2 = 0.5
+p1 = 0
+p2 = 0
 
-    lay = app.CreateLayout( "Linear" );
+# Called when app started.
+def OnStart():
+    global lay, img, x, y, dx, dy, v, p1, p2 # Declare globals
 
-    img = app.CreateImage( null, 1, 1 );
-    img.SetOnTouch( img_OnTouch );
-    img.SetAutoUpdate( false );
-    img.SetTextSize( 30 );
-    lay.AddChild( img );
+    app.SetOrientation("Portrait")
 
-    Score();
-    app.AddLayout( lay );
-    app.Animate( OnAnimate, 50 );
-}
+    lay = app.CreateLayout("Linear")
 
-// Move user bar
-function img_OnTouch( ev ) { x2 = ev.X; }
+    img = app.CreateImage(None, 1, 1)
+    img.SetOnTouch(img_OnTouch)
+    img.SetAutoUpdate(False)
+    img.SetTextSize(30)
+    lay.AddChild(img)
 
-function crop( v, a, b ) { return v < a ? a : v > b ? b : v; }
+    Score()
+    app.AddLayout(lay)
+    app.Animate(OnAnimate, 50, False)
 
-// Calculate ball movement for a given deltatime
-var x, y, v = 0.5, dx = 0, dy = 0;
-function Calculate( dt )
-{
-    x += v * dx * dt / 1000;
-    y += v * dy * dt / 1000;
-    v += dt / 5e4;
+# Move user bar
+def img_OnTouch(ev):
+    global x2
+    x2 = ev.X
 
-    if( dy < 0 && y < 0.5)
-        x1 += crop( 10 * (x - x1), -2, 2 ) * dt / 1000;
+def crop(v, a, b):
+    return max(a, min(v, b))
 
-    if( x < 0.02 ) dx = Math.abs(dx);
-    if( x > 0.98 ) dx = -Math.abs(dx);
-    if( y > 0.04 && y < 0.05 && x > x1 - 0.1 && x < x1 + 0.1 ) {
-        dy =  Math.abs( dy );
-        dx += 5 * ( x1 - x );
-    }
-    if( y < 0.96 && y > 0.95 && x > x2 - 0.1 && x < x2 + 0.1 ) {
-        dy = -Math.abs( dy );
-        dx += 5 * ( x - x2 );
-    }
-    if( y < 0 ) Score( p2++ );
-    if( y > 1 ) Score( p1++ );
-}
+# Calculate ball movement for a given deltatime
+x = 0.5
+y = 0.5
+v = 0.5
+dx = 0
+dy = 0
 
-// Core loop
-function OnAnimate( t, dt, nodraw )
-{
-    // Calculate positions in 4 milliseconds steps
-    do { Calculate(4); dt -= 4; }
-    while( dt > 0 );
+def Calculate(dt):
+    global x, y, v, dx, dy, x1, p1, p2
+    x += v * dx * dt / 1000
+    y += v * dy * dt / 1000
+    v += dt / 5e4
 
-    // Render state
-    img.Clear();
-    img.DrawCircle( x, y, 0.02 );
-    img.DrawText( p1, 0.05, 0.4 );
-    img.DrawText( p2, 0.05, 0.6 );
-    img.DrawRectangle( x1 - 0.1, 0.03, x1 + 0.1, 0.04 );
-    img.DrawRectangle( x2 - 0.1, 0.96, x2 + 0.1, 0.97 );
-    img.Update();
-}
+    if dy < 0 and y < 0.5:
+        x1 += crop(10 * (x - x1), -2, 2) * dt / 1000
 
-// Reset after score
-function Score()
-{
-    x = 0.5; dx = 0;
-    y = 0.5; dy = 0;
-    v = 0.5;
-    var PI = Math.PI;
+    if x < 0.02:
+        dx = abs(dx)
+    if x > 0.98:
+        dx = -abs(dx)
+    if 0.04 < y < 0.05 and x1 - 0.1 < x < x1 + 0.1:
+        dy = abs(dy)
+        dx += 5 * (x1 - x)
+    if 0.95 < y < 0.96 and x2 - 0.1 < x < x2 + 0.1:
+        dy = -abs(dy)
+        dx += 5 * (x - x2)
+    if y < 0:
+        Score(p2 + 1)
+        p2 += 1
+    if y > 1:
+        Score(p1 + 1)
+        p1 += 1
 
-    setTimeout( function()
-    {
-        var a = Math.random() * PI;
-        if( a > PI/2 ) a += PI/2;
-        dx = Math.cos( a + PI/4 );
-        dy = Math.sin( a + PI/4 );
-    }, 1000 );
-}
+# Core loop
+def OnAnimate(t, dt):
+    global x, y, p1, p2
+    # Calculate positions in 4 milliseconds steps
+    while dt > 0:
+        Calculate(4)
+        dt -= 4
+
+    # Render state
+    img.Clear()
+    img.DrawCircle(x, y, 0.02)
+    img.DrawText(str(p1), 0.05, 0.4)
+    img.DrawText(str(p2), 0.05, 0.6)
+    img.DrawRectangle(x1 - 0.1, 0.03, x1 + 0.1, 0.04)
+    img.DrawRectangle(x2 - 0.1, 0.96, x2 + 0.1, 0.97)
+    img.Update()
+
+# Reset after score
+def Score(player = None):
+    global x, y, dx, dy, v
+    x = 0.5
+    dx = 0
+    y = 0.5
+    dy = 0
+    v = 0.5
+    PI = math.pi
+
+    def set_random_direction():
+        global dx, dy
+        a = random.random() * PI
+        if a > PI / 2:
+            a += PI / 2
+        dx = math.cos(a + PI / 4)
+        dy = math.sin(a + PI / 4)
+
+    app.SetTimeout(set_random_direction, 1000)
 </sample Pong>
 
 <sample Python Pong>
