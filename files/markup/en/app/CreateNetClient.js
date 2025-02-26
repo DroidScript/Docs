@@ -445,6 +445,7 @@ def OnStart():
 sent = False
 msg = ""
 def net_OnConnect(connected):
+    global sent
 
     if not connected:
         return app.ShowPopup("Failed to connect!")
@@ -457,6 +458,7 @@ def net_OnConnect(connected):
     net.SendText("GET / HTTP/1.1\r\nHost:www.randomfunfacts.com\r\n\r\n", "UTF-8")
 
 def OnReceive(s):
+    global msg
 
     msg += s
 
@@ -464,6 +466,7 @@ def OnReceive(s):
         txt.SetText(msg)
         web.LoadHtml(msg)
         msg = ""
+
  */
 
 

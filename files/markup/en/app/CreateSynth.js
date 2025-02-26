@@ -405,15 +405,15 @@ def OnStart():
     def playSynth2():
         synth2.PlayMidiTune("59:4,59:8,59:8,62:8,59:4,57:8,55:2,54:2")
 
-    setTimeout(playSynth1, 0*5120)
-    setTimeout(playSynth1, 1*5120)
-    setTimeout(playSynth1, 2*5120)
-    setTimeout(playSynth1, 3*5120)
-    setTimeout(playSynth1, 4*5120)
-    setTimeout(playSynth1, 5*5120)
+    app.SetTimeout(playSynth1, 0*5120)
+    app.SetTimeout(playSynth1, 1*5120)
+    app.SetTimeout(playSynth1, 2*5120)
+    app.SetTimeout(playSynth1, 3*5120)
+    app.SetTimeout(playSynth1, 4*5120)
+    app.SetTimeout(playSynth1, 5*5120)
 
-    setTimeout(playSynth2, 2*5120)
-    setTimeout(playSynth2, 3*5120)
-    setTimeout(playSynth2, 4*5120)
-    setTimeout(playSynth2, 5*5120)
+    app.SetTimeout(playSynth2, 2*5120)
+    app.SetTimeout(playSynth2, 3*5120)
+    app.SetTimeout(playSynth2, 4*5120)
+    app.SetTimeout(playSynth2, 5*5120)
  */

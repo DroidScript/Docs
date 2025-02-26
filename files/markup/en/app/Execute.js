@@ -59,6 +59,49 @@ function btn_OnTouch()
 }
  */
 
+/**
+@sample Python Execute code from WebView
+from native import app
+
+html = """
+<html>
+<head>
+    <script src='file:///android_asset/app.js'></script>
+</head>
+
+<script>
+    var source = "html";
+    function btn_OnTouch()
+    {
+        app.Execute( "app.Alert( 'source: " + source + "\\\\ntarget: ' + source );" );
+    }
+</script>
+
+<body style="text-align: center;">
+    <input type="button" onclick="btn_OnTouch()" value="Click me!"></button>
+</body>
+</html>
+"""
+
+source = "app";
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "fillxy,vcenter" )
+
+    web = app.CreateWebView( .5, .2 )
+    web.LoadHtml( html )
+    lay.AddChild( web )
+
+    btn = app.CreateButton("call myFunction", .4, .1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+
+    app.AddLayout( lay )
+
+def btn_OnTouch():
+    app.Execute( "app.Alert( 'source: " + source + "\\ntarget: ' + source );" )
+ 
+ */
 
 
 /**

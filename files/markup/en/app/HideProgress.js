@@ -31,6 +31,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    app.ShowProgress("Loading...")
+    <b>app.ShowProgress("Loading...")</b>
     app.SetTimeout("app.HideProgress()", 3000)
  */

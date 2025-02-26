@@ -522,10 +522,10 @@ def OnStart():
 	global glview, img
 	lay = app.CreateLayout( "Linear", "FillXY" )
 
-	glview = app.CreateGLView(1, 1, "Fast2d")
+	<b>glview = app.CreateGLView(1, 1, "Fast2d")
 	lay.AddChild(glview)
 
-	img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame )
+	img = glview.CreateImage( "/Sys/Img/Hello.png", DrawFrame )</b>
 
 	app.AddLayout(lay)
 
@@ -546,10 +546,10 @@ def OnStart():
 	global glview, img
 	lay = app.CreateLayout( "Linear", "FillXY" )
 
-	glview = app.CreateGLView(1, 1, "Fast2d")
+	<b>glview = app.CreateGLView(1, 1, "Fast2d")
 	lay.AddChild(glview)
 
-	img = glview.CreateImage("/Sys/Img/Hello.png", StartRendering)
+	img = glview.CreateImage("/Sys/Img/Hello.png", StartRendering)</b>
 
 	app.AddLayout(lay)
 
@@ -560,7 +560,7 @@ def DrawFrame():
 	glview.DrawImage( img, 0.25, 0.3, 0.5, -1, angle )
 
 	angle = angle + 10
-	if( angle == 360 ) angle = 0
+	if angle == 360: angle = 0
 
 	glview.Render()
  */
@@ -570,6 +570,7 @@ def DrawFrame():
 /**
 @sample Python Sprite Sheet Animation
 from native import app
+from math import floor
 
 spriteCount = 8
 srcWidth = 50
@@ -577,30 +578,33 @@ srcHeight = 60
 frameCount = 0
 
 def OnStart():
-	global glview, img
-	lay = app.CreateLayout( "Linear", "FillXY" )
+    global glview, img
+    lay = app.CreateLayout( "Linear", "FillXY" )
 
-	glview = app.CreateGLView(1, 1, "Fast2d")
-	lay.AddChild(glview)
+    <b>glview = app.CreateGLView(1, 1, "Fast2d")
+    lay.AddChild(glview)
 
-	img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering )
+    img = glview.CreateImage( "/Sys/Img/Sprint.png", StartRendering )</b>
 
-	app.AddLayout(lay)
+    app.AddLayout(lay)
+    app.SetTimeout(StartRendering, 1000)
 
 def StartRendering():
-	app.SetInterval( DrawFrame, 1000/30 )
+    app.SetInterval( DrawFrame, 1000/30 )
 
 def DrawFrame():
-	spriteIndex = app.MathFloor(frameCount / 2) % spriteCount
+    global spriteIndex, frameCount
 
-	sx = spriteIndex * srcWidth
-	sy = 0
+    spriteIndex = floor(frameCount / 2) % spriteCount
 
-	glview.DrawSprite( img, sx, sy, srcWidth, srcHeight,
-				0.3, 0.4, 0.3, -1 )
+    sx = spriteIndex * srcWidth
+    sy = 0
 
-	glview.Render()
-	frameCount += 1
+    glview.DrawSprite( img, sx, sy, srcWidth, srcHeight,
+                0.3, 0.4, 0.3, -1 )
+
+    glview.Render()
+    frameCount += 1
  */
 
 

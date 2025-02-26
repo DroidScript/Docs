@@ -61,11 +61,11 @@ function OnKey(action, name, code, extra)
 @sample Python Surprise
 from native import app
 
-prev
+prev = None
 
 def OnStart():
     global lay
-    app.DisableKeys( "VOLUME_DOWN,VOLUME_UP" )
+    <b>app.DisableKeys( "VOLUME_DOWN,VOLUME_UP" )</b>
 
     lay = app.CreateLayout( "Linear", "FillX" )
     lay.SetPadding( 0, .85 )
@@ -80,6 +80,8 @@ def OnStart():
     app.SetOnKey( OnKey )
 
 def OnKey(action, name, code, extra):
+    global prev
+
     if action != prev:
         if action == "Down":
             lay.Animate( "SlideFromBottom", None, 300 )

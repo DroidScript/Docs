@@ -63,10 +63,11 @@ function ShowMemory() {
 /**
 @sample Python Basic
 from native import app
+from browser import window
 
 def OnStart():
-    mem = app.GetMemoryInfo()
-    s = str(mem).replace(",", ",\n")
+    <b>mem = app.GetMemoryInfo()</b>
+    s = window.JSON.stringify(mem).replace(",", ",\n")
     app.Alert(s)
  */
 
@@ -99,5 +100,5 @@ def ShowMemory(time, dtime):
     else:
         color = "white"
 
-    txt.SetHtml(text.fontcolor(color))
+    txt.SetHtml(f"<font color={color}>{text}</font>")
  */

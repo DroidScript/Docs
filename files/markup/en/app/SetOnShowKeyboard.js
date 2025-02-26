@@ -42,7 +42,7 @@ function tgl_OnTouch( show )
 	else app.HideKeyboard();
 }
 
-<b>function OnKeyboard( shown )
+<b>function OnKeyboardShown( shown )
 {
     app.ShowPopup( "Keyboard shown: " + shown );
 }</b>
@@ -76,6 +76,6 @@ def tgl_OnTouch( show ):
     else:
         app.HideKeyboard()
 
-<b>def OnKeyboard( shown ):
-    app.ShowPopup( "Keyboard shown: " + shown )</b>
+<b>def OnKeyboardShown( shown ):
+    app.ShowPopup( "Keyboard shown: " + str(shown) )</b>
  */

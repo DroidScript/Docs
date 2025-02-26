@@ -70,6 +70,7 @@ def OnStart():
     CreateLayout()
 
 def CreateLayout():
+    global lay
 
     if lay:
         app.DestroyLayout(lay)
@@ -91,7 +92,8 @@ def CreateLayout():
 
     app.AddLayout(lay)
 
-def spin_OnChange(item):
+def spin_OnChange(item, index):
+    global themeName
 
     themeName = item
     theme = app.CreateTheme(themeName)

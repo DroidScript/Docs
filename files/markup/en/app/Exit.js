@@ -27,15 +27,32 @@ function OnBack()
 {
     var yesNo = app.CreateYesNoDialog( "Exit App?" );
     yesNo.SetOnTouch( yesNo_OnTouch );
+    yesNo.Show()
 }
 
 function yesNo_OnTouch( result )
 {
-    if( result == "Yes" ) app.Exit();
+    if( result == "Yes" ) <b>app.Exit();</b>
 }
  */
 
+/**
+@sample Python Exit Dialog
+from native import app
 
+def OnStart():
+    app.EnableBackKey( False )
+    app.ShowPopup( "Press the back key" )
+
+def OnBack():
+    yesNo = app.CreateYesNoDialog( "Exit App?" )
+    yesNo.SetOnTouch( yesNo_OnTouch )
+    yesNo.Show()
+
+def yesNo_OnTouch( result ):
+    if result == "Yes": <b>app.Exit()</b>
+
+ */
 
 /**
 @sample Python Creating a Button
@@ -274,16 +291,3 @@ def OnStart():
     app.DisableGps()
  */
 
-
-
-/**
-@sample Python Exit dialog
-from native import app
-
-def OnStart():
-    app.EnableBackKey(False)
-    app.ShowPopup("Press the back key")
-
-def OnBack():
-    yesNo = app
- */

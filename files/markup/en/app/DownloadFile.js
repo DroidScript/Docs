@@ -51,7 +51,27 @@ function OnStart()
 }
  */
 
+/**
+@sample Python Downloading the DroidScript logo
+from native import app
 
+def OnStart():
+    src = "http://www.androidscript.org/droidscriptwp/wp-content/uploads/2015/10/droidscript_logo_64x64.png"
+    dst = "/sdcard/Downloads/logo.png"
+    app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
+ */
+
+
+
+/**
+@sample Python Download to external storage
+from native import app
+
+def OnStart():
+    src = "http://www.androidscript.org/droidscriptwp/wp-content/uploads/2015/10/droidscript_logo_64x64.png"
+    dst = app.GetExternalFolder() + "/Downloads/logo.png"
+    app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
+ */
 
 /**
 @sample Python Get current GPS location

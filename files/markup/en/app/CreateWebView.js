@@ -484,16 +484,16 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    web = app.CreateWebView( 1, 1, "Progress" )
+    <b>web = app.CreateWebView( 1, 1, "Progress" )
     web.SetOnProgress( web_OnProgess )
-    lay.AddChild( web )
+    lay.AddChild( web )</b>
 
     app.AddLayout( lay )
 
     web.LoadUrl( "http:///www.google.com" )
 
 def web_OnProgess( progress ):
-    app.Debug( "progress = " + progress )
+    app.Debug( "progress = " + str(progress) )
  */
 
 
@@ -505,9 +505,9 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    web = app.CreateWebView( 0.8, 0.8 )
+    <b>web = app.CreateWebView( 0.8, 0.8 )
     web.SetBackColor( "#00000000" )
-    lay.AddChild( web )
+    lay.AddChild( web )</b>
 
     app.AddLayout( lay )
 
@@ -520,20 +520,28 @@ def OnStart():
 @sample Python Direct Html
 from native import app
 
+from native import app
+
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    web = app.CreateWebView( 0.8, 0.8 )
+    <b>web = app.CreateWebView( 0.8, 0.8 )
     web.SetBackColor( "#00000000" )
-    lay.AddChild( web )
+    lay.AddChild( web )</b>
 
     app.AddLayout( lay )
 
-    html = "<html><body><center>" + \
-        "    <img src='Img/Droid2.png'>" + \
-        "    <div style='color:white; font-size:30;'>" + \
-        "    Hello World!</div><br>" + \
-        "</center></body></html>"
+    html = """
+<html>
+  <body>
+    <center>
+      <img src='Img/Droid2.png'>
+      <div style='color:white; font-size:30;'>Hello World!</div>
+      <br>
+      </center>
+    </body>
+</html>
+"""
 
     web.LoadHtml( html, "file:///Sys/" )
  */

@@ -64,11 +64,11 @@ def OnStart():
     app.Animate( SimulateTouch, 1/2 )
 
 def SimulateTouch(time, dtime):
-    global i
     app.SimulateTouch( btn, 0.5, 0.5, "down" )
 
 i = 1
 def btn_OnTouch():
+    global i
     app.ShowPopup( "Hello World " + str(i) )
     i += 1
  */

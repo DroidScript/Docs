@@ -31,8 +31,9 @@ function OnStart()
 /**
 @sample Python Example
 from native import app
+from browser import window
 
-defaultUserAgent = navigator.userAgent
+defaultUserAgent = window.navigator.userAgent
 myUserAgent = defaultUserAgent
 
 def OnStart():

@@ -217,10 +217,10 @@ def OnStart():
         app.Wait(.4)
     app.HideProgress()
 
-    bt = app.CreateBluetoothSerial()
+    <b>bt = app.CreateBluetoothSerial()
     bt.SetOnConnect( bt_OnConnect )
     bt.SetSplitMode( "End", "\n" )
-    bt.Listen( True )
+    bt.Listen( True )</b>
 
     lst = app.CreateBluetoothList()
     lst.SetOnTouch(lst_OnTouch)
@@ -232,13 +232,14 @@ def lst_OnTouch( name, address ):
 def bt_OnConnect( ok, data ):
     app.HideProgress()
 
-    if ok:
-        if typeof data == "object":
-            app.ShowPopup( "Connected!" )
-        else:
+    if ok == true:
+        if type(data) == str:
             app.Alert( "Connected to " + ok + " (" + data + ")" )
+        else:
+            app.ShowPopup( "Connected!" )
 
         bt.Write("hello from " + app.GetBluetoothName())
     else:
         app.ShowPopup( "Failed to connect!" )
+
  */

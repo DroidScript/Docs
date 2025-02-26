@@ -39,7 +39,7 @@ function OnStart()
 from native import app
 
 def OnStart():
-    file = app.GetAppPath() + "/" + app.GetAppName() + ".js"
+    <b>file = app.GetAppPath() + "/" + app.GetAppName() + ".py"</b>
     app.CreateShortcut( "Demo", "/Sys/Img/Icon.png", file )
     app.ShowPopup( "Add Shortcut" )
  */

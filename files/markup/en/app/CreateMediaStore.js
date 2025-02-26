@@ -221,7 +221,7 @@ def media_OnArtistsResult(result):
     for m in result:
         s = ""
         for k in m:
-            s += k + ": " + m[k] + "\n"
+            s += f"{k}: {m[k]} \n"
         lst.AddItem(m["artist"], s[:-1], "")
 
     app.HideProgress()
@@ -253,7 +253,7 @@ def media_OnAlbumsResult(result):
     for m in result:
         s = ""
         for k in m:
-            s += k + ": " + m[k] + "\n"
+            s += f"{k}: {m[k]} \n"
         lst.AddItem(m["album"], s[:-1], "audio" if m["albumArt"] == "null" else m["albumArt"])
 
     app.HideProgress()
@@ -283,7 +283,7 @@ def media_OnMediaResult(result):
     for m in result:
         s = ""
         for k in m:
-            s += k + ": " + m[k] + "\n"
+            s += f"{k}: {m[k]} \n"
         lst.AddItem(m["title"], s[:-1], "")
 
     app.HideProgress()
