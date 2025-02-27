@@ -3,7 +3,7 @@
 
 /** # SaveBoolean #
  * @brief Save a boolean value across multiple starts
- * Save a boolean value to remember varibale values between multiple app starts.
+ * Save a boolean value to remember variable values between multiple app starts.
  *
  * See also: @LoadBoolean.
  * $$ app.SaveBoolean(name, value, file?) $$
