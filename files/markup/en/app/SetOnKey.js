@@ -121,29 +121,6 @@ def OnStart():
     edt.Gone()
 
 def OnKey(action, name, code, extra):
-    from native import app
-
-app.DisableKeys( "VOLUME_DOWN,VOLUME_UP,BACK" )
-
-def OnStart():
-    global txt
-    lay = app.CreateLayout( "linear", "VCenter,FillXY" )
-
-    txt = app.CreateText( "", -1, -1, "multiline,left,monospace" )
-    lay.AddChild( txt )
-
-    edt = app.CreateTextEdit( "", .8, .1 )
-    lay.AddChild( edt )
-
-    app.AddLayout( lay )
-
-    <b>app.SetOnKey( OnKey )</b>
-
-    edt.Focus()
-    app.ShowKeyboard( edt )
-    edt.Gone()
-
-def OnKey(action, name, code, extra):
     text = f"""
     action: {action}
     name: {name}

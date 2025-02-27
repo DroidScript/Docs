@@ -202,10 +202,10 @@ from native import app
 def OnStart():
     lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
-    spin = app.CreateSpinner("Bilbo,Frodo,Gandalf", 0.4)
+    <b>spin = app.CreateSpinner("Bilbo,Frodo,Gandalf", 0.4)
     spin.SetOnChange(ShowSelection)
     spin.SelectItem("Frodo")
-    lay.AddChild(spin)
+    lay.AddChild(spin)</b>
 
     app.AddLayout(lay)
 

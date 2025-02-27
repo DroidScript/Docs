@@ -57,7 +57,7 @@ def OnStart():
     app.AddLayout( lay )
 
 def btnChoose_OnTouch():
-    app.ChooseAccount( OnChoose )
+    <b>app.ChooseAccount( OnChoose )</b>
 
 def OnChoose( account ):
     app.Alert( "selected account: " + account )

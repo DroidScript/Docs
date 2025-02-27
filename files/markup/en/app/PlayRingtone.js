@@ -30,7 +30,7 @@ function OnStart()
 
 function btn_OnTouch()
 {
-    app.PlayRingtone("Notification");
+    <b>app.PlayRingtone("Notification");</b>
 }
  */
 
@@ -50,5 +50,5 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    app.PlayRingtone("Notification")
+    <b>app.PlayRingtone("Notification")</b>
  */

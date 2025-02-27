@@ -69,5 +69,5 @@ def OnStart():
     app.AddDrawer(layDrawer, "left", 0.8)
 
 def RemoveDrawer():
-    app.RemoveDrawer("left")
+    <b>app.RemoveDrawer("left")</b>
  */

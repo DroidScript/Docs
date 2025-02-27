@@ -39,7 +39,7 @@ function dlg_OnTouch( account )
 from native import app
 
 def OnStart():
-    accounts = app.GetAccounts()
+    <b>accounts = app.GetAccounts()</b>
     dlg = app.CreateListDialog( "Select an account:", accounts )
     dlg.SetOnTouch( dlg_OnTouch )
     dlg.Show()

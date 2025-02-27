@@ -31,6 +31,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    app.SetMenu("Option 1,Option 2,Option 3")
-    app.ShowMenu()
+    <b>app.SetMenu("Option 1,Option 2,Option 3")
+    app.ShowMenu()</b>
  */

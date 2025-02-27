@@ -31,5 +31,5 @@ function OnStart()
 from native import app
 
 def OnStart():
-    app.Vibrate( "0,100,30,100,50,300" )
+    <b>app.Vibrate( "0,100,30,100,50,300" )</b>
  */

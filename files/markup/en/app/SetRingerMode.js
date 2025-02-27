@@ -67,7 +67,7 @@ def OnStart():
     app.AddLayout( lay )
 
 def SetRingerMode( mode, index):
-    app.SetRingerMode( mode )
+    <b>app.SetRingerMode( mode )</b>
 
 def Notify():
     ntf = app.CreateNotification()

@@ -161,9 +161,9 @@ function OnStart()
 
     <b>chk = app.CreateCheckBox( "Enable Stuff" );
     chk.SetOnTouch( ShowState );
-    lay.AddChild( chk );
+    lay.AddChild( chk );</b>
 
-    app.AddLayout( lay );</b>
+    app.AddLayout( lay );
 }
 
 function ShowState( isChecked )
@@ -181,9 +181,9 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    chk = app.CreateCheckBox( "Enable Stuff" )
+    <b>chk = app.CreateCheckBox( "Enable Stuff" )
     chk.SetOnTouch( ShowState )
-    lay.AddChild( chk )
+    lay.AddChild( chk )</b>
 
     app.AddLayout( lay )
 

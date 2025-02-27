@@ -71,17 +71,20 @@ html = """
 <html>
 <head>
     <meta name="viewport" content="width=device-width">
-    <script src='file:///android_asset/app.js'>
+    <script src='file:///android_asset/app.js'></script>
 </head>
 
-def greetWeb(name):
-    app.ShowPopup("Hello " + name + ", I'm the WebView")
-
-def greetApp():
-    app.Func("greetApp", "WebView")
-
-def OnRequest(err, s):
-    app.Alert(s.split("\\n").join("\\n"))
+<script>
+function greetWeb(name) {
+    app.ShowPopup("Hello " + name + ", I'm the WebView");
+}
+function greetApp() {
+    app.Func("greetApp", "WebView");
+}
+function OnRequest(err, s) {
+    alert(s.split("\\n").join("\\n"))
+}
+</script>
 
 <input type="button" onclick="greetApp()" value="Greet App"/>
 </html>

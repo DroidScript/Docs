@@ -373,7 +373,7 @@ function btn_OnTouch()
 from native import app
 
 def OnStart():
-    lay = app.CreateLayout( "Linear", "Vertical" )
+    <b>lay = app.CreateLayout( "Linear", "Vertical" )</b>
 
     btnA = app.CreateButton( "A", 0.2, 0.1 )
     lay.AddChild( btnA )
@@ -394,7 +394,7 @@ def OnStart():
 from native import app
 
 def OnStart():
-    lay = app.CreateLayout( "Linear", "Horizontal,FillXY" )
+    <b>lay = app.CreateLayout( "Linear", "Horizontal,FillXY" )</b>
 
     btnA = app.CreateButton( "A", 0.2, 0.1 )
     lay.AddChild( btnA )
@@ -420,8 +420,8 @@ def OnStart():
     btnA = app.CreateButton( "A", 0.6, 0.1 )
     layVert.AddChild( btnA )
 
-    layHoriz = app.CreateLayout( "Linear", "Horizontal" )
-    layVert.AddChild( layHoriz )
+    <b>layHoriz = app.CreateLayout( "Linear", "Horizontal" )
+    layVert.AddChild( layHoriz )</b>
 
     btnB1 = app.CreateButton( "B1", 0.2, 0.1 )
     layHoriz.AddChild( btnB1 )
@@ -446,7 +446,7 @@ def OnStart():
     global img2
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    layFrm = app.CreateLayout( "Frame" )
+    <b>layFrm = app.CreateLayout( "Frame" )</b>
     img1 = app.CreateImage( "/Sys/Img/Droid1.png", 0.5 )
     layFrm.AddChild( img1 )
 

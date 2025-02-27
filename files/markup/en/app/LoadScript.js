@@ -43,9 +43,8 @@ function OnLoad() {
 from native import app
 
 scriptPJ = """
-num = 7
-def computeNum():
-    return 6 * num
+var num = 7;
+function computeNum() { return 6 * num; }
 """
 
 def OnStart():

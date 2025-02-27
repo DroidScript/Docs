@@ -211,6 +211,7 @@ def OnStart():
     
     list = zip.List("").split(",")
     app.Alert("\n".join(list))
+*/
 
 /**
 @sample Python Compress

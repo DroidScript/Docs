@@ -265,9 +265,9 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    btn = app.CreateButton( "Press Me" )
+    <b>btn = app.CreateButton( "Press Me" )
     btn.SetOnTouch( SayHello )
-    lay.AddChild( btn )
+    lay.AddChild( btn )</b>
 
     app.AddLayout( lay )
 
@@ -284,9 +284,9 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    btn = app.CreateButton( "Press Me", 0.5, 0.2 )
+    <b>btn = app.CreateButton( "Press Me", 0.5, 0.2 )
     btn.SetOnTouch( SayHello )
-    lay.AddChild( btn )
+    lay.AddChild( btn )</b>
 
     app.AddLayout( lay )
 
@@ -304,9 +304,9 @@ def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
     lay.SetPadding( 0.02, 0.02, 0.02, 0.02 )
 
-    btn = app.CreateButton( "Press Me", -1, -1, "FillX" )
+    <b>btn = app.CreateButton( "Press Me", -1, -1, "FillX" )
     btn.SetOnTouch( SayHello )
-    lay.AddChild( btn )
+    lay.AddChild( btn )</b>
 
     app.AddLayout( lay )
 
@@ -324,14 +324,14 @@ def OnStart():
     lay = app.CreateLayout( "Linear", "Vertical,FillXY" )
     lay.SetPadding( 0.1, 0.1, 0.1, 0 )
 
-    b1 = app.CreateButton( "Normal", -1, -1, "FillX" )
+    <b>b1 = app.CreateButton( "Normal", -1, -1, "FillX" )
     lay.AddChild( b1 )
 
     b2 = app.CreateButton( "Gray", -1, -1, "FillX,Gray" )
     lay.AddChild( b2 )
 
     b3 = app.CreateButton( "Alum", -1, -1, "FillX,Alum" )
-    lay.AddChild( b3 )
+    lay.AddChild( b3 )</b>
 
     app.AddLayout( lay )
  */

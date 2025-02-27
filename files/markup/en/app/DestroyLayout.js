@@ -47,7 +47,7 @@ function btn_OnTouch()
 from native import app
 
 def OnStart():
-    global lay
+    global lay, btn
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     btn = app.CreateButton( "Don't Press Me", 0.3, 0.1 )

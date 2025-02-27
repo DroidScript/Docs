@@ -49,8 +49,8 @@ def OnStart():
     lay.AddChild(lst)
     app.AddLayout(lay)
 
-    app.ShowProgress()
-    app.WifiScan(OnWifi)
+    <b>app.ShowProgress()
+    app.WifiScan(OnWifi)</b>
 
 def OnWifi(ssid):
     lst.SetList(ssid, "\\|")

@@ -82,7 +82,7 @@ def OnStart():
     app.AddLayout( lay )
 
 def btnChoose_OnTouch():
-    app.ChooseContact( "phone", OnPhoneChoose )
+    <b>app.ChooseContact( "phone", OnPhoneChoose )</b>
 
 def OnPhoneChoose( name, number ):
     app.ShowPopup( name + " " + number )
@@ -104,7 +104,7 @@ def OnStart():
     app.AddLayout( lay )
 
 def btnChoose_OnTouch():
-    app.ChooseContact( "email", OnEmailChoose )
+    <b>app.ChooseContact( "email", OnEmailChoose )</b>
 
 def OnEmailChoose( name, email ):
     app.ShowPopup( name + " " + email )

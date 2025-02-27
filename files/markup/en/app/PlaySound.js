@@ -71,7 +71,7 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    app.PlaySound("/Sys/Snd/Trill.ogg")
+    <b>app.PlaySound("/Sys/Snd/Trill.ogg")</b>
  */
 
 
@@ -90,5 +90,5 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    app.PlaySound("https://sgarman.net/silly.mp3")
+    <b>app.PlaySound("https://sgarman.net/silly.mp3")</b>
  */

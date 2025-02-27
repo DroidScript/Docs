@@ -28,9 +28,9 @@ var address = "http://www.randomfunfacts.com";
 
 <b>app.HttpRequest( "GET", address, null, null, handleReply );</b>
 
-function handleReply( error, reply )
+function handleReply( error, reply, status )
 {
-	if( error ) alert( reply );
+	if( error ) app.Alert( reply, status );
 	else
 	{
 		var funfact = reply.slice( reply.indexOf("<i>") + 3, reply.indexOf("</i>") );
@@ -47,11 +47,12 @@ from native import app
 
 address = "http://www.randomfunfacts.com"
 
-app.HttpRequest("GET", address, None, None, handleReply)
+def OnStart():
+    <b>app.HttpRequest("GET", address, None, None, handleReply)</b>
 
-def handleReply(error, reply):
+def handleReply(error, reply, status):
     if error:
-        app.Alert(reply)
+        app.Alert(reply, status)
     else:
         funfact = reply[reply.index("<i>") + 3: reply.index("</i>")]
         app.Alert(funfact)

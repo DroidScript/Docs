@@ -35,6 +35,6 @@ from native import app
 
 def OnStart():
     list = app.GetShortcuts()
-    if list == null: app.Alert( "Unsupported" )
+    if list == None: app.Alert( "Unsupported" )
     else: app.Alert( list, "" )
  */

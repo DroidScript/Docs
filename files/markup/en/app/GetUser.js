@@ -21,7 +21,7 @@
 @sample Show App Path
 function OnStart()
 {
-    <b>var usr = app.GetPath();</b>
+    <b>var usr = app.GetUser();</b>
     app.Alert( usr, "Active User:" );
 }
  */
@@ -33,6 +33,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    usr = app.GetPath()
+    <b>usr = app.GetUser()</b>
     app.Alert(usr, "Active User:")
  */

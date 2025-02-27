@@ -580,14 +580,13 @@ def OnStart():
     global cam
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    cam = app.CreateCameraView( 0.8, 0.4 )
+    <b>cam = app.CreateCameraView( 0.8, 0.4 )
     cam.SetOnReady( cam_OnReady )
-    lay.AddChild( cam )
+    lay.AddChild( cam )</b>
 
     app.AddLayout( lay )
 
 def cam_OnReady():
-    global cam
     cam.StartPreview()
  */
 
@@ -603,9 +602,9 @@ def OnStart():
     global cam
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    cam = app.CreateCameraView( 0.8, 0.4 )
+    <b>cam = app.CreateCameraView( 0.8, 0.4 )
     cam.SetOnReady( cam_OnReady )
-    lay.AddChild( cam )
+    lay.AddChild( cam )</b>
 
     btn = app.CreateButton( "Snap", 0.3, -1 )
     btn.SetOnTouch( Snap )
@@ -614,12 +613,10 @@ def OnStart():
     app.AddLayout( lay )
 
 def cam_OnReady():
-    global cam
     cam.SetPictureSize( 1024, 768 )
     cam.StartPreview()
 
 def Snap():
-    global cam
     cam.TakePicture( "/sdcard/MyPic.jpg" )
     app.ShowPopup("Picture saved")
  */
@@ -652,12 +649,10 @@ def OnStart():
     app.MakeFolder( recFolder )
 
 def cam_OnReady():
-    global cam
     cam.SetFocusMode( "Video" )
     cam.StartPreview()
 
 def Record( start ):
-    global cam, recFolder
     if start:
         cam.Record( recFolder + "/test.mp4" )
         app.ShowPopup("Recording")
@@ -690,8 +685,6 @@ def OnStart():
     app.AddLayout( lay )
 
 def StartDetection():
-    global layCam, cam
-
     sensitivity = 10 # motion threshold
     minPeriod = 500 # millisecs
 

@@ -34,6 +34,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    height = app.GetScreenHeight()
-    app.Alert(str(height))
+    <b>height = app.GetScreenHeight()</b>
+    app.Alert(height)
  */
