@@ -2,10 +2,10 @@
  * @abbrev prd
  * A ProgressDialog is a pop-up dialog that indicates the progress of a task, often accompanied by a loading spinner or bar.
  * @img(img1.png)
- * @jdocs It provides visual feedback to users during time-consuming operations, enhancing the overall user experience by conveying that the application is actively working on a task. Show a progress dialog in your app using the `showProgressDialog` method like this:
+ * @jdocs It provides visual feedback to users during time-consuming operations, enhancing the overall user experience by conveying that the application is actively working on a task. Show a progress dialog in your app using the “showProgressDialog” method like this:
  * $$ prd = ui.showProgressDialog(text, options) $$
  * @param {String} [text] The text message of the progress dialog.
- * @param {String} [options] A comma separated options.\n`AutoCancel` to close the dialog when backdrop is click.
+ * @param {String} [options] A comma separated options.\n“AutoCancel” to close the dialog when backdrop is click.
  * @returns uio-ProgressDialog
  */
 
@@ -119,6 +119,7 @@ def onTouch(event):
 /**
 @sample Python Nocancel progress dialog
 from hybrid import ui
+from browser import timer
 
 def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -126,13 +127,14 @@ def OnStart():
     btn.setOnTouch(onTouch)
 
 def onTouch(event):
+    global pdlg
     pdlg = ui.showProgressDialog("Loading...", "NoCancel")
+    timer.set_timeout(hideProgressDialog, 2000)
 
-    def hideProgressDialog():
-        pdlg.hide()
-        ui.showPopup("Progress dialog is close!")
-
-    app.SetTimeout(hideProgressDialog, 2000)
+def hideProgressDialog():
+    global pdlg
+    pdlg.hide()
+    ui.showPopup("Progress dialog is close!")
  */
 
 

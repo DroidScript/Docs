@@ -5,12 +5,12 @@
  * @img(img2.png)
  * @jdocs It allows users to make multiple choices from a set of related options. In Material Design, a checkbox group is often organized with clear spacing and alignment, providing a cohesive and visually coherent representation. This grouping enhances the user's ability to manage and understand multiple selections within the context of the application's design guidelines.
  * $$ ckb = ui.addCheckboxGroup(parent, list, options, width, height) $$
- * @jdocs Add a checkbox group using the `addCheckboxGroup` method like this:
+ * @jdocs Add a checkbox group using the “addCheckboxGroup” method like this:
  * @param {uio-Layout} parent The parent layout where to add the CheckboxGroup.
  * @param {Array} [list] The items to be displayed.
- * @param {String} [options] A comma separated options.\nTheme Color: `Default`, `Primary`, `Secondary`\nSizes: `Small`, `Medium`\nIcon Position: `Left`, `Right`\nContainer: `Elevated`, `Outlined`\nCorners : `Square`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nTheme Color: “Default”, “Primary”, “Secondary”\nSizes: “Small”, “Medium”\nIcon Position: “Left”, “Right”\nContainer: “Elevated”, “Outlined”\nCorners : “Square”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-CheckboxGroup
  */
 
@@ -21,17 +21,17 @@
 	 * @prop {String} label Sets or returns the label text.
 	 * @prop {String} checkIcon Sets or returns the material icon font for check stated.
      * @prop {String} uncheckIcon Sets or returns the material icon font for uncheck state.
-	 * @prop {String} sizeVariant Sets or returns the size variant of the Checkbox. Values can be `small` or `medium`.
+	 * @prop {String} sizeVariant Sets or returns the size variant of the Checkbox. Values can be “small” or “medium”.
 	 * @prop {String} textColor Sets or returns the text color in hexadecimal format.
 	 * @prop {String} elevation Sets or returns the depth of the container.
      * @prop {String} iconColor Sets or returns the color of the checkbox icon.
      * @prop {Number} textSize Sets or returns the size of the checkbox icon. This will also affect the checkbox icon.
      * @prop {Number} iconSize Sets or returns the size of the checkbox icon.
      * @prop {Number} spaceBetween Sets or returns the space between the checkbox icon and the text.
-     * @prop {String} color Sets or returns the theme color use for the checkbox. Values can be `Default` `Primary` or `Secondary`.
+     * @prop {String} color Sets or returns the theme color use for the checkbox. Values can be “Default” “Primary” or “Secondary”.
      * @prop {Boolean} outlined Sets or returns whether the container is outlined or elevated.
-     * @prop {Array} itemPadding Sets or returns the padding of each list item. See also `setItemPadding` method.
-     * @prop {String} orientation Sets or returns the orientation of the list. Can be "Vertical" or "Horizontal".
+     * @prop {Array} itemPadding Sets or returns the padding of each list item. See also “setItemPadding” method.
+     * @prop {String} orientation Sets or returns the orientation of the list. Can be “Vertical" or "Horizontal”.
 	 */
 
 
@@ -127,9 +127,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -204,23 +201,23 @@
 	 * Get the checked and unchecked icon of the checkbox group.
 	 * $$ ckb.getIcon() $$
 	 * @returns Object
-     * @@ The returned object is of the form `{checked, unchecked}`.
+     * @@ The returned object is of the form “{checked, unchecked}”.
 	 */
 
 
 	/** ### setCheckedByIndex
      * Checked or unchecked a given item by its index.
-	 * $$ ckb.setCheckedByIndex( index, bool ) $$
+	 * $$ ckb.setCheckedByIndex(index, checked) $$
      * @param {Number} item The item or index of the item.
-     * @param {Boolean} bool The item value. Can be `true` or `false`.
+     * @param {Boolean} checked The item value. Can be “true” or “false”.
      */
 
 
 	/** ### setCheckedByName
      * Checked or unchecked a given item by its name.
-	 * $$ ckb.setCheckedByName( name, bool ) $$
+	 * $$ ckb.setChecked(name, checked) $$
      * @param {String} name The item or index of the item.
-     * @param {Boolean} bool The item value. Can be `true` or `false`.
+     * @param {Boolean} checked The item value. Can be “true” or “false”.
      */
 
 
@@ -239,9 +236,9 @@
 	 */
 
 
-	/** ### getCheckedByName
+	/** ### getChecked
 	 * Get the current value of the item in the list.
-	 * $$ ckb.getCheckedByName( name ) $$
+	 * $$ ckb.getChecked( name ) $$
 	 * @param {String} name The index of the corresponding item.
 	 * @returns Boolean
 	 */
@@ -249,17 +246,17 @@
 
 	/** ### setTextByIndex
      * Sets a new text to a given item by its index.
-	 * $$ ckb.setTextByIndex( index, val ) $$
+	 * $$ ckb.setTextByIndex(index, text) $$
      * @param {Number} index The index of the item.
-     * @param {String} val The new text to replace.
+     * @param {String} text The new text to replace.
      */
 
 
-	/** ### setTextByName
+	/** ### setText
      * Sets a new text to a given item by its name.
-	 * $$ ckb.v( name, val ) $$
-     * @param {String} name The name of the item
-     * @param {String} val The new text to replace
+	 * $$ ckb.setText(name, newText) $$
+     * @param {String} name The name or index of the item.
+     * @param {String} newText The new text to replace
      */
 
 
@@ -282,12 +279,12 @@
 	 * Enable or disable an item in the checkbox group.
 	 * $$ ckb.setEnabled( index, value ) $$
 	 * @param {Number} index The index of the checkbox item.
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
     /** ### getEnabled
-     * Get the enabled state of a checkbox item.
+     * Get the enabled state of a checkbox item. If no index is pass, it will return the enabled state of the control.
      * $$ ckb.getEnabled( index ) $$
      * @param {Number} index The index of the checkbox item.
      * @returns Boolean
@@ -298,7 +295,7 @@
      * Enable or disable a checkbox item by its name.
      * $$ ckb.setEnabledByName( name, value ) $$
      * @param {String} name The name of the checkbox item.
-     * @param {Boolean} value Values can be `true` or `false`
+     * @param {Boolean} value Values can be “true” or “false”
      */
 
 
@@ -357,18 +354,18 @@
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
      */
 
 
     /** ### setItemPadding
-     * Sets the padding of the checkbox item. See `itemPadding` property for equivalent setter/getter property.
+     * Sets the padding of the checkbox item. See “itemPadding” property for equivalent setter/getter property.
      * $$ ckg.setItemPadding(left, top, right, bottom, mode) $$
      * @param {Number} left Left padding of the checkbox item.
      * @param {Number} top Top padding of the checkbox item.
      * @param {Number} right Right padding of the checkbox item.
      * @param {Number} bottom Bottom padding of the checkbox item.
-     * @param {String} mode Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
+     * @param {String} mode Unit of measurement. Can be “rem”, “px”, “%”, or “v” for viewport.
      */
 
 

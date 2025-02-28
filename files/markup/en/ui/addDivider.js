@@ -2,11 +2,11 @@
  * @abbrev div
  * A divider is a visual element used to separate content or components within a layout.
  * @img(img1.png)
- * @jdocs In Material Design, dividers are often lines or subtle indicators that enhance visual clarity and organization. They help create a structured and clean interface by distinguishing different sections or items within a mobile application's layout. Add a divider into your app using the `addDivider` method like this:
+ * @jdocs In Material Design, dividers are often lines or subtle indicators that enhance visual clarity and organization. They help create a structured and clean interface by distinguishing different sections or items within a mobile application's layout. Add a divider into your app using the “addDivider” method like this:
  * $$ ui.addDivider(parent, options, width, height) $$
  * @param {uio-Layout} parent The layout where to add the divider.
  * @param {Number} [width=1] Fraction of the parent width. Default is 1.
- * @param {String} [options] A comma separated options.\n`Inset` to add some padding.
+ * @param {String} [options] A comma separated options.\n“Inset” to add some padding.
  * @returns uio-Divider
  */
 
@@ -107,9 +107,6 @@
     /** ## Methods
      * @jdocs Here are the methods for Divider component.
      */
-
-
-    /** @extern setOnContextMenu */
 
 
     /** @extern animate */

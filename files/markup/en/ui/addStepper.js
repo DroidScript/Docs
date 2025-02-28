@@ -3,29 +3,29 @@
  * A Stepper in mobile UI design is a navigation element that guides users through a multi-step process, typically used for forms or sequential tasks.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs In Material Design, it provides clear indicators of progress and allows users to navigate forward and backward through steps, ensuring a structured and user-friendly experience in mobile applications. Add a stepper into your app using the `addStepper` method like this:
+ * @jdocs In Material Design, it provides clear indicators of progress and allows users to navigate forward and backward through steps, ensuring a structured and user-friendly experience in mobile applications. Add a stepper into your app using the “addStepper” method like this:
  * $$ stp = ui.addStepper(parent, steps, options, width, height) $$
  * @param {uio-Layout} parent The parent layout of the Stepper.
  * @param {Array} [steps] An array of titles.
- * @param {String} [options] A comma separated options.\n`Vertical`, `Horizontal`, `Loop`, `Mobile`, `AlternativeLabel`.
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\n“Vertical”, “Horizontal”, “Loop”, “Mobile”, “AlternativeLabel”.
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Stepper
  */
 
 
 /**
- * For `Mobile` option, an additional position options can be added `Top`, `Static` or `Bottom` and `AutoSwipe` to enable auto swiping.
- * To style step count text, pass `Fraction`, `Dots` or `Progress` options.
- * For `vertical` and `mobile`, you can add Layout type `Linear` or `Absolute`
+ * For “Mobile” option, an additional position options can be added “Top”, “Static” or “Bottom” and “AutoSwipe” to enable auto swiping.
+ * To style step count text, pass “Fraction”, “Dots” or “Progress” options.
+ * For “vertical” and “mobile”, you can add Layout type “Linear” or “Absolute”
  */
 
 
 	/** ## Properties ##
 	 * @jdocs Here are the available setters and getters of the Stepper Component.
 	 * @prop {Number} activeStep Sets or returns the active step.
-	 * @prop {String} orientation Sets or returns the orientation of the Stepper. Values can be `Horizontal` or `Vertical`.
-     * @prop {Number} elevation Sets or returns the elevation of the mobile stepper. Value ranges from `0` to `24`.
+	 * @prop {String} orientation Sets or returns the orientation of the Stepper. Values can be “Horizontal” or “Vertical”.
+     * @prop {Number} elevation Sets or returns the elevation of the mobile stepper. Value ranges from “0” to “24”.
 	 */
 
 
@@ -121,9 +121,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -170,6 +167,9 @@
 
 
     /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
 
 
     /** ### setOnComplete
@@ -428,58 +428,6 @@ class Main extends App
 
 
 /**
-@sample Python Progress control implementation
-from hybrid import ui
-
-def OnStart():
-    # Creates a fullscreen layout with objects vertically centered.
-    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    main.childSpacing = "Even"
-
-    # Indeterminate Linear
-    prog1 = ui.addProgress(main, 40, "linear", 0.7)
-
-    # Determinate Linear
-    prog2 = ui.addProgress(main, None, "Linear,Secondary,indeterminate", 0.7)
-
-    # Determinate Circular
-    prog3 = ui.addProgress(main, 50, "Circular")
-
-    # Indeterminate Circular, enlarge and secondary
-    prog4 = ui.addProgress(main, None, "Circular,Secondary,indeterminate")
-    prog4.circleSize = 100
- */
-
-
-/**
-@sample Python Setting progress value
-from hybrid import ui
-
-def OnStart():
-    global prog
-    # Creates a fullscreen layout with objects vertically centered.
-    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    main.childSpacing = "Even"
-
-    # Add an indeterminate linear progress control to the main layout
-    prog = ui.addProgress(main, 0, "Linear", 0.7)
-
-    # Add a button control to the main layout
-    btn = ui.addButton(main, "Increment")
-
-    # Add a callback handler when the button is touched
-    btn.setOnTouch(onTouch)
-
-def onTouch(event):
-    # Increment the value of the progress control by 10
-    if prog.value < 100:
-        prog.value += 10
-    else:
-        ui.showPopup("Progress is complete!")
- */
-
-
-/**
 @sample Python Basic stepper
 from hybrid import ui
 
@@ -609,7 +557,6 @@ def onChange(index):
 from hybrid import ui
 
 def OnStart():
-    ui.setTheme("dark")
 
     # Creates a layout with objects verticaly centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -621,7 +568,7 @@ def OnStart():
     img3 = "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
 
     # Add stepper control with `mobile` option
-    stp = ui.addStepper(main, steps, "mobile,autoswipe,fraction", 0.6)
+    stp = ui.addStepper(main, steps, "mobile,autoswipe,fraction", 0.9)
 
     # Get the first layout on the stepper
     lay1 = stp.getLayout(0)
@@ -636,7 +583,16 @@ def OnStart():
     ui.addImage(lay2, img2, "", 1)
 
     # Get the third layout on the stepper
-    lay3
+    lay3 = stp.getLayout(2)
+
+    #Add an image control to the third layout
+    ui.addImage(lay3, img3, "", 1)
+
+    #Add a callback handler when stepper layout changes
+    stp.setOnChange( onChange )
+
+def onChange( index ):
+    ui.showPopup("Layout index " + str(index))
  */
 
 

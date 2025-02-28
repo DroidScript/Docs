@@ -6,13 +6,13 @@
  * @jdocs It offers supplementary content without obstructing the main interface, enhancing user experience on mobile apps. Initialize a bottom sheet dialog like this:
  * $$ var bts = ui.addBottomSheet(title, options) $$
  * @param {String} title An optional bottomsheet title.
- * @param {String} options A comma separated options. Values are:\n`"Notch"` to add a small notch at the top of the bottomsheet.\n`"HideOnAction"` to hide the bottomsheet when actions are click.\n`"CloseAction"` add a close action at the left.\n`"MoreAction"` add a more action at the right.\n`"NoCancel"` to disable the default closing event when the backdrop is click.
+ * @param {String} options A comma separated options. Values are:\n“Notch” to add a small notch at the top of the bottomsheet.\n“HideOnAction” to hide the bottomsheet when actions are click.\n“CloseAction” add a close action at the left.\n“MoreAction” add a more action at the right.\n“NoCancel” to disable the default closing event when the backdrop is click.
  * @returns uio-BottomSheet
  */
 
 
 /**
- * It's a good practice to avoid adding a notch when your bottomsheet has a `title`, or `leftAction` or `rightAction`
+ * It's a good practice to avoid adding a notch when your bottomsheet has a “title”, or “leftAction” or “rightAction”
  */
 
 
@@ -46,25 +46,25 @@
     /** ### setOnAction
      * Add a callback handler when the left and right action is click when they are provided.
      * $$ bts.setOnAction(name, pos) $$
-     * @param {Function} cb A callback handler when the right or left action is click. The action `name` and `action icon` will be passed to the callback respectively. ---> @arg {String} name The action name. Can be `"leftAction"` or `"rightAction"`. @arg {String} icon Material icon font for the action. 
+     * @param {Function} cb A callback handler when the right or left action is click. The action “name” and “action icon” will be passed to the callback respectively. ---> @arg {String} name The action name. Can be “leftAction” or “rightAction”. @arg {String} icon Material icon font for the action. 
      */
 
 
     /** ### setOnOpen
-     * Add a callback handler on `open` event.
+     * Add a callback handler on “open” event.
      * $$ bts.setOnOpen( cb ) $$
      * @param {Function} cb The callback function to be called.
      */
 
 
     /** ### setOnClose
-     * Add a callback handler on `close` event.
+     * Add a callback handler on “close” event.
      * $$ bts.setOnClose( cb ) $$
      * @param {Function} cb The callback function to be called.
      */
 
 
-/** ## Examples */
+/* ## Examples */
 
 
 /**
@@ -169,7 +169,10 @@ class Main extends App
 @sample Python Basic BottomSheet
 from hybrid import ui
 
-def onStart():
+def OnStart():
+
+    global bts
+    
     # Create a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -183,16 +186,20 @@ def onStart():
     btn = ui.addButton(bts.layout, "Button", "Secondary")
     btn.margins = [0, "1rem", 0, "1rem"]
 
-def btn_onTouch():
+def btn_onTouch( ev ):
     # Show the bottomsheet
     bts.show()
+
+ */
 
 
 /**
 @sample Python BottomSheet with notch
 from hybrid import ui
 
-def onStart():
+def OnStart():
+    global bts
+    
     # Create a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -206,16 +213,19 @@ def onStart():
     btn = ui.addButton(bts.layout, "Button", "Primary")
     btn.margins = [0, "1rem", 0, "1rem"]
 
-def btn_onTouch():
+def btn_onTouch( ev ):
     # Show the bottomsheet
     bts.show()
+ */
 
 
 /**
 @sample Python Complete example
 from hybrid import ui
 
-def onStart():
+def OnStart():
+    global bts
+    
     # Create a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -236,7 +246,7 @@ def onStart():
     btn = ui.addButton(bts.layout, "Button", "Primary")
     btn.margins = [0, "1rem", 0, "1rem"]
 
-def btn_onTouch():
+def btn_onTouch( ev ):
     # Show the bottomsheet
     bts.show()
 

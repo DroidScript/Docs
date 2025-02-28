@@ -3,19 +3,19 @@
  * Tabs in user interfaces facilitate seamless navigation between app sections.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs Positioned in the AppBar, they offer labeled or icon-based selection, enabling users to switch content effortlessly. Consistent styling and clear hierarchy enhances the overall user experience, ensuring intuitive navigation within the application. Add a tabs into your app using the `addTabs` method like this:
+ * @jdocs Positioned in the AppBar, they offer labeled or icon-based selection, enabling users to switch content effortlessly. Consistent styling and clear hierarchy enhances the overall user experience, ensuring intuitive navigation within the application. Add a tabs into your app using the “addTabs” method like this:
  * $$ tab = ui.addTabs(parent, list, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the Tabs Component.
  * @param {Array} [list] An array of tab names.
- * @param {String} [options] A comma separated options.\nSwipe: `Swipeable`\nTheme Colors: `Primary`, `Secondary`, `Inherit`, `Transparent`, `Default`\nVariant: `Standard`, `Scrollable`, `FullWidth`\nLayout: `Linear`, `Absolute`\nUtils: `Icon`, `Center`, `Paper`
- * @param {Number} [width] Fraction of the parent width `[0-1]`
- * @param {Number} [height] Fraction of the parent height `[0-1]`
+ * @param {String} [options] A comma separated options.\nSwipe: “Swipeable”\nTheme Colors: “Primary”, “Secondary”, “Inherit”, “Transparent”, “Default”\nVariant: “Standard”, “Scrollable”, “FullWidth”\nLayout: “Linear”, “Absolute”\nUtils: “Icon”, “Center”, “Paper”, “KeepCase”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”
+ * @param {Number} [height] Fraction of the parent height “[0-1]”
  * @returns uio-Tabs
  */
 
 
 /**
- * Default Tab variant for mobile screens is `fullWidth` unless provided.
+ * Default Tab variant for mobile screens is “fullWidth” unless provided.
  */
 
 
@@ -24,19 +24,19 @@
 
 	/** ## Properties
 	 * @jdocs Here are the available setter and getter properties of the Tabs Component.
-	 * @prop {String} color Sets or returns the theme color of the tab bar. Values can be `Default` `Primary` or `Secondary`
-	 * @prop {String} textColor Sets or returns the theme color for the tab bar titles `Primary` or `Secondary`. You can also pass a hexadecimal color of the form `#rrggbb`
-	 * @prop {String} variant Sets or returns the variant of the Tabs Component. Values can be `Standard` `Scrollable` or `FullWidth`
+	 * @prop {String} color Sets or returns the theme color of the tab bar. Values can be “Default” “Primary” or “Secondary”
+	 * @prop {String} textColor Sets or returns the theme color for the tab bar titles “Primary” or “Secondary”. You can also pass a hexadecimal color of the form “#rrggbb”
+	 * @prop {String} variant Sets or returns the variant of the Tabs Component. Values can be “Standard” “Scrollable” or “FullWidth”
 	 * @prop {Boolean} centered Sets or returns a boolean value whether the tabs are centered or not.
      * @prop {Number} iconSize Sets or returns the tab icon.
      * @prop {String} iconColor Sets or returns the color ofthe tab icon.
-     * @prop {Number} elevation Sets or returns the elevation of the tab bar. Make sure to pass a `Paper` option for this to work.
-     * @prop {String} scrollButtonMode Sets or returns the scroll button mode when tab items overflow the width of its container. Values are `auto` `desktop` `on` and `of`.
-     * @prop {Number} indicatorWidth Sets or returns the width of the indicator bar as a fraction of the tab item width. Works only on `FullWidth` tab.
+     * @prop {Number} elevation Sets or returns the elevation of the tab bar. Make sure to pass a “Paper” option for this to work.
+     * @prop {String} scrollButtonMode Sets or returns the scroll button mode when tab items overflow the width of its container. Values are “auto” “desktop” “on” and “of”.
+     * @prop {Number} indicatorWidth Sets or returns the width of the indicator bar as a fraction of the tab item width. Works only on “FullWidth” tab.
      * @prop {Number} indicatorThickness Sets or returns the thickness of the indicator bar in pixels.
      * @prop {Number} indicatorRadius Sets or returns the corner radius of the indicator bar in pixels.
-     * @prop {String} indicatorColor Sets or returns the color of the indicator bar. You can pass theme color `primary` or `secondary` or in hexadecimal format `#rrggbb`.
-     * @prop {Number} tabPadding Sets or returns the padding of the tab items. The return objects has the following props: `left`, `top`, `right` and `bottom`. You can pass an object to set paddings on all side or see `setTabPadding` method.
+     * @prop {String} indicatorColor Sets or returns the color of the indicator bar. You can pass theme color “primary” or “secondary” or in hexadecimal format “#rrggbb”.
+     * @prop {Number} tabPadding Sets or returns the padding of the tab items. The return objects has the following props: “left”, “top”, “right” and “bottom”. You can pass an object to set paddings on all side or see “setTabPadding” method.
      * @prop {Number} tabHeight Sets or returns the height of the tab in pixels.
 	 */
 
@@ -133,9 +133,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -184,10 +181,13 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnChange
 	 * Sets a callback function when the value of the tab changes.
 	 * $$ tab.setOnChange(callback) $$
-	 * @param {Function} callback The callback function. ---> @arg {String} name The tab name. @arg {Number} index The index of the corresponding tab.
+	 * @param {Function} callback The callback function. ---> @arg {String} name Tab name. @arg {Number} index The index of the corresponding tab.
 	 */
 
 
@@ -281,11 +281,11 @@
 
 
 	/** ### setEnabled
-	 * Enable or disable a tab item. Pass `index` as number if you want the corresponding tab index to be enabled or disabled.
-	 * Pass `index` as Boolean, if you want to disable the entire Tabs component.
+	 * Enable or disable a tab item. Pass “index” as number if you want the corresponding tab index to be enabled or disabled.
+	 * Pass “index” as Boolean, if you want to disable the entire Tabs component.
 	 * $$ tab.setEnabled( index, value ) $$
-	 * @param {Number} index The index of the corresponding tab. Pass `Boolean` if you want to disable the entire Tabs component.
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Number} index The index of the corresponding tab. Pass “Boolean” if you want to disable the entire Tabs component.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
@@ -301,7 +301,7 @@
      * Enable or disable a tab by its name.
      * $$ tab.setEnabledByName( name, value ) $$
      * @param {String} name The name of the tab.
-     * @param {Boolean} value Values can be `true` or `false`.
+     * @param {Boolean} value Values can be “true” or “false”.
      */
 
 
@@ -314,9 +314,9 @@
 
 
 	/** ### showScrollButton
-	 * Determines the behavior of scroll buttons when tabs are set to `scrollable`.
+	 * Determines the behavior of scroll buttons when tabs are set to “scrollable”.
 	 * $$ tab.showScrollButton( mode ) $$
-	 * @param {String} mode Values can be \n `auto` : will only present them when not all the items are visible \n `desktop` : will only present them on medium and larger viewports \n `on` : will always present them \n `off` : will never present them.
+	 * @param {String} mode Values can be \n “auto” : will only present them when not all the items are visible \n “desktop” : will only present them on medium and larger viewports \n “on” : will always present them \n “off” : will never present them.
 	 */
 
 
@@ -341,7 +341,7 @@
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
      */
 
 
@@ -350,13 +350,13 @@
      * $$ tab.setIndicatorStyle(width, thickness, color, radius)
      * @param {Number} width Fraction of the tab item width (horizontal tabs) or height (vertical tabs)
      * @param {Number} thickness Thickness in pixels
-     * @param {String} color Hexadecimal color of the form `#rrggbb`
+     * @param {String} color Hexadecimal color of the form “#rrggbb”
      * @param {Number} radius The corner radius in pixels
      */
 
 
     /** ### getIndicatorStyle
-     * Returns the indicator style as an object. Props are `width`, `thickness`, `color`, `radius` and `fw` which is the actual width or height.
+     * Returns the indicator style as an object. Props are “width”, “thickness”, “color”, “radius” and “fw” which is the actual width or height.
      * $$ var s = tab.getIndicatorStyle()
      * @returns object
      */
@@ -369,7 +369,7 @@
      * @param {Number} [top] The tab-item top padding.
      * @param {Number} [right] The tab-item right padding.
      * @param {Number} [bottom] The tab-item bottom padding.
-     * @param {String} [mode='px'] Unit of measurement. Default is `px`. You can pass `%` `rem` `vw`.
+     * @param {String} [mode='px'] Unit of measurement. Default is “px”. You can pass “%” “rem” “vw”.
      */
 
 
@@ -513,7 +513,7 @@ class Main extends App
 
 
 /**
-@sample Open tabs dynamically
+@sample Open tabs programmatically
 class Main extends App
 {
     onStart()
@@ -658,7 +658,6 @@ from hybrid import ui
 def OnStart():
     # Creates a layout with objects vertically centered
     main = ui.addLayout( "main", "Linear", "FillXY,VCenter")
-    main.backColor = "#e0e0e0"
 
     # Add text control to the main layout
     text = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores voluptatibus deleniti, eum nulla rerum dignissimos nihil, quidem facere repellendus necessitatibus incidunt non quasi doloremque delectus repellat pariatur dolorum. Omnis, vero."
@@ -715,7 +714,7 @@ def OnStart():
     ckb = ui.addCheckbox(tab3, "Check me", "Secondary")
 
 def onChange(tab, index):
-    ui.showPopup( tab + " : Index " + str(index))
+    ui.showPopup(tab + " : Index " + str(index))
  */
 
 
@@ -809,8 +808,77 @@ def onChange(tab, index):
 
 
 /**
-@sample Python Icon only
+@sample Icon only
+class Main extends App
+{
+    onStart()
+    {
+        // Set the primary and secondary theme colors
+        ui.setTheme( "dark" )
 
+        // Creates a layout with objects verticaly centered
+        this.main = ui.addLayout("main", "Linear", "FillXY,VCenter")
+
+        // Initialize tabs array with icons only
+        var tabs = ["favorite", "person", "wifi"];
+
+        // Adds a tab component to the main layout
+        this.tabs = ui.addTabs(this.main, tabs, "Icon", 1, 1)
+
+        // Set the tab height to 40px
+        this.tabs.tabHeight = 40;
+
+        // Handle tab changes
+        this.tabs.setOnChange( this.onChange )
+
+        // get the first tab and add a button control
+        this.tab1 = this.tabs.getLayout(0)
+        this.tab1.options = "VCenter"
+        this.btn = ui.addButton(this.tab1, "Button", "Secondary", 0.5)
+
+        // get the second tab and add a text control.
+        this.tab2 = this.tabs.getLayout(1)
+        this.tab2.options = "VCenter"
+        this.txt = ui.addText(this.tab2, "Lorem ipsum dolor set amit", "Center", 1)
+
+        // get the third tab and add a checkbox control
+        this.tab3 = this.tabs.getLayout(2)
+        this.tab3.options = "VCenter"
+        this.ckb = ui.addCheckbox(this.tab3, "Check me", "Secondary")
+    }
+
+    onChange(tab, index)
+    {
+        ui.showPopup(tab + " : Index " + index, "Bottom")
+    }
+}
+ */
+
+
+/**
+@sample Python Custom colors and sizes
+from hybrid import ui
+
+def OnStart():
+    #Creates a layout with objects verticaly centered
+    main = ui.addLayout("main", "Linear", "FillXY,VCenter")
+    main.backColor = "black"
+
+    #Initialize tabs array with leading icons
+    tabs = [
+        ["favorite", "Favorites"],
+        ["bluetooth", "Bluetooth"],
+        ["wifi", "Connection"]
+    ]
+
+    #Adds a tab component to the main layout
+    #add some styling to the backColor, textColor, iconColor, iconSize and indicator
+    tabs = ui.addTabs(main, tabs, "Icon", 0.8, 0.8)
+    tabs.backColor = "#ffccbc"
+    tabs.textColor = "#f4511e"
+    tabs.iconColor = "#f4511e"
+    tabs.iconSize = "1.5rem"
+    tabs.setIndicatorStyle(0.25, 4, "#f4511e", 4)
  */
 
 

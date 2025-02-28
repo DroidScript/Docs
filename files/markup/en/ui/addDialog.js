@@ -5,13 +5,13 @@
  * @img(img2.png)
  * @img(img3.png)
  * @img(img4.png)
- * @jdocs In Material Design, Dialogs follow guidelines for clarity, actions, and consistent styling. They serve to enhance user interaction and provide a focused way to handle specific tasks or gather input within a mobile application. Add a dialog into your app using the `addDialog` method like this:
+ * @jdocs In Material Design, Dialogs follow guidelines for clarity, actions, and consistent styling. They serve to enhance user interaction and provide a focused way to handle specific tasks or gather input within a mobile application. Add a dialog into your app using the “addDialog” method like this:
  * $$ dlg = ui.addDialog( title, body, actions, options ) $$
  * @param {String} title The dialog title text.
  * @param {String} body The dialog message to be shown.
  * @param {Array} [actions] A string of action button text.
- * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nUtil: `NoCancel` prevents the dialog from closing on action.\nSizes: "fullscreen"
- * @param {Number} width Fraction of the screen width `[0-1]`.
+ * @param {String} [options] A comma separated options.\nTheme Colors: “Primary”, “Secondary”\nUtil: “NoCancel”, “KeepCase" prevents the dialog from closing on action.\nSizes: "fullscreen”
+ * @param {Number} width Fraction of the screen width “[0-1]”.
  * @returns uio-Dialog
  */
 
@@ -19,9 +19,10 @@
 	/** ## Properties
 	 * @jdocs Here are the available setters and/or getter of the Dialog Component.
 	 * @prop {String} text Sets or returns the dialog text.
-	 * @prop {String} titleText Sets or returns the dialog title text.
+	 * @prop {String} title Sets or returns the dialog title text.
 	 * @prop {String} titleColor Sets or returns the title text color in hexadecimal format.
      * @prop {Object} layout Returns the layout of the dialog where you can add custom controls.
+     * @prop {Number} width Sets the width of the dialog.
 	 */
 
 
@@ -44,6 +45,13 @@
 	 */
 
 
+    /** ### setOnOpen
+	 * Adds a callback function when the dialog is open.
+	 * $$ dlg.setOnOpen(callback) $$
+	 * @param {Function} callback The callback function
+	 */
+
+
 	/** ### show
 	 * Show the dialog.
 	 * $$ dlg.show() $$
@@ -53,7 +61,7 @@
 	/** ### hide
 	 * Hide the dialog.
 	 * $$ dlg.hide() $$
-	 * @@ When you add an `onClose` callback, it will be fired after this event.
+	 * @@ When you add an “onClose” callback, it will be fired after this event.
 	 */
 
 

@@ -1,19 +1,19 @@
 /** # Image
  * @abbrev img
  * Adds an image into your layout.
- * @jdocs Images serve to visually enhance applications, displaying graphics or photos. Add an image into your app using the `addImage` method like this:
+ * @jdocs Images serve to visually enhance applications, displaying graphics or photos. Add an image into your app using the “addImage” method like this:
  * $$ img = ui.addImage(parent, file, options, width, height)  $$
  * @param {uio-Layout} parent The parent layout where to add the image.
  * @param {String} file The path to the image.
- * @param {String} [options='Image'] A comma seprated options.\n`Image`, `Canvas`, `Button` and `Avatar`. Default is image. \nFor `Avatar` you can pass `Small` or `Large`.
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options='Image'] A comma seprated options.\n“Image”, “Canvas”, “Button” and “Avatar”. Default is image. \nFor “Avatar” you can pass “Small” or “Large”.
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Image
  */
 
 
 /**
- * Please note that a `canvas` image cannot switch to Button or Avatar in `setOptions` method.
+ * Please note that a “canvas” image cannot switch to Button or Avatar in “setOptions” method.
  */
 
 
@@ -23,12 +23,12 @@
 	 * @prop {String} fillColor Sets or returns the fill color used on close paths such as square, circle, rectangle or arcs.
 	 * @prop {String} image Sets or returns the path or url of the image file.
 	 * @prop {Number} lineWidth Sets or returns the current line thickness.
-	 * @prop {String} lineCap Sets or returns the style of the end caps for a line. Values can be `square` `round` `butt`
-	 * @prop {String} lineJoin Sets or returns the type of corner created when two lines meet. Values `bevel` `round` `miter`
+	 * @prop {String} lineCap Sets or returns the style of the end caps for a line. Values can be “square” “round” “butt”
+	 * @prop {String} lineJoin Sets or returns the type of corner created when two lines meet. Values “bevel” “round” “miter”
 	 * @prop {Number} miterLimit Sets or returns the maximum miter length.
 	 * @prop {String} strokeColor Sets or returns the current color of the line or stroke.
 	 * @prop {String} fill Sets or returns the background color of the canvas.
-     * @prop {String} textStyle Sets or returns the text-style for drawing in the canvas. Values are `normal` and `italic`.
+     * @prop {String} textStyle Sets or returns the text-style for drawing in the canvas. Values are “normal” and “italic”.
      * @prop {Number} textSize Sets or returns the text-size for drawing in the canvas.
      * @prop {String} errorIcon Sets or returns the material icon for error placeholder image.
 	 */
@@ -126,9 +126,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -177,19 +174,22 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
 	/** ### enableContextMenu
 	 * Enable or disbale the context menu or the right click menus.
 	 * $$ img.enableContextMenu( value ) $$
-	 * @param {Boolean} value Value. Can be `true` `false`
+	 * @param {Boolean} value Value. Can be “true” “false”
 	 */
 
 
 	/** ### getPixelColor
-	 * Get the color of a single pixel in the image. The returned array is of the form `[red, green, blue, alpha]`.
+	 * Get the color of a single pixel in the image. The returned array is of the form “[red, green, blue, alpha]”.
 	 * $$ img.getPixelColor( x, y ) $$
 	 * @param {Number} x The x-coordinate of the pixel from the left.
 	 * @param {Number} y The y-coordinate of the pixel from the top.
-     * @param {String} format Pass `"hex"` to return color as hexadecimal formart `"#rrggbb"` or `"hexa"` to include include alpha `"#aarrggbb"` . Pass `"rgb"` to return color as `rgb` format `"rgb(r, g, b)"` or pass `"rgba"` for `"rgba(r, g, b, a)"`.
+     * @param {String} format Pass “hex” to return color as hexadecimal formart “#rrggbb” or “hexa” to include include alpha “#aarrggbb” . Pass “rgb” to return color as “rgb” format “rgb(r, g, b)” or pass “rgba” for “rgba(r, g, b, a)”.
 	 * @returns Array
 	 */
 
@@ -198,7 +198,7 @@
      * Sets the color of a specific pixel in the canvas.
      * @param {Number} x The x-coordinate of the pixel.
      * @param {Number} y The y-coordinate of the pixel.
-     * @param {String} color A hexadecimal color format of the form `"#rrggbb"` or a comma separated rgb color of the form `"r,g,b"`.
+     * @param {String} color A hexadecimal color format of the form “#rrggbb” or a comma separated rgb color of the form “r,g,b”.
      */
 
 
@@ -215,7 +215,7 @@
 
     /** ### setPixelData
      * Set the pixel data of the canvas.
-     * @param {String} base64 Base64 encoded string of the image or the `ImageData` object of the canvas.
+     * @param {String} base64 Base64 encoded string of the image or the “ImageData” object of the canvas.
      * @param {Number} x The x-coordinate of the top-left corner.
      * @param {Number} y The y-coordinate of the top-left corner.
      * @param {Number} width The width of the new image data.
@@ -227,8 +227,8 @@
      * Sets a single line font styling for rendering text on canvas.
      * @param {String} family The font-family for the text.
      * @param {Number} size The text-size for the text.
-     * @param {String} style Value can be `normal` or `italic`,
-     * @param {String} weight Values can be `normal` or `bold`.
+     * @param {String} style Value can be “normal” or “italic”,
+     * @param {String} weight Values can be “normal” or “bold”.
      */
 
 
@@ -241,7 +241,7 @@
 	 * @param {Number} y2 The y-coordinate of the second point in pixels.
 	 * @param {String} [strokeColor] A hexadecimal color.
 	 * @param {Number} [strokeWidth] The stroke thickness.
-	 * @@ This works only when a `canvas` option is pass.
+	 * @@ This works only when a “canvas” option is pass.
 	 */
 
 
@@ -254,7 +254,7 @@
 	 * @param {String} [fillColor] A hexadecimal color.
 	 * @param {String} [strokeColor] A hexadecimal color.
 	 * @param {Number} [strokeWidth] The stoke thickness.
-	 * @@ This works only when a `canvas` option is pass. @@
+	 * @@ This works only when a “canvas” option is pass. @@
 	 */
 
 
@@ -267,7 +267,7 @@
 	 * @param {String} [fillColor] A hexadecimal color.
 	 * @param {String} [strokeColor] A hexadecimal color.
 	 * @param {Number} [strokeWidth] The stroke thickness in pixels.
-	 * @@ This works only when a `canvas` option is pass. @@
+	 * @@ This works only when a “canvas” option is pass. @@
 	 */
 
 
@@ -281,7 +281,7 @@
 	 * @param {String} [fillColor] A hexadecimal color.
 	 * @param {String} [strokeColor] A hexadecimal color.
 	 * @param {Number} [strokeWidth] The stroke thickness.
-	 * @@ This works only when a `canvas` option is pass. @@
+	 * @@ This works only when a “canvas” option is pass. @@
 	 */
 
 
@@ -296,14 +296,14 @@
 	 * @param {String} [fillColor] A hexadecimal color.
 	 * @param {String} [strokeColor] A hexadecimal color.
 	 * @param {Number} [strokeWidth] The stroke thickness.
-     * @param {String} type The type of arc. Can be `filled` or `segment`.
-	 * @@ This works only when a `canvas` option is pass.
+     * @param {String} type The type of arc. Can be “filled” or “segment”.
+	 * @@ This works only when a “canvas” option is pass.
 	 */
 
 
     /** ### drawPolyline
 	 * Draws a polyline on the canvas by passing an array of points.
-	 * @param {Array} points An array of coordinates. Each element on this array is an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point, or an object of the form `{x, y}`.
+	 * @param {Array} points An array of coordinates. Each element on this array is an array of the form “[x, y]” where “x” is the x-coordinate of a point and “y” is the y-coordinate of a point, or an object of the form “{x, y}”.
 	 * @param {String} [strokeColor] A hexadecimal color.
 	 * @param {Number} [strokeWidth] The stroke thickness.
 	 */
@@ -311,7 +311,7 @@
 
 	/** ### drawPolygon
 	 * Draws a polygon on the canvas by passing an array of points.
-	 * @param {Array} points An array of coordinates. Each element on this array if an array of the form `[x, y]` where `x` is the x-coordinate of a point and `y` is the y-coordinate of a point, or an object of the form `{x, y}`.
+	 * @param {Array} points An array of coordinates. Each element on this array if an array of the form “[x, y]” where “x” is the x-coordinate of a point and “y” is the y-coordinate of a point, or an object of the form “{x, y}”.
 	 * @param {String} [fillColor] A hexadecimal color.
 	 * @param {String} [strokeColor] A hexadecimal color.
 	 * @param {Number} [strokeWidth] The stroke thickness.
@@ -334,8 +334,8 @@
      * @param {String} text The text to be drawn.
      * @param {Number} x Distance from the left in pixels.
      * @param {Number} y Distance from the top in pixels.
-     * @param {String} fillColor Text color in hexadecimal format `#rrggbb`.
-     * @param {String} strokeColor Text border color in hexadecimal format `#rrggbb`.
+     * @param {String} fillColor Text color in hexadecimal format “#rrggbb”.
+     * @param {String} strokeColor Text border color in hexadecimal format “#rrggbb”.
      * @param {Number} strokeWidth The border width in pixels.
      */
 
@@ -348,7 +348,7 @@
 	 * @param {Number} [y] The distance from the top of the top-left corner of the image in pixels.
 	 * @param {Number} [width] If provided, the image will be shrink or stretch to fill this width in pixels.
 	 * @param {Number} [height] If provided, the height of the image will be shrink or stretch to fill this height in pixels.
-	 * @@ This works only when a `canvas` option is pass. @@
+	 * @@ This works only when a “canvas” option is pass. @@
 	 */
 
 
@@ -840,99 +840,57 @@ def OnStart():
 
 
 /**
-@sample Python Analog Clock
-from hybrid import ui
-import math
-
-def OnStart():
-    global img, time
-    main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
-
-    ui.addAppBar(main, "Analog Clock")
-
-    img = ui.addImage(main, "", "canvas", "300px", "300px")
-
-    img.lineCap = "round"
-    img.lineWidth = 4
-    img.strokeColor = "#009688"
-    img.lineJoin = "round"
-
-    time = ui.addText(main, "00:00:00", "h6,bold")
-    time.setMargins(0, 0.05, 0, 0)
-
-    draw()
-    app.SetInterval(draw.bind(), 1000)
-
-def draw():
-    img.clear()
-
-    x, y, n = 0, 0, 0
-
-    for n in range(1, 13):
-        x = 130 * math.cos(n * (math.pi / 6))
-        y = 130 * math.sin(n * (math.pi / 6))
-
-        x += 150
-        y += 150
-
-        img.drawCircle(x, y, 4, "#311b92")
-
-    date = datetime.datetime.now()
-
-    hour = date.hour if date.hour <= 12 else date.hour - 12
-    minutes = date.minute
-    seconds = date.second
-
-    hourAngle = hour * (math.pi / 6) - (math.pi / 2)
-    minAngle = minutes * (math.pi / 30) - (math.pi / 2)
-    secAngle = seconds * (math.pi / 30) - (math.pi / 2)
-
-    drawHand(hourAngle, 80, 7, "#311b92")
-    drawHand(minAngle, 100, 4, "#1e88e5")
-    drawHand(secAngle, 110, 2, "#d81b60")
-
-    img.drawCircle(150, 150, 8, "#000")
-
-    time.text = (
-        str(hour).zfill(2) + ":" +
-        str(minutes).zfill(2) + ":" +
-        str(seconds).zfill(2) +
-        " " +
-        ("PM" if date.hour > 12 else "AM")
-    )
-
-def drawHand(angle, length, width, color):
-    x = length * math.cos(angle)
-    y = length * math.sin(angle)
-
-    x += 150
-    y += 150
-
-    img.drawLine(150, 150, x, y, color, width)
- */
-
-
-/**
 @sample Python Scratch Pad
 from hybrid import ui
 
 def OnStart():
+    global color
     color = "#000000"
-    main = ui.addLayout("main", "Linear", "Top", 1, 1)
+    
+    main = ui.addLayout("main", "Linear", "FillXY,Left")
     main.setChildMargins(0, 0.01, 0, 0.01)
 
     lay = ui.addLayout(main, "Linear", "Horizontal,Center,VCenter", 1)
-    lay.setChildMargins(0.01, 0, 0.01, 0)
+    lay.childSpacing = "even"
+    
+    btn = ui.addButton(lay, "", "", 0.225, "3rem")
+    btn.backColor = "#009688"
+    btn.setOnTouch(lambda ev: changeColor("#009688"))
 
-    colors = ["#009688", "#673ab7", "#e53935", "#1e88e5"]
+    btn = ui.addButton(lay, "", "", 0.225, "3rem")
+    btn.backColor = "#673ab7"
+    btn.setOnTouch(lambda ev: changeColor("#673ab7"))
+    
+    btn = ui.addButton(lay, "", "", 0.225, "3rem")
+    btn.backColor = "#e53935"
+    btn.setOnTouch(lambda ev: changeColor("#e53935"))
+    
+    btn = ui.addButton(lay, "", "", 0.225, "3rem")
+    btn.backColor = "#1e88e5"
+    btn.setOnTouch(lambda ev: changeColor("#1e88e5"))
 
-    ui.addText(lay, "Color", "H5")
-    for color in colors:
-        btn = ui.addButton(lay, "", color)
-        btn.onClick = changeColor
+    ui.addText( main, "Thickness", "caption")
 
-def changeColor():
-    color = sender.backgroundColor
+    global sld
+    sld = ui.addSlider( main, 5, "", 0.9)
+    sld.setRange(5, 25)
+    sld.value = 15
+    sld.setMargins(0.05,0,0,0)
+
+    global img
+    img = ui.addImage(main, "", "canvas", 0.96, 0.7)
+    img.fill = "#e0e0e0"
+    img.setOnTouchMove( draw )
+    img.setOnTouchDown( draw )
+    img.setOnTouch( draw )
+
+def changeColor( clr ):
+    global color
+    color = clr
+
+def draw( e ):
+    global img, sld, color
+    img.drawCircle( e.x, e.y, sld.value, color, "", 0 )
  */
 
 

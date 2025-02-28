@@ -3,19 +3,19 @@
  * Adds a radiogroup component into your app.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs A RadioGroup in mobile UI design is a grouping of radio buttons that allows users to select a single option from a set. In Material Design, RadioGroups help organize and present related choices with a consistent appearance, providing an intuitive and visually cohesive way for users to make selections within a mobile application. Add a radigroup into your app using the `addRadioGroup` method like this:
+ * @jdocs A RadioGroup in mobile UI design is a grouping of radio buttons that allows users to select a single option from a set. In Material Design, RadioGroups help organize and present related choices with a consistent appearance, providing an intuitive and visually cohesive way for users to make selections within a mobile application. Add a radigroup into your app using the “addRadioGroup” method like this:
  * $$ rdg = ui.addRadioGroup(parent, list, options, width, height) $$
  * @param {uio-Layout} parent The parent where to add the RadioGroup component.
  * @param {Array} [list] The list items array.
- * @param {String} [options] A comma separated options.\nRadio Sizes: `Small`, `Medium`\nTheme Colors: `Primary`, `Secondary`, Default\nOrientation: `Horizontal`, `Vertical`\nIcon Position: `Left`, `Right`\nContainer: `Elevated`, `Outlined`\nCorner: `Square`\nUtils: `Required`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nRadio Sizes: “Small”, “Medium”\nTheme Colors: “Primary”, “Secondary”, Default\nOrientation: “Horizontal”, “Vertical”\nIcon Position: “Left”, “Right”\nContainer: “Elevated”, “Outlined”\nCorner: “Square”\nUtils: “Required”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-RadioGroup
  */
 
 
 /**
- * Pass `required` as option to have atleast one value selected.
+ * Pass “required” as option to have atleast one value selected.
  */
 
 
@@ -24,18 +24,18 @@
      * @prop {Number} value Sets or returns the value of the RadioGroup Component as an index of the selected item.
      * @prop {String} label Sets or returns the label text of the RadioGroup Component.
      * @prop {Array} list Sets or returns the list array. You can also pass a comma separated string of items.
-     * @prop {String} radioSize Sets or returns the size of the radio button. Values can be `Small` or `Medium`
-     * @prop {String} color Sets or returns the theme color of the Radio Component. Values can be `Default` `Primary` or `Secondary`
+     * @prop {String} radioSize Sets or returns the size of the radio button. Values can be “Small” or “Medium”
+     * @prop {String} color Sets or returns the theme color of the Radio Component. Values can be “Default” “Primary” or “Secondary”
      * @prop {Number} elevation Sets or returns the depth of the RadioGroup container. Value ranges from 0 to 24.
      * @prop {String} iconColor Sets or returns the icon color in hexadecimal format.
      * @prop {Number} spaceBetween Sets or returns the space between the radio button and the text.
      * @prop {Boolean} disabled Sets or returns the disabled state of the radio button group.
-     * @prop {String} iconPosition Sets or returns the position of the icon. Values can be `left` or `right`
-     * @prop {String} textPosition Sets or returns the position of the label text. Values can be `left` or `right`. 
+     * @prop {String} iconPosition Sets or returns the position of the icon. Values can be “left” or “right”
+     * @prop {String} textPosition Sets or returns the position of the label text. Values can be “left” or “right”. 
      * @prop {Boolean} outlined Sets or returns whether the container is outlined or elevated.
-     * @prop {String} textColor Stest or returns the color of the text in hexadecimal format. You can also pass color names e.g. `red`, `green` or `blue`. 
-     * @prop {Array} itemPadding Sets or returns the padding of each radio item. See also `setItemPadding` method.
-     * @prop {String} orientation Sets or returns the orientation of the list. Can be "Vertical" or "Horizontal".
+     * @prop {String} textColor Stest or returns the color of the text in hexadecimal format. You can also pass color names e.g. “red”, “green” or “blue”. 
+     * @prop {Array} itemPadding Sets or returns the padding of each radio item. See also “setItemPadding” method.
+     * @prop {String} orientation Sets or returns the orientation of the list. Can be “Vertical" or "Horizontal”.
      */
 
 
@@ -131,9 +131,6 @@
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -180,6 +177,9 @@
 
 
     /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
 
 
     /** ### setOnChange
@@ -257,7 +257,7 @@
 	 * Enable or disable the radiogroup or an item in the radiogroup.
 	 * $$ rdg.setEnabled( index, value ) $$
 	 * @param {Number} index The index of the item.
-	 * @param {Boolean} value Values can be `true` or `false`. If `false`, the item will be disabled.
+	 * @param {Boolean} value Values can be “true” or “false”. If “false”, the item will be disabled.
 	 */
 
 
@@ -273,7 +273,7 @@
      * Enable or disable a radiogroup item by its name.
      * $$ rdg.setEnabledByName( name, value ) $$
      * @param {String} name The radiogroup text.
-     * @param {Boolean} value Values can be `true` or `false`.
+     * @param {Boolean} value Values can be “true” or “false”.
      */
 
 
@@ -299,18 +299,18 @@
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
      */
 
 
     /** ### setItemPadding
-     * Sets the padding of the radio item. See `itemPadding` property for equivalent setter/getter property.
+     * Sets the padding of the radio item. See “itemPadding” property for equivalent setter/getter property.
      * $$ rdg.setItemPadding(left, top, right, bottom, mode) $$
      * @param {Number} left Left padding of the radio item.
      * @param {Number} top Top padding of the radio item.
      * @param {Number} right Right padding of the radio item.
      * @param {Number} bottom Bottom padding of the radio item.
-     * @param {String} mode Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
+     * @param {String} mode Unit of measurement. Can be “rem”, “px”, “%”, or “v” for viewport.
      */
 
 
@@ -431,7 +431,7 @@ def OnStart():
     # Add a callback handler when the value changes
     rdg.setOnChange( onChange )
 
-def onChange(text):
+def onChange(text, index):
     ui.showPopup("You choose " + text)
  */
 
@@ -488,7 +488,7 @@ def OnStart():
     # Add a callback handler when the value changes
     rdg.setOnChange( onChange )
 
-def onChange(text):
+def onChange(text, index):
     ui.showPopup("You choose " + text)
  */
 

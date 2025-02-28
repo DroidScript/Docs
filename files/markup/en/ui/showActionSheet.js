@@ -6,9 +6,9 @@
  * @jdocs It offers a concise list of choices with icons and labels, making it easy for users to select relevant actions in response to specific interactions. Show an actionsheet like this:
  * $$ ui.showActionSheet(title, list, options, onSelect) $$
  * @param {String} title The custom actionsheet title.
- * @param {Array} list The list items to show. If `"icon"` option is passed, each element in this list array is of the form `[icon, name]`.
- * @param {String} options A comma separated actionsheet options. Values are \n`"Icon"` render a leading icon.\n`"NoCancel"` remove the default `"Cancel"` option.
- * @param {Function} onSelect The callback handler for `"select"` event.
+ * @param {Array} list The list items to show. If “icon” option is passed, each element in this list array is of the form “[icon, name]”.
+ * @param {String} options A comma separated actionsheet options. Values are \n“Icon” render a leading icon.\n“NoCancel” remove the default “Cancel” option.
+ * @param {Function} onSelect The callback handler for “select” event.
  * @returns uio-ActionSheet
  */
 
@@ -25,19 +25,36 @@
      */
 
 
+    /** ### setList
+     * Sets the list items of the action sheet.
+     * $$ acs.setList( items ) $$
+     * @param {Array} items The list items.
+     */
+
+
+    /** ### getList
+     * Returns the list items.
+     * $$ acs.getList() $$
+     * @returns Array
+     */
+
+
+    /** @prop {Array} list Sets or returns the list items. */
+
+
     /** ### setColor
      * Sets the color of the list item by its name.
      * $$ acs.setColor(name, color) $$
      * @param {String} name The list item text.
-     * @param {String} color A css supported color. Available format are: `hexadecimal`, `color-names`, `rgb`, `rgba` ...
+     * @param {String} color A css supported color. Available format are: “hexadecimal”, “color-names”, “rgb”, “rgba” ...
      */
 
 
     /** ### setColorByIndex
-     * Sets the color of the list item by its corresponding index. If you want to set the color of the list using its name, see `setColor` method.
+     * Sets the color of the list item by its corresponding index. If you want to set the color of the list using its name, see “setColor” method.
      * $$ acs.setColorByIndex(index, color) $$
      * @param {Number} index The index of list item.
-     * @param {String} color A css supported color. Available format are: `hexadecimal`, `color-names`, `rgb`, `rgba` ...
+     * @param {String} color A css supported color. Available format are: “hexadecimal”, “color-names”, “rgb”, “rgba” ...
      */
 
 
@@ -59,7 +76,7 @@
      * Add an item into the actionsheet.
      * $$ acs.addItem(name, icon, index) $$
      * @param {String} name List item text.
-     * @param {String} icon List item material icon. "options" argument must include "icon".
+     * @param {String} icon List item material icon. “options" argument must include "icon”.
      * @param {Number} index The index at which the item will be inserted. Will push the item into the list when not given.
      * @returns String
      */
@@ -105,7 +122,7 @@
      */
 
 
-/** ## Examples */
+/* ## Examples */
 
 
 /**
@@ -145,7 +162,7 @@ class Main extends App
 @sample Python Complete example of actionsheet
 from hybrid import ui
 
-def onStart():
+def OnStart():
     # Create a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -153,7 +170,7 @@ def onStart():
     btn = ui.addButton(main, "Show actionsheet", "Primary")
     btn.setOnTouch(btn_onTouch)
 
-def btn_onTouch():
+def btn_onTouch( ev ):
     choices = [
         ["person", "Account"],
         ["share", "Send to email"],

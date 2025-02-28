@@ -16,12 +16,11 @@
 
 /**
  * @jdocs <h4>Content properties</h4>
- * @jdocs `headerTitle` [string] : Card header title.<br>`headerSubtitle` [string] : Card header subtitle or subheader.<br>`headerAvatar` [string] : Card header avatar. Can be a single character or a path to an image.<br>`headerAction` [string] : Card header action. A material icon font.<br>`media` [string] : A path to an image.<br>`bodyTitle` [string] : The title of the card content.<br>`bodyText` [string] : The long description of the card.<br>`actions` [array] : List of icon buttons. These can be a list of material-icon fonts if `actionType` is an `"icon"`.<br>`actionType` [array] : The type of action. Can be a `"button"` or `"icon"`.<br>`onAction` [function] : Callback handler when card actions are clicked. Refer to `setOnAction` method for arguments.<br>`onHeaderAction` [function] : Callback handler when header action is clicked. Refer to `setOnHeaderAction` method for arguments.
+ * @jdocs “headerTitle” [string] : Card header title.<br>“headerSubtitle” [string] : Card header subtitle or subheader.<br>“headerAvatar” [string] : Card header avatar. Can be a single character or a path to an image.<br>“headerAction” [string] : Card header action. A material icon font.<br>“media” [string] : A path to an image.<br>“bodyTitle” [string] : The title of the card content.<br>“bodyText” [string] : The long description of the card.<br>“actions” [array] : List of icon buttons. These can be a list of material-icon fonts if “actionType” is an “icon”.<br>“actionType” [array] : The type of action. Can be a “button” or “icon”.<br>“onAction” [function] : Callback handler when card actions are clicked. Refer to “setOnAction” method for arguments.<br>“onHeaderAction” [function] : Callback handler when header action is clicked. Refer to “setOnHeaderAction” method for arguments.
  */
 
 
-/**
-@ds
+/** @description
 <js>
 {
     headerTitle: string, // card header title
@@ -31,8 +30,8 @@
     media: string, // path to an image
     bodyTitle: string, // title of the card content
     bodyText: string, // long description of the card
-    actions: array, // list of icon buttons. can be a list of material-icon fonts if actionType is an "icon"
-    actionType: string, // type of action. can be a "button" or "icon"
+    actions: array, // list of icon buttons. can be a list of material-icon fonts if actionType is an “icon”
+    actionType: string, // type of action. can be a “button" or "icon”
     onAction: function, // callback when card actions are clicked. refer to setOnAction method for arguments
     onHeaderAction: function // callback when header action is clicked. refer to setOnHeaderAction method for arguments
 }
@@ -50,9 +49,9 @@
      * @prop {String} media Sets or returns the card media.
      * @prop {String} bodyTitle Sets or returns the title of the card content.
      * @prop {String} bodyText Sets or returns the text of the card content.
-     * @prop {Array} actions Sets or returns the list of card actions. If `actionType` is an `"icon"`, provide a list of material icon fonts.
+     * @prop {Array} actions Sets or returns the list of card actions. If “actionType” is an “icon”, provide a list of material icon fonts.
      * @prop {Object} layout Returns the div element of the card content. It is useful when you want to add ui components into the content of the card.
-     * @prop {Object} actionType Sets or returns the type of actions in the card. Values can be `"button"` or `"icon"`. If `"icon"` please provide a material icon actions.
+     * @prop {Object} actionType Sets or returns the type of actions in the card. Values can be “button” or “icon”. If “icon” please provide a material icon actions.
      * @prop {Number} cornerRadius Sets or returns the corner radius.
      * @prop {Number} elevation Sets or returns the elevation of the card.
      */
@@ -146,11 +145,8 @@
 
 
     /** ## Methods
-     * @jdocs These are the methods for `Card` component.
+     * @jdocs These are the methods for “Card” component.
      */
-
-
-    /** @extern setOnContextMenu */
 
 
     /** @extern animate */
@@ -201,6 +197,9 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### addHeaderItems
      * Add header items to the card. Using this method is faster than setting the individual header property.
      * $$ crd.addHeaderItems(title, subtitle, avatar, action) $$
@@ -236,7 +235,7 @@
 /* --- parent_methods here ----- */
 
 
-/** ## Samples */
+/* ## Examples */
 
 
 /**
@@ -403,6 +402,147 @@ class Main extends App
        ui.showPopup( "Header action is click" );
    }
 }
+ */
+
+
+/**
+@sample Python Basic Card
+from hybrid import ui
+
+def OnStart():
+    #Create a fullscreen layout with object vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    content = {
+        "bodyTitle": "Lizard",
+        "bodyText": "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+        "actions": ["Read more"]
+    }
+
+    #Create a card by passing the content object
+    crd = ui.addCard(main, content, "primary", 0.8)
+
+    #Add a callback handler when the action is click
+    crd.setOnAction( onAction ) 
+    
+def onAction(text, i):
+	ui.showPopup( text )
+ */
+
+
+/**
+@sample Python Card with media
+from hybrid import ui
+
+def OnStart():
+    #Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    #initialize the content of the card
+    content = {
+        "media": "https://picsum.photos/300/180",
+        "bodyTitle": "Card",
+        "bodyText": "They are surfaces in material design that display content and actions on a single topic. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.",
+        "actions": ["favorite", "share"],
+        "actionType": "icon"
+    }
+
+    #Create a card by passing the content object
+    crd = ui.addCard(main, content, "primary", 0.8)
+    
+    #Add a callback handler when the action is click
+    crd.setOnAction( onAction )
+
+def onAction(text, i):
+    ui.showPopup( text )
+ */
+
+
+/**
+@sample Python Card with header
+from hybrid import ui
+
+def OnStart():
+    #Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY,ScrollY")
+
+    #initialize the content of the card with header information
+    content = {
+        "headerTitle": "DroidScript.org",
+        "headerSubtitle": "Posted on November 16, 2023",
+        "headerAvatar": "D",
+        "headerAction": "more_vert",
+        "media": "https://picsum.photos/300/180",
+        "bodyTitle": "Card",
+        "bodyText": "They are surfaces in material design that display content and actions on a single topic. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.",
+        "actions": ["favorite", "share"],
+        "actionType": "icon"
+    }
+
+    #Create a card by passing the content object
+    crd = ui.addCard(main, content, "primary", 0.94)
+    crd.headerAvatarColor = "green"
+    
+    #Add a callback handler when the action is click
+    crd.setOnAction( onAction )
+    
+    #Add a callback handler when header action is click
+    crd.setOnHeaderAction( onHeaderAction )
+
+def onAction(text, i):
+    ui.showPopup( text )
+
+def onHeaderAction():
+    ui.showPopup( "Header action is click" )
+ */
+
+
+/**
+@sample Python Card with additional controls
+from hybrid import ui
+
+def OnStart():
+    #Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY,ScrollY")
+
+    #Initialize the content of the card with header information
+    content = {
+        "headerTitle": "DroidScript.org",
+        "headerSubtitle": "Posted on November 16, 2023",
+        "headerAvatar": "D",
+        "headerAction": "more_vert",
+        "media": "https://picsum.photos/300/180",
+        "bodyTitle": "UI Components",
+        "bodyText": "This is a card with additional UI Components as content.",
+        "actions": ["favorite", "share"],
+        "actionType": "icon"
+    }
+
+    #Create a card by passing the content object
+    crd = ui.addCard(main, content, "primary", 0.96)
+    crd.headerAvatarColor = "green"
+    
+    #Add a callback handler when the action is click
+    crd.setOnAction( onAction )
+
+    #Add a callback handler when header action is click
+    crd.setOnHeaderAction( onHeaderAction )
+
+    #Add a UI Button
+    btn = ui.addButton(crd.layout, "Button", "Primary")
+    btn.margins = [0, "1rem", 0, "1rem"]
+
+    #Add a text component
+    txt = ui.addText(crd.layout, "This is a UI component text added to a card layout. Below is a checkbox component.")
+
+    #Add a checkboxgroup component
+    ckb = ui.addCheckboxGroup(crd.layout, "Mango,Apple,Orange", "Left,Secondary", 1)
+    ckb.label = "Select fruits"
+
+def onAction(text, i):
+    ui.showPopup( text )
+
+def onHeaderAction():
+    ui.showPopup( "Header action is click" )
  */
 
 

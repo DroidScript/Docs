@@ -5,30 +5,32 @@
  * @img(img2.png)
  * @jdocs The grouping helps organize and visually connect buttons with similar functions. Design principles may include consistent styling, alignment, and spacing for a unified appearance, promoting a cohesive user experience when interacting with multiple buttons in a single context.
  * $$ btg = ui.addButtonGroup(parent, list, options, width, height) $$
- * @jdocs Add a button group into your app using the `addButtonGroup` method like this:
+ * @jdocs Add a button group into your app using the “addButtonGroup” method like this:
  * @param {uio-Layout} parent The parent layout where to add the ButtonGroup
  * @param {Array} [list] The item to be displayed on the buttn group.
- * @param {String} [options] A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nOrientation: `Horizontal`, `Vertical`\nToggleable: `Toggle`, `Radio`\nUtils: `Icon`, `NoElevation`
- * @param {Number} [width] Fraction of the parent width `[0-1]`
- * @param {Number} [height] Fraction of the parent height `[0-1]`
+ * @param {String} [options] A comma separated options.\nVariant: “Contained”, “Outlined”, “Text”, “Default”\nTheme Color: “Primary”, “Secondary”, “Default”\nSizes: “Small”, “Medium”, “Large”\nOrientation: “Horizontal”, “Vertical”\nToggleable: “Toggle”, “Radio”\nUtils: “Icon”, “NoElevation”, “Link”, NewTab, KeepCase
+ * @param {Number} [width] Fraction of the parent width “[0-1]”
+ * @param {Number} [height] Fraction of the parent height “[0-1]”
  * @returns uio-ButtonGroup
  */
 
 
 /**
- * A toggleable buttongroup can accept additional `Radio` option to have atmost one toggled button item. If buttongroup is toggleable, please refer to the `setOnTouch` callback for the correct order of arguments.
+ * A toggleable buttongroup can accept additional “Radio” option to have atmost one toggled button item. If buttongroup is toggleable, please refer to the “setOnTouch” callback for the correct order of arguments.
+ * 
+ * The “Link" option renders the buttons as anchor tag that will open a link provided in “urls” setter property. The "NewTab” option will allow the link to be open in a new tab window.
  */
 
 
 	/** ## Properties
 	 * @jdocs Here are the setter and/or getter properties of the ButtonGroup Component.
 	 * @prop {Array} list Sets or returns the list items of the button group.
-	 * @prop {String} variant Sets or returns the variant. Values can be `Contained` `Outlined` or `Text`
-	 * @prop {String} color Sets or returns the theme color of the button. Values can be `Default` `Primary` or `Secondary`
+	 * @prop {String} variant Sets or returns the variant. Values can be “Contained” “Outlined” or “Text”
+	 * @prop {String} color Sets or returns the theme color of the button. Values can be “Default” “Primary” or “Secondary”
 	 * @prop {Array} toolTips Sets or returns the list of tooltip titles.
-	 * @prop {String} toolTipPosition Sets or returns the position of the tooltip. Values can be `left` `top` `right` or `bottom`
-	 * @prop {String} sizeVariant Sets or returns the size variant. Values can be `small` `medium` or `large`
-	 * @prop {String} orientation Sets or returns the orientation of the button group. Can be `horizontal` or `vertical`
+	 * @prop {String} toolTipPosition Sets or returns the position of the tooltip. Values can be “left” “top” “right” or “bottom”
+	 * @prop {String} sizeVariant Sets or returns the size variant. Values can be “small” “medium” or “large”
+	 * @prop {String} orientation Sets or returns the orientation of the button group. Can be “horizontal” or “vertical”
      * @prop {String} textColor Sets or returns the color of the button text.
      * @prop {Number} textSize Sets or returns the font size of the button text.
      * @prop {Array} activeItems Sets or returns the indexes of the active button items.
@@ -127,9 +129,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -178,10 +177,13 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
-     * Adds a callback handler when a button item is touch. If the button is `toggleable` the arguments pass into the callback function is `text, index, active, pos` respectively, where `active` is the active state of the button item.
+     * Adds a callback handler when a button item is touch. If the button is “toggleable” the arguments pass into the callback function is “text, index, active, pos” respectively, where “active” is the active state of the button item.
      * $$ btg.setOnTouch( callback ) $$
-     * @param {Function} callback The callback function to be called. ---> @arg {String} text The button text. @arg {Number} index The index of the corresponding button item. @arg {Boolean} active The active state of the button item if button is `toggleable`. @arg {Object} pos The position of the touch event.
+     * @param {Function} callback The callback function to be called. ---> @arg {String} text The button text. @arg {Number} index The index of the corresponding button item. @arg {Boolean} active The active state of the button item if button is “toggleable”. @arg {Object} pos The position of the touch event.
      */
 
 
@@ -189,6 +191,20 @@
      * Adds a callback function on right click.
      * $$ btg.setOnContextMenu( callback ) $$
      * @param {Function} callback The callback function to be called on context menu event or right click event. ---> @arg {String} text Button text. @arg {Number} index The index of the corresponding button. @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setList
+     * Sets the list of button items.
+     * $$ btg.setList( items ) $$
+     * @param {Array} items Button items.
+     */
+
+
+    /** ### getList
+     * Returns the list of button items.
+     * $$ btg.getList() $$
+     * @returns Array
      */
 
 
@@ -237,14 +253,14 @@
 	 * Adds a tooltips to the ButtonGroup items.
 	 * $$ btg.setToolTips(titles, pos) $$
 	 * @param {Array} titles The titles for each item in the ButtonGroup.
-	 * @param {String} [pos='top'] The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
+	 * @param {String} [pos='top'] The positio of the tooltip. \n Can be “top” “left” “right” “bottom” “bottom-end” “bottom-start” “left-end” “left-start” “right-end” “right-start” “top-end” “top-start”
 	 */
 
 
 	/** ### enableElevation
 	 * Enable of disable the elevation of the button group.
 	 * $$ btg.enableElevation( enable ) $$
-	 * @param {Boolean} enable Can be `true` or `false`
+	 * @param {Boolean} enable Can be “true” or “false”
 	 */
 
 
@@ -252,7 +268,7 @@
 	 * Enable or disable a button item in the button group.
 	 * $$ btg.setEnabled( index, value ) $$
 	 * @param {Number} index The index of the button item.
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
@@ -268,7 +284,7 @@
      * Enable or disable a button item by its name.
      * $$ btg.setEnabledByName( name, value ) $$
      * @param {String} name The button text.
-     * @param {Boolean} value Values can be `true` or `false`.
+     * @param {Boolean} value Values can be “true” or “false”.
      */
 
 
@@ -280,10 +296,42 @@
      */
 
 
+    /** ### setUrls
+     * Sets the urls for all button links.
+     * $$ btg.setUrls( urls ) $$
+     * @param {Array} urls An array of urls.
+     */
+
+
+    /** ### GetUrls
+     * Returns the urls of the buttons.
+     * @returns Array
+     */
+
+
+    /** @prop {Array} urls Sets or returns the urls of the buttons. */
+
+
+    /** ### setUrlByIndex
+     * Sets the url of a button by its index.
+     * $$ btg.setUrlByIndex(index, url) $$
+     * @param {Number} index The index of the link button.
+     * @param {String} url Link or page route.
+     * @param {Boolean} newTab Open this url in a new tab.
+     */
+
+
+    /** ### getUrlByIndex
+     * Returns the url of a button link by specifying its index.
+     * $$ btg.getUrlByIndex( index ) $$
+     * @param {Number} index The index of the button.
+     */
+
+
 /* --- parent_methods here ----- */
 
 
-/** ## Examples */
+/* ## Examples */
 
 
 /**

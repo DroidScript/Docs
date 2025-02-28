@@ -2,15 +2,16 @@
  * @abbrev chp
  * In mobile UI design, a Chip is a compact element displaying attributes, input, or actions.
  * @img(img1.png)
- * @jdocs Material Design defines it with rounded corners and a contained style. Chips offer a visual representation for categories, selections, or interactions, contributing to a clear and concise user interface in mobile applications. Add a chip into your app using the `addChip` method like this:
+ * @jdocs Material Design defines it with rounded corners and a contained style. Chips offer a visual representation for categories, selections, or interactions, contributing to a clear and concise user interface in mobile applications. Add a chip into your app using the “addChip” method like this:
  * $$ chp = ui.addChip(parent, text, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the Chip.
  * @param {String} text The text on the chip.
- * @param {String} [options] A comma separated option.\nTheme Color: `Primary`, `Secondary`, `Default`\nSize: `Small`, `Medium`\nVariant: `Outlined`, `Default`\nUtil: `Touchable`
- * @param {Number} [width] Fraction of the parent width `[0-1]`
- * @param {Number} [height] Fraction of the parent height `[0-1]`
+ * @param {String} [options] A comma separated option.\nTheme Color: “Primary”, “Secondary”, “Default”\nSize: “Small”, “Medium”\nVariant: “Outlined”, “Default”\nUtil: “Touchable”, “Toggle”, “Link”, “NewTab”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”
+ * @param {Number} [height] Fraction of the parent height “[0-1]”
  * @returns uio-Chip
- * If you want to change the height of the Chip later on after initializing, pass the `height` argument.
+ * If you want to change the height of the Chip later on after initializing, pass the “height” argument.
+ * Theme colors will be applied only to active state when “Toggle” option is passed.
  */
 
 
@@ -20,12 +21,13 @@
 	 * @prop {String} icon Sets or returns the material icon font if icon is provided.
 	 * @prop {String} avatar Sets or returns the avatar. Can be image or a single character.
 	 * @prop {String} deleteIcon Sets or returns the delete icon.
-	 * @prop {String} sizeVariant Sets or returns the size variant. Values can be `small` or `medium`
+	 * @prop {String} sizeVariant Sets or returns the size variant. Values can be “small” or “medium”
 	 * @prop {Boolean} enabled Returns whether the chip is enabled or disabled.
-	 * @prop {String} variant Sets or returns the variant of the chip. Vaues can be `Default` or `Outlined`
-	 * @prop {String} color Sets or returns the theme color of the chip. Values can be `Default` `Primary` `Secondary`
+	 * @prop {String} variant Sets or returns the variant of the chip. Vaues can be “Default” or “Outlined”
+	 * @prop {String} color Sets or returns the theme color of the chip. Values can be “Default” “Primary” “Secondary”
      * @prop {String} iconColor Sets or returns the icon color in hexadecimal format.
-     * @prop {Number} iconSize Sets or returns the font-size of the icon in css font-size format. You can pass string values to be more specific such as `12px` `1.5rem`.
+     * @prop {Number} iconSize Sets or returns the font-size of the icon in css font-size format. You can pass string values to be more specific such as “12px” “1.5rem”.
+     * @prop {String} url Sets or returns the url if the chip is a link.
 	 */
 
 
@@ -121,9 +123,6 @@
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -172,17 +171,20 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
      * Adds a callback handler when the chip is touch.
      * $$ chp.setOnTouch( callback ) $$
-     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     * @param {Function} callback The callback function to be called. ---> @arg {Boolean} toggle Toggle state of the chip is Toggle option is passed. @arg {Object} pos The position of the touch event.
      */
 
 
 	/** ### setTouchable
 	 * Sets the chip to clickable. This will add a pointer cursor into the chip when hovered.
 	 * $$ chp.setTouchable( touchable ) $$
-	 * @param {Boolean} touchable Can be `true` or `false`
+	 * @param {Boolean} touchable Can be “true” or “false”
 	 */
 
 
@@ -200,7 +202,7 @@
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
      */
 
 
@@ -337,9 +339,6 @@ def OnStart():
 
 def onTouch(event):
     ui.showPopup("You touched the chip!")
-
-sample = Main()
-sample.start()
  */
 
 
@@ -360,9 +359,6 @@ def OnStart():
 
 def onDelete():
     ui.showPopup("Chip is deleted!")
-
-sample = Main()
-sample.start()
  */
 
 
@@ -385,9 +381,6 @@ def OnStart():
 
     # Sets the text size of the chip control
     chip.textSize = 14
-
-sample = Main()
-sample.start()
  */
 
 
@@ -404,9 +397,6 @@ def OnStart():
 
     # Set the avatar property of the main layout
     chip.avatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
-
-sample = Main()
-sample.start()
  */
 
 

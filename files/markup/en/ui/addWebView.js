@@ -2,13 +2,13 @@
  * @abbrev web
  * A WebView in mobile development is a component that allows embedding web content within an application.
  * @img(img1.png)
- * @jdocs It enables the display of web pages or web-based features, providing seamless integration of online content into mobile apps. Add a webview into your app using the `addWebView` method like this:
+ * @jdocs It enables the display of web pages or web-based features, providing seamless integration of online content into mobile apps. Add a webview into your app using the “addWebView” method like this:
  * $$ web = ui.addWebView(parent, url, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the WebView component.
  * @param {String} [url] The url of the website.
- * @param {String} [options] A comma separated options for WebView. Values can be `NoScrollBar`, 
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options for WebView. Values can be “NoScrollBar”, 
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-WebView
  */
 
@@ -117,9 +117,6 @@
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -166,6 +163,9 @@
 
 
     /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
 
 
     /** ### setOnLoad
@@ -378,13 +378,15 @@ class Main extends App
 
 
 /**
-@sample Python EnjineIO homepage
+@sample Python DroidScript.org homepage
 from hybrid import ui
 
 def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    web = ui.addWebView(main, "https://enjine.io/", "", 0.9, 0.9)
+
+    web = ui.addWebView(main, "https://droidscript.org/", "", 0.9, 0.9)
     web.setOnLoad(onLoad)
+    web.backColor = "yellow"
 
 def onLoad():
     ui.showPopup("Website is loaded!")
@@ -394,7 +396,6 @@ def onLoad():
 /**
 @sample Python Call a function inside the webview
 from hybrid import ui
-from native import app
 
 def OnStart():
     global web
@@ -404,11 +405,11 @@ def OnStart():
     web.html = '''
         <html>
         <head>
-
-            function callFunc(name) {
-                app.Alert("Hi " + name + " webview!")
-            }
-
+			<script>
+                function callFunc(name) {
+                    alert("Hi " + name + " from webview!")
+                }
+			</script>
         </head>
         <body>
             <h2>This is an html.</h2>
@@ -416,7 +417,8 @@ def OnStart():
         </html>
     '''
 
-def onLoad():
+def onLoad( e ):
+    global web
     x = web.window.callFunc("John Doe")
  */
 
@@ -433,11 +435,11 @@ def OnStart():
     web.html = '''
         <html>
         <head>
-
+            <script>
                 function getProduct(num1, num2) {
                     return num1 * num2
                 }
-
+            </script>
         </head>
         <body>
             <h2>Get some product here!</h2>
@@ -445,7 +447,7 @@ def OnStart():
         </html>
     '''
 
-def onLoad():
+def onLoad(e):
     prod = web.window.getProduct(2, 3)
     ui.showPopup("The product is " + str(prod))
  */
@@ -472,7 +474,7 @@ def OnStart():
     btn = ui.addButton(main, "Change background color")
     btn.setOnTouch(onTouch)
 
-def onLoad():
+def onLoad(event):
     global loaded
     loaded = True
 

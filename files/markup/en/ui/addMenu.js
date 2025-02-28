@@ -3,13 +3,13 @@
  * A menu is a list of options or actions presented to the user as a popup.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs In Material Design, menus can be contextual, appearing in response to user interactions. They provide a consistent way to access additional functionality or navigate within an application. Show a menu by calling the `addMenu` method like this:
+ * @jdocs In Material Design, menus can be contextual, appearing in response to user interactions. They provide a consistent way to access additional functionality or navigate within an application. Show a menu by calling the “addMenu” method like this:
  * $$ men = ui.addMenu(parent, list, options, width, height) $$
  * @param {uio} parent The component where to anchor the Menu.
- * @param {Array} [list] A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is `icon:title` \n Add a `colon` before an item to display it as the label text.
- * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Error`\nUtils: `Dense`, `Icon`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] A list of items to be shown in the pop-up menu. You can also pass a comma separated string. For menu with icon the format is “icon:title” \n Add a “colon” before an item to display it as the label text.
+ * @param {String} [options] A comma separated options.\nTheme Color: “Primary”, “Secondary”, “Error”\nUtils: “Dense”, “Icon”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Menu
  */
 
@@ -28,7 +28,7 @@
 	/** ## Properties
 	 * @jdocs Here are the available setters and/or getters for the Menu Component.
 	 * @prop {Array} list Sets or returns the items in the menu. You can also pass a comma separated string.
-     * @prop {Array} itemPadding Sets or returns the padding of each menu item. See also `setItemPadding` method.
+     * @prop {Array} itemPadding Sets or returns the padding of each menu item. See also “setItemPadding” method.
 	 */
 
 
@@ -47,7 +47,7 @@
 	/** ### show
 	 * Show the menu pop-up.
 	 * $$ men.show( parent ) $$
-	 * @param {uio} parent The component where to anchor the menu. It can be a `Button` or an `Image`.
+	 * @param {uio} parent The component where to anchor the menu. It can be a “Button” or an “Image”.
 	 * If you passed a parent on initialization, then the menu si anchored on that component.
 	 */
 
@@ -110,7 +110,7 @@
 	/** ### setAutoFocus
 	 * Sets the autofocus value of the menu items.
 	 * $$ men.setAutoFocus( bool ) $$
-	 * @param {Boolean} bool Value can be `true` or `false`
+	 * @param {Boolean} bool Value can be “true” or “false”
 	 */
 
 
@@ -118,7 +118,7 @@
      * Enable or disable an item in the menu popup.
      * $$ men.setEnabled( index, value ) $$
      * @param {Number} index The index of the item.
-     * @param {Boolean} value Values can be `true` or `false`. `false` to disable.
+     * @param {Boolean} value Values can be “true” or “false”. “false” to disable.
      */
 
 
@@ -134,7 +134,7 @@
      * Enable or disable an item in the menu popup by its name.
      * $$ men.setEnabledByName(name, value) $$
      * @param {String} name The name of the corresping item the menu.
-     * @param {Boolean} value Values can be `true` or `false`. `false` to disable an item.
+     * @param {Boolean} value Values can be “true” or “false”. “false” to disable an item.
      */
 
 
@@ -147,13 +147,47 @@
 
 
     /** ### setItemPadding
-     * Sets the padding of the menu item. See `itemPadding` property for equivalent setter/getter property.
+     * Sets the padding of the menu item. See “itemPadding” property for equivalent setter/getter property.
      * $$ men.setItemPadding(left, top, right, bottom, mode) $$
      * @param {Number} left Left padding of the menu item.
      * @param {Number} top Top padding of the menu item.
      * @param {Number} right Right padding of the menu item.
      * @param {Number} bottom Bottom padding of the menu item.
-     * @param {String} mode Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
+     * @param {String} mode Unit of measurement. Can be “rem”, “px”, “%”, or “v” for viewport.
+     */
+
+
+    /** ### setUrls
+     * Sets the urls for each menu item.
+     * $$ men.setUrls( urls ) $$
+     * @param {Array} urls The url for each menu item.
+     */
+
+
+    /** ### getUrls
+     * Returns an array of urls for each menu item.
+     * $$ men.getUrls() $$
+     * @returns Array
+     */
+
+
+    /** @prop {Array} urls Returns an array of urls for each menu item. */
+
+
+    /** ### setUrlByIndex
+     * Sets the url of a menu item by its index.
+     * $$ men.setUrlByIndex(index, url, newTab) $$
+     * @param {Number} index The index of the menu item.
+     * @param {String} url Link or route.
+     * @param {Boolean} newTab Open the url in the new tab.
+     */
+
+
+    /** ### geturlByIndex
+     * Returns the url of a given menu item.
+     * $$ men.geturlByIndex() $$
+     * @param {Number} index The index of the menu item.
+     * @returns String
      */
 
 
@@ -353,7 +387,7 @@ def onTouch(event):
     # show the menu
     menu.show()
 
-def menuTouch(item, icon, index):
+def menuTouch(item, icon, index, event):
     ui.showPopup(item)
  */
 
@@ -393,7 +427,7 @@ def onTouch2(event):
     # Show the menu on button 2
     menu.show(btn2)
 
-def menuTouch(item, icon, index):
+def menuTouch(item, icon, index, event):
     ui.showPopup(item)
  */
 
@@ -427,7 +461,7 @@ def onTouch(event):
     # show the menu
     menu.show()
 
-def menuTouch(item, icon, index):
+def menuTouch(item, icon, index, event):
     # display the selected item
     ui.showPopup(item)
  */
@@ -444,7 +478,7 @@ def OnStart():
     main.setOnContextMenu(onMenu)
 
     # Add a text control to the layout
-    txt = ui.addText(main, "Right click anywhere on the screen.")
+    txt = ui.addText(main, "Right click anywhere on the screen. Or long press anywhere on mobile.", "Multiline", 0.8)
 
     # List items with icons
     items = ["person:Item 1", "delete:Item 2", "favorite:Item 3"]
@@ -459,7 +493,7 @@ def onMenu(pos):
     # show the menu on the position of the mouse
     menu.show(pos.x, pos.y)
 
-def menuTouch(item, icon, index):
+def menuTouch(item, icon, index, event):
     # display the selected item
     ui.showPopup(item)
  */

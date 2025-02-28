@@ -3,13 +3,13 @@
  * The Bottom Navigation Bar (BottomNavBar) is a key element in mobile user interface design, typically placed at the bottom of the screen.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs In Material Design, it features navigation icons or labels for quick access to app sections. It enhances user navigation, maintaining a consistent and ergonomic design across mobile applications. The Bottom Navigation Bar provides a visually clear and accessible way for users to switch between primary destinations or views. Add a bottom navigation bar into your app using the `addBottomNavbar` method like this:
+ * @jdocs In Material Design, it features navigation icons or labels for quick access to app sections. It enhances user navigation, maintaining a consistent and ergonomic design across mobile applications. The Bottom Navigation Bar provides a visually clear and accessible way for users to switch between primary destinations or views. Add a bottom navigation bar into your app using the “addBottomNavbar” method like this:
  * $$ bmn = ui.addBottomNavbar(parent, navs, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the BottomNavbar
- * @param {Array} navs An array whose elements are of the form `[ "Title", "Icon" ]`
- * @param {String} [options] A comma separated options.\nPosition: "Fixed", "Static"\nLabel: `Hidelabels`
- * @param {Number} [width] Fraction of the screen width `[0-1]`
- * @param {Number} [height] Fraction of the screen height `[0-1]`
+ * @param {Array} navs An array whose elements are of the form “[ “Title", "Icon” ]”
+ * @param {String} [options] A comma separated options.\nPosition: “Fixed", "Static”\nLabel: “Hidelabels”
+ * @param {Number} [width] Fraction of the screen width “[0-1]”
+ * @param {Number} [height] Fraction of the screen height “[0-1]”
  * @returns uio-BottomNavbar
  */
 
@@ -19,9 +19,9 @@
 An example of a navs array.
 <js>
 var navs = [
-    [ "Favorites", "favorites" ],
-    [ "Groups", "person" ],
-    [ "Folder", "folder" ]
+    [ “Favorites", "favorites” ],
+    [ “Groups", "person” ],
+    [ “Folder", "folder” ]
 ]
 </js>
  */
@@ -30,10 +30,10 @@ var navs = [
     /** ## Properties
      * @jdocs Here are the available setter and/or getter properties of the BottomNavbar Component.
      * @prop {Boolean} labels Sets or returns a boolean whether the labels are shown or hidden on active state.
-     * @prop {Array} list Sets or returns the navigation actions array. See `navs` params above for format.
-     * @prop {Boolean} disabled Sets or returns whether the bottom navigation is disabled or enabled. All navigation actions must be disabled to return `true`. Otherwise, it will return `false`.
+     * @prop {Array} list Sets or returns the navigation actions array. See “navs” params above for format.
+     * @prop {Boolean} disabled Sets or returns whether the bottom navigation is disabled or enabled. All navigation actions must be disabled to return “true”. Otherwise, it will return “false”.
      * @prop {Number} value Sets or returns the current value of the BottomNavbar. This is the index of the corresponding selected action.
-     * @prop {Number} iconSize Sets or returns the icon font-size. You can also pass string values such as `1.2rem` or `18px`.
+     * @prop {Number} iconSize Sets or returns the icon font-size. You can also pass string values such as “1.2rem” or “18px”.
      * @prop {String} iconColor Sets or returns the icon color. You can pass color in a hexadecimal format or rgb format.
      */
 
@@ -130,9 +130,6 @@ var navs = [
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -181,6 +178,9 @@ var navs = [
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
      * Adds a callback handler when the BottomNavbar item is touch.
      * $$ bmn.setOnTouch( callback ) $$
@@ -188,17 +188,10 @@ var navs = [
      */
 
 
-    /** ### setOnContextMenu
-     * Adds a callback function on right click.
-     * $$ bmn.setOnContextMenu( callback ) $$
-     * @param {Function} callback The callback function to be called on context menu event or right click event. ---> @arg {String} text Bottom navigation action text. @arg {Number} index Bottom navigation action index. @arg {Object} pos The position of the touch event.
-     */
-
-
     /** ### setList
      * Sets the navigation actions list.
      * $$ bmn.setList( navs ) $$
-     * @param {Array} navs The navigation actions array. See `navs` param above for format.
+     * @param {Array} navs The navigation actions array. See “navs” param above for format.
      */
 
 
@@ -289,10 +282,10 @@ var navs = [
 
 
     /** ### setEnabled
-	 * Enable or disable a bottom navigation action. If you want to disable the component, use the `disable` property instead.
+	 * Enable or disable a bottom navigation action. If you want to disable the component, use the “disable” property instead.
 	 * $$ bmn.setEnabled( index, value ) $$
 	 * @param {Number} index The index of the navigation action.
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
@@ -307,7 +300,7 @@ var navs = [
      * Enabled or disable a bottom navigation action by its name.
      * $$ bmn.setEnabledByName(name, value) $$
      * @param {String} name The name of the bottom navigation action.
-     * @param {Boolean} value Values can be `true` or `false`
+     * @param {Boolean} value Values can be “true” or “false”
      */
 
 
@@ -334,7 +327,7 @@ var navs = [
 /* --- parent_methods here ----- */
 
 
-/* ## Examples ## */
+/* ## Examples */
 
 
 /**
@@ -451,8 +444,6 @@ class Main extends App
 
 /**
 @sample Python Sample navs array.
-from native import cfg
-
 navs = [
     ["Favorites", "favorites"],
     ["Groups", "person"],

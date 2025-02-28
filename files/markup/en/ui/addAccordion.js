@@ -4,13 +4,13 @@
  * Adds an accordion or expansion panel into your app.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs This is very useful to display controls that are grouped together. Add an accordion using the `addAccordion` method like this:
+ * @jdocs This is very useful to display controls that are grouped together. Add an accordion using the “addAccordion” method like this:
  * $$ acc = ui.addAccordion(parent, titles, options, width, height)
  * @param {uio-Layout} parent The parent layout where to add the text.
  * @param {Array} titles An array of accordion titles.
  * @param {String} [options] A comma separated options. Style: Square Layout type: Linear|Absolute
- * @param {Number} [width] Fraction of the parent width `[0-1]`
- * @param {Number} [height] Fraction of the parent height `[0-1]`
+ * @param {Number} [width] Fraction of the parent width “[0-1]”
+ * @param {Number} [height] Fraction of the parent height “[0-1]”
  * @returns uio-Accordion
  */
 
@@ -21,15 +21,15 @@
 	 * @prop {String} expandIcon Sets or returns the material icon font for the expand icon.
 	 * @prop {Array} titles Sets or returns the list of titles for the accordion panel. Each element of the titles array is a string.
 	 * @prop {Number} toggle Collapse or shrink a corresponding accordion by its index.
-     * @prop {String} textColor1 Sets or returns the title text color in hexadecimal format `#rrggbb`
-     * @prop {String} textColor2 Sets or returns the secondary text color in hexadecimal format `#rrggbb`
-     * @prop {Boolean} disabled Sets or returns whether the accordion is disabled or not. `True` only if all accordion is disable, otherwise `false`.
+     * @prop {String} textColor1 Sets or returns the title text color in hexadecimal format “#rrggbb”
+     * @prop {String} textColor2 Sets or returns the secondary text color in hexadecimal format “#rrggbb”
+     * @prop {Boolean} disabled Sets or returns whether the accordion is disabled or not. “True” only if all accordion is disable, otherwise “false”.
      * @prop {Number} textSize1 Sets or returns the accordion title text size.
      * @prop {Number} textSize2 Sets or returns the accordion secondary text size.
      * @prop {Boolean} rounded Sets or returns whether the accordion is rounded or not.
-     * @prop {Number} cornerRadius Sets or returns the corner radius of the accordion panel. You can also pass an array of the form `[tl, tr, bl, br]`. See also `setCornerRadius` method.
-     * @prop {Array} secondaryText Sets or returns the secondary text of the accordion items. See also `setSecondaryText` method.
-     * @prop {Array} itemPadding Sets or returns the padding of each accordion item. See also `setItemPadding` method.
+     * @prop {Number} cornerRadius Sets or returns the corner radius of the accordion panel. You can also pass an array of the form “[tl, tr, bl, br]”. See also “setCornerRadius” method.
+     * @prop {Array} secondaryText Sets or returns the secondary text of the accordion items. See also “setSecondaryText” method.
+     * @prop {Array} itemPadding Sets or returns the padding of each accordion item. See also “setItemPadding” method.
 	 */
 
 
@@ -125,9 +125,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -176,6 +173,9 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
 	/** ### getLayout
 	 * Get the layout of the corresponding accordion item. This is very useful when you add a control or component that will be displayed when the accordion collapse.
 	 * $$ acc.getLayout( index ) $$
@@ -196,7 +196,7 @@
 	 * Adds a secondary text on the accordion.
 	 * $$ acc.setSecondaryText( text ) $$
 	 * @param {Array} text The secondary text to display. You can also pass arguments as a comma separated string.
-	 * @param {Number} index If `index` is provided, the corresponding index will be updated with the new text.
+	 * @param {Number} index If “index” is provided, the corresponding index will be updated with the new text.
 	 */
 
 
@@ -212,7 +212,7 @@
 	 * $$ acc.addItem( title, secondaryText, index ) $$
 	 * @param {String} title Accordion title
 	 * @param {String} secondaryText Accordion secondary text
-	 * @param {Number} index The index at which the accordion item will be added. If `null`, the item will be added at the bottom of the accordion.
+	 * @param {Number} index The index at which the accordion item will be added. If “null”, the item will be added at the bottom of the accordion.
 	 */
 
 
@@ -246,7 +246,7 @@
 	 * Enable or disable the accordion component or an item in the accordion component.
 	 * $$ btg.setEnabled( index, value ) $$
 	 * @param {Number} index The index of the corresponding accordion.
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
@@ -261,7 +261,7 @@
      * Enable or disable an accordion item by its name.
      * $$ acc.setEnabledByName( name, value ) $$
      * @param {String} name The title of the accordion
-     * @param {Boolean} value Values can be `true` or `false`.
+     * @param {Boolean} value Values can be “true” or “false”.
      */
 
 
@@ -297,8 +297,8 @@
     /** ### setTextColor
      * Sets the color of the title and the secondary text respectively.
      * $$ acc.setTextColor(color1, color2) $$
-     * @param {String} color1 Color of the title text in hexadecimal format `#rrggbb`
-     * @param {String} [color2] Color of the secondary text in hexadecimal format `#rrggbb`
+     * @param {String} color1 Color of the title text in hexadecimal format “#rrggbb”
+     * @param {String} [color2] Color of the secondary text in hexadecimal format “#rrggbb”
      */
 
 
@@ -309,18 +309,18 @@
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit of measurement. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit of measurement. Values are “px” “rem” or “%”.
      */
 
 
     /** ### setItemPadding
-     * Sets the padding of the accordion item. See `itemPadding` property for equivalent setter/getter property.
+     * Sets the padding of the accordion item. See “itemPadding” property for equivalent setter/getter property.
      * $$ acc.setItemPadding(left, top, right, bottom, mode) $$
      * @param {Number} left Left padding of the accordion item.
      * @param {Number} top Top padding of the accordion item.
      * @param {Number} right Right padding of the accordion item.
      * @param {Number} bottom Bottom padding of the accordion item.
-     * @param {String} mode Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
+     * @param {String} mode Unit of measurement. Can be “rem”, “px”, “%”, or “v” for viewport.
      */
 
 
@@ -474,15 +474,18 @@ class Main extends App
 @sample Python Complete accordion implementation
 from hybrid import ui
 
+items = []
+
 def OnStart():
-    global accords
+    
+    global items
+
     # Creates a fullscreen main layout.
     main = ui.addLayout("main", "Linear", "VCenter", 1, 1)
 
-    accords = ["Accordion 1", "Accordion 2", "Accordion 3"]
+    items = ["Accordion 1", "Accordion 2", "Accordion 3"]
 
-    # Adds an accordion to the main layout
-    acc = ui.addAccordion(main, accords, "", 0.9)
+    acc = ui.addAccordion(main, items, "", 0.9)
 
     # Secondary text to display
     secTxt = [
@@ -492,33 +495,38 @@ def OnStart():
     ]
 
     # sets the secondary text
-    acc.setSecondaryText(secTxt)
+    acc.setSecondaryText( secTxt )
 
     # Add ontouch event handler to the accordion
-    acc.setOnTouch(onTouch)
+    acc.setOnTouch( onTouch )
+
 
     # Add controls to the first accordion layout
-    lay1 = acc.getLayout(0)
+    lay1 = acc.getLayout( 0 )
     txt = ui.addText(lay1, "This is a text in the first layout.")
 
     # Add controls to the second layout
-    lay2 = acc.getLayout(1)
+    lay2 = acc.getLayout( 1 )
     btn = ui.addButton(lay2, "Button", "Primary")
 
     # Add controls to the third layout
-    lay3 = acc.getLayout(2)
-    tfd = ui.addTextField(lay3, "", "Outlined", 0.3)
+    lay3 = acc.getLayout( 2 )
+    tfd = ui.addTextField(lay3, "", "Outlined")
     tfd.label = "Enter some text"
 
 def onTouch(index, expand):
-    msg = f"{accords[index]} is {'open' if expand else 'close'}"
-    ui.showPopup(msg)
+    global items
+    msg = f"{items[index]} is {'open' if expand else 'close'}"
+    ui.showPopup( msg )
  */
 
 
 /**
 @sample Python Items manipulation
 from hybrid import ui
+
+acc = None
+count = 1
 
 def OnStart():
     global acc, count
@@ -547,17 +555,20 @@ def OnStart():
     btn3.setOnTouch(btn3_onTouch)
 
 def btn1_onTouch(event):
+    global acc
     # add an item at the bottom of the accordion
     acc.addItem("New Bottom Title", "New secondary text")
 
 def btn2_onTouch(event):
+    global acc, count
     title = "New Title " + str(count)
     # insert item in the second index
     acc.addItem(title, "New secondary text", 1)
     count += 1
 
 def btn3_onTouch(event):
-    acc.removeItemByIndex(2)
+    global acc
+    acc.removeItemByIndex(1)
     ui.showPopup("Second item is removed")
  */
 

@@ -1,11 +1,11 @@
 /** # Popup
  * @abbrev pop
- * "Popup" is like a short notification that quickly appears on the screen, providing extra options or information in a concise and unobtrusive manner.
+ * “Popup” is like a short notification that quickly appears on the screen, providing extra options or information in a concise and unobtrusive manner.
  * @img(img1.png)
  * @jdocs It's similar to a toast notification. Show a popup like this:
  * $$ pop = ui.showPopup( msg, options, duration ) $$
  * @param {String} msg The message to display on the pop-up.
- * @param {String} [options] A comma separated options.\nDuration: `Short`, `Long`\nVertical Alignment: `Top`, `Bottom`\nHorizontal Alignment: `Left`, `Center`, `Right`\nAction options: `Icon`, `HideOnAction`\nTransition: `Grow`, `Fade`, `Slide`, `Collapse`, `Zoom`
+ * @param {String} [options] A comma separated options.\nDuration: “Short”, “Long”\nVertical Alignment: “Top”, “Bottom”\nHorizontal Alignment: “Left”, “Center”, “Right”\nAction options: “Icon”, “HideOnAction”\nTransition: “Grow”, “Fade”, “Slide”, “Collapse”, “Zoom”
  * @param {Number} [duration] Time in milliseconds. Pass this if you don't want the default auto hide duration.
  * @param {String} [action] Action button text
  * @returns uio-Popup
@@ -32,7 +32,7 @@
 
 
 	/** ### setOnAction
-	 * Adds an action callback when the user touches the action button. The `btnText` param must
+	 * Adds an action callback when the user touches the action button. The “btnText” param must
 	 * be provided in order to create an action button.
 	 * $$ popup.setOnAction( callback ) $$
 	 * @param {Function} callback The on action callback.
@@ -54,13 +54,13 @@
 	/** ### setPosition
 	 * Updates the position of the popup.
 	 * $$ popup.setPosition( vertical, horizontal ) $$
-	 * @param {String} [vertical] Vertical alignment. Values can be `Top` `Bottom`
-	 * @param {String} [horizontal] Horizontal alignment. Values can be `Left` `Center` and `Right`
+	 * @param {String} [vertical] Vertical alignment. Values can be “Top” “Bottom”
+	 * @param {String} [horizontal] Horizontal alignment. Values can be “Left” “Center” and “Right”
 	 */
 
 
 	/** ### getPosition
-	 * Returns the position of the popup. The returned object is of the form `{ vertical, horizontal }`
+	 * Returns the position of the popup. The returned object is of the form “{ vertical, horizontal }”
 	 * $$ popup.getPosition() $$
 	 * @returns Object
 	 */
