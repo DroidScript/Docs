@@ -30,7 +30,7 @@ var langJson = `
         }
     }
 }`;
- 
+
 function OnStart()
 {
     app.WriteFile( "lang.json", langJson );
@@ -43,8 +43,8 @@ function OnStart()
     lay.AddChild( spinLang );
 
     app.AddLayout( lay );
-
-    app.ShowPopup(T( "SelectLang" ));
+    
+    info();
 }
 
 function spinLang_OnChange()
@@ -52,8 +52,11 @@ function spinLang_OnChange()
     language = spinLang.GetText();
     app.SetAppLanguage( language );
 
-    app.DestroyLayout( lay );
-    OnStart();
+    info();
+}
+
+function info() {
+    app.ShowPopup(T( "SelectLang" ));
 }
  */
 
@@ -89,12 +92,16 @@ def OnStart():
 
     app.AddLayout(lay)
 
-    app.ShowPopup(T("SelectLang"))
+    info()
+
 
 def spinLang_OnChange(item, index):
     language = spinLang.GetText()
     app.SetAppLanguage(language)
 
-    app.DestroyLayout(lay)
-    OnStart()
+    info()
+
+def info():
+    app.ShowPopup(T("SelectLang"))
+
  */

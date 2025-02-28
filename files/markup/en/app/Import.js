@@ -40,3 +40,25 @@ async function OnStart()
     }
 }
  */
+
+/**
+@sample Python Import pocketbase
+from native import app
+from browser import aio
+import json
+
+app.Import( "PocketBase", "https://cdn.jsdelivr.net/gh/pocketbase/js-sdk/dist/pocketbase.es.js" )
+
+def OnStart():
+    aio.run(list())
+
+async def list():
+    try:
+        pb = PocketBase("https://{username}-db.droidscript.cloud")
+
+        records = await pb.collection('people').getFullList({"sort": '-created'})
+        app.Alert( json.dumps(records) )
+    except Exception as e:
+        print( e )
+ */
+

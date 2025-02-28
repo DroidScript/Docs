@@ -20,7 +20,7 @@
 @sample Show if Speaker is Enabled
 function OnStart()
 {
-    var speaker = app.GetSpeakerPhone();
+    <b>var speaker = app.GetSpeakerPhone();</b>
     app.Alert( speaker );
 }
  */
@@ -32,6 +32,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    speaker = app.GetSpeakerPhone()
-    app.Alert(str(speaker))
+    <b>speaker = app.GetSpeakerPhone()</b>
+    app.Alert(speaker)
  */

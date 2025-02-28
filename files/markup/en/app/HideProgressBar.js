@@ -31,7 +31,7 @@ function OnStart()
 
 
 /**
-@sample Python
+@sample Python Progress Bar
 from native import app
 
 def OnStart():

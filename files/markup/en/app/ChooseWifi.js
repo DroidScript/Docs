@@ -75,7 +75,7 @@ def OnStart():
     app.AddLayout( lay )
 
 def btnChoose_OnTouch():
-    app.ChooseWifi( "", "", OnWifiChoose )
+    <b>app.ChooseWifi( "", "", OnWifiChoose )</b>
 
 def OnWifiChoose( ssid ):
     app.ShowPopup( "User selected " + ssid )

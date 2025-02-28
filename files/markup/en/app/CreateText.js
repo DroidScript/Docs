@@ -273,9 +273,9 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    txt = app.CreateText( "Hello" )
+    <b>txt = app.CreateText( "Hello" )
     txt.SetTextSize( 22 )
-    lay.AddChild( txt )
+    lay.AddChild( txt )</b>
 
     app.AddLayout( lay )
  */
@@ -289,11 +289,11 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    txt = app.CreateText( "Hello\nWorld", 0.8, 0.2, "Multiline"  )
+    <b>txt = app.CreateText( "Hello\nWorld", 0.8, 0.2, "Multiline"  )
     txt.SetTextSize( 12 )
     txt.SetTextColor( "#ff6666ff" )
     txt.SetBackColor( "#ffffffff" )
-    lay.AddChild( txt )
+    lay.AddChild( txt )</b>
 
     app.AddLayout( lay )
  */
@@ -307,10 +307,10 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    txt = app.CreateText( "The quick brown fox jumps over the lazy dog", 0.75 )
+    <b>txt = app.CreateText( "The quick brown fox jumps over the lazy dog", 0.75 )
     txt.SetTextSize( 28 )
     txt.SetEllipsize( "end" )
-    lay.AddChild( txt )
+    lay.AddChild( txt )</b>
 
     app.AddLayout( lay )
  */

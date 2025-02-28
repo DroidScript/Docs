@@ -134,13 +134,12 @@ function cancel()
 
 /**
 @sample Python Notification
-from hybrid import ui
 from native import app
 
 def OnStart():
     global notify
     app.ShowPopup("Sending notification")
-    <b>notify = ui.Notification()
+    <b>notify = app.CreateNotification()
     notify.SetMessage("Ticker", "Title", "Text")
     notify.Notify("testID")
     app.SetTimeout(cancel, 5000)</b>

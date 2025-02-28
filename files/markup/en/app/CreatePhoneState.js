@@ -108,9 +108,12 @@ function state_OnChange( type, data )
 /**
 @sample Python Demo
 from native import app
+from browser import window
+
+log = []
 
 def OnStart():
-    global txt, log
+    global txt
     lay = app.CreateLayout("linear", "VCenter,FillXY")
 
     txt = app.CreateText("", 0.95, 0.95, "multiline,left")
@@ -125,9 +128,7 @@ def OnStart():
     state.SetOnChange(state_OnChange)
     state.Start()
 
-log = []
-
 def state_OnChange(type, data):
-    log.append("<b>" + type + ":</b><br>\t" + str(data))
+    log.append(f"<b>{type}</b>:<br>\t{window.JSON.stringify(data)}")
     txt.SetHtml("<br>".join(log))
  */

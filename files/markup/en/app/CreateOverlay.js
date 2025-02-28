@@ -126,17 +126,20 @@ def OnStart():
     ovl.AddLayout(lay, 0.8, app.GetTop())
 
     app.Animate(Update, 1)
+    
 
 lst = [1e5] * 100
 
 def Update(time, dtime):
+    global lst
+
     mem = app.GetMemoryInfo()
-    lst.append(round(100 * mem.avail / mem.total) - 50)
+    lst.append(round(100 * mem["avail"] / mem["total"]) - 50)
     lst = lst[-100:]
 
     img.Clear()
     img.SetPaintColor("red")
-    img.DrawLine(0, mem.threshold / mem.total, 1, mem.threshold / mem.total)
+    img.DrawLine(0, mem["threshold"] / mem["total"], 1, mem["threshold"] / mem["total"])
 
     img.SetPaintColor("white")
     img.DrawSamples(lst, 50)

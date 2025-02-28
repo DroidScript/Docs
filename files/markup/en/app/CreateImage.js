@@ -678,9 +678,9 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	img = app.CreateImage( "/Sys/Img/Droid1.png" )
+	<b>img = app.CreateImage( "/Sys/Img/Droid1.png" )
 	img.SetOnTouch( img_OnTouch )
-	lay.AddChild( img )
+	lay.AddChild( img )</b>
 
 	app.AddLayout( lay )
 
@@ -698,9 +698,9 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, 0.7 )
+	<b>img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, 0.7 )
 	img.SetOnTouch( img_OnTouch )
-	lay.AddChild( img )
+	lay.AddChild( img )</b>
 
 	app.AddLayout( lay )
 
@@ -718,15 +718,15 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 )
+	<b>img = app.CreateImage( "/Sys/Img/Droid1.png", 0.5, -1 )
 	img.SetOnTouch( img_OnTouch )
-	lay.AddChild( img )
+	lay.AddChild( img )</b>
 
 	app.AddLayout( lay )
 
 def img_OnTouch( ev ):
 	if ev.action=="Down":
-		app.ShowPopup( ev.x[0] + ", " + ev.y[0], "Short" )
+		app.ShowPopup( f"{ev.x[0]}, {ev.y[0]}", "Short" )
  */
 
 
@@ -738,13 +738,13 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	img = app.CreateImage( None, 0.8, 0.8 )
+	<b>img = app.CreateImage( None, 0.8, 0.8 )
 	lay.AddChild( img )
 
 	img.SetColor( "#8888ff" )
 	img.SetPaintColor( "#ff0000" )
 	img.DrawCircle( 0.5, 0.5, 0.1 )
-	img.DrawRectangle( 0.7, 0.7, 0.1, 0.75 )
+	img.DrawRectangle( 0.7, 0.7, 0.1, 0.75 )</b>
 
 	app.AddLayout( lay )
  */
@@ -790,7 +790,7 @@ def OnAnimate( time, dtime ):
 	hrs = math.floor( secs / 3600 ) % 60
 	min = math.floor( secs / 60 ) % 60
 	sec = math.floor( secs ) % 60
-	time = min + ":" + sec
+	time = str(min) + ":" + str(sec)
 
 	tsize = ptr.MeasureText( time )
 	tx = (1 - tsize.width ) / 2
@@ -817,9 +817,9 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-	btn = app.CreateImage( "/Sys/Img/Hello.png", 0.2, -1, "button" )
+	<b>btn = app.CreateImage( "/Sys/Img/Hello.png", 0.2, -1, "button" )
 	btn.SetOnTouchUp( btn_OnTouch )
-	lay.AddChild( btn )
+	lay.AddChild( btn )</b>
 
 	app.AddLayout( lay )
 

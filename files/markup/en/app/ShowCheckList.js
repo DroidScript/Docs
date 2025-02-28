@@ -60,13 +60,14 @@ function OnFinish( data )
 /**
 @sample Python
 from native import app
+from browser import window
 
 def OnStart():
-    app.ShowCheckList( "Select Animals", "Sheep:true,Cows:false,Pigs:false", OnFinish, 0.8, 0.5 )
+    <b>app.ShowCheckList( "Select Animals", "Sheep:true,Cows:false,Pigs:false", OnFinish, 0.8, 0.5 )</b>
 
 def OnFinish(data):
     if data:
-        app.ShowPopup( JSON.stringify(data) )
+        app.ShowPopup( window.JSON.stringify(data) )
     else:
         app.ShowPopup( "Cancelled" )
  */

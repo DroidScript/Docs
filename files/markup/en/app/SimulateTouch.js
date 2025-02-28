@@ -30,12 +30,13 @@ function OnStart()
 
 	app.AddLayout( lay );
 
-	app.Animate( SimulateTouch, 1/2 );
+	setInterval( SimulateTouch, 1000 );
 }
 
 function SimulateTouch()
 {
     app.SimulateTouch( btn, 0.5, 0.5, "down" );
+    app.SimulateTouch( btn, 0.5, 0.5, "up" );
 }
 
 var i = 1;
@@ -61,14 +62,15 @@ def OnStart():
 
     app.AddLayout( lay )
 
-    app.Animate( SimulateTouch, 1/2 )
+    app.SetInterval( SimulateTouch, 1000 )
 
-def SimulateTouch(time, dtime):
-    global i
+def SimulateTouch():
     app.SimulateTouch( btn, 0.5, 0.5, "down" )
+    app.SimulateTouch( btn, 0.5, 0.5, "up" )
 
 i = 1
 def btn_OnTouch():
+    global i
     app.ShowPopup( "Hello World " + str(i) )
     i += 1
  */

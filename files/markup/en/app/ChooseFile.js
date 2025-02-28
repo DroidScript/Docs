@@ -64,9 +64,9 @@ def OnStart():
     global spnMime
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
-    list = "*_*,application/text,application/apk,application/zip," + \
-        "audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css," + \
-        "text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg"
+    list = "*_*,application/text,application/apk,application/zip,"
+    list += "audio/mpeg,audio/mp4,audio/ogg,image/png,image/jpeg,text/css,"
+    list += "text/html,text/javascript,text/plain,video/mpeg,video/mp4,video/ogg"
 
     spnMime = app.CreateSpinner(list)
     lay.AddChild(spnMime)

@@ -213,7 +213,10 @@ function node_OnReady()
 @sample Python Basic
 from native import app
 
-nodeJs = 'print("Hello World");\nconsole.error("Hello Error");\n'
+nodeJs = """
+console.log("Hello World");
+console.error("Hello Error");
+"""
 
 def OnStart():
     global node
@@ -233,10 +236,10 @@ def OnStart():
     def onMessage(msg):
         txt.Log(msg)
 
-    node.SetOnOutput(onOutput)
+    <b>node.SetOnOutput(onOutput)
     node.SetOnError(onError)
     node.SetOnMessage(onMessage)
-    node.SetOnReady(node_OnReady)
+    node.SetOnReady(node_OnReady)</b>
 
     app.AddLayout(lay)
 

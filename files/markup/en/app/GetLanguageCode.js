@@ -33,6 +33,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    code = app.GetLanguageCode()
+    <b>code = app.GetLanguageCode()</b>
     app.Alert(code)
  */

@@ -210,6 +210,8 @@ function OnConfig()
 
 <sample Python GetDeviceSpecs>
 from native import app
+
+from browser import window
 import json
 
 # https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels
@@ -250,10 +252,10 @@ all_builds = json.loads('''{
 
 os_obj = all_builds.get(str(app.GetOSVersion())) #added str and .get to handle missing keys.
 if os_obj:
-    os_info = "Android " + os_obj["version"] + " (" + os_obj["codename"] + ")  API level " + str(os_obj["level"])
+    os_info = "Android " + os_obj["version"] + " (" + os_obj["codename"] + ") API level " + str(os_obj["level"])
 else:
     os_info = str(app.GetOSVersion())
-    
+
 lay, txt, scroller = None, None, None # initialize variables.
 
 #Called when application is started.
@@ -261,7 +263,7 @@ def OnStart():
     global lay, txt, scroller # declare global variables.
     #Create a layout with objects vertically centered.
     lay = app.CreateLayout("linear", "VCenter,FillXY")
-    
+
     # create viewr for specs
     scroller = app.CreateScroller(1, 0.8)
     specs = getDeviceSpecs()
@@ -270,22 +272,22 @@ def OnStart():
     #txt.SetTextColor("#ff446666")
     scroller.AddChild(txt)
     lay.AddChild(scroller)
-    
+
     #Create a button and add it to layout.
     btn = app.CreateButton("[fa-copy]", -1, -1, "fontAwesome")
     btn.SetTextSize(32)
-    
+
     btn.SetOnTouch(btn_OnTouch)
     lay.AddChild(btn)
-    
+
     #Add layout to app.
     app.AddLayout(lay)
     OnConfig()
-    
+
 def btn_OnTouch():
     app.SetClipboardText(txt.GetText())
     app.ShowPopup("Copied to clipboard")
-    
+
 def getBuilderVersion():
     msg = "Apk Builder plugin not installed"
     path = app.GetPrivateFolder("Plugins") + "/apkbuilder/Version.txt"
@@ -294,7 +296,10 @@ def getBuilderVersion():
     elif app.IsAPK():
         msg = "APK built with " + str(round(app.GetDSVersion(), 2)) #round and convert to string.
     return msg
-    
+
+def storageScoped():
+    return "Scoped" if app.IsScoped() else "Traditional"
+
 def getDeviceSpecs():
     os = app.GetOSVersion()
     model = app.GetModel()
@@ -317,36 +322,54 @@ def getDeviceSpecs():
     intspace = app.GetFreeSpace("internal")
     extspace = app.GetFreeSpace("external")
     mem = "{:,}".format(app.GetMemoryInfo().total) #format with commas.
-    
+
     #specs are formatted as a comment so we can paste
     #them somewhere convenient
     try: os = os_info #use os_info from global scope.
     except NameError: pass #handle the case where os_info is not defined.
     
-    s = "/*\n" + \
-        "os=" + str(os) + "\n" + \
-        getBuilderVersion() + "\n" + \
-        "tablet=" + str(tablet) + "\n" + \
-        "model=" + str(model) + "\n" + \
-        "isChrome=" + str(isChrome) + "\n" + \
-        "isTV=" + str(isTV) + "\n" + \
-        "DroidScript=" + str(dsversion) + "\n" + \
-        "Storage access=" + storageScoped() + "\n" + \
-        "screen width=" + str(sw) + "\n" + \
-        "screen height=" + str(sh) + "\n" + \
-        "screen density=" + str(dens) + "\n" + \
-        "display width=" + str(dw) + "\n" + \
-        "display height=" + str(dh) + "\n" + \
-        "internal folder=" + str(intfld) + "\n" + \
-        "external folder=" + str(extfld) + "\n" + \
-        "int free space=" + str(intspace) + "\n" + \
-        "ext free space=" + str(extspace) + "\n" + \
-        "memory=" + mem + "\n" + \
-        "premium=" + str(isPrem) + "\n" + \
-        "country code=" + app.GetCountryCode() + "\n" + \
-        "country=" + app.GetCountry() + "\n" + \
-        "language code=" + app.GetLanguageCode() + "\n" + \
-        "language=" + app.GetLanguage() + "\n" + \
-        "wifi=" + app.GetIPAddress() + "\n" + \
-        "userAgent='" + getattr
+    s = f"""
+*****
+os={os}
+{getBuilderVersion()}
+tablet={tablet}
+model={model}
+isChrome={isChrome}
+isTV={isTV}
+DroidScript={dsversion}
+Storage access={storageScoped()}
+screen width={sw}
+screen height={sh}
+screen density={dens}
+display width={dw}
+display height={dh}
+internal folder={intfld}
+external folder={extfld}
+int free space={intspace}
+ext free space={extspace}
+memory={mem}
+premium={isPrem}
+country code={app.GetCountryCode()}
+country={app.GetCountry()}
+language code={app.GetLanguageCode()}
+language={app.GetLanguage()}
+wifi={app.GetIPAddress()}
+userAgent={window.navigator.userAgent}
+*****
+"""
+
+    return s
+
+def OnConfig():
+    fixwid = lay.GetAbsWidth() / app.GetDisplayWidth()
+    fixhigh = lay.GetAbsHeight() / app.GetDisplayHeight()
+    wid = 1
+    high = 0.8
+    
+    if fixwid < 1: wid *= fixwid; #chromebook not using full width
+    if fixhigh < 1: high *= fixhigh #or height
+    
+    scroller.SetSize( wid,high )
+    txt.SetSize( wid, high )
+
 </sample>

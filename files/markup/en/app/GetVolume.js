@@ -34,6 +34,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    vol = app.GetVolume()
+    <b>vol = app.GetVolume()</b>
     app.Alert(vol, "System Volume:")
  */

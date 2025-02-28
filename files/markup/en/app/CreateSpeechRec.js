@@ -155,6 +155,7 @@ from native import app
 
 def OnStart():
     global speech
+
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     btn = app.CreateButton( "Talk To Me", 0.3, 0.1 )
@@ -163,10 +164,11 @@ def OnStart():
 
     app.AddLayout( lay )
 
-    speech = app.CreateSpeechRec()
+    <b>speech = app.CreateSpeechRec()
     speech.SetOnReady( speech_OnReady )
     speech.SetOnResult( speech_OnResult )
-    speech.SetOnError( speech_OnError )
+    speech.SetOnError( speech_OnError )</b>
+
 
 def btn_OnTouch():
     speech.Recognize()
@@ -174,7 +176,7 @@ def btn_OnTouch():
 def speech_OnReady():
     app.ShowPopup( "Listening...", "Short" )
 
-def speech_OnResult( results ):
+def speech_OnResult( results, _ ):
     app.ShowPopup( results[0] )
 
 def speech_OnError():

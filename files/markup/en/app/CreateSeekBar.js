@@ -203,11 +203,11 @@ from native import app
 def OnStart():
     lay = app.CreateLayout("Linear", "VCenter,FillXY")
 
-    skb = app.CreateSeekBar(0.8)
+    <b>skb = app.CreateSeekBar(0.8)
     skb.SetRange(1.0)
     skb.SetValue(0.5)
     skb.SetOnTouch(skb_OnTouch)
-    lay.AddChild(skb)
+    lay.AddChild(skb)</b>
 
     app.AddLayout(lay)
 

@@ -35,6 +35,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    name = app.GetCountry()
+    <b>name = app.GetCountry()</b>
     app.Alert(name)
  */

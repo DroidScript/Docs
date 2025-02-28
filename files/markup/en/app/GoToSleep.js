@@ -28,7 +28,7 @@ function OnStart()
 
 
 /**
-@sample Python
+@sample Python Sleep and Wake
 from native import app
 import time
 

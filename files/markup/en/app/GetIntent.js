@@ -31,8 +31,9 @@ function OnStart()
 /**
 @sample Python Get received intent data
 from native import app
+from browser import window
 
 def OnStart():
-    <b>int = app.GetIntent()</b>
-    app.Alert( JSON.stringify( int ))
+    <b>intent = app.GetIntent()</b>
+    app.Alert( window.JSON.stringify(intent) )
  */

@@ -34,10 +34,11 @@ function OnStart()
 /**
 @sample Python Example
 from native import app
+from datetime import datetime
 
 def OnStart():
     oldfile = "test.txt"
     newfile = "test2.txt"
-    app.WriteFile(oldfile, "Created: " + str(app.Date()))
-    app.RenameFile(oldfile, newfile)
+    app.WriteFile(oldfile, f"Created: {datetime.now()}")
+    <b>app.RenameFile(oldfile, newfile)</b>
  */

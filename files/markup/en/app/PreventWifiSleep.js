@@ -31,5 +31,5 @@ function OnStart()
 from native import app
 
 def OnStart():
-    app.PreventWifiSleep()
+    <b>app.PreventWifiSleep()</b>
  */

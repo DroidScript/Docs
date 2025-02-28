@@ -51,7 +51,7 @@ function OnStart()
 
     // delay between calls: 1000ms / 10fps = 100 ms
     // for higher precision use higher fps
-    app.Animate(loop, 10);
+    <b>app.Animate(loop, 10);</b>
 }
 
 var t1 = 0, t2 = 0, n1 = 0, n2 = 0;
@@ -154,18 +154,20 @@ def OnStart():
 
     # delay between calls: 1000ms / 10fps = 100 ms
     # for higher precision use higher fps
-    app.Animate(loop, 10)
+    <b>app.Animate(loop, 10)</b>
 
 def loop(t, dt):
-    global txt1, txt2, n1, n2
+    global t1, t2, n1, n2
     # set txt1 every 500 ms
     if t - t1 >= 500:
-        txt1.SetText(str(++n1) + "\tdt: " + str(t - t1))
+        n1 += 1
+        txt1.SetText(str(n1) + "\tdt: " + str(t - t1))
         t1 = t
 
     # set txt2 every 300 ms
     if t - t2 >= 300:
-        txt2.SetText(str(++n2) + "\tdt: " + str(t - t2))
+        n2 += 1
+        txt2.SetText(str(n2) + "\tdt: " + str(t - t2))
         t2 = t
  */
 
@@ -192,7 +194,6 @@ def OnStart():
     app.AddLayout(lay)
 
     <b>app.Animate( OnAnimate, 30 );</b>
-    app.Animate(OnAnimate, 30)
 
 def OnAnimate(time, dtime):
     global txt
@@ -222,8 +223,7 @@ def OnStart():
 
     app.AddLayout(lay)
 
-    <b>app.Animate(OnAnimate, 1000);</b>
-    app.Animate(OnAnimate, 1000)
+    <b>app.Animate(OnAnimate, 1000)</b>
 
 def OnAnimate(time, dtime):
     global ltime, c, txt

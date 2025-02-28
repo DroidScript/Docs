@@ -33,5 +33,5 @@ from native import app
 
 def OnStart():
     size = app.GetFileSize("/sdcard/")
-    app.Alert(size / 1024 + " kB")
+    app.Alert(str(size / 1024) + " kB")
  */

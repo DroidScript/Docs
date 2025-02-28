@@ -26,7 +26,7 @@ function OnStart()
 
     <b>app.CopyFile("myFile.txt", "/sdcard/myFile.txt");</b>
 
-	if(app.FolderExists("/sdcard/myFile.txt"))
+	if(app.FileExists("/sdcard/myFile.txt"))
 	    app.ShowPopup("myFile exists in /sdcard/!");
     else
 	    app.ShowPopup("myFile does not exist in /sdcard/!");
@@ -42,9 +42,9 @@ from native import app
 def OnStart():
     app.WriteFile( "myFile.txt", "Hello World from Write\n", "Append" )
 
-    app.CopyFile("myFile.txt", "/sdcard/myFile.txt")
+    <b>app.CopyFile("myFile.txt", "/sdcard/myFile.txt")</b>
 
-    if app.FolderExists("/sdcard/myFile.txt"):
+    if app.FileExists("/sdcard/myFile.txt"):
         app.ShowPopup("myFile exists in /sdcard/!")
     else:
         app.ShowPopup("myFile does not exist in /sdcard/!")

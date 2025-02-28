@@ -633,10 +633,10 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	lst = app.CreateList( "Fred,Bill,Jim", 0.8, 0.4 )
+	<b>lst = app.CreateList( "Fred,Bill,Jim", 0.8, 0.4 )
 	lst.SetOnTouch( lst_OnTouch )
 	lst.SetOnLongTouch( lst_OnLongTouch )
-	lay.AddChild( lst )
+	lay.AddChild( lst )</b>
 
 	app.AddLayout( lay )
 
@@ -656,11 +656,11 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	lst = app.CreateList( "Fred,Bill,Jim", 0.8, 0.4 )
+	<b>lst = app.CreateList( "Fred,Bill,Jim", 0.8, 0.4 )
 	lst.SetTextColor( "#ff666666" )
 	lst.SetBackColor( "#ffffffff" )
 	lst.SetOnTouch( lst_OnTouch )
-	lay.AddChild( lst )
+	lay.AddChild( lst )</b>
 
 	app.AddLayout( lay )
 
@@ -677,10 +677,10 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	data = "Folder:folder,Audio:audio,Photo:photo,Video:video"
+	<b>data = "Folder:folder,Audio:audio,Photo:photo,Video:video"
 	lst = app.CreateList( data, 0.8, 0.4 )
 	lst.SetOnTouch( lst_OnTouch )
-	lay.AddChild( lst )
+	lay.AddChild( lst )</b>
 
 	app.AddLayout( lay )
 
@@ -697,11 +697,11 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	data = "The Hobbit:Author^c^ J.R.R. Tolkien:null"
+	<b>data = "The Hobbit:Author^c^ J.R.R. Tolkien:null"
 	data += ",Watership Down:Author^c^ Richard Adams:null"
 	lst = app.CreateList( data, 0.8, 0.4 )
 	lst.SetOnTouch( lst_OnTouch )
-	lay.AddChild( lst )
+	lay.AddChild( lst )</b>
 
 	app.AddLayout( lay )
 
@@ -718,12 +718,12 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	data = "Button 1,Button 2,Button 3,Button 4"
+	<b>data = "Button 1,Button 2,Button 3,Button 4"
 	lst = app.CreateList( data, 0.8, 0.8, "OrangeButton" )
 	lst.SetBackColor( "#ffffff" )
 	lst.SetPadding( 0.1, 0.1, 0.1, 0.1 )
 	lst.SetOnTouch( lst_OnTouch )
-	lay.AddChild( lst )
+	lay.AddChild( lst )</b>
 
 	app.AddLayout( lay )
 
@@ -740,7 +740,7 @@ from native import app
 def OnStart():
 	lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-	data = ""
+	<b>data = ""
 	for i in range(1, 31):
 		if i > 1:
 			data += ","
@@ -750,7 +750,7 @@ def OnStart():
 	lst.SetTextColor2( "#ff555558" )
 	lst.SetTextMargins( 0.04, 0, 0, 0 )
 	lst.SetOnTouch( lst_OnTouch )
-	lay.AddChild( lst )
+	lay.AddChild( lst )</b>
 
 	app.AddLayout( lay )
 

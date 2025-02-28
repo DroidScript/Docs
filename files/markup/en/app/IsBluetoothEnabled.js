@@ -36,17 +36,16 @@ function OnStart()
 
 
 /**
-@sample Python
+@sample Python Check Bluetooth Status
 from native import app
-
 def OnStart():
-    status = app.IsBluetoothEnabled()
+    <b>status = app.IsBluetoothEnabled()</b>
     state = app.IsBluetoothOn()
 
     app.ShowPopup(
         "Bluetooth is " +
-        ("enabled" if status else "disabled") +
-        (" and " if status == state else " but ") +
-        ("on" if state else "off")
+        ( "enabled" if status else "disabled") +
+        ( " and " if status == state else " but ") +
+        ( "on" if state else "off")
     )
  */

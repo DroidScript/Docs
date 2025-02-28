@@ -32,9 +32,10 @@ function OnStart()
 @sample Python Check Started
 from native import app
 
-setTimeout('app.Alert( app.IsStarted(), "Started in global:" );')
+app.SetTimeout(lambda: app.Alert( app.IsStarted(), "Started in global:" ), 1)
 
 def OnStart():
-    started = app.IsStarted()
+    <b>started = app.IsStarted()</b>
     app.Alert( started, "Started in OnStart:" )
+
  */

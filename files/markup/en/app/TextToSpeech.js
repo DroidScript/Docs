@@ -45,5 +45,5 @@ function OnStart()
 from native import app
 
 def OnStart():
-    app.TextToSpeech("DroidScript is awesome!", 1.0, 1.0)
+    <b>app.TextToSpeech("DroidScript is awesome!", 1.0, 1.0)</b>
  */

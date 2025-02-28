@@ -63,7 +63,7 @@ function OnMenu( item )
 from native import app
 
 def OnStart():
-    app.SetMenu("Start,Stop,Pause")
+    <b>app.SetMenu("Start,Stop,Pause")</b>
 
     lay = app.CreateLayout("linear", "")
 
@@ -84,8 +84,8 @@ def OnMenu(item):
 from native import app
 
 def OnStart():
-    menus = "Files:folder,Music:list,Images:picture"
-    app.SetMenu(menus)
+    <b>menus = "Files:folder,Music:list,Images:picture"
+    app.SetMenu(menus)</b>
     app.ShowMenu()
 
 def OnMenu(item):

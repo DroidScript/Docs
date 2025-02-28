@@ -34,5 +34,5 @@ function OnStart()
 from native import app
 
 def OnStart():
-    app.OpenUrl("http://droidscript.org")
+    <b>app.OpenUrl("http://droidscript.org")</b>
  */

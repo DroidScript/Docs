@@ -49,11 +49,11 @@ def OnStart():
     if id:
         app.Alert(id, "Notification ID")
     else:
-        not = app.CreateNotification()
-        not.SetMessage(
+        ntf = app.CreateNotification()
+        ntf.SetMessage(
             "You have an urgent notification",
             "Press me!", "Do as the title says."
         )
-        not.Notify(1234)
+        ntf.Notify(1234)
         app.SetTimeout(app.Exit, 2000)
  */

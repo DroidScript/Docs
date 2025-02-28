@@ -57,6 +57,6 @@ def OnStart():
     app.AddLayout(lay)
 
 def SetVolume(value):
-    app.SetVolume("Music", value)
+    <b>app.SetVolume("Music", value)</b>
     app.PlaySound("/Sys/Snd/Poing.ogg")
  */

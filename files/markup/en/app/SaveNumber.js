@@ -65,7 +65,9 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
+    global clicks
+
     clicks += 1
-    app.SaveNumber("clicks", clicks, file)
+    <b>app.SaveNumber("clicks", clicks, file)</b>
     app.ShowPopup("Clicks: " + str(clicks))
  */

@@ -22,7 +22,7 @@
 function OnStart()
 {
 	<b>tablet = app.IsTablet();</b>
-	app.ShowPopup( tablet, "Is Tablet:" );
+	app.Alert( tablet, "Is Tablet:" );
 }
  */
 
@@ -33,6 +33,6 @@ function OnStart()
 from native import app
 
 def OnStart():
-    tablet = app.IsTablet()
-    app.ShowPopup(str(tablet), "Is Tablet:")
+    <b>tablet = app.IsTablet()</b>
+    app.Alert(tablet, "Is Tablet:")
  */

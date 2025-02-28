@@ -143,12 +143,16 @@
 function OnStart()
 {
 	var name = app.GetAppName();
-	var file = "/sdcard/" + name + ".zip";
+	var file = "/sdcard/DroidScript/" + name + ".zip";
+
+	app.ZipFolder( "/sdcard/DroidScript/" + name, file )
 
 	var zip = app.CreateZipUtil();
 	zip.Open( file );
+
 	var list = zip.List("").split(",");
 	app.Alert(list.join(",\n"));
+
 	zip.Close();
 }
  */
@@ -194,17 +198,20 @@ function OnStart()
 from native import app
 
 def OnStart():
-	name = app.GetAppName()
-	file = "/sdcard/" + name + ".zip"
+    name = app.GetAppName()
+    file = "/sdcard/DroidScript/" + name + ".zip"
+    
+	# Zip the current project folder
+	# and add it to the same folder.
+    app.ZipFolder( "/sdcard/DroidScript/" + name, file )
 
-	zip = app.CreateZipUtil()
-	zip.Open(file)
-	list = zip.List("").split(",")
-	app.Alert("\n".join(list))
-	zip.Close()
- */
-
-
+    zip = app.CreateZipUtil()
+    zip.Open(file)
+    zip.Close()
+    
+    list = zip.List("").split(",")
+    app.Alert("\n".join(list))
+*/
 
 /**
 @sample Python Compress
@@ -225,7 +232,7 @@ def OnStart():
 	app.HideProgress()
 	app.ShowPopup("saved to " + file)
 
-def AddFolder(zip, name, fldr):
+<b>def AddFolder(zip, name, fldr):
 	list = app.ListFolder(fldr, "")
 	for i in range(len(list)):
 		title = list[i]
@@ -233,4 +240,5 @@ def AddFolder(zip, name, fldr):
 			zip.AddFile(name + "/" + title, fldr + "/" + title)
 		else:
 			AddFolder(zip, name + "/" + title, fldr + "/" + title)
+</b>
  */

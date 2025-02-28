@@ -377,9 +377,9 @@ def OnStart():
     global edt, txt
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    edt = app.CreateTextEdit( "Edit me", 0.8, 0.3 )
+    <b>edt = app.CreateTextEdit( "Edit me", 0.8, 0.3 )
     edt.SetOnChange( edt_OnChange )
-    lay.AddChild( edt )
+    lay.AddChild( edt )</b>
 
     txt = app.CreateText( "", 0.8, 0.3 )
     txt.SetMargins( 0, 0.02, 0, 0 )
@@ -400,10 +400,10 @@ from native import app
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    edt = app.CreateTextEdit( "Hello", 0.8, 0.4  )
+    <b>edt = app.CreateTextEdit( "Hello", 0.8, 0.4  )
     edt.SetTextColor( "#ff6666ff" )
     edt.SetBackColor( "#ffffffff" )
-    lay.AddChild( edt )
+    lay.AddChild( edt )</b>
 
     app.AddLayout( lay )
  */
@@ -418,10 +418,10 @@ def OnStart():
     global edt
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    edt = app.CreateTextEdit( "", 0.8, 0.4, "Password,Singleline"  )
+    <b>edt = app.CreateTextEdit( "", 0.8, 0.4, "Password,Singleline"  )
     edt.SetHint( "Password" )
     edt.SetOnEnter( edt_OnEnter )
-    lay.AddChild( edt )
+    lay.AddChild( edt )</b>
 
     app.AddLayout( lay )
 

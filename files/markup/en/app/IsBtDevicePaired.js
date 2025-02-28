@@ -24,15 +24,18 @@ function OnStart()
 {
     app.ShowProgress( "enabling Bluetooth" );
     app.SetBluetoothEnabled( true );
+
     while( !app.IsBluetoothOn() ) app.Wait( 0.2 );
     app.HideProgress();
 
+    devices = app.GetPairedBtDevices()
+
     if( devices.length )
     {
-        paired =  app.IsBtDevicePaired( devices[0].name );
+        <b>paired = app.IsBtDevicePaired( devices[0].name );</b>
         app.Alert( paired, devices[0].name + " paired" );
     } else
-        <b>app.ShowPopup( "No Paired devices found" );</b>
+        app.ShowPopup( "No Paired devices found" );
 }
  */
 
@@ -130,12 +133,15 @@ from native import app
 def OnStart():
     app.ShowProgress("enabling Bluetooth")
     app.SetBluetoothEnabled(True)
+    
     while not app.IsBluetoothOn():
         app.Wait(0.2)
     app.HideProgress()
+    
+    devices = app.GetPairedBtDevices()
 
     if devices:
-        paired = app.IsBtDevicePaired(devices[0].name)
+        <b>paired = app.IsBtDevicePaired(devices[0].name)</b>
         app.Alert(paired, devices[0].name + " paired")
     else:
         app.ShowPopup("No Paired devices found")
@@ -158,8 +164,8 @@ def OnStart():
     app.ShowProgress("Discovering bt devices")
 
 def bt_OnFound(name, address):
-    paired = app.IsBtDevicePaired(name)
-    app.ShowPopup(name + ": paired: " + str(paired))
+    <b>paired = app.IsBtDevicePaired(name)
+    app.ShowPopup(name + ": paired: " + str(paired))</b>
 
 def bt_OnComplete():
     app.HideProgress()

@@ -46,7 +46,7 @@ def OnStart():
 from native import app
 
 def OnStart():
-    name = app.GetJoystickName(0)
+    <b>name = app.GetJoystickName(0)</b>
     app.Alert(name)
  */
 

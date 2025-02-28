@@ -276,7 +276,7 @@ def OnStart():
     player.SetOnError(player_OnError)
     lay.AddChild(player)
 
-    player.SetFile("https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4")
+    <b>player.SetFile("https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4")</b>
 
     app.AddLayout(lay)
 

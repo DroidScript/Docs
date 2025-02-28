@@ -139,7 +139,7 @@
 
 /**
 @sample Example
-function btn_OnTouch()
+function OnStart()
 {
     var file = app.CreateFile( "/sdcard/test.txt", "rw" );
 
@@ -168,12 +168,12 @@ function btn_OnTouch()
 @sample Python Example
 from native import app
 
-def btn_OnTouch():
+def OnStart():
     file = app.CreateFile( "/sdcard/test.txt", "rw" )
 
     file.WriteText( "Hello", "Char" )
     len = file.GetLength()
-    print( "file len: " + len )
+    print( "file len: ", len )
 
     file.Seek( len )
     file.WriteNumber( 77, "Byte" )
@@ -181,7 +181,7 @@ def btn_OnTouch():
 
     file.Seek( 0 )
     data = file.ReadData( 2 )
-    print( "first two bytes:" + data[0] + "," + data[1] )
+    print( "first two bytes:", data[0], ",", data[1] )
 
     file.Seek( 0 )
     app.Alert( file.ReadText( "Line" ) )
