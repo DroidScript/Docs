@@ -3,13 +3,13 @@
  * In UI development, a SwitchGroup refers to a collection or grouping of individual switches.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs Such a grouping is used to represent related settings or options that can be toggle on or off. Add a switchgroup into your app using the `addSwitchGroup` method like this:
+ * @jdocs Such a grouping is used to represent related settings or options that can be toggle on or off. Add a switchgroup into your app using the “addSwitchGroup” method like this:
  * $$ swg = ui.addSwitchGroup(parent, list, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the SwitchGroup Component.
- * @param {Array} [list] The list items array whose elements can be `String` if items is text only, or `Array` of the form `[ "icon", "label" ]` if items is icon and text.
- * @param {String} [options] A comma separated options.\nIcon: `Icon`\nColor: `Primary`, `Secondary`\nContainer: `Elevated`, `Outlined`\nCorner: `Square`\nList divider: `Divider`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {Array} [list] The list items array whose elements can be “String” if items is text only, or “Array” of the form “[ “icon", "label” ]” if items is icon and text.
+ * @param {String} [options] A comma separated options.\nIcon: “Icon”\nColor: “Primary”, “Secondary”\nContainer: “Elevated”, “Outlined”\nCorner: “Square”\nList divider: “Divider”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-SwitchGroup
  */
 
@@ -18,16 +18,16 @@
      * @jdocs Here are the available setter and getter properties of the SwitchGroup Component.
      * @prop {String} label Sets or returns the label text.
      * @prop {Array} list Sets or returns the list items. You can also pass a comma separated string of items.
-     * @prop {String} edge Sets or returns the edge position of the toggle. Values can be `Start` `End` or `False`
-     * @prop {String} color Sets or returns the theme color. Values can be `Default` `Primary` or `Secondary`
-     * @prop {String} iconColor Sets or returns the theme color `Primary` `Secondary` or `Default`. You can also pass a hexadecimal color of the form `#rrggbb`
-     * @prop {String} textColor Sets or returns the theme color `primary` or `secondary`. You can also pass a hexadecimal color of the form `#rrggbb`
+     * @prop {String} edge Sets or returns the edge position of the toggle. Values can be “Start” “End” or “False”
+     * @prop {String} color Sets or returns the theme color. Values can be “Default” “Primary” or “Secondary”
+     * @prop {String} iconColor Sets or returns the theme color “Primary” “Secondary” or “Default”. You can also pass a hexadecimal color of the form “#rrggbb”
+     * @prop {String} textColor Sets or returns the theme color “primary” or “secondary”. You can also pass a hexadecimal color of the form “#rrggbb”
      * @prop {Number} elevation Sets or returns the depth of the control container. Value ranges from 0 to 24.
      * @prop {Number} iconSize Sets or returns the size of the icon.
      * @prop {String} labelColor Sets or returns the color of the label text in hexadecimal format.
      * @prop {Number} labelSize Sets or returns the size of the label text.
      * @prop {Boolean} outlined Sets or returns whether the container is outlined or elevated.
-     * @prop {Array} itemPadding Sets or returns the padding of each switch item. See also `setItemPadding` method.
+     * @prop {Array} itemPadding Sets or returns the padding of each switch item. See also “setItemPadding” method.
      */
 
 
@@ -123,9 +123,6 @@
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -174,6 +171,9 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
 	 * Sets a callback function when the switch item is touch.
 	 * $$ swt.setOnTouch( callback ) $$
@@ -188,11 +188,19 @@
      */
 
 
+    /** ### setValue
+     * Sets the value of the switchgroup item by its title.
+     * $$ swg.setValue(title, value) $$
+     * @param {String} title Title of the switchgroup item.
+     * @param {Boolean} value Toggled state of the item.
+     */
+
+
     /** ### setValueByIndex
      * Sets the value of the corresponding item in the list.
      * $$ swg.setValueByIndex(index, val) $$
      * @param {Number} index The index of the corresponding item.
-     * @param {Boolean} val A Values can be `true` or `false`
+     * @param {Boolean} val A Values can be “true” or “false”
      */
 
 
@@ -228,9 +236,9 @@
      */
 
 
-    /** ### removeItemByName
-     * Removes an item in the SwitchGroup component by its title name.
-     * $$ swg.removeItemByName( title ) $$
+    /** ### removeItem
+     * Removes an item in the SwitchGroup component by its title.
+     * $$ swg.removeItem( title ) $$
      * @param {String} title The title text of the SwitchGroup item.
      */
 
@@ -250,8 +258,8 @@
     /** ### setEnabled
 	 * Enable or disable an item in the switchgroup component.
 	 * $$ swt.setEnabled( index, value ) $$
-	 * @param {Number} index The index of the corresponding item in the list. You can also pass `Boolean` to enable or disable the switchgroup component.
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Number} index The index of the corresponding item in the list. You can also pass “Boolean” to enable or disable the switchgroup component.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
@@ -277,18 +285,18 @@
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
      */
 
 
     /** ### setItemPadding
-     * Sets the padding of the switch item. See `itemPadding` property for equivalent setter/getter property.
+     * Sets the padding of the switch item. See “itemPadding” property for equivalent setter/getter property.
      * $$ swt.setItemPadding(left, top, right, bottom, mode) $$
      * @param {Number} left Left padding of the radio item.
      * @param {Number} top Top padding of the radio item.
      * @param {Number} right Right padding of the radio item.
      * @param {Number} bottom Bottom padding of the radio item.
-     * @param {String} mode Unit of measurement. Can be `rem`, `px`, `%`, or `v` for viewport.
+     * @param {String} mode Unit of measurement. Can be “rem”, “px”, “%”, or “v” for viewport.
      */
 
 
@@ -470,7 +478,7 @@ def OnStart():
     swg.setOnTouch(onTouch)
 
 def onTouch(item, value, index, event):
-    ui.showPopup(item + " : " + value)
+    ui.showPopup(item + " : " + str(value))
  */
 
 
@@ -492,7 +500,7 @@ def OnStart():
     swg.setOnTouch(onTouch)
 
 def onTouch(item, value, index, event):
-    ui.showPopup(item + " : " + value)
+    ui.showPopup(item + " : " + str(value))
  */
 
 
@@ -518,7 +526,7 @@ def OnStart():
     swg.backColor = "rgba(255, 255, 100, 255)"
 
 def onTouch(item, value, index, event):
-    ui.showPopup(item + " : " + value)
+    ui.showPopup(item + " : " + str(value))
  */
 
 
@@ -538,7 +546,7 @@ def OnStart():
 
     swg.setOnChange(onChange)
 
-def onChange(items):
+def onChange(items, index):
     ui.showPopup(", ".join(items))
  */
 
@@ -559,7 +567,7 @@ def OnStart():
 
     swg.setOnChange(onChange)
 
-def onChange(items):
+def onChange(items, index):
     ui.showPopup(", ".join(items))
  */
 

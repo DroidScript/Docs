@@ -3,38 +3,42 @@
  * A button component in mobile UI development is an element that triggers an action when pressed.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs A button typically adheres to guidelines such as elevation, shape, and color to convey interactivity. It serves as a touchable surface with discernible feedback, promoting a consistent and intuitive user experience across mobile applications. Add a button using the `addButton` method like this:
+ * @jdocs A button typically adheres to guidelines such as elevation, shape, and color to convey interactivity. It serves as a touchable surface with discernible feedback, promoting a consistent and intuitive user experience across mobile applications. Add a button using the “addButton” method like this:
  * $$ btn = ui.addButton(parent, text, options, width, height) $$
  * @param {uio-Layout} parent The layout where to add the button.
  * @param {String} text The button text or the material icon text.
- * @param {String} [options] A comma separated options.\nVariant: `Contained`, `Outlined`, `Text`, `Default`\nTheme Color: `Primary`, `Secondary`, `Default`\nSizes: `Small`, `Medium`, `Large`\nToggleable: `Toggle`, `Active`\nUtils: `Icon`, `NoRipple`, `Upload`, `Multiple`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nVariant: “Contained”, “Outlined”, “Text”, “Default”\nTheme Color: “Primary”, “Secondary”, “Default”\nSizes: “Small”, “Medium”, “Large”\nToggleable: “Toggle”, “Active”\nUtils: “Icon”, “NoRipple”, “Upload”, “Multiple”, “Link”, “NewTab”, KeepCase
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Button
  */
 
 
 /**
- * In case of `Upload`, you can specify `Multiple` to accept multiple files.
+ * In case of “Upload”, you can specify “Multiple” to accept multiple files.
+ * The “Link" option renders the button as anchor tag that will open a link provided in “url” setter property. The "NewTab” option will allow the link to be open in a new tab window.
  */
 
 
 	/** ## Properties ##
 	 * @jdocs Here are the available setter and/or getter properties of the Button Component.
 	 * @prop {String} text Sets or returns the button text.
-	 * @prop {Number} badge Sets or returns the badge content. You can pass a `string`
-	 * @prop {String} badgeColor Sets or returns the color of the badge. Values can be `Primary` or `Secondary`
+	 * @prop {Number} badge Sets or returns the badge content. You can pass a “string”
+	 * @prop {String} badgeColor Sets or returns the color of the badge. Values can be “Primary” or “Secondary”
 	 * @prop {String} toolTip Sets or returns the tooltip text.
-	 * @prop {String} toolTipPosition Sets or returns the tooltip position. Values can be `left` `top` `right` or `bottom`
-	 * @prop {String} variant Sets or returns the variant of the button. Values can be `Contained` `Outlined` or `Text`
-	 * @prop {String} color Sets or returns the theme color of the button. Values can be `Default` `Primary` `Secondary` `Inherit`
+	 * @prop {String} toolTipPosition Sets or returns the tooltip position. Values can be “left” “top” “right” or “bottom”
+	 * @prop {String} variant Sets or returns the variant of the button. Values can be “Contained” “Outlined” or “Text”
+	 * @prop {String} color Sets or returns the theme color of the button. Values can be “Default” “Primary” “Secondary” “Inherit”
 	 * @prop {String} textColor Sets or returns the text color in hexadecimal format. 
-	 * @prop {String} sizeVariant Sets or returns the size variant of the button. Values can be `small` `medium` or `large`
+	 * @prop {String} sizeVariant Sets or returns the size variant of the button. Values can be “small” “medium” or “large”
 	 * @prop {Number} cornerRadius Sets or returns the corner radius of the button.
      * @prop {String} icon Sets or returns the material icon font use for the leading icon.
      * @prop {String} acceptedFiles Sets or returns the accepted files for an upload button.
-     * @prop {Boolean} active Sets or returns the active state if button is `toggleable`.
+     * @prop {Boolean} active Sets or returns the active state if button is “toggleable”.
 	 */
+
+
+    /** @prop {String} url Sets or returns the link url, if the button is of type link. */
 
 
     /** @extern width */
@@ -129,9 +133,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -180,10 +181,13 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
-     * Adds a callback handler when the button is touch. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
+     * Adds a callback handler when the button is touch. If the button is “toggleable” the first argument pass into the callback function is a “Boolean” value which is the active state of the button toggle.
      * $$ btn.setOnTouch( callback ) $$
-     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event. If the button is `toggleable` the first argument pass into the callback function is a `Boolean` value which is the active state of the button toggle.
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event. If the button is “toggleable” the first argument pass into the callback function is a “Boolean” value which is the active state of the button toggle.
      */
 
 
@@ -205,7 +209,7 @@
 	 * Sets a tooltip when the button is hovered.
 	 * $$ btn.setToolTip( title, pos ) $$
 	 * @param {String} title The text of the tooltip
-	 * @param {String} [pos='top'] Position of the tooltip. \n Positions : `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
+	 * @param {String} [pos='top'] Position of the tooltip. \n Positions : “top” “left” “right” “bottom” “bottom-end” “bottom-start” “left-end” “left-start” “right-end” “right-start” “top-end” “top-start”
 	 */
 
 
@@ -215,7 +219,7 @@
 	 * @param {Number} radius The radius in pixels
 	 * @param {Number} dx The x-offset in pixels
 	 * @param {Number} dy The y-offset in pixels
-	 * @param {String} color The color in hexadecimal `#rrggbb`
+	 * @param {String} color The color in hexadecimal “#rrggbb”
 	 */
 
 
@@ -226,7 +230,7 @@
 	 * @param {Number} [top] The top padding in pixels,
 	 * @param {Number} [right] The right padding in pixels.
 	 * @param {Number} [bottom] The bottom padding in pixels.
-	 * @param {String} [mode='px'] Can be `px` `%`
+	 * @param {String} [mode='px'] Can be “px” “%”
 	 */
 
 
@@ -237,7 +241,7 @@
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
      */
 
 
@@ -631,6 +635,9 @@ def OnStart():
 
     btn = ui.addButton(main, "Upload File", "Primary,Upload")
     btn.icon = "backup"
+    
+    # Add a callback handler for `onFileSelect` event
+    btn.setOnFileSelect( onFileSelect )
 
 def onFileSelect(files):
     file = files[0]

@@ -3,13 +3,13 @@
  * In mobile UI design, it refers to the style, arrangement, and appearance of text.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs It emphasizes clear and legible fonts, consistent hierarchy, and appropriate spacing. Following these guidelines enhances readability and visual appeal. Add a text control into your app using the `addText` method like this:
+ * @jdocs It emphasizes clear and legible fonts, consistent hierarchy, and appropriate spacing. Following these guidelines enhances readability and visual appeal. Add a text control into your app using the “addText” method like this:
  * $$ txt = ui.addText(parent, text, options, width, height) $$
  * @param {uio-Layout} parent The layout control where to add the text control
  * @param {String} text The text to be displayed on the text control
- * @param {String} [options] A comma separated options.\nVariants: `H1`, `H2`, `H3`, `H4`, `H5`, `H6`, `body1`, `body2`, `overline`, `subtitle1`, `subtitle2`, `button`, `caption`\nLines: `Singleline`, `Multiline`\nAlignment: `Left`, `Center`, `Right`, `Justify`\nTheme Color: `Primary`, `Secondary`, `TextPrimary`, `TextSecondary`, `Error`\nFormat: `Html`, `Icon`, `Italize`, `Monospace`, `Bold`, `Underline`\nUtils: `Touchable`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nVariants: “H1”, “H2”, “H3”, “H4”, “H5”, “H6”, “body1”, “body2”, “overline”, “subtitle1”, “subtitle2”, “button”, “caption”\nLines: “Singleline”, “Multiline”\nAlignment: “Left”, “Center”, “Right”, “Justify”\nTheme Color: “Primary”, “Secondary”, “TextPrimary”, “TextSecondary”, “Error”\nFormat: “Html”, “Icon”, “Italize”, “Monospace”, “Bold”, “Underline”\nUtils: “Touchable”, “Link”, “NewTab”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Text
  */
 
@@ -17,17 +17,18 @@
     /** ## Properties
      * @jdocs Here are the available setter and getter properties for the Text Component.
      * @prop {String} text Sets or returns the text.
-     * @prop {String} variant Sets or returns the text variants. See `options` param above for available values.
-     * @prop {String} color Sets or returns the theme color of the text `Primary` or `Secondary`. You can also pass hexadecimal color of the form `#rrggbb`
+     * @prop {String} variant Sets or returns the text variants. See “options” param above for available values.
+     * @prop {String} color Sets or returns the theme color of the text “Primary” or “Secondary”. You can also pass hexadecimal color of the form “#rrggbb”
      * @prop {String} textColor Sets or returns the text color in hexadecimal format.
-     * @prop {String} ellipsize Sets or returns the ellipsis use when the text is truncated. Values can be `Ellipsis` `End` or `Start`
-     * @prop {Number} textSize Sets or returns the fontsize for the text. You can also pass values such as `1.2em`.
-     * @prop {String} textStyle Sets or returns the style of the text. Values can be `italic` or `normal`.
-     * @prop {String} alignment Sets or returns the horizontal alignment of the text. Values can be `Left` `Center` `Right` or `Justify`.
-     * @prop {String} verticalAlignment Sets or returns the vertical alignment of the text. Values can be `Top` `Center` or `Bottom`.
-     * @prop {Boolean} italic Sets or returns whether the text is `italized` or not.
-     * @prop {Boolean} bold Sets or returns whether the text is `bold` or not.
-     * @prop {Boolean} underline Sets or returns whether the text is `underlined` or not.
+     * @prop {String} ellipsize Sets or returns the ellipsis use when the text is truncated. Values can be “Ellipsis” “End” or “Start”
+     * @prop {Number} textSize Sets or returns the fontsize for the text. You can also pass values such as “1.2em”.
+     * @prop {String} textStyle Sets or returns the style of the text. Values can be “italic” or “normal”.
+     * @prop {String} alignment Sets or returns the horizontal alignment of the text. Values can be “Left” “Center” “Right” or “Justify”.
+     * @prop {String} verticalAlignment Sets or returns the vertical alignment of the text. Values can be “Top” “Center” or “Bottom”.
+     * @prop {Boolean} italic Sets or returns whether the text is “italized” or not.
+     * @prop {Boolean} bold Sets or returns whether the text is “bold” or not.
+     * @prop {Boolean} underline Sets or returns whether the text is “underlined” or not.
+     * @prop {String} url Sets or returns the url if the text is a link.
      */
 
 
@@ -123,9 +124,6 @@
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -174,6 +172,9 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
      * Adds an event handler when the text component is touch.
      * $$ txt.setOnTouch( callback ) $$
@@ -192,7 +193,7 @@
      * Sets an html on the text control.
      * $$ txt.setHtml( html ) $$
      * @param {String} html An html string
-     * @@ Options should include an `html` option.
+     * @@ Options should include an “html” option.
      */
 
 
@@ -209,7 +210,7 @@
      * @param {Number} radius The radius in pixels
      * @param {Number} dx X-offset of the shadow
      * @param {Number} dy Y-offset of the shadow
-     * @param {String} color A hexadecimal color of the form `#rrggbb`
+     * @param {String} color A hexadecimal color of the form “#rrggbb”
      */
 
 
@@ -389,141 +390,129 @@ class Main extends App
 
 /**
 @sample Python Basic text control
-class Main extends App
-    onStart()
-        #  Create a full screen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from hybrid import ui
 
-        t = "This is the sample text to be displayed."
+def OnStart():
+    #  Create a full screen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Add a text control to the main layout
-        this.txt = ui.addText(this.main, t)
+    t = "This is the sample text to be displayed."
 
-        #  You can also add a callback handler when the text control is touch
-        this.txt.setOnTouch( this.onTouch )
+    #  Add a text control to the main layout
+    txt = ui.addText(main, t)
 
-    onTouch()
-        ui.showPopup( "You touched the text!" )
+    #  You can also add a callback handler when the text control is touch
+    txt.setOnTouch( onTouch )
+
+def onTouch():
+    ui.showPopup( "You touched the text!" )
  */
 
 
 /**
 @sample Python Heading variants
-class Main extends App
-    onStart()
-        #  Create a full screen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+from hybrid import ui
 
-        t = "Lorem ipsum dolor sit amet, consectetur"
+def OnStart():
+    #Create a full screen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-        #  Heading ranges from H1 to H6
-
-        this.h1 = ui.addText( this.main, "Heading 1", "H1" )
-
-        this.h2 = ui.addText( this.main, "Heading 2", "H2" )
-
-        this.h3 = ui.addText( this.main, "Heading 3", "H3" )
-
-        this.h4 = ui.addText( this.main, "Heading 4", "H4" )
-
-        this.h5 = ui.addText( this.main, "Heading 5", "H5" )
-
-        this.h6 = ui.addText( this.main, "Heading 6", "H6" )
+    #Heading ranges from H1 to H6
+    h1 = ui.addText(main, "Heading", "H1")
+    h2 = ui.addText(main, "Heading 2", "H2")
+    h3 = ui.addText(main, "Heading 3", "H3")
+    h4 = ui.addText(main, "Heading 4", "H4")
+    h5 = ui.addText(main, "Heading 5", "H5")
+    h6 = ui.addText(main, "Heading 6", "H6")
  */
 
 
 /**
 @sample Python Other variants
-class Main extends App
-    onStart()
-        #  Create a full screen layout.
-        this.main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
+from hybrid import ui
 
-        t = "Lorem ipsum dolor sit amet, consectetur"
+def OnStart():
+    #  Create a full screen layout.
+    main = ui.addLayout( "main", "Linear", "VCenter", 1, 1 )
 
-        this.text = ui.addText( this.main, t, "body1" )
+    t = "Lorem ipsum dolor sit amet, consectetur"
 
-        this.text = ui.addText( this.main, t, "body2" )
-
-        this.text = ui.addText( this.main, t, "subtitle1" )
-
-        this.text = ui.addText( this.main, t, "subtitle2" )
-
-        this.text = ui.addText( this.main, t, "overline" )
-
-        this.text = ui.addText( this.main, t, "button" )
-
-        this.text = ui.addText( this.main, t, "caption" )
+    ui.addText(main, t, "body1")
+    ui.addText(main, t, "body2")
+    ui.addText(main, t, "subtitle1")
+    ui.addText(main, t, "subtitle2")
+    ui.addText(main, t, "overline")
+    ui.addText(main, t, "button")
+    ui.addText(main, t, "caption")
  */
 
 
 /**
 @sample Python Alignments and colors
-class Main extends App
-    onStart()
-        #  Create a full screen layout.
-        this.main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
-        this.main.setChildMargins(0, 0.05)
+from hybrid import ui
 
-        t = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-            
-        #  Default is left
-        this.txt1 = ui.addText( this.main, t, "body1,Left", 0.9 )
-        this.txt1.backColor = "#e0e0e0"
+def OnStart():
+    ui.setTheme("light")
+    #  Create a full screen layout.
+    main = ui.addLayout( "main", "Linear", "VCenter,FillXY")
 
-        #  Center and color primary
-        this.txt2 = ui.addText( this.main, t, "body1,Center,Primary", 0.9 )
-        this.txt2.backColor = "#e0e0e0"
+    t = "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        
+    #  Default is left
+    txt1 = ui.addText(main, t, "body1,Left", 0.9)
 
-        #  Right and color secondary
-        this.txt3 = ui.addText( this.main, t, "body1,Right,Secondary", 0.9)
-        this.txt3.backColor = "#e0e0e0"
+    #  Center and color primary
+    txt2 = ui.addText(main, t, "body1,Center,Primary", 0.9)
 
-        #  Bottom, Center with a textSecondary color
-        this.txt4 = ui.addText( this.main, t, "body1,Center,Bottom,TextSecondary", 0.9, 0.1)
-        this.txt4.backColor = "#e0e0e0"
+    #  Right and color secondary
+    txt3 = ui.addText(main, t, "body1,Right,Secondary", 0.9)
+
+    #  Bottom, Center with a textSecondary color
+    txt4 = ui.addText(main, t, "body1,Center,Bottom,TextSecondary", 0.9, 0.1)
  */
 
 
 /**
 @sample Python Icons
-class Main extends App
-    onStart()
-        #  Create a full screen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        this.main.setChildMargins(0, 0.05)
-        
-        #  Add a settings icon
-        this.txt1 = ui.addText(this.main, "settings", "Icon")
-        this.txt1.setOnTouch( this.onTouch )
+from hybrid import ui
 
-        #  Add a camera icon
-        ui.addText(this.main, "add_a_photo", "Icon,TextSecondary")
+def OnStart():
+    #  Create a full screen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    main.setChildMargins(0, 0.05)
+    
+    #  Add a settings icon
+    txt1 = ui.addText(main, "settings", "Icon")
+    txt1.setOnTouch( onTouch )
 
-        #  Add a heart icon
-        ui.addText(this.main, "favorite", "Icon,Secondary")
+    #  Add a camera icon
+    ui.addText(main, "add_a_photo", "Icon,TextSecondary")
 
-        #  Add an android icon
-        ui.addText(this.main, "android", "Icon,Primary")
+    #  Add a heart icon
+    ui.addText(main, "favorite", "Icon,Secondary")
 
-    onTouch()
-        ui.showPopup( "You touch the icon!" )
+    #  Add an android icon
+    ui.addText(main, "android", "Icon,Primary")
+
+def onTouch( event ):
+    ui.showPopup( "You touch the icon!" )
  */
 
 
 /**
 @sample Python Html formatted text
-class Main extends App
-    onStart()
-        #  Create a full screen layout with objects vertically centered.
-        this.main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-        
-        #  Html formatted string
-        t = 'This text is formatted as html. <h3 style="color:green;">This is a heading with color.</h3>'
-        t += 'You can also add <i>italize text</i> as well as <span style="background-color:yellow;">text with styles</span>.'
+from hybrid import ui
 
-        #  Add text control to the main layout by passing `Html` option
-        this.txt = ui.addText(this.main, t, "html")
+def OnStart():
+    #  Create a full screen layout with objects vertically centered.
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    
+    #  Html formatted string
+    t = 'This text is formatted as html. <h3 style="color:green;">This is a heading with color.</h3>'
+    t += 'You can also add <i>italize text</i> as well as <span style="background-color:yellow;">text with styles</span>.'
+
+    #  Add text control to the main layout by passing `Html` option
+    txt = ui.addText(main, t, "html")
  */
 
 

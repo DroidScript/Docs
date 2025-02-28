@@ -3,13 +3,13 @@
  * A Switch in mobile UI design is a toggle control that allows users to turn a setting on or off.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs In Material Design, it's presented with a sliding motion and adheres to consistent styling for clarity. Switches provide an intuitive way to enable or disable options in applications, contributing to a seamless user experience. Add a switch into your app using the `addSwitch` method like this:
+ * @jdocs In Material Design, it's presented with a sliding motion and adheres to consistent styling for clarity. Switches provide an intuitive way to enable or disable options in applications, contributing to a seamless user experience. Add a switch into your app using the “addSwitch” method like this:
  * $$ swt = ui.addSwitch(parent, text, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the Switch Component.
  * @param {String} text The label text.
- * @param {String} [options] A comma separated options.\nTheme Color: `Primary`, `Secondary`, `Default`\nIcon Position: `Left`, `Top`, `Right`, `Bottom`\nSizes: `Small`, `Medium`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nTheme Color: “Primary”, “Secondary”, “Default”\nIcon Position: “Left”, “Top”, “Right”, “Bottom”\nSizes: “Small”, “Medium”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Switch
  */
 
@@ -18,12 +18,12 @@
      * @jdocs Here are the available setters and getters for the Switch Component.
      * @prop {Boolean} value Sets or returns the value of the switch toggle.
      * @prop {String} text Sets or returns the label text.
-     * @prop {String} iconPosition Sets or returns the icon position. Values can be `left` `top` `right` or `bottom`
+     * @prop {String} iconPosition Sets or returns the icon position. Values can be “left” “top” “right” or “bottom”
      * @prop {Boolean} required Sets or returns a boolean value whether this component is required or not.
-     * @prop {String} color Sets or returns the theme color. Values can be `Default` `Primary` or `Secondary`
+     * @prop {String} color Sets or returns the theme color. Values can be “Default” “Primary” or “Secondary”
      * @prop {String} textColor Sets or returns the text color in hexadecimal format.
-     * @prop {String} sizeVariant Sets or returns the size variant of the toggle switch. Values can be `Small` or `Medium`
-     * @prop {String} edge Sets or returns the edge position of the toggle. Values can be `Start` `End` or `False`
+     * @prop {String} sizeVariant Sets or returns the size variant of the toggle switch. Values can be “Small” or “Medium”
+     * @prop {String} edge Sets or returns the edge position of the toggle. Values can be “Start” “End” or “False”
      * @prop {Boolean} enable Sets or returns a Boolean whether the component is enabled or disabled.
      * @prop {Number} spaceBetween Sets or returns the space between the switch icon and the label text.
      * @prop {Boolean} disableRipple Sets or returns the disabled state of the ripple effect.
@@ -122,9 +122,6 @@
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -171,6 +168,9 @@
 
 
     /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
 
 
     /** ### setOnTouch
@@ -259,8 +259,8 @@ def OnStart():
     # Add a callback handler when the switch control is touch
     swt.setOnTouch(onTouch)
 
-def onTouch(value):
-    ui.showPopup("Value is : "  + value)
+def onTouch(value, event):
+    ui.showPopup("Value is : "  + str(value))
 
     # Setting the switch label text
     swt.text = f"Check me (Value is {value})"
@@ -283,13 +283,13 @@ def OnStart():
     swt.border = 1
     swt.padding = ["1.2rem"]
     swt.cornerRadius = 4
-    swt.backColor = "yellow"
+    swt.backColor = "green"
 
     # Add a callback handler when the switch control is touch
     swt.setOnTouch(onTouch)
 
-def onTouch(value):
-    ui.showPopup("Value is : " + value)
+def onTouch(value, event):
+    ui.showPopup("Value is : " + str(value))
  */
 
 

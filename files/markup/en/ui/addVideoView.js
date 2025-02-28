@@ -1,13 +1,13 @@
 /** # VideoView
  * Adds a video view into your app layout.
  * @param {uio-Layout} parent The layout where to add the video view.
- * @param {string} url The video source url. Supported video formats are `"mp4", "ogg", "webm"`
- * @param {string} options Comma separated options. Values can be one or a combination of the following: `autoplay`, `loop`, `controls`, `muted`, `fill` or `stretch`. If you pass "controls", you can optionally remove some controls such as "nodownload", "nofullscreen" and "noremoteplayback".
+ * @param {string} url The video source url. Supported video formats are “mp4“, "ogg", ”webm”
+ * @param {string} options Comma separated options. Values can be one or a combination of the following: “autoplay”, “loop”, “controls”, “muted”, “fill” or “stretch”. If you pass “controls", you can optionally remove some controls such as "nodownload", "nofullscreen" and "noremoteplayback”.
  * @param {number} width Fraction of the parent width. Values can be [0-1].
  * @param {number} height Fraction of the parent height. Values can be [0-1].
  * @returns uio-VideoView
  * 
- * By default, the video will be resize relative to its dimensions. If you want the video to cover the entire width and height, pass `"fill"` in the options argument.
+ * By default, the video will be resize relative to its dimensions. If you want the video to cover the entire width and height, pass “fill” in the options argument.
  */
 
 
@@ -241,13 +241,10 @@
     /** ### capture
      * Capture an image in the playback. This will return an image data which you can save or manipulate.
      * $$ vid.capture(type, format)
-     * @param {string} type The image type. Values are "jpg", "png", "webp", "gif". Default is "jpg".
-     * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer".
+     * @param {string} type The image type. Values are “jpg", "png", "webp", "gif". Default is "jpg”.
+     * @param {string} format The returned data format. Can be “base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer”.
      * @return object
      */
-
-
-    /** @extern setOnContextMenu */
 
 
     /** @extern animate */
@@ -298,8 +295,14 @@
     /** @extern addClass */
 
 
-/** ## Examples
- * Try these samples for `VideoView` control.
+    /** @extern setOnContextMenu */
+
+
+/* ## Examples */
+
+
+/**
+ * Try these samples for “VideoView” control.
  * @jdocs You can edit the code, save it and run. See your app in real time.
  */
 

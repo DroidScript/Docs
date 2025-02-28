@@ -3,25 +3,25 @@
  * A drawer is a navigation panel that slides in from the edge of the screen, typically from the left, to reveal additional options or content.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs In Material Design, Drawers offer a consistent and organized way to access app navigation, settings, or other features, contributing to a seamless and intuitive user experience. Add a drawer into your app using the `addDrawer` method like this:
+ * @jdocs In Material Design, Drawers offer a consistent and organized way to access app navigation, settings, or other features, contributing to a seamless and intuitive user experience. Add a drawer into your app using the “addDrawer” method like this:
  * $$ drw = ui.addDrawer(lay, options) $$
  * @param {uio-Layout} layout The drawer layout where to add controls.
- * @param {String} [options] A comma separated options.nVariant: `Permanent`, `Persistent`, `Temporary`\nAnchor: `Left`, `Right`, `Top`, `Bottom`
- * @param {Number} [width] Fraction of the screen width starting from the anchor position `[0-1]`.
+ * @param {String} [options] A comma separated options.nVariant: “Permanent”, “Persistent”, “Temporary”\nAnchor: “Left”, “Right”, “Top”, “Bottom”
+ * @param {Number} [width] Fraction of the screen width starting from the anchor position “[0-1]”.
  * @returns uio-Drawer
  */
 
 
-	/** ## Properties ##
+	/** ## Properties
 	 * @jdocs Here are the available setter and getter properties of the Drawer Component.
-     * @prop {Boolean} disabled Sets or returns the `disabled` state of the drawer.
-     * @prop {Number} width Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position `[0-1]`.
-     * @prop {String} anchor Sets or returns the anchor position of the drawer. Values can be `left`, `top`, `right`, `bottom`.
+     * @prop {Boolean} disabled Sets or returns the “disabled” state of the drawer.
+     * @prop {Number} width Sets or returns the width of the drawer as a fraction of the screen viewport relative to its anchor position “[0-1]”.
+     * @prop {String} anchor Sets or returns the anchor position of the drawer. Values can be “left”, “top”, “right”, “bottom”.
      * @prop {Number} swipeAreaWidth Sets or returns the width of the swipeable area of the Drawer.
 	 */
 
 
-	/** ## Methods ##
+	/** ## Methods
 	 * @jdocs Here are the available methods of the Drawer Component.
 	 */
 
@@ -35,21 +35,21 @@
 	/** ### disableSwipeToOpen ###
 	 * Disable swipe to open feature of the drawer. You can use this especially for ios devices which has swipe to go back feature.
 	 * $$ drw.disableSwipeToOpen( value ) $$
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
 	/** ### disableBackdropTransition ###
 	 * Disable the backdrop transition. This can improve the FPS on low-end devices.
 	 * $$ drw.disableBackdropTransition( value ) $$
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
 	/** ### disableDiscovery ###
-	 * If `true`, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture.
+	 * If “true”, touching the screen near the edge of the drawer will not slide in the drawer a bit to promote accidental discovery of the swipe gesture.
 	 * $$ drw.disableDiscovery( value ) $$
-	 * @param {Boolean} value Values can be `true` or `false`.
+	 * @param {Boolean} value Values can be “true” or “false”.
 	 */
 
 
@@ -70,7 +70,7 @@
 	/** ### show ###
 	 * Open the drawer dynamically.
 	 * $$ drw.show( anchor ) $$
-	 * @param {String} [anchor='left'] Optional. The anchor position. Can be `left`, `top`, `right`, `bottom`. Default is `left`.
+	 * @param {String} [anchor='left'] Optional. The anchor position. Can be “left”, “top”, “right”, “bottom”. Default is “left”.
 	 */
 
 
@@ -83,7 +83,7 @@
 /* --- parent_methods here ----- */
 
 
-/* ## Examples ## */
+/* ## Examples */
 
 
 /**
@@ -114,7 +114,7 @@ class Main extends App
         this.drawer.setOnClose( this.onClose )
 
         var lst1 = [
-            [ "music_note", "Audios" ],
+            [ "music_note", "Audio" ],
             [ "movie", "Videos" ],
             [ "insert_drive_file", "Documents" ]
         ]
@@ -185,7 +185,7 @@ class Main extends App
         this.drawer = ui.addDrawer( this.drawerLay, "left" )
 
         var lst1 = [
-            [ "music_note", "Audios" ],
+            [ "music_note", "Audio" ],
             [ "movie", "Videos" ],
             [ "insert_drive_file", "Documents" ]
         ]
@@ -246,43 +246,47 @@ class Main extends App
 from hybrid import ui
 
 def OnStart():
-            main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+    global drawer
+    
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
-            apb = ui.addAppBar(main, "My App", "Menu,Fixed")
-            apb.setOnMenu(openDrawer)
+    apb = ui.addAppBar(main, "My App", "Menu,Fixed")
+    apb.setOnMenu(openDrawer)
 
-            ui.addText(main, "<---- Swipe left ----->", "Center")
+    ui.addText(main, "<---- Swipe left ----->", "Center")
 
-            drawerLay = ui.addLayout(None, "Linear")
-            drawer = ui.addDrawer(drawerLay, "left", 0.7)
-            drawer.setOnClose(onClose)
+    drawerLay = ui.addLayout(None, "Linear")
+    drawer = ui.addDrawer(drawerLay, "left", 0.7)
 
-            lst1 = [
-                ["music_note", "Audios"],
-                ["movie", "Videos"],
-                ["insert_drive_file", "Documents"]
-            ]
-            lstMenu1 = ui.addList(drawerLay, lst1, "Icon", 1)
-            lstMenu1.label = "Main navigation"
-            lstMenu1.setOnTouch(onSelect)
+    lst1 = [
+        ["music_note", "Audio"],
+        ["movie", "Videos"],
+        ["insert_drive_file", "Documents"]
+    ]
+    lstMenu1 = ui.addList(drawerLay, lst1, "Icon", 1)
+    lstMenu1.label = "Main navigation"
+    lstMenu1.setOnTouch(onSelect)
 
-            ui.addDivider(drawerLay, 1)
+    ui.addDivider(drawerLay, 1)
 
-            lst2 = [
-                ["mail", "All Mail"],
-                ["inbox", "Inbox"],
-                ["drafts", "Outbox"],
-                ["send", "Sent"]
-            ]
-            lstMenu2 = ui.addList(drawerLay, lst2, "Icon", 1)
-            lstMenu2.label = "Secondary navigation"
-            lstMenu2.setOnTouch(onSelect)
+    lst2 = [
+        ["mail", "All Mail"],
+        ["inbox", "Inbox"],
+        ["drafts", "Outbox"],
+        ["send", "Sent"]
+    ]
+    lstMenu2 = ui.addList(drawerLay, lst2, "Icon", 1)
+    lstMenu2.label = "Secondary navigation"
+    lstMenu2.setOnTouch(onSelect)
 
-        def openDrawer():
-            drawer.show()
+def openDrawer( ev ):
+    global drawer
+    drawer.show()
 
-        def onSelect( title ):
-            ui.showPopup( title )
+def onSelect(title, body, icon, action, index, ev):
+    global drawer
+    ui.showPopup( title )
+    drawer.hide()
  */
 
 
@@ -290,7 +294,9 @@ def OnStart():
 @sample Python Drawer Anchor Positions
 from hybrid import ui
 
-def onStart():
+def OnStart():
+    global drawer
+
     # Creates a fullscreen layout with objects vertically centered.
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -308,7 +314,7 @@ def onStart():
     drawer = ui.addDrawer(drawerLay, "left")
 
     lst1 = [
-        ["music_note", "Audios"],
+        ["music_note", "Audio"],
         ["movie", "Videos"],
         ["insert_drive_file", "Documents"]
     ]
@@ -333,14 +339,13 @@ def onStart():
     lstMenu2.label = "Secondary navigation"
     lstMenu2.setOnTouch(closeDrawer)
 
-def openDrawer():
-    drawer.show()
-
-def closeDrawer(, title):
+def closeDrawer(title, body, icon, action, index, ev):
+    global drawer
     ui.showPopup(title)
     drawer.hide()
 
-def onSelect(, value):
+def onSelect(value, index):
+    global drawer
     # Set the drawer anchor first
     drawer.anchor = value
 

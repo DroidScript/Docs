@@ -2,21 +2,21 @@
  * @abbrev dtp
  * A DateTimePicker in mobile UI design combines date and time selection in one interface.
  * @img(img1.png)
- * @jdocs Following Material Design, it provides a unified, user-friendly experience for choosing both date and time, ensuring consistency and ease in applications and forms with date and time-sensitive inputs. Show a date-time picker using the `showDateTimePicker` method like this:
+ * @jdocs Following Material Design, it provides a unified, user-friendly experience for choosing both date and time, ensuring consistency and ease in applications and forms with date and time-sensitive inputs. Show a date-time picker using the “showDateTimePicker” method like this:
  * $$ ui.showDateTimePicker(date, time, format, onSelect) $$
  * $$ ui.showDateTimePicker(date, time, onSelect) $$
  * $$ ui.showDateTimePicker(date, onSelect) $$
  * $$ ui.showDateTimePicker( onSelect ) $$
- * @param {String} [date] Default value for date of the form "YYYY-MM-DD"
- * @param {String} [time] Default value for time of the form "HH:MM:SS"
- * @param {String} [format] The format of the value that will be pass to the `onSelect` callback. Default is `"YYYY-MM-DD HH:MM:SS"`. You can refer to <a href="https://momentjs.com/" target="_blank">https://momentjs.com/</a> for more date time formats. Sample formats: `"MMMM Do YYYY, h:mm:ss a"`, `"dddd"`, `"MMM Do YY"`, `"LLL"`
+ * @param {String} [date] Default value for date of the form “YYYY-MM-DD”
+ * @param {String} [time] Default value for time of the form “HH:MM:SS”
+ * @param {String} [format] The format of the value that will be pass to the “onSelect” callback. Default is “YYYY-MM-DD HH:MM:SS”. You can refer to <a href=“https://momentjs.com/" target="_blank”>https://momentjs.com/</a> for more date time formats. Sample formats: “MMMM Do YYYY, h:mm:ss a”, “dddd”, “MMM Do YY”, “LLL”
  * @param {Function} onSelect The callback function to be called on submit.
  * @returns uio-DateTimePicker
  */
 
 
 /**
- * If you want a date picker only see `DatePicker` or if you want time picker only see `TimePicker`
+ * If you want a date picker only see “DatePicker” or if you want time picker only see “TimePicker”
  */
 
 

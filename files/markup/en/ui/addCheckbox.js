@@ -3,25 +3,25 @@
  * A checkbox in UI development is a graphical control element that allows users to toggle between two states, typically checked or unchecked, to indicate a choice or selection.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs In Material Design, checkboxes maintain a consistent appearance with rounded corners and adhere to elevation principles. Add a checkbox component using the `addCheckbox` method like this:
+ * @jdocs In Material Design, checkboxes maintain a consistent appearance with rounded corners and adhere to elevation principles. Add a checkbox component using the “addCheckbox” method like this:
  * $$ ckb = ui.addCheckbox(parent, text, options, width, height) $$
  * @param {uio-Layout} parent The layout where to add the checkbox
  * @param {String} text The label for the checkbox
- * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`\nSizes: `Medium`, `Small`\nIcon position: `Left`, `Top`, `Right`, `Bottom`\nVariant: `Indeterminate`, `Determinate`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nTheme Colors: “Primary”, “Secondary”\nSizes: “Medium”, “Small”\nIcon position: “Left”, “Top”, “Right”, “Bottom”\nVariant: “Indeterminate”, “Determinate”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Checkbox
  */
 
 
     /** ## Properties
      * @jdocs Here are the available setters and/or getters of the Checkbox Component.
-     * @prop {String} textPosition Sets or returns the text position. Values can be `left` `top` `right` `bottom`
+     * @prop {String} textPosition Sets or returns the text position. Values can be “left” “top” “right” “bottom”
      * @prop {String} checkIcon Sets or returns the material icon font for check stated.
      * @prop {String} uncheckIcon Sets or returns the material icon font for uncheck state.
      * @prop {Boolean} value Sets or returns the checked state of the checkbox.
      * @prop {Boolean} enabled Returns whether the Checkbox is enabled or disabled.
-     * @prop {String} color Sets or returns the theme color of the checkbox when checked. Values can be `Default` `Primary` or `Secondary`
+     * @prop {String} color Sets or returns the theme color of the checkbox when checked. Values can be “Default” “Primary” or “Secondary”
      * @prop {String} text Sets or returns the checkbox text.
      * @prop {Boolean} disable Enabled or disable the checkbox component.
      * @prop {Number} iconSize Sets or returns the size of the icon.
@@ -120,9 +120,6 @@
 	/** ## Methods
 	 * @jdocs Here are the methods available for Checkbox Component
 	 */
-
-
-    /** @extern setOnContextMenu */
 
 
     /** @extern animate */
@@ -335,7 +332,7 @@ def OnStart():
     # Add a callback handler for `onTouch` event
     ckb.setOnTouch(onTouch)
 
-def onTouch(value):
+def onTouch(value, ev):
     ui.showPopup(f"Value is {value}")
  */
 
@@ -364,7 +361,7 @@ def OnStart():
     ckb3.value = True
     ckb3.setOnTouch(onTouch)
 
-def onTouch(value):
+def onTouch(value, ev):
     ui.showPopup(f"Value is {value}")
  */
 
@@ -394,7 +391,7 @@ def OnStart():
     ckb4 = ui.addCheckbox(main, "Checkbox on the bottom", "Secondary,Bottom")
     ckb4.setOnTouch(onTouch)
 
-def onTouch(value):
+def onTouch(value, ev):
     ui.showPopup(f"Value is {value}")
  */
 
@@ -417,7 +414,7 @@ def OnStart():
     # Add a callback handler for `onTouch` event
     ckb.setOnTouch(onTouch)
 
-def onTouch(value):
+def onTouch(value, ev):
     ui.showPopup(f"Value is {value}")
  */
 

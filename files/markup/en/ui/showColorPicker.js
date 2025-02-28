@@ -3,11 +3,11 @@
  * Shows a color picker.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette. Show a color picker using the `showColorPicker` method like this:
+ * @jdocs Customize a color or choose from the presets of color carefully selected from Material Design Color Pallette. Show a color picker using the “showColorPicker” method like this:
  * $$ ui.showColorPicker(onSelect)
  * $$ ui.showColorPicker(value, onSelect)
  * @param {String} [value] A hexadecimal default value for the color picker.
- * @param {Function} onSelect The callback function to be called when onselect event is fired. ---> @arg {String} value Color in hexadecimal format `#rrggbb` or `#aarrggbb` if `Alpha` option is passed.
+ * @param {Function} onSelect The callback function to be called when onselect event is fired. ---> @arg {String} value Color in hexadecimal format “#rrggbb” or “#aarrggbb” if “Alpha” option is passed.
  * @returns uio-ColorPicker
  */
 
@@ -82,6 +82,52 @@ class Main extends App
         ui.showPopup( clr )
     }
 }
+ */
+
+
+/**
+@sample Python Basic
+from hybrid import ui
+
+def OnStart():
+    #Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    #Add a button to the main layout
+    btn = ui.addButton(main, "Show Popup", "Primary")
+
+    #Add callback handler for onTouch event
+    btn.setOnTouch( showColorPicker )
+
+def showColorPicker( ev ):
+    #Show color picker dialog
+    ui.showColorPicker( onSelect )
+
+def onSelect( clr ):
+    ui.showPopup( clr )
+ */
+
+
+/**
+@sample Python Default value
+from hybrid import ui
+
+def OnStart():
+    #Create a fullscreen layout with objects vertically centered
+    main = ui.addLayout("main", "Linear", "VCenter,FillXY")
+
+    #Add a button to the main layout
+    btn = ui.addButton(main, "Show Popup", "Primary")
+
+    #Add callback handler for onTouch event
+    btn.setOnTouch( showColorPicker )
+
+def showColorPicker( ev ):
+    #Show color picker dialog
+    ui.showColorPicker("#009688", onSelect)
+
+def onSelect( clr ):
+    ui.showPopup( clr )
  */
 
 

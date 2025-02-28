@@ -5,12 +5,12 @@
  * @img(img2.png)
  * @img(img3.png)
  * @img(img4.png)
- * @jdocs In accordance with Material Design, it offers a visually consistent and user-friendly interface for choosing hours and minutes usually render as analog clock design. Time Pickers are commonly used in applications where precise time input is essential. Show a time picker using the `showTimePicker` method like this:
+ * @jdocs In accordance with Material Design, it offers a visually consistent and user-friendly interface for choosing hours and minutes usually render as analog clock design. Time Pickers are commonly used in applications where precise time input is essential. Show a time picker using the “showTimePicker” method like this:
  * $$ ui.showTimePicker(time, options, onSelect) $$
  * $$ ui.showTimePicker(time, onSelect) $$
  * $$ ui.showTimePicker( onSelect ) $$
- * @param {String} time A default time value to which the timepicker begins. Value is of the form `HH:mm`
- * @param {String} [options] A comma separated options.\nOrientation: `Portrait`, `Landscape`\nFormat: `24H`, `12H`
+ * @param {String} time A default time value to which the timepicker begins. Value is of the form “HH:mm”
+ * @param {String} [options] A comma separated options.\nOrientation: “Portrait”, “Landscape”\nFormat: “24H”, “12H”
  * @param {Function} onSelect The callback function to be called when time is selected.
  * @returns uio-TimePicker
  */
@@ -113,6 +113,9 @@ from hybrid import ui
 
 def OnStart():
     global tpk
+
+    ui.setTheme("light")
+
     main = ui.addLayout("main", "Linear", "VCenter,ScrollY", 1, 1)
     btn = ui.addButton(main, "Show Time Picker", "Outlined,Secondary", 0.2)
     btn.setOnTouch(showTimePicker)
@@ -123,7 +126,7 @@ def showTimePicker(event):
     tpk.show()
 
 def onSelect(value):
-    print(value)
+    ui.showPopup(value)
  */
 
 

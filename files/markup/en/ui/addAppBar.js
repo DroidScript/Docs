@@ -3,13 +3,13 @@
  * Adds an appbar to your app.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs In UI development, an AppBar is a common user interface element found at the top of the screen in mobile applications. It typically contains the app's title, navigation icons, and other actions. In Material Design, an AppBar follows guidelines such as elevation, color, and typography for consistency. Add an AppBar into your app using the `addAppBar` method like this:
+ * @jdocs In UI development, an AppBar is a common user interface element found at the top of the screen in mobile applications. It typically contains the app's title, navigation icons, and other actions. In Material Design, an AppBar follows guidelines such as elevation, color, and typography for consistency. Add an AppBar into your app using the “addAppBar” method like this:
  * $$ apb = ui.addAppBar(parent, title, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the AppBar
  * @param {String} title The title text of the appbar
- * @param {String} [options] A comma separated options.\nMenu icon: `Menu` \nTheme Color: `Primary`, `Secondary`, `Transparent`, `Inherit`, `Default`\nPosition: `Absolute`, `Static`, `Fixed`, `Relative`
- * @param {Number} [width] Fraction of the parent width `[0-1]`
- * @param {Number} [height] Fraction of the parent height `[0-1]`
+ * @param {String} [options] A comma separated options.\nMenu icon: “Menu” \nTheme Color: “Primary”, “Secondary”, “Transparent”, “Inherit”, “Default”\nPosition: “Absolute”, “Static”, “Fixed”, “Relative”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”
+ * @param {Number} [height] Fraction of the parent height “[0-1]”
  * @returns uio-AppBar
  */
 
@@ -17,14 +17,14 @@
 	/** ## Properties
 	 * @jdocs Here are the available setters and getters of the AppBar Component.
 	 * @prop {String} text Sets or return the AppBar title “text”
-	 * @prop {String} color Sets or returns the theme color of the AppBar. Values can be `Default` `Primary` `Secondary` `Transparent` `Inherit`
+	 * @prop {String} color Sets or returns the theme color of the AppBar. Values can be “Default” “Primary” “Secondary” “Transparent” “Inherit”
 	 * @prop {String} textColor Sets or returns the hexadecimal color of the appbar title.
-	 * @prop {String} textVariant Sets or returns the variant of the title text. Values can be `h1` `h2` `h3` `h4` `h5` or `h6`
+	 * @prop {String} textVariant Sets or returns the variant of the title text. Values can be “h1” “h2” “h3” “h4” “h5” or “h6”
 	 * @prop {Number} textSize Sets or returns the font size of the title text. 
 	 * @prop {String} icon Sets or returns the icon of the menu button.
 	 * @prop {Object} layout Returns the right layout of the appbar where you can add controls.
      * @prop {Boolean} menu Sets or returns whether the appbar has menu button. 
-     * @prop {Number} cornerRadius Sets or returns the corner radius of the accordion panel. You can also pass an array of the form `[tl, tr, bl, br]`. See `setCornerRadius` for customization.
+     * @prop {Number} cornerRadius Sets or returns the corner radius of the accordion panel. You can also pass an array of the form “[tl, tr, bl, br]”. See “setCornerRadius” for customization.
 	 */
 
 
@@ -120,9 +120,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -171,6 +168,9 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
      * Adds a callback handler when the component is touch.
      * $$ apb.setOnTouch( callback ) $$
@@ -199,7 +199,7 @@
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
      */
 
 
@@ -452,10 +452,10 @@ def OnStart():
     # Add a callback handler to the list onTouch event
     lstMenu.setOnTouch( onTouch )
 
-def showDrawer():
+def showDrawer( ev ):
     drawer.show()
 
-def onTouch(title, body, icon, index, event):
+def onTouch(title, body, icon, action, index, event):
     # Set the appbar text with the selected list item
     apb.text = title
 
@@ -504,10 +504,10 @@ def OnStart():
     # Add a callback handler to the list onTouch event
     lstMenu.setOnTouch( onTouch )
 
-def showDrawer():
+def showDrawer( ev ):
     drawer.show()
 
-def onTouch(title, body, icon, index, event):
+def onTouch(title, body, icon, action, index, event):
     # Set the appbar text with the selected list item
     apb.text = title
 
@@ -529,7 +529,7 @@ def OnStart():
     apb = ui.addAppBar(main, "My app", "Default")
 
     # Adds a textfield to the appbar
-    tfd = ui.addTextField(apb.layout, "", "Search,Outlined,Small")
+    tfd = ui.addTextField(apb.layout, "", "Search,Outlined,Small", "10rem")
     tfd.placeholder = "Search"
     tfd.hide()
 
@@ -542,6 +542,7 @@ def OnStart():
 def showSearchField(event):
     if searchBtn.text == "search":
         tfd.show()
+        tfd.focus()
         searchBtn.text = "close"
     else:
         tfd.hide()

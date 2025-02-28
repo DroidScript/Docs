@@ -3,13 +3,13 @@
  * A dropdown, also known as a spinner or picker, is a user interface element that presents a list of options in a drop-down menu.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs Users can select one option from the list. In Material Design, Dropdowns typically provide a clear visual representation, ensuring a consistent and intuitive way for users to make selections within mobile applications. Add a dropdown into your app using the `addDropdown` method like this:
+ * @jdocs Users can select one option from the list. In Material Design, Dropdowns typically provide a clear visual representation, ensuring a consistent and intuitive way for users to make selections within mobile applications. Add a dropdown into your app using the “addDropdown” method like this:
  * $$ dpd = ui.addDropdown(parent, list, options, width, height) $$
  * @param {uio-Layout} parent The layout where to add the dropdown.
  * @param {Array} [list] The list items to show.
- * @param {String} [options] A comma separated options.\nTheme Colors: `Primary`, `Secondary`, `Default`\nVariants: `Contained`, `Outlined`, `Text`\nSizes: `Small`, `Medium`, `Large`\nOrientation: `Horizontal`, `Vertical`\nUtil: `NoElevation` 
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nTheme Colors: “Primary”, “Secondary”, “Default”\nVariants: “Contained”, “Outlined”, “Text”\nSizes: “Small”, “Medium”, “Large”\nOrientation: “Horizontal”, “Vertical”\nUtil: “NoElevation”, KeepCase
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Dropdown
  */
 
@@ -18,10 +18,10 @@
 	 * @jdocs Here are the available setters and/or getters of Dropdown Component.
 	 * @prop {Array} list Sets or returns the dropdown list. You can also passed a comma separated string.
 	 * @prop {String} value Sets or returns the value of the Dropdown. If you pass a number it will be treated as the index of the corresponding item in the choices.
-	 * @prop {String} variant Sets or returns the variant of the dropdown button. Values can be `Contained` or `Outlined` or `Text`
-	 * @prop {String} sizeVariant Sets or returns the size variant of the dropdown button. Values can be `Small` or `Medium` or `Large`
-	 * @prop {String} color Sets or returns the theme color. Values can be `Default` `Primary` or `Secondary`
-	 * @prop {String} orientation Sets or returns the orientation of the dropdown buttongroup. Values can be `horizontal` or `vertical`
+	 * @prop {String} variant Sets or returns the variant of the dropdown button. Values can be “Contained” or “Outlined” or “Text”
+	 * @prop {String} sizeVariant Sets or returns the size variant of the dropdown button. Values can be “Small” or “Medium” or “Large”
+	 * @prop {String} color Sets or returns the theme color. Values can be “Default” “Primary” or “Secondary”
+	 * @prop {String} orientation Sets or returns the orientation of the dropdown buttongroup. Values can be “horizontal” or “vertical”
 	 * @prop {String} label Sets or returns the default label of the dropdown.
      * @prop {String} icon Sets or returns the dropdown material icon font.
 	 */
@@ -119,9 +119,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -170,6 +167,9 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
      * Adds a callback handler when the component is touch.
      * $$ cname.setOnTouch( callback ) $$
@@ -208,8 +208,8 @@
 	/** ### setItemByIndex
 	 * Updates the text of the corresponding item in the dropdown.
 	 * $$ dpd.setItemByIndex(item, index) $$
+     * @param {Number} index The index of the item to update.
 	 * @param {String} item The new item text.
-	 * @param {Number} index The index of the item to update.
 	 */
 
 
@@ -225,7 +225,7 @@
 	 * Enable or disable an item in the dropdown.
 	 * $$ dpd.setEnabled( index, value ) $$
 	 * @param {Number} index The index of the item.
-	 * @param {Boolean} value Values can be `true` `false`.
+	 * @param {Boolean} value Values can be “true” “false”.
 	 */
 
 
@@ -241,7 +241,7 @@
 	 * Enable or disable an item in the dropdown.
 	 * $$ dpd.setEnabledByName( name, value ) $$
 	 * @param {String} name The name of the item.
-	 * @param {Boolean} value Values can be `true` `false`.
+	 * @param {Boolean} value Values can be “true” “false”.
 	 */
 
 
@@ -287,14 +287,68 @@
 	 */
 
 
+    /** @prop {Number} iconSize Sets or returns the dropdown icon size. You can also pass a string e.g. 1rem. */
+
+
+    /** @prop {String} iconColor Sets or returns the dropdown icon color. */
+
+
+    /** @prop {Number} iconPadding Sets or returns the dropdown icon padding. You can also pass string e.g. 1rem. */
+
+
+    /** ### setIconPadding
+     * Set the icon padding.
+     * $$ dpd.setIconPadding(left, top, right, bottom, mode) $$
+     * @param {Number} left Left padding
+     * @param {Number} top Padding top
+     * @param {Number} right Padding right
+     * @param {Number} bottom Padding bottom
+     * @param {String} mode Mode of measurement. e.g. “rem", "px”
+     */
+
+
     /** ### setCornerRadius
      * Sets the corner radius of the dropdown.
-     * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
+     * $$ dpd.setCornerRadius(tl, tr, bl, br, mode) $$
      * @param {Number} [tl] Top-left corner radius.
      * @param {Number} [tr] Top-right corner radius.
      * @param {Number} [bl] Bottom-left corner radius.
      * @param {Number} [br] Bottom-right corner radius.
-     * @param {String} [mode='px'] Unit. Values are `px` `rem` or `%`.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
+     */
+
+
+    /** ### setUrls
+     * Sets the urls for each menu item in the dropdown.
+     * $$ dpd.setUrls( urls ) $$
+     * @param {Array} urls The url for each menu item.
+     */
+
+
+    /** ### getUrls
+     * Returns an array of urls for each menu item in the dropdown.
+     * $$ dpd.getUrls() $$
+     * @returns Array
+     */
+
+
+    /** @prop {Array} urls Returns an array of urls for each menu item. */
+
+
+    /** ### setUrlByIndex
+     * Sets the url of a menu item by its index.
+     * $$ dpd.setUrlByIndex(index, url, newTab) $$
+     * @param {Number} index The index of the menu item.
+     * @param {String} url Link or route.
+     * @param {Boolean} newTab Open the url in the new tab.
+     */
+
+
+    /** ### geturlByIndex
+     * Returns the url of a given menu item.
+     * $$ dpd.geturlByIndex() $$
+     * @param {Number} index The index of the menu item.
+     * @returns String
      */
 
 

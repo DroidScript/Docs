@@ -3,18 +3,18 @@
  * A Floating Action Button (FAB) is a prominent, circular button that hovers above the content, typically used for a primary action in an application.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs In Material Design, FABs provide a visually distinctive and accessible means to trigger key actions, promoting a clean and focused user interface. Add a floating action button into your app using the `addFAB` method like this:
+ * @jdocs In Material Design, FABs provide a visually distinctive and accessible means to trigger key actions, promoting a clean and focused user interface. Add a floating action button into your app using the “addFAB” method like this:
  * $$ fab = ui.addFAB(parent, icon, options, text) $$
  * @param {uio-Layout} parent The parent layout where to add the fab
  * @param {String} icon The string icon of the FAB
- * @param {String} options A comma separated option.\nPosition: `Fixed`, `Static`\nStyle: `Rounded`, `Extended`\nAnchor: `Left`, `Right`
+ * @param {String} options A comma separated option.\nPosition: “Fixed”, “Static”\nStyle: “Rounded”, “Extended”\nAnchor: “Left”, “Right”\nText styling: “KeepCase”
  * @param {String} text Text to show for extended FABs
  * @returns uio-FloatingActionButton
  */
 
 
 /**
- * If you want the fab to position relative to the layout and not on the bottom right corner, pass a `Static` option. If fab is `Extended` pass a text argument.
+ * If you want the fab to position relative to the layout and not on the bottom right corner, pass a “Static” option. If fab is “Extended” pass a text argument.
  */
 
 
@@ -22,9 +22,9 @@
 	 * @jdocs Here are the available setters and/or getters of the FloatingActionButton Component.
 	 * @prop {String} icon Sets or returns the material icon font.
 	 * @prop {String} text Sets or returns the text for extended FAB.
-	 * @prop {String} color Sets or returns the theme color for the FAB. Values can be `Default` `Primary` or `Secondary`
-	 * @prop {String} variant Sets or returns the variant use for the FAB. Can be `Extended` or `Rounded`
-	 * @prop {String} sizeVariant Sets or returns the size variant of the FAB. Values can be `Small` `Medium` or `Large`
+	 * @prop {String} color Sets or returns the theme color for the FAB. Values can be “Default” “Primary” or “Secondary”
+	 * @prop {String} variant Sets or returns the variant use for the FAB. Can be “Extended” or “Rounded”
+	 * @prop {String} sizeVariant Sets or returns the size variant of the FAB. Values can be “Small” “Medium” or “Large”
      * @prop {Number} iconSize Sets or returns the size of the icon.
      * @prop {Boolean} disabledRipple Sets or returns the disabled state of the ripple effect.
 	 */
@@ -122,9 +122,6 @@
 	 */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -173,6 +170,9 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setOnTouch
      * Adds a callback handler when the FAB is touch.
      * $$ fab.setOnTouch( callback ) $$
@@ -187,17 +187,18 @@
      * @param {Number} tr Top-right corner radius.
      * @param {Number} bl Bottom-left corner radius.
      * @param {Number} br Bottom-right corner radius.
-     * @param {String} mode Unit. Values are `px` `rem` or `%`.
+     * @param {String} mode Unit. Values are “px” “rem” or “%”.
      */
 
 
 /* --- parent_methods here ----- */
 
 
-/* ## Examples ## */
+/* ## Examples */
 
 
-/** #Example - Basic FAB
+/**
+@sample Basic FAB
 class Main extends App
 {
     onStart()

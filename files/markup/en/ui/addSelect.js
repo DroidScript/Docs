@@ -3,22 +3,22 @@
  * Adds a Select Component to a given layout.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs This component often refers to a dropdown or picker element that allows users to choose from a list of options. Add a select into your app using the `addSelect` method like this:
+ * @jdocs This component often refers to a dropdown or picker element that allows users to choose from a list of options. Add a select into your app using the “addSelect” method like this:
  * $$ sel =  ui.addSelect(parent, list, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the control
  * @param {Array} [list] The list of items for the Select options
- * @param {String} [options] A comma separated options.\nSizes: `Small`, `Medium`\nVariant: `Filled`, `Outlined`, `Standard`\nMargin: `Dense`, `Normal`\nUtils: `Required`, `Multiple`, `Radio`, `Disabled`, `AutoFocus`, `FullWidth`
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options.\nSizes: “Small”, “Medium”\nVariant: “Filled”, “Outlined”, “Standard”\nMargin: “Dense”, “Normal”\nUtils: “Required”, “Multiple”, “Radio”, “Disabled”, “AutoFocus”, “FullWidth”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Select
  */
 
 
 /**
  * A simple list
- * $$ [ "Option 1", "Option 2", "Option 3"] $$
- * If you want a list with groupings, you can add a colon `:` before each item text to display as group name. Below is an example
- * $$ [":Group 1", "Option 1", "Option 2", ":Group 2", "Item 1", "Item 2"] $$
+ * $$ [ “Option 1", "Option 2", "Option 3”] $$
+ * If you want a list with groupings, you can add a colon “:” before each item text to display as group name. Below is an example
+ * $$ [“:Group 1", "Option 1", "Option 2", ":Group 2", "Item 1", "Item 2”] $$
  */
 
 
@@ -27,11 +27,11 @@
      * @prop {String} label Sets or returns the label text.
      * @prop {Array} list Sets or returns the list items. You can also pass a comma separated string of items.
      * @prop {Boolean} enabled Sets or returns a boolean value whether the component is enabled or disabled.
-     * @prop {String} value Sets or returns the value of the Select Component. For Select with `Multiple` options, the `value` is an array of string items. You can also pass the `index` of the selected item. Pass an array of `indexes` for multiple selection.
-     * @prop {String} variant Sets or returns the variant of the Select Component. Values can be `Standard` `Filled` and `Outlined`
-     * @prop {String} sizeVariant Sets or returns the size variant of the Select Component. Values can be `Small` or `Medium`
-     * @prop {String} iconColor Sets or returns the color of the icon in hexadecimal format `#rrggbb`
-     * @prop {String} labelColor Sets or returns the color of the label text in hexadecimal format `#rrggbb`
+     * @prop {String} value Sets or returns the value of the Select Component. For Select with “Multiple” options, the “value” is an array of string items. You can also pass the “index” of the selected item. Pass an array of “indexes” for multiple selection.
+     * @prop {String} variant Sets or returns the variant of the Select Component. Values can be “Standard” “Filled” and “Outlined”
+     * @prop {String} sizeVariant Sets or returns the size variant of the Select Component. Values can be “Small” or “Medium”
+     * @prop {String} iconColor Sets or returns the color of the icon in hexadecimal format “#rrggbb”
+     * @prop {String} labelColor Sets or returns the color of the label text in hexadecimal format “#rrggbb”
      * @prop {Number} labelSize Sets or returns the size of the label.
      * @prop {String} popupColor Sets or returns the color of the popup in hexadecimal format.
      * @prop {Number} maxHeight Sets or returns the maximum height of the popup container.
@@ -130,9 +130,6 @@
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -179,6 +176,9 @@
 
 
     /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
 
 
     /** ### setOnTouch
@@ -260,8 +260,8 @@
     /** ### setEnabled
      * Enable or disable the select component.
      * $$ sel.setEnabled( index, value ) $$
-     * @param {Number} index Can be `true` or `false`. You can also pass a `Boolean` to enable or disable the Select component.
-     * @param {Boolean} value Values can be `true` or `false`.
+     * @param {Number} index Index of the corresponding item. You can also pass a “Boolean” to enable or disable the Select component.
+     * @param {Boolean} value Values can be “true” or “false”.
      */
 
 
@@ -277,7 +277,7 @@
      * Enable or disable an item in the menu popup.
      * $$ sel.setEnabledByName( name, value ) $$
      * @param {String} name The name of the menu item.
-     * @param {Boolean} value Value can be `true` or `false`
+     * @param {Boolean} value Value can be “true” or “false”
      */
 
 
@@ -503,7 +503,6 @@ class Main extends App
 /**
 @sample Python Basic
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered
@@ -521,17 +520,14 @@ def OnStart():
     # Add a callback handler when an item is selected
     sel.setOnChange(onChange)
 
-def onChange(text):
+def onChange(text, index):
     ui.showPopup("You choose " + text)
-
-app.add(Main())
  */
 
 
 /**
 @sample Python Group title
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered
@@ -550,20 +546,16 @@ def OnStart():
     # Add a callback handler when an item is selected
     sel.setOnChange(onChange)
 
-def onChange(text):
+def onChange(text, index):
     ui.showPopup("You choose " + text)
-
-app.add(Main())
  */
 
 
 /**
 @sample Python Multiple selection
 from hybrid import ui
-from native import app
 
 def OnStart():
-    global items
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -578,17 +570,14 @@ def OnStart():
     # Add a callback handler when an item is selected
     sel.setOnChange(onChange)
 
-def onChange(items):
+def onChange(items, index):
     ui.showPopup("You choose " + ", ".join(items))
-
-app.add(Main())
  */
 
 
 /**
 @sample Python Outlined and small
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered
@@ -606,17 +595,14 @@ def OnStart():
     # Add a callback handler when an item is selected
     sel.setOnChange(onChange)
 
-def onChange(item):
+def onChange(item, index):
     ui.showPopup("You choose " + item)
-
-app.add(Main())
  */
 
 
 /**
 @sample Python Radiogroup items
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered
@@ -633,17 +619,14 @@ def OnStart():
     # Add a callback handler when an item is selected
     sel.setOnChange(onChange)
 
-def onChange(item):
+def onChange(item, index):
     ui.showPopup("You choose " + item)
-
-app.add(Main())
  */
 
 
 /**
 @sample Python Grouped list items
 from hybrid import ui
-from native import app
 
 def OnStart():
     # Creates a fullscreen layout with objects vertically centered
@@ -659,10 +642,8 @@ def OnStart():
     # Add a callback handler when an item is selected
     sel.setOnChange(onChange)
 
-def onChange(item):
+def onChange(item, index):
     ui.showPopup("You choose " + item)
-
-app.add(Main())
  */
 
 
@@ -671,7 +652,6 @@ app.add(Main())
 from hybrid import ui
 
 def OnStart():
-    global items
     # Creates a fullscreen layout with objects vertically centered
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
 
@@ -685,8 +665,8 @@ def OnStart():
     # Add a callback handler when an item is selected
     sel.setOnChange(onChange)
 
-def onChange(items):
-    ui.show
+def onChange(items, index):
+    ui.showPopup("You choose " + ", ".join(items))
  */
 
 

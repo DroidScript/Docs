@@ -5,11 +5,11 @@
  * @img(img2.png)
  * @jdocs It is like a small, temporary window that appears above other content, showing additional options or details. It's a brief and focused way to present information or choices to the user.
  * $$ ui.showPopover(parent, text, position, height, height) $$
- * @param {uio} parent UI component. Can be a `Layout` `Button` `Image` `Text` or any UI component except dialogs.
- * @param {String} [text] The text to de displayed. For displaying more data, pass a `Layout`
- * @param {String} [position] A comma separated values representing the\n`"anchorOrigin,transformOrigin"`\n`anchorOrigin` Position of the popover on its parent.\n`transformOrigin` Origin on the popover itself.\nAvailable values for both `anchorOrigin` and `transformOrigin`  are\n`tl` for top-left, `tc` for top-center, `tr` `cl` `cc` `cr` `bl` `bc` and `br` for bottom-right.
- * @param {Number} [width] Fraction of the screen width `[0-1]`.
- * @param {Number} [height] Fraction of the screen height `[0-1]`.
+ * @param {uio} parent UI component. Can be a “Layout” “Button” “Image” “Text” or any UI component except dialogs.
+ * @param {String} [text] The text to de displayed. For displaying more data, pass a “Layout”
+ * @param {String} [position] A comma separated values representing the\n“anchorOrigin,transformOrigin”\n“anchorOrigin” Position of the popover on its parent.\n“transformOrigin” Origin on the popover itself.\nAvailable values for both “anchorOrigin” and “transformOrigin”  are\n“tl” for top-left, “tc” for top-center, “tr” “cl” “cc” “cr” “bl” “bc” and “br” for bottom-right.
+ * @param {Number} [width] Fraction of the screen width “[0-1]”.
+ * @param {Number} [height] Fraction of the screen height “[0-1]”.
  * @returns uio-Popover
  */
 
@@ -191,80 +191,6 @@ def OnStart():
 def onTouch(event):
     # Display a popover when the button is clicked
     ui.showPopover(btn, "This is a text to be displayed.")
- */
-
-
-/**
-@sample Python Positioning
-from hybrid import ui
-
-def OnStart():
-    # Creates a fullscreen layout with objects vertically centered.
-    main = ui.addLayout("main", "Linear", "VCenter,Horizontal", 1, 1)
-
-    lay1 = ui.addLayout(main, "Linear", "VCenter", 0.5, 1)
-    lay1.setChildMargins(0, 0.05)
-
-    ui.addText(lay1, "Position on parent", "h5")
-
-    btn = ui.addButton(lay1, "Top-Left")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,tl"))
-
-    btn = ui.addButton(lay1, "Top-Center")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tc,tl"))
-
-    btn = ui.addButton(lay1, "Top-Right")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tr,tl"))
-
-    btn = ui.addButton(lay1, "Center-Left")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "cl,tl"))
-
-    btn = ui.addButton(lay1, "Center-Center")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "cc,tl"))
-
-    btn = ui.addButton(lay1, "Center-Right")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "cr,tl"))
-
-    btn = ui.addButton(lay1, "Bottom-Left")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "bl,tl"))
-
-    btn = ui.addButton(lay1, "Bottom-Center")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "bc,tl"))
-
-    btn = ui.addButton(lay1, "Bottom-Right")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "br,tl"))
-
-    lay2 = ui.addLayout(main, "Linear", "VCenter", 0.5, 1)
-    lay2.setChildMargins(0, 0.05)
-
-    ui.addText(lay2, "Origin on popover", "h5")
-
-    btn = ui.addButton(lay2, "Top-Left")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,tl"))
-
-    btn = ui.addButton(lay2, "Top-Center")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,tc"))
-
-    btn = ui.addButton(lay2, "Top-Right")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,tr"))
-
-    btn = ui.addButton(lay2, "Center-Left")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl", "cl"))
-
-    btn = ui.addButton(lay2, "Center-Center")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,cc"))
-
-    btn = ui.addButton(lay2, "Center-Right")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,cr"))
-
-    btn = ui.addButton(lay2, "Bottom-Left")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,bl"))
-
-    btn = ui.addButton(lay2, "Bottom-Center")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,bc"))
-
-    btn = ui.addButton(lay2, "Bottom-Right")
-    btn.setOnTouch(lambda event: ui.showPopover("This is a popover message", "tl,br"))
  */
 
 

@@ -3,19 +3,19 @@
  * A TreeView is a hierarchical representation of data, often used to display nested categories or organized information.
  * @img(img1.png)
  * @img(img2.png)
- * @jdocs A tree view is best use in file system navigation. Add a treeview into your app using the `addTreeView` method like this:
+ * @jdocs A tree view is best use in file system navigation. Add a treeview into your app using the “addTreeView” method like this:
  * $$ trv = ui.addTreeView(parent, list, options, width, height) $$
  * @param {uio-Layout} parent The parent layout where to add the TreeView component.
  * @param {Object} [list] An object of the treeview items. See example below.
- * @param {String} [options] A comma separated options. Values can be `MultiSelect`.
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {String} [options] A comma separated options. Values can be “MultiSelect”.
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-TreeView
  */
 
 
 /**
-```
+<js>
 var items = {
     "Group 1": {
         "Item 1": "",
@@ -42,7 +42,7 @@ var items = {
         }
     }
 }
-```
+</js>
  */
 
 
@@ -53,7 +53,8 @@ var items = {
  */
 
 
-/** #Example - Items with icons
+/**
+@sample Items with icons
 var items = {
     "Folders": {
         "Music": "music_note",
@@ -163,9 +164,6 @@ var items = {
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -212,6 +210,9 @@ var items = {
 
 
     /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
 
 
     /** ### setOnTouch
@@ -384,7 +385,7 @@ def OnStart():
     trv.setMargins(0, 5, 0, 0, "rem")
     trv.setOnTouch(onTouch)
 
-def onTouch(value, path):
+def onTouch(value, path, event):
     ui.showPopup("Value: " + value + " Path: " + path)
  */
 

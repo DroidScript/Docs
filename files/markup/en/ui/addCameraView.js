@@ -2,7 +2,7 @@
  * Adds a camera view into your app to take pictures and record videos.
  * $$ cam = ui.addCameraView(parent, options, width, height)
  * @param {uio-Layout} parent The parent layout where to add the camera view.
- * @param {String} options Comma separated options for the camera view. Available values are "Front", "Back", "Video", "Fill" and "Stretch". "Video" option includes audio.
+ * @param {String} options Comma separated options for the camera view. Available values are “Front", "Back", "Video", "Fill" and "Stretch". "Video” option includes audio.
  * @param {Number} width Fraction of the parent width [0-1].
  * @param {Number} height Fraction of the parent height [0-1].
  * @returns uio-CameraView
@@ -11,26 +11,26 @@
 
 /**
 @description
-The `capture` method returns the image data. To save the image in DroidScript, you can use the `WriteFile` method like this:
+The “capture” method returns the image data. To save the image in DroidScript, you can use the “WriteFile” method like this:
 <js>
 // capture an image
-img = cam.capture("jpeg", "base64")
-filePath = "image.jpeg"
-app.WriteFile(filePath, img, "base64")
+img = cam.capture(“jpeg", "base64”)
+filePath = “image.jpeg”
+app.WriteFile(filePath, img, “base64”)
 </js>
-Likewise, the `record` method requires a callback to be called when the video data is ready. To save videos in DroidScript, you can use the `WriteFile` method like this:
+Likewise, the “record” method requires a callback to be called when the video data is ready. To save videos in DroidScript, you can use the “WriteFile” method like this:
 <js>
 // record a video
-cam.record("mp4", "base64", onRecord)
+cam.record(“mp4", "base64”, onRecord)
 
 // in your callback function
 onRecord( data ) {
-    filePath = "video.mp4"
-    app.WriteFile(filePath, data, "base64")
+    filePath = “video.mp4”
+    app.WriteFile(filePath, data, “base64”)
 }
 </js>
 
-Note: Don't forget to add permission to "Camera" and/or "Microphone" when you are taking videos.
+Note: Don't forget to add permission to “Camera" and/or "Microphone” when you are taking videos.
  */
 
 
@@ -48,13 +48,13 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** @prop {object} capabilities Returns the capabilities of the camera. You can inspect this object to set camera constraints. */
 
 
-    /** @prop {number} frameRate Sets or returns the video frame rate. See `capabilites` for min and max values. */
+    /** @prop {number} frameRate Sets or returns the video frame rate. See “capabilites” for min and max values. */
 
 
-    /** @prop {string} focusMode Sets or returns the camera focus mode. Available values are `"manual"`, `"single-shot"`, `"continuous"` */
+    /** @prop {string} focusMode Sets or returns the camera focus mode. Available values are “manual”, “single-shot”, “continuous” */
 
 
-    /** @prop {number} focusDistance Sets or returns the focus distance. See `capabilities` for min and max values. */
+    /** @prop {number} focusDistance Sets or returns the focus distance. See “capabilities” for min and max values. */
 
 
     /** @prop {object} img Sets the preview image taken on capture. Must be a UI image component. */
@@ -63,10 +63,10 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** @prop {boolean} sound Sets or returns a boolean value whether the sound is enabled or disabled */
 
 
-    /** @prop {string} source The camera source to be use. Values can be `"front"` or `"back"`. */
+    /** @prop {string} source The camera source to be use. Values can be “front” or “back”. */
 
 
-    /** @prop {number} iso Sets or returns the camera iso. See `capabilities` for max and min values. */
+    /** @prop {number} iso Sets or returns the camera iso. See “capabilities” for max and min values. */
 
 
     /** @extern width */
@@ -164,7 +164,7 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** ### getPixelData
      * Returns the pixel data of the image preview or a given portion of it.
      * $$ cam.getPixelData(format, left, top, width, height)
-     * @param {string} format Values are "rgba" array, or "pngbase64" or "jpgbase64".
+     * @param {string} format Values are “rgba" array, or "pngbase64" or "jpgbase64”.
      * @param {number} left Starting pixel from the left.
      * @param {number} top Starting pixel from the top.
      * @param {number} width The width of the image portion in pixels.
@@ -175,8 +175,8 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** ### capture
      * Capture an image. This will return an image data which you can save or manipulate.
      * $$ cam.capture(type, format)
-     * @param {string} type The image type. Values are "jpg" or "jpeg"", "png", "webp", "gif". Default is "jpg".
-     * @param {string} format The returned data format. Can be "base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer". Default is "base64"
+     * @param {string} type The image type. Values are “jpg" or "jpeg"", "png", "webp", "gif". Default is "jpg”.
+     * @param {string} format The returned data format. Can be “base64", "bytes"(regular array), "uint8array"(typed array) or "arraybuffer". Default is "base64”
      * @return object
      */
 
@@ -184,8 +184,8 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** ### record
      * Record a video.
      * $$ cam.record(type, format, cb)
-     * @param {string} type Video output encoding format. Values can be "mp4", "ogg" and "webm".Default is "mp4"
-     * @param {string} format Return video data format. Values can be "blob", "base64", "bytes" (regular array), "objecturl", "arraybuffer", "uint8array" (typed array). Default is "base64"
+     * @param {string} type Video output encoding format. Values can be “mp4", "ogg" and "webm".Default is "mp4”
+     * @param {string} format Return video data format. Values can be “blob", "base64", "bytes" (regular array), "objecturl", "arraybuffer", "uint8array" (typed array). Default is "base64”
      * @param {function} cb The callback function to be called passing the video data.
      */
 
@@ -193,8 +193,8 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** ### setPictureSize
      * Sets the size of the image.
      * $$ cam.setPictureSize(width, height)
-     * @param {number} width The image width in pixels. See `capabilities` for minimum and maximum values.
-     * @param {number} height The image height in pixels. See `capabilities` for minimum and maximum values.
+     * @param {number} width The image width in pixels. See “capabilities” for minimum and maximum values.
+     * @param {number} height The image height in pixels. See “capabilities” for minimum and maximum values.
      */
 
 
@@ -233,9 +233,6 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
      * Add a callback handler when an error occured.
      * @param {function} cb The callback function to be called. ---> @arg {string} error The error message.
      */
-
-
-    /** @extern setOnContextMenu */
 
 
     /** @extern animate */
@@ -286,8 +283,14 @@ Note: Don't forget to add permission to "Camera" and/or "Microphone" when you ar
     /** @extern addClass */
 
 
-/** ## Examples
- * Try these samples for `CameraView` control.
+    /** @extern setOnContextMenu */
+
+
+/* ## Examples */
+
+
+/**
+ * Try these samples for “CameraView” control.
  * @jdocs You can edit the code, save it and run. See your app in real time.
  */
 

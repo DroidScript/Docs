@@ -1,48 +1,48 @@
 /** # Layout
  * @abbrev lay
  * Adds a layout into your app.
- * @jdocs A layout is the basic ui component of an app. It is where you add other ui components such as buttons, textfields, checkboxes, list, images and many more. To add a layout, simply call the `addLayout` method of the `ui` object.
+ * @jdocs A layout is the basic ui component of an app. It is where you add other ui components such as buttons, textfields, checkboxes, list, images and many more. To add a layout, simply call the “addLayout” method of the “ui” object.
  * $$ lay = ui.addLayout(parent, type, options, width, height) $$
- * @param {uio-Layout} parent The parent layout where to add this component. Pass a string `main` for the main layout of your app.
- * @param {String} type The layout type. Values can be `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"`, `"Card"`
- * @param {String} [options] A comma separated options.\nOrientation: `Horizontal`, `Vertical`\nHorizontal Alignment: `Left`, `Center`, `Right`\nVertical Alignment: `Top`, `VCenter`, `Bottom`\nDimensions: `FillXY`, `FillX`, `FillY`, `FillAxis`\nScroll: `ScrollX`, `ScrollY`, `ScrollXY`, `NoScrollBar`\nUtils:\n`BackColor` to apply theme background color rather than transparent.\n`NoScrollBar` to remove scrollbar when scroll options is passed.\n`TouchThrough` to enable touch events to propagate behind the layers in frame layouts.\n`"Touchable"` enable touch in card layout.\n`"Outlined"` card variant is outlined.\n`"Square"` card rounded corners is remove.
- * @param {Number} [width] Fraction of the parent width `[0-1]`.
- * @param {Number} [height] Fraction of the parent height `[0-1]`.
+ * @param {uio-Layout} parent The parent layout where to add this component. Pass a string “main” for the main layout of your app.
+ * @param {String} type The layout type. Values can be “Linear”, “Absolute”, “Frame”, “Slide”, “Card”
+ * @param {String} [options] A comma separated options.\nOrientation: “Horizontal”, “Vertical”\nHorizontal Alignment: “Left”, “Center”, “Right”\nVertical Alignment: “Top”, “VCenter”, “Bottom”\nDimensions: “FillXY”, “FillX”, “FillY”, “FillAxis”\nScroll: “ScrollX”, “ScrollY”, “ScrollXY”, “NoScrollBar”\nUtils:\n“BackColor” to apply theme background color rather than transparent.\n“NoScrollBar” to remove scrollbar when scroll options is passed.\n“TouchThrough” to enable touch events to propagate behind the layers in frame layouts.\n“Touchable” enable touch in card layout.\n“Outlined” card variant is outlined.\n“Square” card rounded corners is remove.
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
  * @returns uio-Layout
  */
 
 
 /**
- * There are 5 types of layouts: `"Linear"`, `"Absolute"`, `"Frame"`, `"Slide"` and `"Card"`. Layouts are transparent by default but you can set a background color or a background image. You can add child objects to the Layout by passing the layout as parent when initializing a control. By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: `FillXY`, `FillX`, and `FillY`.
+ * There are 5 types of layouts: “Linear”, “Absolute”, “Frame”, “Slide” and “Card”. Layouts are transparent by default but you can set a background color or a background image. You can add child objects to the Layout by passing the layout as parent when initializing a control. By default, Layouts will auto-size to wrap and fit their contents but you have 3 more options as to how layout sizes within it's parent: “FillXY”, “FillX”, and “FillY”.
  * 
  * ### Linear Layouts
- * Linear layouts are probably the most common type and are used to organize controls in the `Vertical` or `Horizontal` orientation on the screen. You can also pass alignment options. For vertical alignment you can pass `Top`, `VCenter`, and `Bottom`. For horizontal alignment you can pass `Left`, `Center`, and `Right`. These will align your children accordingly. For children spacing, see `childSpacing` property below.
+ * Linear layouts are probably the most common type and are used to organize controls in the “Vertical” or “Horizontal” orientation on the screen. You can also pass alignment options. For vertical alignment you can pass “Top”, “VCenter”, and “Bottom”. For horizontal alignment you can pass “Left”, “Center”, and “Right”. These will align your children accordingly. For children spacing, see “childSpacing” property below.
  * ### Absolute Layouts
- * Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the `setPosition` method of each child control. However, you are encouraged to use linear layouts for most of your programs, unless it is absolutely necessary.
+ * Absolute layouts ignore all alignment options and allow the absolute positioning of controls by calling the “setPosition” method of each child control. However, you are encouraged to use linear layouts for most of your programs, unless it is absolutely necessary.
  * ### Frame Layouts
- * Frame layouts are used to display objects in front or behind each other. Everytime a child control is added, the new control is placed in a new layer in front of the previously added control at the top left of the frame. You can then use `setPosition` method of the child control to position it relative to the frame.
+ * Frame layouts are used to display objects in front or behind each other. Everytime a child control is added, the new control is placed in a new layer in front of the previously added control at the top left of the frame. You can then use “setPosition” method of the child control to position it relative to the frame.
  * ### Slide Layouts
- * Slide layouts are used to display carousels or swipeable contents. The same as the Frame layout, this will add a new layer when a new control is added with a swipeable behaviour. You can pass alignment options to align your children within the Slide layout layer. Please note that `Vertical` and `Horizontal` options will be the direction of the swipe. If your parent layout is of type `Slide`, do not add `setOnTouch` callback handler in order for the slide layout to work perfectly.
+ * Slide layouts are used to display carousels or swipeable contents. The same as the Frame layout, this will add a new layer when a new control is added with a swipeable behaviour. You can pass alignment options to align your children within the Slide layout layer. Please note that “Vertical” and “Horizontal” options will be the direction of the swipe. If your parent layout is of type “Slide”, do not add “setOnTouch” callback handler in order for the slide layout to work perfectly.
  * ### Card Layouts
- * Card layouts are used to display surfaces with elevation and a rounder corners to emphasize its contents. This type of layout has default values for padding. You can clear the padding by setting the `padding` property to `0`. If you want to use the material design card implementation, refer to the `Card` component.
+ * Card layouts are used to display surfaces with elevation and a rounder corners to emphasize its contents. This type of layout has default values for padding. You can clear the padding by setting the “padding” property to “0”. If you want to use the material design card implementation, refer to the “Card” component.
  * ### Dimensions
- * To set the width and height of a layout, pass a `width` and `height` argument as a `decimal fraction` of its parent's width and height.
- * In some scenarios where you want the layout to occupy the available space, you can add `"FillXY"` in the `options` argument to fill the available width and height of its parent. Similarly, when you want to fill the available horizontal space, you can pass `"FillX"` and `"FillY"` for filling the available vertical space.
+ * To set the width and height of a layout, pass a “width” and “height” argument as a “decimal fraction” of its parent's width and height.
+ * In some scenarios where you want the layout to occupy the available space, you can add “FillXY” in the “options” argument to fill the available width and height of its parent. Similarly, when you want to fill the available horizontal space, you can pass “FillX” and “FillY” for filling the available vertical space.
  */
 
 
     /** ## Properties
      * @jdocs Here are the available setters and getters for the Layout Component.
-     * @prop {String} orientation Sets or returns the orientation of the controls in a Linear Layout. Values can be `'Horizontal'` or `"Vertical"`
-     * @prop {String} alignment Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be `"Left"` `"Center"` and `"Right"`
-     * @prop {String} verticalAlignment Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be `"Top"` `"VCenter"` or `"Bottom"`
-     * @prop {String} childSpacing Sets or returns the spacing of the child control in a Linear Layout. Values can be `"Around"` `"Between"` `"Even"`
+     * @prop {String} orientation Sets or returns the orientation of the controls in a Linear Layout. Values can be “'Horizontal'” or “Vertical”
+     * @prop {String} alignment Sets or returns the horizontal alignment of the control in a Linear Layout. Values can be “Left” “Center” and “Right”
+     * @prop {String} verticalAlignment Sets or returns the vertical alignment of the controls in a Linear Layout. Values can be “Top” “VCenter” or “Bottom”
+     * @prop {String} childSpacing Sets or returns the spacing of the child control in a Linear Layout. Values can be “Around” “Between” “Even”
      * @prop {Number} currentSlide Sets or returns the index of the current slide.
-     * @prop {Array} childMargins Sets or returns the margins of child components. The array is of the form `[left, top, right, bottom]`.
+     * @prop {Array} childMargins Sets or returns the margins of child components. The array is of the form “[left, top, right, bottom]”.
      * @prop {Array} children Returns all the children added to this layout.
      * @prop {Number} elevation Sets or returns the elevation of a card layout.
-     * @prop {String} variant Sets or returns the card variant. Can be `"elevation"` or `"outlined"`
-     * @prop {String} layoutType Sets or returns the layout type. Note: You cannot change the layout type of "Card" and "Slide" to another type.
+     * @prop {String} variant Sets or returns the card variant. Can be “elevation” or “outlined”
+     * @prop {String} layoutType Sets or returns the layout type. Note: You cannot change the layout type of “Card" and "Slide” to another type.
      */
 
 
@@ -138,9 +138,6 @@
      */
 
 
-    /** @extern setOnContextMenu */
-
-
     /** @extern animate */
 
 
@@ -189,14 +186,17 @@
     /** @extern addClass */
 
 
+    /** @extern setOnContextMenu */
+
+
     /** ### setChildMargins ###
      * Sets a default margins for the children of the layout component.
      * $$ lay.setChildMargins( left, top, right, bottom, mode ) $$
-     * @param {Number} [left] Left margin. You can also pass string e.g. `12rem`
-     * @param {Number} [top] Top margin. You can also pass string e.g. `12rem`
-     * @param {Number} [right] Right margin. You can also pass string e.g. `12rem`
-     * @param {Number} [bottom] Bottom margin. You can also pass string e.g. `12rem`
-     * @param {String} [mode='px'] Unit of measurement.\n`px` for pixels\n`%` relative to its parent dimension.\n`v` relative to viewport dimension,\n`rem`
+     * @param {Number} [left] Left margin. You can also pass string e.g. “12rem”
+     * @param {Number} [top] Top margin. You can also pass string e.g. “12rem”
+     * @param {Number} [right] Right margin. You can also pass string e.g. “12rem”
+     * @param {Number} [bottom] Bottom margin. You can also pass string e.g. “12rem”
+     * @param {String} [mode='px'] Unit of measurement.\n“px” for pixels\n“%” relative to its parent dimension.\n“v” relative to viewport dimension,\n“rem”
      */
 
 
@@ -275,6 +275,13 @@
     /** ### clear
      * Clear the content of the layout.
      * $$ lay.clear() $$
+     */
+
+
+    /** ### setOnScroll
+     * Add a callback function to be called on scroll event.
+     * $$ lay.setOnScroll( cb ) $$
+     * @param {Function} cb Callback function. --> @arg {Number} scrollLeft Scroll distance from the left in px. @arg {Number} scrollTop Scroll distance from the top in px. @arg {Boolean} scrollRight Is scroll reaches the right end for horizontal scrolling. @arg {Boolean} scrollBottom Is scroll reaches the bottom end for vertical scrolling.
      */
 
 
