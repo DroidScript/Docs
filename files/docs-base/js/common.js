@@ -273,13 +273,13 @@ function addInternalPlugins(plugins, docsList = []) {
 	$('ul#internal').empty().append(items).listview("refresh");
 
 	// decide UI index page
-	const uiDocs = ["ui", "UIDocs.htm", "HybridUI.htm"];
-	const uiIndexes = uiDocs.filter(f => docsList.includes(f));
-	const uiItem = $("ul#native > li:contains(Hybrid UI)").show();
+	// const uiDocs = ["ui", "UIDocs.htm", "HybridUI.htm"];
+	// const uiIndexes = uiDocs.filter(f => docsList.includes(f));
+	// const uiItem = $("ul#native > li:contains(Hybrid UI)").show();
 
-	if (uiIndexes[0] != "ui") uiItem.attr('href', uiIndexes[0]);
-	else if (plugins.UI) uiItem.hide();
-	else uiItem.attr('href', uiIndexes[1]);
+	// if (uiIndexes[0] != "ui") uiItem.attr('href', uiIndexes[0]);
+	// else if (plugins.UI) uiItem.hide();
+	// else uiItem.attr('href', uiIndexes[1]);
 }
 
 //Dynamically create plugins page.
