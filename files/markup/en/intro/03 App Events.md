@@ -1,81 +1,24 @@
 In your app you can use various event functions which will be automatically called by DroidScript.
 
 ### OnStart()
-This is probably the most popular one. It will be called when DroidScript has initialized and it is the last function which will be called from global scope. That means every timeout you might have set will be called **after** OnStart was called.
-When OnStart has returned, the apps '**started**' state will be set to <js nobox>true</js>. Therefore **app.@../app/IsStarted()** method will return <js nobox>true</js> as well.
+This function will be called shortly after your app has initialized and is normally where you add code to create the main user interface (UI) of your app.
 
 <sample OnStart>
 
-setTimeout(OnLoad);
-
 <b>function OnStart()
 {
-	alert("called OnStart\nApp Started: " + app.IsStarted());
+    app.Alert( "App started!" )
 }</b>
-
-function OnLoad()
-{
-	alert("called OnLoad\nApp Started: " + app.IsStarted());
-}
 
 </sample OnStart>
 
 <sample Python OnStart>
+
 from native import app
-from browser import timer
 
 <b>def OnStart():
-    app.Alert("called OnStart\nApp Started: " + str(app.IsStarted()))
+    app.Alert( "App started!" )
 </b>
-
-def OnLoad():
-    app.Alert("called OnLoad\nApp Started: " + str(app.IsStarted()))
-
-timer.set_timeout(OnLoad, 1)
-</sample>
-
-### OnMenu(name)
-This event is called when the user selects an item from the in-app menu.
-See Also: @../app/SetMenu, @../app/ShowMenu
-
-<sample OnMenu>
-
-function OnStart()
-{
-	<b>app.SetMenu( "Start,Stop,Pause" );</b>
-
-	lay = app.CreateLayout( "linear", "" );
-
-	btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" );
-	btn.SetOnTouch( app.ShowMenu );
-	lay.AddChild( btn );
-
-	app.AddLayout( lay );
-}
-
-function OnMenu( item )
-{
-	app.ShowPopup( item, "Short" );
-}
-
-</sample OnMenu>
-
-<sample Python OnMenu>
-from native import app
-
-def OnStart():
-    <b>app.SetMenu( "Start,Stop,Pause" )</b>
-
-    lay = app.CreateLayout( "linear", "" )
-
-    btn = app.CreateButton( "[fa-gear]", -1, -1, "fontawesome" )
-    btn.SetOnTouch( app.ShowMenu )
-    lay.AddChild( btn )
-
-    app.AddLayout( lay )
-
-def OnMenu( item ):
-    app.ShowPopup( item, "Short" )
 
 </sample>
 
