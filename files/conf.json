@@ -10,8 +10,8 @@
 	"langs": {
 		"en": "English"
 	},
-	"vers": ["latest", "beta", "v266", "v264"],
-	"version": "latest",
+	"vers": ["v276", "beta", "v266", "v264"],
+	"version": "v276",
 	"regHide": "^(_.*|.+\\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\\.(un)?loadTexture)$",
 	"regControl": "^(Create(?!Debug).*|OpenDatabase|Odroid)$",
 	"tname": {
