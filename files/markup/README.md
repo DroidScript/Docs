@@ -6,8 +6,8 @@ This folder contains all the markup files for all controls, methods, and compone
 
 ## Why JavaScript `.js` and NOT Markdown `.md`?
 
-### For **`API`** documentation, use **`Javascript`** file.
-It allows easy editing of documentation through markup comments in **jsdoc** format especially when working on function definitions. Also, when working in code editors such as VS Code, the syntax highlighting and autocompletion makes writing the comments more easy and fun.
+### For **`API`** documentation, use a **`JavaScript`** file.
+It allows easy editing of documentation through markup comments in **jsdoc** format, especially when working on function definitions. Also, when working in code editors such as VS Code, the syntax highlighting and autocompletion make writing the comments easier and more fun.
 
 ### For general purpose documentation use the **`Markdown`** file format.
 See **`"en/intro"`** folder for reference.
@@ -215,7 +215,7 @@ For **Data Types** with default description you can select from the list below.
 - **`num_mtu`:** "maximum transmission unit"
 - **`num_prc`:** "percent"
 - **`num_pxl`:** "pixel"
-- **`num_rad`:** "angle in radient (0..2*π)"
+- **`num_rad`:** "angle in radian (0..2*π)"
 - **`num_sec`:** "seconds"
 - **`str_acc`:** "account Email"
 - **`str_b64`:** "base64 encoded"

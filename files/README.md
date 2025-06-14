@@ -6,8 +6,8 @@
 ### File Structure
 ```bash
 files/
-├─ json/         # intermediate json docs definitons
-├─ markup/       # markup docs definitons
+├─ json/         # intermediate JSON docs definitions
+├─ markup/       # markup docs definitions
 ├─ docs-base/    # docs template folder for every language/version
 ├─ font-awesome/ # belongs to docs-base
 │
