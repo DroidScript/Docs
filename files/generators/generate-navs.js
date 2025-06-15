@@ -17,6 +17,7 @@ function generateNavigators(scope, navs, name, state, pfx) {
     let nav = '', addcontent = '';
 
     // function list
+    const noClassFor = ['04 Coding Features'];
     if (navs instanceof Array) {
         for (const func of navs.filter(nothidden)) {
             const m = scope[func];
@@ -27,7 +28,9 @@ function generateNavigators(scope, navs, name, state, pfx) {
                 m.hasNav ||= (name !== 'All');
                 nav += newNaviItem(
                     state.curScope + `/${func.replace(/^\d+|\s+/g, '')}.htm`,
-                    (m.name || func).replace(/^\d+\s*/, ''), getAddClass(m, state));
+                    (m.name || func).replace(/^\d+\s*/, ''),
+                    noClassFor.includes(m.name || func) ? '' : getAddClass(m, state)
+                );
             }
         }
     }
