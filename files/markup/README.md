@@ -251,7 +251,7 @@ or you can specify a **width** and **height** as decimal fractions.
 ```
 Here's the rendered page.
 
-![Description with samples](18pgf9EBIBnwt_9svSYt-vkkKb2Jr-ooC)
+![Description with samples](https://drive.google.com/uc?id=18pgf9EBIBnwt_9svSYt-vkkKb2Jr-ooC)
 
 ---
 
