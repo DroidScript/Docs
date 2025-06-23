@@ -333,7 +333,7 @@ function skb_OnTouch( value )
 
 ---
 
-### 📘 Parameter Data Types
+### Parameter Data Types
 
 Here are the complete data types you can use for parameter and return descriptions.
 
