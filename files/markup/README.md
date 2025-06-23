@@ -1,185 +1,340 @@
-# DroidScript Markup
+# DroidScript Markup Documentation
 
-This folder contains all the markup files for all controls, methods, and components. Each file is a JavaScript file that resembles a codebase with all the code removed and only the **comments** left.
+This folder contains all the markup files for all controls, methods, and components. Each file is a JavaScript file that resembles a codebase with all the code removed and only the **comments** are left.
 
-> There is a VS Code Extension that generates docs on-the-fly and displays a preview live in the editor. Install it [here](https://marketplace.visualstudio.com/items?itemName=droidscript.droidscript-docs).
+> 💡 **Live Preview in VS Code**  
+> There is a VS Code Extension that generates docs on-the-fly and displays a preview live in the editor.  
+> 👉 Install it [here](https://marketplace.visualstudio.com/items?itemName=droidscript.droidscript-docs)
 
-## Why JavaScript `.js` and NOT Markdown `.md`?
+---
 
-### For **`API`** documentation, use a **`JavaScript`** file.
-It allows easy editing of documentation through markup comments in **jsdoc** format, especially when working on function definitions. Also, when working in code editors such as VS Code, the syntax highlighting and autocompletion make writing the comments easier and more fun.
+## 📁 File Format Guide
 
-### For general purpose documentation use the **`Markdown`** file format.
-See **`"en/intro"`** folder for reference.
+### Why Use JavaScript (`.js`) Instead of Markdown (`.md`)?
 
-## Parts
+#### For API Documentation
 
-These are the parts of each DroidScript Doc page, in their required order. Parts may be missing or added later, as long as they are in the correct order.
+Use a **JavaScript** file for API docs.  
+It allows easy editing of documentation through markup comments in jsdoc format, especially when working on function definitions. Also, when working in code editors such as VS Code, the syntax highlighting and autocompletion make writing the comments easier and more fun.
 
-- Header
-- Long Description
-- Samples
-- Methods
+#### For General Purpose Documentation
 
-### Header
+Use the **Markdown (`.md`)** format.  
+See the **`"en/intro"`** folder as a reference.
 
-The header contains information about the **Control Name**, **Short Description**, and **Initialization**. The **Initialization** also contains information about parameters and the return data type.
+---
 
-Example: Header of the app.Call method.
+## 📚 Doc File Structure
 
-![Header part](https://drive.google.com/uc?id=1RAkKFr7M_y9Lq-useFzRliqrRtIdUmNj)
+These are the parts of each DroidScript Doc page.
 
-The markup comments will look like this:
+1. Header  
+2. Long Description
+3. Samples
+4. Methods & Properties
 
+📌 **Example: Documentation for CreateZipUtil method**
+
+![Documentation for CreateZipUtil method](https://drive.google.com/uc?id=17D1AzNyTuLJksPCNXwjlRgb4TUjAb_57)
+
+> Some pages may contain all four (4) parts while others may only contain **Header** and **Description** only.
+
+---
+
+## 1. 🧩 Header
+
+This is the topmost part of the docs page and it contains the following:
+
+- **Control name**
+- **Short Description**
+- **Initialization** (parameters, return types)
+
+### Control Name
+
+This refers to the scope method name, control name or component name.
+
+#### 💡 Markup format
+
+It is written as the first line in the header markup and enclosed in a single hash (`#`).
+
+📌 **Example**
 ```js
-/** # Call #
- * @brief Calls a phone number
- * Call is used to call the given phone number.
- * $$ app.Call(number) $$
- * @param {str} number
+/** # CreateSeekBar #
+ * 
  */
 ```
 
-The line `$$ app.Call(number) $$` can be omitted, it is provided for reference for the parameter descriptions.
+### Short description
 
-You will notice the `@brief` tag which is a custom jsdoc annotation for DroidScript Docs markup. See [custom tags](#custom-tags) section below.
+This is a one sentence description for the **Control Name**.
 
-Furthermore, you can see the **_`"str"`_** data type. It is a custom data types which adds an extra description in the final documentation. They will be autocompleted by the vscode extension too. For more information about the available types, see the [parameter section](#parameter-description) below.
+#### 💡 Markup format
 
-## Long Description
+It is written as a regular text just below the **Control Name**.
 
-Some documentation files have a long description below the header or after the **Initialization** part.
-
-You can find the _Long Description_ in the file just below the Header part in a block comment with the **@Description** tag in it.
-
-Example: Long Description for Checkbox.
-
-![Long Description Part](https://drive.google.com/uc?id=1Bo-7Z_SkDgDfNsrIDptvpLvUO8Yd4PEt)
-
-> The description starts after the initialization starting from the paragraph _"They consist of a ticker box on the left ..."_ until the Example at the bottom.
-
-The markup comments will look like this
-
-```javascript
-
-/** @Description
-
-They consist of a ticker box on the left and a text label on the right side.
-
-It is disabled by default, but you can enable it with the **SetChecked** method to change its initial state.
-
-Use the SetOnTouch method of the CheckBox object to define a function you want to be called when the CheckBox is touched. There you can read  the 'isChecked' parameter to get the current state of the CheckBox:
-*/
-
+📌 **Example**
+```js
+/** # CreateSeekBar #
+ * SeekBars are bars with a moveable pointer which let the user select a value in a given range.
+ * 
+ */
 ```
 
-You can remove the description from the Header and prepend it in this Long Description markup. The result will still be the same. This is recommended and thus you can see this in all Controls and Components with this long description part.
+### Initialization
 
-> When writing the long description, you can use the same markdown formatting. From the example above, the `"**SetChecked**"` text will be rendered as bold text in the final Docs.
+These are the parameter definitions and return data type if any.
 
-## Samples
-Code samples are placed below the long description, if any, enclosed in a block comment with the word **@Sample**. See below.
+#### 💡 Markup format
 
-Each sample is wrapped with `sample` tags. Any string after the word `sample` in the opening tag is treated as the sample title.
+This is just the same as writing function definitions in javascript which you are familiar with. It may also includes return data type if any.
 
-## Examples
-The examples can be found at the bottom of each file. They are enclose in a block comment with a tag **@sample** in it followed by the title of the sample.
+It follows the following syntax: `@param {type} name description`
 
-Example from **`ZipFolder.js`**
+Where:
+- **_type_** - is the parameter data type.
+- **_name_** - is the parameter name.
+- **_description_** - optional parameter description.
 
-``` js
+📌 **Example**
+```js
+/** # CreateSeekBar #
+ * SeekBars are bars with a moveable pointer which let the user select a value in a given range.
+ * $$ skb = app.CreateSeekBar(width, height, options) $$
+ * @param {num_frc} width
+ * @param {num_frc} height
+ * @param {str_com} options FillX/Y
+ * @returns dso-SeekBar
+ */
+```
+
+From the above example, you will notice the `num_frc`, `str_com` and `dso` data type. It is a custom data types which adds an extra description in the final documentation. They will be autocompleted by the vscode extension too. For more information about the available types, see [Parameter Data Types](#parameter-data-types).
+
+> ➡️ The line `$$ skb = app.CreateSeekBar(width, height, options) $$` can be omitted, it is provided for reference for the parameter descriptions.
+
+---
+
+## 2. 📝 Long Description
+
+This appears directly below the **Header**. It shows a complete documentation for the given method, component or control.
+
+> ➡️ **Description** is optional. Sometimes, a simple description is enough in the **Header** description.
+
+#### 💡 Markup format
+
+It is a block comment with the `@description` tag as the first line.  You can follow markdown formatting when writing **description**.
+
+📌 **Example**
+```js
+/** # CreateSeekBar #
+ * SeekBars are bars with a moveable pointer which let the user select a value in a given range.
+ * @param {num_frc} width
+ * @param {num_frc} height
+ * @param {str_com} options FillX/Y
+ * @returns dso-SeekBar
+ */
+
+/** @description
+The **SetRange** method of the SeekBar object to sets the value range of the SeekBar and the **SetValue** method sets the current value.
+Use the SetOnChange method to define a function you want to be called when the SeekBar value has changed. You can read the _value_ parameter in your callback function to get the current SeekBar value.
+*/
+```
+
+✨ You can move **Short Descriptions** from the Header into this section. This is recommended for controls/components with longer documentation.
+
+---
+
+## 3. 💡 Samples
+
+Samples are placed at the bottom of each markup file. When rendered, they appear below the **Description** section on each documentation page as collapsible buttons.
+
+#### 💡 Markup format
+
+It is a block comment with the `@sample` tag in the first line followed by the sample title.
+
+📌 **Example**
+
+```js
+/** # CreateSeekBar #
+ * SeekBars are bars with a moveable pointer which let the user select a value in a given range.
+ * @param {num_frc} width
+ * @param {num_frc} height
+ * @param {str_com} options FillX/Y
+ * @returns dso-SeekBar
+ */
+
+/** @description
+The **SetRange** method of the SeekBar object to sets the value range of the SeekBar and the **SetValue** method sets the current value.
+Use the SetOnChange method to define a function you want to be called when the SeekBar value has changed. You can read the _value_ parameter in your callback function to get the current SeekBar value.
+ */
+
 /**
-@sample Zip Folder
+@sample Example
 function OnStart()
 {
-    var folder = "/sdcard/DroidScript/Hello World";
-	app.ZipFolder( folder, folder + ".zip" );
-	app.ShowPopup( "Compressed to " + folder + ".zip" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+    <b>skb = app.CreateSeekBar( 0.8 );
+    skb.SetRange( 1.0 );
+    skb.SetValue( 0.5 );
+    skb.SetOnTouch( skb_OnTouch );
+    lay.AddChild( skb );</b>
+
+    app.AddLayout( lay );
+}
+
+function skb_OnTouch( value )
+{
+    app.ShowPopup( "Value = " + value );
 }
  */
 ```
 
-Example from **`Button.js`**
+📌 **Examples from `en/app/Button.js`:**
 
 ```js
 /**
-@sample Fixed Size
+@sample Default Size
 function OnStart()
 {
-	lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
 
-<b>	btn = app.CreateButton( "Press Me", 0.5, 0.2 );
-	btn.SetOnTouch( SayHello );
-	lay.AddChild( btn );</b>
+<b>	btn = app.CreateButton( "Press Me" );
+    btn.SetOnTouch( SayHello );
+    lay.AddChild( btn );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function SayHello()
 {
-	app.ShowPopup("Hello World!");
+    app.ShowPopup("Hello World!");
+}
+ */
+
+/**
+@sample Fixed Size
+function OnStart()
+{
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+<b>	btn = app.CreateButton( "Press Me", 0.5, 0.2 );
+    btn.SetOnTouch( SayHello );
+    lay.AddChild( btn );</b>
+
+    app.AddLayout( lay );
+}
+
+function SayHello()
+{
+    app.ShowPopup("Hello World!");
 }
  */
 ```
 
-The above markup includes two samples with the titles **Zip Folder** and **Fixed Size**.
+### Sample placement
 
-## Methods
-
-The methods are defined after the Header section and after the Long Description, if present.
-
-Each method is a function definition which has the same markup comments as the Header Part except the method name is now enclosed in three (3) consecutive hash (#).
-
-And since it has the same markup format as the Header Part, each method definition contains information about the **Method Name**, **Method Description**, and **Initialization**. The **Initialization** also contains information about parameter description and the return data type.
-
-Example: Methods Section of Text Control
-
-![Methods Section of DS](https://drive.google.com/uc?id=1Ktnqd4HoERg1-JsyXMzrGs2VmeqZ7fzt)
-
-Example 1: Method definition of `SetText` method.
+By default, samples are placed below the **Description** section when they are rendered. But you can place a sample within the **Description** section by referencing it. Just follow this format `<sample [Sample Name]>`. See the `en/app/CreateButton.js` **Description** section.
 
 ```js
-/** ### SetText ###
- * Change the currently displayed text in the control.
- * $$ txt.SetText(text) $$
- * @param {str} text 
+/* @Description
+
+....
+
+You can allow the button to auto-size by leaving out the dimensions
+<sample Default Size>
+
+or you can specify a **width** and **height** as decimal fractions.
+<sample Fixed Size>
+
+...
+*/
+```
+Here's the rendered page.
+
+![Description with samples](18pgf9EBIBnwt_9svSYt-vkkKb2Jr-ooC)
+
+---
+
+## 4. 🔧 Methods & Properties
+
+The methods and properties are defined after the **Header** section and after the **Long Description**, if present. When they are rendered, they will be placed at the bottom of each docs page as you can see in DroidScript docs.
+
+#### 💡 Markup format
+
+Each method is a function definition which has the same markup comments as the **Header Part** except the method name or property name is now enclosed in three (3) consecutive hash (`###`).
+
+And since it has the same markup format as the **Header** section, each method definition contains information about the **Method Name**, **Method Description**, and **Initialization**. The **Initialization** also contains information about parameter description and the return data type if any.
+
+For a property, just add `@prop` tag after the property name.
+
+📌 **Example**
+
+```js
+// ------------- HEADER SECTION -------------
+
+/** # CreateSeekBar #
+ * SeekBars are bars with a moveable pointer which let the user select a value in a given range.
+ * @param {num_frc} width
+ * @param {num_frc} height
+ * @param {str_com} options FillX/Y
+ * @returns dso-SeekBar
+ */
+
+// ------------- LONG DESCRIPTION -------------
+
+/** @description
+The **SetRange** method of the SeekBar object to sets the value range of the SeekBar and the **SetValue** method sets the current value.
+Use the SetOnChange method to define a function you want to be called when the SeekBar value has changed. You can read the _value_ parameter in your callback function to get the current SeekBar value.
+ */
+
+// ------------- VISIBLE METHODS & PROPERTIES -------------
+
+/** ### GetValue ###
+ * Returns the current value of the seek bar.
+ * $$ skb.GetValue() $$
+ * @returns num
+ */
+
+/** ### SetValue ###
+ * Change the current seekbar value in the defined range.
+ * $$ skb.SetValue(val) $$
+ * @param {num} val
+ */
+
+/** ### data
+ * @prop
+ * An object for saving individual extra properties.
+ * @returns obj-{ key:str, value:all }
+ */
+
+// ------------- SAMPLES -------------
+
+/**
+@sample Example
+function OnStart()
+{
+    lay = app.CreateLayout( "Linear", "VCenter,FillXY" );
+
+    <b>skb = app.CreateSeekBar( 0.8 );
+    skb.SetRange( 1.0 );
+    skb.SetValue( 0.5 );
+    skb.SetOnTouch( skb_OnTouch );
+    lay.AddChild( skb );</b>
+
+    app.AddLayout( lay );
+}
+
+function skb_OnTouch( value )
+{
+    app.ShowPopup( "Value = " + value );
+}
  */
 ```
 
-Example 2: Method definition of SetSize method.
+---
 
-```js
-/** ### SetSize ###
- * Change the size of the control in either screen relative values or in pixels if the `px` option was given.
- * $$ txt.SetSize(width, height, options) $$
- * @param {num} width 
- * @param {num} height 
- * @param {str} options px|sp|dip|dp|mm|pt
- */
-```
-> As stated above, the lines that includes `$$ txt.SetText(text) $$` and `$$ txt.SetSize(width, height, options) $$` is not necessary but it is provided for reference to the parameter description.
+### Parameter Data Types
 
-For more information on parameter descriptions especially data types, see the [Parameter Section](#parameter-description) below.
-
-## Parameter Description
-
-The parameter description is of the form
-
-```js
-@param {Type} Name Description
-```
-
-Where
-
-_`Type`_: The data type.
-- Can be a **str** for _string_, **num** for _number_, **bin** for _boolean_, **obj** for _objects_ and **fnc** for _functions_. See the [Data Types](#parameter-data-types) section below for more details.
-
-_`Name`_: The parameter name.
-
-_`Description`_: The parameter description.
-
-
-## Parameter Data Types
 Here are the complete data types you can use for parameter and return descriptions.
 
 - **`str`:** String [You can also write _String_]
