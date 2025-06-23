@@ -6,7 +6,7 @@
  * AddLayout adds a layout to the screen so that it is visible (if not hidden with SetVisibility)
  * When @CreateLayout arguments are passed it will create the layout just like app.CreateLayout and also add it.
  *
- * See Also: @RemoveLayout
+ * See Also: @CreateLayout for arguments (parameters), and @RemoveLayout
  * $$ app.AddLayout(layout, type?, options?) $$
  * @param {dso} layout CreateLayout
  * @param {str} [type] Linear|Absolute|Frame|Card
