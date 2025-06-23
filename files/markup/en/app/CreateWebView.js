@@ -328,6 +328,12 @@ If you need to, you can use the **Execute** method to execute JavaScript code wi
  * @param {fnc_json} callback {"pNames":["url"],"pTypes":["str_url"]}
  */
 
+/** ### SetOptions ###
+ * @brief Set WebView options
+ * Set WebView options at runtime. Refer to "options" param for available options.
+ * $$ web.SetOptions( options ) $$
+ * @param {str_com} options
+ */
 
 /** @extern SetPadding */
 
