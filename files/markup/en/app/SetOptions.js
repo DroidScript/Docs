@@ -7,5 +7,5 @@
  *
  * See Also: @GetOptions
  * $$ app.SetOptions(options?) $$
- * @param {str_com} [options] UseBrowser,NoKeys|ShowKeys,NoPause:dont pause when not in foreground,NoThemeAlerts,IgnoreSslErrors,TouchModal,NoCors,NoTouch,NoFocus,Secure,ShowLocked,WakeScreen,ScreenOn
+ * @param {str_com} [options] UseBrowser,NoKeys|ShowKeys,NoPause:dont pause when not in foreground,NoThemeAlerts,IgnoreSslErrors,TouchModal,NoCors,ForceCors,NoTouch,NoFocus,Secure,ShowLocked,WakeScreen,ScreenOn
 */
