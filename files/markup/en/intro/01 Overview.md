@@ -18,4 +18,33 @@ DroidScript comes with many sample Apps, ranging from very simple "Hello World" 
 In order to maintain the scale of graphical objects in devices with different screen resolutions and orientations, all positioning and sizing values are given as a decimal **fraction** of the screen width or height. For example creating a button with a width of 0.5 would make the button half the screen width and using a height of 0.1 would make the button one tenth of screen height. You can however specify -1 or leave out the width and height parameters completely on many controls if you want the control to size according to its contents.
 
 ### Getting Started
-Before starting to write your own Apps it's a good idea to read the documentation explaining '[Layouts](../app/CreateLayout.htm)' as these are a fundamental part of every DroidScript App.
+At the top of the DroidScript screen on the right side is a "<<" button which opens a menu for samples (rocket icon), downloads (cart icon), and other features. Tap one of the sample categories. Look for samples that interest you.
+
+Points of Interest:
+
+- Code files tend to start with `OnStart()`.
+- Objects are derived from the built-in `app` object, manipulated, then passed back to other functions on `app`.
+- Screen output is structured in layouts, with controls in nested layouts.
+  - Before starting to write your own Apps it's a good idea to read the documentation explaining '[Layouts](../app/CreateLayout.htm)' as these are a fundamental part of every DroidScript App.
+- You can run samples right on their pages, and copy the code for placement into a new app.
+
+Continue your introduction:
+
+- Tap that top-right button again to see the main DroidScript app dashboard.  
+- From the "..." menu, select New.  
+- Enter a name like "First App" and click OK.  
+- An icon for the new app is placed on the dashboard.  
+- Tap that and it executes as a new open app.  
+- Close that app (swipe it away).  
+- On the DroidScript dashboard, press and hold the (First App) app.  
+- Select Edit.
+- You're now in the code.  
+- Swipe back to get to the dashboard. The code is auto-saved.
+
+From here you can go back to the documentation, look at more samples, and look at other "..." menu options.
+
+Read about the available project types (Native, Node, HTML, Services, Python, Hybrid, etc.).
+
+Join one of the forums (Google, Discord) and discuss DroidScript with others.
+
+And consider a Premium license for many more features and extended Support.
