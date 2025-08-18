@@ -21,7 +21,8 @@ function generateNavigators(scope, navs, name, state, pfx) {
     if (navs instanceof Array) {
         for (const func of navs.filter(nothidden)) {
             const m = scope[func];
-            if (!func) { nav += "<li></li>"; }
+            // any undefined non-empty value for data-theme results in no styling = gap
+            if (!func) { nav += "\n\t\t\t<li data-theme='x'>&nbsp;</li>"; }
             else if (name !== 'All' && scope['_' + func]) { scope['_' + func].hasNav = true; }
             else if (!m) { Throw(`nav to deleted method ${state.curScope}.${func}`); }
             else {
@@ -45,7 +46,7 @@ function generateNavigators(scope, navs, name, state, pfx) {
             }
             if (!val) val = state.curScope + "/" + cat + ".htm";
 
-            // targtet file
+            // target file
             if (typeof val === "string") {
                 const m = val.match(state.curScope + "\\/(\\w+).htm(#(.*))?");
                 /** @type {DSFunction|string|undefined} */
