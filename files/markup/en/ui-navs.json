@@ -2,7 +2,9 @@
 	"_nofilter": true,
 	"All": [],
 	"Controls": [
+		"addAlert",
 		"addButton",
+		"addBreadcrumbs",
 		"addCameraView",
 		"addCard",
 		"addCheckbox",
@@ -15,6 +17,7 @@
 		"addProgress",
 		"addSelect",
 		"addSlider",
+		"addSpeedDial",
 		"addSwitch",
 		"addText",
 		"addTextField",
@@ -29,7 +32,9 @@
 		"addRadioGroup",
 		"addStepper",
 		"addSwitchGroup",
+		"addTable",
 		"addTabs",
+		"addTimeline",
 		"addTreeView",
 		"addVideoView"
 	],
