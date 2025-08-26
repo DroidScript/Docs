@@ -48,6 +48,9 @@ This includes methods like setInterval and setTimeout which should be converted 
 
 **Note:** The same effect can be observed when running in a Node.js environment (using the `cfg.Node` flag)
 
+#### cfg.EdgeToEdge
+This will enable edge-to-edge feature when device supports edge-to-edge.
+
 
 ## app.eventSource
 In callback functions of controls you can use <js nobox>app.eventSource</js> to access the callee control object without having to assign the control to a specific variable. Previously this could be achieved by using the <js nobox>this</js> keyword. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:
