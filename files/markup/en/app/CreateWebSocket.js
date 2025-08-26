@@ -89,6 +89,30 @@ See Also: @CreateWebServer
  */
 
 
+/** ### SetOnWsClose ###
+ * @brief Called when WebSocket client is close
+ * %cb% the WebSocket client has been close.
+ * $$ wbs.SetOnWsClose(callback) $$
+ * @param {fnc_json} callback {}
+ */
+
+
+/** ### SetOnWsOpen ###
+ * @brief Called when WebSocket client is open
+ * %cb% the WebSocket client has been open.
+ * $$ wbs.SetOnWsOpen(callback) $$
+ * @param {fnc_json} callback {}
+ */
+
+
+/** ### SetOnWsReceive ###
+ * @brief Called when WebSocket client receives a message
+ * %cb% the WebSocket client receives a message.
+ * $$ wbs.SetOnWsReceive(callback) $$
+ * @param {fnc_json} callback {}
+ */
+
+
 
 // ------------- SAMPLES -------------
 
