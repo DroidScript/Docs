@@ -18,4 +18,13 @@ DroidScript comes with many sample Apps, ranging from very simple "Hello World" 
 In order to maintain the scale of graphical objects in devices with different screen resolutions and orientations, all positioning and sizing values are given as a decimal **fraction** of the screen width or height. For example creating a button with a width of 0.5 would make the button half the screen width and using a height of 0.1 would make the button one tenth of screen height. You can however specify -1 or leave out the width and height parameters completely on many controls if you want the control to size according to its contents.
 
 ### Getting Started
-Before starting to write your own Apps it's a good idea to read the documentation explaining '[Layouts](../app/CreateLayout.htm)' as these are a fundamental part of every DroidScript App.
+Before starting to write your own Apps, we recommend watching the overview video below.  
+It will give you a good introduction to DroidScript.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+  <iframe style="position: absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/JANgL1dbCpk?si=CdFG_KwH1Ji0jIEV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+
+After watching the video, it's a good idea to read the documentation explaining '[Layout](../app/CreateLayout.htm)' as this is a fundamental part of every DroidScript App.
+
