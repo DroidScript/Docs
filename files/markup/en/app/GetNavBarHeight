@@ -1,0 +1,38 @@
+// ------------- HEADER SECTION -------------
+
+
+/** # GetNavBarHeight #
+ * @brief Get apps navbar height
+ * Get the navbar height of the app in pixels.
+ *
+ * See Also: @GetDisplayHeight, @GetDisplayWidth, @GetScreenHeight
+ * $$ app.GetNavBarHeight() $$
+ * @returns num_pxl
+*/
+
+
+
+
+// ------------- SAMPLES -------------
+
+
+
+/**
+@sample Show navbar height
+function OnStart()
+{
+    <b>var height = app.GetNavBarHeight();</b>
+    app.Alert( height );
+}
+ */
+
+
+
+/**
+@sample Python Show navbar height
+from native import app
+
+def OnStart():
+    height = app.GetNavBarHeight()
+    app.Alert(height)
+ */
