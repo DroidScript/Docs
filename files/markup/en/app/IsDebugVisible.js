@@ -4,19 +4,19 @@
 /** # IsDebugVisible #
  * @brief Check if debug view is currently shown
  * Returns if the debug view is currently visible to the user.
- * 
+ *
  * See Also: @Debug, @ShowDebug
- * $$ app.IsDebugVisible() $$ 
+ * $$ app.IsDebugVisible() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Toggle Debug
 function OnStart()
@@ -40,9 +40,9 @@ function ShowDebug( show )
     app.ShowPopup( vis );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Toggle Debug
 from native import app
@@ -64,5 +64,3 @@ def ShowDebug(show):
     vis = app.IsDebugVisible()
     app.ShowPopup(vis)
  */
-    
-            

@@ -4,18 +4,18 @@
 /** # CreateListDialog #
  * @abbrev lsd
  * Creates a more customizable list dialog
- * $$ lsd = MUI.CreateListDialog(title, list, color, bottom) $$ 
- * @param {str} title 
+ * $$ lsd = MUI.CreateListDialog(title, list, color?, bottom?) $$
+ * @param {str} title
  * @param {lst} list An array of objects of the form {name: 'string', icon: 'material-icon', color: 'string'}
- * @param {str_col} color 
- * @param {bin} bottom 
+ * @param {str_col} [color]
+ * @param {bin} [bottom]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSelect ###
@@ -69,10 +69,10 @@
 /** @extern SetTextEdit */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -111,9 +111,9 @@ function OnTouch(name)
     app.ShowPopup(name)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Icon
 cfg.Light
@@ -152,9 +152,9 @@ function OnTouch(name)
     app.ShowPopup(name)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Icon & Colors
 cfg.Light
@@ -193,9 +193,9 @@ function OnTouch(name)
     app.ShowPopup(name)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark Bottom
 cfg.Dark
@@ -234,9 +234,9 @@ function OnTouch(name)
     app.ShowPopup(name)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -271,9 +271,9 @@ def ShowListDialog():
 def OnTouch(name, index):
     app.ShowPopup(name)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Icon
 # cfg.Light, cfg.MUI
@@ -308,9 +308,9 @@ def ShowListDialog():
 def OnTouch(name, index):
     app.ShowPopup(name)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Icon & Colors
 # cfg.Light, cfg.MUI
@@ -345,9 +345,9 @@ def ShowListDialog():
 def OnTouch(name, index):
     app.ShowPopup(name)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark Bottom
 # cfg.Dark, cfg.MUI
@@ -382,5 +382,3 @@ def ShowListDialog():
 def OnTouch(name, index):
     app.ShowPopup(name)
  */
-    
-            

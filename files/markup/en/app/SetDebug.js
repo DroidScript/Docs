@@ -3,13 +3,13 @@
 
 /** # SetDebug #
  * @brief Control the debug level of the program
- * 
- * $$ app.SetDebug(switches) $$ 
+ *
+ * $$ app.SetDebug(switches) $$
  * @param {str_com} switches console,ds,adb,all
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 SetDebug lets you control the debugging level. The available modes are:
@@ -26,10 +26,10 @@ See Also: @Debug, @GetDebug, @IsDebugging
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demonstration
 function OnStart()
@@ -64,9 +64,9 @@ function OnStart()
 	console.log("hello 14");  // off
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demonstration
 from native import app
@@ -101,5 +101,3 @@ def OnStart():
     app.Debug("hello 13")    # off
     print("hello 14")  # off
  */
-    
-            

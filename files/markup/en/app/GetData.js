@@ -4,20 +4,20 @@
 /** # GetData #
  * @brief Retreive saved data
  * Returns data stored via app.SetData(key, value). All data will be lost when the app is closed.
- * 
+ *
  * See Also: @SetData
- * $$ app.GetData(name) $$ 
- * @param {str} name 
+ * $$ app.GetData(name) $$
+ * @param {str} name
  * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Get Saved Data
 function OnStart()
@@ -27,9 +27,9 @@ function OnStart()
     app.Alert( data, "Saved Data:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Random Value
 function OnStart()
@@ -50,9 +50,9 @@ function btn_OnTouch()
 	app.ShowPopup( "Data: " + data);
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Get Saved Data
 from native import app
@@ -62,14 +62,13 @@ def OnStart():
     data = app.GetData("myvar")
     app.Alert(data, "Saved Data:")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Random Value
 from native import app
-import math
-import random
+from random import math
 
 def OnStart():
     lay = app.CreateLayout("linear", "VCenter,FillXY")
@@ -80,9 +79,7 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    app.SetData("number", str(int(100 * random.random())))
+    app.SetData("number", str(int(100 * random())))
     data = app.GetData("number")
     app.ShowPopup("Data: " + data)
  */
-    
-            

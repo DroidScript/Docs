@@ -3,20 +3,20 @@
 
 /** # SetOnBroadcast #
  * @brief Called on incoming Broadcasts
- * 
- * $$ app.SetOnBroadcast(callback, action) $$ 
+ *
+ * $$ app.SetOnBroadcast(callback, action) $$
  * @param {fnc_json} callback {"pNames":["type","msg"],"pTypes":["str","str"]}
- * @param {str} action 
+ * @param {str} action
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Define a callback function for incoming Broadcast messages.
+Check out @../intro/AppIntents#Broadcasts for commonly used examples.
 You can find [a list of broadcasts available for android SDK ver. 28 here](https://chromium.googlesource.com/android\_tools/+/refs/heads/master/sdk/platforms/android-28/data/broadcast\_actions.txt)
 
 
 See also: @Broadcast
  */
-

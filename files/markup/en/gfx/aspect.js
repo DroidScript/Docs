@@ -5,17 +5,17 @@
  * @prop
  * @brief The display aspect ratio
  * The aspect ratio of the gfx container (display)
- * $$ gfx.aspect() $$ 
+ * $$ gfx.aspect $$
  * @returns num
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Square
 cfg.Game;
@@ -31,9 +31,9 @@ function OnReady()
     gfx.Play();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Square
 # cfg.Game
@@ -48,5 +48,3 @@ def OnReady():
     gfx.AddGraphic(square, 0.3, 0.2)
     gfx.Play()
  */
-    
-            

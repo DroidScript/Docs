@@ -4,22 +4,22 @@
 /** # Error #
  * @brief Show an error message
  * Shows a detailed error message with message, file and line in an asynchroneous dialog. You can also set it to quit the app after the user dismisses the dialog.
- * 
+ *
  * See Also: @Alert
- * $$ app.Error(message, line, file, quit) $$ 
- * @param {str} message 
- * @param {num_int} line 
- * @param {str_ptf} file 
- * @param {bin} quit 
+ * $$ app.Error(message, line, file, quit=false) $$
+ * @param {str} message
+ * @param {num_int} line
+ * @param {str_ptf} file
+ * @param {bin} [quit=false]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show error and exit
 function OnStart()
@@ -28,9 +28,9 @@ function OnStart()
     app.Error( msg, 4, "demo.js", true );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a Button
 from native import app
@@ -44,9 +44,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a DatePicker
 from native import app
@@ -60,9 +60,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a ProgressBar
 from native import app
@@ -77,9 +77,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a ToggleButton
 from native import app
@@ -93,9 +93,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a Spinner
 from native import app
@@ -109,9 +109,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Showing a Popup
 from native import app
@@ -119,9 +119,9 @@ from native import app
 def OnStart():
     app.ShowPopup("Hello, world!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enabling Bluetooth
 from native import app
@@ -129,9 +129,9 @@ from native import app
 def OnStart():
     app.SetBluetoothEnabled(True)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Disabling Bluetooth
 from native import app
@@ -139,9 +139,9 @@ from native import app
 def OnStart():
     app.SetBluetoothEnabled(False)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Discover Bluetooth Devices
 from native import app
@@ -167,9 +167,9 @@ def OnFound(name, address):
 def OnComplete():
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Delete created file
 from native import app
@@ -184,9 +184,9 @@ def OnStart():
     else:
         app.ShowPopup("myFile was deleted!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Delete created folder
 from native import app
@@ -201,9 +201,9 @@ def OnStart():
     else:
         app.ShowPopup("myFolder was deleted!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Destroy layout and check if deleted
 from native import app
@@ -224,9 +224,9 @@ def btn_OnTouch():
     text = this.GetText() or "nothing in here!"
     app.ShowPopup(text)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Downloading the DroidScript logo
 from native import app
@@ -236,9 +236,9 @@ def OnStart():
     dst = "/sdcard/Downloads/logo.png"
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Download to external storage
 from native import app
@@ -248,9 +248,9 @@ def OnStart():
     dst = app.GetExternalFolder() + "/Downloads/logo.png"
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enable GPS
 from native import app
@@ -258,9 +258,9 @@ from native import app
 def OnStart():
     app.EnableGps()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Disable GPS
 from native import app
@@ -268,5 +268,3 @@ from native import app
 def OnStart():
     app.DisableGps()
  */
-    
-            

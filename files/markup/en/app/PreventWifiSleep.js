@@ -4,18 +4,18 @@
 /** # PreventWifiSleep #
  * @brief Prevent Wifi from powering down
  * Prevent the device WiFi from powering down.
- * 
+ *
  * See Also: @SetWifiEnabled, @IsWifiEnabled
- * $$ app.PreventWifiSleep() $$ 
+ * $$ app.PreventWifiSleep() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
@@ -23,15 +23,13 @@ function OnStart()
 	<b>app.PreventWifiSleep();</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
 
 def OnStart():
-    app.PreventWifiSleep()
+    <b>app.PreventWifiSleep()</b>
  */
-    
-            

@@ -1,217 +1,168 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addDivider #
- * @brief addDivider
- * 
- * $$ ui.addDivider(parent, width, options) $$ 
- * @param {obj} parent The layour where to add the divider.
- * @param {num} width Fraction of the screen width. Default is 1.
- * @param {str} options A comma separated Divider options. Values can be `Inset`
- * @returns obj-Divider Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a hairline divider into your layout.
-
-### Properties
-These are the setter and getter properties for the addDivider Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>color:"str:'Sets or returns the color in hexadecimal format.'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
+/** # Divider
+ * @abbrev div
+ * A divider is a visual element used to separate content or components within a layout.
+ * @img(img1.png)
+ * @jdocs In Material Design, dividers are often lines or subtle indicators that enhance visual clarity and organization. They help create a structured and clean interface by distinguishing different sections or items within a mobile application's layout. Add a divider into your app using the “addDivider” method like this:
+ * $$ ui.addDivider(parent, options, width, height) $$
+ * @param {uio-Layout} parent The layout where to add the divider.
+ * @param {Number} [width=1] Fraction of the parent width. Default is 1.
+ * @param {String} [options] A comma separated options.\n“Inset” to add some padding.
+ * @returns uio-Divider
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the component is touch
- * $$ undefined.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
- */
+	/** ## Properties
+	 * @jdocs Here are the available setters and/or getters of the Divider Component.
+	 * @prop {String} color Sets or returns the color in hexadecimal format.
+	 */
 
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ undefined.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
- */
+    /** @extern width */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ undefined.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+    /** @extern height */
 
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ undefined.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+    /** @extern opacity */
 
 
-/** ### show ###
- * @brief show
- * Show the component
- * $$ undefined.show() $$
- */
+    /** @extern textSize */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ undefined.hide() $$
- */
+    /** @extern textColor */
 
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ undefined.gone() $$
- */
+    /** @extern rotation */
 
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ undefined.destroy() $$
- */
+    /** @extern fontFile */
 
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ undefined.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+    /** @extern visibility */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ undefined.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
+    /** @extern type */
 
 
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ undefined.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
+    /** @extern absWidth */
 
 
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ undefined.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
+    /** @extern absHeight */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ undefined.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
+    /** @extern backColor */
 
 
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ undefined.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
+    /** @extern backImage */
 
 
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the component
- * $$ undefined.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-Left border radius in pixels.
- * @param {num} tr Top-Right border radius in pixels.
- * @param {num} bl Bottom-Left border radius in pixels.
- * @param {num} br Bottom-Right border radius in pixels.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern isVisible */
 
 
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ undefined.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
+    /** @extern top */
 
 
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ undefined.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
+    /** @extern left */
 
 
+    /** @extern absTop */
 
-// ------------- SAMPLES ------------- 
+
+    /** @extern absLeft */
 
 
-    
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** ## Methods
+     * @jdocs Here are the methods for Divider component.
+     */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Basic
 class Main extends App
@@ -238,9 +189,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -264,5 +214,5 @@ def OnStart():
 
     ui.addText(main, text, "Justify", 0.8)
  */
-    
-            
+
+

@@ -4,19 +4,19 @@
 /** # ChooseAccount #
  * @brief Let the user choose an google account
  * Opens an Android dialog and allows the user to select one of the registered Google/Gmail accounts or add one. The selected email address is returned as the first argument in the callback function.
- * 
+ *
  * See Also: @GetAccounts
- * $$ app.ChooseAccount(callback) $$ 
+ * $$ app.ChooseAccount(callback) $$
  * @param {fnc_json} callback {"pNames":["account"],"pTypes":["str-email"]}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Choose Account
 function OnStart()
@@ -40,9 +40,9 @@ function OnChoose( account )
     alert( "selected account: " + account );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Choose Account
 from native import app
@@ -57,10 +57,8 @@ def OnStart():
     app.AddLayout( lay )
 
 def btnChoose_OnTouch():
-    app.ChooseAccount( OnChoose )
+    <b>app.ChooseAccount( OnChoose )</b>
 
 def OnChoose( account ):
     app.Alert( "selected account: " + account )
  */
-    
-            

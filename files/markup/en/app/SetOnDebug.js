@@ -4,19 +4,19 @@
 /** # SetOnDebug #
  * @brief Called on app debug messages
  * Define a callback function for debug messages.
- * 
+ *
  * See also: @Debug, @SetDebug
- * $$ app.SetOnDebug(callback) $$ 
+ * $$ app.SetOnDebug(callback) $$
  * @param {fnc_json} callback {}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample OnDebug
 function OnStart()
@@ -32,9 +32,9 @@ function OnDebug(msg)
     app.SetDebug( true );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python OnDebug
 from native import app
@@ -48,5 +48,3 @@ def OnDebug(msg):
     app.Alert( msg, "Received debug message:" )
     app.SetDebug( True )
  */
-    
-            

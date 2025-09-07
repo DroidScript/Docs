@@ -4,19 +4,19 @@
 /** # SetOnWifiChange #
  * @brief Called on WiFi connected state changes
  * Define a callback function to detect when the WiFi connected state has changed. The **state** parameter can be “CONNECTING”, “CONNECTED”, or “DISCONNECTED”. The WiFi ssid is passed on “CONNECTED” only.
- * 
+ *
  * See Also: @WifiConnect, @WifiScan
- * $$ app.SetOnWifiChange(callback) $$ 
+ * $$ app.SetOnWifiChange(callback) $$
  * @param {fnc_json} callback {"pNames":["state","ssid"],"pTypes":["str-CONNECTING|CONNECTED|DISCONNECTED","str"]}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Detect WiFi Changes
 function OnStart()
@@ -34,9 +34,9 @@ function OnStart()
     else app.ShowProgress( state )
 }</b>
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Detect WiFi Changes
 from native import app
@@ -51,5 +51,3 @@ def OnWifiChange(state, ssid):
     else:
         app.ShowProgress(state)
  */
-    
-            

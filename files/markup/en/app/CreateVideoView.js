@@ -4,16 +4,16 @@
 /** # CreateVideoView #
  * @abbrev vid
  * @brief Returns a new VideoView object
- * 
- * $$ vid = app.CreateVideoView(width, height, options) $$ 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options 
+ *
+ * $$ vid = app.CreateVideoView(width=-1, height=-1, options?) $$
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options]
  * @returns dso-VideoView
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The **VideoView** can be used to play local video files from the filesystem or video streams from remote sources.
@@ -26,12 +26,14 @@ If the video cannot be played, the OnError callback function will be called. Use
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -116,7 +118,7 @@ If the video cannot be played, the OnError callback function will be called. Use
  * @brief Seek to a given playback time
  * Seek the video to given time in seconds.
  * $$ vid.SeekTo(seconds) $$
- * @param {num_int} seconds 
+ * @param {num_int} seconds
  */
 
 
@@ -192,18 +194,20 @@ If the video cannot be played, the OnError callback function will be called. Use
  * @brief Set a subtitle source
  * Set a subtitle file where to retreive the video subtitles from.
  * $$ vid.SetSubtitles(file) $$
- * @param {str_ptf} file 
+ * @param {str_ptf} file
  */
 
 
 /** @extern SetVisibility */
 
+/** @extern SetWeight */
+
 /** ### SetVolume ###
  * @brief Change the playback volume
  * Change the video player volume
  * $$ vid.SetVolume(left, right) $$
- * @param {num_prc} left 
- * @param {num_prc} right 
+ * @param {num_prc} left
+ * @param {num_prc} right
  */
 
 
@@ -219,10 +223,10 @@ If the video cannot be played, the OnError callback function will be called. Use
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Video Stream
 function OnStart()
@@ -254,9 +258,9 @@ function player_OnError(e)
     app.ShowPopup( "Error" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Video Stream
 from native import app
@@ -272,7 +276,7 @@ def OnStart():
     player.SetOnError(player_OnError)
     lay.AddChild(player)
 
-    player.SetFile("https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4")
+    <b>player.SetFile("https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4")</b>
 
     app.AddLayout(lay)
 
@@ -285,5 +289,4 @@ def player_OnError(e):
     app.HideProgress()
     app.ShowPopup("Error")
  */
-    
-            
+

@@ -4,19 +4,19 @@
 /** # SetAppLanguage #
  * @brief Load the language code from lang.json
  * Loads the current language code from the lang.json file in your project root folder. Make sure you use the [standard 2 letter language codes](http://www.loc.gov/standards/iso639-2/php/code_list.php).
- * 
+ *
  * See Also: @GetAppLanguages
- * $$ app.SetAppLanguage(name) $$ 
- * @param {str} name 
+ * $$ app.SetAppLanguage(name) $$
+ * @param {str} name
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Switch Language
 var langJson = `
@@ -30,7 +30,7 @@ var langJson = `
         }
     }
 }`;
- 
+
 function OnStart()
 {
     app.WriteFile( "lang.json", langJson );
@@ -43,8 +43,8 @@ function OnStart()
     lay.AddChild( spinLang );
 
     app.AddLayout( lay );
-
-    app.ShowPopup(T( "SelectLang" ));
+    
+    info();
 }
 
 function spinLang_OnChange()
@@ -52,13 +52,16 @@ function spinLang_OnChange()
     language = spinLang.GetText();
     app.SetAppLanguage( language );
 
-    app.DestroyLayout( lay );
-    OnStart();
+    info();
+}
+
+function info() {
+    app.ShowPopup(T( "SelectLang" ));
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Switch Language
 from native import app
@@ -89,14 +92,16 @@ def OnStart():
 
     app.AddLayout(lay)
 
-    app.ShowPopup(T("SelectLang"))
+    info()
+
 
 def spinLang_OnChange(item, index):
     language = spinLang.GetText()
     app.SetAppLanguage(language)
 
-    app.DestroyLayout(lay)
-    OnStart()
+    info()
+
+def info():
+    app.ShowPopup(T("SelectLang"))
+
  */
-    
-            

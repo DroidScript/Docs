@@ -5,20 +5,20 @@
  * @abbrev cir
  * @brief Creates a circle
  * Creates a circular game object.
- * $$ cir = gfx.CreateCircle(width, color, lineWidth, lineColor, lineAlpha, group) $$ 
- * @param {num_frc} width 
- * @param {num_col} color 
- * @param {num_pxl} lineWidth 
- * @param {num_col} lineColor 
- * @param {num_frc} lineAlpha 
- * @param {str} group 
+ * $$ cir = gfx.CreateCircle(width, color, lineWidth, lineColor, lineAlpha, group) $$
+ * @param {num_frc} width
+ * @param {num_col} color
+ * @param {num_pxl} lineWidth
+ * @param {num_col} lineColor
+ * @param {num_frc} lineAlpha
+ * @param {str} group
  * @returns gvo-Circle
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern alpha */
@@ -52,12 +52,12 @@
 /** @extern width */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 cfg.Game;
 
 function OnLoad()
@@ -71,11 +71,11 @@ function OnReady()
     gfx.Play();
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 # cfg.Game
 
 def OnLoad():
@@ -86,5 +86,3 @@ def OnReady():
     gfx.AddGraphic( circle, 0.3, 0.2 )
     gfx.Play()
  */
-    
-            

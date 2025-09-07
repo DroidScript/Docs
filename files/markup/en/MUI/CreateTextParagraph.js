@@ -4,20 +4,20 @@
 /** # CreateTextParagraph #
  * @abbrev txp
  * Creates a paragraph text
- * $$ txp = MUI.CreateTextParagraph(text, width, height, options, color, fontWeight) $$ 
- * @param {str} text 
- * @param {num} width 
- * @param {num} height 
- * @param {str} options DS text options
- * @param {str_col} color 
- * @param {str} fontWeight Thin|Light|Regular|Medium|Bold
+ * $$ txp = MUI.CreateTextParagraph(text, width=-1, height=-1, options?, color?, fontWeight?) $$
+ * @param {str} text
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
+ * @param {str} [options] DS text options
+ * @param {str_col} [color]
+ * @param {str} [fontWeight] Thin|Light|Regular|Medium|Bold
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -26,13 +26,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -41,44 +38,17 @@
 
 /** @extern GetHeight */
 
-/** ### GetHtml ###
- * 
- * $$ txp.GetHtml() $$
- * @returns obj
- */
-
+/** @extern GetHtml */
 
 /** @extern GetLeft */
 
-/** ### GetLineCount ###
- * 
- * $$ txp.GetLineCount() $$
- * @returns num_int
- */
+/** @extern GetLineCount */
 
+/** @extern GetLineStart */
 
-/** ### GetLineStart ###
- * 
- * $$ txp.GetLineStart(line) $$
- * @param {num_int} line 
- * @returns num_int
- */
+/** @extern GetLineTop */
 
-
-/** ### GetLineTop ###
- * 
- * $$ txp.GetLineTop(line) $$
- * @param {num_int} line 
- * @returns num
- */
-
-
-/** ### GetMaxLines ###
- * 
- * $$ txp.GetMaxLines() $$
- * @returns num_int
- */
-
+/** @extern GetMaxLines */
 
 /** @extern GetParent */
 
@@ -91,7 +61,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ txp.GetType() $$
  * @returns str-Text
  */
@@ -111,13 +81,7 @@
 
 /** @extern IsVisible */
 
-/** ### Log ###
- * 
- * $$ txp.Log(msg, options) $$
- * @param {str} msg 
- * @param {str_com} options 
- */
-
+/** @extern Log */
 
 /** @extern Method */
 
@@ -143,12 +107,7 @@
 
 /** @extern SetHtml */
 
-/** ### SetLog ###
- * 
- * $$ txp.SetLog(maxLines) $$
- * @param {num_int} maxLines 
- */
-
+/** @extern SetLog */
 
 /** @extern SetMargins */
 
@@ -187,10 +146,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Paragraph-Sample
 cfg.Light
@@ -204,20 +163,20 @@ function OnStart()
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
 
         var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis nunc nec orci finibus blandit. Nam nec consectetur odio. Sed a erat ultrices lectus volutpat malesuada. Aliquam id dictum metus."
-        
+
         p1 = MUI.AddText(lay, text, 0.9, null, "Multiline,Paragraph,Light")
 
         p2 = MUI.AddTextParagraph(lay, text, 0.9, null, "Multiline", null, "Light")
-        
+
         p3 = MUI.CreateTextParagraph(text, 0.9, null, "Multiline", null, "Light")
         lay.AddChild(p3)
 
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Paragraph-Sample
 # cfg.Light, cfg.MUI
@@ -241,5 +200,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

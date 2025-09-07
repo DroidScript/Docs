@@ -1,4 +1,3 @@
-const versions = {"en":"v265"};
 (function Forward(move = true) {
     const oldHost = 'symdstools.github.io', newHost = 'droidscript.github.io';
     move = move && sessionStorage.getItem("moveDocs") !== "false";
@@ -7,10 +6,9 @@ const versions = {"en":"v265"};
     if (move && location.host === oldHost) return moveSite();
 
     const pathname = location.pathname;
-    const getLink = (m, add, lang = 'en') => `/Docs/docs${add || ''}/${versions[lang] || versions.en}/`;
-    const newPath = 
-        pathname.replace(/^\/Docs\/docs(-(\w\w))?\/(?!v\d+)/, getLink)
-        .replace(/intro\/\d+/, 'intro/');
+    const newPath =
+        pathname.replace(/^\/Docs\/docs(-\w\w)?\/(?!v\d+|latest|beta)/, '/Docs/docs$1/latest/')
+            .replace(/intro\/\d+/, 'intro/');
     console.log("suggested " + newPath);
 
     if (pathname === newPath || pathname === "/Docs/404.html") return;

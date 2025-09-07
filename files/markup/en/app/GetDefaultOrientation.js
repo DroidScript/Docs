@@ -4,19 +4,19 @@
 /** # GetDefaultOrientation #
  * @brief Get devces default orientation
  * Returns the default Orientation of the device. The result modes can be “Portrait” if the device width is smaller than the device height, or “Landscape” vice versa.
- * 
+ *
  * See Also: @SetOrientation, @GetOrientation
- * $$ app.GetDefaultOrientation() $$ 
+ * $$ app.GetDefaultOrientation() $$
  * @returns str-Portrait|Landscape
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Default Orientation
 function OnStart()
@@ -25,16 +25,14 @@ function OnStart()
     app.Alert( orient );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     orient = app.GetDefaultOrientation()
     app.Alert(orient)
  */
-    
-            

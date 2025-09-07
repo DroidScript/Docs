@@ -4,20 +4,20 @@
 /** # CreateTextSecondary #
  * @abbrev txs
  * Creates a secondary text
- * $$ txs = MUI.CreateTextSecondary(text, width, height, options, color, fontWeight) $$ 
- * @param {str} text 
- * @param {num} width 
- * @param {num} height 
- * @param {str} options DS text options
- * @param {str_col} color 
- * @param {str} fontWeight Thin|Light|Regular|Medium|Bold
+ * $$ txs = MUI.CreateTextSecondary(text, width=-1, height=-1, options?, color?, fontWeight?) $$
+ * @param {str} text
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
+ * @param {str} [options] DS text options
+ * @param {str_col} [color]
+ * @param {str} [fontWeight] Thin|Light|Regular|Medium|Bold
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -26,13 +26,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -41,44 +38,17 @@
 
 /** @extern GetHeight */
 
-/** ### GetHtml ###
- * 
- * $$ txs.GetHtml() $$
- * @returns obj
- */
-
+/** @extern GetHtml */
 
 /** @extern GetLeft */
 
-/** ### GetLineCount ###
- * 
- * $$ txs.GetLineCount() $$
- * @returns num_int
- */
+/** @extern GetLineCount */
 
+/** @extern GetLineStart */
 
-/** ### GetLineStart ###
- * 
- * $$ txs.GetLineStart(line) $$
- * @param {num_int} line 
- * @returns num_int
- */
+/** @extern GetLineTop */
 
-
-/** ### GetLineTop ###
- * 
- * $$ txs.GetLineTop(line) $$
- * @param {num_int} line 
- * @returns num
- */
-
-
-/** ### GetMaxLines ###
- * 
- * $$ txs.GetMaxLines() $$
- * @returns num_int
- */
-
+/** @extern GetMaxLines */
 
 /** @extern GetParent */
 
@@ -91,7 +61,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ txs.GetType() $$
  * @returns str-Text
  */
@@ -111,13 +81,7 @@
 
 /** @extern IsVisible */
 
-/** ### Log ###
- * 
- * $$ txs.Log(msg, options) $$
- * @param {str} msg 
- * @param {str_com} options 
- */
-
+/** @extern Log */
 
 /** @extern Method */
 
@@ -143,12 +107,7 @@
 
 /** @extern SetHtml */
 
-/** ### SetLog ###
- * 
- * $$ txs.SetLog(maxLines) $$
- * @param {num_int} maxLines 
- */
-
+/** @extern SetLog */
 
 /** @extern SetMargins */
 
@@ -187,10 +146,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample All Headings
 cfg.Light
@@ -215,9 +174,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python All Headings
 from native import app
@@ -239,5 +198,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

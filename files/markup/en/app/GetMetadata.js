@@ -3,21 +3,21 @@
 
 /** # GetMetadata #
  * Returns a string list of metadata values contained in an audio file.
- * 
+ *
  * See Also: @CreateMediaPlayer
- * $$ app.GetMetadata(file, keys) $$ 
- * @param {str_ptf} file 
- * @param {str_com} keys album,artist,genre,title,composer,author,duration,bitrate,width,height
+ * $$ app.GetMetadata(file, keys?) $$
+ * @param {str_ptf} file
+ * @param {str_com} [keys] album,artist,genre,title,composer,author,duration,bitrate,width,height
  * @returns str_com
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Retreive all Metadata
 function OnStart()
@@ -41,9 +41,9 @@ function OnChoose( path )
     app.Alert( lst.join( "\n" ), path );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Retreive all Metadata
 from native import app
@@ -66,5 +66,3 @@ def OnChoose(path):
 
     app.Alert("\n".join(lst), path)
  */
-    
-            

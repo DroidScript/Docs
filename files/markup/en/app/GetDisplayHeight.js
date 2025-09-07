@@ -4,19 +4,19 @@
 /** # GetDisplayHeight #
  * @brief Get apps display height
  * Get the display height of the app in pixels. Therefore the android status bar and virtual buttons won't be included to the value.
- * 
+ *
  * See Also: @GetDisplayWidth, @GetScreenHeight
- * $$ app.GetDisplayHeight() $$ 
+ * $$ app.GetDisplayHeight() $$
  * @returns num_pxl
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show display height
 function OnStart()
@@ -25,16 +25,14 @@ function OnStart()
     app.Alert( height );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     height = app.GetDisplayHeight()
     app.Alert(height)
  */
-    
-            

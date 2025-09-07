@@ -5,6 +5,7 @@ declare global {
     declare type App = {
         ReadFile(p: string): string;
         WriteFile(p: string, s: string): void;
+        AppendFile(p: string, s: string): void;
         DeleteFile(p: string): void;
         ListFolder(p: string): string[];
         MakeFolder(p: string): void;
@@ -16,13 +17,22 @@ declare global {
         FolderExists(p: string): boolean;
         GetFileDate(p: string): Date;
         SetDebug(d: boolean): void;
+        GetDebug(): boolean;
         ShowProgressBar(t: string): void;
         UpdateProgressBar(i: number, t: string): void;
         HideProgressBar(): void;
         ShowPopup(s: string): void;
+        WalkFolder(path: string, filter?: string, depth?: number): Obj<WalkDir[]>;
         Alert(s: string): void;
     }
 
+    type WalkDir = {
+        name: string;
+        isFile: boolean;
+        modified: number;
+        size: number;
+        hidden: boolean;
+    }
 
     declare class DSMethod {
         name?: string;
@@ -30,7 +40,7 @@ declare global {
         shortDesc: string;
         pNames: string[];
         pTypes: (string | DSFunction)[];
-        retval?: string;
+        retval?: string | DSFunction;
         hasNav?: boolean;
         isval?: boolean;
         noCon?: boolean;

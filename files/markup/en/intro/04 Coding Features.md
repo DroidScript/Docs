@@ -48,6 +48,9 @@ This includes methods like setInterval and setTimeout which should be converted 
 
 **Note:** The same effect can be observed when running in a Node.js environment (using the `cfg.Node` flag)
 
+#### cfg.EdgeToEdge
+This will enable edge-to-edge feature when device supports edge-to-edge.
+
 
 ## app.eventSource
 In callback functions of controls you can use <js nobox>app.eventSource</js> to access the callee control object without having to assign the control to a specific variable. Previously this could be achieved by using the <js nobox>this</js> keyword. This allows you to create multiple controls with the same behaviour without having to redefine callback functions for different controls:
@@ -70,6 +73,24 @@ function btnN_OnTouch()
 	// app.eventSource == this
     app.ShowPopup("Hello " + app.eventSource.GetText());
 }
+</sample>
+
+<sample Python Use Case of this>
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("Linear", "FillXY,VCenter")
+    lay.SetChildMargins(0, 0.03)
+
+    for i in range(1, 6):
+        btn = app.AddButton(lay, str(i), 0.6)
+        btn.SetOnTouch(lambda b=btn: btnN_OnTouch(b))
+
+    app.AddLayout(lay)
+
+def btnN_OnTouch(btn):
+    # app.eventSource == this
+    app.ShowPopup("Hello " + btn.GetText())
 </sample>
 
 ## Function Shortcuts
@@ -136,6 +157,41 @@ function NewButton2(name, lay)
 
 </sample Using I()>
 
+<sample Python Using I()>
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    NewButton("Button 1", lay)
+    NewButton("Button 2", lay)
+
+    NewButton2("Button 1", lay)
+    NewButton2("Button 2", lay)
+
+    app.AddLayout(lay)
+
+def NewButton(name, lay):
+    btn = app.AddButton(lay, name, 0.3, 0.1)
+    btn.SetMargins(0, 0, 0, 0.02)
+    btn.SetTextColor("red")
+
+    <b>def button_touch():
+        app.ShowPopup(name)
+
+    btn.SetOnTouch(I(button_touch))</b>
+
+def NewButton2(name, lay):
+    btn = app.AddButton(lay, name, 0.3, 0.1)
+    btn.SetTextColor("green")
+    btn.SetMargins(0, 0.02)
+
+    <b>def button2_touch():
+        app.ShowPopup(name)
+
+    btn.SetOnTouch(I(button2_touch))</b>
+</sample>
+
 ### Custom Contexts: M()
 The M() macro is equivalent to the I() macro, except that it accepts a custom '<js nobox>this</js>' context as first argument.
 
@@ -149,13 +205,13 @@ function OnStart()
 {
 	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	NewButton2("Button 1", lay);
-	NewButton2("Button 2", lay);
+	NewButton("Button 1", lay);
+	NewButton("Button 2", lay);
 
 	app.AddLayout( lay );
 }
 
-function NewButton2(name, lay)
+function NewButton(name, lay)
 {
 	btn = app.AddButton( lay, name, 0.3, 0.1 );
 	btn.SetTextColor( "green" );
@@ -170,3 +226,27 @@ function NewButton2(name, lay)
 }
 
 </sample Using this.data>
+
+<sample Python Using this.data>
+from native import app
+
+def OnStart():
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    NewButton("Button 1", lay)
+    NewButton("Button 2", lay)
+
+    app.AddLayout(lay)
+
+def NewButton(name, lay):
+    btn = app.AddButton(lay, name, 0.3, 0.1)
+    btn.SetTextColor("green")
+    btn.SetMargins(0, 0.02)
+
+    <b>btn.name_data = name
+
+    btn.SetOnTouch(lambda b=btn: button2_touch(b))
+
+def button2_touch(btn):
+    app.ShowPopup(btn.name_data)</b>
+</sample>

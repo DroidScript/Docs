@@ -3,15 +3,15 @@
 
 /** # CreateLayout #
  * @abbrev lay
- * 
- * $$ lay = MUI.CreateLayout(type, options) $$ 
+ *
+ * $$ lay = MUI.CreateLayout(type, options?) $$
  * @param {str} type Linear|Absolute|Frame|Card
- * @param {str} options Comma separated DroidScript layout options
- * @returns obj
+ * @param {str} [options] Comma separated DroidScript layout options
+ * @returns dso-@../app/CreateLayout
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 It is just the **CreateLayout** method of DroidScript with predefined values on background color just to be consistent on MUI theming.
@@ -30,10 +30,10 @@ Since it returns a DroidScript layout object, you can use all the layout methods
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Just Layout
 cfg.Light
@@ -52,9 +52,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark Layout with Card
 cfg.Dark
@@ -74,9 +74,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Just Layout
 # cfg.Light, cfg.MUI
@@ -94,9 +94,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark Layout with Card
 # cfg.Dark, cfg.MUI
@@ -115,5 +115,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

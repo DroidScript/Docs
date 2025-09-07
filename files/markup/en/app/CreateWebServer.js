@@ -4,15 +4,15 @@
 /** # CreateWebServer #
  * @abbrev sock
  * @brief Returns a new WebServer object
- * 
- * $$ sock = app.CreateWebServer(port, options) $$ 
- * @param {num_int} port 
- * @param {str_com} options ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients,"&lt;BUFSIZE&gt;":"“ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”"
+ *
+ * $$ sock = app.CreateWebServer(port, options?) $$
+ * @param {num_int} port
+ * @param {str_com} [options] ListDir:Show files in folder|Upload:Allow file uploads|NoWelcome:Ignore index&period;html|Reflect:Reflect web socket messages back to all clients,"&lt;BUFSIZE&gt;":"“ws_64k, ws_128k, ws_512k, ws_1M, ws_5M, ws_10M”"
  * @returns dso-WebServer
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Web servers form the foundation of the web, especially the Internet of Things (IoT). Turning your phone or tablet into a web server or creating a network of interconnected devices is very simple with DroidScript. Set a document root for the server using the SetFolder method of the WebServer object. This is the folder location on your device that your web pages will be served from.
@@ -53,15 +53,15 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AddRedirect ###
  * @brief Redirect urls
  * Redirects a url pattern (with \* wildcards) to a target location
  * $$ sock.AddRedirect(pattern, location) $$
- * @param {str_url} pattern 
- * @param {str_url} location 
+ * @param {str_url} pattern
+ * @param {str_url} location
  */
 
 
@@ -69,19 +69,21 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Called when servlet received a message
  * %cb% a HTTP GET request on a given servlet name was recieved.
  * $$ sock.AddServlet(path, callback) $$
- * @param {str:url path} path /name
- * @param {fnc_json} callback {"pNames":["args","info"],"pTypes":["obj-{ parameter: argument }","obj-{ remoteAddress:str }"]}
+ * @param {str:url path} path /endpoint name
+ * @param {fnc_json} callback {"pNames":["args","info"],"pTypes":["obj-{ parameter:str: argument:str }","obj-{ remoteAddress:str }"]}
  */
 
 
 /** @extern Batch */
 
+/** @extern data */
+
 /** ### Disconnect ###
  * @brief Disconnect Client from WebServer
  * Disconnects a client from the WebServer.
- * $$ sock.Disconnect(ip, id) $$
- * @param {str} ip 
- * @param {num_int} id 
+ * $$ sock.Disconnect(ip, id?) $$
+ * @param {str} ip
+ * @param {num_int} [id]
  */
 
 
@@ -108,9 +110,9 @@ The following example demonstrates web sockets being used to receive messages fr
  * If no id is given, all clients of the specified ip are notified.
  * If neither ip nor id is given, the message will be sent to all connected clients.
  * $$ sock.SendText(txt, ip, id) $$
- * @param {str} txt 
- * @param {str} ip 
- * @param {num_int} id 
+ * @param {str} txt
+ * @param {str} ip
+ * @param {num_int} id
  */
 
 
@@ -118,7 +120,7 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Set server root folder
  * Specifies the root folder of the server.
  * $$ sock.SetFolder(folder) $$
- * @param {str_ptd} folder 
+ * @param {str_ptd} folder
  */
 
 
@@ -142,7 +144,7 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Respond to incoming HTTP request
  * Responds to an incoming HTTP request
  * $$ sock.SetResponse(text) $$
- * @param {str} text 
+ * @param {str} text
  */
 
 
@@ -150,7 +152,7 @@ The following example demonstrates web sockets being used to receive messages fr
  * @brief Defile file upload destination
  * Set a folder where uploaded files are to be placed.
  * $$ sock.SetUploadFolder(folder) $$
- * @param {str_ptd} folder 
+ * @param {str_ptd} folder
  */
 
 
@@ -168,10 +170,10 @@ The following example demonstrates web sockets being used to receive messages fr
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -184,9 +186,9 @@ function OnStart()
     serv.Start();</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Servlets
 function OnStart()
@@ -194,68 +196,68 @@ function OnStart()
     var ip = app.GetIPAddress();
     app.Alert( ip +":8080", "Type the following address into your browser" );
 
-	<b>serv = app.CreateWebServer( 8080, "Upload,ListDir" );
-	serv.SetFolder( "/sdcard/DroidScript" );
-	serv.AddServlet( "/message", OnServlet );
-	serv.Start();</b>
+    <b>serv = app.CreateWebServer( 8080, "Upload,ListDir" );
+    serv.SetFolder( "/sdcard/DroidScript" );
+    serv.AddServlet( "/message", OnServlet );
+    serv.Start();</b>
 }
 
 function OnServlet( request, info )
 {
-	serv.SetResponse( "Got it!" );
-	app.ShowPopup(  info.remoteAddress + " says: " + request.msg );
+    serv.SetResponse( "Got it!" );
+    app.ShowPopup(  info.remoteAddress + " says: " + request.msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Send and Receive messages
 var indexhtml = `
 <html>
 <head>
-	<title>WebSockets Demo</title>
+    <title>WebSockets Demo</title>
 
-	<script>
-		var count = 0;
+    <script>
+        var count = 0;
 
-		function Connect()
-		{
-			// Open web socket to phone.
-			ws = new WebSocket( "ws://" + window.location.host );
-			ws.onopen = ws_onopen;
-			ws.onmessage = ws_onmessage;
-			ws.onclose = ws_onclose;
-			ws.onerror = ws_onerror;
-		}
+        function Connect()
+        {
+            // Open web socket to phone.
+            ws = new WebSocket( "ws://" + window.location.host );
+            ws.onopen = ws_onopen;
+            ws.onmessage = ws_onmessage;
+            ws.onclose = ws_onclose;
+            ws.onerror = ws_onerror;
+        }
 
-		function Send() {
-			ws.send( "Hello " + count++ );
-		}
+        function Send() {
+            ws.send( "Hello " + count++ );
+        }
 
-		function ws_onopen() {
-			id_info.innerHTML = "Socket Open";
-		}
+        function ws_onopen() {
+            id_info.innerHTML = "Socket Open";
+        }
 
-		function ws_onmessage( msg ) {
-			id_info.innerHTML = msg.data;
-		}
+        function ws_onmessage( msg ) {
+            id_info.innerHTML = msg.data;
+        }
 
-		function ws_onclose() {
-			id_info.innerHTML = "Socket Closed";
-		}
+        function ws_onclose() {
+            id_info.innerHTML = "Socket Closed";
+        }
 
-		function ws_onerror(e) {
-			id_info.innerHTML = "Socket Error: " + e.data;
-		}
-	</script>
+        function ws_onerror(e) {
+            id_info.innerHTML = "Socket Error: " + e.data;
+        }
+    </script>
 </head>
 
 <body>
-	<h2>DroidScript WebSockets Demo</h2>
-	<div id="id_info">Ready</div>
-	<button onclick="Connect()">Connect</button>
-	<button onclick="Send()">Send Message</button>
+    <h2>DroidScript WebSockets Demo</h2>
+    <div id="id_info">Ready</div>
+    <button onclick="Connect()">Connect</button>
+    <button onclick="Send()">Send Message</button>
 </body>
 </html>`;
 
@@ -270,54 +272,54 @@ function OnStart()
     ip = app.GetIPAddress();
     app.Alert( ip +":8080", "Type the following address into your browser" );
 
-	app.PreventWifiSleep();
+    app.PreventWifiSleep();
 
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	txt = app.CreateText( "No connected clients.", 0.8, 0.3, "AutoScale,MultiLine" );
-	txt.SetTextSize( 22 );
-	lay.AddChild( txt );
+    txt = app.CreateText( "No connected clients.", 0.8, 0.3, "AutoScale,MultiLine" );
+    txt.SetTextSize( 22 );
+    lay.AddChild( txt );
 
-	txtMsg = app.CreateText( "", 0.8, 0.3, "AutoScale,MultiLine" );
-	txtMsg.SetTextSize( 22 );
-	lay.AddChild( txtMsg );
+    txtMsg = app.CreateText( "", 0.8, 0.3, "AutoScale,MultiLine" );
+    txtMsg.SetTextSize( 22 );
+    lay.AddChild( txtMsg );
 
-	btn = app.CreateButton( "Send Message", 0.4, 0.1);
-	btn.SetMargins( 0, 0.05, 0, 0 );
-	btn.SetOnTouch( SendMessage );
-	lay.AddChild( btn );
+    btn = app.CreateButton( "Send Message", 0.4, 0.1);
+    btn.SetMargins( 0, 0.05, 0, 0 );
+    btn.SetOnTouch( SendMessage );
+    lay.AddChild( btn );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
-	serv = app.CreateWebServer( 8080 );
-	serv.SetFolder( app.GetAppPath() );
-	serv.SetOnReceive( serv_OnReceive );
-	serv.Start();
+    serv = app.CreateWebServer( 8080 );
+    serv.SetFolder( app.GetAppPath() );
+    serv.SetOnReceive( serv_OnReceive );
+    serv.Start();
 
-	setInterval( ShowConnections, 3000 );
+    setInterval( ShowConnections, 3000 );
 }
 
 function ShowConnections()
 {
-	var clients = serv.GetWebSockClients();
-	var list = [];
-	for( var i = 0; i < clients.length; i++ )
-		list.push(clients[i].remoteAddress);
+    var clients = serv.GetWebSockClients();
+    var list = [];
+    for( var i = 0; i < clients.length; i++ )
+        list.push(clients[i].remoteAddress);
 
-	if(list.length) txt.SetText( list.join("\n") );
+    if(list.length) txt.SetText( list.join("\n") );
 }
 
 function SendMessage() {
-	serv.SendText( "Hello " + count++ )
+    serv.SendText( "Hello " + count++ )
 }
 
 function serv_OnReceive( msg, ip ) {
-	txtMsg.SetText( ip + ": " + msg );
+    txtMsg.SetText( ip + ": " + msg );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -330,9 +332,9 @@ def OnStart():
     serv.SetFolder( "/sdcard/DroidScript" )
     serv.Start()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Servlets
 from native import app
@@ -351,9 +353,9 @@ def OnServlet( request, info ):
     serv.SetResponse( "Got it!" )
     app.ShowPopup(  info.remoteAddress + " says: " + request.msg )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Send and Receive messages
 from native import app
@@ -459,5 +461,3 @@ def SendMessage():
 def serv_OnReceive( msg, ip, id):
     txtMsg.SetText( ip + ": " + msg )
  */
-    
-            

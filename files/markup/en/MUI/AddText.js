@@ -4,23 +4,23 @@
 /** # AddText #
  * @abbrev txt
  * Adds a mui text control to the layout. See @CreateTextH1, @CreateTextH2, @CreateTextH3, @CreateTextH4, @CreateTextH5, @CreateTextH6, @CreateTextJumbo, @CreateTextParagraph and @CreateTextSecondary for full documentation on each type of mui typhography.
- * $$ txt = MUI.AddText(parent, text, width, height, options, color) $$ 
+ * $$ txt = MUI.AddText(parent, text, width=-1, height=-1, options?, color?) $$
  * @param {dso} parent @../app/CreateLayout
- * @param {str} text 
- * @param {num} width 
- * @param {num} height 
- * @param {str} options DS text options with addition Thin|Light|Regular|Medium|Bold,h1|h2|h3|h4|h5|h6|secondary|jumbo|paragraph
- * @param {str_col} color 
+ * @param {str} text
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
+ * @param {str_com} [options] DS text options|Thin|Light|Regular|Medium|Bold,h1|h2|h3|h4|h5|h6|secondary|jumbo|paragraph
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample All Typography
 cfg.Light
@@ -42,9 +42,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python All Typography
 # cfg.Light, cfg.MUI
@@ -65,5 +65,3 @@ def OnStart():
     s = MUI.AddText(lay, "text", 0.8, None, "secondary,light")
     app.AddLayout(lay)
  */
-    
-            

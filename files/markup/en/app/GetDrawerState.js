@@ -4,9 +4,9 @@
 /** # GetDrawerState #
  * @brief Get current drawer state
  * Returns the current drawer state of a drawer on a given side.
- * 
+ *
  * See Also: @OpenDrawer, @CloseDrawer, @AddDrawer
- * $$ app.GetDrawerState(side) $$ 
+ * $$ app.GetDrawerState(side) $$
  * @param {str} side left|right
  * @returns str-Open|Closed
 */
@@ -14,12 +14,12 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 function OnStart()
 {
 	lay = app.CreateLayout( "Linear", "FillXY,VCenter,Left" );
@@ -57,11 +57,11 @@ function btn_OnTouch()
         app.CloseDrawer( "left" );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
@@ -97,5 +97,3 @@ def btn_OnTouch():
     else:
         app.CloseDrawer("left")
  */
-    
-            

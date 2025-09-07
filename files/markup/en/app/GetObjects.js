@@ -4,17 +4,17 @@
 /** # GetObjects #
  * @brief Get map of created DroidScript objects
  * Returns a map of DroidScript control objects with their id as key.
- * $$ app.GetObjects() $$ 
+ * $$ app.GetObjects() $$
  * @returns lst-[ id:str_oid: control:dso ]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Types of all Objects
 function OnStart()
@@ -43,9 +43,9 @@ function btn_OnTouch()
     app.Alert( lst.join( "\n" ));
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Types of all Objects
 from native import app
@@ -72,5 +72,3 @@ def btn_OnTouch():
 
     app.Alert( "\n".join(lst) )
  */
-    
-            

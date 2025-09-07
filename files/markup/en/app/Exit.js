@@ -4,17 +4,17 @@
 /** # Exit #
  * @brief Close and stop the app
  * With Exit you can cancel and completely stop the app. You can also forcefully **kill** the app by passing true as first argument.
- * $$ app.Exit(kill) $$ 
- * @param {bin} kill 
+ * $$ app.Exit(kill?) $$
+ * @param {bin} [kill]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Exit dialog
 function OnStart()
@@ -27,16 +27,33 @@ function OnBack()
 {
     var yesNo = app.CreateYesNoDialog( "Exit App?" );
     yesNo.SetOnTouch( yesNo_OnTouch );
+    yesNo.Show()
 }
 
 function yesNo_OnTouch( result )
 {
-    if( result == "Yes" ) app.Exit();
+    if( result == "Yes" ) <b>app.Exit();</b>
 }
  */
-    
-            
-    
+
+/**
+@sample Python Exit Dialog
+from native import app
+
+def OnStart():
+    app.EnableBackKey( False )
+    app.ShowPopup( "Press the back key" )
+
+def OnBack():
+    yesNo = app.CreateYesNoDialog( "Exit App?" )
+    yesNo.SetOnTouch( yesNo_OnTouch )
+    yesNo.Show()
+
+def yesNo_OnTouch( result ):
+    if result == "Yes": <b>app.Exit()</b>
+
+ */
+
 /**
 @sample Python Creating a Button
 from native import app
@@ -50,9 +67,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a DatePicker
 from native import app
@@ -66,9 +83,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a ProgressBar
 from native import app
@@ -83,9 +100,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a ToggleButton
 from native import app
@@ -99,9 +116,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a Spinner
 from native import app
@@ -115,9 +132,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Showing a Popup
 from native import app
@@ -125,9 +142,9 @@ from native import app
 def OnStart():
     app.ShowPopup("Hello, world!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enabling Bluetooth
 from native import app
@@ -135,9 +152,9 @@ from native import app
 def OnStart():
     app.SetBluetoothEnabled(True)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Disabling Bluetooth
 from native import app
@@ -145,9 +162,9 @@ from native import app
 def OnStart():
     app.SetBluetoothEnabled(False)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Discover Bluetooth Devices
 from native import app
@@ -172,9 +189,9 @@ def OnStart():
 
     app.DiscoverBtDevices("", OnFound, OnComplete)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Delete created file
 from native import app
@@ -189,9 +206,9 @@ def OnStart():
     else:
         app.ShowPopup("myFile was deleted!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Delete created folder
 from native import app
@@ -206,9 +223,9 @@ def OnStart():
     else:
         app.ShowPopup("myFolder was deleted!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Destroy layout and check if deleted
 from native import app
@@ -229,9 +246,9 @@ def btn_OnTouch():
     text = this.GetText() or "nothing in here!"
     app.ShowPopup(text)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Downloading the DroidScript logo
 from native import app
@@ -241,9 +258,9 @@ def OnStart():
     dst = "/sdcard/Downloads/logo.png"
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Download to external storage
 from native import app
@@ -253,9 +270,9 @@ def OnStart():
     dst = app.GetExternalFolder() + "/Downloads/logo.png"
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enable GPS
 from native import app
@@ -263,9 +280,9 @@ from native import app
 def OnStart():
     app.EnableGps()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Disable GPS
 from native import app
@@ -273,19 +290,4 @@ from native import app
 def OnStart():
     app.DisableGps()
  */
-    
-            
-    
-/**
-@sample Python Exit dialog
-from native import app
 
-def OnStart():
-    app.EnableBackKey(False)
-    app.ShowPopup("Press the back key")
-
-def OnBack():
-    yesNo = app
- */
-    
-            

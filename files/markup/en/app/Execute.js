@@ -4,17 +4,17 @@
 /** # Execute #
  * @brief Execute js code from your app or a WebWiew
  * Executes a piece of code asynchroneously to your program. It is designed for interacting with your main app from within a [WebView](CreateWebView.htm).
- * $$ app.Execute(js) $$ 
- * @param {str_jsc} js 
+ * $$ app.Execute(js) $$
+ * @param {str_jsc} js
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Execute code from WebView
 var html = `
@@ -58,9 +58,52 @@ function btn_OnTouch()
     app.Execute( "app.Alert( 'source: " + source + "\\ntarget: ' + source );" );
 }
  */
-    
-            
-    
+
+/**
+@sample Python Execute code from WebView
+from native import app
+
+html = """
+<html>
+<head>
+    <script src='file:///android_asset/app.js'></script>
+</head>
+
+<script>
+    var source = "html";
+    function btn_OnTouch()
+    {
+        app.Execute( "app.Alert( 'source: " + source + "\\\\ntarget: ' + source );" );
+    }
+</script>
+
+<body style="text-align: center;">
+    <input type="button" onclick="btn_OnTouch()" value="Click me!"></button>
+</body>
+</html>
+"""
+
+source = "app";
+
+def OnStart():
+    lay = app.CreateLayout( "linear", "fillxy,vcenter" )
+
+    web = app.CreateWebView( .5, .2 )
+    web.LoadHtml( html )
+    lay.AddChild( web )
+
+    btn = app.CreateButton("call myFunction", .4, .1)
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+
+    app.AddLayout( lay )
+
+def btn_OnTouch():
+    app.Execute( "app.Alert( 'source: " + source + "\\ntarget: ' + source );" )
+ 
+ */
+
+
 /**
 @sample Python Creating a Button
 from native import app
@@ -74,9 +117,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a DatePicker
 from native import app
@@ -90,9 +133,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a ProgressBar
 from native import app
@@ -107,9 +150,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a ToggleButton
 from native import app
@@ -123,9 +166,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Creating a Spinner
 from native import app
@@ -139,9 +182,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Showing a Popup
 from native import app
@@ -149,9 +192,9 @@ from native import app
 def OnStart():
     app.ShowPopup("Hello, world!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enabling Bluetooth
 from native import app
@@ -159,9 +202,9 @@ from native import app
 def OnStart():
     app.SetBluetoothEnabled(True)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Disabling Bluetooth
 from native import app
@@ -169,9 +212,9 @@ from native import app
 def OnStart():
     app.SetBluetoothEnabled(False)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Discover Bluetooth Devices
 from native import app
@@ -196,9 +239,9 @@ def OnStart():
 
     app.DiscoverBtDevices("", OnFound, OnComplete)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Delete created file
 from native import app
@@ -213,9 +256,9 @@ def OnStart():
     else:
         app.ShowPopup("myFile was deleted!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Delete created folder
 from native import app
@@ -230,9 +273,9 @@ def OnStart():
     else:
         app.ShowPopup("myFolder was deleted!")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Destroy layout and check if deleted
 from native import app
@@ -253,9 +296,9 @@ def btn_OnTouch():
     text = this.GetText() or "nothing in here!"
     app.ShowPopup(text)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Downloading the DroidScript logo
 from native import app
@@ -265,9 +308,9 @@ def OnStart():
     dst = "/sdcard/Downloads/logo.png"
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Download to external storage
 from native import app
@@ -277,9 +320,9 @@ def OnStart():
     dst = app.GetExternalFolder() + "/Downloads/logo.png"
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Enable GPS
 from native import app
@@ -287,9 +330,9 @@ from native import app
 def OnStart():
     app.EnableGps()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Disable GPS
 from native import app
@@ -297,5 +340,3 @@ from native import app
 def OnStart():
     app.DisableGps()
  */
-    
-            

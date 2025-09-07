@@ -1,72 +1,76 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addDialog #
+/** # Dialog
  * @abbrev dlg
- * @brief addDialog
- * 
- * $$ dlg = ui.addDialog(title, body, actions, options) $$ 
- * @param {str} title The dialog title text.
- * @param {str} body The dialog message to be shown.
- * @param {str} actions A comma separated text for action buttons.
- * @param {str_com} options Colors: `Primary` `Secondary` \n `Util`: `NoCancel` prevents the dialog from closing on action.
- * @returns obj-Dialog Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a dialog into your app.
-
-### Properties
-These are the setter and getter properties for the addDialog Component.
-<smp noinl>layout:"Layout:'Returns the layout of the dialog where you can add custom controls.'"</smp>
-<smp noinl>text:"str:'Sets or returns the dialog text.'"</smp>
-<smp noinl>titleColor:"str:'Sets or returns the title text color in hexadecimal format.'"</smp>
-<smp noinl>titleText:"str:'Sets or returns the dialog title text.'"</smp>
+ * A Dialog in mobile UI design is a pop-up window that appears on top of the current screen to prompt the user for input or to convey information.
+ * @img(img1.png)
+ * @img(img2.png)
+ * @img(img3.png)
+ * @img(img4.png)
+ * @jdocs In Material Design, Dialogs follow guidelines for clarity, actions, and consistent styling. They serve to enhance user interaction and provide a focused way to handle specific tasks or gather input within a mobile application. Add a dialog into your app using the “addDialog” method like this:
+ * $$ dlg = ui.addDialog( title, body, actions, options ) $$
+ * @param {String} title The dialog title text.
+ * @param {String} body The dialog message to be shown.
+ * @param {Array} [actions] A string of action button text.
+ * @param {String} [options] A comma separated options.\nTheme Colors: “Primary”, “Secondary”\nUtil: “NoCancel”, “KeepCase" prevents the dialog from closing on action.\nSizes: "fullscreen”
+ * @param {Number} width Fraction of the screen width “[0-1]”.
+ * @returns uio-Dialog
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setOnAction ###
- * @brief setOnAction
- * Adds a callback function when the action buttons are click
- * $$ dlg.setOnAction(callback) $$
- * @param {fnc_json} callback {"pNames":["text","index"],"pTypes":["str-The dialog action text.","num-The index of the corresponding dialog action."]}
- */
+	/** ## Properties
+	 * @jdocs Here are the available setters and/or getter of the Dialog Component.
+	 * @prop {String} text Sets or returns the dialog text.
+	 * @prop {String} title Sets or returns the dialog title text.
+	 * @prop {String} titleColor Sets or returns the title text color in hexadecimal format.
+     * @prop {Object} layout Returns the layout of the dialog where you can add custom controls.
+     * @prop {Number} width Sets the width of the dialog.
+	 */
 
 
-/** ### setOnClose ###
- * @brief setOnClose
- * Adds a callback function when the dialog is close
- * $$ dlg.setOnClose(callback) $$
- * @param {fnc_json} callback {}
- */
+	/** ## Methods
+	 * @jdocs Here are the available methods of the Dialog Component.
+	 */
 
 
-/** ### show ###
- * @brief show
- * Show the dialog
- * $$ dlg.show() $$
- */
+	/** ### setOnAction
+	 * Adds a callback function when the action buttons are click.
+	 * $$ dlg.setOnAction( callback ) $$
+	 * @param {Function} callback The callback function. ---> @arg {String} text The dialog action text. @arg {Number} index The index of the corresponding dialog action.
+	 */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the dialog
- * $$ dlg.hide() $$
- */
+	/** ### setOnClose
+	 * Adds a callback function when the dialog is close.
+	 * $$ dlg.setOnClose(callback) $$
+	 * @param {Function} callback The callback function
+	 */
 
 
+    /** ### setOnOpen
+	 * Adds a callback function when the dialog is open.
+	 * $$ dlg.setOnOpen(callback) $$
+	 * @param {Function} callback The callback function
+	 */
 
-// ------------- SAMPLES ------------- 
+
+	/** ### show
+	 * Show the dialog.
+	 * $$ dlg.show() $$
+	 */
 
 
-    
+	/** ### hide
+	 * Hide the dialog.
+	 * $$ dlg.hide() $$
+	 * @@ When you add an “onClose” callback, it will be fired after this event.
+	 */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Basic
 class Main extends App
@@ -94,9 +98,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample NoCancel
 class Main extends App
@@ -142,9 +145,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Adding controls to the dialog
 class Main extends App
@@ -194,9 +196,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -220,9 +221,8 @@ def showDialog(event):
     # Show the Dialog component when the button is clicked.
     dlg.show()
  */
-    
-            
-    
+
+
 /**
 @sample Python NoCancel
 from hybrid import ui
@@ -258,9 +258,8 @@ def onAction(action, index):
     else:
         ui.showPopup("Oops! You can't close me here.")
  */
-    
-            
-    
+
+
 /**
 @sample Python Adding controls to the dialog
 from hybrid import ui
@@ -302,5 +301,5 @@ def onAction(action, index):
         # Change the text of the text control.
         txt.text = "Email: " + tfd.text
  */
-    
-            
+
+

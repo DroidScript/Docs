@@ -3,13 +3,13 @@
 
 /** # colors #
  * @prop
- * 
- * $$ MUI.colors() $$ 
+ *
+ * $$ MUI.colors $$
  * @returns obj
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 MUI colors are accessible through the **colors** property of the MUI object.
@@ -45,10 +45,10 @@ To select a color and shading choose the right property of the base color object
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample All Colors From Green
 cfg.Light
@@ -90,9 +90,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Change Layout Background
 cfg.Light
@@ -135,9 +135,9 @@ function OnSelect(name)
     lay.SetBackColor(color[name])
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python All Colors From Green
 # cfg.Light, cfg.MUI
@@ -178,9 +178,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Change Layout Background
 # cfg.Light, cfg.MUI
@@ -219,5 +219,3 @@ def ShowDialog():
 def OnSelect(name, index):
     lay.SetBackColor(color[name])
  */
-    
-            

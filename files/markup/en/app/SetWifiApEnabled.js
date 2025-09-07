@@ -3,15 +3,15 @@
 
 /** # SetWifiApEnabled #
  * @brief En/Disable the mobile Wifi Access Point of the device
- * 
- * $$ app.SetWifiApEnabled(enable, ssid, key) $$ 
- * @param {bin} enable 
- * @param {str} ssid 
- * @param {str} key 
+ *
+ * $$ app.SetWifiApEnabled(enable, ssid?, key?) $$
+ * @param {bin} enable
+ * @param {str} [ssid]
+ * @param {str} [key]
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 En/Disable the mobile Wifi Access Point of the device. You can define a custom WiFi AP name and a password as credentials for other people.
@@ -24,10 +24,10 @@ See Also: @IsWifiApEnabled, @IsWifiEnabled
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample WiFi Access Point
 function OnStart()
@@ -47,9 +47,9 @@ function tgl_OnTouch( enable )
     else app.SetWifiApEnabled( false );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python WiFi Access Point
 from native import app
@@ -69,5 +69,3 @@ def tgl_OnTouch( enable ):
     else:
         app.SetWifiApEnabled( False )
  */
-    
-            

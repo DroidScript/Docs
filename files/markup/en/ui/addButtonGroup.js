@@ -1,334 +1,339 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addButtonGroup #
+/** # ButtonGroup
  * @abbrev btg
- * @brief addButtonGroup
+ * In mobile UI development, a button group refers to a collection of buttons presented together, often used for related actions.
+ * @img(img1.png)
+ * @img(img2.png)
+ * @jdocs The grouping helps organize and visually connect buttons with similar functions. Design principles may include consistent styling, alignment, and spacing for a unified appearance, promoting a cohesive user experience when interacting with multiple buttons in a single context.
+ * $$ btg = ui.addButtonGroup(parent, list, options, width, height) $$
+ * @jdocs Add a button group into your app using the “addButtonGroup” method like this:
+ * @param {uio-Layout} parent The parent layout where to add the ButtonGroup
+ * @param {Array} [list] The item to be displayed on the buttn group.
+ * @param {String} [options] A comma separated options.\nVariant: “Contained”, “Outlined”, “Text”, “Default”\nTheme Color: “Primary”, “Secondary”, “Default”\nSizes: “Small”, “Medium”, “Large”\nOrientation: “Horizontal”, “Vertical”\nToggleable: “Toggle”, “Radio”\nUtils: “Icon”, “NoElevation”, “Link”, NewTab, KeepCase
+ * @param {Number} [width] Fraction of the parent width “[0-1]”
+ * @param {Number} [height] Fraction of the parent height “[0-1]”
+ * @returns uio-ButtonGroup
+ */
+
+
+/**
+ * A toggleable buttongroup can accept additional “Radio” option to have atmost one toggled button item. If buttongroup is toggleable, please refer to the “setOnTouch” callback for the correct order of arguments.
  * 
- * $$ btg = ui.addButtonGroup(parent, list, options, width, height) $$ 
- * @param {obj} parent The parent layout where to add the ButtonGroup
- * @param {lst} list The item to be displayed on the buttn group.
- * @param {str_com} options one or a combination of the following: \n Variant: `Contained` `Outlined` `Text` `Default` \n `Color`: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` `Large` \n `Orientation`: `Horizontal` `Vertical` \n `Util`: `Icon` `NoElevation`
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- * @returns obj-ButtonGroup Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a button group into your app.
-
-### Properties
-These are the setter and getter properties for the addButtonGroup Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>color:"str:'Sets or returns the theme color of the button. Values can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> or <col nobox #fb8c00>Secondary</col>'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>list:"lst:'Sets or returns the list items of the button group.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>orientation:"str:'Sets or returns the orientation of the button group. Can be <col nobox #fb8c00>horizontal</col> or <col nobox #fb8c00>vertical</col>'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>sizeVariant:"str:'Sets or returns the size variant. Values can be <col nobox #fb8c00>small</col> <col nobox #fb8c00>medium</col> or <col nobox #fb8c00>large</col>'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the button text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the font size of the button text.'"</smp>
-<smp noinl>toolTipPosition:"str:'Sets or returns the position of the tooltip. Values can be <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> or <col nobox #fb8c00>bottom</col>'"</smp>
-<smp noinl>toolTips:"lst:'Sets or returns the list of tooltip titles.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>variant:"str:'Sets or returns the variant. Values can be <col nobox #fb8c00>Contained</col> <col nobox #fb8c00>Outlined</col> or <col nobox #fb8c00>Text</col>'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
+ * The “Link" option renders the buttons as anchor tag that will open a link provided in “urls” setter property. The "NewTab” option will allow the link to be open in a new tab window.
  */
 
 
+	/** ## Properties
+	 * @jdocs Here are the setter and/or getter properties of the ButtonGroup Component.
+	 * @prop {Array} list Sets or returns the list items of the button group.
+	 * @prop {String} variant Sets or returns the variant. Values can be “Contained” “Outlined” or “Text”
+	 * @prop {String} color Sets or returns the theme color of the button. Values can be “Default” “Primary” or “Secondary”
+	 * @prop {Array} toolTips Sets or returns the list of tooltip titles.
+	 * @prop {String} toolTipPosition Sets or returns the position of the tooltip. Values can be “left” “top” “right” or “bottom”
+	 * @prop {String} sizeVariant Sets or returns the size variant. Values can be “small” “medium” or “large”
+	 * @prop {String} orientation Sets or returns the orientation of the button group. Can be “horizontal” or “vertical”
+     * @prop {String} textColor Sets or returns the color of the button text.
+     * @prop {Number} textSize Sets or returns the font size of the button text.
+     * @prop {Array} activeItems Sets or returns the indexes of the active button items.
+	 */
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
+    /** @extern width */
 
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the button is touch
- * $$ btg.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-The button text.","num-The index of the correspoding button.","obj-The pointer click event object."]}
- */
 
+    /** @extern height */
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ btg.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-Button text.","num-The index of the corresponding button.","obj-The pointer event object."]}
- */
 
+    /** @extern opacity */
 
-/** ### setList ###
- * @brief setList
- * Sets the new list of the button group
- * $$ btg.setList(items) $$
- * @param {str} items A comma separated list or an array
- */
-
 
-/** ### setItemByIndex ###
- * @brief setItemByIndex
- * Sets a new text for the item in the button group
- * $$ btg.setItemByIndex(item, index) $$
- * @param {str} item The new text
- * @param {num} index The index of the item.
- */
-
+    /** @extern textSize */
 
-/** ### addItem ###
- * @brief addItem
- * Adds an additional item in the button group
- * $$ btg.addItem(item) $$
- * @param {str} item The additional item.
- */
-
-
-/** ### removeItemIndex ###
- * @brief removeItemIndex
- * Removes an item in the button group by its index
- * $$ btg.removeItemIndex(index) $$
- * @param {num} index The index of the item to be remove.
- */
-
 
-/** ### removeItemByName ###
- * @brief removeItemByName
- * Removes an item in the button group by its name
- * $$ btg.removeItemByName(name) $$
- * @param {str} name The name of the item to be remove.
- */
+    /** @extern textColor */
 
 
-/** ### popItem ###
- * @brief popItem
- * Removes the last item of the button group
- * $$ btg.popItem() $$
- */
+    /** @extern rotation */
 
 
-/** ### shiftItem ###
- * @brief shiftItem
- * Removes the first item in the button group
- * $$ btg.shiftItem() $$
- */
+    /** @extern fontFile */
 
 
-/** ### setToolTip ###
- * @brief setToolTip
- * Adds a tooltip to the ButtonGroup items
- * $$ btg.setToolTip(titles, pos) $$
- * @param {lst} titles The titles for each item in the ButtonGroup.
- * @param {str} pos The positio of the tooltip. \n Can be `top` `left` `right` `bottom` `bottom-end` `bottom-start` `left-end` `left-start` `right-end` `right-start` `top-end` `top-start`
- */
+    /** @extern visibility */
 
 
-/** ### enableElevation ###
- * @brief enableElevation
- * Enable of disable the elevation of the button group
- * $$ btg.enableElevation(enable) $$
- * @param {bin} enable `true` or `false`
- */
-
+    /** @extern type */
 
-/** ### setEnabled ###
- * @brief setEnabled
- * Enable or disable a button item in the button group
- * $$ btg.setEnabled(index, value) $$
- * @param {num} index The index of the button item.
- * @param {bin} value Values can be `true` or `false`.
- */
-
-
-/** ### getEnabled ###
- * @brief getEnabled
- * Get the enabled state of the button item in the button group
- * $$ btg.getEnabled(index) $$
- * @param {num} index The index of the button item in the button group.
- * @returns bin
- */
-
-
-/** ### setEnabledByName ###
- * @brief setEnabledByName
- * Enable or disable a button item by its name
- * $$ btg.setEnabledByName(name, value) $$
- * @param {str} name The button text.
- * @param {bin} value Values can be `true` or `false`.
- */
-
-
-/** ### getEnabledByName ###
- * @brief getEnabledByName
- * Get the enabled state of button item in the button group
- * $$ btg.getEnabledByName(name) $$
- * @param {str} name The button text.
- * @returns bin
- */
-
-
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ btg.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
-
-
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ btg.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
-
-
-/** ### show ###
- * @brief show
- * Show the component
- * $$ btg.show() $$
- */
-
-
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ btg.hide() $$
- */
-
-
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ btg.gone() $$
- */
-
-
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ btg.destroy() $$
- */
-
-
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ btg.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
-
-
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ btg.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
-
-
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ btg.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
-
-
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ btg.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
-
-
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ btg.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
-
-
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ btg.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
-
-
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the component
- * $$ btg.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-Left border radius in pixels.
- * @param {num} tr Top-Right border radius in pixels.
- * @param {num} bl Bottom-Left border radius in pixels.
- * @param {num} br Bottom-Right border radius in pixels.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
-
-
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ btg.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
-
-
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ btg.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
-
-
-
-// ------------- SAMPLES ------------- 
-
-
-    
+
+    /** @extern absWidth */
+
+
+    /** @extern absHeight */
+
+
+    /** @extern backColor */
+
+
+    /** @extern backImage */
+
+
+    /** @extern isVisible */
+
+
+    /** @extern top */
+
+
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+	/** ## Methods
+	 * @jdocs Here are the methods available for ButtonGroup Component
+	 */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when a button item is touch. If the button is “toggleable” the arguments pass into the callback function is “text, index, active, pos” respectively, where “active” is the active state of the button item.
+     * $$ btg.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {String} text The button text. @arg {Number} index The index of the corresponding button item. @arg {Boolean} active The active state of the button item if button is “toggleable”. @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setOnContextMenu
+     * Adds a callback function on right click.
+     * $$ btg.setOnContextMenu( callback ) $$
+     * @param {Function} callback The callback function to be called on context menu event or right click event. ---> @arg {String} text Button text. @arg {Number} index The index of the corresponding button. @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setList
+     * Sets the list of button items.
+     * $$ btg.setList( items ) $$
+     * @param {Array} items Button items.
+     */
+
+
+    /** ### getList
+     * Returns the list of button items.
+     * $$ btg.getList() $$
+     * @returns Array
+     */
+
+
+	/** ### setItemByIndex
+	 * Sets a new text for the item in the button group.
+	 * $$ btg.setItemByIndex( item, index ) $$
+	 * @param {String} item The new text
+	 * @param {Number} index The index of the item.
+	 */
+
+
+	/** ### addItem
+	 * Adds an additional item in the button group.
+	 * $$ btg.addItem( item ) $$
+	 * @param {String} item The additional item.
+	 */
+
+
+	/** ### removeItemByIndex
+	 * Removes an item in the button group by its index.
+	 * $$ btg.removeItemByIndex( index ) $$
+	 * @param {Number} index The index of the item to be remove.
+	 */
+
+
+	/** ### removeItemByName
+	 * Removes an item in the button group by its name.
+	 * $$ btg.removeItemByName( name ) $$
+	 * @param {String} name The name of the item to be remove.
+	 */
+
+
+	/** ### popItem
+	 * Removes the last item of the button group. This will return the item being removed.
+	 * $$ btg.popItem() $$
+	 */
+
+
+	/** ### shiftItem
+	 * Removes the first item in the button group. This will return the item being removed.
+	 * $$ btg.shiftItem() $$
+	 */
+
+
+	/** ### setToolTips
+	 * Adds a tooltips to the ButtonGroup items.
+	 * $$ btg.setToolTips(titles, pos) $$
+	 * @param {Array} titles The titles for each item in the ButtonGroup.
+	 * @param {String} [pos='top'] The positio of the tooltip. \n Can be “top” “left” “right” “bottom” “bottom-end” “bottom-start” “left-end” “left-start” “right-end” “right-start” “top-end” “top-start”
+	 */
+
+
+	/** ### enableElevation
+	 * Enable of disable the elevation of the button group.
+	 * $$ btg.enableElevation( enable ) $$
+	 * @param {Boolean} enable Can be “true” or “false”
+	 */
+
+
+	/** ### setEnabled
+	 * Enable or disable a button item in the button group.
+	 * $$ btg.setEnabled( index, value ) $$
+	 * @param {Number} index The index of the button item.
+	 * @param {Boolean} value Values can be “true” or “false”.
+	 */
+
+
+    /** ### getEnabled
+     * Get the enabled state of the button item in the button group.
+     * $$ btg.getEnabled( index ) $$
+     * @param {Number} index The index of the button item in the button group.
+     * @returns Boolean
+     */
+
+
+    /** ### setEnabledByName
+     * Enable or disable a button item by its name.
+     * $$ btg.setEnabledByName( name, value ) $$
+     * @param {String} name The button text.
+     * @param {Boolean} value Values can be “true” or “false”.
+     */
+
+
+    /** ### getEnabledByName
+     * Get the enabled state of button item in the button group.
+     * $$ btg.getEnabledByName( name ) $$
+     * @param {String} name The button text.
+     * @returns Boolean
+     */
+
+
+    /** ### setUrls
+     * Sets the urls for all button links.
+     * $$ btg.setUrls( urls ) $$
+     * @param {Array} urls An array of urls.
+     */
+
+
+    /** ### GetUrls
+     * Returns the urls of the buttons.
+     * @returns Array
+     */
+
+
+    /** @prop {Array} urls Sets or returns the urls of the buttons. */
+
+
+    /** ### setUrlByIndex
+     * Sets the url of a button by its index.
+     * $$ btg.setUrlByIndex(index, url) $$
+     * @param {Number} index The index of the link button.
+     * @param {String} url Link or page route.
+     * @param {Boolean} newTab Open this url in a new tab.
+     */
+
+
+    /** ### getUrlByIndex
+     * Returns the url of a button link by specifying its index.
+     * $$ btg.getUrlByIndex( index ) $$
+     * @param {Number} index The index of the button.
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Basic ButtonGroup
 class Main extends App
@@ -355,9 +360,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample ButtonGroup variants
 class Main extends App
@@ -390,9 +394,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample ButtonGroup colors
 class Main extends App
@@ -426,9 +429,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample ButtonGroup sizes
 class Main extends App
@@ -462,9 +464,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample ButtonGroup icons
 class Main extends App
@@ -498,9 +499,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Basic ButtonGroup
 from hybrid import ui
@@ -522,9 +522,8 @@ def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
  */
-    
-            
-    
+
+
 /**
 @sample Python ButtonGroup variants
 from hybrid import ui
@@ -552,9 +551,8 @@ def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
  */
-    
-            
-    
+
+
 /**
 @sample Python ButtonGroup colors
 from hybrid import ui
@@ -583,9 +581,8 @@ def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
  */
-    
-            
-    
+
+
 /**
 @sample Python ButtonGroup sizes
 from hybrid import ui
@@ -614,9 +611,8 @@ def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
  */
-    
-            
-    
+
+
 /**
 @sample Python ButtonGroup icons
 from hybrid import ui
@@ -645,5 +641,5 @@ def onTouch(text, index, event):
     # Display the touched button text
     ui.showPopup(text)
  */
-    
-            
+
+

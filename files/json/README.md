@@ -19,7 +19,7 @@
 		- [Custom Constructor positions](#custom-constructor-positions)
 		- [Custom Sample positions](#custom-sample-positions)
 	- [Generating](#generating)
-	- [Update Github Pages](#update-github-pages)
+    - [Update GitHub Pages](#update-github-pages)
 
 ## File Structure
 
@@ -54,7 +54,7 @@ json/<lang>/<ver>/<scope>/
 └─ samples<member>.txt   # large code examples
 ```
 
-Note: in fact, no file is reqired all the times. Following rules apply:
+Note: in fact, no file is required at all times. The following rules apply:
 - If _obj.json_ is defined, it can make use of _desc/\<member\>.md_ **and** _base.json_
 - If _obj.json_ is **not** defined, the description files in the _desc/_ directory will be used as scope contents
 - If _navs.json_ is **not** defined, the scope members (from _obj.json_ or _desc/_) will be listed as flat index (similar to the 'All' category)
@@ -322,14 +322,14 @@ If you want to put a sample of a sample.txt file to a specified position in your
 
 - in a terminal navigate to _'files'_ by executing `$ cd files`
 - execute `$ ./generate.js` to generate all docs of every language (`./generate.js` and `node generate.js` are synonym)
-- execute `$ ./generate.js -c` to foce a clean regeneration
+- execute `$ ./generate.js -c` to force a clean regeneration
 - execute `$ ./generate.js -help` to see more cli help
 - execute `$ ./generate.js <lang> [..]` to generate docs of a specific language
 - execute `$ ./generate.js <scope> [..]` to generate a specific scope
 - execute `$ ./generate.js <scope>.<pattern> [..]` to generate only certain members of a scope (pattern is a contained regex. - ie. app.Create will generate all members containing 'Create')
 - execute `$ ./generate.js <lang>.<scope> [..]` to generate a specific scope of a language
 
-Note: the script will only generate a scope if any file of the scope gen folder has been modified since the last generation of this scope. disable this behaviour with the -clean option.
+Note: the script will only generate a scope if any file of the scope gen folder has been modified since the last generation of this scope. Disable this behaviour with the -clean option.
 
 <details>
 <summary><b>Full generate.js option list</b></summary>
@@ -362,7 +362,7 @@ MEMBER-PATTERN:             RegEx pattern
 ```
 </details>
 
-## Update Github Pages
+## Update GitHub Pages
 
 To publish the generated html files on GitHub Pages execute the `updatePages` script
 ```sh

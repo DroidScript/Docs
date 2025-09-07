@@ -4,21 +4,21 @@
 /** # GetCountry #
  * @brief Get user country name
  * Returns the name of the device country (ie. “United Kingdom” or “Deutschland”)
- * 
+ *
  * See Also: @GetCountryCode,
- * 
+ *
  * See Also: @GetLanguage
- * $$ app.GetCountry() $$ 
+ * $$ app.GetCountry() $$
  * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show Country
 function OnStart()
@@ -27,16 +27,14 @@ function OnStart()
     app.Alert( name );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show Country
 from native import app
 
 def OnStart():
-    name = app.GetCountry()
+    <b>name = app.GetCountry()</b>
     app.Alert(name)
  */
-    
-            

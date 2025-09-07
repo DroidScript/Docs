@@ -4,17 +4,17 @@
 /** # RedirectAssets #
  * @brief Read assets from given folder
  * Reads the assets folders “Img”,“Snd”,“Html” and “Misc” from an external folder outside the apk.
- * $$ app.RedirectAssets(dir) $$ 
- * @param {str_ptd} dir 
+ * $$ app.RedirectAssets(dir) $$
+ * @param {str_ptd} dir
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Redirect Assets
 function OnStart()
@@ -29,9 +29,9 @@ function OnStart()
     app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Redirect Assets
 from native import app
@@ -46,5 +46,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

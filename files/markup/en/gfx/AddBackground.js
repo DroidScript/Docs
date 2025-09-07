@@ -4,17 +4,17 @@
 /** # AddBackground #
  * @brief Adds a background to the game
  * Adds a static background to your game.
- * $$ gfx.AddBackground(obj) $$ 
+ * $$ gfx.AddBackground(obj) $$
  * @param {gvo} obj CreateBackground
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Game;
@@ -30,9 +30,9 @@ function OnReady()
 	gfx.Play();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Game
@@ -45,5 +45,3 @@ def OnReady():
     gfx.AddBackground(sky)
     gfx.Play()
  */
-    
-            

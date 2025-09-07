@@ -3,17 +3,17 @@
 
 /** # ChooseWifi #
  * @brief Let the user choose a WiFi network
- * 
- * $$ app.ChooseWifi(title1, title2, callback, options, extra) $$ 
- * @param {str} title1 
- * @param {str} title2 
+ *
+ * $$ app.ChooseWifi(title1, title2, callback, options='', extra?) $$
+ * @param {str} title1
+ * @param {str} title2
  * @param {fnc_json} callback {"pNames":["ssid"],"pTypes":["str"]}
- * @param {str_com} options force|large
- * @param {str} extra ssids
+ * @param {str_com} [options=''] force|large
+ * @param {str} [extra] ssids
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 ChooseWifi lets the user select a WiFi network in range.
@@ -31,10 +31,10 @@ See Also:  @WifiConnect
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Choose WiFi Network
 function OnStart()
@@ -58,9 +58,9 @@ function OnWifiChoose( ssid )
      app.ShowPopup( "User selected " + ssid );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Choose WiFi Network
 from native import app
@@ -75,10 +75,8 @@ def OnStart():
     app.AddLayout( lay )
 
 def btnChoose_OnTouch():
-    app.ChooseWifi( "", "", OnWifiChoose )
+    <b>app.ChooseWifi( "", "", OnWifiChoose )</b>
 
 def OnWifiChoose( ssid ):
     app.ShowPopup( "User selected " + ssid )
  */
-    
-            

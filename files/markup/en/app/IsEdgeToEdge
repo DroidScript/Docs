@@ -1,0 +1,37 @@
+// ------------- HEADER SECTION -------------
+
+
+/** # IsEdgeToEdge #
+ * @brief Check if device supports edge to edge
+ * Checks if the device supports edge to edge.
+ *
+ * $$ app.IsEdgeToEdge() $$
+ * @returns bin
+*/
+
+
+
+
+// ------------- SAMPLES -------------
+
+
+
+/**
+@sample Check edge to edge
+function OnStart()
+{
+    <b>var isEdgeToEdge = app.IsEdgeToEdge();</b>
+    app.Alert( isEdgeToEdge, "is Connected:" );
+}
+ */
+
+
+
+/**
+@sample Python Check edge to edge
+from native import app
+
+def OnStart():
+    isEdgeToEdge = app.IsEdgeToEdge()
+    app.Alert(isEdgeToEdge, "is Connected:")
+ */

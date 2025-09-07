@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>AddPhysics</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>AddPhysics</h1>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Adds the Box2D physics engine to your game.</p>
+
+		<div class="samp">
+		phs = gfx.AddPhysics(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">gravity?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">accuracy?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">sleep?</a> )
+			→ <b>game object:</b> Physics
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Billiard</h3>
+			<div id="examp1" class="code-js" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <b id="snip1" class="code-js" style="font-size:100%">gfx<span class="token punctuation">.</span><span class="token function">AddPhysics</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">Enclose</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"left,top,right,bottom"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></b><br>
+				    <br>
+				    ball1 <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Forward.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ball2 <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Forward.png"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddSprite</span><span class="token punctuation">(</span> ball1<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.16</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ball1<span class="token punctuation">.</span><span class="token function">SetPhysics</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.01</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ball1<span class="token punctuation">.</span><span class="token function">SetVelocity</span><span class="token punctuation">(</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ball1<span class="token punctuation">.</span><span class="token function">SetShape</span><span class="token punctuation">(</span> <span class="token string">"round"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddSprite</span><span class="token punctuation">(</span> ball2<span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.24</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ball2<span class="token punctuation">.</span><span class="token function">SetPhysics</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.01</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ball2<span class="token punctuation">.</span><span class="token function">SetVelocity</span><span class="token punctuation">(</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    ball2<span class="token punctuation">.</span><span class="token function">SetShape</span><span class="token punctuation">(</span> <span class="token string">"round"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    gfx<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp1" class="code-py" style="font-size:70%">
+				<span class="token comment"># cfg.Game</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> ball1<span class="token punctuation">,</span> ball2<br>
+				    gfx<span class="token punctuation">.</span>AddPhysics<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>Enclose<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"left,top,right,bottom"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><br>
+				    <br>
+				    ball1 <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateSprite<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Forward.png"</span><span class="token punctuation">)</span><br>
+				    ball2 <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateSprite<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Forward.png"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    gfx<span class="token punctuation">.</span>AddSprite<span class="token punctuation">(</span>ball1<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.16</span><span class="token punctuation">)</span><br>
+				    ball1<span class="token punctuation">.</span>SetPhysics<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				    ball1<span class="token punctuation">.</span>SetVelocity<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.3</span><span class="token punctuation">)</span><br>
+				    ball1<span class="token punctuation">.</span>SetShape<span class="token punctuation">(</span><span class="token string">"round"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    gfx<span class="token punctuation">.</span>AddSprite<span class="token punctuation">(</span>ball2<span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.24</span><span class="token punctuation">)</span><br>
+				    ball2<span class="token punctuation">.</span>SetPhysics<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.8</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				    ball2<span class="token punctuation">.</span>SetVelocity<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2.3</span><span class="token punctuation">)</span><br>
+				    ball2<span class="token punctuation">.</span>SetShape<span class="token punctuation">(</span><span class="token string">"round"</span><span class="token punctuation">)</span><br>
+				    <br>
+				    gfx<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip1' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp1' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp1' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Collision</h3>
+			<div id="examp2" class="code-js" style="font-size:70%">
+				cfg<span class="token punctuation">.</span>Game<span class="token punctuation">;</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddPhysics</span><span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">Enclose</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"left,top,right,bottom"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.01</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    bunny <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSprite</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Img/Bunny.png"</span><span class="token punctuation">,</span> <span class="token string">"bunnies"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    squeak <span class="token operator">=</span> gfx<span class="token punctuation">.</span><span class="token function">CreateSound</span><span class="token punctuation">(</span> <span class="token string">"/Sys/Snd/Squeak.mp3"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<span class="token keyword">function</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    gfx<span class="token punctuation">.</span><span class="token function">AddSprite</span><span class="token punctuation">(</span> bunny<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.05</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    bunny<span class="token punctuation">.</span><span class="token function">SetPhysics</span><span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    bunny<span class="token punctuation">.</span><span class="token function">SetVelocity</span><span class="token punctuation">(</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.3</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				    <br>
+				    gfx<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span><br>
+				<br>
+				<br>
+				<b id="snip2" class="code-js" style="font-size:100%"><span class="token keyword">function</span> <span class="token function">OnCollide</span><span class="token punctuation">(</span> <span class="token parameter">a<span class="token punctuation">,</span> b</span> <span class="token punctuation">)</span><br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token keyword">if</span><span class="token punctuation">(</span> a<span class="token punctuation">.</span>group <span class="token operator">==</span> <span class="token string">"bunnies"</span> <span class="token punctuation">)</span><br>
+				        squeak<span class="token punctuation">.</span><span class="token function">Play</span><span class="token punctuation">(</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><br>
+				<span class="token punctuation">}</span></b>
+			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token comment"># cfg.Game</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> bunny<span class="token punctuation">,</span> squeak<br>
+				    gfx<span class="token punctuation">.</span>AddPhysics<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><br>
+				    gfx<span class="token punctuation">.</span>Enclose<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"left,top,right,bottom"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				    <br>
+				    bunny <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateSprite<span class="token punctuation">(</span><span class="token string">"/Sys/Img/Bunny.png"</span><span class="token punctuation">,</span> <span class="token string">"bunnies"</span><span class="token punctuation">)</span><br>
+				    squeak <span class="token operator">=</span> gfx<span class="token punctuation">.</span>CreateSound<span class="token punctuation">(</span><span class="token string">"/Sys/Snd/Squeak.mp3"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    gfx<span class="token punctuation">.</span>AddSprite<span class="token punctuation">(</span>bunny<span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.6</span><span class="token punctuation">,</span> <span class="token number">0.05</span><span class="token punctuation">)</span><br>
+				    bunny<span class="token punctuation">.</span>SetPhysics<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Dynamic"</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><br>
+				    bunny<span class="token punctuation">.</span>SetVelocity<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2.3</span><span class="token punctuation">)</span><br>
+				    <br>
+				    gfx<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnCollide</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">if</span> a<span class="token punctuation">.</span>group <span class="token operator">==</span> <span class="token string">"bunnies"</span><span class="token punctuation">:</span><br>
+				        squeak<span class="token punctuation">.</span>Play<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'snip2' )">    Copy    </a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
+			</div>
+		</div>
+
+		<p><i>The method list below shows the <u>functions which are added to game objects</u> when using physics.</i></p>
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>Physics</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_001" data-transition="pop" data-rel="popup">AddShape</a>(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_lst_001" data-transition="pop" data-rel="popup">points</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup">AddVelocity</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">angular?</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">bodyRelative?</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup">ApplyImpulse</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">offsetX=0</a>,
+			<a href="#pop_num_001" data-transition="pop" data-rel="popup">offsetY=0</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup" class="baseFunc">Contains</a>(
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">y</a> )
+			→ <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">EnablePhysics</a>(
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">enable</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">GetVelocity</a>(
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">component</a> )
+			→ <b>Number</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup">RemovePhysics</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_008" data-transition="pop" data-rel="popup" class="baseFunc">SetMatrix</a>(
+			<a href="#pop_obj_001" data-transition="pop" data-rel="popup">mtx</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_009" data-transition="pop" data-rel="popup">SetPhysics</a>(
+			<a href="#pop_mul_001" data-transition="pop" data-rel="popup">groupId</a>,
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">type</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">density?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">bounce?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">friction?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">linearDamp?</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">angularDamp?</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00a" data-transition="pop" data-rel="popup">SetShape</a>(
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">shape</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">width?</a>,
+			<a href="#pop_num_frc" data-transition="pop" data-rel="popup">height?</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00b" data-transition="pop" data-rel="popup">SetVelocity</a>(
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">x</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">y</a>,
+			<a href="#pop_std_num" data-transition="pop" data-rel="popup">angular?</a>,
+			<a href="#pop_std_bin" data-transition="pop" data-rel="popup">bodyRelative?</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_00c" data-transition="pop" data-rel="popup">UpdatePhysics</a>()
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_std_bin" class="ui-content"><b>Boolean</b></div>
+	<div data-role="popup" id="pop_std_num" class="ui-content"><b>Number</b></div>
+	<div data-role="popup" id="pop_num_frc" class="ui-content"><b>Number:</b> <i>fraction (0..1)</i></div>
+	<div data-role="popup" id="pop_num_001" class="ui-content"><b>Number:</b> -1..1</div>
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“Polygon”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <docstr>“x”</docstr> or <docstr>“y”</docstr> or <docstr>“angular”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“moveable”</docstr> or <docstr>“fixed”</docstr> or <docstr>“dynamic”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“rect”</docstr> or <docstr>“round”</docstr></div>
+	<div data-role="popup" id="pop_mul_001" class="ui-content"><b>String</b><br><b>Number</b></div>
+	<div data-role="popup" id="pop_obj_001" class="ui-content"><b>Object:</b> Matrix</div>
+	<div data-role="popup" id="pop_lst_001" class="ui-content"><b>List:</b> [ [<a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">x</a>, <a href="" onclick="app.ShowPopup('Number: fraction (0..1)')">y</a>] ]</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>phs.AddShape</b><br>Adds linear and angular velocity to the object</div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>phs.AddVelocity</b><br>Adds linear and angular velocity to the object</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>phs.ApplyImpulse</b><br>Applies an impulse (impulse=velocity*mass) to the object</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>phs.Contains</b><br>Checks if a given point is in the hitbox</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>phs.EnablePhysics</b><br>Temporally En/Disables physics for the game object.</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>phs.GetVelocity</b><br>Returns the current total linear velocity or the <docstr>“x”</docstr>, <docstr>“y”</docstr> or <docstr>“angular”</docstr> component.</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>phs.RemovePhysics</b><br>Removes physics from the game oblect.</div>
+	<div data-role="popup" id="pop_dsc_008" class="ui-content"><b>phs.SetMatrix</b><br>Applies a 2D transformation matrix to the game object.</div>
+	<div data-role="popup" id="pop_dsc_009" class="ui-content"><b>phs.SetPhysics</b><br>Set the physics properties for the game object.</div>
+	<div data-role="popup" id="pop_dsc_00a" class="ui-content"><b>phs.SetShape</b><br>Defines the shape for collision detection of the object.</div>
+	<div data-role="popup" id="pop_dsc_00b" class="ui-content"><b>phs.SetVelocity</b><br>Set the velocity of the game object.</div>
+	<div data-role="popup" id="pop_dsc_00c" class="ui-content"><b>phs.UpdatePhysics</b><br>Updates the internal position and size properties</div>
+</div>
+</body>
+
+</html>

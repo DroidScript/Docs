@@ -1,5 +1,170 @@
 <!-- /([^\\])([_*])/$1\\$2/ /:/&colon;/ -->
 
+### DS 2.76b2
+- 'Game' mode now fills the camera notch area too (if present).
+- Added "application/wasm" mime type to jetty/ide server.
+- cfg.ESM is now automatic if 'export' or 'import' statements are found.
+- Added support for .mjs files.
+- Added new file type 'JS-Module'.
+- Changed Hybrid samples to use import statements.
+- Enabled creation of Python apps from wifi IDE.
+- Switched Python Hybrid default to light mode.
+- Removed Github feature (more work on wifi ide version needed).
+- Added missing imports from many Python samples in docs.
+- Html and Hybrid apps no longer allow pinch/zoom/scroll by default.
+- Added 'desktop' option to app.CreateWebView() methods (enables desktop mode)
+- Added WebView.SetOptions method so that (most) options can be changed at runtime.
+
+### DS 2.76b1 (10-Feb 2025)
+- Fixed issue with null timer ids when using app.SetOnError in Node apps.
+- Added missing Bluetooth/Location permissions when app.DiscoverBtDevices is used.
+- Fixed right-click 'Install' option in wifi ide for ppks.
+- Fixed app.UnzipFile failure on some devices.
+- Added the .mjs MIME mapping to Jetty web server.
+- Fixed cfg.ESM mode for recent Android WebViews.
+- Fixed atob bug breaking pre-encoded plugin strings sent with CallScript method.
+- Fixed automatic resize for Hybrid and Python apps on screen rotation.
+- Added ext.deviceName and ext.appType fields to extension object.
+- Added appType parameter to ext_OnProject callback.
+- Fixed using app.CreateNode method inside services.
+- Fixed PlayStore.GetPurchases() not returning 'IAP' types.
+- Updated docs theme to look more modern (and match v3 editor).
+- Upgraded material icons version for docs and extensions.
+- Added SetWeight( weight, orient ) method to all controls.
+- Added Layout.SetWeightSum( sum ).
+- Switched plugin installer to use Android built-in zip extractor.
+- Fixed wiping out of .mjs files when using cfg.NodeESM mode.
+- Modified NodeJS os.homedir() func to return same as app.RealPath("/Private").
+- Added (dark) Google group to forum tab.
+- Fixed bug stopping demos work after using docs pythons samples.
+
+### DS 2.75b2
+- Prevented high CPU/power usage of NodeJS apps.
+- Fixed DoEvents to prevent lockups in Node based apps.
+- Added 'doevents' option to app.CopyFolder (keeps UI alive when copying large folders).
+- Fixed 'Simple' Node Native template.
+
+### DS 2.75b1 (25-Oct 2024)
+- Fixed crash when calling !buildapk option from Wifi-IDE.
+- Added extra 'password' param to !buildapk (user.keystore musts exist).
+- Added new '!buildaab' command to Wifi-IDE.
+- Added 'noHeadless' option to config.json (block TV/Headless mode).
+- Fixed app.SetOnError method for Node based apps (trap errors to prevent app exit).
+- Crypto now uses "AES/GCM/NoPadding" (pass "AES/ECB/PKCS5Padding" to app.CreateCrypt for old method)
+- Removed old samples tab from Wifi-IDE.
+- Removed scanning for 'HeartRate' keyword (related to restricted body sensor permission).
+- Fixed missing docs + 90% installation lockup for TV devices.
+
+## DS 2.74 (25-Sep 2024)
+- Removed body sensor permission (due to new Google Play restriction)
+
+### DS 2.73b1 (17-Sep 2024)
+- Updated Microcontroller extension to support unix style commands: ls,cd,pwd,cat,cp,rm,mkdir,rmdir.
+- Added Servo-2040, Motor-2040, Tiny-FX samples to Microcontroller extension.
+- Added support for micro_main.py file in normal apps (runs it on microcontroller if connected)
+- Changed WebView.SetRedirect() method 'from' param to use regex match instead of includes match.
+- Fixed crash when hiding keyboard in remote terminal.
+- Fixed unreliability of Notification listener on some devices.
+- Fixed app.SetDebug/app.SetDebugEnabled for Node services/apps.
+- Enabled word-wrap on samples list/extension.
+
+### DS 2.72b1 (22-Aug 2024)
+- Fixed issue with chopped off samples.
+- Moved TV mode to X version (due to GooglePlay AAB only restriction)
+
+### DS 2.71b1 (09-Aug 2024)
+- Added new Samples extension (with extra python samps).
+- Added new microcontroller extension.
+- Fixed app.SetOptions('UseBrowser') for HTML apps.
+- Enabled AndroidTV support.
+- Added !settings remote command to show settings dialog on TVs.
+- Enabled cam.SetDuplicateImage to be used with single image (allows flipping of preview).
+- Added __dirname and __filename support for DS extension server scripts.
+- Fixed Python/Hybrid template 'datetimepicker' error popup.
+- Fixed FileManager extension tilde filename issue + text searching.
+- Remove TV manifest entries unless cfg.TV is enabled.
+- Removed language selector (we don't have enough human resources to support it)
+- Removed deep links and unused services from APK/AAB manifests.
+- Fixed issue with with backspace hiding keyboard on blank lines when editing on device.
+- Fixed security exception when loading .jar based plugins on Android 14+.
+- Added internal retry mechanism for PlayStore component + new SetOnReady method.
+
+## DS 2.70 (13-Jul 2024)
+- Fixed app.SetOrientation in Python apps.
+- Fixed bug in app.CheckPermission for top level folders.
+- Added new "Media" permission for Android 13+.
+- Added missing "Query Images" to on-device samples list.
+- No longer need to disable password for local file browser to work.
+- Removed tab chars from Python 'Simple' template (4 spaces instead).
+- Fixed bluetooth 'no permissions' issue on Android 12+
+
+### DS 2.69b2p4
+- User no longer needs to remove extra .zip extension from downloaded ppk/spk files.
+- Set wifi ide editorToolbar width to 99%.
+
+### DS 2.69b2p3
+- Added speech.SetLanguage() method. eg. speech.SetLanguage("Fr").
+- Modified wifi server to work on Samsung devices.
+- Fix for hybrid app template with latest UI libs.
+- Removed wifi ide editorToolbar width (to prevent scrollbars).
+
+### DS 2.69b2p2
+- Fixed APK install 'NOT VALID' failure caused by min api v23 change.
+- Fixed cfg.NodeESM crash out error caused by chdir on .mjs file.
+- Fixed crash/lockup when opening of .ppk files.
+
+### DS 2.69b2p1
+- Fixed ide.AddModule() crash out.
+- Updated UI components to v28.
+- Fixed double slash problem with ext.ReadFile in extensions.
+- Added PhoneState.GetNumber() method + required permission.
+- Fixed SAF bug where folders with same root name assumed permissions were ok.
+
+### DS 2.69b2
+- Added web.SetOnBlob() method to handle objectUrls/blobs.
+- Enabled wifi button to work when hotspot running.
+- Added app.HideDialogs() method.
+- Wifi connect IP/Info dialog now hidden automatically on remote connect.
+- Upgraded Wifi IDE to use CodeMirror editor instead of Ace.
+- Added local File Browser extension.
+- Enabled cfg.ESM in Hybrid apps (Main class must be exported).
+- Fix Web App template.
+
+### DS 2.69b1
+- Moved up to minSdkVersion 23 (Android 6).
+- Added 'BypassDnd' option to CreateNotification() method.
+- Added app.Print() method (prints contents of the app screen).
+- Added app.HasExternalStorage() to check for read/write external sdcard/partition.
+- Fixed parent.SendMessage() in nodejs apps.
+- Added node.Func() and parent.Func() method to node apps.
+- Fixed docs plugin not extracting after update or .edit folder deletion.
+- Added Premium+ subscription option (Cloud Services).
+- Improved error handling for ds:/* includes.
+- Added cfg.ESM to enable ES module imports (Note: OnStart func must be exported).
+- Added app.Import() and app.Include() methods (app.Include now preferred over app.Script).
+
+## DS 2.68 (20-Feb 2024)
+- Fixed bluetooth permissions for Android12+.
+
+### DS 2.68b1p1
+- Fixed plugin docs not working.
+
+### DS 2.68b1
+- Fixed web.Reload() error.
+- Fixed app.CreateNode() cwd incorrect on scoped storage.
+- Made 'Bound' class available to pure node scripts.
+- Fixed issue with Node server callback deadlocks.
+- Added app.SetTimeout/SetInterval for Python apps.
+- Added 'quality' option to CamView.Record (high,low,cif,qvga,vga,480p,720p,1080p,2k,4k,8k,etc)
+- Modified USBSerial object to cope with ascii control chars (ctrl+d,ctrl+c etc)
+- Updated UI components to 0.27
+- Fixed FileManager extension not editing .htm files.
+- Added 'Command' context menu on device (extensions can add to this).
+- The 'project' filter in app.ListFolder() now excludes folders starting with '.' or '~'.
+- Added new 'Backup' option to menus for backing/restoring projects to Google Drive or sdcard etc.
+- Added new "Allow Background Launch" option, lets DS run apps from background.
+- Update docs to latest with Python sample support.
+
 ### DS 2.67b1 (15-Dec 2023)
 - Fixed bug stopping background services from running.
 - Fixed bug stopping some plugins from working (eg. BLEBeacon)
@@ -9,6 +174,7 @@
 - Fixed node.Execute() atob2 is not defined bug.
 - Disabled banner animation when in premium.
 - Added new forum extension to device IDE.
+- Improved remote Terminal.
 
 ## DS 2.66 (02-Dec 2023)
 - Removed docs auto-update (need more testing).

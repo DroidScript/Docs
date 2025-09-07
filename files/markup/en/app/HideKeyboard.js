@@ -4,18 +4,18 @@
 /** # HideKeyboard #
  * @brief Hide the device keyboard
  * Hides the device keyboard if it is currently shown.
- * 
+ *
  * See Also: @ShowKeyboard, @SetOnShowKeyboard
- * $$ app.HideKeyboard() $$ 
+ * $$ app.HideKeyboard() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Toggle Keyboard
 function OnStart()
@@ -39,9 +39,9 @@ function tgl_OnTouch( show )
 	else app.HideKeyboard();</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Toggle Keyboard
 from native import app
@@ -61,10 +61,8 @@ def OnStart():
     app.AddLayout( lay )
 
 def tgl_OnTouch( show ):
-    if show:
+    <b>if show:
         app.ShowKeyboard( edt )
     else:
-        app.HideKeyboard()
+        app.HideKeyboard()</b>
  */
-    
-            

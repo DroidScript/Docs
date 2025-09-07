@@ -5,22 +5,23 @@
  * @brief Creates a Home-Screen shortcut to an app
  * This method creates a shortcut of an app on your home screen - referencing to a js file runnable with DS.
  * Note: since Android 9 this method prompts a system dialog
- * 
+ *
  * See also: @GetShortcuts
- * $$ app.CreateShortcut(name, iconFile, file, options) $$ 
- * @param {str} name 
- * @param {str_ptf} iconFile 
- * @param {str_ptf} file 
- * @param {str_com} options Portrait|Landscape,Transparent,Debug:start app in debug mode,Game:runs in GameView mode|remote
+ * $$ app.CreateShortcut(name, iconFile, file, options?) $$
+ * @param {str} name
+ * @param {str_ptf} iconFile
+ * @param {str_ptf} file
+ * @param {str_com} [options] Portrait|Landscape,Transparent,Debug:start app in debug mode,Game:runs in GameView mode|remote
+ * @returns nil
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
@@ -30,17 +31,15 @@ function OnStart()
     app.ShowPopup( "Add Shortcut" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
-    file = app.GetAppPath() + "/" + app.GetAppName() + ".js"
+    <b>file = app.GetAppPath() + "/" + app.GetAppName() + ".py"</b>
     app.CreateShortcut( "Demo", "/Sys/Img/Icon.png", file )
     app.ShowPopup( "Add Shortcut" )
  */
-    
-            

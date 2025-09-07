@@ -4,18 +4,18 @@
 /** # GoToSleep #
  * @brief Puts the phone into sleep mode
  * Forces the screen to turn off and puts the device to sleep. (This has the same effect as pressing the power button)
- * 
+ *
  * See Also: @WakeUp
- * $$ app.GoToSleep() $$ 
+ * $$ app.GoToSleep() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Sleep and Wake
 function OnStart()
@@ -24,11 +24,11 @@ function OnStart()
     setTimeout("app.WakeUp()", 5000)
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python Sleep and Wake
 from native import app
 import time
 
@@ -37,5 +37,3 @@ def OnStart():
     time.sleep(5)
     app.WakeUp()
  */
-    
-            

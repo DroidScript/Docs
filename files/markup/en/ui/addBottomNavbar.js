@@ -1,399 +1,335 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addBottomNavbar #
+/** # BottomNavbar
  * @abbrev bmn
- * @brief addBottomNavbar
- * 
- * $$ bmn = ui.addBottomNavbar(parent, navs, options, width, height) $$ 
- * @param {obj} parent The parent layout where to add the BottomNavbar
- * @param {lst} navs An array whose elements are of the form `[ "Title", "Icon" ]`
- * @param {str_com} options one or a combination of the following: `Hidelabels`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-BottomNavbar Component
-*/
+ * The Bottom Navigation Bar (BottomNavBar) is a key element in mobile user interface design, typically placed at the bottom of the screen.
+ * @img(img1.png)
+ * @img(img2.png)
+ * @jdocs In Material Design, it features navigation icons or labels for quick access to app sections. It enhances user navigation, maintaining a consistent and ergonomic design across mobile applications. The Bottom Navigation Bar provides a visually clear and accessible way for users to switch between primary destinations or views. Add a bottom navigation bar into your app using the “addBottomNavbar” method like this:
+ * $$ bmn = ui.addBottomNavbar(parent, navs, options, width, height) $$
+ * @param {uio-Layout} parent The parent layout where to add the BottomNavbar
+ * @param {Array} navs An array whose elements are of the form “[ “Title", "Icon” ]”
+ * @param {String} [options] A comma separated options.\nPosition: “Fixed", "Static”\nLabel: “Hidelabels”
+ * @param {Number} [width] Fraction of the screen width “[0-1]”
+ * @param {Number} [height] Fraction of the screen height “[0-1]”
+ * @returns uio-BottomNavbar
+ */
 
 
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a bottom navigation bar to your app.
-
+/**
+@description
 An example of a navs array.
 <js>
 var navs = [
-    [ "Favorites", "favorites" ],
-    [ "Groups", "person" ],
-    [ "Folder", "folder" ]
+    [ “Favorites", "favorites” ],
+    [ “Groups", "person” ],
+    [ “Folder", "folder” ]
 ]
 </js>
- ### Properties
-These are the setter and getter properties for the addBottomNavbar Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns whether the bottom navigation is disabled or enabled. All navigation actions must be disabled to return <col nobox #fb8c00>true</col>. Otherwise, it will return <col nobox #fb8c00>false</col>.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>iconColor:"str:'Sets or returns the icon color. You can pass color in a hexadecimal format or rgb format.'"</smp>
-<smp noinl>iconSize:"num:'Sets or returns the icon font-size. You can also pass string values such as <col nobox #fb8c00>1.2rem</col> or <col nobox #fb8c00>18px</col>.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>labels:"bin:'Sets or returns a boolean whether the labels are shown or hidden on active state.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>list:"lst:'Sets or returns the navigation actions array. See <col nobox #fb8c00>navs</col> params above for format.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>value:"num:'Sets or returns the current value of the BottomNavbar. This is the index of the corresponding selected action.'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
  */
 
 
+    /** ## Properties
+     * @jdocs Here are the available setter and/or getter properties of the BottomNavbar Component.
+     * @prop {Boolean} labels Sets or returns a boolean whether the labels are shown or hidden on active state.
+     * @prop {Array} list Sets or returns the navigation actions array. See “navs” params above for format.
+     * @prop {Boolean} disabled Sets or returns whether the bottom navigation is disabled or enabled. All navigation actions must be disabled to return “true”. Otherwise, it will return “false”.
+     * @prop {Number} value Sets or returns the current value of the BottomNavbar. This is the index of the corresponding selected action.
+     * @prop {Number} iconSize Sets or returns the icon font-size. You can also pass string values such as “1.2rem” or “18px”.
+     * @prop {String} iconColor Sets or returns the icon color. You can pass color in a hexadecimal format or rgb format.
+     */
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
 
+    /** @extern width */
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ bmn.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["text","index","event"],"pTypes":["str-Bottom navigation action text.","num-Bottom navigation action index.","obj-The pointer event object."]}
- */
 
+    /** @extern height */
 
-/** ### setList ###
- * @brief setList
- * Sets the navigation actions list
- * $$ bmn.setList(navs) $$
- * @param {lst} navs The navigation actions array. See `navs` param above for format.
- */
 
+    /** @extern opacity */
 
-/** ### getList ###
- * @brief getList
- * Returns the navigation actions list
- * $$ bmn.getList() $$
- * @returns lst
- */
 
+    /** @extern textSize */
 
-/** ### selectItem ###
- * @brief selectItem
- * Sets navigation action to active by its name. If you are providing a wrong name, no action will be active
- * $$ bmn.selectItem(name) $$
- * @param {str} name The name to be set to active
- */
-
 
-/** ### selectItemByIndex ###
- * @brief selectItemByIndex
- * Sets a botttom navigation action to active by its index
- * $$ bmn.selectItemByIndex(index) $$
- * @param {num} index The index of the bottom navigation action to be selected
- */
-
-
-/** ### clearSelection ###
- * @brief clearSelection
- * Clears the selected navigation action
- * $$ bmn.clearSelection() $$
- */
-
-
-/** ### setItemByIndex ###
- * @brief setItemByIndex
- * Updates a navigation action by its index
- * $$ bmn.setItemByIndex(index, newName, newIcon) $$
- * @param {num} index The index to update
- * @param {str} newName The name of the navigation action
- * @param {str} newIcon Material icon
- */
-
+    /** @extern textColor */
 
-/** ### setIcon ###
- * @brief setIcon
- * Updates the icon of the given index
- * $$ bmn.setIcon(index, newIcon) $$
- * @param {num} index The index of the navigation action to update
- * @param {str} newIcon Material icon
- */
 
+    /** @extern rotation */
 
-/** ### addItem ###
- * @brief addItem
- * Adds a navigation action
- * $$ bmn.addItem(name, icon, index) $$
- * @param {str} name The name of the navigation action
- * @param {str} icon Material icon
- * @param {num} index The index in which to add the action.
- */
 
+    /** @extern fontFile */
 
-/** ### removeItemByIndex ###
- * @brief removeItemByIndex
- * Removes a navigation action by its given index
- * $$ bmn.removeItemByIndex(index) $$
- * @param {num} index The index of the navigation action to be remove
- */
 
+    /** @extern visibility */
 
-/** ### removeItemByName ###
- * @brief removeItemByName
- * Removes a navigation action by its given name
- * $$ bmn.removeItemByName(name) $$
- * @param {str} name The name of the navigation action to be remove.
- */
 
+    /** @extern type */
 
-/** ### shiftItem ###
- * @brief shiftItem
- * Removes the first navigation action
- * $$ bmn.shiftItem() $$
- */
 
+    /** @extern absWidth */
 
-/** ### popItem ###
- * @brief popItem
- * Removes the last navigation action
- * $$ bmn.popItem() $$
- */
 
+    /** @extern absHeight */
 
-/** ### setOnChange ###
- * @brief setOnChange
- * Sets a callback function to execute when bottom navbar value changes
- * $$ bmn.setOnChange(callback) $$
- * @param {fnc_json} callback {"pNames":["text","index"],"pTypes":["str-Bottom navigation action text.","num-Bottom navigation action index."]}
- */
 
+    /** @extern backColor */
 
-/** ### setEnabled ###
- * @brief setEnabled
- * Enable or disable a bottom navigation action. If you want to disable the component, use the `disable` property instead
- * $$ bmn.setEnabled(index, value) $$
- * @param {num} index The index of the navigation action.
- * @param {bin} value Values can be `true` or `false`.
- */
 
+    /** @extern backImage */
 
-/** ### getEnabled ###
- * @brief getEnabled
- * Get the enabled state of a navigation action
- * $$ bmn.getEnabled(index) $$
- * @param {num} index The index of the navigation action.
- * @returns bin
- */
 
+    /** @extern isVisible */
 
-/** ### setEnabledByName ###
- * @brief setEnabledByName
- * Enabled or disable a bottom navigation action by its name
- * $$ bmn.setEnabledByName(name, value) $$
- * @param {str} name The name of the bottom navigation action.
- * @param {bin} value Values can be `true` or `false`
- */
 
+    /** @extern top */
 
-/** ### getEnabledByName ###
- * @brief getEnabledByName
- * Get the enabled state of the bottom navigation action by its name
- * $$ bmn.getEnabledByName(name) $$
- * @param {str} name The name of the bottom navigation action.
- * @returns bin
- */
 
-
-/** ### showLabels ###
- * @brief showLabels
- * Shows the text label of the bottom navigation action
- * $$ bmn.showLabels() $$
- */
-
-
-/** ### hideLabels ###
- * @brief hideLabels
- * Hides the text label of the bottom navigation action
- * $$ bmn.hideLabels() $$
- */
-
-
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the component is touch
- * $$ bmn.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
- */
-
-
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ bmn.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
-
-
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ bmn.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
-
-
-/** ### show ###
- * @brief show
- * Show the component
- * $$ bmn.show() $$
- */
-
-
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ bmn.hide() $$
- */
-
-
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ bmn.gone() $$
- */
-
-
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ bmn.destroy() $$
- */
-
-
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ bmn.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
-
-
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ bmn.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
-
-
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ bmn.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
-
-
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ bmn.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
-
-
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ bmn.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
-
-
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ bmn.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
-
-
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the component
- * $$ bmn.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-Left border radius in pixels.
- * @param {num} tr Top-Right border radius in pixels.
- * @param {num} bl Bottom-Left border radius in pixels.
- * @param {num} br Bottom-Right border radius in pixels.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
-
-
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ bmn.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
-
-
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ bmn.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
-
-
-
-// ------------- SAMPLES ------------- 
-
-
-    
-/**
-@sample Sample navs array.
-var navs = [
-        [ "Favorites", "favorites" ],
-        [ "Groups", "person" ],
-        [ "Folder", "folder" ]
-    ]
- */
-    
-            
-    
+    /** @extern left */
+
+
+    /** @extern absTop */
+
+
+    /** @extern absLeft */
+
+
+    /** @extern parent */
+
+
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** ## Methods
+	 * @jdocs Here are the methods available for BottomNavbar Component
+	 */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the BottomNavbar item is touch.
+     * $$ bmn.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {String} name The name of the item. @arg {Number} value The value or index of the item. @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setList
+     * Sets the navigation actions list.
+     * $$ bmn.setList( navs ) $$
+     * @param {Array} navs The navigation actions array. See “navs” param above for format.
+     */
+
+
+    /** ### getList
+     * Returns the navigation actions list.
+     * @returns Array
+     */
+
+
+    /** ### selectItem
+     * Sets navigation action to active by its name. If you are providing a wrong name, no action will be active.
+     * $$ bmn.selectItem( name ) $$
+     * @param {String} name The name to be set to active
+     */
+
+
+    /** ### selectItemByIndex
+     * Sets a botttom navigation action to active by its index
+     * $$ bmn.selectItemByIndex( index ) $$
+     * @param {Number} index The index of the bottom navigation action to be selected
+     */
+
+
+    /** ### clearSelection
+     * Clears the selected navigation action.
+     * $$ bmn.clearSelection() $$
+     */
+
+
+    /** ### setItemByIndex
+     * Updates a navigation action by its index.
+     * $$ bmn.setItemByIndex( index, newName, newIcon ) $$
+     * @param {Number} index The index to update
+     * @param {String} newName The name of the navigation action
+     * @param {String} newIcon Material icon
+     */
+
+
+    /** ### setIcon
+     * Updates the icon of the given index.
+     * $$ bmn.setIcon( index, newIcon ) $$
+     * @param {Number} index The index of the navigation action to update
+     * @param {String} newIcon Material icon
+     */
+
+
+    /** ### addItem
+     * Adds a navigation action
+     * $$ bmn.addItem( name, icon ) $$
+     * @param {String} name The name of the navigation action
+     * @param {String} icon Material icon
+     * @param {Number} index The index in which to add the action.
+     */
+
+
+    /** ### removeItemByIndex
+     * Removes a navigation action by its given index.
+     * $$ bmn.removeItemByIndex( index ) $$
+     * @param {Number} index The index of the navigation action to be remove
+     */
+
+
+    /** ### removeItemByName
+     * Removes a navigation action by its given name.
+     * $$ bmn.removeItemByName( index ) $$
+     * @param {String} name The name of the navigation action to be remove.
+     * @@ This will work only on the latest browsers.
+     */
+
+
+    /** ### shiftItem
+     * Removes the first navigation action. This will return the item being removed.
+     * $$ bmn.shiftItem() $$
+     */
+
+
+    /** ### popItem
+     * Removes the last navigation action. This will return the item being removed.
+     * $$ bmn.popItem() $$
+     */
+
+
+    /** ### setOnChange
+     * Sets a callback function to execute when bottom navbar value changes.
+     * $$ bmn.setOnChange( callback ) $$
+     * @param {Function} callback A callback function. ---> @arg {String} text Bottom navigation action text. @arg {Number} index Bottom navigation action index.
+     */
+
+
+    /** ### setEnabled
+	 * Enable or disable a bottom navigation action. If you want to disable the component, use the “disable” property instead.
+	 * $$ bmn.setEnabled( index, value ) $$
+	 * @param {Number} index The index of the navigation action.
+	 * @param {Boolean} value Values can be “true” or “false”.
+	 */
+
+
+    /** ### getEnabled
+     * Get the enabled state of a navigation action.
+     * @param {Number} index The index of the navigation action.
+     * @returns Boolean
+     */
+
+
+    /** ### setEnabledByName
+     * Enabled or disable a bottom navigation action by its name.
+     * $$ bmn.setEnabledByName(name, value) $$
+     * @param {String} name The name of the bottom navigation action.
+     * @param {Boolean} value Values can be “true” or “false”
+     */
+
+
+    /** ### getEnabledByName
+     * Get the enabled state of the bottom navigation action by its name.
+     * $$ bmn. getEnabledByName( name ) $$
+     * @param {String} name The name of the bottom navigation action.
+     * @returns Boolean
+     */
+
+
+    /** ### showLabels
+     * Shows the text label of the bottom navigation action.
+     * $$ bmn.showLabels() $$
+     */
+
+
+    /** ### hideLabels
+     * Hides the text label of the bottom navigation action.
+     * $$ bmn.hideLabels() $$
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Basic
 class Main extends App
@@ -423,9 +359,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Hide or show labels
 class Main extends App
@@ -473,9 +408,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Custom styles
 class Main extends App
@@ -506,22 +440,18 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Sample navs array.
-from native import cfg
-
 navs = [
     ["Favorites", "favorites"],
     ["Groups", "person"],
     ["Folder", "folder"]
 ]
  */
-    
-            
-    
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -546,9 +476,8 @@ def OnStart():
 def onChange(text, index):
     ui.showPopup(text)
  */
-    
-            
-    
+
+
 /**
 @sample Python Hide or show labels
 from hybrid import ui
@@ -588,9 +517,8 @@ def hideLabels(event):
 def onChange(text, index):
     ui.showPopup(text)
  */
-    
-            
-    
+
+
 /**
 @sample Python Custom styles
 from hybrid import ui
@@ -618,5 +546,5 @@ def OnStart():
     # Set the icon size
     bmn.iconSize = "2rem"
  */
-    
-            
+
+

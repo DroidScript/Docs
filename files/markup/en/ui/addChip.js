@@ -1,247 +1,217 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addChip #
+/** # Chip
  * @abbrev chp
- * @brief addChip
- * 
- * $$ chp = ui.addChip(parent, text, options, width, height) $$ 
- * @param {obj} parent The parent layout where to add the Chip.
- * @param {str} text The text on the chip.
- * @param {str_com} options Color: `Primary` `Secondary` `Default` \n `Size`: `Small` `Medium` \n `Variant`: `Outlined` `Default` \n `Util`: `Touchable`
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-Chip Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a chip into your app.
-
- If you want to change the height of the Chip later on after initializing, pass the <col nobox #4c4>height</col> argument.
-
-### Properties
-These are the setter and getter properties for the addChip Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>avatar:"str:'Sets or returns the avatar. Can be image or a single character.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>color:"str:'Sets or returns the theme color of the chip. Values can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> <col nobox #fb8c00>Secondary</col>'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>deleteIcon:"str:'Sets or returns the delete icon.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>enabled:"bin:'Returns whether the chip is enabled or disabled.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>icon:"str:'Sets or returns the material icon font if icon is provided.'"</smp>
-<smp noinl>iconColor:"str:'Sets or returns the icon color in hexadecimal format.'"</smp>
-<smp noinl>iconSize:"num:'Sets or returns the font-size of the icon in css font-size format. You can pass string values to be more specific such as <col nobox #fb8c00>12px</col> <col nobox #fb8c00>1.5rem</col>.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>sizeVariant:"str:'Sets or returns the size variant. Values can be <col nobox #fb8c00>small</col> or <col nobox #fb8c00>medium</col>'"</smp>
-<smp noinl>text:"str:'Sets or returns the text of the chip.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>variant:"str:'Sets or returns the variant of the chip. Vaues can be <col nobox #fb8c00>Default</col> or <col nobox #fb8c00>Outlined</col>'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
+ * In mobile UI design, a Chip is a compact element displaying attributes, input, or actions.
+ * @img(img1.png)
+ * @jdocs Material Design defines it with rounded corners and a contained style. Chips offer a visual representation for categories, selections, or interactions, contributing to a clear and concise user interface in mobile applications. Add a chip into your app using the “addChip” method like this:
+ * $$ chp = ui.addChip(parent, text, options, width, height) $$
+ * @param {uio-Layout} parent The parent layout where to add the Chip.
+ * @param {String} text The text on the chip.
+ * @param {String} [options] A comma separated option.\nTheme Color: “Primary”, “Secondary”, “Default”\nSize: “Small”, “Medium”\nVariant: “Outlined”, “Default”\nUtil: “Touchable”, “Toggle”, “Link”, “NewTab”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”
+ * @param {Number} [height] Fraction of the parent height “[0-1]”
+ * @returns uio-Chip
+ * If you want to change the height of the Chip later on after initializing, pass the “height” argument.
+ * Theme colors will be applied only to active state when “Toggle” option is passed.
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setTouchable ###
- * @brief setTouchable
- * Sets the chip to clickable. This will add a pointer cursor into the chip when hovered
- * $$ chp.setTouchable(touchable) $$
- * @param {bin} touchable `true` or `false`
- */
-
-
-/** ### setOnDelete ###
- * @brief setOnDelete
- * Sets a callback function when the chip is deleted. This will automatically add a delete icon to the chip
- * $$ chp.setOnDelete(callback) $$
- * @param {fnc_json} callback {}
- */
+	/** ## Properties ##
+     * @jdocs Here are the available setters and/or getters of the Chip Component.
+	 * @prop {String} text Sets or returns the text of the chip.
+	 * @prop {String} icon Sets or returns the material icon font if icon is provided.
+	 * @prop {String} avatar Sets or returns the avatar. Can be image or a single character.
+	 * @prop {String} deleteIcon Sets or returns the delete icon.
+	 * @prop {String} sizeVariant Sets or returns the size variant. Values can be “small” or “medium”
+	 * @prop {Boolean} enabled Returns whether the chip is enabled or disabled.
+	 * @prop {String} variant Sets or returns the variant of the chip. Vaues can be “Default” or “Outlined”
+	 * @prop {String} color Sets or returns the theme color of the chip. Values can be “Default” “Primary” “Secondary”
+     * @prop {String} iconColor Sets or returns the icon color in hexadecimal format.
+     * @prop {Number} iconSize Sets or returns the font-size of the icon in css font-size format. You can pass string values to be more specific such as “12px” “1.5rem”.
+     * @prop {String} url Sets or returns the url if the chip is a link.
+	 */
 
 
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the chip
- * $$ chp.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern width */
 
 
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the component is touch
- * $$ chp.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
- */
+    /** @extern height */
 
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ chp.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
- */
+    /** @extern opacity */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ chp.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+    /** @extern textSize */
 
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ chp.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+    /** @extern textColor */
 
 
-/** ### show ###
- * @brief show
- * Show the component
- * $$ chp.show() $$
- */
+    /** @extern rotation */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ chp.hide() $$
- */
+    /** @extern fontFile */
 
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ chp.gone() $$
- */
+    /** @extern visibility */
 
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ chp.destroy() $$
- */
+    /** @extern type */
 
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ chp.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+    /** @extern absWidth */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ chp.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
+    /** @extern absHeight */
 
 
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ chp.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
+    /** @extern backColor */
 
 
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ chp.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
+    /** @extern backImage */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ chp.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
+    /** @extern isVisible */
 
 
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ chp.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
+    /** @extern top */
 
 
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ chp.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
+    /** @extern left */
 
 
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ chp.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
+    /** @extern absTop */
 
 
+    /** @extern absLeft */
 
-// ------------- SAMPLES ------------- 
+
+    /** @extern parent */
 
 
-    
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+	/** ## Methods
+	 * @jdocs Here are the methods available for Chips Component
+     */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the chip is touch.
+     * $$ chp.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Boolean} toggle Toggle state of the chip is Toggle option is passed. @arg {Object} pos The position of the touch event.
+     */
+
+
+	/** ### setTouchable
+	 * Sets the chip to clickable. This will add a pointer cursor into the chip when hovered.
+	 * $$ chp.setTouchable( touchable ) $$
+	 * @param {Boolean} touchable Can be “true” or “false”
+	 */
+
+
+	/** ### setOnDelete
+	 * Sets a callback function when the chip is deleted. This will automatically add a delete icon to the chip.
+	 * $$ chp.setOnDelete( callback ) $$
+	 * @param {Function} callback On delete callback function.
+	 */
+
+
+    /** ### setCornerRadius
+     * Sets the corner radius of the chip.
+     * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
+     * @param {Number} [tl] Top-left corner radius.
+     * @param {Number} [tr] Top-right corner radius.
+     * @param {Number} [bl] Bottom-left corner radius.
+     * @param {Number} [br] Bottom-right corner radius.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Chips
 class Main extends App
@@ -273,9 +243,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Deletable chip
 class Main extends App
@@ -299,9 +268,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Custom styles
 class Main extends App
@@ -325,9 +293,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Avatar
 class Main extends App
@@ -345,9 +312,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Chips
 from hybrid import ui
@@ -373,13 +339,9 @@ def OnStart():
 
 def onTouch(event):
     ui.showPopup("You touched the chip!")
-
-sample = Main()
-sample.start()
  */
-    
-            
-    
+
+
 /**
 @sample Python Deletable chip
 from hybrid import ui
@@ -397,13 +359,9 @@ def OnStart():
 
 def onDelete():
     ui.showPopup("Chip is deleted!")
-
-sample = Main()
-sample.start()
  */
-    
-            
-    
+
+
 /**
 @sample Python Custom styles
 from hybrid import ui
@@ -423,13 +381,9 @@ def OnStart():
 
     # Sets the text size of the chip control
     chip.textSize = 14
-
-sample = Main()
-sample.start()
  */
-    
-            
-    
+
+
 /**
 @sample Python Avatar
 from hybrid import ui
@@ -443,9 +397,6 @@ def OnStart():
 
     # Set the avatar property of the main layout
     chip.avatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hapus_Mango.jpg/220px-Hapus_Mango.jpg"
-
-sample = Main()
-sample.start()
  */
-    
-            
+
+

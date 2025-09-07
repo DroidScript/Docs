@@ -4,21 +4,21 @@
 /** # ClearData #
  * @brief Deletes app.Save*() storage
  * ClearData deletes variables saved via app.Save*(). The file parameter is optional. If given, the specified file will be used, otherwise it will be located in the apps private Folder.
- * 
+ *
  * See Also: @SetData,
- * 
+ *
  * See Also: @GetData
- * $$ app.ClearData(file) $$ 
- * @param {str_ptf} file 
+ * $$ app.ClearData(file?) $$
+ * @param {str_ptf} [file]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Save, Load and Clear Data
 var file = "demofile";
@@ -32,35 +32,43 @@ function OnStart()
     lay.AddChild( txtValues );
 
     btnClear = app.CreateButton( "Clear Data", 0.5, 0.1 );
-	btnClear.SetOnTouch( btnClear_OnTouch );
-	lay.AddChild( btnClear );
+    btnClear.SetOnTouch( btnClear_OnTouch );
+    lay.AddChild( btnClear );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
 
 function btnClear_OnTouch()
 {
-	<b>app.ClearData( file );</b>
+    <b>app.ClearData( file );</b>
     txtValues.SetText( getValues() );
-	app.ShowPopup( "Data Cleared." );
+    app.ShowPopup( "Data Cleared." );
 }
 
 function getValues()
 {
-    return (
+    runCount = app.LoadNumber( "runs", 0, file )
+    
+    data = (
         "saved Text: " + app.LoadText( "value", "No Value stored.", file ) + "\n" +
-        "click count: " + app.LoadNumber( "clicks", 0, file ) + "\n" +
+        "click count: " + runCount  + "\n" +
         "first start: " + app.LoadBoolean( "first", true, file ) + "\n");
+    
+    app.SaveNumber( "runs", runCount + 1, file )
+    app.SaveBoolean( "first", false, file )
+        
+    return data
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Save, Load and Clear Data
 from native import app
 
 file = "demofile"
+txtValues = None
 
 def OnStart():
     global txtValues
@@ -71,21 +79,29 @@ def OnStart():
     lay.AddChild( txtValues )
 
     btnClear = app.CreateButton( "Clear Data", 0.5, 0.1 )
-	btnClear.SetOnTouch( btnClear_OnTouch )
-	lay.AddChild( btnClear )
+    btnClear.SetOnTouch( btnClear_OnTouch )
+    lay.AddChild( btnClear )
 
-	app.AddLayout( lay )
+    app.AddLayout( lay )
 
 def btnClear_OnTouch():
-	<b>app.ClearData( file )</b>
+    <b>app.ClearData( file )</b>
     txtValues.SetText( getValues() )
-	app.ShowPopup( "Data Cleared." )
+    app.ShowPopup( "Data Cleared." )
 
 def getValues():
-    return (
-        "saved Text: " + app.LoadText( "value", "No Value stored.", file ) + "\n" +
-        "click count: " + app.LoadNumber( "clicks", 0, file ) + "\n" +
-        "first start: " + app.LoadBoolean( "first", True, file ) + "\n")
+    runCount = app.LoadNumber( "runs", 0, file )
+
+    data = f"""
+saved Text: {app.LoadText( "value", "No Value stored.", file )}
+run count: {runCount}
+first start: {app.LoadBoolean( "first", True, file )}
+"""
+
+    app.SaveNumber( "runs", runCount + 1, file )
+    app.SaveBoolean( "first", False, file )
+
+    return data
+
  */
-    
-            
+

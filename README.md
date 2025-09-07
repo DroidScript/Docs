@@ -42,8 +42,8 @@ To edit the Docs you need to 'fork' the DroidScript repository. The easiest way 
 When the Codespace is open, navigate to the files/markup/en directory and make changes on any file you want to contribute. DroidScript has multiple scopes each having its own subdirectory with every possible method defined as _markup.js_ file. Inside you can modify the description, subfunctions, parameters and more. Make sure to follow the [markup format](files/markup/README.md)!
 
 ### Commit Changes
-When you finished your changes switch to the git tab on the left and descibe briefly what you have changed in the commit message field. The first line should describe what you did in general and each following line should include a more detailed list of your changes.\
-After that commit and synchronize your changes to GitHub with the green button below. If you just opened the Codespace on the DroidScript repository it will ask to create a fork.
+When you finish your changes, switch to the Git tab on the left and describe briefly what you have changed in the commit message field. The first line should describe what you did in general and each following line should include a more detailed list of your changes.\
+After that, commit and synchronize your changes to GitHub with the green button below. If you just opened the Codespace on the DroidScript repository it will ask to create a fork.
 
 **Note:** there is an ongoing Codespace bug that prevents you from committing to your fork. If that applies to you, open your workspace terminal and execute `git push --set-upstream origin master`
 
@@ -55,7 +55,7 @@ When you are satisfied with your changes and want us to review your changes, go 
 <p align="center"><img src="files/Screenshot-PullRequest.jpg" alt="Pull Request Dialog" width="100%" style="max-width:1000px"></p>
 
 ### Check on your Pull Request
-When a developer is satisfied with the request he will merge them into the DroidScript repository. If not he will leave a comment on [your pull request](https://github.com/DroidScript/Docs/pull/60) so make sure to regulary check on it until it gets approved, and enable notifications.
+When a developer is satisfied with the request, they will merge it into the DroidScript repository. If not, they will leave a comment on [your pull request](https://github.com/DroidScript/Docs/pull/60) so make sure to regularly check on it until it gets approved, and enable notifications.
 
 <div style="text-align:center">
 <b><big>Thank you for your contribution and support of </strong>DroidScript.org</strong>.!</big></b>

@@ -4,21 +4,21 @@
 /** # ShowProgressBar #
  * @brief Show a progress bar dialog
  * Shows a dialog with a bar indicating the current progress of a certain thing.
- * 
+ *
  * See Also: @UpdateProgressBar, @HideProgressBar
- * $$ app.ShowProgressBar(title, percent, options) $$ 
- * @param {str} title 
- * @param {num_prc} percent 
- * @param {str} options Light
+ * $$ app.ShowProgressBar(title, percent?, options?) $$
+ * @param {str} title
+ * @param {num_prc} [percent]
+ * @param {str} [options] Light
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Progress Bar
 function OnStart()
@@ -31,20 +31,18 @@ function OnStart()
 	app.HideProgressBar();</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Progress Bar
 from native import app
 
 def OnStart():
-    app.ShowProgressBar( "Loading..." )
+    <b>app.ShowProgressBar( "Loading..." )
 
     for prog in range(100):
         app.UpdateProgressBar( prog )
 
-    app.HideProgressBar()
+    app.HideProgressBar()</b>
  */
-    
-            

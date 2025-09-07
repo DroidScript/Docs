@@ -5,10 +5,10 @@
  * @abbrev txt
  * @brief Returns a new text object
  * Creates a text label which is used to display texts in your game.
- * $$ txt = gfx.CreateText(text, fontSize, fontFile, align, callback) $$ 
- * @param {str} text 
- * @param {num} fontSize 
- * @param {str_ptf} fontFile 
+ * $$ txt = gfx.CreateText(text, fontSize, fontFile, align, callback) $$
+ * @param {str} text
+ * @param {num} fontSize
+ * @param {str_ptf} fontFile
  * @param {str} align left|center|right
  * @param {fnc_json} callback {}
  * @returns gvo-Text
@@ -17,7 +17,7 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### align
@@ -27,7 +27,7 @@
  * @returns str-left|center|right
  */
 
-                    
+
 /** @extern alpha */
 
 /** @extern angle */
@@ -41,7 +41,7 @@
  * @returns str_pth
  */
 
-                    
+
 /** ### fontSize
  * @prop
  * @brief pixel font size
@@ -49,7 +49,7 @@
  * @returns num_pxl
  */
 
-                    
+
 /** @extern height */
 
 /** @extern pivotX */

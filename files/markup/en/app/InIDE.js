@@ -2,18 +2,18 @@
 
 
 /** # InIDE #
- * 
- * $$ app.InIDE() $$ 
+ *
+ * $$ app.InIDE() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check IDE
 function OnStart()
@@ -22,9 +22,9 @@ function OnStart()
     app.Alert( inIDE, "Is in IDE:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check IDE
 from native import app
@@ -33,5 +33,3 @@ def OnStart():
     inIDE = app.InIDE()
     app.Alert( inIDE, "Is in IDE:" )
  */
-    
-            

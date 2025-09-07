@@ -4,19 +4,19 @@
 /** # SetRingerMode #
  * @brief Set current device ringer mode
  * Change the current ringer mode of the device which can be “Normal”, “Vibrate” or “Silent”.
- * 
+ *
  * See Also: @GetRingerMode
- * $$ app.SetRingerMode(mode) $$ 
+ * $$ app.SetRingerMode(mode) $$
  * @param {str} mode Normal|Vibrate|Silent
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample SetRingerMode Demo
 function OnStart()
@@ -46,9 +46,9 @@ function Notify()
     ntf.Notify();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python SetRingerMode Demo
 from native import app
@@ -67,12 +67,10 @@ def OnStart():
     app.AddLayout( lay )
 
 def SetRingerMode( mode, index):
-    app.SetRingerMode( mode )
+    <b>app.SetRingerMode( mode )</b>
 
 def Notify():
     ntf = app.CreateNotification()
     ntf.SetMessage( "RingerMode Demo", "RingerMode Demo notifies:", "Hello World" )
     ntf.Notify()
  */
-    
-            

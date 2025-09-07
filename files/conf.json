@@ -1,36 +1,40 @@
 {
 	"scopes": {
 		"intro": "Introduction",
-		"app": "Reference",
+		"app": "Native",
 		"gfx": "Game Engine",
 		"MUI": "Material UI",
-		"ui": "Hybrid UI"
+		"ui": "Hybrid UI",
+		"global": "Global Helpers"
 	},
 	"langs": {
 		"en": "English"
 	},
-	"vers": ["v265", "v264"],
-	"version": "v265",
-	"regHide": "^(_.*|.+\\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Destroy|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\\.(un)?loadTexture)$",
+	"vers": ["v278"],
+	"version": "v278",
+	"regHide": "^(_.*|.+\\._.*|(Create|Install)Wallpaper|Create(Object|ListView|NxtRemote|SmartWatch)|GetLast.*|(Set|Is)DebugEnabled|Odroid|Draw|Release|Explode|Detailed|IsEngine|SetOn(Touch|Connect)Ex|id|S?Obj|ctx\\.(un)?loadTexture)$",
 	"regControl": "^(Create(?!Debug).*|OpenDatabase|Odroid)$",
 	"tname": {
 		"all": "all types",
 		"bin": "Boolean",
 		"dso": "app object",
 		"gvo": "game object",
-		"swo": "smartwatch object",
+		"muo": "MUI object",
 		"jso": "JavaScript object",
 		"fnc": "Function",
 		"lst": "List",
 		"num": "Number",
 		"obj": "Object",
 		"str": "String",
+		"nil": "void",
 		"?": "unknown",
 		"uio": "ui object"
 	},
 	"tdesc": {
 		"lst_obj": "of objects",
 		"lst_num": "of numbers",
+		"lst_str": "of strings",
+		"lst_bin": "of booleans",
 		"num_byt": "bytes",
 		"num_col": "hexadecimal 0xrrggbb",
 		"num_dat": "datetime in milliseconds (from JS Date object)",

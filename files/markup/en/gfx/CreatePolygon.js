@@ -4,22 +4,22 @@
 /** # CreatePolygon #
  * @abbrev pol
  * Creates a polygonal game object.
- * $$ pol = gfx.CreatePolygon(points, pivotX, pivotY, color, lineWidth, lineColor, lineAlpha, group) $$ 
+ * $$ pol = gfx.CreatePolygon(points, pivotX, pivotY, color, lineWidth?, lineColor?, lineAlpha?, group?) $$
  * @param {lst} points [ point_x_y:num_frc ]
- * @param {num_frc} pivotX 
- * @param {num_frc} pivotY 
- * @param {num_col} color 
- * @param {num_pxl} lineWidth 
- * @param {num_col} lineColor 
- * @param {num_frc} lineAlpha 
- * @param {str} group 
+ * @param {num_frc} pivotX
+ * @param {num_frc} pivotY
+ * @param {num_col} color
+ * @param {num_pxl} [lineWidth]
+ * @param {num_col} [lineColor]
+ * @param {num_frc} [lineAlpha]
+ * @param {str} [group]
  * @returns gvo-Polygon
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern alpha */
@@ -53,12 +53,12 @@
 /** @extern width */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 cfg.Game;
 
 function OnLoad()
@@ -72,11 +72,11 @@ function OnReady()
     gfx.Play();
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 # cfg.Game
 
 def OnLoad():
@@ -87,5 +87,3 @@ def OnReady():
     gfx.AddGraphic(polygon, 0.2, 0.7 )
     gfx.Play()
  */
-    
-            

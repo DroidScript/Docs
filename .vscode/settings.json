@@ -2,6 +2,6 @@
     "livePreview.autoRefreshPreview": "On Changes to Saved Files",
     "livePreview.serverKeepAliveAfterEmbeddedPreviewClose": 1,
     "editor.detectIndentation": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.indentSize": 4
 }

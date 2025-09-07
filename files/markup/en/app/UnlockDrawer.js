@@ -5,17 +5,17 @@
  * @brief Unlock a locked drawer
  * Unlocks a locked drawer.
  * See Also @LockDrawer, @AddDrawer
- * $$ app.UnlockDrawer(side) $$ 
+ * $$ app.UnlockDrawer(side) $$
  * @param {str} side left|right
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -42,9 +42,9 @@ function OnLockChange( lock )
     else app.UnlockDrawer( "left" );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -71,5 +71,3 @@ def OnLockChange(lock):
     else:
         app.UnlockDrawer("left")
  */
-    
-            

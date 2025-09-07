@@ -4,17 +4,17 @@
 /** # CreateAlert #
  * @abbrev alr
  * A nice pop-up at the top of your current layout
- * $$ alr = MUI.CreateAlert(text, icon, color) $$ 
+ * $$ alr = MUI.CreateAlert(text, icon?, color?) $$
  * @param {str} text Popup text
- * @param {str} icon Material icon
- * @param {str_col} color 
+ * @param {str} [icon] Material icon
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern GetVisibility */
@@ -61,10 +61,10 @@
 /** @extern IsVisible */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample No icon
 cfg.Light
@@ -80,9 +80,9 @@ function OnStart()
     alr.Show()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With icon
 cfg.Light
@@ -105,9 +105,9 @@ function CloseAlert()
     alr.Hide()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample On close function
 cfg.Dark
@@ -130,9 +130,9 @@ function AlertOnClose(val)
         app.ShowPopup("You close me!")
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python No icon
 # cfg.Light, cfg.MUI
@@ -147,9 +147,9 @@ def OnStart():
     alr = MUI.MUI.CreateAlert(text)
     alr.Show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With icon
 # cfg.Light, cfg.MUI
@@ -170,9 +170,9 @@ def OnStart():
 def CloseAlert():
     alr.Hide()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python On close function
 # cfg.Dark, cfg.MUI
@@ -192,5 +192,3 @@ def AlertOnClose(val):
     if val:
         app.ShowPopup("You close me!")
  */
-    
-            

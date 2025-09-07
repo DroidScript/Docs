@@ -3,19 +3,19 @@
 
 /** # SetTheme #
  * Change the theme of your app to any created [Theme Object](CreateTheme.htm). The theme will only apply to objects created after the theme was set. You typically need to recreate all your controls or restart the app to apply the new theme.
- * 
+ *
  * <premium>
- * $$ app.SetTheme(theme) $$ 
+ * $$ app.SetTheme(theme) $$
  * @param {dso} theme CreateTheme
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Themes Demo
 var lay = null;
@@ -56,9 +56,9 @@ function spin_OnChange( item )
     CreateLayout();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Themes Demo
 from native import app
@@ -70,6 +70,7 @@ def OnStart():
     CreateLayout()
 
 def CreateLayout():
+    global lay
 
     if lay:
         app.DestroyLayout(lay)
@@ -91,12 +92,11 @@ def CreateLayout():
 
     app.AddLayout(lay)
 
-def spin_OnChange(item):
+def spin_OnChange(item, index):
+    global themeName
 
     themeName = item
     theme = app.CreateTheme(themeName)
     app.SetTheme(theme)
     CreateLayout()
  */
-    
-            

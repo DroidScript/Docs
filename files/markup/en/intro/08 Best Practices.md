@@ -207,3 +207,169 @@ function OnConfig()
     txt.SetSize( wid, high  );
 }
 </sample>
+
+<sample Python GetDeviceSpecs>
+from native import app
+
+from browser import window
+import json
+
+# https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels
+all_builds = json.loads('''{
+    "1":{"level":1,"codename":"(no code name)","version":"1.0"},
+    "2":{"level":2,"codename":"(no code name)","version":"1.1"},
+    "3":{"level":3,"codename":"Cupcake","version":"1.5"},
+    "4":{"level":4,"codename":"Donut","version":"1.6"},
+    "5":{"level":5,"codename":"Eclair","version":"2.0"},
+    "6":{"level":6,"codename":"Eclair","version":"2.0.1"},
+    "7":{"level":7,"codename":"Eclair","version":"2.1"},
+    "8":{"level":8,"codename":"Froyo","version":"2.2.x"},
+    "9":{"level":9,"codename":"Gingerbread","version":"2.3 - 2.3.2"},
+    "10":{"level":10,"codename":"Gingerbread","version":"2.3.3 - 2.3.7"},
+    "11":{"level":11,"codename":"Honeycomb","version":"3.0"},
+    "12":{"level":12,"codename":"Honeycomb","version":"3.1"},
+    "13":{"level":13,"codename":"Honeycomb","version":"3.2.x"},
+    "14":{"level":14,"codename":"Ice Cream Sandwich","version":"4.0.1 - 4.0.2"},
+    "15":{"level":15,"codename":"Ice Cream Sandwich","version":"4.0.3 - 4.0.4"},
+    "16":{"level":16,"codename":"Jelly Bean","version":"4.1.x"},
+    "17":{"level":17,"codename":"Jelly Bean","version":"4.2.x"},
+    "18":{"level":18,"codename":"Jelly Bean","version":"4.3.x"},
+    "19":{"level":19,"codename":"KitKat","version":"4.4 - 4.4.4"},
+    "20":{"level":20,"codename":"K or L","version":"4 or 5"},
+    "21":{"level":21,"codename":"Lollipop","version":"5.0"},
+    "22":{"level":22,"codename":"Lollipop","version":"5.1"},
+    "23":{"level":23,"codename":"MarshMallow","version":"6.0"},
+    "24":{"level":24,"codename":"Nougat","version":"7.0"},
+    "25":{"level":25,"codename":"Nougat","version":"7.1"},
+    "26":{"level":26,"codename":"Oreo","version":"8.0"},
+    "27":{"level":27,"codename":"Oreo","version":"8.1"},
+    "28":{"level":28,"codename":"Pie","version":"9"},
+    "29":{"level":29,"codename":"Q","version":"10"},
+    "30":{"level":30,"codename":"R","version":"11"},
+    "31":{"level":31,"codename":"S","version":"12"},
+    "32":{"level":32,"codename":"S_V2","version":"12"}
+}''')
+
+os_obj = all_builds.get(str(app.GetOSVersion())) #added str and .get to handle missing keys.
+if os_obj:
+    os_info = "Android " + os_obj["version"] + " (" + os_obj["codename"] + ") API level " + str(os_obj["level"])
+else:
+    os_info = str(app.GetOSVersion())
+
+lay, txt, scroller = None, None, None # initialize variables.
+
+#Called when application is started.
+def OnStart():
+    global lay, txt, scroller # declare global variables.
+    #Create a layout with objects vertically centered.
+    lay = app.CreateLayout("linear", "VCenter,FillXY")
+
+    # create viewr for specs
+    scroller = app.CreateScroller(1, 0.8)
+    specs = getDeviceSpecs()
+    txt = app.CreateText(specs, 1, 0.8, "left,multiLine")
+    txt.SetPadding(0.02, 0.01, 0.02, 0.01)
+    #txt.SetTextColor("#ff446666")
+    scroller.AddChild(txt)
+    lay.AddChild(scroller)
+
+    #Create a button and add it to layout.
+    btn = app.CreateButton("[fa-copy]", -1, -1, "fontAwesome")
+    btn.SetTextSize(32)
+
+    btn.SetOnTouch(btn_OnTouch)
+    lay.AddChild(btn)
+
+    #Add layout to app.
+    app.AddLayout(lay)
+    OnConfig()
+
+def btn_OnTouch():
+    app.SetClipboardText(txt.GetText())
+    app.ShowPopup("Copied to clipboard")
+
+def getBuilderVersion():
+    msg = "Apk Builder plugin not installed"
+    path = app.GetPrivateFolder("Plugins") + "/apkbuilder/Version.txt"
+    if app.FileExists(path):
+        msg = "Apk Builder version " + app.ReadFile(path)
+    elif app.IsAPK():
+        msg = "APK built with " + str(round(app.GetDSVersion(), 2)) #round and convert to string.
+    return msg
+
+def storageScoped():
+    return "Scoped" if app.IsScoped() else "Traditional"
+
+def getDeviceSpecs():
+    os = app.GetOSVersion()
+    model = app.GetModel()
+    tablet = app.IsTablet()
+    fromapk = app.IsAPK()
+    isChrome = app.IsChrome()
+    isPrem = app.IsPremium()
+    isTV = app.IsTV()
+    dsversion = round(app.GetDSVersion(), 2) #round
+    #Get screen dimensions.
+    sw = app.GetScreenWidth()
+    sh = app.GetScreenHeight()
+    dens = app.GetScreenDensity()
+    #Get display dimensions.
+    dw = app.GetDisplayWidth()
+    dh = app.GetDisplayHeight()
+    #Get drive details
+    intfld = app.GetInternalFolder()
+    extfld = app.GetExternalFolder()
+    intspace = app.GetFreeSpace("internal")
+    extspace = app.GetFreeSpace("external")
+    mem = "{:,}".format(app.GetMemoryInfo().total) #format with commas.
+
+    #specs are formatted as a comment so we can paste
+    #them somewhere convenient
+    try: os = os_info #use os_info from global scope.
+    except NameError: pass #handle the case where os_info is not defined.
+    
+    s = f"""
+*****
+os={os}
+{getBuilderVersion()}
+tablet={tablet}
+model={model}
+isChrome={isChrome}
+isTV={isTV}
+DroidScript={dsversion}
+Storage access={storageScoped()}
+screen width={sw}
+screen height={sh}
+screen density={dens}
+display width={dw}
+display height={dh}
+internal folder={intfld}
+external folder={extfld}
+int free space={intspace}
+ext free space={extspace}
+memory={mem}
+premium={isPrem}
+country code={app.GetCountryCode()}
+country={app.GetCountry()}
+language code={app.GetLanguageCode()}
+language={app.GetLanguage()}
+wifi={app.GetIPAddress()}
+userAgent={window.navigator.userAgent}
+*****
+"""
+
+    return s
+
+def OnConfig():
+    fixwid = lay.GetAbsWidth() / app.GetDisplayWidth()
+    fixhigh = lay.GetAbsHeight() / app.GetDisplayHeight()
+    wid = 1
+    high = 0.8
+    
+    if fixwid < 1: wid *= fixwid; #chromebook not using full width
+    if fixhigh < 1: high *= fixhigh #or height
+    
+    scroller.SetSize( wid,high )
+    txt.SetSize( wid, high )
+
+</sample>

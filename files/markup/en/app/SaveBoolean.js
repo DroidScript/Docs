@@ -3,22 +3,22 @@
 
 /** # SaveBoolean #
  * @brief Save a boolean value across multiple starts
- * Save a boolean value to remember varibale values between multiple app starts.
- * 
+ * Save a boolean value to remember variable values between multiple app starts.
+ *
  * See also: @LoadBoolean.
- * $$ app.SaveBoolean(name, value, file) $$ 
- * @param {str} name 
- * @param {bin} value 
- * @param {str_ptf} file 
+ * $$ app.SaveBoolean(name, value, file?) $$
+ * @param {str} name
+ * @param {bin} value
+ * @param {str_ptf} [file]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Detect First Start
 var file = "demofile";
@@ -35,9 +35,9 @@ function OnStart()
 	<b>app.SaveBoolean( "first", false, file );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Detect First Start
 from native import app
@@ -54,5 +54,3 @@ def OnStart():
 
     app.SaveBoolean( "first", False, file )
  */
-    
-            

@@ -4,20 +4,20 @@
 /** # SetInBackground #
  * @brief Set services to run in the background
  * Set the current service to run in the background.
- * 
+ *
  * See Also: @StartService, @SetInForeground.
- * $$ app.SetInBackground() $$ 
+ * $$ app.SetInBackground() $$
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 var serviceJS = `
 function OnStart()
 {
@@ -52,11 +52,11 @@ function tgl_OnTouch( fg )
     else svc.SendMessage( "bg" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 serviceJS = """
@@ -95,5 +95,3 @@ def OnStart():
 
     svc = app.CreateService("this", "this", OnSvcStart)
  */
-    
-            

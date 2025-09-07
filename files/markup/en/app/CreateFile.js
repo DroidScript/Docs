@@ -5,8 +5,8 @@
  * @abbrev fil
  * @brief Returns a new File object
  * Returns a File object.
- * $$ fil = app.CreateFile(file, mode) $$ 
- * @param {str_ptf} file 
+ * $$ fil = app.CreateFile(file, mode) $$
+ * @param {str_ptf} file
  * @param {str} mode r|w|rw
  * @returns dso-File
 */
@@ -14,10 +14,12 @@
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### Close ###
  * Close File
@@ -37,6 +39,7 @@
  * @brief Get pointer position
  * Returns the current pointer position in the file.
  * $$ fil.GetPointer() $$
+ * @returns num_int
  */
 
 
@@ -50,9 +53,9 @@
 /** ### ReadData ###
  * @brief Read data from file
  * Reads a amount of bytes from the file.
- * $$ fil.ReadData(len, mode) $$
- * @param {num_int} len 
- * @param {str} mode Int|Text|Hex
+ * $$ fil.ReadData(len, mode='Text') $$
+ * @param {num_int} len
+ * @param {str} [mode='Text'] Int|Text|Hex
  */
 
 
@@ -85,14 +88,14 @@
 /** ### Seek ###
  * CHange pointer position to a given byte in the file.
  * $$ fil.Seek(offset) $$
- * @param {num_int} offset 
+ * @param {num_int} offset
  */
 
 
 /** ### SetLength ###
  * Allocate memory for a file.
  * $$ fil.SetLength(len) $$
- * @param {num_int} len 
+ * @param {num_int} len
  */
 
 
@@ -100,77 +103,77 @@
  * @brief Let the pointer skip some bytes
  * Let the pointer skip a given number of bytes.
  * $$ fil.Skip(bytes) $$
- * @param {num_int} bytes 
+ * @param {num_int} bytes
  */
 
 
 /** ### WriteData ###
  * Write data to the file.
- * $$ fil.WriteData(data, mode) $$
+ * $$ fil.WriteData(data, mode='Text') $$
  * @param {str} data FA\,FB\,FC|250\,251\,252|abc46:low order 8-bit bytes
- * @param {str} mode Hex|Int|Text
+ * @param {str} [mode='Text'] Hex|Int|Text
  */
 
 
 /** ### WriteNumber ###
  * @brief Write number to the file
  * Writes a number to the file.
- * $$ fil.WriteNumber(data, type) $$
- * @param {num} data 
- * @param {str} type Byte|UByte|Bool|Float|FloatLE|Long|LongLE|Short|UShort|ShortLE|UShortLE|Int|UInt|IntLE
+ * $$ fil.WriteNumber(data, type='Int') $$
+ * @param {num} data
+ * @param {str} [type='Int'] Byte|UByte|Bool|Float|FloatLE|Long|LongLE|Short|UShort|ShortLE|UShortLE|Int|UInt|IntLE
  */
 
 
 /** ### WriteText ###
  * writes text to file
- * $$ fil.WriteText(data, type) $$
+ * $$ fil.WriteText(data, type='Text') $$
  * @param {str||lst} data [ bytes:num_int ]
- * @param {str} type UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters
+ * @param {str} [type='Text'] UTF:write UTF-8 encoded text,Bytes:8-bit bytes|Char:Write big-endian 16-bit characters
  */
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
-function btn_OnTouch()
+function OnStart()
 {
-	var file = app.CreateFile( "/sdcard/test.txt", "rw" );
+    var file = app.CreateFile( "/sdcard/test.txt", "rw" );
 
-	file.WriteText( "Hello", "Char" );
-	var len = file.GetLength();
-	console.log( "file len: " + len );
+    file.WriteText( "Hello", "Char" );
+    var len = file.GetLength();
+    console.log( "file len: " + len );
 
-	file.Seek( len );
-	file.WriteNumber( 77, "Byte" );
-	file.WriteData( "66,121,101", "Int" );
+    file.Seek( len );
+    file.WriteNumber( 77, "Byte" );
+    file.WriteData( "66,121,101", "Int" );
 
-	file.Seek( 0 );
-	var data = file.ReadData( 2 );
-	console.log( "first two bytes:" + data[0] + "," + data[1] );
+    file.Seek( 0 );
+    var data = file.ReadData( 2 );
+    console.log( "first two bytes:" + data[0] + "," + data[1] );
 
-	file.Seek( 0 );
-	alert( file.ReadText( "Line" ) );
+    file.Seek( 0 );
+    alert( file.ReadText( "Line" ) );
 
-	file.Close();
+    file.Close();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Example
 from native import app
 
-def btn_OnTouch():
+def OnStart():
     file = app.CreateFile( "/sdcard/test.txt", "rw" )
 
     file.WriteText( "Hello", "Char" )
     len = file.GetLength()
-    print( "file len: " + len )
+    print( "file len: ", len )
 
     file.Seek( len )
     file.WriteNumber( 77, "Byte" )
@@ -178,12 +181,10 @@ def btn_OnTouch():
 
     file.Seek( 0 )
     data = file.ReadData( 2 )
-    print( "first two bytes:" + data[0] + "," + data[1] )
+    print( "first two bytes:", data[0], ",", data[1] )
 
     file.Seek( 0 )
     app.Alert( file.ReadText( "Line" ) )
 
     file.Close()
  */
-    
-            

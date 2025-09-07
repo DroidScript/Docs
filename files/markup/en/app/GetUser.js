@@ -4,37 +4,35 @@
 /** # GetUser #
  * @brief Get current user email
  * Returns the email-address of the currently active user account.
- * 
+ *
  * See Also: @GetAccounts
- * $$ app.GetUser() $$ 
+ * $$ app.GetUser() $$
  * @returns str_acc
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show App Path
 function OnStart()
 {
-    <b>var usr = app.GetPath();</b>
+    <b>var usr = app.GetUser();</b>
     app.Alert( usr, "Active User:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show App Path
 from native import app
 
 def OnStart():
-    usr = app.GetPath()
+    <b>usr = app.GetUser()</b>
     app.Alert(usr, "Active User:")
  */
-    
-            

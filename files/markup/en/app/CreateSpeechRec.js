@@ -4,14 +4,14 @@
 /** # CreateSpeechRec #
  * @abbrev spr
  * @brief Returns a new SpeechRec object
- * 
- * $$ spr = app.CreateSpeechRec(options) $$ 
- * @param {str_com} options NoBeep,Partial
+ *
+ * $$ spr = app.CreateSpeechRec(options?) $$
+ * @param {str_com} [options] NoBeep,Partial
  * @returns dso-SpeechRec
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 The **SpeechRec** object can be used to listen for and recognize speech.
@@ -27,10 +27,12 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** ### Cancel ###
  * @brief Stop recognition
@@ -102,57 +104,58 @@ If the SpeechRec object does not recognize anything, the **OnError** callback fu
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Example
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	btn = app.CreateButton( "Talk To Me", 0.3, 0.1 );
-	btn.SetOnTouch( btn_OnTouch );
-	lay.AddChild( btn );
+    btn = app.CreateButton( "Talk To Me", 0.3, 0.1 );
+    btn.SetOnTouch( btn_OnTouch );
+    lay.AddChild( btn );
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 
 <b>	speech = app.CreateSpeechRec();
-	speech.SetOnReady( speech_OnReady );
-	speech.SetOnResult( speech_OnResult );
-	speech.SetOnError( speech_OnError );
+    speech.SetOnReady( speech_OnReady );
+    speech.SetOnResult( speech_OnResult );
+    speech.SetOnError( speech_OnError );
 </b>}
 
 function btn_OnTouch()
 {
-	speech.Recognize();
+    speech.Recognize();
 }
 
 function speech_OnReady()
 {
-	app.ShowPopup( "Listening...", "Short" );
+    app.ShowPopup( "Listening...", "Short" );
 }
 
 function speech_OnResult( results )
 {
-	app.ShowPopup( results[0] );
+    app.ShowPopup( results[0] );
 }
 
 function speech_OnError()
 {
-	app.ShowPopup( "Please speak more clearly!" );
+    app.ShowPopup( "Please speak more clearly!" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     global speech
+
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
 
     btn = app.CreateButton( "Talk To Me", 0.3, 0.1 )
@@ -161,10 +164,11 @@ def OnStart():
 
     app.AddLayout( lay )
 
-    speech = app.CreateSpeechRec()
+    <b>speech = app.CreateSpeechRec()
     speech.SetOnReady( speech_OnReady )
     speech.SetOnResult( speech_OnResult )
-    speech.SetOnError( speech_OnError )
+    speech.SetOnError( speech_OnError )</b>
+
 
 def btn_OnTouch():
     speech.Recognize()
@@ -172,11 +176,9 @@ def btn_OnTouch():
 def speech_OnReady():
     app.ShowPopup( "Listening...", "Short" )
 
-def speech_OnResult( results ):
+def speech_OnResult( results, _ ):
     app.ShowPopup( results[0] )
 
 def speech_OnError():
     app.ShowPopup( "Please speak more clearly!" )
  */
-    
-            

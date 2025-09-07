@@ -79,12 +79,34 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "generate markdown",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["-c", "-n", "-m"],
+            "program": "${workspaceFolder}/files/generate.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "generate tsx",
             "cwd": "${workspaceFolder}/files",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "args": ["-d"],
+            "args": ["-c", "-n", "-d"],
+            "program": "${workspaceFolder}/files/generate.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "generate navs",
+            "cwd": "${workspaceFolder}/files",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["-c", "-n", "-N"],
             "program": "${workspaceFolder}/files/generate.js"
         },
         {
@@ -101,12 +123,22 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "test",
+            "name": "smartDeclareSamples",
             "cwd": "${workspaceFolder}/files",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/files/test.js",
+            "program": "${workspaceFolder}/files/smartDeclareSamples.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "test",
+            "cwd": "${workspaceFolder}/files/test",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/files/test/test.js",
         }
     ]
 }

@@ -4,17 +4,17 @@
 /** # PlayRingtone #
  * @brief Play specific ringtone type
  * Play a specific ringtone type based on the users device settings for ringtones. _Type_ can be “Alarm”, “Notification” or “Ringtone”.
- * $$ app.PlayRingtone(type) $$ 
+ * $$ app.PlayRingtone(type) $$
  * @param {str} type Alarm|Notification|Ringtone
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Play Notification Sound
 function OnStart()
@@ -30,12 +30,12 @@ function OnStart()
 
 function btn_OnTouch()
 {
-    app.PlayRingtone("Notification");
+    <b>app.PlayRingtone("Notification");</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Play Notification Sound
 from native import app
@@ -50,7 +50,5 @@ def OnStart():
     app.AddLayout(lay)
 
 def btn_OnTouch():
-    app.PlayRingtone("Notification")
+    <b>app.PlayRingtone("Notification")</b>
  */
-    
-            

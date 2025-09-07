@@ -1,53 +1,51 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # showProgressDialog #
+/** # ProgressDialog
  * @abbrev prd
- * @brief showProgressDialog
- * Shows a progress dialog component into your app.
- * 
- * ### Properties
- * These are the setter and getter properties for the showProgressDialog Component.
- * <smp noinl>text:"str:'Sets or returns the ProgressDialog text.'"</smp>
- * $$ prd = ui.showProgressDialog(text, options) $$ 
- * @param {str} text The text message of the progress dialog. Options can be \n `AutoCancel` to close the dialog when backdrop is click.
- * @param {str_com} options 
- * @returns obj-ProgressDialog
-*/
-
-
-
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### show ###
- * @brief show
- * Show the progress dialog component
- * $$ prd.show() $$
+ * A ProgressDialog is a pop-up dialog that indicates the progress of a task, often accompanied by a loading spinner or bar.
+ * @img(img1.png)
+ * @jdocs It provides visual feedback to users during time-consuming operations, enhancing the overall user experience by conveying that the application is actively working on a task. Show a progress dialog in your app using the “showProgressDialog” method like this:
+ * $$ prd = ui.showProgressDialog(text, options) $$
+ * @param {String} [text] The text message of the progress dialog.
+ * @param {String} [options] A comma separated options.\n“AutoCancel” to close the dialog when backdrop is click.
+ * @returns uio-ProgressDialog
  */
 
 
-/** ### hide ###
- * @brief hide
- * Hides the dialog component
- * $$ prd.hide() $$
- */
+	/** ## Properties
+	 * @jdocs Here are the available setters and getters for the ProgressDialog Component.
+	 * @prop {String} text Sets or returns the ProgressDialog text.
+	 */
 
 
-/** ### setOnClose ###
- * @brief setOnClose
- * Adds a callback handler method on close event
- * $$ prd.setOnClose(callback) $$
- * @param {fnc_json} callback {}
- */
+	/** ## Methods
+	 * @jdocs Here are the available methods for the ProgressDialog Component.
+	 */
 
 
+    /** ### show
+	 * Show the progress dialog component.
+	 * $$ prd.show() $$
+	 */
 
-// ------------- SAMPLES ------------- 
+
+	/** ### hide
+	 * Hides the dialog component.
+	 * $$ prd.hide() $$
+	 */
 
 
-    
+	/** ### setOnClose
+	 * Adds a callback handler method on close event.
+	 * $$ prd.setOnClose(callback) $$
+	 * @param {Function} callback The callback function.
+	 */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Progress Dialog
 class Main extends App
@@ -71,11 +69,10 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
-@sample Nocancel progress dialog
+@sample  Nocancel progress dialog
 class Main extends App
 {
     onStart()
@@ -103,9 +100,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Progress Dialog
 from hybrid import ui
@@ -118,12 +114,12 @@ def OnStart():
 def onTouch(event):
     ui.showProgressDialog("Loading...", "AutoCancel")
  */
-    
-            
-    
+
+
 /**
 @sample Python Nocancel progress dialog
 from hybrid import ui
+from browser import timer
 
 def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
@@ -131,13 +127,14 @@ def OnStart():
     btn.setOnTouch(onTouch)
 
 def onTouch(event):
+    global pdlg
     pdlg = ui.showProgressDialog("Loading...", "NoCancel")
+    timer.set_timeout(hideProgressDialog, 2000)
 
-    def hideProgressDialog():
-        pdlg.hide()
-        ui.showPopup("Progress dialog is close!")
-
-    app.SetTimeout(hideProgressDialog, 2000)
+def hideProgressDialog():
+    global pdlg
+    pdlg.hide()
+    ui.showPopup("Progress dialog is close!")
  */
-    
-            
+
+

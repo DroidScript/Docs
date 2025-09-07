@@ -3,13 +3,13 @@
 
 /** # SetOnKey #
  * @brief Catch key events fired in your app
- * 
- * $$ app.SetOnKey(callback) $$ 
+ *
+ * $$ app.SetOnKey(callback) $$
  * @param {fnc_json} callback {"pNames":["action","name","keycode","extrakeys"],"pTypes":["str-DOWN|UP","str-ENTER,VOLUME_DOWN,VOLUME_UP,BACK,MENU,...","num_int","str-Shift,Ctrl,Alt,Meta"]}
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 You can use SetOnKey for receiving and handling all key events fired in the application.
@@ -23,10 +23,10 @@ See Also: @SimulateKey
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demonstration
 app.DisableKeys( 'VOLUME_DOWN,VOLUME_UP,BACK' );
@@ -60,9 +60,9 @@ function OnKey(action, name, code, extra) {
     txt.SetText( text );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Surprise
 var prev;
@@ -93,9 +93,9 @@ function OnKey(action, name, code, extra)
     prev = action;
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demonstration
 from native import app
@@ -114,24 +114,29 @@ def OnStart():
 
     app.AddLayout( lay )
 
-    app.SetOnKey( OnKey )
+    <b>app.SetOnKey( OnKey )</b>
 
     edt.Focus()
     app.ShowKeyboard( edt )
     edt.Gone()
 
 def OnKey(action, name, code, extra):
-    text = "action:" + action + "\nname  :" + name + "\ncode  :" + code + "\nextra :" + extra
+    text = f"""
+    action: {action}
+    name: {name}
+    code: {code}
+    extra: {extra}"""
+
     txt.SetText( text )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Surprise
 from native import app
 
-prev
+prev = None
 
 def OnStart():
     global lay
@@ -150,6 +155,8 @@ def OnStart():
     app.SetOnKey( OnKey )
 
 def OnKey(action, name, code, extra):
+    global prev
+
     if action != prev:
         if action == "Down":
             lay.Animate( "SlideFromBottom", None, 300 )
@@ -157,5 +164,3 @@ def OnKey(action, name, code, extra):
             lay.Animate( "SlideToBottom", None, 300 )
     prev = action
  */
-    
-            

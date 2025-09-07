@@ -5,20 +5,20 @@
  * @abbrev cde
  * @brief Returns a new CodeEdit object
  * CreateCodeEdit is a control for premium users which is like a TextEdit but it has advanced methods.
- * 
+ *
  * <premium>
- * $$ cde = app.CreateCodeEdit(text, width, height, options) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_com} options FillX/Y
+ * $$ cde = app.CreateCodeEdit(text, width=-1, height=-1, options?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_com} [options] FillX/Y
  * @returns dso-CodeEdit
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -26,6 +26,8 @@
 /** @extern Animate */
 
 /** @extern Batch */
+
+/** @extern data */
 
 /** @extern ClearFocus */
 
@@ -79,7 +81,7 @@
  * @brief Get the start character index of a line
  * Returns at which character in the text a certain line begins.
  * $$ cde.GetLineStart(line) $$
- * @param {num_int} line 
+ * @param {num_int} line
  * @returns num_int
  */
 
@@ -143,7 +145,7 @@
  * @brief Underlines a certain line in the text
  * Highlights a specific line in the text with a thin red underline.
  * $$ cde.HighlightLine(line) $$
- * @param {num_int} line 
+ * @param {num_int} line
  */
 
 
@@ -151,7 +153,7 @@
  * @brief Insert text at the cursor
  * Inserts a string at the current cursor position.
  * $$ cde.InsertText(text) $$
- * @param {str} text 
+ * @param {str} text
  */
 
 
@@ -180,17 +182,17 @@
  * @brief Replace the selected text
  * Replaces the current selection with the passed text.
  * $$ cde.Replace(text) $$
- * @param {str} text 
+ * @param {str} text
  */
 
 
 /** ### ReplaceAll ###
  * Replace all occurances of a string in the text.
- * $$ cde.ReplaceAll(text, newText, matchCase, wholeWord) $$
- * @param {str} text 
- * @param {str} newText 
- * @param {bin} matchCase 
- * @param {bin} wholeWord 
+ * $$ cde.ReplaceAll(text, newText, matchCase=false, wholeWord=false) $$
+ * @param {str} text
+ * @param {str} newText
+ * @param {bin} [matchCase=false]
+ * @param {bin} [wholeWord=false]
  */
 
 
@@ -198,20 +200,20 @@
  * @brief Replace a range of the text with a string
  * Replaces a given range in the text with some string.
  * $$ cde.ReplaceText(text, start, end) $$
- * @param {str} text 
- * @param {num_int} start 
- * @param {num_int} end 
+ * @param {str} text
+ * @param {num_int} start
+ * @param {num_int} end
  */
 
 
 /** ### Search ###
  * @brief Search and select a string in the text
  * Search for a string in the text in a given direction and selects it.
- * $$ cde.Search(text, direction, matchCase, wholeWord) $$
- * @param {str} text 
- * @param {str} direction Up|Down
- * @param {bin} matchCase 
- * @param {bin} wholeWord 
+ * $$ cde.Search(text, direction='Down', matchCase=false, wholeWord=false) $$
+ * @param {str} text
+ * @param {str} [direction='Down'] Up|Down
+ * @param {bin} [matchCase=false]
+ * @param {bin} [wholeWord=false]
  */
 
 
@@ -246,7 +248,7 @@
 /** ### SetCursorPos ###
  * Change the current cursor position.
  * $$ cde.SetCursorPos(position) $$
- * @param {num_int} position 
+ * @param {num_int} position
  */
 
 
@@ -300,8 +302,8 @@
 /** ### SetSelection ###
  * Selects part of the text in a given range.
  * $$ cde.SetSelection(start, stop) $$
- * @param {num_int} start 
- * @param {num_int} stop 
+ * @param {num_int} start
+ * @param {num_int} stop
  */
 
 
@@ -309,7 +311,7 @@
  * @brief En/Disable cursor selection mode
  * En/Disables the selection mode for the cursor.
  * $$ cde.SetSelectMode(onOff) $$
- * @param {bin} onOff 
+ * @param {bin} onOff
  */
 
 
@@ -325,11 +327,13 @@
  * @brief En/Disable device keyboard
  * En/Disable usage of the device keyboard.
  * $$ cde.SetUseKeyboard(onOff) $$
- * @param {bin} onOff 
+ * @param {bin} onOff
  */
 
 
 /** @extern SetVisibility */
+
+/** @extern SetWeight */
 
 /** @extern Show */
 
@@ -342,43 +346,41 @@
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample dark scheme
 function OnStart()
 {
-	lay = app.CreateLayout( "linear", "VCenter,FillXY" );
+    lay = app.CreateLayout( "linear", "VCenter,FillXY" );
 
-	<b>cde = app.CreateCodeEdit( "", 1, 1 );
-	cde.SetText(app.ReadFile("/assets/templates/js/Simple.js"))
-	cde.SetLanguage(".js");
-	cde.SetColorScheme( "dark" );
-	lay.AddChild( cde );</b>
+    <b>cde = app.CreateCodeEdit( "", 1, 1 );
+    cde.SetText(app.ReadFile("/assets/templates/js/Simple.js"))
+    cde.SetLanguage(".js");
+    cde.SetColorScheme( "dark" );
+    lay.AddChild( cde );</b>
 
-	app.AddLayout( lay );
+    app.AddLayout( lay );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python dark scheme
-from hybrid import ui
 from native import app
 
 def OnStart():
     lay = app.CreateLayout( "Linear", "VCenter,FillXY" )
 
-    cde = ui.CodeEdit("", 1, 1)
+    <b>cde = app.CreateCodeEdit("", 1, 1)
     cde.SetText(app.ReadFile("/assets/templates/js/Simple.js"))
     cde.SetLanguage(".js")
     cde.SetColorScheme("dark")
-    lay.AddChild(cde)
+    lay.AddChild(cde)</b>
 
     app.AddLayout(lay)
  */
-    
-            
+

@@ -5,17 +5,17 @@
  * @brief Suppress all touch events
  * Use this method to prevent any user interaction with the app.
  * You could use this for a safe mode for a slideshow.
- * $$ app.DisableTouch(disable) $$ 
- * @param {bin} disable 
+ * $$ app.DisableTouch(disable) $$
+ * @param {bin} disable
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Demo
 function OnStart()
@@ -35,14 +35,13 @@ function btn_OnTouch()
 	app.ShowPopup( "Touch Disabled." );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Demo
 from native import app
 
-<!--[CDATA[
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY,touchspy" )
 
@@ -55,7 +54,5 @@ def OnStart():
 def btn_OnTouch():
     app.DisableTouch( True )
     app.ShowPopup( "Touch Disabled." )
-]]>
+
  */
-    
-            

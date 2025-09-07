@@ -4,17 +4,17 @@
 /** # IsPortrait #
  * @brief Check if device is in portrait mode
  * Checks if the device is in portrait mode.
- * $$ app.IsPortrait() $$ 
+ * $$ app.IsPortrait() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Portrait
 function OnStart()
@@ -23,9 +23,9 @@ function OnStart()
     app.Alert( isPortrait, "is Portrait:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Portrait
 from native import app
@@ -34,5 +34,3 @@ def OnStart():
     <b>isPortrait = app.IsPortrait()</b>
     app.Alert(isPortrait, "is Portrait:")
  */
-    
-            

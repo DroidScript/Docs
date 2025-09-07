@@ -4,23 +4,23 @@
 /** # AddGraphic #
  * Adds a basic shape object to the game.
  * See Also: @CreateCircle, @CreateEllipse, @CreateRectangle, @CreatePolygon
- * $$ gfx.AddGraphic(obj, x, y, w, h, angle, alpha) $$ 
- * @param {obj} obj 
- * @param {num_frc} x 
- * @param {num_frc} y 
- * @param {num_frc} w 
- * @param {num_frc} h 
- * @param {num_rad} angle 
- * @param {num_frc} alpha 
+ * $$ gfx.AddGraphic(obj, x, y, w?, h?, angle?, alpha?) $$
+ * @param {obj} obj
+ * @param {num_frc} x
+ * @param {num_frc} y
+ * @param {num_frc} [w]
+ * @param {num_frc} [h]
+ * @param {num_rad} [angle]
+ * @param {num_frc} [alpha]
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Game;
@@ -36,9 +36,9 @@ function OnReady()
 	gfx.Play();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Game
@@ -51,5 +51,3 @@ def OnReady():
     gfx.AddGraphic(rect, .1, 0.4)
     gfx.Play()
  */
-    
-            

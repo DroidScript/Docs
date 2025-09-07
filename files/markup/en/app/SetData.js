@@ -4,20 +4,20 @@
 /** # SetData #
  * @brief Save data while app is running
  * Saves variables until the app closes. All saved data will be lost afterwards. %c
- * 
+ *
  * See Also: @GetData, @ClearData
- * $$ app.SetData(name, value) $$ 
- * @param {str} name 
- * @param {str} value 
+ * $$ app.SetData(name, value) $$
+ * @param {str} name
+ * @param {str} value
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 function OnStart()
@@ -27,9 +27,9 @@ function OnStart()
     app.Alert( data, "Saved Data:" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Random Value
 function OnStart()
@@ -50,9 +50,9 @@ function btn_OnTouch()
 	app.ShowPopup( "Data: " + app.GetData( "number" ));
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 from native import app
@@ -62,12 +62,13 @@ def OnStart():
     data = app.GetData("myvar")
     app.Alert( data, "Saved Data:" )
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Random Value
 from native import app
+from random import random
 
 def OnStart():
     lay = app.CreateLayout( "linear", "VCenter,FillXY" )
@@ -78,10 +79,8 @@ def OnStart():
     app.AddLayout( lay )
 
 def btn_OnTouch():
-    data = str(int(100 * (random.random())))
+    data = str(int(100 * (random())))
     app.SetData( "number", data )
 
     app.ShowPopup( "Data: " + app.GetData( "number" ))
  */
-    
-            

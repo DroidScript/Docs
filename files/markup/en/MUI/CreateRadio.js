@@ -5,18 +5,18 @@
  * @abbrev rd
  * @brief Creates a radio control. A radio control allows the user to select only one item in a list.
  * Creates a radio control by manipulation of the DroidScript's list control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.
- * $$ rd = MUI.CreateRadio(list, width, height, color) $$ 
+ * $$ rd = MUI.CreateRadio(list, width=-1, height=-1, color?) $$
  * @param {str_com} list strings
- * @param {num} width 
- * @param {num} height 
- * @param {str_col} color 
+ * @param {num} [width=-1]
+ * @param {num} [height=-1]
+ * @param {str_col} [color]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnSelect ###
@@ -30,7 +30,7 @@
 /** ### CheckItemByIndex ###
  * Checks a corresponding item
  * $$ rd.CheckItemByIndex(index) $$
- * @param {num_int} index 
+ * @param {num_int} index
  */
 
 
@@ -54,17 +54,17 @@
 /** @extern GetHeight */
 
 /** ### GetItem ###
- * 
+ *
  * $$ rd.GetItem(title) $$
- * @param {str} title 
+ * @param {str} title
  * @returns obj
  */
 
 
 /** ### GetItemByIndex ###
- * 
+ *
  * $$ rd.GetItemByIndex(index) $$
- * @param {num} index 
+ * @param {num} index
  * @returns obj
  */
 
@@ -72,16 +72,16 @@
 /** @extern GetLeft */
 
 /** ### GetLength ###
- * 
+ *
  * $$ rd.GetLength() $$
  * @returns num_int
  */
 
 
 /** ### GetList ###
- * 
+ *
  * $$ rd.GetList(delim) $$
- * @param {str} delim 
+ * @param {str} delim
  * @returns obj
  */
 
@@ -95,7 +95,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ rd.GetType() $$
  * @returns str-List
  */
@@ -110,12 +110,12 @@
 /** @extern Hide */
 
 /** ### InsertItem ###
- * 
- * $$ rd.InsertItem(index, title, body, image) $$
- * @param {num} index 
- * @param {str} title 
- * @param {str} body 
- * @param {str_ptf} image 
+ *
+ * $$ rd.InsertItem(index, title, body?, image?) $$
+ * @param {num} index
+ * @param {str} title
+ * @param {str} [body]
+ * @param {str_ptf} [image]
  */
 
 
@@ -128,54 +128,54 @@
 /** @extern Method */
 
 /** ### RemoveAll ###
- * 
+ *
  * $$ rd.RemoveAll() $$
  */
 
 
 /** ### RemoveItem ###
- * 
+ *
  * $$ rd.RemoveItem(title) $$
- * @param {str} title 
+ * @param {str} title
  */
 
 
 /** ### RemoveItemByIndex ###
- * 
+ *
  * $$ rd.RemoveItemByIndex(index) $$
- * @param {num} index 
+ * @param {num} index
  */
 
 
 /** ### ScrollToItem ###
- * 
- * $$ rd.ScrollToItem(title, body) $$
- * @param {str} title 
- * @param {str} body 
+ *
+ * $$ rd.ScrollToItem(title, body?) $$
+ * @param {str} title
+ * @param {str} [body]
  */
 
 
 /** ### ScrollToItemByIndex ###
- * 
+ *
  * $$ rd.ScrollToItemByIndex(index) $$
- * @param {num} index 
+ * @param {num} index
  */
 
 
 /** ### SelectItem ###
- * 
- * $$ rd.SelectItem(title, body, scroll) $$
- * @param {str} title 
- * @param {str} body 
- * @param {?} scroll 
+ *
+ * $$ rd.SelectItem(title, body?, scroll?) $$
+ * @param {str} title
+ * @param {str} [body]
+ * @param {bin} [scroll]
  */
 
 
 /** ### SelectItemByIndex ###
- * 
- * $$ rd.SelectItemByIndex(index, scroll) $$
- * @param {num} index 
- * @param {?} scroll 
+ *
+ * $$ rd.SelectItemByIndex(index, scroll?) $$
+ * @param {num} index
+ * @param {bin} [scroll]
  */
 
 
@@ -194,36 +194,36 @@
 /** @extern SetColorFilter */
 
 /** ### SetColumnWidths ###
- * 
- * $$ rd.SetColumnWidths(icon, title, body, mode) $$
- * @param {?} icon 
- * @param {str} title 
- * @param {str} body 
- * @param {?} mode 
+ *
+ * $$ rd.SetColumnWidths(icon, title?, body?, mode?) $$
+ * @param {?} icon
+ * @param {str} [title]
+ * @param {str} [body]
+ * @param {?} [mode]
  */
 
 
 /** ### SetDivider ###
- * 
- * $$ rd.SetDivider(height, color) $$
- * @param {num} height 
- * @param {str_col} color 
+ *
+ * $$ rd.SetDivider(height, color?) $$
+ * @param {num} height
+ * @param {str_col} [color]
  */
 
 
 /** @extern SetEllipsize */
 
 /** ### SetEllipsize1 ###
- * 
+ *
  * $$ rd.SetEllipsize1(mode) $$
- * @param {?} mode 
+ * @param {?} mode
  */
 
 
 /** ### SetEllipsize2 ###
- * 
+ *
  * $$ rd.SetEllipsize2(mode) $$
- * @param {?} mode 
+ * @param {?} mode
  */
 
 
@@ -232,24 +232,24 @@
 /** @extern SetFontFile */
 
 /** ### SetHiTextColor1 ###
- * 
+ *
  * $$ rd.SetHiTextColor1(clr) $$
- * @param {?} clr 
+ * @param {?} clr
  */
 
 
 /** ### SetHiTextColor2 ###
- * 
+ *
  * $$ rd.SetHiTextColor2(clr) $$
- * @param {?} clr 
+ * @param {?} clr
  */
 
 
 /** ### SetList ###
- * 
- * $$ rd.SetList(list, delim) $$
- * @param {?} list 
- * @param {str} delim 
+ *
+ * $$ rd.SetList(list, delim=',') $$
+ * @param {?} list
+ * @param {str} [delim=',']
  */
 
 
@@ -268,68 +268,68 @@
 /** @extern SetTextColor */
 
 /** ### SetTextColor1 ###
- * 
+ *
  * $$ rd.SetTextColor1(clr) $$
- * @param {?} clr 
+ * @param {?} clr
  */
 
 
 /** ### SetTextColor2 ###
- * 
+ *
  * $$ rd.SetTextColor2(clr) $$
- * @param {?} clr 
+ * @param {?} clr
  */
 
 
 /** ### SetTextMargins ###
- * 
- * $$ rd.SetTextMargins(left, top, right, bottom, mode, options) $$
- * @param {?} left 
- * @param {?} top 
- * @param {?} right 
- * @param {?} bottom 
- * @param {?} mode 
- * @param {str_com} options 
+ *
+ * $$ rd.SetTextMargins(left=0, top=0, right=0, bottom=0, mode='px', options?) $$
+ * @param {?} [left=0]
+ * @param {?} [top=0]
+ * @param {?} [right=0]
+ * @param {?} [bottom=0]
+ * @param {?} [mode='px']
+ * @param {str_com} [options]
  */
 
 
 /** @extern SetTextShadow */
 
 /** ### SetTextShadow1 ###
- * 
- * $$ rd.SetTextShadow1(radius, dx, dy, color) $$
- * @param {num} radius 
- * @param {num} dx 
- * @param {num} dy 
- * @param {str_col} color 
+ *
+ * $$ rd.SetTextShadow1(radius, dx?, dy?, color?) $$
+ * @param {num} radius
+ * @param {num} [dx]
+ * @param {num} [dy]
+ * @param {str_col} [color]
  */
 
 
 /** ### SetTextShadow2 ###
- * 
- * $$ rd.SetTextShadow2(radius, dx, dy, color) $$
- * @param {num} radius 
- * @param {num} dx 
- * @param {num} dy 
- * @param {str_col} color 
+ *
+ * $$ rd.SetTextShadow2(radius, dx?, dy?, color?) $$
+ * @param {num} radius
+ * @param {num} [dx]
+ * @param {num} [dy]
+ * @param {str_col} [color]
  */
 
 
 /** @extern SetTextSize */
 
 /** ### SetTextSize1 ###
- * 
- * $$ rd.SetTextSize1(size, mode) $$
- * @param {?} size 
- * @param {?} mode 
+ *
+ * $$ rd.SetTextSize1(size, mode='px') $$
+ * @param {?} size
+ * @param {?} [mode='px']
  */
 
 
 /** ### SetTextSize2 ###
- * 
- * $$ rd.SetTextSize2(size, mode) $$
- * @param {?} size 
- * @param {?} mode 
+ *
+ * $$ rd.SetTextSize2(size, mode='px') $$
+ * @param {?} size
+ * @param {?} [mode='px']
  */
 
 
@@ -340,10 +340,10 @@
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -363,9 +363,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With callback
 cfg.Light
@@ -391,9 +391,9 @@ function OnTouch(name, index)
     app.ShowPopup(name+" : "+index)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -412,9 +412,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With callback
 # cfg.Light, cfg.MUI
@@ -437,5 +437,3 @@ def OnStart():
 def OnTouch(name, index):
     app.ShowPopup(name + " : " + str(index))
  */
-    
-            

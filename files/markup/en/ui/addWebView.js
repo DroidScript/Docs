@@ -1,237 +1,211 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addWebView #
+/** # WebView
  * @abbrev web
- * @brief addWebView
- * 
- * $$ web = ui.addWebView(parent, url, options, width, height) $$ 
- * @param {obj} parent The parent layout where to add the WebView component.
- * @param {str} url The url of the website.
- * @param {str_com} options 
- * @param {num} width Fraction of the parent width.
- * @param {num} height Fraction of the parent height.
- * @returns obj-WebView Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds a webview into your app. A webview is a component where you can display a website into your app layout.
-
-### Properties
-These are the setter and getter properties for the addWebView Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>blockUrls:"lst:'Sets or returns the list of blocked urls.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius in pixels.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>document:"obj:'A reference to the webview`s window document object.'"</smp>
-<smp noinl>errorPage:"str:'Sets or returns the redirect url when an error occur.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>html:"str:'Setst or returns the html loaded in the iframe.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the color of the text.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the size of the text within the control.'"</smp>
-<smp noinl>textZoom:"num:'Sets or returns the text zoom of the page loaded in the web view.'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>url:"str:'Sets or returns the url of the webview.'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
-<smp noinl>window:"obj:'A reference to the webview`s window object.'"</smp>
+ * A WebView in mobile development is a component that allows embedding web content within an application.
+ * @img(img1.png)
+ * @jdocs It enables the display of web pages or web-based features, providing seamless integration of online content into mobile apps. Add a webview into your app using the “addWebView” method like this:
+ * $$ web = ui.addWebView(parent, url, options, width, height) $$
+ * @param {uio-Layout} parent The parent layout where to add the WebView component.
+ * @param {String} [url] The url of the website.
+ * @param {String} [options] A comma separated options for WebView. Values can be “NoScrollBar”, 
+ * @param {Number} [width] Fraction of the parent width “[0-1]”.
+ * @param {Number} [height] Fraction of the parent height “[0-1]”.
+ * @returns uio-WebView
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setOnLoad ###
- * @brief setOnLoad
- * Adds a event handler for onload event
- * 
- * The example above will call the function `Hello` defined in the WebView passing
- * the three arguments which is a text, number and a boolean
- * $$ web.setOnLoad(callback) $$
- * @param {fnc_json} callback {}
- */
+    /** ## Properties
+     * @jdocs Here are the setter and getter properties of the WebView Component.
+     * @prop {String} url Sets or returns the url of the webview.
+     * @prop {String} html Setst or returns the html loaded in the iframe.
+     * @prop {String} errorPage Sets or returns the redirect url when an error occur.
+     * @prop {Number} textZoom Sets or returns the text zoom of the page loaded in the web view.
+     * @prop {Object} window A reference to the webview's window object.
+     * @prop {Object} document A reference to the webview's window document object.
+     * @prop {Array} blockUrls Sets or returns the list of blocked urls.
+     */
 
 
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the component is touch
- * $$ web.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
- */
+    /** @extern width */
 
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ web.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
- */
+    /** @extern height */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ web.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+    /** @extern opacity */
 
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ web.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+    /** @extern textSize */
 
 
-/** ### show ###
- * @brief show
- * Show the component
- * $$ web.show() $$
- */
+    /** @extern textColor */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ web.hide() $$
- */
+    /** @extern rotation */
 
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ web.gone() $$
- */
+    /** @extern fontFile */
 
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ web.destroy() $$
- */
+    /** @extern visibility */
 
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ web.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+    /** @extern type */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ web.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
+    /** @extern absWidth */
 
 
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ web.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
+    /** @extern absHeight */
 
 
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ web.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
+    /** @extern backColor */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ web.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
+    /** @extern backImage */
 
 
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ web.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
+    /** @extern isVisible */
 
 
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the component
- * $$ web.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-Left border radius in pixels.
- * @param {num} tr Top-Right border radius in pixels.
- * @param {num} bl Bottom-Left border radius in pixels.
- * @param {num} br Bottom-Right border radius in pixels.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern top */
 
 
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ web.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
+    /** @extern left */
 
 
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ web.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
+    /** @extern absTop */
 
 
+    /** @extern absLeft */
 
-// ------------- SAMPLES ------------- 
+
+    /** @extern parent */
 
 
-    
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+    /** ## Methods
+     * @jdocs Here are the available methods for the WebView Component.
+     */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** ### setOnLoad
+     * Adds a callback handler for onload event.
+     * $$ web.setOnLoad( callback ) $$
+     * @param {Function} callback The callback function.
+     */
+
+
+    /** ### setOnUrl
+     * Define a callback function which is called when the user clicked a link.
+     * $$ web.setOnUrl( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {String} url The new url to navigate.
+     */
+
+
+    /** ### stop
+     * Stops any web loading.
+     * $$ web.stop() $$
+     */
+
+
+    /** ### reload
+     * Reloads the current page.
+     * $$ web.reload() $$
+     */
+
+
+    /** ### print
+     * Print current page via the builtin android printer dialog.
+     * $$ web.print() $$
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample EnjineIO homepage
 class Main extends App
@@ -254,9 +228,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Call a function inside the webview
 class Main extends App
@@ -295,9 +268,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Getting returned values from a function in a webview
 class Main extends App
@@ -339,9 +311,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Manipulate dom inside the webview
 class Main extends App
@@ -404,28 +375,27 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
-@sample Python EnjineIO homepage
+@sample Python DroidScript.org homepage
 from hybrid import ui
 
 def OnStart():
     main = ui.addLayout("main", "Linear", "VCenter,FillXY")
-    web = ui.addWebView(main, "https://enjine.io/", "", 0.9, 0.9)
+
+    web = ui.addWebView(main, "https://droidscript.org/", "", 0.9, 0.9)
     web.setOnLoad(onLoad)
+    web.backColor = "yellow"
 
 def onLoad():
     ui.showPopup("Website is loaded!")
  */
-    
-            
-    
+
+
 /**
 @sample Python Call a function inside the webview
 from hybrid import ui
-from native import app
 
 def OnStart():
     global web
@@ -435,11 +405,11 @@ def OnStart():
     web.html = '''
         <html>
         <head>
-
+			<script>
                 function callFunc(name) {
-                    app.Alert("Hi " + name + " webview!")
+                    alert("Hi " + name + " from webview!")
                 }
-
+			</script>
         </head>
         <body>
             <h2>This is an html.</h2>
@@ -447,12 +417,12 @@ def OnStart():
         </html>
     '''
 
-def onLoad():
+def onLoad( e ):
+    global web
     x = web.window.callFunc("John Doe")
  */
-    
-            
-    
+
+
 /**
 @sample Python Getting returned values from a function in a webview
 from hybrid import ui
@@ -465,11 +435,11 @@ def OnStart():
     web.html = '''
         <html>
         <head>
-
+            <script>
                 function getProduct(num1, num2) {
                     return num1 * num2
                 }
-
+            </script>
         </head>
         <body>
             <h2>Get some product here!</h2>
@@ -477,13 +447,12 @@ def OnStart():
         </html>
     '''
 
-def onLoad():
+def onLoad(e):
     prod = web.window.getProduct(2, 3)
     ui.showPopup("The product is " + str(prod))
  */
-    
-            
-    
+
+
 /**
 @sample Python Manipulate dom inside the webview
 from hybrid import ui
@@ -505,7 +474,7 @@ def OnStart():
     btn = ui.addButton(main, "Change background color")
     btn.setOnTouch(onTouch)
 
-def onLoad():
+def onLoad(event):
     global loaded
     loaded = True
 
@@ -519,5 +488,5 @@ def onTouch(event):
     else:
         ui.showPopup("Webview is not yet loaded!")
  */
-    
-            
+
+

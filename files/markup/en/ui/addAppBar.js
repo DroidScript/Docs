@@ -1,241 +1,214 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # addAppBar #
+/** # AppBar
  * @abbrev apb
- * @brief addAppBar
- * 
- * $$ apb = ui.addAppBar(parent, title, options, width, height) $$ 
- * @param {obj} parent The parent layout where to add the AppBar
- * @param {str} title The title text of the appbar
- * @param {str_com} options one or a combination of the following: \n `Menu` : Adds a menu icon on the left \n `Primary` `Secondary` `Transparent` `Inherit` `Default` : Adds a color \n `Absolute` `Static` `Fixed` `Relative` : Adds a positioning
- * @param {num} width Fraction of the screen width. [0-1]
- * @param {num} height Fraction of the screen height. [0-1]
- * @returns obj-AppBar Component
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Adds an AppBar on your app.
-
-### Properties
-These are the setter and getter properties for the addAppBar Component.
-<smp noinl>absHeight:"num:'Returns the absolute height of the control in pixels.'"</smp>
-<smp noinl>absLeft:"num:'Returns the absolute distance of the control from the left in pixels.'"</smp>
-<smp noinl>absTop:"num:'Returns the absolute distance of the control from the top in pixels.'"</smp>
-<smp noinl>absWidth:"num:'Returns the absolute width of the control in pixels.'"</smp>
-<smp noinl>backColor:"str:'A hexadecimal color of the form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>backImage:"str:'The path to your image file.'"</smp>
-<smp noinl>border:"num:'Sets or returns the border thickness in pixels.'"</smp>
-<smp noinl>borderColor:"str:'Sets or returns the border color. Color is in hexadecimal form <col nobox #fb8c00>#rrggbb</col>'"</smp>
-<smp noinl>borderStyle:"str:'Sets or returns the border style. Values can be <col nobox #fb8c00>dotted</col>, <col nobox #fb8c00>dashed</col>, <col nobox #fb8c00>solid</col>, <col nobox #fb8c00>double</col>, <col nobox #fb8c00>groove</col>, <col nobox #fb8c00>ridge</col>, <col nobox #fb8c00>inset</col> and <col nobox #fb8c00>outset</col>. Default is <col nobox #fb8c00>solid</col>.'"</smp>
-<smp noinl>color:"str:'Sets or returns the theme color of the AppBar. Values can be <col nobox #fb8c00>Default</col> <col nobox #fb8c00>Primary</col> <col nobox #fb8c00>Secondary</col> <col nobox #fb8c00>Transparent</col> <col nobox #fb8c00>Inherit</col>'"</smp>
-<smp noinl>cornerRadius:"num:'Sets or returns the corner radius of the accordion panel. You can also pass an array of the form <col nobox #fb8c00>[tl, tr, bl, br]</col>. See <col nobox #fb8c00>setCornerRadius</col> for customization.'"</smp>
-<smp noinl>disabled:"bin:'Sets or returns the <col nobox #fb8c00>disabled</col> state of the control.'"</smp>
-<smp noinl>fontFile:"str:'Sets or returns the <col nobox #fb8c00>relative</col> path to the font-family use.'"</smp>
-<smp noinl>height:"num:'Sets or returns the height of the control as a fraction of the parent control.'"</smp>
-<smp noinl>icon:"str:'Sets or returns the icon of the menu button.'"</smp>
-<smp noinl>isVisible:"bin:'Returns whether the control is visible or not.'"</smp>
-<smp noinl>layout:"Layout:'Returns the right layout of the appbar where you can add controls.'"</smp>
-<smp noinl>left:"num:'Returns the distance of the control from the left.'"</smp>
-<smp noinl>margins:"lst:'Sets or returns the margin of the control. Works on controls with <col nobox #fb8c00>Linear</col> parent only. You can also pass a number to set equal margins for all sides.'"</smp>
-<smp noinl>menu:"bin:'Sets or returns whether the appbar has menu button.'"</smp>
-<smp noinl>opacity:"num:'Sets or returns the opacity of the control.'"</smp>
-<smp noinl>options:"str:'Sets or returns the <col nobox #fb8c00>options</col> of the control.'"</smp>
-<smp noinl>padding:"lst:'Sets or returns the padding of the control. You can also pass a number to set equal padding for all sides.'"</smp>
-<smp noinl>parent:"obj:'Returns the parent layout control.'"</smp>
-<smp noinl>position:"obj:'Returns the position of the control. The returned object has <col nobox #fb8c00>left</col> <col nobox #fb8c00>top</col> <col nobox #fb8c00>right</col> and <col nobox #fb8c00>bottom</col> props.'"</smp>
-<smp noinl>rotation:"num:'Sets or returns the angle of rotation in degrees.'"</smp>
-<smp noinl>text:"str:'Sets or return the AppBar title text'"</smp>
-<smp noinl>textColor:"str:'Sets or returns the hexadecimal color of the appbar title.'"</smp>
-<smp noinl>textSize:"num:'Sets or returns the font size of the title text.'"</smp>
-<smp noinl>textVariant:"str:'Sets or returns the variant of the title text. Values can be <col nobox #fb8c00>h1</col> <col nobox #fb8c00>h2</col> <col nobox #fb8c00>h3</col> <col nobox #fb8c00>h4</col> <col nobox #fb8c00>h5</col> or <col nobox #fb8c00>h6</col>'"</smp>
-<smp noinl>top:"num:'Returns the distance of the control from the top.'"</smp>
-<smp noinl>type:"str:'Returns the type of the control.'"</smp>
-<smp noinl>visibility:"str:'Sets or returns the visibility of the control.'"</smp>
-<smp noinl>width:"num:'Sets or returns the width of the control as a fraction of the parent control.'"</smp>
+ * Adds an appbar to your app.
+ * @img(img1.png)
+ * @img(img2.png)
+ * @jdocs In UI development, an AppBar is a common user interface element found at the top of the screen in mobile applications. It typically contains the app's title, navigation icons, and other actions. In Material Design, an AppBar follows guidelines such as elevation, color, and typography for consistency. Add an AppBar into your app using the “addAppBar” method like this:
+ * $$ apb = ui.addAppBar(parent, title, options, width, height) $$
+ * @param {uio-Layout} parent The parent layout where to add the AppBar
+ * @param {String} title The title text of the appbar
+ * @param {String} [options] A comma separated options.\nMenu icon: “Menu” \nTheme Color: “Primary”, “Secondary”, “Transparent”, “Inherit”, “Default”\nPosition: “Absolute”, “Static”, “Fixed”, “Relative”
+ * @param {Number} [width] Fraction of the parent width “[0-1]”
+ * @param {Number} [height] Fraction of the parent height “[0-1]”
+ * @returns uio-AppBar
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setOnMenu ###
- * @brief setOnMenu
- * Sets a function to be called when the user clicks the menu
- * $$ apb.setOnMenu(callback) $$
- * @param {fnc_json} callback {}
- */
-
-
-/** ### addLayout ###
- * @brief addLayout
- * Adds a layout for additional controls at the right of the appbar
- * $$ apb.addLayout(lay) $$
- * @param {obj} lay The layout where to add controls
- */
+	/** ## Properties
+	 * @jdocs Here are the available setters and getters of the AppBar Component.
+	 * @prop {String} text Sets or return the AppBar title “text”
+	 * @prop {String} color Sets or returns the theme color of the AppBar. Values can be “Default” “Primary” “Secondary” “Transparent” “Inherit”
+	 * @prop {String} textColor Sets or returns the hexadecimal color of the appbar title.
+	 * @prop {String} textVariant Sets or returns the variant of the title text. Values can be “h1” “h2” “h3” “h4” “h5” or “h6”
+	 * @prop {Number} textSize Sets or returns the font size of the title text. 
+	 * @prop {String} icon Sets or returns the icon of the menu button.
+	 * @prop {Object} layout Returns the right layout of the appbar where you can add controls.
+     * @prop {Boolean} menu Sets or returns whether the appbar has menu button. 
+     * @prop {Number} cornerRadius Sets or returns the corner radius of the accordion panel. You can also pass an array of the form “[tl, tr, bl, br]”. See “setCornerRadius” for customization.
+	 */
 
 
-/** ### setCornerRadius ###
- * @brief setCornerRadius
- * Sets the corner radius of the appbar
- * $$ apb.setCornerRadius(tl, tr, bl, br, mode) $$
- * @param {num} tl Top-left corner radius.
- * @param {num} tr Top-right corner radius.
- * @param {num} bl Bottom-left corner radius.
- * @param {num} br Bottom-right corner radius.
- * @param {str} mode Unit. Values are `px` `rem` or `%`.
- */
+    /** @extern width */
 
 
-/** ### setOnTouch ###
- * @brief setOnTouch
- * Adds a callback handler when the component is touch
- * $$ apb.setOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The click event object."]}
- */
+    /** @extern height */
 
 
-/** ### setOnContextMenu ###
- * @brief setOnContextMenu
- * Adds a callback function on right click
- * $$ apb.setOnContextMenu(callback) $$
- * @param {fnc_json} callback {"pNames":["event"],"pTypes":["obj-The pointer event object."]}
- */
+    /** @extern opacity */
 
 
-/** ### animate ###
- * @brief animate
- * Animate the component
- * $$ apb.animate(anim, duration) $$
- * @param {str} anim The type of animation. Here are the available values \n `bounce` `flash` `pulse` `rubberBand` `shakeX` `shakeY` `headShake` `swing` `tada` `wobble` `jello` `heartBeat` \n `Back Entrances `backInDown` `backInLeft` `backInRight` `backInUp` \n `Back Exits `backOutDown` `backOutLeft` `backOutRight` `backOutUp` \n `Bouncing Entrances `bounceIn` `bounceInDown` `bounceInLeft` `bounceInRight` `bounceInUp` \n `Bouncing exits `bounceOut` `bounceOutDown` `bounceOutLeft` `bounceOutRight` `bounceOutUp` \n `Fading entrances `fadeIn` `fadeInDown` `fadeInDownBig` `fadeInLeft` `fadeInLeftBig` `fadeInRight` `fadeInRightBig` `fadeInUp` `fadeInUpBig` `fadeInTopLeft` `fadeInTopRight` `fadeInBottomLeft` `fadeInBottomRight` \n `Fading exits `fadeOut` `fadeOutDown` `fadeOutDownBig` `fadeOutLeft` `fadeOutLeftBig` `fadeOutRight` `fadeOutRightBig` `fadeOutUp` `fadeOutUpBig` `fadeOutTopLeft` `fadeOutTopRight` `fadeOutBottomRight` `fadeOutBottomLeft` \n `Flippers `flip` `flipInX` `flipInY` `flipOutX` `flipOutY` \n `Lightspeed `lightSpeedInRight` `lightSpeedInLeft` `lightSpeedOutRight` `lightSpeedOutLeft` \n `Rotating Entrances `rotateIn` `rotateInDownLeft` `rotateInDownRight` `rotateInUpLeft` `rotateInUpRight` \n `Rotating Exits `rotateOut` `rotateOutDownLeft` `rotateOutDownRight` `rotateOutUpLeft` `rotateOutUpRight` \n `Specials `hinge` `jackInTheBox` `rollIn` `rollOut` \n `Zooming Entrances `zoomIn` `zoomInDown` `zoomInLeft` `zoomInRight` `zoomInUp` \n `Zooming Exits `zoomOut` `zoomOutDown` `zoomOutLeft` `zoomOutRight` `zoomOutUp` \n `Sliding Entrances `slideInDown` `slideInLeft` `slideInRight` `slideInUp` \n `Sliding Exits `slideOutDown` `slideOutLeft` `slideOutRight` `slideOutUp`.
- * @param {num} duration The time in milliseconds.
- */
+    /** @extern textSize */
 
 
-/** ### setSize ###
- * @brief setSize
- * Sets the size of the component
- * $$ apb.setSize(width, height) $$
- * @param {num} width Fraction of the parent width. [0-1]
- * @param {num} height Fraction of the parent height. [0-1]
- */
+    /** @extern textColor */
 
 
-/** ### show ###
- * @brief show
- * Show the component
- * $$ apb.show() $$
- */
+    /** @extern rotation */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the component
- * $$ apb.hide() $$
- */
+    /** @extern fontFile */
 
 
-/** ### gone ###
- * @brief gone
- * Destroy the component
- * $$ apb.gone() $$
- */
+    /** @extern visibility */
 
 
-/** ### destroy ###
- * @brief destroy
- * Destroy the component
- * $$ apb.destroy() $$
- */
+    /** @extern type */
 
 
-/** ### setScale ###
- * @brief setScale
- * Sets the x and y scaling of the component
- * $$ apb.setScale(x, y) $$
- * @param {num} x The x-scale of the component.Values less than `0` is smaller than the normal. While values greater than `1` is greater than the normal.
- * @param {num} y The y-scale of the component. Values less than `1` is smaller than the normal. While vaues greater than `1` is greater than the normal.
- */
+    /** @extern absWidth */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the component. The return object is of the form `{ left, top, right, bottom
- * $$ apb.getPosition(options) $$
- * @param {str} options The mode of the measurements. Values can be `px` or `%`
- * @returns obj
- */
+    /** @extern absHeight */
 
 
-/** ### setMargins ###
- * @brief setMargins
- * Sets the margin of the component
- * $$ apb.setMargins(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the parent width.
- * @param {num} top Fraction of the parent height.
- * @param {num} right Fraction of the parent width.
- * @param {num} bottom Fraction of the parent height.
- * @param {str} mode `px` or `%`
- */
+    /** @extern backColor */
 
 
-/** ### setPadding ###
- * @brief setPadding
- * Sets the padding component container
- * $$ apb.setPadding(left, top, right, bottom, mode) $$
- * @param {num} left Fraction of the component width.
- * @param {num} top Fraction of the component height. [0-1]
- * @param {num} right Fraction of the component width. [0-1]
- * @param {num} bottom Fraction of the component height. [0-1]
- * @param {str} mode The size thickness mode. Can be `px`
- */
+    /** @extern backImage */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Sets the position of the component relative to its parent dimensions
- * $$ apb.setPosition(left, top, mode) $$
- * @param {num} left Fraction of the parent width. [0-1]
- * @param {num} top Fraction of the screen height. [0-1]
- * @param {str} mode Unit of measurement. Can be `px` or `%` or any css unit of measurement.
- */
+    /** @extern isVisible */
 
 
-/** ### setBorder ###
- * @brief setBorder
- * Sets the border line for the component container
- * $$ apb.setBorder(width, clr, style) $$
- * @param {num} width Border-left thickness in pixels.
- * @param {str} clr Border color in hexadecimal form `#rrggbb`
- * @param {str} style Border-styles. Values can be `dotted` `dashed` `solid` `double` `groove` `ridge` `inset` and `outset`. Default is `solid`
- */
+    /** @extern top */
 
 
-/** ### bringForward ###
- * @brief bringForward
- * Bring this component forward by a given z-index
- * $$ apb.bringForward(zIndex) $$
- * @param {num} zIndex The z-index. A negative value behaves like `sendBackward` method.
- */
+    /** @extern left */
 
 
-/** ### sendBackward ###
- * @brief sendBackward
- * Bring this component backward by a given z-index
- * $$ apb.sendBackward(zIndex) $$
- * @param {num} zIndex The z-index. A positve value behaves like `bringForward` method.
- */
+    /** @extern absTop */
 
 
+    /** @extern absLeft */
 
-// ------------- SAMPLES ------------- 
+
+    /** @extern parent */
 
 
-    
+    /** @extern position */
+
+
+    /** @extern margins */
+
+
+    /** @extern padding */
+
+
+    /** @extern options */
+
+
+    /** @extern disabled */
+
+
+    /** @extern border */
+
+
+    /** @extern borderColor */
+
+
+    /** @extern borderStyle */
+
+
+    /** @extern cornerRadius */
+
+
+    /** @extern el */
+
+
+	/** ## Methods
+	 * @jdocs Here are the methods available for AppBar Component.
+	 */
+
+
+    /** @extern animate */
+
+
+    /** @extern setSize */
+
+
+    /** @extern show */
+
+
+    /** @extern hide */
+
+
+    /** @extern gone */
+
+
+    /** @extern destroy */
+
+
+    /** @extern setScale */
+
+
+    /** @extern getPosition */
+
+
+    /** @extern setMargins */
+
+
+    /** @extern setPadding */
+
+
+    /** @extern setPosition */
+
+
+    /** @extern setBorder */
+
+
+    /** @extern setCornerRadius */
+
+
+    /** @extern bringForward */
+
+
+    /** @extern sendBackward */
+
+
+    /** @extern addClass */
+
+
+    /** @extern setOnContextMenu */
+
+
+    /** ### setOnTouch
+     * Adds a callback handler when the component is touch.
+     * $$ apb.setOnTouch( callback ) $$
+     * @param {Function} callback The callback function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### setOnMenu
+     * Sets a function to be called when the user clicks the menu.
+	 * $$ apb.setOnMenu( callback ) $$
+     * @param {Function} callback The function to be called. ---> @arg {Object} pos The position of the touch event.
+     */
+
+
+    /** ### addLayout
+     * Adds a layout for additional controls at the right of the appbar.
+	 * $$ apb.addLayout( lay ) $$
+     * @param {Object} lay The layout where to add controls
+     */
+
+
+    /** ### setCornerRadius
+     * Sets the corner radius of the appbar.
+     * $$ acc.setCornerRadius(tl, tr, bl, br, mode) $$
+     * @param {Number} [tl] Top-left corner radius.
+     * @param {Number} [tr] Top-right corner radius.
+     * @param {Number} [bl] Bottom-left corner radius.
+     * @param {Number} [br] Bottom-right corner radius.
+     * @param {String} [mode='px'] Unit. Values are “px” “rem” or “%”.
+     */
+
+
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Basic AppBar
 class Main extends App
@@ -254,9 +227,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Fixed appbar with drawer
 class Main extends App
@@ -276,7 +248,7 @@ class Main extends App
         this.drawLay = ui.addLayout(null, "Linear", "Top")
 
         // Add a drawer to the app and pass the drawer layout
-        this.drawer = ui.addDrawer(this.drawLay, "left")
+        this.drawer = ui.addDrawer(this.drawLay, "left", 0.7)
 
         // Add a list to the drawer layout. See `List` component for customization.
         let lst = [
@@ -306,9 +278,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Appbar with actions
 class Main extends App
@@ -335,7 +306,7 @@ class Main extends App
         this.drawLay = ui.addLayout(null, "Linear", "Top")
 
         // Adds a drawer to the app and pass the drawer layout
-        this.drawer = ui.addDrawer(this.drawLay, "left")
+        this.drawer = ui.addDrawer(this.drawLay, "left", 0.7)
 
         // Adds a list to the drawer layout. See `List` component for customization.
         let lst = [
@@ -365,51 +336,72 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Appbar with search field
 class Main extends App
 {
-    onStart()
-    {
-        // Creates a fullscreen layout with objects vertically centered.
-        this.main = ui.addLayout( "main", "Linear", "Top", 1, 1 )
+   onStart()
+   {
+        this.show = false
+       // Creates a fullscreen layout with objects vertically centered.
+       this.main = ui.addLayout("main", "Linear", "Top,FillXY")
 
-        // Add an appbar to the main layout
-        this.apb = ui.addAppBar( this.main, "My app", "Default" )
+       // Add an appbar to the main layout with menu icon
+       this.apb = ui.addAppBar(this.main, "My app", "Default,Menu")
+
+       // Add a callback handler when the menu icon is click
+   	   this.apb.setOnMenu( this.onMenu )
+       
+       // Adds a textfield to the appbar
+       this.tfd = ui.addTextField(this.apb.layout, "", "Search,Small", 0.9)
+       this.tfd.placeholder = "Search"
+       this.tfd.hide()
+
+       // Add a search icon button to the appbar
+       this.searchBtn = ui.addButton(this.apb.layout, "search", "icon")
+
+       // Add a callback handler when the search button is click
+       this.searchBtn.setOnTouch( this.showSearchField )
+   }
     
-        // Adds a textfield to the appbar
-        this.tfd = ui.addTextField(this.apb.layout, "", "Search,Outlined,Small")
-        this.tfd.placeholder = "Search"
-        this.tfd.hide()
-
-        // Add a search icon button to the appbar
-        this.searchBtn = ui.addButton(this.apb.layout, "search", "icon")
-
-        // Add a callback handler when the button is click
-        this.searchBtn.setOnTouch( this.showSearchField )
+    onMenu()
+    {
+        // Close the textfield if it is shown
+        if( this.show )
+        {
+			this.closeSearchField()
+        }
     }
 
     showSearchField()
     {
-        if(this.searchBtn.text == "search")
+        // Display textfield if not shown
+        if( !this.show )
         {
             this.tfd.show()
-            this.searchBtn.text = "close"
+            this.apb.text = ""
+            this.apb.icon = "arrow_back"
+            this.show = true;
         }
         else
         {
-            this.tfd.hide()
-            this.searchBtn.text = "search"
+            ui.showPopup("Search for "+this.tfd.text)
         }
+    }
+    
+    closeSearchField()
+    {
+        this.tfd.hide()
+        this.apb.text = "My app"
+        this.apb.icon = "menu"
+        this.show = false
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Basic AppBar
 from hybrid import ui
@@ -425,9 +417,8 @@ def OnStart():
     btn = ui.addButton(main, "Button")
     btn.margins = 0.1
  */
-    
-            
-    
+
+
 /**
 @sample Python Fixed appbar with drawer
 from hybrid import ui
@@ -461,19 +452,18 @@ def OnStart():
     # Add a callback handler to the list onTouch event
     lstMenu.setOnTouch( onTouch )
 
-def showDrawer():
+def showDrawer( ev ):
     drawer.show()
 
-def onTouch(title, body, icon, index, event):
+def onTouch(title, body, icon, action, index, event):
     # Set the appbar text with the selected list item
     apb.text = title
 
     # Close the drawer
     drawer.hide()
  */
-    
-            
-    
+
+
 /**
 @sample Python Appbar with actions
 from hybrid import ui
@@ -514,19 +504,18 @@ def OnStart():
     # Add a callback handler to the list onTouch event
     lstMenu.setOnTouch( onTouch )
 
-def showDrawer():
+def showDrawer( ev ):
     drawer.show()
 
-def onTouch(title, body, icon, index, event):
+def onTouch(title, body, icon, action, index, event):
     # Set the appbar text with the selected list item
     apb.text = title
 
     # Close the drawer
     drawer.hide()
  */
-    
-            
-    
+
+
 /**
 @sample Python Appbar with search field
 from hybrid import ui
@@ -540,7 +529,7 @@ def OnStart():
     apb = ui.addAppBar(main, "My app", "Default")
 
     # Adds a textfield to the appbar
-    tfd = ui.addTextField(apb.layout, "", "Search,Outlined,Small")
+    tfd = ui.addTextField(apb.layout, "", "Search,Outlined,Small", "10rem")
     tfd.placeholder = "Search"
     tfd.hide()
 
@@ -553,10 +542,11 @@ def OnStart():
 def showSearchField(event):
     if searchBtn.text == "search":
         tfd.show()
+        tfd.focus()
         searchBtn.text = "close"
     else:
         tfd.hide()
         searchBtn.text = "search"
  */
-    
-            
+
+

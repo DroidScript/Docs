@@ -4,23 +4,23 @@
 /** # CreateBanner #
  * @abbrev bnr
  * A banner dialog is a nice popup that slides from the top of your current page
- * $$ bnr = MUI.CreateBanner(text, okText, cancelText) $$ 
- * @param {str} text 
- * @param {str} okText Truthy button text
- * @param {str} cancelText Falsey button text
+ * $$ bnr = MUI.CreateBanner(text, okText?, cancelText?) $$
+ * @param {str} text
+ * @param {str} [okText] Truthy button text
+ * @param {str} [cancelText] Falsey button text
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### SetOnTouch ###
  * Calls a function when buttons are click (prev. SetOnTouchOK)
  * $$ bnr.SetOnTouch(callback) $$
- * @param {fnc_json} callback {"pNames":["isOkBtnClick","btnText"],"pTypes":["bin","str"]}
+ * @param {fnc_json} callback {"pNames":["isOk","btnText"],"pTypes":["bin","str"]}
  */
 
 
@@ -73,10 +73,10 @@
 /** @extern SetOnClose */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -94,9 +94,9 @@ function OnStart()
     ban.Show()
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark
 cfg.Dark
@@ -123,9 +123,9 @@ function OnTouch(v)
 		app.ShowPopup("Banner close")
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Light
 # cfg.Light, cfg.MUI
@@ -143,9 +143,9 @@ def OnStart():
     ban = MUI.CreateBanner("There is no internet connection at the moment.", "LEARN MORE", "CLOSE")
     ban.Show()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Dark
 # cfg.Dark, cfg.MUI
@@ -170,5 +170,3 @@ def OnTouch(v, btnText):
     else:
         app.ShowPopup("Banner close")
  */
-    
-            

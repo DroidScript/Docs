@@ -4,18 +4,18 @@
 /** # CreateDataTable #
  * @abbrev tbl
  * @brief Creates a new DataTable Control.
- * 
- * $$ tbl = MUI.CreateDataTable(columns, values, width, height, options) $$ 
+ *
+ * $$ tbl = MUI.CreateDataTable(columns, values, width=-1, height=-1, options?) $$
  * @param {lst} columns An array of strings of the form Name:Type for column header. Where 'Name' is the column name and 'Type is the column type [Can be Sortable or Numeric]'
  * @param {lst} values An array of strings of the form Val1:Val2:Val3...
- * @param {num} width Fraction of the screen width
- * @param {num} height Fraction of the screen height
- * @param {str_com} options Selectable
+ * @param {num} [width=-1] Fraction of the screen width
+ * @param {num} [height=-1] Fraction of the screen height
+ * @param {str_com} [options] Selectable
  * @returns obj
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Data tables display sets of data across rows and columns. You can pass options and and configure your header and rows to add specific functionality.
@@ -37,7 +37,7 @@ You can also add a footer into your table if you want controls associated with t
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** ### AppendRow ###
@@ -107,10 +107,11 @@ You can also add a footer into your table if you want controls associated with t
 
 /** ### AddFooter ###
  * Add a footer layout to the table where you can add controls.
- * $$ tbl.AddFooter(type, options, height) $$
+ * $$ tbl.AddFooter(type, options?, height?) $$
  * @param {str} type Type of layout. Can be Linear|Absolute|Frame. Default to Linear
- * @param {str} options A comma separated layout options. Default to Horizontal|Right|VCenter
- * @param {num} height A fraction of the screen height.
+ * @param {str} [options] A comma separated layout options. Default to Horizontal|Right|VCenter
+ * @param {num} [height] A fraction of the screen height.
+ * @returns dso-@../app/CreateLayout
  */
 
 
@@ -159,10 +160,10 @@ You can also add a footer into your table if you want controls associated with t
 /** @extern Tween */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Basic
 cfg.Light
@@ -186,9 +187,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Sortable and Numeric Column
 cfg.Light
@@ -214,9 +215,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Selectable and Dark
 cfg.Dark
@@ -242,9 +243,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample With Footer
 cfg.Dark
@@ -283,9 +284,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Basic
 # cfg.Light, cfg.MUI
@@ -309,9 +310,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Sortable and Numeric Column
 # cfg.Light, cfg.MUI
@@ -337,9 +338,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Selectable and Dark
 # cfg.Dark, cfg.MUI
@@ -365,9 +366,9 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            
-    
+
+
+
 /**
 @sample Python With Footer
 # cfg.Dark, cfg.MUI
@@ -410,5 +411,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

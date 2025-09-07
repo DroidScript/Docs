@@ -1,87 +1,77 @@
-// ------------- HEADER SECTION -------------
-
-
-/** # showPopup #
+/** # Popup
  * @abbrev pop
- * @brief showPopup
- * 
- * $$ pop = ui.showPopup(msg, options, duration, action) $$ 
- * @param {str} msg The message to display on the pop-up.
- * @param {str} options A comma separated Menu options. Values can be \n Duration: `Short` `Long` \n `Vertical Alignment: `Top` `Bottom` \n `Horizontal Alignment: `Left` `Center` `Right` \n `Action options: `Icon` or `HideOnAction` \n `Transition`: `Grow` `Fade` `Slide` `Collapse` `Zoom`
- * @param {num} duration Time in milliseconds. Pass this, if you don't want the default auto hide duration.
- * @param {str} action Action button text.
- * @returns obj-Popup Component.
-*/
-
-
-// ------------- LONG DESCRIPTION ------------- 
-
-/** @Description
-Shows a popup into your app.
-
-### Properties
-These are the setter and getter properties for the showPopup Component.
-<smp noinl>duration:"num:'Sets or returns the duration of the popup in milliseconds.'"</smp>
-<smp noinl>text:"str:'Sets or returns the text of the popup.'"</smp>
+ * “Popup” is like a short notification that quickly appears on the screen, providing extra options or information in a concise and unobtrusive manner.
+ * @img(img1.png)
+ * @jdocs It's similar to a toast notification. Show a popup like this:
+ * $$ pop = ui.showPopup( msg, options, duration ) $$
+ * @param {String} msg The message to display on the pop-up.
+ * @param {String} [options] A comma separated options.\nDuration: “Short”, “Long”\nVertical Alignment: “Top”, “Bottom”\nHorizontal Alignment: “Left”, “Center”, “Right”\nAction options: “Icon”, “HideOnAction”\nTransition: “Grow”, “Fade”, “Slide”, “Collapse”, “Zoom”
+ * @param {Number} [duration] Time in milliseconds. Pass this if you don't want the default auto hide duration.
+ * @param {String} [action] Action button text
+ * @returns uio-Popup
  */
 
 
-
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
-
-
-/** ### setOnClose ###
- * @brief setOnClose
- * Adds an onClose callback to your popup
- * $$ pop.setOnClose(callback) $$
- * @param {fnc_json} callback {}
- */
+	/** ## Properties
+	 * @jdocs Here are the available setters and/or getters for the Popup Component.
+	 * @prop {String} text Sets or returns the text of the popup.
+	 * @prop {Number} duration Sets or returns the duration of the popup in milliseconds.
+	 */
 
 
-/** ### setOnAction ###
- * @brief setOnAction
- * Adds an action callback when the user touches the action button. The `btnText` param must be provided in order to create an action button
- * $$ pop.setOnAction(callback) $$
- * @param {fnc_json} callback {}
- */
+	/** ## Methods
+	 * @jdocs Here are the available methods for the Popup Component.
+	 */
 
 
-/** ### show ###
- * @brief show
- * Show the popup
- * $$ pop.show() $$
- */
+    /** ### setOnClose
+	 * Adds an onClose callback to your popup.
+	 * $$ popup.setOnClose( callback ) $$
+	 * @param {Function} callback The onclose callback.
+	 */
 
 
-/** ### hide ###
- * @brief hide
- * Hide the popup
- * $$ pop.hide() $$
- */
+	/** ### setOnAction
+	 * Adds an action callback when the user touches the action button. The “btnText” param must
+	 * be provided in order to create an action button.
+	 * $$ popup.setOnAction( callback ) $$
+	 * @param {Function} callback The on action callback.
+	 */
 
 
-/** ### setPosition ###
- * @brief setPosition
- * Updates the position of the popup
- * $$ pop.setPosition(vertical, horizontal) $$
- * @param {str} vertical Vertical alignment. Values can be `Top` `Bottom`
- * @param {str} horizontal Horizontal alignment. Values can be `Left` `Center` and `Right`
- */
+	/** ### show
+	 * Show the popup.
+	 * $$ popup.show() $$
+	 */
 
 
-/** ### getPosition ###
- * @brief getPosition
- * Returns the position of the popup. The returned object is of the form `{ vertical, horizontal
- * $$ pop.getPosition() $$
- * @returns obj
- */
+	/** ### hide
+	 * Hide the popup.
+	 * $$ popup.hide() $$
+	 */
 
 
+	/** ### setPosition
+	 * Updates the position of the popup.
+	 * $$ popup.setPosition( vertical, horizontal ) $$
+	 * @param {String} [vertical] Vertical alignment. Values can be “Top” “Bottom”
+	 * @param {String} [horizontal] Horizontal alignment. Values can be “Left” “Center” and “Right”
+	 */
 
-// ------------- SAMPLES ------------- 
+
+	/** ### getPosition
+	 * Returns the position of the popup. The returned object is of the form “{ vertical, horizontal }”
+	 * $$ popup.getPosition() $$
+	 * @returns Object
+	 */
 
 
-    
+/* --- parent_methods here ----- */
+
+
+/* ## Examples */
+
+
 /**
 @sample Basic
 class Main extends App
@@ -105,11 +95,10 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
-@sample Popups with transitions
+@sample Popup with transition
 class Main extends App
 {
     onStart()
@@ -140,11 +129,10 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
-@sample With Transition
+@sample With action
 class Main extends App
 {
     onStart()
@@ -176,9 +164,8 @@ class Main extends App
     }
 }
  */
-    
-            
-    
+
+
 /**
 @sample Python Basic
 from hybrid import ui
@@ -191,9 +178,8 @@ def OnStart():
 def onTouch(event):
     ui.showPopup("Hello from popup!")
  */
-    
-            
-    
+
+
 /**
 @sample Python Popups with transitions
 from hybrid import ui
@@ -212,9 +198,8 @@ def onTouch1(event):
 def onTouch2(event):
     ui.showPopup("Hello world.", "Bottom,Slide", 1500)
  */
-    
-            
-    
+
+
 /**
 @sample Python With Transition
 from hybrid import ui
@@ -233,5 +218,5 @@ def onAction():
     snackbar.hide()
     ui.showPopup("Login is click. Show login Page.")
  */
-    
-            
+
+

@@ -3,17 +3,17 @@
 
 /** # DownloadFile #
  * @brief Download a file with Androids download manager
- * 
- * $$ app.DownloadFile(source, destination, title, description, options) $$ 
- * @param {str} source 
- * @param {str_pth} destination 
- * @param {str} title 
- * @param {str} description 
- * @param {str} options NoDialog
+ *
+ * $$ app.DownloadFile(source, destination, title?, description?, options?) $$
+ * @param {str} source
+ * @param {str_pth} destination
+ * @param {str} [title]
+ * @param {str} [description]
+ * @param {str} [options] NoDialog
 */
 
 
-// ------------- LONG DESCRIPTION ------------- 
+// ------------- LONG DESCRIPTION -------------
 
 /** @Description
 Downloads a file using the Android's built-in download manager which creates a notification with the current download status and a custom title and description.
@@ -25,10 +25,10 @@ With this methof you won't be able to get a OnComplete callback - if you need th
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Downloading the DroidScript logo
 function OnStart()
@@ -38,9 +38,9 @@ function OnStart()
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog");
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Download to external storage
 function OnStart()
@@ -50,9 +50,29 @@ function OnStart()
     app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog");
 }
  */
-    
-            
-    
+
+/**
+@sample Python Downloading the DroidScript logo
+from native import app
+
+def OnStart():
+    src = "http://www.androidscript.org/droidscriptwp/wp-content/uploads/2015/10/droidscript_logo_64x64.png"
+    dst = "/sdcard/Downloads/logo.png"
+    app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
+ */
+
+
+
+/**
+@sample Python Download to external storage
+from native import app
+
+def OnStart():
+    src = "http://www.androidscript.org/droidscriptwp/wp-content/uploads/2015/10/droidscript_logo_64x64.png"
+    dst = app.GetExternalFolder() + "/Downloads/logo.png"
+    app.DownloadFile(src, dst, "MyTitle", "My Description", "NoDialog")
+ */
+
 /**
 @sample Python Get current GPS location
 from native import app
@@ -68,5 +88,3 @@ def WaitForGps():
 
     app.ShowPopup("Latitude: " + lat + ", Longitude: " + lon)
  */
-    
-            

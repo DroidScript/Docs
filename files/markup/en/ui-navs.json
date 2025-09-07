@@ -2,23 +2,26 @@
 	"_nofilter": true,
 	"All": [],
 	"Controls": [
+		"addAlert",
 		"addButton",
+		"addBreadcrumbs",
+		"addCameraView",
+		"addCard",
 		"addCheckbox",
 		"addChip",
 		"addDropdown",
-		"addFAB",
+		"addFloatingActionButton",
 		"addImage",
 		"addLayout",
 		"addList",
 		"addProgress",
 		"addSelect",
 		"addSlider",
+		"addSpeedDial",
 		"addSwitch",
 		"addText",
 		"addTextField",
-		"addWebView"
-	],
-	"Components": [
+		"addWebView",
 		"addAccordion",
 		"addAppBar",
 		"addBottomNavbar",
@@ -26,23 +29,28 @@
 		"addCheckboxGroup",
 		"addDivider",
 		"addDrawer",
-		"addMenu",
 		"addRadioGroup",
 		"addStepper",
 		"addSwitchGroup",
+		"addTable",
 		"addTabs",
-		"addTreeView"
+		"addTimeline",
+		"addTreeView",
+		"addVideoView"
 	],
 	"Dialogs": [
+		"showActionSheet",
+		"addBottomSheet",
 		"addDialog",
+		"addMenu",
 		"showProgressDialog",
 		"showPopup",
 		"showPopover"
 	],
 	"Pickers": [
 		"showColorPicker",
-		"showDateTimePicker",
-		"addTimePicker",
-		"addDatePicker"
+		"showDatePicker",
+		"showTimePicker",
+		"showDateTimePicker"
 	]
 }

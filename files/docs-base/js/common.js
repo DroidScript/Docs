@@ -20,7 +20,7 @@ var isChromeOS = (!!agent.match(/Chrome OS|Chromebook|PixelBook/));
 var useWebIDE = (has(agent, "Remix") || isChromeOS);
 var isAndroid = (has(agent, "Android"));
 
-var isDS = (location.href.match(/\bds=true\b/) != null);
+var isDS = location.href.match(/\bds=true\b/) != null || location.port == '8088';
 isDS = isDS || getCookie("isDS") == 'true';
 setCookie("isDS", isDS);
 
@@ -109,20 +109,12 @@ $(document).live('pageshow', function (event, ui) {
 		curPage = $.mobile.activePage.attr('id');
 
 		// change link to ui/UI.html inside DS
-		if (curPage == "main") {
-			if (isMobileIDE && !app.FileExists(baseFolder + "UIDocs.htm"))
-				$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
-			else if (isWebIDE) {
-				getIdeList("list&dir=.edit/docs/", function _onIdeList(data) {
-					if (!data.list.includes("UIDocs.htm"))
-						$("a:contains(Hybrid UI)").attr("href", "ui/UI.html");
-				})
-			}
-		}
-
+		if (curPage == "main") ReloadIndex()
 		//Show plugins list if 'plugins' page is loading.
-		if (curPage == "plugins") ShowPluginsPage()
+		else if (curPage == "plugins") ShowPluginsPage()
 		else if (curPage == "extensions") ShowExtensionsPage()
+		else if (curPage == "search") searchDocs(localStorage.getItem("searchName"), localStorage.getItem("searchContent"));
+
 
 		//Append popup div in plugin docs if not exists
 		if (!$(".androidPopup").parent().is(":visible"))
@@ -228,11 +220,72 @@ function getIdeList(cmd, cb) {
 	xmlHttp.send();
 }
 
+// display internal plugins on main page
+const ignoredDirs = 'app,css,gfx,global,intro,js,node,plugins'.split(',');
+function ReloadIndex() {
+	if (isMobileIDE) {
+		const plugins = {};
+		const docsList = app.ListFolder(baseFolder);
+		for (const folder of docsList) {
+			if (folder.includes('.') || ignoredDirs.includes(folder)) continue;
+
+			const files = app.ListFolder(baseFolder + folder,
+				"(?i)" + folder + "\\.html", null, "RegExp");
+			if (files.length == 0) continue;
+
+			const name = files[0].slice(0, -5);
+			plugins[name] = folder + '/' + files[0];
+		}
+		addInternalPlugins(plugins, docsList);
+	}
+	else if (isWebIDE) {
+		getIdeList("list&dir=.edit/docs/", data => onDocsList(data.list));
+	}
+}
+
+//Web IDE .edit/docs/ list callback
+function onDocsList(docsList) {
+	const plugins = {};
+
+	for (const folder of docsList) {
+		// skip files
+		if (folder.includes('.') || ignoredDirs.includes(folder)) continue;
+		const indexName = folder.toLowerCase() + '.html';
+
+		getIdeList("list&dir=.edit/docs/" + folder, function _onIntDocList(data) {
+			const indexFile = data.list?.find(f => f.toLowerCase() == indexName);
+			if (!indexFile) return console.log("skipped intPlugDir", folder, data);
+
+			const name = indexFile.slice(0, -5);
+			plugins[name] = folder + '/' + indexFile;
+			addInternalPlugins(plugins, docsList);
+		});
+	}
+}
+
+//Set internal plugin list by plugins {name:url} object
+function addInternalPlugins(plugins, docsList = []) {
+	const order = ["Music", "UI"], rename = { UI: "Hybrid UI" };
+	const items = Object.keys(plugins).sort()
+		.sort((a, b) => order.indexOf(b) - order.indexOf(a))
+		.map(n => `<li><a href=${JSON.stringify(plugins[n])}>${rename[n] || n}</a></li>`);
+
+	$('ul#internal').empty().append(items).listview("refresh");
+
+	// decide UI index page
+	// const uiDocs = ["ui", "UIDocs.htm", "HybridUI.htm"];
+	// const uiIndexes = uiDocs.filter(f => docsList.includes(f));
+	// const uiItem = $("ul#native > li:contains(Hybrid UI)").show();
+
+	// if (uiIndexes[0] != "ui") uiItem.attr('href', uiIndexes[0]);
+	// else if (plugins.UI) uiItem.hide();
+	// else uiItem.attr('href', uiIndexes[1]);
+}
+
 //Dynamically create plugins page.
 function ShowPluginsPage() {
 	const getPath = name => "plugins/" + name.toLowerCase() + "/" + name + ".html";
 	try {
-		//If on device.
 		if (isMobileIDE) {
 			const list = app.ListFolder(pluginFolder, null, null, "folders");
 
@@ -244,8 +297,7 @@ function ShowPluginsPage() {
 			}
 			addList('#divPlugs', list, getPath);
 		}
-		//If on PC.
-		else {
+		else if (isWebIDE) {
 			getIdeList("getplugins", data =>
 				addList('#divPlugs', data.plugins.split(","), getPath)
 			);
@@ -257,15 +309,13 @@ function ShowPluginsPage() {
 //Dynamically create extensions page.
 function ShowExtensionsPage() {
 	try {
-		//If on device.
 		if (isMobileIDE) {
 			const fldr = "/sdcard/DroidScript/Extensions";
 			const list = app.ListFolder(fldr, null, null, "folders");
 			const getPath = name => fldr + "/" + name + "/Docs.html";
 			addList('#divExts', list, getPath);
 		}
-		//If on PC.
-		else {
+		else if (isWebIDE) {
 			const getPath = name => "/Extensions/" + name + "/Docs.html";
 			getIdeList("getextensions", data =>
 				addList('#divExts', data.extensions.split(","), getPath)
@@ -367,8 +417,14 @@ function fetchIndex(cb) {
 	xmlHttp.send();
 }
 
+var searchPage = 0;
 //Get list from device.
 function searchDocs(filterName, filterContent, fetched) {
+	if (typeof filterName === "number") {
+		searchPage += filterName;
+		filterName = undefined;
+	}
+
 	if (fetched && !indexContent) return;
 	if (!indexContent.length) {
 		fetchIndex(function () {
@@ -379,9 +435,14 @@ function searchDocs(filterName, filterContent, fetched) {
 
 	var nameFilter = $("#nameFilter").css("border-color", "");
 	var contentFilter = $("#contentFilter").css("border-color", "");
-	if (!filterName) filterName = nameFilter.val();
-	if (!filterContent) filterContent = contentFilter.val();
+	if (filterName) nameFilter.val(filterName);
+	else filterName = nameFilter.val();
+	if (filterContent) contentFilter.val(filterContent);
+	else filterContent = contentFilter.val();
 	if (!filterName && !filterContent) return;
+
+	localStorage.setItem("searchName", filterName);
+	localStorage.setItem("searchContent", filterContent);
 
 	var useReg = $("#regex-toggle").prop("checked");
 	var useCase = $("#case-toggle").prop("checked");
@@ -395,7 +456,7 @@ function searchDocs(filterName, filterContent, fetched) {
 
 	function match(s, m) {
 		if (!m) return true;
-		if (useReg) return s.match(RegExp(m, useCase ? "i" : ""))
+		if (useReg) return s.match(RegExp(m, useCase ? "" : "i"))
 		if (useCase) return s.includes(m);
 		return s.toLowerCase().includes(m.toLowerCase());
 	}
@@ -408,11 +469,24 @@ function searchDocs(filterName, filterContent, fetched) {
 		.map(url => [url, `?search=${encodeURIComponent(filterContent || filterName)}&flags=${2 * useReg + useCase}`])
 		.map(([url, flags]) => `<li><a href='${url}${flags}'>${url.replace('.htm', '')}</a></li>`);
 
-	var resultText = `Results: ${Math.min(items.length, max)}`;
-	if (items.length > max) resultText += ` of ${items.length}`;
-	$("#results").text(resultText);
+	if (searchPage * max >= items.length) searchPage = (items.length - 1) / max | 0;
+	if (searchPage < 0) searchPage = 0;
 
-	if (items.length) $("#listview").empty().append(items.slice(0, max).join('\n')).listview("refresh");
+	const offset = searchPage * max;
+	var resultText = `Results: `;
+
+	if (items.length > max) resultText += `${offset + 1} - ${Math.min(items.length, offset + max)} of ${items.length}`;
+	else resultText += Math.min(items.length, max);
+
+	$(".search-results").show().text(resultText);
+	if (items.length > max) $(".search-page").show();
+	else $(".search-page").hide();
+
+	if (items.length) {
+		$("#listview").empty()
+			.append(items.slice(offset, offset + max).join('\n'))
+			.listview("refresh");
+	}
 }
 
 //Shortcut for string.contains
@@ -444,7 +518,7 @@ function IsApp() {
 
 function OpenSamples() {
 	if (isMobileIDE) app.Execute("if(typeof btnSamp_OnTouch == 'function') btnSamp_OnTouch();");
-	else {
+	else if (isWebIDE) {
 		var e = parent.$(".nav-tabs > li > a:contains(Samples)");
 		if (e.length) e.click()
 		else IsApp();
@@ -467,8 +541,9 @@ function RemovePlugin(plugName) {
 		app.Execute("if(typeof AskRemovePlugin == 'function') AskRemovePlugin('" + plugName + "');" +
 			"else if(typeof RemovePlugin == 'function') RemovePlugin('" + plugName + "');");
 	}
-	else if (isWebIDE)
+	else if (isWebIDE) {
 		RemoteExec('ide', "RemovePlugin('" + plugName + "')")
+	}
 
 	setTimeout(ShowPluginsPage, 1000)
 }

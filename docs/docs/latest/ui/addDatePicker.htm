@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>addDatePicker</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" id="themeJQ" href="../css/themes/default/theme-dark.min.css"/>
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile.structure-1.2.0.min.css"/>
+	<link rel="stylesheet" id="themePrism" href="../css/themes/prism/dark.min.css"/>
+	<link rel="stylesheet" id="themeDocs" href="../css/docs-dark.min.css"/>
+
+	<script src="../js/forward.js"></script>
+	<script src="../js/energize-min.js"></script>
+	<script src="../js/jquery-1.8.1.min.js"></script>
+	<script src="../js/jquery.mark.es6.min.js"></script>
+	<script src="../../app.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/example.js"></script>
+	<script src="../js/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+<div data-role="page" data-theme="a">
+
+	<div data-role="header" data-position="fixed">
+		<a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">Back</a>
+		<h1>addDatePicker</h1>
+		<div class="ui-btn-right" style="font-size:50%">
+			<a class="code-js" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">JS</a>
+			<a class="code-py" data-role="button" data-inline="true" data-mini="true" onclick="tglMode()">Py</a>
+			<a data-icon="gear" data-role="button" data-inline="true" data-mini="true" data-iconpos="notext" onclick="tglTheme()"></a>
+		</div>
+	</div>
+
+	<div style="position:fixed; top:40px; width:100%; text-align:center; z-index:1101;">
+		<div id="appPopup" class="androidPopup">Hello World</div>
+	</div>
+
+	<div data-role="content">
+
+		<div class="samp samp-inline" style="font-size:revert; padding:10px 15px">
+		<b>Content:</b><br>
+		<span style="display:inline-block;padding-left:2em;">
+				- <a href="" onclick="jumpTo('Properties')">Properties</a><br>
+				- <a href="" onclick="jumpTo('Methods')">Methods</a><br>
+			</span><br>
+		</div>
+
+		<p>Adds a date picker component to the app.</p>
+
+		<div class="samp">
+		dtp = ui.addDatePicker(
+			<a href="#pop_str_001" data-transition="pop" data-rel="popup">date</a>,
+			<a href="#pop_str_002" data-transition="pop" data-rel="popup">options?</a> )
+			→ <b>ui object:</b> DatePicker
+		</div>
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - Default</h3>
+			<div id="examp2" class="code-js" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span> <br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setMargins</span><span class="token punctuation">(</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a button to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Date Picker"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>showDatePicker <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Initialize date picker</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>dtp <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addDatePicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">showDatePicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Display the date picker dialog</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>dtp<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp2" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> dtp<br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,Vcenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>setMargins<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a button to the main layout</span><br>
+				    btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Show Date Picker"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>showDatePicker<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Initialize date picker</span><br>
+				    dtp <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDatePicker<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">showDatePicker</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Display the date picker dialog</span><br>
+				    dtp<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp2' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp2' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - With initial value & portrait</h3>
+			<div id="examp3" class="code-js" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span> <br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setMargins</span><span class="token punctuation">(</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a button to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Date Picker"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>showDatePicker <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// With initial value. Date must be of the form "YYYY-MM-DD"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>dtp <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addDatePicker</span><span class="token punctuation">(</span> <span class="token string">"2022-12-25"</span><span class="token punctuation">,</span> <span class="token string">"Portrait"</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">showDatePicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Display the date picker dialog</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>dtp<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp3" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> dtp<br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,Vcenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>setMargins<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a button to the main layout</span><br>
+				    btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Show Date Picker"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>showDatePicker<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># With initial value. Date must be of the form "YYYY-MM-DD"</span><br>
+				    dtp <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDatePicker<span class="token punctuation">(</span><span class="token string">"2022-12-25"</span><span class="token punctuation">,</span> <span class="token string">"Portrait"</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">showDatePicker</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Display the date picker dialog</span><br>
+				    dtp<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp3' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp3' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<div data-role="collapsible" data-collapsed="true" data-mini="true" data-theme="a" data-content-theme="a">
+			<h3>Example - With limits & callback</h3>
+			<div id="examp4" class="code-js" style="font-size:70%">
+				<span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token keyword">extends</span> <span class="token class-name">App</span> <br>
+				<span class="token punctuation">{</span><br>
+				    <span class="token function">onStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Creates a fullscreen layout with objects vertically centered.</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addLayout</span><span class="token punctuation">(</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,VCenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span><span class="token function">setMargins</span><span class="token punctuation">(</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span> <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// Add a button to the main layout</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addButton</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>main<span class="token punctuation">,</span> <span class="token string">"Show Date Picker"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">setOnTouch</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>showDatePicker <span class="token punctuation">)</span><br>
+				        <br>
+				        <span class="token comment">// With initial value. Date must be of the form "YYYY-MM-DD"</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>dtp <span class="token operator">=</span> ui<span class="token punctuation">.</span><span class="token function">addDatePicker</span><span class="token punctuation">(</span> <span class="token string">"2022-12-25"</span><span class="token punctuation">,</span> <span class="token string">"Portrait"</span> <span class="token punctuation">)</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>dtp<span class="token punctuation">.</span><span class="token function">setOnSelect</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSelect <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">showDatePicker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        <span class="token comment">// Display the date picker dialog</span><br>
+				        <span class="token keyword">this</span><span class="token punctuation">.</span>dtp<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				    <br>
+				    <span class="token function">onSelect</span><span class="token punctuation">(</span> <span class="token parameter">value</span> <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">{</span><br>
+				        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> value <span class="token punctuation">)</span><br>
+				    <span class="token punctuation">}</span><br>
+				<span class="token punctuation">}</span>
+			</div>
+			<div id="examp4" class="code-py" style="font-size:70%">
+				<span class="token keyword">from</span> hybrid <span class="token keyword">import</span> ui<br>
+				<span class="token keyword">from</span> native <span class="token keyword">import</span> app<br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">OnStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token keyword">global</span> dtp<br>
+				    <span class="token comment"># Creates a fullscreen layout with objects vertically centered.</span><br>
+				    main <span class="token operator">=</span> ui<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span><span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token string">"Linear"</span><span class="token punctuation">,</span> <span class="token string">"Top,Vcenter"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><br>
+				    main<span class="token punctuation">.</span>setMargins<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">,</span> <span class="token number">0.01</span><span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># Add a button to the main layout</span><br>
+				    btn <span class="token operator">=</span> ui<span class="token punctuation">.</span>addButton<span class="token punctuation">(</span>main<span class="token punctuation">,</span> <span class="token string">"Show Date Picker"</span><span class="token punctuation">,</span> <span class="token string">"Secondary"</span><span class="token punctuation">)</span><br>
+				    btn<span class="token punctuation">.</span>setOnTouch<span class="token punctuation">(</span>showDatePicker<span class="token punctuation">)</span><br>
+				    <br>
+				    <span class="token comment"># With initial value. Date must be of the form "YYYY-MM-DD"</span><br>
+				    dtp <span class="token operator">=</span> ui<span class="token punctuation">.</span>addDatePicker<span class="token punctuation">(</span><span class="token string">"2022-12-25"</span><span class="token punctuation">,</span> <span class="token string">"Portrait"</span><span class="token punctuation">)</span><br>
+				    dtp<span class="token punctuation">.</span>setOnSelect<span class="token punctuation">(</span>onSelect<span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">showDatePicker</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    <span class="token comment"># Display the date picker dialog</span><br>
+				    dtp<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><br>
+				<br>
+				<span class="token keyword">def</span> <span class="token function">onSelect</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span><br>
+				    app<span class="token punctuation">.</span>ShowPopup<span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+			</div>
+			<div name="divCopy" align="right">
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="copy( 'examp4' )">Copy All</a>
+			<a href="#" data-role="button" data-mini="true" data-inline="true" onclick="demo( 'examp4' )">      Run      </a>
+			</div>
+		</div>
+
+
+		<h3>Properties</h3>
+		<p>The following properties are available on the <strong>DatePicker</strong> object:</p>
+
+		<div class="samp"><a href="#pop_dsc_001" data-transition="pop" data-rel="popup">format</a> → <b>String</b></div>
+
+		<h3>Methods</h3>
+		<p>The following methods are available on the <strong>DatePicker</strong> object:</p>
+
+		<div class="samp">
+			<a href="#pop_dsc_002" data-transition="pop" data-rel="popup" class="baseFunc">hide</a>()
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_003" data-transition="pop" data-rel="popup" class="baseFunc">isVisible</a>() → <b>Boolean</b>
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_004" data-transition="pop" data-rel="popup">setFormat</a>(
+			<a href="#pop_str_003" data-transition="pop" data-rel="popup">format</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_005" data-transition="pop" data-rel="popup">setLimits</a>(
+			<a href="#pop_str_004" data-transition="pop" data-rel="popup">past?</a>,
+			<a href="#pop_str_005" data-transition="pop" data-rel="popup">future?</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_006" data-transition="pop" data-rel="popup">setOnSelect</a>(
+			<a href="#pop_fnc_001" data-transition="pop" data-rel="popup">callback</a> )
+		</div>
+		<div class="samp">
+			<a href="#pop_dsc_007" data-transition="pop" data-rel="popup" class="baseFunc">show</a>()
+		</div>
+
+	</div>
+
+	<div data-role="popup" id="pop_str_001" class="ui-content"><b>String:</b> <docstr>“A default date value to which the datepicker begins. Format `YYYY-MM-DD`”</docstr></div>
+	<div data-role="popup" id="pop_str_002" class="ui-content"><b>String:</b> <i>comma <docstr>“,”</docstr> separated:</i> <docstr>“`Portrait` `Landscape`”</docstr></div>
+	<div data-role="popup" id="pop_str_003" class="ui-content"><b>String:</b> <docstr>“A date format. Can be `YYYY-MM-DD` `MM-DD-YYYY` `DD-MM-YYYY`”</docstr></div>
+	<div data-role="popup" id="pop_str_004" class="ui-content"><b>String:</b> <docstr>“Date in the past of the form `YYYY-MM-DD`”</docstr></div>
+	<div data-role="popup" id="pop_str_005" class="ui-content"><b>String:</b> <docstr>“Date in the future of the form `YYYY-MM-DD`”</docstr></div>
+	<div data-role="popup" id="pop_fnc_001" class="ui-content"><b>function</b>(
+		<a href="" onclick="app.ShowPopup('String: “The selected date in the following format `YYYY-MM-DD`. You change format by setting `format` property.”')">date</a>
+	)</div>
+	<div data-role="popup" id="pop_dsc_001" class="ui-content"><b>dtp.format</b><br>Sets or returns the format of the selected date. Values are <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">YYYY-MM-DD</span> <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">MM-DD-YYYY</span> or <span style="color:#fb8c00; font-family:Courier,monospace; padding:0px 2px;">DD-MM-YYYY</span></div>
+	<div data-role="popup" id="pop_dsc_002" class="ui-content"><b>dtp.hide</b><br>Hide the date picker dialog</div>
+	<div data-role="popup" id="pop_dsc_003" class="ui-content"><b>dtp.isVisible</b><br>Get the current visibility of the date picker</div>
+	<div data-role="popup" id="pop_dsc_004" class="ui-content"><b>dtp.setFormat</b><br>Sets the format of the date to be passed into the onSelect callback</div>
+	<div data-role="popup" id="pop_dsc_005" class="ui-content"><b>dtp.setLimits</b><br>Set a limit to which the date picker dialog can render a date</div>
+	<div data-role="popup" id="pop_dsc_006" class="ui-content"><b>dtp.setOnSelect</b><br>Sets a callback function to execute when date picker dialog is submitted</div>
+	<div data-role="popup" id="pop_dsc_007" class="ui-content"><b>dtp.show</b><br>Show the date picker the dialog</div>
+</div>
+</body>
+
+</html>

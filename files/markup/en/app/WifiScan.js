@@ -4,18 +4,18 @@
 /** # WifiScan #
  * @brief Scan for any available Wifi networks
  * Scans the surroundings for any available Wifi networks.
- * $$ app.WifiScan(callback, options) $$ 
+ * $$ app.WifiScan(callback, options?) $$
  * @param {fnc_json} callback {"pNames":["ssids"],"pTypes":["str_pip||lst"]}
- * @param {str} options detail
+ * @param {str} [options] detail
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Conect to DS WiFi AP
 function OnStart()
@@ -35,9 +35,9 @@ function OnWifi( ssid )
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Conect to DS WiFi AP
 from native import app
@@ -49,12 +49,10 @@ def OnStart():
     lay.AddChild(lst)
     app.AddLayout(lay)
 
-    app.ShowProgress()
-    app.WifiScan(OnWifi)
+    <b>app.ShowProgress()
+    app.WifiScan(OnWifi)</b>
 
 def OnWifi(ssid):
     lst.SetList(ssid, "\\|")
     app.HideProgress()
  */
-    
-            

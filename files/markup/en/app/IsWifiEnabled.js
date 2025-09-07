@@ -4,19 +4,19 @@
 /** # IsWifiEnabled #
  * @brief Check if WiFi is enabled
  * Checks if Wifi is enabled on the user device.
- * 
+ *
  * See Also: @SetWifiEnabled, @SetOnWifiChange, @IsWifiApEnabled
- * $$ app.IsWifiEnabled() $$ 
+ * $$ app.IsWifiEnabled() $$
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Wifi Enabled
 function OnStart()
@@ -25,16 +25,14 @@ function OnStart()
     app.Alert( wifiEnabled, "Wifi Enabled:" );
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 from native import app
 
 def OnStart():
     wifiEnabled = app.IsWifiEnabled()
     app.Alert(wifiEnabled, "Wifi Enabled:")
  */
-    
-            

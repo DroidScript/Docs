@@ -4,40 +4,43 @@
 /** # IsBtDevicePaired #
  * @brief Check bt paired state to other device
  * Checks if a given bluetooth device was paired with the user device.
- * 
+ *
  * See Also: @GetPairedBtDevices, @UnpairBtDevice
- * $$ app.IsBtDevicePaired(name) $$ 
- * @param {str} name 
+ * $$ app.IsBtDevicePaired(name) $$
+ * @param {str} name
  * @returns bin
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Paired
 function OnStart()
 {
     app.ShowProgress( "enabling Bluetooth" );
     app.SetBluetoothEnabled( true );
+
     while( !app.IsBluetoothOn() ) app.Wait( 0.2 );
     app.HideProgress();
 
+    devices = app.GetPairedBtDevices()
+
     if( devices.length )
     {
-        paired =  app.IsBtDevicePaired( devices[0].name );
+        <b>paired = app.IsBtDevicePaired( devices[0].name );</b>
         app.Alert( paired, devices[0].name + " paired" );
     } else
-        <b>app.ShowPopup( "No Paired devices found" );</b>
+        app.ShowPopup( "No Paired devices found" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Check Paired from Available
 function OnStart()
@@ -61,9 +64,9 @@ function bt_OnComplete() {
     app.HideProgress();
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Pairing and Unpairing bluetooth devices
 function OnStart()
@@ -120,9 +123,9 @@ function OnUnpair() {
     app.Alert( name + "  " + address, "Unpairing successful!" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Paired
 from native import app
@@ -130,19 +133,22 @@ from native import app
 def OnStart():
     app.ShowProgress("enabling Bluetooth")
     app.SetBluetoothEnabled(True)
+    
     while not app.IsBluetoothOn():
         app.Wait(0.2)
     app.HideProgress()
+    
+    devices = app.GetPairedBtDevices()
 
     if devices:
-        paired = app.IsBtDevicePaired(devices[0].name)
+        <b>paired = app.IsBtDevicePaired(devices[0].name)</b>
         app.Alert(paired, devices[0].name + " paired")
     else:
         app.ShowPopup("No Paired devices found")
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Paired from Available
 from native import app
@@ -158,15 +164,15 @@ def OnStart():
     app.ShowProgress("Discovering bt devices")
 
 def bt_OnFound(name, address):
-    paired = app.IsBtDevicePaired(name)
-    app.ShowPopup(name + ": paired: " + str(paired))
+    <b>paired = app.IsBtDevicePaired(name)
+    app.ShowPopup(name + ": paired: " + str(paired))</b>
 
 def bt_OnComplete():
     app.HideProgress()
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Pairing and Unpairing bluetooth devices
 from native import app
@@ -215,5 +221,3 @@ def OnPair(name, address):
 def OnUnpair():
     app.Alert(name + "  " + address, "Unpairing successful!")
  */
-    
-            

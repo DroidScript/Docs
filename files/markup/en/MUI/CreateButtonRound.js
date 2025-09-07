@@ -4,19 +4,19 @@
 /** # CreateButtonRound #
  * @abbrev btr
  * A round material button
- * $$ btr = MUI.CreateButtonRound(text, width, height, color, txtcolor) $$ 
- * @param {str} text 
- * @param {num_frc} width 
- * @param {num_frc} height 
- * @param {str_col} color 
- * @param {str_col} txtcolor 
+ * $$ btr = MUI.CreateButtonRound(text, width=-1, height=-1, color?, textColor?) $$
+ * @param {str} text
+ * @param {num_frc} [width=-1]
+ * @param {num_frc} [height=-1]
+ * @param {str_col} [color]
+ * @param {str_col} [textColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern AdjustColor */
@@ -25,13 +25,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -53,7 +50,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ btr.GetType() $$
  * @returns str-Button
  */
@@ -111,17 +108,7 @@
 
 /** @extern SetSize */
 
-/** ### SetStyle ###
- * 
- * $$ btr.SetStyle(clr1, clr2, radius, strokeClr, strokeWidth, shadow) $$
- * @param {str_col} clr1 
- * @param {str_col} clr2 
- * @param {num} radius 
- * @param {str_col} strokeClr 
- * @param {num} strokeWidth 
- * @param {num} shadow 
- */
-
+/** @extern SetStyle */
 
 /** @extern SetText */
 
@@ -140,10 +127,10 @@
 /** @extern SetColor */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Light
 cfg.Light
@@ -156,21 +143,21 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonRound("BUTTON", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonRound("BUTTON", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonRound("[fa-android] ANDROID", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonRound("[fa-android] ANDROID", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonRound("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonRound("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+        lay.AddChild(btn)
 
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Dark
 cfg.Dark
@@ -183,21 +170,21 @@ function OnStart()
 
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
     	
-    	btn = MUI.CreateButtonRound("BUTTON", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonRound("BUTTON", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonRound("[fa-android] ANDROID", 0.35)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonRound("[fa-android] ANDROID", 0.35)
+        lay.AddChild(btn)
 
-    	btn = MUI.CreateButtonRound("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
-    	lay.AddChild(btn)
+        btn = MUI.CreateButtonRound("CUSTOM COLOR", 0.5, 0.1, MUI.colors.blue.blue)
+        lay.AddChild(btn)
 
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Add Method
 cfg.Light
@@ -206,7 +193,7 @@ cfg.MUI
 function OnStart()
 {
     lay = MUI.CreateLayout("Linear", "VCenter,FillXY")
-    
+
         btn1 = MUI.AddButtonRound(lay, "BUTTON 1", 0.35)
         btn2 = MUI.AddButtonRound(lay, "[fa-heart] BUTTON 2", 0.35)
         btn3 = MUI.AddButtonRound(lay, "BUTTON 3", 0.35, 0.1, MUI.colors.green.darken2)
@@ -214,9 +201,9 @@ function OnStart()
     app.AddLayout(lay)
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Add Method
 # cfg.Light, cfg.MUI
@@ -232,5 +219,3 @@ def OnStart():
 
     app.AddLayout(lay)
  */
-    
-            

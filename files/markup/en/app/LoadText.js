@@ -3,21 +3,22 @@
 
 /** # LoadText #
  * Load saved text value to remember varibale values between multiple app starts.
- * 
+ *
  * See also: @SaveText.
- * $$ app.LoadText(name, default, file) $$ 
- * @param {str} name 
- * @param {str} default 
- * @param {str_ptf} file 
+ * $$ app.LoadText(name, default?, file?) $$
+ * @param {str} name
+ * @param {str} [default]
+ * @param {str_ptf} [file]
+ * @returns str
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Load Saved Text
 var file = "demofile";
@@ -53,9 +54,9 @@ function btnLoad_OnTouch()
 	app.ShowPopup( value );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Load Saved Text
 from native import app
@@ -88,5 +89,3 @@ def btnLoad_OnTouch():
     value = app.LoadText("value", "no value stored", file)
     app.ShowPopup(value)
  */
-    
-            

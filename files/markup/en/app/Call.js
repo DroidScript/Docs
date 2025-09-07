@@ -4,17 +4,17 @@
 /** # Call #
  * @brief Calls a phone number
  * Call is used to call the given phone number.
- * $$ app.Call(number) $$ 
+ * $$ app.Call(number) $$
  * @param {str} number number
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Check Voice Messages
 function OnStart()
@@ -37,12 +37,14 @@ function btnCall_OnTouch()
 	<b>app.Call( edtNumber.GetText() );</b>
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Check Voice Messages
 from native import app
+
+edtNumber = None
 
 def OnStart():
     global edtNumber
@@ -61,5 +63,3 @@ def OnStart():
 def btnCall_OnTouch():
     <b>app.Call( edtNumber.GetText() )</b>
  */
-    
-            

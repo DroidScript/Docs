@@ -4,20 +4,20 @@
 /** # UnpairBtDevice #
  * @brief Unpair a paired Bluetooth device
  * Unpairs a paired Bluetooth device by its bt address. The _callback_ argument is called when the device was successfully unpaired.
- * 
+ *
  * See Also: @PairBtDevice, @GetPairedBtDevices, @DiscoverBtDevices, @CreateBluetoothSerial
- * $$ app.UnpairBtDevice(address, callback) $$ 
- * @param {str} address 
- * @param {fnc_json} callback {}
+ * $$ app.UnpairBtDevice(address, callback?) $$
+ * @param {str} address
+ * @param {fnc_json} [callback] {}
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Pairing and Unpairing bluetooth devices
 function OnStart()
@@ -74,9 +74,9 @@ function OnUnpair() {
     app.Alert( name + "  " + address, "Unpairing successful!" );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Pairing and Unpairing bluetooth devices
 from native import app
@@ -125,5 +125,3 @@ def OnPair(name, address):
 def OnUnpair(name, address):
     app.Alert(name + "  " + address, "Unpairing successful!")
  */
-    
-            

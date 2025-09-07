@@ -4,17 +4,17 @@
 /** # CreateFABOutline #
  * @abbrev fab
  * Creates an outlined floating action button
- * $$ fab = MUI.CreateFABOutline(icon, color, backColor) $$ 
+ * $$ fab = MUI.CreateFABOutline(icon, color?, backColor?) $$
  * @param {str} icon Material icon font
- * @param {str_col} color 
- * @param {str_col} backColor 
+ * @param {str_col} [color]
+ * @param {str_col} [backColor]
  * @returns obj
 */
 
 
 
 
-// ------------- VISIBLE METHODS & PROPERTIES ------------- 
+// ------------- VISIBLE METHODS & PROPERTIES -------------
 
 
 /** @extern SetOnLongTouch */
@@ -30,8 +30,8 @@
 
 /** ### SetIconColor ###
  * Sets the text color
- * $$ fab.SetIconColor(color) $$
- * @param {str_col} color 
+ * $$ fab.SetIconColor(color?) $$
+ * @param {str_col} [color]
  */
 
 
@@ -46,13 +46,10 @@
 
 /** @extern ClearFocus */
 
-/** ### data
- * @prop
- * 
- * @returns obj
- */
+/** @extern Batch */
 
-                    
+/** @extern data */
+
 /** @extern Focus */
 
 /** @extern GetAbsHeight */
@@ -70,7 +67,7 @@
 /** @extern GetTop */
 
 /** ### GetType ###
- * 
+ *
  * $$ fab.GetType() $$
  * @returns str-Button
  */
@@ -107,12 +104,12 @@
 /** @extern SetText */
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
-@sample 
+@sample
 cfg.Light
 cfg.MUI
 
@@ -135,11 +132,11 @@ function OnClick()
     app.ShowPopup("You click FAB")
 }
  */
-    
-            
-    
+
+
+
 /**
-@sample Python 
+@sample Python
 # cfg.Light, cfg.MUI
 
 from native import app
@@ -159,5 +156,3 @@ def OnStart():
 def OnClick():
     app.ShowPopup("You click FAB")
  */
-    
-            

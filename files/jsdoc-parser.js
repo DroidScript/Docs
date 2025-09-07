@@ -12,7 +12,7 @@ const LANG = "en";
 const SRC = path.normalize(__dirname + "/markup/" + LANG);
 const DST = path.normalize(__dirname + "/json/" + LANG + "/" + conf.version);
 
-const typx = "all,bin,dso,gvo,jso,swo,fnc,lst,num,obj,str,?,uio";
+const typx = Object.keys(conf.tname);
 /** @type {Obj<string>} */
 const types = {
     String: "str",
@@ -21,6 +21,12 @@ const types = {
     Boolean: "bin",
     Function: "fnc",
     Array: "lst",
+    string: "str",
+    number: "num",
+    object: "obj",
+    boolean: "bin",
+    function: "fnc",
+    array: "lst",
     Any: "all",
     AppObject: "dso",
     GameObject: "gvo",
@@ -98,6 +104,8 @@ function LoopFiles(SOURCE_DIR, fn) {
             // write description.md file
             const descFile = path.join(outputDesc, data.name + ".md");
             if (!_errors) fs.writeFileSync(descFile, data.desc.replace(/<br>/g, '\n'));
+            const pysampleFile = path.join(outputSamples, data.name + "-py.txt");
+            if (!_errors && data.samples.py) fs.writeFileSync(pysampleFile, data.samples.py);
         }
     }
     Throw(null, SOURCE_DIR);
@@ -230,9 +238,23 @@ function renderMdFile(filePath, objJson) {
     const desc = fs.readFileSync(filePath, "utf8");
     objJson[name] = newDSFunc();
     objJson[name].desc = "#" + name + ".md";
+
+    const regex = /<sample Python.*?>(.*?)<\/sample>/gs;
+    const pySamples = [];
+    let match, modDesc = desc
+
+    while ((match = regex.exec(desc)) !== null) {
+        pySamples.push(match[0].trim());
+        modDesc = modDesc.replace(pySamples[pySamples.length-1], "")
+    }
+
     return {
         name,
-        desc
+        desc: modDesc,
+        samples: {
+            js: "",
+            py: pySamples.map(m => m.replace("<sample Python", "<sample")).join("\n\n")
+        }
     };
 }
 
@@ -291,7 +313,17 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
 
     tokens.forEach(c => {
         if (c.type === "BlockComment") {
-            const mt = c.value.match(/@\s*(ex|s)ample *-? *(.*)/i);
+            // convert inline and block code first
+            if (c.value.includes('```')) {
+                let t = c.value;
+                // For inline code blocks
+                t = t.replace(/```(.*?)```/gs, (_, match) => `<js>${match.trim()}</js>`);
+                // // For block code blocks
+                t = t.replace(/```([\s\S]*?)```/gs, (_, match) => `\n<js>\n${match.trim()}\n</js>`);
+                func.desc += t;
+            }
+
+            const mt = c.value.match(/@(ex|s)ample *-? *(.*)/i);
             if (mt) {
                 const t = mt[2].trim() || '';
                 const ext = t.startsWith("Python") ? "py" : "js";
@@ -301,35 +333,35 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
                 const sample = `\n\n<sample${title && ' ' + title}>\n${cod.replace(/\*_/g, '*/')}\n</sample>`;
                 samples[ext] += sample;
             }
-            else if (c.value.includes('```')) { /* empty */ }
 
             // Description.md
-            else if (/@\s*description/i.test(c.value)) {
-                func.desc += c.value.substring(c.value.indexOf("\n"));
+            else if (/@description\b/i.test(c.value)) {
+                if (func.desc) func.desc += "\n\n";
+                func.desc += c.value.split(/@description\b/i)[1].trim();
             }
 
-            else if (/@\s*ds/i.test(c.value)) {
+            else if (/@ds\b/i.test(c.value)) {
                 func.desc += c.value.split("@ds")[1].trim();
             }
 
             // Sample.txt
-            else if (/@\s*sample/i.test(c.value)) {
+            else if (/@sample\b/i.test(c.value)) {
                 const _samp = c.value.slice(c.value.indexOf("\n") + 1);
                 samples.js += `\n\n${_samp}\n\n`;
                 console.log("reached @sample despite /(ex|s)ample/");
             }
 
             // Base method
-            else if (/@\s*extern/i.test(c.value)) {
-                const [_m, _n, _, _k = ''] = c.value.match(/@\s*extern\s+(\S+)(\s+(#\S+))?/i) || [];
-                if (!baseJson[_k || _n])
+            else if (/@extern\b/i.test(c.value)) {
+                const [_m, _n, _, _k = ''] = c.value.match(/@extern\s+(\S+)(\s+(#\S+|r\/[^/]+\/|\{.*\}))?/i) || [];
+                if (!baseJson[_k || _n] && name !== "_tsxdefs")
                     Throw(`unknown base method '${_n + (_k && ' ' + _k)}' in '${name}'`);
-                json[_n] = _k || '#' + _n;
+                else json[_n] = _k ? _k.replace(/\\n/g, "\n").replace(/\\t/g, "\t") : '#' + _n;
             }
 
             // Category
-            else if (/@\s*category/i.test(c.value)) {
-                const _n = c.value.split(/@\s*category/i)[1].trim();
+            else if (/@category\b/i.test(c.value)) {
+                const _n = c.value.split(/@category\b/i)[1].trim();
                 if (_n) categories.push(_n);
             }
 
@@ -377,29 +409,33 @@ function RenderComments(objJson, tokens, cmp, name, baseJson) {
  * @param {Obj<string|UndefinedPartial<DSMethod>>} objJson
  */
 function HandleComment(c, name, func, json, objJson) {
-    let isCA = false, afterCmpParam = false;
+    let isCA = false, afterCmpParam = false, isComment = false;
     let met = newDSFunc();
+    met.isval = false;
+    let subfName = '';
+    const lines = c.value.split(/\r?\n/);
 
-    for (let line of c.value.split(/\r?\n/)) {
-        line = line.trim();
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
         const obj = isCA ? func : met;
 
-        if (line.includes("###") && !isCA) {
+        if (line.match(/^[ */]+###/) && !isCA && !isComment) {
             const method = line.replace(/^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$/g, "");
             const ref = /\d/.test(method[0]) ? '#' : '';
+            subfName = method;
             json[ref + method] = met = newDSFunc();
             if (c.value.includes("@prop")) met.isval = true;
         }
 
         // exclude these lines
-        else if (line.includes("@jdocs")) { /* empty */ }
+        else if (line.match(/^[ */]+@jdocs/)) { /* empty */ }
 
-        else if (line.includes("##") && !isCA) {
+        else if (line.match(/^[ */]+##/) && !isCA && !isComment) {
             // met += line;
         }
 
         // isCA = false
-        else if (line.includes("@prop") && line.includes("{")) {
+        else if (line.match(/^[ */]+@prop/) && line.includes("{")) {
             const l = line.split("@prop")[1].trim(),
                 p = extractParams(l),
                 ts = p.type.split('||').map(t => types[p.type] || t);
@@ -413,10 +449,10 @@ function HandleComment(c, name, func, json, objJson) {
             let g = p.type.split(/[_\s:-]/)[0], v;
             if (types[g]) v = types[g];
             else if (typx.includes(g)) v = p.type;
-            else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p.type;
+            else console.log(`unknown prop type ${g} in ${name}`), v = "obj-" + p.type;
             met.retval = v;
         }
-        else if (line.includes("@prop")) {
+        else if (line.match(/^[ */]+@prop/)) {
             if (line.includes("{")) {
                 const l = line.split("@prop")[1].trim(),
                     p = extractParams(l),
@@ -431,17 +467,17 @@ function HandleComment(c, name, func, json, objJson) {
                 let g = p.type.split(/[_\s:-]/)[0], v;
                 if (types[g]) v = types[g];
                 else if (typx.includes(g)) v = p.type;
-                else console.log(`unknown ret type ${g} in ${name}`), v = "obj-" + p.type;
+                else console.log(`unknown prop type ${g} in ${name}`), v = "obj-" + p.type;
                 met.retval = v;
             }
             else { obj.isval = true; }
         }
 
-        else if (line.includes("@name")) {
+        else if (line.match(/^[ */]+@name/)) {
             obj.name = line.substring(line.indexOf("@name") + 5).trim();
         }
 
-        else if (line.includes("@brief")) {
+        else if (line.match(/^[ */]+@brief/)) {
             obj.shortDesc = line.substring(line.indexOf("@brief") + 6).trim();
         }
 
@@ -449,18 +485,26 @@ function HandleComment(c, name, func, json, objJson) {
             obj.params = line.split("@param")[1].trim();
         }
 
-        else if (line.includes("@param")) {
+        else if (line.match(/^[ */]+@param/)) {
             const l = line.split("@param")[1].trim();
             const p = extractParams(l);
             let d;
             //p.desc = p.desc.replace(/\\n/g, '\n') //.replace(pattern, replacement);
             if (p.desc.includes("--->") || p.type.includes("unction")) {
                 d = formatDef(p.desc.split("--->")[1] || "");
+                if (!d) {
+                    // console.error(`Warning: no callback args in function ${name}${subfName && '.' + subfName}(${p.name})`);
+                    d = {};
+                }
                 p.desc = p.desc.split("--->")[0];
                 p.desc = extractBacktickStrings(p.desc);
             }
             else if (p.type === "fnc_json") {
                 d = p.desc && JSON.parse(p.desc);
+                if (!d) {
+                    console.error(`Warning: no callback args in fnc_json ${name}${subfName && '.' + subfName}(${p.name})`);
+                    d = {};
+                }
             }
             else {
                 const ts = p.type.split('||').map(t => types[p.type] || t);
@@ -479,38 +523,55 @@ function HandleComment(c, name, func, json, objJson) {
             afterCmpParam = true;
         }
 
-        else if (line.includes("#") && !func.desc) {
+        else if (line.match(/^[ */]+#/) && !func.desc && !isComment) {
             isCA = true;
+            const nameMatch = line.match(/(?=#)\s+(\S+)/);
+            name = nameMatch ? nameMatch[1] : name;
             func = objJson[name] = newDSFunc();
             // if( parent && isChild ) {
             //     met.subf = JSON.parse(JSON.stringify(parent));
             // }
         }
 
-        else if (line.includes("@returns")) {
-            const f = line.split("returns")[1].trim(), g = f.split(/[_\s:-]/)[0];
-            if (types[g]) obj.retval = types[g];
-            else if (typx.includes(g)) obj.retval = f;
+        else if (line.match(/^[ */]+@returns?\b/)) {
+            const f = line.split(/returns?/)[1].trim(), g = f.split(/[_\s:-]/)[0];
+            if (f.startsWith("fnc_json")) obj.retval = JSON.parse(f.slice(f.indexOf('-') + 1));
+            else if (types[g]) obj.retval = types[g];
+            else if (!g.split("||").find(t => !typx.includes(t))) obj.retval = f;
             else console.log(`unknown ret type ${g} in ${name}`), obj.retval = "obj-" + f;
+            if (isCA && name.startsWith("show") && typeof obj.retval == "string" && obj.retval[2] === 'o') obj.subf ||= {};
         }
 
-        else if (line.includes("@img")) { /* empty */ }
-        else if (line.includes("@@")) { /* empty */ }
+        else if (line.match(/^[ */]+@img/)) { /* empty */ }
+        else if (line.match(/^[ */]+@@/)) { /* empty */ }
         else if (line.startsWith("* $ ")) { /* empty */ }
 
-        else if (line.includes("$$")) {
-            if (!line.includes('(')) obj.isval = true;
-            if (isCA && afterCmpParam) {
+        else if (line.match(/^[ */]+\$\$/)) {
+            if (!afterCmpParam) {
+                if (!line.includes('(')) obj.isval = true;
+            }
+            else if (isCA) {
                 const match = line.match(/\$\$(.*?)\$\$/) || [];
                 func.desc += ('\n<js>' + match[1].replace(/:/g, ' : ') + '</js>\n');
             }
+            else {
+                console.warn(`ignored code ${line} in ${name}`);
+            }
         }
 
-        else if (line.includes("@abbrev")) { func.abbrev = line.split("abbrev")[1].trim(); }
+        else if (line.match(/^[ */]+@abbrev/)) { func.abbrev = line.split("abbrev")[1].trim(); }
         else if (line.trim() === "*") { obj.desc += "\n"; }
         else if (line.trim() === "*/" || !line.trim()) { /* empty */ }
-        else { obj.desc += line.trim().replace(/^\* | \* /g, '\n'); }
+        else if (!line.match(/^\s*---/)) {
+            const addline = line.trim().replace(/^\* | \* /g, '\n');
+            obj.desc += addline.replace(/(^|\s+)(## Examples)/, '$1#$2');
+            isComment = true;
+        }
     }
+
+    // trailing descriptions
+    if (met.isval === false && met.desc) func.desc += "\n" + met.desc;
+
     return func;
 }
 
@@ -536,7 +597,7 @@ function formatDef(sline) {
         if (!l.trim()) return;
         const r = extractParamDef(l);
         pNames.push(r[1]);
-        if (!types[r[0]]) console.log(`unknown def type ${r[0]}`);
+        if (!types[r[0]]) console.log(`unknown def type ${r[0]} in \`${sline}\``);
         pTypes.push(types[r[0]] ? types[r[0]] + "-" + r[2] : "obj-" + r[2]);
     });
     return { pNames, pTypes };

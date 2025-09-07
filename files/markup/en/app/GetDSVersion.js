@@ -4,17 +4,17 @@
 /** # GetDSVersion #
  * @brief Get current DS version
  * Returns the current DroidScript version number in the format 0.00.
- * $$ app.GetDSVersion() $$ 
+ * $$ app.GetDSVersion() $$
  * @returns num_flt
 */
 
 
 
 
-// ------------- SAMPLES ------------- 
+// ------------- SAMPLES -------------
 
 
-    
+
 /**
 @sample Show DroidScript Version
 function OnStart()
@@ -23,9 +23,9 @@ function OnStart()
     app.Alert( ver );
 }
  */
-    
-            
-    
+
+
+
 /**
 @sample Python Show DroidScript Version
 from native import app
@@ -34,5 +34,3 @@ def OnStart():
     ver = app.GetDSVersion()
     app.Alert(ver)
  */
-    
-            
